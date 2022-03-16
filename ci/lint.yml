@@ -1,0 +1,15 @@
+---
+
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: node
+    tag: latest
+
+inputs:
+  - name: dp-census-atlas
+
+run:
+  path: dp-census-atlas/ci/scripts/lint.sh

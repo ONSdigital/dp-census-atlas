@@ -1,0 +1,10 @@
+FROM node:latest
+
+WORKDIR /app/
+
+COPY build build
+COPY package.json .
+
+RUN npm install  
+
+CMD node build/index.js

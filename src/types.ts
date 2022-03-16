@@ -1,0 +1,26 @@
+
+import type topics from "./data/curation"
+
+export type GeoType = 'lad' | 'msoa'
+
+export type MapState = {
+  bbox:    Bbox
+  geoType: GeoType
+}
+
+export type VizData = {
+  breaks: number[],
+  places: { geoCode: string, value: number }[]
+  params: {
+    topic:    typeof topics[0],
+    variable: typeof topics[0]["variables"][0],
+    category: typeof topics[0]["variables"][0]["categories"][0],
+  }
+}
+
+export type Bbox = {
+  east:  number
+  north: number
+  west:  number
+  south: number
+}

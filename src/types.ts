@@ -1,6 +1,6 @@
-import type topics from "./data/curation";
+import type topics from "./data/content"
 
-export type GeoType = "lad" | "msoa";
+export type GeoType = 'lad' | 'msoa'
 
 export type MapState = {
   bbox: Bbox;

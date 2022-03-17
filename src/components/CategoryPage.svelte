@@ -3,8 +3,8 @@
   import { mapStore } from "../stores/stores";
   import { fetchVizData } from "../data/fetchVizData";
   import { getCodesForCategory } from "../helpers/categoryHelper";
-  import RadioButton from "../components/RadioButton.svelte";
-  import topics from "../data/curation";
+  import RadioButton from '../components/RadioButton.svelte';
+  import topics from '../data/content'
 
   $: params = $page.params;
   $: topicSlug = params.topic;

@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { page } from "$app/stores";
-  import RightChevron from "./RightChevron.svelte";
-  import topics from "../data/curation";
+  import { page } from '$app/stores';
+  import RightChevron from './RightChevron.svelte';
+  import topics from '../data/content'
 
   $: url = $page.url;
   $: topicSlug = $page.params.topic;

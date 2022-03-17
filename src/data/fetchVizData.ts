@@ -21,8 +21,8 @@ export const fetchVizData = async (args: {
   ]);
 
   vizStore.set({
-    breaks: vizData[1][args.categoryCode],
-    places: vizData[0].map(row => ({ geoCode: row.geography_code, value: parseInt(row[args.categoryCode]) })),
+    breaks: vizData[1][args.categoryCode].map(breakpoint => parseFloat(breakpoint) * 100),
+    places: vizData[0].map(row => parsePlaceData(row, args.totalCode, args.categoryCode)),
     params: getCategoryInfo(args.categoryCode),
   });
 
@@ -51,7 +51,7 @@ const fetchBreaks = async (args: {
 
   const breakCount = 5;
 
-  let url = `${apiBaseUrl}/ckmeans/2011?cat=${args.totalCode},${args.categoryCodes.join(',')}&geotype=${args.geoType}&k=${breakCount}`;
+  let url = `${apiBaseUrl}/ckmeans/2011?divide_by=${args.totalCode}&cat=${args.categoryCodes.join(',')}&geotype=${args.geoType}&k=${breakCount}`;
   let response = await fetch(url);
   let parsed = await response.json();
 
@@ -62,4 +62,12 @@ const fetchBreaks = async (args: {
       parsed[code][args.geoType.toUpperCase()]
     ]))
   );
+}
+
+const parsePlaceData = (row: dsv.DSVRowString<string>, totalCode: string, categoryCode: string) => {
+  let geoCode = row.geography_code;
+  let total = parseInt(row[totalCode]);
+  let count = parseInt(row[categoryCode]);
+  let percentage = (count / total) * 100;
+  return { geoCode, count, total, percentage };
 }

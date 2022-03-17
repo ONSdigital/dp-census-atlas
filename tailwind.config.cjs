@@ -11,9 +11,9 @@ module.exports = {
         onsdarker: '#0a2032',
         onsreverse: '#f5f5f6',
       },
-      // fontFamily: {
-      //   sans: ["Open Sans", 'Helvetica', 'Arial', 'sans-serif'],
-      // },      
+      fontFamily: {
+        sans: ["Open Sans", 'Helvetica', 'Arial', 'sans-serif'],
+      },      
       zIndex: {
         'abovemap': 1001
       },

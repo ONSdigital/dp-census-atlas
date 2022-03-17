@@ -6,8 +6,8 @@ debug:
 	npm run dev
 
 .PHONY: build
-build:
-	npm run build
+build: # NB - assumed this will only be used by the CI, where we should be building node rather than netlify
+	npm run build-node
 
 .PHONY: test
 test:

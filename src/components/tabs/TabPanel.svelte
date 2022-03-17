@@ -1,4 +1,3 @@
-
 <script>
 	import { getContext } from 'svelte';
 	import { TABS } from './Tabs.svelte';
@@ -10,5 +9,5 @@
 </script>
 
 {#if $selectedPanel === panel}
-	<slot></slot>
+	<slot />
 {/if}

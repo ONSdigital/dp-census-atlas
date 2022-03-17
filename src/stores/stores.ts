@@ -1,4 +1,3 @@
-
 import { writable } from 'svelte/store';
 import type { MapState, VizData } from '../types';
 

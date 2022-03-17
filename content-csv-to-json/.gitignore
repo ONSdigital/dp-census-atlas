@@ -1,0 +1,4 @@
+.python-version
+*.csv
+*.json
+__pycache__

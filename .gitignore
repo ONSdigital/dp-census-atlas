@@ -16,3 +16,9 @@ node_modules
 .idea/
 *.iml
 *.iws
+
+# Nodenv
+.node-version
+
+# Pyenv
+.python-version

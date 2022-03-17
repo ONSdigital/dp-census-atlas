@@ -20,19 +20,23 @@ export const initMap = (container) => {
     zoom: 11,
   });
 
+  map.on("load", () => {
+    initMapLayers(map);
+  });
+  
   fromEvent(map, "load").pipe(
     delay(1500) // leave some time between base layer and viz to avoid "flash" of base layer on first load
-  ).subscribe(() => {
-    initMapLayers(map);
+    ).subscribe(() => {
     vizStore.subscribe(value => { renderMapViz(map, value); });
+    setMapStore(map);
   });
 
-  fromEvent(map, "render").pipe(
+  fromEvent(map, "moveend").pipe(
     throttleTime(1000, undefined, { leading: false, trailing: true }), // don't discard the final movement
   ).subscribe(() => {
     setMapStore(map);
   });
-  
+
   map.on("click", "msoa-features", (e) => {
     let geoCode = e.features[0].properties["areacd"];
     setGeoSearchParam({ geoType: "msoa", geoCode });

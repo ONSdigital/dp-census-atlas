@@ -9,6 +9,6 @@ import Logo from "./Logo.svelte";
   <span class="p-y-0.5 px-2 bg-black text-white font-bold">ALPHA</span>
   <span class="p-y-0.5 px-2 bg-onsgreen text-white font-bold">POC</span>
 </div>
-<div class="xl:hidden p-1 px-2 bg-onsblue text-white text-md font-thin">
-  Explore Census 2021x
+<div class="xl:hidden p-1 px-2 bg-onsblue text-white text-lg">
+  Explore Census 2021
 </div>

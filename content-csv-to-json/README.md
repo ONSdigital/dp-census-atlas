@@ -12,6 +12,15 @@ This script creates a JSON file that is bundled with the app.
 Requires Python 3.9+ to be available as the default `Python` executable in the current environment. Can be installed and set as the local python as follows (macOS):
 
 - brew install pyenv
+- you then have to do some fiddling to get pyenv to work - add the following to either `~/.bashrc`, `~/.bash_profile` or `~/.zshrc`, depending on which you have on your system (if you're on a mac its probably `~/.zshrc`):
+    ```shell
+    eval "$(pyenv init --path)"
+
+    if command -v pyenv 1>/dev/null 2>&1; then
+    eval "$(pyenv init -)"
+    fi
+    ```
+- restart shell with `exec $SHELL`
 - pyenv install 3.10.0
 - cd content-csv-to-json && pyenv local 3.10.0
 

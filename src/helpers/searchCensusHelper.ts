@@ -1,4 +1,4 @@
-import topics from "../data/curation";
+import topics from "../data/content";
 
 export const searchCensus = (q: string) => {
   let s = q.toLowerCase();

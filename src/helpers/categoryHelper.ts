@@ -1,4 +1,4 @@
-import topics from '../data/content';
+import topics from "../data/content";
 
 export const getCodesForCategory = (
   topicSlug: string,

@@ -1,4 +1,3 @@
-
 # Generating the content JSON file from the content spreadsheet
 
 ## Intro
@@ -13,13 +12,15 @@ Requires Python 3.9+ to be available as the default `Python` executable in the c
 
 - brew install pyenv
 - you then have to do some fiddling to get pyenv to work - add the following to either `~/.bashrc`, `~/.bash_profile` or `~/.zshrc`, depending on which you have on your system (if you're on a mac its probably `~/.zshrc`):
-    ```shell
-    eval "$(pyenv init --path)"
 
-    if command -v pyenv 1>/dev/null 2>&1; then
-    eval "$(pyenv init -)"
-    fi
-    ```
+  ```shell
+  eval "$(pyenv init --path)"
+
+  if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+  fi
+  ```
+
 - restart shell with `exec $SHELL`
 - pyenv install 3.10.0
 - cd content-csv-to-json && pyenv local 3.10.0

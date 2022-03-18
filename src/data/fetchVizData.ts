@@ -44,18 +44,17 @@ const fetchBreaks = async (args: { totalCode: string; categoryCodes: string[]; g
   return Object.fromEntries(Object.keys(parsed).map((code) => [code, parsed[code][args.geoType.toUpperCase()]]));
 };
 
+export const fetchCensusTableData = async (args: { geoCode: string; tableCode: string; totalCode: string }) => {
+  const data = await fetchTableQuery({ geoCode: args.geoCode, tableCode: args.tableCode });
+  selectedLocationDataStore.set({ categories: parseTableData(data, args.totalCode) });
+};
 
-export const fetchCensusTableData = async (args: {geoCode: string; tableCode: string; totalCode:string}) => {
-  const data = await fetchTableQuery({geoCode: args.geoCode, tableCode: args.tableCode})
-  selectedLocationDataStore.set({categories:parseTableData(data, args.totalCode)})
-}
-
-const fetchTableQuery = async (args: {geoCode: string; tableCode: string}) => {
-  const url = `${apiBaseUrl}/query/2011?rows=${args.geoCode}&censustable=${args.tableCode}`
-  const response = await fetch(url)
+const fetchTableQuery = async (args: { geoCode: string; tableCode: string }) => {
+  const url = `${apiBaseUrl}/query/2011?rows=${args.geoCode}&censustable=${args.tableCode}`;
+  const response = await fetch(url);
   const csv = await response.text();
   return dsv.csvParse(csv);
-}
+};
 
 const parsePlaceData = (row: dsv.DSVRowString<string>, totalCode: string, categoryCode: string) => {
   let geoCode = row.geography_code;
@@ -67,10 +66,10 @@ const parsePlaceData = (row: dsv.DSVRowString<string>, totalCode: string, catego
 
 const parseTableData = (rawTableData: dsv.DSVRowArray<string>, totalCode: string) => {
   const total = parseInt(rawTableData[0][totalCode]);
-  const catCodesArr=rawTableData.columns.filter((catCode)=>catCode!=totalCode) 
- return catCodesArr.map((categoryCode)=>{
+  const catCodesArr = rawTableData.columns.filter((catCode) => catCode != totalCode);
+  return catCodesArr.map((categoryCode) => {
     let count = parseInt(rawTableData[0][categoryCode]);
     let percentage = (count / total) * 100;
-      return { catCode: categoryCode, count: count, total: total, percentage: percentage }
-  })
+    return { catCode: categoryCode, count: count, total: total, percentage: percentage };
+  });
 };

@@ -3,16 +3,16 @@
 @tailwind utilities;
 
 @layer components {
-	.custom-ring {
-		@apply focus:outline-none focus-visible:ring focus-visible:ring-onsyellow;
-	}
-	.custom-focus {
-		@apply outline-none focus:bg-inherit focus-visible:bg-yellow-300;
-	}
-	.hyperlink {
-		@apply text-onsblue underline custom-ring hover:decoration-[3px] group-hover:decoration-[2px];
-	}
-	.mark {
-		@apply bg-yellow-300 font-bold;
-	}
+  .custom-ring {
+    @apply focus:outline-none focus-visible:ring focus-visible:ring-onsyellow;
+  }
+  .custom-focus {
+    @apply outline-none focus:bg-inherit focus-visible:bg-yellow-300;
+  }
+  .hyperlink {
+    @apply text-onsblue underline custom-ring hover:decoration-[3px] group-hover:decoration-[2px];
+  }
+  .mark {
+    @apply bg-yellow-300 font-bold;
+  }
 }

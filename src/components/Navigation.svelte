@@ -1,13 +1,13 @@
 <script>
-	import Heading from './Heading.svelte';
+  import Heading from "./Heading.svelte";
 </script>
 
 <div class="">
-	<Heading />
+  <Heading />
 
-	<slot />
+  <slot />
 
-	<!-- <div class="bg-onspale p-6 min-h-[20rem]">
+  <!-- <div class="bg-onspale p-6 min-h-[20rem]">
     Nav footer content here
   </div> -->
 </div>

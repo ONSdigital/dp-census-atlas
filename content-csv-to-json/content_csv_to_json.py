@@ -74,7 +74,6 @@ def process_census_content(rows: list[dict], i: int) -> (dict, int):
     # all non-totals categories should have all three Data percentage components
     if row["taxonomy"] in ("category", "sub-category") and not is_total_code(row["code"]):
         dpcs = (
-            row["Data percentage component 1"], 
             row["Data percentage component 2"], 
             row["Data percentage component 3"]
         )
@@ -83,7 +82,6 @@ def process_census_content(rows: list[dict], i: int) -> (dict, int):
                 f"Content definition for category or sub-category did not include dpc strings! {row}"
             )
         else:
-            content["category_h_pt1"] = norm_template_taxonomy(row["Data percentage component 1"])
             content["category_h_pt2"] = norm_template_taxonomy(row["Data percentage component 2"])
             content["category_h_pt3"] = norm_template_taxonomy(row["Data percentage component 3"])
 

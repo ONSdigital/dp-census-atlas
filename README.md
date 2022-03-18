@@ -38,6 +38,8 @@ Once you've created a project and installed dependencies with `npm install` (or 
 
 You can preview the production build with `npm run preview`.
 
+To build specifically for node (required for production deployment), use `npm run build-node`. This is as above, but first sets an env var (`SKADAPTER=node`) that controls the adapter used to build.
+
 > To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
 
 ## Contributing

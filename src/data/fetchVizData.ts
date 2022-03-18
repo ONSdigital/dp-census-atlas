@@ -14,7 +14,6 @@ export const fetchVizData = async (args: {
   bbox: Bbox;
 }) => {
   let vizData = await Promise.all([fetchQuery(args), fetchBreaks(args)]);
-
   vizStore.set({
     breaks: vizData[1][args.categoryCode].map((breakpoint) => parseFloat(breakpoint) * 100),
     places: vizData[0].map((row) => parsePlaceData(row, args.totalCode, args.categoryCode)),
@@ -46,15 +45,12 @@ const fetchBreaks = async (args: { totalCode: string; categoryCodes: string[]; g
 };
 
 
-const fetchCensusTableData = async (args: {geoCode: string; tableCode: string}) => {
+export const fetchCensusTableData = async (args: {geoCode: string; tableCode: string; totalCode:string}) => {
   const data = await fetchTableQuery({geoCode: args.geoCode, tableCode: args.tableCode})
-  
-
-  
+  selectedLocationDataStore.set({categories:parseTableData(data, args.totalCode)})
 }
 
 const fetchTableQuery = async (args: {geoCode: string; tableCode: string}) => {
-  console.log("test")
   const url = `${apiBaseUrl}/query/2011?rows=${args.geoCode}&censustable=${args.tableCode}`
   const response = await fetch(url)
   const csv = await response.text();
@@ -67,4 +63,14 @@ const parsePlaceData = (row: dsv.DSVRowString<string>, totalCode: string, catego
   let count = parseInt(row[categoryCode]);
   let percentage = (count / total) * 100;
   return { geoCode, count, total, percentage };
+};
+
+const parseTableData = (rawTableData: dsv.DSVRowArray<string>, totalCode: string) => {
+  const total = parseInt(rawTableData[0][totalCode]);
+  const catCodesArr=rawTableData.columns.filter((catCode)=>catCode!=totalCode) 
+ return catCodesArr.map((categoryCode)=>{
+    let count = parseInt(rawTableData[0][categoryCode]);
+    let percentage = (count / total) * 100;
+      return { catCode: categoryCode, count: count, total: total, percentage: percentage }
+  })
 };

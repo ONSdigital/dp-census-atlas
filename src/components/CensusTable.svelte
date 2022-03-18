@@ -1,15 +1,19 @@
 <script>
-	import { vizStore } from '../stores/stores';
+	import { selectedLocationDataStore } from '../stores/stores';
 	import { page } from '$app/stores';
+
+	export let variable;
+
+	$: console.log($selectedLocationDataStore);
 </script>
 
-{#if $vizStore}
+{#if $selectedLocationDataStore && variable}
 	<table class="ons-table">
 		<thead class="ons-table__head">
 			<tr class="ons-table__row">
 				<th scope="col" class="ons-table__header" />
 				<th scope="col" class="ons-table__header ons-table__header--numeric">
-					<span>{$vizStore.params.variable.units}</span>
+					<span>{variable.units}</span>
 				</th>
 				<th scope="col" class="ons-table__header ons-table__header--numeric">
 					<span>Percentage</span>
@@ -17,32 +21,39 @@
 			</tr>
 		</thead>
 		<tbody class="ons-table__body">
-			{#each $vizStore.params.variable.categories as category}
-				<tr
-					class="ons-table__row"
-					class:ons-table__row--overlay={category.slug === $page.params.category}
-				>
-					<td
-						class="ons-table__cell "
-						class:ons-table__cell--onSelect={category.slug === $page.params.category}
+			{#each variable.categories as category}
+				{#if $selectedLocationDataStore[category.code]}
+					<tr
+						class="ons-table__row"
+						class:ons-table__row--overlay={category.slug === $page.params.category}
 					>
-						{#if category.slug !== $page.params.category}
-							<a
-								href="/2021/{$page.params.topic}/{$page.params
-									.variable}/defaul/{category.slug}{$page.url.search}">{category.name}</a
+						<td
+							class="ons-table__cell "
+							class:ons-table__cell--onSelect={category.slug === $page.params.category}
+						>
+							{#if category.slug !== $page.params.category}
+								<a
+									href="/2021/{$page.params.topic}/{$page.params
+										.variable}/defaul/{category.slug}{$page.url.search}">{category.name}</a
+								>
+							{:else}
+								{category.name}
+							{/if}
+						</td>
+						<td
+							class="ons-table__cell  ons-table__cell--numeric"
+							class:ons-table__cell--onSelect={category.slug === $page.params.category}
+							>{$selectedLocationDataStore[category.code].count.toLocaleString()}</td
+						>
+						<td class="ons-table__cell  ons-table__cell--numeric ons-table__cell--key"
+							><span
+								>{(
+									Math.round($selectedLocationDataStore[category.code].percentage * 10) / 10
+								).toFixed(1)}%</span
 							>
-						{:else}
-							{category.name}
-						{/if}
-					</td>
-					<td
-						class="ons-table__cell  ons-table__cell--numeric"
-						class:ons-table__cell--onSelect={category.slug === $page.params.category}
-					/>
-					<td class="ons-table__cell  ons-table__cell--numeric ons-table__cell--key"
-						><span>%</span>
-					</td>
-				</tr>
+						</td>
+					</tr>
+				{/if}
 			{/each}
 		</tbody>
 	</table>

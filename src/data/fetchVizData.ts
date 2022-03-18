@@ -46,7 +46,7 @@ const fetchBreaks = async (args: { totalCode: string; categoryCodes: string[]; g
 
 export const fetchCensusTableData = async (args: { geoCode: string; tableCode: string; totalCode: string }) => {
   const data = await fetchTableQuery({ geoCode: args.geoCode, tableCode: args.tableCode });
-  selectedLocationDataStore.set({ categories: parseTableData(data, args.totalCode) });
+  selectedLocationDataStore.set(parseTableData(data, args.totalCode));
 };
 
 const fetchTableQuery = async (args: { geoCode: string; tableCode: string }) => {
@@ -67,9 +67,11 @@ const parsePlaceData = (row: dsv.DSVRowString<string>, totalCode: string, catego
 const parseTableData = (rawTableData: dsv.DSVRowArray<string>, totalCode: string) => {
   const total = parseInt(rawTableData[0][totalCode]);
   const catCodesArr = rawTableData.columns.filter((catCode) => catCode != totalCode);
-  return catCodesArr.map((categoryCode) => {
-    let count = parseInt(rawTableData[0][categoryCode]);
-    let percentage = (count / total) * 100;
-    return { catCode: categoryCode, count: count, total: total, percentage: percentage };
+  const selectedLocationData = {}
+  catCodesArr.forEach((categoryCode) => {
+    const count = parseInt(rawTableData[0][categoryCode]);
+    const percentage = (count / total) * 100;
+    selectedLocationData[categoryCode] = { count: count, total: total, percentage: percentage };
   });
+  return selectedLocationData
 };

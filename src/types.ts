@@ -25,5 +25,5 @@ export type Bbox = {
 };
 
 export type SelectedLocationData = {
-  categories: { catCode: string; count: number; total: number, percentage: number }[]
+  [catCode: string] : { count: number; total: number, percentage: number }
 }

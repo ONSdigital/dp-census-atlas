@@ -1,6 +1,5 @@
-
 <script>
-  import TopicPage from '../../components/TopicPage.svelte';
+  import TopicPage from "../../components/TopicPage.svelte";
 </script>
 
 <TopicPage />

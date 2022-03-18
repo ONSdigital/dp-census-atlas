@@ -1,28 +1,28 @@
-
 <script lang="ts">
-	import { getContext } from 'svelte';
-	import { TABS } from './Tabs.svelte';
-	
-	export let forInput: string
+  import { getContext } from "svelte";
+  import { TABS } from "./Tabs.svelte";
 
-	const tab = {};
-	const { registerTab, selectTab, selectedTab } = getContext(TABS);
+  export let forInput: string;
 
-	registerTab(tab);
+  const tab = {};
+  const { registerTab, selectTab, selectedTab } = getContext(TABS);
 
-  let selectedBorderBottomClass = 'border-b-4 border-b-black'
-  let selectedBackgroundClass = 'bg-onspale'
+  registerTab(tab);
+
+  let selectedBorderBottomClass = "border-b-4 border-b-black";
+  let selectedBackgroundClass = "bg-onspale";
 </script>
 
-
 <button
-	on:click="{() => selectTab(tab)}"
-	class="p-6 pr-7 text-xl {$selectedTab === tab ? selectedBackgroundClass : ''} custom-ring"
-	>
-	<label for="{forInput}"
-		class="cursor-pointer pb-1
+  on:click={() => selectTab(tab)}
+  class="p-6 pr-7 text-xl {$selectedTab === tab ? selectedBackgroundClass : ''} custom-ring"
+>
+  <label
+    for={forInput}
+    class="cursor-pointer pb-1
 		{$selectedTab === tab ? selectedBorderBottomClass : ''}
-		">
-		<slot></slot>
-	</label>
+		"
+  >
+    <slot />
+  </label>
 </button>

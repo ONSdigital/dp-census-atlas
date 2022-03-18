@@ -1,20 +1,18 @@
-
 <script lang="ts">
-
-  import { page } from '$app/stores';
-  import RightChevron from './RightChevron.svelte';
-  import topics from '../data/curation'
+  import { page } from "$app/stores";
+  import RightChevron from "./RightChevron.svelte";
+  import topics from "../data/curation";
 
   $: url = $page.url;
   $: topicSlug = $page.params.topic;
-  $: topic = topics.find(t => t.slug === topicSlug);
-
+  $: topic = topics.find((t) => t.slug === topicSlug);
 </script>
 
 <div class="p-6 bg-onspale mb-6">
   <a class="hyperlink" href={`/${url.search}`}>Home</a>
   <span class="hidden xl:inline">
-    <span class="mx-1">&gt;</span> {topic.name} 
+    <span class="mx-1">&gt;</span>
+    {topic.name}
   </span>
 </div>
 
@@ -25,10 +23,12 @@
   </div>
   <div class="flex flex-col mb-6 last:border-b-[1px] border-b-slate-300">
     {#each topic.variables as variable}
-      <a class="border-t-[1px] border-t-slate-300 py-2 group"
-        href={`/2021/${topic.slug}/${variable.slug}/default/${variable.categories[0].slug}${url.search}`}>
+      <a
+        class="border-t-[1px] border-t-slate-300 py-2 group"
+        href={`/2021/${topic.slug}/${variable.slug}/default/${variable.categories[0].slug}${url.search}`}
+      >
         <div class="flex justify-between">
-          <div class="text-xl hyperlink" >{variable.name}</div>
+          <div class="text-xl hyperlink">{variable.name}</div>
           <RightChevron />
         </div>
         <div class="">{variable.desc}</div>

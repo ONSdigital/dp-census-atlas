@@ -12,7 +12,11 @@ export default [
           { code: "QS501EW0004", name: "Level 2 qualifications", slug: "level-2-qualifications" },
           { code: "QS501EW0005", name: "Apprenticeship", slug: "apprenticeship" },
           { code: "QS501EW0006", name: "Level 3 qualifications", slug: "level-3-qualifications" },
-          { code: "QS501EW0007", name: "Level 4 qualifications and above", slug: "level-4-qualifications-and-above" },
+          {
+            code: "QS501EW0007",
+            name: "Level 4 qualifications and above",
+            slug: "level-4-qualifications-and-above",
+          },
           { code: "QS501EW0008", name: "Other qualifications", slug: "other-qualifications" },
         ],
         code: "QS501EW",
@@ -47,7 +51,11 @@ export default [
         name: "General health",
         slug: "general-health",
         desc: "How people rate their general health.",
-        total: { code: "QS302EW0001", name: "All categories: General health", slug: "all-categories-general-health" },
+        total: {
+          code: "QS302EW0001",
+          name: "All categories: General health",
+          slug: "all-categories-general-health",
+        },
         units: "People",
       },
       {
@@ -81,7 +89,11 @@ export default [
       },
       {
         categories: [
-          { code: "QS301EW0002", name: "Does not provide unpaid care", slug: "does-not-provide-unpaid-care" },
+          {
+            code: "QS301EW0002",
+            name: "Does not provide unpaid care",
+            slug: "does-not-provide-unpaid-care",
+          },
           {
             code: "QS301EW0003",
             name: "Provides 1 to 19 hours unpaid care a week",
@@ -124,13 +136,21 @@ export default [
           { code: "QS406EW0004", name: "3 person household", slug: "3-person-household" },
           { code: "QS406EW0005", name: "4 person household", slug: "4-person-household" },
           { code: "QS406EW0006", name: "5 person household", slug: "5-person-household" },
-          { code: "QS406EW0009", name: "6 or more people in household", slug: "6-or-more-people-in-household" },
+          {
+            code: "QS406EW0009",
+            name: "6 or more people in household",
+            slug: "6-or-more-people-in-household",
+          },
         ],
         code: "QS406EW",
         name: "Size of household",
         slug: "size-of-household",
         desc: "How many people living in the same home.",
-        total: { code: "QS406EW0001", name: "All categories: Household size", slug: "all-categories-household-size" },
+        total: {
+          code: "QS406EW0001",
+          name: "All categories: Household size",
+          slug: "all-categories-household-size",
+        },
         units: "Households",
       },
       {
@@ -147,7 +167,11 @@ export default [
             name: "Social rent: Rented from council (Local Authority)",
             slug: "social-rent-rented-from-council-local-authority",
           },
-          { code: "KS402EW0006", name: "Social rent: Other social rented", slug: "social-rent-other-social-rented" },
+          {
+            code: "KS402EW0006",
+            name: "Social rent: Other social rented",
+            slug: "social-rent-other-social-rented",
+          },
           {
             code: "KS402EW0007",
             name: "Private rented: Private landlord or letting agency",
@@ -159,15 +183,27 @@ export default [
         name: "Owned and renting",
         slug: "owned-and-renting",
         desc: "People that live in a home they rent or own.",
-        total: { code: "KS402EW0001", name: "All categories: Tenure", slug: "all-categories-tenure" },
+        total: {
+          code: "KS402EW0001",
+          name: "All categories: Tenure",
+          slug: "all-categories-tenure",
+        },
         units: "Households",
       },
       {
         categories: [
-          { code: "QS416EW0002", name: "No cars or vans available", slug: "no-cars-or-vans-available" },
+          {
+            code: "QS416EW0002",
+            name: "No cars or vans available",
+            slug: "no-cars-or-vans-available",
+          },
           { code: "QS416EW0003", name: "1 car or van", slug: "1-car-or-van" },
           { code: "QS416EW0004", name: "2 cars or vans", slug: "2-cars-or-vans" },
-          { code: "QS416EW0006", name: "3 or more cars or vans available", slug: "3-or-more-cars-or-vans-available" },
+          {
+            code: "QS416EW0006",
+            name: "3 or more cars or vans available",
+            slug: "3-or-more-cars-or-vans-available",
+          },
         ],
         code: "QS416EW",
         name: "Car or van availability",
@@ -249,7 +285,11 @@ export default [
             slug: "white-english-welsh-scottish-northern-irish-british",
           },
           { code: "QS201EW0003", name: "White: Irish", slug: "white-irish" },
-          { code: "QS201EW0004", name: "White: Gypsy or Irish Traveller", slug: "white-gypsy-or-irish-traveller" },
+          {
+            code: "QS201EW0004",
+            name: "White: Gypsy or Irish Traveller",
+            slug: "white-gypsy-or-irish-traveller",
+          },
           { code: "QS201EW0005", name: "White: Other White", slug: "white-other-white" },
           {
             code: "QS201EW0006",
@@ -271,11 +311,31 @@ export default [
             name: "Mixed/multiple ethnic group: Other Mixed",
             slug: "mixed-multiple-ethnic-group-other-mixed",
           },
-          { code: "QS201EW0010", name: "Asian/Asian British: Indian", slug: "asian-asian-british-indian" },
-          { code: "QS201EW0011", name: "Asian/Asian British: Pakistani", slug: "asian-asian-british-pakistani" },
-          { code: "QS201EW0012", name: "Asian/Asian British: Bangladeshi", slug: "asian-asian-british-bangladeshi" },
-          { code: "QS201EW0013", name: "Asian/Asian British: Chinese", slug: "asian-asian-british-chinese" },
-          { code: "QS201EW0014", name: "Asian/Asian British: Other Asian", slug: "asian-asian-british-other-asian" },
+          {
+            code: "QS201EW0010",
+            name: "Asian/Asian British: Indian",
+            slug: "asian-asian-british-indian",
+          },
+          {
+            code: "QS201EW0011",
+            name: "Asian/Asian British: Pakistani",
+            slug: "asian-asian-british-pakistani",
+          },
+          {
+            code: "QS201EW0012",
+            name: "Asian/Asian British: Bangladeshi",
+            slug: "asian-asian-british-bangladeshi",
+          },
+          {
+            code: "QS201EW0013",
+            name: "Asian/Asian British: Chinese",
+            slug: "asian-asian-british-chinese",
+          },
+          {
+            code: "QS201EW0014",
+            name: "Asian/Asian British: Other Asian",
+            slug: "asian-asian-british-other-asian",
+          },
           {
             code: "QS201EW0015",
             name: "Black/African/Caribbean/Black British: African",
@@ -291,7 +351,11 @@ export default [
             name: "Black/African/Caribbean/Black British: Other Black",
             slug: "black-african-caribbean-black-british-other-black",
           },
-          { code: "QS201EW0018", name: "Other ethnic group: Arab", slug: "other-ethnic-group-arab" },
+          {
+            code: "QS201EW0018",
+            name: "Other ethnic group: Arab",
+            slug: "other-ethnic-group-arab",
+          },
           {
             code: "QS201EW0019",
             name: "Other ethnic group: Any other ethnic group",
@@ -302,7 +366,11 @@ export default [
         name: "Ethnicity",
         slug: "ethnicity",
         desc: "How people identify the ethnic group they belong to.",
-        total: { code: "QS201EW0001", name: "All categories: Ethnic group", slug: "all-categories-ethnic-group" },
+        total: {
+          code: "QS201EW0001",
+          name: "All categories: Ethnic group",
+          slug: "all-categories-ethnic-group",
+        },
         units: "People",
       },
       {
@@ -351,7 +419,11 @@ export default [
         name: "Religion and beliefs",
         slug: "religion-and-beliefs",
         desc: "People's religion and beliefs. ",
-        total: { code: "QS208EW0001", name: "All categories: Religion", slug: "all-categories-religion" },
+        total: {
+          code: "QS208EW0001",
+          name: "All categories: Religion",
+          slug: "all-categories-religion",
+        },
         units: "People",
       },
       {
@@ -361,8 +433,16 @@ export default [
           { code: "QS203EW0015", name: "Europe, Other Europe", slug: "europe-other-europe" },
           { code: "QS203EW0032", name: "Africa", slug: "africa" },
           { code: "QS203EW0045", name: "Middle East and Asia", slug: "middle-east-and-asia" },
-          { code: "QS203EW0063", name: "The Americas and the Caribbean", slug: "the-americas-and-the-caribbean" },
-          { code: "QS203EW0072", name: "Antarctica, Oceania, and other", slug: "antarctica-oceania-and-other" },
+          {
+            code: "QS203EW0063",
+            name: "The Americas and the Caribbean",
+            slug: "the-americas-and-the-caribbean",
+          },
+          {
+            code: "QS203EW0072",
+            name: "Antarctica, Oceania, and other",
+            slug: "antarctica-oceania-and-other",
+          },
         ],
         code: "QS203EW",
         name: "Country of birth",
@@ -516,11 +596,27 @@ export default [
       },
       {
         categories: [
-          { code: "QS119EW0002", name: "Not deprived in any dimension", slug: "not-deprived-in-any-dimension" },
+          {
+            code: "QS119EW0002",
+            name: "Not deprived in any dimension",
+            slug: "not-deprived-in-any-dimension",
+          },
           { code: "QS119EW0003", name: "Deprived in 1 dimension", slug: "deprived-in-1-dimension" },
-          { code: "QS119EW0004", name: "Deprived in 2 dimensions", slug: "deprived-in-2-dimensions" },
-          { code: "QS119EW0005", name: "Deprived in 3 dimensions", slug: "deprived-in-3-dimensions" },
-          { code: "QS119EW0006", name: "Deprived in 4 dimensions", slug: "deprived-in-4-dimensions" },
+          {
+            code: "QS119EW0004",
+            name: "Deprived in 2 dimensions",
+            slug: "deprived-in-2-dimensions",
+          },
+          {
+            code: "QS119EW0005",
+            name: "Deprived in 3 dimensions",
+            slug: "deprived-in-3-dimensions",
+          },
+          {
+            code: "QS119EW0006",
+            name: "Deprived in 4 dimensions",
+            slug: "deprived-in-4-dimensions",
+          },
         ],
         code: "QS119EW",
         name: "Household deprivation",
@@ -536,20 +632,32 @@ export default [
       {
         categories: [
           { code: "QS101EW0002", name: "Lives in a household", slug: "lives-in-a-household" },
-          { code: "QS101EW0003", name: "Lives in a communal establishment", slug: "lives-in-a-communal-establishment" },
+          {
+            code: "QS101EW0003",
+            name: "Lives in a communal establishment",
+            slug: "lives-in-a-communal-establishment",
+          },
         ],
         code: "QS101EW",
         name: "Residence type",
         slug: "residence-type",
         desc: "Families and other groups living in the same home or communal establishment.",
-        total: { code: "QS101EW0001", name: "All categories: Residence type", slug: "all-categories-residence-type" },
+        total: {
+          code: "QS101EW0001",
+          name: "All categories: Residence type",
+          slug: "all-categories-residence-type",
+        },
         units: "People",
       },
       {
         categories: [
           { code: "QS113EW0002", name: "One person household", slug: "one-person-household" },
           { code: "QS113EW0005", name: "One family households", slug: "one-family-households" },
-          { code: "QS113EW0026", name: "Multiple family households", slug: "multiple-family-households" },
+          {
+            code: "QS113EW0026",
+            name: "Multiple family households",
+            slug: "multiple-family-households",
+          },
         ],
         code: "QS113EW",
         name: "Families living in the same home",
@@ -603,15 +711,27 @@ export default [
         name: "Working hours",
         slug: "working-hours",
         desc: "Hours people work per week.",
-        total: { code: "QS604EW0001", name: "All categories: Hours worked", slug: "all-categories-hours-worked" },
+        total: {
+          code: "QS604EW0001",
+          name: "All categories: Hours worked",
+          slug: "all-categories-hours-worked",
+        },
         units: "People who have a job or their last job",
       },
       {
         categories: [
-          { code: "QS605EW0002", name: "Agriculture, energy and water", slug: "agriculture-energy-and-water" },
+          {
+            code: "QS605EW0002",
+            name: "Agriculture, energy and water",
+            slug: "agriculture-energy-and-water",
+          },
           { code: "QS605EW0004", name: "Manufacturing", slug: "manufacturing" },
           { code: "QS605EW0014", name: "Construction", slug: "construction" },
-          { code: "QS605EW0016", name: "Transportation and communications", slug: "transportation-and-communications" },
+          {
+            code: "QS605EW0016",
+            name: "Transportation and communications",
+            slug: "transportation-and-communications",
+          },
           {
             code: "QS605EW0017",
             name: "Distribution, hotels and restaurants",
@@ -627,7 +747,11 @@ export default [
         name: "Sector",
         slug: "sector",
         desc: "Types of sectors people who have a job or their last job worked in.",
-        total: { code: "QS605EW0001", name: "All categories: Industry", slug: "all-categories-industry" },
+        total: {
+          code: "QS605EW0001",
+          name: "All categories: Industry",
+          slug: "all-categories-industry",
+        },
         units: "People",
       },
       {
@@ -637,7 +761,11 @@ export default [
             name: "Managers, directors and senior officials",
             slug: "managers-directors-and-senior-officials",
           },
-          { code: "QS606EW0017", name: "Professional occupations", slug: "professional-occupations" },
+          {
+            code: "QS606EW0017",
+            name: "Professional occupations",
+            slug: "professional-occupations",
+          },
           {
             code: "QS606EW0038",
             name: "Associate professional and technical occupations",
@@ -663,7 +791,11 @@ export default [
         name: "Job",
         slug: "job",
         desc: "The types of jobs people do",
-        total: { code: "QS606EW0001", name: "All categories: Occupation", slug: "all-categories-occupation" },
+        total: {
+          code: "QS606EW0001",
+          name: "All categories: Occupation",
+          slug: "all-categories-occupation",
+        },
         units: "People",
       },
       {
@@ -676,13 +808,21 @@ export default [
           },
           { code: "QS701EW0004", name: "Train", slug: "train" },
           { code: "QS701EW0005", name: "Bus, minibus or coach", slug: "bus-minibus-or-coach" },
-          { code: "QS701EW0007", name: "Motorcycle, scooter or moped", slug: "motorcycle-scooter-or-moped" },
+          {
+            code: "QS701EW0007",
+            name: "Motorcycle, scooter or moped",
+            slug: "motorcycle-scooter-or-moped",
+          },
           { code: "QS701EW0010", name: "Bicycle", slug: "bicycle" },
           { code: "QS701EW0011", name: "Walking", slug: "walking" },
           { code: "QS701EW0012", name: "Other", slug: "other" },
           { code: "QS701EW0006", name: "Taxi", slug: "taxi" },
           { code: "QS701EW0008", name: "Driving in a car or van", slug: "driving-in-a-car-or-van" },
-          { code: "QS701EW0009", name: "Passenger in a car or van", slug: "passenger-in-a-car-or-van" },
+          {
+            code: "QS701EW0009",
+            name: "Passenger in a car or van",
+            slug: "passenger-in-a-car-or-van",
+          },
           { code: "QS701EW0013", name: "Not in employment", slug: "not-in-employment" },
         ],
         code: "QS701EW",

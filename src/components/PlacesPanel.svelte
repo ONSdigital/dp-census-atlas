@@ -1,7 +1,5 @@
 <script>
-
   import SearchBox from "./SearchBox.svelte";
-
 </script>
 
 <div class="p-6 pt-8 bg-onspale">

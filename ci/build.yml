@@ -1,0 +1,18 @@
+---
+
+platform: linux
+
+image_resource:
+  type: docker-image
+  source:
+    repository: node
+    tag: latest
+
+inputs:
+  - name: dp-census-atlas
+
+outputs:
+  - name: build
+
+run:
+  path: dp-census-atlas/ci/scripts/build.sh

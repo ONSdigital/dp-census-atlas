@@ -1,8 +1,7 @@
-
 <script>
-  import CensusPanel from './CensusPanel.svelte';
-  import PlacesPanel from './PlacesPanel.svelte';
-  import { Tabs, TabList, TabPanel, Tab } from './tabs/tabs';
+  import CensusPanel from "./CensusPanel.svelte";
+  import PlacesPanel from "./PlacesPanel.svelte";
+  import { Tabs, TabList, TabPanel, Tab } from "./tabs/tabs";
 </script>
 
 <Tabs>

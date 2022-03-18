@@ -1,4 +1,3 @@
-
 # Census Atlas
 
 Explore neighbourhood-level Census data tables on a map.
@@ -11,9 +10,9 @@ In this app, there are three 'owners' of state:
 - Map instance (transitory map state, eg exact zoom and position)
 - Svelte components (transistory, local UI state, eg a [details](https://design-system.service.gov.uk/components/details/) component)
 
-All *important* state flows in one direction from the URL to the UI. This is a fundamental principle of web design and UX on the web. It enables link sharing and makes apps work on the web. 
+All _important_ state flows in one direction from the URL to the UI. This is a fundamental principle of web design and UX on the web. It enables link sharing and makes apps work on the web.
 
-- When a URL is shared, the app opens in the same state as when it was shared *in every important way*
+- When a URL is shared, the app opens in the same state as when it was shared _in every important way_
 - The Back (and Forward) buttons should work completely correctly
 - Embedding is a special case of sharing - again, the URL needs to contain all the relevant state needed to show the embeddable content
 
@@ -21,7 +20,7 @@ All *important* state flows in one direction from the URL to the UI. This is a f
 
     /population/sex/default/female          ? msoa=E02006827
                     |                               |
-                    |                               |    
+                    |                               |
     /topic/variable/classification/category ? geotype=geocode
                     |                               |
           `path` picks a node                `query` selects

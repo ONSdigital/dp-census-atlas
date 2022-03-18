@@ -1,4 +1,3 @@
-
 <script lang="ts">
 
   import { page } from '$app/stores';
@@ -8,8 +7,7 @@
 
   $: url = $page.url;
   $: topicSlug = $page.params.topic;
-  $: topic = topics.find(t => t.slug === topicSlug);
-
+  $: topic = topics.find((t) => t.slug === topicSlug);
 </script>
 
 <!-- TODO: Move breadcrumbs into seperate component, wrap navigation slot in container and main elements/classes -->
@@ -17,7 +15,8 @@
 <div class="p-6 bg-onspale mb-6">
   <a class="hyperlink" href={`/${url.search}`}>Home</a>
   <span class="hidden xl:inline">
-    <span class="mx-1">&gt;</span> {topic.name} 
+    <span class="mx-1">&gt;</span>
+    {topic.name}
   </span>
 </div>
 

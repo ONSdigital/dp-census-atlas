@@ -1,16 +1,15 @@
-
 <script>
-  import '../app.css'
-  import Layout from '../components/Layout.svelte';
+  import "../app.css";
+  import Layout from "../components/Layout.svelte";
 </script>
 
 <Layout>
-  <slot></slot>
+  <slot />
 </Layout>
 
 <style lang="scss" global>
-/* XXX: Replicate main.scss in order to work around some bugs on upstream lulz */
-@import "normalize";
+  /* XXX: Replicate main.scss in order to work around some bugs on upstream lulz */
+  @import "normalize";
   $static: "";
   @import "./../../node_modules/@ons/design-system/scss/vars/colors";
   @import "./../../node_modules/@ons/design-system/scss/vars/typography";

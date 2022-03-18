@@ -1,6 +1,5 @@
-
-import { writable } from 'svelte/store';
-import type { MapState, VizData } from '../types';
+import { writable } from "svelte/store";
+import type { MapState, VizData } from "../types";
 
 /**
  * A Svelte store containing any relevant map state

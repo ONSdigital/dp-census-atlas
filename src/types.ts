@@ -1,26 +1,25 @@
+import type topics from "./data/curation";
 
-import type topics from "./data/curation"
-
-export type GeoType = 'lad' | 'msoa'
+export type GeoType = "lad" | "msoa";
 
 export type MapState = {
-  bbox:    Bbox
-  geoType: GeoType
-}
+  bbox: Bbox;
+  geoType: GeoType;
+};
 
 export type VizData = {
-  breaks: number[],
-  places: { geoCode: string, value: number }[]
+  breaks: number[];
+  places: { geoCode: string; count: number; percentage: number; total: number }[];
   params: {
-    topic:    typeof topics[0],
-    variable: typeof topics[0]["variables"][0],
-    category: typeof topics[0]["variables"][0]["categories"][0],
-  }
-}
+    topic: typeof topics[0];
+    variable: typeof topics[0]["variables"][0];
+    category: typeof topics[0]["variables"][0]["categories"][0];
+  };
+};
 
 export type Bbox = {
-  east:  number
-  north: number
-  west:  number
-  south: number
-}
+  east: number;
+  north: number;
+  west: number;
+  south: number;
+};

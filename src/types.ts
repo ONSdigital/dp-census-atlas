@@ -23,3 +23,7 @@ export type Bbox = {
   west: number;
   south: number;
 };
+
+export type SelectedLocationData = {
+  categories: { catCode: string; count: number; total: number, percentage: number }[]
+}

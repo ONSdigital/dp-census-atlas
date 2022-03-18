@@ -1,6 +1,6 @@
 import * as dsv from "d3-dsv"; // https://github.com/d3/d3/issues/3469
 import type { Bbox, GeoType } from "../types";
-import { vizStore } from "../stores/stores";
+import { vizStore, selectedLocationDataStore } from "../stores/stores";
 import { getBboxString } from "../helpers/spatialHelper";
 import { getCategoryInfo } from "../helpers/categoryHelper";
 
@@ -44,6 +44,22 @@ const fetchBreaks = async (args: { totalCode: string; categoryCodes: string[]; g
   // (ignore data from the API that we don't need)
   return Object.fromEntries(Object.keys(parsed).map((code) => [code, parsed[code][args.geoType.toUpperCase()]]));
 };
+
+
+const fetchCensusTableData = async (args: {geoCode: string; tableCode: string}) => {
+  const data = await fetchTableQuery({geoCode: args.geoCode, tableCode: args.tableCode})
+  
+
+  
+}
+
+const fetchTableQuery = async (args: {geoCode: string; tableCode: string}) => {
+  console.log("test")
+  const url = `${apiBaseUrl}/query/2011?rows=${args.geoCode}&censustable=${args.tableCode}`
+  const response = await fetch(url)
+  const csv = await response.text();
+  return dsv.csvParse(csv);
+}
 
 const parsePlaceData = (row: dsv.DSVRowString<string>, totalCode: string, categoryCode: string) => {
   let geoCode = row.geography_code;

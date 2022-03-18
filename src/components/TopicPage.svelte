@@ -3,7 +3,7 @@
   import { page } from '$app/stores';
   import ONSAccordion from "./ons/ONSAccordion.svelte";
   import ONSAccordionPanel from "./ons/ONSAccordionPanel.svelte";
-  import topics from '../data/curation'
+  import topics from '../data/content'
 
   $: url = $page.url;
   $: topicSlug = $page.params.topic;

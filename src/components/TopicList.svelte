@@ -6,19 +6,19 @@
   $: url = $page.url;
 </script>
 
-<h2 class="text-3xl mb-5">Topics</h2>
+<h2 class="tw-text-3xl tw-mb-5">Topics</h2>
 
-<div class="flex flex-wrap gap-x-8 gap-y-4">
+<div class="tw-flex tw-flex-wrap tw-gap-x-8 tw-gap-y-4">
   {#each topics as topic}
     <a
-      class="flex-none w-72 flex-grow-[1] pt-2.5 border-t-[1px] border-t-slate-300 group"
+      class="tw-flex-none tw-w-72 tw-flex-grow-[1] tw-pt-2.5 tw-border-t-[1px] tw-border-t-slate-300 tw-group"
       href={`/2021/${topic.slug}${url.search}`}
     >
-      <div class="flex justify-between">
-        <div class="text-xl hyperlink">{topic.name}</div>
+      <div class="tw-flex tw-justify-between">
+        <div class="tw-text-xl tw-hyperlink">{topic.name}</div>
         <RightChevron />
       </div>
-      <div class="pr-10 mt-1 ">{topic.desc}</div>
+      <div class="tw-pr-10 tw-mt-1 ">{topic.desc}</div>
     </a>
   {/each}
 </div>

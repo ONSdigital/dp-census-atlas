@@ -25,5 +25,5 @@ export const searchCensus = (q: string) => {
 };
 
 export const highlightText = (text: string, q: string) => {
-  return text.replace(new RegExp(q, "gi"), '<mark class="mark">$&</mark>');
+  return text.replace(new RegExp(q, "gi"), '<mark class="tw-mark">$&</mark>');
 };

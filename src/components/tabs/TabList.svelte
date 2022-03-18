@@ -1,3 +1,3 @@
-<div class="flex">
+<div class="tw-flex">
   <slot />
 </div>

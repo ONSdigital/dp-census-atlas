@@ -25,56 +25,56 @@
   }
 </script>
 
-<div class="p-6 bg-onspale mb-6">
-  <a class="hyperlink" href={`/${search}`}>Home</a> <span class="mx-1">&gt;</span>
-  <a class="hyperlink" href={`/2021/${topic.slug}${search}`}>{topic.name}</a>
-  <span class="hidden xl:inline">
-    <span class="mx-1">&gt;</span>
+<div class="tw-p-6 tw-bg-onspale tw-mb-6">
+  <a class="tw-hyperlink" href={`/${search}`}>Home</a> <span class="tw-mx-1">&gt;</span>
+  <a class="tw-hyperlink" href={`/2021/${topic.slug}${search}`}>{topic.name}</a>
+  <span class="tw-hidden xl:tw-inline">
+    <span class="tw-mx-1">&gt;</span>
     {variable.name}
   </span>
 </div>
 
-<div class="px-6">
-  <h1 class="text-3xl mb-0.5">{variable.name}</h1>
-  <div class="mb-6 flex gap-2">
+<div class="tw-px-6">
+  <h1 class="tw-text-3xl tw-mb-0.5">{variable.name}</h1>
+  <div class="tw-mb-6 tw-flex tw-gap-2">
     <div>
       {variable.desc}
     </div>
   </div>
 
-  <div class="flex flex-col text-lg last:border-b-[1px] border-b-red">
+  <div class="tw-flex tw-flex-col tw-text-lg last:tw-border-b-[1px] tw-border-b-red">
     {#each classification.categories as category}
       <a
         href={`/2021/${topicSlug}/${variableSlug}/default/${category.slug}${search}`}
-        class="flex gap-2 items-center p-2 border-t-[1px] border-t-slate-300 cursor-pointer 
-          {category.slug === categorySlug ? 'bg-onspale' : ''}"
+        class="tw-flex tw-gap-2 tw-items-center tw-p-2 tw-border-t-[1px] tw-border-t-slate-300 tw-cursor-pointer 
+          {category.slug === categorySlug ? 'tw-bg-onspale' : ''}"
       >
         <RadioButton selected={category.slug === categorySlug} />
         {category.name}
       </a>
     {/each}
   </div>
-  <div class="h-[1px] border-t-[1px] mb-6 border-t-slate-300" />
+  <div class="tw-h-[1px] tw-border-t-[1px] tw-mb-6 tw-border-t-slate-300" />
 
-  <div class="mb-6">
-    Change the <a class="hyperlink" href={`/2021/${topic.slug}/${variableSlug}${search}`}>number of categories</a>.
+  <div class="tw-mb-6">
+    Change the <a class="tw-hyperlink" href={`/2021/${topic.slug}/${variableSlug}${search}`}>number of categories</a>.
   </div>
 </div>
 
 <!--
-<div class="p-6 font-mono text-sm bg-onspale mb-6">
+<div class="tw-p-6 tw-font-mono tw-text-sm tw-bg-onspale tw-mb-6">
   This is the [category]
 </div>
 -->
 
 <!--
-<div class="px-6 font-mono bg-onspale mb-6">
+<div class="tw-px-6 tw-font-mono tw-bg-onspale tw-mb-6">
   Proportion of {variable.units.toLowerCase()}, by local authority, {variable.joiner ?? 'with'} {category.name}.
 </div>
 -->
 
 <!--
-<div class="p-6 bg-onspale">
+<div class="tw-p-6 tw-bg-onspale">
   {$vizStore}
 </div>
 -->

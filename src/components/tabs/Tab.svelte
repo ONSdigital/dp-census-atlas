@@ -9,17 +9,17 @@
 
   registerTab(tab);
 
-  let selectedBorderBottomClass = "border-b-4 border-b-black";
-  let selectedBackgroundClass = "bg-onspale";
+  let selectedBorderBottomClass = "tw-border-b-4 tw-border-b-black";
+  let selectedBackgroundClass = "tw-bg-onspale";
 </script>
 
 <button
   on:click={() => selectTab(tab)}
-  class="p-6 pr-7 text-xl {$selectedTab === tab ? selectedBackgroundClass : ''} custom-ring"
+  class="tw-p-6 tw-pr-7 tw-text-xl {$selectedTab === tab ? selectedBackgroundClass : ''} tw-custom-ring"
 >
   <label
     for={forInput}
-    class="cursor-pointer pb-1
+    class="tw-cursor-pointer tw-pb-1
 		{$selectedTab === tab ? selectedBorderBottomClass : ''}
 		"
   >

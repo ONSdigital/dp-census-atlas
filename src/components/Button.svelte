@@ -8,11 +8,11 @@
 <button
   on:click={click}
   class="
-  custom-ring
-  {colour === 'primary' ? 'bg-onsgreen' : 'bg-slate-200'}
-  {colour === 'primary' ? 'text-white' : ''}
-  {colour === 'primary' ? 'font-bold' : ''}
-   rounded-md border-b-[3px] border-b-slate-600 py-1 px-3"
+  tw-custom-ring
+  {colour === 'primary' ? 'tw-bg-onsgreen' : 'tw-bg-slate-200'}
+  {colour === 'primary' ? 'tw-text-white' : ''}
+  {colour === 'primary' ? 'tw-font-bold' : ''}
+  tw-rounded-md tw-border-b-[3px] tw-border-b-slate-600 tw-py-1 tw-px-3"
 >
   <slot />
 </button>

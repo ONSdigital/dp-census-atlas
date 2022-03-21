@@ -10,12 +10,17 @@ export type MapState = {
 export type VizData = {
   breaks: number[];
   places: { geoCode: string; count: number; percentage: number; total: number }[];
-  selectedGeography: {[key: string]: {count: number; percentage: number; total: number}};
   params: {
     topic: typeof topics[0];
     variable: typeof topics[0]["variables"][0];
     category: typeof topics[0]["variables"][0]["categories"][0];
   };
+};
+
+export type SelectedGeographyData = {
+  displayName: string;
+  geoCode: string;
+  variableData: { [catCode: string]: { count: number; total: number; percentage: number } };
 };
 
 export type Bbox = {
@@ -24,7 +29,3 @@ export type Bbox = {
   west: number;
   south: number;
 };
-
-export type SelectedLocationData = {
-  [catCode: string] : { count: number; total: number, percentage: number }
-}

@@ -17,27 +17,29 @@
   </thead>
   <tbody class="ons-table__body">
     {#each variable.categories as category}
-      {#if variableData[category.code]}
-        <tr class="ons-table__row" class:ons-table__row--overlay={category.slug === $page.params.category}>
-          <td class="ons-table__cell " class:ons-table__cell--onSelect={category.slug === $page.params.category}>
-            {#if category.slug !== $page.params.category}
-              <a href="/2021/{$page.params.topic}/{$page.params.variable}/defaul/{category.slug}{$page.url.search}"
-                >{category.name}</a
-              >
-            {:else}
-              {category.name}
-            {/if}
-          </td>
-          <td
-            class="ons-table__cell  ons-table__cell--numeric"
-            class:ons-table__cell--onSelect={category.slug === $page.params.category}
-            >{variableData[category.code].count.toLocaleString()}</td
+      <tr class="ons-table__row" class:ons-table__row--overlay={category.slug === $page.params.category}>
+        <td class="ons-table__cell " class:ons-table__cell--onSelect={category.slug === $page.params.category}>
+          {#if category.slug !== $page.params.category}
+            <a href="/2021/{$page.params.topic}/{$page.params.variable}/defaul/{category.slug}{$page.url.search}"
+              >{category.name}</a
+            >
+          {:else}
+            {category.name}
+          {/if}
+        </td>
+        <td
+          class="ons-table__cell  ons-table__cell--numeric"
+          class:ons-table__cell--onSelect={category.slug === $page.params.category}
+          >{variableData ? variableData[category?.code]?.count.toLocaleString() : ""}</td
+        >
+        <td class="ons-table__cell  ons-table__cell--numeric ons-table__cell--key"
+          ><span
+            >{variableData
+              ? `${(Math.round(variableData[category?.code]?.percentage * 10) / 10).toFixed(1)}%`
+              : ""}</span
           >
-          <td class="ons-table__cell  ons-table__cell--numeric ons-table__cell--key"
-            ><span>{(Math.round(variableData[category.code].percentage * 10) / 10).toFixed(1)}%</span>
-          </td>
-        </tr>
-      {/if}
+        </td>
+      </tr>
     {/each}
   </tbody>
 </table>

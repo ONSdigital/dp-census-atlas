@@ -13,4 +13,4 @@
   });
 </script>
 
-<div class="w-full h-[20rem] xl:h-full" bind:this={mapContainer} />
+<div class="tw-w-full tw-h-[20rem] xl:tw-h-full" bind:this={mapContainer} />

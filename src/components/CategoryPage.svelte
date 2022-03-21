@@ -32,11 +32,11 @@
 	}
 </script>
 
-<div class="p-6 bg-onspale mb-6">
-	<a class="hyperlink" href={`/${search}`}>Home</a> <span class="mx-1">&gt;</span>
-	<a class="hyperlink" href={`/2021/${topic.slug}${search}`}>{topic.name}</a>
-	<span class="hidden xl:inline">
-		<span class="mx-1">&gt;</span>
+<div class="tw-p-6 tw-bg-onspale tw-mb-6">
+	<a class="tw-hyperlink" href={`/${search}`}>Home</a> <span class="tw-mx-1">&gt;</span>
+	<a class="tw-hyperlink" href={`/2021/${topic.slug}${search}`}>{topic.name}</a>
+	<span class="tw-hidden xl:tw-inline">
+		<span class="tw-mx-1">&gt;</span>
 		{variable.name}
 	</span>
 </div>

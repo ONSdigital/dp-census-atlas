@@ -2,8 +2,8 @@
   export let link: string;
 </script>
 
-<li class="mb-1 border-b-[1px] border-b-slate-300 ">
-  <a href={link} class="block py-2 px-1 custom-ring">
+<li class="tw-mb-1 tw-border-b-[1px] tw-border-b-slate-300 ">
+  <a href={link} class="tw-block tw-py-2 tw-px-1 tw-custom-ring">
     <slot />
   </a>
 </li>

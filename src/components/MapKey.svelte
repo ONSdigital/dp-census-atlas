@@ -4,18 +4,18 @@
 </script>
 
 {#if $vizStore}
-  <div class={`flex justify-center absolute bottom-8 left-1/2 -translate-x-1/2`}>
+  <div class={`tw-flex tw-justify-center tw-absolute tw-bottom-8 tw-left-1/2 -tw-translate-x-1/2`}>
     <div
-      class="z-abovemap bg-white px-8 pb-2.5 pt-3.5 border-[1px] border-slate-500 flex flex-col gap-1.5 items-center"
+      class="tw-z-abovemap tw-bg-white tw-px-8 tw-pb-2.5 tw-pt-3.5 tw-border-[1px] tw-border-slate-500 tw-flex tw-flex-col tw-gap-1.5 tw-items-center"
     >
-      <div class="flex items-center gap-1">
-        <div class="text-sm mr-1">Low</div>
+      <div class="tw-flex tw-items-center tw-gap-1">
+        <div class="tw-text-sm tw-mr-1">Low</div>
         {#each choroplethColours as colour}
-          <div class="h-6 w-6" style={`background-color: ${colour};`} />
+          <div class="tw-h-6 tw-w-6" style={`background-color: ${colour};`} />
         {/each}
-        <div class="text-sm ml-1">High</div>
+        <div class="tw-text-sm tw-ml-1">High</div>
       </div>
-      <div class="text-center">
+      <div class="tw-text-center">
         Proportion of {$vizStore.params.variable.units.toLowerCase()}
         with {$vizStore.params.category.name}
         {$vizStore.params.variable.name}.

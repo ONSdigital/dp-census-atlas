@@ -13,14 +13,12 @@ export const fetchVizData = async (args: {
   geoType: GeoType;
   bbox: Bbox;
 }) => {
-  let vizData = await Promise.all([fetchQuery(args), fetchBreaks(args)]);
-
+  let [places, breaks] = await Promise.all([fetchQuery(args), fetchBreaks(args)]);
   vizStore.set({
-    breaks: vizData[1][args.categoryCode].map((breakpoint) => parseFloat(breakpoint) * 100),
-    places: vizData[0].map((row) => parsePlaceData(row, args.totalCode, args.categoryCode)),
+    breaks: breaks[args.categoryCode].map((breakpoint) => parseFloat(breakpoint) * 100),
+    places: places.map((row) => parsePlaceData(row, args.totalCode, args.categoryCode)),
     params: getCategoryInfo(args.categoryCode),
   });
-
   return Promise.resolve();
 };
 

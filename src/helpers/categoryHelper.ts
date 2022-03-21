@@ -35,3 +35,15 @@ export const getCategoryInfo = (categoryCode: string) => {
     category: match.category,
   };
 };
+
+export function getSelectedGeography(pageUrl) {
+  //TODO: don't parse manually
+  const pageUrlArr = pageUrl.search.split("=");
+  const geoCode = pageUrlArr[1];
+  const geoType = pageUrlArr[0].slice(1);
+  if (geoCode) {
+    return { geoType, geoCode };
+  } else {
+    return { geoType: "ew", geoCode: "K04000001" };
+  }
+}

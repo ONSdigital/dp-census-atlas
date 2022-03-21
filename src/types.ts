@@ -17,6 +17,12 @@ export type VizData = {
   };
 };
 
+export type SelectedGeographyData = {
+  displayName: string;
+  geoCode: string;
+  variableData: { [catCode: string]: { count: number; total: number; percentage: number } };
+};
+
 export type Bbox = {
   east: number;
   north: number;

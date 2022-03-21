@@ -8,15 +8,26 @@
 
 	let geoCode = '';
 
+	//move to helpers
+	function getSelectedGeography(pageUrl) {
+		//TODO: don't parse manually
+		const pageUrlArr = pageUrl.search.split('=');
+		const geoCode = pageUrlArr[1];
+		const geoType = pageUrlArr[0].slice(1);
+		if (geoCode) {
+			return { geoType, geoCode };
+		} else {
+			return { geoType: 'ew', geoCode: 'K04000001' };
+		}
+	}
+
 	$: params = $page.params;
 	$: topicSlug = params.topic;
 	$: topic = topics.find((t) => t.slug === topicSlug);
 	$: variableSlug = params.variable;
 	$: variable = topic.variables.find((v) => v.slug === variableSlug);
-
 	$: search = $page.url.search;
-
-	$: search ? (geoCode = search.split('=').at[-1]) : (geoCode = 'K04000001');
+	$: selectedGeography = getSelectedGeography($page.url);
 
 	$: if ($mapStore) {
 		let codes = getCodesForCategory(

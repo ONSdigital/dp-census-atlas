@@ -32,13 +32,6 @@ const fetchQuery = async (args: { totalCode: string; categoryCode: string; geoTy
   return dsv.csvParse(csv);
 };
 
-const fetchSelectedGeographyData = async (args: {totalCode: string; categoryCodes: string[]; geoCode: string}) => {
-  const url = `${apiBaseUrl}/query/2011?cols=${args.totalCode},${args.categoryCodes.join(",")}&rows=${args.geoCode}`
-  const response = await fetch(url)
-  const csv = await response.text()
-  return dsv.csvParse(csv)
-}
-
 const fetchBreaks = async (args: { totalCode: string; categoryCodes: string[]; geoType: GeoType }) => {
   const breakCount = 5;
 
@@ -58,17 +51,4 @@ const parsePlaceData = (row: dsv.DSVRowString<string>, totalCode: string, catego
   let count = parseInt(row[categoryCode]);
   let percentage = (count / total) * 100;
   return { geoCode, count, total, percentage };
-};
-
-
-const parseSelectedGeographyData = (rawData: dsv.DSVRowArray<string>, totalCode: string) => {
-  const total = parseInt(rawData[0][totalCode]);
-  const catCodesArr = rawData.columns.filter((catCode) => catCode != totalCode);
-  const selectedLocationData = {}
-  catCodesArr.forEach((categoryCode) => {
-    const count = parseInt(rawData[0][categoryCode]);
-    const percentage = (count / total) * 100;
-    selectedLocationData[categoryCode] = { count: count, total: total, percentage: percentage };
-  });
-  return selectedLocationData
 };

@@ -1,0 +1,17 @@
+{
+  "recommendations": [
+    "ardenivanov.svelte-intellisense",
+    "christian-kohler.npm-intellisense",
+    "christian-kohler.path-intellisense",
+    "davidanson.vscode-markdownlint",
+    "dbaeumer.vscode-eslint",
+    "editorconfig.editorconfig",
+    "esbenp.prettier-vscode",
+    "gruntfuggly.todo-tree",
+    "ms-vsliveshare.vsliveshare",
+    "sleistner.vscode-fileutils",
+    "svelte.svelte-vscode",
+    "visualstudioexptteam.vscodeintellicode",
+    "Orta.vscode-jest"
+  ]
+}

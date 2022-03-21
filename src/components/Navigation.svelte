@@ -7,7 +7,7 @@
 
   <slot />
 
-  <!-- <div class="bg-onspale p-6 min-h-[20rem]">
+  <!-- <div class="tw-bg-onspale tw-p-6 tw-min-h-[20rem]">
     Nav footer content here
   </div> -->
 </div>

@@ -9,19 +9,19 @@
 </script>
 
 <div class="">
-  <div class="flex max-w-[30rem]">
+  <div class="tw-flex tw-max-w-[30rem]">
     <input
       id="{name}-input"
       {name}
       type="search"
       autocomplete="off"
-      class="flex items-center justify-center h-12 p-2 w-full border-l-2 border-t-2 border-b-2 border-black focus:border-4 custom-ring"
+      class="tw-flex tw-items-center tw-justify-center tw-h-12 tw-p-2 tw-w-full tw-border-l-2 tw-border-t-2 tw-border-b-2 tw-border-black focus:tw-border-4 tw-custom-ring"
       bind:value={val}
     />
-    <button tabindex="-1" type="submit" class="bg-onsblue px-3">
+    <button tabindex="-1" type="submit" class="tw-bg-onsblue tw-px-3">
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        class="h-6 w-6 text-white "
+        class="tw-h-6 tw-w-6 tw-text-white "
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -37,16 +37,16 @@
   </div>
 
   {#if val && val.length > 2}
-    <div class="relative">
+    <div class="tw-relative">
       <div
-        class="absolute left-0 right-0 z-50 max-h-[30rem] overflow-y-auto p-3 pt-2 border-[1px] border-slate-600 bg-white"
+        class="tw-absolute tw-left-0 tw-right-0 tw-z-50 tw-max-h-[30rem] tw-overflow-y-auto tw-p-3 tw-pt-2 tw-border-[1px] tw-border-slate-600 tw-bg-white"
       >
         <ul>
           {#each results.topics as t}
             <SearchBoxItem link={`/2021/${t.slug}`}>
-              <div class="flex items-center gap-2">
-                <Badge className="bg-slate-500">TOPIC</Badge>
-                <div class="text-xl">{@html highlightText(t.name, val)}</div>
+              <div class="tw-flex tw-items-center tw-gap-2">
+                <Badge className="tw-bg-slate-500">TOPIC</Badge>
+                <div class="tw-text-xl">{@html highlightText(t.name, val)}</div>
               </div>
               <div class="">
                 {@html highlightText(t.desc, val)}
@@ -55,9 +55,9 @@
           {/each}
           {#each results.variables as v}
             <SearchBoxItem link={`/2021/${v.topic.slug}/${v.variable.slug}`}>
-              <div class="flex items-center gap-2">
-                <Badge className="bg-slate-500">VARIABLE</Badge>
-                <div class="text-xl">{@html highlightText(v.variable.name, val)}</div>
+              <div class="tw-flex tw-items-center tw-gap-2">
+                <Badge className="tw-bg-slate-500">VARIABLE</Badge>
+                <div class="tw-text-xl">{@html highlightText(v.variable.name, val)}</div>
               </div>
               <div class="">
                 {@html highlightText(v.variable.desc, val)}
@@ -66,9 +66,9 @@
           {/each}
           {#each results.categories as c}
             <SearchBoxItem link={`/2021/${c.topic.slug}/${c.variable.variable.slug}/default/${c.category.slug}`}>
-              <div class="flex items-center gap-2">
-                <Badge className="bg-slate-500">CATEGORY</Badge>
-                <div class="text-xl">{@html highlightText(c.category.name, val)}</div>
+              <div class="tw-flex tw-items-center tw-gap-2">
+                <Badge className="tw-bg-slate-500">CATEGORY</Badge>
+                <div class="tw-text-xl">{@html highlightText(c.category.name, val)}</div>
               </div>
               <div class="">
                 in variable {c.variable.variable.name}
@@ -76,7 +76,7 @@
             </SearchBoxItem>
           {/each}
         </ul>
-        <div class="pt-3 pb-1 px-1">
+        <div class="tw-pt-3 tw-pb-1 tw-px-1">
           {results.topics.length + results.variables.length + results.categories.length}
           results
         </div>

@@ -1,4 +1,5 @@
 // https://stackoverflow.com/a/38658925
+import { capitalizeFirstLetter } from "./stringUtil";
 
 var num =
   "zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen".split(
@@ -14,10 +15,10 @@ function number2words(n) {
   return number2words(~~(n / 1000)) + " thousand" + (n % 1000 != 0 ? " " + number2words(n % 1000) : "");
 }
 
-function capitalizeFirstLetter(string) {
-  return string.charAt(0).toUpperCase() + string.slice(1);
-}
-
 export function numberToWords(n: number) {
   return capitalizeFirstLetter(number2words(n));
+}
+
+export const renderPercentage = (percentage: number) => {
+  return (Math.round(percentage * 10) / 10).toFixed(1)
 }

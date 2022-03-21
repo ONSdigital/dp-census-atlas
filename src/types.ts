@@ -10,6 +10,7 @@ export type MapState = {
 export type VizData = {
   breaks: number[];
   places: { geoCode: string; count: number; percentage: number; total: number }[];
+  selectedGeography: {[key: string]: {count: number; percentage: number; total: number}};
   params: {
     topic: typeof topics[0];
     variable: typeof topics[0]["variables"][0];

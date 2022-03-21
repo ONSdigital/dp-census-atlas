@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { mapStore } from '../stores/stores';
-	import { fetchVizData, fetchCensusTableData } from '../data/fetchVizData';
+	import { fetchVizData } from '../data/fetchVizData';
 	import { getCodesForCategory } from '../helpers/categoryHelper';
 	import CensusTable from './CensusTable.svelte';
 	import topics from '../data/content';
@@ -14,7 +14,6 @@
 	$: variableSlug = params.variable;
 	$: variable = topic.variables.find((v) => v.slug === variableSlug);
 
-	$: console.log(variable.categories);
 	$: search = $page.url.search;
 
 	$: search ? (geoCode = search.split('=').at[-1]) : (geoCode = 'K04000001');
@@ -26,12 +25,7 @@
 			params.classification,
 			params.category
 		);
-		fetchVizData({ ...codes, geoType: $mapStore.geoType, bbox: $mapStore.bbox });
-		fetchCensusTableData({
-			geoCode: geoCode,
-			tableCode: variable.code,
-			totalCode: codes.totalCode
-		});
+		fetchVizData({ ...codes, geoType: $mapStore.geoType, bbox: $mapStore.bbox, geoCode });
 	}
 </script>
 

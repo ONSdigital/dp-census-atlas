@@ -1,19 +1,15 @@
 <script>
-	import { selectedLocationDataStore } from '../stores/stores';
+	import { vizStore } from '../stores/stores';
 	import { page } from '$app/stores';
-
-	export let variable;
-
-	$: console.log($selectedLocationDataStore);
 </script>
 
-{#if $selectedLocationDataStore && variable}
+{#if $vizStore}
 	<table class="ons-table">
 		<thead class="ons-table__head">
 			<tr class="ons-table__row">
 				<th scope="col" class="ons-table__header" />
 				<th scope="col" class="ons-table__header ons-table__header--numeric">
-					<span>{variable.units}</span>
+					<span>{$vizStore.params.variable.units}</span>
 				</th>
 				<th scope="col" class="ons-table__header ons-table__header--numeric">
 					<span>Percentage</span>
@@ -21,8 +17,8 @@
 			</tr>
 		</thead>
 		<tbody class="ons-table__body">
-			{#each variable.categories as category}
-				{#if $selectedLocationDataStore[category.code]}
+			{#each $vizStore.params.variable.categories as category}
+				{#if $vizStore.selectedGeography[category.code]}
 					<tr
 						class="ons-table__row"
 						class:ons-table__row--overlay={category.slug === $page.params.category}
@@ -43,12 +39,12 @@
 						<td
 							class="ons-table__cell  ons-table__cell--numeric"
 							class:ons-table__cell--onSelect={category.slug === $page.params.category}
-							>{$selectedLocationDataStore[category.code].count.toLocaleString()}</td
+							>{$vizStore.selectedGeography[category.code].count.toLocaleString()}</td
 						>
 						<td class="ons-table__cell  ons-table__cell--numeric ons-table__cell--key"
 							><span
 								>{(
-									Math.round($selectedLocationDataStore[category.code].percentage * 10) / 10
+									Math.round($vizStore.selectedGeography[category.code].percentage * 10) / 10
 								).toFixed(1)}%</span
 							>
 						</td>

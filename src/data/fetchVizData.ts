@@ -1,6 +1,6 @@
 import * as dsv from "d3-dsv"; // https://github.com/d3/d3/issues/3469
 import type { Bbox, GeoType } from "../types";
-import { vizStore, selectedLocationDataStore } from "../stores/stores";
+import { vizStore } from "../stores/stores";
 import { getBboxString } from "../helpers/spatialHelper";
 import { getCategoryInfo } from "../helpers/categoryHelper";
 
@@ -12,14 +12,15 @@ export const fetchVizData = async (args: {
   categoryCodes: string[];
   geoType: GeoType;
   bbox: Bbox;
+  geoCode: string;
 }) => {
-  let vizData = await Promise.all([fetchQuery(args), fetchBreaks(args)]);
+  let [places, breaks, selectedGeography] = await Promise.all([fetchQuery(args), fetchBreaks(args), fetchSelectedGeographyData(args)]);
   vizStore.set({
-    breaks: vizData[1][args.categoryCode].map((breakpoint) => parseFloat(breakpoint) * 100),
-    places: vizData[0].map((row) => parsePlaceData(row, args.totalCode, args.categoryCode)),
+    breaks: breaks[args.categoryCode].map((breakpoint) => parseFloat(breakpoint) * 100),
+    places: places.map((row) => parsePlaceData(row, args.totalCode, args.categoryCode)),
+    selectedGeography: parseSelectedGeographyData(selectedGeography, args.totalCode),
     params: getCategoryInfo(args.categoryCode),
   });
-
   return Promise.resolve();
 };
 
@@ -30,6 +31,13 @@ const fetchQuery = async (args: { totalCode: string; categoryCode: string; geoTy
   let csv = await response.text();
   return dsv.csvParse(csv);
 };
+
+const fetchSelectedGeographyData = async (args: {totalCode: string; categoryCodes: string[]; geoCode: string}) => {
+  const url = `${apiBaseUrl}/query/2011?cols=${args.totalCode},${args.categoryCodes.join(",")}&rows=${args.geoCode}`
+  const response = await fetch(url)
+  const csv = await response.text()
+  return dsv.csvParse(csv)
+}
 
 const fetchBreaks = async (args: { totalCode: string; categoryCodes: string[]; geoType: GeoType }) => {
   const breakCount = 5;
@@ -44,18 +52,6 @@ const fetchBreaks = async (args: { totalCode: string; categoryCodes: string[]; g
   return Object.fromEntries(Object.keys(parsed).map((code) => [code, parsed[code][args.geoType.toUpperCase()]]));
 };
 
-export const fetchCensusTableData = async (args: { geoCode: string; tableCode: string; totalCode: string }) => {
-  const data = await fetchTableQuery({ geoCode: args.geoCode, tableCode: args.tableCode });
-  selectedLocationDataStore.set(parseTableData(data, args.totalCode));
-};
-
-const fetchTableQuery = async (args: { geoCode: string; tableCode: string }) => {
-  const url = `${apiBaseUrl}/query/2011?rows=${args.geoCode}&censustable=${args.tableCode}`;
-  const response = await fetch(url);
-  const csv = await response.text();
-  return dsv.csvParse(csv);
-};
-
 const parsePlaceData = (row: dsv.DSVRowString<string>, totalCode: string, categoryCode: string) => {
   let geoCode = row.geography_code;
   let total = parseInt(row[totalCode]);
@@ -64,12 +60,13 @@ const parsePlaceData = (row: dsv.DSVRowString<string>, totalCode: string, catego
   return { geoCode, count, total, percentage };
 };
 
-const parseTableData = (rawTableData: dsv.DSVRowArray<string>, totalCode: string) => {
-  const total = parseInt(rawTableData[0][totalCode]);
-  const catCodesArr = rawTableData.columns.filter((catCode) => catCode != totalCode);
+
+const parseSelectedGeographyData = (rawData: dsv.DSVRowArray<string>, totalCode: string) => {
+  const total = parseInt(rawData[0][totalCode]);
+  const catCodesArr = rawData.columns.filter((catCode) => catCode != totalCode);
   const selectedLocationData = {}
   catCodesArr.forEach((categoryCode) => {
-    const count = parseInt(rawTableData[0][categoryCode]);
+    const count = parseInt(rawData[0][categoryCode]);
     const percentage = (count / total) * 100;
     selectedLocationData[categoryCode] = { count: count, total: total, percentage: percentage };
   });

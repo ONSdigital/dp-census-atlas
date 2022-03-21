@@ -12,9 +12,3 @@ export const mapStore = writable<MapState | undefined>(undefined);
  * order to show a vizualisation (i.e., a query response).
  * */
 export const vizStore = writable<VizData | undefined>(undefined);
-
-/**
- * A Svelte store containing data for the selected location.
- * */
-
-export const selectedLocationDataStore = writable<SelectedLocationData | undefined>(undefined)

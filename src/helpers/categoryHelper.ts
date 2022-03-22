@@ -1,6 +1,4 @@
 import topics from "../data/content";
-import type { Variable, Category } from "../types";
-import { unCapitalizeFirstLetter } from "../util/stringUtil"
 
 export const getCodesForCategory = (
   topicSlug: string,
@@ -50,20 +48,6 @@ export function getSelectedGeography(pageUrl) {
   }
 }
 
-export const renderCatHeadString = (
-  variable: Variable, 
-  category: Category, 
-  location: string, 
-  templateStr: string
-) => { 
-  const stringReplaceMap = {
-    "{category_name}": unCapitalizeFirstLetter(category.name),
-    "{category_unit}": unCapitalizeFirstLetter(variable.units),
-    "{location}": location,
-    "{variable_name}": unCapitalizeFirstLetter(variable.name),
-  }
-  for (const [strToReplace, replacementStr] of Object.entries(stringReplaceMap)) {
-    templateStr = templateStr.replace(strToReplace, replacementStr)
-  }
-  return templateStr
+export const formatPercentage = (percentage: number) => {
+  return (Math.round(percentage * 10) / 10).toFixed(1)
 }

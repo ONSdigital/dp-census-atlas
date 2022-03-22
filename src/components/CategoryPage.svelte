@@ -3,7 +3,7 @@
   import { mapStore, selectedGeographyStore } from "../stores/stores";
   import { fetchVizData } from "../data/fetchVizData";
   import { fetchGeographyData } from "../data/fetchGeographyData";
-  import { getCodesForCategory, getSelectedGeography } from "../helpers/categoryHelper";
+  import { getCodesForCategory, getSelectedGeography } from "../helpers/categoryHelpers";
   import CensusTable from "./CensusTable.svelte";
   import topics from "../data/content";
 

@@ -7,6 +7,7 @@ export const fetchGeographyData = async (args: { totalCode: string; categoryCode
   let data = await fetchSelectedGeographyData(args);
   let parsedData = parseSelectedGeographyData(data, args.totalCode);
   selectedGeographyStore.set({
+    geoType: "ew",
     displayName: "England and Wales",
     geoCode: args.geoCode,
     variableData: parsedData,

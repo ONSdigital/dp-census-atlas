@@ -2,7 +2,7 @@ import * as dsv from "d3-dsv"; // https://github.com/d3/d3/issues/3469
 import type { Bbox, GeoType } from "../types";
 import { vizStore } from "../stores/stores";
 import { getBboxString } from "../helpers/spatialHelper";
-import { getCategoryInfo } from "../helpers/categoryHelper";
+import { getCategoryInfo } from "../helpers/categoryHelpers";
 
 const apiBaseUrl = `https://cep5lmkia0.execute-api.eu-west-1.amazonaws.com/dev`;
 

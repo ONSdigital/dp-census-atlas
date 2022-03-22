@@ -31,12 +31,7 @@
   }
 </script>
 
-<CategoryHeading
-  variableData={variableData}
-  variable={variable}
-  category={category}
-  location={selectedGeographyDisplayName}
-/>
+<CategoryHeading {variableData} {variable} {category} location={selectedGeographyDisplayName} />
 
 <div class="tw-p-6 tw-bg-onspale tw-mb-6">
   <a class="tw-hyperlink" href={`/${search}`}>Home</a> <span class="tw-mx-1">&gt;</span>

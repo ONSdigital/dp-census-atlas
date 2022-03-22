@@ -21,7 +21,7 @@
 
   const handleOnClick = async (value: string) => {
     if (value) {
-      fetchGeographyLookup(value)
+      fetchGeographyLookup(value, false)
         .then((response) => {
           const { meta: { code } }: GeographyLookupProps = JSON.parse(response);
           setGeoSearchParam({ geoType: "lad", geoCode: code });

@@ -1,21 +1,30 @@
 import * as dsv from "d3-dsv"; // https://github.com/d3/d3/issues/3469
 import { selectedGeographyStore } from "../stores/stores";
+import type { GeographyLookupProps } from "../types";
 
 const apiBaseUrl = `https://cep5lmkia0.execute-api.eu-west-1.amazonaws.com/dev`;
 
 export const fetchGeographyData = async (args: { totalCode: string; categoryCodes: string[]; geoCode: string }) => {
   const data = await fetchSelectedGeographyData(args);
   const parsedData = parseSelectedGeographyData(data, args.totalCode);
+  let displayName = "England and Wales";
+  await fetchGeographyLookup(args.geoCode).then((response) => {
+    const {
+      meta: { name },
+    }: GeographyLookupProps = JSON.parse(response);
+    displayName = name;
+  });
+
   selectedGeographyStore.set({
-    displayName: "England and Wales",
+    displayName,
     geoCode: args.geoCode,
     variableData: parsedData,
   });
   return Promise.resolve();
 };
 
-export const fetchGeographyLookup = async (location: string) => {
-  const url = `${apiBaseUrl}/geo/2011?geoname=${location}`;
+export const fetchGeographyLookup = async (location: string, useCode = true) => {
+  const url = `${apiBaseUrl}/geo/2011?${useCode ? "geocode" : "geoname"}=${location}`;
   const response = await fetch(url);
   const data = await response.text();
   return data;

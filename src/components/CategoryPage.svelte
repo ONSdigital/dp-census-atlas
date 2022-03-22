@@ -7,6 +7,7 @@
 	import CensusTable from './CensusTable.svelte';
 	import topics from '../data/content';
 	import { buildHyperlink } from '../helpers/buildHyperlinkHelper';
+	import CategoryHeading from '../components/CategoryHeading.svelte';
 
 	$: variableData = $selectedGeographyStore?.variableData;
 	$: params = $page.params;
@@ -16,6 +17,9 @@
 	$: variable = topic.variables.find((v) => v.slug === variableSlug);
 	$: search = $page.url.search;
 	$: selectedGeography = getSelectedGeography($page.url);
+	$: selectedGeographyDisplayName = $selectedGeographyStore?.displayName;
+	$: categorySlug = params.category;
+	$: category = variable.categories.find((c) => c.slug === categorySlug);
 
 	$: if ($mapStore) {
 		let codes = getCodesForCategory(
@@ -32,6 +36,8 @@
 		});
 	}
 </script>
+
+<CategoryHeading {variableData} {variable} {category} location={selectedGeographyDisplayName} />
 
 <div class="tw-p-6 tw-bg-onspale tw-mb-6">
 	<a class="tw-hyperlink" href={buildHyperlink({ selectedGeography: $selectedGeographyStore })}

@@ -1,9 +1,9 @@
 import { capitalizeFirstLetter } from "./stringUtil";
 
 var num =
-"zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen".split(
-  " ",
-);
+  "zero one two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen".split(
+    " ",
+  );
 var tens = "twenty thirty forty fifty sixty seventy eighty ninety".split(" ");
 
 // https://stackoverflow.com/a/38658925

@@ -23,7 +23,6 @@
   @import "./../../node_modules/@ons/design-system/components/button/button";
   @import "./../../node_modules/@ons/design-system/components/icons/icons";
 
-
   @import "./../../node_modules/@ons/design-system/scss/utilities/index";
   // Right to left
   @import "./../../node_modules/@ons/design-system/scss/overrides/rtl";

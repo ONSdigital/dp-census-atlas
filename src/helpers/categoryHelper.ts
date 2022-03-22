@@ -49,5 +49,5 @@ export function getSelectedGeography(pageUrl) {
 }
 
 export const formatPercentage = (percentage: number) => {
-  return (Math.round(percentage * 10) / 10).toFixed(1)
-}
+  return (Math.round(percentage * 10) / 10).toFixed(1);
+};

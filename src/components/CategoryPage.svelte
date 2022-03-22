@@ -5,6 +5,7 @@
   import { fetchGeographyData } from "../data/fetchGeographyData";
   import { getCodesForCategory, getSelectedGeography } from "../helpers/categoryHelper";
   import CensusTable from "./CensusTable.svelte";
+  import NavigationComponent from "./NavigationComponent.svelte";
   import topics from "../data/content";
 
   $: variableData = $selectedGeographyStore?.variableData;
@@ -27,13 +28,6 @@
   }
 </script>
 
-<div class="tw-p-6 tw-bg-onspale tw-mb-6">
-  <a class="tw-hyperlink" href={`/${search}`}>Home</a> <span class="tw-mx-1">&gt;</span>
-  <a class="tw-hyperlink" href={`/2021/${topic.slug}${search}`}>{topic.name}</a>
-  <span class="tw-hidden xl:tw-inline">
-    <span class="tw-mx-1">&gt;</span>
-    {variable.name}
-  </span>
-</div>
+<NavigationComponent {search} {topicSlug} currentURL={$page.url.pathname} />
 
 <CensusTable {variable} {variableData} />

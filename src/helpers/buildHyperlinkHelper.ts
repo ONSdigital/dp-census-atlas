@@ -9,20 +9,14 @@ export const buildHyperlink = (args: {topic?: string, variable?: string, classif
         const paramsArr = [args.topic, args.variable, args.classification, args.category]
         url = "/2021"
         paramsArr.forEach((param) => {
-            url = checkParam(url, param)
+            if (param){
+                url = `${url}/${param}`
+            }
         })
     }
     if (!args.selectedGeography || args.selectedGeography.geoType === "ew"){
         return url
     } else {
         return `${url}?${args.selectedGeography.geoType}=${args.selectedGeography.geoCode}`
-    }
-}
-
-const checkParam = (url: string, param: string | undefined) => {
-    if (!param) {
-        return url
-    } else {
-        return `${url}/${param}`
     }
 }

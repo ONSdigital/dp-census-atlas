@@ -4,14 +4,21 @@ import { selectedGeographyStore } from "../stores/stores";
 const apiBaseUrl = `https://cep5lmkia0.execute-api.eu-west-1.amazonaws.com/dev`;
 
 export const fetchGeographyData = async (args: { totalCode: string; categoryCodes: string[]; geoCode: string }) => {
-  let data = await fetchSelectedGeographyData(args);
-  let parsedData = parseSelectedGeographyData(data, args.totalCode);
+  const data = await fetchSelectedGeographyData(args);
+  const parsedData = parseSelectedGeographyData(data, args.totalCode);
   selectedGeographyStore.set({
     displayName: "England and Wales",
     geoCode: args.geoCode,
     variableData: parsedData,
   });
   return Promise.resolve();
+};
+
+export const fetchGeographyLookup = async (location: string) => {
+  const url = `${apiBaseUrl}/geo/2011?geoname=${location}`;
+  const response = await fetch(url);
+  const data = await response.text();
+  return data;
 };
 
 const fetchSelectedGeographyData = async (args: { totalCode: string; categoryCodes: string[]; geoCode: string }) => {

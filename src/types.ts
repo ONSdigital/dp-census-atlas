@@ -27,6 +27,29 @@ export type SelectedGeographyData = {
   variableData: { [catCode: string]: { count: number; total: number; percentage: number } };
 };
 
+export type GeographyLookupProps = {
+  meta: {
+    name: string;
+    code: string;
+  };
+  geo_json: GeographyGeo;
+};
+
+type GeographyGeo = {
+  type: string;
+  features: GeographyFeatures[];
+};
+
+type GeographyFeatures = {
+  type: string;
+  id: string;
+  geometry: {
+    type: string;
+    coordinates: (number[][] | number[] | number)[];
+  };
+  properties?: any;
+};
+
 export type Bbox = {
   east: number;
   north: number;

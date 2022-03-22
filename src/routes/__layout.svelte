@@ -1,6 +1,7 @@
 <script>
   import "../app.css";
   import Layout from "../components/Layout.svelte";
+  import "../i18n/i18n.ts";
 </script>
 
 <Layout>
@@ -22,6 +23,12 @@
   @import "./../../node_modules/@ons/design-system/components/collapsible/collapsible";
   @import "./../../node_modules/@ons/design-system/components/button/button";
   @import "./../../node_modules/@ons/design-system/components/icons/icons";
+
+  @import "./../../node_modules/@ons/design-system/components/autosuggest/autosuggest";
+  @import "./../../node_modules/@ons/design-system/components/input/input";
+  @import "./../../node_modules/@ons/design-system/components/input/input-type";
+  @import "./../../node_modules/@ons/design-system/components/panel/panel";
+  @import "./../../node_modules/@ons/design-system/components/label/label";
 
 
   @import "./../../node_modules/@ons/design-system/scss/utilities/index";

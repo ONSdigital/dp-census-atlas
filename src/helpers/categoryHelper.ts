@@ -6,14 +6,14 @@ export const getCodesForCategory = (
   classificationSlug: string,
   categorySlug: string,
 ) => {
-  let topic = topics.find((t) => t.slug === topicSlug);
-  let variable = topic.variables.find((v) => v.slug === variableSlug);
-  let classification = {
+  const topic = topics.find((t) => t.slug === topicSlug);
+  const variable = topic.variables.find((v) => v.slug === variableSlug);
+  const classification = {
     name: "Default",
     desc: "Default classification",
     categories: variable.categories,
   };
-  let category = variable.categories.find((c) => c.slug === categorySlug);
+  const category = variable.categories.find((c) => c.slug === categorySlug);
 
   return {
     totalCode: variable.total.code,
@@ -23,11 +23,11 @@ export const getCodesForCategory = (
 };
 
 export const getCategoryInfo = (categoryCode: string) => {
-  let allVariables = topics.flatMap((t) => t.variables.map((v) => ({ topic: t, variable: v })));
-  let allCategories = allVariables.flatMap((v) =>
+  const allVariables = topics.flatMap((t) => t.variables.map((v) => ({ topic: t, variable: v })));
+  const allCategories = allVariables.flatMap((v) =>
     v.variable.categories.map((c) => ({ topic: v.topic, category: c, variable: v })),
   );
-  let match = allCategories.find((c) => c.category.code === categoryCode);
+  const match = allCategories.find((c) => c.category.code === categoryCode);
 
   return {
     topic: match.topic,

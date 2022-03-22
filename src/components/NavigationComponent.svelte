@@ -14,14 +14,7 @@
   </div>
   <div class="ons-grid__col ons-col-auto ons-grid__col--flex divider">
     <div class="ons-pl-grid-col">
-      <a
-        href={currentLocationLink}
-        on:click={() => {
-          console.log(currentLocationLink);
-        }}
-      >
-        New location
-      </a>
+      <a href={currentLocationLink} on:click={onClick}> New location </a>
     </div>
   </div>
   <div class="ons-grid__col ons-col-auto ons-grid__col--flex">

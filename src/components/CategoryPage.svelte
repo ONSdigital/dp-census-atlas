@@ -28,6 +28,13 @@
   }
 </script>
 
-<NavigationComponent {search} {topicSlug} currentURL={$page.url.pathname} />
+<NavigationComponent
+  {search}
+  {topicSlug}
+  currentURL={$page.url.pathname}
+  onClick={() => {
+    console.log($page.url.pathname);
+  }}
+/>
 
 <CensusTable {variable} {variableData} />

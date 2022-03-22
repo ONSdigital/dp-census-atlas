@@ -7,13 +7,17 @@
   import CensusTable from "./CensusTable.svelte";
   import NavigationComponent from "./NavigationComponent.svelte";
   import topics from "../data/content";
+  import CategoryHeading from "../components/CategoryHeading.svelte";
 
   $: variableData = $selectedGeographyStore?.variableData;
+  $: selectedGeographyDisplayName = $selectedGeographyStore?.displayName;
   $: params = $page.params;
   $: topicSlug = params.topic;
   $: topic = topics.find((t) => t.slug === topicSlug);
   $: variableSlug = params.variable;
   $: variable = topic.variables.find((v) => v.slug === variableSlug);
+  $: categorySlug = params.category;
+  $: category = variable.categories.find((c) => c.slug === categorySlug);
   $: search = $page.url.search;
   $: selectedGeography = getSelectedGeography($page.url);
 
@@ -28,6 +32,8 @@
   }
 </script>
 
+<CategoryHeading {variableData} {variable} {category} location={selectedGeographyDisplayName} />
+
 <NavigationComponent
   {search}
   {topicSlug}
@@ -36,5 +42,4 @@
     console.log($page.url.pathname);
   }}
 />
-
 <CensusTable {variable} {variableData} />

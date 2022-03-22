@@ -47,3 +47,7 @@ export function getSelectedGeography(pageUrl) {
     return { geoType: "ew", geoCode: "K04000001" };
   }
 }
+
+export const formatPercentage = (percentage: number) => {
+  return (Math.round(percentage * 10) / 10).toFixed(1)
+}

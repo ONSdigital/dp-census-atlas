@@ -8,7 +8,7 @@ export const defaultGeography: GeographyLookupProps = {
   meta: {
     name: "England and Wales",
     code: "K04000001",
-    geotype: "EW",
+    geotype: "ew",
   },
   geo_json: {
     type: "FeatureCollection",

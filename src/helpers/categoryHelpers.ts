@@ -45,7 +45,7 @@ export function getSelectedGeography(pageUrl) {
   if (geoCode) {
     return { geoType, geoCode };
   } else {
-    return { geoType: defaultGeography.meta.geotype.toLowerCase(), geoCode: defaultGeography.meta.code };
+    return { geoType: defaultGeography.meta.geotype, geoCode: defaultGeography.meta.code };
   }
 }
 

@@ -15,7 +15,7 @@ export const fetchGeographyData = async (args: { totalCode: string; categoryCode
       meta: { name, geotype },
     }: GeographyLookupProps = JSON.parse(response);
     displayName = name;
-    geoType = geoType;
+    geoType = geoType.toLowerCase();
   });
 
   /* TODO: Grab geoType from endpoint */

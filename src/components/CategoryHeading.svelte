@@ -1,6 +1,6 @@
 <script>
   import { areAllDefined } from "../util/genUtil";
-  import { formatPercentage } from "../helpers/categoryHelper";
+  import { formatPercentage } from "../helpers/categoryHelpers";
   import { unCapitalizeFirstLetter } from "../util/stringUtil";
   export let variableData;
   export let variable;

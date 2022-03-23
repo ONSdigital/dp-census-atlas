@@ -2,6 +2,8 @@
   import { page } from "$app/stores";
   import topics from "../data/content";
   import RightChevron from "./RightChevron.svelte";
+  import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
+  import { selectedGeographyStore } from "../stores/stores";
 
   $: url = $page.url;
 </script>
@@ -12,7 +14,10 @@
   {#each topics as topic}
     <a
       class="tw-flex-none tw-w-72 tw-flex-grow-[1] tw-pt-2.5 tw-border-t-[1px] tw-border-t-slate-300 tw-group"
-      href={`/2021/${topic.slug}${url.search}`}
+      href={buildHyperlink({
+        topic: topic.slug,
+        selectedGeography: $selectedGeographyStore,
+      })}
     >
       <div class="tw-flex tw-justify-between">
         <div class="tw-text-xl tw-hyperlink">{topic.name}</div>

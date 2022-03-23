@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
   import Button from "./Button.svelte";
   import SearchBox from "./SearchBox.svelte";
   import TopicList from "./TopicList.svelte";
@@ -30,17 +31,40 @@
         <ul class="tw-list-disc tw-list-inside">
           <li class="tw-pb-1">
             Which areas have the
-            <a href="/2021/housing/owned-and-renting/default/shared-ownership" class="tw-hyperlink">
+            <a
+              href={buildHyperlink({
+                topic: "housing",
+                variable: "owned-or-renting",
+                category: "shared-ownership",
+              })}
+              class="tw-hyperlink"
+            >
               highest levels of shared ownership properties</a
             >?
           </li>
           <li class="tw-pb-1">
             Which areas of the country are the
-            <a href="/2021/health/general-health/default/very-good" class="tw-hyperlink"> most healthy</a>?
+            <a
+              href={buildHyperlink({
+                topic: "health",
+                variable: "general-health",
+                category: "very-good",
+              })}
+              class="tw-hyperlink"
+            >
+              most healthy</a
+            >?
           </li>
           <li class="tw-pb-1">
             Where are the
-            <a href="/2021/housing/heating/default/no-central-heating" class="tw-hyperlink">
+            <a
+              href={buildHyperlink({
+                topic: "housing",
+                variable: "heating",
+                category: "no-central-heating",
+              })}
+              class="tw-hyperlink"
+            >
               highest levels of homes without central heating</a
             >?
           </li>

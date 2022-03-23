@@ -4,6 +4,7 @@
   let n;
   let inverted = invertTextColor ? "input--with-white-description" : "";
   let inputContainer = header || renderError ? "header-input-container" : "non-header-input-container";
+  let result;
 
   onMount(async () => {
     const autosuggests = [...document.querySelectorAll(".ons-js-autosuggest")];
@@ -13,12 +14,31 @@
         await import("./../../../node_modules/@ons/design-system/components/autosuggest/autosuggest")
       ).default;
 
-      autosuggests.forEach((autosuggest) => new Autosuggest(autosuggest));
+      autosuggests.forEach((autosuggest) => {
+        result = new Autosuggest(autosuggest);
+        new Autosuggest(autosuggest);
+      });
     }
   });
 
+  /* WARNING: Custom logic not from the ONS component */
+  /* Used so that we can get extra information from the autoSuggest file and pass back */
+  /* autoSuggest find the label key based on html Lang */
+
+  /* TODO: Use following code when lookup file is in */
+  const findMeta = (value) => {
+    const {
+      lang,
+      autosuggest: { data },
+    } = result;
+    return data.find((item) => item[lang] === value);
+  };
+
   function onClick({ target }) {
-    autosuggestValue = target.innerText;
+    autosuggestValue - target.innerText;
+    /* TODO: Use this code 
+    autosuggestValue = findMeta(target.innerText);
+    */
   }
 
   function onKeyUp(e) {
@@ -26,6 +46,9 @@
       const input = document.querySelector(".ons-autosuggest-input__option--focused");
       if (input) {
         autosuggestValue = input.innerText;
+        /* TODO: Use this code 
+        autosuggestValue = findMeta(input.innerText);
+        */
       }
     }
   }

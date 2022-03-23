@@ -8,17 +8,19 @@ export const fetchGeographyData = async (args: { totalCode: string; categoryCode
   const data = await fetchSelectedGeographyData(args);
   const parsedData = parseSelectedGeographyData(data, args.totalCode);
   let displayName = "England and Wales";
+  let geoType = "lad";
   await fetchGeographyLookup(args.geoCode).then((response) => {
     const {
-      meta: { name },
+      meta: { name, geotype },
     }: GeographyLookupProps = JSON.parse(response);
     displayName = name;
+    geoType = geoType;
   });
 
   /* TODO: Grab geoType from endpoint */
 
   selectedGeographyStore.set({
-    geoType: "lad",
+    geoType,
     displayName,
     geoCode: args.geoCode,
     variableData: parsedData,

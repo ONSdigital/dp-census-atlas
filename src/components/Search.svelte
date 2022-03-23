@@ -20,11 +20,18 @@
   let invertTextColor = false;
 
   const handleOnClick = async (value: string) => {
+    /* TODO: Use below logic once new lookup file is ready */
+    // if (value) {
+    //   const {  geoCode, geoType } = value;
+    //   setGeoSearchParam({ geoType, geoCode });
+    // }
     if (value) {
       fetchGeographyLookup(value, false)
         .then((response) => {
-          const { meta: { code } }: GeographyLookupProps = JSON.parse(response);
-          setGeoSearchParam({ geoType: "lad", geoCode: code });
+          const {
+            meta: { code, geotype },
+          }: GeographyLookupProps = JSON.parse(response);
+          setGeoSearchParam({ geoType: geotype.toLowerCase(), geoCode: code });
         })
         .catch(() => {
           renderError = true;

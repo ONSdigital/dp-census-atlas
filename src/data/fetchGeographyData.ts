@@ -31,7 +31,7 @@ export const fetchGeographyData = async (args: { totalCode: string; categoryCode
 
 export const fetchGeographyLookup = async (location: string, useCode = true) => {
   // return defaultGeography if the name or code matches...
-  if ((useCode && defaultGeography.meta.code == location) || defaultGeography.meta.code == location) {
+  if ((useCode && defaultGeography.meta.code == location) || defaultGeography.meta.name == location) {
     return JSON.stringify(defaultGeography);
   }
   // otherwise query API

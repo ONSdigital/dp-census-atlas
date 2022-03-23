@@ -10,14 +10,11 @@
   $: topic = topics.find((t) => t.slug === topicSlug);
 </script>
 
-<!-- TODO: Move breadcrumbs into seperate component, wrap navigation slot in container and main elements/classes -->
-
 <div class="p-6 bg-onspale mb-6">
-  <a class="hyperlink" href={buildHyperlink({ selectedGeography: $selectedGeographyStore })}>Home</a>
-  <span class="hidden xl:inline">
-    <span class="mx-1">&gt;</span>
-    {topic.name}
-  </span>
+  <p>
+    Change to a
+    <a href={buildHyperlink({ selectedGeography: $selectedGeographyStore })}>new topic</a>
+  </p>
 </div>
 
 <div class="ons-page__container ons-container">

@@ -1,19 +1,19 @@
 import topics from "../data/content";
 
 export const searchCensus = (q: string) => {
-  let s = q.toLowerCase();
+  const s = q.toLowerCase();
 
-  let topicResults = topics.filter((t) => t.name.toLowerCase().includes(s) || t.desc.toLowerCase().includes(s));
+  const topicResults = topics.filter((t) => t.name.toLowerCase().includes(s) || t.desc.toLowerCase().includes(s));
 
-  let allVariables = topics.flatMap((t) => t.variables.map((v) => ({ topic: t, variable: v })));
-  let variableResults = allVariables.filter(
+  const allVariables = topics.flatMap((t) => t.variables.map((v) => ({ topic: t, variable: v })));
+  const variableResults = allVariables.filter(
     (v) => v.variable.name.toLowerCase().includes(s) || v.variable.desc.toLowerCase().includes(s),
   );
 
-  let allCategories = allVariables.flatMap((v) =>
+  const allCategories = allVariables.flatMap((v) =>
     v.variable.categories.map((c) => ({ topic: v.topic, category: c, variable: v })),
   );
-  let categoryResults = allCategories.filter(
+  const categoryResults = allCategories.filter(
     (c) => c.category.name.toLowerCase().includes(s), // || c.desc.toLowerCase().includes(s)
   );
 

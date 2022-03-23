@@ -11,7 +11,7 @@ mapboxgl.accessToken = "pk.eyJ1Ijoic3Vtb3RoZWNhdCIsImEiOiJjaWxocngyanYwMDY4dmprc
 
 /** Configure the map's properties and subscribe to its events. */
 export const initMap = (container) => {
-  let map = new Map({
+  const map = new Map({
     container,
     style: "mapbox://styles/mapbox/navigation-day-v1",
     center: { lat: 53, lng: -2 },
@@ -42,7 +42,7 @@ export const initMap = (container) => {
     });
 
   map.on("click", "msoa-features", (e) => {
-    let geoCode = e.features[0].properties["areacd"];
+    const geoCode = e.features[0].properties["areacd"];
     setGeoSearchParam({ geoType: "msoa", geoCode });
   });
 
@@ -50,9 +50,9 @@ export const initMap = (container) => {
 };
 
 const setMapStore = (map: mapboxgl.Map) => {
-  let b = map.getBounds();
-  let bbox = { east: b.getEast(), north: b.getNorth(), west: b.getWest(), south: b.getSouth() };
-  let zoom = map.getZoom();
+  const b = map.getBounds();
+  const bbox = { east: b.getEast(), north: b.getNorth(), west: b.getWest(), south: b.getSouth() };
+  const zoom = map.getZoom();
 
   mapStore.set({
     bbox,

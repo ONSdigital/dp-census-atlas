@@ -1,15 +1,22 @@
 <script>
+  import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
+  import { selectedGeographyStore } from "../stores/stores";
+
   export let topicSlug, search, currentURL, onClick;
   export let isMobile = false;
 
-  $: locationQueryParam = search ? search : "";
   $: currentLocationLink = search ? `${currentURL}${search}` : currentURL;
 </script>
 
 <div class={`ons-grid ons-grid--flex navigation-container ${isMobile ? "mobile" : ""}`}>
   <div class="ons-grid__col ons-col-auto ons-grid__col--flex divider">
     <div class="ons-pl-grid-col">
-      <a href={`/2021/${topicSlug}${locationQueryParam}`}>New category</a>
+      <a
+        href={buildHyperlink({
+          topic: topicSlug,
+          selectedGeography: $selectedGeographyStore,
+        })}>New category</a
+      >
     </div>
   </div>
   <div class="ons-grid__col ons-col-auto ons-grid__col--flex divider">
@@ -18,7 +25,9 @@
     </div>
   </div>
   <div class="ons-grid__col ons-col-auto ons-grid__col--flex">
-    <div class="ons-pl-grid-col"><a href="/">Back to start</a></div>
+    <div class="ons-pl-grid-col">
+      <a href={buildHyperlink({ selectedGeography: $selectedGeographyStore })}>Back to start</a>
+    </div>
   </div>
 </div>
 

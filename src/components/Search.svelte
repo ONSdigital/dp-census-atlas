@@ -20,6 +20,8 @@
   let invertTextColor = false;
 
   const handleOnClick = async (value: string) => {
+    renderError = false;
+    invertTextColor = false;
     /* TODO: Use below logic once new lookup file is ready */
     // if (value) {
     //   const {  geoCode, geoType } = value;

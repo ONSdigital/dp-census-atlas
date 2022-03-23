@@ -34,21 +34,17 @@
     return data.find((item) => item[lang] === value);
   };
 
+  /* TODO: Use this code in onClick and keyUp
+   autosuggestValue = findMeta(value);
+  */
   function onClick({ target }) {
-    autosuggestValue - target.innerText;
-    /* TODO: Use this code 
-    autosuggestValue = findMeta(target.innerText);
-    */
+    autosuggestValue = target.innerText;
   }
-
   function onKeyUp(e) {
     if (e.keyCode === 13) {
       const input = document.querySelector(".ons-autosuggest-input__option--focused");
       if (input) {
         autosuggestValue = input.innerText;
-        /* TODO: Use this code 
-        autosuggestValue = findMeta(input.innerText);
-        */
       }
     }
   }

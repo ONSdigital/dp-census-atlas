@@ -15,7 +15,10 @@ export const fetchGeographyData = async (args: { totalCode: string; categoryCode
     displayName = name;
   });
 
+  /* TODO: Grab geoType from endpoint */
+
   selectedGeographyStore.set({
+    geoType: "lad",
     displayName,
     geoCode: args.geoCode,
     variableData: parsedData,

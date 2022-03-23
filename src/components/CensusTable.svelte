@@ -1,5 +1,7 @@
 <script>
   import { page } from "$app/stores";
+  import { selectedGeographyStore } from "../stores/stores";
+  import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
   export let variableData, variable;
 </script>
 
@@ -20,8 +22,13 @@
       <tr class="ons-table__row" class:ons-table__row--overlay={category.slug === $page.params.category}>
         <td class="ons-table__cell " class:ons-table__cell--onSelect={category.slug === $page.params.category}>
           {#if category.slug !== $page.params.category}
-            <a href="/2021/{$page.params.topic}/{$page.params.variable}/defaul/{category.slug}{$page.url.search}"
-              >{category.name}</a
+            <a
+              href={buildHyperlink({
+                topic: $page.params.topic,
+                variable: $page.params.variable,
+                category: category.slug,
+                selectedGeography: $selectedGeographyStore,
+              })}>{category.name}</a
             >
           {:else}
             {category.name}

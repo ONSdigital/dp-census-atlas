@@ -1,6 +1,6 @@
 import type topics from "./data/content";
 
-export type GeoType = "ew" | "lad" | "msoa";
+export type GeoType = "ew" | "lad" | "msoa" | string;
 
 export type MapState = {
   bbox: Bbox;
@@ -26,6 +26,30 @@ export type SelectedGeographyData = {
   displayName: string;
   geoCode: string;
   variableData: { [catCode: string]: { count: number; total: number; percentage: number } };
+};
+
+export type GeographyLookupProps = {
+  meta: {
+    name: string;
+    code: string;
+    geotype: string;
+  };
+  geo_json: GeographyGeo;
+};
+
+type GeographyGeo = {
+  type: string;
+  features: GeographyFeatures[];
+};
+
+type GeographyFeatures = {
+  type: string;
+  id: string;
+  geometry: {
+    type: string;
+    coordinates: (number[][] | number[] | number)[];
+  };
+  properties?: any;
 };
 
 export type Bbox = {

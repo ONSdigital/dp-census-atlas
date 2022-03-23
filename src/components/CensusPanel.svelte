@@ -1,14 +1,21 @@
 <script lang="ts">
+  import { _ } from "svelte-i18n";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
   import Button from "./Button.svelte";
-  import SearchBox from "./SearchBox.svelte";
+  import Search from "./Search.svelte";
   import TopicList from "./TopicList.svelte";
 
   let suggestionsVisible = false;
 </script>
 
-<div class="tw-p-6 tw-pt-8 tw-bg-onspale">
-  <SearchBox name="search-census" />
+<div class="tw-p-6 tw-pt-8">
+  <Search
+    title={$_("search.title")}
+    label={$_("search.label")}
+    button={$_("search.button")}
+    error={$_("search.error")}
+  />
+  <hr />
   <div class="tw-pt-6">
     <div class="tw-flex tw-items-center tw-gap-1">
       <svg

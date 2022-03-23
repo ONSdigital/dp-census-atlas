@@ -3,23 +3,23 @@
   import { mapStore, selectedGeographyStore } from "../stores/stores";
   import { fetchVizData } from "../data/fetchVizData";
   import { fetchGeographyData } from "../data/fetchGeographyData";
-  import { getCodesForCategory, getSelectedGeography } from "../helpers/categoryHelper";
+  import { getCodesForCategory, getSelectedGeography } from "../helpers/categoryHelpers";
   import CensusTable from "./CensusTable.svelte";
   import NavigationComponent from "./NavigationComponent.svelte";
   import topics from "../data/content";
   import CategoryHeading from "../components/CategoryHeading.svelte";
 
   $: variableData = $selectedGeographyStore?.variableData;
-  $: selectedGeographyDisplayName = $selectedGeographyStore?.displayName;
   $: params = $page.params;
   $: topicSlug = params.topic;
   $: topic = topics.find((t) => t.slug === topicSlug);
   $: variableSlug = params.variable;
   $: variable = topic.variables.find((v) => v.slug === variableSlug);
-  $: categorySlug = params.category;
-  $: category = variable.categories.find((c) => c.slug === categorySlug);
   $: search = $page.url.search;
   $: selectedGeography = getSelectedGeography($page.url);
+  $: selectedGeographyDisplayName = $selectedGeographyStore?.displayName;
+  $: categorySlug = params.category;
+  $: category = variable.categories.find((c) => c.slug === categorySlug);
 
   $: if ($mapStore) {
     let codes = getCodesForCategory(params.topic, params.variable, params.classification, params.category);

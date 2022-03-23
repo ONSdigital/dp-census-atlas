@@ -1,6 +1,6 @@
 import type topics from "./data/content";
 
-export type GeoType = "lad" | "msoa";
+export type GeoType = "ew" | "lad" | "msoa";
 
 export type MapState = {
   bbox: Bbox;
@@ -22,6 +22,7 @@ export type VizData = {
 };
 
 export type SelectedGeographyData = {
+  geoType: GeoType;
   displayName: string;
   geoCode: string;
   variableData: { [catCode: string]: { count: number; total: number; percentage: number } };

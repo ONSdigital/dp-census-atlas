@@ -2,6 +2,7 @@
   import Badge from "./Badge.svelte";
   import SearchBoxItem from "./SearchBoxItem.svelte";
   import { highlightText, searchCensus } from "../helpers/searchCensusHelper";
+  import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
 
   export let name: string;
   let val = "";
@@ -43,7 +44,7 @@
       >
         <ul>
           {#each results.topics as t}
-            <SearchBoxItem link={`/2021/${t.slug}`}>
+            <SearchBoxItem link={buildHyperlink({ topic: t.slug })}>
               <div class="tw-flex tw-items-center tw-gap-2">
                 <Badge className="tw-bg-slate-500">TOPIC</Badge>
                 <div class="tw-text-xl">{@html highlightText(t.name, val)}</div>
@@ -54,7 +55,12 @@
             </SearchBoxItem>
           {/each}
           {#each results.variables as v}
-            <SearchBoxItem link={`/2021/${v.topic.slug}/${v.variable.slug}`}>
+            <SearchBoxItem
+              link={buildHyperlink({
+                topic: v.topic.slug,
+                variable: v.variable.slug,
+              })}
+            >
               <div class="tw-flex tw-items-center tw-gap-2">
                 <Badge className="tw-bg-slate-500">VARIABLE</Badge>
                 <div class="tw-text-xl">{@html highlightText(v.variable.name, val)}</div>
@@ -65,7 +71,13 @@
             </SearchBoxItem>
           {/each}
           {#each results.categories as c}
-            <SearchBoxItem link={`/2021/${c.topic.slug}/${c.variable.variable.slug}/default/${c.category.slug}`}>
+            <SearchBoxItem
+              link={buildHyperlink({
+                topic: c.topic.slug,
+                variable: c.variable.variable.slug,
+                category: c.category.slug,
+              })}
+            >
               <div class="tw-flex tw-items-center tw-gap-2">
                 <Badge className="tw-bg-slate-500">CATEGORY</Badge>
                 <div class="tw-text-xl">{@html highlightText(c.category.name, val)}</div>

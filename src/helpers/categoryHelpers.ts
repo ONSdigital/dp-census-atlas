@@ -1,4 +1,5 @@
 import topics from "../data/content";
+import { defaultGeography } from "./spatialHelper";
 
 export const getCodesForCategory = (
   topicSlug: string,
@@ -44,7 +45,7 @@ export function getSelectedGeography(pageUrl) {
   if (geoCode) {
     return { geoType, geoCode };
   } else {
-    return { geoType: "ew", geoCode: "K04000001" };
+    return { geoType: defaultGeography.meta.geotype.toLowerCase(), geoCode: defaultGeography.meta.code };
   }
 }
 

@@ -18,6 +18,8 @@ export const initMap = (container) => {
     zoom: 11,
   });
 
+  map.addControl(new mapboxgl.NavigationControl({ showCompass: false }));
+  
   map.on("load", () => {
     initMapLayers(map);
   });

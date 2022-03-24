@@ -1,5 +1,5 @@
-// "source": "Census Atlas Content - V4_3.csv",
-// "utc_created_at": "2022-03-18T09:24:07.066031"
+// "source": "Census Atlas Content - V4_3b.csv",
+// "utc_created_at": "2022-03-24T16:35:43.312624"
 
 export default [
   {
@@ -21,6 +21,8 @@ export default [
             desc: "People that do not have any qualifications",
             category_h_pt2: "of {category_unit} in {location} have",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}.",
           },
           {
             name: "Level 1 qualifications",
@@ -29,6 +31,8 @@ export default [
             desc: "Level 1 qualifications are GCSE (grades 3 to 1 or grades, D to G), level 1 award, certificate, diploma or NVQ , Welsh Baccalaureate Foundation Diploma.",
             category_h_pt2: "of {category_unit} in {location} have",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}.",
           },
           {
             name: "Level 2 qualifications",
@@ -37,6 +41,8 @@ export default [
             desc: "Level 2 qualifications are GCSE (grades 9 to 4 or grades A* to C), O level (grade A to C or pass), level 2 award, certificate or NVQ, Welsh Baccalaureate Diploma.",
             category_h_pt2: "of {category_unit} in {location} have",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}.",
           },
           {
             name: "Level 3 qualifications",
@@ -45,6 +51,8 @@ export default [
             desc: "Level 3 qualifications are A level, AS level, level 3 award, certificate, diploma or NVQ, Welsh Baccalaureate, International Baccalaureate.",
             category_h_pt2: "of {category_unit} in {location} have",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}.",
           },
           {
             name: "Level 4 qualifications and above",
@@ -53,6 +61,8 @@ export default [
             desc: "Level 4 qualifications and above are certificate of higher education (CertHE), higher national certificate (HNC), level 4 award, certificate, diploma or NVQ, diploma of higher education (DipHE), higher national diploma (HND), degree, master\u2019s degree or doctorate.",
             category_h_pt2: "of {category_unit} in {location} have",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}.",
           },
           {
             name: "Apprenticeship",
@@ -61,6 +71,8 @@ export default [
             desc: "People who have a Modern Apprenticeship.",
             category_h_pt2: "of {category_unit} in {location} have an",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}.",
           },
           {
             name: "Other qualifications",
@@ -69,6 +81,8 @@ export default [
             desc: "People that have other qualifications not covered by levels 1 to 4.",
             category_h_pt2: "of {category_unit} in {location} have",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have an {category_name}.",
           },
         ],
         total: {
@@ -97,7 +111,9 @@ export default [
             code: "QS302EW0002",
             desc: "This is someone\u2019s own opinion that best describes their overall state of health as very good most of the time.",
             category_h_pt2: "of {category_unit} in {location} have",
-            category_h_pt3: "{category_name} {variable_name} ",
+            category_h_pt3: "{category_name} health",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name} health.",
           },
           {
             name: "Good",
@@ -105,7 +121,9 @@ export default [
             code: "QS302EW0003",
             desc: "This is someone\u2019s own opinion that best describes their overall state of health as good most of the time.",
             category_h_pt2: "of {category_unit} in {location} have",
-            category_h_pt3: "{category_name} {variable_name} ",
+            category_h_pt3: "{category_name} health",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name} health.",
           },
           {
             name: "Fair",
@@ -113,7 +131,9 @@ export default [
             code: "QS302EW0004",
             desc: "This is someone\u2019s own opinion that best describes their overall state of health as fair most of the time.",
             category_h_pt2: "of {category_unit} in {location} have",
-            category_h_pt3: "{category_name} {variable_name} ",
+            category_h_pt3: "{category_name} health",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name} health.",
           },
           {
             name: "Bad",
@@ -121,7 +141,9 @@ export default [
             code: "QS302EW0005",
             desc: "This is someone\u2019s own opinion that best describes their overall state of health as bad most of the time.",
             category_h_pt2: "of {category_unit} in {location} have",
-            category_h_pt3: "{category_name} {variable_name} ",
+            category_h_pt3: "{category_name} health",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name} health.",
           },
           {
             name: "Very bad",
@@ -129,7 +151,9 @@ export default [
             code: "QS302EW0006",
             desc: "This is someone\u2019s own opinion that best describes their overall state of health as very bad most of the time.",
             category_h_pt2: "of {category_unit} in {location} have",
-            category_h_pt3: "{category_name} {variable_name} ",
+            category_h_pt3: "{category_name} health",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name} health.",
           },
         ],
         total: {
@@ -152,6 +176,8 @@ export default [
             desc: "Non-disabled people are able to carry out their day-to-day activities without being limited by a physical or mental health condition.",
             category_h_pt2: "of {category_unit} in {location} have",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) do not have a long-term health condition.",
           },
           {
             name: "Day-to-day activities limited a little",
@@ -160,6 +186,8 @@ export default [
             desc: "People with a long-term physical or mental health condition (lasting or expected to last 12 months or more) that limits their day-to-day activities a little.",
             category_h_pt2: "of {category_unit} in {location} have their",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) {category_unit} day to day activities are limited a little.",
           },
           {
             name: "Day-to-day activities limited a lot",
@@ -168,6 +196,8 @@ export default [
             desc: "People with a long-term physical or mental health condition (lasting or expected to last 12 months or more) that limits their day-to-day activities a lot.",
             category_h_pt2: "of {category_unit} in {location} have their",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) {category_unit} day to day activities are limited a lot.",
           },
         ],
         total: {
@@ -190,6 +220,8 @@ export default [
             desc: "People who do not provide unpaid help or support to anyone who has a long-term physical or mental health condition or illness, or problems related to old age.",
             category_h_pt2: "of {category_unit} in {location}",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) {category_name}.",
           },
           {
             name: "Provide 1 to 19 hours unpaid care a week",
@@ -198,6 +230,8 @@ export default [
             desc: "People who provide unpaid help or support to anyone who has a long-term physical or mental health condition or illness, or problems related to old age.",
             category_h_pt2: "of {category_unit} in {location}",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) {category_name}.",
           },
           {
             name: "Provide 20 to 49 hours unpaid care a week",
@@ -206,6 +240,8 @@ export default [
             desc: "People who provide unpaid help or support to anyone who has a long-term physical or mental health condition or illness, or problems related to old age.",
             category_h_pt2: "of {category_unit} in {location}",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) {category_name}.",
           },
           {
             name: "Provide 50 or more hours unpaid care a week",
@@ -214,6 +250,8 @@ export default [
             desc: "People who provide unpaid help or support to anyone who has a long-term physical or mental health condition or illness, or problems related to old age.",
             category_h_pt2: "of {category_unit} in {location}",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) {category_name}.",
           },
         ],
         total: {
@@ -237,44 +275,54 @@ export default [
         units: "Households",
         categories: [
           {
-            name: "1 person household",
-            slug: "1-person-household",
+            name: "1 person households",
+            slug: "1-person-households",
             code: "QS406EW0002",
             desc: "This is a home with 1 person living on their own.",
             category_h_pt2: "of {category_unit} in {location} are",
-            category_h_pt3: "{category_name}s",
+            category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
           },
           {
-            name: "2 person household",
-            slug: "2-person-household",
+            name: "2 person households",
+            slug: "2-person-households",
             code: "QS406EW0003",
             desc: "This is a home shared by 2 people.",
             category_h_pt2: "of {category_unit} in {location} are",
-            category_h_pt3: "{category_name}s",
+            category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
           },
           {
-            name: "3 person household",
-            slug: "3-person-household",
+            name: "3 person households",
+            slug: "3-person-households",
             code: "QS406EW0004",
             desc: "This is a home shared by 3 people.",
             category_h_pt2: "of {category_unit} in {location} are",
-            category_h_pt3: "{category_name}s",
+            category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
           },
           {
-            name: "4 person household",
-            slug: "4-person-household",
+            name: "4 person households",
+            slug: "4-person-households",
             code: "QS406EW0005",
             desc: "This is a home shared by 4 people.",
             category_h_pt2: "of {category_unit} in {location} are",
-            category_h_pt3: "{category_name}s",
+            category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
           },
           {
-            name: "5 person household",
-            slug: "5-person-household",
+            name: "5 person households",
+            slug: "5-person-households",
             code: "QS406EW0006",
             desc: "This is a home shared by 5 people.",
             category_h_pt2: "of {category_unit} in {location} are",
-            category_h_pt3: "{category_name}s",
+            category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
           },
         ],
         total: {
@@ -291,36 +339,44 @@ export default [
         units: "Households",
         categories: [
           {
-            name: "Whole house or bungalow",
-            slug: "whole-house-or-bungalow",
+            name: "Whole houses or bungalows",
+            slug: "whole-houses-or-bungalows",
             code: "QS402EW0003",
             desc: "This is a property that has not been split into separate flats or other accommodation.",
-            category_h_pt2: "of {category_unit} in {location} live in a",
+            category_h_pt2: "of {category_unit} in {location} live in",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) live in {category_name}.",
           },
           {
-            name: "Flat, maisonette or apartment",
-            slug: "flat-maisonette-or-apartment",
+            name: "Flats, maisonettes or apartments",
+            slug: "flats-maisonettes-or-apartments",
             code: "QS402EW0007",
             desc: "This could be in a purpose built block or tenement, part of a converted or shared house (including bedsits), part of another converted building.",
-            category_h_pt2: "of {category_unit} in {location} live in a",
+            category_h_pt2: "of {category_unit} in {location} live in",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) live in {category_name}.",
           },
           {
-            name: "Caravan or other temporary structure",
-            slug: "caravan-or-other-temporary-structure",
+            name: "Caravans or other temporary structures",
+            slug: "caravans-or-other-temporary-structures",
             code: "QS402EW0011",
             desc: "This could include camper vans, canal barges, converrted railway carriages,garden building or shed, houseboats, mobile homes, tents, trailers.",
-            category_h_pt2: "of {category_unit} in {location} live in a",
+            category_h_pt2: "of {category_unit} in {location} live in",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) live in {category_name}.",
           },
           {
-            name: "Shared home",
-            slug: "shared-home",
+            name: "Shared homes",
+            slug: "shared-homes",
             code: "QS402EW0012",
             desc: "A home is shared if the household spaces it contains are \u2018part of a converted or shared house or not all rooms are behind closed doors.",
-            category_h_pt2: "of {category_unit} in {location} live in a",
+            category_h_pt2: "of {category_unit} in {location} live in",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) live in {category_name}.",
           },
         ],
         total: {
@@ -343,6 +399,8 @@ export default [
             desc: "This type of home a home with no dedicated bedroom such as a bedsit or studio apartment.",
             category_h_pt2: "of {category_unit} in {location} have",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}.",
           },
           {
             name: "1 bedroom",
@@ -351,6 +409,8 @@ export default [
             desc: "This type of home has 1 dedicated bedroom.",
             category_h_pt2: "of {category_unit} in {location} have",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}.",
           },
           {
             name: "2 bedrooms",
@@ -359,6 +419,8 @@ export default [
             desc: "This type of home has 2 dedicated bedrooms.",
             category_h_pt2: "of {category_unit} in {location} have",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}.",
           },
           {
             name: "3 bedrooms",
@@ -367,6 +429,8 @@ export default [
             desc: "This type of home has 3 dedicated bedrooms.",
             category_h_pt2: "of {category_unit} in {location} have",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}.",
           },
           {
             name: "4 bedrooms",
@@ -375,6 +439,8 @@ export default [
             desc: "This type of home has 4 dedicated bedrooms.",
             category_h_pt2: "of {category_unit} in {location} have",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}.",
           },
           {
             name: "5 or more bedrooms",
@@ -383,6 +449,8 @@ export default [
             desc: "This type of home has 5 or more dedicated bedrooms.",
             category_h_pt2: "of {category_unit} in {location} have",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}.",
           },
         ],
         total: {
@@ -403,32 +471,40 @@ export default [
             slug: "owned",
             code: "QS403EW0002",
             desc: "This is a home where the home owner either wons the home outright, has a mortage or loan on the property.",
-            category_h_pt2: "of {category_unit} in {location} are",
-            category_h_pt3: "{category_name}",
+            category_h_pt2: "of {category_unit} in {location} live in",
+            category_h_pt3: "{category_name} homes",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) live in {category_name} homes.",
           },
           {
             name: "Shared ownership",
             slug: "shared-ownership",
             code: "QS403EW0005",
             desc: "This is a home that is part rented and part owned.",
-            category_h_pt2: "of {category_unit} in {location} have",
-            category_h_pt3: "{category_name}",
+            category_h_pt2: "of {category_unit} in {location} live in",
+            category_h_pt3: "{category_name} homes",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) live in {category_name} homes.",
           },
           {
-            name: "Social rent",
-            slug: "social-rent",
+            name: "Social rented",
+            slug: "social-rented",
             code: "QS403EW0006",
             desc: "This is a home where the tenants pays rent to a local authority or housing association.",
-            category_h_pt2: "of {category_unit} in {location} are",
-            category_h_pt3: "{category_name}ed",
+            category_h_pt2: "of {category_unit} in {location} live in",
+            category_h_pt3: "{category_name} homes",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) live in {category_name} homes.",
           },
           {
             name: "Private rented",
             slug: "private-rented",
             code: "QS403EW0009",
             desc: "This is a home where the tenants pay rent to a private landlord.",
-            category_h_pt2: "of {category_unit} in {location} are",
-            category_h_pt3: "{category_name}",
+            category_h_pt2: "of {category_unit} in {location} live in",
+            category_h_pt3: "{category_name} homes",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) live in {category_name} homes.",
           },
         ],
         total: {
@@ -451,6 +527,8 @@ export default [
             desc: "The people living in this home do not have a car or van available to use.",
             category_h_pt2: "of {category_unit} in {location} have",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}.",
           },
           {
             name: "1 car or van",
@@ -459,6 +537,8 @@ export default [
             desc: "This is the number of cars or vans people living in the same home own or use.",
             category_h_pt2: "of {category_unit} in {location} have",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) available.",
           },
           {
             name: "2 cars or vans",
@@ -467,6 +547,8 @@ export default [
             desc: "This is the number of cars or vans people living in the same home own or use.",
             category_h_pt2: "of {category_unit} in {location} have",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) available.",
           },
         ],
         total: {
@@ -486,9 +568,11 @@ export default [
             name: "No central heating",
             slug: "no-central-heating",
             code: "QS415EW0002",
-            desc: "This home does not have ",
+            desc: "This home does not have central heating.",
             category_h_pt2: "of {category_unit} in {location} have",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}.",
           },
           {
             name: "Gas",
@@ -496,7 +580,9 @@ export default [
             code: "QS415EW0003",
             desc: "This central heating system is fuelled by gas and heats more than one room in a building.",
             category_h_pt2: "of {category_unit} in {location} have",
-            category_h_pt3: "{category_name} {variable_name}",
+            category_h_pt3: "{category_name} central heating",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name} central heating.",
           },
           {
             name: "Electric (including storage heaters)",
@@ -504,7 +590,9 @@ export default [
             code: "QS415EW0004",
             desc: "This central heating system is fuelled by electricity (inlcuding storage heaters) and heats more than one room in a building.",
             category_h_pt2: "of {category_unit} in {location} have",
-            category_h_pt3: "{category_name} {variable_name}",
+            category_h_pt3: "{category_name} central heating",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name} central heating.",
           },
           {
             name: "Oil",
@@ -512,7 +600,9 @@ export default [
             code: "QS415EW0005",
             desc: "This central heating system is fuelled by oil heats more than one room in a building.",
             category_h_pt2: "of {category_unit} in {location} have",
-            category_h_pt3: "{category_name} {variable_name}",
+            category_h_pt3: "{category_name} central heating",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name} central heating.",
           },
           {
             name: "Solid fuel (for example wood, coal)",
@@ -520,7 +610,9 @@ export default [
             code: "QS415EW0006",
             desc: "This central heating system is fuelled by a solid fuel such as wood or coal and heats more than one room in a building.",
             category_h_pt2: "of {category_unit} in {location} have",
-            category_h_pt3: "{category_name} {variable_name}",
+            category_h_pt3: "{category_name} central heating",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name} central heating.",
           },
           {
             name: "Other central heating",
@@ -529,6 +621,8 @@ export default [
             desc: "This central heating system is not fuelled by a solid fuel, oil, gas or electricity. It heats more than one room in a building.",
             category_h_pt2: "of {category_unit} in {location} have",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}.",
           },
           {
             name: "Two or more types of central heating",
@@ -537,6 +631,8 @@ export default [
             desc: "This central heating system is has more than one fuel source and heats morte than one room in a building.",
             category_h_pt2: "of {category_unit} in {location} have",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}.",
           },
         ],
         total: {
@@ -559,6 +655,8 @@ export default [
             desc: "A place where people live alone or together",
             category_h_pt2: "of {category_unit} in {location}",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) {category_name}.",
           },
           {
             name: "Live in a communal establishment",
@@ -567,6 +665,8 @@ export default [
             desc: "A place that provides managed residential accommodation.",
             category_h_pt2: "of {category_unit} in {location}",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) {category_name}.",
           },
         ],
         total: {
@@ -596,6 +696,8 @@ export default [
             desc: "People who identified themselves as belonging to this ethnic group.",
             category_h_pt2: "of {category_unit} in {location} are",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are Asian/Asian British: Indian.",
           },
           {
             name: "Asian/Asian British: Pakistani",
@@ -604,6 +706,8 @@ export default [
             desc: "People who identified themselves as belonging to this ethnic group.",
             category_h_pt2: "of {category_unit} in {location} are",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are Asian/Asian British: Pakistani.",
           },
           {
             name: "Asian/Asian British: Bangladeshi",
@@ -612,6 +716,8 @@ export default [
             desc: "People who identified themselves as belonging to this ethnic group.",
             category_h_pt2: "of {category_unit} in {location} are",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are Asian/Asian British: Bangladeshi.",
           },
           {
             name: "Asian/Asian British: Chinese",
@@ -620,6 +726,8 @@ export default [
             desc: "People who identified themselves as belonging to this ethnic group.",
             category_h_pt2: "of {category_unit} in {location} are",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are Asian/Asian British: Chinese.",
           },
           {
             name: "Asian/Asian British: Other Asian",
@@ -628,6 +736,8 @@ export default [
             desc: "People who identified themselves as belonging to this ethnic group.",
             category_h_pt2: "of {category_unit} in {location} are",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are Asian/Asian British: Other Asian.",
           },
           {
             name: "Black/African/Caribbean/Black British: African",
@@ -636,6 +746,8 @@ export default [
             desc: "People who identified themselves as belonging to this ethnic group.",
             category_h_pt2: "of {category_unit} in {location} are",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are Black/African/Caribbean/Black British: African.",
           },
           {
             name: "Black/African/Caribbean/Black British: Caribbean",
@@ -644,6 +756,8 @@ export default [
             desc: "People who identified themselves as belonging to this ethnic group.",
             category_h_pt2: "of {category_unit} in {location} are",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are Black/African/Caribbean/Black British: Caribbean.",
           },
           {
             name: "Black/African/Caribbean/Black British: Other Black",
@@ -652,6 +766,8 @@ export default [
             desc: "People who identified themselves as belonging to this ethnic group.",
             category_h_pt2: "of {category_unit} in {location} are",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are Black/African/Caribbean/Black British: Other Black.",
           },
           {
             name: "Mixed/multiple ethnic group: White and Black Caribbean",
@@ -660,6 +776,8 @@ export default [
             desc: "People who identified themselves as belonging to this ethnic group.",
             category_h_pt2: "of {category_unit} in {location} are",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are Mixed/multiple ethnic group: White and Black Caribbean.",
           },
           {
             name: "Mixed/multiple ethnic group: White and Black African",
@@ -668,6 +786,8 @@ export default [
             desc: "People who identified themselves as belonging to this ethnic group.",
             category_h_pt2: "of {category_unit} in {location} are",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are Mixed/multiple ethnic group: White and Black African.",
           },
           {
             name: "Mixed/multiple ethnic group: White and Asian",
@@ -676,6 +796,8 @@ export default [
             desc: "People who identified themselves as belonging to this ethnic group.",
             category_h_pt2: "of {category_unit} in {location} are",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are Mixed/multiple ethnic group: White and Asian.",
           },
           {
             name: "Mixed/multiple ethnic group: Other Mixed",
@@ -684,6 +806,8 @@ export default [
             desc: "People who identified themselves as belonging to this ethnic group.",
             category_h_pt2: "of {category_unit} in {location} are",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are Mixed/multiple ethnic group: Other Mixed.",
           },
           {
             name: "White: English/Welsh/Scottish/Northern Irish/British",
@@ -692,6 +816,8 @@ export default [
             desc: "People who identified themselves as belonging to this ethnic group.",
             category_h_pt2: "of {category_unit} in {location} are",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are White: English/Welsh/Scottish/Northern Irish/British.",
           },
           {
             name: "White: Irish",
@@ -700,6 +826,8 @@ export default [
             desc: "People who identified themselves as belonging to this ethnic group.",
             category_h_pt2: "of {category_unit} in {location} are",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are White: Irish.",
           },
           {
             name: "White: Gypsy or Irish Traveller",
@@ -708,6 +836,8 @@ export default [
             desc: "People who identified themselves as belonging to this ethnic group.",
             category_h_pt2: "of {category_unit} in {location} are",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are White: Gypsy or Irish Traveller.",
           },
           {
             name: "White: Other White",
@@ -716,6 +846,8 @@ export default [
             desc: "People who identified themselves as belonging to this ethnic group.",
             category_h_pt2: "of {category_unit} in {location} are",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are White: Other White.",
           },
           {
             name: "Other ethnic group: Arab",
@@ -724,6 +856,8 @@ export default [
             desc: "People who identified themselves as belonging to this ethnic group.",
             category_h_pt2: "of {category_unit} in {location} are",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are other ethnic group: Arab.",
           },
           {
             name: "Other ethnic group: Any other ethnic group",
@@ -732,6 +866,8 @@ export default [
             desc: "People who identified themselves as belonging to this ethnic group.",
             category_h_pt2: "of {category_unit} in {location} are",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are other ethnic group: Any other ethnic group.",
           },
         ],
         total: {
@@ -754,6 +890,8 @@ export default [
             desc: "Households where all members are from the same ethnic group.",
             category_h_pt2: "of {category_unit} in {location} have",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}.",
           },
           {
             name: "Different ethnic groups between the generations only",
@@ -762,6 +900,8 @@ export default [
             desc: "Households where the members are not the the same between generations.",
             category_h_pt2: "of {category_unit} in {location} have",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}.",
           },
           {
             name: "Different ethnic groups within partnerships",
@@ -770,6 +910,8 @@ export default [
             desc: "Households where the members in a partnership are from different ethnic groups.",
             category_h_pt2: "of {category_unit} in {location} have",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}.",
           },
           {
             name: "Any other combination of multiple ethnic groups",
@@ -778,6 +920,8 @@ export default [
             desc: "Households where there are other combinations of multiple ethnic groups.",
             category_h_pt2: "of {category_unit} in {location} have",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have other combination of multiple ethnic groups.",
           },
         ],
         total: {
@@ -800,6 +944,8 @@ export default [
             desc: "People who they neither practice or identify with in any religion.",
             category_h_pt2: "of {category_unit} in {location} have",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}.",
           },
           {
             name: "Christian",
@@ -808,6 +954,8 @@ export default [
             desc: "This is someone who identify with as Christian whether they practice or have belief in it.",
             category_h_pt2: "of {category_unit} in {location} are",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
           },
           {
             name: "Buddhist",
@@ -816,6 +964,8 @@ export default [
             desc: "This is someone who identify with as Buddhist whether they practice or have belief in it.",
             category_h_pt2: "of {category_unit} in {location} are",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
           },
           {
             name: "Hindu",
@@ -824,6 +974,8 @@ export default [
             desc: "This is someone who identify with as Hindu whether they practice or have belief in it.",
             category_h_pt2: "of {category_unit} in {location} are",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
           },
           {
             name: "Jewish",
@@ -832,6 +984,8 @@ export default [
             desc: "This is someone who identify with as Jewish whether they practice or have belief in it.",
             category_h_pt2: "of {category_unit} in {location} are",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
           },
           {
             name: "Muslim",
@@ -840,6 +994,8 @@ export default [
             desc: "This is someone who identify with as Muslim whether they practice or have belief in it.",
             category_h_pt2: "of {category_unit} in {location} are",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
           },
           {
             name: "Sikh",
@@ -848,6 +1004,8 @@ export default [
             desc: "This is someone who identify with as Sikh whether they practice or have belief in it.",
             category_h_pt2: "of {category_unit} in {location} are",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
           },
           {
             name: "Other religion",
@@ -856,6 +1014,8 @@ export default [
             desc: "This is someone who identify with as another religion whether they practice or have belief in it.",
             category_h_pt2: "of {category_unit} in {location} have",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) do not follow one of the main religions.",
           },
           {
             name: "Not stated",
@@ -864,6 +1024,8 @@ export default [
             desc: "This is someone who has chosen to mot state their religion or beliefs.",
             category_h_pt2: "of {category_unit} in {location} have",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name} their religion.",
           },
         ],
         total: {
@@ -885,7 +1047,9 @@ export default [
             code: "QS203EW0003",
             desc: "People born in the UK and Northern Ireland.",
             category_h_pt2: "of {category_unit} in {location} were born in",
-            category_h_pt3: "{category_name}",
+            category_h_pt3: "The United Kingdom",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) were born in The United Kingdom.",
           },
           {
             name: "Europe, Ireland",
@@ -893,7 +1057,9 @@ export default [
             code: "QS203EW0014",
             desc: "People born in Ireland.",
             category_h_pt2: "of {category_unit} in {location} were born in",
-            category_h_pt3: "{category_name}",
+            category_h_pt3: "Ireland",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) were born in Ireland",
           },
           {
             name: "Other Europe",
@@ -901,7 +1067,9 @@ export default [
             code: "QS203EW0015",
             desc: "People born in Mainland Europe.",
             category_h_pt2: "of {category_unit} in {location} were born in",
-            category_h_pt3: "{category_name}",
+            category_h_pt3: "Europe (excluding The United Kingdom or Ireland).",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) were born in Europe (excluding The United Kingdom or Ireland).",
           },
           {
             name: "Africa",
@@ -909,7 +1077,9 @@ export default [
             code: "QS203EW0032",
             desc: "People born in Africa",
             category_h_pt2: "of {category_unit} in {location} were born in",
-            category_h_pt3: "{category_name}",
+            category_h_pt3: "Africa",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) were born in Africa.",
           },
           {
             name: "Middle East and Asia",
@@ -917,15 +1087,19 @@ export default [
             code: "QS203EW0045",
             desc: "People born in the Middle East and Asia",
             category_h_pt2: "of {category_unit} in {location} were born in",
-            category_h_pt3: "{category_name}",
+            category_h_pt3: "the Middle East or Asia",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) were born in the Middle East or Asia.",
           },
           {
             name: "The Americas and the Caribbean",
             slug: "the-americas-and-the-caribbean",
             code: "QS203EW0063",
-            desc: "People born in North and South America and te Caribbean.",
+            desc: "People born in North and South America and the Caribbean.",
             category_h_pt2: "of {category_unit} in {location} were born in",
-            category_h_pt3: "{category_name}",
+            category_h_pt3: "North and South America or the Caribbean.",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) were born in North and South America or the Caribbean.",
           },
         ],
         total: {
@@ -948,6 +1122,8 @@ export default [
             desc: "People that can understand spoken Welsh but cannot read or write it.",
             category_h_pt2: "of {category_unit} in {location}",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) {category_name}.",
           },
           {
             name: "Can speak, read or write Welsh",
@@ -956,6 +1132,8 @@ export default [
             desc: "People that can speak, read or write Welsh.",
             category_h_pt2: "of {category_unit} in {location}",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) {category_name}.",
           },
           {
             name: "No Welsh skills",
@@ -964,6 +1142,8 @@ export default [
             desc: "People that cannot read, write, speak Welsh.",
             category_h_pt2: "of {category_unit} in {location} have",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}.",
           },
         ],
         total: {
@@ -986,6 +1166,8 @@ export default [
             desc: "These households are not deprived in any of the recognised dimensions.",
             category_h_pt2: "of {category_unit} in {location} are",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
           },
           {
             name: "Deprived in 1 dimension",
@@ -994,6 +1176,8 @@ export default [
             desc: "These households are deprived in 1 of the 4 dimensions.",
             category_h_pt2: "of {category_unit} in {location} are",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
           },
           {
             name: "Deprived in 2 dimensions",
@@ -1002,6 +1186,8 @@ export default [
             desc: "These households are deprived in 2 of the 4 dimensions.",
             category_h_pt2: "of {category_unit} in {location} are",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
           },
           {
             name: "Deprived in 3 dimensions",
@@ -1010,6 +1196,8 @@ export default [
             desc: "These households are deprived in 3 of the 4 dimensions.",
             category_h_pt2: "of {category_unit} in {location} are",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
           },
           {
             name: "Deprived in 4 dimensions",
@@ -1018,6 +1206,8 @@ export default [
             desc: "These households are deprived in all 4 dimensions.",
             category_h_pt2: "of {category_unit} in {location} are",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
           },
         ],
         total: {
@@ -1047,6 +1237,8 @@ export default [
             desc: "Households where the members are single and have never been married or in a civil partnership.",
             category_h_pt2: "of {category_unit} in {location} are",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
           },
           {
             name: "Married",
@@ -1055,6 +1247,8 @@ export default [
             desc: "Households where the members are married.",
             category_h_pt2: "of {category_unit} in {location} are",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
           },
           {
             name: "In a registered civil partnership",
@@ -1063,6 +1257,8 @@ export default [
             desc: "Households where the members are in a registered civil partnership..",
             category_h_pt2: "of {category_unit} in {location} are",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
           },
           {
             name: "Separated (but still legally married)",
@@ -1071,6 +1267,8 @@ export default [
             desc: "Households where the members are separated but still legally married.",
             category_h_pt2: "of {category_unit} in {location} are",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
           },
           {
             name: "Divorced or civil partnership dissolved",
@@ -1079,6 +1277,8 @@ export default [
             desc: "Households where the members are either divorced or a civil partnership has been dissolved.",
             category_h_pt2: "of {category_unit} in {location} are",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
           },
           {
             name: "Widowed or surviving civil partnership partner",
@@ -1087,6 +1287,8 @@ export default [
             desc: "Households where the members widowed or a surviving civil partner.",
             category_h_pt2: "of {category_unit} in {location} are",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
           },
         ],
         total: {
@@ -1109,6 +1311,8 @@ export default [
             desc: "One person household is when someone lives on their own.",
             category_h_pt2: "of {category_unit} in {location} are",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
           },
           {
             name: "Single family households",
@@ -1117,6 +1321,8 @@ export default [
             desc: "Single family household is when one family live in the same home",
             category_h_pt2: "of {category_unit} in {location} are",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
           },
         ],
         total: {
@@ -1139,6 +1345,8 @@ export default [
             desc: "People born in the UK or have emigrated and have returned.",
             category_h_pt2: "of {category_unit} in {location} were",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) were {category_name}.",
           },
           {
             name: "Less than 2 years",
@@ -1147,6 +1355,8 @@ export default [
             desc: "This is the length of time someone who was not born in the UK has recently lived here.",
             category_h_pt2: "of {category_unit} in {location} have lived in the UK",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have lived in the UK {category_name}.",
           },
           {
             name: "2 to 4 years",
@@ -1155,6 +1365,8 @@ export default [
             desc: "This is the length of time someone who was not born in the UK has recently lived here.",
             category_h_pt2: "of {category_unit} in {location} have lived in the UK",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have lived in the UK {category_name}.",
           },
           {
             name: "5 to 9 years",
@@ -1163,6 +1375,8 @@ export default [
             desc: "This is the length of time someone who was not born in the UK has recently lived here.",
             category_h_pt2: "of {category_unit} in {location} have lived in the UK",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have lived in the UK {category_name}.",
           },
           {
             name: "10 years or more",
@@ -1171,6 +1385,8 @@ export default [
             desc: "This is the length of time someone who was not born in the UK has recently lived here.",
             category_h_pt2: "of {category_unit} in {location} have lived in the UK",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have lived in the UK {category_name}.",
           },
         ],
         total: {
@@ -1200,6 +1416,8 @@ export default [
             desc: "Anyone aged 16 years and over was economically active if they were employed, waiting to start work or looking for work at the time of the census.",
             category_h_pt2: "of {category_unit} in {location} are",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
           },
           {
             name: "Economically inactive",
@@ -1208,6 +1426,8 @@ export default [
             desc: "Economically inactive people did not have a job, had not looked for work or could not start work at the time of the census.",
             category_h_pt2: "of {category_unit} in {location} are",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
           },
         ],
         total: {
@@ -1230,6 +1450,8 @@ export default [
             desc: "These are people that work between 15 and 30 hours per week.",
             category_h_pt2: "of {category_unit} in {location} work",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) work {category_name}.",
           },
           {
             name: "Full-time",
@@ -1238,6 +1460,8 @@ export default [
             desc: "These are people that work a minimum of 31 hours per week.",
             category_h_pt2: "of {category_unit} in {location} work",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) work {category_name}.",
           },
         ],
         total: {
@@ -1260,6 +1484,8 @@ export default [
             desc: "People whose work activities or job title are a manager, director or senior official in their main job.",
             category_h_pt2: "of {category_unit} in {location} are",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) work as {category_name}.",
           },
           {
             name: "Professional occupations",
@@ -1268,6 +1494,8 @@ export default [
             desc: "People whose work activities or job title are a professional in their main job.",
             category_h_pt2: "of {category_unit} in {location} have",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) work in {category_name}.",
           },
           {
             name: "Associate professionals and technical occupations",
@@ -1276,6 +1504,8 @@ export default [
             desc: "People whose work activities at or job titles are associate or technical professionals in their main job.",
             category_h_pt2: "of {category_unit} in {location} have",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) work in {category_name}.",
           },
           {
             name: "Administrative and secretarial occupations",
@@ -1284,6 +1514,8 @@ export default [
             desc: "People whose work activities or job titles are administrative or secretarial in their main job.",
             category_h_pt2: "of {category_unit} in {location} have",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) work in {category_name}.",
           },
           {
             name: "Process, plant and machine operatives",
@@ -1292,6 +1524,8 @@ export default [
             desc: "People whose work activities or job titles are process, plant and machine operative in their main job.",
             category_h_pt2: "of {category_unit} in {location} are",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) work as {category_name}.",
           },
           {
             name: "Unskilled or semi-skilled occupations",
@@ -1300,6 +1534,8 @@ export default [
             desc: "People whose work activities or job titles are unskilled or semi-skilled in their main job.",
             category_h_pt2: "of {category_unit} in {location} have",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) work in {category_name}.",
           },
         ],
         total: {
@@ -1322,62 +1558,78 @@ export default [
             desc: "People that mainly work from home so do not travel to work for their main job.",
             category_h_pt2: "of {category_unit} in {location}",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) {category_name}.",
           },
           {
             name: "London Underground, metro, light rail, tram",
             slug: "london-underground-metro-light-rail-tram",
             code: "QS701EW0003",
             desc: "People that use London Underground (the tube), metro, light rail or tram for the longest, part by, distance of their journey to their main job.",
-            category_h_pt2: "of {category_unit} in {location} {variable_name} by",
+            category_h_pt2: "of {category_unit} in {location} travel to work by",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel to work by {category_name}.",
           },
           {
             name: "Train",
             slug: "train",
             code: "QS701EW0004",
             desc: "People that use a train for the longest part, by distance, of their journey to their main job.",
-            category_h_pt2: "of {category_unit} in {location} {variable_name} by",
+            category_h_pt2: "of {category_unit} in {location} travel to work by",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel to work by {category_name}.",
           },
           {
             name: "Bus, minibus or coach",
             slug: "bus-minibus-or-coach",
             code: "QS701EW0005",
             desc: "People that use a bus, minibus or coach for the longest part, by distance, of their journey to their main job.",
-            category_h_pt2: "of {category_unit} in {location} {variable_name} by",
+            category_h_pt2: "of {category_unit} in {location} travel to work by",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel to work by {category_name}.",
           },
           {
             name: "Motorcycle, scooter or moped",
             slug: "motorcycle-scooter-or-moped",
             code: "QS701EW0007",
             desc: "People that use a motorcycle, scooter or moped for the longest part, by distance, of their journey to their main job.",
-            category_h_pt2: "of {category_unit} in {location} {variable_name} by",
+            category_h_pt2: "of {category_unit} in {location} travel to work by",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel to work by {category_name}.",
           },
           {
             name: "Bicycle",
             slug: "bicycle",
             code: "QS701EW0010",
             desc: "People that use a bicyle for the longest part, by distance, of their journey to their main job.",
-            category_h_pt2: "of {category_unit} in {location} {variable_name} by",
+            category_h_pt2: "of {category_unit} in {location} travel to work by",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel to work by {category_name}.",
           },
           {
             name: "Walk",
             slug: "walk",
             code: "QS701EW0011",
             desc: "People that walk for the longest part, by distance, of their journey to their main job.",
-            category_h_pt2: "of {category_unit} in {location} {variable_name} by",
-            category_h_pt3: "{category_name}",
+            category_h_pt2: "of {category_unit} in {location}",
+            category_h_pt3: "walk to work",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) walk to work.",
           },
           {
             name: "Other",
             slug: "other",
             code: "QS701EW0012",
             desc: "People that use other means of transport for the longest part by distance of their journey to their main job.",
-            category_h_pt2: "of {category_unit} in {location} {variable_name} by",
-            category_h_pt3: "{category_name}",
+            category_h_pt2: "of {category_unit} in {location} travel to work by",
+            category_h_pt3: "alternative methods",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel to work using alternative methods of transport such as ferry.",
           },
         ],
         total: {
@@ -1400,6 +1652,8 @@ export default [
             desc: "People that travel less than 2 km (1.25 miles) to their main job.",
             category_h_pt2: "of {category_unit}s in {location} {variable_name} is",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel {category_name} to work.",
           },
           {
             name: "2km to less than 5km",
@@ -1408,6 +1662,8 @@ export default [
             desc: "People that travel between 2 km (1.25 miles) and 5 km (3.10 miles) to their main job.",
             category_h_pt2: "of {category_unit}s in {location} {variable_name} is",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel between 2 km (1.25 miles) and 5 km (3.10 miles) to their main job.",
           },
           {
             name: "5km to less than 10km",
@@ -1416,6 +1672,8 @@ export default [
             desc: "People that travel between 5 km (3.10 miles) and 10 km (6.21 miles) to their main job.",
             category_h_pt2: "of {category_unit}s in {location} {variable_name} is",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel between 5 km (3.10 miles) and 10 km (6.21 miles) to their main job.",
           },
           {
             name: "10km to less than 20km",
@@ -1424,6 +1682,8 @@ export default [
             desc: "People that travel between 10 km (6.21 miles) and 20 km (12.42 miles) to their main job.",
             category_h_pt2: "of {category_unit}s in {location} {variable_name} is",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel between 10 km (6.21 miles) and 20 km (12.42 miles) to their main job.",
           },
           {
             name: "20km to less than 30km",
@@ -1432,6 +1692,8 @@ export default [
             desc: "People that travel between 20 km (12.42 miles) and 30 km (18.64 miles) to their main job.",
             category_h_pt2: "of {category_unit}s in {location} {variable_name} is",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel between 20 km (12.42 miles) and 30 km (18.64 miles) to their main job.",
           },
           {
             name: "30km to less than 40km",
@@ -1440,6 +1702,8 @@ export default [
             desc: "People that travel between 30 km (18.64 miles) and 40 km (24.85 miles) to their main job.",
             category_h_pt2: "of {category_unit}s in {location} {variable_name} is",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel between 30 km (18.64 miles) and 40 km (24.85 miles) to their main job.",
           },
           {
             name: "40km to less than 60km",
@@ -1448,6 +1712,8 @@ export default [
             desc: "People that travel between 40 km (24.85 miles) and 60 km (37.28 miles) to their main job.",
             category_h_pt2: "of {category_unit}s in {location} {variable_name} is",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%)travel between 40 km (24.85 miles) and 60 km (37.28 miles) to their main job.",
           },
           {
             name: "60km and over",
@@ -1456,6 +1722,8 @@ export default [
             desc: "People that travel over 60 km (37.28 miles) to their main job.",
             category_h_pt2: "of {category_unit}s in {location} {variable_name} is",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel over 60 km (37.28 miles) to their main job.",
           },
           {
             name: "Mainly work from home",
@@ -1464,14 +1732,18 @@ export default [
             desc: "People that mainly work from home so do not travel to work for their main job.",
             category_h_pt2: "of {category_unit}s in {location} {variable_name}",
             category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) work from home.",
           },
           {
             name: "Other",
             slug: "other",
             code: "QS702EW0011",
             desc: "People that neither travel to work or work from home.",
-            category_h_pt2: "of {category_unit}s in {location} {variable_name} are",
-            category_h_pt3: "{category_desc}",
+            category_h_pt2: "of {category_unit}s in {location}",
+            category_h_pt3: "work offshore, outside of UK or at no fixed location",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) either have no fixed place of work, work on an offshore installation or work outside of the UK.",
           },
         ],
         total: {

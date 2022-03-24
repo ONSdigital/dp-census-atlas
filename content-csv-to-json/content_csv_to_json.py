@@ -85,6 +85,15 @@ def process_census_content(rows: list[dict], i: int) -> (dict, int):
             content["category_h_pt2"] = norm_template_taxonomy(row["Data percentage component 2"])
             content["category_h_pt3"] = norm_template_taxonomy(row["Data percentage component 3"])
 
+     # all non-totals categories should have a comparison component 2
+    if row["taxonomy"] in ("category", "sub-category") and not is_total_code(row["code"]):
+        if row["comparison component 2"] == "":	
+            raise Exception(
+                f"Content definition for category or sub-category did not include comparison component 2 strings! {row}"
+            )
+        else:
+            content["cat_location_summary_pt2"] = norm_template_taxonomy(row["comparison component 2"])
+
     # all variables should have units!
     if row["taxonomy"] == "variable":
         if row["units"] == "":

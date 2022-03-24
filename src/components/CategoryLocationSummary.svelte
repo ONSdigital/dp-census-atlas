@@ -1,7 +1,7 @@
 <script>
   import { areAllDefined } from "../util/genUtil";
   import { assertPluralised } from "../util/stringUtil";
-  import { formatTemplateString, comparePercentage, formatPercentage } from "../helpers/categoryHelpers";
+  import { formatTemplateString, comparePercentage } from "../helpers/categoryHelpers";
   import { defaultGeography } from "../helpers/spatialHelper";
   export let variableData;
   export let variable;

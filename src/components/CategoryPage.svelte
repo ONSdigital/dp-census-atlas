@@ -1,13 +1,14 @@
 <script lang="ts">
-  import { page } from "$app/stores";
-  import { mapStore, selectedGeographyStore } from "../stores/stores";
   import { fetchVizData } from "../data/fetchVizData";
   import { fetchGeographyData } from "../data/fetchGeographyData";
   import { getCodesForCategory, getSelectedGeography } from "../helpers/categoryHelpers";
+  import { mapStore, selectedGeographyStore } from "../stores/stores";
+  import { page } from "$app/stores";
+  import CategoryHeading from "../components/CategoryHeading.svelte";
+  import CategoryLocationSummary from "./CategoryLocationSummary.svelte";
   import CensusTable from "./CensusTable.svelte";
   import NavigationComponent from "./NavigationComponent.svelte";
   import topics from "../data/content";
-  import CategoryHeading from "../components/CategoryHeading.svelte";
 
   $: variableData = $selectedGeographyStore?.variableData;
   $: params = $page.params;
@@ -42,4 +43,7 @@
     console.log($page.url.pathname);
   }}
 />
+
+<CategoryLocationSummary />
+
 <CensusTable {variable} {variableData} />

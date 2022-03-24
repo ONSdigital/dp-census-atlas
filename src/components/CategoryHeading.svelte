@@ -6,6 +6,7 @@
   export let variable;
   export let category;
   export let location;
+  let args = false;
 
   const percentPlaceholder = "00.0";
 
@@ -22,26 +23,26 @@
     return templateStr;
   };
 
-  const areArgsDefined = () => {
-    return areAllDefined([variableData, variable, category, location]);
-  };
+  $: {
+    args = areAllDefined([variableData, variable, category, location]);
+  }
 </script>
 
 <div>
   <div>
     <span>
-      {areArgsDefined() ? formatPercentage(variableData[category.code]?.percentage) : percentPlaceholder}<span>%</span>
+      {args ? formatPercentage(variableData[category.code]?.percentage) : percentPlaceholder}<span>%</span>
     </span>
   </div>
   <div>
     <div>
       <span>
-        {areArgsDefined() ? formatCatHeadString(variable, category, location, category.category_h_pt2) : ""}
+        {args ? formatCatHeadString(variable, category, location, category.category_h_pt2) : ""}
       </span>
     </div>
     <div>
       <span>
-        {areArgsDefined() ? formatCatHeadString(variable, category, location, category.category_h_pt3) : ""}
+        {args ? formatCatHeadString(variable, category, location, category.category_h_pt3) : ""}
       </span>
     </div>
   </div>

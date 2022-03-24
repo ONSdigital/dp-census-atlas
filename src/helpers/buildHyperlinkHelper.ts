@@ -1,16 +1,32 @@
 import type { SelectedGeographyData } from "../types";
 import { areAllUndefined } from "../util/genUtil";
 
-export const buildHyperlink = (args: {
-  topic?: string;
-  variable?: string;
-  classification?: string;
-  category?: string;
+interface IndexPageParams {}
+interface TopicPageParams {
+  topic: string;
   selectedGeography?: SelectedGeographyData;
-}) => {
+}
+
+interface VariablePageParams {
+  topic: string;
+  variable: string;
+  selectedGeography?: SelectedGeographyData;
+}
+
+interface CategoryPageParams {
+  topic: string;
+  variable: string;
+  classification?: string;
+  category: string;
+  selectedGeography?: SelectedGeographyData;
+}
+
+type PageParams = IndexPageParams | TopicPageParams | VariablePageParams | CategoryPageParams;
+
+export const buildHyperlink = (args: PageParams) => {
   let url = "/";
   let paramsArr = [args.topic, args.variable, args.classification, args.category];
-  if (args.topic) {
+  if (args !== {}) {
     if (args.category && !args.classification) {
       paramsArr[2] = "default";
     }

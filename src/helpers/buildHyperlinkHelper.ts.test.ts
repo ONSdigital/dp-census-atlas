@@ -105,3 +105,7 @@ describe("category url", () => {
     expect(buildHyperlink(args)).toEqual("/2021/topic/variable/default/category");
   });
 });
+
+describe("edge cases", () => {
+    test("")
+})

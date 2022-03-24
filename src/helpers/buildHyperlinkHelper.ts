@@ -24,12 +24,15 @@ interface CategoryPageParams {
 type PageParams = IndexPageParams | TopicPageParams | VariablePageParams | CategoryPageParams;
 
 export const buildHyperlink = (args: PageParams) => {
+  let paramsArr = [];
   let url = "/";
-  let paramsArr = [args.topic, args.variable, args.classification, args.category];
-  if (args !== {}) {
-    if (args.category && !args.classification) {
-      paramsArr[2] = "default";
+  if (Object.keys(args).length === 0) {
+    return url;
+  } else {
+    if ("category" in args && !("classification" in args)) {
+      args.classification = "default";
     }
+    paramsArr = Object.values(args).filter((param) => typeof param === "string");
     url = "/2021";
     paramsArr.forEach((param) => {
       if (param) {
@@ -37,7 +40,7 @@ export const buildHyperlink = (args: PageParams) => {
       }
     });
   }
-  if (!args.selectedGeography || args.selectedGeography.geoType === "ew" || areAllUndefined(paramsArr)) {
+  if (!("selectedGeography" in args) || ("selectedGeography" in args && args.selectedGeography.geoType === "ew")) {
     return url;
   } else {
     return `${url}?${args.selectedGeography.geoType}=${args.selectedGeography.geoCode}`;

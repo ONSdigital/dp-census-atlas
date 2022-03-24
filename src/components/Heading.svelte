@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let serviceTitle: string,
+  export let serviceTitle: string | undefined,
     description: string | undefined = "";
 </script>
 

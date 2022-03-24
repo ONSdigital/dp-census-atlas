@@ -4,8 +4,6 @@
   import RightChevron from "./RightChevron.svelte";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
   import { selectedGeographyStore } from "../stores/stores";
-
-  $: url = $page.url;
 </script>
 
 <h2 class="tw-text-3xl tw-mb-5">Topics</h2>

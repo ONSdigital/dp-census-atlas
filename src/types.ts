@@ -19,13 +19,13 @@ export type VizData = {
     variable: Variable;
     category: Category;
   };
+  variableData?: { [catCode: string]: { count: number; total: number; percentage: number } };
 };
 
 export type SelectedGeographyData = {
   geoType: GeoType;
   displayName: string;
   geoCode: string;
-  variableData: { [catCode: string]: { count: number; total: number; percentage: number } };
 };
 
 export type GeographyLookupProps = {

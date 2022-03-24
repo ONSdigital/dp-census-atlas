@@ -2,6 +2,7 @@
   import ONSAutoSuggest from "./ons/ONSAutoSuggest.svelte";
   import ONSError from "./ons/ONSError.svelte";
 
+  import { selectedGeographyStore } from "../stores/stores";
   import { fetchGeographyLookup } from "../data/fetchGeographyData";
   import { setGeoSearchParam } from "../helpers/queryParamsHelper";
   import type { GeographyLookupProps } from "../types";
@@ -31,8 +32,13 @@
       fetchGeographyLookup(value, false)
         .then((response) => {
           const {
-            meta: { code, geotype },
+            meta: { name, code, geotype },
           }: GeographyLookupProps = JSON.parse(response);
+          selectedGeographyStore.set({
+            geoType: geotype.toLowerCase(),
+            displayName: name,
+            geoCode: code,
+          });
           setGeoSearchParam({ geoType: geotype.toLowerCase(), geoCode: code });
         })
         .catch(() => {

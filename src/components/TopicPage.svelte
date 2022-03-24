@@ -2,14 +2,36 @@
   import { page } from "$app/stores";
   import ONSAccordion from "./ons/ONSAccordion.svelte";
   import ONSAccordionPanel from "./ons/ONSAccordionPanel.svelte";
+  import Heading from "./Heading.svelte";
   import topics from "../data/content";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
   import { selectedGeographyStore } from "../stores/stores";
+  import { returnCorrectArticle, unCapitalizeFirstLetter } from "../util/stringUtil";
+  import { fetchGeographyLookup } from "../data/fetchGeographyData";
+  import { getSelectedGeography } from "../helpers/categoryHelpers";
+  import type { GeographyLookupProps } from "../types";
 
   $: topicSlug = $page.params.topic;
   $: topic = topics.find((t) => t.slug === topicSlug);
+  $: selectedGeographyDisplayName = $selectedGeographyStore?.displayName;
+  $: search = $page.url.search;
+  $: selectedGeography = getSelectedGeography($page.url);
+
+  $: if (search) {
+    fetchGeographyLookup(selectedGeography.geoCode).then((response) => {
+      const {
+        meta: { name, code, geotype },
+      }: GeographyLookupProps = JSON.parse(response);
+      $selectedGeographyStore = { displayName: name, geoCode: code, geoType: geotype.toLowerCase(), variableData: {} };
+    });
+  }
 </script>
 
+<Heading
+  serviceTitle={`Select ${returnCorrectArticle(topic.name)} ${unCapitalizeFirstLetter(
+    topic.name,
+  )} category to explore in ${selectedGeographyDisplayName ? selectedGeographyDisplayName : "England and Wales"}`}
+/>
 <div class="p-6 bg-onspale mb-6">
   <p>
     Change to a

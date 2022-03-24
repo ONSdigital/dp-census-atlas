@@ -30,7 +30,7 @@
 <div>
   <div>
     <span>
-      {areArgsDefined() ? formatPercentage(variableData[category.code].percentage) : percentPlaceholder}<span>%</span>
+      {areArgsDefined() ? formatPercentage(variableData[category.code]?.percentage) : percentPlaceholder}<span>%</span>
     </span>
   </div>
   <div>

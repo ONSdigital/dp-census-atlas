@@ -17,6 +17,7 @@
   $: search = $page.url.search;
   $: selectedGeographyDisplayName = $selectedGeographyStore?.displayName;
   $: selectedGeographyGeoCode = $selectedGeographyStore?.geoCode;
+  $: selectedGeographyGeoType = $selectedGeographyStore?.geoType;
   $: categorySlug = params.category;
   $: category = variable.categories.find((c) => c.slug === categorySlug);
 
@@ -24,7 +25,7 @@
     let codes = getCodesForCategory(params.topic, params.variable, params.classification, params.category);
     fetchVizData({
       ...codes,
-      geoType: $mapStore.geoType,
+      geoType: selectedGeographyGeoType,
       geoCode: selectedGeographyGeoCode,
       bbox: $mapStore.bbox,
     });

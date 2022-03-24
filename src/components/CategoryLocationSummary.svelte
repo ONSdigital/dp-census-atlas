@@ -1,15 +1,30 @@
 <script>
+  import { areAllDefined } from "../util/genUtil";
+  import { assertPluralised } from "../util/stringUtil";
+  import { formatTemplateString, comparePercentage, formatPercentage } from "../helpers/categoryHelpers";
+  export let variableData;
+  export let variable;
+  export let category;
+  export let location;
+
+  const areArgsDefined = () => {
+    return areAllDefined([location, category]);
+  };
 </script>
 
 <div>
-  <h2>One person households in Enfield</h2>
-  <p>A one person household is a home that has one person living on their own.</p>
+  <h2>{areArgsDefined() ? `${assertPluralised(category.name)} in ${location}` : ""}</h2>
+  <p>{areArgsDefined() ? category.desc : ""}</p>
   <p>
-    Out of 119,916 households in the local council of Enfield, Greater London, 25000 (5.2%) are one person households.
+    {areArgsDefined()
+      ? formatTemplateString(variable, variableData, category, location, category.cat_location_summary_pt2)
+      : ""}
   </p>
-  <p>Thats 10.8% lower than England and Wales.</p>
-  <h3>Household composition</h3>
-  <p>One person houeholds is part of Household composition</p>
+  <p>
+    {areArgsDefined() ? `Thats ${comparePercentage(variableData[category.code].percentage, 2)} England and Wales.` : ""}
+  </p>
+  <h3>{areArgsDefined() ? variable.name : ""}</h3>
+  <p>{areArgsDefined() ? `${assertPluralised(category.name)} is part of ${variable.name}` : ""}</p>
   <!-- Dead link included for UR. Will point at data dictionary entry for topic when the data dictionary exists -->
-  <a>Full definition for household composition</a>
+  <a>{areArgsDefined() ? `Full definition for ${variable.name}` : ""}</a>
 </div>

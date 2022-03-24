@@ -1,5 +1,6 @@
 import topics from "../data/content";
 import { defaultGeography } from "./spatialHelper";
+import { unCapitalizeFirstLetter } from "../util/stringUtil";
 
 export const getCodesForCategory = (
   topicSlug: string,
@@ -51,4 +52,30 @@ export function getSelectedGeography(pageUrl) {
 
 export const formatPercentage = (percentage: number) => {
   return (Math.round(percentage * 10) / 10).toFixed(1);
+};
+
+export const comparePercentage = (percentage1, percentage2) => {
+  const difference = percentage1 - percentage2;
+  if (difference > 0) {
+    return `${formatPercentage(difference)}% higher than`;
+  } else if (difference < 0) {
+    return `${formatPercentage(difference * -1)}% lower than`;
+  }
+  return "the same as";
+};
+
+export const formatTemplateString = (variable, variableData, category, location, templateStr) => {
+  const stringReplaceMap = {
+    "{variable_name}": unCapitalizeFirstLetter(variable.name),
+    "{category_name}": unCapitalizeFirstLetter(category.name),
+    "{category_unit}": unCapitalizeFirstLetter(variable.units),
+    "{category_total}": variableData[category.code].total.toLocaleString(),
+    "{category_value}": variableData[category.code].count.toLocaleString(),
+    "{category_percentage}": formatPercentage(variableData[category.code].percentage),
+    "{location}": location,
+  };
+  for (const [strToReplace, replacementStr] of Object.entries(stringReplaceMap)) {
+    templateStr = templateStr.replace(strToReplace, replacementStr);
+  }
+  return templateStr;
 };

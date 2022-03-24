@@ -44,6 +44,6 @@
   }}
 />
 
-<CategoryLocationSummary />
+<CategoryLocationSummary {variableData} {variable} {category} location={selectedGeographyDisplayName} />
 
 <CensusTable {variable} {variableData} />

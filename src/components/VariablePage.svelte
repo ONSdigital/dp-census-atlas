@@ -6,7 +6,6 @@
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
   import { selectedGeographyStore } from "../stores/stores";
 
-  $: url = $page.url;
   $: topicSlug = $page.params.topic;
   $: topic = topics.find((t) => t.slug === topicSlug);
   $: variableSlug = $page.params.variable;

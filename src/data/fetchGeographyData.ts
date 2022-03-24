@@ -8,8 +8,8 @@ const apiBaseUrl = `https://cep5lmkia0.execute-api.eu-west-1.amazonaws.com/dev`;
 export const fetchGeographyData = async (args: { totalCode: string; categoryCodes: string[]; geoCode: string }) => {
   const data = await fetchSelectedGeographyData(args);
   const parsedData = parseSelectedGeographyData(data, args.totalCode);
-  let displayName = "England and Wales";
-  let geoType = "lad";
+  let displayName = defaultGeography.meta.name;
+  let geoType = defaultGeography.meta.geotype;
   await fetchGeographyLookup(args.geoCode).then((response) => {
     const {
       meta: { name, geotype },

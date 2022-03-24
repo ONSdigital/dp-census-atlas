@@ -2,6 +2,7 @@
   import { areAllDefined } from "../util/genUtil";
   import { assertPluralised } from "../util/stringUtil";
   import { formatTemplateString, comparePercentage, formatPercentage } from "../helpers/categoryHelpers";
+  import { defaultGeography } from "../helpers/spatialHelper";
   export let variableData;
   export let variable;
   export let category;
@@ -9,6 +10,10 @@
 
   const areArgsDefined = () => {
     return areAllDefined([location, category]);
+  };
+
+  const isNotDefaultGeo = () => {
+    return location != defaultGeography.meta.name;
   };
 </script>
 
@@ -21,7 +26,9 @@
       : ""}
   </p>
   <p>
-    {areArgsDefined() ? `Thats ${comparePercentage(variableData[category.code].percentage, 2)} England and Wales.` : ""}
+    {areArgsDefined() && isNotDefaultGeo()
+      ? `Thats ${comparePercentage(variableData[category.code].percentage, 2)} ${defaultGeography.meta.name}.`
+      : ""}
   </p>
   <h3>{areArgsDefined() ? variable.name : ""}</h3>
   <p>{areArgsDefined() ? `${assertPluralised(category.name)} is part of ${variable.name}` : ""}</p>

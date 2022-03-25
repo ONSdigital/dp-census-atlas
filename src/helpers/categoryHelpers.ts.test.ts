@@ -98,4 +98,26 @@ describe("formatTemplateString", () => {
       formatTemplateString(testVariable, testVariableData, testCategory, testLocation, "{location} in a sentence"),
     ).toEqual("testLocation in a sentence");
   });
+  test("formats all in same string", () => {
+    expect(
+      formatTemplateString(
+        testVariable,
+        testVariableData,
+        testCategory,
+        testLocation,
+        "{variable_name}, {category_name}, {category_unit}, {category_total}, {category_value}, {location} in a sentence",
+      ),
+    ).toEqual("testVar, testCat, testUnits, 100,000, 10,000, testLocation in a sentence");
+  });
+  test("formats all occurences in string", () => {
+    expect(
+      formatTemplateString(
+        testVariable,
+        testVariableData,
+        testCategory,
+        testLocation,
+        "{variable_name}, {variable_name}, {category_name}, {category_name} in a sentence",
+      ),
+    ).toEqual("testVar, testVar, testCat, testCat in a sentence");
+  });
 });

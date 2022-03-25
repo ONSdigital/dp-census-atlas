@@ -8,6 +8,9 @@ const mockSelectedGeography = {
   variableData: {
     catCode: { count: 0, percentage: 0, total: 0 },
   },
+  defaultGeoVariableData: {
+    catCode: { count: 0, percentage: 0, total: 0 },
+  },
 } as SelectedGeographyData;
 
 test("returns correct url given all inputs", () => {

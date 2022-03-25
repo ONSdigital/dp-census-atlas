@@ -1,9 +1,9 @@
 <script lang="ts">
-  export let serviceTitle: string | undefined,
-    description: string | undefined = "";
+  export let serviceTitle: string;
+  export let description: string = "";
 </script>
 
-<header class="ons-header ons-header--hero" role="banner">
+<header class="ons-header ons-header--hero">
   <div class="ons-header__main {description ? 'ons-header__main--with-description' : ''}">
     <div class="ons-container">
       <div

@@ -1,10 +1,12 @@
-<script>
+<script lang="ts">
   import { areAllDefined } from "../util/genUtil";
   import { formatTemplateString, formatPercentage } from "../helpers/categoryHelpers";
-  export let variableData;
-  export let variable;
-  export let category;
-  export let location;
+  import type { Variable, Category } from "../types";
+
+  export let variableData: Object;
+  export let variable: Variable;
+  export let category: Category;
+  export let location: string;
 
   const percentPlaceholder = "00.0";
 

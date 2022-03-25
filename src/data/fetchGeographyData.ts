@@ -24,7 +24,8 @@ export const fetchGeographyData = async (args: { totalCode: string; categoryCode
     geoType,
     displayName,
     geoCode: args.geoCode,
-    variableData: parsedData,
+    variableData: parsedData.selectedGeographyData,
+    defaultGeoVariableData: parsedData.defaultGeographyData,
   });
   return Promise.resolve();
 };
@@ -42,20 +43,53 @@ export const fetchGeographyLookup = async (location: string, useCode = true) => 
 };
 
 const fetchSelectedGeographyData = async (args: { totalCode: string; categoryCodes: string[]; geoCode: string }) => {
-  const url = `${apiBaseUrl}/query/2011?cols=${args.totalCode},${args.categoryCodes.join(",")}&rows=${args.geoCode}`;
+  const url = `${apiBaseUrl}/query/2011?cols=geography_code,${args.totalCode},${args.categoryCodes.join(",")}&rows=${
+    args.geoCode
+  },${defaultGeography.meta.code}`;
   const response = await fetch(url);
   const csv = await response.text();
   return dsv.csvParse(csv);
 };
 
-const parseSelectedGeographyData = (rawData: dsv.DSVRowArray<string>, totalCode: string) => {
-  const total = parseInt(rawData[0][totalCode]);
-  const catCodesArr = rawData.columns.filter((catCode) => catCode != totalCode);
-  const selectedGeographyData = {};
+const parseSelectedGeographyData = (rawData: dsv.DSVRowArray, totalCode: string) => {
+  // parse selected geographyrow from default geography row (used for comparisons)
+  var selectedGeographyRow = rawData.find((row) => row.geography_code != defaultGeography.meta.code);
+  const defaultGeographyRow = rawData.find((row) => row.geography_code === defaultGeography.meta.code);
+
+  // now row found that is NOT equal to the defaultGeography code, we must be getting data for the defaultGeography ONLY
+  if (!selectedGeographyRow) {
+    selectedGeographyRow = defaultGeographyRow;
+  }
+
+  // get totals categories for both
+  const selectedTotal = parseInt(selectedGeographyRow[totalCode]);
+  const defaultTotal = parseInt(defaultGeographyRow[totalCode]);
+
+  // loop through non-totals categories and process
+  const catCodesArr = rawData.columns.filter((catCode) => ![totalCode, "geography_code"].includes(catCode));
+  console.log(catCodesArr);
+  const parsedData = {
+    selectedGeographyData: {},
+    defaultGeographyData: {},
+  };
   catCodesArr.forEach((categoryCode) => {
-    const count = parseInt(rawData[0][categoryCode]);
-    const percentage = (count / total) * 100;
-    selectedGeographyData[categoryCode] = { count: count, total: total, percentage: percentage };
+    // process selected geography
+    const selectedCount = parseInt(selectedGeographyRow[categoryCode]);
+    const selectedPercentage = (selectedCount / selectedTotal) * 100;
+    parsedData.selectedGeographyData[categoryCode] = {
+      count: selectedCount,
+      total: selectedTotal,
+      percentage: selectedPercentage,
+    };
+
+    // process default geography (used for comparisons)
+    const defaultCount = parseInt(defaultGeographyRow[categoryCode]);
+    const defaultPercentage = (defaultCount / defaultTotal) * 100;
+    parsedData.defaultGeographyData[categoryCode] = {
+      count: defaultCount,
+      total: defaultTotal,
+      percentage: defaultPercentage,
+    };
   });
-  return selectedGeographyData;
+  return parsedData;
 };

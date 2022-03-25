@@ -26,6 +26,7 @@ export type SelectedGeographyData = {
   displayName: string;
   geoCode: string;
   variableData: { [catCode: string]: { count: number; total: number; percentage: number } };
+  defaultGeoVariableData: { [catCode: string]: { count: number; total: number; percentage: number } };
 };
 
 export type GeographyLookupProps = {

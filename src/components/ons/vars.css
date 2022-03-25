@@ -28,11 +28,11 @@
   --color-flamingo-pink: #df0667;
 
   /* Grid */
-  --grid-bp-xxs: 300px;
-  --grid-bp-xs: 400px;
-  --grid-bp-s: 500px;
-  --grid-bp-m: 740px;
-  --grid-bp-l: 980px;
-  --grid-bp-xl: 1300px;
-  --grid-bp-xxl: 1600px;
+  @custom-media --grid-bp-xxs (min-width: 300px);
+  @custom-media --grid-bp-xs (min-width: 400px);
+  @custom-media --grid-bp-s (min-width: 500px);
+  @custom-media --grid-bp-m (min-width: 740px);
+  @custom-media --grid-bp-l (min-width: 980px);
+  @custom-media --grid-bp-xl (min-width: 1300px);
+  @custom-media --grid-bp-xxl (min-width: 1600px);
 }

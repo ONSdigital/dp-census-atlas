@@ -110,14 +110,14 @@
     color: var(--color-white);
   }
 
-  @media only screen and (var(--grid-bp-s)) ) {
+  @media (--grid-bp-s) {
     .ons-input--select:not(.ons-input--block):not(.ons-input-search):not([class*="input--w-"]),
     .ons-input--text:not(.ons-input--block):not(.ons-input-search):not([class*="input--w-"]) {
       width: 100%;
     }
   }
 
-  @media only screen and (var(--grid-bp-m)) ) {
+  @media (--grid-bp-m) {
     .ons-col-8\@m {
       max-width: 100%;
     }

@@ -34,7 +34,7 @@
   .ons-header__main {
     padding: 1rem 0;
   }
-  @media only screen and (min-width: var(--grid-bp-m)) {
+  @media (--grid-bp-m) {
     .ons-header__main {
       height: auto;
     }

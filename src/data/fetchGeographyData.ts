@@ -52,44 +52,33 @@ const fetchSelectedGeographyData = async (args: { totalCode: string; categoryCod
 };
 
 const parseSelectedGeographyData = (rawData: dsv.DSVRowArray, totalCode: string) => {
-  // parse selected geography row from default geography row (used for comparisons)
-  var selectedGeographyRow = rawData.find((row) => row.geography_code != defaultGeography.meta.code);
-  const defaultGeographyRow = rawData.find((row) => row.geography_code === defaultGeography.meta.code);
-
-  // if no row found that is NOT equal to the defaultGeography code, we must be getting data for the defaultGeography
-  // ONLY
-  if (!selectedGeographyRow) {
-    selectedGeographyRow = defaultGeographyRow;
-  }
-
-  // get totals categories for both
-  const selectedTotal = parseInt(selectedGeographyRow[totalCode]);
-  const defaultTotal = parseInt(defaultGeographyRow[totalCode]);
-
-  // loop through non-totals categories and process
-  const catCodesArr = rawData.columns.filter((catCode) => ![totalCode, "geography_code"].includes(catCode));
-  const parsedData = {
-    selectedGeographyData: {},
-    defaultGeographyData: {},
-  };
-  catCodesArr.forEach((categoryCode) => {
-    // process selected geography
-    const selectedCount = parseInt(selectedGeographyRow[categoryCode]);
-    const selectedPercentage = (selectedCount / selectedTotal) * 100;
-    parsedData.selectedGeographyData[categoryCode] = {
-      count: selectedCount,
-      total: selectedTotal,
-      percentage: selectedPercentage,
-    };
-
-    // process default geography (used for comparisons)
-    const defaultCount = parseInt(defaultGeographyRow[categoryCode]);
-    const defaultPercentage = (defaultCount / defaultTotal) * 100;
-    parsedData.defaultGeographyData[categoryCode] = {
-      count: defaultCount,
-      total: defaultTotal,
-      percentage: defaultPercentage,
-    };
+  // we're expecting one row for the selected geography and one row for the default geography, UNLESS the selected
+  // geography IS the default geography, in which case we will only get one row.
+  var selectedGeographyData;
+  var defaultGeographyData;
+  rawData.forEach((row) => {
+    var parsedRow = {};
+    for (const [catCode, catCount] of Object.entries(row)) {
+      if (![totalCode, "geography_code"].includes(catCode)) {
+        const count = parseInt(catCount);
+        const total = parseInt(row[totalCode]);
+        parsedRow[catCode] = {
+          count: count,
+          total: total,
+          percentage: (count / total) * 100,
+        };
+      }
+    }
+    // NB if the selected geography IS teh default geography, the selectedGeographyData object will remain empty...
+    if (row.geography_code === defaultGeography.meta.code) {
+      defaultGeographyData = parsedRow;
+    } else {
+      selectedGeographyData = parsedRow;
+    }
   });
-  return parsedData;
+  // ... and so substitute any empty selectedGeographyData objects for the default object before returning.
+  return {
+    selectedGeographyData: selectedGeographyData || defaultGeographyData,
+    defaultGeographyData: defaultGeographyData,
+  };
 };

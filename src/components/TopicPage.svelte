@@ -21,16 +21,12 @@
 <div class="p-6 bg-onspale mb-6">
   <p>
     Change to a
-    <a href={buildHyperlink({ selectedGeography: $selectedGeographyStore })}>new topic</a>
+    <a href="topics{$page.url.search}">new topic</a>
   </p>
 </div>
 
 <div class="ons-page__container ons-container">
   <main class="ons-page__main">
-    <h1 class="text-3xl mb-0.5">{topic.name}</h1>
-    <div class="mb-6">
-      {topic.desc}
-    </div>
     {#each topic.variables as variable}
       <ONSAccordion showAll={false}>
         <ONSAccordionPanel id={variable.slug} title={variable.name} description={variable.desc}>

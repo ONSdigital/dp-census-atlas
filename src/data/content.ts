@@ -18,7 +18,7 @@ export default [
             name: "No qualifications",
             slug: "no-qualifications",
             code: "QS501EW0002",
-            desc: "People that do not have any qualifications.",
+            desc: "People that do not have any qualifications",
             category_h_pt2: "of {category_unit} in {location} have",
             category_h_pt3: "{category_name}",
             cat_location_summary_pt2:
@@ -187,7 +187,7 @@ export default [
             category_h_pt2: "of {category_unit} in {location} have their",
             category_h_pt3: "{category_name}",
             cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) {category_unit} day to day activities are limited a little.",
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have their day to day activities are limited a little.",
           },
           {
             name: "Day-to-day activities limited a lot",
@@ -197,7 +197,7 @@ export default [
             category_h_pt2: "of {category_unit} in {location} have their",
             category_h_pt3: "{category_name}",
             cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) {category_unit} day to day activities are limited a lot.",
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have their day to day activities are limited a lot.",
           },
         ],
         total: {

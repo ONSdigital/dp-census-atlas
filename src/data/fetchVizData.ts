@@ -19,11 +19,13 @@ export const fetchVizData = async (args: {
     fetchBreaks(args),
     fetchSelectedGeographyData(args),
   ]);
+  const selectedGeographyData = parseSelectedGeographyData(table, args.totalCode);
   vizStore.set({
     breaks: breaks[args.categoryCode].map((breakpoint) => parseFloat(breakpoint) * 100),
     places: places.map((row) => parsePlaceData(row, args.totalCode, args.categoryCode)),
     params: getCategoryInfo(args.categoryCode),
-    variableData: parseSelectedGeographyData(table, args.totalCode),
+    variableData: selectedGeographyData.selectedGeoData,
+    defaultGeoVariableData: selectedGeographyData.defaultGeoData,
   });
   return Promise.resolve();
 };
@@ -60,22 +62,44 @@ const fetchBreaks = async (args: { totalCode: string; categoryCodes: string[]; g
 };
 
 const fetchSelectedGeographyData = async (args: { totalCode: string; categoryCodes: string[]; geoCode: string }) => {
-  const url = `${apiBaseUrl}/query/2011?cols=${args.totalCode},${args.categoryCodes.join(",")}&rows=${args.geoCode}`;
+  const url = `${apiBaseUrl}/query/2011?cols=geography_code,${args.totalCode},${args.categoryCodes.join(",")}&rows=${
+    args.geoCode
+  },${defaultGeography.meta.code}`;
   const response = await fetch(url);
   const csv = await response.text();
   return dsv.csvParse(csv);
 };
 
-const parseSelectedGeographyData = (rawData: dsv.DSVRowArray<string>, totalCode: string) => {
-  const total = parseInt(rawData[0][totalCode]);
-  const catCodesArr = rawData.columns.filter((catCode) => catCode != totalCode);
-  const selectedGeographyData = {};
-  catCodesArr.forEach((categoryCode) => {
-    const count = parseInt(rawData[0][categoryCode]);
-    const percentage = (count / total) * 100;
-    selectedGeographyData[categoryCode] = { count: count, total: total, percentage: percentage };
+const parseSelectedGeographyData = (rawData: dsv.DSVRowArray, totalCode: string) => {
+  // we're expecting one row for the selected geography and one row for the default geography, UNLESS the selected
+  // geography IS the default geography, in which case we will only get one row.
+  let selectedGeoData;
+  let defaultGeoData;
+  rawData.forEach((row) => {
+    const parsedRow = {};
+    for (const [catCode, catCount] of Object.entries(row)) {
+      if (![totalCode, "geography_code"].includes(catCode)) {
+        const count = parseInt(catCount);
+        const total = parseInt(row[totalCode]);
+        parsedRow[catCode] = {
+          count: count,
+          total: total,
+          percentage: (count / total) * 100,
+        };
+      }
+    }
+    // NB if the selected geography IS teh default geography, the selectedGeographyData object will remain empty...
+    if (row.geography_code === defaultGeography.meta.code) {
+      defaultGeoData = parsedRow;
+    } else {
+      selectedGeoData = parsedRow;
+    }
   });
-  return selectedGeographyData;
+  // ... and so substitute any empty selectedGeographyData objects for the default object before returning.
+  return {
+    selectedGeoData: selectedGeoData || defaultGeoData,
+    defaultGeoData: defaultGeoData,
+  };
 };
 
 const parsePlaceData = (row: dsv.DSVRowString<string>, totalCode: string, categoryCode: string) => {

@@ -21,6 +21,7 @@ export type VizData = {
     category: Category;
   };
   variableData?: VariableData;
+  defaultGeoVariableData?: VariableData;
 };
 
 export type SelectedGeographyData = {

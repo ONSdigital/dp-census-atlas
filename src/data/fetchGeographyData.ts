@@ -52,11 +52,12 @@ const fetchSelectedGeographyData = async (args: { totalCode: string; categoryCod
 };
 
 const parseSelectedGeographyData = (rawData: dsv.DSVRowArray, totalCode: string) => {
-  // parse selected geographyrow from default geography row (used for comparisons)
+  // parse selected geography row from default geography row (used for comparisons)
   var selectedGeographyRow = rawData.find((row) => row.geography_code != defaultGeography.meta.code);
   const defaultGeographyRow = rawData.find((row) => row.geography_code === defaultGeography.meta.code);
 
-  // now row found that is NOT equal to the defaultGeography code, we must be getting data for the defaultGeography ONLY
+  // if no row found that is NOT equal to the defaultGeography code, we must be getting data for the defaultGeography
+  // ONLY
   if (!selectedGeographyRow) {
     selectedGeographyRow = defaultGeographyRow;
   }

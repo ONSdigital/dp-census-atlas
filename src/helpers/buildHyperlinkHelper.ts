@@ -1,16 +1,13 @@
 import type { SelectedGeographyData } from "../types";
 import { areAllUndefined } from "../util/genUtil";
 
-interface IndexPageParams {}
 interface TopicPageParams {
   topic: string;
-  selectedGeography?: SelectedGeographyData;
 }
 
 interface VariablePageParams {
   topic: string;
   variable: string;
-  selectedGeography?: SelectedGeographyData;
 }
 
 interface CategoryPageParams {
@@ -18,31 +15,39 @@ interface CategoryPageParams {
   variable: string;
   classification?: string;
   category: string;
-  selectedGeography?: SelectedGeographyData;
 }
 
-type PageParams = IndexPageParams | TopicPageParams | VariablePageParams | CategoryPageParams;
+type UrlParams = TopicPageParams | VariablePageParams | CategoryPageParams;
 
-export const buildHyperlink = (args: PageParams) => {
-  let paramsArr = [];
-  let url = "/";
-  if (Object.keys(args).length === 0) {
-    return url;
+/**
+ * Function takes in current url and (optionally)
+ * topic / variable / classification / category in
+ * urlParams object
+ * and returns complete hyperlink string.
+ * Omitting the urlParams parameter will return a link
+ * to the index page.
+ */
+export const buildHyperlink = (url: URL, urlParams?: UrlParams) => {
+  if (!urlParams) {
+    return `/${url.search}`;
   } else {
-    if ("category" in args && !("classification" in args)) {
-      args.classification = "default";
+    let link = "/2021";
+    if ("topic" in urlParams) {
+      link = `${link}/${urlParams.topic}`;
     }
-    paramsArr = Object.values(args).filter((param) => typeof param === "string");
-    url = "/2021";
-    paramsArr.forEach((param) => {
-      if (param) {
-        url = `${url}/${param}`;
+    if ("variable" in urlParams) {
+      link = `${link}/${urlParams.variable}`;
+    }
+    if ("classification" in urlParams) {
+      link = `${link}/${urlParams.classification}`;
+    }
+    if ("category" in urlParams) {
+      if (!("classification" in urlParams)) {
+        link = `${link}/default/${urlParams.category}`;
+      } else {
+        link = `${link}/${urlParams.category}`;
       }
-    });
-  }
-  if (!("selectedGeography" in args) || ("selectedGeography" in args && args.selectedGeography.geoType === "ew")) {
-    return url;
-  } else {
-    return `${url}?${args.selectedGeography.geoType}=${args.selectedGeography.geoCode}`;
+    }
+    return `${link}${url.search}`;
   }
 };

@@ -1,5 +1,5 @@
 import mapboxgl, { Map } from "mapbox-gl";
-import { fromEvent } from "rxjs";
+import { fromEvent, merge } from "rxjs";
 import { delay, throttleTime } from "rxjs/operators";
 import type { GeoType } from "../types";
 import { vizStore, mapStore, selectedGeographyStore } from "../stores/stores";
@@ -51,7 +51,7 @@ export const initMap = (container) => {
       setMapStore(map);
     });
 
-  fromEvent(map, "moveend")
+  merge(fromEvent(map, "move"), fromEvent(map, "zoom"))
     .pipe(
       throttleTime(1000, undefined, { leading: false, trailing: true }), // don't discard the final movement
     )

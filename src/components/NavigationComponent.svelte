@@ -1,6 +1,6 @@
 <script>
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
-  import { selectedGeographyStore } from "../stores/stores";
+  import { page } from "$app/stores";
 
   export let topicSlug, search, currentURL, onClick;
   export let isMobile = false;
@@ -12,9 +12,8 @@
   <div class="ons-grid__col ons-col-auto ons-grid__col--flex divider">
     <div class="ons-pl-grid-col">
       <a
-        href={buildHyperlink({
+        href={buildHyperlink($page.url, {
           topic: topicSlug,
-          selectedGeography: $selectedGeographyStore,
         })}>New category</a
       >
     </div>
@@ -26,7 +25,7 @@
   </div>
   <div class="ons-grid__col ons-col-auto ons-grid__col--flex">
     <div class="ons-pl-grid-col">
-      <a href={buildHyperlink({ selectedGeography: $selectedGeographyStore })}>Back to start</a>
+      <a href={buildHyperlink($page.url)}>Back to start</a>
     </div>
   </div>
 </div>

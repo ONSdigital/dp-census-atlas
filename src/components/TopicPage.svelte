@@ -4,7 +4,6 @@
   import ONSAccordionPanel from "./ons/ONSAccordionPanel.svelte";
   import topics from "../data/content";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
-  import { selectedGeographyStore } from "../stores/stores";
 
   $: topicSlug = $page.params.topic;
   $: topic = topics.find((t) => t.slug === topicSlug);
@@ -13,7 +12,7 @@
 <div class="p-6 bg-onspale mb-6">
   <p>
     Change to a
-    <a href={buildHyperlink({ selectedGeography: $selectedGeographyStore })}>new topic</a>
+    <a href={buildHyperlink($page.url)}>new topic</a>
   </p>
 </div>
 
@@ -31,11 +30,10 @@
               <li class="ons-list__item">
                 <a
                   class="ons-list__link"
-                  href={buildHyperlink({
+                  href={buildHyperlink($page.url, {
                     topic: topic.slug,
                     variable: variable.slug,
                     category: category.slug,
-                    selectedGeography: $selectedGeographyStore,
                   })}
                 >
                   {category.name}

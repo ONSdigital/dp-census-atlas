@@ -68,7 +68,6 @@ const parseSelectedGeographyData = (rawData: dsv.DSVRowArray, totalCode: string)
 
   // loop through non-totals categories and process
   const catCodesArr = rawData.columns.filter((catCode) => ![totalCode, "geography_code"].includes(catCode));
-  console.log(catCodesArr);
   const parsedData = {
     selectedGeographyData: {},
     defaultGeographyData: {},

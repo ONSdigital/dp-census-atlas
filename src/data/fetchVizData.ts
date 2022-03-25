@@ -1,7 +1,7 @@
 import * as dsv from "d3-dsv"; // https://github.com/d3/d3/issues/3469
 import type { Bbox, GeoType } from "../types";
 import { vizStore } from "../stores/stores";
-import { getBboxString } from "../helpers/spatialHelper";
+import { defaultGeography, getBboxString } from "../helpers/spatialHelper";
 import { getCategoryInfo } from "../helpers/categoryHelpers";
 
 const apiBaseUrl = `https://cep5lmkia0.execute-api.eu-west-1.amazonaws.com/dev`;
@@ -38,6 +38,16 @@ const fetchQuery = async (args: { totalCode: string; categoryCode: string; geoTy
 
 const fetchBreaks = async (args: { totalCode: string; categoryCodes: string[]; geoType: GeoType }) => {
   const breakCount = 5;
+
+  // return -1s (so that all data will NOT be assigned a break, and the map will remain colorless) if its the default
+  // geography (england and wales)
+  if (args.geoType === defaultGeography.meta.geotype) {
+    const noBreaksBreaks = {};
+    for (const categoryCode of args.categoryCodes) {
+      noBreaksBreaks[categoryCode] = Array(breakCount).fill(-1);
+    }
+    return noBreaksBreaks;
+  }
 
   const url = `${apiBaseUrl}/ckmeans/2011?divide_by=${args.totalCode}&cat=${args.categoryCodes.join(",")}&geotype=${
     args.geoType

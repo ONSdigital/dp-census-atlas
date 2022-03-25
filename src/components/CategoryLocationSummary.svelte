@@ -7,6 +7,7 @@
   export let variable;
   export let category;
   export let location;
+  export let ewPercentage;
 
   const areArgsDefined = () => {
     return areAllDefined([location, category]);
@@ -27,7 +28,9 @@
   </p>
   <p>
     {areArgsDefined() && isNotDefaultGeo()
-      ? `Thats ${comparePercentage(variableData[category.code].percentage, 2)} ${defaultGeography.meta.name}.`
+      ? `Thats ${comparePercentage(variableData[category.code].percentage, ewPercentage)} ${
+          defaultGeography.meta.name
+        }.`
       : ""}
   </p>
   <h3>{areArgsDefined() ? variable.name : ""}</h3>

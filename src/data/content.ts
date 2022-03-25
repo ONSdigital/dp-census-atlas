@@ -18,7 +18,7 @@ export default [
             name: "No qualifications",
             slug: "no-qualifications",
             code: "QS501EW0002",
-            desc: "People that do not have any qualifications",
+            desc: "People that do not have any qualifications.",
             category_h_pt2: "of {category_unit} in {location} have",
             category_h_pt3: "{category_name}",
             cat_location_summary_pt2:

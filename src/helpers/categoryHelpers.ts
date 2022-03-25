@@ -1,5 +1,6 @@
 import topics from "../data/content";
 import { defaultGeography } from "./spatialHelper";
+import type { Variable, Category } from "../types";
 import { unCapitalizeFirstLetter } from "../util/stringUtil";
 
 export const getCodesForCategory = (
@@ -54,8 +55,9 @@ export const formatPercentage = (percentage: number) => {
   return (Math.round(percentage * 10) / 10).toFixed(1);
 };
 
-export const comparePercentage = (percentage1, percentage2) => {
+export const comparePercentage = (percentage1: number, percentage2: number) => {
   const difference = percentage1 - percentage2;
+  console.log(difference);
   if (difference > 0) {
     return `${formatPercentage(difference)}% higher than`;
   } else if (difference < 0) {
@@ -64,7 +66,13 @@ export const comparePercentage = (percentage1, percentage2) => {
   return "the same as";
 };
 
-export const formatTemplateString = (variable, variableData, category, location, templateStr) => {
+export const formatTemplateString = (
+  variable: Variable,
+  variableData: Object,
+  category: Category,
+  location: string,
+  templateStr: string,
+) => {
   const stringReplaceMap = {
     "{variable_name}": unCapitalizeFirstLetter(variable.name),
     "{category_name}": unCapitalizeFirstLetter(category.name),

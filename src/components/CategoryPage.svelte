@@ -44,6 +44,12 @@
   }}
 />
 
-<CategoryLocationSummary {variableData} {variable} {category} location={selectedGeographyDisplayName} />
+<CategoryLocationSummary
+  {variableData}
+  {variable}
+  {category}
+  location={selectedGeographyDisplayName}
+  ewPercentage={10}
+/>
 
 <CensusTable {variable} {variableData} />

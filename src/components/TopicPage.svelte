@@ -21,7 +21,7 @@
 <div class="p-6 bg-onspale mb-6">
   <p>
     Change to a
-    <a href="topics{$page.url.search}">new topic</a>
+    <a href={buildHyperlink($page.url, null, "topics")}>new topic</a>
   </p>
 </div>
 

@@ -1,6 +1,3 @@
-import type { SelectedGeographyData } from "../types";
-import { areAllUndefined } from "../util/genUtil";
-
 interface TopicPageParams {
   topic: string;
 }
@@ -22,16 +19,21 @@ type UrlParams = TopicPageParams | VariablePageParams | CategoryPageParams;
 /**
  * Function takes in current url and (optionally)
  * topic / variable / classification / category in
- * urlParams object
+ * urlParams object or (optionally) a static path e.g. "topics"
  * and returns complete hyperlink string.
  * Omitting the urlParams parameter will return a link
  * to the index page.
  */
-export const buildHyperlink = (url: URL, urlParams?: UrlParams) => {
-  if (!urlParams) {
+export const buildHyperlink = (url: URL, urlParams?: UrlParams, staticPath?: string) => {
+  if (!urlParams && !staticPath) {
     return `/${url.search}`;
+  } else if (staticPath) {
+    return `/2021/${staticPath}${url.search}`;
   } else {
     let link = "/2021";
+    if ("path" in urlParams) {
+      return `${link}/topics${url.search}`;
+    }
     if ("topic" in urlParams) {
       link = `${link}/${urlParams.topic}`;
     }

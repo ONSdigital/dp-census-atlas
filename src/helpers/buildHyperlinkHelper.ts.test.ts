@@ -81,3 +81,13 @@ describe("category url", () => {
     expect(buildHyperlink(ewSelectedUrl, urlParams)).toEqual("/2021/topic/variable/default/category");
   });
 });
+
+describe("topics url", () => {
+  const staticPath = "topics";
+  test("returns topics path with geography query param given an LAD in input url", () => {
+    expect(buildHyperlink(ladSelectedUrl, null, staticPath)).toEqual("/2021/topics?lad=ladCode");
+  });
+  test("returns topics url without geography query param given no geography in input url", () => {
+    expect(buildHyperlink(ewSelectedUrl, null, staticPath)).toEqual("/2021/topics");
+  });
+});

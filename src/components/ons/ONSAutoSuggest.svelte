@@ -105,21 +105,19 @@
   </div>
 </div>
 
-<style lang="scss">
-  @import "../../../node_modules/@ons/design-system/scss/vars/_index.scss";
-
+<style>
   .input--with-white-description {
-    color: $color-white;
+    color: var(--color-white);
   }
 
-  @media only screen and (min-width: map-get($grid-bp, s)) {
+  @media only screen and (var(--grid-bp-s)) ) {
     .ons-input--select:not(.ons-input--block):not(.ons-input-search):not([class*="input--w-"]),
     .ons-input--text:not(.ons-input--block):not(.ons-input-search):not([class*="input--w-"]) {
       width: 100%;
     }
   }
 
-  @media only screen and (min-width: map-get($grid-bp, m)) {
+  @media only screen and (var(--grid-bp-m)) ) {
     .ons-col-8\@m {
       max-width: 100%;
     }

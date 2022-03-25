@@ -6,13 +6,13 @@
   import type { Variable, Category } from "../types";
 
   export let variableData: Object;
+  export let defaultGeoVariableData: Object;
   export let variable: Variable;
   export let category: Category;
   export let location: string;
-  export let ewPercentage: number;
 
   const areArgsDefined = () => {
-    return areAllDefined([location, category]);
+    return areAllDefined([variableData, defaultGeoVariableData, variable, category, location]);
   };
 
   const isNotDefaultGeo = () => {
@@ -30,9 +30,10 @@
   </p>
   <p>
     {areArgsDefined() && isNotDefaultGeo()
-      ? `Thats ${comparePercentage(variableData[category.code].percentage, ewPercentage)} ${
-          defaultGeography.meta.name
-        }.`
+      ? `Thats ${comparePercentage(
+          variableData[category.code].percentage,
+          defaultGeoVariableData[category.code].percentage,
+        )} ${defaultGeography.meta.name}.`
       : ""}
   </p>
   <h3>{areArgsDefined() ? variable.name : ""}</h3>

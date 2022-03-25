@@ -11,6 +11,7 @@
   import topics from "../data/content";
 
   $: variableData = $selectedGeographyStore?.variableData;
+  $: defaultGeoVariableData = $selectedGeographyStore?.defaultGeoVariableData;
   $: params = $page.params;
   $: topicSlug = params.topic;
   $: topic = topics.find((t) => t.slug === topicSlug);
@@ -46,6 +47,7 @@
 
 <CategoryLocationSummary
   {variableData}
+  {defaultGeoVariableData}
   {variable}
   {category}
   location={selectedGeographyDisplayName}

@@ -83,7 +83,7 @@ export const formatTemplateString = (
     "{location}": location,
   };
   for (const [strToReplace, replacementStr] of Object.entries(stringReplaceMap)) {
-    templateStr = templateStr.replace(strToReplace, replacementStr);
+    templateStr = templateStr.replace(new RegExp(strToReplace, "g"), replacementStr);
   }
   return templateStr;
 };

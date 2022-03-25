@@ -1,8 +1,8 @@
 import mapboxgl, { Map } from "mapbox-gl";
-import { fromEvent } from "rxjs";
+import { fromEvent, merge } from "rxjs";
 import { delay, throttleTime } from "rxjs/operators";
 import type { GeoType } from "../types";
-import { vizStore, mapStore } from "../stores/stores";
+import { vizStore, mapStore, selectedGeographyStore } from "../stores/stores";
 import { setGeoSearchParam } from "../helpers/queryParamsHelper";
 import { initMapLayers } from "./initMapLayers";
 import { renderMapViz } from "./renderMapViz";
@@ -19,7 +19,7 @@ export const initMap = (container) => {
   });
 
   map.addControl(new mapboxgl.NavigationControl({ showCompass: false }));
-  
+
   map.on("load", () => {
     initMapLayers(map);
   });
@@ -35,7 +35,7 @@ export const initMap = (container) => {
       setMapStore(map);
     });
 
-  fromEvent(map, "moveend")
+  merge(fromEvent(map, "move"), fromEvent(map, "zoom"))
     .pipe(
       throttleTime(1000, undefined, { leading: false, trailing: true }), // don't discard the final movement
     )
@@ -45,6 +45,12 @@ export const initMap = (container) => {
 
   map.on("click", "msoa-features", (e) => {
     const geoCode = e.features[0].properties["areacd"];
+    const displayName = e.features[0].properties.hclnm;
+    selectedGeographyStore.set({
+      geoType: "msoa",
+      displayName,
+      geoCode,
+    });
     setGeoSearchParam({ geoType: "msoa", geoCode });
   });
 

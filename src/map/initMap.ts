@@ -18,6 +18,22 @@ export const initMap = (container) => {
     zoom: 11,
   });
 
+  selectedGeographyStore.subscribe((meta) => {
+    if (meta.bbox) {
+      const { bbox } = meta;
+      const bounds = new mapboxgl.LngLatBounds([
+        [bbox[0], bbox[1]],
+        [bbox[2], bbox[3]],
+      ]);
+      if (JSON.stringify(bounds) !== JSON.stringify(map.getBounds())) {
+        map.flyTo({
+          center: bounds.getCenter(),
+          zoom: 11,
+        });
+      }
+    }
+  });
+
   map.addControl(new mapboxgl.NavigationControl({ showCompass: false }));
 
   map.on("load", () => {
@@ -46,6 +62,10 @@ export const initMap = (container) => {
   map.on("click", "msoa-features", (e) => {
     const geoCode = e.features[0].properties["areacd"];
     const displayName = e.features[0].properties.hclnm;
+    map.flyTo({
+      center: e.lngLat,
+    });
+
     selectedGeographyStore.set({
       geoType: "msoa",
       displayName,

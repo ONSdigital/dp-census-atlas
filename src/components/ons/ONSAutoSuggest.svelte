@@ -1,6 +1,6 @@
 <script>
   import { onMount } from "svelte";
-  export let labelText, id, autosuggestValue, autosuggestData, header, invertTextColor, renderError;
+  export let labelText, id, autosuggestValue, autosuggestMeta, autosuggestData, header, invertTextColor, renderError;
   let n;
   let inverted = invertTextColor ? "input--with-white-description" : "";
   let inputContainer = header || renderError ? "header-input-container" : "non-header-input-container";
@@ -24,8 +24,6 @@
   /* WARNING: Custom logic not from the ONS component */
   /* Used so that we can get extra information from the autoSuggest file and pass back */
   /* autoSuggest find the label key based on html Lang */
-
-  /* TODO: Use following code when lookup file is in */
   const findMeta = (value) => {
     const {
       lang,
@@ -34,17 +32,16 @@
     return data.find((item) => item[lang] === value);
   };
 
-  /* TODO: Use this code in onClick and keyUp
-   autosuggestValue = findMeta(value);
-  */
   function onClick({ target }) {
     autosuggestValue = target.innerText;
+    autosuggestMeta = findMeta(target.innerText);
   }
   function onKeyUp(e) {
     if (e.keyCode === 13) {
       const input = document.querySelector(".ons-autosuggest-input__option--focused");
       if (input) {
         autosuggestValue = input.innerText;
+        autosuggestMeta = findMeta(input.innerText);
       }
     }
   }

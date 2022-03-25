@@ -1,13 +1,15 @@
-<script>
+<script lang="ts">
   import { areAllDefined } from "../util/genUtil";
   import { assertPluralised } from "../util/stringUtil";
   import { formatTemplateString, comparePercentage } from "../helpers/categoryHelpers";
   import { defaultGeography } from "../helpers/spatialHelper";
-  export let variableData;
-  export let variable;
-  export let category;
-  export let location;
-  export let ewPercentage;
+  import type { Variable, Category } from "../types";
+
+  export let variableData: Object;
+  export let variable: Variable;
+  export let category: Category;
+  export let location: string;
+  export let ewPercentage: number;
 
   const areArgsDefined = () => {
     return areAllDefined([location, category]);

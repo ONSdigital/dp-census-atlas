@@ -66,9 +66,9 @@ export const formatTemplateString = (
     "{variable_name}": unCapitalizeFirstLetter(variable.name),
     "{category_name}": unCapitalizeFirstLetter(category.name),
     "{category_unit}": unCapitalizeFirstLetter(variable.units),
-    "{category_total}": variableData[category.code].total.toLocaleString(),
-    "{category_value}": variableData[category.code].count.toLocaleString(),
-    "{category_percentage}": formatPercentage(variableData[category.code].percentage),
+    "{category_total}": variableData[category.code]?.total.toLocaleString(),
+    "{category_value}": variableData[category.code]?.count.toLocaleString(),
+    "{category_percentage}": formatPercentage(variableData[category.code]?.percentage),
     "{location}": location,
   };
   Object.entries(stringReplaceMap).forEach(([strToReplace, replacementStr]) => {

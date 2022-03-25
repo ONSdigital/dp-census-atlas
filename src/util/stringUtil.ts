@@ -13,3 +13,7 @@ export function returnCorrectArticle(string: string) {
     return "a";
   }
 }
+
+export function assertPluralised(string) {
+  return string.slice(-1) === "s" ? string : `${string}s`;
+}

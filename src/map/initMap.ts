@@ -7,6 +7,7 @@ import { handleLocationSelect } from "../helpers/locationSelectHelper";
 import { englandAndWales } from "../helpers/spatialHelper";
 import { initMapLayers } from "./initMapLayers";
 import { renderMapViz } from "./renderMapViz";
+import { layers } from "./layers";
 
 mapboxgl.accessToken = "pk.eyJ1Ijoic3Vtb3RoZWNhdCIsImEiOiJjaWxocngyanYwMDY4dmprcTg4ODN2Z3B2In0.CockfZdHAzqOfsbw8VcQyQ";
 
@@ -80,5 +81,7 @@ const setMapStore = (map: mapboxgl.Map) => {
 
 const getGeoTypeForCurrentZoom = (zoom: number): GeoType => {
   // todo
-  return "msoa";
+  // return "msoa";
+  if (zoom >= 9) return "msoa";
+  else return "lad";
 };

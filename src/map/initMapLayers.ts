@@ -1,7 +1,46 @@
-// import { fromEvent, bindCallback } from "rxjs";
-// import { throttleTime } from "rxjs/operators";
-
 export const initMapLayers = (map) => {
+  map.addSource("lad", {
+    type: "vector",
+    tiles: ["https://cdn.jsdelivr.net/gh/VivianAllen/maptiles/authorities-2011/v4/{z}/{x}/{y}.pbf"],
+    promoteId: "lad11cd", // tells mapbox which property to use as the feature id
+  });
+
+  map.addLayer({
+    id: "lad-features",
+    minzoom: 6,
+    source: "lad",
+    "source-layer": "lad",
+    type: "fill",
+    paint: {
+      "fill-color": [
+        "case",
+        ["!=", ["feature-state", "colour"], null],
+        ["feature-state", "colour"],
+        "rgba(255, 255, 255, 0)",
+      ],
+    },
+  });
+
+  map.addLayer({
+    id: "lad-outlines",
+    type: "line",
+    source: "lad",
+    "source-layer": "lad",
+    minzoom: 6,
+    paint: {
+      "line-color": "black",
+      // "line-width": 1,
+      "line-width": [
+        "case",
+        ["==", ["feature-state", "selected"], true],
+        5,
+        ["==", ["feature-state", "hovered"], true],
+        2,
+        1,
+      ],
+    },
+  });
+
   map.addSource("msoa", {
     type: "vector",
     tiles: ["https://cdn.ons.gov.uk/maptiles/administrative/msoa/v2/boundaries/{z}/{x}/{y}.pbf"],

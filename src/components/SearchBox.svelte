@@ -3,6 +3,7 @@
   import SearchBoxItem from "./SearchBoxItem.svelte";
   import { highlightText, searchCensus } from "../helpers/searchCensusHelper";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
+  import { page } from "$app/stores";
 
   export let name: string;
   let val = "";
@@ -44,7 +45,7 @@
       >
         <ul>
           {#each results.topics as t}
-            <SearchBoxItem link={buildHyperlink({ topic: t.slug })}>
+            <SearchBoxItem link={buildHyperlink($page.url, { topic: t.slug })}>
               <div class="tw-flex tw-items-center tw-gap-2">
                 <Badge className="tw-bg-slate-500">TOPIC</Badge>
                 <div class="tw-text-xl">{@html highlightText(t.name, val)}</div>
@@ -56,7 +57,7 @@
           {/each}
           {#each results.variables as v}
             <SearchBoxItem
-              link={buildHyperlink({
+              link={buildHyperlink($page.url, {
                 topic: v.topic.slug,
                 variable: v.variable.slug,
               })}
@@ -72,7 +73,7 @@
           {/each}
           {#each results.categories as c}
             <SearchBoxItem
-              link={buildHyperlink({
+              link={buildHyperlink($page.url, {
                 topic: c.topic.slug,
                 variable: c.variable.variable.slug,
                 category: c.category.slug,

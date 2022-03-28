@@ -26,6 +26,16 @@ export type SelectedGeographyData = {
   geoType: GeoType;
   displayName: string;
   geoCode: string;
+  bbox?: [number, number, number, number];
+};
+
+export type GeographyAutoSuggestProps = {
+  bbox: number[];
+  cy: string;
+  en: string;
+  geoCode: string;
+  geoType: string;
+  sanitisedText?: string;
 };
 
 export type GeographyLookupProps = {

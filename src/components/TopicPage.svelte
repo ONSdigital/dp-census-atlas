@@ -21,7 +21,7 @@
 <div class="p-6 bg-onspale mb-6">
   <p>
     Change to a
-    <a href="topics{$page.url.search}">new topic</a>
+    <a href={buildHyperlink($page.url, null, "topics")}>new topic</a>
   </p>
 </div>
 
@@ -35,11 +35,10 @@
               <li class="ons-list__item">
                 <a
                   class="ons-list__link"
-                  href={buildHyperlink({
+                  href={buildHyperlink($page.url, {
                     topic: topic.slug,
                     variable: variable.slug,
                     category: category.slug,
-                    selectedGeography: $selectedGeographyStore,
                   })}
                 >
                   {category.name}

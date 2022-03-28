@@ -4,6 +4,7 @@
   import Button from "./Button.svelte";
   import Search from "./Search.svelte";
   import TopicList from "./TopicList.svelte";
+  import { page } from "$app/stores";
 
   let suggestionsVisible = false;
 </script>
@@ -39,7 +40,7 @@
           <li class="tw-pb-1">
             Which areas have the
             <a
-              href={buildHyperlink({
+              href={buildHyperlink($page.url, {
                 topic: "housing",
                 variable: "owned-or-renting",
                 category: "shared-ownership",
@@ -52,7 +53,7 @@
           <li class="tw-pb-1">
             Which areas of the country are the
             <a
-              href={buildHyperlink({
+              href={buildHyperlink($page.url, {
                 topic: "health",
                 variable: "general-health",
                 category: "very-good",
@@ -65,7 +66,7 @@
           <li class="tw-pb-1">
             Where are the
             <a
-              href={buildHyperlink({
+              href={buildHyperlink($page.url, {
                 topic: "housing",
                 variable: "heating",
                 category: "no-central-heating",

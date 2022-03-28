@@ -1,6 +1,5 @@
 <script>
   import { page } from "$app/stores";
-  import { selectedGeographyStore } from "../stores/stores";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
   export let variableData, variable;
 </script>
@@ -23,11 +22,10 @@
         <td class="ons-table__cell " class:ons-table__cell--onSelect={category.slug === $page.params.category}>
           {#if category.slug !== $page.params.category}
             <a
-              href={buildHyperlink({
+              href={buildHyperlink($page.url, {
                 topic: $page.params.topic,
                 variable: $page.params.variable,
                 category: category.slug,
-                selectedGeography: $selectedGeographyStore,
               })}>{category.name}</a
             >
           {:else}

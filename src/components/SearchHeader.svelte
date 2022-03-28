@@ -5,7 +5,7 @@
   import { setGeoSearchParam } from "../helpers/queryParamsHelper";
 
   import Search from "./Search.svelte";
-  import { defaultGeography } from "../helpers/spatialHelper";
+  import { englandAndWales } from "../helpers/spatialHelper";
 
   $: selectedGeographyGeoType = $selectedGeographyStore?.geoType;
 
@@ -50,7 +50,7 @@
         <button
           class="tw-underline"
           on:click={() => {
-            setGeoSearchParam({ geoType: defaultGeography.meta.geotype, geoCode: defaultGeography.meta.code });
+            setGeoSearchParam({ geoType: englandAndWales.meta.geotype, geoCode: englandAndWales.meta.code });
             onClose();
           }}>{$_("search.reset")}</button
         >

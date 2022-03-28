@@ -7,24 +7,26 @@ export default (location: string, store: SelectedGeographyData) => {
   const currentCode = store.geoCode;
   if (code && code !== currentCode) {
     fetchGeographyLookup(code).then((response) => {
-      const {
-        meta: { name, code, geotype },
-        geo_json: { features },
-      }: GeographyLookupProps = JSON.parse(response);
-      const geoMeta = features.find((_) => _.id === "bbox");
-      let bbox;
-      if (geoMeta) {
+      if (response) {
         const {
-          geometry: { coordinates },
-        } = geoMeta;
-        bbox = coordinates;
+          meta: { name, code, geotype },
+          geo_json: { features },
+        }: GeographyLookupProps = JSON.parse(response);
+        const geoMeta = features.find((_) => _.id === "bbox");
+        let bbox;
+        if (geoMeta) {
+          const {
+            geometry: { coordinates },
+          } = geoMeta;
+          bbox = coordinates;
+        }
+        selectedGeographyStore.set({
+          geoType: geotype.toLowerCase(),
+          displayName: name,
+          geoCode: code,
+          bbox,
+        });
       }
-      selectedGeographyStore.set({
-        geoType: geotype.toLowerCase(),
-        displayName: name,
-        geoCode: code,
-        bbox,
-      });
     });
   }
 };

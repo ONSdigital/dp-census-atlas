@@ -7,8 +7,10 @@
   $: selectedGeographyDisplayName = $selectedGeographyStore?.displayName;
 </script>
 
-<Heading
-  serviceTitle={$_("heading.topicsPage.serviceTitle") +
-    `${selectedGeographyDisplayName ? selectedGeographyDisplayName : "England and Wales"}`}
-/>
-<TopicList />
+<div class="tw-flex tw-flex-col tw-max-h-full">
+  <Heading
+    serviceTitle={$_("heading.topicsPage.serviceTitle") +
+      `${selectedGeographyDisplayName ? selectedGeographyDisplayName : "England and Wales"}`}
+  />
+  <TopicList />
+</div>

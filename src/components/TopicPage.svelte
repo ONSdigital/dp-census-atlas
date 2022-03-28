@@ -13,43 +13,47 @@
   $: selectedGeographyDisplayName = $selectedGeographyStore?.displayName;
 </script>
 
-<Heading
-  serviceTitle={`Select ${returnCorrectArticle(topic.name)} ${unCapitalizeFirstLetter(
-    topic.name,
-  )} category to explore in ${selectedGeographyDisplayName ? selectedGeographyDisplayName : "England and Wales"}`}
-/>
-<div class="p-6 bg-onspale mb-6">
-  <p>
-    Change to a
-    <a href={buildHyperlink($page.url, null, "topics")}>new topic</a>
-  </p>
-</div>
+<div class="tw-flex tw-flex-col tw-max-h-full">
+  <Heading
+    serviceTitle={`Select ${returnCorrectArticle(topic.name)} ${unCapitalizeFirstLetter(
+      topic.name,
+    )} category to explore in ${selectedGeographyDisplayName ? selectedGeographyDisplayName : "England and Wales"}`}
+  />
+  <div class="tw-overflow-y-scroll">
+    <div class="p-6 bg-onspale mb-6">
+      <p>
+        Change to a
+        <a href={buildHyperlink($page.url, null, "topics")}>new topic</a>
+      </p>
+    </div>
 
-<div class="ons-page__container ons-container">
-  <main class="ons-page__main">
-    {#each topic.variables as variable}
-      <ONSAccordion showAll={false}>
-        <ONSAccordionPanel id={variable.slug} title={variable.name} description={variable.desc}>
-          <ul class="ons-list ons-list--bare">
-            {#each variable.categories as category}
-              <li class="ons-list__item">
-                <a
-                  class="ons-list__link"
-                  href={buildHyperlink($page.url, {
-                    topic: topic.slug,
-                    variable: variable.slug,
-                    category: category.slug,
-                  })}
-                >
-                  {category.name}
-                </a>
-              </li>
-            {/each}
-          </ul>
-        </ONSAccordionPanel>
-      </ONSAccordion>
-    {/each}
-  </main>
+    <div class="ons-page__container ons-container">
+      <main class="ons-page__main">
+        {#each topic.variables as variable}
+          <ONSAccordion showAll={false}>
+            <ONSAccordionPanel id={variable.slug} title={variable.name} description={variable.desc}>
+              <ul class="ons-list ons-list--bare">
+                {#each variable.categories as category}
+                  <li class="ons-list__item">
+                    <a
+                      class="ons-list__link"
+                      href={buildHyperlink($page.url, {
+                        topic: topic.slug,
+                        variable: variable.slug,
+                        category: category.slug,
+                      })}
+                    >
+                      {category.name}
+                    </a>
+                  </li>
+                {/each}
+              </ul>
+            </ONSAccordionPanel>
+          </ONSAccordion>
+        {/each}
+      </main>
+    </div>
+  </div>
 </div>
 
 <style lang="scss">

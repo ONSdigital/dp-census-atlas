@@ -1,5 +1,5 @@
-// "source": "Census Atlas Content - V4_3b.csv",
-// "utc_created_at": "2022-03-24T16:35:43.312624"
+// "source": "Census Atlas Content - V4_4.csv",
+// "utc_created_at": "2022-03-28T15:35:55.048890"
 
 export default [
   {
@@ -18,7 +18,7 @@ export default [
             name: "No qualifications",
             slug: "no-qualifications",
             code: "QS501EW0002",
-            desc: "People that do not have any qualifications",
+            desc: "People that do not have any qualifications.",
             category_h_pt2: "of {category_unit} in {location} have",
             category_h_pt3: "{category_name}",
             cat_location_summary_pt2:
@@ -58,7 +58,7 @@ export default [
             name: "Level 4 qualifications and above",
             slug: "level-4-qualifications-and-above",
             code: "QS501EW0007",
-            desc: "Level 4 qualifications and above are certificate of higher education (CertHE), higher national certificate (HNC), level 4 award, certificate, diploma or NVQ, diploma of higher education (DipHE), higher national diploma (HND), degree, master\u2019s degree or doctorate.",
+            desc: "Level 4 qualifications and above are certificate of higher education (CertHE), higher national certificate (HNC), level 4 award, certificate, diploma or NVQ, diploma of higher education (DipHE), higher national diploma (HND), degree, master’s degree or doctorate.",
             category_h_pt2: "of {category_unit} in {location} have",
             category_h_pt3: "{category_name}",
             cat_location_summary_pt2:
@@ -72,7 +72,7 @@ export default [
             category_h_pt2: "of {category_unit} in {location} have an",
             category_h_pt3: "{category_name}",
             cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}.",
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have an {category_name}.",
           },
           {
             name: "Other qualifications",
@@ -82,7 +82,7 @@ export default [
             category_h_pt2: "of {category_unit} in {location} have",
             category_h_pt3: "{category_name}",
             cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have an {category_name}.",
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}.",
           },
         ],
         total: {
@@ -104,56 +104,58 @@ export default [
         code: "QS302EW",
         desc: "How people rate their general health.",
         units: "People",
+        topic_page_cat_desc:
+          "People who think their general health is, very good, good, fair, bad or very bad, by usual residents",
         categories: [
           {
-            name: "Very good",
-            slug: "very-good",
+            name: "Very good health",
+            slug: "very-good-health",
             code: "QS302EW0002",
-            desc: "This is someone\u2019s own opinion that best describes their overall state of health as very good most of the time.",
+            desc: "This is someone’s own opinion that best describes their overall state of health as very good most of the time.",
             category_h_pt2: "of {category_unit} in {location} have",
-            category_h_pt3: "{category_name} health",
+            category_h_pt3: "{category_name}",
             cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name} health.",
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}.",
           },
           {
-            name: "Good",
-            slug: "good",
+            name: "Good health",
+            slug: "good-health",
             code: "QS302EW0003",
-            desc: "This is someone\u2019s own opinion that best describes their overall state of health as good most of the time.",
+            desc: "This is someone’s own opinion that best describes their overall state of health as good most of the time.",
             category_h_pt2: "of {category_unit} in {location} have",
-            category_h_pt3: "{category_name} health",
+            category_h_pt3: "{category_name}",
             cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name} health.",
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}.",
           },
           {
-            name: "Fair",
-            slug: "fair",
+            name: "Fair health",
+            slug: "fair-health",
             code: "QS302EW0004",
-            desc: "This is someone\u2019s own opinion that best describes their overall state of health as fair most of the time.",
+            desc: "This is someone’s own opinion that best describes their overall state of health as fair most of the time.",
             category_h_pt2: "of {category_unit} in {location} have",
-            category_h_pt3: "{category_name} health",
+            category_h_pt3: "{category_name}",
             cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name} health.",
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}.",
           },
           {
-            name: "Bad",
-            slug: "bad",
+            name: "Bad health",
+            slug: "bad-health",
             code: "QS302EW0005",
-            desc: "This is someone\u2019s own opinion that best describes their overall state of health as bad most of the time.",
+            desc: "This is someone’s own opinion that best describes their overall state of health as bad most of the time.",
             category_h_pt2: "of {category_unit} in {location} have",
-            category_h_pt3: "{category_name} health",
+            category_h_pt3: "{category_name}",
             cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name} health.",
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}.",
           },
           {
-            name: "Very bad",
-            slug: "very-bad",
+            name: "Very bad health",
+            slug: "very-bad-health",
             code: "QS302EW0006",
-            desc: "This is someone\u2019s own opinion that best describes their overall state of health as very bad most of the time.",
+            desc: "This is someone’s own opinion that best describes their overall state of health as very bad most of the time.",
             category_h_pt2: "of {category_unit} in {location} have",
-            category_h_pt3: "{category_name} health",
+            category_h_pt3: "{category_name}",
             cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name} health.",
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}.",
           },
         ],
         total: {
@@ -166,7 +168,7 @@ export default [
         name: "Long-term conditions",
         slug: "long-term-conditions",
         code: "QS303EW",
-        desc: "How people's heath affect their day-to-day activities.",
+        desc: "How people's health affects their day-to-day activities.",
         units: "People",
         categories: [
           {
@@ -187,7 +189,7 @@ export default [
             category_h_pt2: "of {category_unit} in {location} have their",
             category_h_pt3: "{category_name}",
             cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have their day to day activities are limited a little.",
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have their day to day activities limited a little.",
           },
           {
             name: "Day-to-day activities limited a lot",
@@ -197,7 +199,7 @@ export default [
             category_h_pt2: "of {category_unit} in {location} have their",
             category_h_pt3: "{category_name}",
             cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have their day to day activities are limited a lot.",
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have their day to day activities limited a lot.",
           },
         ],
         total: {
@@ -212,6 +214,8 @@ export default [
         code: "QS301EW",
         desc: "People who provide unpaid care.",
         units: "People",
+        topic_page_cat_desc:
+          "This is someone who provides unpaid care or occasional help to someone who is unwell, elderly or unable to manage on their own.",
         categories: [
           {
             name: "Do not provide unpaid care",
@@ -372,7 +376,7 @@ export default [
             name: "Shared homes",
             slug: "shared-homes",
             code: "QS402EW0012",
-            desc: "A home is shared if the household spaces it contains are \u2018part of a converted or shared house or not all rooms are behind closed doors.",
+            desc: "A home is shared if the household spaces it contains are ‘part of a converted or shared house or not all rooms are behind closed doors.",
             category_h_pt2: "of {category_unit} in {location} live in",
             category_h_pt3: "{category_name}",
             cat_location_summary_pt2:
@@ -467,44 +471,44 @@ export default [
         units: "People",
         categories: [
           {
-            name: "Owned",
-            slug: "owned",
+            name: "Owned homes",
+            slug: "owned-homes",
             code: "QS403EW0002",
-            desc: "This is a home where the home owner either wons the home outright, has a mortage or loan on the property.",
+            desc: "This is a home where the home owner either owns the home outright, has a mortage or loan on the property.",
             category_h_pt2: "of {category_unit} in {location} live in",
-            category_h_pt3: "{category_name} homes",
+            category_h_pt3: "{category_name}",
             cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) live in {category_name} homes.",
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) live in {category_name}.",
           },
           {
-            name: "Shared ownership",
-            slug: "shared-ownership",
+            name: "Shared ownership homes",
+            slug: "shared-ownership-homes",
             code: "QS403EW0005",
             desc: "This is a home that is part rented and part owned.",
             category_h_pt2: "of {category_unit} in {location} live in",
-            category_h_pt3: "{category_name} homes",
+            category_h_pt3: "{category_name}",
             cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) live in {category_name} homes.",
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) live in {category_name}.",
           },
           {
-            name: "Social rented",
-            slug: "social-rented",
+            name: "Social rented homes",
+            slug: "social-rented-homes",
             code: "QS403EW0006",
             desc: "This is a home where the tenants pays rent to a local authority or housing association.",
             category_h_pt2: "of {category_unit} in {location} live in",
-            category_h_pt3: "{category_name} homes",
+            category_h_pt3: "{category_name}",
             cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) live in {category_name} homes.",
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) live in {category_name}.",
           },
           {
-            name: "Private rented",
-            slug: "private-rented",
+            name: "Private rented homes",
+            slug: "private-rented-homes",
             code: "QS403EW0009",
             desc: "This is a home where the tenants pay rent to a private landlord.",
             category_h_pt2: "of {category_unit} in {location} live in",
-            category_h_pt3: "{category_name} homes",
+            category_h_pt3: "{category_name}",
             cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) live in {category_name} homes.",
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) live in {category_name}.",
           },
         ],
         total: {
@@ -575,44 +579,44 @@ export default [
               "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}.",
           },
           {
-            name: "Gas",
-            slug: "gas",
+            name: "Gas central heating",
+            slug: "gas-central-heating",
             code: "QS415EW0003",
             desc: "This central heating system is fuelled by gas and heats more than one room in a building.",
             category_h_pt2: "of {category_unit} in {location} have",
-            category_h_pt3: "{category_name} central heating",
+            category_h_pt3: "{category_name}",
             cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name} central heating.",
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}.",
           },
           {
-            name: "Electric (including storage heaters)",
-            slug: "electric-including-storage-heaters",
+            name: "Electric central heating (including storage heaters)",
+            slug: "electric-central-heating-including-storage-heaters",
             code: "QS415EW0004",
             desc: "This central heating system is fuelled by electricity (inlcuding storage heaters) and heats more than one room in a building.",
             category_h_pt2: "of {category_unit} in {location} have",
-            category_h_pt3: "{category_name} central heating",
+            category_h_pt3: "{category_name}",
             cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name} central heating.",
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}.",
           },
           {
-            name: "Oil",
-            slug: "oil",
+            name: "Oil central heating",
+            slug: "oil-central-heating",
             code: "QS415EW0005",
             desc: "This central heating system is fuelled by oil heats more than one room in a building.",
             category_h_pt2: "of {category_unit} in {location} have",
-            category_h_pt3: "{category_name} central heating",
+            category_h_pt3: "{category_name}",
             cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name} central heating.",
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}.",
           },
           {
-            name: "Solid fuel (for example wood, coal)",
-            slug: "solid-fuel-for-example-wood-coal",
+            name: "Solid fuel central heating (for example wood, coal)",
+            slug: "solid-fuel-central-heating-for-example-wood-coal",
             code: "QS415EW0006",
             desc: "This central heating system is fuelled by a solid fuel such as wood or coal and heats more than one room in a building.",
             category_h_pt2: "of {category_unit} in {location} have",
-            category_h_pt3: "{category_name} central heating",
+            category_h_pt3: "{category_name}",
             cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name} central heating.",
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}.",
           },
           {
             name: "Other central heating",
@@ -936,6 +940,7 @@ export default [
         code: "QS208EW",
         desc: "People's religion and beliefs.",
         units: "People",
+        topic_page_cat_desc: "People who practice, have religious beliefs or no religion.",
         categories: [
           {
             name: "No religion",
@@ -1337,6 +1342,7 @@ export default [
         code: "QS803EW",
         desc: "People born or have moved to the UK .",
         units: "People",
+        topic_page_cat_desc: "This is the length of time someone who was not born in the UK has recently lived here.",
         categories: [
           {
             name: "Born in the UK",
@@ -1408,6 +1414,7 @@ export default [
         code: "QS601EW",
         desc: "People who are in work, starting work, looking for or do not work.",
         units: "People",
+        topic_page_cat_desc: "People who are in work, starting work, looking for or do not work.",
         categories: [
           {
             name: "Economically active",
@@ -1442,6 +1449,8 @@ export default [
         code: "QS604EW",
         desc: "Hours people work per week.",
         units: "People",
+        topic_page_cat_desc:
+          "The number of hours someone aged 16 to 74 years in employment worked in their job or their last job.",
         categories: [
           {
             name: "Part-time",
@@ -1476,6 +1485,8 @@ export default [
         code: "KS608EW",
         desc: "The types of jobs people do or did?",
         units: "People",
+        topic_page_cat_desc:
+          "This is what someone does as their main job. It is based on their job title or details of the activities they do in their job.",
         categories: [
           {
             name: "Managers, directors and senior officials",
@@ -1550,6 +1561,8 @@ export default [
         code: "QS701EW",
         desc: "Types of transport people use to travel to work.",
         units: "People",
+        topic_page_cat_desc:
+          "This is the type of transport someone uses for the longest part by distance of their journey to their main job.",
         categories: [
           {
             name: "Work mainly from home",
@@ -1644,6 +1657,7 @@ export default [
         code: "QS702EW",
         desc: "The daily distance travelled to work.",
         units: "People",
+        topic_page_cat_desc: "The total distance people travel to their man job.",
         categories: [
           {
             name: "Less than 2km",
@@ -1713,7 +1727,7 @@ export default [
             category_h_pt2: "of {category_unit}s in {location} {variable_name} is",
             category_h_pt3: "{category_name}",
             cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%)travel between 40 km (24.85 miles) and 60 km (37.28 miles) to their main job.",
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage})travel between 40 km (24.85 miles) and 60 km (37.28 miles) to their main job.",
           },
           {
             name: "60km and over",

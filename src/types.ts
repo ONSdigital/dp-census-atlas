@@ -10,6 +10,7 @@ export type MapState = {
 export type Topic = typeof topics[0];
 export type Variable = typeof topics[0]["variables"][0];
 export type Category = typeof topics[0]["variables"][0]["categories"][0];
+export type VariableData = { [catCode: string]: { count: number; total: number; percentage: number } };
 
 export type VizData = {
   breaks: number[];
@@ -19,7 +20,8 @@ export type VizData = {
     variable: Variable;
     category: Category;
   };
-  variableData?: { [catCode: string]: { count: number; total: number; percentage: number } };
+  variableData?: VariableData;
+  defaultGeoVariableData?: VariableData;
 };
 
 export type SelectedGeographyData = {

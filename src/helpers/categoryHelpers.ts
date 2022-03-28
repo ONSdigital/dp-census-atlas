@@ -1,5 +1,7 @@
 import topics from "../data/content";
 import { defaultGeography } from "./spatialHelper";
+import type { Variable, VariableData, Category } from "../types";
+import { unCapitalizeFirstLetter } from "../util/stringUtil";
 
 export const getCodesForCategory = (
   topicSlug: string,
@@ -51,4 +53,37 @@ export function getSelectedGeography(pageUrl) {
 
 export const formatPercentage = (percentage: number) => {
   return (Math.round(percentage * 10) / 10).toFixed(1);
+};
+
+export const formatTemplateString = (
+  variable: Variable,
+  variableData: VariableData,
+  category: Category,
+  location: string,
+  templateStr: string,
+) => {
+  const stringReplaceMap = {
+    "{variable_name}": unCapitalizeFirstLetter(variable.name),
+    "{category_name}": unCapitalizeFirstLetter(category.name),
+    "{category_unit}": unCapitalizeFirstLetter(variable.units),
+    "{category_total}": variableData[category.code]?.total.toLocaleString(),
+    "{category_value}": variableData[category.code]?.count.toLocaleString(),
+    "{category_percentage}": formatPercentage(variableData[category.code]?.percentage),
+    "{location}": location,
+  };
+  Object.entries(stringReplaceMap).forEach(([strToReplace, replacementStr]) => {
+    templateStr = templateStr.replace(new RegExp(strToReplace, "g"), replacementStr);
+  });
+  return templateStr;
+};
+
+export const comparePercentage = (percentage1: number, percentage2: number) => {
+  const difference = percentage1 - percentage2;
+  console.log(difference);
+  if (difference > 0) {
+    return `${formatPercentage(difference)}% higher than`;
+  } else if (difference < 0) {
+    return `${formatPercentage(difference * -1)}% lower than`;
+  }
+  return "the same as";
 };

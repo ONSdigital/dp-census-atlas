@@ -2,15 +2,14 @@
   import ONSCard from "./ons/ONSCard.svelte";
   import topics from "../data/content";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
-  import { selectedGeographyStore } from "../stores/stores";
+  import { page } from "$app/stores";
 </script>
 
 {#each topics as topic, i}
   <ONSCard
     title={topic.name}
-    href={buildHyperlink({
+    href={buildHyperlink($page.url, {
       topic: topic.slug,
-      selectedGeography: $selectedGeographyStore,
     })}
     id="topic-{i}">{topic.desc}</ONSCard
   >

@@ -4,7 +4,6 @@
   import RightChevron from "./RightChevron.svelte";
   import topics from "../data/content";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
-  import { selectedGeographyStore } from "../stores/stores";
 
   $: topicSlug = $page.params.topic;
   $: topic = topics.find((t) => t.slug === topicSlug);
@@ -13,13 +12,12 @@
 </script>
 
 <div class="tw-p-6 tw-bg-onspale tw-mb-6">
-  <a class="tw-hyperlink" href={buildHyperlink({ selectedGeography: $selectedGeographyStore })}>Home</a>
+  <a class="tw-hyperlink" href={buildHyperlink($page.url)}>Home</a>
   <span class="mx-1">&gt;</span>
   <a
     class="tw-hyperlink"
-    href={buildHyperlink({
+    href={buildHyperlink($page.url, {
       topic: topicSlug,
-      selectedGeography: $selectedGeographyStore,
     })}>{topic.name}</a
   >
   <span class="tw-hidden xl:tw-inline">
@@ -42,11 +40,10 @@
     <!-- {#each variable.classifications as classification} -->
     <a
       class="tw-border-t-[1px] tw-border-t-slate-300 tw-py-2 tw-group"
-      href={buildHyperlink({
+      href={buildHyperlink($page.url, {
         topic: topic.slug,
         variable: variable.slug,
         category: variable.categories[0].slug,
-        selectedGeography: $selectedGeographyStore,
       })}
     >
       <div class="tw-flex tw-justify-between">

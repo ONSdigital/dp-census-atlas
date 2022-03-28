@@ -79,7 +79,6 @@ export const formatTemplateString = (
 
 export const comparePercentage = (percentage1: number, percentage2: number) => {
   const difference = percentage1 - percentage2;
-  console.log(difference);
   if (difference > 0) {
     return `${formatPercentage(difference)}% higher than`;
   } else if (difference < 0) {

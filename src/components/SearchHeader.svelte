@@ -42,6 +42,7 @@
       error={$_("search.error")}
       invert
       padding
+      onClose={() => onClose()}
     />
     <div class="tw-pb-6">
       {#if selectedGeographyGeoType !== "ew"}

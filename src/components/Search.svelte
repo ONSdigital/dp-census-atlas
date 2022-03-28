@@ -2,7 +2,6 @@
   import ONSAutoSuggest from "./ons/ONSAutoSuggest.svelte";
   import ONSError from "./ons/ONSError.svelte";
 
-  import { selectedGeographyStore } from "../stores/stores";
   import { setGeoSearchParam } from "../helpers/queryParamsHelper";
   import type { GeographyAutoSuggestProps } from "../types";
 
@@ -12,8 +11,9 @@
   export let title: string = "Search by area";
   export let error: string = "Error";
   export let header: boolean = false;
-  export let invert: boolean = false;
-  export let padding: boolean = false;
+  export let invert: boolean = undefined;
+  export let padding: boolean = undefined;
+  export let onClose: () => void = undefined;
 
   let userInputValue;
   let userInputMeta;
@@ -24,14 +24,9 @@
     renderError = false;
     invertTextColor = invert;
     if (value) {
-      const { en, geoCode, geoType, bbox } = value;
-      selectedGeographyStore.set({
-        geoType: geoType.toLowerCase(),
-        displayName: en,
-        geoCode,
-        bbox,
-      });
+      const { geoCode, geoType } = value;
       setGeoSearchParam({ geoCode, geoType: geoType.toLowerCase() });
+      onClose();
     } else {
       renderError = true;
       invertTextColor = false;

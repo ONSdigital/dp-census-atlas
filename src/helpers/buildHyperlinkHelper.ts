@@ -27,29 +27,26 @@ type UrlParams = TopicPageParams | VariablePageParams | CategoryPageParams;
 export const buildHyperlink = (url: URL, urlParams?: UrlParams, staticPath?: string) => {
   if (!urlParams && !staticPath) {
     return `/${url.search}`;
-  } else if (staticPath) {
-    return `/2021/${staticPath}${url.search}`;
-  } else {
-    let link = "/2021";
-    if ("path" in urlParams) {
-      return `${link}/topics${url.search}`;
-    }
-    if ("topic" in urlParams) {
-      link = `${link}/${urlParams.topic}`;
-    }
-    if ("variable" in urlParams) {
-      link = `${link}/${urlParams.variable}`;
-    }
-    if ("classification" in urlParams) {
-      link = `${link}/${urlParams.classification}`;
-    }
-    if ("category" in urlParams) {
-      if (!("classification" in urlParams)) {
-        link = `${link}/default/${urlParams.category}`;
-      } else {
-        link = `${link}/${urlParams.category}`;
-      }
-    }
-    return `${link}${url.search}`;
   }
+  if (staticPath) {
+    return `/2021/${staticPath}${url.search}`;
+  }
+  let link = "/2021";
+  if ("topic" in urlParams) {
+    link = `${link}/${urlParams.topic}`;
+  }
+  if ("variable" in urlParams) {
+    link = `${link}/${urlParams.variable}`;
+  }
+  if ("classification" in urlParams) {
+    link = `${link}/${urlParams.classification}`;
+  }
+  if ("category" in urlParams) {
+    if (!("classification" in urlParams)) {
+      link = `${link}/default/${urlParams.category}`;
+    } else {
+      link = `${link}/${urlParams.category}`;
+    }
+  }
+  return `${link}${url.search}`;
 };

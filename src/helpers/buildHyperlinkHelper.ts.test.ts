@@ -1,5 +1,4 @@
 import { buildHyperlink } from "./buildHyperlinkHelper";
-import type { SelectedGeographyData } from "../types";
 
 const ladSelectedUrl = new URL("/test?lad=ladCode", "https://test.com");
 const ewSelectedUrl = new URL("/test", "https://test.com");
@@ -21,7 +20,7 @@ describe("index page url", () => {
 });
 
 describe("topic url", () => {
-  let urlParams = {
+  const urlParams = {
     topic: "topic",
   };
   test("returns topic url with geography query param given an LAD in input url", () => {
@@ -33,7 +32,7 @@ describe("topic url", () => {
 });
 
 describe("variable url", () => {
-  let urlParams = {
+  const urlParams = {
     topic: "topic",
     variable: "variable",
   };
@@ -46,7 +45,7 @@ describe("variable url", () => {
 });
 
 describe("classification url", () => {
-  let urlParams = {
+  const urlParams = {
     topic: "topic",
     variable: "variable",
     classification: "classification",
@@ -60,7 +59,7 @@ describe("classification url", () => {
 });
 
 describe("category url", () => {
-  let urlParams = {
+  const urlParams = {
     topic: "topic",
     variable: "variable",
     classification: "classification",

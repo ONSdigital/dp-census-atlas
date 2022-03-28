@@ -7,8 +7,10 @@
   import NavigationComponent from "./NavigationComponent.svelte";
   import topics from "../data/content";
   import CategoryHeading from "../components/CategoryHeading.svelte";
+  import CategoryLocationSummary from "./CategoryLocationSummary.svelte";
 
   $: variableData = $vizStore?.variableData;
+  $: defaultGeoVariableData = $vizStore?.defaultGeoVariableData;
   $: params = $page.params;
   $: topicSlug = params.topic;
   $: topic = topics.find((t) => t.slug === topicSlug);
@@ -42,4 +44,13 @@
     console.log($page.url.pathname);
   }}
 />
+
+<CategoryLocationSummary
+  {variable}
+  {variableData}
+  {defaultGeoVariableData}
+  {category}
+  location={selectedGeographyDisplayName}
+/>
+
 <CensusTable {variable} {variableData} />

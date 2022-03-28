@@ -5,18 +5,20 @@
   import { page } from "$app/stores";
 </script>
 
-{#each topics as topic, i}
-  <ONSCard
-    title={topic.name}
-    href={buildHyperlink($page.url, {
-      topic: topic.slug,
-    })}
-    id="topic-{i}">{topic.desc}</ONSCard
-  >
-  {#if i < topics.length - 1}
-    <hr class="component-margin--2" />
-  {/if}
-{/each}
+<div class="tw-overflow-y-scroll">
+  {#each topics as topic, i}
+    <ONSCard
+      title={topic.name}
+      href={buildHyperlink($page.url, {
+        topic: topic.slug,
+      })}
+      id="topic-{i}">{topic.desc}</ONSCard
+    >
+    {#if i < topics.length - 1}
+      <hr class="component-margin--2" />
+    {/if}
+  {/each}
+</div>
 
 <style lang="scss">
   .component-margin--2 {

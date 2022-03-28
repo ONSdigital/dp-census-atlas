@@ -4,5 +4,7 @@
   import Heading from "./Heading.svelte";
 </script>
 
-<Heading serviceTitle={$_("heading.homePage.serviceTitle")} description={$_("heading.homePage.description")} />
-<CensusPanel />
+<div class="tw-flex tw-flex-col tw-max-h-full">
+  <Heading serviceTitle={$_("heading.homePage.serviceTitle")} description={$_("heading.homePage.description")} />
+  <CensusPanel />
+</div>

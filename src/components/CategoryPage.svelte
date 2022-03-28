@@ -6,8 +6,11 @@
   import CensusTable from "./CensusTable.svelte";
   import NavigationComponent from "./NavigationComponent.svelte";
   import topics from "../data/content";
-  import CategoryHeading from "../components/CategoryHeading.svelte";
+  import CategoryHeading from "./CategoryHeading.svelte";
   import CategoryLocationSummary from "./CategoryLocationSummary.svelte";
+  import SearchHeader from "./SearchHeader.svelte";
+
+  let changeLocation: boolean = false;
 
   $: variableData = $vizStore?.variableData;
   $: defaultGeoVariableData = $vizStore?.defaultGeoVariableData;
@@ -34,23 +37,26 @@
   }
 </script>
 
-<CategoryHeading {variableData} {variable} {category} location={selectedGeographyDisplayName} />
-
-<NavigationComponent
-  {search}
-  {topicSlug}
-  currentURL={$page.url.pathname}
-  onClick={() => {
-    console.log($page.url.pathname);
-  }}
-/>
-
-<CategoryLocationSummary
-  {variable}
-  {variableData}
-  {defaultGeoVariableData}
-  {category}
-  location={selectedGeographyDisplayName}
-/>
-
-<CensusTable {variable} {variableData} />
+<div class="tw-flex tw-flex-col tw-max-h-full">
+  {#if changeLocation}
+    <SearchHeader onClose={() => (changeLocation = !changeLocation)} />
+  {:else}
+    <CategoryHeading {variableData} {variable} {category} location={selectedGeographyDisplayName} />
+    <NavigationComponent
+      {search}
+      {topicSlug}
+      currentURL={$page.url.pathname}
+      onClick={() => (changeLocation = !changeLocation)}
+    />
+  {/if}
+  <div class="tw-overflow-y-scroll">
+    <CategoryLocationSummary
+      {variable}
+      {variableData}
+      {defaultGeoVariableData}
+      {category}
+      location={selectedGeographyDisplayName}
+    />
+    <CensusTable {variable} {variableData} />
+  </div>
+</div>

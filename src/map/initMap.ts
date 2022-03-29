@@ -80,8 +80,7 @@ const setMapStore = (map: mapboxgl.Map) => {
 };
 
 const getGeoTypeForCurrentZoom = (zoom: number): GeoType => {
-  // todo
-  // return "msoa";
+  // todo - use layers.ts
   if (zoom >= 9) return "msoa";
   else return "lad";
 };

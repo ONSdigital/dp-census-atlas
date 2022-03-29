@@ -25,7 +25,7 @@
     invertTextColor = invert;
     if (value) {
       const { geoCode, geoType } = value;
-      setGeoSearchParam({ geoCode, geoType: geoType.toLowerCase() });
+      setGeoSearchParam({ geoCode, geoType: geoType.toLowerCase() }, window.location.pathname);
       onClose();
     } else {
       renderError = true;

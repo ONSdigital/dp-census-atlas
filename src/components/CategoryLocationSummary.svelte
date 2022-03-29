@@ -1,6 +1,5 @@
 <script lang="ts">
   import { areAllDefined } from "../util/genUtil";
-  import { assertPluralised } from "../util/stringUtil";
   import { formatTemplateString, comparePercentage } from "../helpers/categoryHelpers";
   import { englandAndWales } from "../helpers/spatialHelper";
   import type { Variable, VariableData, Category } from "../types";
@@ -21,7 +20,7 @@
 </script>
 
 <div>
-  <h2>{args ? `${assertPluralised(category.name)} in ${location}` : ""}</h2>
+  <h2>{args ? `${category.name} in ${location}` : ""}</h2>
   <p>{args ? category.desc : ""}</p>
   <p>
     {args ? formatTemplateString(variable, variableData, category, location, category.cat_location_summary_pt2) : ""}
@@ -35,7 +34,7 @@
       : ""}
   </p>
   <h3>{args ? variable.name : ""}</h3>
-  <p>{args ? `${assertPluralised(category.name)} is part of ${variable.name}` : ""}</p>
+  <p>{args ? `${category.name} is part of ${variable.name}` : ""}</p>
   <!-- Dead link included for UR. Will point at data dictionary entry for topic when the data dictionary exists -->
   <a>{args ? `Full definition for ${variable.name}` : ""}</a>
 </div>

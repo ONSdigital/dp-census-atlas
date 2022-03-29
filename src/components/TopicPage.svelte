@@ -31,7 +31,11 @@
       <main class="ons-page__main">
         {#each topic.variables as variable}
           <ONSAccordion showAll={false}>
-            <ONSAccordionPanel id={variable.slug} title={variable.name} description={variable.desc}>
+            <ONSAccordionPanel
+              id={variable.slug}
+              title={variable.name}
+              description={variable?.topic_page_cat_desc || variable.desc}
+            >
               <ul class="ons-list ons-list--bare">
                 {#each variable.categories as category}
                   <li class="ons-list__item">

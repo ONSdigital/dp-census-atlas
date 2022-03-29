@@ -64,6 +64,10 @@ export const initMap = (container) => {
     const geoCode = e.features[0].properties["areacd"];
     handleLocationSelect({ geoType: "msoa", geoCode });
   });
+  map.on("click", "lad-features", (e) => {
+    const geoCode = e.features[0].properties["lad11cd"];
+    setGeoSearchParam({ geoType: "lad", geoCode });
+  });
 
   return map;
 };

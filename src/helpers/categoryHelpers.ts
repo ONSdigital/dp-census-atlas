@@ -1,5 +1,5 @@
 import topics from "../data/content";
-import { defaultGeography } from "./spatialHelper";
+import { englandAndWales } from "./spatialHelper";
 import type { Variable, VariableData, Category } from "../types";
 import { unCapitalizeFirstLetter } from "../util/stringUtil";
 
@@ -47,7 +47,7 @@ export function getSelectedGeography(pageUrl) {
   if (geoCode) {
     return { geoType, geoCode };
   } else {
-    return { geoType: defaultGeography.meta.geotype, geoCode: defaultGeography.meta.code };
+    return { geoType: englandAndWales.meta.geotype, geoCode: englandAndWales.meta.code };
   }
 }
 

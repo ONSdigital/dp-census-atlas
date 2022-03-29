@@ -4,7 +4,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        onsdarkblue: "#003c57",
         onsblue: "#206095",
+        onsteal: "#519BA8",
         onsgreen: "#0f8243",
         onsyellow: "#fd0",
         onspale: "#f3f2f1",
@@ -13,6 +15,7 @@ module.exports = {
         onsreverse: "#f5f5f6",
         onsgrey: "#f3f3f3",
         onsred: "#FF0000",
+        onswhite: "#fff",
       },
       fontFamily: {
         sans: ["Open Sans", "Helvetica", "Arial", "sans-serif"],

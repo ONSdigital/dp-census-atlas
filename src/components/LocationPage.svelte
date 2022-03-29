@@ -7,7 +7,7 @@
   import { getCodesForCategory } from "../helpers/categoryHelpers";
 
   let householdsCodes = getCodesForCategory("housing", "size-of-household", "default", "1-person-households");
-  let peopleCodes = getCodesForCategory("health", "general-health", "default", "very-good");
+  let peopleCodes = getCodesForCategory("health", "general-health", "default", "very-good-health");
   let allHouseholdsTotal = "";
   let allPeopleTotal = "";
 

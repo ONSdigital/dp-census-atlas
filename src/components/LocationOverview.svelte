@@ -49,7 +49,7 @@
         href={buildHyperlink($page.url, {
           topic: "health",
           variable: "general-health",
-          category: "good",
+          category: "good-health",
         })}
         class="ons-list__link">Residents general health.</a
       >

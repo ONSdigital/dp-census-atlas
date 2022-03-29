@@ -67,6 +67,9 @@
     border-bottom: 0;
     color: #222222;
   }
+  .ons-table__header:nth-child(2) {
+    padding-left: 0px;
+  }
   th {
     font-weight: normal;
   }
@@ -77,7 +80,7 @@
     width: 50%;
   }
   table tr th:nth-child(2) {
-    width: 20%;
+    width: 22.5%;
   }
   .ons-table__cell {
     font-size: 18px;

@@ -1,8 +1,9 @@
 <script lang="ts">
   import { _ } from "svelte-i18n";
+  import { page } from "$app/stores";
   import { selectedGeographyStore } from "../stores/stores";
+  import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
   export let allPeopleTotal: string;
-  export let search: string;
   export let allHouseholdsTotal: string;
   export let title: string;
   $: selectedGeographyDisplayName = $selectedGeographyStore?.displayName;
@@ -30,21 +31,37 @@
       : "England and Wales"} live and work.
   </p>
   <p>
-    <a href="topics{search}">Choose a topic from the full list</a> or explore one of these suggestions.
+    <a href={buildHyperlink($page.url, null, "topics")}>Choose a topic from the full list</a> or explore one of these suggestions.
   </p>
   <ul class="ons-list ons-list--bare">
     <li class="ons-list__item">
       <a
-        href="education/highest-level-of-qualification-gained/default/level-4-qualifications-and-above{search}"
+        href={buildHyperlink($page.url, {
+          topic: "education",
+          variable: "highest-level-of-qualification-gained",
+          category: "level-4-qualifications-and-above",
+        })}
         class="ons-list__link">People with a Level 4 education or above.</a
       >
     </li>
     <li class="ons-list__item">
-      <a href="health/general-health/default/good{search}" class="ons-list__link">Residents general health.</a>
+      <a
+        href={buildHyperlink($page.url, {
+          topic: "health",
+          variable: "general-health",
+          category: "good",
+        })}
+        class="ons-list__link">Residents general health.</a
+      >
     </li>
     <li class="ons-list__item">
-      <a href="housing/size-of-household/default/2-person-household{search}" class="ons-list__link"
-        >What is the most common household size?</a
+      <a
+        href={buildHyperlink($page.url, {
+          topic: "housing",
+          variable: "size-of-household",
+          category: "2-person-households",
+        })}
+        class="ons-list__link">What is the most common household size?</a
       >
     </li>
   </ul>

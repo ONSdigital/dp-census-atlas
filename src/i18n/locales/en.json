@@ -15,5 +15,10 @@
     "topicsPage": {
       "serviceTitle": "Select a topic to explore census results for "
     }
+  },
+  "locationOverview": {
+    "title": "Explore",
+    "peopleSubTitle": "All people (usual residents)",
+    "householdsSubTitle": "All households"
   }
 }

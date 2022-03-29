@@ -11,6 +11,8 @@ module.exports = {
         onsdark: "#414042",
         onsdarker: "#0a2032",
         onsreverse: "#f5f5f6",
+        onsgrey: "#f3f3f3",
+        onsred: "#FF0000",
       },
       fontFamily: {
         sans: ["Open Sans", "Helvetica", "Arial", "sans-serif"],

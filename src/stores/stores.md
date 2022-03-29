@@ -11,18 +11,6 @@
           category: typeof topics[0]["variables"][0]["categories"][0];
     }
 
-## mapStore
-
-    {
-       bbox:{
-          east: number;
-          north: number;
-          west: number;
-          south: number;
-          };
-       geoType: "ew" | "lad" | "msoa" | string;
-    }
-
 ## selectedGeographyStore
 
     {
@@ -40,10 +28,17 @@
        geoCode: string,
        geoType: string,
        variableData:{ [catCode: string]: { count: number; total: number; percentage: number } },
+       englandAndWalesVariableData:{ [catCode: string]: { count: number; total: number; percentage: number } }
     }
 
-## englandandWalesStore
+## mapStore
 
     {
-       [catCode: string]: { count: number; total: number; percentage: number },
+       bbox:{
+          east: number;
+          north: number;
+          west: number;
+          south: number;
+          };
+       geoType: "ew" | "lad" | "msoa" | string;
     }

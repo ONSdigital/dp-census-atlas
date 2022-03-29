@@ -1,5 +1,5 @@
 import { writable } from "svelte/store";
-import type { MapState, VizData, SelectedGeographyData } from "../types";
+import type { MapState, VizData, SelectedGeographyData, SelectedGeographyVariableData } from "../types";
 
 /**
  * A Svelte store containing any relevant map state
@@ -17,8 +17,8 @@ export const vizStore = writable<VizData | undefined>(undefined);
  * A Svelte store containing all the data we need to show the selected geography.
  */
 export const selectedGeographyStore = writable<SelectedGeographyData | undefined>(undefined);
-// {
-//   displayName: "England and Wales",
-//   geoCode: "K04000001",
-//   geoType: "ew",
-// }
+
+/**
+ * A Svelte store containing variable data for a given geography.
+ */
+export const selectedGeographyVariableStore = writable<SelectedGeographyVariableData | undefined>(undefined);

@@ -20,8 +20,6 @@ export type VizData = {
     variable: Variable;
     category: Category;
   };
-  variableData?: VariableData;
-  defaultGeoVariableData?: VariableData;
 };
 
 export type SelectedGeographyData = {
@@ -31,6 +29,11 @@ export type SelectedGeographyData = {
   bbox: [number, number, number, number];
   allHouseholdsTotal: number;
   allPeopleTotal: number;
+};
+
+export type SelectedGeographyVariableData = {
+  variableData: VariableData;
+  englandAndWalesVariableData: VariableData;
 };
 
 export type GeographyAutoSuggestProps = {

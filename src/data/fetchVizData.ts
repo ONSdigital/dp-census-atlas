@@ -61,7 +61,11 @@ const fetchBreaks = async (args: { totalCode: string; categoryCodes: string[]; g
   return Object.fromEntries(Object.keys(parsed).map((code) => [code, parsed[code][args.geoType.toUpperCase()]]));
 };
 
-const fetchSelectedGeographyData = async (args: { totalCode: string; categoryCodes: string[]; geoCode: string }) => {
+export const fetchSelectedGeographyData = async (args: {
+  totalCode: string;
+  categoryCodes: string[];
+  geoCode: string;
+}) => {
   const url = `${apiBaseUrl}/query/2011?cols=geography_code,${args.totalCode},${args.categoryCodes.join(",")}&rows=${
     args.geoCode
   },${defaultGeography.meta.code}`;
@@ -70,11 +74,12 @@ const fetchSelectedGeographyData = async (args: { totalCode: string; categoryCod
   return dsv.csvParse(csv);
 };
 
-const parseSelectedGeographyData = (rawData: dsv.DSVRowArray, totalCode: string) => {
+export const parseSelectedGeographyData = (rawData: dsv.DSVRowArray, totalCode: string) => {
   // we're expecting one row for the selected geography and one row for the default geography, UNLESS the selected
   // geography IS the default geography, in which case we will only get one row.
   let selectedGeoData;
   let defaultGeoData;
+  let selectedGeographyTotal;
   rawData.forEach((row) => {
     const parsedRow = {};
     for (const [catCode, catCount] of Object.entries(row)) {
@@ -90,8 +95,10 @@ const parseSelectedGeographyData = (rawData: dsv.DSVRowArray, totalCode: string)
     }
     // NB if the selected geography IS teh default geography, the selectedGeographyData object will remain empty...
     if (row.geography_code === defaultGeography.meta.code) {
+      selectedGeographyTotal = rawData[0][totalCode];
       defaultGeoData = parsedRow;
     } else {
+      selectedGeographyTotal = rawData[1][totalCode];
       selectedGeoData = parsedRow;
     }
   });
@@ -99,6 +106,7 @@ const parseSelectedGeographyData = (rawData: dsv.DSVRowArray, totalCode: string)
   return {
     selectedGeoData: selectedGeoData || defaultGeoData,
     defaultGeoData: defaultGeoData,
+    selectedGeographyTotal: selectedGeographyTotal,
   };
 };
 

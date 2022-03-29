@@ -94,12 +94,14 @@ def process_census_content(rows: list[dict], i: int) -> (dict, int):
         else:
             content["cat_location_summary_pt2"] = norm_template_taxonomy(row["comparison component 2"])
 
-    # all variables should have units!
     if row["taxonomy"] == "variable":
+        # all variables should have units!
         if row["units"] == "":
             raise Exception(f"Classification definition does not include units! {row}")
         else:
             content["units"] = row["units"]
+        if row["Category description component"] != "":
+            content["topic_page_cat_desc"] = row["Category description component"]
 
     # deal with nested content using lookahead
     i+=1

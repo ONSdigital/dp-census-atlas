@@ -36,20 +36,23 @@ class TestContentCsvToJson(TestCase):
         # GIVEN we have written a csv with one topic and two tables, each with two categories and one total
         self.write_test_CSV([
             ["code","taxonomy","display taxonomy","name","desc","units", "Data percentage component 1", 
-            "Data percentage component 2","Data percentage component 3", "comparison component 2"],
-            ["", "topic","topic", "Topic 1", "Topic 1 desc.", "", "", "", "", ""],
-            ["1_1", "variable","category", "Class 1_1", "Class 1_1 desc.", "units_1", "", "", ""],
-            ["1_1_0001", "category","subject", "Cat 1_1_0001", "Cat 1_1_0001 desc.", "", "", "", ""],
+            "Data percentage component 2","Data percentage component 3", "comparison component 2", 
+            "Category description component"],
+            ["", "topic","topic", "Topic 1", "Topic 1 desc.", "", "", "", "", "", ""],
+            ["1_1", "variable","category", "Class 1_1", "Class 1_1 desc.", "units_1", "", "", "", "", 
+            "var_1_1_custom_desc"],
+            ["1_1_0001", "category","subject", "Cat 1_1_0001", "Cat 1_1_0001 desc.", "", "", "", "", ""],
             ["1_1_0002", "category","subject", "Cat 1_1_0002", "Cat 1_1_0002 desc.", "", "dpc1_1_1_2", "dpc2_1_1_2",
-            "dpc3_1_1_2", "cc2_1_1_2"],
+            "dpc3_1_1_2", "cc2_1_1_2", ""],
             ["1_1_0003", "category","subject", "Cat 1_1_0003", "Cat 1_1_0003 desc.", "", "dpc1_1_1_3", "dpc2_1_1_3",
-            "dpc3_1_1_3", "cc2_1_1_3"],
-            ["1_2", "variable","category", "Class 1_2", "Class 1_2 desc.", "units_2", "", "", ""],
-            ["1_2_0001", "category","subject", "Cat 1_2_0001", "Cat 1_2_0001 desc.", "", "", "", ""],
+            "dpc3_1_1_3", "cc2_1_1_3", ""],
+            ["1_2", "variable","category", "Class 1_2", "Class 1_2 desc.", "units_2", "", "", "", "", 
+            "var_1_2_custom_desc"],
+            ["1_2_0001", "category","subject", "Cat 1_2_0001", "Cat 1_2_0001 desc.", "", "", "", "", ""],
             ["1_2_0002", "category","subject", "Cat 1_2_0002", "Cat 1_2_0002 desc.", "", "dpc1_1_2_2", "dpc2_1_2_2",
-            "dpc3_1_2_2", "cc2_1_2_2"],
+            "dpc3_1_2_2", "cc2_1_2_2", ""],
             ["1_2_0003", "category","subject", "Cat 1_2_0003", "Cat 1_2_0003 desc.", "", "dpc1_1_2_3", "dpc2_1_2_3",
-            "dpc3_1_2_3", "cc2_1_2_3"],
+            "dpc3_1_2_3", "cc2_1_2_3", ""],
         ])
        
         # WHEN we run the content_csv_to_json script
@@ -68,6 +71,7 @@ class TestContentCsvToJson(TestCase):
                         "slug": "class-1-1",
                         "desc": "Class 1_1 desc.",
                         "units": "units_1",
+                        "topic_page_cat_desc": "var_1_1_custom_desc",
                         "total": {
                             "code": "1_1_0001",
                             "name": "Cat 1_1_0001",
@@ -100,6 +104,7 @@ class TestContentCsvToJson(TestCase):
                         "slug": "class-1-2",
                         "desc": "Class 1_2 desc.",
                         "units": "units_2",
+                        "topic_page_cat_desc": "var_1_2_custom_desc",
                         "total": {
                             "code": "1_2_0001",
                             "name": "Cat 1_2_0001",
@@ -131,5 +136,4 @@ class TestContentCsvToJson(TestCase):
         ]
 
         returned = self.read_test_JSON()
-        print(returned)
         self.assertEqual(expected, returned)

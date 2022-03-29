@@ -1,11 +1,11 @@
-import { defaultGeography } from "../helpers/spatialHelper";
+import { englandAndWales } from "../helpers/spatialHelper";
 
 const apiBaseUrl = `https://cep5lmkia0.execute-api.eu-west-1.amazonaws.com/dev`;
 
 export const fetchGeographyLookup = async (location: string, useCode = true) => {
-  // return defaultGeography if the name or code matches...
-  if ((useCode && defaultGeography.meta.code == location) || defaultGeography.meta.name == location) {
-    return JSON.stringify(defaultGeography);
+  // return englandAndWales if the name or code matches...
+  if ((useCode && englandAndWales.meta.code == location) || englandAndWales.meta.name == location) {
+    return JSON.stringify(englandAndWales);
   }
   // otherwise query API
   const url = `${apiBaseUrl}/geo/2011?${useCode ? "geocode" : "geoname"}=${location}`;

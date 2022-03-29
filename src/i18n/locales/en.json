@@ -3,7 +3,9 @@
     "title": "Search by area",
     "label": "Enter a local council.",
     "button": "Choose",
-    "error": "You must enter the name of the local council or city."
+    "error": "You must enter the name of the local council or city.",
+    "reset": "See data for all England and Wales",
+    "close": "Close"
   },
   "heading": {
     "homePage": {

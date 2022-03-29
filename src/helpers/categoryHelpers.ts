@@ -1,5 +1,5 @@
 import topics from "../data/content";
-import { defaultGeography } from "./spatialHelper";
+import { englandAndWales } from "./spatialHelper";
 import type { Variable, VariableData, Category } from "../types";
 import { unCapitalizeFirstLetter } from "../util/stringUtil";
 
@@ -47,7 +47,7 @@ export function getSelectedGeography(pageUrl) {
   if (geoCode) {
     return { geoType, geoCode };
   } else {
-    return { geoType: defaultGeography.meta.geotype, geoCode: defaultGeography.meta.code };
+    return { geoType: englandAndWales.meta.geotype, geoCode: englandAndWales.meta.code };
   }
 }
 
@@ -79,7 +79,6 @@ export const formatTemplateString = (
 
 export const comparePercentage = (percentage1: number, percentage2: number) => {
   const difference = percentage1 - percentage2;
-  console.log(difference);
   if (difference > 0) {
     return `${formatPercentage(difference)}% higher than`;
   } else if (difference < 0) {

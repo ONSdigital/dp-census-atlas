@@ -8,7 +8,7 @@
 <div class="xl:tw-absolute tw-inset-0 xl:tw-flex tw-flex-col">
   <Header />
   <div class="tw-flex-1 tw-flex tw-flex-col-reverse xl:tw-flex-row tw-overflow-y-scroll">
-    <div class="tw-flex-1 tw-grow-[3] xl:tw-max-w-[42rem]">
+    <div class="tw-flex-1 tw-grow-[3] xl:tw-max-w-[27rem]">
       <slot />
     </div>
     <div class="tw-flex-1 tw-grow-[4] tw-relative">

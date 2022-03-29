@@ -2,7 +2,6 @@
   import ONSAutoSuggest from "./ons/ONSAutoSuggest.svelte";
   import ONSError from "./ons/ONSError.svelte";
 
-  import { selectedGeographyStore } from "../stores/stores";
   import { setGeoSearchParam } from "../helpers/queryParamsHelper";
   import type { GeographyAutoSuggestProps } from "../types";
 
@@ -12,37 +11,35 @@
   export let title: string = "Search by area";
   export let error: string = "Error";
   export let header: boolean = false;
+  export let invert: boolean = undefined;
+  export let padding: boolean = undefined;
+  export let onClose: () => void = undefined;
 
   let userInputValue;
   let userInputMeta;
   let renderError = false;
-  let invertTextColor = false;
+  let invertTextColor = invert;
 
   const handleOnClick = async (value: GeographyAutoSuggestProps) => {
     renderError = false;
-    invertTextColor = false;
+    invertTextColor = invert;
     if (value) {
-      const { en, geoCode, geoType, bbox } = value;
-      selectedGeographyStore.set({
-        geoType: geoType.toLowerCase(),
-        displayName: en,
-        geoCode,
-        bbox,
-      });
+      const { geoCode, geoType } = value;
       setGeoSearchParam({ geoCode, geoType: geoType.toLowerCase() });
+      onClose();
     } else {
       renderError = true;
-      invertTextColor = true;
+      invertTextColor = false;
     }
   };
 </script>
 
 <div class="component-margin--2">
   {#if !header}
-    <h2 class="ons-u-mb-xs">{title}</h2>
+    <h2 class={`ons-u-mb-xs ${invert ? "invert" : ""}`}>{title}</h2>
   {/if}
   <ONSError errorText={error} {id} {renderError}>
-    <div class="ons-field">
+    <div class={`ons-field ${padding ? "tw-pb-8" : ""}`}>
       <ONSAutoSuggest
         labelText={label}
         {invertTextColor}
@@ -60,8 +57,9 @@
   </ONSError>
 </div>
 
-<style>
-  .component-margin--2 {
-    margin-bottom: 2rem;
+<style lang="scss">
+  @import "../../node_modules/@ons/design-system/scss/vars/_index.scss";
+  .invert {
+    color: $color-white;
   }
 </style>

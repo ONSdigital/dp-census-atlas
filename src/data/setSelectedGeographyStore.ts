@@ -4,14 +4,14 @@ import { getCodesForCategory } from "../helpers/categoryHelpers";
 import { englandAndWales } from "../helpers/spatialHelper";
 import type { GeographyInfo, GeoType } from "../types";
 import { selectedGeographyStore } from "../stores/stores";
-import { fetchGeographyInfoByGeoCode, fetchSelectedGeographyData } from "./api";
+import { fetchGeographyInfo, fetchSelectedGeographyData } from "./api";
 
 export const setSelectedGeographyStore = async (args: { geoType: GeoType; geoCode: string }) => {
   const peopleCodes = getCodesForCategory("health", "general-health", "default", "very-good-health");
   const householdsCodes = getCodesForCategory("housing", "size-of-household", "default", "1-person-households");
 
   const [geographyinfo, peopleTotal, householdTotal] = await Promise.all([
-    fetchGeographyInfoByGeoCode(args.geoCode),
+    fetchGeographyInfo(args.geoCode),
     fetchSelectedGeographyData({
       totalCode: peopleCodes.totalCode,
       categoryCodes: peopleCodes.categoryCodes,

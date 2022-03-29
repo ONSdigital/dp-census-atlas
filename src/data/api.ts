@@ -49,21 +49,11 @@ export const fetchSelectedGeographyData = async (args: {
   return dsv.csvParse(csv);
 };
 
-export const fetchGeographyInfoByGeoCode = async (geoCode: string) => {
+export const fetchGeographyInfo = async (geoCode: string) => {
   if (geoCode === englandAndWales.meta.code) {
     return JSON.stringify(englandAndWales);
   }
   const url = `${apiBaseUrl}/geo/2011?geocode=${geoCode}`;
-  const response = await fetch(url);
-  const data = await response.text();
-  return data;
-};
-
-export const fetchGeographyInfoByName = async (name: string) => {
-  if (name === englandAndWales.meta.name) {
-    return JSON.stringify(englandAndWales);
-  }
-  const url = `${apiBaseUrl}/geo/2011?geoname=${name}`;
   const response = await fetch(url);
   const data = await response.text();
   return data;

@@ -67,9 +67,6 @@
     border-bottom: 0;
     color: #222222;
   }
-  .ons-table__header:nth-child(2) {
-    padding-left: 0px;
-  }
   th {
     font-weight: normal;
   }
@@ -77,10 +74,10 @@
     font-weight: bold;
   }
   table tr th:nth-child(1) {
-    width: 50%;
+    width: 45%;
   }
-  table tr th:nth-child(2) {
-    width: 22.5%;
+  table tr th:nth-child(3) {
+    width: 30%;
   }
   .ons-table__cell {
     font-size: 18px;
@@ -98,9 +95,6 @@
     padding-right: 18px;
   }
 
-  .ons-table__cell:nth-child(2) {
-    padding-left: 0px;
-  }
   .ons-table__cell--onSelect {
     font-weight: bold;
     color: #222222;

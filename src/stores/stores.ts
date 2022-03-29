@@ -16,8 +16,9 @@ export const vizStore = writable<VizData | undefined>(undefined);
 /**
  * A Svelte store containing all the data we need to show the selected geography.
  */
-export const selectedGeographyStore = writable<SelectedGeographyData | undefined>({
-  displayName: "England and Wales",
-  geoCode: "K04000001",
-  geoType: "ew",
-});
+export const selectedGeographyStore = writable<SelectedGeographyData | undefined>(undefined);
+// {
+//   displayName: "England and Wales",
+//   geoCode: "K04000001",
+//   geoType: "ew",
+// }

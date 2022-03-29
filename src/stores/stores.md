@@ -29,8 +29,8 @@
        displayName: string,
        geoCode: string,
        geoType: string,
-       allHouseholdsTotal:string,
-       allPeopleTotal:string
+       allHouseholdsTotal:number,
+       allPeopleTotal:number
     }
 
 ## selectedGeographyVariableStore

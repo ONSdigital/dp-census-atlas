@@ -1,7 +1,7 @@
 <script lang="ts">
   import { page } from "$app/stores";
   import { mapStore, selectedGeographyStore, vizStore } from "../stores/stores";
-  import { fetchVizData } from "../data/fetchVizData";
+  import { setVizStore } from "../data/setVizStore";
   import { getCodesForCategory } from "../helpers/categoryHelpers";
   import CensusTable from "./CensusTable.svelte";
   import NavigationComponent from "./NavigationComponent.svelte";
@@ -28,7 +28,7 @@
 
   $: if ($mapStore) {
     let codes = getCodesForCategory(params.topic, params.variable, params.classification, params.category);
-    fetchVizData({
+    setVizStore({
       ...codes,
       geoType: selectedGeographyGeoType,
       geoCode: selectedGeographyGeoCode,

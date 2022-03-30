@@ -57,7 +57,7 @@ export const initMap = (container) => {
 
   map.on("click", "msoa-features", (e) => {
     const geoCode = e.features[0].properties["areacd"];
-    handleLocationSelect({ geoType: "msoa", geoCode }, window.location.pathname);
+    handleLocationSelect({ geoType: "msoa", geoCode });
   });
 
   return map;

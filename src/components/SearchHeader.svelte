@@ -50,10 +50,7 @@
         <button
           class="tw-underline"
           on:click={() => {
-            handleLocationSelect(
-              { geoType: englandAndWales.meta.geotype, geoCode: englandAndWales.meta.code },
-              window.location.pathname,
-            );
+            handleLocationSelect({ geoType: englandAndWales.meta.geotype, geoCode: englandAndWales.meta.code });
             onClose();
           }}>{$_("search.reset")}</button
         >

@@ -25,7 +25,7 @@
     invertTextColor = invert;
     if (value) {
       const { geoCode, geoType } = value;
-      handleLocationSelect({ geoCode, geoType: geoType.toLowerCase() }, window.location.pathname);
+      handleLocationSelect({ geoCode, geoType: geoType.toLowerCase() });
       onClose();
     } else {
       renderError = true;

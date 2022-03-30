@@ -19,43 +19,40 @@
       topic.name,
     )} category to explore in ${selectedGeographyDisplayName ? selectedGeographyDisplayName : "England and Wales"}`}
   />
-  <div class="tw-overflow-y-scroll">
-    <div class="p-6 bg-onspale mb-6">
-      <p>
+  <div class="tw-px-4 tw-overflow-y-scroll">
+    <div class="tw-py-3">
+      <p class="tw-m-0">
         Change to a
         <a href={buildHyperlink($page.url, null, "topics")}>new topic</a>
       </p>
     </div>
-
-    <div class="ons-page__container ons-container">
-      <main class="ons-page__main">
-        {#each topic.variables as variable}
-          <ONSAccordion showAll={false}>
-            <ONSAccordionPanel
-              id={variable.slug}
-              title={variable.name}
-              description={variable?.topic_page_cat_desc || variable.desc}
-            >
-              <ul class="ons-list ons-list--bare">
-                {#each variable.categories as category}
-                  <li class="ons-list__item">
-                    <a
-                      class="ons-list__link"
-                      href={buildHyperlink($page.url, {
-                        topic: topic.slug,
-                        variable: variable.slug,
-                        category: category.slug,
-                      })}
-                    >
-                      {category.name}
-                    </a>
-                  </li>
-                {/each}
-              </ul>
-            </ONSAccordionPanel>
-          </ONSAccordion>
-        {/each}
-      </main>
+    <div class="tw-pb-14">
+      {#each topic.variables as variable}
+        <ONSAccordion showAll={false}>
+          <ONSAccordionPanel
+            id={variable.slug}
+            title={variable.name}
+            description={variable?.topic_page_cat_desc || variable.desc}
+          >
+            <ul class="ons-list ons-list--bare">
+              {#each variable.categories as category}
+                <li>
+                  <a
+                    class="tw-underline"
+                    href={buildHyperlink($page.url, {
+                      topic: topic.slug,
+                      variable: variable.slug,
+                      category: category.slug,
+                    })}
+                  >
+                    {category.name}
+                  </a>
+                </li>
+              {/each}
+            </ul>
+          </ONSAccordionPanel>
+        </ONSAccordion>
+      {/each}
     </div>
   </div>
 </div>
@@ -63,9 +60,6 @@
 <style lang="scss">
   @import "../../node_modules/@ons/design-system/scss/vars/_index.scss";
 
-  a {
-    text-decoration: underline;
-  }
   a:visited {
     color: $color-indigo-blue;
   }

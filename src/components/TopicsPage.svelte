@@ -12,5 +12,7 @@
     serviceTitle={$_("heading.topicsPage.serviceTitle") +
       `${selectedGeographyDisplayName ? selectedGeographyDisplayName : "England and Wales"}`}
   />
-  <TopicList />
+  <div class="tw-overflow-y-scroll tw-p-5">
+    <TopicList />
+  </div>
 </div>

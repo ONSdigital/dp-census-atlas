@@ -20,5 +20,36 @@
     "title": "Explore",
     "peopleSubTitle": "All people (usual residents)",
     "householdsSubTitle": "All households"
+  },
+  "homePage": {
+    "topicList": {
+      "title": "Select a topic",
+      "description": "We have grouped census information into topics, categories and subjects to help you find what you are looking for."
+    }
+  },
+  "suggestions": {
+    "homePage": {
+      "title": "Popular topic searches",
+      "content": [
+        {
+          "label": "Which areas have the highest levels of shared ownership properties?",
+          "topic": "housing",
+          "variable": "owned-or-renting",
+          "category": "shared-ownership-homes"
+        },
+        {
+          "label": "Which areas of the country are the most healthy?",
+          "topic": "health",
+          "variable": "general-health",
+          "category": "very-good-health"
+        },
+        {
+          "label": "Where are the highest levels of homes without central heating?",
+          "topic": "housing",
+          "variable": "heating",
+          "category": "no-central-heating"
+        }
+      ]
+    }
   }
 }

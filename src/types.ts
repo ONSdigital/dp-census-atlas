@@ -75,3 +75,12 @@ export type Bbox = {
   west: number;
   south: number;
 };
+
+export type LocaleSuggestions = [
+  {
+    label: string;
+    topic: string;
+    variable: string;
+    category: string;
+  },
+];

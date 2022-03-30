@@ -9,8 +9,13 @@
   $: selectedGeographyDisplayName = $selectedGeographyStore?.displayName;
 </script>
 
-<div class="ons-card component-margin--2" role="region" aria-labelledBy="explore-title" aria-describedBy="text">
-  <h2 class="ons-u-fs-m">{title}</h2>
+<div
+  class="tw-px-4 tw-pt-4 ons-card component-margin--2"
+  role="region"
+  aria-labelledBy="explore-title"
+  aria-describedBy="text"
+>
+  <h2 class="ons-u-fs-m tw-mb-3">{title}</h2>
   <div class="ons-grid explore-container">
     <div class="ons-grid__col ons-col-6@m">
       <div class="ons-pl-grid-col">

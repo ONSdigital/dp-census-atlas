@@ -11,6 +11,26 @@
           category: typeof topics[0]["variables"][0]["categories"][0];
     }
 
+## selectedGeographyStore
+
+    {
+       displayName: string,
+       geoCode: string,
+       geoType: string,
+       allHouseholdsTotal:number,
+       allPeopleTotal:number
+    }
+
+## selectedGeographyVariableStore
+
+    {
+       displayName: string,
+       geoCode: string,
+       geoType: string,
+       variableData:{ [catCode: string]: { count: number; total: number; percentage: number } },
+       englandAndWalesVariableData:{ [catCode: string]: { count: number; total: number; percentage: number } }
+    }
+
 ## mapStore
 
     {
@@ -21,29 +41,4 @@
           south: number;
           };
        geoType: "ew" | "lad" | "msoa" | string;
-    }
-
-## selectedGeographyStore
-
-    {
-       displayName: string,
-       geoCode: string,
-       geoType: string,
-       allHouseholdsTotal:string,
-       allPeopleTotal:string
-    }
-
-## selectedGeographyVariableStore
-
-    {
-       displayName: string,
-       geoCode: string,
-       geoType: string,
-       variableData:{ [catCode: string]: { count: number; total: number; percentage: number } },
-    }
-
-## englandandWalesStore
-
-    {
-       [catCode: string]: { count: number; total: number; percentage: number },
     }

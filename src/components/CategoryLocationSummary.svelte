@@ -4,7 +4,7 @@
   import { englandAndWales } from "../helpers/spatialHelper";
   import type { Variable, VariableData, Category } from "../types";
   export let variableData: VariableData;
-  export let defaultGeoVariableData: VariableData;
+  export let englandAndWalesVariableData: VariableData;
   export let variable: Variable;
   export let category: Category;
   export let location: string;
@@ -29,7 +29,7 @@
     {args && isNotEnglandAndWales
       ? `Thats ${comparePercentage(
           variableData[category.code]?.percentage,
-          defaultGeoVariableData[category.code]?.percentage,
+          englandAndWalesVariableData[category.code]?.percentage,
         )} ${englandAndWales.meta.name}.`
       : ""}
   </p>

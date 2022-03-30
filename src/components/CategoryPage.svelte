@@ -1,7 +1,8 @@
 <script lang="ts">
   import { page } from "$app/stores";
-  import { mapStore, selectedGeographyStore, vizStore } from "../stores/stores";
-  import { fetchVizData } from "../data/fetchVizData";
+  import { mapStore, selectedGeographyStore, selectedGeographyVariableStore } from "../stores/stores";
+  import { setVizStore } from "../data/setVizStore";
+  import { setSelectedGeographyVariableStore } from "../data/setSelectedGeographyVariableStore";
   import { getCodesForCategory } from "../helpers/categoryHelpers";
   import CensusTable from "./CensusTable.svelte";
   import NavigationComponent from "./NavigationComponent.svelte";
@@ -12,8 +13,8 @@
 
   let changeLocation: boolean = false;
 
-  $: variableData = $vizStore?.variableData;
-  $: defaultGeoVariableData = $vizStore?.defaultGeoVariableData;
+  $: variableData = $selectedGeographyVariableStore?.variableData;
+  $: englandAndWalesVariableData = $selectedGeographyVariableStore?.englandAndWalesVariableData;
   $: params = $page.params;
   $: topicSlug = params.topic;
   $: topic = topics.find((t) => t.slug === topicSlug);
@@ -28,11 +29,16 @@
 
   $: if ($mapStore) {
     let codes = getCodesForCategory(params.topic, params.variable, params.classification, params.category);
-    fetchVizData({
+    setVizStore({
       ...codes,
       geoType: selectedGeographyGeoType,
       geoCode: selectedGeographyGeoCode,
       bbox: $mapStore.bbox,
+    });
+    setSelectedGeographyVariableStore({
+      totalCode: codes.totalCode,
+      categoryCodes: codes.categoryCodes,
+      geoCode: selectedGeographyGeoCode,
     });
   }
 </script>
@@ -53,7 +59,7 @@
     <CategoryLocationSummary
       {variable}
       {variableData}
-      {defaultGeoVariableData}
+      {englandAndWalesVariableData}
       {category}
       location={selectedGeographyDisplayName}
     />

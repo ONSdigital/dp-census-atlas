@@ -18,10 +18,9 @@ export const initMap = (container) => {
     zoom: 11,
   });
 
-  selectedGeographyStore.subscribe((meta) => {
-    if (meta.bbox) {
-      const { bbox } = meta;
-      const bounds = new mapboxgl.LngLatBounds(bbox);
+  selectedGeographyStore.subscribe((geography) => {
+    if (geography) {
+      const bounds = new mapboxgl.LngLatBounds(geography.bbox);
       if (JSON.stringify(bounds) !== JSON.stringify(map.getBounds())) {
         map.flyTo({
           center: bounds.getCenter(),

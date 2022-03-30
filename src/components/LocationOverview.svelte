@@ -3,8 +3,8 @@
   import { page } from "$app/stores";
   import { selectedGeographyStore } from "../stores/stores";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
-  export let allPeopleTotal: string;
-  export let allHouseholdsTotal: string;
+  export let allPeopleTotal: number;
+  export let allHouseholdsTotal: number;
   export let title: string;
   $: selectedGeographyDisplayName = $selectedGeographyStore?.displayName;
 </script>

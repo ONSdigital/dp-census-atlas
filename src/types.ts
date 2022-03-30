@@ -20,15 +20,20 @@ export type VizData = {
     variable: Variable;
     category: Category;
   };
-  variableData?: VariableData;
-  defaultGeoVariableData?: VariableData;
 };
 
 export type SelectedGeographyData = {
   geoType: GeoType;
-  displayName: string;
   geoCode: string;
-  bbox?: [number, number, number, number];
+  displayName: string;
+  bbox: [number, number, number, number];
+  allHouseholdsTotal: number;
+  allPeopleTotal: number;
+};
+
+export type SelectedGeographyVariableData = {
+  variableData: VariableData;
+  englandAndWalesVariableData: VariableData;
 };
 
 export type GeographyAutoSuggestProps = {
@@ -40,16 +45,16 @@ export type GeographyAutoSuggestProps = {
   sanitisedText?: string;
 };
 
-export type GeographyLookupProps = {
+export type GeographyInfo = {
   meta: {
     name: string;
     code: string;
     geotype: string;
   };
-  geo_json: GeographyGeo;
+  geo_json: GeographyGeojson;
 };
 
-type GeographyGeo = {
+type GeographyGeojson = {
   type: string;
   features: GeographyFeatures[];
 };

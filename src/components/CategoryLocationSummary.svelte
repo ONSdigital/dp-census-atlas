@@ -19,8 +19,8 @@
   }
 </script>
 
-<div>
-  <h2>{args ? `${category.name} in ${location}` : ""}</h2>
+<div class="tw-px-4 tw-pt-4">
+  <h2 class="ons-u-fs-m tw-mb-1.5">{args ? `${category.name} in ${location}` : ""}</h2>
   <p>{args ? category.desc : ""}</p>
   <p>
     {args ? formatTemplateString(variable, variableData, category, location, category.cat_location_summary_pt2) : ""}
@@ -33,7 +33,7 @@
         )} ${englandAndWales.meta.name}.`
       : ""}
   </p>
-  <h3>{args ? variable.name : ""}</h3>
+  <h3 class="tw-mb-1.5">{args ? variable.name : ""}</h3>
   <p>{args ? `${category.name} is part of ${variable.name}` : ""}</p>
   <!-- Dead link included for UR. Will point at data dictionary entry for topic when the data dictionary exists -->
   <a>{args ? `Full definition for ${variable.name}` : ""}</a>

@@ -57,9 +57,8 @@
   </ONSError>
 </div>
 
-<style lang="scss">
-  @import "../../node_modules/@ons/design-system/scss/vars/_index.scss";
+<style>
   .invert {
-    color: $color-white;
+    color: var(--color-white);
   }
 </style>

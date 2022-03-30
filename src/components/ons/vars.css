@@ -1,0 +1,38 @@
+:root {
+  /* Grey palette */
+  --color-black: #222;
+  --color-grey-100: #414042;
+  --color-grey-75: #707071;
+  --color-grey-35: #bcbcbd;
+  --color-grey-15: #e2e2e3;
+  --color-grey-5: #f5f5f6;
+  --color-white: #fff;
+
+  /* Primary brand palette */
+  --color-night-blue: #003c57; /* ONS logo primary */
+  --color-spring-green: #a8bd3a; /* ONS logo accent */
+  --color-ocean-blue: #4f606d;
+  --color-sky-blue: #27a0cc;
+  --color-aqua-teal: #00a3a6;
+
+  /* Supporting palette */
+  --color-leaf-green: #0f8243;
+  --color-ruby-red: #d0021b;
+  --color-jaffa-orange: #fa6401;
+  --color-sun-yellow: #fbc900;
+  --color-neon-yellow: #f0f762;
+
+  /* Census 2021 */
+  --color-indigo-blue: #3c388e;
+  --color-plum-purple: #902082;
+  --color-flamingo-pink: #df0667;
+
+  /* Grid */
+  @custom-media --grid-bp-xxs (min-width: 300px);
+  @custom-media --grid-bp-xs (min-width: 400px);
+  @custom-media --grid-bp-s (min-width: 500px);
+  @custom-media --grid-bp-m (min-width: 740px);
+  @custom-media --grid-bp-l (min-width: 980px);
+  @custom-media --grid-bp-xl (min-width: 1300px);
+  @custom-media --grid-bp-xxl (min-width: 1600px);
+}

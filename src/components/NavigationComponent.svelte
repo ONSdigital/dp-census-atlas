@@ -3,12 +3,11 @@
   import { page } from "$app/stores";
 
   export let topicSlug, search, currentURL, onClick;
-  export let isMobile = false;
 
   $: currentLocationLink = search ? `${currentURL}${search}` : currentURL;
 </script>
 
-<div class={`ons-grid ons-grid--flex navigation-container ${isMobile ? "mobile" : ""}`}>
+<div class={"ons-grid ons-grid--flex navigation-container"}>
   <div class="ons-grid__col ons-col-auto ons-grid__col--flex divider">
     <div class="ons-pl-grid-col">
       <a
@@ -30,23 +29,18 @@
   </div>
 </div>
 
-<style lang="scss">
-  @import "../../node_modules/@ons/design-system/scss/vars/_index.scss";
-
+<style>
   .navigation-container {
     min-height: 46px;
-    background-color: $color-ocean-blue;
+    background-color: var(--color-ocean-blue);
     margin: unset;
     padding: 6px 0px;
   }
-  .mobile {
-    margin: 0px -18px;
-  }
   a {
-    color: $color-white;
+    color: var(--color-white);
   }
   .divider {
-    border-right: 0.25px solid $color-white;
+    border-right: 0.25px solid var(--color-white);
   }
   .ons-grid__col {
     justify-content: center;

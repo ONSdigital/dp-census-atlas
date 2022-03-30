@@ -3,7 +3,7 @@ import { fromEvent, merge } from "rxjs";
 import { delay, throttleTime } from "rxjs/operators";
 import type { GeoType } from "../types";
 import { vizStore, mapStore, selectedGeographyStore } from "../stores/stores";
-import { setGeoSearchParam } from "../helpers/queryParamsHelper";
+import { handleLocationSelect } from "../helpers/locationSelectHelper";
 import { initMapLayers } from "./initMapLayers";
 import { renderMapViz } from "./renderMapViz";
 
@@ -56,7 +56,7 @@ export const initMap = (container) => {
 
   map.on("click", "msoa-features", (e) => {
     const geoCode = e.features[0].properties["areacd"];
-    setGeoSearchParam({ geoType: "msoa", geoCode });
+    handleLocationSelect({ geoType: "msoa", geoCode });
   });
 
   return map;

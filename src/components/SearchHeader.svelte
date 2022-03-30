@@ -2,7 +2,7 @@
   import { _ } from "svelte-i18n";
   import { selectedGeographyStore } from "../stores/stores";
 
-  import { setGeoSearchParam } from "../helpers/queryParamsHelper";
+  import { handleLocationSelect } from "../helpers/locationSelectHelper";
 
   import Search from "./Search.svelte";
   import { englandAndWales } from "../helpers/spatialHelper";
@@ -50,7 +50,7 @@
         <button
           class="tw-underline"
           on:click={() => {
-            setGeoSearchParam({ geoType: englandAndWales.meta.geotype, geoCode: englandAndWales.meta.code });
+            handleLocationSelect({ geoType: englandAndWales.meta.geotype, geoCode: englandAndWales.meta.code });
             onClose();
           }}>{$_("search.reset")}</button
         >

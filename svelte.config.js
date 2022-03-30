@@ -2,9 +2,6 @@ import adapter from "@sveltejs/adapter-auto";
 import dotenv from "dotenv";
 import nodeAdapter from "@sveltejs/adapter-node";
 import preprocess from "svelte-preprocess";
-import tailwind from "tailwindcss";
-import autoprefixer from "autoprefixer";
-import postcssCustomMedia from "postcss-custom-media";
 
 dotenv.config();
 
@@ -24,9 +21,7 @@ const config = {
   // Consult https://github.com/sveltejs/svelte-preprocess
   // for more information about preprocessors
   preprocess: preprocess({
-    postcss: {
-      plugins: [tailwind, autoprefixer, postcssCustomMedia],
-    },
+    postcss: true,
   }),
   kit: {
     adapter: getAdapter(),

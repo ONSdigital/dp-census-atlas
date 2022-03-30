@@ -4,16 +4,16 @@
   import LocationOverview from "./LocationOverview.svelte";
   import { selectedGeographyStore } from "../stores/stores";
 
-  $: selectedGeographyDisplayName = $selectedGeographyStore?.displayName;
+  $: selectedGeographyDisplayName = $selectedGeographyStore?.displayName
+    ? $selectedGeographyStore.displayName
+    : $_("defaultGeography");
   $: allHouseholdsTotal = $selectedGeographyStore?.allHouseholdsTotal;
   $: allPeopleTotal = $selectedGeographyStore?.allPeopleTotal;
 </script>
 
-<Heading serviceTitle={selectedGeographyDisplayName ? selectedGeographyDisplayName : "England and Wales"} />
+<Heading serviceTitle={selectedGeographyDisplayName} />
 <LocationOverview
   {allPeopleTotal}
   {allHouseholdsTotal}
-  title="{$_('locationOverview.title')} {selectedGeographyDisplayName
-    ? selectedGeographyDisplayName
-    : 'England and Wales'}"
+  title={$_("locationOverview.title", { values: { selectedGeographyDisplayName: `${selectedGeographyDisplayName}` } })}
 />

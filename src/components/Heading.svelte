@@ -22,9 +22,7 @@
   </div>
 </header>
 
-<style lang="scss">
-  @import "../../node_modules/@ons/design-system/scss/vars/_index.scss";
-
+<style>
   .ons-container {
     padding: 0 1rem;
   }
@@ -36,7 +34,7 @@
   .ons-header__main {
     padding: 1rem 0;
   }
-  @media only screen and (min-width: map-get($grid-bp, m)) {
+  @media (--grid-bp-m) {
     .ons-header__main {
       height: auto;
     }

@@ -46,9 +46,7 @@
   </div>
 </div>
 
-<style lang="scss">
-  @import "../../node_modules/@ons/design-system/scss/vars/_index.scss";
-
+<style>
   .ons-collapsible--noTopBorder:first-child .ons-collapsible__heading {
     border-top: 0;
   }

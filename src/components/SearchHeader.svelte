@@ -59,15 +59,14 @@
   </div>
 </div>
 
-<style lang="scss">
-  @import "../../node_modules/@ons/design-system/scss/vars/_index.scss";
+<style>
   .search-container {
-    background-color: $color-ocean-blue;
+    background-color: var(--color-ocean-blue);
   }
   button {
-    color: $color-white;
+    color: var(color-white);
   }
   .close-button {
-    background-color: $color-night-blue;
+    background-color: var(color-night-blue);
   }
 </style>

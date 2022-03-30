@@ -3,12 +3,11 @@
   import { page } from "$app/stores";
 
   export let topicSlug, search, currentURL, onClick;
-  export let isMobile = false;
 
   $: currentLocationLink = search ? `${currentURL}${search}` : currentURL;
 </script>
 
-<div class={`ons-grid ons-grid--flex navigation-container ${isMobile ? "mobile" : ""}`}>
+<div class={"ons-grid ons-grid--flex navigation-container"}>
   <div class="ons-grid__col ons-col-auto ons-grid__col--flex divider">
     <div class="ons-pl-grid-col">
       <a
@@ -36,9 +35,6 @@
     background-color: var(--color-ocean-blue);
     margin: unset;
     padding: 6px 0px;
-  }
-  .mobile {
-    margin: 0px -18px;
   }
   a {
     color: var(--color-white);

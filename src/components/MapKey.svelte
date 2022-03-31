@@ -2,7 +2,10 @@
   import { vizStore } from "../stores/stores";
   import { choroplethColours } from "../helpers/choroplethHelpers";
   import { calculateDataBreakBuckets } from "../helpers/mapKeyHelper";
-  const buckets = calculateDataBreakBuckets([4.11, 6.4587, 19.23423, 80.3434, 90], 2.013);
+  import { areAllDefined } from "../util/genUtil";
+  let buckets;
+  $: areAllDefined([$vizStore?.breaks]) &&
+    (buckets = calculateDataBreakBuckets($vizStore.breaks, $vizStore?.minMaxVals[0]));
 </script>
 
 {#if $vizStore}

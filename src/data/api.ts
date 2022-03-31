@@ -12,7 +12,11 @@ export const fetchQuery = async (args: { totalCode: string; categoryCode: string
   return dsv.csvParse(csv);
 };
 
-export const fetchBreaks = async (args: { totalCode: string; categoryCodes: string[]; geoType: GeoType }) => {
+export const fetchBreaks = async (args: {
+  totalCode: string;
+  categoryCodes: string[];
+  geoType: GeoType;
+}): Promise<{ breaks: { [categoryCode: string]: number[] }; minMax: { [categoryCode: string]: number[] } }> => {
   const breakCount = 5;
 
   // TODO imporove this? or don't get here if England & Wales
@@ -20,10 +24,12 @@ export const fetchBreaks = async (args: { totalCode: string; categoryCodes: stri
   // geography (england and wales)
   if (args.geoType === englandAndWales.meta.geotype) {
     const noBreaksBreaks = {};
+    const noBreaksMinMax = {};
     for (const categoryCode of args.categoryCodes) {
       noBreaksBreaks[categoryCode] = Array(breakCount).fill(-1);
+      noBreaksMinMax[categoryCode] = Array(2).fill(-1);
     }
-    return noBreaksBreaks;
+    return { breaks: noBreaksBreaks, minMax: noBreaksMinMax };
   }
 
   const url = `${apiBaseUrl}/ckmeans/2011?divide_by=${args.totalCode}&cat=${args.categoryCodes.join(",")}&geotype=${
@@ -32,8 +38,15 @@ export const fetchBreaks = async (args: { totalCode: string; categoryCodes: stri
   const response = await fetch(url);
   const parsed = await response.json();
 
-  // (ignore data from the API that we don't need)
-  return Object.fromEntries(Object.keys(parsed).map((code) => [code, parsed[code][args.geoType.toUpperCase()]]));
+  // (ignore data from the API for geotypes we don't need)
+  const breaks = Object.fromEntries(
+    Object.keys(parsed).map((code) => [code, parsed[code][args.geoType.toUpperCase()]]),
+  );
+  const minMax = Object.fromEntries(
+    Object.keys(parsed).map((code) => [code, parsed[code][`${args.geoType.toUpperCase()}_min_max`]]),
+  );
+
+  return { breaks, minMax };
 };
 
 export const fetchSelectedGeographyData = async (args: {

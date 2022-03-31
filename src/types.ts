@@ -14,6 +14,7 @@ export type VariableData = { [catCode: string]: { count: number; total: number; 
 
 export type VizData = {
   breaks: number[];
+  minMaxVals: number[];
   places: { geoCode: string; count: number; percentage: number; total: number }[];
   params: {
     topic: Topic;

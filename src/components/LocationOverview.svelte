@@ -1,12 +1,18 @@
 <script lang="ts">
-  import { _ } from "svelte-i18n";
+  import { _, json } from "svelte-i18n";
   import { page } from "$app/stores";
   import { selectedGeographyStore } from "../stores/stores";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
+  import type { LocaleSuggestions } from "../types";
   export let allPeopleTotal: number;
   export let allHouseholdsTotal: number;
   export let title: string;
-  $: selectedGeographyDisplayName = $selectedGeographyStore?.displayName;
+
+  $: selectedGeographyDisplayName = $selectedGeographyStore?.displayName
+    ? $selectedGeographyStore.displayName
+    : $_("defaultGeography");
+
+  const suggestions: LocaleSuggestions = $json("suggestions.locationPage.content");
 </script>
 
 <div
@@ -31,44 +37,27 @@
     </div>
   </div>
   <p>
-    The 2021 Census tells us a lot about how people in {selectedGeographyDisplayName
-      ? selectedGeographyDisplayName
-      : "England and Wales"} live and work.
+    {$_("locationOverview.content", { values: { selectedGeographyDisplayName: `${selectedGeographyDisplayName}` } })}
   </p>
   <p>
-    <a href={buildHyperlink($page.url, null, "topics")}>Choose a topic from the full list</a> or explore one of these suggestions.
+    <a href={buildHyperlink($page.url, null, $_("suggestions.locationPage.title.slug"))}
+      >{$_("suggestions.locationPage.title.hyperlink")}</a
+    >
+    {$_("suggestions.locationPage.title.text")}
   </p>
   <ul class="ons-list ons-list--bare">
-    <li class="ons-list__item">
-      <a
-        href={buildHyperlink($page.url, {
-          topic: "education",
-          variable: "highest-level-of-qualification-gained",
-          category: "level-4-qualifications-and-above",
-        })}
-        class="ons-list__link">People with a Level 4 education or above.</a
-      >
-    </li>
-    <li class="ons-list__item">
-      <a
-        href={buildHyperlink($page.url, {
-          topic: "health",
-          variable: "general-health",
-          category: "good-health",
-        })}
-        class="ons-list__link">Residents general health.</a
-      >
-    </li>
-    <li class="ons-list__item">
-      <a
-        href={buildHyperlink($page.url, {
-          topic: "housing",
-          variable: "size-of-household",
-          category: "2-person-households",
-        })}
-        class="ons-list__link">What is the most common household size?</a
-      >
-    </li>
+    {#each suggestions as { topic, variable, category, label }}
+      <li class="ons-list__item">
+        <a
+          href={buildHyperlink($page.url, {
+            topic,
+            variable,
+            category,
+          })}
+          class="ons-list__link">{label}</a
+        >
+      </li>
+    {/each}
   </ul>
 </div>
 

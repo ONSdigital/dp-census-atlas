@@ -1,4 +1,5 @@
 {
+  "defaultGeography": "England and Wales",
   "search": {
     "title": "Search by area",
     "label": "Enter a local council.",
@@ -17,9 +18,10 @@
     }
   },
   "locationOverview": {
-    "title": "Explore",
+    "title": "Explore {selectedGeographyDisplayName}",
     "peopleSubTitle": "All people (usual residents)",
-    "householdsSubTitle": "All households"
+    "householdsSubTitle": "All households",
+    "content": "The 2021 Census tells us a lot about how people in {selectedGeographyDisplayName} live and work."
   },
   "homePage": {
     "topicList": {
@@ -48,6 +50,33 @@
           "topic": "housing",
           "variable": "heating",
           "category": "no-central-heating"
+        }
+      ]
+    },
+    "locationPage": {
+      "title": {
+        "hyperlink": "Choose a topic from the full list ",
+        "text": "or explore one of these suggestions.",
+        "slug": "topics"
+      },
+      "content": [
+        {
+          "label": "People with a Level 4 education or above.",
+          "topic": "education",
+          "variable": "highest-level-of-qualification-gained",
+          "category": "level-4-qualifications-and-above"
+        },
+        {
+          "label": "Residents general health.",
+          "topic": "health",
+          "variable": "general-health",
+          "category": "good-health"
+        },
+        {
+          "label": "What is the most common household size?",
+          "topic": "housing",
+          "variable": "size-of-household",
+          "category": "2-person-households"
         }
       ]
     }

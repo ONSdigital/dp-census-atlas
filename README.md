@@ -26,6 +26,11 @@ All _important_ state flows in one direction from the URL to the UI. This is a f
           `path` picks a node                `query` selects
           in the content tree                 the geography
 
+## Localization
+
+All hard-coded text should be added to the en.json file within the i18n locales folder. Each translation can be created under it's own file e.g cy.json.
+The structure of the file is pages and hard-coded text relevant to those pages and custom components and text relevant to those components.
+
 ## Developing
 
 Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:

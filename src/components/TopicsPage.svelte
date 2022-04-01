@@ -9,8 +9,11 @@
 
 <div class="tw-flex tw-flex-col tw-max-h-full">
   <Heading
-    serviceTitle={$_("heading.topicsPage.serviceTitle") +
-      `${selectedGeographyDisplayName ? selectedGeographyDisplayName : "England and Wales"}`}
+    serviceTitle={$_("topicsPage.heading.serviceTitle", {
+      values: {
+        selectedGeographyDisplayName: selectedGeographyDisplayName ? selectedGeographyDisplayName : "England and Wales",
+      },
+    })}
   />
   <div class="tw-overflow-y-scroll tw-p-5">
     <TopicList />

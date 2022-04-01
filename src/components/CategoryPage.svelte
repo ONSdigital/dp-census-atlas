@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { _ } from "svelte-i18n";
   import { page } from "$app/stores";
   import { mapStore, selectedGeographyStore, selectedGeographyVariableStore } from "../stores/stores";
   import { setVizStore } from "../data/setVizStore";
@@ -10,6 +11,9 @@
   import CategoryHeading from "./CategoryHeading.svelte";
   import CategoryLocationSummary from "./CategoryLocationSummary.svelte";
   import SearchHeader from "./SearchHeader.svelte";
+  import Icon from "./Icon.svelte";
+  import ONSShare from "./ons/ONSShare.svelte";
+  import ONSShareItem from "./ons/ONSShareItem.svelte";
 
   let changeLocation: boolean = false;
 
@@ -43,6 +47,17 @@
   }
 </script>
 
+<svelte:head>
+  <title
+    >{$_("categoryPage.html.title", {
+      values: {
+        categoryName: category.name,
+        selectedGeographyDisplayName: `${selectedGeographyDisplayName}`,
+      },
+    })}</title
+  >
+</svelte:head>
+
 <div class="tw-flex tw-flex-col tw-max-h-full">
   {#if changeLocation}
     <SearchHeader onClose={() => (changeLocation = !changeLocation)} />
@@ -64,5 +79,19 @@
       location={selectedGeographyDisplayName}
     />
     <CensusTable {variable} {variableData} />
+    <div class="tw-p-5">
+      <ONSShare title={$_("share.title")}>
+        <ONSShareItem label="Facebook" type="facebook"><Icon type="facebook" /></ONSShareItem>
+        <ONSShareItem label="Twitter" type="twitter"><Icon type="twitter" /></ONSShareItem>
+        <ONSShareItem label="Linkedin" type="linkedin"><Icon type="linkedin" /></ONSShareItem>
+        <ONSShareItem
+          title={$_("categoryPage.html.title", {
+            values: { categoryName: category.name, selectedGeographyDisplayName: `${selectedGeographyDisplayName}` },
+          })}
+          label="Email"
+          type="email"><Icon type="email" /></ONSShareItem
+        >
+      </ONSShare>
+    </div>
   </div>
 </div>

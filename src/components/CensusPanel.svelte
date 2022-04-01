@@ -4,13 +4,16 @@
 
   import Search from "./Search.svelte";
   import TopicList from "./TopicList.svelte";
+  import Icon from "./Icon.svelte";
   import ONSCollapsible from "./ons/ONSCollapsible.svelte";
+  import ONSShare from "./ons/ONSShare.svelte";
+  import ONSShareItem from "./ons/ONSShareItem.svelte";
 
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
 
   import type { LocaleSuggestions } from "../types";
 
-  const suggestions: LocaleSuggestions = $json("suggestions.homePage.content");
+  const suggestions: LocaleSuggestions = $json("homePage.suggestions.content");
 </script>
 
 <div class="tw-overflow-y-scroll">
@@ -32,7 +35,7 @@
       <TopicList />
     </div>
     <div class="tw-pb-16">
-      <ONSCollapsible isRegularFontWeightTitle title={$_("suggestions.homePage.title")} a11yHeading>
+      <ONSCollapsible isRegularFontWeightTitle title={$_("homePage.suggestions.title")} a11yHeading>
         {#each suggestions as { topic, variable, category, label }}
           <p>
             <a
@@ -48,5 +51,11 @@
         {/each}
       </ONSCollapsible>
     </div>
+    <ONSShare title={$_("share.title")}>
+      <ONSShareItem label="Facebook" type="facebook"><Icon type="facebook" /></ONSShareItem>
+      <ONSShareItem label="Twitter" type="twitter"><Icon type="twitter" /></ONSShareItem>
+      <ONSShareItem label="Linkedin" type="linkedin"><Icon type="linkedin" /></ONSShareItem>
+      <ONSShareItem title={$_("homePage.html.title")} label="Email" type="email"><Icon type="email" /></ONSShareItem>
+    </ONSShare>
   </div>
 </div>

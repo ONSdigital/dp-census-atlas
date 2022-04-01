@@ -1,5 +1,6 @@
 <script lang="ts">
   import { page } from "$app/stores";
+  import { _ } from "svelte-i18n";
   import ONSAccordion from "./ons/ONSAccordion.svelte";
   import ONSAccordionPanel from "./ons/ONSAccordionPanel.svelte";
   import Heading from "./Heading.svelte";
@@ -15,9 +16,13 @@
 
 <div class="tw-flex tw-flex-col tw-max-h-full">
   <Heading
-    serviceTitle={`Select ${returnCorrectArticle(topic.name)} ${unCapitalizeFirstLetter(
-      topic.name,
-    )} category to explore in ${selectedGeographyDisplayName ? selectedGeographyDisplayName : "England and Wales"}`}
+    serviceTitle={$_("topicPage.heading.serviceTitle", {
+      values: {
+        topicArticle: returnCorrectArticle(topic.name),
+        topicName: unCapitalizeFirstLetter(topic.name),
+        selectedGeographyDisplayName: selectedGeographyDisplayName ? selectedGeographyDisplayName : "England and Wales",
+      },
+    })}
   />
   <div class="tw-px-4 tw-overflow-y-scroll">
     <div class="tw-py-3">

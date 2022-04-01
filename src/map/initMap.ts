@@ -4,6 +4,7 @@ import { delay, throttleTime } from "rxjs/operators";
 import type { GeoType } from "../types";
 import { vizStore, mapStore, selectedGeographyStore } from "../stores/stores";
 import { handleLocationSelect } from "../helpers/locationSelectHelper";
+import { englandAndWales } from "../helpers/spatialHelper";
 import { initMapLayers } from "./initMapLayers";
 import { renderMapViz } from "./renderMapViz";
 
@@ -11,11 +12,15 @@ mapboxgl.accessToken = "pk.eyJ1Ijoic3Vtb3RoZWNhdCIsImEiOiJjaWxocngyanYwMDY4dmprc
 
 /** Configure the map's properties and subscribe to its events. */
 export const initMap = (container) => {
+  /* Set default center as EW bounds center */
+  const { features } = englandAndWales.geo_json;
+  const center = new mapboxgl.LngLatBounds(features[0].geometry.coordinates).getCenter();
+
   const map = new Map({
     container,
     style: "mapbox://styles/mapbox/navigation-day-v1",
-    center: { lat: 53, lng: -2 },
-    zoom: 11,
+    center,
+    zoom: 7,
   });
 
   selectedGeographyStore.subscribe((geography) => {

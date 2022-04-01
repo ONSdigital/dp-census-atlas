@@ -12,7 +12,7 @@
     ? $selectedGeographyStore.displayName
     : $_("defaultGeography");
 
-  const suggestions: LocaleSuggestions = $json("suggestions.locationPage.content");
+  const suggestions: LocaleSuggestions = $json("locationPage.suggestions.content");
 </script>
 
 <div
@@ -40,10 +40,10 @@
     {$_("locationOverview.content", { values: { selectedGeographyDisplayName: `${selectedGeographyDisplayName}` } })}
   </p>
   <p>
-    <a href={buildHyperlink($page.url, null, $_("suggestions.locationPage.title.slug"))}
-      >{$_("suggestions.locationPage.title.hyperlink")}</a
+    <a href={buildHyperlink($page.url, null, $_("locationPage.suggestions.title.slug"))}
+      >{$_("locationPage.suggestions.title.hyperlink")}</a
     >
-    {$_("suggestions.locationPage.title.text")}
+    {$_("locationPage.suggestions.title.text")}
   </p>
   <ul class="ons-list ons-list--bare">
     {#each suggestions as { topic, variable, category, label }}

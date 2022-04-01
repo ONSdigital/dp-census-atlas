@@ -12,9 +12,10 @@ export const setVizStore = async (args: {
   geoCode: string;
   bbox: Bbox;
 }) => {
-  const [places, breaks] = await Promise.all([fetchQuery(args), fetchBreaks(args)]);
+  const [places, breaksData] = await Promise.all([fetchQuery(args), fetchBreaks(args)]);
   vizStore.set({
-    breaks: breaks[args.categoryCode].map((breakpoint) => parseFloat(breakpoint) * 100),
+    breaks: breaksData.breaks[args.categoryCode].map((breakpoint) => parseFloat(breakpoint) * 100),
+    minMaxVals: breaksData.minMax[args.categoryCode],
     places: places.map((row) => parsePlaceData(row, args.totalCode, args.categoryCode)),
     params: getCategoryInfo(args.categoryCode),
   });

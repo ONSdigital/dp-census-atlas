@@ -11,7 +11,7 @@ export const calculateDataBreakBuckets = (breaks: number[], min: number) => {
       //for all other buckets, set upperVal to the start of the next bucket minus 0.1
       upperVal = (Math.round(fullBreaks[i + 1] * 10) / 10 - 0.1).toFixed(1);
     }
-    stringsArr.push(`${lowVal}% to ${upperVal}%`);
+    stringsArr.push(`${lowVal}% - ${upperVal}%`);
   }
   return stringsArr.reverse();
 };

@@ -1,11 +1,13 @@
-// "source": "Census Atlas Content - V4_4.csv",
-// "utc_created_at": "2022-03-28T15:35:55.048890"
+// meta: {
+//   source: "Census Atlas Content - V4_4b.csv",
+//   utc_created_at: "2022-04-04T08:24:22.484496"
+// }
 
 export default [
   {
     name: "Education",
     slug: "education",
-    desc: "Residents in education and qualifications they hold.",
+    desc: "People in education and qualifications they hold.",
     variables: [
       {
         name: "Highest level of qualification gained",
@@ -96,7 +98,7 @@ export default [
   {
     name: "Health",
     slug: "health",
-    desc: "General health and caring responsibilities.",
+    desc: "People's general health and caring responsibilities.",
     variables: [
       {
         name: "General health",
@@ -347,7 +349,7 @@ export default [
             slug: "whole-houses-or-bungalows",
             code: "QS402EW0003",
             desc: "This is a property that has not been split into separate flats or other accommodation.",
-            category_h_pt2: "of {category_unit} in {location} live in",
+            category_h_pt2: "of {category_unit} in {location} are",
             category_h_pt3: "{category_name}",
             cat_location_summary_pt2:
               "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) live in {category_name}.",
@@ -357,30 +359,30 @@ export default [
             slug: "flats-maisonettes-or-apartments",
             code: "QS402EW0007",
             desc: "This could be in a purpose built block or tenement, part of a converted or shared house (including bedsits), part of another converted building.",
-            category_h_pt2: "of {category_unit} in {location} live in",
+            category_h_pt2: "of {category_unit} in {location} are",
             category_h_pt3: "{category_name}",
             cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) live in {category_name}.",
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
           },
           {
             name: "Caravans or other temporary structures",
             slug: "caravans-or-other-temporary-structures",
             code: "QS402EW0011",
             desc: "This could include camper vans, canal barges, converrted railway carriages,garden building or shed, houseboats, mobile homes, tents, trailers.",
-            category_h_pt2: "of {category_unit} in {location} live in",
+            category_h_pt2: "of {category_unit} in {location} are",
             category_h_pt3: "{category_name}",
             cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) live in {category_name}.",
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
           },
           {
             name: "Shared homes",
             slug: "shared-homes",
             code: "QS402EW0012",
             desc: "A home is shared if the household spaces it contains are ‘part of a converted or shared house or not all rooms are behind closed doors.",
-            category_h_pt2: "of {category_unit} in {location} live in",
+            category_h_pt2: "of {category_unit} in {location} are",
             category_h_pt3: "{category_name}",
             cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) live in {category_name}.",
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
           },
         ],
         total: {
@@ -400,7 +402,7 @@ export default [
             name: "No dedicated bedroom",
             slug: "no-dedicated-bedroom",
             code: "QS411EW0002",
-            desc: "This type of home a home with no dedicated bedroom such as a bedsit or studio apartment.",
+            desc: "This type of home has no dedicated bedroom. This could be a bedsit or studio apartment.",
             category_h_pt2: "of {category_unit} in {location} have",
             category_h_pt3: "{category_name}",
             cat_location_summary_pt2:
@@ -540,7 +542,7 @@ export default [
             code: "QS416EW0003",
             desc: "This is the number of cars or vans people living in the same home own or use.",
             category_h_pt2: "of {category_unit} in {location} have",
-            category_h_pt3: "{category_name}",
+            category_h_pt3: "{category_name} available",
             cat_location_summary_pt2:
               "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) available.",
           },
@@ -550,7 +552,7 @@ export default [
             code: "QS416EW0004",
             desc: "This is the number of cars or vans people living in the same home own or use.",
             category_h_pt2: "of {category_unit} in {location} have",
-            category_h_pt3: "{category_name}",
+            category_h_pt3: "{category_name} available",
             cat_location_summary_pt2:
               "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) available.",
           },
@@ -632,7 +634,7 @@ export default [
             name: "Two or more types of central heating",
             slug: "two-or-more-types-of-central-heating",
             code: "QS415EW0008",
-            desc: "This central heating system is has more than one fuel source and heats morte than one room in a building.",
+            desc: "This central heating system has more than one fuel source and heats more than one room in a building.",
             category_h_pt2: "of {category_unit} in {location} have",
             category_h_pt3: "{category_name}",
             cat_location_summary_pt2:
@@ -656,7 +658,7 @@ export default [
             name: "Live in a household",
             slug: "live-in-a-household",
             code: "QS101EW0002",
-            desc: "A place where people live alone or together",
+            desc: "A place where people live alone or together.",
             category_h_pt2: "of {category_unit} in {location}",
             category_h_pt3: "{category_name}",
             cat_location_summary_pt2:
@@ -684,7 +686,7 @@ export default [
   {
     name: "Identity",
     slug: "identity",
-    desc: "How residents identify themselves and their beliefs.",
+    desc: "How people identify themselves and their beliefs.",
     variables: [
       {
         name: "Ethnicity",
@@ -946,7 +948,7 @@ export default [
             name: "No religion",
             slug: "no-religion",
             code: "QS208EW0009",
-            desc: "People who they neither practice or identify with in any religion.",
+            desc: "People who neither practice or identify with any religion.",
             category_h_pt2: "of {category_unit} in {location} have",
             category_h_pt3: "{category_name}",
             cat_location_summary_pt2:
@@ -958,7 +960,7 @@ export default [
             code: "QS208EW0002",
             desc: "This is someone who identify with as Christian whether they practice or have belief in it.",
             category_h_pt2: "of {category_unit} in {location} are",
-            category_h_pt3: "{category_name}",
+            category_h_pt3: "Christian",
             cat_location_summary_pt2:
               "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
           },
@@ -968,7 +970,7 @@ export default [
             code: "QS208EW0003",
             desc: "This is someone who identify with as Buddhist whether they practice or have belief in it.",
             category_h_pt2: "of {category_unit} in {location} are",
-            category_h_pt3: "{category_name}",
+            category_h_pt3: "Buddhist",
             cat_location_summary_pt2:
               "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
           },
@@ -978,7 +980,7 @@ export default [
             code: "QS208EW0004",
             desc: "This is someone who identify with as Hindu whether they practice or have belief in it.",
             category_h_pt2: "of {category_unit} in {location} are",
-            category_h_pt3: "{category_name}",
+            category_h_pt3: "Hindu",
             cat_location_summary_pt2:
               "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
           },
@@ -988,7 +990,7 @@ export default [
             code: "QS208EW0005",
             desc: "This is someone who identify with as Jewish whether they practice or have belief in it.",
             category_h_pt2: "of {category_unit} in {location} are",
-            category_h_pt3: "{category_name}",
+            category_h_pt3: "Jewish",
             cat_location_summary_pt2:
               "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
           },
@@ -998,7 +1000,7 @@ export default [
             code: "QS208EW0006",
             desc: "This is someone who identify with as Muslim whether they practice or have belief in it.",
             category_h_pt2: "of {category_unit} in {location} are",
-            category_h_pt3: "{category_name}",
+            category_h_pt3: "Muslim",
             cat_location_summary_pt2:
               "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
           },
@@ -1008,7 +1010,7 @@ export default [
             code: "QS208EW0007",
             desc: "This is someone who identify with as Sikh whether they practice or have belief in it.",
             category_h_pt2: "of {category_unit} in {location} are",
-            category_h_pt3: "{category_name}",
+            category_h_pt3: "Sikh",
             cat_location_summary_pt2:
               "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
           },
@@ -1017,8 +1019,8 @@ export default [
             slug: "other-religion",
             code: "QS208EW0008",
             desc: "This is someone who identify with as another religion whether they practice or have belief in it.",
-            category_h_pt2: "of {category_unit} in {location} have",
-            category_h_pt3: "{category_name}",
+            category_h_pt2: "of {category_unit} in {location}",
+            category_h_pt3: "do not follow one of the main religions",
             cat_location_summary_pt2:
               "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) do not follow one of the main religions.",
           },
@@ -1026,9 +1028,9 @@ export default [
             name: "Not stated",
             slug: "not-stated",
             code: "QS208EW0010",
-            desc: "This is someone who has chosen to mot state their religion or beliefs.",
+            desc: "This is someone who has chosen to not state their religion or beliefs.",
             category_h_pt2: "of {category_unit} in {location} have",
-            category_h_pt3: "{category_name}",
+            category_h_pt3: "{category_name} their religion",
             cat_location_summary_pt2:
               "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name} their religion.",
           },
@@ -1226,7 +1228,7 @@ export default [
   {
     name: "Population",
     slug: "population",
-    desc: "Residents and their living arrangements.",
+    desc: "People and their living arrangements.",
     variables: [
       {
         name: "Marital status",
@@ -1323,7 +1325,7 @@ export default [
             name: "Single family households",
             slug: "single-family-households",
             code: "QS113EW0005",
-            desc: "Single family household is when one family live in the same home",
+            desc: "Single family household is when one family live in the same home.",
             category_h_pt2: "of {category_unit} in {location} are",
             category_h_pt3: "{category_name}",
             cat_location_summary_pt2:
@@ -1406,7 +1408,7 @@ export default [
   {
     name: "Work",
     slug: "work",
-    desc: "Residents employment status.",
+    desc: "People's employment status.",
     variables: [
       {
         name: "Economic activity",
@@ -1568,15 +1570,15 @@ export default [
             name: "Work mainly from home",
             slug: "work-mainly-from-home",
             code: "QS701EW0002",
-            desc: "People that mainly work from home so do not travel to work for their main job.",
+            desc: "People that mainly work from home do not travel to work for their main job.",
             category_h_pt2: "of {category_unit} in {location}",
             category_h_pt3: "{category_name}",
             cat_location_summary_pt2:
               "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) {category_name}.",
           },
           {
-            name: "London Underground, metro, light rail, tram",
-            slug: "london-underground-metro-light-rail-tram",
+            name: "London Underground, metro, light rail, or tram",
+            slug: "london-underground-metro-light-rail-or-tram",
             code: "QS701EW0003",
             desc: "People that use London Underground (the tube), metro, light rail or tram for the longest, part by, distance of their journey to their main job.",
             category_h_pt2: "of {category_unit} in {location} travel to work by",
@@ -1664,8 +1666,8 @@ export default [
             slug: "less-than-2km",
             code: "QS702EW0002",
             desc: "People that travel less than 2 km (1.25 miles) to their main job.",
-            category_h_pt2: "of {category_unit}s in {location} {variable_name} is",
-            category_h_pt3: "{category_name}",
+            category_h_pt2: "of {category_unit} in {location} travel",
+            category_h_pt3: "less than 2km to work",
             cat_location_summary_pt2:
               "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel {category_name} to work.",
           },
@@ -1674,8 +1676,8 @@ export default [
             slug: "2km-to-less-than-5km",
             code: "QS702EW0003",
             desc: "People that travel between 2 km (1.25 miles) and 5 km (3.10 miles) to their main job.",
-            category_h_pt2: "of {category_unit}s in {location} {variable_name} is",
-            category_h_pt3: "{category_name}",
+            category_h_pt2: "of {category_unit}s in {location} travel from",
+            category_h_pt3: "2km to less than 5km",
             cat_location_summary_pt2:
               "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel between 2 km (1.25 miles) and 5 km (3.10 miles) to their main job.",
           },
@@ -1684,8 +1686,8 @@ export default [
             slug: "5km-to-less-than-10km",
             code: "QS702EW0004",
             desc: "People that travel between 5 km (3.10 miles) and 10 km (6.21 miles) to their main job.",
-            category_h_pt2: "of {category_unit}s in {location} {variable_name} is",
-            category_h_pt3: "{category_name}",
+            category_h_pt2: "of {category_unit}s in {location} travel from",
+            category_h_pt3: "5km to less than 10km",
             cat_location_summary_pt2:
               "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel between 5 km (3.10 miles) and 10 km (6.21 miles) to their main job.",
           },
@@ -1694,8 +1696,8 @@ export default [
             slug: "10km-to-less-than-20km",
             code: "QS702EW0005",
             desc: "People that travel between 10 km (6.21 miles) and 20 km (12.42 miles) to their main job.",
-            category_h_pt2: "of {category_unit}s in {location} {variable_name} is",
-            category_h_pt3: "{category_name}",
+            category_h_pt2: "of {category_unit}s in {location} travel from",
+            category_h_pt3: "10km to less than 20km",
             cat_location_summary_pt2:
               "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel between 10 km (6.21 miles) and 20 km (12.42 miles) to their main job.",
           },
@@ -1704,8 +1706,8 @@ export default [
             slug: "20km-to-less-than-30km",
             code: "QS702EW0006",
             desc: "People that travel between 20 km (12.42 miles) and 30 km (18.64 miles) to their main job.",
-            category_h_pt2: "of {category_unit}s in {location} {variable_name} is",
-            category_h_pt3: "{category_name}",
+            category_h_pt2: "of {category_unit}s in {location} travel from",
+            category_h_pt3: "20km to less than 30km",
             cat_location_summary_pt2:
               "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel between 20 km (12.42 miles) and 30 km (18.64 miles) to their main job.",
           },
@@ -1714,8 +1716,8 @@ export default [
             slug: "30km-to-less-than-40km",
             code: "QS702EW0007",
             desc: "People that travel between 30 km (18.64 miles) and 40 km (24.85 miles) to their main job.",
-            category_h_pt2: "of {category_unit}s in {location} {variable_name} is",
-            category_h_pt3: "{category_name}",
+            category_h_pt2: "of {category_unit}s in {location} travel from",
+            category_h_pt3: "30km to less than 40km",
             cat_location_summary_pt2:
               "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel between 30 km (18.64 miles) and 40 km (24.85 miles) to their main job.",
           },
@@ -1724,8 +1726,8 @@ export default [
             slug: "40km-to-less-than-60km",
             code: "QS702EW0008",
             desc: "People that travel between 40 km (24.85 miles) and 60 km (37.28 miles) to their main job.",
-            category_h_pt2: "of {category_unit}s in {location} {variable_name} is",
-            category_h_pt3: "{category_name}",
+            category_h_pt2: "of {category_unit}s in {location} travel from",
+            category_h_pt3: "40km to less than 60km",
             cat_location_summary_pt2:
               "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage})travel between 40 km (24.85 miles) and 60 km (37.28 miles) to their main job.",
           },
@@ -1734,8 +1736,8 @@ export default [
             slug: "60km-and-over",
             code: "QS702EW0009",
             desc: "People that travel over 60 km (37.28 miles) to their main job.",
-            category_h_pt2: "of {category_unit}s in {location} {variable_name} is",
-            category_h_pt3: "{category_name}",
+            category_h_pt2: "of {category_unit}s in {location} travel",
+            category_h_pt3: "60km and over.",
             cat_location_summary_pt2:
               "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel over 60 km (37.28 miles) to their main job.",
           },
@@ -1744,8 +1746,8 @@ export default [
             slug: "mainly-work-from-home",
             code: "QS702EW0010",
             desc: "People that mainly work from home so do not travel to work for their main job.",
-            category_h_pt2: "of {category_unit}s in {location} {variable_name}",
-            category_h_pt3: "{category_name}",
+            category_h_pt2: "of {category_unit}s in {location}",
+            category_h_pt3: "mainy work from home.",
             cat_location_summary_pt2:
               "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) work from home.",
           },

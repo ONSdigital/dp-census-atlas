@@ -1,6 +1,6 @@
 <script lang="ts">
   import { areAllDefined } from "../util/genUtil";
-  import { formatTemplateString, comparePercentage } from "../helpers/categoryHelpers";
+  import { formatTemplateString, formatPercentage } from "../helpers/categoryHelpers";
   import { englandAndWales } from "../helpers/spatialHelper";
   import type { Variable, VariableData, Category } from "../types";
   export let variableData: VariableData;
@@ -27,10 +27,9 @@
   </p>
   <p>
     {args && isNotEnglandAndWales
-      ? `Thats ${comparePercentage(
-          variableData[category.code]?.percentage,
-          englandAndWalesVariableData[category.code]?.percentage,
-        )} ${englandAndWales.meta.name}.`
+      ? `This compares to ${formatPercentage(englandAndWalesVariableData[category.code]?.percentage)}% for ${
+          englandAndWales.meta.name
+        }.`
       : ""}
   </p>
   <h3 class="tw-mb-1.5">{args ? variable.name : ""}</h3>

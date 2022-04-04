@@ -1,5 +1,5 @@
 import type { Variable, VariableData, Category } from "../types";
-import { comparePercentage, formatPercentage, formatTemplateString } from "./categoryHelpers";
+import { formatPercentage, formatTemplateString } from "./categoryHelpers";
 
 describe("formatPercentage", () => {
   test("rounds percentage to nearest single decimal place and returns as string - single decimal place input", () => {
@@ -10,18 +10,6 @@ describe("formatPercentage", () => {
   });
   test("rounds percentage to nearest single decimal place and returns as string - multiple decimal place input", () => {
     expect(formatPercentage(10.58098340980878)).toEqual("10.6");
-  });
-});
-
-describe("comparePercentage", () => {
-  test("returns corrected string when first percentage higher", () => {
-    expect(comparePercentage(100, 50)).toEqual("50.0% higher than");
-  });
-  test("returns corrected string when first percentage lower", () => {
-    expect(comparePercentage(50, 100)).toEqual("50.0% lower than");
-  });
-  test("returns corrected string when first and second percentages equal", () => {
-    expect(comparePercentage(50, 50)).toEqual("the same as");
   });
 });
 

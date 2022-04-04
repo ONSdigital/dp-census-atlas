@@ -1,18 +1,20 @@
 <script lang="ts">
-  export let colour: "primary" | "secondary" = "primary";
-  export let click: () => void;
+  import Icon from "./Icon.svelte";
+  import type { IconType } from "./Icon.svelte";
 
-  // 616165 boxshodaow
+  export let onClick: () => void;
+  export let label: string = "";
+  export let icon: IconType;
 </script>
 
 <button
-  on:click={click}
-  class="
-  tw-custom-ring
-  {colour === 'primary' ? 'tw-bg-onsgreen' : 'tw-bg-slate-200'}
-  {colour === 'primary' ? 'tw-text-white' : ''}
-  {colour === 'primary' ? 'tw-font-bold' : ''}
-  tw-rounded-md tw-border-b-[3px] tw-border-b-slate-600 tw-py-1 tw-px-3"
+  class="tw-flex tw-items-center tw-px-2 tw-py-1 tw-justify-center tw-bg-onsdarkblue tw-text-onswhite"
+  on:click={onClick}
 >
-  <slot />
+  {label}
+  <div class="tw-pl-1">
+    {#if icon}
+      <Icon type={icon} />
+    {/if}
+  </div>
 </button>

@@ -102,5 +102,8 @@
     "error": "You must enter the name of the local council or city.",
     "reset": "See data for all England and Wales",
     "close": "Close"
+  },
+  "mapKey": {
+    "button": "Collapse"
   }
 }

@@ -1,24 +1,42 @@
 <script lang="ts">
+  import { _ } from "svelte-i18n";
   import { vizStore } from "../stores/stores";
   import { choroplethColours } from "../helpers/choroplethHelpers";
+  import { calculateDataBreakBuckets } from "../helpers/mapKeyHelper";
+  import { areAllDefined } from "../util/genUtil";
+  import Button from "./Button.svelte";
+
+  let buckets: string[];
+  /* TODO: Mobile this is collapsed as default */
+  let collapse: boolean = false;
+  $: areAllDefined([$vizStore?.breaks]) &&
+    (buckets = calculateDataBreakBuckets($vizStore.breaks, $vizStore?.minMaxVals[0]));
 </script>
 
 {#if $vizStore}
-  <div class={`tw-flex tw-justify-center tw-absolute tw-bottom-8 tw-left-1/2 -tw-translate-x-1/2`}>
+  <div class={`tw-flex tw-absolute tw-right-[28px] tw-top-20 tw-w-28`}>
     <div
-      class="tw-z-abovemap tw-bg-white tw-px-8 tw-pb-2.5 tw-pt-3.5 tw-border-[1px] tw-border-slate-500 tw-flex tw-flex-col tw-gap-1.5 tw-items-center"
+      class="tw-z-abovemap tw-bg-white tw-px-2 tw-pt-2 tw-flex
+    tw-flex-col ons-u-fs-s"
     >
-      <div class="tw-flex tw-items-center tw-gap-1">
-        <div class="tw-text-sm tw-mr-1">Low</div>
-        {#each choroplethColours as colour}
-          <div class="tw-h-6 tw-w-6" style={`background-color: ${colour};`} />
-        {/each}
-        <div class="tw-text-sm tw-ml-1">High</div>
+      <p class="tw-mb-2 tw-text-base">
+        <!-- TODO: Mobile this text is hidden -->
+        {$vizStore.params.category.name}
+      </p>
+      <div
+        class="tw-text-onswhite tw-w-28 tw-p-1 tw-pl-1.5 tw-mb-1"
+        style={`background-color: ${choroplethColours[4]};`}
+      >
+        High
       </div>
-      <div class="tw-text-center">
-        Proportion of {$vizStore.params.variable.units.toLowerCase()}
-        with {$vizStore.params.category.name}
-        {$vizStore.params.variable.name}.
+      {#each choroplethColours.slice().reverse() as colour, i}
+        <div class="tw-w-28 tw-p-1.5 {i < 2 ? 'tw-text-onswhite' : null}" style={`background-color: ${colour};`}>
+          {#if !collapse}{buckets[i]}{/if}
+        </div>
+      {/each}
+      <div class="tw-w-28 tw-p-1 tw-pl-1.5 tw-mt-1" style={`background-color: ${choroplethColours[0]};`}>Low</div>
+      <div class="tw-flex tw-justify-end tw--mr-2 tw-mt-3">
+        <Button label={$_("mapKey.button")} icon="chevron-right" onClick={() => (collapse = !collapse)} />
       </div>
     </div>
   </div>

@@ -5,6 +5,7 @@
   import { handleLocationSelect } from "../helpers/locationSelectHelper";
 
   import Search from "./Search.svelte";
+  import Button from "./Button.svelte";
   import { englandAndWales } from "../helpers/spatialHelper";
 
   $: selectedGeographyGeoType = $selectedGeographyStore?.geoType;
@@ -12,28 +13,9 @@
   export let onClose: () => void;
 </script>
 
-<div class="search-container tw-relative tw-pt-8">
-  <div class="close-button tw-w-20 tw-h-8 tw-flex tw-justify-center tw-items-center tw-absolute tw-top-0 tw-right-0">
-    <button class="close-link tw-flex tw-gap-2 tw-items-center" on:click={onClose}
-      >{$_("search.close")}
-      <svg
-        class="ons-svg-icon"
-        width="19"
-        height="17"
-        viewBox="0 0 19 17"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M9.31707 10.5509L18.3902 2.09375L16.258 0.106323L9.31707 6.56194L2.37609 0.106323L0.243897 2.09375L9.31707 10.5509Z"
-          fill="white"
-        />
-        <path
-          d="M9.31707 6.44931L0.243896 14.9064L2.37609 16.8939L9.31707 10.4383L16.258 16.8939L18.3902 14.9064L9.31707 6.44931Z"
-          fill="white"
-        />
-      </svg>
-    </button>
+<div class="tw-bg-onsblue tw-relative tw-pt-8">
+  <div class="tw-absolute tw-top-0 tw-right-0">
+    <Button label={$_("search.close")} icon="close" onClick={onClose} />
   </div>
   <div class="ons-container">
     <Search
@@ -48,7 +30,7 @@
     <div class="tw-pb-6">
       {#if selectedGeographyGeoType !== "ew"}
         <button
-          class="tw-underline"
+          class="tw-underline tw-text-white"
           on:click={() => {
             handleLocationSelect({ geoType: englandAndWales.meta.geotype, geoCode: englandAndWales.meta.code });
             onClose();
@@ -58,15 +40,3 @@
     </div>
   </div>
 </div>
-
-<style>
-  .search-container {
-    background-color: var(--color-ocean-blue);
-  }
-  button {
-    color: var(color-white);
-  }
-  .close-button {
-    background-color: var(color-night-blue);
-  }
-</style>

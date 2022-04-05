@@ -76,13 +76,3 @@ export const formatTemplateString = (
   });
   return templateStr;
 };
-
-export const comparePercentage = (percentage1: number, percentage2: number) => {
-  const difference = percentage1 - percentage2;
-  if (difference > 0) {
-    return `${formatPercentage(difference)}% higher than`;
-  } else if (difference < 0) {
-    return `${formatPercentage(difference * -1)}% lower than`;
-  }
-  return "the same as";
-};

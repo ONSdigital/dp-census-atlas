@@ -1,5 +1,14 @@
 <script context="module" lang="ts">
-  export type IconType = "facebook" | "twitter" | "linkedin" | "email" | "logo" | "chevron-right" | "close" | "info";
+  export type IconType =
+    | "facebook"
+    | "twitter"
+    | "linkedin"
+    | "email"
+    | "logo"
+    | "chevron-right"
+    | "chevron-up"
+    | "close"
+    | "info";
 </script>
 
 <script lang="ts">
@@ -9,6 +18,7 @@
   import Email from "./icons/Email.svelte";
   import Logo from "./icons/Logo.svelte";
   import ChevronRight from "./icons/ChevronRight.svelte";
+  import ChevronUp from "./icons/ChevronUp.svelte";
   import Close from "./icons/Close.svelte";
   import Information from "./icons/Information.svelte";
 
@@ -39,6 +49,10 @@
     {
       id: "chevron-right",
       component: ChevronRight,
+    },
+    {
+      id: "chevron-up",
+      component: ChevronUp,
     },
     {
       id: "close",

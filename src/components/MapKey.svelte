@@ -40,7 +40,7 @@
         {#if collapse}
           <Icon type="info" onClick={() => (collapse = !collapse)} />
         {:else}
-          <Button label={$_("mapKey.button")} icon="chevron-right" onClick={() => (collapse = !collapse)} />
+          <Button label={$_("mapKey.button")} icon="chevron-up" onClick={() => (collapse = !collapse)} />
         {/if}
       </div>
     </div>

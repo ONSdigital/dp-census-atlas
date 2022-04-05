@@ -1,19 +1,23 @@
 <script lang="ts">
   import { _ } from "svelte-i18n";
   import { page } from "$app/stores";
+
   import { mapStore, selectedGeographyStore, selectedGeographyVariableStore } from "../stores/stores";
+  import topics from "../data/content";
   import { setVizStore } from "../data/setVizStore";
   import { setSelectedGeographyVariableStore } from "../data/setSelectedGeographyVariableStore";
   import { getCodesForCategory } from "../helpers/categoryHelpers";
+  import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
+
   import CensusTable from "./CensusTable.svelte";
   import NavigationComponent from "./NavigationComponent.svelte";
-  import topics from "../data/content";
   import CategoryHeading from "./CategoryHeading.svelte";
   import CategoryLocationSummary from "./CategoryLocationSummary.svelte";
   import SearchHeader from "./SearchHeader.svelte";
   import Icon from "./Icon.svelte";
   import ONSShare from "./ons/ONSShare.svelte";
   import ONSShareItem from "./ons/ONSShareItem.svelte";
+  import Explore from "./Explore.svelte";
 
   let changeLocation: boolean = false;
 
@@ -70,7 +74,7 @@
       onClick={() => (changeLocation = !changeLocation)}
     />
   {/if}
-  <div class="tw-overflow-y-scroll">
+  <div class="tw-flex tw-flex-col tw-gap-5 tw-p-3 tw-overflow-y-scroll">
     <CategoryLocationSummary
       {variable}
       {variableData}
@@ -79,19 +83,37 @@
       location={selectedGeographyDisplayName}
     />
     <CensusTable {variable} {variableData} />
-    <div class="tw-p-5">
-      <ONSShare title={$_("share.title")}>
-        <ONSShareItem label="Facebook" type="facebook"><Icon type="facebook" /></ONSShareItem>
-        <ONSShareItem label="Twitter" type="twitter"><Icon type="twitter" /></ONSShareItem>
-        <ONSShareItem label="Linkedin" type="linkedin"><Icon type="linkedin" /></ONSShareItem>
-        <ONSShareItem
-          title={$_("categoryPage.html.title", {
-            values: { categoryName: category.name, selectedGeographyDisplayName: `${selectedGeographyDisplayName}` },
-          })}
-          label="Email"
-          type="email"><Icon type="email" /></ONSShareItem
-        >
-      </ONSShare>
-    </div>
+    <ONSShare title={$_("share.title")}>
+      <ONSShareItem label="Facebook" type="facebook"><Icon type="facebook" /></ONSShareItem>
+      <ONSShareItem label="Twitter" type="twitter"><Icon type="twitter" /></ONSShareItem>
+      <ONSShareItem label="Linkedin" type="linkedin"><Icon type="linkedin" /></ONSShareItem>
+      <ONSShareItem
+        title={$_("categoryPage.html.title", {
+          values: { categoryName: category.name, selectedGeographyDisplayName: `${selectedGeographyDisplayName}` },
+        })}
+        label="Email"
+        type="email"><Icon type="email" /></ONSShareItem
+      >
+    </ONSShare>
+    <Explore
+      content={[
+        {
+          label: $_("explore.newCategoryLabel"),
+          href: buildHyperlink($page.url, {
+            topic: topicSlug,
+          }),
+        },
+
+        {
+          label: selectedGeographyDisplayName ? $_("explore.chooseLocationLabel") : $_("explore.newLocationLabel"),
+          href: "",
+          onClick: () => (changeLocation = !changeLocation),
+        },
+        {
+          label: $_("explore.backToStartLabel"),
+          href: buildHyperlink($page.url),
+        },
+      ]}
+    />
   </div>
 </div>

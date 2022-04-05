@@ -19,7 +19,7 @@
   }
 </script>
 
-<div class="tw-px-4 tw-pt-4">
+<div>
   <h2 class="ons-u-fs-m tw-mb-1.5">{args ? `${category.name} in ${location}` : ""}</h2>
   <p>{args ? category.desc : ""}</p>
   <p>

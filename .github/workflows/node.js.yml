@@ -11,17 +11,19 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  unit-test:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
       - name: Set up Node
         uses: actions/setup-node@v3
         with:
           node-version: 16.x
           cache: "npm"
-      - run: |
+      - name: Test
+        run: |
           npm ci
           npm run build --if-present
           npm test

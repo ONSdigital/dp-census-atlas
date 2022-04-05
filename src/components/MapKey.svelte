@@ -5,6 +5,7 @@
   import { calculateDataBreakBuckets } from "../helpers/mapKeyHelper";
   import { areAllDefined } from "../util/genUtil";
   import Button from "./Button.svelte";
+  import Icon from "./Icon.svelte";
 
   let buckets: string[];
   /* TODO: Mobile this is collapsed as default */
@@ -35,8 +36,12 @@
         </div>
       {/each}
       <div class="tw-w-28 tw-p-1 tw-pl-1.5 tw-mt-1" style={`background-color: ${choroplethColours[0]};`}>Low</div>
-      <div class="tw-flex tw-justify-end tw--mr-2 tw-mt-3">
-        <Button label={$_("mapKey.button")} icon="chevron-right" onClick={() => (collapse = !collapse)} />
+      <div class={`tw-flex tw-justify-end tw-mt-3 ${collapse ? "tw-mb-1" : "tw--mr-2"}`}>
+        {#if collapse}
+          <Icon type="info" onClick={() => (collapse = !collapse)} />
+        {:else}
+          <Button label={$_("mapKey.button")} icon="chevron-right" onClick={() => (collapse = !collapse)} />
+        {/if}
       </div>
     </div>
   </div>

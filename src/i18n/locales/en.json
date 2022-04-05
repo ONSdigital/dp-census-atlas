@@ -105,5 +105,13 @@
   },
   "mapKey": {
     "button": "Collapse"
+  },
+  "explore": {
+    "title": "Explore something else",
+    "newTopicLabel": "New topic",
+    "newCategoryLabel": "New Category",
+    "chooseLocationLabel": "Choose location",
+    "newLocationLabel": "New location",
+    "backToStartLabel": "Back to start"
   }
 }

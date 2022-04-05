@@ -2,14 +2,14 @@
   import { page } from "$app/stores";
   import { _, json } from "svelte-i18n";
 
+  import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
+
   import Search from "./Search.svelte";
   import TopicList from "./TopicList.svelte";
   import Icon from "./Icon.svelte";
   import ONSCollapsible from "./ons/ONSCollapsible.svelte";
   import ONSShare from "./ons/ONSShare.svelte";
   import ONSShareItem from "./ons/ONSShareItem.svelte";
-
-  import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
 
   import type { LocaleSuggestions } from "../types";
 

@@ -1,5 +1,5 @@
 <script context="module" lang="ts">
-  export type IconType = "facebook" | "twitter" | "linkedin" | "email" | "logo" | "chevron-right" | "close";
+  export type IconType = "facebook" | "twitter" | "linkedin" | "email" | "logo" | "chevron-right" | "close" | "info";
 </script>
 
 <script lang="ts">
@@ -10,8 +10,10 @@
   import Logo from "./icons/Logo.svelte";
   import ChevronRight from "./icons/ChevronRight.svelte";
   import Close from "./icons/Close.svelte";
+  import Information from "./icons/Information.svelte";
 
   export let type: IconType;
+  export let onClick: () => void = undefined;
 
   const icons = [
     {
@@ -42,9 +44,15 @@
       id: "close",
       component: Close,
     },
+    {
+      id: "info",
+      component: Information,
+    },
   ];
 
   $: icon = icons.find(({ id }) => id === type);
 </script>
 
-<svelte:component this={icon.component} />
+<div on:click={onClick}>
+  <svelte:component this={icon.component} />
+</div>

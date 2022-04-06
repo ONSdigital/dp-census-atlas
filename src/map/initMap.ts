@@ -66,7 +66,7 @@ export const initMap = (container) => {
   });
   map.on("click", "lad-features", (e) => {
     const geoCode = e.features[0].properties["lad11cd"];
-    setGeoSearchParam({ geoType: "lad", geoCode });
+    handleLocationSelect({ geoType: "lad", geoCode });
   });
 
   return map;

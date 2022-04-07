@@ -2,7 +2,7 @@
   "name": "svelteapp",
   "version": "0.0.1",
   "scripts": {
-    "dev": "svelte-kit dev",
+    "dev": "svelte-kit dev -p 28100",
     "build": "svelte-kit build",
     "build-node": "export SKADAPTER=node && svelte-kit build",
     "package": "svelte-kit package",

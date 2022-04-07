@@ -16,3 +16,9 @@
     @apply tw-bg-yellow-300 tw-font-bold;
   }
 }
+
+@layer base {
+  a {
+    @apply tw-underline;
+  }
+}

@@ -4,7 +4,7 @@
   export let variableData, variable;
 </script>
 
-<table class="ons-table ">
+<table class="ons-table">
   <thead class="ons-table__head">
     <tr class="ons-table__row">
       <th scope="col" class="ons-table__header" />

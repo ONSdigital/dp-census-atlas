@@ -113,5 +113,13 @@
     "chooseLocationLabel": "Choose location",
     "newLocationLabel": "New location",
     "backToStartLabel": "Back to start"
+  },
+  "footer": {
+    "label": "Is this page useful?",
+    "links": [
+      { "label": "Yes", "href": "/" },
+      { "label": "No", "href": "/" }
+    ],
+    "help": { "label": "Can’t find what you’re looking for?", "href": "/" }
   }
 }

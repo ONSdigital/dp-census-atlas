@@ -47,6 +47,10 @@
 </div>
 
 <style>
+  .ons-collapsible__icon {
+    display: flex;
+    align-items: flex-end;
+  }
   .ons-collapsible--noTopBorder:first-child .ons-collapsible__heading {
     border-top: 0;
   }

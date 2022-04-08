@@ -83,18 +83,20 @@
       location={selectedGeographyDisplayName}
     />
     <CensusTable {variable} {variableData} />
-    <ONSShare title={$_("share.title")}>
-      <ONSShareItem label="Facebook" type="facebook"><Icon type="facebook" /></ONSShareItem>
-      <ONSShareItem label="Twitter" type="twitter"><Icon type="twitter" /></ONSShareItem>
-      <ONSShareItem label="Linkedin" type="linkedin"><Icon type="linkedin" /></ONSShareItem>
-      <ONSShareItem
-        title={$_("categoryPage.html.title", {
-          values: { categoryName: category.name, selectedGeographyDisplayName: `${selectedGeographyDisplayName}` },
-        })}
-        label="Email"
-        type="email"><Icon type="email" /></ONSShareItem
-      >
-    </ONSShare>
+    <div>
+      <ONSShare title={$_("share.title")}>
+        <ONSShareItem label="Facebook" type="facebook"><Icon type="facebook" /></ONSShareItem>
+        <ONSShareItem label="Twitter" type="twitter"><Icon type="twitter" /></ONSShareItem>
+        <ONSShareItem label="Linkedin" type="linkedin"><Icon type="linkedin" /></ONSShareItem>
+        <ONSShareItem
+          title={$_("categoryPage.html.title", {
+            values: { categoryName: category.name, selectedGeographyDisplayName: `${selectedGeographyDisplayName}` },
+          })}
+          label="Email"
+          type="email"><Icon type="email" /></ONSShareItem
+        >
+      </ONSShare>
+    </div>
     <Explore
       content={[
         {

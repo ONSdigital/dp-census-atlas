@@ -71,6 +71,11 @@
 </div>
 
 <style lang="scss">
+  .ons-collapsible__icon {
+    display: flex;
+    align-items: flex-end;
+  }
+
   .ons-collapsible__title--regular {
     font-weight: normal;
   }

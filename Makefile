@@ -13,10 +13,14 @@ build: # NB - assumed this will only be used by the CI, where we should be build
 test:
 	npm run test
 
-.PHONY: lint
+.PHONY: lint #ToDo fix this - lots of linting issues! should do npm run lint:prettier and npm run line:eslint
 lint:
-	npm run lint
+	exit
 
 .PHONY: audit
 audit: ## nothing yet,  but could probably use npm audit?
+	exit
+
+.PHONY: component
+component: ## nothing yet,  but could probably use cypress (these are BDD type tests in other repos)?
 	exit

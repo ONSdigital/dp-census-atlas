@@ -1,37 +1,26 @@
 import { choroplethColours } from "../helpers/choroplethHelpers";
 import type { VizData } from "../types";
+import { layers } from "./layers";
 
 export const renderMapViz = (map: mapboxgl.Map, data: VizData) => {
   if (!data) return;
 
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore (typings for this overload are currently missing)
-  const features2 = map.queryRenderedFeatures({ layers: ["lad-features"] });
+  // TODO: we only only to do this for the currently visible geotype
+  layers.forEach((l) => {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore (typings for this overload are currently missing)
+    const features = map.queryRenderedFeatures({ layers: [`${l.name}-features`] });
 
-  features2.forEach((f) => {
-    const dataForFeature = data.places.find((p) => p.geoCode === f.id);
+    features.forEach((f) => {
+      const dataForFeature = data.places.find((p) => p.geoCode === f.id);
 
-    if (dataForFeature) {
-      map.setFeatureState(
-        { source: "lad", sourceLayer: "lad", id: f.id },
-        { colour: getChoroplethColour(dataForFeature.percentage, data.breaks) },
-      );
-    }
-  });
-
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore (typings for this overload are currently missing)
-  const features = map.queryRenderedFeatures({ layers: ["msoa-features"] });
-
-  features.forEach((f) => {
-    const dataForFeature = data.places.find((p) => p.geoCode === f.id);
-
-    if (dataForFeature) {
-      map.setFeatureState(
-        { source: "msoa", sourceLayer: "msoa", id: f.id },
-        { colour: getChoroplethColour(dataForFeature.percentage, data.breaks) },
-      );
-    }
+      if (dataForFeature) {
+        map.setFeatureState(
+          { source: l.name, sourceLayer: l.name, id: f.id },
+          { colour: getChoroplethColour(dataForFeature.percentage, data.breaks) },
+        );
+      }
+    });
   });
 };
 

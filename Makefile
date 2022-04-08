@@ -20,3 +20,7 @@ lint:
 .PHONY: audit
 audit: ## nothing yet,  but could probably use npm audit?
 	exit
+
+.PHONY: component
+component: ## nothing yet,  but could probably use cypress (these are BDD type tests in other repos)?
+	exit

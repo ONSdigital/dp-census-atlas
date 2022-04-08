@@ -68,6 +68,10 @@ job "dp-census-atlas" {
         source      = "${NOMAD_TASK_DIR}/vars-template"
         destination = "${NOMAD_TASK_DIR}/vars"
       }
+
+      vault {
+        policies = ["dp-census-atlas-web"]
+      }
     }
   }
 }

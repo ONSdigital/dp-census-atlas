@@ -39,7 +39,7 @@
     let codes = getCodesForCategory(params.topic, params.variable, params.classification, params.category);
     setVizStore({
       ...codes,
-      geoType: selectedGeographyGeoType,
+      geoType: $mapStore.geoType, // todo remove
       geoCode: selectedGeographyGeoCode,
       bbox: $mapStore.bbox,
     });

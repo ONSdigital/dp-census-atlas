@@ -7,31 +7,19 @@ import { handleLocationSelect } from "../helpers/locationSelectHelper";
 import { englandAndWales } from "../helpers/spatialHelper";
 import { initMapLayers } from "./initMapLayers";
 import { renderMapViz } from "./renderMapViz";
+import { layers, layersWithSiblings } from "./layers";
 
 mapboxgl.accessToken = "pk.eyJ1Ijoic3Vtb3RoZWNhdCIsImEiOiJjaWxocngyanYwMDY4dmprcTg4ODN2Z3B2In0.CockfZdHAzqOfsbw8VcQyQ";
+export const maxAllowedZoom = 22;
 
 /** Configure the map's properties and subscribe to its events. */
 export const initMap = (container) => {
-  /* Set default center as EW bounds center */
-  const { features } = englandAndWales.geo_json;
-  const center = new mapboxgl.LngLatBounds(features[0].geometry.coordinates).getCenter();
-
   const map = new Map({
     container,
     style: "mapbox://styles/mapbox/navigation-day-v1",
-    center,
-    zoom: 7,
-  });
-
-  selectedGeographyStore.subscribe((geography) => {
-    if (geography) {
-      const bounds = new mapboxgl.LngLatBounds(geography.bbox);
-      if (JSON.stringify(bounds) !== JSON.stringify(map.getBounds())) {
-        map.flyTo({
-          center: bounds.getCenter(),
-        });
-      }
-    }
+    center: new mapboxgl.LngLatBounds(englandAndWales.geo_json.features[0].geometry.coordinates).getCenter(),
+    zoom: 6,
+    maxZoom: maxAllowedZoom,
   });
 
   map.addControl(new mapboxgl.NavigationControl({ showCompass: false }));
@@ -59,9 +47,24 @@ export const initMap = (container) => {
       setMapStore(map);
     });
 
-  map.on("click", "msoa-features", (e) => {
-    const geoCode = e.features[0].properties["areacd"];
-    handleLocationSelect({ geoType: "msoa", geoCode });
+  layers.forEach((l) => {
+    map.on("click", `${l.name}-features`, (e) => {
+      const geoCode = e.features[0].properties[l.idProperty];
+      handleLocationSelect({ geoType: l.name, geoCode });
+    });
+  });
+
+  // todo: this doesn't appear to work on inital page load
+  // todo: we shouldn't flyTo/easeTo when we can already see the geography
+  selectedGeographyStore.subscribe((geography) => {
+    if (geography) {
+      const bounds = new mapboxgl.LngLatBounds(geography.bbox);
+      if (JSON.stringify(bounds) !== JSON.stringify(map.getBounds())) {
+        map.easeTo({
+          center: bounds.getCenter(),
+        });
+      }
+    }
   });
 
   return map;
@@ -79,6 +82,9 @@ const setMapStore = (map: mapboxgl.Map) => {
 };
 
 const getGeoTypeForCurrentZoom = (zoom: number): GeoType => {
-  // todo
-  return "msoa";
+  for (const x of layersWithSiblings()) {
+    if (zoom >= x.layer.minZoom && (!x.next || zoom < x.next.minZoom)) {
+      return x.layer.name;
+    }
+  }
 };

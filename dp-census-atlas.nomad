@@ -36,7 +36,7 @@ job "dp-census-atlas" {
       config {
         command = "${NOMAD_TASK_DIR}/start-task"
 
-        args = ["./dp-census-atlas"]
+        args = ["node",  "build/index.js"]
 
         image = "{{ECR_URL}}:concourse-{{REVISION}}"
 

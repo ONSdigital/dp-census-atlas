@@ -1,3 +1,5 @@
+import config from "../../svelte.config"
+
 interface TopicPageParams {
   topic: string;
 }
@@ -25,13 +27,14 @@ type UrlParams = TopicPageParams | VariablePageParams | CategoryPageParams;
  * to the index page.
  */
 export const buildHyperlink = (url: URL, urlParams?: UrlParams, staticPath?: string) => {
+  const basePath = config.kit.paths.base;
   if (!urlParams && !staticPath) {
-    return `/${url.search}`;
+    return `${basePath}/${url.search}`;
   }
   if (staticPath) {
-    return `/2021/${staticPath}${url.search}`;
+    return `${basePath}/2021/${staticPath}${url.search}`;
   }
-  let link = "/2021";
+  let link = `${basePath}/2021`;
   if ("topic" in urlParams) {
     link = `${link}/${urlParams.topic}`;
   }

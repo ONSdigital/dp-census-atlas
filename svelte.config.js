@@ -16,6 +16,15 @@ const getAdapter = () => {
   }
 };
 
+const getPaths = () => {
+  const paths = {}
+  const basePath = process.env.BASEPATH;
+  if (basePath) {
+    paths.base = basePath
+  }
+  return paths
+}
+
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
   // Consult https://github.com/sveltejs/svelte-preprocess
@@ -25,6 +34,7 @@ const config = {
   }),
   kit: {
     adapter: getAdapter(),
+    paths: getPaths(),
   },
 };
 

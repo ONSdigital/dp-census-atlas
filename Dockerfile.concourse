@@ -7,4 +7,4 @@ COPY package.json .
 
 RUN npm install --silent
 
-CMD export PORT=28100 && node build/index.js
+CMD PORT=${PORT:-28100} node build/index.js

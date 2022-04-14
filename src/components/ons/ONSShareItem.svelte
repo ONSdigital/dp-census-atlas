@@ -1,4 +1,4 @@
-<script type="text/javascript" lang="ts">
+<script lang="ts">
   import { page } from "$app/stores";
   export let title: string = "";
   export let label: string;

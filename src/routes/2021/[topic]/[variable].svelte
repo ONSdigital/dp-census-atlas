@@ -1,4 +1,4 @@
-<script type="text/javascript">
+<script>
   import VariablePage from "../../../components/VariablePage.svelte";
 </script>
 

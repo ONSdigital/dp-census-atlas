@@ -1,4 +1,4 @@
-<script type="text/javascript" lang="ts">
+<script lang="ts">
   import { _, json } from "svelte-i18n";
   const links: { label: string; href: string }[] = $json("footer.links");
 </script>

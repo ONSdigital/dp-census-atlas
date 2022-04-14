@@ -1,4 +1,4 @@
-<script type="text/javascript">
+<script>
   import CategoryPage from "../../../../../components/CategoryPage.svelte";
 </script>
 

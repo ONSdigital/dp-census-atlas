@@ -1,4 +1,4 @@
-<script type="text/javascript" lang="ts">
+<script lang="ts">
   import Icon from "./Icon.svelte";
   import type { IconType } from "./Icon.svelte";
 

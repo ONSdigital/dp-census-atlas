@@ -1,4 +1,4 @@
-<script type="text/javascript" lang="ts">
+<script lang="ts">
   export let href: string, title: string, id: string;
 </script>
 

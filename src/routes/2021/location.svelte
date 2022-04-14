@@ -1,4 +1,4 @@
-<script type="text/javascript" lang="ts">
+<script lang="ts">
   import LocationPage from "../../components/LocationPage.svelte";
 </script>
 

@@ -1,4 +1,4 @@
-<script type="text/javascript" lang="ts">
+<script lang="ts">
   import { areAllDefined } from "../util/genUtil";
   import { formatTemplateString, formatPercentage } from "../helpers/categoryHelpers";
   import { englandAndWales } from "../helpers/spatialHelper";

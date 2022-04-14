@@ -1,4 +1,4 @@
-<script type="text/javascript">
+<script>
   import HomePage from "../components/HomePage.svelte";
 </script>
 

@@ -1,4 +1,4 @@
-<script type="text/javascript">
+<script>
   import "mapbox-gl/dist/mapbox-gl.css";
   import "../app.css";
   import "../components/ons/vars.css";

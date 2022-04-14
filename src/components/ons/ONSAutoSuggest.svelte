@@ -1,4 +1,4 @@
-<script type="text/javascript">
+<script>
   import { onMount } from "svelte";
   export let labelText, id, autosuggestValue, autosuggestMeta, autosuggestData, header, invertTextColor, renderError;
   let n;

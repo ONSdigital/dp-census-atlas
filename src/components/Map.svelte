@@ -1,4 +1,4 @@
-<script type="text/javascript" lang="ts">
+<script lang="ts">
   import { onMount, onDestroy } from "svelte";
   import { initMap } from "../map/initMap";
 

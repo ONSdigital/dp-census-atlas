@@ -1,4 +1,4 @@
-<script type="text/javascript" lang="ts">
+<script lang="ts">
   import ONSAutoSuggest from "./ons/ONSAutoSuggest.svelte";
   import ONSError from "./ons/ONSError.svelte";
 

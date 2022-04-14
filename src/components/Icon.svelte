@@ -1,4 +1,4 @@
-<script type="text/javascript" context="module" lang="ts">
+<script context="module" lang="ts">
   export type IconType =
     | "facebook"
     | "twitter"
@@ -11,7 +11,7 @@
     | "info";
 </script>
 
-<script type="text/javascript" lang="ts">
+<script lang="ts">
   import Facebook from "./icons/Facebook.svelte";
   import Twitter from "./icons/Twitter.svelte";
   import Linkedin from "./icons/Linkedin.svelte";

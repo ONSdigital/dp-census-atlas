@@ -1,4 +1,4 @@
-<script type="text/javascript">
+<script>
   import { _ } from "svelte-i18n";
   import CensusPanel from "./CensusPanel.svelte";
   import Heading from "./Heading.svelte";

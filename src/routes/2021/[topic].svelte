@@ -1,4 +1,4 @@
-<script type="text/javascript">
+<script>
   import TopicPage from "../../components/TopicPage.svelte";
 </script>
 

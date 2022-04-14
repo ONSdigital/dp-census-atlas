@@ -17,12 +17,12 @@ const getAdapter = () => {
 };
 
 const getPaths = () => {
-  const paths = {}
+  const paths = {};
   const basePath = process.env.BASEPATH;
   if (basePath) {
-    paths.base = basePath
+    paths.base = basePath;
   }
-  return paths
+  return paths;
 }
 
 /** @type {import('@sveltejs/kit').Config} */

@@ -1,4 +1,4 @@
-<script lang="ts">
+<script type="text/javascript" lang="ts">
   import { areAllDefined } from "../util/genUtil";
   import { formatPercentage, formatTemplateString } from "../helpers/categoryHelpers";
   import { choroplethColours } from "../helpers/choroplethHelpers";

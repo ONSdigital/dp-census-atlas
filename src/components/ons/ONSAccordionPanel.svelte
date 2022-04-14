@@ -1,4 +1,4 @@
-<script>
+<script type="text/javascript">
   export let id, title, description;
   export let noTopBorder = false;
 

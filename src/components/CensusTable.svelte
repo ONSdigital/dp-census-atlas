@@ -1,4 +1,4 @@
-<script>
+<script type="text/javascript">
   import { page } from "$app/stores";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
   export let variableData, variable;

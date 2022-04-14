@@ -1,4 +1,4 @@
-<script lang="ts">
+<script type="text/javascript" lang="ts">
   export let serviceTitle: string;
   export let description: string = "";
 </script>

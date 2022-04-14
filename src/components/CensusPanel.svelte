@@ -1,4 +1,4 @@
-<script lang="ts">
+<script type="text/javascript" lang="ts">
   import { page } from "$app/stores";
   import { _, json } from "svelte-i18n";
 

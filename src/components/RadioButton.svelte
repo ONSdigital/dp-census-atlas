@@ -1,4 +1,4 @@
-<script>
+<script type="text/javascript">
   export let selected = false;
 </script>
 

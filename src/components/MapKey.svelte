@@ -1,4 +1,4 @@
-<script lang="ts">
+<script type="text/javascript" lang="ts">
   import { _ } from "svelte-i18n";
   import { vizStore } from "../stores/stores";
   import { choroplethColours } from "../helpers/choroplethHelpers";

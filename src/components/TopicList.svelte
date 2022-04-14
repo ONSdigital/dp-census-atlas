@@ -1,4 +1,4 @@
-<script lang="ts">
+<script type="text/javascript" lang="ts">
   import ONSCard from "./ons/ONSCard.svelte";
   import topics from "../data/content";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";

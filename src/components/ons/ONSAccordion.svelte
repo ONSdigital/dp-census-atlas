@@ -1,4 +1,4 @@
-<script>
+<script type="text/javascript">
   import { onMount } from "svelte";
 
   onMount(async () => {

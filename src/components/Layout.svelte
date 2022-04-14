@@ -1,4 +1,4 @@
-<script>
+<script type="text/javascript">
   import Header from "./Header.svelte";
   import Footer from "./Footer.svelte";
   import Map from "./Map.svelte";

@@ -1,4 +1,4 @@
-<script>
+<script type="text/javascript">
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
   import { page } from "$app/stores";
   import Icon from "./Icon.svelte";

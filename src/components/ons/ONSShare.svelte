@@ -1,4 +1,4 @@
-<script>
+<script type="text/javascript">
   export let title = "Share this post";
 </script>
 

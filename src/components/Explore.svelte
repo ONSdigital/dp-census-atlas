@@ -1,4 +1,4 @@
-<script lang="ts">
+<script type="text/javascript" lang="ts">
   import { _ } from "svelte-i18n";
 
   export let content: { label: string; href: string; onClick?: () => void }[];

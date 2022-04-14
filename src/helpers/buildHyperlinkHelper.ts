@@ -1,4 +1,4 @@
-import config from "../../svelte.config"
+import config from "../../svelte.config";
 
 interface TopicPageParams {
   topic: string;

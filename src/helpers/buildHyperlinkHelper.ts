@@ -26,12 +26,12 @@ type UrlParams = TopicPageParams | VariablePageParams | CategoryPageParams;
  */
 export const buildHyperlink = (url: URL, urlParams?: UrlParams, staticPath?: string) => {
   if (!urlParams && !staticPath) {
-    return `/${url.search}`;
+    return `/census-atlas/${url.search}`;
   }
   if (staticPath) {
-    return `/2021/${staticPath}${url.search}`;
+    return `/census-atlas/2021/${staticPath}${url.search}`;
   }
-  let link = "/2021";
+  let link = "/census-atlas/2021";
   if ("topic" in urlParams) {
     link = `${link}/${urlParams.topic}`;
   }

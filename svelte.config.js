@@ -25,6 +25,9 @@ const config = {
   }),
   kit: {
     adapter: getAdapter(),
+    paths: {
+      base: "/census-atlas",
+    },
   },
 };
 

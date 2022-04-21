@@ -8,6 +8,8 @@ mv _app census-atlas/_app
 popd
 
 pushd ./build/static
-mkdir census-atlas
-mv * census-atlas
+# mv ignores .hidden objects (so don't move the destination dir into itself)
+mkdir .census-atlas
+mv * .census-atlas
+mv .census-atlas census-atlas
 popd

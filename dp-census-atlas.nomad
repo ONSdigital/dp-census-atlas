@@ -49,7 +49,7 @@ job "dp-census-atlas" {
 
         check {
           type     = "http"
-          path     = "/health"
+          path     = "/census-atlas/health"
           interval = "10s"
           timeout  = "2s"
         }

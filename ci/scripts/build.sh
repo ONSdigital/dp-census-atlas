@@ -1,8 +1,7 @@
 #!/bin/bash -eux
 
 pushd dp-census-atlas
-  git branch --show-current
-  git rev-parse --abbrev-ref HEAD
+  git show-ref | grep $(git log --pretty=%h -1) | sed 's|.*/\(.*\)|\1|' | sort -u | grep -v HEAD
   npm install --silent
   make build
   cp -r build package.json Dockerfile.concourse ../build

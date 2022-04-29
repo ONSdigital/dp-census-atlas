@@ -2,7 +2,8 @@ import * as dsv from "d3-dsv"; // https://github.com/d3/d3/issues/3469
 import type { Bbox, GeoType } from "src/types";
 import { englandAndWales, getBboxString } from "../helpers/spatialHelper";
 
-export const apiBaseUrl = `https://cep5lmkia0.execute-api.eu-west-1.amazonaws.com/dev`;
+export const apiBaseUrl =
+  import.meta.env.VITE_API_BASE_URL || "https://cep5lmkia0.execute-api.eu-west-1.amazonaws.com/dev";
 
 export const fetchQuery = async (args: { totalCode: string; categoryCode: string; geoType: GeoType; bbox: Bbox }) => {
   const bboxParam = getBboxString(args.bbox);

@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "svelte-kit dev -p 28100",
     "build": "svelte-kit build",
-    "build-node": "export SKADAPTER=node && svelte-kit build && ./workaround-sveltekit-3726.sh",
+    "build-node-develop": ". ./develop.env && svelte-kit build && ./workaround-sveltekit-3726.sh",
+    "build-node-prod": ". ./production.env && svelte-kit build && ./workaround-sveltekit-3726.sh",
     "package": "svelte-kit package",
     "preview": "svelte-kit preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",

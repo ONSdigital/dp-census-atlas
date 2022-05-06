@@ -1,9 +1,74 @@
 import * as dsv from "d3-dsv"; // https://github.com/d3/d3/issues/3469
 import type { Bbox, GeoType } from "src/types";
-import { englandAndWales, getBboxString } from "../helpers/spatialHelper";
+import { englandAndWales, getBboxString, doBboxesIntersect } from "../helpers/spatialHelper";
+import cacheGrid from "./cacheGrid";
 
 export const apiBaseUrl =
   import.meta.env.VITE_API_BASE_URL || "https://cep5lmkia0.execute-api.eu-west-1.amazonaws.com/dev";
+
+/* 
+  Fetch place data from api as bounding box requests, via closure with shallow cache (one request deep) - reasoning is 
+  that using the caching grid (which has quads bigger than the viewport will typically be) will mean that small-medium 
+  map movements are likely to result in the same grid quad or set of grid quads being repeatedly requested.
+*/
+export const getFetchPlaceData = () => {
+  const prevReq = {
+    totalCode: "",
+    categoryCode: "",
+    geoType: "",
+    quads: [],
+    apiResponse: [],
+  };
+
+  // returned function actually does the API place data fetching
+  return async (args: { totalCode: string; categoryCode: string; geoType: GeoType; bbox: Bbox }) => {
+    // pass straight through to fetch function if no caching grid available for geoTypes
+    // (ToDo - caching grid for LADs?), so pass args straight through to fetchQuery
+    if (!["msoa", "lsoa", "oa"].includes(args.geoType)) {
+      return fetchQuery(args);
+    }
+
+    // filter cache grid to only quads that intersect with viewport bbox
+    const intersectingQuads = cacheGrid[args.geoType].filter((quad) => {
+      return doBboxesIntersect({ bbox1: args.bbox, bbox2: quad });
+    });
+
+    // check if the set of intersecting quads was previously requested for the same categories / geotype, return 
+    // previous flattened response if so
+    if (
+      prevReq.totalCode === args.totalCode &&
+      prevReq.categoryCode === args.categoryCode &&
+      prevReq.geoType === args.geoType &&
+      intersectingQuads.every((quad) => prevReq.quads.includes(quad))
+    ) {
+      return Promise.resolve(prevReq.apiResponse);
+    }
+
+    // otherwise call fetchQuery on all intersecting quads and flatten results
+    const apiResponse = await Promise.all(
+      // call fetch on all
+      intersectingQuads.map((quad) => {
+        return fetchQuery({
+          totalCode: args.totalCode,
+          categoryCode: args.categoryCode,
+          geoType: args.geoType,
+          bbox: quad,
+        });
+      }),
+    ).then((responseArry) => {
+      return responseArry.flat();
+    });
+
+    // set shallow response cache with new values
+    prevReq.totalCode = args.totalCode;
+    prevReq.categoryCode = args.categoryCode;
+    prevReq.geoType = args.geoType;
+    prevReq.quads = intersectingQuads;
+    prevReq.apiResponse = apiResponse;
+
+    return Promise.resolve(apiResponse);
+  };
+};
 
 export const fetchQuery = async (args: { totalCode: string; categoryCode: string; geoType: GeoType; bbox: Bbox }) => {
   const bboxParam = getBboxString(args.bbox);

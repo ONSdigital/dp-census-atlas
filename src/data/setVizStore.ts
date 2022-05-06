@@ -1,8 +1,11 @@
 import type * as dsv from "d3-dsv"; // https://github.com/d3/d3/issues/3469
-import { fetchBreaks, fetchQuery } from "./api";
+import { fetchBreaks, getFetchPlaceData } from "./api";
 import type { Bbox, GeoType } from "../types";
 import { vizStore } from "../stores/stores";
 import { getCategoryInfo } from "../helpers/categoryHelpers";
+
+// initialise API place data fetcher
+const fetchPlaceData = getFetchPlaceData();
 
 export const setVizStore = async (args: {
   totalCode: string;
@@ -12,7 +15,7 @@ export const setVizStore = async (args: {
   geoCode: string;
   bbox: Bbox;
 }) => {
-  const [places, breaksData] = await Promise.all([fetchQuery(args), fetchBreaks(args)]);
+  const [places, breaksData] = await Promise.all([fetchPlaceData(args), fetchBreaks(args)]);
   vizStore.set({
     breaks: breaksData.breaks[args.categoryCode].map((breakpoint) => parseFloat(breakpoint) * 100),
     minMaxVals: breaksData.minMax[args.categoryCode],

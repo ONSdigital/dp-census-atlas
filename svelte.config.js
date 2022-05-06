@@ -28,6 +28,13 @@ const config = {
     paths: {
       base: "/census-atlas",
     },
+    vite: {
+      server: {
+        fs: {
+          allow: ["data-tile-grids"],
+        },
+      },
+    },
   },
 };
 

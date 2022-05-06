@@ -1,11 +1,49 @@
 import * as dsv from "d3-dsv"; // https://github.com/d3/d3/issues/3469
 import type { Bbox, GeoType } from "src/types";
-import { englandAndWales, getBboxString } from "../helpers/spatialHelper";
 import mem from "mem";
 import QuickLRU from "quick-lru";
+import { bboxToDataTiles, englandAndWales, getBboxString } from "../helpers/spatialHelper";
 
 export const apiBaseUrl =
   import.meta.env.VITE_API_BASE_URL || "https://cep5lmkia0.execute-api.eu-west-1.amazonaws.com/dev";
+
+// ToDo configure this via env var?
+const FetchCensusDataFromFlatFiles = false;
+
+/*
+  Fetch place data for all data 'tiles' (predefined coordinate grid squares) that intersect with current viewport 
+  bounding box. ToDo extent this to allow fetching from either API or flat files from s3 (ToDoDo - pick which one
+  is to be used and deprecate the other!)
+*/
+export const fetchTileDataForBbox = async (args: {
+  totalCode: string;
+  categoryCode: string;
+  geoType: GeoType;
+  bbox: Bbox;
+}) => {
+  // get all intersecting data tiles
+  const dataTiles = bboxToDataTiles(args.bbox, args.geoType);
+
+  if (FetchCensusDataFromFlatFiles) {
+    // fetch data from data tile flat files
+    console.log("Flat file data fetching still not implemented!!");
+  } else {
+    // fetch data from api for data tile bounding boxes
+    const fetchedData = await Promise.all(
+      dataTiles.map((dataTile) => {
+        return memFetchQuery({
+          totalCode: args.totalCode,
+          categoryCode: args.categoryCode,
+          geoType: args.geoType,
+          bbox: dataTile.bbox,
+        });
+      }),
+    ).then((responseArry) => {
+      return responseArry.flat();
+    });
+    return Promise.resolve(fetchedData);
+  }
+};
 
 /*
   Fetch census data by for categories categoryCode and totalCode for all geographies of type 'geoType' that fall within

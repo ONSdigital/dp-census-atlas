@@ -14,7 +14,7 @@ export const initMapLayers = (map) => {
       id: `${l.layer.name}-features`,
       minzoom: l.layer.minZoom,
       source: l.layer.name,
-      "source-layer": l.layer.name,
+      "source-layer": l.layer.sourceLayer,
       type: "fill",
       paint: {
         "fill-color": [
@@ -30,7 +30,7 @@ export const initMapLayers = (map) => {
       id: `${l.layer.name}-outlines`,
       type: "line",
       source: l.layer.name,
-      "source-layer": l.layer.name,
+      "source-layer": l.layer.sourceLayer,
       minzoom: l.layer.minZoom,
       maxzoom: l.next ? l.next.minZoom : maxAllowedZoom,
       paint: {
@@ -61,12 +61,15 @@ export const initMapLayers = (map) => {
       if (e.features.length > 0) {
         if (hoveredStateId !== null) {
           map.setFeatureState(
-            { source: l.layer.name, sourceLayer: l.layer.name, id: hoveredStateId },
+            { source: l.layer.name, sourceLayer: l.layer.sourceLayer, id: hoveredStateId },
             { hovered: false },
           );
         }
         hoveredStateId = e.features[0].id;
-        map.setFeatureState({ source: l.layer.name, sourceLayer: l.layer.name, id: hoveredStateId }, { hovered: true });
+        map.setFeatureState(
+          { source: l.layer.name, sourceLayer: l.layer.sourceLayer, id: hoveredStateId },
+          { hovered: true },
+        );
       }
     });
 
@@ -75,7 +78,7 @@ export const initMapLayers = (map) => {
     map.on("mouseleave", `${l.layer.name}-outlines`, () => {
       if (hoveredStateId !== null) {
         map.setFeatureState(
-          { source: l.layer.name, sourceLayer: l.layer.name, id: hoveredStateId },
+          { source: l.layer.name, sourceLayer: l.layer.sourceLayer, id: hoveredStateId },
           { hovered: false },
         );
       }

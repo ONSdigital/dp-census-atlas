@@ -31,4 +31,9 @@ describe("doBboxesIntersect", () => {
     const bottomBox = { east: 8, north: 7, west: 4, south: 3 };
     expect(doBboxesIntersect({ bbox1: topBox, bbox2: bottomBox })).toBe(true);
   });
+  test("returns true for bboxes that share one edge", () => {
+    const topBox = { east: 8, north: 7, west: 4, south: 3 };
+    const bottomBox = { east: 12, north: 7, west: 8, south: 3 };
+    expect(doBboxesIntersect({ bbox1: topBox, bbox2: bottomBox })).toBe(true);
+  });
 });

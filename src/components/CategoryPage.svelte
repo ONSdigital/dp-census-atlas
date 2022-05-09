@@ -37,17 +37,20 @@
 
   $: if ($mapStore) {
     let codes = getCodesForCategory(params.topic, params.variable, params.classification, params.category);
-    setVizStore({
-      ...codes,
-      geoType: $mapStore.geoType, // todo remove
-      geoCode: selectedGeographyGeoCode,
-      bbox: $mapStore.bbox,
-    });
-    setSelectedGeographyVariableStore({
-      totalCode: codes.totalCode,
-      categoryCodes: codes.categoryCodes,
-      geoCode: selectedGeographyGeoCode,
-    });
+    // TEMP do not load data for OAs as its not available
+    if ($mapStore.geoType != "oa") {
+      setVizStore({
+        ...codes,
+        geoType: $mapStore.geoType, // todo remove
+        geoCode: selectedGeographyGeoCode,
+        bbox: $mapStore.bbox,
+      });
+      setSelectedGeographyVariableStore({
+        totalCode: codes.totalCode,
+        categoryCodes: codes.categoryCodes,
+        geoCode: selectedGeographyGeoCode,
+      });
+    }
   }
 </script>
 

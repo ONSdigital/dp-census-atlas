@@ -39,7 +39,7 @@
     <h2 class={`ons-u-mb-xs ${invert ? "invert" : ""}`}>{title}</h2>
   {/if}
   <ONSError errorText={error} {id} {renderError}>
-    <div class={`ons-field ${padding ? "tw-pb-8" : ""}`}>
+    <div class={`ons-field ${padding ? "pb-8" : ""}`}>
       <ONSAutoSuggest
         labelText={label}
         {invertTextColor}

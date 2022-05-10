@@ -7,12 +7,9 @@
   export let icon: IconType;
 </script>
 
-<button
-  class="tw-flex tw-items-center tw-px-2 tw-py-1 tw-justify-center tw-bg-onsdarkblue tw-text-onswhite"
-  on:click={onClick}
->
+<button class="flex items-center px-2 py-1 justify-center bg-onsdarkblue text-onswhite" on:click={onClick}>
   {label}
-  <div class="tw-pl-1">
+  <div class="pl-1">
     {#if icon}
       <Icon type={icon} />
     {/if}

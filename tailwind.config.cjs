@@ -1,10 +1,10 @@
 module.exports = {
   content: ["./src/**/*.{html,js,svelte,ts}"],
-  prefix: "tw-",
   theme: {
-    screens: { xxs: "300px", xs: "400px", sm: "500px", md: "740px", lg: "980px", xl: "1300px", xxl: "1600px" },
+    // screens: { xxs: "300px", xs: "400px", sm: "500px", md: "740px", lg: "980px", xl: "1300px", xxl: "1600px" },
     extend: {
       colors: {
+        "ons-census": "#902082",
         onsdarkblue: "#003c57",
         onsblue: "#206095",
         onsteal: "#519BA8",

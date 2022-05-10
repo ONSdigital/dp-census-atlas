@@ -29,23 +29,23 @@
 </script>
 
 <div>
-  <div class="tw-flex tw-h-full tw-min-h-[5rem]">
+  <div class="flex h-full min-h-[5rem]">
     <div
-      class="tw-flex tw-justify-center tw-items-center tw-min-w-[5rem]"
+      class="flex justify-center items-center min-w-[5rem]"
       style={`background-color: ${choroplethColours[colour]};`}
     >
-      <p class={`tw-text-2xl tw-font-bold tw-m-0 ${colour > 2 ? "tw-text-onswhite" : ""}`}>
+      <p class={`text-2xl font-bold m-0 ${colour > 2 ? "text-onswhite" : ""}`}>
         {args ? formatPercentage(variableData[category.code]?.percentage) : percentPlaceholder}<span
-          class="tw-font-normal tw-text-xl">%</span
+          class="font-normal text-xl">%</span
         >
       </p>
     </div>
-    <div class="tw-w-full tw-pl-4 tw-py-4 tw-text-onswhite tw-bg-onsdarkblue">
-      <p class="tw-flex tw-flex-col tw-mb-0">
+    <div class="w-full pl-4 py-4 text-onswhite bg-onsdarkblue">
+      <p class="flex flex-col mb-0">
         <span>
           {args ? formatTemplateString(variable, variableData, category, location, category.category_h_pt2) : ""}
         </span>
-        <span class="tw-text-xl tw-font-bold">
+        <span class="text-xl font-bold">
           {args ? formatTemplateString(variable, variableData, category, location, category.category_h_pt3) : ""}
         </span>
       </p>

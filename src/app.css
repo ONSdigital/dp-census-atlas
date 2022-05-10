@@ -3,22 +3,22 @@
 @tailwind utilities;
 
 @layer components {
-  .tw-custom-ring {
-    @apply focus:tw-outline-none focus-visible:tw-ring focus-visible:tw-ring-onsyellow;
+  .custom-ring {
+    @apply focus:outline-none focus-visible:ring focus-visible:ring-onsyellow;
   }
-  .tw-custom-focus {
-    @apply tw-outline-none focus:tw-bg-inherit focus-visible:tw-bg-yellow-300;
+  .custom-focus {
+    @apply outline-none focus:bg-inherit focus-visible:bg-yellow-300;
   }
-  .tw-hyperlink {
-    @apply tw-text-onsblue tw-underline tw-custom-ring hover:tw-decoration-[3px] group-hover:tw-decoration-[2px];
+  .hyperlink {
+    @apply text-onsblue underline custom-ring hover:decoration-[3px] group-hover:decoration-[2px];
   }
-  .tw-mark {
-    @apply tw-bg-yellow-300 tw-font-bold;
+  .mark {
+    @apply bg-yellow-300 font-bold;
   }
 }
 
-@layer base {
+/* @layer base {
   a {
-    @apply tw-underline;
+    @apply underline;
   }
-}
+} */

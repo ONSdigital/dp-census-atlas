@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 echo "Workaround Sveltekit issue 3726..."
+# https://github.com/sveltejs/kit/issues/3726
 
 pushd ./build/client
 mkdir census-atlas

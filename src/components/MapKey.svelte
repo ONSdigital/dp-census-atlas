@@ -15,28 +15,23 @@
 </script>
 
 {#if $vizStore}
-  <div class={`tw-flex tw-absolute tw-right-[28px] tw-top-20 tw-w-28`}>
+  <div class={`flex absolute right-[28px] top-20 w-28`}>
     <div
-      class="tw-z-abovemap tw-bg-white tw-px-2 tw-pt-2 tw-flex
-    tw-flex-col ons-u-fs-s"
+      class="z-abovemap bg-white px-2 pt-2 flex
+    flex-col ons-u-fs-s"
     >
-      <p class="tw-mb-2 tw-text-base">
+      <p class="mb-2 text-base">
         <!-- TODO: Mobile this text is hidden -->
         {$vizStore.params.category.name}
       </p>
-      <div
-        class="tw-text-onswhite tw-w-28 tw-p-1 tw-pl-1.5 tw-mb-1"
-        style={`background-color: ${choroplethColours[4]};`}
-      >
-        High
-      </div>
+      <div class="text-onswhite w-28 p-1 pl-1.5 mb-1" style={`background-color: ${choroplethColours[4]};`}>High</div>
       {#each choroplethColours.slice().reverse() as colour, i}
-        <div class="tw-w-28 tw-p-1.5 {i < 2 ? 'tw-text-onswhite' : null}" style={`background-color: ${colour};`}>
+        <div class="w-28 p-1.5 {i < 2 ? 'text-onswhite' : null}" style={`background-color: ${colour};`}>
           {#if !collapse}{buckets[i]}{/if}
         </div>
       {/each}
-      <div class="tw-w-28 tw-p-1 tw-pl-1.5 tw-mt-1" style={`background-color: ${choroplethColours[0]};`}>Low</div>
-      <div class={`tw-flex tw-justify-end tw-mt-3 ${collapse ? "tw-mb-1" : "tw--mr-2"}`}>
+      <div class="w-28 p-1 pl-1.5 mt-1" style={`background-color: ${choroplethColours[0]};`}>Low</div>
+      <div class={`flex justify-end mt-3 ${collapse ? "mb-1" : "-mr-2"}`}>
         {#if collapse}
           <Icon type="info" onClick={() => (collapse = !collapse)} />
         {:else}

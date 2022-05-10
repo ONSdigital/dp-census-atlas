@@ -5,8 +5,8 @@
 </script>
 
 <div>
-  <h3 class="tw-mb-3">{$_("explore.title")}</h3>
-  <ul class="tw-p-0 tw-m-0">
+  <h3 class="mb-3">{$_("explore.title")}</h3>
+  <ul class="p-0 m-0">
     {#each content as { label, href, onClick }}
       <li>
         <a {href} on:click={onClick}>{label}</a>

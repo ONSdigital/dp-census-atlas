@@ -1,8 +1,8 @@
 <script>
   import Header from "./Header.svelte";
-  import Footer from "./Footer.svelte";
   import Map from "./Map.svelte";
-  import MapKey from "./MapKey.svelte";
+  import BreaksChart from "./BreaksChart.svelte";
+  import MapLegend from "./MapLegend.svelte";
   import { page } from "$app/stores";
   import { getSelectedGeography } from "../helpers/categoryHelpers";
   import { setSelectedGeographyStore } from "../data/setSelectedGeographyStore";
@@ -13,16 +13,15 @@
   }
 </script>
 
-<div class="xl:tw-absolute tw-inset-0 xl:tw-flex tw-flex-col">
+<div class="inset-0 lg:absolute lg:flex flex-col">
   <Header />
-  <div class="tw-flex-1 tw-flex tw-flex-col-reverse xl:tw-flex-row tw-overflow-y-scroll">
-    <div class="tw-flex-1 tw-grow-[3] xl:tw-max-w-[27rem]">
+  <div class="flex-1 flex flex-col-reverse lg:flex-row overflow-y-auto ">
+    <div class="flex-1 grow-[4] min-w-[30rem] overflow-y-auto">
       <slot />
     </div>
-    <div class="tw-flex-1 tw-grow-[4] tw-relative">
+    <div class="flex-1 grow-[7] relative">
       <Map />
-      <MapKey />
+      <MapLegend />
     </div>
   </div>
-  <Footer />
 </div>

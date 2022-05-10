@@ -20,7 +20,7 @@
   $: selectedGeographyDisplayName = $selectedGeographyStore?.displayName;
 </script>
 
-<div class="tw-flex tw-flex-col tw-max-h-full">
+<div class="flex flex-col max-h-full">
   {#if changeLocation}
     <SearchHeader onClose={() => (changeLocation = !changeLocation)} />
   {:else}
@@ -36,12 +36,12 @@
       })}
     />
   {/if}
-  <div class="tw-overflow-y-scroll tw-p-3">
-    <p class="tw-m-0 tw-pb-5">
+  <div class="overflow-y-scroll p-3">
+    <p class="m-0 pb-5">
       Change to a
       <a href={buildHyperlink($page.url, null, "topics")}>new topic</a>
     </p>
-    <div class="tw-flex tw-flex-col tw-gap-11">
+    <div class="flex flex-col gap-11">
       <div>
         {#each topic.variables as variable}
           <ONSAccordion showAll={false}>
@@ -54,7 +54,7 @@
                 {#each variable.categories as category}
                   <li>
                     <a
-                      class="tw-underline"
+                      class="underline"
                       href={buildHyperlink($page.url, {
                         topic: topic.slug,
                         variable: variable.slug,

@@ -44,6 +44,7 @@
         geoType: $mapStore.geoType, // todo remove
         geoCode: selectedGeographyGeoCode,
         bbox: $mapStore.bbox,
+        zoom: $mapStore.zoom,
       });
       setSelectedGeographyVariableStore({
         totalCode: codes.totalCode,

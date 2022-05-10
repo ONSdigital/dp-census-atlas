@@ -11,6 +11,7 @@ export const setVizStore = async (args: {
   geoType: GeoType;
   geoCode: string;
   bbox: Bbox;
+  zoom: number;
 }) => {
   const [places, breaksData] = await Promise.all([fetchQuery(args), fetchBreaks(args)]);
   vizStore.set({

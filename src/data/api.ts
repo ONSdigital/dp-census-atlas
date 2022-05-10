@@ -1,12 +1,18 @@
 import * as dsv from "d3-dsv"; // https://github.com/d3/d3/issues/3469
 import type { Bbox, GeoType } from "src/types";
-import { englandAndWales, getBboxString } from "../helpers/spatialHelper";
+import { englandAndWales, getBboxString, getQuantisedBbox } from "../helpers/spatialHelper";
 
 export const apiBaseUrl =
   import.meta.env.VITE_API_BASE_URL || "https://cep5lmkia0.execute-api.eu-west-1.amazonaws.com/dev";
 
-export const fetchQuery = async (args: { totalCode: string; categoryCode: string; geoType: GeoType; bbox: Bbox }) => {
-  const bboxParam = getBboxString(args.bbox);
+export const fetchQuery = async (args: {
+  totalCode: string;
+  categoryCode: string;
+  geoType: GeoType;
+  bbox: Bbox;
+  zoom: number;
+}) => {
+  const bboxParam = getBboxString(getQuantisedBbox(args.bbox, args.zoom));
   const url = `${apiBaseUrl}/query/2011?bbox=${bboxParam}&cols=geography_code,${args.totalCode},${args.categoryCode}&geotype=${args.geoType}`;
   const response = await fetch(url);
   const csv = await response.text();
@@ -20,7 +26,7 @@ export const fetchBreaks = async (args: {
 }): Promise<{ breaks: { [categoryCode: string]: number[] }; minMax: { [categoryCode: string]: number[] } }> => {
   const breakCount = 5;
 
-  // TODO imporove this? or don't get here if England & Wales
+  // TODO improve this? or don't get here if England & Wales
   // return -1s (so that all data will NOT be assigned a break, and the map will remain colorless) if its the default
   // geography (england and wales)
   if (args.geoType === englandAndWales.meta.geotype) {

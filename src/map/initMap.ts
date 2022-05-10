@@ -78,6 +78,7 @@ const setMapStore = (map: mapboxgl.Map) => {
   mapStore.set({
     bbox,
     geoType: getGeoTypeForCurrentZoom(zoom),
+    zoom: zoom,
   });
 };
 

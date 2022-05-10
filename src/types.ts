@@ -5,6 +5,7 @@ export type GeoType = "ew" | "lad" | "msoa" | string;
 export type MapState = {
   bbox: Bbox;
   geoType: GeoType;
+  zoom: number;
 };
 
 export type Topic = typeof topics[0];

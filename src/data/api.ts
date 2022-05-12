@@ -1,24 +1,42 @@
 import * as dsv from "d3-dsv"; // https://github.com/d3/d3/issues/3469
 import type { Bbox, GeoType } from "src/types";
-import { englandAndWales, getBboxString, getQuantisedBbox } from "../helpers/spatialHelper";
+import { englandAndWales, getBboxString } from "../helpers/spatialHelper";
+import mem from "mem";
+import QuickLRU from "quick-lru";
 
 export const apiBaseUrl =
   import.meta.env.VITE_API_BASE_URL || "https://cep5lmkia0.execute-api.eu-west-1.amazonaws.com/dev";
 
-export const fetchQuery = async (args: {
-  totalCode: string;
-  categoryCode: string;
-  geoType: GeoType;
-  bbox: Bbox;
-  zoom: number;
-}) => {
-  const bboxParam = getBboxString(getQuantisedBbox(args.bbox, args.zoom));
+/*
+  Fetch census data by for categories categoryCode and totalCode for all geographies of type 'geoType' that fall within
+  geographic bounding box 'bbox'. Uses the geodata api 'query' endpoint, see documentation here:
+  https://api.develop.onsdigital.co.uk/v1/geodata/swaggerui#/public/get_query__year_
+  (develop env access required - ToDo replace w. public API swagger URL when available)
+*/
+export const fetchQuery = async (args: { totalCode: string; categoryCode: string; geoType: GeoType; bbox: Bbox }) => {
+  const bboxParam = getBboxString(args.bbox);
   const url = `${apiBaseUrl}/query/2011?bbox=${bboxParam}&cols=geography_code,${args.totalCode},${args.categoryCode}&geotype=${args.geoType}`;
   const response = await fetch(url);
   const csv = await response.text();
   return dsv.csvParse(csv);
 };
 
+/*
+  Memoized version of fetchQuery, used to reduce API calls.
+*/
+export const memFetchQuery = mem(fetchQuery, {
+  cacheKey: (arguments_) => {
+    return JSON.stringify(arguments_[0]);
+  },
+  cache: new QuickLRU({ maxSize: 100 }),
+});
+
+/*
+  Fetch esimated natural breakpoints in data for all census categories in 'categoryCodes', divided by census category
+  'totalCode'. Uses the geodata api 'ckmeans' endpoint, see
+  documentation here: https://api.develop.onsdigital.co.uk/v1/geodata/swaggerui#/public/get_ckmeans__year_
+  (develop env access required - ToDo replace w. public API swagger URL when available)
+*/
 export const fetchBreaks = async (args: {
   totalCode: string;
   categoryCodes: string[];
@@ -56,6 +74,21 @@ export const fetchBreaks = async (args: {
   return { breaks, minMax };
 };
 
+/*
+  Memoized version of fetchBreaks, used to reduce API calls.
+*/
+export const memFetchBreaks = mem(fetchBreaks, {
+  cacheKey: (arguments_) => {
+    return JSON.stringify(arguments_[0]);
+  },
+  cache: new QuickLRU({ maxSize: 100 }),
+});
+
+/*
+  Fetch census data for geography 'geoCode' and all categoryCodes plust totalCode. Uses the geodata api 'query' 
+  endpoint, see documentation here: https://api.develop.onsdigital.co.uk/v1/geodata/swaggerui#/public/get_query__year_
+  (develop env access required - ToDo replace w. public API swagger URL when available)
+*/
 export const fetchSelectedGeographyData = async (args: {
   totalCode: string;
   categoryCodes: string[];
@@ -69,6 +102,11 @@ export const fetchSelectedGeographyData = async (args: {
   return dsv.csvParse(csv);
 };
 
+/*
+  Fetch information about geography 'geoCode' (name, bounding box, etc). Uses the geodata api 'geo' endpoint, see
+  documentation here: https://api.develop.onsdigital.co.uk/v1/geodata/swaggerui#/public/GetGeo
+  (develop env access required - ToDo replace w. public API swagger URL when available)
+*/
 export const fetchGeographyInfo = async (geoCode: string) => {
   if (geoCode === englandAndWales.meta.code) {
     return JSON.stringify(englandAndWales);

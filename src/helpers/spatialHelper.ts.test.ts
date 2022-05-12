@@ -1,5 +1,5 @@
 import { getQuantisedBbox, MaxZoomToUseUKBbox, UKBbox } from "./spatialHelper";
-import tilebelt from "@mapbox/tilebelt";
+import { vi } from "vitest";
 
 const testBbox = {
   east: 1,
@@ -8,7 +8,21 @@ const testBbox = {
   south: 48,
 };
 
+const mockTileBeltBBox = [1, 2, 3, 4];
+
 describe("getQuantisedBbox", () => {
+  beforeEach(() => {
+    // ToDo - figure out how you set these mock return values per test...
+    vi.mock("@mapbox/tilebelt", () => ({
+      pointToTile: vi.fn(),
+      tileToBBOX: vi.fn(() => {
+        return mockTileBeltBBox;
+      }),
+    }));
+  });
+  afterEach(() => {
+    vi.clearAllMocks();
+  });
   test("returns UK bbox for zoom levels below MaxZoomToUseUKBbox", () => {
     const zoom = MaxZoomToUseUKBbox * 0.8;
     expect(getQuantisedBbox(testBbox, zoom)).toEqual(UKBbox);
@@ -19,8 +33,6 @@ describe("getQuantisedBbox", () => {
   });
   test("returns bbox based on slippy map tile X,Y grid for zoom levels above MaxZoomToUseUKBbox", () => {
     const zoom = MaxZoomToUseUKBbox * 2;
-    const mockTileBeltBBox = [1, 2, 3, 4];
-    jest.spyOn(tilebelt, "tileToBBOX").mockReturnValue(mockTileBeltBBox);
     const expectedBbox = {
       east: mockTileBeltBBox[2],
       north: mockTileBeltBBox[3],

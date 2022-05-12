@@ -1,8 +1,9 @@
 import type * as dsv from "d3-dsv"; // https://github.com/d3/d3/issues/3469
-import { fetchBreaks, fetchQuery } from "./api";
+import { memFetchBreaks, memFetchQuery } from "./api";
 import type { Bbox, GeoType } from "../types";
 import { vizStore } from "../stores/stores";
 import { getCategoryInfo } from "../helpers/categoryHelpers";
+import { getQuantisedBbox } from "../helpers/spatialHelper";
 
 export const setVizStore = async (args: {
   totalCode: string;
@@ -13,7 +14,9 @@ export const setVizStore = async (args: {
   bbox: Bbox;
   zoom: number;
 }) => {
-  const [places, breaksData] = await Promise.all([fetchQuery(args), fetchBreaks(args)]);
+  // normalise bbox to slippy map X,Y tile grid before fetching, to increase cachability
+  args.bbox = getQuantisedBbox(args.bbox, args.zoom);
+  const [places, breaksData] = await Promise.all([memFetchQuery(args), memFetchBreaks(args)]);
   vizStore.set({
     breaks: breaksData.breaks[args.categoryCode].map((breakpoint) => parseFloat(breakpoint) * 100),
     minMaxVals: breaksData.minMax[args.categoryCode],

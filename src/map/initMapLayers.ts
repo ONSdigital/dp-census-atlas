@@ -8,43 +8,58 @@ export const initMapLayers = (map) => {
       type: "vector",
       tiles: [l.layer.urlTemplate],
       promoteId: l.layer.idProperty, // tells mapbox which property to use as the feature id
+      maxzoom: l.layer.sourceMaxZoom, // This is the maximum zoom level that the map tiles are available for (tiles can be over-zoomed)
     });
 
-    map.addLayer({
-      id: `${l.layer.name}-features`,
-      minzoom: l.layer.minZoom,
-      source: l.layer.name,
-      "source-layer": l.layer.sourceLayer,
-      type: "fill",
-      paint: {
-        "fill-color": [
-          "case",
-          ["!=", ["feature-state", "colour"], null],
-          ["feature-state", "colour"],
-          "rgba(255, 255, 255, 0)",
-        ],
+    map.addLayer(
+      {
+        id: `${l.layer.name}-features`,
+        minzoom: l.layer.minZoom,
+        source: l.layer.name,
+        "source-layer": l.layer.sourceLayer,
+        type: "fill",
+        maxzoom: l.next ? l.next.minZoom : maxAllowedZoom,
+        paint: {
+          "fill-color": [
+            "case",
+            ["!=", ["feature-state", "colour"], null],
+            ["feature-state", "colour"],
+            "lightgrey", // Set to grey to confirm layer exists when data not loaded. Should be set to rgba(255,255,255,0)
+          ],
+        },
       },
-    });
+      "mask-raster",
+    );
 
-    map.addLayer({
-      id: `${l.layer.name}-outlines`,
-      type: "line",
-      source: l.layer.name,
-      "source-layer": l.layer.sourceLayer,
-      minzoom: l.layer.minZoom,
-      maxzoom: l.next ? l.next.minZoom : maxAllowedZoom,
-      paint: {
-        "line-color": "black",
-        "line-width": [
-          "case",
-          ["==", ["feature-state", "selected"], true],
-          5,
-          ["==", ["feature-state", "hovered"], true],
-          3,
-          1,
-        ],
+    map.addLayer(
+      {
+        id: `${l.layer.name}-outlines`,
+        type: "line",
+        source: l.layer.name,
+        "source-layer": l.layer.sourceLayer,
+        minzoom: l.layer.minZoom,
+        maxzoom: l.next ? l.next.minZoom : maxAllowedZoom,
+        paint: {
+          "line-color": [
+            "case",
+            ["==", ["feature-state", "selected"], true],
+            "black",
+            ["==", ["feature-state", "hovered"], true],
+            "black",
+            "rgba(0,0,0,0.3)",
+          ],
+          "line-width": [
+            "case",
+            ["==", ["feature-state", "selected"], true],
+            3,
+            ["==", ["feature-state", "hovered"], true],
+            2,
+            0.5,
+          ],
+        },
       },
-    });
+      "place_other",
+    );
 
     // cursor to pointer when hovered
     map.on("mouseenter", `${l.layer.name}-features`, () => {
@@ -73,9 +88,9 @@ export const initMapLayers = (map) => {
       }
     });
 
-    // when the mouse leaves the state-fill layer, update the feature state of the
+    // when the mouse leaves the fill layer, update the feature state of the
     // previously hovered feature.
-    map.on("mouseleave", `${l.layer.name}-outlines`, () => {
+    map.on("mouseleave", `${l.layer.name}-features`, () => {
       if (hoveredStateId !== null) {
         map.setFeatureState(
           { source: l.layer.name, sourceLayer: l.layer.sourceLayer, id: hoveredStateId },

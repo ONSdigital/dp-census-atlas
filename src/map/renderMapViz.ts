@@ -16,7 +16,7 @@ export const renderMapViz = (map: mapboxgl.Map, data: VizData) => {
 
       if (dataForFeature) {
         map.setFeatureState(
-          { source: l.name, sourceLayer: l.name, id: f.id },
+          { source: l.name, sourceLayer: l.sourceLayer, id: f.id },
           { colour: getChoroplethColour(dataForFeature.percentage, data.breaks) },
         );
       }

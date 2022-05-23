@@ -8,18 +8,18 @@ import { englandAndWales } from "../helpers/spatialHelper";
 import { initMapLayers } from "./initMapLayers";
 import { renderMapViz } from "./renderMapViz";
 import { layers, layersWithSiblings } from "./layers";
+import { style } from "./style";
 
-mapboxgl.accessToken = "pk.eyJ1Ijoic3Vtb3RoZWNhdCIsImEiOiJjaWxocngyanYwMDY4dmprcTg4ODN2Z3B2In0.CockfZdHAzqOfsbw8VcQyQ";
-export const maxAllowedZoom = 22;
+export const maxAllowedZoom = 16;
 
 /** Configure the map's properties and subscribe to its events. */
 export const initMap = (container) => {
   const map = new Map({
     container,
-    style: "mapbox://styles/mapbox/navigation-day-v1",
+    style,
     center: new mapboxgl.LngLatBounds(englandAndWales.geo_json.features[0].geometry.coordinates).getCenter(),
     zoom: 6,
-    maxZoom: maxAllowedZoom,
+    maxZoom: maxAllowedZoom - 0.001, // prevents the layers from disappearing at the absolute max zoom of the map
   });
 
   map.addControl(new mapboxgl.NavigationControl({ showCompass: false }));

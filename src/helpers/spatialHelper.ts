@@ -1,8 +1,28 @@
-import { pointToTile, tileToBBOX } from "@mapbox/tilebelt";
-import type { Bbox, GeographyInfo } from "../types";
+import type { Bbox, DataTileGrid, GeographyInfo, GeoType } from "../types";
+import censusDataTileGrid from "../../data-tile-grids/quadsDataTileGrid.json";
+import booleanIntersects from "@turf/boolean-intersects";
+import bboxPolygon from "@turf/bbox-polygon";
 
 export const getBboxString = (args: Bbox) => {
   return [args.east, args.north, args.west, args.south].map((n) => n.toFixed(6)).join(",");
+};
+
+/*
+  Test for bbox intersection using turf functions, after converting both bbox to geojson features 
+*/
+export const doBboxesIntersect = (args: { bbox1: Bbox; bbox2: Bbox }) => {
+  const bbox1Feature = bboxPolygon([args.bbox1.south, args.bbox1.west, args.bbox1.north, args.bbox1.east])
+  const bbox2Feature = bboxPolygon([args.bbox2.south, args.bbox2.west, args.bbox2.north, args.bbox2.east])
+  return booleanIntersects(bbox1Feature, bbox2Feature);
+};
+
+/*
+  filter data tile grid to those data tiles that intersect with the supplied bbox
+*/
+export const bboxToDataTiles = (bbox: Bbox, geoType: GeoType, dataTileGrid: DataTileGrid = censusDataTileGrid) => {
+  return dataTileGrid[geoType].filter((dataTile) => {
+    return doBboxesIntersect({ bbox1: bbox, bbox2: dataTile.bbox });
+  });
 };
 
 export const englandAndWales: GeographyInfo = {
@@ -23,44 +43,3 @@ export const englandAndWales: GeographyInfo = {
   },
 };
 
-// uk bounding box, taken from UK bbox value used in API
-// https://github.com/ONSdigital/dp-geodata-api/blob/develop/pkg/geodata/coords.go
-export const UKBbox: Bbox = {
-  east: 1.76,
-  north: 58.64,
-  west: -7.57,
-  south: 49.92,
-};
-
-// maxmium zoom level at which to subsitute UKBbox for arbitrary viewport bbox
-export const MaxZoomToUseUKBbox = 6;
-
-/*
-  Snap viewport bounding box coordinates to closest slippy map tile integer X,Y values for current zoom (see
-  https://wiki.openstreetmap.org/wiki/Slippy_map_tilenames) to make bounding box requests cachable.
-*/
-export const getQuantisedBbox = (bbox: Bbox, zoom: number) => {
-  // round down zoom level to ensure snap is to integer tile grid
-  const floorZoom = Math.floor(zoom);
-
-  // if zoom is lower than minZoomToSnapBBoxes, just return bbox for all of UK
-  if (floorZoom <= MaxZoomToUseUKBbox) {
-    return UKBbox;
-  }
-
-  // get map tiles for current zoom that contain bbox corners
-  const neTile = pointToTile(bbox.east, bbox.north, floorZoom);
-  const swTile = pointToTile(bbox.west, bbox.south, floorZoom);
-
-  // convert map tiles to bboxes
-  const neTileBbox = tileToBBOX(neTile);
-  const swTileBbox = tileToBBOX(swTile);
-
-  // return bbox for both tiles  (NB tilebelt/mapbox uses West, South, East, North bbox convention)
-  return {
-    east: neTileBbox[2],
-    north: neTileBbox[3],
-    west: swTileBbox[0],
-    south: swTileBbox[1],
-  };
-};

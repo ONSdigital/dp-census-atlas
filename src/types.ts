@@ -1,6 +1,6 @@
 import type topics from "./data/content";
 
-export type GeoType = "ew" | "lad" | "msoa" | string;
+export type GeoType = "ew" | "lad" | "msoa" | "oa" | string;
 
 export type MapState = {
   bbox: Bbox;
@@ -86,3 +86,14 @@ export type LocaleSuggestions = [
     category: string;
   },
 ];
+
+export type DataTile = {
+  tilename: string;
+  bbox: Bbox;
+};
+
+export type DataTileGrid = {
+  lad: DataTile[];
+  msoa: DataTile[];
+  oa: DataTile[];
+};

@@ -18,6 +18,7 @@
   },
   "type": "module",
   "devDependencies": {
+    "@mapbox/tilebelt": "^1.0.2",
     "@sveltejs/adapter-auto": "^1.0.0-next.33",
     "@sveltejs/adapter-node": "^1.0.0-next.72",
     "@sveltejs/kit": "^1.0.0-next.299",
@@ -49,8 +50,9 @@
     "vitest": "^0.12.4"
   },
   "dependencies": {
-    "@mapbox/tilebelt": "^1.0.2",
     "@ons/design-system": "^45.2.2",
+    "@turf/bbox-polygon": "^6.5.0",
+    "@turf/boolean-intersects": "^6.5.0",
     "d3-dsv": "^2.0.0",
     "fuse.js": "^3.6.1",
     "mapbox-gl": "^1.13.2",

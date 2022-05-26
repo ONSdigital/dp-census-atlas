@@ -5,7 +5,7 @@ import QuickLRU from "quick-lru";
 import { bboxToDataTiles, englandAndWales, getBboxString } from "../helpers/spatialHelper";
 
 export const apiBaseUrl =
-  import.meta.env.VITE_API_BASE_URL || "https://cep5lmkia0.execute-api.eu-west-1.amazonaws.com/dev";
+  import.meta.env.VITE_API_BASE_URL || "https://api.develop.onsdigital.co.uk/v1/geodata";
 
 // ToDo configure this via env var?
 const FetchCensusDataFromFlatFiles = false;

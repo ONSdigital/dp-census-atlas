@@ -1,19 +1,15 @@
 import * as dsv from "d3-dsv"; // https://github.com/d3/d3/issues/3469
-import type { Bbox, GeoType } from "src/types";
+import type { Bbox, GeoType, DataTile } from "src/types";
 import mem from "mem";
 import QuickLRU from "quick-lru";
 import { bboxToDataTiles, englandAndWales, getBboxString } from "../helpers/spatialHelper";
 
-export const apiBaseUrl =
-  import.meta.env.VITE_API_BASE_URL || "https://api.develop.onsdigital.co.uk/v1/geodata";
-
-// ToDo configure this via env var?
-const FetchCensusDataFromFlatFiles = false;
+export const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || "https://api.develop.onsdigital.co.uk/v1/geodata";
+const s3BaseUrl = "https://find-insights-db-dumps.s3.eu-central-1.amazonaws.com/education";
 
 /*
-  Fetch place data for all data 'tiles' (predefined coordinate grid squares) that intersect with current viewport 
-  bounding box. ToDo extent this to allow fetching from either API or flat files from s3 (ToDoDo - pick which one
-  is to be used and deprecate the other!)
+  Fetch place data files for all data 'tiles' (predefined coordinate grid squares) that intersect with current viewport 
+  bounding box.
 */
 export const fetchTileDataForBbox = async (args: {
   totalCode: string;
@@ -24,25 +20,19 @@ export const fetchTileDataForBbox = async (args: {
   // get all intersecting data tiles
   const dataTiles = bboxToDataTiles(args.bbox, args.geoType);
 
-  if (FetchCensusDataFromFlatFiles) {
-    // fetch data from data tile flat files
-    console.log("Flat file data fetching still not implemented!!");
-  } else {
-    // fetch data from api for data tile bounding boxes
-    const fetchedData = await Promise.all(
-      dataTiles.map((dataTile) => {
-        return memFetchQuery({
-          totalCode: args.totalCode,
-          categoryCode: args.categoryCode,
-          geoType: args.geoType,
-          bbox: dataTile.bbox,
-        });
-      }),
-    ).then((responseArry) => {
-      return responseArry.flat();
-    });
-    return Promise.resolve(fetchedData);
-  }
+  // fetch data from data tile files
+  const fetchedData = await Promise.all(
+    dataTiles.map((dataTile) => {
+      return memFetchTileData({
+        categoryCode: args.categoryCode,
+        geoType: args.geoType,
+        tile: dataTile,
+      });
+    }),
+  ).then((responseArry) => {
+    return responseArry.flat();
+  });
+  return Promise.resolve(fetchedData);
 };
 
 /*
@@ -51,9 +41,8 @@ export const fetchTileDataForBbox = async (args: {
   https://api.develop.onsdigital.co.uk/v1/geodata/swaggerui#/public/get_query__year_
   (develop env access required - ToDo replace w. public API swagger URL when available)
 */
-export const fetchQuery = async (args: { totalCode: string; categoryCode: string; geoType: GeoType; bbox: Bbox }) => {
-  const bboxParam = getBboxString(args.bbox);
-  const url = `${apiBaseUrl}/query/2011?bbox=${bboxParam}&cols=geography_code,${args.totalCode},${args.categoryCode}&geotype=${args.geoType}`;
+export const fetchTileData = async (args: { categoryCode: string; geoType: GeoType; tile: DataTile }) => {
+  const url = `${s3BaseUrl}/${args.geoType}/${args.tile.tilename}/${args.categoryCode}.csv`;
   const response = await fetch(url);
   const csv = await response.text();
   return dsv.csvParse(csv);
@@ -62,13 +51,14 @@ export const fetchQuery = async (args: { totalCode: string; categoryCode: string
 /*
   Memoized version of fetchQuery, used to reduce API calls.
 */
-export const memFetchQuery = mem(fetchQuery, {
+export const memFetchTileData = mem(fetchTileData, {
   cacheKey: (arguments_) => {
     return JSON.stringify(arguments_[0]);
   },
   cache: new QuickLRU({ maxSize: 100 }),
 });
 
+// ToDo This function needs some love!
 /*
   Fetch esimated natural breakpoints in data for all census categories in 'categoryCodes', divided by census category
   'totalCode'. Uses the geodata api 'ckmeans' endpoint, see
@@ -76,8 +66,7 @@ export const memFetchQuery = mem(fetchQuery, {
   (develop env access required - ToDo replace w. public API swagger URL when available)
 */
 export const fetchBreaks = async (args: {
-  totalCode: string;
-  categoryCodes: string[];
+  categoryCode: string;
   geoType: GeoType;
 }): Promise<{ breaks: { [categoryCode: string]: number[] }; minMax: { [categoryCode: string]: number[] } }> => {
   const breakCount = 5;
@@ -86,21 +75,18 @@ export const fetchBreaks = async (args: {
   // return -1s (so that all data will NOT be assigned a break, and the map will remain colorless) if its the default
   // geography (england and wales)
   if (args.geoType === englandAndWales.meta.geotype) {
-    const noBreaksBreaks = {};
-    const noBreaksMinMax = {};
-    for (const categoryCode of args.categoryCodes) {
-      noBreaksBreaks[categoryCode] = Array(breakCount).fill(-1);
-      noBreaksMinMax[categoryCode] = Array(2).fill(-1);
-    }
+    const noBreaksBreaks = {
+      [args.categoryCode]: Array(breakCount).fill(-1),
+    };
+    const noBreaksMinMax = {
+      [args.categoryCode]: Array(2).fill(-1),
+    };
     return { breaks: noBreaksBreaks, minMax: noBreaksMinMax };
   }
 
-  const url = `${apiBaseUrl}/ckmeans/2011?divide_by=${args.totalCode}&cat=${args.categoryCodes.join(",")}&geotype=${
-    args.geoType
-  }&k=${breakCount}`;
+  const url = `${s3BaseUrl}/breaks/${args.geoType}/${args.categoryCode}.json`;
   const response = await fetch(url);
   const parsed = await response.json();
-
   // (ignore data from the API for geotypes we don't need)
   const breaks = Object.fromEntries(
     Object.keys(parsed).map((code) => [code, parsed[code][args.geoType.toUpperCase()]]),
@@ -108,7 +94,6 @@ export const fetchBreaks = async (args: {
   const minMax = Object.fromEntries(
     Object.keys(parsed).map((code) => [code, parsed[code][`${args.geoType.toUpperCase()}_min_max`]]),
   );
-
   return { breaks, minMax };
 };
 

@@ -7,13 +7,11 @@ import { getCategoryInfo } from "../helpers/categoryHelpers";
 export const setVizStore = async (args: {
   totalCode: string;
   categoryCode: string;
-  categoryCodes: string[];
   geoType: GeoType;
   geoCode: string;
   bbox: Bbox;
   zoom: number;
 }) => {
-  // normalise bbox to slippy map X,Y tile grid before fetching, to increase cachability
   const [places, breaksData] = await Promise.all([fetchTileDataForBbox(args), memFetchBreaks(args)]);
   vizStore.set({
     breaks: breaksData.breaks[args.categoryCode].map((breakpoint) => parseFloat(breakpoint) * 100),

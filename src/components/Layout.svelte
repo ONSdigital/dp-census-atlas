@@ -7,10 +7,6 @@
   import { getSelectedGeography } from "../helpers/categoryHelpers";
   import { setSelectedGeographyStore } from "../data/setSelectedGeographyStore";
 
-  $: if ($page) {
-    const g = getSelectedGeography($page.url);
-    setSelectedGeographyStore({ geoCode: g.geoCode, geoType: g.geoType });
-  }
 </script>
 
 <div class="xl:tw-absolute tw-inset-0 xl:tw-flex tw-flex-col">

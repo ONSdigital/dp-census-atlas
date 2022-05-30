@@ -2,9 +2,8 @@ import * as dsv from "d3-dsv"; // https://github.com/d3/d3/issues/3469
 import type { Bbox, GeoType, DataTile } from "src/types";
 import mem from "mem";
 import QuickLRU from "quick-lru";
-import { bboxToDataTiles, englandAndWales, getBboxString } from "../helpers/spatialHelper";
+import { bboxToDataTiles, englandAndWales } from "../helpers/spatialHelper";
 
-export const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || "https://api.develop.onsdigital.co.uk/v1/geodata";
 const s3BaseUrl = "https://find-insights-db-dumps.s3.eu-central-1.amazonaws.com/education";
 
 /*
@@ -108,34 +107,24 @@ export const memFetchBreaks = mem(fetchBreaks, {
 });
 
 /*
-  Fetch census data for geography 'geoCode' and all categoryCodes plust totalCode. Uses the geodata api 'query' 
-  endpoint, see documentation here: https://api.develop.onsdigital.co.uk/v1/geodata/swaggerui#/public/get_query__year_
-  (develop env access required - ToDo replace w. public API swagger URL when available)
+  DUMMY FUNCTION (to be removed!) Just returns 1 for every category requested.
 */
 export const fetchSelectedGeographyData = async (args: {
   totalCode: string;
   categoryCodes: string[];
   geoCode: string;
 }) => {
-  const url = `${apiBaseUrl}/query/2011?cols=geography_code,${args.totalCode},${args.categoryCodes.join(",")}&rows=${
+  const dummyData = `geography_code,${args.totalCode},${args.categoryCodes.join(",")}\n${
     args.geoCode
-  },${englandAndWales.meta.code}`;
-  const response = await fetch(url);
-  const csv = await response.text();
-  return dsv.csvParse(csv);
+  },1,${args.categoryCodes.map(() => 1).join(",")}`;
+  return dsv.csvParse(dummyData);
 };
 
 /*
-  Fetch information about geography 'geoCode' (name, bounding box, etc). Uses the geodata api 'geo' endpoint, see
-  documentation here: https://api.develop.onsdigital.co.uk/v1/geodata/swaggerui#/public/GetGeo
-  (develop env access required - ToDo replace w. public API swagger URL when available)
+  DUMMY FUNCTION (to be removed!) Just returns England and Wales data with the geocode changed.
 */
 export const fetchGeographyInfo = async (geoCode: string) => {
-  if (geoCode === englandAndWales.meta.code) {
-    return JSON.stringify(englandAndWales);
-  }
-  const url = `${apiBaseUrl}/geo/2011?geocode=${geoCode}`;
-  const response = await fetch(url);
-  const data = await response.text();
-  return data;
+  const dummyData = englandAndWales;
+  dummyData.meta.code = geoCode;
+  return JSON.stringify(dummyData);
 };

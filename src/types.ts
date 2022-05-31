@@ -17,7 +17,7 @@ export type VizData = {
   geoType: GeoType;
   breaks: number[];
   minMaxVals: number[];
-  places: { geoCode: string; count: number; percentage: number; total: number }[];
+  places: { geoCode: string; ratioToTotal: number }[];
   params: {
     topic: Topic;
     variable: Variable;

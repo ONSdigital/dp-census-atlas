@@ -4,18 +4,13 @@ import mem from "mem";
 import QuickLRU from "quick-lru";
 import { bboxToDataTiles, englandAndWales } from "../helpers/spatialHelper";
 
-const s3BaseUrl = "https://find-insights-db-dumps.s3.eu-central-1.amazonaws.com/education";
+const s3BaseUrl = "https://find-insights-db-dumps.s3.eu-central-1.amazonaws.com/quads";
 
 /*
   Fetch place data files for all data 'tiles' (predefined coordinate grid squares) that intersect with current viewport 
   bounding box.
 */
-export const fetchTileDataForBbox = async (args: {
-  totalCode: string;
-  categoryCode: string;
-  geoType: GeoType;
-  bbox: Bbox;
-}) => {
+export const fetchTileDataForBbox = async (args: { categoryCode: string; geoType: GeoType; bbox: Bbox }) => {
   // get all intersecting data tiles
   const dataTiles = bboxToDataTiles(args.bbox, args.geoType);
 

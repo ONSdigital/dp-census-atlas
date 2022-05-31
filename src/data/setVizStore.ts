@@ -5,7 +5,6 @@ import { vizStore } from "../stores/stores";
 import { getCategoryInfo } from "../helpers/categoryHelpers";
 
 export const setVizStore = async (args: {
-  totalCode: string;
   categoryCode: string;
   geoType: GeoType;
   geoCode: string;
@@ -15,19 +14,16 @@ export const setVizStore = async (args: {
   const [places, breaksData] = await Promise.all([fetchTileDataForBbox(args), memFetchBreaks(args)]);
   vizStore.set({
     geoType: args.geoType,
-    breaks: breaksData.breaks[args.categoryCode].map((breakpoint) => parseFloat(breakpoint) * 100),
+    breaks: breaksData.breaks[args.categoryCode],
     minMaxVals: breaksData.minMax[args.categoryCode],
-    places: places.map((row) => parsePlaceData(row, args.totalCode, args.categoryCode)),
+    places: places.map((row) => parsePlaceData(row, args.categoryCode)),
     params: getCategoryInfo(args.categoryCode),
   });
   return Promise.resolve();
 };
 
-// TODO do we actually use the percentages now?
-const parsePlaceData = (row: dsv.DSVRowString<string>, totalCode: string, categoryCode: string) => {
+const parsePlaceData = (row: dsv.DSVRowString<string>, categoryCode: string) => {
   const geoCode = row.geography_code;
-  const total = parseInt(row[totalCode]);
-  const count = parseInt(row[categoryCode]);
-  const percentage = (count / total) * 100;
-  return { geoCode, count, total, percentage };
+  const ratioToTotal = parseFloat(row[categoryCode]);
+  return { geoCode, ratioToTotal };
 };

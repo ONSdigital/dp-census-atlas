@@ -14,6 +14,7 @@ export const setVizStore = async (args: {
 }) => {
   const [places, breaksData] = await Promise.all([fetchTileDataForBbox(args), memFetchBreaks(args)]);
   vizStore.set({
+    geoType: args.geoType,
     breaks: breaksData.breaks[args.categoryCode].map((breakpoint) => parseFloat(breakpoint) * 100),
     minMaxVals: breaksData.minMax[args.categoryCode],
     places: places.map((row) => parsePlaceData(row, args.totalCode, args.categoryCode)),

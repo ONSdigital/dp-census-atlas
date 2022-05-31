@@ -14,6 +14,7 @@ export type Category = typeof topics[0]["variables"][0]["categories"][0];
 export type VariableData = { [catCode: string]: { count: number; total: number; percentage: number } };
 
 export type VizData = {
+  geoType: GeoType;
   breaks: number[];
   minMaxVals: number[];
   places: { geoCode: string; count: number; percentage: number; total: number }[];

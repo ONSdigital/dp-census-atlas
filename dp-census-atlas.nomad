@@ -6,7 +6,7 @@ job "dp-census-atlas" {
   update {
     stagger          = "60s"
     min_healthy_time = "30s"
-    healthy_deadline = "2m"
+    healthy_deadline = "4m"
     max_parallel     = 1
     auto_revert      = true
   }

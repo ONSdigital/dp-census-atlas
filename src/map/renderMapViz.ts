@@ -5,22 +5,15 @@ import { layers } from "./layers";
 export const renderMapViz = (map: mapboxgl.Map, data: VizData) => {
   if (!data) return;
 
-  // TODO: we only only to do this for the currently visible geotype
-  layers.forEach((l) => {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore (typings for this overload are currently missing)
-    const features = map.queryRenderedFeatures({ layers: [`${l.name}-features`] });
+  const layer = layers.find((l) => l.name == data.geoType);
 
-    features.forEach((f) => {
-      const dataForFeature = data.places.find((p) => p.geoCode === f.id);
-
-      if (dataForFeature) {
-        map.setFeatureState(
-          { source: l.name, sourceLayer: l.sourceLayer, id: f.id },
-          { colour: getChoroplethColour(dataForFeature.percentage, data.breaks) },
-        );
-      }
-    });
+  // assume all data in viz store relates to a place on the map that is currently in view, so no need to filter to
+  // rendered features only
+  data.places.forEach((p) => {
+    map.setFeatureState(
+      { source: layer.name, sourceLayer: layer.sourceLayer, id: p.geoCode },
+      { colour: getChoroplethColour(p.percentage, data.breaks) },
+    );
   });
 };
 

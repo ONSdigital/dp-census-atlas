@@ -9,6 +9,16 @@ const tileJSONfn = process.argv[2];
 const quadTiles = JSON.parse(readFileSync(tileJSONfn));
 const quadBBoxes = {};
 
+// add default ew tile for LAD if they're not in the input file
+if (!("lad" in quadTiles)) {
+  quadBBoxes["lad"] = [
+    {
+      tilename: "ew",
+      bbox: { east: 1.76, north: 58.64, west: -7.57, south: 49.92 },
+    },
+  ];
+}
+
 for (const key in quadTiles) {
   quadBBoxes[key] = quadTiles[key].map((tile) => {
     const tilename = tile.map((x) => x.toString()).join("-");

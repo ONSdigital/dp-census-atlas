@@ -30,10 +30,8 @@ export const fetchTileDataForBbox = async (args: { categoryCode: string; geoType
 };
 
 /*
-  Fetch census data by for categories categoryCode and totalCode for all geographies of type 'geoType' that fall within
-  geographic bounding box 'bbox'. Uses the geodata api 'query' endpoint, see documentation here:
-  https://api.develop.onsdigital.co.uk/v1/geodata/swaggerui#/public/get_query__year_
-  (develop env access required - ToDo replace w. public API swagger URL when available)
+  Fetch json with census data by for categories categoryCode and totalCode for all geographies of type 'geoType' that 
+  fall within geographic bounding box represented by 'tile'.
 */
 export const fetchTileData = async (args: { categoryCode: string; geoType: GeoType; tile: DataTile }) => {
   const url = `${s3BaseUrl}/${args.geoType}/${args.tile.tilename}/${args.categoryCode}.csv`;
@@ -54,10 +52,8 @@ export const memFetchTileData = mem(fetchTileData, {
 
 // ToDo This function needs some love!
 /*
-  Fetch esimated natural breakpoints in data for all census categories in 'categoryCodes', divided by census category
-  'totalCode'. Uses the geodata api 'ckmeans' endpoint, see
-  documentation here: https://api.develop.onsdigital.co.uk/v1/geodata/swaggerui#/public/get_ckmeans__year_
-  (develop env access required - ToDo replace w. public API swagger URL when available)
+  Fetch json with estimated natural breakpoints (w. ckmeans algorithm) in data for all census category 'categoryCode'
+  divided by total for that category.
 */
 export const fetchBreaks = async (args: {
   categoryCode: string;
@@ -102,6 +98,19 @@ export const memFetchBreaks = mem(fetchBreaks, {
 });
 
 /*
+  Fetch json with bounding box for geography.
+*/
+export const fetchGeographyInfo = async (geoCode: string) => {
+  if (geoCode === englandAndWales.meta.code) {
+    return JSON.stringify(englandAndWales);
+  }
+  const url = `${s3BaseUrl}/geo/${geoCode}.geojson`;
+  const response = await fetch(url);
+  const data = await response.text();
+  return data;
+};
+
+/*
   DUMMY FUNCTION (to be removed!) Just returns 1 for every category requested.
 */
 export const fetchSelectedGeographyData = async (args: {
@@ -113,13 +122,4 @@ export const fetchSelectedGeographyData = async (args: {
     args.geoCode
   },1,${args.categoryCodes.map(() => 1).join(",")}`;
   return dsv.csvParse(dummyData);
-};
-
-/*
-  DUMMY FUNCTION (to be removed!) Just returns England and Wales data with the geocode changed.
-*/
-export const fetchGeographyInfo = async (geoCode: string) => {
-  const dummyData = englandAndWales;
-  dummyData.meta.code = geoCode;
-  return JSON.stringify(dummyData);
 };

@@ -44,7 +44,7 @@
         labelText={label}
         {invertTextColor}
         {id}
-        autosuggestData={"/geoLookup.json"}
+        autosuggestData={"https://find-insights-db-dumps.s3.eu-central-1.amazonaws.com/quads/autosuggestData/geoLookup.json"}
         {renderError}
         {header}
         bind:autosuggestValue={userInputValue}

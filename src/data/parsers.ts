@@ -21,15 +21,8 @@ export const parseSelectedGeographyData = (rawData: dsv.DSVRowArray, totalCode: 
         };
       }
     }
-    // if the selected geography IS the default geography,
-    // the selectedGeographyData object will remain empty...
-    if (row.geography_code === englandAndWales.meta.code) {
-      selectedGeographyTotal = rawData[0][totalCode];
-      englandAndWalesGeoData = parsedRow;
-    } else {
-      selectedGeographyTotal = rawData[1][totalCode];
-      selectedGeoData = parsedRow;
-    }
+    selectedGeographyTotal = rawData[0][totalCode];
+    englandAndWalesGeoData = parsedRow;
   });
   // ... and so substitute any empty selectedGeographyData objects for the default object before returning.
   return {

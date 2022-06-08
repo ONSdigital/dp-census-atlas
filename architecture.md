@@ -61,9 +61,9 @@ There are two areas of deployment concern:
 
 We have working output files, plus a hacked front-end working demo, using three 'flat file APIs', eg.:
 
-    - .../data/msoa/62-42-7/QS501EW0002.csv <-- data API (get the viz data for a category, for one tile)
-    - .../breaks/msoa/QS501EW0002.json      <-- breaks API (get the breaks for a category, at a geotype level)
-    - .../geo/msoa/W02000139.geojson        <-- geography API (get info about a geography, eg name)
+    - .../data/msoa/62-42-7/QS501EW0002.csv <-- data API      (get the viz data for a category, for one tile)
+    - .../breaks/msoa/QS501EW0002.json      <-- breaks API    (get the breaks for a category, for a geotype)
+    - .../geo/W02000139.geojson             <-- geography API (get info about a geography, eg name, bbox)
 
 NB. Front end is a now a bit of a mess, preventing UI work from merging.
 
@@ -71,10 +71,10 @@ NB. Front end is a now a bit of a mess, preventing UI work from merging.
 
 A collection uploaded to the File Service contains a set of files:
 
-    content.json  (the content.json that has been created for the this publishing collection - it has the category codes)
-    data/         (the set of data files)
-    breaks/       (the set of breaks files)
-    geo/          (the set of geography files, although this could be stored elsewhere)
+    content.json  <-- the content.json that has been created for this publishing collection - it has the category codes
+    data/         <-- the set of data files
+    breaks/       <-- the set of breaks files
+    geo/          <-- the set of geography files, although this could be stored elsewhere
 
 Proposal: imagine we have a small list of “DP Collection ID”s committed into the front end code, like this:
 

@@ -26,21 +26,21 @@
 </div> -->
 {#if suggestions}
   <div class="mt-3 border-l-4 border-l-gray-400 p-3 ">
-    <ul class=" list-disc list-inside">
+    <ul class="pl-4 list-disc list-outside">
       <li class="pb-1">
-        Which areas have the
-        <a href="/2021/housing/owned-and-renting/default/shared-ownership" class="hyperlink">
-          highest levels of shared ownership properties</a
-        >?
-      </li>
-      <li class="pb-1">
-        Which areas of the country are the
+        Where are people
         <a href="/2021/health/general-health/default/very-good" class="hyperlink"> most healthy</a>?
       </li>
       <li class="pb-1">
         Where are the
         <a href="/2021/housing/heating/default/no-central-heating" class="hyperlink">
           highest levels of homes without central heating</a
+        >?
+      </li>
+      <li class="pb-1">
+        Which areas have the
+        <a href="/2021/housing/owned-and-renting/default/shared-ownership" class="hyperlink">
+          highest levels of shared ownership properties</a
         >?
       </li>
     </ul>

@@ -41,7 +41,7 @@
   </div>
   {#if selected}
     <!-- <div class="marker" style="width: 4px; left: calc({pos(selected, breaks)}% - {lineWidth / 2}px);" /> -->
-    <div class="absolute z-10 -top-1" style="left: calc({pos(selected, breaks)}% - {28 / 2}px);">
+    <div class="absolute z-10 -top-2.5" style="left: calc({pos(selected, breaks)}% - {28 / 2}px);">
       <svg class="h-7 w-7" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
         <!-- <circle cx="50" cy="50" r="40" stroke="black" stroke-width="20" fill="white" /> -->
         <polygon points="10,10 90,10 50,78 " stroke="black" stroke-width="19" stroke-linejoin="round" fill="white" />
@@ -76,7 +76,7 @@
   .tick-big {
     top: calc(100% + 0px);
     font-size: x-large;
-    font-weight: bold;
+    /* font-weight: bold; */
   }
   .tick-suffix {
     font-size: 90%;

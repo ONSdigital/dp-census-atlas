@@ -48,7 +48,7 @@
             </div>
             <div class="-mt-0.5">
               {#if args}
-                <span class="text-xl font-bold">
+                <span class="text-lg font-bold">
                   {formatTemplateString(
                     variable,
                     variableData,

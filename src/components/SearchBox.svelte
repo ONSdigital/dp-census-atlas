@@ -14,6 +14,7 @@
       id="{name}-input"
       {name}
       type="search"
+      placeholder="Search Census"
       autocomplete="off"
       class="flex items-center justify-center h-12 p-2 w-full border-l-2 border-t-2 border-b-2 border-black focus:border-4 custom-ring"
       bind:value={val}

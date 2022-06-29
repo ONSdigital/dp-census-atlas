@@ -1,5 +1,7 @@
 <script lang="ts">
-  import Button2 from "./Button2.svelte";
+  import { selectedGeographyStore } from "../stores/stores";
+  $: selectedGeographyDisplayName = $selectedGeographyStore?.displayName;
+  $: selectedGeographyGeoType = $selectedGeographyStore?.geoType.toUpperCase();
 
   $: open = false;
   let q = "";
@@ -21,7 +23,16 @@
   <div class=" font-bold text-slate-500">Area</div>
   <button class="w-full text-left" on:click={handleClick}>
     <div class="flex items-center gap-1">
-      <div class="flex-grow text-xl ">England & Wales</div>
+      <div class="flex-grow flex items-center gap-2 text-xl ">
+        <div class="">
+          {selectedGeographyDisplayName}
+        </div>
+        {#if selectedGeographyGeoType !== "EW"}
+          <div class="ml-0.5 text-sm bg-ons-census text-white font-bold px-1 rounded-sm">
+            {selectedGeographyGeoType}
+          </div>
+        {/if}
+      </div>
 
       <div class={open ? "rotate-180" : ""}>
         <svg

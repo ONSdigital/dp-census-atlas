@@ -5,6 +5,186 @@
 
 export default [
   {
+    name: "Population",
+    slug: "population",
+    desc: "People and their living arrangements.",
+    variables: [
+      {
+        name: "Marital status",
+        slug: "marital-status",
+        code: "KS103EW",
+        desc: "People married or in civil partnerships.",
+        units: "People",
+        categories: [
+          {
+            name: "Single never married or in a civil partnership",
+            slug: "single-never-married-or-in-a-civil-partnership",
+            code: "KS103EW0002",
+            desc: "Households where the members are single and have never been married or in a civil partnership.",
+            category_h_pt2: "of {category_unit} in {location} are",
+            category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
+          },
+          {
+            name: "Married",
+            slug: "married",
+            code: "KS103EW0003",
+            desc: "Households where the members are married.",
+            category_h_pt2: "of {category_unit} in {location} are",
+            category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
+          },
+          {
+            name: "In a registered civil partnership",
+            slug: "in-a-registered-civil-partnership",
+            code: "KS103EW0004",
+            desc: "Households where the members are in a registered civil partnership..",
+            category_h_pt2: "of {category_unit} in {location} are",
+            category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
+          },
+          {
+            name: "Separated (but still legally married)",
+            slug: "separated-but-still-legally-married",
+            code: "KS103EW0005",
+            desc: "Households where the members are separated but still legally married.",
+            category_h_pt2: "of {category_unit} in {location} are",
+            category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
+          },
+          {
+            name: "Divorced or civil partnership dissolved",
+            slug: "divorced-or-civil-partnership-dissolved",
+            code: "KS103EW0006",
+            desc: "Households where the members are either divorced or a civil partnership has been dissolved.",
+            category_h_pt2: "of {category_unit} in {location} are",
+            category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
+          },
+          {
+            name: "Widowed or surviving civil partnership partner",
+            slug: "widowed-or-surviving-civil-partnership-partner",
+            code: "KS103EW0007",
+            desc: "Households where the members widowed or a surviving civil partner.",
+            category_h_pt2: "of {category_unit} in {location} are",
+            category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
+          },
+        ],
+        total: {
+          name: "All categories: Marital and civil partnership status",
+          slug: "all-categories-marital-and-civil-partnership-status",
+          code: "KS103EW0001",
+        },
+      },
+      {
+        name: "Families living in the same home",
+        slug: "families-living-in-the-same-home",
+        code: "QS113EW",
+        desc: "Types of families living in the same home.",
+        units: "Households",
+        categories: [
+          {
+            name: "One person households",
+            slug: "one-person-households",
+            code: "QS113EW0002",
+            desc: "One person household is when someone lives on their own.",
+            category_h_pt2: "of {category_unit} in {location} are",
+            category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
+          },
+          {
+            name: "Single family households",
+            slug: "single-family-households",
+            code: "QS113EW0005",
+            desc: "Single family household is when one family live in the same home.",
+            category_h_pt2: "of {category_unit} in {location} are",
+            category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
+          },
+        ],
+        total: {
+          name: "All categories: Household composition",
+          slug: "all-categories-household-composition",
+          code: "QS113EW0001",
+        },
+      },
+      {
+        name: "Length of time people have lived in the UK",
+        slug: "length-of-time-people-have-lived-in-the-uk",
+        code: "QS803EW",
+        desc: "People born or have moved to the UK .",
+        units: "People",
+        topic_page_cat_desc: "This is the length of time someone who was not born in the UK has recently lived here.",
+        categories: [
+          {
+            name: "Born in the UK",
+            slug: "born-in-the-uk",
+            code: "QS803EW0002",
+            desc: "People born in the UK or have emigrated and have returned.",
+            category_h_pt2: "of {category_unit} in {location} were",
+            category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) were {category_name}.",
+          },
+          {
+            name: "Less than 2 years",
+            slug: "less-than-2-years",
+            code: "QS803EW0003",
+            desc: "This is the length of time someone who was not born in the UK has recently lived here.",
+            category_h_pt2: "of {category_unit} in {location} have lived in the UK",
+            category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have lived in the UK {category_name}.",
+          },
+          {
+            name: "2 to 4 years",
+            slug: "2-to-4-years",
+            code: "QS803EW0004",
+            desc: "This is the length of time someone who was not born in the UK has recently lived here.",
+            category_h_pt2: "of {category_unit} in {location} have lived in the UK",
+            category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have lived in the UK {category_name}.",
+          },
+          {
+            name: "5 to 9 years",
+            slug: "5-to-9-years",
+            code: "QS803EW0005",
+            desc: "This is the length of time someone who was not born in the UK has recently lived here.",
+            category_h_pt2: "of {category_unit} in {location} have lived in the UK",
+            category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have lived in the UK {category_name}.",
+          },
+          {
+            name: "10 years or more",
+            slug: "10-years-or-more",
+            code: "QS803EW0006",
+            desc: "This is the length of time someone who was not born in the UK has recently lived here.",
+            category_h_pt2: "of {category_unit} in {location} have lived in the UK",
+            category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have lived in the UK {category_name}.",
+          },
+        ],
+        total: {
+          name: "All categories: Length of residence in the UK",
+          slug: "all-categories-length-of-residence-in-the-uk",
+          code: "QS803EW0001",
+        },
+      },
+    ],
+  },
+  {
     name: "Education",
     slug: "education",
     desc: "People in education and qualifications they hold.",
@@ -91,179 +271,6 @@ export default [
           name: "All categories: Highest level of qualification",
           slug: "all-categories-highest-level-of-qualification",
           code: "QS501EW0001",
-        },
-      },
-    ],
-  },
-  {
-    name: "Health",
-    slug: "health",
-    desc: "People's general health and caring responsibilities.",
-    variables: [
-      {
-        name: "General health",
-        slug: "general-health",
-        code: "QS302EW",
-        desc: "How people rate their general health.",
-        units: "People",
-        topic_page_cat_desc:
-          "People who think their general health is, very good, good, fair, bad or very bad, by usual residents",
-        categories: [
-          {
-            name: "Very good health",
-            slug: "very-good-health",
-            code: "QS302EW0002",
-            desc: "This is someone’s own opinion that best describes their overall state of health as very good most of the time.",
-            category_h_pt2: "of {category_unit} in {location} have",
-            category_h_pt3: "{category_name}",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}.",
-          },
-          {
-            name: "Good health",
-            slug: "good-health",
-            code: "QS302EW0003",
-            desc: "This is someone’s own opinion that best describes their overall state of health as good most of the time.",
-            category_h_pt2: "of {category_unit} in {location} have",
-            category_h_pt3: "{category_name}",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}.",
-          },
-          {
-            name: "Fair health",
-            slug: "fair-health",
-            code: "QS302EW0004",
-            desc: "This is someone’s own opinion that best describes their overall state of health as fair most of the time.",
-            category_h_pt2: "of {category_unit} in {location} have",
-            category_h_pt3: "{category_name}",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}.",
-          },
-          {
-            name: "Bad health",
-            slug: "bad-health",
-            code: "QS302EW0005",
-            desc: "This is someone’s own opinion that best describes their overall state of health as bad most of the time.",
-            category_h_pt2: "of {category_unit} in {location} have",
-            category_h_pt3: "{category_name}",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}.",
-          },
-          {
-            name: "Very bad health",
-            slug: "very-bad-health",
-            code: "QS302EW0006",
-            desc: "This is someone’s own opinion that best describes their overall state of health as very bad most of the time.",
-            category_h_pt2: "of {category_unit} in {location} have",
-            category_h_pt3: "{category_name}",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}.",
-          },
-        ],
-        total: {
-          name: "All categories: General health",
-          slug: "all-categories-general-health",
-          code: "QS302EW0001",
-        },
-      },
-      {
-        name: "Long-term conditions",
-        slug: "long-term-conditions",
-        code: "QS303EW",
-        desc: "How people's health affects their day-to-day activities.",
-        units: "People",
-        categories: [
-          {
-            name: "No long-term condition",
-            slug: "no-long-term-condition",
-            code: "QS303EW0004",
-            desc: "Non-disabled people are able to carry out their day-to-day activities without being limited by a physical or mental health condition.",
-            category_h_pt2: "of {category_unit} in {location} have",
-            category_h_pt3: "{category_name}",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) do not have a long-term health condition.",
-          },
-          {
-            name: "Day-to-day activities limited a little",
-            slug: "day-to-day-activities-limited-a-little",
-            code: "QS303EW0003",
-            desc: "People with a long-term physical or mental health condition (lasting or expected to last 12 months or more) that limits their day-to-day activities a little.",
-            category_h_pt2: "of {category_unit} in {location} have their",
-            category_h_pt3: "{category_name}",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have their day to day activities limited a little.",
-          },
-          {
-            name: "Day-to-day activities limited a lot",
-            slug: "day-to-day-activities-limited-a-lot",
-            code: "QS303EW0002",
-            desc: "People with a long-term physical or mental health condition (lasting or expected to last 12 months or more) that limits their day-to-day activities a lot.",
-            category_h_pt2: "of {category_unit} in {location} have their",
-            category_h_pt3: "{category_name}",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have their day to day activities limited a lot.",
-          },
-        ],
-        total: {
-          name: "All categories: Long-term health problem or disability",
-          slug: "all-categories-long-term-health-problem-or-disability",
-          code: "QS303EW0001",
-        },
-      },
-      {
-        name: "Unpaid care",
-        slug: "unpaid-care",
-        code: "QS301EW",
-        desc: "People who provide unpaid care.",
-        units: "People",
-        topic_page_cat_desc:
-          "This is someone who provides unpaid care or occasional help to someone who is unwell, elderly or unable to manage on their own.",
-        categories: [
-          {
-            name: "Do not provide unpaid care",
-            slug: "do-not-provide-unpaid-care",
-            code: "QS301EW0002",
-            desc: "People who do not provide unpaid help or support to anyone who has a long-term physical or mental health condition or illness, or problems related to old age.",
-            category_h_pt2: "of {category_unit} in {location}",
-            category_h_pt3: "{category_name}",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) {category_name}.",
-          },
-          {
-            name: "Provide 1 to 19 hours unpaid care a week",
-            slug: "provide-1-to-19-hours-unpaid-care-a-week",
-            code: "QS301EW0003",
-            desc: "People who provide unpaid help or support to anyone who has a long-term physical or mental health condition or illness, or problems related to old age.",
-            category_h_pt2: "of {category_unit} in {location}",
-            category_h_pt3: "{category_name}",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) {category_name}.",
-          },
-          {
-            name: "Provide 20 to 49 hours unpaid care a week",
-            slug: "provide-20-to-49-hours-unpaid-care-a-week",
-            code: "QS301EW0004",
-            desc: "People who provide unpaid help or support to anyone who has a long-term physical or mental health condition or illness, or problems related to old age.",
-            category_h_pt2: "of {category_unit} in {location}",
-            category_h_pt3: "{category_name}",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) {category_name}.",
-          },
-          {
-            name: "Provide 50 or more hours unpaid care a week",
-            slug: "provide-50-or-more-hours-unpaid-care-a-week",
-            code: "QS301EW0005",
-            desc: "People who provide unpaid help or support to anyone who has a long-term physical or mental health condition or illness, or problems related to old age.",
-            category_h_pt2: "of {category_unit} in {location}",
-            category_h_pt3: "{category_name}",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) {category_name}.",
-          },
-        ],
-        total: {
-          name: "All categories: Provision of unpaid care",
-          slug: "all-categories-provision-of-unpaid-care",
-          code: "QS301EW0001",
         },
       },
     ],
@@ -679,6 +686,545 @@ export default [
           name: "All categories: Residence type",
           slug: "all-categories-residence-type",
           code: "QS101EW0001",
+        },
+      },
+    ],
+  },
+  {
+    name: "Work",
+    slug: "work",
+    desc: "People's employment status.",
+    variables: [
+      {
+        name: "Economic activity",
+        slug: "economic-activity",
+        code: "QS601EW",
+        desc: "People who are in work, starting work, looking for or do not work.",
+        units: "People",
+        topic_page_cat_desc: "People who are in work, starting work, looking for or do not work.",
+        categories: [
+          {
+            name: "Economically active",
+            slug: "economically-active",
+            code: "QS601EW0002",
+            desc: "Anyone aged 16 years and over was economically active if they were employed, waiting to start work or looking for work at the time of the census.",
+            category_h_pt2: "of {category_unit} in {location} are",
+            category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
+          },
+          {
+            name: "Economically inactive",
+            slug: "economically-inactive",
+            code: "QS601EW0011",
+            desc: "Economically inactive people did not have a job, had not looked for work or could not start work at the time of the census.",
+            category_h_pt2: "of {category_unit} in {location} are",
+            category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
+          },
+        ],
+        total: {
+          name: "All categories: Economic activity",
+          slug: "all-categories-economic-activity",
+          code: "QS601EW0001",
+        },
+      },
+      {
+        name: "Working hours",
+        slug: "working-hours",
+        code: "QS604EW",
+        desc: "Hours people work per week.",
+        units: "People",
+        topic_page_cat_desc:
+          "The number of hours someone aged 16 to 74 years in employment worked in their job or their last job.",
+        categories: [
+          {
+            name: "Part-time",
+            slug: "part-time",
+            code: "QS604EW0002",
+            desc: "These are people that work between 15 and 30 hours per week.",
+            category_h_pt2: "of {category_unit} in {location} work",
+            category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) work {category_name}.",
+          },
+          {
+            name: "Full-time",
+            slug: "full-time",
+            code: "QS604EW0005",
+            desc: "These are people that work a minimum of 31 hours per week.",
+            category_h_pt2: "of {category_unit} in {location} work",
+            category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) work {category_name}.",
+          },
+        ],
+        total: {
+          name: "All categories: Hours worked",
+          slug: "all-categories-hours-worked",
+          code: "QS604EW0001",
+        },
+      },
+      {
+        name: "Job",
+        slug: "job",
+        code: "KS608EW",
+        desc: "The types of jobs people do or did?",
+        units: "People",
+        topic_page_cat_desc:
+          "This is what someone does as their main job. It is based on their job title or details of the activities they do in their job.",
+        categories: [
+          {
+            name: "Managers, directors and senior officials",
+            slug: "managers-directors-and-senior-officials",
+            code: "KS608EW0002",
+            desc: "People whose work activities or job title are a manager, director or senior official in their main job.",
+            category_h_pt2: "of {category_unit} in {location} are",
+            category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) work as {category_name}.",
+          },
+          {
+            name: "Professional occupations",
+            slug: "professional-occupations",
+            code: "KS608EW0003",
+            desc: "People whose work activities or job title are a professional in their main job.",
+            category_h_pt2: "of {category_unit} in {location} have",
+            category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) work in {category_name}.",
+          },
+          {
+            name: "Associate professionals and technical occupations",
+            slug: "associate-professionals-and-technical-occupations",
+            code: "KS608EW0004",
+            desc: "People whose work activities at or job titles are associate or technical professionals in their main job.",
+            category_h_pt2: "of {category_unit} in {location} have",
+            category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) work in {category_name}.",
+          },
+          {
+            name: "Administrative and secretarial occupations",
+            slug: "administrative-and-secretarial-occupations",
+            code: "KS608EW0005",
+            desc: "People whose work activities or job titles are administrative or secretarial in their main job.",
+            category_h_pt2: "of {category_unit} in {location} have",
+            category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) work in {category_name}.",
+          },
+          {
+            name: "Process, plant and machine operatives",
+            slug: "process-plant-and-machine-operatives",
+            code: "KS608EW0009",
+            desc: "People whose work activities or job titles are process, plant and machine operative in their main job.",
+            category_h_pt2: "of {category_unit} in {location} are",
+            category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) work as {category_name}.",
+          },
+          {
+            name: "Unskilled or semi-skilled occupations",
+            slug: "unskilled-or-semi-skilled-occupations",
+            code: "KS608EW0010",
+            desc: "People whose work activities or job titles are unskilled or semi-skilled in their main job.",
+            category_h_pt2: "of {category_unit} in {location} have",
+            category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) work in {category_name}.",
+          },
+        ],
+        total: {
+          name: "All categories: Occupation",
+          slug: "all-categories-occupation",
+          code: "KS608EW0001",
+        },
+      },
+      {
+        name: "Travel to work",
+        slug: "travel-to-work",
+        code: "QS701EW",
+        desc: "Types of transport people use to travel to work.",
+        units: "People",
+        topic_page_cat_desc:
+          "This is the type of transport someone uses for the longest part by distance of their journey to their main job.",
+        categories: [
+          {
+            name: "Work mainly from home",
+            slug: "work-mainly-from-home",
+            code: "QS701EW0002",
+            desc: "People that mainly work from home do not travel to work for their main job.",
+            category_h_pt2: "of {category_unit} in {location}",
+            category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) {category_name}.",
+          },
+          {
+            name: "London Underground, metro, light rail, or tram",
+            slug: "london-underground-metro-light-rail-or-tram",
+            code: "QS701EW0003",
+            desc: "People that use London Underground (the tube), metro, light rail or tram for the longest, part by, distance of their journey to their main job.",
+            category_h_pt2: "of {category_unit} in {location} travel to work by",
+            category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel to work by {category_name}.",
+          },
+          {
+            name: "Train",
+            slug: "train",
+            code: "QS701EW0004",
+            desc: "People that use a train for the longest part, by distance, of their journey to their main job.",
+            category_h_pt2: "of {category_unit} in {location} travel to work by",
+            category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel to work by {category_name}.",
+          },
+          {
+            name: "Bus, minibus or coach",
+            slug: "bus-minibus-or-coach",
+            code: "QS701EW0005",
+            desc: "People that use a bus, minibus or coach for the longest part, by distance, of their journey to their main job.",
+            category_h_pt2: "of {category_unit} in {location} travel to work by",
+            category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel to work by {category_name}.",
+          },
+          {
+            name: "Motorcycle, scooter or moped",
+            slug: "motorcycle-scooter-or-moped",
+            code: "QS701EW0007",
+            desc: "People that use a motorcycle, scooter or moped for the longest part, by distance, of their journey to their main job.",
+            category_h_pt2: "of {category_unit} in {location} travel to work by",
+            category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel to work by {category_name}.",
+          },
+          {
+            name: "Bicycle",
+            slug: "bicycle",
+            code: "QS701EW0010",
+            desc: "People that use a bicyle for the longest part, by distance, of their journey to their main job.",
+            category_h_pt2: "of {category_unit} in {location} travel to work by",
+            category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel to work by {category_name}.",
+          },
+          {
+            name: "Walk",
+            slug: "walk",
+            code: "QS701EW0011",
+            desc: "People that walk for the longest part, by distance, of their journey to their main job.",
+            category_h_pt2: "of {category_unit} in {location}",
+            category_h_pt3: "walk to work",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) walk to work.",
+          },
+          {
+            name: "Other",
+            slug: "other",
+            code: "QS701EW0012",
+            desc: "People that use other means of transport for the longest part by distance of their journey to their main job.",
+            category_h_pt2: "of {category_unit} in {location} travel to work by",
+            category_h_pt3: "alternative methods",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel to work using alternative methods of transport such as ferry.",
+          },
+        ],
+        total: {
+          name: "All categories: Method of travel to work",
+          slug: "all-categories-method-of-travel-to-work",
+          code: "QS701EW0001",
+        },
+      },
+      {
+        name: "Distance travelled to work",
+        slug: "distance-travelled-to-work",
+        code: "QS702EW",
+        desc: "The daily distance travelled to work.",
+        units: "People",
+        topic_page_cat_desc: "The total distance people travel to their man job.",
+        categories: [
+          {
+            name: "Less than 2km",
+            slug: "less-than-2km",
+            code: "QS702EW0002",
+            desc: "People that travel less than 2 km (1.25 miles) to their main job.",
+            category_h_pt2: "of {category_unit} in {location} travel",
+            category_h_pt3: "less than 2km to work",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel {category_name} to work.",
+          },
+          {
+            name: "2km to less than 5km",
+            slug: "2km-to-less-than-5km",
+            code: "QS702EW0003",
+            desc: "People that travel between 2 km (1.25 miles) and 5 km (3.10 miles) to their main job.",
+            category_h_pt2: "of {category_unit}s in {location} travel from",
+            category_h_pt3: "2km to less than 5km",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel between 2 km (1.25 miles) and 5 km (3.10 miles) to their main job.",
+          },
+          {
+            name: "5km to less than 10km",
+            slug: "5km-to-less-than-10km",
+            code: "QS702EW0004",
+            desc: "People that travel between 5 km (3.10 miles) and 10 km (6.21 miles) to their main job.",
+            category_h_pt2: "of {category_unit}s in {location} travel from",
+            category_h_pt3: "5km to less than 10km",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel between 5 km (3.10 miles) and 10 km (6.21 miles) to their main job.",
+          },
+          {
+            name: "10km to less than 20km",
+            slug: "10km-to-less-than-20km",
+            code: "QS702EW0005",
+            desc: "People that travel between 10 km (6.21 miles) and 20 km (12.42 miles) to their main job.",
+            category_h_pt2: "of {category_unit}s in {location} travel from",
+            category_h_pt3: "10km to less than 20km",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel between 10 km (6.21 miles) and 20 km (12.42 miles) to their main job.",
+          },
+          {
+            name: "20km to less than 30km",
+            slug: "20km-to-less-than-30km",
+            code: "QS702EW0006",
+            desc: "People that travel between 20 km (12.42 miles) and 30 km (18.64 miles) to their main job.",
+            category_h_pt2: "of {category_unit}s in {location} travel from",
+            category_h_pt3: "20km to less than 30km",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel between 20 km (12.42 miles) and 30 km (18.64 miles) to their main job.",
+          },
+          {
+            name: "30km to less than 40km",
+            slug: "30km-to-less-than-40km",
+            code: "QS702EW0007",
+            desc: "People that travel between 30 km (18.64 miles) and 40 km (24.85 miles) to their main job.",
+            category_h_pt2: "of {category_unit}s in {location} travel from",
+            category_h_pt3: "30km to less than 40km",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel between 30 km (18.64 miles) and 40 km (24.85 miles) to their main job.",
+          },
+          {
+            name: "40km to less than 60km",
+            slug: "40km-to-less-than-60km",
+            code: "QS702EW0008",
+            desc: "People that travel between 40 km (24.85 miles) and 60 km (37.28 miles) to their main job.",
+            category_h_pt2: "of {category_unit}s in {location} travel from",
+            category_h_pt3: "40km to less than 60km",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage})travel between 40 km (24.85 miles) and 60 km (37.28 miles) to their main job.",
+          },
+          {
+            name: "60km and over",
+            slug: "60km-and-over",
+            code: "QS702EW0009",
+            desc: "People that travel over 60 km (37.28 miles) to their main job.",
+            category_h_pt2: "of {category_unit}s in {location} travel",
+            category_h_pt3: "60km and over.",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel over 60 km (37.28 miles) to their main job.",
+          },
+          {
+            name: "Mainly work from home",
+            slug: "mainly-work-from-home",
+            code: "QS702EW0010",
+            desc: "People that mainly work from home so do not travel to work for their main job.",
+            category_h_pt2: "of {category_unit}s in {location}",
+            category_h_pt3: "mainy work from home.",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) work from home.",
+          },
+          {
+            name: "Other",
+            slug: "other",
+            code: "QS702EW0011",
+            desc: "People that neither travel to work or work from home.",
+            category_h_pt2: "of {category_unit}s in {location}",
+            category_h_pt3: "work offshore, outside of UK or at no fixed location",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) either have no fixed place of work, work on an offshore installation or work outside of the UK.",
+          },
+        ],
+        total: {
+          name: "All categories: Distance travelled to work",
+          slug: "all-categories-distance-travelled-to-work",
+          code: "QS702EW0001",
+        },
+      },
+    ],
+  },
+
+  {
+    name: "Health",
+    slug: "health",
+    desc: "People's general health and caring responsibilities.",
+    variables: [
+      {
+        name: "General health",
+        slug: "general-health",
+        code: "QS302EW",
+        desc: "How people rate their general health.",
+        units: "People",
+        topic_page_cat_desc:
+          "People who think their general health is, very good, good, fair, bad or very bad, by usual residents",
+        categories: [
+          {
+            name: "Very good health",
+            slug: "very-good-health",
+            code: "QS302EW0002",
+            desc: "This is someone’s own opinion that best describes their overall state of health as very good most of the time.",
+            category_h_pt2: "of {category_unit} in {location} have",
+            category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}.",
+          },
+          {
+            name: "Good health",
+            slug: "good-health",
+            code: "QS302EW0003",
+            desc: "This is someone’s own opinion that best describes their overall state of health as good most of the time.",
+            category_h_pt2: "of {category_unit} in {location} have",
+            category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}.",
+          },
+          {
+            name: "Fair health",
+            slug: "fair-health",
+            code: "QS302EW0004",
+            desc: "This is someone’s own opinion that best describes their overall state of health as fair most of the time.",
+            category_h_pt2: "of {category_unit} in {location} have",
+            category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}.",
+          },
+          {
+            name: "Bad health",
+            slug: "bad-health",
+            code: "QS302EW0005",
+            desc: "This is someone’s own opinion that best describes their overall state of health as bad most of the time.",
+            category_h_pt2: "of {category_unit} in {location} have",
+            category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}.",
+          },
+          {
+            name: "Very bad health",
+            slug: "very-bad-health",
+            code: "QS302EW0006",
+            desc: "This is someone’s own opinion that best describes their overall state of health as very bad most of the time.",
+            category_h_pt2: "of {category_unit} in {location} have",
+            category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}.",
+          },
+        ],
+        total: {
+          name: "All categories: General health",
+          slug: "all-categories-general-health",
+          code: "QS302EW0001",
+        },
+      },
+      {
+        name: "Long-term conditions",
+        slug: "long-term-conditions",
+        code: "QS303EW",
+        desc: "How people's health affects their day-to-day activities.",
+        units: "People",
+        categories: [
+          {
+            name: "No long-term condition",
+            slug: "no-long-term-condition",
+            code: "QS303EW0004",
+            desc: "Non-disabled people are able to carry out their day-to-day activities without being limited by a physical or mental health condition.",
+            category_h_pt2: "of {category_unit} in {location} have",
+            category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) do not have a long-term health condition.",
+          },
+          {
+            name: "Day-to-day activities limited a little",
+            slug: "day-to-day-activities-limited-a-little",
+            code: "QS303EW0003",
+            desc: "People with a long-term physical or mental health condition (lasting or expected to last 12 months or more) that limits their day-to-day activities a little.",
+            category_h_pt2: "of {category_unit} in {location} have their",
+            category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have their day to day activities limited a little.",
+          },
+          {
+            name: "Day-to-day activities limited a lot",
+            slug: "day-to-day-activities-limited-a-lot",
+            code: "QS303EW0002",
+            desc: "People with a long-term physical or mental health condition (lasting or expected to last 12 months or more) that limits their day-to-day activities a lot.",
+            category_h_pt2: "of {category_unit} in {location} have their",
+            category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have their day to day activities limited a lot.",
+          },
+        ],
+        total: {
+          name: "All categories: Long-term health problem or disability",
+          slug: "all-categories-long-term-health-problem-or-disability",
+          code: "QS303EW0001",
+        },
+      },
+      {
+        name: "Unpaid care",
+        slug: "unpaid-care",
+        code: "QS301EW",
+        desc: "People who provide unpaid care.",
+        units: "People",
+        topic_page_cat_desc:
+          "This is someone who provides unpaid care or occasional help to someone who is unwell, elderly or unable to manage on their own.",
+        categories: [
+          {
+            name: "Do not provide unpaid care",
+            slug: "do-not-provide-unpaid-care",
+            code: "QS301EW0002",
+            desc: "People who do not provide unpaid help or support to anyone who has a long-term physical or mental health condition or illness, or problems related to old age.",
+            category_h_pt2: "of {category_unit} in {location}",
+            category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) {category_name}.",
+          },
+          {
+            name: "Provide 1 to 19 hours unpaid care a week",
+            slug: "provide-1-to-19-hours-unpaid-care-a-week",
+            code: "QS301EW0003",
+            desc: "People who provide unpaid help or support to anyone who has a long-term physical or mental health condition or illness, or problems related to old age.",
+            category_h_pt2: "of {category_unit} in {location}",
+            category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) {category_name}.",
+          },
+          {
+            name: "Provide 20 to 49 hours unpaid care a week",
+            slug: "provide-20-to-49-hours-unpaid-care-a-week",
+            code: "QS301EW0004",
+            desc: "People who provide unpaid help or support to anyone who has a long-term physical or mental health condition or illness, or problems related to old age.",
+            category_h_pt2: "of {category_unit} in {location}",
+            category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) {category_name}.",
+          },
+          {
+            name: "Provide 50 or more hours unpaid care a week",
+            slug: "provide-50-or-more-hours-unpaid-care-a-week",
+            code: "QS301EW0005",
+            desc: "People who provide unpaid help or support to anyone who has a long-term physical or mental health condition or illness, or problems related to old age.",
+            category_h_pt2: "of {category_unit} in {location}",
+            category_h_pt3: "{category_name}",
+            cat_location_summary_pt2:
+              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) {category_name}.",
+          },
+        ],
+        total: {
+          name: "All categories: Provision of unpaid care",
+          slug: "all-categories-provision-of-unpaid-care",
+          code: "QS301EW0001",
         },
       },
     ],
@@ -1221,551 +1767,6 @@ export default [
           name: "All categories: Classification of household deprivation",
           slug: "all-categories-classification-of-household-deprivation",
           code: "QS119EW0001",
-        },
-      },
-    ],
-  },
-  {
-    name: "Population",
-    slug: "population",
-    desc: "People and their living arrangements.",
-    variables: [
-      {
-        name: "Marital status",
-        slug: "marital-status",
-        code: "KS103EW",
-        desc: "People married of in civil partnerships.",
-        units: "People",
-        categories: [
-          {
-            name: "Single never married or in a civil partnership",
-            slug: "single-never-married-or-in-a-civil-partnership",
-            code: "KS103EW0002",
-            desc: "Households where the members are single and have never been married or in a civil partnership.",
-            category_h_pt2: "of {category_unit} in {location} are",
-            category_h_pt3: "{category_name}",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
-          },
-          {
-            name: "Married",
-            slug: "married",
-            code: "KS103EW0003",
-            desc: "Households where the members are married.",
-            category_h_pt2: "of {category_unit} in {location} are",
-            category_h_pt3: "{category_name}",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
-          },
-          {
-            name: "In a registered civil partnership",
-            slug: "in-a-registered-civil-partnership",
-            code: "KS103EW0004",
-            desc: "Households where the members are in a registered civil partnership..",
-            category_h_pt2: "of {category_unit} in {location} are",
-            category_h_pt3: "{category_name}",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
-          },
-          {
-            name: "Separated (but still legally married)",
-            slug: "separated-but-still-legally-married",
-            code: "KS103EW0005",
-            desc: "Households where the members are separated but still legally married.",
-            category_h_pt2: "of {category_unit} in {location} are",
-            category_h_pt3: "{category_name}",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
-          },
-          {
-            name: "Divorced or civil partnership dissolved",
-            slug: "divorced-or-civil-partnership-dissolved",
-            code: "KS103EW0006",
-            desc: "Households where the members are either divorced or a civil partnership has been dissolved.",
-            category_h_pt2: "of {category_unit} in {location} are",
-            category_h_pt3: "{category_name}",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
-          },
-          {
-            name: "Widowed or surviving civil partnership partner",
-            slug: "widowed-or-surviving-civil-partnership-partner",
-            code: "KS103EW0007",
-            desc: "Households where the members widowed or a surviving civil partner.",
-            category_h_pt2: "of {category_unit} in {location} are",
-            category_h_pt3: "{category_name}",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
-          },
-        ],
-        total: {
-          name: "All categories: Marital and civil partnership status",
-          slug: "all-categories-marital-and-civil-partnership-status",
-          code: "KS103EW0001",
-        },
-      },
-      {
-        name: "Families living in the same home",
-        slug: "families-living-in-the-same-home",
-        code: "QS113EW",
-        desc: "Types of families living in the same home.",
-        units: "Households",
-        categories: [
-          {
-            name: "One person households",
-            slug: "one-person-households",
-            code: "QS113EW0002",
-            desc: "One person household is when someone lives on their own.",
-            category_h_pt2: "of {category_unit} in {location} are",
-            category_h_pt3: "{category_name}",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
-          },
-          {
-            name: "Single family households",
-            slug: "single-family-households",
-            code: "QS113EW0005",
-            desc: "Single family household is when one family live in the same home.",
-            category_h_pt2: "of {category_unit} in {location} are",
-            category_h_pt3: "{category_name}",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
-          },
-        ],
-        total: {
-          name: "All categories: Household composition",
-          slug: "all-categories-household-composition",
-          code: "QS113EW0001",
-        },
-      },
-      {
-        name: "Length of time people have lived in the UK",
-        slug: "length-of-time-people-have-lived-in-the-uk",
-        code: "QS803EW",
-        desc: "People born or have moved to the UK .",
-        units: "People",
-        topic_page_cat_desc: "This is the length of time someone who was not born in the UK has recently lived here.",
-        categories: [
-          {
-            name: "Born in the UK",
-            slug: "born-in-the-uk",
-            code: "QS803EW0002",
-            desc: "People born in the UK or have emigrated and have returned.",
-            category_h_pt2: "of {category_unit} in {location} were",
-            category_h_pt3: "{category_name}",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) were {category_name}.",
-          },
-          {
-            name: "Less than 2 years",
-            slug: "less-than-2-years",
-            code: "QS803EW0003",
-            desc: "This is the length of time someone who was not born in the UK has recently lived here.",
-            category_h_pt2: "of {category_unit} in {location} have lived in the UK",
-            category_h_pt3: "{category_name}",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have lived in the UK {category_name}.",
-          },
-          {
-            name: "2 to 4 years",
-            slug: "2-to-4-years",
-            code: "QS803EW0004",
-            desc: "This is the length of time someone who was not born in the UK has recently lived here.",
-            category_h_pt2: "of {category_unit} in {location} have lived in the UK",
-            category_h_pt3: "{category_name}",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have lived in the UK {category_name}.",
-          },
-          {
-            name: "5 to 9 years",
-            slug: "5-to-9-years",
-            code: "QS803EW0005",
-            desc: "This is the length of time someone who was not born in the UK has recently lived here.",
-            category_h_pt2: "of {category_unit} in {location} have lived in the UK",
-            category_h_pt3: "{category_name}",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have lived in the UK {category_name}.",
-          },
-          {
-            name: "10 years or more",
-            slug: "10-years-or-more",
-            code: "QS803EW0006",
-            desc: "This is the length of time someone who was not born in the UK has recently lived here.",
-            category_h_pt2: "of {category_unit} in {location} have lived in the UK",
-            category_h_pt3: "{category_name}",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have lived in the UK {category_name}.",
-          },
-        ],
-        total: {
-          name: "All categories: Length of residence in the UK",
-          slug: "all-categories-length-of-residence-in-the-uk",
-          code: "QS803EW0001",
-        },
-      },
-    ],
-  },
-  {
-    name: "Work",
-    slug: "work",
-    desc: "People's employment status.",
-    variables: [
-      {
-        name: "Economic activity",
-        slug: "economic-activity",
-        code: "QS601EW",
-        desc: "People who are in work, starting work, looking for or do not work.",
-        units: "People",
-        topic_page_cat_desc: "People who are in work, starting work, looking for or do not work.",
-        categories: [
-          {
-            name: "Economically active",
-            slug: "economically-active",
-            code: "QS601EW0002",
-            desc: "Anyone aged 16 years and over was economically active if they were employed, waiting to start work or looking for work at the time of the census.",
-            category_h_pt2: "of {category_unit} in {location} are",
-            category_h_pt3: "{category_name}",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
-          },
-          {
-            name: "Economically inactive",
-            slug: "economically-inactive",
-            code: "QS601EW0011",
-            desc: "Economically inactive people did not have a job, had not looked for work or could not start work at the time of the census.",
-            category_h_pt2: "of {category_unit} in {location} are",
-            category_h_pt3: "{category_name}",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}.",
-          },
-        ],
-        total: {
-          name: "All categories: Economic activity",
-          slug: "all-categories-economic-activity",
-          code: "QS601EW0001",
-        },
-      },
-      {
-        name: "Working hours",
-        slug: "working-hours",
-        code: "QS604EW",
-        desc: "Hours people work per week.",
-        units: "People",
-        topic_page_cat_desc:
-          "The number of hours someone aged 16 to 74 years in employment worked in their job or their last job.",
-        categories: [
-          {
-            name: "Part-time",
-            slug: "part-time",
-            code: "QS604EW0002",
-            desc: "These are people that work between 15 and 30 hours per week.",
-            category_h_pt2: "of {category_unit} in {location} work",
-            category_h_pt3: "{category_name}",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) work {category_name}.",
-          },
-          {
-            name: "Full-time",
-            slug: "full-time",
-            code: "QS604EW0005",
-            desc: "These are people that work a minimum of 31 hours per week.",
-            category_h_pt2: "of {category_unit} in {location} work",
-            category_h_pt3: "{category_name}",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) work {category_name}.",
-          },
-        ],
-        total: {
-          name: "All categories: Hours worked",
-          slug: "all-categories-hours-worked",
-          code: "QS604EW0001",
-        },
-      },
-      {
-        name: "Job",
-        slug: "job",
-        code: "KS608EW",
-        desc: "The types of jobs people do or did?",
-        units: "People",
-        topic_page_cat_desc:
-          "This is what someone does as their main job. It is based on their job title or details of the activities they do in their job.",
-        categories: [
-          {
-            name: "Managers, directors and senior officials",
-            slug: "managers-directors-and-senior-officials",
-            code: "KS608EW0002",
-            desc: "People whose work activities or job title are a manager, director or senior official in their main job.",
-            category_h_pt2: "of {category_unit} in {location} are",
-            category_h_pt3: "{category_name}",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) work as {category_name}.",
-          },
-          {
-            name: "Professional occupations",
-            slug: "professional-occupations",
-            code: "KS608EW0003",
-            desc: "People whose work activities or job title are a professional in their main job.",
-            category_h_pt2: "of {category_unit} in {location} have",
-            category_h_pt3: "{category_name}",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) work in {category_name}.",
-          },
-          {
-            name: "Associate professionals and technical occupations",
-            slug: "associate-professionals-and-technical-occupations",
-            code: "KS608EW0004",
-            desc: "People whose work activities at or job titles are associate or technical professionals in their main job.",
-            category_h_pt2: "of {category_unit} in {location} have",
-            category_h_pt3: "{category_name}",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) work in {category_name}.",
-          },
-          {
-            name: "Administrative and secretarial occupations",
-            slug: "administrative-and-secretarial-occupations",
-            code: "KS608EW0005",
-            desc: "People whose work activities or job titles are administrative or secretarial in their main job.",
-            category_h_pt2: "of {category_unit} in {location} have",
-            category_h_pt3: "{category_name}",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) work in {category_name}.",
-          },
-          {
-            name: "Process, plant and machine operatives",
-            slug: "process-plant-and-machine-operatives",
-            code: "KS608EW0009",
-            desc: "People whose work activities or job titles are process, plant and machine operative in their main job.",
-            category_h_pt2: "of {category_unit} in {location} are",
-            category_h_pt3: "{category_name}",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) work as {category_name}.",
-          },
-          {
-            name: "Unskilled or semi-skilled occupations",
-            slug: "unskilled-or-semi-skilled-occupations",
-            code: "KS608EW0010",
-            desc: "People whose work activities or job titles are unskilled or semi-skilled in their main job.",
-            category_h_pt2: "of {category_unit} in {location} have",
-            category_h_pt3: "{category_name}",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) work in {category_name}.",
-          },
-        ],
-        total: {
-          name: "All categories: Occupation",
-          slug: "all-categories-occupation",
-          code: "KS608EW0001",
-        },
-      },
-      {
-        name: "Travel to work",
-        slug: "travel-to-work",
-        code: "QS701EW",
-        desc: "Types of transport people use to travel to work.",
-        units: "People",
-        topic_page_cat_desc:
-          "This is the type of transport someone uses for the longest part by distance of their journey to their main job.",
-        categories: [
-          {
-            name: "Work mainly from home",
-            slug: "work-mainly-from-home",
-            code: "QS701EW0002",
-            desc: "People that mainly work from home do not travel to work for their main job.",
-            category_h_pt2: "of {category_unit} in {location}",
-            category_h_pt3: "{category_name}",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) {category_name}.",
-          },
-          {
-            name: "London Underground, metro, light rail, or tram",
-            slug: "london-underground-metro-light-rail-or-tram",
-            code: "QS701EW0003",
-            desc: "People that use London Underground (the tube), metro, light rail or tram for the longest, part by, distance of their journey to their main job.",
-            category_h_pt2: "of {category_unit} in {location} travel to work by",
-            category_h_pt3: "{category_name}",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel to work by {category_name}.",
-          },
-          {
-            name: "Train",
-            slug: "train",
-            code: "QS701EW0004",
-            desc: "People that use a train for the longest part, by distance, of their journey to their main job.",
-            category_h_pt2: "of {category_unit} in {location} travel to work by",
-            category_h_pt3: "{category_name}",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel to work by {category_name}.",
-          },
-          {
-            name: "Bus, minibus or coach",
-            slug: "bus-minibus-or-coach",
-            code: "QS701EW0005",
-            desc: "People that use a bus, minibus or coach for the longest part, by distance, of their journey to their main job.",
-            category_h_pt2: "of {category_unit} in {location} travel to work by",
-            category_h_pt3: "{category_name}",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel to work by {category_name}.",
-          },
-          {
-            name: "Motorcycle, scooter or moped",
-            slug: "motorcycle-scooter-or-moped",
-            code: "QS701EW0007",
-            desc: "People that use a motorcycle, scooter or moped for the longest part, by distance, of their journey to their main job.",
-            category_h_pt2: "of {category_unit} in {location} travel to work by",
-            category_h_pt3: "{category_name}",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel to work by {category_name}.",
-          },
-          {
-            name: "Bicycle",
-            slug: "bicycle",
-            code: "QS701EW0010",
-            desc: "People that use a bicyle for the longest part, by distance, of their journey to their main job.",
-            category_h_pt2: "of {category_unit} in {location} travel to work by",
-            category_h_pt3: "{category_name}",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel to work by {category_name}.",
-          },
-          {
-            name: "Walk",
-            slug: "walk",
-            code: "QS701EW0011",
-            desc: "People that walk for the longest part, by distance, of their journey to their main job.",
-            category_h_pt2: "of {category_unit} in {location}",
-            category_h_pt3: "walk to work",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) walk to work.",
-          },
-          {
-            name: "Other",
-            slug: "other",
-            code: "QS701EW0012",
-            desc: "People that use other means of transport for the longest part by distance of their journey to their main job.",
-            category_h_pt2: "of {category_unit} in {location} travel to work by",
-            category_h_pt3: "alternative methods",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel to work using alternative methods of transport such as ferry.",
-          },
-        ],
-        total: {
-          name: "All categories: Method of travel to work",
-          slug: "all-categories-method-of-travel-to-work",
-          code: "QS701EW0001",
-        },
-      },
-      {
-        name: "Distance travelled to work",
-        slug: "distance-travelled-to-work",
-        code: "QS702EW",
-        desc: "The daily distance travelled to work.",
-        units: "People",
-        topic_page_cat_desc: "The total distance people travel to their man job.",
-        categories: [
-          {
-            name: "Less than 2km",
-            slug: "less-than-2km",
-            code: "QS702EW0002",
-            desc: "People that travel less than 2 km (1.25 miles) to their main job.",
-            category_h_pt2: "of {category_unit} in {location} travel",
-            category_h_pt3: "less than 2km to work",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel {category_name} to work.",
-          },
-          {
-            name: "2km to less than 5km",
-            slug: "2km-to-less-than-5km",
-            code: "QS702EW0003",
-            desc: "People that travel between 2 km (1.25 miles) and 5 km (3.10 miles) to their main job.",
-            category_h_pt2: "of {category_unit}s in {location} travel from",
-            category_h_pt3: "2km to less than 5km",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel between 2 km (1.25 miles) and 5 km (3.10 miles) to their main job.",
-          },
-          {
-            name: "5km to less than 10km",
-            slug: "5km-to-less-than-10km",
-            code: "QS702EW0004",
-            desc: "People that travel between 5 km (3.10 miles) and 10 km (6.21 miles) to their main job.",
-            category_h_pt2: "of {category_unit}s in {location} travel from",
-            category_h_pt3: "5km to less than 10km",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel between 5 km (3.10 miles) and 10 km (6.21 miles) to their main job.",
-          },
-          {
-            name: "10km to less than 20km",
-            slug: "10km-to-less-than-20km",
-            code: "QS702EW0005",
-            desc: "People that travel between 10 km (6.21 miles) and 20 km (12.42 miles) to their main job.",
-            category_h_pt2: "of {category_unit}s in {location} travel from",
-            category_h_pt3: "10km to less than 20km",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel between 10 km (6.21 miles) and 20 km (12.42 miles) to their main job.",
-          },
-          {
-            name: "20km to less than 30km",
-            slug: "20km-to-less-than-30km",
-            code: "QS702EW0006",
-            desc: "People that travel between 20 km (12.42 miles) and 30 km (18.64 miles) to their main job.",
-            category_h_pt2: "of {category_unit}s in {location} travel from",
-            category_h_pt3: "20km to less than 30km",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel between 20 km (12.42 miles) and 30 km (18.64 miles) to their main job.",
-          },
-          {
-            name: "30km to less than 40km",
-            slug: "30km-to-less-than-40km",
-            code: "QS702EW0007",
-            desc: "People that travel between 30 km (18.64 miles) and 40 km (24.85 miles) to their main job.",
-            category_h_pt2: "of {category_unit}s in {location} travel from",
-            category_h_pt3: "30km to less than 40km",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel between 30 km (18.64 miles) and 40 km (24.85 miles) to their main job.",
-          },
-          {
-            name: "40km to less than 60km",
-            slug: "40km-to-less-than-60km",
-            code: "QS702EW0008",
-            desc: "People that travel between 40 km (24.85 miles) and 60 km (37.28 miles) to their main job.",
-            category_h_pt2: "of {category_unit}s in {location} travel from",
-            category_h_pt3: "40km to less than 60km",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage})travel between 40 km (24.85 miles) and 60 km (37.28 miles) to their main job.",
-          },
-          {
-            name: "60km and over",
-            slug: "60km-and-over",
-            code: "QS702EW0009",
-            desc: "People that travel over 60 km (37.28 miles) to their main job.",
-            category_h_pt2: "of {category_unit}s in {location} travel",
-            category_h_pt3: "60km and over.",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel over 60 km (37.28 miles) to their main job.",
-          },
-          {
-            name: "Mainly work from home",
-            slug: "mainly-work-from-home",
-            code: "QS702EW0010",
-            desc: "People that mainly work from home so do not travel to work for their main job.",
-            category_h_pt2: "of {category_unit}s in {location}",
-            category_h_pt3: "mainy work from home.",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) work from home.",
-          },
-          {
-            name: "Other",
-            slug: "other",
-            code: "QS702EW0011",
-            desc: "People that neither travel to work or work from home.",
-            category_h_pt2: "of {category_unit}s in {location}",
-            category_h_pt3: "work offshore, outside of UK or at no fixed location",
-            cat_location_summary_pt2:
-              "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) either have no fixed place of work, work on an offshore installation or work outside of the UK.",
-          },
-        ],
-        total: {
-          name: "All categories: Distance travelled to work",
-          slug: "all-categories-distance-travelled-to-work",
-          code: "QS702EW0001",
         },
       },
     ],

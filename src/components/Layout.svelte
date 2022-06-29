@@ -13,7 +13,7 @@
   }
 </script>
 
-<div class="inset-0 lg:absolute lg:flex flex-col">
+<div class="inset-0 lg:absolute lg:flex flex-col text-onsblack">
   <Header />
   <div class="flex-1 flex flex-col-reverse lg:flex-row overflow-y-auto ">
     <div class="flex-1 grow-[4] min-w-[30rem] overflow-y-auto">

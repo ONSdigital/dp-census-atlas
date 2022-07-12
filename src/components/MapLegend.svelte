@@ -1,15 +1,15 @@
 <script>
   import { page } from "$app/stores";
-  import { vizStore, selectedGeographyStore, selectedGeographyVariableStore } from "../stores/stores";
+  import { vizStore, selectedGeographyStore } from "../stores/stores";
   import topics from "../data/content";
-  import { formatPercentage, formatTemplateString } from "../helpers/categoryHelpers";
+  import { formatTemplateString } from "../helpers/categoryHelpers";
   import { areAllDefined } from "../util/genUtil";
+  import { ratioToPercentage } from "../util/numberUtil";
   import { choroplethColours } from "../helpers/choroplethHelpers";
 
   import BreaksChart from "./BreaksChart.svelte";
 
-  $: variableData = $selectedGeographyVariableStore?.variableData;
-  $: englandAndWalesVariableData = $selectedGeographyVariableStore?.englandAndWalesVariableData;
+  $: categoryValueForSelectedGeography = $vizStore?.places.find((place) => place.geoCode === $selectedGeographyStore?.geoCode)?.ratioToTotal;
   $: params = $page.params;
   $: topicSlug = params.topic;
   $: topic = topics.find((t) => t.slug === topicSlug);
@@ -19,7 +19,7 @@
   $: categorySlug = params.category;
   $: category = variable ? variable.categories.find((c) => c.slug === categorySlug) : undefined;
 
-  $: args = areAllDefined([topic, variableData, variable, category, selectedGeographyDisplayName]);
+  $: args = areAllDefined([topic, categoryValueForSelectedGeography, variable, category, selectedGeographyDisplayName]);
 </script>
 
 {#if category}
@@ -27,42 +27,44 @@
     <div class="z-abovemap bg-white px-6 py-3 w-[40rem] h-[8.6rem]">
       <div class="">
         <div class="flex gap-3 mb-3">
+          {#if args}
           <div class="whitespace-nowrap">
             <span class="text-5xl font-bold">
-              {$selectedGeographyVariableStore?.variableData[category.code].percentage.toFixed(1)}</span
+              { ratioToPercentage(categoryValueForSelectedGeography, 1) }</span
             ><span class="text-4xl font-bold">%</span>
           </div>
+          {/if}
           <div class="flex-grow">
+            {#if args}
             <div class="">
-              {#if args}
-                <span class="text-base leading-5">
-                  {formatTemplateString(
-                    variable,
-                    variableData,
-                    category,
-                    selectedGeographyDisplayName,
-                    category.category_h_pt2,
+              <span class="text-base leading-5">
+                {formatTemplateString(
+                  variable,
+                  category,
+                  selectedGeographyDisplayName,
+                  category.category_h_pt2,
                   )}
-                </span>
-              {/if}
+              </span>
             </div>
             <div class="-mt-0.5">
-              {#if args}
-                <span class="text-lg font-bold">
-                  {formatTemplateString(
-                    variable,
-                    variableData,
-                    category,
-                    selectedGeographyDisplayName,
-                    category.category_h_pt3,
-                  )}
-                </span>
-              {/if}
+              <span class="text-lg font-bold">
+                {formatTemplateString(
+                  variable,
+                  category,
+                  selectedGeographyDisplayName,
+                  category.category_h_pt3,
+                )}
+              </span>
             </div>
+            {:else}
+              <span class="text-lg font-bold">
+                {category.name}
+              </span>
+            {/if}
           </div>
         </div>
         <BreaksChart
-          selected={$selectedGeographyVariableStore?.variableData[category.code].percentage}
+          selected={categoryValueForSelectedGeography}
           suffix="%"
           breaks={$vizStore ? [$vizStore?.minMaxVals[0], ...$vizStore.breaks] : undefined}
           colors={choroplethColours}

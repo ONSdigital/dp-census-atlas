@@ -27,7 +27,6 @@
     let codes = getCodesForCategory(params.topic, params.variable, params.classification, params.category);
     // TEMP do not load data for OAs as its not available
     setVizStore({
-      totalCode: codes.totalCode,
       categoryCode: codes.categoryCode,
       geoType: $mapStore.geoType, // todo remove
       geoCode: selectedGeographyGeoCode,

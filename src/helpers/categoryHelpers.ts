@@ -55,20 +55,11 @@ export const formatPercentage = (percentage: number) => {
   return (Math.round(percentage * 10) / 10).toFixed(1);
 };
 
-export const formatTemplateString = (
-  variable: Variable,
-  variableData: VariableData,
-  category: Category,
-  location: string,
-  templateStr: string,
-) => {
+export const formatTemplateString = (variable: Variable, category: Category, location: string, templateStr: string) => {
   const stringReplaceMap = {
     "{variable_name}": unCapitalizeFirstLetter(variable.name),
     "{category_name}": unCapitalizeFirstLetter(category.name),
     "{category_unit}": unCapitalizeFirstLetter(variable.units),
-    "{category_total}": variableData[category.code]?.total.toLocaleString(),
-    "{category_value}": variableData[category.code]?.count.toLocaleString(),
-    "{category_percentage}": formatPercentage(variableData[category.code]?.percentage),
     "{location}": location,
   };
   Object.entries(stringReplaceMap).forEach(([strToReplace, replacementStr]) => {

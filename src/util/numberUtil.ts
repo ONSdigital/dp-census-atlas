@@ -18,3 +18,10 @@ function number2words(n) {
 export function numberToWords(n: number) {
   return capitalizeFirstLetter(number2words(n));
 }
+
+export function ratioToPercentage(r: number, decimalPlaces?: number) {
+  if (typeof decimalPlaces !== undefined) {
+    return (r * 100).toFixed(decimalPlaces);
+  }
+  return r * 100;
+}

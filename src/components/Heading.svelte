@@ -1,42 +1,8 @@
 <script lang="ts">
-  export let serviceTitle: string;
-  export let description: string = "";
+  import IntroAndExamples from "./IntroAndExamples.svelte";
 </script>
 
-<header class="ons-header ons-header--hero">
-  <div class="ons-header__main {description ? 'ons-header__main--with-description' : ''}">
-    <div class="ons-container">
-      <div
-        class="ons-grid ons-grid--gutterless ons-grid--flex ons-grid--between ons-grid--vertical-center ons-grid--no-wrap"
-      >
-        <div class="ons-grid__col ons-col-auto ons-u-flex-shrink">
-          <div class="ons-header__title {description ? 'header__title--with-description' : ''}">
-            <h1>{serviceTitle}</h1>
-          </div>
-        </div>
-      </div>
-      {#if description}
-        <p class="ons-header__desc">{description}</p>
-      {/if}
-    </div>
-  </div>
-</header>
-
-<style>
-  .ons-container {
-    padding: 0 1rem;
-  }
-
-  .ons-header__desc {
-    margin: -0.2rem 0 0 0;
-  }
-
-  .ons-header__main {
-    padding: 1rem 0;
-  }
-  @media (--grid-bp-m) {
-    .ons-header__main {
-      height: auto;
-    }
-  }
-</style>
+<div class="p-6 pb-4">
+  <h1 class="text-4xl pb-2.5 font-semibold break-words">Census maps</h1>
+  <IntroAndExamples />
+</div>

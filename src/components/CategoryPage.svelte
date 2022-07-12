@@ -1,37 +1,25 @@
 <script lang="ts">
   import { _ } from "svelte-i18n";
   import { page } from "$app/stores";
-
   import { mapStore, selectedGeographyStore, selectedGeographyVariableStore } from "../stores/stores";
   import topics from "../data/content";
   import { setVizStore } from "../data/setVizStore";
   import { setSelectedGeographyVariableStore } from "../data/setSelectedGeographyVariableStore";
   import { getCodesForCategory } from "../helpers/categoryHelpers";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
-
-  import CensusTable from "./CensusTable.svelte";
-  import NavigationComponent from "./NavigationComponent.svelte";
-  import CategoryHeading from "./CategoryHeading.svelte";
-  import CategoryLocationSummary from "./CategoryLocationSummary.svelte";
-  import SearchHeader from "./SearchHeader.svelte";
-  import Icon from "./Icon.svelte";
-  import ONSShare from "./ons/ONSShare.svelte";
-  import ONSShareItem from "./ons/ONSShareItem.svelte";
-  import Explore from "./Explore.svelte";
-
-  let changeLocation: boolean = false;
+  import { areAllDefined } from "../util/genUtil";
+  import Heading from "./Heading.svelte";
+  import AreaPanel from "./AreaPanel.svelte";
+  import RadioButton from "./RadioButton.svelte";
 
   $: variableData = $selectedGeographyVariableStore?.variableData;
-  $: englandAndWalesVariableData = $selectedGeographyVariableStore?.englandAndWalesVariableData;
   $: params = $page.params;
   $: topicSlug = params.topic;
   $: topic = topics.find((t) => t.slug === topicSlug);
   $: variableSlug = params.variable;
   $: variable = topic.variables.find((v) => v.slug === variableSlug);
-  $: search = $page.url.search;
   $: selectedGeographyDisplayName = $selectedGeographyStore?.displayName;
   $: selectedGeographyGeoCode = $selectedGeographyStore?.geoCode;
-  $: selectedGeographyGeoType = $selectedGeographyStore?.geoType;
   $: categorySlug = params.category;
   $: category = variable.categories.find((c) => c.slug === categorySlug);
 
@@ -52,6 +40,8 @@
       geoCode: selectedGeographyGeoCode,
     });
   }
+
+  $: args = areAllDefined([variableData, variable, category, selectedGeographyDisplayName]);
 </script>
 
 <svelte:head>
@@ -65,8 +55,99 @@
   >
 </svelte:head>
 
-<div class="tw-flex tw-flex-col tw-max-h-full">
-  {#if changeLocation}
+<Heading />
+<div class="px-6">
+  <AreaPanel />
+  <div class="pt-3 flex">
+    <div class="font-bold text-slate-500">Topic</div>
+  </div>
+  <div class="flex flex-wrap items-center gap-2 text-xl">
+    <a class="hyperlink" href={buildHyperlink($page.url)}>Home</a>
+    <div class="text-sm font-extrabold text-slate-500">&gt;</div>
+    <a class="hyperlink" href={buildHyperlink($page.url, { topic: topic.slug })}>{topic.name}</a>
+    <div class="text-sm font-extrabold text-slate-500">&gt;</div>
+    <div class=" ">{variable.name}</div>
+  </div>
+  <div class="mt-4 mb-2 flex items-center gap-2">
+    <div>
+      {variable.desc}
+    </div>
+    <!-- <span class="text-sm font-bold text-slate-500">{variable.code}</span> -->
+    <div class="ml-0.5 text-sm bg-ons-census text-white font-bold px-1 rounded-sm">
+      {variable.code}
+    </div>
+  </div>
+  <!-- <div class="mt-3 mb-3">{variable.name}</div> -->
+  <div class="flex flex-col last:border-b-[1px] border-b-red">
+    {#each variable.categories as category}
+      <a
+        href={buildHyperlink($page.url, { topic: topic.slug, variable: variable.slug, category: category.slug })}
+        class="flex gap-2 items-center p-2 border-t-[1px] border-t-slate-300 cursor-pointer 
+          {category.slug === categorySlug ? 'bg-onspale' : ''}"
+      >
+        <RadioButton selected={category.slug === categorySlug} />
+        {category.name}
+      </a>
+    {/each}
+  </div>
+</div>
+
+<!-- 
+<div class="">
+  {$vizStore.breaks}
+</div>
+<div class="">
+  {$vizStore?.minMaxVals[0]} /
+  {$vizStore?.minMaxVals[1]}
+</div>
+ -->
+
+<!-- <div class="p-4">
+  <div class="flex gap-3">
+    <div class="whitespace-nowrap">
+      <span class="text-5xl font-bold">
+        {$selectedGeographyVariableStore?.variableData[category.code].percentage.toFixed(1)}
+      </span>
+      <span class="text-4xl font-bold">%</span>
+    </div>
+    <div class="flex-grow">
+      <div class="">
+        {#if args}
+          <span class="text-sm">
+            {formatTemplateString(
+              variable,
+              variableData,
+              category,
+              selectedGeographyDisplayName,
+              category.category_h_pt2,
+            )}
+          </span>
+        {/if}
+      </div>
+      <div class="">
+        {#if args}
+          <span class="text-base">
+            {formatTemplateString(
+              variable,
+              variableData,
+              category,
+              selectedGeographyDisplayName,
+              category.category_h_pt3,
+            )}
+          </span>
+        {/if}
+      </div>
+    </div>
+  </div>
+  <BreaksChart
+    selected={$selectedGeographyVariableStore?.variableData[category.code].percentage}
+    suffix="%"
+    breaks={$vizStore ? [$vizStore?.minMaxVals[0], ...$vizStore.breaks] : undefined}
+    colors={choroplethColours}
+  />
+</div> -->
+
+<!-- {#if changeLocation}
     <SearchHeader onClose={() => (changeLocation = !changeLocation)} />
   {:else}
     <CategoryHeading {variableData} {variable} {category} location={selectedGeographyDisplayName} />
@@ -76,17 +157,17 @@
       currentURL={$page.url.pathname}
       onClick={() => (changeLocation = !changeLocation)}
     />
-  {/if}
-  <div class="tw-flex tw-flex-col tw-gap-5 tw-p-3 tw-overflow-y-scroll">
-    <CategoryLocationSummary
+  {/if} -->
+<!-- <CategoryLocationSummary
       {variable}
       {variableData}
       {englandAndWalesVariableData}
       {category}
       location={selectedGeographyDisplayName}
-    />
-    <CensusTable {variable} {variableData} />
-    <div>
+    /> -->
+
+<!-- <CensusTable {variable} {variableData} /> -->
+<!-- <div>
       <ONSShare title={$_("share.title")}>
         <ONSShareItem label="Facebook" type="facebook"><Icon type="facebook" /></ONSShareItem>
         <ONSShareItem label="Twitter" type="twitter"><Icon type="twitter" /></ONSShareItem>
@@ -99,26 +180,27 @@
           type="email"><Icon type="email" /></ONSShareItem
         >
       </ONSShare>
-    </div>
-    <Explore
-      content={[
-        {
-          label: $_("explore.newCategoryLabel"),
-          href: buildHyperlink($page.url, {
-            topic: topicSlug,
-          }),
-        },
+    </div> -->
+<!-- <Explore
+  content={[
+    {
+      label: $_("explore.newCategoryLabel"),
+      href: buildHyperlink($page.url, {
+        topic: topicSlug,
+      }),
+    },
 
-        {
-          label: selectedGeographyDisplayName ? $_("explore.chooseLocationLabel") : $_("explore.newLocationLabel"),
-          href: "",
-          onClick: () => (changeLocation = !changeLocation),
-        },
-        {
-          label: $_("explore.backToStartLabel"),
-          href: buildHyperlink($page.url),
-        },
-      ]}
-    />
-  </div>
-</div>
+    {
+      label: selectedGeographyDisplayName ? $_("explore.chooseLocationLabel") : $_("explore.newLocationLabel"),
+      href: "",
+      onClick: () => (changeLocation = !changeLocation),
+    },
+    {
+      label: $_("explore.backToStartLabel"),
+      href: buildHyperlink($page.url),
+    },
+  ]}
+/> -->
+
+<!-- </div> -->
+<!-- </div> -->

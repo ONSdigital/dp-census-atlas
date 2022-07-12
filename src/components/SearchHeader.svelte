@@ -13,8 +13,8 @@
   export let onClose: () => void;
 </script>
 
-<div class="tw-bg-onsblue tw-relative tw-pt-8">
-  <div class="tw-absolute tw-top-0 tw-right-0">
+<div class="bg-onsblue relative pt-8">
+  <div class="absolute top-0 right-0">
     <Button label={$_("search.close")} icon="close" onClick={onClose} />
   </div>
   <div class="ons-container">
@@ -27,10 +27,10 @@
       padding
       onClose={() => onClose()}
     />
-    <div class="tw-pb-6">
+    <div class="pb-6">
       {#if selectedGeographyGeoType !== "ew"}
         <button
-          class="tw-underline tw-text-white"
+          class="underline text-white"
           on:click={() => {
             handleLocationSelect({ geoType: englandAndWales.meta.geotype, geoCode: englandAndWales.meta.code });
             onClose();

@@ -1,27 +1,35 @@
 <script lang="ts">
-  import ONSCard from "./ons/ONSCard.svelte";
+  import { page } from "$app/stores";
   import topics from "../data/content";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
-  import { page } from "$app/stores";
+  import RightChevron from "./RightChevron.svelte";
 </script>
 
 <div>
-  {#each topics as topic, i}
-    <ONSCard
-      title={topic.name}
-      href={buildHyperlink($page.url, {
-        topic: topic.slug,
-      })}
-      id="topic-{i}">{topic.desc}</ONSCard
-    >
-    {#if i < topics.length - 1}
-      <hr class="component-margin--2" />
-    {/if}
-  {/each}
+  <div class="flex flex-wrap gap-x-8 gap-y-2">
+    {#each topics as topic}
+      <a
+        class="flex-none w-56 flex-grow-[1] pb-3 border-b-[1px] border-b-slate-300 group"
+        href={buildHyperlink($page.url, {
+          topic: topic.slug,
+        })}
+      >
+        <div class="flex justify-between mb-0.5">
+          <div class="hyperlink text-xl">{topic.name}</div>
+          <div class="text-onsblue stroke-2 group-hover:stroke-[2px]">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </div>
+        </div>
+        <div class="pr-10">{topic.desc}</div>
+      </a>
+    {/each}
+  </div>
 </div>
-
-<style>
-  .component-margin--2 {
-    margin: 0 0 1rem;
-  }
-</style>

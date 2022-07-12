@@ -22,7 +22,7 @@
   }
 </script>
 
-<li class="ons-list__item tw-relative tw-w-3/6">
+<li class="ons-list__item relative w-3/6">
   <span class="ons-list__prefix" aria-hidden="true">
     <slot />
   </span>

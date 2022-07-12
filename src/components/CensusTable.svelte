@@ -19,10 +19,7 @@
   <tbody class="ons-table__body">
     {#each variable.categories as category}
       <tr class="ons-table__row" class:ons-table__row--overlay={category.slug === $page.params.category}>
-        <td
-          class="ons-table__cell tw-underline"
-          class:ons-table__cell--onSelect={category.slug === $page.params.category}
-        >
+        <td class="ons-table__cell underline" class:ons-table__cell--onSelect={category.slug === $page.params.category}>
           {#if category.slug !== $page.params.category}
             <a
               href={buildHyperlink($page.url, {
@@ -51,62 +48,3 @@
     {/each}
   </tbody>
 </table>
-
-<style>
-  .ons-table {
-    table-layout: fixed;
-    width: calc(100% + 36px);
-    margin-left: -18px;
-  }
-  .ons-table__row--overlay {
-    background-color: rgba(229, 229, 229, 1);
-  }
-  .ons-table__header {
-    border-bottom: 0;
-    color: #222222;
-  }
-  th {
-    font-weight: normal;
-  }
-  tr td a {
-    font-weight: bold;
-  }
-  table tr th:nth-child(1) {
-    width: 45%;
-  }
-  table tr th:nth-child(3) {
-    width: 30%;
-  }
-  .ons-table__cell {
-    font-size: 18px;
-    line-height: 26px;
-    border-bottom: 0;
-    color: #595959;
-    overflow-wrap: anywhere;
-  }
-  .ons-table__header:first-of-type,
-  .ons-table__cell:first-of-type {
-    padding-left: 18px;
-  }
-  .ons-table__header:last-of-type,
-  .ons-table__cell:last-of-type {
-    padding-right: 18px;
-  }
-
-  .ons-table__cell--onSelect {
-    font-weight: bold;
-    color: #222222;
-    text-decoration: unset;
-  }
-  .ons-table__cell--key {
-    font-size: 24px;
-    line-height: 24px;
-    font-weight: bold;
-    color: #222222;
-  }
-  .ons-table__cell--key span {
-    font-size: 20px;
-    line-height: 24px;
-    font-weight: normal;
-  }
-</style>

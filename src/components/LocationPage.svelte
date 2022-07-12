@@ -30,13 +30,13 @@
   >
 </svelte:head>
 
-<div class="tw-flex tw-flex-col tw-max-h-full">
+<div class="flex flex-col max-h-full">
   {#if changeLocation}
     <SearchHeader onClose={() => (changeLocation = !changeLocation)} />
   {:else}
     <Heading serviceTitle={selectedGeographyDisplayName} />
   {/if}
-  <div class="tw-overflow-y-scroll tw-p-3 tw-flex tw-flex-col tw-gap-11">
+  <div class="overflow-y-scroll p-3 flex flex-col gap-11">
     <LocationOverview
       {allPeopleTotal}
       {allHouseholdsTotal}

@@ -16,25 +16,25 @@
   const suggestions: LocaleSuggestions = $json("homePage.suggestions.content");
 </script>
 
-<div class="tw-overflow-y-scroll">
-  <div class="tw-p-5 tw-pt-4">
+<div class="overflow-y-scroll">
+  <div class="p-5 pt-4">
     <Search
       title={$_("search.title")}
       label={$_("search.label")}
       button={$_("search.button")}
       error={$_("search.error")}
     />
-    <hr class="tw-pb-5" />
-    <div class="tw-pb-3">
-      <h3 class="tw-mb-1">{$_("homePage.topicList.title")}</h3>
+    <hr class="pb-5" />
+    <div class="pb-3">
+      <h3 class="mb-1">{$_("homePage.topicList.title")}</h3>
       <p>
         {$_("homePage.topicList.description")}
       </p>
     </div>
-    <div class="tw-pb-6">
+    <div class="pb-6">
       <TopicList />
     </div>
-    <div class="tw-pb-16">
+    <div class="pb-16">
       <ONSCollapsible isRegularFontWeightTitle title={$_("homePage.suggestions.title")} a11yHeading>
         {#each suggestions as { topic, variable, category, label }}
           <p>

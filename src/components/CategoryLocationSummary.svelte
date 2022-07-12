@@ -20,7 +20,7 @@
 </script>
 
 <div>
-  <h2 class="ons-u-fs-m tw-mb-1.5">{args ? `${category.name} in ${location}` : ""}</h2>
+  <h2 class="ons-u-fs-m mb-1.5">{args ? `${category.name} in ${location}` : ""}</h2>
   <p>{args ? category.desc : ""}</p>
   <p>
     {args ? formatTemplateString(variable, variableData, category, location, category.cat_location_summary_pt2) : ""}
@@ -32,8 +32,8 @@
         }.`
       : ""}
   </p>
-  <h3 class="tw-mb-1.5">{args ? variable.name : ""}</h3>
+  <h3 class="mb-1.5">{args ? variable.name : ""}</h3>
   <p>{args ? `${category.name} is part of ${variable.name}` : ""}</p>
   <!-- Dead link included for UR. Will point at data dictionary entry for topic when the data dictionary exists -->
-  <a>{args ? `Full definition for ${variable.name}` : ""}</a>
+  <!-- <a>{args ? `Full definition for ${variable.name}` : ""}</a> -->
 </div>

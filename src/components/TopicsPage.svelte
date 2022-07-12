@@ -15,7 +15,7 @@
   $: selectedGeographyDisplayName = $selectedGeographyStore?.displayName;
 </script>
 
-<div class="tw-flex tw-flex-col tw-max-h-full">
+<div class="flex flex-col max-h-full">
   {#if changeLocation}
     <SearchHeader onClose={() => (changeLocation = !changeLocation)} />
   {:else}
@@ -30,7 +30,7 @@
     />
   {/if}
 
-  <div class="tw-flex tw-flex-col tw-overflow-y-scroll tw-p-5 tw-gap-11">
+  <div class="flex flex-col overflow-y-scroll p-5 gap-11">
     <TopicList />
     <Explore
       content={[

@@ -1,6 +1,6 @@
 # Census Atlas
 
-Explore neighbourhood-level Census data tables on a map.
+Explore neighbourhood-level Census data on a map.
 
 ## State ownership
 

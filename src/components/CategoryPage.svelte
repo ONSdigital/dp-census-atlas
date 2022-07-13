@@ -1,18 +1,14 @@
 <script lang="ts">
   import { _ } from "svelte-i18n";
   import { page } from "$app/stores";
-  import { mapStore, selectedGeographyStore, selectedGeographyVariableStore } from "../stores/stores";
+  import { mapStore, selectedGeographyStore } from "../stores/stores";
   import topics from "../data/content";
   import { setVizStore } from "../data/setVizStore";
-  import { setSelectedGeographyVariableStore } from "../data/setSelectedGeographyVariableStore";
-  import { getCodesForCategory } from "../helpers/categoryHelpers";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
-  import { areAllDefined } from "../util/genUtil";
   import Heading from "./Heading.svelte";
   import AreaPanel from "./AreaPanel.svelte";
   import RadioButton from "./RadioButton.svelte";
 
-  $: variableData = $selectedGeographyVariableStore?.variableData;
   $: params = $page.params;
   $: topicSlug = params.topic;
   $: topic = topics.find((t) => t.slug === topicSlug);
@@ -24,23 +20,14 @@
   $: category = variable.categories.find((c) => c.slug === categorySlug);
 
   $: if ($mapStore) {
-    let codes = getCodesForCategory(params.topic, params.variable, params.classification, params.category);
-    // TEMP do not load data for OAs as its not available
     setVizStore({
-      categoryCode: codes.categoryCode,
-      geoType: $mapStore.geoType, // todo remove
+      categoryCode: category.code,
+      geoType: $mapStore.geoType,
       geoCode: selectedGeographyGeoCode,
       bbox: $mapStore.bbox,
       zoom: $mapStore.zoom,
     });
-    setSelectedGeographyVariableStore({
-      totalCode: codes.totalCode,
-      categoryCodes: codes.categoryCodes,
-      geoCode: selectedGeographyGeoCode,
-    });
   }
-
-  $: args = areAllDefined([variableData, variable, category, selectedGeographyDisplayName]);
 </script>
 
 <svelte:head>

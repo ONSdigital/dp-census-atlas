@@ -3,13 +3,12 @@
   import { vizStore, selectedGeographyStore } from "../stores/stores";
   import topics from "../data/content";
   import { formatTemplateString } from "../helpers/categoryHelpers";
-  import { areAllDefined } from "../util/genUtil";
   import { ratioToPercentage } from "../util/numberUtil";
   import { choroplethColours } from "../helpers/choroplethHelpers";
 
   import BreaksChart from "./BreaksChart.svelte";
 
-  $: categoryValueForSelectedGeography = $vizStore?.places.find((place) => place.geoCode === $selectedGeographyStore?.geoCode)?.ratioToTotal;
+  $: categoryValueForSelectedGeography = $vizStore?.places.find((p) => p.geoCode === $selectedGeographyStore?.geoCode)?.ratioToTotal;
   $: params = $page.params;
   $: topicSlug = params.topic;
   $: topic = topics.find((t) => t.slug === topicSlug);
@@ -19,7 +18,6 @@
   $: categorySlug = params.category;
   $: category = variable ? variable.categories.find((c) => c.slug === categorySlug) : undefined;
 
-  $: args = areAllDefined([topic, categoryValueForSelectedGeography, variable, category, selectedGeographyDisplayName]);
 </script>
 
 {#if category}
@@ -27,7 +25,7 @@
     <div class="z-abovemap bg-white px-6 py-3 w-[40rem] h-[8.6rem]">
       <div class="">
         <div class="flex gap-3 mb-3">
-          {#if args}
+          {#if categoryValueForSelectedGeography}
           <div class="whitespace-nowrap">
             <span class="text-5xl font-bold">
               { ratioToPercentage(categoryValueForSelectedGeography, 1) }</span
@@ -35,7 +33,7 @@
           </div>
           {/if}
           <div class="flex-grow">
-            {#if args}
+            {#if categoryValueForSelectedGeography}
             <div class="">
               <span class="text-base leading-5">
                 {formatTemplateString(

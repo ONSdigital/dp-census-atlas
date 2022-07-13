@@ -17,8 +17,3 @@ export const vizStore = writable<VizData | undefined>(undefined);
  * A Svelte store containing all the data we need to show the selected geography.
  */
 export const selectedGeographyStore = writable<SelectedGeographyData | undefined>(undefined);
-
-/**
- * A Svelte store containing variable data for a given geography.
- */
-export const selectedGeographyVariableStore = writable<SelectedGeographyVariableData | undefined>(undefined);

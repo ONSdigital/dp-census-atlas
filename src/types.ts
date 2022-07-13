@@ -30,8 +30,6 @@ export type SelectedGeographyData = {
   geoCode: string;
   displayName: string;
   bbox: [number, number, number, number];
-  allHouseholdsTotal: number;
-  allPeopleTotal: number;
 };
 
 export type SelectedGeographyVariableData = {

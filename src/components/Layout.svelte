@@ -9,7 +9,7 @@
 
   $: if ($page) {
     const g = getSelectedGeography($page.url);
-    setSelectedGeographyStore({ geoCode: g.geoCode, geoType: g.geoType });
+    setSelectedGeographyStore(g.geoCode);
   }
 </script>
 

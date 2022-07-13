@@ -3,28 +3,6 @@ import { englandAndWales } from "./spatialHelper";
 import type { Variable, VariableData, Category } from "../types";
 import { unCapitalizeFirstLetter } from "../util/stringUtil";
 
-export const getCodesForCategory = (
-  topicSlug: string,
-  variableSlug: string,
-  classificationSlug: string,
-  categorySlug: string,
-) => {
-  const topic = topics.find((t) => t.slug === topicSlug);
-  const variable = topic.variables.find((v) => v.slug === variableSlug);
-  const classification = {
-    name: "Default",
-    desc: "Default classification",
-    categories: variable.categories,
-  };
-  const category = variable.categories.find((c) => c.slug === categorySlug);
-
-  return {
-    totalCode: variable.total.code,
-    categoryCode: category.code,
-    categoryCodes: variable.categories.map((c) => c.code),
-  };
-};
-
 export const getCategoryInfo = (categoryCode: string) => {
   const allVariables = topics.flatMap((t) => t.variables.map((v) => ({ topic: t, variable: v })));
   const allCategories = allVariables.flatMap((v) =>

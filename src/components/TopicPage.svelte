@@ -5,6 +5,7 @@
   import { selectedGeographyStore } from "../stores/stores";
   import { returnCorrectArticle, unCapitalizeFirstLetter } from "../util/stringUtil";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
+  import { getDefaultClassification } from "../helpers/variableHelpers";
   import topics from "../data/content.json";
 
   import ONSAccordion from "./ons/ONSAccordion.svelte";
@@ -46,7 +47,7 @@
         href={buildHyperlink($page.url, {
           topic: topic.slug,
           variable: variable.slug,
-          category: variable.categories[0].slug,
+          category: getDefaultClassification(variable).categories[0].slug,
         })}
       >
         <div class="flex justify-between">

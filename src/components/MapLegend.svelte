@@ -5,6 +5,7 @@
   import { formatTemplateString } from "../helpers/categoryHelpers";
   import { ratioToPercentage } from "../util/numberUtil";
   import { choroplethColours } from "../helpers/choroplethHelpers";
+  import { getDefaultClassification } from "../helpers/variableHelpers";
 
   import BreaksChart from "./BreaksChart.svelte";
 
@@ -15,8 +16,9 @@
   $: variableSlug = params.variable;
   $: variable = topic ? topic.variables.find((v) => v.slug === variableSlug) : undefined;
   $: selectedGeographyDisplayName = $selectedGeographyStore?.displayName;
+  $: classification = getDefaultClassification(variable)
   $: categorySlug = params.category;
-  $: category = variable ? variable.categories.find((c) => c.slug === categorySlug) : undefined;
+  $: category = variable ? classification.categories.find((c) => c.slug === categorySlug) : undefined;
 
 </script>
 

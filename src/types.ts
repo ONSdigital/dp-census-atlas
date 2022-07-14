@@ -11,7 +11,8 @@ export type MapState = {
 
 export type Topic = typeof topics[0];
 export type Variable = typeof topics[0]["variables"][0];
-export type Category = typeof topics[0]["variables"][0]["categories"][0];
+export type Classification = typeof topics[0]["variables"][0]["classifications"][0];
+export type Category = typeof topics[0]["variables"][0]["classifications"][0]["categories"][0];
 export type VariableData = { [catCode: string]: { count: number; total: number; percentage: number } };
 
 export type VizData = {

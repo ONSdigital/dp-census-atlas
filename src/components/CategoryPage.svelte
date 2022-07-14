@@ -5,6 +5,7 @@
   import topics from "../data/content.json";
   import { setVizStore } from "../data/setVizStore";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
+  import { getDefaultClassification } from "../helpers/variableHelpers";
   import Heading from "./Heading.svelte";
   import AreaPanel from "./AreaPanel.svelte";
   import RadioButton from "./RadioButton.svelte";
@@ -16,8 +17,9 @@
   $: variable = topic.variables.find((v) => v.slug === variableSlug);
   $: selectedGeographyDisplayName = $selectedGeographyStore?.displayName;
   $: selectedGeographyGeoCode = $selectedGeographyStore?.geoCode;
+  $: classification = getDefaultClassification(variable)
   $: categorySlug = params.category;
-  $: category = variable.categories.find((c) => c.slug === categorySlug);
+  $: category = classification.categories.find((c) => c.slug === categorySlug);
 
   $: if ($mapStore) {
     setVizStore({
@@ -60,12 +62,12 @@
     </div>
     <!-- <span class="text-sm font-bold text-slate-500">{variable.code}</span> -->
     <div class="ml-0.5 text-sm bg-ons-census text-white font-bold px-1 rounded-sm">
-      {variable.code}
+      {classification.code}
     </div>
   </div>
   <!-- <div class="mt-3 mb-3">{variable.name}</div> -->
   <div class="flex flex-col last:border-b-[1px] border-b-red">
-    {#each variable.categories as category}
+    {#each classification.categories as category}
       <a
         href={buildHyperlink($page.url, { topic: topic.slug, variable: variable.slug, category: category.slug })}
         class="flex gap-2 items-center p-2 border-t-[1px] border-t-slate-300 cursor-pointer 

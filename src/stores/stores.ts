@@ -1,5 +1,5 @@
 import { writable } from "svelte/store";
-import type { MapState, VizData, SelectedGeographyData, SelectedGeographyVariableData, SelectedGeographyCategoryData } from "../types";
+import type { MapState, VizData, SelectedGeographyData } from "../types";
 
 /**
  * A Svelte store containing any relevant map state

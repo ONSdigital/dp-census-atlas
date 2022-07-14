@@ -33,11 +33,6 @@ export type SelectedGeographyData = {
   bbox: [number, number, number, number];
 };
 
-export type SelectedGeographyVariableData = {
-  variableData: VariableData;
-  englandAndWalesVariableData: VariableData;
-};
-
 export type GeographyAutoSuggestProps = {
   bbox: number[];
   cy: string;

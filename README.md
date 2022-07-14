@@ -28,13 +28,14 @@ All _important_ state flows in one direction from the URL to the UI. This is a f
 
 ## Localization
 
+TODO: clean this up:
+
 All hard-coded text should be added to the en.json file within the i18n locales folder. Each translation can be created under it's own file e.g cy.json.
 The structure of the file is pages and hard-coded text relevant to those pages and custom components and text relevant to those components.
 
 ## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
+    npm install
     npm run dev
 
 ## Building
@@ -42,10 +43,74 @@ Once you've created a project and installed dependencies with `npm install` (or 
     npm run build
 
 You can preview the production build with `npm run preview`.
+TODO: is this still the case?
 
 To build specifically for node (required for production deployment), use `npm run build-node`. This is as above, but first sets an env var (`SKADAPTER=node`) that controls the adapter used to build.
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+## Data
+
+Data is hosted in three 'flat file APIs' - that is, sets of files hosted on S3.
+
+> Note: the data structures returned by the APIs could be simplified slightly - the output has been kept compatible with the earlier dynamic Go API.
+
+### 'Data' API
+
+- Get the values for a category, for one 'tile'.
+- E.g. `atlas/data/msoa/127-84-8/QS501EW0002.csv`
+
+This API retrieves the values for the specified category, for all of the areas in the _tile_. We define our own tiles, by breaking up the country into smaller or larger rectangles according to population density.
+
+When the user selects a category, like `education > highest level of qualification > no qualifications`, we need to know the percentage of people who have no qualifications in all of the areas we're currently looking at. If we were looking near Oxford, we'd load a CSV file for any of the tiles in view.
+
+> At the LAD level, there's actually just one big tile covering the whole of England & Wales.
+
+Example data:
+
+    geography_code,QS501EW0002
+    ...
+    E07000177,0.19688
+    E07000178,0.13641  <--- 13.6% of people in Oxford LAD have no qualifications
+    E07000179,0.16471
+    ...
+
+Note that we generally call this "percentage" a _ratio_ in the app, and it's expressed as a decimal. We format it as a percentage in the UI.
+
+### 'Breaks' API
+
+- Get the breaks for a category, for a geotype
+- E.g. `atlas/breaks/msoa/QS501EW0002.json`
+
+This API represents the "five colours" - otherwise known as the breaks, or "buckets", of the choropleth. Logically, this is just 6 numbers between 0 and 1. The output is split into two for historical reasons, with the highest and lowest numbers in a separate array. (The property names here can otherwise be ignored):
+
+    "MSOA": [
+        0.14306061085614813,
+        0.2033898305084746,
+        0.2640757349277529,
+        0.33841721742077613,
+        0.5066721412440978
+    ],
+    "MSOA_min_max": [
+        0.01660255112370925,
+        0.5066721412440978
+    ]
+
+### 'Geo' API
+
+- Get the info about the specified geography (area)
+- E.g. `atlas/geo/E07000178.geojson`
+
+This simple API gets basic info about an area. For example, Oxford LAD:
+
+    {
+        "meta": {
+            "name": "Oxford",
+            "code": "E07000178",
+            "geotype": "LAD"
+        },
+        "geo_json": {
+            ... (the bounding box)
+        }
+    }
 
 ## Contributing
 

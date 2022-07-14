@@ -55,32 +55,36 @@ Data is hosted in three 'flat file APIs' - that is, sets of files hosted on S3.
 
 ### 'Data' API
 
-- Get the values for a category, for one 'tile'.
+- Get the values for a category, for all the areas in one 'tile'.
 - E.g. `atlas/data/msoa/127-84-8/QS501EW0002.csv`
 
-This API retrieves the values for the specified category, for all of the areas in the _tile_. We define our own tiles, by breaking up the country into smaller or larger rectangles according to population density.
+When the user selects a category, like `education > qualifications > no qualifications`, we need to know the percentage of people who have no qualifications in all of the areas we're currently looking at. If we were looking near Oxford, we'd load a CSV file for any/all of the tiles in the viewport.
 
-When the user selects a category, like `education > highest level of qualification > no qualifications`, we need to know the percentage of people who have no qualifications in all of the areas we're currently looking at. If we were looking near Oxford, we'd load a CSV file for any of the tiles in view.
+This API retrieves the values for the specified category, for all of the areas in the _tile_. We define our own tiles, by breaking up the country into smaller or larger rectangles according to population density. There's a tile set for each significant zoom level (i.e., for each geotype).
 
-> At the LAD level, there's actually just one big tile covering the whole of England & Wales.
+> At the top (LAD) level, there's just one tile, covering the whole of England & Wales.
 
 Example data:
 
     geography_code,QS501EW0002
     ...
     E07000177,0.19688
-    E07000178,0.13641  <--- 13.6% of people in Oxford LAD have no qualifications
+    E07000178,0.13641   <--- 13.6% of people in Oxford LAD have no qualifications
     E07000179,0.16471
     ...
 
-Note that we generally call this "percentage" a _ratio_ in the app, and it's expressed as a decimal. We format it as a percentage in the UI.
+We generally call this "percentage" a _ratio_ in the app, and it's expressed as a decimal. (We format it as a percentage in the UI.)
 
 ### 'Breaks' API
 
 - Get the breaks for a category, for a geotype
 - E.g. `atlas/breaks/msoa/QS501EW0002.json`
 
-This API represents the "five colours" - otherwise known as the breaks, or "buckets", of the choropleth. Logically, this is just 6 numbers between 0 and 1. The output is split into two for historical reasons, with the highest and lowest numbers in a separate array. (The property names here can otherwise be ignored):
+This API represents the "five colours" - otherwise known as the breaks, or "buckets", of the choropleth.
+
+Logically, this is just 6 numbers between 0 and 1. (The output is split into two for historical reasons, with the highest and lowest numbers in a separate array. The property names here can otherwise be ignored).
+
+Now we know how to colour an area! (We know which bucket its value belongs to.)
 
     "MSOA": [
         0.14306061085614813,

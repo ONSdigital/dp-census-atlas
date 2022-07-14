@@ -1,29 +1,7 @@
 import topics from "../data/content";
 import { englandAndWales } from "./spatialHelper";
-import type { Variable, VariableData, Category } from "../types";
+import { GeoTypes, type Variable, type Category } from "../types";
 import { unCapitalizeFirstLetter } from "../util/stringUtil";
-
-export const getCodesForCategory = (
-  topicSlug: string,
-  variableSlug: string,
-  classificationSlug: string,
-  categorySlug: string,
-) => {
-  const topic = topics.find((t) => t.slug === topicSlug);
-  const variable = topic.variables.find((v) => v.slug === variableSlug);
-  const classification = {
-    name: "Default",
-    desc: "Default classification",
-    categories: variable.categories,
-  };
-  const category = variable.categories.find((c) => c.slug === categorySlug);
-
-  return {
-    totalCode: variable.total.code,
-    categoryCode: category.code,
-    categoryCodes: variable.categories.map((c) => c.code),
-  };
-};
 
 export const getCategoryInfo = (categoryCode: string) => {
   const allVariables = topics.flatMap((t) => t.variables.map((v) => ({ topic: t, variable: v })));
@@ -40,35 +18,27 @@ export const getCategoryInfo = (categoryCode: string) => {
 };
 
 export function getSelectedGeography(pageUrl) {
-  //TODO: don't parse manually
-  const pageUrlArr = pageUrl.search.split("=");
-  const geoCode = pageUrlArr[1];
-  const geoType = pageUrlArr[0].slice(1);
-  if (geoCode) {
-    return { geoType, geoCode };
-  } else {
-    return { geoType: englandAndWales.meta.geotype, geoCode: englandAndWales.meta.code };
+  const urlParams = new URLSearchParams(pageUrl.search);
+  for (const g of GeoTypes) {
+    if (urlParams.has(g)) {
+      return {
+        geoType: g,
+        geoCode: urlParams.get(g),
+      };
+    }
   }
+  return { geoType: englandAndWales.meta.geotype, geoCode: englandAndWales.meta.code };
 }
 
 export const formatPercentage = (percentage: number) => {
   return (Math.round(percentage * 10) / 10).toFixed(1);
 };
 
-export const formatTemplateString = (
-  variable: Variable,
-  variableData: VariableData,
-  category: Category,
-  location: string,
-  templateStr: string,
-) => {
+export const formatTemplateString = (variable: Variable, category: Category, location: string, templateStr: string) => {
   const stringReplaceMap = {
     "{variable_name}": unCapitalizeFirstLetter(variable.name),
     "{category_name}": unCapitalizeFirstLetter(category.name),
     "{category_unit}": unCapitalizeFirstLetter(variable.units),
-    "{category_total}": variableData[category.code]?.total.toLocaleString(),
-    "{category_value}": variableData[category.code]?.count.toLocaleString(),
-    "{category_percentage}": formatPercentage(variableData[category.code]?.percentage),
     "{location}": location,
   };
   Object.entries(stringReplaceMap).forEach(([strToReplace, replacementStr]) => {

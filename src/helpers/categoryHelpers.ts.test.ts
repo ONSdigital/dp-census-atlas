@@ -1,5 +1,6 @@
-import type { Variable, VariableData, Category } from "../types";
-import { formatPercentage, formatTemplateString } from "./categoryHelpers";
+import { GeoTypes, type Variable, type Category } from "../types";
+import { englandAndWales } from "./spatialHelper";
+import { getSelectedGeography, formatPercentage, formatTemplateString } from "./categoryHelpers";
 
 describe("formatPercentage", () => {
   test("rounds percentage to nearest single decimal place and returns as string - single decimal place input", () => {
@@ -36,77 +37,81 @@ describe("formatTemplateString", () => {
       code: "testTotalCode",
     },
   };
-  const testVariableData: VariableData = {
-    testCatCode: {
-      total: 100000,
-      count: 10000,
-      percentage: 50,
-    },
-  };
   const testLocation = "testLocation";
 
   test("formats {variable_name}", () => {
-    expect(
-      formatTemplateString(testVariable, testVariableData, testCategory, testLocation, "{variable_name} in a sentence"),
-    ).toEqual("testVar in a sentence");
+    expect(formatTemplateString(testVariable, testCategory, testLocation, "{variable_name} in a sentence")).toEqual(
+      "testVar in a sentence",
+    );
   });
   test("formats {category_name}", () => {
-    expect(
-      formatTemplateString(testVariable, testVariableData, testCategory, testLocation, "{category_name} in a sentence"),
-    ).toEqual("testCat in a sentence");
+    expect(formatTemplateString(testVariable, testCategory, testLocation, "{category_name} in a sentence")).toEqual(
+      "testCat in a sentence",
+    );
   });
   test("formats {category_unit}", () => {
-    expect(
-      formatTemplateString(testVariable, testVariableData, testCategory, testLocation, "{category_unit} in a sentence"),
-    ).toEqual("testUnits in a sentence");
-  });
-  test("formats {category_total} to comma-seperated number", () => {
-    expect(
-      formatTemplateString(
-        testVariable,
-        testVariableData,
-        testCategory,
-        testLocation,
-        "{category_total} in a sentence",
-      ),
-    ).toEqual("100,000 in a sentence");
-  });
-  test("formats {category_value} to comma-seperated number", () => {
-    expect(
-      formatTemplateString(
-        testVariable,
-        testVariableData,
-        testCategory,
-        testLocation,
-        "{category_value} in a sentence",
-      ),
-    ).toEqual("10,000 in a sentence");
+    expect(formatTemplateString(testVariable, testCategory, testLocation, "{category_unit} in a sentence")).toEqual(
+      "testUnits in a sentence",
+    );
   });
   test("formats {location}", () => {
-    expect(
-      formatTemplateString(testVariable, testVariableData, testCategory, testLocation, "{location} in a sentence"),
-    ).toEqual("testLocation in a sentence");
+    expect(formatTemplateString(testVariable, testCategory, testLocation, "{location} in a sentence")).toEqual(
+      "testLocation in a sentence",
+    );
   });
   test("formats all in same string", () => {
     expect(
       formatTemplateString(
         testVariable,
-        testVariableData,
         testCategory,
         testLocation,
-        "{variable_name}, {category_name}, {category_unit}, {category_total}, {category_value}, {location} in a sentence",
+        "{variable_name}, {category_name}, {category_unit}, {location} in a sentence",
       ),
-    ).toEqual("testVar, testCat, testUnits, 100,000, 10,000, testLocation in a sentence");
+    ).toEqual("testVar, testCat, testUnits, testLocation in a sentence");
   });
   test("formats all occurences in string", () => {
     expect(
       formatTemplateString(
         testVariable,
-        testVariableData,
         testCategory,
         testLocation,
         "{variable_name}, {variable_name}, {category_name}, {category_name} in a sentence",
       ),
     ).toEqual("testVar, testVar, testCat, testCat in a sentence");
   });
+});
+
+describe("getSelectedGeography", () => {
+  test("returns ew when no geography in url", () => {
+    const testURL = new URL("https://dp.aws.onsdigital.uk/census-atlas");
+    expect(getSelectedGeography(testURL)).toEqual({
+      geoType: englandAndWales.meta.geotype,
+      geoCode: englandAndWales.meta.code,
+    });
+  });
+  // test all known geotypes are found
+  for (const g of GeoTypes) {
+    const testSelectedGeography = {
+      geoType: g,
+      geoCode: `testGeoCode${g}`,
+    };
+    test("retrives selected geography from short url", () => {
+      const testURL = new URL(
+        `https://dp.aws.onsdigital.uk/census-atlas?${testSelectedGeography.geoType}=${testSelectedGeography.geoCode}`,
+      );
+      expect(getSelectedGeography(testURL)).toEqual(testSelectedGeography);
+    });
+    test("retrives selected geography from longer url", () => {
+      const testURL = new URL(
+        `https://dp.aws.onsdigital.uk/census-atlas/2021/population?${testSelectedGeography.geoType}=${testSelectedGeography.geoCode}`,
+      );
+      expect(getSelectedGeography(testURL)).toEqual(testSelectedGeography);
+    });
+    test("retrives selected geography from longest url", () => {
+      const testURL = new URL(
+        `https://dp.aws.onsdigital.uk/census-atlas/2021/population/marital-status/default/single-never-married-or-in-a-civil-partnership?${testSelectedGeography.geoType}=${testSelectedGeography.geoCode}`,
+      );
+      expect(getSelectedGeography(testURL)).toEqual(testSelectedGeography);
+    });
+  }
 });

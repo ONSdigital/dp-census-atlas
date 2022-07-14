@@ -21,16 +21,6 @@
        allPeopleTotal:number
     }
 
-## selectedGeographyVariableStore
-
-    {
-       displayName: string,
-       geoCode: string,
-       geoType: string,
-       variableData:{ [catCode: string]: { count: number; total: number; percentage: number } },
-       englandAndWalesVariableData:{ [catCode: string]: { count: number; total: number; percentage: number } }
-    }
-
 ## mapStore
 
     {

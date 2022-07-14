@@ -59,30 +59,33 @@ export const fetchBreaks = async (args: {
   categoryCode: string;
   geoType: GeoType;
 }): Promise<{ breaks: { [categoryCode: string]: number[] }; minMax: { [categoryCode: string]: number[] } }> => {
-  const breakCount = 5;
-
-  // TODO improve this? or don't get here if England & Wales
-  // return -1s (so that all data will NOT be assigned a break, and the map will remain colorless) if its the default
-  // geography (england and wales)
-  if (args.geoType === englandAndWales.meta.geotype) {
-    const noBreaksBreaks = {
-      [args.categoryCode]: Array(breakCount).fill(-1),
-    };
-    const noBreaksMinMax = {
-      [args.categoryCode]: Array(2).fill(-1),
-    };
-    return { breaks: noBreaksBreaks, minMax: noBreaksMinMax };
-  }
-
   const url = `${s3BaseUrl}/breaks/${args.geoType}/${args.categoryCode}.json`;
-  const response = await fetch(url);
-  const parsed = await response.json();
-  // (ignore data from the API for geotypes we don't need)
+  const breaksRaw = await fetch(url).then((resp) => resp.json());
+  /* 
+    breaks json files have legacy format from when it was an API response:
+    e.g. 
+    {
+      "KS103EW0002": {
+        "LAD": [
+            0.283667019342937,
+            0.32603232256525966,
+            0.3817375703709814,
+            0.4696799398260561,
+            0.5993594922100404
+        ],
+        "LAD_min_max": [
+            0.21006838234294492,
+            0.5993594922100404
+        ]
+      }
+    }
+    ToDo - refactor json files to match required format (see function output defintions above)
+  */
   const breaks = Object.fromEntries(
-    Object.keys(parsed).map((code) => [code, parsed[code][args.geoType.toUpperCase()]]),
+    Object.keys(breaksRaw).map((code) => [code, breaksRaw[code][args.geoType.toUpperCase()]]),
   );
   const minMax = Object.fromEntries(
-    Object.keys(parsed).map((code) => [code, parsed[code][`${args.geoType.toUpperCase()}_min_max`]]),
+    Object.keys(breaksRaw).map((code) => [code, breaksRaw[code][`${args.geoType.toUpperCase()}_min_max`]]),
   );
   return { breaks, minMax };
 };

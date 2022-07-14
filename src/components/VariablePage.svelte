@@ -2,7 +2,7 @@
   import { page } from "$app/stores";
   import { numberToWords } from "../util/numberUtil";
   import RightChevron from "./RightChevron.svelte";
-  import topics from "../data/content";
+  import topics from "../data/content.json";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
 
   $: topicSlug = $page.params.topic;

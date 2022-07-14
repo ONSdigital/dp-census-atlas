@@ -2,7 +2,7 @@
   import { _ } from "svelte-i18n";
   import { page } from "$app/stores";
   import { mapStore, selectedGeographyStore } from "../stores/stores";
-  import topics from "../data/content";
+  import topics from "../data/content.json";
   import { setVizStore } from "../data/setVizStore";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
   import Heading from "./Heading.svelte";

@@ -1,7 +1,7 @@
 <script>
   import { page } from "$app/stores";
   import { vizStore, selectedGeographyStore } from "../stores/stores";
-  import topics from "../data/content";
+  import topics from "../data/content.json";
   import { formatTemplateString } from "../helpers/categoryHelpers";
   import { ratioToPercentage } from "../util/numberUtil";
   import { choroplethColours } from "../helpers/choroplethHelpers";

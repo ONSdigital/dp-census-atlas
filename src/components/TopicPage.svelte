@@ -5,7 +5,7 @@
   import { selectedGeographyStore } from "../stores/stores";
   import { returnCorrectArticle, unCapitalizeFirstLetter } from "../util/stringUtil";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
-  import topics from "../data/content";
+  import topics from "../data/content.json";
 
   import ONSAccordion from "./ons/ONSAccordion.svelte";
   import ONSAccordionPanel from "./ons/ONSAccordionPanel.svelte";

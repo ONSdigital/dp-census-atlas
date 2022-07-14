@@ -31,7 +31,7 @@ const config = {
     vite: {
       server: {
         fs: {
-          allow: ["data-tile-grids"],
+          allow: ["data-tile-grids", "src/data"],
         },
       },
     },

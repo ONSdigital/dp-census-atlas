@@ -1,6 +1,6 @@
 <script lang="ts">
   import { page } from "$app/stores";
-  import topics from "../data/content";
+  import topics from "../data/content.json";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
   import RightChevron from "./RightChevron.svelte";
 </script>

@@ -1,4 +1,4 @@
-import topics from "../data/content";
+import topics from "../data/content.json";
 import { englandAndWales } from "./spatialHelper";
 import { GeoTypes, type Variable, type Category } from "../types";
 import { unCapitalizeFirstLetter } from "../util/stringUtil";

@@ -1,6 +1,6 @@
 import topics from "../data/content";
 import { englandAndWales } from "./spatialHelper";
-import type { Variable, VariableData, Category } from "../types";
+import { GeoTypes, type Variable, type Category } from "../types";
 import { unCapitalizeFirstLetter } from "../util/stringUtil";
 
 export const getCategoryInfo = (categoryCode: string) => {
@@ -18,15 +18,16 @@ export const getCategoryInfo = (categoryCode: string) => {
 };
 
 export function getSelectedGeography(pageUrl) {
-  //TODO: don't parse manually
-  const pageUrlArr = pageUrl.search.split("=");
-  const geoCode = pageUrlArr[1];
-  const geoType = pageUrlArr[0].slice(1);
-  if (geoCode) {
-    return { geoType, geoCode };
-  } else {
-    return { geoType: englandAndWales.meta.geotype, geoCode: englandAndWales.meta.code };
+  const urlParams = new URLSearchParams(pageUrl.search);
+  for (const g of GeoTypes) {
+    if (urlParams.has(g)) {
+      return {
+        geoType: g,
+        geoCode: urlParams.get(g),
+      };
+    }
   }
+  return { geoType: englandAndWales.meta.geotype, geoCode: englandAndWales.meta.code };
 }
 
 export const formatPercentage = (percentage: number) => {

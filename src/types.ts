@@ -1,6 +1,7 @@
 import type topics from "./data/content";
 
-export type GeoType = "ew" | "lad" | "msoa" | "oa" | string;
+export const GeoTypes = ["ew", "lad", "msoa", "oa"];
+export type GeoType = typeof GeoTypes[number];
 
 export type MapState = {
   bbox: Bbox;

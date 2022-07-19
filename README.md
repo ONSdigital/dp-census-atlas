@@ -133,7 +133,7 @@ There are two areas of deployment concern:
       ===========        |        |      ‖
                          | Script |      ‖
       ???????????   -->  |        |      ‖
-     ? Cantabula ?        ~~~~~~~~       ‖
+     ? Cantabular ?       ~~~~~~~~       ‖
       ???????????            ↓           ‖
                          collection      ‖
                       e.g. "0000000038"  ‖

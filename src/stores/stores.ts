@@ -2,14 +2,12 @@ import { writable } from "svelte/store";
 import type { MapState, VizData, SelectedGeographyData } from "../types";
 
 /**
- * A Svelte store containing any relevant map state
- * we need to be aware of within the Svelte app.
+ * A Svelte store containing any map state we need to be aware of within the Svelte app.
  * */
 export const mapStore = writable<MapState | undefined>(undefined);
 
 /**
- * A Svelte store containing all the data we need in
- * order to show a vizualisation (i.e., a query response).
+ * A Svelte store containing all the data we need in order to show a vizualisation.
  * */
 export const vizStore = writable<VizData | undefined>(undefined);
 

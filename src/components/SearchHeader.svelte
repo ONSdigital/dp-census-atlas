@@ -2,7 +2,7 @@
   import { _ } from "svelte-i18n";
   import { selectedGeographyStore } from "../stores/stores";
 
-  import { handleLocationSelect } from "../helpers/locationSelectHelper";
+  import { selectGeography } from "../helpers/geographyHelper";
 
   import Search from "./Search.svelte";
   import Button from "./Button.svelte";
@@ -32,7 +32,7 @@
         <button
           class="underline text-white"
           on:click={() => {
-            handleLocationSelect({ geoType: englandAndWales.meta.geotype, geoCode: englandAndWales.meta.code });
+            selectGeography({ geoType: englandAndWales.meta.geotype, geoCode: englandAndWales.meta.code });
             onClose();
           }}>{$_("search.reset")}</button
         >

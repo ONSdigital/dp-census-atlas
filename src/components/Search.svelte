@@ -2,7 +2,7 @@
   import ONSAutoSuggest from "./ons/ONSAutoSuggest.svelte";
   import ONSError from "./ons/ONSError.svelte";
 
-  import { handleLocationSelect } from "../helpers/locationSelectHelper";
+  import { selectGeography } from "../helpers/geographyHelper";
   import type { GeographyAutoSuggestProps } from "../types";
 
   export let id: string = "search-field";
@@ -25,7 +25,7 @@
     invertTextColor = invert;
     if (value) {
       const { geoCode, geoType } = value;
-      handleLocationSelect({ geoCode, geoType: geoType.toLowerCase() });
+      selectGeography({ geoCode, geoType: geoType.toLowerCase() });
       onClose();
     } else {
       renderError = true;

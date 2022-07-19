@@ -4,7 +4,7 @@ import mem from "mem";
 import QuickLRU from "quick-lru";
 import { bboxToDataTiles, englandAndWales } from "../helpers/spatialHelper";
 
-const s3BaseUrl = "https://find-insights-db-dumps.s3.eu-central-1.amazonaws.com/quads";
+const s3BaseUrl = "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/quads";
 
 /*
   Fetch place data files for all data 'tiles' (predefined coordinate grid squares) that intersect with current viewport 

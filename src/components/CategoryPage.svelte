@@ -44,38 +44,63 @@
 <Heading />
 <div class="px-6">
   <AreaPanel />
-  <div class="pt-3 flex">
-    <div class="font-bold text-slate-500">Topic</div>
-  </div>
-  <div class="flex flex-wrap items-center gap-2 text-xl">
-    <a class="hyperlink" href={buildHyperlink($page.url)}>Home</a>
-    <div class="text-sm font-extrabold text-slate-500">&gt;</div>
-    <a class="hyperlink" href={buildHyperlink($page.url, { topic: topic.slug })}>{topic.name}</a>
-    <div class="text-sm font-extrabold text-slate-500">&gt;</div>
-    <div class=" ">{variable.name}</div>
-  </div>
-  <div class="mt-4 mb-2 flex items-center gap-2">
-    <div>
-      {variable.desc}
+  <section>
+    <h2 class="pt-3 font-bold text-slate-500">Topic</h2>
+    <nav class="flex flex-wrap items-center gap-2 text-xl" aria-label="Breadcrumb">
+      <a class="hyperlink" href={buildHyperlink($page.url)}>Home</a>
+      <div class="text-sm font-extrabold text-slate-500" aria-hidden>&gt;</div>
+      <a class="hyperlink" href={buildHyperlink($page.url, { topic: topic.slug })}>{topic.name}</a>
+      <div class="text-sm font-extrabold text-slate-500" aria-hidden>&gt;</div>
+      <div class=" ">{variable.name}</div>
+    </nav>
+    <div class="mt-4 mb-2 flex items-center gap-2">
+      <div>
+        {variable.desc}
+      </div>
+      <div class="ml-0.5 text-sm bg-ons-census text-white font-bold px-1 rounded-sm">
+        {variable.code}
+      </div>
     </div>
-    <!-- <span class="text-sm font-bold text-slate-500">{variable.code}</span> -->
-    <div class="ml-0.5 text-sm bg-ons-census text-white font-bold px-1 rounded-sm">
-      {variable.code}
-    </div>
-  </div>
-  <!-- <div class="mt-3 mb-3">{variable.name}</div> -->
-  <div class="flex flex-col last:border-b-[1px] border-b-red">
-    {#each variable.categories as category}
-      <a
-        href={buildHyperlink($page.url, { topic: topic.slug, variable: variable.slug, category: category.slug })}
-        class="flex gap-2 items-center p-2 border-t-[1px] border-t-slate-300 cursor-pointer 
-          {category.slug === categorySlug ? 'bg-onspale' : ''}"
-      >
-        <RadioButton selected={category.slug === categorySlug} />
-        {category.name}
-      </a>
-    {/each}
-  </div>
+    <ul class="flex flex-col last:border-b-[1px] border-b-red">
+      {#each variable.categories as category}
+        <li class="">
+          <a
+            href={buildHyperlink($page.url, { topic: topic.slug, variable: variable.slug, category: category.slug })}
+            class="flex gap-2 items-center p-2 border-t-[1px] border-t-slate-300 cursor-pointer
+              {category.slug === categorySlug ? 'bg-onspale' : ''}"
+          >
+            <RadioButton selected={category.slug === categorySlug} />
+            {category.name}
+          </a>
+        </li>
+      {/each}
+    </ul>
+  </section>
+</div>
+
+<div class="mt-48">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+  aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+  occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</div>
+<div class="">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+  aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+  occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</div>
+<div class="">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+  aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+  occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+</div>
+<div class="">
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+  aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+  occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 </div>
 
 <!-- 

@@ -4,7 +4,7 @@
   import TopicList from "./TopicList.svelte";
   import AreaPanel from "./AreaPanel.svelte";
   import SearchBox from "./SearchBox.svelte";
-  import Icon from "./Icon.svelte";
+  import Icon from "./MaterialIcon.svelte";
 </script>
 
 <svelte:head>
@@ -17,20 +17,18 @@
 <div class="px-6">
   <AreaPanel />
 
-  <div class="pt-3 pb-2">
-    <div class=" font-bold text-slate-500">Topic</div>
-  </div>
+  <section>
+    <h2 class="pt-3 pb-2 font-bold text-slate-500">Topic</h2>
+    <div class="mb-6">
+      <SearchBox name="search-census" />
+    </div>
+    <TopicList />
+  </section>
 
-  <div class="mb-6">
-    <SearchBox name="search-census" />
-  </div>
-
-  <TopicList />
-
-  <br class="" />
-  <div class="h-32 w-32">
-    <Icon type="formatListNumbered" />
-  </div>
+  <!-- <br class="" />
+  <div class="text-2xl">
+    <Icon kind="settings" />
+  </div> -->
 
   <div class="">
     <!-- <ONSShare title={$_("share.title")}>

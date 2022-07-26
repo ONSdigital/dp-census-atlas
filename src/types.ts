@@ -30,7 +30,8 @@ export type SelectedGeographyData = {
   geoType: GeoType;
   geoCode: string;
   displayName: string;
-  bbox: [number, number, number, number];
+  bbox: [[number, number], [number, number]];
+  boundary: GeographyFeature;
 };
 
 export type GeographyAutoSuggestProps = {
@@ -53,10 +54,10 @@ export type GeographyInfo = {
 
 type GeographyGeojson = {
   type: string;
-  features: GeographyFeatures[];
+  features: GeographyFeature[];
 };
 
-type GeographyFeatures = {
+type GeographyFeature = {
   type: string;
   id: string;
   geometry: {

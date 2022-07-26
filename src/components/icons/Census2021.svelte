@@ -1,5 +1,5 @@
 <svg
-  class="ons-header__title--svg-logo"
+  class="ons-svg-logo"
   xmlns="http://www.w3.org/2000/svg"
   focusable="false"
   width="228"

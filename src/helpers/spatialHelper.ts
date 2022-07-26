@@ -11,8 +11,17 @@ export const getBboxString = (args: Bbox) => {
   Test for bbox intersection using turf functions, after converting both bbox to geojson features 
 */
 export const doBboxesIntersect = (args: { bbox1: Bbox; bbox2: Bbox }) => {
-  const bbox1Feature = bboxPolygon([args.bbox1.south, args.bbox1.west, args.bbox1.north, args.bbox1.east])
-  const bbox2Feature = bboxPolygon([args.bbox2.south, args.bbox2.west, args.bbox2.north, args.bbox2.east])
+  const bbox1Feature = bboxPolygon([args.bbox1.south, args.bbox1.west, args.bbox1.north, args.bbox1.east]);
+  const bbox2Feature = bboxPolygon([args.bbox2.south, args.bbox2.west, args.bbox2.north, args.bbox2.east]);
+  return booleanIntersects(bbox1Feature, bbox2Feature);
+};
+
+export const doBboxArraysIntersect = (
+  bbox1: [number, number, number, number],
+  bbox2: [number, number, number, number],
+) => {
+  const bbox1Feature = bboxPolygon(bbox1);
+  const bbox2Feature = bboxPolygon(bbox2);
   return booleanIntersects(bbox1Feature, bbox2Feature);
 };
 

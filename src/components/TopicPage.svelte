@@ -2,30 +2,25 @@
   import { page } from "$app/stores";
   import { _ } from "svelte-i18n";
 
-  import { selectedGeographyStore } from "../stores/stores";
-  import { returnCorrectArticle, unCapitalizeFirstLetter } from "../util/stringUtil";
+  import { mapStore, selectedGeographyStore, vizStore } from "../stores/stores";
+  import { setVizStore } from "../data/setVizStore";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
   import topics from "../data/content";
 
-  import ONSAccordion from "./ons/ONSAccordion.svelte";
-  import ONSAccordionPanel from "./ons/ONSAccordionPanel.svelte";
-  import SearchHeader from "./SearchHeader.svelte";
   import Heading from "./Heading.svelte";
-  import Explore from "./Explore.svelte";
   import AreaPanel from "./AreaPanel.svelte";
-  import RightChevron from "./RightChevron.svelte";
-  import IntroAndExamples from "./IntroAndExamples.svelte";
-  import Breadcrumb from "./Breadcrumb.svelte";
-
-  let changeLocation: boolean = false;
 
   $: topicSlug = $page.params.topic;
   $: topic = topics.find((t) => t.slug === topicSlug);
-  $: selectedGeographyDisplayName = $selectedGeographyStore?.displayName;
+
+  // $: if ($mapStore) {
+  //   vizStore.set(undefined);
+  // }
 </script>
 
 <Heading />
 
+<!-- {JSON.stringify($vizStore)} -->
 <div class="px-6">
   <AreaPanel />
   <div class="pt-3 flex">

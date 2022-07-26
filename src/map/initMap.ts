@@ -1,15 +1,16 @@
-import mapboxgl, { Map } from "mapbox-gl";
+import mapboxgl, { GeoJSONSource, Map } from "mapbox-gl";
 import { fromEvent, merge } from "rxjs";
 import { delay, throttleTime } from "rxjs/operators";
 import type { GeoType } from "../types";
 import { vizStore, mapStore, selectedGeographyStore } from "../stores/stores";
-import { handleLocationSelect } from "../helpers/locationSelectHelper";
-import { englandAndWales } from "../helpers/spatialHelper";
+import { englandAndWalesBbox, selectGeography } from "../helpers/geographyHelper";
+import { doBboxesIntersect } from "../helpers/spatialHelper";
 import { initMapLayers } from "./initMapLayers";
 import { renderMapViz } from "./renderMapViz";
 import { layers, layersWithSiblings } from "./layers";
 import { style } from "./style";
 
+export const defaultZoom = 6;
 export const maxAllowedZoom = 16;
 
 /** Configure the map's properties and subscribe to its events. */
@@ -17,15 +18,17 @@ export const initMap = (container) => {
   const map = new Map({
     container,
     style,
-    center: new mapboxgl.LngLatBounds(englandAndWales.geo_json.features[0].geometry.coordinates).getCenter(),
-    zoom: 6,
-    maxZoom: maxAllowedZoom - 0.001, // prevents the layers from disappearing at the absolute max zoom of the map
+    center: new mapboxgl.LngLatBounds(englandAndWalesBbox).getCenter(),
+    zoom: defaultZoom,
+    maxZoom: maxAllowedZoom - 0.001, // prevent layers from disappearing at absolute max zoom
   });
 
   map.addControl(new mapboxgl.NavigationControl({ showCompass: false }));
 
   map.on("load", () => {
     initMapLayers(map);
+    initSelectedGeographyLayers(map);
+    listenToSelectedGeographyStore(map);
   });
 
   fromEvent(map, "load")
@@ -50,21 +53,8 @@ export const initMap = (container) => {
   layers.forEach((l) => {
     map.on("click", `${l.name}-features`, (e) => {
       const geoCode = e.features[0].properties[l.idProperty];
-      handleLocationSelect({ geoType: l.name, geoCode });
+      selectGeography({ geoType: l.name, geoCode });
     });
-  });
-
-  // todo: this doesn't appear to work on inital page load
-  // todo: we shouldn't flyTo/easeTo when we can already see the geography
-  selectedGeographyStore.subscribe((geography) => {
-    if (geography) {
-      const bounds = new mapboxgl.LngLatBounds(geography.bbox);
-      if (JSON.stringify(bounds) !== JSON.stringify(map.getBounds())) {
-        map.easeTo({
-          center: bounds.getCenter(),
-        });
-      }
-    }
   });
 
   return map;
@@ -88,4 +78,62 @@ const getGeoTypeForCurrentZoom = (zoom: number): GeoType => {
       return x.layer.name;
     }
   }
+};
+
+const listenToSelectedGeographyStore = (map: mapboxgl.Map) => {
+  selectedGeographyStore.subscribe((geography) => {
+    if (geography && map.isStyleLoaded()) {
+      if (geography.geoType === "ew") {
+        // maybe we don't want to reset the map view?
+        // map.setZoom(defaultZoom);
+        // map.setCenter(new mapboxgl.LngLatBounds(englandAndWalesBbox).getCenter());
+      } else {
+        const bounds = new mapboxgl.LngLatBounds(geography.bbox);
+        const source = map.getSource("selected-geography") as GeoJSONSource;
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore the types here are useless
+        source.setData(geography.boundary);
+        if (shouldZoomToGeography()) {
+          map.fitBounds(bounds, { padding: 300, animate: false });
+        }
+      }
+    }
+  });
+};
+
+const initSelectedGeographyLayers = (map: mapboxgl.Map) => {
+  map.addSource("selected-geography", {
+    type: "geojson",
+    data: {
+      type: "Feature",
+      properties: {},
+      geometry: {
+        type: "Polygon",
+        coordinates: [],
+      },
+    },
+  });
+  map.addLayer({
+    id: "selected-geography-outline",
+    type: "line",
+    source: "selected-geography",
+    layout: {},
+    paint: {
+      "line-color": "#000",
+      "line-width": 3,
+    },
+  });
+};
+
+// todo: we shouldn't flyTo/easeTo when we can already "see" the geography?
+const shouldZoomToGeography = () => {
+  // const b2 = map.getBounds();
+  // const intersects = doBboxesIntersect({
+  //   bbox1: { north: b1.getNorth(), east: b1.getEast(), south: b1.getSouth(), west: b1.getWest() },
+  //   bbox2: { north: b2.getNorth(), east: b2.getEast(), south: b2.getSouth(), west: b2.getWest() },
+  // });
+  // [2, 58, -6, 48]
+  // ea, n, w, s
+
+  return false;
 };

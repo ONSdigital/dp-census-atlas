@@ -30,15 +30,15 @@
     />
     <div class="line" style="left: {i * (100 / (breaks.length - 1))}%;" />
     <div
-      class={i === 0 ? "tick tick-big" : "tick"}
+      class="tick"
       style="left: {i * (100 / (breaks.length - 1))}%; transform: translateX({i == 0 && snapTicks ? '-2px' : '-50%'});"
     >
-      {ratioToPercentage(breaks[i], 0)}<span class={i === 0 ? "tick-big-suffix" : "tick-suffix"}>{suffix}</span>
+      {ratioToPercentage(breaks[i], 0)}<span class="tick-suffix">{suffix}</span>
     </div>
   {/each}
   <div class="line" style="right: 0;" />
-  <div class="tick tick-big" style="right: 0; transform: translateX({snapTicks ? '2px' : '50%'});">
-    {ratioToPercentage(breaks[breaks.length - 1], 0)}<span class="tick-big-suffix">{suffix}</span>
+  <div class="tick" style="right: 0; transform: translateX({snapTicks ? '2px' : '50%'});">
+    {ratioToPercentage(breaks[breaks.length - 1], 0)}<span class="tick-suffix">{suffix}</span>
   </div>
   {#if selected}
     <!-- <div class="marker" style="width: 4px; left: calc({pos(selected, breaks)}% - {lineWidth / 2}px);" /> -->
@@ -74,16 +74,8 @@
     text-align: center;
     transform: translateX(-50%);
   }
-  .tick-big {
-    top: calc(100% + 0px);
-    font-size: x-large;
-    /* font-weight: bold; */
-  }
   .tick-suffix {
     font-size: 90%;
-  }
-  .tick-big-suffix {
-    font-size: 70%;
   }
   .marker {
     position: absolute;

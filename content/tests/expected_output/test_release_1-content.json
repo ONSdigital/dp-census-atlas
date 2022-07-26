@@ -1,0 +1,248 @@
+[
+  {
+    "name": "test_topic_1",
+    "slug": "tt1",
+    "desc": "first test topic",
+    "variables": [
+      {
+        "name": "test variable 1",
+        "code": "test_var_1",
+        "slug": "test-var-1",
+        "desc": "first test variable",
+        "units": "Household",
+        "classifications": [
+          {
+            "code": "test_var_1_3a",
+            "slug": "test-var-1-3a",
+            "desc": "first test variable, 3 answers",
+            "chorolpleth_default": true,
+            "categories": [
+              {
+                "name": "test_var_1_3a_1",
+                "slug": "test-var-1-3a-1",
+                "code": "test-var-1-3a-1=1",
+                "legend_str_1": " of households in {LOCATION} are ",
+                "legend_str_2": "test_var_1_3a_1"
+              },
+              {
+                "name": "test_var_1_3a_2",
+                "slug": "test-var-1-3a-2",
+                "code": "test-var-1-3a-2=2,3",
+                "legend_str_1": " of households in {LOCATION} are ",
+                "legend_str_2": "test_var_1_3a_2"
+              }
+            ]
+          },
+          {
+            "code": "test_var_1_6a",
+            "slug": "test-var-1-6a",
+            "desc": "first test variable, 6 answers",
+            "dot_density_default": true,
+            "categories": [
+              {
+                "name": "test_var_1_6a_1",
+                "slug": "test-var-1-6a-1",
+                "code": "test-var-1-6a-1=1",
+                "legend_str_1": " of households in {LOCATION} are ",
+                "legend_str_2": "test_var_1_6a_1"
+              },
+              {
+                "name": "test_var_1_6a_2",
+                "slug": "test-var-1-6a-2",
+                "code": "test-var-1-6a-2=2",
+                "legend_str_1": " of households in {LOCATION} are ",
+                "legend_str_2": "test_var_1_6a_2"
+              },
+              {
+                "name": "test_var_1_6a_3",
+                "slug": "test-var-1-6a-3",
+                "code": "test-var-1-6a-3=3",
+                "legend_str_1": " of households in {LOCATION} are ",
+                "legend_str_2": "test_var_1_6a_3"
+              },
+              {
+                "name": "test_var_1_6a_4",
+                "slug": "test-var-1-6a-4",
+                "code": "test-var-1-6a-4=4",
+                "legend_str_1": " of households in {LOCATION} are ",
+                "legend_str_2": "test_var_1_6a_4"
+              },
+              {
+                "name": "test_var_1_6a_5",
+                "slug": "test-var-1-6a-5",
+                "code": "test-var-1-6a-5=5-9",
+                "legend_str_1": " of households in {LOCATION} are ",
+                "legend_str_2": "test_var_1_6a_5"
+              }
+            ]
+          },
+          {
+            "code": "test_var_1_9a",
+            "slug": "test-var-1-9a",
+            "desc": "first test variable, 9 answers",
+            "categories": [
+              {
+                "name": "test_var_1_9a_1",
+                "slug": "test-var-1-9a-1",
+                "code": "test-var-1-9a-1=1",
+                "legend_str_1": " of households in {LOCATION} are ",
+                "legend_str_2": "test_var_1_9a_1"
+              },
+              {
+                "name": "test_var_1_9a_2",
+                "slug": "test-var-1-9a-2",
+                "code": "test-var-1-9a-2=2",
+                "legend_str_1": " of households in {LOCATION} are ",
+                "legend_str_2": "test_var_1_9a_2"
+              },
+              {
+                "name": "test_var_1_9a_3",
+                "slug": "test-var-1-9a-3",
+                "code": "test-var-1-9a-3=3",
+                "legend_str_1": " of households in {LOCATION} are ",
+                "legend_str_2": "test_var_1_9a_3"
+              },
+              {
+                "name": "test_var_1_9a_4",
+                "slug": "test-var-1-9a-4",
+                "code": "test-var-1-9a-4=4",
+                "legend_str_1": " of households in {LOCATION} are ",
+                "legend_str_2": "test_var_1_9a_4"
+              },
+              {
+                "name": "test_var_1_9a_5",
+                "slug": "test-var-1-9a-5",
+                "code": "test-var-1-9a-5=5",
+                "legend_str_1": " of households in {LOCATION} are ",
+                "legend_str_2": "test_var_1_9a_5"
+              },
+              {
+                "name": "test_var_1_9a_6",
+                "slug": "test-var-1-9a-6",
+                "code": "test-var-1-9a-6=6",
+                "legend_str_1": " of households in {LOCATION} are ",
+                "legend_str_2": "test_var_1_9a_6"
+              },
+              {
+                "name": "test_var_1_9a_7",
+                "slug": "test-var-1-9a-7",
+                "code": "test-var-1-9a-7=7",
+                "legend_str_1": " of households in {LOCATION} are ",
+                "legend_str_2": "test_var_1_9a_7"
+              },
+              {
+                "name": "test_var_1_9a_8",
+                "slug": "test-var-1-9a-8",
+                "code": "test-var-1-9a-8=8,9,10",
+                "legend_str_1": " of households in {LOCATION} are ",
+                "legend_str_2": "test_var_1_9a_8"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "test_topic_2",
+    "slug": "tt2",
+    "desc": "second test topic",
+    "variables": [
+      {
+        "name": "test variable 2",
+        "code": "test_var_2",
+        "slug": "test-var-2",
+        "desc": "second test variable",
+        "units": "Person",
+        "classifications": [
+          {
+            "code": "test_var_2_5a",
+            "slug": "test-var-2-5a",
+            "desc": "second test variable, 5 answers",
+            "chorolpleth_default": true,
+            "dot_density_default": true,
+            "categories": [
+              {
+                "name": "test_var_2_5a_1",
+                "slug": "test-var-2-5a-1",
+                "code": "test-var-2-5a-1=1",
+                "legend_str_1": " of people in {LOCATION} are ",
+                "legend_str_2": "test_var_2_5a_1"
+              },
+              {
+                "name": "test_var_2_5a_2",
+                "slug": "test-var-2-5a-2",
+                "code": "test-var-2-5a-2=2",
+                "legend_str_1": " of people in {LOCATION} are ",
+                "legend_str_2": "test_var_2_5a_2"
+              },
+              {
+                "name": "test_var_2_5a_3",
+                "slug": "test-var-2-5a-3",
+                "code": "test-var-2-5a-3=3",
+                "legend_str_1": " of people in {LOCATION} are ",
+                "legend_str_2": "test_var_2_5a_3"
+              },
+              {
+                "name": "test_var_2_5a_4",
+                "slug": "test-var-2-5a-4",
+                "code": "test-var-2-5a-4=4",
+                "legend_str_1": " of people in {LOCATION} are ",
+                "legend_str_2": "test_var_2_5a_4"
+              }
+            ]
+          },
+          {
+            "code": "test_var_2_7a",
+            "slug": "test-var-2-7a",
+            "desc": "second test variable, 7 answers",
+            "categories": [
+              {
+                "name": "test_var_2_7a_1",
+                "slug": "test-var-2-7a-1",
+                "code": "test-var-2-7a-1=1",
+                "legend_str_1": " of people in {LOCATION} are ",
+                "legend_str_2": "test_var_2_7a_1"
+              },
+              {
+                "name": "test_var_2_7a_2",
+                "slug": "test-var-2-7a-2",
+                "code": "test-var-2-7a-2=2",
+                "legend_str_1": " of people in {LOCATION} are ",
+                "legend_str_2": "test_var_2_7a_2"
+              },
+              {
+                "name": "test_var_2_7a_3",
+                "slug": "test-var-2-7a-3",
+                "code": "test-var-2-7a-3=3",
+                "legend_str_1": " of people in {LOCATION} are ",
+                "legend_str_2": "test_var_2_7a_3"
+              },
+              {
+                "name": "test_var_2_7a_4",
+                "slug": "test-var-2-7a-4",
+                "code": "test-var-2-7a-4=4",
+                "legend_str_1": " of people in {LOCATION} are ",
+                "legend_str_2": "test_var_2_7a_4"
+              },
+              {
+                "name": "test_var_2_7a_5",
+                "slug": "test-var-2-7a-5",
+                "code": "test-var-2-7a-5=5",
+                "legend_str_1": " of people in {LOCATION} are ",
+                "legend_str_2": "test_var_2_7a_5"
+              },
+              {
+                "name": "test_var_2_7a_6",
+                "slug": "test-var-2-7a-6",
+                "code": "test-var-2-7a-6=6",
+                "legend_str_1": " of people in {LOCATION} are ",
+                "legend_str_2": "test_var_2_7a_6"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

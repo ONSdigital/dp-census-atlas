@@ -9,9 +9,12 @@
   $: showOrHideText = open ? "Hide heading and examples" : "Show heading and examples";
 </script>
 
-<div class="p-6 pt-5 pb-4">
-  <div class="flex items-center group hoverable" on:click={toggleOpen}>
-    <h1 class="flex-grow text-3xl font-semibold break-words">Census maps</h1>
+<div class="p-6 pt-5 pb-4 bg-ons-ocean-blue text-ons-grey-5">
+  <div class="flex items-center gap-3 group hoverable" on:click={toggleOpen}>
+    <h1 class="text-3xl font-semibold break-words">Census maps</h1>
+    <div class="flex-grow ">
+      <span class="px-2 bg-ons-black text-ons-grey-5 font-bold">ALPHA</span>
+    </div>
     <button
       class="ml-auto group-hover:scale-125 transition-all custom-ring"
       title={showOrHideText}
@@ -23,7 +26,7 @@
     </button>
   </div>
   {#if open}
-    <div class="mt-2.5">
+    <div class="mt-2">
       <IntroAndExamples />
     </div>
   {/if}

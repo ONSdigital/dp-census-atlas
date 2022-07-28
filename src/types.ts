@@ -34,14 +34,14 @@ export type SelectedGeographyData = {
   boundary: GeographyFeature;
 };
 
-export type GeographyAutoSuggestProps = {
-  bbox: number[];
-  cy: string;
-  en: string;
-  geoCode: string;
-  geoType: string;
-  sanitisedText?: string;
-};
+// export type GeographyAutoSuggestProps = {
+//   bbox: number[];
+//   cy: string;
+//   en: string;
+//   geoCode: string;
+//   geoType: string;
+//   sanitisedText?: string;
+// };
 
 export type GeographyInfo = {
   meta: {

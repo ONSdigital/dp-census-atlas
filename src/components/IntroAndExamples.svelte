@@ -8,19 +8,17 @@
 </script>
 
 <div class="">
-  <span class="mr-0.5">
-    Use our interactive map to find out what people's lives are like across England and Wales.</span
-  >
+  <span class="mr-2"> Use our interactive map to find out what people's lives are like across England and Wales.</span>
   <div class="inline-flex items-center gap-0.5">
     <div class="text-xs">
       <MaterialIcon kind="arrowForwardIos" orientation={suggestions ? "e" : "n"} />
     </div>
-    <button class="hyperlink " on:click={() => (suggestions = !suggestions)}> Show me examples </button>
+    <button class="hyperlink-reverse" on:click={() => (suggestions = !suggestions)}> Show me examples </button>
   </div>
 </div>
 
 {#if suggestions}
-  <div class="mt-3 border-l-4 border-l-gray-400 p-3 ">
+  <div class="mt-3 border-l-4 border-l-ons-grey-5 p-3 ">
     <ul class="pl-4 list-disc list-outside">
       <li class="pb-1">
         Where are people who are
@@ -30,7 +28,7 @@
             variable: "general-health",
             category: "very-good-health",
           })}
-          class="hyperlink"
+          class="hyperlink-reverse"
         >
           most healthy</a
         >?
@@ -43,7 +41,7 @@
             variable: "heating",
             category: "no-central-heating",
           })}
-          class="hyperlink"
+          class="hyperlink-reverse"
         >
           highest levels of homes without central heating</a
         >?
@@ -56,21 +54,25 @@
             variable: "owned-or-renting",
             category: "shared-ownership-homes",
           })}
-          class="hyperlink"
+          class="hyperlink-reverse"
         >
           highest levels of shared ownership properties</a
         >?
       </li>
     </ul>
     <div class="mt-5">
-      <Button2
-        colour="secondary"
-        click={() => {
+      <button
+        on:click={() => {
           suggestions = false;
         }}
+        class="
+        custom-ring
+        bg-ons-grey-15
+        text-ons-black
+         rounded-md border-b-[3px] border-b-ons-grey-75 py-1 px-3"
       >
         Hide examples
-      </Button2>
+      </button>
     </div>
   </div>
 {/if}

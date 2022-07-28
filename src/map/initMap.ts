@@ -1,10 +1,10 @@
+import { get } from "svelte/store";
 import mapboxgl, { GeoJSONSource, Map } from "mapbox-gl";
 import { fromEvent, merge } from "rxjs";
 import { delay, throttleTime } from "rxjs/operators";
 import type { GeoType } from "../types";
-import { vizStore, mapStore, selectedGeographyStore } from "../stores/stores";
-import { englandAndWalesBbox, selectGeography } from "../helpers/geographyHelper";
-import { doBboxesIntersect } from "../helpers/spatialHelper";
+import { vizStore, mapStore, selectedGeographyStore, preventFlyToGeographyStore } from "../stores/stores";
+import { englandAndWalesBbox, preventFlyToGeography, selectGeography } from "../helpers/geographyHelper";
 import { initMapLayers } from "./initMapLayers";
 import { renderMapViz } from "./renderMapViz";
 import { layers, layersWithSiblings } from "./layers";
@@ -28,18 +28,18 @@ export const initMap = (container) => {
   map.on("load", () => {
     initMapLayers(map);
     initSelectedGeographyLayers(map);
-    listenToSelectedGeographyStore(map);
   });
 
   fromEvent(map, "load")
     .pipe(
-      delay(1500), // leave some time between base layer and viz to avoid "flash" of base layer on first load
+      delay(1000), // leave some time between base layer and viz to avoid "flash" of base layer on first load
     )
     .subscribe(() => {
       vizStore.subscribe((value) => {
         renderMapViz(map, value);
       });
       setMapStore(map);
+      listenToSelectedGeographyStore(map);
     });
 
   merge(fromEvent(map, "move"), fromEvent(map, "zoom"))
@@ -53,6 +53,7 @@ export const initMap = (container) => {
   layers.forEach((l) => {
     map.on("click", `${l.name}-features`, (e) => {
       const geoCode = e.features[0].properties[l.idProperty];
+      preventFlyToGeography(geoCode);
       selectGeography({ geoType: l.name, geoCode });
     });
   });
@@ -82,19 +83,24 @@ const getGeoTypeForCurrentZoom = (zoom: number): GeoType => {
 
 const listenToSelectedGeographyStore = (map: mapboxgl.Map) => {
   selectedGeographyStore.subscribe((geography) => {
+    // console.log("geography", geography);
+
     if (geography && map.isStyleLoaded()) {
       if (geography.geoType === "ew") {
-        // maybe we don't want to reset the map view?
-        // map.setZoom(defaultZoom);
-        // map.setCenter(new mapboxgl.LngLatBounds(englandAndWalesBbox).getCenter());
+        // do we want to reset the map view?
+        map.setZoom(defaultZoom);
+        map.setCenter(new mapboxgl.LngLatBounds(englandAndWalesBbox).getCenter());
       } else {
         const bounds = new mapboxgl.LngLatBounds(geography.bbox);
         const source = map.getSource("selected-geography") as GeoJSONSource;
         // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore the types here are useless
         source.setData(geography.boundary);
-        if (shouldZoomToGeography()) {
+        // console.log("preventFlyToGeographyStore", get(preventFlyToGeographyStore));
+        // console.log("geography", geography.geoCode);
+        if (geography.geoCode !== get(preventFlyToGeographyStore)) {
           map.fitBounds(bounds, { padding: 300, animate: false });
+          preventFlyToGeographyStore.set(undefined);
         }
       }
     }
@@ -123,17 +129,4 @@ const initSelectedGeographyLayers = (map: mapboxgl.Map) => {
       "line-width": 3,
     },
   });
-};
-
-// todo: we shouldn't flyTo/easeTo when we can already "see" the geography?
-const shouldZoomToGeography = () => {
-  // const b2 = map.getBounds();
-  // const intersects = doBboxesIntersect({
-  //   bbox1: { north: b1.getNorth(), east: b1.getEast(), south: b1.getSouth(), west: b1.getWest() },
-  //   bbox2: { north: b2.getNorth(), east: b2.getEast(), south: b2.getSouth(), west: b2.getWest() },
-  // });
-  // [2, 58, -6, 48]
-  // ea, n, w, s
-
-  return false;
 };

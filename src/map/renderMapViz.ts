@@ -6,8 +6,8 @@ export const renderMapViz = (map: mapboxgl.Map, data: VizData) => {
   if (!data) {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore (typings for this overload are currently missing)
-    const feats = map.queryRenderedFeatures({ layers: [`lad-features`] }); //, `msoa-features`, `oa-features`
-    console.log(feats);
+    // const feats = map.queryRenderedFeatures({ layers: [`lad-features`] }); //, `msoa-features`, `oa-features`
+    // console.log(feats);
     // feats.forEach((f) => {
     //   map.setFeatureState({ source: layer.name, sourceLayer: layer.sourceLayer, id: f.id }, { colour: "#fff" });
     // });

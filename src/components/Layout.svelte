@@ -1,7 +1,7 @@
 <script>
   import Header from "./Header.svelte";
   import Map from "./Map.svelte";
-  import BreaksChart from "./BreaksChart.svelte";
+  import MapTips from "./MapTips.svelte";
   import MapLegend from "./MapLegend.svelte";
   import { page } from "$app/stores";
   import { getSelectedGeography } from "../helpers/categoryHelpers";
@@ -21,6 +21,7 @@
     </div>
     <div class="flex-1 grow-[7] relative">
       <Map />
+      <MapTips />
       <MapLegend />
     </div>
   </div>

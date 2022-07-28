@@ -2,8 +2,8 @@
   import { page } from "$app/stores";
   import { _ } from "svelte-i18n";
 
-  import { mapStore, selectedGeographyStore, vizStore } from "../stores/stores";
-  import { setVizStore } from "../data/setVizStore";
+  // import { mapStore, selectedGeographyStore, vizStore } from "../stores/stores";
+  // import { setVizStore } from "../data/setVizStore";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
   import topics from "../data/content";
 

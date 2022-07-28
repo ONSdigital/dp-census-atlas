@@ -20,7 +20,7 @@
   $: openOrCloseAreaSearchPanelText = open ? "Close area search panel" : "Open area search panel";
 </script>
 
-<section class="py-3 border-b-2 border-t-2">
+<section class="py-3 border-b-2">
   <h2 class="font-bold text-slate-500">Area</h2>
   <!-- nested buttons are invalid html, so workaround with a clickable label -->
   <label for="area-input" on:click={toggleOpen} class="group w-full text-left hoverable custom-ring">

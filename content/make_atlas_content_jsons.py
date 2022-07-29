@@ -536,7 +536,7 @@ def filter_required_classifications(cls_column_indices: list[dict], config_row: 
     else:
         required_cls = [x.strip() for x in required_cls_str.split(",")]
         return [
-            c for c in cls_column_indices if any(c["cls_code"].lower().endswith(rc.lower()) for rc in required_cls)
+            c for c in cls_column_indices if any(has_suffix(c["cls_code"], rc) for rc in required_cls)
         ]
 
 
@@ -551,9 +551,14 @@ def get_classification_visualisation_flags(code: str, config_row: dict) -> dict:
     dot_density_class_suffix = config_row.dot_density_default_classification.strip().lower()
     code_for_comparison = code.lower()
     return {
-        "chorolpleth_default": code_for_comparison.endswith(default_class_suffix),
-        "dot_density_default": dot_density_class_suffix != "no" and code_for_comparison.endswith(dot_density_class_suffix)
+        "chorolpleth_default": has_suffix(code_for_comparison, default_class_suffix),
+        "dot_density_default": dot_density_class_suffix != "no" and has_suffix(code_for_comparison, dot_density_class_suffix)
     }
+
+
+def has_suffix(classification_code: str, suffix: str) -> bool:
+    """Return true if classification_code ends with an underscore followed by suffix"""
+    return classification_code.lower().endswith(f"_{suffix.lower()}")
 
 
 # ================================================ CATEGORY PROCESSING =============================================== #

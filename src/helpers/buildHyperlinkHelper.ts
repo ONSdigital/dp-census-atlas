@@ -1,3 +1,5 @@
+import { appBasePath } from "../env";
+
 interface TopicPageParams {
   topic: string;
 }
@@ -26,12 +28,12 @@ type UrlParams = TopicPageParams | VariablePageParams | CategoryPageParams;
  */
 export const buildHyperlink = (url: URL, urlParams?: UrlParams, staticPath?: string) => {
   if (!urlParams && !staticPath) {
-    return `/census-atlas/${url.search}`;
+    return `${appBasePath}/${url.search}`;
   }
   if (staticPath) {
-    return `/census-atlas/2021/${staticPath}${url.search}`;
+    return `${appBasePath}/2021/${staticPath}${url.search}`;
   }
-  let link = "/census-atlas/2021";
+  let link = `${appBasePath}/2021`;
   if ("topic" in urlParams) {
     link = `${link}/${urlParams.topic}`;
   }

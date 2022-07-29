@@ -2,7 +2,7 @@
   import { _ } from "svelte-i18n";
   import { page } from "$app/stores";
   import { mapStore, selectedGeographyStore } from "../stores/stores";
-  import topics from "../data/content";
+  import { topicStore } from "../stores/stores"
   import { setVizStore } from "../data/setVizStore";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
   import Heading from "./Heading.svelte";
@@ -11,7 +11,7 @@
 
   $: params = $page.params;
   $: topicSlug = params.topic;
-  $: topic = topics.find((t) => t.slug === topicSlug);
+  $: topic = $topicStore.find((t) => t.slug === topicSlug);
   $: variableSlug = params.variable;
   $: variable = topic.variables.find((v) => v.slug === variableSlug);
   $: selectedGeographyDisplayName = $selectedGeographyStore?.displayName;
@@ -26,6 +26,7 @@
       geoCode: selectedGeographyGeoCode,
       bbox: $mapStore.bbox,
       zoom: $mapStore.zoom,
+      topics: $topicStore,
     });
   }
 </script>

@@ -26,7 +26,7 @@ const config = {
   kit: {
     adapter: getAdapter(),
     paths: {
-      base: "/census-atlas",
+      base: process.env.VITE_APP_BASE_PATH,
     },
     vite: {
       server: {

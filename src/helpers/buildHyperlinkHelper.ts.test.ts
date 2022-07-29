@@ -1,4 +1,5 @@
 import { buildHyperlink } from "./buildHyperlinkHelper";
+import { appBasePath } from "../env";
 
 const ladSelectedUrl = new URL("/test?lad=ladCode", "https://test.com");
 const ewSelectedUrl = new URL("/test", "https://test.com");
@@ -11,13 +12,13 @@ test("returns correct url given all inputs", () => {
     category: "category",
   };
   expect(buildHyperlink(ladSelectedUrl, urlParams)).toEqual(
-    "/census-atlas/2021/topic/variable/classification/category?lad=ladCode",
+    `${appBasePath}/2021/topic/variable/classification/category?lad=ladCode`,
   );
 });
 
 describe("index page url", () => {
   test("returns base url given only url input", () => {
-    expect(buildHyperlink(ladSelectedUrl)).toEqual("/census-atlas/?lad=ladCode");
+    expect(buildHyperlink(ladSelectedUrl)).toEqual(`${appBasePath}/?lad=ladCode`);
   });
 });
 
@@ -26,10 +27,10 @@ describe("topic url", () => {
     topic: "topic",
   };
   test("returns topic url with geography query param given an LAD in input url", () => {
-    expect(buildHyperlink(ladSelectedUrl, urlParams)).toEqual("/census-atlas/2021/topic?lad=ladCode");
+    expect(buildHyperlink(ladSelectedUrl, urlParams)).toEqual(`${appBasePath}/2021/topic?lad=ladCode`);
   });
   test("returns topic url without geography query param given no geography in input url", () => {
-    expect(buildHyperlink(ewSelectedUrl, urlParams)).toEqual("/census-atlas/2021/topic");
+    expect(buildHyperlink(ewSelectedUrl, urlParams)).toEqual(`${appBasePath}/2021/topic`);
   });
 });
 
@@ -39,10 +40,10 @@ describe("variable url", () => {
     variable: "variable",
   };
   test("returns variable url with geography query param given an LAD in input url", () => {
-    expect(buildHyperlink(ladSelectedUrl, urlParams)).toEqual("/census-atlas/2021/topic/variable?lad=ladCode");
+    expect(buildHyperlink(ladSelectedUrl, urlParams)).toEqual(`${appBasePath}/2021/topic/variable?lad=ladCode`);
   });
   test("returns variable url without geography query param given no geography in input url", () => {
-    expect(buildHyperlink(ewSelectedUrl, urlParams)).toEqual("/census-atlas/2021/topic/variable");
+    expect(buildHyperlink(ewSelectedUrl, urlParams)).toEqual(`${appBasePath}/2021/topic/variable`);
   });
 });
 
@@ -54,11 +55,11 @@ describe("classification url", () => {
   };
   test("returns classification url with geography query param given an LAD in input url", () => {
     expect(buildHyperlink(ladSelectedUrl, urlParams)).toEqual(
-      "/census-atlas/2021/topic/variable/classification?lad=ladCode",
+      `${appBasePath}/2021/topic/variable/classification?lad=ladCode`,
     );
   });
   test("returns classification url without geography query param given no geography in input url", () => {
-    expect(buildHyperlink(ewSelectedUrl, urlParams)).toEqual("/census-atlas/2021/topic/variable/classification");
+    expect(buildHyperlink(ewSelectedUrl, urlParams)).toEqual(`${appBasePath}/2021/topic/variable/classification`);
   });
 });
 
@@ -71,28 +72,28 @@ describe("category url", () => {
   };
   test("returns category url with specified classification and geography query param given an LAD in input url", () => {
     expect(buildHyperlink(ladSelectedUrl, urlParams)).toEqual(
-      "/census-atlas/2021/topic/variable/classification/category?lad=ladCode",
+      `${appBasePath}/2021/topic/variable/classification/category?lad=ladCode`,
     );
   });
 
   test("returns category url with specified classification value but without geography query param given no geography in input url", () => {
     expect(buildHyperlink(ewSelectedUrl, urlParams)).toEqual(
-      "/census-atlas/2021/topic/variable/classification/category",
+      `${appBasePath}/2021/topic/variable/classification/category`,
     );
   });
 
   test("returns category url with default classification value if not specified", () => {
     delete urlParams.classification;
-    expect(buildHyperlink(ewSelectedUrl, urlParams)).toEqual("/census-atlas/2021/topic/variable/default/category");
+    expect(buildHyperlink(ewSelectedUrl, urlParams)).toEqual(`${appBasePath}/2021/topic/variable/default/category`);
   });
 });
 
 describe("topics url", () => {
   const staticPath = "topics";
   test("returns topics path with geography query param given an LAD in input url", () => {
-    expect(buildHyperlink(ladSelectedUrl, null, staticPath)).toEqual("/census-atlas/2021/topics?lad=ladCode");
+    expect(buildHyperlink(ladSelectedUrl, null, staticPath)).toEqual(`${appBasePath}/2021/topics?lad=ladCode`);
   });
   test("returns topics url without geography query param given no geography in input url", () => {
-    expect(buildHyperlink(ewSelectedUrl, null, staticPath)).toEqual("/census-atlas/2021/topics");
+    expect(buildHyperlink(ewSelectedUrl, null, staticPath)).toEqual(`${appBasePath}/2021/topics`);
   });
 });

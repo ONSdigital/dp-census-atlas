@@ -1,0 +1,336 @@
+[
+  {
+    "name": "Work",
+    "slug": "work",
+    "desc": "People's employment status.",
+    "variables": [
+      {
+        "name": "Economic activity",
+        "slug": "economic-activity",
+        "code": "QS601EW",
+        "desc": "People who are in work, starting work, looking for or do not work.",
+        "units": "People",
+
+        "categories": [
+          {
+            "name": "Economically active",
+            "slug": "economically-active",
+            "code": "QS601EW0002",
+            "desc": "Anyone aged 16 years and over was economically active if they were employed, waiting to start work or looking for work at the time of the census.",
+            "category_h_pt2": "of {category_unit} in {location} are",
+            "category_h_pt3": "{category_name}",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}."
+          },
+          {
+            "name": "Economically inactive",
+            "slug": "economically-inactive",
+            "code": "QS601EW0011",
+            "desc": "Economically inactive people did not have a job, had not looked for work or could not start work at the time of the census.",
+            "category_h_pt2": "of {category_unit} in {location} are",
+            "category_h_pt3": "{category_name}",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}."
+          }
+        ],
+        "total": {
+          "name": "All categories: Economic activity",
+          "slug": "all-categories-economic-activity",
+          "code": "QS601EW0001"
+        }
+      },
+      {
+        "name": "Working hours",
+        "slug": "working-hours",
+        "code": "QS604EW",
+        "desc": "Hours people work per week.",
+        "units": "People",
+
+        "categories": [
+          {
+            "name": "Part-time",
+            "slug": "part-time",
+            "code": "QS604EW0002",
+            "desc": "These are people that work between 15 and 30 hours per week.",
+            "category_h_pt2": "of {category_unit} in {location} work",
+            "category_h_pt3": "{category_name}",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) work {category_name}."
+          },
+          {
+            "name": "Full-time",
+            "slug": "full-time",
+            "code": "QS604EW0005",
+            "desc": "These are people that work a minimum of 31 hours per week.",
+            "category_h_pt2": "of {category_unit} in {location} work",
+            "category_h_pt3": "{category_name}",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) work {category_name}."
+          }
+        ],
+        "total": {
+          "name": "All categories: Hours worked",
+          "slug": "all-categories-hours-worked",
+          "code": "QS604EW0001"
+        }
+      },
+      {
+        "name": "Job",
+        "slug": "job",
+        "code": "KS608EW",
+        "desc": "The types of jobs people do or did.",
+        "units": "People",
+
+        "categories": [
+          {
+            "name": "Managers, directors and senior officials",
+            "slug": "managers-directors-and-senior-officials",
+            "code": "KS608EW0002",
+            "desc": "People whose work activities or job title are a manager, director or senior official in their main job.",
+            "category_h_pt2": "of {category_unit} in {location} are",
+            "category_h_pt3": "{category_name}",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) work as {category_name}."
+          },
+          {
+            "name": "Professional occupations",
+            "slug": "professional-occupations",
+            "code": "KS608EW0003",
+            "desc": "People whose work activities or job title are a professional in their main job.",
+            "category_h_pt2": "of {category_unit} in {location} have",
+            "category_h_pt3": "{category_name}",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) work in {category_name}."
+          },
+          {
+            "name": "Associate professionals and technical occupations",
+            "slug": "associate-professionals-and-technical-occupations",
+            "code": "KS608EW0004",
+            "desc": "People whose work activities at or job titles are associate or technical professionals in their main job.",
+            "category_h_pt2": "of {category_unit} in {location} have",
+            "category_h_pt3": "{category_name}",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) work in {category_name}."
+          },
+          {
+            "name": "Administrative and secretarial occupations",
+            "slug": "administrative-and-secretarial-occupations",
+            "code": "KS608EW0005",
+            "desc": "People whose work activities or job titles are administrative or secretarial in their main job.",
+            "category_h_pt2": "of {category_unit} in {location} have",
+            "category_h_pt3": "{category_name}",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) work in {category_name}."
+          },
+          {
+            "name": "Process, plant and machine operatives",
+            "slug": "process-plant-and-machine-operatives",
+            "code": "KS608EW0009",
+            "desc": "People whose work activities or job titles are process, plant and machine operative in their main job.",
+            "category_h_pt2": "of {category_unit} in {location} are",
+            "category_h_pt3": "{category_name}",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) work as {category_name}."
+          },
+          {
+            "name": "Unskilled or semi-skilled occupations",
+            "slug": "unskilled-or-semi-skilled-occupations",
+            "code": "KS608EW0010",
+            "desc": "People whose work activities or job titles are unskilled or semi-skilled in their main job.",
+            "category_h_pt2": "of {category_unit} in {location} have",
+            "category_h_pt3": "{category_name}",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) work in {category_name}."
+          }
+        ],
+        "total": {
+          "name": "All categories: Occupation",
+          "slug": "all-categories-occupation",
+          "code": "KS608EW0001"
+        }
+      },
+      {
+        "name": "Travel to work",
+        "slug": "travel-to-work",
+        "code": "QS701EW",
+        "desc": "Types of transport people use to travel to work.",
+        "units": "People",
+
+        "categories": [
+          {
+            "name": "Work mainly from home",
+            "slug": "work-mainly-from-home",
+            "code": "QS701EW0002",
+            "desc": "People that mainly work from home do not travel to work for their main job.",
+            "category_h_pt2": "of {category_unit} in {location}",
+            "category_h_pt3": "{category_name}",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) {category_name}."
+          },
+          {
+            "name": "London Underground, metro, light rail, or tram",
+            "slug": "london-underground-metro-light-rail-or-tram",
+            "code": "QS701EW0003",
+            "desc": "People that use London Underground (the tube), metro, light rail or tram for the longest, part by, distance of their journey to their main job.",
+            "category_h_pt2": "of {category_unit} in {location} travel to work by",
+            "category_h_pt3": "{category_name}",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel to work by {category_name}."
+          },
+          {
+            "name": "Train",
+            "slug": "train",
+            "code": "QS701EW0004",
+            "desc": "People that use a train for the longest part, by distance, of their journey to their main job.",
+            "category_h_pt2": "of {category_unit} in {location} travel to work by",
+            "category_h_pt3": "{category_name}",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel to work by {category_name}."
+          },
+          {
+            "name": "Bus, minibus or coach",
+            "slug": "bus-minibus-or-coach",
+            "code": "QS701EW0005",
+            "desc": "People that use a bus, minibus or coach for the longest part, by distance, of their journey to their main job.",
+            "category_h_pt2": "of {category_unit} in {location} travel to work by",
+            "category_h_pt3": "{category_name}",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel to work by {category_name}."
+          },
+          {
+            "name": "Motorcycle, scooter or moped",
+            "slug": "motorcycle-scooter-or-moped",
+            "code": "QS701EW0007",
+            "desc": "People that use a motorcycle, scooter or moped for the longest part, by distance, of their journey to their main job.",
+            "category_h_pt2": "of {category_unit} in {location} travel to work by",
+            "category_h_pt3": "{category_name}",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel to work by {category_name}."
+          },
+          {
+            "name": "Bicycle",
+            "slug": "bicycle",
+            "code": "QS701EW0010",
+            "desc": "People that use a bicyle for the longest part, by distance, of their journey to their main job.",
+            "category_h_pt2": "of {category_unit} in {location} travel to work by",
+            "category_h_pt3": "{category_name}",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel to work by {category_name}."
+          },
+          {
+            "name": "Walk",
+            "slug": "walk",
+            "code": "QS701EW0011",
+            "desc": "People that walk for the longest part, by distance, of their journey to their main job.",
+            "category_h_pt2": "of {category_unit} in {location}",
+            "category_h_pt3": "walk to work",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) walk to work."
+          },
+          {
+            "name": "Other",
+            "slug": "other",
+            "code": "QS701EW0012",
+            "desc": "People that use other means of transport for the longest part by distance of their journey to their main job.",
+            "category_h_pt2": "of {category_unit} in {location} travel to work by",
+            "category_h_pt3": "alternative methods",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel to work using alternative methods of transport such as ferry."
+          }
+        ],
+        "total": {
+          "name": "All categories: Method of travel to work",
+          "slug": "all-categories-method-of-travel-to-work",
+          "code": "QS701EW0001"
+        }
+      },
+      {
+        "name": "Distance travelled to work",
+        "slug": "distance-travelled-to-work",
+        "code": "QS702EW",
+        "desc": "The daily distance travelled to work.",
+        "units": "People",
+
+        "categories": [
+          {
+            "name": "Less than 2km",
+            "slug": "less-than-2km",
+            "code": "QS702EW0002",
+            "desc": "People that travel less than 2 km (1.25 miles) to their main job.",
+            "category_h_pt2": "of {category_unit} in {location} travel",
+            "category_h_pt3": "less than 2km to work",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel {category_name} to work."
+          },
+          {
+            "name": "2km to less than 5km",
+            "slug": "2km-to-less-than-5km",
+            "code": "QS702EW0003",
+            "desc": "People that travel between 2 km (1.25 miles) and 5 km (3.10 miles) to their main job.",
+            "category_h_pt2": "of {category_unit}s in {location} travel from",
+            "category_h_pt3": "2km to less than 5km",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel between 2 km (1.25 miles) and 5 km (3.10 miles) to their main job."
+          },
+          {
+            "name": "5km to less than 10km",
+            "slug": "5km-to-less-than-10km",
+            "code": "QS702EW0004",
+            "desc": "People that travel between 5 km (3.10 miles) and 10 km (6.21 miles) to their main job.",
+            "category_h_pt2": "of {category_unit}s in {location} travel from",
+            "category_h_pt3": "5km to less than 10km",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel between 5 km (3.10 miles) and 10 km (6.21 miles) to their main job."
+          },
+          {
+            "name": "10km to less than 20km",
+            "slug": "10km-to-less-than-20km",
+            "code": "QS702EW0005",
+            "desc": "People that travel between 10 km (6.21 miles) and 20 km (12.42 miles) to their main job.",
+            "category_h_pt2": "of {category_unit}s in {location} travel from",
+            "category_h_pt3": "10km to less than 20km",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel between 10 km (6.21 miles) and 20 km (12.42 miles) to their main job."
+          },
+          {
+            "name": "20km to less than 30km",
+            "slug": "20km-to-less-than-30km",
+            "code": "QS702EW0006",
+            "desc": "People that travel between 20 km (12.42 miles) and 30 km (18.64 miles) to their main job.",
+            "category_h_pt2": "of {category_unit}s in {location} travel from",
+            "category_h_pt3": "20km to less than 30km",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel between 20 km (12.42 miles) and 30 km (18.64 miles) to their main job."
+          },
+          {
+            "name": "30km to less than 40km",
+            "slug": "30km-to-less-than-40km",
+            "code": "QS702EW0007",
+            "desc": "People that travel between 30 km (18.64 miles) and 40 km (24.85 miles) to their main job.",
+            "category_h_pt2": "of {category_unit}s in {location} travel from",
+            "category_h_pt3": "30km to less than 40km",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel between 30 km (18.64 miles) and 40 km (24.85 miles) to their main job."
+          },
+          {
+            "name": "40km to less than 60km",
+            "slug": "40km-to-less-than-60km",
+            "code": "QS702EW0008",
+            "desc": "People that travel between 40 km (24.85 miles) and 60 km (37.28 miles) to their main job.",
+            "category_h_pt2": "of {category_unit}s in {location} travel from",
+            "category_h_pt3": "40km to less than 60km",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage})travel between 40 km (24.85 miles) and 60 km (37.28 miles) to their main job."
+          },
+          {
+            "name": "60km and over",
+            "slug": "60km-and-over",
+            "code": "QS702EW0009",
+            "desc": "People that travel over 60 km (37.28 miles) to their main job.",
+            "category_h_pt2": "of {category_unit}s in {location} travel",
+            "category_h_pt3": "60km and over.",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) travel over 60 km (37.28 miles) to their main job."
+          },
+          {
+            "name": "Mainly work from home",
+            "slug": "mainly-work-from-home",
+            "code": "QS702EW0010",
+            "desc": "People that mainly work from home so do not travel to work for their main job.",
+            "category_h_pt2": "of {category_unit}s in {location}",
+            "category_h_pt3": "mainy work from home.",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) work from home."
+          },
+          {
+            "name": "Other",
+            "slug": "other",
+            "code": "QS702EW0011",
+            "desc": "People that neither travel to work or work from home.",
+            "category_h_pt2": "of {category_unit}s in {location}",
+            "category_h_pt3": "work offshore, outside of UK or at no fixed location",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) either have no fixed place of work, work on an offshore installation or work outside of the UK."
+          }
+        ],
+        "total": {
+          "name": "All categories: Distance travelled to work",
+          "slug": "all-categories-distance-travelled-to-work",
+          "code": "QS702EW0001"
+        }
+      }
+    ]
+  }
+]

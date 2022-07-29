@@ -1,9 +1,8 @@
-import topics from "../data/content";
 import { englandAndWales } from "./spatialHelper";
-import { GeoTypes, type Variable, type Category } from "../types";
+import { GeoTypes, type Variable, type Category, type Topic } from "../types";
 import { unCapitalizeFirstLetter } from "../util/stringUtil";
 
-export const getCategoryInfo = (categoryCode: string) => {
+export const getCategoryInfo = (categoryCode: string, topics: [Topic]) => {
   const allVariables = topics.flatMap((t) => t.variables.map((v) => ({ topic: t, variable: v })));
   const allCategories = allVariables.flatMap((v) =>
     v.variable.categories.map((c) => ({ topic: v.topic, category: c, variable: v })),

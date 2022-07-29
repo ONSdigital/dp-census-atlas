@@ -1,0 +1,389 @@
+[
+  {
+    "name": "Housing",
+    "slug": "housing",
+    "desc": "Types of homes and the people living in them.",
+    "variables": [
+      {
+        "name": "Size of household",
+        "slug": "size-of-household",
+        "code": "QS406EW",
+        "desc": "Number of people who usually live together in the same home.",
+        "units": "Households",
+        "categories": [
+          {
+            "name": "1 person households",
+            "slug": "1-person-households",
+            "code": "QS406EW0002",
+            "desc": "This is a home with 1 person living on their own.",
+            "category_h_pt2": "of {category_unit} in {location} are",
+            "category_h_pt3": "{category_name}",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}."
+          },
+          {
+            "name": "2 person households",
+            "slug": "2-person-households",
+            "code": "QS406EW0003",
+            "desc": "This is a home shared by 2 people.",
+            "category_h_pt2": "of {category_unit} in {location} are",
+            "category_h_pt3": "{category_name}",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}."
+          },
+          {
+            "name": "3 person households",
+            "slug": "3-person-households",
+            "code": "QS406EW0004",
+            "desc": "This is a home shared by 3 people.",
+            "category_h_pt2": "of {category_unit} in {location} are",
+            "category_h_pt3": "{category_name}",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}."
+          },
+          {
+            "name": "4 person households",
+            "slug": "4-person-households",
+            "code": "QS406EW0005",
+            "desc": "This is a home shared by 4 people.",
+            "category_h_pt2": "of {category_unit} in {location} are",
+            "category_h_pt3": "{category_name}",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}."
+          },
+          {
+            "name": "5 person households",
+            "slug": "5-person-households",
+            "code": "QS406EW0006",
+            "desc": "This is a home shared by 5 people.",
+            "category_h_pt2": "of {category_unit} in {location} are",
+            "category_h_pt3": "{category_name}",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}."
+          }
+        ],
+        "total": {
+          "name": "All categories: Household size",
+          "slug": "all-categories-household-size",
+          "code": "QS406EW0001"
+        }
+      },
+      {
+        "name": "Type of home",
+        "slug": "type-of-home",
+        "desc": "Types of homes people live in.",
+        "code": "QS402EW",
+        "units": "Households",
+        "categories": [
+          {
+            "name": "Whole houses or bungalows",
+            "slug": "whole-houses-or-bungalows",
+            "code": "QS402EW0003",
+            "desc": "This is a property that has not been split into separate flats or other accommodation.",
+            "category_h_pt2": "of {category_unit} in {location} are",
+            "category_h_pt3": "{category_name}",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) live in {category_name}."
+          },
+          {
+            "name": "Flats, maisonettes or apartments",
+            "slug": "flats-maisonettes-or-apartments",
+            "code": "QS402EW0007",
+            "desc": "This could be in a purpose built block or tenement, part of a converted or shared house (including bedsits), part of another converted building.",
+            "category_h_pt2": "of {category_unit} in {location} are",
+            "category_h_pt3": "{category_name}",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}."
+          },
+          {
+            "name": "Caravans or other temporary structures",
+            "slug": "caravans-or-other-temporary-structures",
+            "code": "QS402EW0011",
+            "desc": "This could include camper vans, canal barges, converrted railway carriages,garden building or shed, houseboats, mobile homes, tents, trailers.",
+            "category_h_pt2": "of {category_unit} in {location} are",
+            "category_h_pt3": "{category_name}",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}."
+          },
+          {
+            "name": "Shared homes",
+            "slug": "shared-homes",
+            "code": "QS402EW0012",
+            "desc": "A home is shared if the household spaces it contains are part of a converted or shared house or not all rooms are behind closed doors.",
+            "category_h_pt2": "of {category_unit} in {location} are",
+            "category_h_pt3": "{category_name}",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) are {category_name}."
+          }
+        ],
+        "total": {
+          "name": "All categories: Accommodation type",
+          "slug": "all-categories-accommodation-type",
+          "code": "QS402EW0001"
+        }
+      },
+      {
+        "name": "Number of bedrooms",
+        "slug": "number-of-bedrooms",
+        "code": "QS411EW",
+        "desc": "The number of dedicated bedrooms in a home",
+        "units": "Households",
+        "categories": [
+          {
+            "name": "No dedicated bedroom",
+            "slug": "no-dedicated-bedroom",
+            "code": "QS411EW0002",
+            "desc": "This type of home has no dedicated bedroom. This could be a bedsit or studio apartment.",
+            "category_h_pt2": "of {category_unit} in {location} have",
+            "category_h_pt3": "{category_name}",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}."
+          },
+          {
+            "name": "1 bedroom",
+            "slug": "1-bedroom",
+            "code": "QS411EW0003",
+            "desc": "This type of home has 1 dedicated bedroom.",
+            "category_h_pt2": "of {category_unit} in {location} have",
+            "category_h_pt3": "{category_name}",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}."
+          },
+          {
+            "name": "2 bedrooms",
+            "slug": "2-bedrooms",
+            "code": "QS411EW0004",
+            "desc": "This type of home has 2 dedicated bedrooms.",
+            "category_h_pt2": "of {category_unit} in {location} have",
+            "category_h_pt3": "{category_name}",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}."
+          },
+          {
+            "name": "3 bedrooms",
+            "slug": "3-bedrooms",
+            "code": "QS411EW0005",
+            "desc": "This type of home has 3 dedicated bedrooms.",
+            "category_h_pt2": "of {category_unit} in {location} have",
+            "category_h_pt3": "{category_name}",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}."
+          },
+          {
+            "name": "4 bedrooms",
+            "slug": "4-bedrooms",
+            "code": "QS411EW0006",
+            "desc": "This type of home has 4 dedicated bedrooms.",
+            "category_h_pt2": "of {category_unit} in {location} have",
+            "category_h_pt3": "{category_name}",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}."
+          },
+          {
+            "name": "5 or more bedrooms",
+            "slug": "5-or-more-bedrooms",
+            "code": "QS411EW0007",
+            "desc": "This type of home has 5 or more dedicated bedrooms.",
+            "category_h_pt2": "of {category_unit} in {location} have",
+            "category_h_pt3": "{category_name}",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}."
+          }
+        ],
+        "total": {
+          "name": "All categories: Number of bedrooms",
+          "slug": "all-categories-number-of-bedrooms",
+          "code": "QS411EW0001"
+        }
+      },
+      {
+        "name": "Owned or renting",
+        "slug": "owned-or-renting",
+        "desc": "People that live in a home they rent or own.",
+        "units": "People",
+        "code": "QS403EW",
+        "categories": [
+          {
+            "name": "Owned homes",
+            "slug": "owned-homes",
+            "code": "QS403EW0002",
+            "desc": "This is a home where the home owner either owns the home outright, has a mortage or loan on the property.",
+            "category_h_pt2": "of {category_unit} in {location} live in",
+            "category_h_pt3": "{category_name}",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) live in {category_name}."
+          },
+          {
+            "name": "Shared ownership homes",
+            "slug": "shared-ownership-homes",
+            "code": "QS403EW0005",
+            "desc": "This is a home that is part rented and part owned.",
+            "category_h_pt2": "of {category_unit} in {location} live in",
+            "category_h_pt3": "{category_name}",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) live in {category_name}."
+          },
+          {
+            "name": "Social rented homes",
+            "slug": "social-rented-homes",
+            "code": "QS403EW0006",
+            "desc": "This is a home where the tenants pays rent to a local authority or housing association.",
+            "category_h_pt2": "of {category_unit} in {location} live in",
+            "category_h_pt3": "{category_name}",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) live in {category_name}."
+          },
+          {
+            "name": "Private rented homes",
+            "slug": "private-rented-homes",
+            "code": "QS403EW0009",
+            "desc": "This is a home where the tenants pay rent to a private landlord.",
+            "category_h_pt2": "of {category_unit} in {location} live in",
+            "category_h_pt3": "{category_name}",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) live in {category_name}."
+          }
+        ],
+        "total": {
+          "name": "All categories: Tenure",
+          "slug": "all-categories-tenure",
+          "code": "QS403EW0001"
+        }
+      },
+      {
+        "name": "Car or van availability",
+        "slug": "car-or-van-availability",
+        "code": "QS416EW",
+        "desc": "People living in the same home that have use of or own a car or van.",
+        "units": "Households",
+
+        "categories": [
+          {
+            "name": "No cars or vans available",
+            "slug": "no-cars-or-vans-available",
+            "code": "QS416EW0002",
+            "desc": "The people living in this home do not have a car or van available to use.",
+            "category_h_pt2": "of {category_unit} in {location} have",
+            "category_h_pt3": "{category_name}",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}."
+          },
+          {
+            "name": "1 car or van",
+            "slug": "1-car-or-van",
+            "code": "QS416EW0003",
+            "desc": "This is the number of cars or vans people living in the same home own or use.",
+            "category_h_pt2": "of {category_unit} in {location} have",
+            "category_h_pt3": "{category_name} available",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) available."
+          },
+          {
+            "name": "2 cars or vans",
+            "slug": "2-cars-or-vans",
+            "code": "QS416EW0004",
+            "desc": "This is the number of cars or vans people living in the same home own or use.",
+            "category_h_pt2": "of {category_unit} in {location} have",
+            "category_h_pt3": "{category_name} available",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) available."
+          }
+        ],
+        "total": {
+          "name": "All categories: Car or van availability",
+          "slug": "all-categories-car-or-van-availability",
+          "code": "QS416EW0001"
+        }
+      },
+      {
+        "name": "Heating",
+        "slug": "heating",
+        "desc": "Types of central heating available for use in the home.",
+        "code": "QS415EW",
+        "units": "Households",
+
+        "categories": [
+          {
+            "name": "No central heating",
+            "slug": "no-central-heating",
+            "code": "QS415EW0002",
+            "desc": "This home does not have central heating.",
+            "category_h_pt2": "of {category_unit} in {location} have",
+            "category_h_pt3": "{category_name}",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}."
+          },
+          {
+            "name": "Gas central heating",
+            "slug": "gas-central-heating",
+            "code": "QS415EW0003",
+            "desc": "This central heating system is fuelled by gas and heats more than one room in a building.",
+            "category_h_pt2": "of {category_unit} in {location} have",
+            "category_h_pt3": "{category_name}",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}."
+          },
+          {
+            "name": "Electric central heating (including storage heaters)",
+            "slug": "electric-central-heating-including-storage-heaters",
+            "code": "QS415EW0004",
+            "desc": "This central heating system is fuelled by electricity (inlcuding storage heaters) and heats more than one room in a building.",
+            "category_h_pt2": "of {category_unit} in {location} have",
+            "category_h_pt3": "{category_name}",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}."
+          },
+          {
+            "name": "Oil central heating",
+            "slug": "oil-central-heating",
+            "code": "QS415EW0005",
+            "desc": "This central heating system is fuelled by oil heats more than one room in a building.",
+            "category_h_pt2": "of {category_unit} in {location} have",
+            "category_h_pt3": "{category_name}",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}."
+          },
+          {
+            "name": "Solid fuel central heating (for example wood, coal)",
+            "slug": "solid-fuel-central-heating-for-example-wood-coal",
+            "code": "QS415EW0006",
+            "desc": "This central heating system is fuelled by a solid fuel such as wood or coal and heats more than one room in a building.",
+            "category_h_pt2": "of {category_unit} in {location} have",
+            "category_h_pt3": "{category_name}",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}."
+          },
+          {
+            "name": "Other central heating",
+            "slug": "other-central-heating",
+            "code": "QS415EW0007",
+            "desc": "This central heating system is not fuelled by a solid fuel, oil, gas or electricity. It heats more than one room in a building.",
+            "category_h_pt2": "of {category_unit} in {location} have",
+            "category_h_pt3": "{category_name}",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}."
+          },
+          {
+            "name": "Two or more types of central heating",
+            "slug": "two-or-more-types-of-central-heating",
+            "code": "QS415EW0008",
+            "desc": "This central heating system has more than one fuel source and heats more than one room in a building.",
+            "category_h_pt2": "of {category_unit} in {location} have",
+            "category_h_pt3": "{category_name}",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) have {category_name}."
+          }
+        ],
+        "total": {
+          "name": "All categories: Type of central heating in household",
+          "slug": "all-categories-type-of-central-heating-in-household",
+          "code": "QS415EW0001"
+        }
+      },
+      {
+        "name": "Residence type",
+        "slug": "residence-type",
+        "desc": "Families and other groups living in the same home or communal establishment.",
+        "code": "QS101EW",
+        "units": "People",
+
+        "categories": [
+          {
+            "name": "Live in a household",
+            "slug": "live-in-a-household",
+            "code": "QS101EW0002",
+            "desc": "A place where people live alone or together.",
+            "category_h_pt2": "of {category_unit} in {location}",
+            "category_h_pt3": "{category_name}",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) {category_name}."
+          },
+          {
+            "name": "Live in a communal establishment",
+            "slug": "live-in-a-communal-establishment",
+            "code": "QS101EW0003",
+            "desc": "A place that provides managed residential accommodation.",
+            "category_h_pt2": "of {category_unit} in {location}",
+            "category_h_pt3": "{category_name}",
+            "cat_location_summary_pt2": "Out of {category_total} {category_unit} in {location}, {category_value} ({category_percentage}%) {category_name}."
+          }
+        ],
+        "total": {
+          "name": "All categories: Residence type",
+          "slug": "all-categories-residence-type",
+          "code": "QS101EW0001"
+        }
+      }
+    ]
+  }
+]

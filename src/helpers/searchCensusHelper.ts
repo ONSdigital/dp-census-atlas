@@ -1,8 +1,12 @@
-import topics from "../data/content";
-
-export const searchCensus = (q: string) => {
+export const searchCensus = (q: string, topics) => {
+  if (!topics) {
+    return {
+      topics: [],
+      variables: [],
+      categories: [],
+    };
+  }
   const s = q.toLowerCase();
-
   const topicResults = topics.filter((t) => t.name.toLowerCase().includes(s) || t.desc.toLowerCase().includes(s));
 
   const allVariables = topics.flatMap((t) => t.variables.map((v) => ({ topic: t, variable: v })));

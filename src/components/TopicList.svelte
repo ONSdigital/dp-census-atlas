@@ -1,13 +1,13 @@
 <script lang="ts">
   import { page } from "$app/stores";
-  import topics from "../data/content";
+  import { topicStore } from "../stores/stores"
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
   import RightChevron from "./RightChevron.svelte";
 </script>
 
 <div>
   <div class="flex flex-wrap gap-x-8 gap-y-2">
-    {#each topics as topic}
+    {#each $topicStore as topic}
       <a
         class="flex-none w-48 flex-grow-[1] pb-3 border-b-[1px] border-b-slate-300 group custom-ring"
         href={buildHyperlink($page.url, {

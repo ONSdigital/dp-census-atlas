@@ -121,18 +121,22 @@ class CensusCategory:
 
     name: str
     slug: str
-    code: str
+    code: str # is code a good name for this? probably
+    desc: str = ""
     legend_str_1: str = ""
     legend_str_2: str = ""
+    legend_str_3: str = ""
 
     def to_jsonable(self):
         """Category in json-friendly form."""
         return {
             "name": self.name, 
             "slug": self.slug, 
-            "code": self.code, 
+            "code": self.code,
+            "desc": self.desc,
             "legend_str_1": self.legend_str_1, 
-            "legend_str_2": self.legend_str_2
+            "legend_str_2": self.legend_str_2,
+            "legend_str_3": self.legend_str_3,
         }
 
 
@@ -140,7 +144,7 @@ class CensusCategory:
 class CensusClassification:
     """A classification as found in content.json."""
 
-    code: str
+    code: str # probably don't need this here, only categories are fetched
     slug: str
     desc: str
     chorolpleth_default: bool
@@ -167,7 +171,7 @@ class CensusVariable:
     """A variable as found in content.json."""
 
     name: str
-    code: str
+    code: str # probably don't need this here, only categories are fetched
     slug: str
     desc: str
     units: str
@@ -190,7 +194,7 @@ class CensusTopic:
     """A topic as found in content.json."""
 
     name: str
-    code: str
+    code: str # probably don't need this here, only categories are fetched
     slug: str
     desc: str
     variables: list[CensusVariable]

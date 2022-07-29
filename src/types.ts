@@ -1,5 +1,3 @@
-import type topics from "./data/content";
-
 export const GeoTypes = ["ew", "lad", "msoa", "oa"];
 export type GeoType = typeof GeoTypes[number];
 
@@ -9,9 +7,29 @@ export type MapState = {
   zoom: number;
 };
 
-export type Topic = typeof topics[0];
-export type Variable = typeof topics[0]["variables"][0];
-export type Category = typeof topics[0]["variables"][0]["categories"][0];
+export type Topic = {
+  name: string;
+  slug: string;
+  desc: string;
+  variables: [Variable];
+};
+export type Variable = {
+  name: string;
+  slug: string;
+  code: string;
+  desc: string;
+  units: string;
+  categories: [Category];
+}
+export type Category = {
+  name: string;
+  slug: string;
+  code: string;
+  desc: string;
+  category_h_pt2: string;
+  category_h_pt3: string;
+  cat_location_summary_pt2: string;
+}
 export type VariableData = { [catCode: string]: { count: number; total: number; percentage: number } };
 
 export type VizData = {

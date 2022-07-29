@@ -1,16 +1,15 @@
 <script>
   import { fade } from "svelte/transition";
   import { page } from "$app/stores";
-  import { selectedGeographyStore, mapStore } from "../stores/stores";
+  import { selectedGeographyStore, mapStore, topicStore } from "../stores/stores";
   import tipStore from "../stores/tipStore";
-  import topics from "../data/content";
 
   import Icon from "./MaterialIcon.svelte";
   import { geoTypeDescriptions } from "../helpers/geographyHelper";
 
   $: params = $page.params;
   $: topicSlug = params.topic;
-  $: topic = topics.find((t) => t.slug === topicSlug);
+  $: topic = $topicStore.find((t) => t.slug === topicSlug);
   $: variableSlug = params.variable;
   $: variable = topic ? topic.variables.find((v) => v.slug === variableSlug) : undefined;
   $: categorySlug = params.category;

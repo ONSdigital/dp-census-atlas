@@ -10,8 +10,8 @@ pushd dp-census-atlas
   # only should be building from develop or master here, but should handle other branches just in case
   case $GIT_BRANCH in
     "develop")
-      echo "Building for develop"
-      make build-develop
+      echo "Building for sandbox"
+      make build-sandbox
       ;;
     "master")
       echo "Building for production"

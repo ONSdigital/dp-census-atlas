@@ -1,5 +1,5 @@
 import { writable } from "svelte/store";
-import type { MapState, VizData, SelectedGeographyData } from "../types";
+import type { MapState, VizData, SelectedGeographyData, Topic } from "../types";
 
 /**
  * A Svelte store containing any map state we need to be aware of within the Svelte app.
@@ -20,3 +20,8 @@ export const selectedGeographyStore = writable<SelectedGeographyData | undefined
  * A Svelte store ...
  */
 export const preventFlyToGeographyStore = writable<string | undefined>(undefined);
+
+/**
+ * A Svelte store containing all topics
+ */
+export const topicStore = writable<[Topic] | undefined>(undefined);

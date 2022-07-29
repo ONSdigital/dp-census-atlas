@@ -2,10 +2,11 @@
   "name": "svelteapp",
   "version": "0.0.1",
   "scripts": {
-    "dev": "svelte-kit dev -p 28100",
+    "dev": ". env/dev.sh && svelte-kit dev -p 28100",
     "build": "svelte-kit build",
-    "build-node-develop": ". build-configs/develop.sh && svelte-kit build && ./workaround-sveltekit-3726.sh",
-    "build-node-prod": ". build-configs/production.sh && svelte-kit build && ./workaround-sveltekit-3726.sh",
+    "build:netlify": ". env/dev.sh && npm run build",
+    "build:sandbox": ". env/sandbox.sh && npm run build && ./workaround-sveltekit-3726.sh",
+    "build:prod": ". env/prod.sh && npm run build && ./workaround-sveltekit-3726.sh",
     "package": "svelte-kit package",
     "preview": "svelte-kit preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
@@ -14,7 +15,7 @@
     "lint:eslint": "eslint --ignore-path .gitignore . --max-warnings=0",
     "format:prettier": "prettier --ignore-path .gitignore --write --plugin-search-dir=. .",
     "format:eslint": "eslint --ignore-path .gitignore . --fix",
-    "test": "vitest run"
+    "test": ". env/test.sh && vitest run"
   },
   "type": "module",
   "devDependencies": {
@@ -56,9 +57,7 @@
     "d3-dsv": "^2.0.0",
     "fuse.js": "^3.6.1",
     "mapbox-gl": "^1.13.2",
-    "mem": "^9.0.2",
     "normalize.css": "^8.0.1",
-    "quick-lru": "^6.1.1",
     "rxjs": "^7.5.4",
     "svelte-i18n": "^3.3.13"
   }

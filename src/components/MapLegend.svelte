@@ -1,19 +1,19 @@
 <script>
   import { page } from "$app/stores";
   import { vizStore, selectedGeographyStore } from "../stores/stores";
-  import topics from "../data/content";
+  import { topicStore } from "../stores/stores"
   import { formatTemplateString } from "../helpers/categoryHelpers";
   import { ratioToPercentage } from "../util/numberUtil";
   import { choroplethColours } from "../helpers/choroplethHelpers";
 
   import BreaksChart from "./BreaksChart.svelte";
-
+  
   $: categoryValueForSelectedGeography = $vizStore?.places.find(
     (p) => p.geoCode === $selectedGeographyStore?.geoCode,
   )?.ratioToTotal;
   $: params = $page.params;
   $: topicSlug = params.topic;
-  $: topic = topics.find((t) => t.slug === topicSlug);
+  $: topic = $topicStore.find((t) => t.slug === topicSlug);
   $: variableSlug = params.variable;
   $: variable = topic ? topic.variables.find((v) => v.slug === variableSlug) : undefined;
   $: selectedGeographyDisplayName = $selectedGeographyStore?.displayName;

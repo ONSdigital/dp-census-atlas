@@ -1,10 +1,9 @@
 import * as dsv from "d3-dsv"; // https://github.com/d3/d3/issues/3469
 import type { Bbox, GeoType, DataTile } from "src/types";
-import mem from "mem";
-import QuickLRU from "quick-lru";
+// import mem from "mem";
+// import QuickLRU from "quick-lru";
 import { bboxToDataTiles, englandAndWales } from "../helpers/spatialHelper";
-
-const s3BaseUrl = "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/quads";
+import { geodataBaseUrl } from "../env";
 
 /*
   Fetch place data files for all data 'tiles' (predefined coordinate grid squares) that intersect with current viewport 
@@ -17,7 +16,7 @@ export const fetchTileDataForBbox = async (args: { categoryCode: string; geoType
   // fetch data from data tile files
   const fetchedData = await Promise.all(
     dataTiles.map((dataTile) => {
-      return memFetchTileData({
+      return fetchTileData({
         categoryCode: args.categoryCode,
         geoType: args.geoType,
         tile: dataTile,
@@ -34,23 +33,12 @@ export const fetchTileDataForBbox = async (args: { categoryCode: string; geoType
   fall within geographic bounding box represented by 'tile'.
 */
 export const fetchTileData = async (args: { categoryCode: string; geoType: GeoType; tile: DataTile }) => {
-  const url = `${s3BaseUrl}/${args.geoType}/${args.tile.tilename}/${args.categoryCode}.csv`;
+  const url = `${geodataBaseUrl}/${args.geoType}/${args.tile.tilename}/${args.categoryCode}.csv`;
   const response = await fetch(url);
   const csv = await response.text();
   return dsv.csvParse(csv);
 };
 
-/*
-  Memoized version of fetchQuery, used to reduce API calls.
-*/
-export const memFetchTileData = mem(fetchTileData, {
-  cacheKey: (arguments_) => {
-    return JSON.stringify(arguments_[0]);
-  },
-  cache: new QuickLRU({ maxSize: 100 }),
-});
-
-// ToDo This function needs some love!
 /*
   Fetch json with estimated natural breakpoints (w. ckmeans algorithm) in data for all census category 'categoryCode'
   divided by total for that category.
@@ -59,7 +47,7 @@ export const fetchBreaks = async (args: {
   categoryCode: string;
   geoType: GeoType;
 }): Promise<{ breaks: { [categoryCode: string]: number[] }; minMax: { [categoryCode: string]: number[] } }> => {
-  const url = `${s3BaseUrl}/breaks/${args.geoType}/${args.categoryCode}.json`;
+  const url = `${geodataBaseUrl}/breaks/${args.geoType}/${args.categoryCode}.json`;
   const breaksRaw = await fetch(url).then((resp) => resp.json());
   /* 
     breaks json files have legacy format from when it was an API response:
@@ -91,38 +79,14 @@ export const fetchBreaks = async (args: {
 };
 
 /*
-  Memoized version of fetchBreaks, used to reduce API calls.
-*/
-export const memFetchBreaks = mem(fetchBreaks, {
-  cacheKey: (arguments_) => {
-    return JSON.stringify(arguments_[0]);
-  },
-  cache: new QuickLRU({ maxSize: 100 }),
-});
-
-/*
   Fetch json with bounding box for geography.
 */
 export const fetchGeographyInfo = async (geoCode: string) => {
   if (geoCode === englandAndWales.meta.code) {
     return JSON.stringify(englandAndWales);
   }
-  const url = `${s3BaseUrl}/geo/${geoCode}.geojson`;
+  const url = `${geodataBaseUrl}/geo/${geoCode}.geojson`;
   const response = await fetch(url);
   const data = await response.text();
   return data;
-};
-
-/*
-  DUMMY FUNCTION (to be removed!) Just returns 1 for every category requested.
-*/
-export const fetchSelectedGeographyData = async (args: {
-  totalCode: string;
-  categoryCodes: string[];
-  geoCode: string;
-}) => {
-  const dummyData = `geography_code,${args.totalCode},${args.categoryCodes.join(",")}\n${
-    args.geoCode
-  },1,${args.categoryCodes.map(() => 1).join(",")}`;
-  return dsv.csvParse(dummyData);
 };

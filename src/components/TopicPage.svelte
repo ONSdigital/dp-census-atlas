@@ -5,14 +5,14 @@
   // import { mapStore, selectedGeographyStore, vizStore } from "../stores/stores";
   // import { setVizStore } from "../data/setVizStore";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
-  import topics from "../data/content";
+  import { topicStore } from "../stores/stores"
 
   import Heading from "./Heading.svelte";
   import AreaPanel from "./AreaPanel.svelte";
 
   $: topicSlug = $page.params.topic;
-  $: topic = topics.find((t) => t.slug === topicSlug);
-
+  $: topic = $topicStore.find((t) => t.slug === topicSlug);
+  
   // $: if ($mapStore) {
   //   vizStore.set(undefined);
   // }

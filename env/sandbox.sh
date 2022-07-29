@@ -7,9 +7,8 @@ export VITE_CONTENT_JSONS='[
     "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/education-content.json",
     "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/housing-content.json",
     "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/work-content.json",
-    "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/health-content.json",
-    "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/identity-content.json",
-    "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/does-not-exist.json",
-    "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/quads/lad/ew/KS103EW0002.csv"
+    "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/health-content-pt1.json",
+    "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/health-content-pt2.json",
+    "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/identity-content.json"
 ]'
 export VITE_APP_BASE_PATH="/census-atlas"

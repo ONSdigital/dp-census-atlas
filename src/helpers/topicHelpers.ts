@@ -35,6 +35,7 @@ const mergeVariables = (variables: [Variable]) => {
       slug: variablesToMerge[0].slug,
       code: variablesToMerge[0].code,
       desc: variablesToMerge[0].desc,
+      units: variablesToMerge[0].units,
       categories: dedupeCategories(allCategories as [Category]),
     });
   }

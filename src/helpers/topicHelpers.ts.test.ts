@@ -22,6 +22,7 @@ const makeTestVariables = (n: number, parentName: string) => {
       slug: `test-variable-${parentName}-${i}`,
       code: `tv${parentName}${i}`,
       desc: `${parentName}${i} test variable`,
+      units: "test_units",
       categories: makeTestCategories(n, `${parentName}_${i}`) as [Category],
     });
   }

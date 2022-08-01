@@ -1,4 +1,4 @@
-import type { Topic, Variable, Category } from "../types";
+import type { Topic, Variable, Classification, Category } from "../types";
 
 /*
   Iterate over list of Topics and merge topics with the same name.
@@ -29,27 +29,27 @@ const mergeVariables = (variables: [Variable]) => {
   const mergedVariables = [];
   for (const varName of varNames) {
     const variablesToMerge = variables.filter((v) => v.name === varName);
-    const allCategories = variablesToMerge.flatMap((v) => v.categories);
+    const allClassifications = variablesToMerge.flatMap((v) => v.classifications);
     mergedVariables.push({
       name: variablesToMerge[0].name,
       slug: variablesToMerge[0].slug,
       code: variablesToMerge[0].code,
       desc: variablesToMerge[0].desc,
-      categories: dedupeCategories(allCategories as [Category]),
+      classifications: dedupeClassifications(allClassifications as [Classification]),
     });
   }
   return mergedVariables;
 };
 
 /*
-  Iterate over list of Categories and ensure theres none with the same name (categories cannot be merged!)
+  Iterate over list of classifications and ensure theres none with the same name (classifications cannot be merged!)
 */
-const dedupeCategories = (categories: [Category]) => {
-  const catNames = new Set(categories.map((c) => c.name));
-  const mergedCats = [];
-  for (const catName of catNames) {
-    const catsToMerge = categories.filter((c) => c.name == catName);
-    mergedCats.push(catsToMerge[0]);
+const dedupeClassifications = (classifications: [Classification]) => {
+  const clsCodes = new Set(classifications.map((c) => c.code));
+  const mergedCls = [];
+  for (const clsCode of clsCodes) {
+    const clsToMerge = classifications.filter((c) => c.code == clsCode);
+    mergedCls.push(clsToMerge[0]);
   }
-  return mergedCats;
+  return mergedCls;
 };

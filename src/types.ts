@@ -25,6 +25,8 @@ export type Classification = {
   code: string;
   slug: string;
   desc: string;
+  choropleth_default: boolean;
+  dot_density_default: boolean;
   categories: [Category];
 };
 

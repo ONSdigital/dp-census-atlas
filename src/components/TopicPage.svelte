@@ -5,14 +5,16 @@
   // import { mapStore, selectedGeographyStore, vizStore } from "../stores/stores";
   // import { setVizStore } from "../data/setVizStore";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
-  import { topicStore } from "../stores/stores"
+  import { getDefaultChoroplethClassification } from "../helpers/variableHelpers";
+
+  import { topicStore } from "../stores/stores";
 
   import Heading from "./Heading.svelte";
   import AreaPanel from "./AreaPanel.svelte";
 
   $: topicSlug = $page.params.topic;
   $: topic = $topicStore.find((t) => t.slug === topicSlug);
-  
+
   // $: if ($mapStore) {
   //   vizStore.set(undefined);
   // }
@@ -41,7 +43,7 @@
         href={buildHyperlink($page.url, {
           topic: topic.slug,
           variable: variable.slug,
-          category: variable.categories[0].slug,
+          category: getDefaultChoroplethClassification(variable).categories[0].slug,
         })}
       >
         <div class="flex justify-between">

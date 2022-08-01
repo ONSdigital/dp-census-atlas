@@ -121,8 +121,7 @@ class CensusCategory:
 
     name: str
     slug: str
-    code: str # is code a good name for this? probably
-    desc: str = ""
+    code: str
     legend_str_1: str = ""
     legend_str_2: str = ""
     legend_str_3: str = ""
@@ -133,7 +132,6 @@ class CensusCategory:
             "name": self.name, 
             "slug": self.slug, 
             "code": self.code,
-            "desc": self.desc,
             "legend_str_1": self.legend_str_1, 
             "legend_str_2": self.legend_str_2,
             "legend_str_3": self.legend_str_3,
@@ -144,7 +142,7 @@ class CensusCategory:
 class CensusClassification:
     """A classification as found in content.json."""
 
-    code: str # probably don't need this here, only categories are fetched
+    code: str
     slug: str
     desc: str
     chorolpleth_default: bool
@@ -171,7 +169,7 @@ class CensusVariable:
     """A variable as found in content.json."""
 
     name: str
-    code: str # probably don't need this here, only categories are fetched
+    code: str
     slug: str
     desc: str
     units: str
@@ -194,7 +192,7 @@ class CensusTopic:
     """A topic as found in content.json."""
 
     name: str
-    code: str # probably don't need this here, only categories are fetched
+    code: str
     slug: str
     desc: str
     variables: list[CensusVariable]
@@ -631,8 +629,9 @@ def make_cat_code(cat_name: str, cat_codes: str) -> str:
 
 def make_cat_legend_strs(var: CensusVariable, cat: CensusCategory) -> None:
     """Make first-attempt at legend strings for category (intention is these are then manually reviewed / edited)"""
-    cat.legend_str_1 = f" of {UNIT_PLURALS[var.units.lower()]} in {{LOCATION}} are "
-    cat.legend_str_2 = cat.name.lower()
+    cat.legend_str_1 = f" of {UNIT_PLURALS[var.units.lower()]} in {{location}}"
+    cat.legend_str_2 = " are "
+    cat.legend_str_3 = cat.name.lower()
 
 
 # ======================================================= MAIN ======================================================= #

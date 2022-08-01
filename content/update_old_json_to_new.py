@@ -18,6 +18,7 @@ def refactor_variable(variable: dict) -> dict:
     return {
         "name": variable["name"],
         "slug": variable["slug"],
+        "code": variable["code"],
         "desc": variable["desc"],
         "units": variable["units"],
         "classifications": [make_default_classification(variable)],

@@ -241,6 +241,18 @@ def load_config_rows_from_config_sheet(wb: Workbook) -> list[ConfigRow]:
         for row in rows
         if not all(c.value == None for c in row)
     ]
+    for required_column in [
+        RELEASE_COLUMN, 
+        TOPIC_NAME_COLUMN, 
+        VAR_HYPERLINK_COLUMN, 
+        CLASSIFICATIONS_TO_INCLUDE_COLUMN,
+        CHOROPLETH_DEFAULT_CLASS_COLUMN,
+        DOT_DENSITY_DEFAULT_CLASS_COLUMN
+    ]: 
+        if required_column not in row_dicts[0]:
+            print(
+                f"Required column {required_column} could not be found in the {CONFIG_WORKSHEET} worksheet"
+            )
     return [
         ConfigRow(
             release=row_raw[RELEASE_COLUMN].value,
@@ -377,13 +389,12 @@ def get_topics(wb: Workbook, config_rows: list[ConfigRow], cantabular_metadata) 
             search_name = cr.topic
 
         # If we've already processed this topic on a different row, just add the topic variable...
-        if search_name in [t.name for t in topics]:
-            topic = next(t for t in topics if t.name == search_name)
-
-        # ... else get cantabular topic, add variable, and append to topics - nb config sheet seems to refer to topics
-        # by either name, code or desc. skip this config row if no matching topic can be found/
-        # NB COPY TOPIC FROM CANTABULAR RATHER THAN JUST TAKE REFERENCE (topics can be in multiple releases!)
-        else:
+        topic = next((t for t in topics if  cmp_string_to_list(search_name, (t.name, t.code, t.desc))), None)
+        if topic is None:
+            # ... else get cantabular topic, add variable, and append to topics - nb config sheet seems to refer to topics
+            # by either name, code or desc. skip this config row if no matching topic can be found/
+            # NB COPY TOPIC FROM CANTABULAR RATHER THAN JUST TAKE REFERENCE (topics can be in multiple releases!)
+       
             try:
                 topic = copy.deepcopy(
                         next(
@@ -491,7 +502,7 @@ def get_required_classifications(
             print(
                 f"** No defintion found in cantabular metadata for classification {c['cls_code']}, cannot process! **"
             )
-            return []
+            continue
 
         cls_flags = get_classification_visualisation_flags(
             c["cls_code"], config_row)

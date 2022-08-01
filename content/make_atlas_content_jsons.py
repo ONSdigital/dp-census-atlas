@@ -629,8 +629,8 @@ def make_cat_code(cat_name: str, cat_codes: str) -> str:
 
 def make_cat_legend_strs(var: CensusVariable, cat: CensusCategory) -> None:
     """Make first-attempt at legend strings for category (intention is these are then manually reviewed / edited)"""
-    cat.legend_str_1 = f" of {UNIT_PLURALS[var.units.lower()]} in {{location}}"
-    cat.legend_str_2 = " are "
+    cat.legend_str_1 = f"of {UNIT_PLURALS[var.units.lower()]} in {{location}}"
+    cat.legend_str_2 = "are"
     cat.legend_str_3 = cat.name.lower()
 
 

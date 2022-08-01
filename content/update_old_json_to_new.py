@@ -41,7 +41,6 @@ def refactor_category(category: dict) -> dict:
         "name": category["name"],
         "slug": category["slug"],
         "code": category["code"],
-        "desc": category["desc"],
         "legend_str_1": "".join(category_h_pt2_components[:2]),
         "legend_str_2": category_h_pt2_components[2],
         "legend_str_3": category["category_h_pt3"]

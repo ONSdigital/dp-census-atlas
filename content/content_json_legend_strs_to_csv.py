@@ -7,12 +7,13 @@ them for readability.
 
 import csv
 import json
+from pathlib import Path
 import sys
 
 
 def main():
     content_json_fp = sys.argv[1]
-    output_filename = sys.argv[2]
+    output_filename = Path(sys.argv[2])
     if output_filename.exists():
         print(
             f"target file {output_filename} already exists! Will not overwrite to avoid loss of work. "
@@ -36,6 +37,7 @@ def main():
                         "ADMIN_legend_start_str": "{PERCENTAGE}%",
                         "EDIT_THIS_legend_str_1": category["legend_str_1"],
                         "EDIT_THIS_legend_str_2": category["legend_str_2"],
+                        "EDIT_THIS_legend_str_3": category["legend_str_3"],
                     })
     
     with open(output_filename, "w") as f:

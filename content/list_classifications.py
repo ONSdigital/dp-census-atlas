@@ -24,8 +24,7 @@ def main():
                     "variable": variable["name"],
                     "classification": classification["code"],
                 })
-                # for category in classification["categories"]:
-    
+
     with open(output_filename, "w") as f:
         writer = csv.DictWriter(f, fieldnames=csv_content[0].keys(), quoting=csv.QUOTE_ALL)
         writer.writeheader()

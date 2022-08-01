@@ -30,7 +30,7 @@ def make_default_classification(variable: dict) -> dict:
         "code": variable["code"],
         "slug": variable["slug"],
         "desc": variable["desc"],
-        "chorolpleth_default": True,
+        "choropleth_default": True,
         "categories": [refactor_category(cat) for cat in variable["categories"]]
     }
 

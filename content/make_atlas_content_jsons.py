@@ -56,7 +56,7 @@ VAR_HYPERLINK_COLUMN = "2021 Mnemonic (variable)"
 CLASSIFICATIONS_TO_INCLUDE_COLUMN = "Classifications to keep"
 
 # The column name (assumed to be first row) that defines the default classification to be used for each variable.
-CHOROLPLETH_DEFAULT_CLASS_COLUMN = "Default classification"
+CHOROPLETH_DEFAULT_CLASS_COLUMN = "Default classification"
 
 # The column name (assumed to be first row) that defines the classification for each variable that can be represented
 # as a dot density map
@@ -107,7 +107,7 @@ class ConfigRow:
     topic: str
     variable: Cell
     classifications: str
-    chorolpleth_default_classification: str
+    choropleth_default_classification: str
     dot_density_default_classification: str
 
     def to_str(self):
@@ -145,7 +145,7 @@ class CensusClassification:
     code: str
     slug: str
     desc: str
-    chorolpleth_default: bool
+    choropleth_default: bool
     dot_density_default: bool
     categories: list[CensusCategory]
 
@@ -156,8 +156,8 @@ class CensusClassification:
             "slug": self.slug,
             "desc": self.desc
         }
-        if self.chorolpleth_default:
-            output_params["chorolpleth_default"] = self.chorolpleth_default
+        if self.choropleth_default:
+            output_params["choropleth_default"] = self.choropleth_default
         if self.dot_density_default:
             output_params["dot_density_default"] = self.dot_density_default
         output_params["categories"] = [c.to_jsonable() for c in self.categories]
@@ -247,7 +247,7 @@ def load_config_rows_from_config_sheet(wb: Workbook) -> list[ConfigRow]:
             topic=row_raw[TOPIC_NAME_COLUMN].value,
             variable=row_raw[VAR_HYPERLINK_COLUMN],
             classifications=row_raw[CLASSIFICATIONS_TO_INCLUDE_COLUMN].value,
-            chorolpleth_default_classification=row_raw[CHOROLPLETH_DEFAULT_CLASS_COLUMN].value,
+            choropleth_default_classification=row_raw[CHOROPLETH_DEFAULT_CLASS_COLUMN].value,
             dot_density_default_classification=row_raw[DOT_DENSITY_DEFAULT_CLASS_COLUMN].value,
         )
         for row_raw in row_dicts
@@ -309,7 +309,7 @@ def load_cantabular_classifications(classification_csv: str) -> list[CensusClass
                 code=cls_raw["Classification_Mnemonic"].strip(),
                 slug=slugify(cls_raw["Classification_Mnemonic"].strip()),
                 desc=cls_raw["External_Classification_Label_English"].strip(),
-                chorolpleth_default=False,
+                choropleth_default=False,
                 dot_density_default=False,
                 categories=[],
             )
@@ -495,7 +495,7 @@ def get_required_classifications(
 
         cls_flags = get_classification_visualisation_flags(
             c["cls_code"], config_row)
-        classification.chorolpleth_default = cls_flags["chorolpleth_default"]
+        classification.choropleth_default = cls_flags["choropleth_default"]
         classification.dot_density_default = cls_flags["dot_density_default"]
         classification.categories = get_categories(
             cls_ws_cols[c["cat_codes_col"]], cls_ws_cols[c["cat_name_col"]]
@@ -544,17 +544,17 @@ def filter_required_classifications(cls_column_indices: list[dict], config_row: 
 
 def get_classification_visualisation_flags(code: str, config_row: dict) -> dict:
     """Parse additional flags relating to map visualisations for current variables classifications from config_row"""
-    default_class_suffix = (
-        config_row.chorolpleth_default_classification
+    choropleth_default_class_suffix = (
+        config_row.choropleth_default_classification
         .replace("(only one classification)", "")
         .strip()
         .lower()
     )
-    dot_density_class_suffix = config_row.dot_density_default_classification.strip().lower()
+    dot_density_default_class_suffix = config_row.dot_density_default_classification.strip().lower()
     code_for_comparison = code.lower()
     return {
-        "chorolpleth_default": has_suffix(code_for_comparison, default_class_suffix),
-        "dot_density_default": dot_density_class_suffix != "no" and has_suffix(code_for_comparison, dot_density_class_suffix)
+        "choropleth_default": has_suffix(code_for_comparison, choropleth_default_class_suffix),
+        "dot_density_default": dot_density_default_class_suffix != "no" and has_suffix(code_for_comparison, dot_density_default_class_suffix)
     }
 
 

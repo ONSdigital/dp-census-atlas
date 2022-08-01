@@ -15,7 +15,7 @@
             "code": "test_var_3_3a",
             "slug": "test-var-3-3a",
             "desc": "third test variable, 3 answers",
-            "chorolpleth_default": true,
+            "choropleth_default": true,
             "dot_density_default": true,
             "categories": [
               {

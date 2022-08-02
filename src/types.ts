@@ -19,17 +19,25 @@ export type Variable = {
   code: string;
   desc: string;
   units: string;
+  classifications: [Classification];
+};
+export type Classification = {
+  code: string;
+  slug: string;
+  desc: string;
+  choropleth_default: boolean;
+  dot_density_default: boolean;
   categories: [Category];
-}
+};
+
 export type Category = {
   name: string;
   slug: string;
   code: string;
-  desc: string;
-  category_h_pt2: string;
-  category_h_pt3: string;
-  cat_location_summary_pt2: string;
-}
+  legend_str_1: string;
+  legend_str_2: string;
+  legend_str_3: string;
+};
 export type VariableData = { [catCode: string]: { count: number; total: number; percentage: number } };
 
 export type VizData = {

@@ -1,13 +1,14 @@
 <script>
   import { page } from "$app/stores";
   import { vizStore, selectedGeographyStore } from "../stores/stores";
-  import { topicStore } from "../stores/stores"
+  import { topicStore } from "../stores/stores";
   import { formatTemplateString } from "../helpers/categoryHelpers";
   import { ratioToPercentage } from "../util/numberUtil";
   import { choroplethColours } from "../helpers/choroplethHelpers";
+  import { getDefaultChoroplethClassification } from "../helpers/variableHelpers";
 
   import BreaksChart from "./BreaksChart.svelte";
-  
+
   $: categoryValueForSelectedGeography = $vizStore?.places.find(
     (p) => p.geoCode === $selectedGeographyStore?.geoCode,
   )?.ratioToTotal;
@@ -17,8 +18,9 @@
   $: variableSlug = params.variable;
   $: variable = topic ? topic.variables.find((v) => v.slug === variableSlug) : undefined;
   $: selectedGeographyDisplayName = $selectedGeographyStore?.displayName;
+  $: defaultChoroplethClassification = getDefaultChoroplethClassification(variable);
   $: categorySlug = params.category;
-  $: category = variable ? variable.categories.find((c) => c.slug === categorySlug) : undefined;
+  $: category = variable ? defaultChoroplethClassification.categories.find((c) => c.slug === categorySlug) : undefined;
 </script>
 
 <!-- todo: new design for all four states -->
@@ -42,10 +44,13 @@
         <div class="flex-grow">
           {#if category && categoryValueForSelectedGeography}
             <div class="text-base leading-5">
-              {formatTemplateString(variable, category, selectedGeographyDisplayName, category.category_h_pt2)}
+              <span>
+                {formatTemplateString(variable, category, selectedGeographyDisplayName, category.legend_str_1)}
+                {formatTemplateString(variable, category, selectedGeographyDisplayName, category.legend_str_2)}
+              </span>
             </div>
             <div class="-mt-0.5 text-lg font-bold">
-              {formatTemplateString(variable, category, selectedGeographyDisplayName, category.category_h_pt3)}
+              {formatTemplateString(variable, category, selectedGeographyDisplayName, category.legend_str_3)}
             </div>
           {:else if category}
             <div class="">{selectedGeographyDisplayName}</div>

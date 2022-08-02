@@ -3,6 +3,7 @@
   import { page } from "$app/stores";
   import { selectedGeographyStore, mapStore, topicStore } from "../stores/stores";
   import tipStore from "../stores/tipStore";
+  import { getDefaultChoroplethClassification } from "../helpers/variableHelpers";
 
   import Icon from "./MaterialIcon.svelte";
   import { geoTypeDescriptions } from "../helpers/geographyHelper";
@@ -12,8 +13,9 @@
   $: topic = $topicStore.find((t) => t.slug === topicSlug);
   $: variableSlug = params.variable;
   $: variable = topic ? topic.variables.find((v) => v.slug === variableSlug) : undefined;
+  $: defaultChoroplethClassification = getDefaultChoroplethClassification(variable);
   $: categorySlug = params.category;
-  $: category = variable ? variable.categories.find((c) => c.slug === categorySlug) : undefined;
+  $: category = variable ? defaultChoroplethClassification.categories.find((c) => c.slug === categorySlug) : undefined;
 </script>
 
 {#if $mapStore && $selectedGeographyStore && !category}

@@ -23,10 +23,23 @@ const makeTestVariables = (n: number, parentName: string) => {
       code: `tv${parentName}${i}`,
       desc: `${parentName}${i} test variable`,
       units: "test_units",
-      categories: makeTestCategories(n, `${parentName}_${i}`) as [Category],
+      classifications: makeTestClassifications(n, `${parentName}_${i}`) as [Category],
     });
   }
   return variables;
+};
+
+const makeTestClassifications = (n: number, parentName: string) => {
+  const classifications = [];
+  for (let i = 0; i < n; i++) {
+    classifications.push({
+      code: `tcls${parentName}${i}`,
+      slug: `test-classification-${parentName}-${i}`,
+      desc: `${parentName}${i} test classification`,
+      categories: makeTestCategories(n, `${parentName}_${i}`) as [Category],
+    });
+  }
+  return classifications;
 };
 
 const makeTestCategories = (n: number, parentName: string) => {
@@ -36,10 +49,9 @@ const makeTestCategories = (n: number, parentName: string) => {
       name: `test category ${parentName} ${i}`,
       slug: `test-category-${parentName}-${i}`,
       code: `tc${parentName}${i}`,
-      desc: `${parentName}${i} test category`,
-      category_h_pt2: `lorem ${parentName}${i}`,
-      category_h_pt3: `ipsum ${parentName}${i}`,
-      cat_location_summary_pt2: `whatever comes after lorem ipsum ${parentName}${i}`,
+      legend_str_1: `lorem ${parentName}${i}`,
+      legend_str_2: `ipsum ${parentName}${i}`,
+      legend_str_3: `whatever comes after lorem ipsum ${parentName}${i}`,
     });
   }
   return categories;

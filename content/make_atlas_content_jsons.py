@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 """
-Parse atlas content.json file(s) from config excel and csv files. 
+Parse atlas content.json file(s) from config excel and csv files.
 
 Load category mappings and custom config from output category mapping excel file (this must be suppled as an arg when
 running the script). This file is expected to be changed by use fairly regularly and so is given as an arg.
@@ -56,7 +56,7 @@ VAR_HYPERLINK_COLUMN = "2021 Mnemonic (variable)"
 CLASSIFICATIONS_TO_INCLUDE_COLUMN = "Classifications to keep"
 
 # The column name (assumed to be first row) that defines the default classification to be used for each variable.
-CHOROLPLETH_DEFAULT_CLASS_COLUMN = "Default classification"
+CHOROPLETH_DEFAULT_CLASS_COLUMN = "Default classification"
 
 # The column name (assumed to be first row) that defines the classification for each variable that can be represented
 # as a dot density map
@@ -96,6 +96,7 @@ UNIT_PLURALS = {
     "person": "people"
 }
 
+
 # ==================================================== CLASSES ======================================================= #
 
 
@@ -107,7 +108,7 @@ class ConfigRow:
     topic: str
     variable: Cell
     classifications: str
-    chorolpleth_default_classification: str
+    choropleth_default_classification: str
     dot_density_default_classification: str
 
     def to_str(self):
@@ -124,15 +125,30 @@ class CensusCategory:
     code: str
     legend_str_1: str = ""
     legend_str_2: str = ""
+    legend_str_3: str = ""
 
-    def to_jsonable(self):
+    def is_valid(self) -> bool:
+        """Return False if public properties are blank strings."""
+        is_valid = True
+
+        for prop, value in vars(self).items():
+            if isinstance(value, str) and not prop.startswith("_") and value == "":
+                print(f"** Blank property {prop} found in category {self.name} **")
+                is_valid = False
+
+        return is_valid
+
+
+
+    def to_jsonable(self) -> dict:
         """Category in json-friendly form."""
         return {
-            "name": self.name, 
-            "slug": self.slug, 
-            "code": self.code, 
-            "legend_str_1": self.legend_str_1, 
-            "legend_str_2": self.legend_str_2
+            "name": self.name,
+            "slug": self.slug,
+            "code": self.code,
+            "legend_str_1": self.legend_str_1,
+            "legend_str_2": self.legend_str_2,
+            "legend_str_3": self.legend_str_3,
         }
 
 
@@ -143,9 +159,30 @@ class CensusClassification:
     code: str
     slug: str
     desc: str
-    chorolpleth_default: bool
+    choropleth_default: bool
     dot_density_default: bool
     categories: list[CensusCategory]
+
+    def is_valid(self) -> bool:
+        """
+        Return False if properties are blank strings, categories is empty list, or any categories are not valid
+        """
+        is_valid = True
+
+        for prop, value in vars(self).items():
+            if isinstance(value, str) and value == "":
+                print(f"** Blank property {prop} found in classification {self.code} **")
+                is_valid = False
+
+        if len(self.categories) == 0:
+            print(f"** Classification {self.code} has no categories **")
+            is_valid = False
+
+        for c in self.categories:
+            if not c.is_valid():
+                is_valid = False
+
+        return is_valid
 
     def to_jsonable(self):
         """Classification json-friendly form w. optional properties."""
@@ -154,11 +191,15 @@ class CensusClassification:
             "slug": self.slug,
             "desc": self.desc
         }
-        if self.chorolpleth_default:
-            output_params["chorolpleth_default"] = self.chorolpleth_default
+
+        if self.choropleth_default:
+            output_params["choropleth_default"] = self.choropleth_default
+
         if self.dot_density_default:
             output_params["dot_density_default"] = self.dot_density_default
+
         output_params["categories"] = [c.to_jsonable() for c in self.categories]
+
         return output_params
 
 
@@ -172,6 +213,41 @@ class CensusVariable:
     desc: str
     units: str
     classifications: list[CensusClassification]
+    _name_on_sheet: str = ""
+
+    def is_valid(self) -> bool:
+        """
+        Return False if public properties are blank strings, classifications is empty list, there is no choropleth
+        default classification set, or any classifications are not valid.
+        """
+        is_valid = True
+
+        for prop, value in vars(self).items():
+            if isinstance(value, str) and not prop.startswith("_") and value == "":
+                if self._name_on_sheet != "":
+                    print(f"** Blank property {prop} found in variable referenced as {self._name_on_sheet} in workbook **")
+                else:
+                    print(f"** Blank property {prop} found in variable {self.name} **")
+                is_valid = False
+
+        if len(self.classifications) == 0:
+            if self._name_on_sheet != "":
+                print(f"** Variable referenced as {self._name_on_sheet} in workbook has no classifications **")
+            else:
+                print(f"** Variable {self.name} has no classifications **")
+            is_valid = False
+
+        if not any(getattr(c, "choropleth_default", False) for c in self.classifications):
+            if self._name_on_sheet != "":
+                print(f"** Variable referenced as {self._name_on_sheet} in workbook has no choropleth default classification **")
+            else:
+                print(f"** Variable {self.name} has no choropleth default classification **")
+
+        for c in self.classifications:
+            if not c.is_valid():
+                is_valid = False
+
+        return is_valid
 
     def to_jsonable(self):
         """Variable in json-friendly form."""
@@ -190,12 +266,40 @@ class CensusTopic:
     """A topic as found in content.json."""
 
     name: str
-    code: str
     slug: str
     desc: str
     variables: list[CensusVariable]
+    _code: str = ""
+    _name_on_sheet: str = ""
 
-    def to_jsonable(self):
+    def is_valid(self) -> bool:
+        """
+        Return False if public properties are blank strings, variables is empty list or any variables are not valid.
+        """
+        is_valid = True
+
+        for prop, value in vars(self).items():
+            if isinstance(value, str) and not prop.startswith("_") and value == "":
+                if self._name_on_sheet != "":
+                    print(f"** Blank property {prop} found in topic referenced as {self._name_on_sheet} in workbook **")
+                else:
+                    print(f"** Blank property {prop} found in topic {self.name} **")
+                is_valid = False
+
+        if len(self.variables) == 0:
+            if self._name_on_sheet != "":
+                print(f"** Topic referenced as {self._name_on_sheet} in workbook has no variables **")
+            else:
+                print(f"** Topic {self.name} has no variables **")
+            is_valid = False
+
+        for v in self.variables:
+            if not v.is_valid():
+                is_valid = False
+
+        return is_valid
+
+    def to_jsonable(self) -> dict:
         """Topic in json-friendly form."""
         return {
             "name": self.name,
@@ -211,6 +315,25 @@ class CensusRelease:
 
     name: str
     topics: list[CensusTopic]
+
+    def is_valid(self) -> bool:
+        """
+        Return False if topics are repeated, or if any topic is invalid.
+        """
+        is_valid = True
+        if len(set(t.name for t in self.topics)) != len(self.topics):
+            print(f"Release {self.name} contains repeated topics - something has gone wrong!")
+            is_valid = False
+
+        for t in self.topics:
+            if not t.is_valid():
+                print(f"Release {self.name} has no topics - something has gone wrong!")
+                is_valid = False
+
+        return is_valid
+
+
+
 
     def to_jsonable(self):
         """Topic list in json-friendly form, with topics sorted alphabetically.."""
@@ -239,13 +362,25 @@ def load_config_rows_from_config_sheet(wb: Workbook) -> list[ConfigRow]:
         for row in rows
         if not all(c.value == None for c in row)
     ]
+    for required_column in [
+        RELEASE_COLUMN,
+        TOPIC_NAME_COLUMN,
+        VAR_HYPERLINK_COLUMN,
+        CLASSIFICATIONS_TO_INCLUDE_COLUMN,
+        CHOROPLETH_DEFAULT_CLASS_COLUMN,
+        DOT_DENSITY_DEFAULT_CLASS_COLUMN
+    ]:
+        if required_column not in row_dicts[0]:
+            print(
+                f"Required column {required_column} could not be found in the {CONFIG_WORKSHEET} worksheet"
+            )
     return [
         ConfigRow(
             release=row_raw[RELEASE_COLUMN].value,
             topic=row_raw[TOPIC_NAME_COLUMN].value,
             variable=row_raw[VAR_HYPERLINK_COLUMN],
             classifications=row_raw[CLASSIFICATIONS_TO_INCLUDE_COLUMN].value,
-            chorolpleth_default_classification=row_raw[CHOROLPLETH_DEFAULT_CLASS_COLUMN].value,
+            choropleth_default_classification=row_raw[CHOROPLETH_DEFAULT_CLASS_COLUMN].value,
             dot_density_default_classification=row_raw[DOT_DENSITY_DEFAULT_CLASS_COLUMN].value,
         )
         for row_raw in row_dicts
@@ -267,7 +402,7 @@ def load_cantabular_topics(topic_csv: str) -> list[CensusTopic]:
         return [
             CensusTopic(
                 name=topic_raw["Topic_Title"].strip(),
-                code=topic_raw["Topic_Mnemonic"].strip(),
+                _code=topic_raw["Topic_Mnemonic"].strip(),
                 slug=slugify(topic_raw["Topic_Mnemonic"].strip()),
                 desc=topic_raw["Topic_Description"].strip(),
                 variables=[],
@@ -307,7 +442,7 @@ def load_cantabular_classifications(classification_csv: str) -> list[CensusClass
                 code=cls_raw["Classification_Mnemonic"].strip(),
                 slug=slugify(cls_raw["Classification_Mnemonic"].strip()),
                 desc=cls_raw["External_Classification_Label_English"].strip(),
-                chorolpleth_default=False,
+                choropleth_default=False,
                 dot_density_default=False,
                 categories=[],
             )
@@ -375,19 +510,18 @@ def get_topics(wb: Workbook, config_rows: list[ConfigRow], cantabular_metadata) 
             search_name = cr.topic
 
         # If we've already processed this topic on a different row, just add the topic variable...
-        if search_name in [t.name for t in topics]:
-            topic = next(t for t in topics if t.name == search_name)
+        topic = next((t for t in topics if  cmp_string_to_list(search_name, (t.name, t._code, t.desc))), None)
+        if topic is None:
+            # ... else get cantabular topic, add variable, and append to topics - nb config sheet seems to refer to topics
+            # by either name, code or desc. skip this config row if no matching topic can be found/
+            # NB COPY TOPIC FROM CANTABULAR RATHER THAN JUST TAKE REFERENCE (topics can be in multiple releases!)
 
-        # ... else get cantabular topic, add variable, and append to topics - nb config sheet seems to refer to topics
-        # by either name, code or desc. skip this config row if no matching topic can be found/
-        # NB COPY TOPIC FROM CANTABULAR RATHER THAN JUST TAKE REFERENCE (topics can be in multiple releases!)
-        else:
             try:
                 topic = copy.deepcopy(
                         next(
                         t
                         for t in cantabular_metadata.topics
-                        if cmp_string_to_list(search_name, (t.name, t.code, t.desc))
+                        if cmp_string_to_list(search_name, (t.name, t._code, t.desc))
                     )
                 )
                 topics.append(topic)
@@ -401,6 +535,8 @@ def get_topics(wb: Workbook, config_rows: list[ConfigRow], cantabular_metadata) 
         variable = get_variable(wb, cr, cantabular_metadata)
         if variable is not None:
             topic.variables.append(variable)
+
+        topic._name_on_sheet = cr.topic
 
     return topics
 
@@ -443,7 +579,9 @@ def get_variable(wb: Workbook, config_row: ConfigRow, cantabular_metadata: Canta
     for classification in variable.classifications:
         for category in classification.categories:
             make_cat_legend_strs(variable, category)
-    
+
+    variable._name_on_sheet = config_row.variable.value
+
     return variable
 
 
@@ -489,11 +627,11 @@ def get_required_classifications(
             print(
                 f"** No defintion found in cantabular metadata for classification {c['cls_code']}, cannot process! **"
             )
-            return []
+            continue
 
         cls_flags = get_classification_visualisation_flags(
             c["cls_code"], config_row)
-        classification.chorolpleth_default = cls_flags["chorolpleth_default"]
+        classification.choropleth_default = cls_flags["choropleth_default"]
         classification.dot_density_default = cls_flags["dot_density_default"]
         classification.categories = get_categories(
             cls_ws_cols[c["cat_codes_col"]], cls_ws_cols[c["cat_name_col"]]
@@ -536,24 +674,29 @@ def filter_required_classifications(cls_column_indices: list[dict], config_row: 
     else:
         required_cls = [x.strip() for x in required_cls_str.split(",")]
         return [
-            c for c in cls_column_indices if any(c["cls_code"].lower().endswith(rc.lower()) for rc in required_cls)
+            c for c in cls_column_indices if any(has_suffix(c["cls_code"], rc) for rc in required_cls)
         ]
 
 
 def get_classification_visualisation_flags(code: str, config_row: dict) -> dict:
     """Parse additional flags relating to map visualisations for current variables classifications from config_row"""
-    default_class_suffix = (
-        config_row.chorolpleth_default_classification
+    choropleth_default_class_suffix = (
+        config_row.choropleth_default_classification
         .replace("(only one classification)", "")
         .strip()
         .lower()
     )
-    dot_density_class_suffix = config_row.dot_density_default_classification.strip().lower()
+    dot_density_default_class_suffix = config_row.dot_density_default_classification.strip().lower()
     code_for_comparison = code.lower()
     return {
-        "chorolpleth_default": code_for_comparison.endswith(default_class_suffix),
-        "dot_density_default": dot_density_class_suffix != "no" and code_for_comparison.endswith(dot_density_class_suffix)
+        "choropleth_default": has_suffix(code_for_comparison, choropleth_default_class_suffix),
+        "dot_density_default": dot_density_default_class_suffix != "no" and has_suffix(code_for_comparison, dot_density_default_class_suffix)
     }
+
+
+def has_suffix(classification_code: str, suffix: str) -> bool:
+    """Return true if classification_code ends with an underscore followed by suffix"""
+    return classification_code.lower().endswith(f"_{suffix.lower()}")
 
 
 # ================================================ CATEGORY PROCESSING =============================================== #
@@ -622,8 +765,9 @@ def make_cat_code(cat_name: str, cat_codes: str) -> str:
 
 def make_cat_legend_strs(var: CensusVariable, cat: CensusCategory) -> None:
     """Make first-attempt at legend strings for category (intention is these are then manually reviewed / edited)"""
-    cat.legend_str_1 = f" of {UNIT_PLURALS[var.units.lower()]} in {{LOCATION}} are "
-    cat.legend_str_2 = cat.name.lower()
+    cat.legend_str_1 = f"of {UNIT_PLURALS[var.units.lower()]} in {{location}}"
+    cat.legend_str_2 = "are"
+    cat.legend_str_3 = cat.name.lower()
 
 
 # ======================================================= MAIN ======================================================= #
@@ -634,6 +778,10 @@ def main(workbook_fn: str, topic_meta_fn: str, variable_meta_fn: str, classifica
     config_rows = load_config_rows_from_config_sheet(wb)
     cantabular_metadata = load_cantabular_metadata(topic_meta_fn, variable_meta_fn, classification_meta_fn)
     releases = get_releases(wb, config_rows, cantabular_metadata)
+    if not all([r.is_valid() for r in releases]):
+        print("Cannot complete processing due to data validation issues, check input files and try again.")
+        return
+
     for release in releases:
         output_filename = f"{output_dir}/{release.name}-content.json"
         if os.path.exists(output_filename):

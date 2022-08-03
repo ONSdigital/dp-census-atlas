@@ -2,10 +2,11 @@
 
 ## Overview
 
-Utility scripts for making and editing content.json files for consumption by the atlas. These files hold the census metadata the atlas needs to fetch 
+Utility scripts for making and editing content.json files for consumption by the atlas. These files hold the census metadata the atlas needs to fetch
 and display census data. Each content.json file represents a census data release.
 
 ## Requirements
+
 - Python >= 3.10
 - python dependencies as listed in `requirements.txt`
 
@@ -22,7 +23,7 @@ and display census data. Each content.json file represents a census data release
 ### metadata files
 
 - Ensure up-to-date versions of the cantabular metadata files `Topic.csv`, `Variable.csv` and `Classification.csv` are placed in the `metadata_files` directory. At time of writing these can be found on sharepoint (here: [https://confluence.ons.gov.uk/display/ODADH/Upload+Metadata+Files+to+support+NOMIS%2C+Testing+etc](https://confluence.ons.gov.uk/display/ODADH/Upload+Metadata+Files+to+support+NOMIS%2C+Testing+etc)), within zip archives, e.g.
-[https://confluence.ons.gov.uk/download/attachments/77312931/d_ar2776-c21ew_metadata-v1-1_cantab_20220527-1.zip?api=v2](https://confluence.ons.gov.uk/download/attachments/77312931/d_ar2776-c21ew_metadata-v1-1_cantab_20220527-1.zip?api=v2)
+  [https://confluence.ons.gov.uk/download/attachments/77312931/d_ar2776-c21ew_metadata-v1-1_cantab_20220527-1.zip?api=v2](https://confluence.ons.gov.uk/download/attachments/77312931/d_ar2776-c21ew_metadata-v1-1_cantab_20220527-1.zip?api=v2)
 - A copy of the latest annotated Output_Category_Mapping excel file will be needed - probably best to talk to Ahmad (ahmad.barclay@ons.gov.uk) or Viv (vivian.allen@methods.co.uk) if you're unsure where to get this.
 
 ## How to use
@@ -30,8 +31,13 @@ and display census data. Each content.json file represents a census data release
 ### creating content.json files
 
 - Ensure code dependencies are installed and metada files obtained and placed in the `metadata_files` directory.
-- To create content.json files for each data release defined in the `Release` column on the `Index-filtered` sheet of the annotated Output_Category_Mapping excel file (NB column name and sheet name *may* have changed since time of writing), invoke `make_atlas_content_jsons.py` with a reference to the annotated Output_Category_Mapping excel file, e.g. `./make_atlas_content_jsons.py metadata_files/Output_Category_Mapping_2021_20220719-w-releases.xlsx`
+- To create content.json files for each data release defined in the `Release` column on the `Index-filtered` sheet of the annotated Output_Category_Mapping excel file (NB column name and sheet name _may_ have changed since time of writing), invoke `make_atlas_content_jsons.py` with a reference to the annotated Output_Category_Mapping excel file, e.g. `./make_atlas_content_jsons.py metadata_files/MY_OUTPUT_CATEGORY_MAPPING.xlsx`
 - This will create `content.json` files (one for each release defined in the `Release` column) in the `content_jsons` directory.
+
+## validating content.json files
+
+The `make_atlas_content_jsons.py` script checks that the metadata defined for each releases are complete and valid before saving, and so should not produce any broken json files.
+Files that have been manually edited subsequently (see editing content.json legend strings, below) should be re-validated. This can be done by invoking `validate_content_json_.py` with a reference to a content.json file, e.g. `./validate_content_json.py content_jsons/MY_CONTENT.json`.
 
 ### editing content.json legend strings
 

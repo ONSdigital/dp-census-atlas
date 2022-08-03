@@ -33,10 +33,18 @@ TODO: clean this up:
 All hard-coded text should be added to the en.json file within the i18n locales folder. Each translation can be created under it's own file e.g cy.json.
 The structure of the file is pages and hard-coded text relevant to those pages and custom components and text relevant to those components.
 
+## Generating content files
+
+The main config files for the atlas are `content.json` files that list the census data that the atlas will show, and contain metadata (labels etc) for that content. These are generated
+from ONS metadata files by python scripts in the `content` directory found in the project root. See `content/README.md` for more details.
+
 ## Developing
 
     npm install
     npm run dev
+
+NB - if you need to use locally-served content.json files (e.g. to test new or sensitive content metadata without hosting it on s3), you can serve all files found in content content_jsons on localhost:8090 using `npm run serve-local-content-jsons`, and set the dev version of the app to look for them by exporting the env var VITE_CONTENT_JSONS to a JSON string array referencing the content json(s) you want the local app to use, e.g. `export VITE_CONTENT_JSONS='["http://localhost:8090/MY_TEST_CONTENT.json"]' && npm run dev`. This will
+override the value for VITE_CONTENT_JSONS set in `env/dev.sh`.
 
 ## Building
 

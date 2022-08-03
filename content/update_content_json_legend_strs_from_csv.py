@@ -16,7 +16,7 @@ def main():
 
     with open(content_json, "r") as f:
         content = json.load(f)
-    
+
     with open(legend_str_file, "r") as f:
         reader = csv.DictReader(f)
         content_to_upsert = list(reader)
@@ -28,10 +28,10 @@ def main():
         category = next(c for c in classification["categories"] if  c["name"] == row["ADMIN_category"])
         category["legend_str_1"] = row["EDIT_THIS_legend_str_1"]
         category["legend_str_2"] = row["EDIT_THIS_legend_str_2"]
-    
+
     with open(content_json, "w") as f:
         json.dump(content, f, indent=2)
-                   
+
 
 if __name__ == "__main__":
     main()

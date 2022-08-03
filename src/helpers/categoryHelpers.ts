@@ -4,8 +4,16 @@ import { unCapitalizeFirstLetter } from "../util/stringUtil";
 
 export const getCategoryInfo = (categoryCode: string, topics: [Topic]) => {
   const allVariables = topics.flatMap((t) => t.variables.map((v) => ({ topic: t, variable: v })));
-  const allCategories = allVariables.flatMap((v) =>
-    v.variable.categories.map((c) => ({ topic: v.topic, category: c, variable: v })),
+  const allClassifications = allVariables.flatMap((v) =>
+    v.variable.classifications.map((c) => ({ topic: v.topic, variable: v, classification: c })),
+  );
+  const allCategories = allClassifications.flatMap((c) =>
+    c.classification.categories.map((cat) => ({
+      topic: c.topic,
+      variable: c.variable,
+      classification: c,
+      category: cat,
+    })),
   );
   const match = allCategories.find((c) => c.category.code === categoryCode);
 

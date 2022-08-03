@@ -15,22 +15,24 @@
             "code": "test_var_3_3a",
             "slug": "test-var-3-3a",
             "desc": "third test variable, 3 answers",
-            "chorolpleth_default": true,
+            "choropleth_default": true,
             "dot_density_default": true,
             "categories": [
               {
                 "name": "test_var_3_3a_1",
                 "slug": "test-var-3-3a-1",
                 "code": "test-var-3-3a-1=1",
-                "legend_str_1": " of people in {LOCATION} are ",
-                "legend_str_2": "test_var_3_3a_1"
+                "legend_str_1": "of people in {location}",
+                "legend_str_2": "are",
+                "legend_str_3": "test_var_3_3a_1"
               },
               {
                 "name": "test_var_3_3a_2",
                 "slug": "test-var-3-3a-2",
                 "code": "test-var-3-3a-2=2,3",
-                "legend_str_1": " of people in {LOCATION} are ",
-                "legend_str_2": "test_var_3_3a_2"
+                "legend_str_1": "of people in {location}",
+                "legend_str_2": "are",
+                "legend_str_3": "test_var_3_3a_2"
               }
             ]
           },
@@ -43,36 +45,41 @@
                 "name": "test_var_3_6a_1",
                 "slug": "test-var-3-6a-1",
                 "code": "test-var-3-6a-1=1",
-                "legend_str_1": " of people in {LOCATION} are ",
-                "legend_str_2": "test_var_3_6a_1"
+                "legend_str_1": "of people in {location}",
+                "legend_str_2": "are",
+                "legend_str_3": "test_var_3_6a_1"
               },
               {
                 "name": "test_var_3_6a_2",
                 "slug": "test-var-3-6a-2",
                 "code": "test-var-3-6a-2=2",
-                "legend_str_1": " of people in {LOCATION} are ",
-                "legend_str_2": "test_var_3_6a_2"
+                "legend_str_1": "of people in {location}",
+                "legend_str_2": "are",
+                "legend_str_3": "test_var_3_6a_2"
               },
               {
                 "name": "test_var_3_6a_3",
                 "slug": "test-var-3-6a-3",
                 "code": "test-var-3-6a-3=3",
-                "legend_str_1": " of people in {LOCATION} are ",
-                "legend_str_2": "test_var_3_6a_3"
+                "legend_str_1": "of people in {location}",
+                "legend_str_2": "are",
+                "legend_str_3": "test_var_3_6a_3"
               },
               {
                 "name": "test_var_3_6a_4",
                 "slug": "test-var-3-6a-4",
                 "code": "test-var-3-6a-4=4",
-                "legend_str_1": " of people in {LOCATION} are ",
-                "legend_str_2": "test_var_3_6a_4"
+                "legend_str_1": "of people in {location}",
+                "legend_str_2": "are",
+                "legend_str_3": "test_var_3_6a_4"
               },
               {
                 "name": "test_var_3_6a_5",
                 "slug": "test-var-3-6a-5",
                 "code": "test-var-3-6a-5=5-9",
-                "legend_str_1": " of people in {LOCATION} are ",
-                "legend_str_2": "test_var_3_6a_5"
+                "legend_str_1": "of people in {location}",
+                "legend_str_2": "are",
+                "legend_str_3": "test_var_3_6a_5"
               }
             ]
           }

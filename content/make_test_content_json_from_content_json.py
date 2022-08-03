@@ -2,7 +2,7 @@
 
 """
 Scrape all unique category from the TEST_GEODATA_BUCKET/LAD_DATA_TILES_PREFIX and replace each category.code
-in the content_json file (provided as first arg) with a randomly chosen test category code, then write out to 
+in the content_json file (provided as first arg) with a randomly chosen test category code, then write out to
 a new content_json file, named as the input file but suffixed with '-test'.
 """
 
@@ -46,16 +46,16 @@ def main() -> None:
     test_cat_codes = get_category_codes_from_s3(TEST_GEODATA_BUCKET, LAD_DATA_TILES_PREFIX)
     content_json = sys.argv[1]
     output_filename = content_json.replace(".json", "-test.json")
-    
+
     with open(content_json, "r") as f:
         content = json.load(f)
-    
+
     for topic in content:
         for variable in topic["variables"]:
             for classification in variable["classifications"]:
                 for category in classification["categories"]:
                     category["code"] = random.choice(test_cat_codes)
-    
+
     with open(output_filename, "w") as f:
         json.dump(content, f, indent=2)
 

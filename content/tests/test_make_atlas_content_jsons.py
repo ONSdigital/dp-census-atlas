@@ -35,5 +35,5 @@ def test_make_atlas_content_jsons(output_dir):
             expected = json.load(f)
         with open(Path(output_dir).joinpath(file_to_test), "r") as f:
             output = json.load(f)
-        
+
         assert output == expected

@@ -2,9 +2,10 @@
   import { _ } from "svelte-i18n";
   import { page } from "$app/stores";
   import { mapStore, selectedGeographyStore } from "../stores/stores";
-  import { topicStore } from "../stores/stores"
+  import { topicStore } from "../stores/stores";
   import { setVizStore } from "../data/setVizStore";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
+  import { getDefaultChoroplethClassification } from "../helpers/variableHelpers";
   import Heading from "./Heading.svelte";
   import AreaPanel from "./AreaPanel.svelte";
   import RadioButton from "./RadioButton.svelte";
@@ -16,8 +17,9 @@
   $: variable = topic.variables.find((v) => v.slug === variableSlug);
   $: selectedGeographyDisplayName = $selectedGeographyStore?.displayName;
   $: selectedGeographyGeoCode = $selectedGeographyStore?.geoCode;
+  $: defaultChoroplethClassification = getDefaultChoroplethClassification(variable);
   $: categorySlug = params.category;
-  $: category = variable.categories.find((c) => c.slug === categorySlug);
+  $: category = defaultChoroplethClassification.categories.find((c) => c.slug === categorySlug);
 
   $: if ($mapStore) {
     setVizStore({
@@ -63,7 +65,7 @@
       </div>
     </div>
     <ul class="flex flex-col last:border-b-[1px] border-b-red">
-      {#each variable.categories as category}
+      {#each defaultChoroplethClassification.categories as category}
         <li class="">
           <a
             href={buildHyperlink($page.url, { topic: topic.slug, variable: variable.slug, category: category.slug })}

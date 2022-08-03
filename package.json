@@ -4,7 +4,7 @@
   "scripts": {
     "dev": ". env/dev.sh && svelte-kit dev -p 28100",
     "build": "svelte-kit build",
-    "build:netlify": ". env/dev.sh && npm run build",
+    "build:netlify": ". env/netlify.sh && npm run build",
     "build:sandbox": ". env/sandbox.sh && npm run build && ./workaround-sveltekit-3726.sh",
     "build:prod": ". env/prod.sh && npm run build && ./workaround-sveltekit-3726.sh",
     "package": "svelte-kit package",
@@ -15,6 +15,7 @@
     "lint:eslint": "eslint --ignore-path .gitignore . --max-warnings=0",
     "format:prettier": "prettier --ignore-path .gitignore --write --plugin-search-dir=. .",
     "format:eslint": "eslint --ignore-path .gitignore . --fix",
+    "serve-local-content-jsons": "http-server content/content_jsons -p 8090 --cors",
     "test": ". env/test.sh && vitest run"
   },
   "type": "module",
@@ -36,6 +37,7 @@
     "eslint-plugin-only-warn": "^1.0.3",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-svelte3": "^3.4.0",
+    "http-server": "^14.1.1",
     "jest": "^27.5.1",
     "postcss": "^8.4.6",
     "postcss-custom-media": "^8.0.0",

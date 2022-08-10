@@ -19,9 +19,23 @@ export function numberToWords(n: number) {
   return capitalizeFirstLetter(number2words(n));
 }
 
-export function ratioToPercentage(r: number, decimalPlaces?: number) {
+export function ratioToPercentage(r: number, decimalPlaces?: number): string {
   if (typeof decimalPlaces !== undefined) {
     return (r * 100).toFixed(decimalPlaces);
   }
-  return r * 100;
+  return (r * 100).toFixed(0);
+}
+
+/*
+  Return minimum decimal places needed to round ratios while ensuring they remain unique
+*/
+export function minDecimalPlacesToAntialias(ratios: number[]): number {
+  let decimalPlaces = 0;
+  let percentages = ratios.map((n) => ratioToPercentage(n, decimalPlaces));
+  // iterate decimalPlaces until percentages contains only unique values
+  while (new Set(percentages).size != ratios.length) {
+    decimalPlaces += 1;
+    percentages = ratios.map((n) => ratioToPercentage(n, decimalPlaces));
+  }
+  return decimalPlaces;
 }

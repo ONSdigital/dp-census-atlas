@@ -3,7 +3,7 @@
   import { vizStore, selectedGeographyStore } from "../stores/stores";
   import { topicStore } from "../stores/stores";
   import { formatTemplateString } from "../helpers/categoryHelpers";
-  import { ratioToPercentage } from "../util/numberUtil";
+  import { minDecimalPlacesToAntialias, ratioToPercentage } from "../util/numberUtil";
   import { choroplethColours } from "../helpers/choroplethHelpers";
   import { getDefaultChoroplethClassification } from "../helpers/variableHelpers";
 
@@ -21,6 +21,8 @@
   $: defaultChoroplethClassification = getDefaultChoroplethClassification(variable);
   $: categorySlug = params.category;
   $: category = variable ? defaultChoroplethClassification.categories.find((c) => c.slug === categorySlug) : undefined;
+  $: breaks = $vizStore ? [$vizStore?.minMaxVals[0], ...$vizStore.breaks] : undefined
+  $: decimalPlaces = breaks ? minDecimalPlacesToAntialias(breaks) : 0
 </script>
 
 <!-- todo: new design for all four states -->
@@ -66,7 +68,8 @@
         <BreaksChart
           selected={categoryValueForSelectedGeography}
           suffix="%"
-          breaks={$vizStore ? [$vizStore?.minMaxVals[0], ...$vizStore.breaks] : undefined}
+          breaks={breaks}
+          decimalPlaces = {decimalPlaces}
           colors={choroplethColours}
         />
       {/if}

@@ -36,3 +36,16 @@ if (appBasePath != "" && appBasePath[0] != "/") {
   throw new Error(`Env var VITE_APP_BASE_PATH='${appBasePath}' must be either blank or start with a '/'.`);
 }
 export { appBasePath };
+
+// isPublishing is an optional boolean that defaults to false
+const isPublishing = import.meta.env.VITE_IS_PUBLISHING === "true" ? true : false;
+export { isPublishing };
+
+// publishingDownloadUrlw must be a valid URL if isPublishing is true
+const publishingDownloadUrl = import.meta.env.VITE_PUBLISHING_DOWNLOAD_URL;
+if (isPublishing && isNotUrl(publishingDownloadUrl)) {
+  throw new Error(
+    `Env var VITE_PUBLISHING_DOWNLOAD_URL='${publishingDownloadUrl}' must be set to a valid URL if IS_PUBLISHING='true'.`,
+  );
+}
+export { publishingDownloadUrl };

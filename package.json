@@ -60,6 +60,7 @@
     "mapbox-gl": "^1.13.2",
     "normalize.css": "^8.0.1",
     "rxjs": "^7.5.4",
-    "svelte-i18n": "^3.3.13"
+    "svelte-i18n": "^3.3.13",
+    "svelte-select": "^4.4.7"
   }
 }

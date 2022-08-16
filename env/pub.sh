@@ -1,10 +1,10 @@
-# env vars needed to run on netlify
+# env vars needed to build for ONS publishing env
 
-export SKADAPTER=""
-export VITE_GEODATA_BASE_URL="https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/quads"
+export SKADAPTER="node"
+export VITE_GEODATA_BASE_URL="this will need to be: <publishing atlas url>/files-proxy/<path to data files>"
 export VITE_CONTENT_JSONS='[
-    "https://localhost:28100/files-proxy/Education/2011-Education-new-format-content.json"
+    "this will need to be: <publishing atlas url>/files-proxy/<path to config jsons>"
 ]'
-export VITE_APP_BASE_PATH=""
+export VITE_APP_BASE_PATH="/census-atlas"
 export VITE_IS_PUBLISHING="true"
-export VITE_PUBLISHING_DOWNLOAD_URL="http://localhost:23201/v1/downloads-new"
+export VITE_PUBLISHING_DOWNLOAD_URL="this will need to be: <publishing API url>/v1/downloads-new"

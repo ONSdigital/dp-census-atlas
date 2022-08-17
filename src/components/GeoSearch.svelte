@@ -1,40 +1,11 @@
 <script lang="ts">
-  let q = "";
-
-  import { timer } from "rxjs";
-  let tick = timer(0, 1000);
-
-  import { of } from "rxjs";
-  import { fromFetch } from "rxjs/fetch";
-  import { catchError, switchMap, startWith, debounceTime } from "rxjs/operators";
   import { SvelteSubject } from "../util/rxUtil";
+  import { setupGeoSearch } from "../helpers/geoSearchHelper";
 
   const query = new SvelteSubject("");
-
-  const results = query.pipe(
-    debounceTime(350),
-    switchMap((q) => {
-      if (!q) {
-        return of([]);
-      }
-      return fromFetch(`https://www.episodate.com/api/search?q=${q}`).pipe(
-        switchMap((response) => {
-          if (response.ok) {
-            return response.json();
-          } else {
-            return of({ error: true, message: `Error: ${response.status}` });
-          }
-        }),
-        catchError((err) => of({ error: true, message: err.message })),
-      );
-    }),
-    startWith([]),
-  );
+  const results = setupGeoSearch(query);
 </script>
 
-<div class="">
-  Tick: {$tick}
-</div>
 <div class="flex max-w-[25rem]">
   <input
     bind:value={$query}
@@ -64,9 +35,6 @@
 </div>
 <div class="mt-2 text-sm text-onsdark">For example, your home town, a postcode or district</div>
 
-<div class="p-5">
-  <pre>{q}</pre>
-</div>
 <div class="p-5">
   <pre>{JSON.stringify($results, ["tv_shows", "id", "name"], 2)}</pre>
 </div>

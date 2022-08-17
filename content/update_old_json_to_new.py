@@ -1,5 +1,10 @@
 #!/usr/bin/env python
 
+"""
+Take content.json (CL arg 1) in legacy format and update to newer format with classifications, extra properties etc then
+write to CL arg 2.
+"""
+
 import csv
 import json
 import re

@@ -12,8 +12,8 @@ import sys
 
 
 def main():
-    content_json_fp = sys.argv[1]
-    output_filename = Path(sys.argv[2])
+    content_json_fn = Path(sys.argv[1])
+    output_filename = content_json_fn.parent.joinpath(f"{content_json_fn.stem}-legend-strs.csv")
     if output_filename.exists():
         print(
             f"target file {output_filename} already exists! Will not overwrite to avoid loss of work. "
@@ -21,7 +21,7 @@ def main():
         )
         return
 
-    with open(content_json_fp, "r") as f:
+    with open(content_json_fn, "r") as f:
         content = json.load(f)
     
     csv_content = []

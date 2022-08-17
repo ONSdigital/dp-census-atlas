@@ -1,26 +1,44 @@
 <script lang="ts">
   let q = "";
 
-  import { writable } from "svelte/store";
+  import { timer } from "rxjs";
+  let tick = timer(0, 1000);
 
-  let tick = writable(0, () => {
-    let interval = setInterval(() => {
-      tick.update((value) => value + 1);
-    }, 1000);
+  import { of, fromEvent } from "rxjs";
+  import { fromFetch } from "rxjs/fetch";
+  import { map, concatMap, catchError, switchMap, startWith, debounceTime } from "rxjs/operators";
+  import { onMount$ } from "../util/rxUtil";
 
-    return () => {
-      clearInterval(interval);
-    };
-  });
+  let inputElement;
 
-  let tickValue = 0;
-  tick.subscribe((v) => {
-    tickValue = v;
-  });
+  const books = onMount$.pipe(
+    concatMap(() =>
+      fromEvent(inputElement, "input").pipe(
+        debounceTime(350),
+        map((e) => e.target.value),
+        switchMap((query) => {
+          if (!query) {
+            return of([]);
+          }
+          return fromFetch(`https://www.episodate.com/api/search?q=${query}`).pipe(
+            switchMap((response) => {
+              if (response.ok) {
+                return response.json();
+              } else {
+                return of({ error: true, message: `Error ${response.status}` });
+              }
+            }),
+            catchError((err) => of({ error: true, message: err.message })),
+          );
+        }),
+        startWith([]),
+      ),
+    ),
+  );
 </script>
 
 <div class="">
-  Tick: {tick}
+  Tick: {$tick}
 </div>
 <div class="flex max-w-[25rem]">
   <input

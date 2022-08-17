@@ -4,36 +4,31 @@
   import { timer } from "rxjs";
   let tick = timer(0, 1000);
 
-  import { of, fromEvent } from "rxjs";
+  import { of } from "rxjs";
   import { fromFetch } from "rxjs/fetch";
-  import { map, concatMap, catchError, switchMap, startWith, debounceTime } from "rxjs/operators";
-  import { onMount$ } from "../util/rxUtil";
+  import { catchError, switchMap, startWith, debounceTime } from "rxjs/operators";
+  import { SvelteSubject } from "../util/rxUtil";
 
-  let inputElement: HTMLInputElement;
+  const query = new SvelteSubject("");
 
-  const books = onMount$.pipe(
-    concatMap(() =>
-      fromEvent(inputElement, "input").pipe(
-        debounceTime(350),
-        map((e) => (e.target as HTMLInputElement).value),
-        switchMap((query) => {
-          if (!query) {
-            return of([]);
+  const results = query.pipe(
+    debounceTime(350),
+    switchMap((q) => {
+      if (!q) {
+        return of([]);
+      }
+      return fromFetch(`https://www.episodate.com/api/search?q=${q}`).pipe(
+        switchMap((response) => {
+          if (response.ok) {
+            return response.json();
+          } else {
+            return of({ error: true, message: `Error: ${response.status}` });
           }
-          return fromFetch(`https://www.episodate.com/api/search?q=${query}`).pipe(
-            switchMap((response) => {
-              if (response.ok) {
-                return response.json();
-              } else {
-                return of({ error: true, message: `Error ${response.status}` });
-              }
-            }),
-            catchError((err) => of({ error: true, message: err.message })),
-          );
         }),
-        startWith([]),
-      ),
-    ),
+        catchError((err) => of({ error: true, message: err.message })),
+      );
+    }),
+    startWith([]),
   );
 </script>
 
@@ -42,13 +37,12 @@
 </div>
 <div class="flex max-w-[25rem]">
   <input
-    bind:this={inputElement}
+    bind:value={$query}
     id="area-input"
     name="area-input"
     type="search"
     autocomplete="off"
     class="flex items-center justify-center h-12 p-2 w-full border-l-2 border-t-2 border-b-2 border-black focus:border-4 custom-ring"
-    bind:value={q}
   />
 
   <button tabindex="-1" type="submit" class="bg-onsblue px-3">
@@ -74,5 +68,5 @@
   <pre>{q}</pre>
 </div>
 <div class="p-5">
-  <pre>{JSON.stringify($books, ["tv_shows", "id", "name"], 2)}</pre>
+  <pre>{JSON.stringify($results, ["tv_shows", "id", "name"], 2)}</pre>
 </div>

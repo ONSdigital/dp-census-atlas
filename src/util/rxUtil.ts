@@ -1,4 +1,4 @@
-// let's not install this tiny package
+// let's not install svelte-rx - it's a tiny package
 // https://github.com/timdeschryver/svelte-utils/blob/master/packages/rx/src/lifecycles.ts
 
 import { onMount, onDestroy, beforeUpdate, afterUpdate } from "svelte";

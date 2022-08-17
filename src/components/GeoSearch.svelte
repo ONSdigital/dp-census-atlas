@@ -9,13 +9,13 @@
   import { map, concatMap, catchError, switchMap, startWith, debounceTime } from "rxjs/operators";
   import { onMount$ } from "../util/rxUtil";
 
-  let inputElement;
+  let inputElement: HTMLInputElement;
 
   const books = onMount$.pipe(
     concatMap(() =>
       fromEvent(inputElement, "input").pipe(
         debounceTime(350),
-        map((e) => e.target.value),
+        map((e) => (e.target as HTMLInputElement).value),
         switchMap((query) => {
           if (!query) {
             return of([]);
@@ -42,6 +42,7 @@
 </div>
 <div class="flex max-w-[25rem]">
   <input
+    bind:this={inputElement}
     id="area-input"
     name="area-input"
     type="search"
@@ -68,3 +69,10 @@
   </button>
 </div>
 <div class="mt-2 text-sm text-onsdark">For example, your home town, a postcode or district</div>
+
+<div class="p-5">
+  <pre>{q}</pre>
+</div>
+<div class="p-5">
+  <pre>{JSON.stringify($books, ["tv_shows", "id", "name"], 2)}</pre>
+</div>

@@ -14,7 +14,7 @@ A brief explainer. For more detail, see https://github.com/ONSdigital/dp-census-
 ## Explanation
 
 - Our web app requests all its data from the Static Files Download-Service API.
-- ONS staff publish all app data with Florence and an Data Prep script which uses the Static Files Upload-Service API.
+- ONS staff publish all app data with Florence and a 'data prep' script, which uses the Static Files Upload-Service API.
 - The Static Files service makes these collections available (published) as scheduled.
 - In _publishing_, our web app requests its files and we expect to see all the collections, whether they are published or not. The web app therefore needs to authorise requests for un-published data from the Static Files Download-Service API.
 - In _web_, the atlas does not need to authorise requests, and data from not-yet-published collections will be invisible.

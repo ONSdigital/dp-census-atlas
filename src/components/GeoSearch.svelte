@@ -1,11 +1,21 @@
 <script lang="ts">
+  import Select from "svelte-select";
   import { SvelteSubject } from "../util/rxUtil";
   import { setupGeoSearch } from "../helpers/geoSearchHelper";
 
   const query = new SvelteSubject("");
   const results = setupGeoSearch(query);
+
+  const items = ["One", "Two", "Three"];
 </script>
 
+<div class="">
+  <div class="themed">
+    <h2>Theming</h2>
+    <Select {items} containerClasses="text-red-500 custom-ring" />
+  </div>
+  <!-- <Select bind:value={$query} /> -->
+</div>
 <div class="flex max-w-[25rem]">
   <input
     bind:value={$query}
@@ -36,5 +46,8 @@
 <div class="mt-2 text-sm text-onsdark">For example, your home town, a postcode or district</div>
 
 <div class="p-5">
-  <pre>{JSON.stringify($results, ["tv_shows", "id", "name"], 2)}</pre>
+  <pre>{JSON.stringify($results)}</pre>
 </div>
+
+<style>
+</style>

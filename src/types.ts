@@ -60,14 +60,13 @@ export type SelectedGeographyData = {
   boundary: GeographyFeature;
 };
 
-// export type GeographyAutoSuggestProps = {
-//   bbox: number[];
-//   cy: string;
-//   en: string;
-//   geoCode: string;
-//   geoType: string;
-//   sanitisedText?: string;
-// };
+export type GeoSearchItem = {
+  geoType: string;
+  geoCode: string;
+  en: string;
+  cy: string;
+  bbox: number[];
+};
 
 export type GeographyInfo = {
   meta: {

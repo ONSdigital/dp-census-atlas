@@ -8,12 +8,12 @@ export const get: RequestHandler = ({ url }) => {
     const results = data.filter(
       (geo) => geo.en.toLowerCase().includes(q) || geo.cy.toLowerCase().includes(q) || geo.geoCode.toLowerCase() === q,
     );
-    return { ...okResult, body: results };
+    return { ...ok, body: results };
   } else {
-    return okResult;
+    return ok;
   }
 };
 
-const okResult = {
+const ok = {
   status: 200,
 };

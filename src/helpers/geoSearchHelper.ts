@@ -1,16 +1,6 @@
-import { of, zip, type Observable } from "rxjs";
+import { type Observable, of } from "rxjs";
 import { fromFetch } from "rxjs/fetch";
-import {
-  filter,
-  catchError,
-  switchMap,
-  mergeMap,
-  map,
-  startWith,
-  debounceTime,
-  distinctUntilChanged,
-  tap,
-} from "rxjs/operators";
+import { switchMap, mergeMap, map, debounceTime, distinctUntilChanged, tap, withLatestFrom } from "rxjs/operators";
 import type { GeoSearchItem } from "../types";
 import type { SvelteSubject } from "../util/rxUtil";
 
@@ -20,16 +10,17 @@ export const setupGeoSearch = (query: SvelteSubject<string>): Observable<GeoSear
     distinctUntilChanged(),
     switchMap((q) => {
       if (q.length > 2) {
-        return zip(
-          fromFetch(`https://api.postcodes.io/postcodes/${q}/autocomplete`).pipe(
-            mergeMap((response) => response.json()),
-            map((json) => json.result ?? []),
-          ),
-          fromFetch(`/geo?q=${q}`).pipe(mergeMap((response) => response.json())),
-        ).pipe(
+        const postcodes = fromFetch(`https://api.postcodes.io/postcodes/${q}/autocomplete`).pipe(
+          mergeMap((response) => response.json()),
+          map((json) => json.result ?? []),
+        );
+        const geographies = fromFetch(`/geo/../geo/../geo/../geo/../geo/../geo?q=${q}`).pipe(
+          mergeMap((response) => response.json()),
+        );
+        return postcodes.pipe(
+          withLatestFrom(geographies),
           map(([postcodes, geographies]) => {
-            console.log("postcodes:", postcodes);
-            console.log("geographies:", geographies);
+            return postcodes.concat(geographies.map((geo) => geo.en));
           }),
         );
       } else {
@@ -39,12 +30,3 @@ export const setupGeoSearch = (query: SvelteSubject<string>): Observable<GeoSear
     tap(console.log),
   );
 };
-
-// const searchPostcodes = async (q: string) => {
-//   if (q.length > 2) {
-//     const res = await fetch(`https://api.postcodes.io/postcodes/${q}/autocomplete`);
-//     return await res.json();
-//   } else {
-//     return new Promise();
-//   }
-// };

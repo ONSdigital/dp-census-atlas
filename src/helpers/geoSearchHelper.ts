@@ -1,6 +1,16 @@
-import { of, type Observable } from "rxjs";
+import { of, zip, type Observable } from "rxjs";
 import { fromFetch } from "rxjs/fetch";
-import { filter, catchError, switchMap, map, startWith, debounceTime, distinctUntilChanged, tap } from "rxjs/operators";
+import {
+  filter,
+  catchError,
+  switchMap,
+  mergeMap,
+  map,
+  startWith,
+  debounceTime,
+  distinctUntilChanged,
+  tap,
+} from "rxjs/operators";
 import type { GeoSearchItem } from "../types";
 import type { SvelteSubject } from "../util/rxUtil";
 
@@ -10,9 +20,18 @@ export const setupGeoSearch = (query: SvelteSubject<string>): Observable<GeoSear
     distinctUntilChanged(),
     switchMap((q) => {
       if (q.length > 2) {
-        return fromFetch(`https://api.postcodes.io/postcodes/${q}/autocomplete`, {
-          selector: (res) => res.json(),
-        }).pipe(map((json) => json.result));
+        return zip(
+          fromFetch(`https://api.postcodes.io/postcodes/${q}/autocomplete`).pipe(
+            mergeMap((response) => response.json()),
+            map((json) => json.result ?? []),
+          ),
+          fromFetch(`/geo?q=${q}`).pipe(mergeMap((response) => response.json())),
+        ).pipe(
+          map(([postcodes, geographies]) => {
+            console.log("postcodes:", postcodes);
+            console.log("geographies:", geographies);
+          }),
+        );
       } else {
         return of([]);
       }

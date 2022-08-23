@@ -14,9 +14,7 @@ export const setupGeoSearch = (query: SvelteSubject<string>): Observable<GeoSear
           mergeMap((response) => response.json()),
           map((json) => json.result ?? []),
         );
-        const geographies = fromFetch(`/geo/../geo/../geo/../geo/../geo/../geo?q=${q}`).pipe(
-          mergeMap((response) => response.json()),
-        );
+        const geographies = fromFetch(`/geo?q=${q}`).pipe(mergeMap((response) => response.json()));
         return postcodes.pipe(
           withLatestFrom(geographies),
           map(([postcodes, geographies]) => {

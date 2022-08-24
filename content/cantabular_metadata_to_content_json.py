@@ -37,7 +37,7 @@ def category_from_cantabular_csv_row(csv_row: dict) -> CensusCategory:
     return CensusCategory(
         # combine mapping label with source values to make code? ToDo - discuss this!
         name=csv_row["External_Mapping_Label_English"].strip(),
-        code=f'{csv_row["External_Mapping_Label_English"].strip()}-{csv_row["Source_Value"].strip()}',
+        code=f'{slugify(csv_row["External_Mapping_Label_English"].strip())}-{csv_row["Source_Value"].strip()}',
         slug=slugify(csv_row["External_Mapping_Label_English"].strip()),
         legend_str_1="",
         legend_str_2="",
@@ -138,5 +138,5 @@ def main(cantabular_metadata_dir: Path, output_dir: Path):
 
 if __name__ == "__main__":
     metadata_dir = Path(sys.argv[1])
-    output_dir = "content_jsons"
+    output_dir = Path("content_jsons")
     main(metadata_dir, output_dir)

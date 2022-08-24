@@ -60,13 +60,19 @@ export type SelectedGeographyData = {
   boundary: GeographyFeature;
 };
 
-export type GeoSearchItem = {
+export type GeographySearchItem = {
+  kind: "Geography";
   geoType: string;
   geoCode: string;
   en: string;
   cy: string;
   bbox: number[];
 };
+export type PostcodeSearchItem = {
+  kind: "Postcode";
+  value: string;
+};
+export type GeoSearchItem = GeographySearchItem | PostcodeSearchItem;
 
 export type GeographyInfo = {
   meta: {

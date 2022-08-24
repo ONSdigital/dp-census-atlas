@@ -60,3 +60,9 @@ When you have finished editing the variable descs in a csv file, to update a con
 ### listing census content in more readable csv files
 
 Often a csv list of the variables, classifications etc is required to show other teams what the atlas uses. To dump all topics, variables or classifications from a content.json file to a csv file, run `./list_census_objects_in_content_json.py <path to content.json> <census object to list>`, e.g. `./list_census_data.py content_jsons/all-2021-content-2022-08-23.json variable`. This will create a .csv file listing all the object type you asked for, in the directory that you invoked the file from, named for the input content.json file with suffixes for object type and the date it was produced, e.g. `ar2776-c21ew_metadata-v1-3_cantab_20220822-1-content-atlas-2022-08-24-all-variable-2022-08-24.csv`.
+
+### Misc (ToDo, document these properly)
+
+- `update_old_json_to_new.py` updates an old legacy-format content.json file to the latest format.
+- `content_json_to_excel.py` creates an excel file in the (approximate) format of the `Output_Category_Mapping_2021.xlsx` that was doing the rounds.
+- `split_content_json_by_release.py` is WIP but will divide an input content.json into seperate files, each relating to a specific data release.

@@ -29,8 +29,9 @@ def main():
         for variable in topic["variables"]:
             csv_content.append({
                 "ADMIN_topic": topic["name"],
-                "ADMIN_variable": variable["name"],
-                "ADMIN_old_desc": variable["desc"],
+                "ADMIN_variable_name": variable["name"],
+                "ADMIN_variable_mnemonic": variable["code"],
+                "ADMIN_long_desc": variable["desc"],
                 "EDIT_THIS_new_desc": variable["desc"]
             })
     

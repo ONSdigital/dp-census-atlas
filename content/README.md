@@ -19,6 +19,11 @@ Utility scripts for making and editing content.json files for consumption by the
 - activate virtual env with `source env/bin/activate`
 - install requirements with `pip install -r requirements.txt`
 
+### running unit tests
+
+- Ensure code dependencies are setup and the virtual env is activated
+- Invoke tests with `python -m pytest tests`
+
 ### metadata files
 
 - Ensure an up-to-date, unzipped archive of cantabular metadata files is placed in the `metadata_files` directory. At time of writing these can be found on sharepoint (here: [https://confluence.ons.gov.uk/display/ODADH/Upload+Metadata+Files+to+support+NOMIS%2C+Testing+etc](https://confluence.ons.gov.uk/display/ODADH/Upload+Metadata+Files+to+support+NOMIS%2C+Testing+etc)), e.g.

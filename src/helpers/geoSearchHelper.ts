@@ -10,18 +10,19 @@ export type GeoSearchResults = { geographies: GeographySearchItem[]; postcodes: 
 export const setupGeoSearch = (query: SvelteSubject<string>): Observable<GeoSearchResults> => {
   return query.pipe(
     debounceTime(400),
+    map((q) => q.trimStart()),
     distinctUntilChanged(),
     switchMap((q) => {
       if (q.length > 2) {
         const geographies = fromFetch(`${appBasePath}/geo?q=${q}`).pipe(
           mergeMap((response) => response.json()),
-          handleError,
           map(parseGeographySearchItems),
+          catchError(handleError),
         );
         const postcodes = fromFetch(`https://api.postcodes.io/postcodes/${q}/autocomplete`).pipe(
           mergeMap((response) => response.json()),
-          handleError,
           map(parsePostcodeSearchItems),
+          catchError(handleError),
         );
         return forkJoin({
           geographies,
@@ -41,8 +42,8 @@ const parseGeographySearchItems = (json: any): GeographySearchItem[] => {
 const parsePostcodeSearchItems = (json: any): PostcodeSearchItem[] => {
   return (json.result ?? []).map((postcode) => ({ kind: "Postcode", value: postcode }));
 };
-
-const handleError = catchError((err) => {
+const handleError = (err: any) => {
+  // an error during a typeahead search request isn't fatal
   console.error(err);
   return of([]);
-});
+};

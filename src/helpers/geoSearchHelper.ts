@@ -1,13 +1,13 @@
-import { type Observable, of, forkJoin, tap } from "rxjs";
+import { type Observable, of, forkJoin } from "rxjs";
 import { fromFetch } from "rxjs/fetch";
 import { switchMap, mergeMap, map, debounceTime, distinctUntilChanged, catchError } from "rxjs/operators";
-import type { GeoSearchItem, GeographySearchItem, PostcodeSearchItem } from "../types";
+import type { GeographySearchItem, PostcodeSearchItem } from "../types";
 import type { SvelteSubject } from "../util/rxUtil";
 import { appBasePath } from "../env";
 
-export const setupGeoSearch = (
-  query: SvelteSubject<string>,
-): Observable<{ geographies: GeographySearchItem[]; postcodes: PostcodeSearchItem[] }> => {
+export type GeoSearchResults = { geographies: GeographySearchItem[]; postcodes: PostcodeSearchItem[] };
+
+export const setupGeoSearch = (query: SvelteSubject<string>): Observable<GeoSearchResults> => {
   return query.pipe(
     debounceTime(400),
     distinctUntilChanged(),
@@ -28,10 +28,10 @@ export const setupGeoSearch = (
           postcodes,
         });
       } else {
-        return of({ geographies: [] as GeographySearchItem[], postcodes: [] as PostcodeSearchItem[] });
+        return of({ geographies: [], postcodes: [] });
       }
     }),
-    // tap(console.log),
+    // tap(console.log), // uncomment and import { tap } from "rxjs" to debug this pipeline
   );
 };
 

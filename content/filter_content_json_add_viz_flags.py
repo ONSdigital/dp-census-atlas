@@ -128,13 +128,7 @@ def get_topics(config_rows: list[ConfigRow], all_topics: list[CensusTopic]) -> l
 
 
 def get_variable(config_row: ConfigRow, topic: CensusTopic) -> CensusVariable:
-    """
-    To parse a variable from the wb workbook, first get_variable_code from the config_row, and then lookup the variable
-    for that code in cantabular_metadata.variable (return if a variable for that code could not be found), then
-    get_classifications from the worksheet for the variable, and finally make_legend_strs for all categories in all
-    classifications for that variable.
-    """
-
+    """Filter topic variables to ones specified in config_row."""
     try:
 
         # NB COPY VARIABLE RATHER THAN JUST TAKE REFERENCE (variables can be in multiple releases!)
@@ -161,9 +155,7 @@ def get_variable(config_row: ConfigRow, topic: CensusTopic) -> CensusVariable:
 
 
 def get_required_classifications(config_row: ConfigRow, variable: CensusVariable) -> list[CensusClassification]:
-    """
-    Filter classifications specified in config_row from all classifications found in variable.
-    """
+    """Filter classifications specified in config_row from all classifications found in variable."""
     required_cls_str = config_row.classifications
     classifications = []
     required_cls_suffixes = [x.strip() for x in required_cls_str.split(",")]

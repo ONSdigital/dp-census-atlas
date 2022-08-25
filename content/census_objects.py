@@ -5,7 +5,6 @@ Class definitions and factories for census content objects
 """
 
 from dataclasses import dataclass
-import re
 
 
 # ====================================================== CONFIG ====================================================== #
@@ -76,7 +75,8 @@ class CensusClassification:
     def gather_categories(self, category_list: list[CensusCategory]) -> None:
         """
         Append all categories with matching classification code to self. Aggregate categories with the same name,
-        as these are how categories aggregated from non-sequential parent categories are encoded.
+        as categories aggregated from non-sequential parent categories are encoded in the csv files as repeated entries
+        under the same category name.
         """
         categories = [c for c in category_list if c._classification_code == self.code]
 
@@ -114,7 +114,7 @@ class CensusClassification:
 
         for prop, value in vars(self).items():
             if isinstance(value, str) and not prop.startswith("_") and value == "":
-                print(f"** Blank property {prop} found in variable {self.name} **")
+                print(f"** Blank property {prop} found in variable {self.code} **")
                 is_valid = False
 
         if len(self.categories) == 0:
@@ -194,7 +194,7 @@ class CensusVariable:
             print(f"** Variable {self.name} has no classifications **")
             is_valid = False
 
-        if not any(getattr(c, "choropleth_default", False) for c in self.classifications):
+        if not any(getattr(c, "choropleth_default", False) == True for c in self.classifications):
            print(f"** Variable {self.name} has no choropleth default classification **")
            is_valid = False
 
@@ -270,16 +270,20 @@ class CensusRelease:
 
     def is_valid(self) -> bool:
         """
-        Return False if topics are repeated, or if any topic is invalid.
+        Return False if there are no topics, topics are repeated, or if any topic is invalid.
         """
         is_valid = True
+        if len(self.topics) == 0:
+            print(f"** Release {self.name} has no topics **")
+            is_valid = False
+
         if len(set(t.name for t in self.topics)) != len(self.topics):
             print(f"Release {self.name} contains repeated topics - something has gone wrong!")
             is_valid = False
 
         for t in self.topics:
             if not t.is_valid():
-                print(f"Release {self.name} has no topics - something has gone wrong!")
+                print(f"Release {self.name} has invalid topics - something has gone wrong!")
                 is_valid = False
 
         return is_valid

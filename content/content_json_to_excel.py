@@ -75,7 +75,13 @@ def main(content_json_fn: Path, output_dir: Path, index_csv_fn: Path or None) ->
             for classification in variable.classifications:
                 ws.cell(row=row, column=column, value=classification.code)
                 row +=1
-                ws.cell(row=row, column=column, value="")
+                ws.cell(row=row, column=column, value="Dataset:")
+                row +=1
+                ws.cell(row=row, column=column, value=classification.dataset)
+                row +=1
+                ws.cell(row=row, column=column, value="Derivable From Dataset:")
+                row +=1
+                ws.cell(row=row, column=column, value=classification.derivable_from_dataset)
                 row +=1
                 ws.cell(row=row, column=column, value="Categories:")
                 row +=1

@@ -3,24 +3,31 @@
 """
 Create atlas content.json file containing ALL census objects defined in cantabular_metadata_dir, which is assumed
 to be an unzipped cantabular metadata archive containing csv files. This script consumes four of these - assumed to be
-found as: '<cantabular_metadata_dir>/Topic.csv', '<cantabular_metadata_dir>/Variable.csv',  
+found as: '<cantabular_metadata_dir>/Topic.csv', '<cantabular_metadata_dir>/Variable.csv',
 '<cantabular_metadata_dir>/Classification.csv'and '<cantabular_metadata_dir>/Category_Mapping.csv'.
 
 Parse topics and their child variables, classifications and categories from these files, collates,
-and output as <output_dir>/<lowest level of cantabular_metada_dir>-content.json, e.g. if 
+and output as <output_dir>/<lowest level of cantabular_metada_dir>-content.json, e.g. if
 cantabular_metadata_dir="path/to/my-cantabular-metadata-dir" and output_dir="content_jsons", the output will be written
 to "content_jsons/my-cantabular-metadata-dir-content.json".
 """
 
 import csv
 from dataclasses import dataclass
+from datetime import datetime
 import json
 from pathlib import Path
 import sys
 
 from slugify import slugify
 
-from census_objects import (CensusCategory, CensusClassification, CensusVariable, CensusTopic)
+from census_objects import (
+    CensusCategory,
+    CensusClassification,
+    CensusVariable,
+    CensusTopic,
+    CensusDataset,
+)
 
 # ====================================================== CONFIG ====================================================== #
 
@@ -84,6 +91,15 @@ def topic_from_cantabular_csv_row(csv_row: dict) -> CensusTopic:
     )
 
 
+def dataset_from_cantabular_csv_row(csv_row: dict) -> CensusDataset:
+    return CensusDataset(
+        code=csv_row["Dataset_Mnemonic"].strip(),
+        variable=csv_row["Variable_Mnemonic"].strip(),
+        classification=csv_row["Classification_Mnemonic"].strip(),
+    )
+
+
+
 # create blank topic to store things that don't seem to have a topic...
 NO_TOPIC = CensusTopic(
     name="NO TOPIC",
@@ -102,9 +118,12 @@ def main(cantabular_metadata_dir: Path, output_dir: Path):
     with open(cantabular_metadata_dir.joinpath("Category_Mapping.csv"), "r",  encoding=METADATA_FILE_ENCODING) as f:
         categories = [category_from_cantabular_csv_row(csv_row) for csv_row in csv.DictReader(f)]
 
+    with open(cantabular_metadata_dir.joinpath("Dataset_Variable.csv"), "r",  encoding=METADATA_FILE_ENCODING) as f:
+        datasets = [dataset_from_cantabular_csv_row(csv_row) for csv_row in csv.DictReader(f)]
+
     with open(cantabular_metadata_dir.joinpath("Classification.csv"), "r",  encoding=METADATA_FILE_ENCODING) as f:
         classifications = [classification_from_cantabular_csv_row(csv_row) for csv_row in csv.DictReader(f)]
-    
+
     with open(cantabular_metadata_dir.joinpath("Variable.csv"), "r",  encoding=METADATA_FILE_ENCODING) as f:
         variables = [variable_from_cantabular_csv_row(csv_row) for csv_row in csv.DictReader(f)]
 
@@ -121,17 +140,20 @@ def main(cantabular_metadata_dir: Path, output_dir: Path):
     # gather children and append any missing info
     for c in classifications:
         c.gather_categories(categories)
-    
+        c.find_dataset(datasets)
+
     for v in variables:
         v.gather_classifications(classifications)
         v.make_legend_strings()
-    
+        v.set_derivable_from_dataset()
+
     for t in topics:
         t.gather_variables(variables)
-    
+
     # sort topics and convert to jsonable
     content = [t.to_jsonable() for t in sorted(topics, key=lambda x: x.name)]
-    output_filename = output_dir.joinpath(f"{cantabular_metadata_dir.name}-content.json")
+    today = datetime.today().strftime('%Y-%m-%d')
+    output_filename = output_dir.joinpath(f"{cantabular_metadata_dir.name}-content-{today}.json")
     with open(output_filename, "w") as f:
         json.dump(content, f, indent=2)
 

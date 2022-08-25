@@ -40,11 +40,24 @@ def main():
 
                 else:
                     for classification in variable["classifications"]:
-                        csv_content.append({
-                            "topic": topic["name"],
-                            "variable_mnemonic": variable["code"],
-                            "classification_mnemonic": classification["code"],
-                        })
+
+                        if census_data_type == "classification":
+                            csv_content.append({
+                                "topic": topic["name"],
+                                "variable_mnemonic": variable["code"],
+                                "classification_mnemonic": classification["code"],
+                            })
+                            continue
+
+                        else: 
+                            for category in classification["categories"]:
+                                csv_content.append({
+                                    "topic": topic["name"],
+                                    "variable_mnemonic": variable["code"],
+                                    "classification_mnemonic": classification["code"],
+                                    "category": category["name"]
+                                })
+
     output_filename = f"{content_json_fp.stem}-all-{census_data_type}-{datetime.today().strftime('%Y-%m-%d')}.csv"
     with open(output_filename, "w") as f:
         writer = csv.DictWriter(f, fieldnames=csv_content[0].keys(), quoting=csv.QUOTE_ALL)

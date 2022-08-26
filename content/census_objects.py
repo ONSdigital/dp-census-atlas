@@ -126,7 +126,7 @@ class CensusClassification:
 
         for prop, value in vars(self).items():
             if isinstance(value, str) and not prop.startswith("_") and value == "":
-                print(f"** Blank property {prop} found in variable {self.code} **")
+                print(f"** Blank property {prop} found in classification {self.code} **")
                 is_valid = False
 
         if len(self.categories) == 0:

@@ -61,6 +61,8 @@ def test_census_classification_to_jsonable_no_vis_flags():
         "code": test_classification.code,
         "slug": test_classification.slug,
         "desc": test_classification.desc,
+        "dataset": test_classification.dataset,
+        "derivable_from_dataset": test_classification.derivable_from_dataset,
         "categories": ["test_category","test_category","test_category"]
     }
     assert returned == expected
@@ -89,6 +91,8 @@ def test_census_classification_to_jsonable_vis_flags():
         "code": test_classification.code,
         "slug": test_classification.slug,
         "desc": test_classification.desc,
+        "dataset": test_classification.dataset,
+        "derivable_from_dataset": test_classification.derivable_from_dataset,
         "choropleth_default": test_classification.choropleth_default,
         "dot_density_default": test_classification.dot_density_default,
         "categories": ["test_category","test_category","test_category"]

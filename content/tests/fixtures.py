@@ -29,6 +29,9 @@ def get_test_classification(**kwargs) -> CensusClassification:
         desc=kwargs.get("desc", "test_desc"),
         choropleth_default=kwargs.get("choropleth_default", False),
         dot_density_default=kwargs.get("dot_density_default", False),
+        dataset=kwargs.get("dataset", "test_dataset"),
+        derivable_from_dataset=kwargs.get("test_derivable_from_dataset"),
+        comparison_2011_data_available=kwargs.get("comparison_2011_data_available", False),
         categories=kwargs.get("categories", []),
         _variable_code=kwargs.get("_variable_code", "test_variable_code"),
     )

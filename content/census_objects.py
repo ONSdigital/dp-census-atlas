@@ -61,6 +61,12 @@ class CensusCategory:
 
 
 @dataclass
+class CensusDataset:
+    code: str
+    variable: str
+    classification: str
+
+@dataclass
 class CensusClassification:
     """A classification as found in content.json."""
 
@@ -70,6 +76,9 @@ class CensusClassification:
     choropleth_default: bool
     dot_density_default: bool
     categories: list[CensusCategory]
+    dataset: str = ""
+    derivable_from_dataset: str = ""
+    comparison_2011_data_available: bool = False
     _variable_code: str = ""
 
     def gather_categories(self, category_list: list[CensusCategory]) -> None:
@@ -105,6 +114,9 @@ class CensusClassification:
                 _source_value=cat_to_take_values_from._source_value
             ))
 
+    def find_dataset(self, dataset_list: list[CensusDataset]) -> None:
+        self.dataset = next((d.code for d in dataset_list if d.classification == self.code), "")
+
 
     def is_valid(self) -> bool:
         """
@@ -114,7 +126,7 @@ class CensusClassification:
 
         for prop, value in vars(self).items():
             if isinstance(value, str) and not prop.startswith("_") and value == "":
-                print(f"** Blank property {prop} found in variable {self.code} **")
+                print(f"** Blank property {prop} found in classification {self.code} **")
                 is_valid = False
 
         if len(self.categories) == 0:
@@ -132,7 +144,9 @@ class CensusClassification:
         output_params = {
             "code": self.code,
             "slug": self.slug,
-            "desc": self.desc
+            "desc": self.desc,
+            "dataset": self.dataset,
+            "derivable_from_dataset": self.derivable_from_dataset,
         }
 
         if self.choropleth_default:
@@ -140,6 +154,9 @@ class CensusClassification:
 
         if self.dot_density_default:
             output_params["dot_density_default"] = self.dot_density_default
+
+        if self.comparison_2011_data_available:
+            output_params["comparison_2011_data_available"] = self.comparison_2011_data_available
 
         output_params["categories"] = [c.to_jsonable() for c in self.categories]
 
@@ -177,6 +194,13 @@ class CensusVariable:
                 c.legend_str_1 = f"of {UNIT_PLURALS[self.units.lower()]} in {{location}}"
                 c.legend_str_2 = "are"
                 c.legend_str_3 = c.name.lower()
+
+    def set_derivable_from_dataset(self) -> None:
+        classifications_w_datasets = [c for c in self.classifications if c.dataset != ""]
+        for c in self.classifications:
+            c.derivable_from_dataset = ",".join([
+                cd.dataset for cd in classifications_w_datasets if len(cd.categories) > len(c.categories)
+            ])
 
     def is_valid(self) -> bool:
         """
@@ -316,6 +340,9 @@ def classification_from_content_json(content_json: dict) -> CensusClassification
         desc=content_json["desc"],
         choropleth_default=content_json.get("choropleth_default", False),
         dot_density_default=content_json.get("dot_density_default", False),
+        dataset=content_json.get("dataset", ""),
+        derivable_from_dataset=content_json.get("derivable_from_dataset", ""),
+        comparison_2011_data_available=content_json.get("comparison_2011_data_available", False),
         categories=[category_from_content_json(c) for c in content_json["categories"]],
     )
 

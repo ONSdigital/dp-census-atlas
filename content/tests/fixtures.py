@@ -5,9 +5,8 @@ from census_objects import (
     CensusTopic,
     CensusRelease,
 )
-from filter_content_json_add_viz_flags import (
-    ConfigRow,
-)
+from filter_content_json_add_viz_flags import ConfigRow
+from filter_content_json_to_rich_content_spec import RichContentSpecRow
 
 
 def get_test_category(**kwargs) -> CensusCategory:
@@ -30,6 +29,9 @@ def get_test_classification(**kwargs) -> CensusClassification:
         desc=kwargs.get("desc", "test_desc"),
         choropleth_default=kwargs.get("choropleth_default", False),
         dot_density_default=kwargs.get("dot_density_default", False),
+        dataset=kwargs.get("dataset", "test_dataset"),
+        derivable_from_dataset=kwargs.get("test_derivable_from_dataset"),
+        comparison_2011_data_available=kwargs.get("comparison_2011_data_available", False),
         categories=kwargs.get("categories", []),
         _variable_code=kwargs.get("_variable_code", "test_variable_code"),
     )
@@ -73,4 +75,14 @@ def get_test_config_row(**kwargs) -> ConfigRow:
         classifications=kwargs.get("classifications", "raw"),
         choropleth_default_classification=kwargs.get("choropleth_default_classification", ""),
         dot_density_default_classification=kwargs.get("dot_density_default_classification", ""),
+    )
+
+def get_test_spec_row(**kwargs) -> RichContentSpecRow:
+    return RichContentSpecRow(
+        dataset=kwargs.get("dataset", "test_dataset"),
+        dataset_classification=kwargs.get("dataset_classification", "test_dataset_classification"),
+        additional_atlas_classifications=kwargs.get("additional_atlas_classifications", []),
+        choropleth_default_classification=kwargs.get("choropleth_default_classification", False),
+        dot_density_default_classification=kwargs.get("dot_density_default_classification", False),
+        comparison_2011=kwargs.get("comparison_2011", False)
     )

@@ -10,7 +10,6 @@ content/env
 content/**/*.pyc
 content/metadata_files/*
 !content/metadata_files/keep.me
-!content/metadata_files/Topic_Groupings.json
 content/content_jsons/*
 !content/content_jsons/keep.me
 

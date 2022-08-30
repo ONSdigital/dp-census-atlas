@@ -26,31 +26,22 @@ from census_objects import (
     CensusClassification,
     CensusVariable,
     CensusTopic,
-    CensusDataset,
+    CensusTopicGroup
 )
-
-# ====================================================== CONFIG ====================================================== #
-
-
-# csv file encoding. NB - might want to check this if you get weird characters in the metadata output
-METADATA_FILE_ENCODING = "utf-8-sig'"
-
-
-# ================================================ CLASS FACTORIES =================================================== #
 
 
 def category_from_cantabular_csv_row(csv_row: dict) -> CensusCategory:
-    """Make CensusCategory from row in Category_Mapping.csv"""
+    """Make CensusCategory from row in Category.csv"""
+    cat_code = str(csv_row["Category_Code"]).zfill(3)
     return CensusCategory(
-        # combine mapping label with source values to make code? ToDo - discuss this!
-        name=csv_row["External_Mapping_Label_English"].strip(),
-        code=f'{slugify(csv_row["External_Mapping_Label_English"].strip())}-{csv_row["Source_Value"].strip()}',
-        slug=slugify(csv_row["External_Mapping_Label_English"].strip()),
+        name=csv_row["External_Category_Label_English"].strip(),
+        code=f'{csv_row["Classification_Mnemonic"]}-{cat_code}',
+        slug=slugify(csv_row["External_Category_Label_English"].strip()),
         legend_str_1="",
         legend_str_2="",
         legend_str_3="",
         _classification_code=csv_row["Classification_Mnemonic"],
-        _source_value=csv_row["Source_Value"],
+        _category_code=csv_row["Category_Code"],
     )
 
 
@@ -71,7 +62,7 @@ def variable_from_cantabular_csv_row(csv_row: dict) -> CensusVariable:
     return CensusVariable(
         name=csv_row["Variable_Title"].strip(),
         code=csv_row["Variable_Mnemonic"].strip(),
-        slug=slugify(csv_row["Variable_Mnemonic"].strip()),
+        slug=slugify(csv_row["Variable_Title"].strip()),
         desc=csv_row["Variable_Description"].strip(),
         units=csv_row["Statistical_Unit"].strip(),
         classifications=[],
@@ -84,20 +75,22 @@ def topic_from_cantabular_csv_row(csv_row: dict) -> CensusTopic:
     """Make CensusTopic from row in Topic.csv"""
     return CensusTopic(
         name=csv_row["Topic_Title"].strip(),
-        slug=slugify(csv_row["Topic_Mnemonic"].strip()),
+        slug=slugify(csv_row["Topic_Title"].strip()),
         desc=csv_row["Topic_Description"].strip(),
         variables=[],
         _code=csv_row["Topic_Mnemonic"].strip(),
     )
 
 
-def dataset_from_cantabular_csv_row(csv_row: dict) -> CensusDataset:
-    return CensusDataset(
-        code=csv_row["Dataset_Mnemonic"].strip(),
-        variable=csv_row["Variable_Mnemonic"].strip(),
-        classification=csv_row["Classification_Mnemonic"].strip(),
+def topic_groups_from_dict(raw_tg: dict) -> CensusTopic:
+    """Make CensusTopic from row in Topic.csv"""
+    return CensusTopicGroup(
+        name=raw_tg["name"].strip(),
+        slug=raw_tg["slug"],
+        desc=raw_tg["desc"],
+        topics=[],
+        _topic_names=raw_tg["topic_names"],
     )
-
 
 
 # create blank topic to store things that don't seem to have a topic...
@@ -110,24 +103,22 @@ NO_TOPIC = CensusTopic(
 )
 
 
-# ======================================================= MAIN ======================================================= #
-
-
 def main(cantabular_metadata_dir: Path, output_dir: Path):
-    # load all census objects
-    with open(cantabular_metadata_dir.joinpath("Category_Mapping.csv"), "r",  encoding=METADATA_FILE_ENCODING) as f:
-        categories = [category_from_cantabular_csv_row(csv_row) for csv_row in csv.DictReader(f)]
+    # load all census objects, ignoring non-ACSII characters
+    with open(topic_groupings_json_fn, "r") as f:
+        topic_groups = [topic_groups_from_dict(tg_raw) for tg_raw in json.load(f)]
 
-    with open(cantabular_metadata_dir.joinpath("Dataset_Variable.csv"), "r",  encoding=METADATA_FILE_ENCODING) as f:
-        datasets = [dataset_from_cantabular_csv_row(csv_row) for csv_row in csv.DictReader(f)]
+    with open(cantabular_metadata_dir.joinpath("Category.csv"), "r", encoding="ascii", errors="ignore") as f:
+        # nb filter out 'minus' categories (generally 'Does Not Apply' or similar) and non-numeric strings
+        categories = [category_from_cantabular_csv_row(csv_row) for csv_row in csv.DictReader(f) if csv_row["Category_Code"].isnumeric()]
 
-    with open(cantabular_metadata_dir.joinpath("Classification.csv"), "r",  encoding=METADATA_FILE_ENCODING) as f:
+    with open(cantabular_metadata_dir.joinpath("Classification.csv"), "r", encoding="ascii", errors="ignore") as f:
         classifications = [classification_from_cantabular_csv_row(csv_row) for csv_row in csv.DictReader(f)]
 
-    with open(cantabular_metadata_dir.joinpath("Variable.csv"), "r",  encoding=METADATA_FILE_ENCODING) as f:
+    with open(cantabular_metadata_dir.joinpath("Variable.csv"), "r", encoding="ascii", errors="ignore") as f:
         variables = [variable_from_cantabular_csv_row(csv_row) for csv_row in csv.DictReader(f)]
 
-    with open(cantabular_metadata_dir.joinpath("Topic.csv"), "r",  encoding=METADATA_FILE_ENCODING) as f:
+    with open(cantabular_metadata_dir.joinpath("Topic.csv"), "r", encoding="ascii", errors="ignore") as f:
         topics = [topic_from_cantabular_csv_row(csv_row) for csv_row in csv.DictReader(f)]
     topics.append(NO_TOPIC)
 
@@ -140,25 +131,35 @@ def main(cantabular_metadata_dir: Path, output_dir: Path):
     # gather children and append any missing info
     for c in classifications:
         c.gather_categories(categories)
-        c.find_dataset(datasets)
 
     for v in variables:
         v.gather_classifications(classifications)
         v.make_legend_strings()
-        v.set_derivable_from_dataset()
 
     for t in topics:
         t.gather_variables(variables)
 
+    for tg in topic_groups:
+        tg.gather_topics(topics)
+
     # sort topics and convert to jsonable
-    content = [t.to_jsonable() for t in sorted(topics, key=lambda x: x.name)]
-    today = datetime.today().strftime('%Y-%m-%d')
-    output_filename = output_dir.joinpath(f"{cantabular_metadata_dir.name}-content-{today}.json")
+    now = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
+    meta = {
+        "first_created_at": now,
+        "cantabular_metadata_source": cantabular_metadata_dir.name
+    }
+    content = [tg.to_jsonable() for tg in topic_groups]
+    output = {
+        "meta": meta,
+        "content": content
+    }
+    output_filename = output_dir.joinpath(f"all-cantabular-content-{now}.json")
     with open(output_filename, "w") as f:
-        json.dump(content, f, indent=2)
+        json.dump(output, f, indent=2)
 
 
 if __name__ == "__main__":
     metadata_dir = Path(sys.argv[1])
+    topic_groupings_json_fn = Path(sys.argv[2])
     output_dir = Path("content_jsons")
     main(metadata_dir, output_dir)

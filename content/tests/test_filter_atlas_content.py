@@ -1,10 +1,11 @@
 from unittest import mock
 
-from filter_content_json_to_rich_content_spec import filter_content
+from filter_atlas_content import filter_content
 from fixtures import (
     get_test_classification,
     get_test_variable,
     get_test_topic,
+    get_test_topic_grouping,
     get_test_spec_row,
 )
 
@@ -43,9 +44,21 @@ def test_filter_content_filters_and_copies_required_objects():
         additional_atlas_classifications=[c.code for c in test_classifications_1[3:]]
     )
 
+    # AND given we wrap the topic up in a test topic grouping
+    test_topic_grouping = get_test_topic_grouping(topics=[test_topic])
+
     # WHEN we invoke filter_content against our test values
-    returned_topic = filter_content([test_spec_row], [test_topic])[0]
-    # THEN we expect to get a topic back that is NOT our original topic...
+    returned_topic_grouping = filter_content([test_spec_row], [test_topic_grouping])[0]
+
+    # THEN we expect to get a topic grouping back that is NOT our original topic grouping...
+    assert returned_topic_grouping != test_topic_grouping
+    # ... BUT IS a clone of it
+    for test_prop in ["name", "slug", "desc"]:
+        assert getattr(returned_topic_grouping, test_prop) == getattr(test_topic_grouping, test_prop)
+
+    # AND we expect our topic grouping to only have one topic, that is NOT our original topic...
+    assert len(returned_topic_grouping.topics) == 1
+    returned_topic = returned_topic_grouping.topics[0]
     assert returned_topic != test_topic
     # ... BUT IS a clone of it
     for test_prop in ["name", "slug", "desc"]:
@@ -74,6 +87,9 @@ def test_filter_content_aggregates_variables_from_multiple_spec_rows():
     test_variable.classifications = test_classifications
     test_topic.variables = [test_variable]
 
+    # AND given we wrap the topic up in a test topic grouping
+    test_topic_grouping = get_test_topic_grouping(topics=[test_topic])
+
     # AND given two spec rows that each specifie a classification from the same variable
     test_spec_rows = [
         get_test_spec_row(dataset_classification="v1_1a"),
@@ -81,12 +97,13 @@ def test_filter_content_aggregates_variables_from_multiple_spec_rows():
     ]
 
     # WHEN we invoke filter_content against our test values
-    returned_topics = filter_content(test_spec_rows, [test_topic])
-    # THEN we expect to get a single topic back
-    assert len(returned_topics) == 1
+    returned_topic_groupings = filter_content(test_spec_rows, [test_topic_grouping])
+    # THEN we expect to get a single returned_topic_grouping back with a single topic in it
+    assert len(returned_topic_groupings) == 1
+    assert len(returned_topic_groupings[0].topics) == 1
 
     # AND we expect our topic to have a single variable, that is NOT the original target variable...
-    returned_variables = returned_topics[0].variables
+    returned_variables = returned_topic_groupings[0].topics[0].variables
     assert len(returned_variables) == 1
     returned_variable = returned_variables[0]
     assert returned_variable != test_variable
@@ -109,6 +126,9 @@ def test_filter_content_adds_visualisation_flags():
     test_variable.classifications = test_classifications
     test_topic.variables = [test_variable]
 
+    # AND given we wrap the topic up in a test topic grouping
+    test_topic_grouping = get_test_topic_grouping(topics=[test_topic])
+
     # AND given a spec row that specifies all three classification, and sets visualisation flags for two
     test_spec_rows = [get_test_spec_row(
         dataset_classification="v1_1a",
@@ -118,11 +138,12 @@ def test_filter_content_adds_visualisation_flags():
     )]
 
     # WHEN we invoke filter_content against our test values
-    returned_topics = filter_content(test_spec_rows, [test_topic])
+    returned_topic_groupings = filter_content(test_spec_rows, [test_topic_grouping])
 
-    # THEN we expect to get a single topic and variable back
-    assert len(returned_topics) == 1
-    returned_variables = returned_topics[0].variables
+    # THEN we expect to get a single topic grouping, topic and variable back
+    assert len(returned_topic_groupings) == 1
+    assert len(returned_topic_groupings[0].topics) == 1
+    returned_variables = returned_topic_groupings[0].topics[0].variables
     assert len(returned_variables) == 1
     returned_variable = returned_variables[0]
     # AND we expect the variable to have three classifications
@@ -157,6 +178,9 @@ def test_filter_content_adds_2011_comparison_flags():
     test_variable_2.classifications = test_classifications_2
     test_topic.variables = [test_variable_1, test_variable_2]
 
+    # AND given we wrap the topic up in a test topic grouping
+    test_topic_grouping = get_test_topic_grouping(topics=[test_topic])
+
     # AND given a spec row that specifies all three classification for both, but only 2011 comparison data for one
     test_spec_rows = [
         get_test_spec_row(
@@ -171,11 +195,12 @@ def test_filter_content_adds_2011_comparison_flags():
     ]
 
     # WHEN we invoke filter_content against our test values
-    returned_topics = filter_content(test_spec_rows, [test_topic])
+    returned_topic_groupings = filter_content(test_spec_rows, [test_topic_grouping])
 
-    # THEN we expect to get a single topic and two variables back
-    assert len(returned_topics) == 1
-    returned_variables = returned_topics[0].variables
+     # THEN we expect to get a single topic grouping, topic and two variable back
+    assert len(returned_topic_groupings) == 1
+    assert len(returned_topic_groupings[0].topics) == 1
+    returned_variables = returned_topic_groupings[0].topics[0].variables
     assert len(returned_variables) == 2
 
     # AND we expect each variable to have three classifications

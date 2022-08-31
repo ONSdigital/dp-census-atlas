@@ -33,7 +33,7 @@ export const fetchTileDataForBbox = async (args: { categoryCode: string; geoType
   fall within geographic bounding box represented by 'tile'.
 */
 export const fetchTileData = async (args: { categoryCode: string; geoType: GeoType; tile: DataTile }) => {
-  const url = `${geodataBaseUrl}/${args.geoType}/${args.tile.tilename}/${args.categoryCode}.csv`;
+  const url = `${geodataBaseUrl}/tiles/${args.geoType}/${args.tile.tilename}/${args.categoryCode}.csv`;
   const response = await fetch(url);
   const csv = await response.text();
   return dsv.csvParse(csv);

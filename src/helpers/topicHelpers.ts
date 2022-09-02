@@ -1,4 +1,42 @@
-import type { Topic, Variable, Classification, Category } from "../types";
+import type { TopicGroup, Topic, Variable, Classification } from "../types";
+
+
+/*
+  Iterate over list of TopicGroups and convert each to a topic by moving the variables in side each of their child
+  topics to a new key in the TopicGroup, then removing the topics themselves
+*/
+export const flattenTopicGroupsToTopics = (topicGroups: [TopicGroup]) => {
+  const topics = [];
+  for (const topicGroup of topicGroups) {
+    topics.push({
+      name: topicGroup.name,
+      slug: topicGroup.slug,
+      desc: topicGroup.desc,
+      variables: topicGroup.topics.flatMap((t) => t.variables),
+    })
+  }
+  return topics;
+};
+
+
+/*
+  Iterate over list of TopicGroups and merge topic groups with the same name.
+*/
+export const mergeTopicGroups = (topicGroups: [TopicGroup]) => {
+  const topicGroupNames = new Set(topicGroups.map((tg) => tg.name));
+  const mergedTopicGroups = [];
+  for (const topicGroupName of topicGroupNames) {
+    const topicGroupsToMerge = topicGroups.filter((tg) => tg.name === topicGroupName);
+    const allTopics = topicGroupsToMerge.flatMap((tg) => tg.topics);
+    mergedTopicGroups.push({
+      name: topicGroupsToMerge[0].name,
+      slug: topicGroupsToMerge[0].slug,
+      desc: topicGroupsToMerge[0].desc,
+      topics: mergeTopics(allTopics as [Topic]),
+    });
+  }
+  return mergedTopicGroups;
+};
 
 /*
   Iterate over list of Topics and merge topics with the same name.

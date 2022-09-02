@@ -10,7 +10,7 @@ fi
 
 if [ -z $VITE_CONTENT_JSONS]; then
 export VITE_CONTENT_JSONS='[
-    "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2011-new-format-content.json"
+    "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2011-TEST-PLACEHOLDER-VAR-DESCS-all-atlas-content-2022-09-02-11-58-45.json"
 ]'
 else
 export VITE_CONTENT_JSONS=$VITE_CONTENT_JSONS

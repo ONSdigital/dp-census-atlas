@@ -1,12 +1,12 @@
 import { get } from "svelte/store";
 import { contentJsonUrls } from "../env";
 import { topicStore } from "../stores/stores";
-import { mergeTopics } from "../helpers/topicHelpers";
-import type { Topic } from "../types";
+import { flattenTopicGroupsToTopics, mergeTopicGroups } from "../helpers/topicHelpers";
+import type { Topic, TopicGroup } from "../types";
 
 // use async/await for better "error handling", non-200 returns, not JSON, etc
 const fetchTopicsFromContentJsons = async () => {
-  const topics = await Promise.all(
+  const topicsGroups = await Promise.all(
     contentJsonUrls.map(async (config_json_url) => {
       const resp = await fetch(config_json_url);
       if (resp.status != 200) {
@@ -15,7 +15,7 @@ const fetchTopicsFromContentJsons = async () => {
       } else {
         try {
           const contentJson = await resp.json();
-          return contentJson;
+          return contentJson.content;
         } catch (e) {
           console.log(`Content json file ${config_json_url} could not be parsed: ${e}`);
         }
@@ -24,7 +24,7 @@ const fetchTopicsFromContentJsons = async () => {
   ).then((responseArry) => {
     return responseArry.filter((t) => t != null).flat();
   });
-  return topics;
+  return topicsGroups;
 };
 
 /*
@@ -36,7 +36,8 @@ export const setTopicStoreOnce = async () => {
   if (get(topicStore)) {
     return;
   }
-  const topics = await fetchTopicsFromContentJsons();
-  const mergedTopics = mergeTopics(topics as [Topic]);
-  topicStore.set(mergedTopics as [Topic]);
+  const topicsGroups = await fetchTopicsFromContentJsons();
+  const mergedTopicGroups = mergeTopicGroups(topicsGroups as [TopicGroup]);
+  const topics = flattenTopicGroupsToTopics(mergedTopicGroups as [TopicGroup]);
+  topicStore.set(topics as [Topic]);
 };

@@ -1,14 +1,27 @@
-import type { Topic, Variable, Category } from "../types";
-import { mergeTopics } from "./topicHelpers";
+import type { TopicGroup, Topic, Variable, Category } from "../types";
+import { flattenTopicGroupsToTopics, mergeTopicGroups, mergeTopics } from "./topicHelpers";
 
-const makeTestTopics = (n: number) => {
+const makeTestTopicGroups = (n: number) => {
+  const topicGroups = [];
+  for (let i = 0; i < n; i++) {
+    topicGroups.push({
+      name: `test topic group ${i}`,
+      slug: `test-topic-group-${i}`,
+      desc: `${i} test topic group`,
+      topics: makeTestTopics(n, `topic_group_${i}`) as [Topic],
+    });
+  }
+  return topicGroups;
+};
+
+const makeTestTopics = (n: number, parentName = "") => {
   const topics = [];
   for (let i = 0; i < n; i++) {
     topics.push({
-      name: `test topic ${i}`,
-      slug: `test-topic-${i}`,
-      desc: `${i} test category`,
-      variables: makeTestVariables(n, `topic_${i}`) as [Variable],
+      name: `test topic ${parentName} ${i}`,
+      slug: `test-topic-${parentName}-${i}`,
+      desc: `${parentName}${i} test topic`,
+      variables: makeTestVariables(n, `${parentName}_${i}`) as [Variable],
     });
   }
   return topics;
@@ -94,5 +107,66 @@ describe("mergeTopics", () => {
     const expectedTopics = makeTestTopics(6);
     // WHEN we call mergeTopics on them, we expect them to have merged back into complete topics
     expect(mergeTopics(topicsToMerge as [Topic])).toEqual(expectedTopics);
+  });
+});
+
+describe("mergeTopicGroups", () => {
+  test("does not merge topic groups with different names", () => {
+    // GIVEN a set of topic groups with unique names
+    const topicGroupsToMerge = makeTestTopicGroups(5);
+    const expectedTopicGroups = topicGroupsToMerge;
+    // WHEN we call mergeTopicGroups on them, we expect them NOT to change
+    expect(mergeTopicGroups(topicGroupsToMerge as [TopicGroup])).toEqual(expectedTopicGroups);
+  });
+  test("does dedupe topicGroups with the same names and content", () => {
+    // GIVEN two sets of identical topic groups combined into a single array
+    const topicGroupsToMerge1 = makeTestTopicGroups(5);
+    const topicGroupsToMerge2 = makeTestTopicGroups(5);
+    const topicGroupsToMerge = [...topicGroupsToMerge1, ...topicGroupsToMerge2];
+    const expectedTopicGroups = topicGroupsToMerge1;
+    // WHEN we call mergeTopicGroups on them, we expect them to be de-duplicated
+    expect(mergeTopicGroups(topicGroupsToMerge as [TopicGroup])).toEqual(expectedTopicGroups);
+  });
+  test("does merge topicGroups with the same names and different topics", () => {
+    // GIVEN two sets of topic groups with the same names but different variables
+    const topicGroupsToMerge1 = makeTestTopicGroups(6);
+    const topicGroupsToMerge2 = makeTestTopicGroups(6);
+    // pop last three topics from topicGroups in topicGroupsToMerge1
+    for (const topicGroup of topicGroupsToMerge1) {
+      for (let i = 0; i < 3; i++) {
+        topicGroup.topics.pop();
+      }
+    }
+    // shift first three topics from topicGroups in topicGroupsToMerge2
+    for (const topicGroup of topicGroupsToMerge2) {
+      for (let i = 0; i < 3; i++) {
+        topicGroup.topics.shift();
+      }
+    }
+    const topicGroupsToMerge = [...topicGroupsToMerge1, ...topicGroupsToMerge2];
+    const expectedTopicGroups = makeTestTopicGroups(6);
+    // WHEN we call mergeTopicGroups on them, we expect them to have merged back into complete topics
+    expect(mergeTopicGroups(topicGroupsToMerge as [TopicGroup])).toEqual(expectedTopicGroups);
+  });
+});
+
+describe("flattenTopicGroupsToTopics", () => {
+  test("flattens topic groups to topics with the same properties as the original topicGroup", () => {
+    // GIVEN a set of topic groups with unique names
+    const topicGroupsToFlatten = makeTestTopicGroups(5);
+    // WHEN we call flattenTopicGroupsToTopics on them
+    const returnedTopics = flattenTopicGroupsToTopics(topicGroupsToFlatten as [TopicGroup]);
+    // THEN we expect there to be five topics returned
+    expect(returnedTopics.length).toEqual(5);
+    // AND we expect each topic to have the basic properties of the original topic group
+    returnedTopics.forEach((topic, i) => {
+      const tg = topicGroupsToFlatten[i];
+      expect([topic.name, topic.slug, topic.desc]).toEqual([tg.name, tg.slug, tg.desc]);
+    });
+    // AND we expect each topic to have 25 variables, which are the variables nested under the original topics
+    returnedTopics.forEach((topic, i) => {
+      const expected_variables = topicGroupsToFlatten[i].topics.flatMap((t) => t.variables);
+      expect(topic.variables).toEqual(expected_variables);
+    })
   });
 });

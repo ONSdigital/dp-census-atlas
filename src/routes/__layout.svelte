@@ -5,7 +5,7 @@
   // import "../../node_modules/@ons/design-system/css/main.css";
   import "../i18n/i18n.ts";
   import Layout from "../components/Layout.svelte";
-  import { setTopicStoreOnce } from "../data/setTopicStore"
+  import { setContentStoresOnce } from "../data/setContentStores"
   import { topicStore } from "../stores/stores"
   import { onMount } from 'svelte';
 
@@ -14,7 +14,7 @@
     loads first, populate the topicStore here! NB - setTopicStoreOnce will only set the topicStore if it is not
     already populated, so can be called every time this component is mounted without doing uneccessary work.
   */
-  onMount(async () => setTopicStoreOnce())
+  onMount(async () => setContentStoresOnce())
 </script>
 
 {#if $topicStore}

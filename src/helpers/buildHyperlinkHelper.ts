@@ -1,4 +1,4 @@
-import { appBasePath } from "../env";
+import { appBasePath } from "../buildEnv";
 
 interface TopicPageParams {
   topic: string;

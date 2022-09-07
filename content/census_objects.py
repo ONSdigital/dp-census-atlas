@@ -5,7 +5,8 @@ Class definitions and factories for census content objects
 """
 
 from dataclasses import dataclass
-
+import json
+from pathlib import Path
 
 # ====================================================== CONFIG ====================================================== #
 
@@ -35,7 +36,7 @@ class CensusCategory:
     legend_str_2: str
     legend_str_3: str
     _classification_code: str = ""
-    _source_value: str = ""
+    _category_code: str = ""
 
     def is_valid(self) -> bool:
         """Return False if public properties are blank strings."""
@@ -58,14 +59,6 @@ class CensusCategory:
             "legend_str_2": self.legend_str_2,
             "legend_str_3": self.legend_str_3,
         }
-
-
-@dataclass
-class CensusDataset:
-    code: str
-    variable: str
-    classification: str
-
 @dataclass
 class CensusClassification:
     """A classification as found in content.json."""
@@ -76,47 +69,14 @@ class CensusClassification:
     choropleth_default: bool
     dot_density_default: bool
     categories: list[CensusCategory]
-    dataset: str = ""
-    derivable_from_dataset: str = ""
     comparison_2011_data_available: bool = False
     _variable_code: str = ""
 
     def gather_categories(self, category_list: list[CensusCategory]) -> None:
         """
-        Append all categories with matching classification code to self. Aggregate categories with the same name,
-        as categories aggregated from non-sequential parent categories are encoded in the csv files as repeated entries
-        under the same category name.
+        Append all categories with matching classification code to self.
         """
-        categories = [c for c in category_list if c._classification_code == self.code]
-
-        # NB use list of dict keys here rather than set to preserve category order
-        # see https://stackoverflow.com/questions/1653970/does-python-have-an-ordered-set
-        unique_category_names = list(dict.fromkeys(c.name for c in categories))
-
-        for unique_category_name in unique_category_names:
-            cats_to_aggregate = [c for c in categories if c.name == unique_category_name]
-
-            if len(cats_to_aggregate) == 1:
-                self.categories.append(cats_to_aggregate[0])
-                continue
-
-            source_values = [c._source_value for c in cats_to_aggregate]
-            cat_to_take_values_from = cats_to_aggregate[0]
-
-            self.categories.append(CensusCategory(
-                name=cat_to_take_values_from.name,
-                code=f'{cat_to_take_values_from.name}-{"-".join(source_values)}',
-                slug=cat_to_take_values_from.slug,
-                legend_str_1=cat_to_take_values_from.legend_str_1,
-                legend_str_2=cat_to_take_values_from.legend_str_2,
-                legend_str_3=cat_to_take_values_from.legend_str_3,
-                _classification_code=cat_to_take_values_from._classification_code,
-                _source_value=cat_to_take_values_from._source_value
-            ))
-
-    def find_dataset(self, dataset_list: list[CensusDataset]) -> None:
-        self.dataset = next((d.code for d in dataset_list if d.classification == self.code), "")
-
+        self.categories = [c for c in category_list if c._classification_code == self.code]
 
     def is_valid(self) -> bool:
         """
@@ -144,9 +104,7 @@ class CensusClassification:
         output_params = {
             "code": self.code,
             "slug": self.slug,
-            "desc": self.desc,
-            "dataset": self.dataset,
-            "derivable_from_dataset": self.derivable_from_dataset,
+            "desc": self.desc
         }
 
         if self.choropleth_default:
@@ -194,13 +152,6 @@ class CensusVariable:
                 c.legend_str_1 = f"of {UNIT_PLURALS[self.units.lower()]} in {{location}}"
                 c.legend_str_2 = "are"
                 c.legend_str_3 = c.name.lower()
-
-    def set_derivable_from_dataset(self) -> None:
-        classifications_w_datasets = [c for c in self.classifications if c.dataset != ""]
-        for c in self.classifications:
-            c.derivable_from_dataset = ",".join([
-                cd.dataset for cd in classifications_w_datasets if len(cd.categories) > len(c.categories)
-            ])
 
     def is_valid(self) -> bool:
         """
@@ -286,11 +237,18 @@ class CensusTopic:
 
 
 @dataclass
-class CensusRelease:
-    """The contents of an individual content json, representing a release of census data."""
+class CensusTopicGroup:
+    """Atlas-specific group of topics."""
 
     name: str
+    slug: str
+    desc: str
     topics: list[CensusTopic]
+    _topic_names: list[str]
+
+    def gather_topics(self, topic_list: list[CensusTopic]) -> None:
+        """Append all topics with listed in self._topic_names."""
+        self.topics = [t for t in topic_list if t.name in self._topic_names]
 
     def is_valid(self) -> bool:
         """
@@ -298,23 +256,28 @@ class CensusRelease:
         """
         is_valid = True
         if len(self.topics) == 0:
-            print(f"** Release {self.name} has no topics **")
+            print(f"** Topic Group {self.name} has no topics **")
             is_valid = False
 
         if len(set(t.name for t in self.topics)) != len(self.topics):
-            print(f"Release {self.name} contains repeated topics - something has gone wrong!")
+            print(f"Topic Group {self.name} contains repeated topics - something has gone wrong!")
             is_valid = False
 
         for t in self.topics:
             if not t.is_valid():
-                print(f"Release {self.name} has invalid topics - something has gone wrong!")
+                print(f"Topic Group {self.name} has invalid topics - something has gone wrong!")
                 is_valid = False
 
         return is_valid
 
     def to_jsonable(self):
-        """Topic list in json-friendly form, with topics sorted alphabetically.."""
-        return [t.to_jsonable() for t in sorted(self.topics, key=lambda x: x.name)]
+        """Topic group in json-friendly form, with topics sorted alphabetically."""
+        return {
+            "name": self.name,
+            "slug": self.slug,
+            "desc": self.desc,
+            "topics": [t.to_jsonable() for t in sorted(self.topics, key=lambda x: x.name)],
+        }
 
 
 # ================================================ CLASS FACTORIES =================================================== #
@@ -340,8 +303,6 @@ def classification_from_content_json(content_json: dict) -> CensusClassification
         desc=content_json["desc"],
         choropleth_default=content_json.get("choropleth_default", False),
         dot_density_default=content_json.get("dot_density_default", False),
-        dataset=content_json.get("dataset", ""),
-        derivable_from_dataset=content_json.get("derivable_from_dataset", ""),
         comparison_2011_data_available=content_json.get("comparison_2011_data_available", False),
         categories=[category_from_content_json(c) for c in content_json["categories"]],
     )
@@ -366,3 +327,32 @@ def topic_from_content_json(content_json: dict) -> CensusTopic:
         desc=content_json["desc"],
         variables=[variable_from_content_json(v) for v in content_json["variables"]],
     )
+
+def topic_grouping_from_content_json(content_json: dict) -> CensusTopic:
+    """Make CensusTopicGrouping dictionary extracted from a content.json file"""
+    return CensusTopicGroup(
+        name=content_json["name"],
+        slug=content_json["slug"],
+        desc=content_json["desc"],
+        topics=[topic_from_content_json(t) for t in content_json["topics"]],
+        _topic_names=[],
+    )
+
+
+def load_content(content_file: Path) -> list[CensusTopicGroup]:
+    """Load all census objects defined in content_file."""
+    with open(content_file, "r") as f:
+        raw_content = json.load(f)
+    return {
+        "meta": raw_content["meta"],
+        "content": [topic_grouping_from_content_json(tg) for tg in raw_content["content"]]
+    }
+
+
+def write_content(content: dict, output_fn) -> None:
+    output = {
+        "meta": content["meta"],
+        "content": [tg.to_jsonable() for tg in content["content"]]
+    }
+    with open(output_fn, "w") as f:
+        json.dump(output, f, indent=2)

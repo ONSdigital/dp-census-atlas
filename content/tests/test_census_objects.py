@@ -5,7 +5,7 @@ from fixtures import (
     get_test_classification,
     get_test_variable,
     get_test_topic,
-    get_test_release
+    get_test_topic_grouping
 )
 
 
@@ -61,8 +61,6 @@ def test_census_classification_to_jsonable_no_vis_flags():
         "code": test_classification.code,
         "slug": test_classification.slug,
         "desc": test_classification.desc,
-        "dataset": test_classification.dataset,
-        "derivable_from_dataset": test_classification.derivable_from_dataset,
         "categories": ["test_category","test_category","test_category"]
     }
     assert returned == expected
@@ -91,8 +89,6 @@ def test_census_classification_to_jsonable_vis_flags():
         "code": test_classification.code,
         "slug": test_classification.slug,
         "desc": test_classification.desc,
-        "dataset": test_classification.dataset,
-        "derivable_from_dataset": test_classification.derivable_from_dataset,
         "choropleth_default": test_classification.choropleth_default,
         "dot_density_default": test_classification.dot_density_default,
         "categories": ["test_category","test_category","test_category"]
@@ -138,51 +134,30 @@ def test_census_classification_not_valid_invalid_category():
     assert test_classification.is_valid() is False
 
 
-def gather_classification_setup():
+def test_census_classification_gather_categories_filters_for_associated_categories():
     # GIVEN we instatiate a CensusClassification
     test_classification = get_test_classification()
-    # AND GIVEN we have a list of categories, some with the same name but with different
-    # source values, some with different names and source values, all of which reference our test_classification
+    # AND GIVEN we have a list of categories which reference our test_classification
     test_categories = []
-    for name, source_value in [("tc1", "1"), ("tc1", "2"), ("tc1", "3"), ("tc2", "1"), ("tc3", "1")]:
+    for cl_cd in ["tc1", "tc2", "tc3"]:
         test_categories.append(
-            get_test_category(name=name, _source_value=source_value, _classification_code=test_classification.code)
+            get_test_category(code=cl_cd, _classification_code=test_classification.code)
         )
     # AND GIVEN we append additional categories to our test list that do NOT reference our test_classification
     test_categories.extend([
-        get_test_category(_classification_code="not_our_cls_1"),
-        get_test_category(_classification_code="not_our_cls_2")
+        get_test_category(code="tc4", _classification_code="not_our_cls_1"),
+        get_test_category(code="tc5", _classification_code="not_our_cls_2")
     ])
     # WHEN we invoke the gather_categories method against our test categories
     test_classification.gather_categories(test_categories)
-    return test_classification
-
-
-def test_census_classification_gather_categories_filters_for_associated_categories():
-    # GIVEN we have setup the gather classifications test
-    test_classification = gather_classification_setup()
-    # THEN we expect the classification to NOT have the categories that do NOT reference it
+    # THEN we expect the classification to have the categories that do reference it
     assert len(test_classification.categories) == 3
-    for cl_cd in ["not_our_cls_1", "not_our_cls_2"]:
-        assert any(c._classification_code == cl_cd for c in test_classification.categories) is False
-
-
-def test_census_classification_gather_categories_preserves_category_order():
-    # GIVEN we have setup the gather classifications test
-    test_classification = gather_classification_setup()
-    # THEN we expect the classification to have the classifications in the order they were added
-    assert [c.name for c in test_classification.categories] == ["tc1", "tc2", "tc3"]
-    # AND we expect the classification to have aggregated the multiple tc1 categories together and referenced the source
-    # values in the code
-    assert test_classification.categories[0].code == "tc1-1-2-3"
-
-
-def test_census_classification_gather_categories_aggregates_compound_categories():
-    # GIVEN we have setup the gather classifications test
-    test_classification = gather_classification_setup()
-    # THEN we expect the classification to have aggregated the multiple tc1 categories together and referenced the source
-    # values in the code
-    assert test_classification.categories[0].code == "tc1-1-2-3"
+    for cl_cd in ["tc1", "tc2", "tc3"]:
+        assert any(c.code == cl_cd for c in test_classification.categories)
+    # AND we expect the classification to NOT have the categories that do NOT reference it
+    assert len(test_classification.categories) == 3
+    for cl_cd in ["tc4", "tc5"]:
+        assert any(c.code == cl_cd for c in test_classification.categories) is False
 
 
 # -------------------------------------------------- CensusVariable -------------------------------------------------- #
@@ -381,11 +356,11 @@ def test_census_topic_gather_variables_filters_for_associated_variables():
         assert any(v.topic_code == t_cd for v in test_topic.variables) is False
 
 
-# -------------------------------------------------- CensusRelease --------------------------------------------------- #
+# ---------------------------------------------- CensusTopicGrouping ------------------------------------------------- #
 
 
-def test_census_release_to_jsonable():
-    # GIVEN we instatiate a CensusRelease with a set of test properties
+def test_census_topic_grouping_to_jsonable():
+    # GIVEN we instatiate a CensusTopicGrouping with a set of test properties
     mock_topics = [MagicMock(), MagicMock(), MagicMock()]
     mock_topics[0].name = "test_topic_b"
     mock_topics[0].to_jsonable.return_value = "test_topic_b"
@@ -393,11 +368,16 @@ def test_census_release_to_jsonable():
     mock_topics[1].to_jsonable.return_value = "test_topic_a"
     mock_topics[2].name = "test_topic_c"
     mock_topics[2].to_jsonable.return_value = "test_topic_c"
-    test_release  = get_test_release(topics=mock_topics)
+    test_topic_grouping = get_test_topic_grouping(topics=mock_topics)
     # WHEN we invoke the to_jsonable method
-    returned = test_release.to_jsonable()
+    returned = test_topic_grouping.to_jsonable()
     # THEN we expect to get the correct json-friendly object back, with topics sorted in lexical order
-    expected = ["test_topic_a","test_topic_b","test_topic_c"]
+    expected = {
+        "name": test_topic_grouping.name,
+        "slug": test_topic_grouping.slug,
+        "desc": test_topic_grouping.desc,
+        "topics": ["test_topic_a","test_topic_b","test_topic_c"]
+    }
     assert returned == expected
     # AND we expect the to_jsonable method to have been called on all
     # mock_variables
@@ -405,35 +385,35 @@ def test_census_release_to_jsonable():
         mt.to_jsonable.assert_called
 
 
-def test_census_release_is_valid():
-    # GIVEN we instatiate a CensusRelease with all required properties
+def test_census_topic_grouping__is_valid():
+    # GIVEN we instatiate a CensusTopicGrouping with all required properties
     mock_topic = MagicMock()
     mock_topic.is_valid.return_value = True
-    test_release = get_test_release(topics=[mock_topic])
+    test_topic_grouping = get_test_topic_grouping(topics=[mock_topic])
     # WHEN we invoke the is_valid method, THEN we expect to get True
-    assert test_release.is_valid() is True
+    assert test_topic_grouping.is_valid() is True
 
 
-def test_census_release_not_valid_no_topics():
-    # GIVEN we instatiate a CensusRelease with no topics (default)
-    test_release = get_test_release()
+def test_census_topic_grouping_not_valid_no_topics():
+    # GIVEN we instatiate a CensusTopicGrouping with no topics (default)
+    test_topic_grouping = get_test_topic_grouping()
     # WHEN we invoke the is_valid method, THEN we expect to get false
-    assert test_release.is_valid() is False
+    assert test_topic_grouping.is_valid() is False
 
 
-def test_census_release_not_valid_repeated_topics():
-    # GIVEN we instatiate a CensusRelease with repeated topics
+def test_census_topic_grouping_not_valid_repeated_topics():
+    # GIVEN we instatiate a CensusTopicGrouping with repeated topics
     mock_topic = MagicMock()
     mock_topic.is_valid.return_value = True
-    test_release = get_test_release(topics=[mock_topic, mock_topic])
+    test_topic_grouping = get_test_topic_grouping(topics=[mock_topic, mock_topic])
     # WHEN we invoke the is_valid method, THEN we expect to get False
-    assert test_release.is_valid() is False
+    assert test_topic_grouping.is_valid() is False
 
 
-def test_census_release_not_valid_invalid_topic():
-    # GIVEN we instantiate a CensusRelease with a mocked invalid topic
+def test_census_topic_grouping_not_valid_invalid_topic():
+    # GIVEN we instantiate a CensusTopicGrouping with a mocked invalid topic
     mock_topic = MagicMock()
     mock_topic.is_valid.return_value = False
-    test_release = get_test_release(topics=[mock_topic])
+    test_topic_grouping = get_test_topic_grouping(topics=[mock_topic])
     # WHEN we invoke the is_valid method, THEN we expect to get false
-    assert test_release.is_valid() is False
+    assert test_topic_grouping.is_valid() is False

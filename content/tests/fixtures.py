@@ -3,10 +3,9 @@ from census_objects import (
     CensusClassification,
     CensusVariable,
     CensusTopic,
-    CensusRelease,
+    CensusTopicGroup,
 )
-from filter_content_json_add_viz_flags import ConfigRow
-from filter_content_json_to_rich_content_spec import RichContentSpecRow
+from filter_atlas_content import RichContentSpecRow
 
 
 def get_test_category(**kwargs) -> CensusCategory:
@@ -18,7 +17,7 @@ def get_test_category(**kwargs) -> CensusCategory:
         legend_str_2=kwargs.get("legend_str_2", "test_legend_str_2"),
         legend_str_3=kwargs.get("legend_str_3", "test_legend_str_3"),
         _classification_code=kwargs.get("_classification_code", "test_classification_code"),
-        _source_value=kwargs.get("_source_value", "test_source_value"),
+        _category_code=kwargs.get("_category_code", 1),
     )
 
 
@@ -29,8 +28,6 @@ def get_test_classification(**kwargs) -> CensusClassification:
         desc=kwargs.get("desc", "test_desc"),
         choropleth_default=kwargs.get("choropleth_default", False),
         dot_density_default=kwargs.get("dot_density_default", False),
-        dataset=kwargs.get("dataset", "test_dataset"),
-        derivable_from_dataset=kwargs.get("test_derivable_from_dataset"),
         comparison_2011_data_available=kwargs.get("comparison_2011_data_available", False),
         categories=kwargs.get("categories", []),
         _variable_code=kwargs.get("_variable_code", "test_variable_code"),
@@ -59,23 +56,15 @@ def get_test_topic(**kwargs) -> CensusTopic:
     )
 
 
-def get_test_release(**kwargs) -> CensusRelease:
-    return CensusRelease(
+def get_test_topic_grouping(**kwargs) -> CensusTopicGroup:
+    return CensusTopicGroup(
         name=kwargs.get("name", "test_name"),
+        slug=kwargs.get("slug", "test_slug"),
+        desc=kwargs.get("desc", "test_desc"),
         topics=kwargs.get("topics", []),
+        _topic_names=kwargs.get("to_topic_namesics", []),
     )
 
-
-def get_test_config_row(**kwargs) -> ConfigRow:
-    return ConfigRow(
-        release=kwargs.get("release", "test_release"),
-        topic_grouping=kwargs.get("topic_grouping", "test_topic_grouping"),
-        topic=kwargs.get("topic", "test_topic"),
-        variable=kwargs.get("variable", "test_variable"),
-        classifications=kwargs.get("classifications", "raw"),
-        choropleth_default_classification=kwargs.get("choropleth_default_classification", ""),
-        dot_density_default_classification=kwargs.get("dot_density_default_classification", ""),
-    )
 
 def get_test_spec_row(**kwargs) -> RichContentSpecRow:
     return RichContentSpecRow(

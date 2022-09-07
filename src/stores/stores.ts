@@ -25,3 +25,8 @@ export const preventFlyToGeographyStore = writable<string | undefined>(undefined
  * A Svelte store containing all topics
  */
 export const topicStore = writable<[Topic] | undefined>(undefined);
+
+/**
+ * A Svelte store containing the base URL for accessing census tile data
+ */
+ export const geodataBaseUrlStore = writable<string | undefined>(undefined);

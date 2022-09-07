@@ -1,9 +1,8 @@
+import { get } from "svelte/store";
 import * as dsv from "d3-dsv"; // https://github.com/d3/d3/issues/3469
 import type { Bbox, GeoType, DataTile } from "src/types";
-// import mem from "mem";
-// import QuickLRU from "quick-lru";
 import { bboxToDataTiles, englandAndWales } from "../helpers/spatialHelper";
-import { geodataBaseUrl } from "../env";
+import { geodataBaseUrlStore } from "../stores/stores";
 
 /*
   Fetch place data files for all data 'tiles' (predefined coordinate grid squares) that intersect with current viewport 
@@ -33,7 +32,7 @@ export const fetchTileDataForBbox = async (args: { categoryCode: string; geoType
   fall within geographic bounding box represented by 'tile'.
 */
 export const fetchTileData = async (args: { categoryCode: string; geoType: GeoType; tile: DataTile }) => {
-  const url = `${geodataBaseUrl}/tiles/${args.geoType}/${args.tile.tilename}/${args.categoryCode}.csv`;
+  const url = `${get(geodataBaseUrlStore)}/tiles/${args.geoType}/${args.tile.tilename}/${args.categoryCode}.csv`;
   const response = await fetch(url);
   const csv = await response.text();
   return dsv.csvParse(csv);
@@ -47,7 +46,7 @@ export const fetchBreaks = async (args: {
   categoryCode: string;
   geoType: GeoType;
 }): Promise<{ breaks: { [categoryCode: string]: number[] }; minMax: { [categoryCode: string]: number[] } }> => {
-  const url = `${geodataBaseUrl}/breaks/${args.geoType}/${args.categoryCode}.json`;
+  const url = `${get(geodataBaseUrlStore)}/breaks/${args.geoType}/${args.categoryCode}.json`;
   const breaksRaw = await fetch(url).then((resp) => resp.json());
   /* 
     breaks json files have legacy format from when it was an API response:

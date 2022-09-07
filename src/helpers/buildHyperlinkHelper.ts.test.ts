@@ -1,5 +1,5 @@
 import { buildHyperlink } from "./buildHyperlinkHelper";
-import { appBasePath } from "../env";
+import { appBasePath } from "../buildEnv";
 
 const ladSelectedUrl = new URL("/test?lad=ladCode", "https://test.com");
 const ewSelectedUrl = new URL("/test", "https://test.com");

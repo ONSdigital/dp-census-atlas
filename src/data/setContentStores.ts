@@ -2,6 +2,7 @@ import { get } from "svelte/store";
 import { geodataBaseUrlStore, topicStore } from "../stores/stores";
 import { mergeTopics } from "../helpers/topicHelpers";
 import type { Topic } from "../types";
+import { appBasePath } from "../buildEnv";
 
 const fetchTopicsFromContentJsons = async (contentJsonUrls: [string]) => {
   const topics = await Promise.all(
@@ -36,7 +37,7 @@ export const setContentStoresOnce = async () => {
   if (get(topicStore)) {
     return;
   }
-  const env = await (await fetch("/runtime-env")).json();
+  const env = await (await fetch(`${appBasePath}/runtime-env`)).json();
   geodataBaseUrlStore.set(env.geodataBaseUrl);
   const topics = await fetchTopicsFromContentJsons(env.contentJsonUrls);
   const mergedTopics = mergeTopics(topics as [Topic]);

@@ -5,6 +5,7 @@
   // import "../../node_modules/@ons/design-system/css/main.css";
   import "../i18n/i18n.ts";
   import Layout from "../components/Layout.svelte";
+  import ServiceUnavailablePage from "../components/ServiceUnavailablePage.svelte";
   import { setContentStoresOnce } from "../data/setContentStores"
   import { topicStore } from "../stores/stores"
   import { onMount } from 'svelte';
@@ -17,8 +18,15 @@
   onMount(async () => setContentStoresOnce())
 </script>
 
+<!-- Display blank page until topicStore is populated... -->
 {#if $topicStore}
-<Layout>
-    <slot />
-</Layout>
+  {#if $topicStore.length > 0}
+    <!-- Display app if some topics were successfully loaded... -->
+    <Layout>
+        <slot />
+    </Layout>
+  {:else}
+    <!-- ... otherwise display service unavailable page. -->
+    <ServiceUnavailablePage />
+  {/if}
 {/if}

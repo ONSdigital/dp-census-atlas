@@ -7,12 +7,20 @@ export type MapState = {
   zoom: number;
 };
 
+export type TopicGroup = {
+  name: string;
+  slug: string;
+  desc: string;
+  topics: [Topic];
+};
+
 export type Topic = {
   name: string;
   slug: string;
   desc: string;
   variables: [Variable];
 };
+
 export type Variable = {
   name: string;
   slug: string;
@@ -21,6 +29,7 @@ export type Variable = {
   units: string;
   classifications: [Classification];
 };
+
 export type Classification = {
   code: string;
   slug: string;

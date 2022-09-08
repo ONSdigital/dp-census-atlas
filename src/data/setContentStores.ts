@@ -1,11 +1,11 @@
 import { get } from "svelte/store";
 import { geodataBaseUrlStore, topicStore } from "../stores/stores";
-import { mergeTopics } from "../helpers/topicHelpers";
-import type { Topic } from "../types";
 import { appBasePath } from "../buildEnv";
+import { flattenTopicGroupsToTopics, mergeTopicGroups } from "../helpers/topicHelpers";
+import type { Topic, TopicGroup } from "../types";
 
 const fetchTopicsFromContentJsons = async (contentJsonUrls: [string]) => {
-  const topics = await Promise.all(
+  const topicsGroups = await Promise.all(
     contentJsonUrls.map(async (config_json_url) => {
       const resp = await fetch(config_json_url);
       if (resp.status != 200) {
@@ -14,7 +14,7 @@ const fetchTopicsFromContentJsons = async (contentJsonUrls: [string]) => {
       } else {
         try {
           const contentJson = await resp.json();
-          return contentJson;
+          return contentJson.content;
         } catch (e) {
           console.log(`Content json file ${config_json_url} could not be parsed: ${e}`);
         }
@@ -23,7 +23,7 @@ const fetchTopicsFromContentJsons = async (contentJsonUrls: [string]) => {
   ).then((responseArry) => {
     return responseArry.filter((t) => t != null).flat();
   });
-  return topics;
+  return topicsGroups;
 };
 
 /*
@@ -39,7 +39,8 @@ export const setContentStoresOnce = async () => {
   }
   const env = await (await fetch(`${appBasePath}/runtime-env`)).json();
   geodataBaseUrlStore.set(env.geodataBaseUrl);
-  const topics = await fetchTopicsFromContentJsons(env.contentJsonUrls);
-  const mergedTopics = mergeTopics(topics as [Topic]);
-  topicStore.set(mergedTopics as [Topic]);
+  const topicsGroups = await fetchTopicsFromContentJsons(env.contentJsonUrls);
+  const mergedTopicGroups = mergeTopicGroups(topicsGroups as [TopicGroup]);
+  const topics = flattenTopicGroupsToTopics(mergedTopicGroups as [TopicGroup]);
+  topicStore.set(topics as [Topic]);
 };

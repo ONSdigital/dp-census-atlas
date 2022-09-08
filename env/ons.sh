@@ -1,4 +1,4 @@
-# env vars needed to build for ONS sandbox env
+# env vars needed to build for ONS envs
 
 export SKADAPTER="node"
 export VITE_GEODATA_BASE_URL="https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/newquads"

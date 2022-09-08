@@ -2,6 +2,6 @@
 
 pushd dp-census-atlas
   npm install --silent
-  npm run build:sandbox
+  npm run build:ons
   make test
 popd

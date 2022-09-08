@@ -9,13 +9,13 @@ debug:
 build: # generic build command using automatic sveltekit adapter
 	npm run build
 
-.PHONY: build-sandbox
-build-sandbox: # NB - assumed this will only be used by the CI, where we should be building node rather than netlify
-	npm run build:sandbox
+.PHONY: build-netlify
+build-netlify:
+	npm run build:netlify
 
-.PHONY: build-prod
-build-prod: # NB - assumed this will only be used by the CI, where we should be building node rather than netlify
-	npm run build:prod
+.PHONY: build-ons
+build-ons: # NB - assumed this will only be used by the CI, where we should be building node rather than netlify
+	npm run build:ons
 
 .PHONY: test
 test:

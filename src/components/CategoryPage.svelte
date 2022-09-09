@@ -2,7 +2,7 @@
   import { _ } from "svelte-i18n";
   import { page } from "$app/stores";
   import { mapStore, selectedGeographyStore } from "../stores/stores";
-  import { topicStore } from "../stores/stores";
+  import { contentStore } from "../stores/stores";
   import { setVizStore } from "../data/setVizStore";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
   import { getDefaultChoroplethClassification } from "../helpers/variableHelpers";
@@ -12,7 +12,7 @@
 
   $: params = $page.params;
   $: topicSlug = params.topic;
-  $: topic = $topicStore.find((t) => t.slug === topicSlug);
+  $: topic = $contentStore.topics.find((t) => t.slug === topicSlug);
   $: variableSlug = params.variable;
   $: variable = topic.variables.find((v) => v.slug === variableSlug);
   $: selectedGeographyDisplayName = $selectedGeographyStore?.displayName;
@@ -23,12 +23,12 @@
 
   $: if ($mapStore) {
     setVizStore({
-      categoryCode: category.code,
+      category: category,
       geoType: $mapStore.geoType,
       geoCode: selectedGeographyGeoCode,
       bbox: $mapStore.bbox,
       zoom: $mapStore.zoom,
-      topics: $topicStore,
+      topics: $contentStore.topics,
     });
   }
 </script>

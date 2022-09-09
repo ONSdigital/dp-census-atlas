@@ -5,8 +5,7 @@ export const get: RequestHandler = async () => {
   return {
     status: 200,
     body: {
-      contentJsonUrls: JSON.parse(process.env["CONTENT_JSONS"] || import.meta.env.VITE_CONTENT_JSONS),
-      geodataBaseUrl: process.env["GEODATA_BASE_URL"] || import.meta.env.VITE_GEODATA_BASE_URL,
+      envName: process.env["ENV_NAME"] || import.meta.env.VITE_ENV_NAME,
     },
   };
 };

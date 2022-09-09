@@ -2,11 +2,11 @@
   import { page } from "$app/stores";
   import { numberToWords } from "../util/numberUtil";
   import RightChevron from "./RightChevron.svelte";
-  import { topicStore } from "../stores/stores"
+  import { contentStore } from "../stores/stores"
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
 
   $: topicSlug = $page.params.topic;
-  $: topic = $topicStore.find((t) => t.slug === topicSlug);
+  $: topic = $contentStore.topics.find((t) => t.slug === topicSlug);
   $: variableSlug = $page.params.variable;
   $: variable = topic.variables.find((v) => v.slug === variableSlug);
 </script>

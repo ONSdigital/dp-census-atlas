@@ -11,6 +11,8 @@
     const g = getSelectedGeography($page.url);
     setSelectedGeographyStore(g.geoCode);
   }
+
+  export let drawMap = true;
 </script>
 
 <div class="inset-0 lg:absolute lg:flex flex-col text-onsblack">
@@ -19,10 +21,12 @@
     <div class="flex-1 grow-[4] min-w-[30rem] overflow-y-auto">
       <slot />
     </div>
-    <div class="flex-1 grow-[7] relative">
-      <Map />
-      <MapTips />
-      <MapLegend />
-    </div>
+    {#if drawMap}
+      <div class="flex-1 grow-[7] relative">
+        <Map />
+        <MapTips />
+        <MapLegend />
+      </div>
+    {/if}
   </div>
 </div>

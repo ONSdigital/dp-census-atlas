@@ -1,7 +1,7 @@
 <script>
   import { page } from "$app/stores";
   import { vizStore, selectedGeographyStore } from "../stores/stores";
-  import { topicStore } from "../stores/stores";
+  import { contentStore } from "../stores/stores";
   import { formatTemplateString } from "../helpers/categoryHelpers";
   import { minDecimalPlacesToAntialias, ratioToPercentage } from "../util/numberUtil";
   import { choroplethColours } from "../helpers/choroplethHelpers";
@@ -14,7 +14,7 @@
   )?.ratioToTotal;
   $: params = $page.params;
   $: topicSlug = params.topic;
-  $: topic = $topicStore.find((t) => t.slug === topicSlug);
+  $: topic = $contentStore.topics.find((t) => t.slug === topicSlug);
   $: variableSlug = params.variable;
   $: variable = topic ? topic.variables.find((v) => v.slug === variableSlug) : undefined;
   $: selectedGeographyDisplayName = $selectedGeographyStore?.displayName;

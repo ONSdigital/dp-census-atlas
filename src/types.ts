@@ -46,6 +46,7 @@ export type Category = {
   legend_str_1: string;
   legend_str_2: string;
   legend_str_3: string;
+  baseUrl: string;
 };
 export type VariableData = { [catCode: string]: { count: number; total: number; percentage: number } };
 
@@ -132,4 +133,18 @@ export type DataTileGrid = {
   lad: DataTile[];
   msoa: DataTile[];
   oa: DataTile[];
+};
+
+export type RuntimeEnv = {
+  envName: string;
+};
+
+export type ContentConfig = {
+  contentBaseUrl: string;
+  contentJsonUrl: string;
+};
+
+export type ContentStore = {
+  releases: [string];
+  topics: [Topic];
 };

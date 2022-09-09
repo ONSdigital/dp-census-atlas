@@ -1,5 +1,5 @@
 import type { TopicGroup, Topic, Variable, Category } from "../types";
-import { flattenTopicGroupsToTopics, mergeTopicGroups, mergeTopics } from "./topicHelpers";
+import { flattenTopicGroupsToTopics, mergeTopicGroups, mergeTopics } from "./contentHelpers";
 
 const makeTestTopicGroups = (n: number) => {
   const topicGroups = [];

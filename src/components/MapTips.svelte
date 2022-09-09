@@ -1,7 +1,7 @@
 <script>
   import { fade } from "svelte/transition";
   import { page } from "$app/stores";
-  import { selectedGeographyStore, mapStore, topicStore } from "../stores/stores";
+  import { selectedGeographyStore, mapStore, contentStore } from "../stores/stores";
   import tipStore from "../stores/tipStore";
   import { getDefaultChoroplethClassification } from "../helpers/variableHelpers";
 
@@ -10,7 +10,7 @@
 
   $: params = $page.params;
   $: topicSlug = params.topic;
-  $: topic = $topicStore.find((t) => t.slug === topicSlug);
+  $: topic = $contentStore.topics.find((t) => t.slug === topicSlug);
   $: variableSlug = params.variable;
   $: variable = topic ? topic.variables.find((v) => v.slug === variableSlug) : undefined;
   $: defaultChoroplethClassification = getDefaultChoroplethClassification(variable);

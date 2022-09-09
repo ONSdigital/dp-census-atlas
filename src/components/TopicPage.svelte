@@ -7,13 +7,13 @@
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
   import { getDefaultChoroplethClassification } from "../helpers/variableHelpers";
 
-  import { topicStore } from "../stores/stores";
+  import { contentStore } from "../stores/stores";
 
   import Heading from "./Heading.svelte";
   import AreaPanel from "./AreaPanel.svelte";
 
   $: topicSlug = $page.params.topic;
-  $: topic = $topicStore.find((t) => t.slug === topicSlug);
+  $: topic = $contentStore.topics.find((t) => t.slug === topicSlug);
 
   // $: if ($mapStore) {
   //   vizStore.set(undefined);

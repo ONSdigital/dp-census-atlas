@@ -1,6 +1,6 @@
 <script lang="ts">
   import { selectedGeographyStore } from "../stores/stores";
-  import GeoSearch from "./GeoSearch.svelte";
+  import GeoSearch from "./AreaSearch.svelte";
   import Icon from "./MaterialIcon.svelte";
   import { deselectGeography } from "../helpers/geographyHelper";
 

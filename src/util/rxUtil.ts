@@ -5,7 +5,7 @@ import { BehaviorSubject } from "rxjs";
  * https://github.com/ReactiveX/rxjs/issues/4740#issuecomment-490601347
  */
 export class SvelteSubject<T> extends BehaviorSubject<T> {
-  set(value) {
+  set(value: T) {
     super.next(value);
   }
 }

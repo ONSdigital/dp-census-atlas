@@ -72,7 +72,7 @@ export type PostcodeSearchItem = {
   kind: "Postcode";
   value: string;
 };
-export type GeoSearchItem = GeographySearchItem | PostcodeSearchItem;
+export type AreaSearchItem = GeographySearchItem | PostcodeSearchItem;
 
 export type GeographyInfo = {
   meta: {

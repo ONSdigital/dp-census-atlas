@@ -3,7 +3,7 @@ import { fromFetch } from "rxjs/fetch";
 import { switchMap, mergeMap, map, debounceTime, distinctUntilChanged, catchError } from "rxjs/operators";
 import type { AreaSearchItem, GeographySearchItem, PostcodeSearchItem } from "../types";
 import type { SvelteSubject } from "../util/rxUtil";
-import { appBasePath } from "../env";
+import { appBasePath } from "../buildEnv";
 
 export const composeAreaSearch = (query: SvelteSubject<string>): Observable<AreaSearchItem[]> =>
   query.pipe(

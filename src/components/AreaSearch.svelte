@@ -5,7 +5,7 @@
   import { highlightText } from "../helpers/searchCensusHelper";
   import { selectGeography } from "../helpers/geographyHelper";
   import type { GeographySearchItem, PostcodeSearchItem } from "../types";
-  import { appBasePath } from "../env";
+  import { appBasePath } from "../buildEnv";
 
   const query = new SvelteSubject("");
   const results = composeAreaSearch(query);

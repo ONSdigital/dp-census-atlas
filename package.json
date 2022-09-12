@@ -2,8 +2,10 @@
   "name": "svelteapp",
   "version": "0.0.1",
   "scripts": {
+    "tsc": "tsc --noEmit",
     "dev": ". env/dev.sh && svelte-kit dev -p 28100",
     "build": "svelte-kit build",
+    "build:dev": ". env/dev.sh && npm run build",
     "build:netlify": ". env/netlify.sh && npm run build",
     "build:ons": ". env/ons.sh && npm run build && ./workaround-sveltekit-3726.sh",
     "package": "svelte-kit package",

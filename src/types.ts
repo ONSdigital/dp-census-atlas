@@ -11,14 +11,14 @@ export type TopicGroup = {
   name: string;
   slug: string;
   desc: string;
-  topics: [Topic];
+  topics: Topic[];
 };
 
 export type Topic = {
   name: string;
   slug: string;
   desc: string;
-  variables: [Variable];
+  variables: Variable[];
 };
 
 export type Variable = {
@@ -27,7 +27,7 @@ export type Variable = {
   code: string;
   desc: string;
   units: string;
-  classifications: [Classification];
+  classifications: Classification[];
 };
 
 export type Classification = {
@@ -36,7 +36,7 @@ export type Classification = {
   desc: string;
   choropleth_default: boolean;
   dot_density_default: boolean;
-  categories: [Category];
+  categories: Category[];
 };
 
 export type Category = {

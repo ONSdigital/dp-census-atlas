@@ -3,7 +3,7 @@ import type { ContentConfig, Classification, Topic, TopicGroup, Variable } from 
 /*
   Iterate through topic groups and append the data baseUrl to each.
 */
-export const appendBaseUrlToCategories = (topicGroups: [TopicGroup], ctcfg: ContentConfig) => {
+export const appendBaseUrlToCategories = (topicGroups: TopicGroup[], ctcfg: ContentConfig) => {
   topicGroups.forEach((tg) => {
     tg.topics.forEach((t) => {
       t.variables.forEach((v) => {
@@ -20,7 +20,7 @@ export const appendBaseUrlToCategories = (topicGroups: [TopicGroup], ctcfg: Cont
 /*
   Iterate over list of TopicGroups and merge topic groups with the same name.
 */
-export const mergeTopicGroups = (topicGroups: [TopicGroup]) => {
+export const mergeTopicGroups = (topicGroups: TopicGroup[]) => {
   const topicGroupNames = new Set(topicGroups.map((tg) => tg.name));
   const mergedTopicGroups = [];
   for (const topicGroupName of topicGroupNames) {
@@ -39,7 +39,7 @@ export const mergeTopicGroups = (topicGroups: [TopicGroup]) => {
 /*
   Iterate over list of Topics and merge topics with the same name.
 */
-export const mergeTopics = (topics: [Topic]) => {
+export const mergeTopics = (topics: Topic[]) => {
   const topicNames = new Set(topics.map((t) => t.name));
   const mergedTopics = [];
   for (const topicName of topicNames) {

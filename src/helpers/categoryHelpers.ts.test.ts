@@ -1,4 +1,4 @@
-import { GeoTypes, type Variable, type Category } from "../types";
+import { GeoTypes, type Variable, type Category, type Classification } from "../types";
 import { englandAndWales } from "./spatialHelper";
 import { getSelectedGeography, formatPercentage, formatTemplateString } from "./categoryHelpers";
 
@@ -19,10 +19,10 @@ describe("formatTemplateString", () => {
     name: "testCat",
     slug: "test-cat",
     code: "testCatCode",
-    desc: "",
-    category_h_pt2: "",
-    category_h_pt3: "",
-    cat_location_summary_pt2: "",
+    legend_str_1: "",
+    legend_str_2: "",
+    legend_str_3: "",
+    baseUrl: "",
   };
   const testVariable: Variable = {
     name: "testVar",
@@ -30,12 +30,7 @@ describe("formatTemplateString", () => {
     code: "testVarCode",
     desc: "",
     units: "testUnits",
-    categories: [],
-    total: {
-      name: "testTotal",
-      slug: "test-total",
-      code: "testTotalCode",
-    },
+    classifications: [] as Classification[],
   };
   const testLocation = "testLocation";
 

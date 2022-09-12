@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": ". env/dev.sh && svelte-kit dev -p 28100",
+    "dev-win": "call env/dev.bat && svelte-kit dev -p 28100",
     "build": "svelte-kit build",
     "build:netlify": ". env/netlify.sh && npm run build",
     "build:ons": ". env/ons.sh && npm run build && ./workaround-sveltekit-3726.sh",

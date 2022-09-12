@@ -5,6 +5,8 @@ import preprocess from "svelte-preprocess";
 
 dotenv.config();
 
+console.log(process.env);
+
 const getAdapter = () => {
   const skAdapter = process.env.SKADAPTER;
   if (skAdapter === "node") {

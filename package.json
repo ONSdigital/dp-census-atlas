@@ -2,8 +2,10 @@
   "name": "svelteapp",
   "version": "0.0.1",
   "scripts": {
+    "tsc": "tsc --noEmit",
     "dev": ". env/dev.sh && svelte-kit dev -p 28100",
     "build": "svelte-kit build",
+    "build:dev": ". env/dev.sh && npm run build",
     "build:netlify": ". env/netlify.sh && npm run build",
     "build:ons": ". env/ons.sh && npm run build && ./workaround-sveltekit-3726.sh",
     "package": "svelte-kit package",
@@ -60,6 +62,7 @@
     "mapbox-gl": "^1.13.2",
     "normalize.css": "^8.0.1",
     "rxjs": "^7.5.4",
-    "svelte-i18n": "^3.3.13"
+    "svelte-i18n": "^3.3.13",
+    "svelte-select": "^4.4.7"
   }
 }

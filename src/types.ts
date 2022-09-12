@@ -69,14 +69,19 @@ export type SelectedGeographyData = {
   boundary: GeographyFeature;
 };
 
-// export type GeographyAutoSuggestProps = {
-//   bbox: number[];
-//   cy: string;
-//   en: string;
-//   geoCode: string;
-//   geoType: string;
-//   sanitisedText?: string;
-// };
+export type GeographySearchItem = {
+  kind: "Geography";
+  geoType: string;
+  geoCode: string;
+  en: string;
+  cy: string;
+  bbox: number[];
+};
+export type PostcodeSearchItem = {
+  kind: "Postcode";
+  value: string;
+};
+export type AreaSearchItem = GeographySearchItem | PostcodeSearchItem;
 
 export type GeographyInfo = {
   meta: {

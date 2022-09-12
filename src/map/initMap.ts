@@ -83,8 +83,6 @@ const getGeoTypeForCurrentZoom = (zoom: number): GeoType => {
 
 const listenToSelectedGeographyStore = (map: mapboxgl.Map) => {
   selectedGeographyStore.subscribe((geography) => {
-    // console.log("geography", geography);
-
     if (geography && map.isStyleLoaded()) {
       if (geography.geoType === "ew") {
         // do we want to reset the map view?

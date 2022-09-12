@@ -84,7 +84,7 @@ export const fetchGeographyInfo = async (geoCode: string) => {
   if (geoCode === englandAndWales.meta.code) {
     return JSON.stringify(englandAndWales);
   }
-  const url = `${geodataBaseUrl}/geo/${geoCode}.geojson`;
+  const url = `${get(geodataBaseUrlStore)}/geo/${geoCode}.geojson`;
   const response = await fetch(url);
   const data = await response.text();
   return data;

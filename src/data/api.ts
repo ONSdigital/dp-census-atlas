@@ -1,14 +1,13 @@
-import { get } from "svelte/store";
 import * as dsv from "d3-dsv"; // https://github.com/d3/d3/issues/3469
-import type { Bbox, GeoType, DataTile } from "src/types";
+import type { Bbox, Category, DataTile, GeoType } from "src/types";
 import { bboxToDataTiles, englandAndWales } from "../helpers/spatialHelper";
-import { geodataBaseUrlStore } from "../stores/stores";
+import { geoBaseUrl } from "../buildEnv";
 
 /*
   Fetch place data files for all data 'tiles' (predefined coordinate grid squares) that intersect with current viewport 
   bounding box.
 */
-export const fetchTileDataForBbox = async (args: { categoryCode: string; geoType: GeoType; bbox: Bbox }) => {
+export const fetchTileDataForBbox = async (args: { category: Category; geoType: GeoType; bbox: Bbox }) => {
   // get all intersecting data tiles
   const dataTiles = bboxToDataTiles(args.bbox, args.geoType);
 
@@ -16,7 +15,7 @@ export const fetchTileDataForBbox = async (args: { categoryCode: string; geoType
   const fetchedData = await Promise.all(
     dataTiles.map((dataTile) => {
       return fetchTileData({
-        categoryCode: args.categoryCode,
+        category: args.category,
         geoType: args.geoType,
         tile: dataTile,
       });
@@ -31,8 +30,8 @@ export const fetchTileDataForBbox = async (args: { categoryCode: string; geoType
   Fetch json with census data by for categories categoryCode and totalCode for all geographies of type 'geoType' that 
   fall within geographic bounding box represented by 'tile'.
 */
-export const fetchTileData = async (args: { categoryCode: string; geoType: GeoType; tile: DataTile }) => {
-  const url = `${get(geodataBaseUrlStore)}/tiles/${args.geoType}/${args.tile.tilename}/${args.categoryCode}.csv`;
+export const fetchTileData = async (args: { category: Category; geoType: GeoType; tile: DataTile }) => {
+  const url = `${args.category.baseUrl}/tiles/${args.geoType}/${args.tile.tilename}/${args.category.code}.csv`;
   const response = await fetch(url);
   const csv = await response.text();
   return dsv.csvParse(csv);
@@ -43,10 +42,10 @@ export const fetchTileData = async (args: { categoryCode: string; geoType: GeoTy
   divided by total for that category.
 */
 export const fetchBreaks = async (args: {
-  categoryCode: string;
+  category: Category;
   geoType: GeoType;
 }): Promise<{ breaks: { [categoryCode: string]: number[] }; minMax: { [categoryCode: string]: number[] } }> => {
-  const url = `${get(geodataBaseUrlStore)}/breaks/${args.geoType}/${args.categoryCode}.json`;
+  const url = `${args.category.baseUrl}/breaks/${args.geoType}/${args.category.code}.json`;
   const breaksRaw = await fetch(url).then((resp) => resp.json());
   /* 
     breaks json files have legacy format from when it was an API response:
@@ -84,7 +83,7 @@ export const fetchGeographyInfo = async (geoCode: string) => {
   if (geoCode === englandAndWales.meta.code) {
     return JSON.stringify(englandAndWales);
   }
-  const url = `${get(geodataBaseUrlStore)}/geo/${geoCode}.geojson`;
+  const url = `${geoBaseUrl}/${geoCode}.geojson`;
   const response = await fetch(url);
   const data = await response.text();
   return data;

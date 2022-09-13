@@ -1,28 +1,26 @@
-import type { TopicGroup, Topic, Variable, Classification } from "../types";
-
+import type { ContentConfig, Classification, Topic, TopicGroup, Variable } from "../types";
 
 /*
-  Iterate over list of TopicGroups and convert each to a topic by moving the variables in side each of their child
-  topics to a new key in the TopicGroup, then removing the topics themselves
+  Iterate through topic groups and append the data baseUrl to each.
 */
-export const flattenTopicGroupsToTopics = (topicGroups: [TopicGroup]) => {
-  const topics = [];
-  for (const topicGroup of topicGroups) {
-    topics.push({
-      name: topicGroup.name,
-      slug: topicGroup.slug,
-      desc: topicGroup.desc,
-      variables: topicGroup.topics.flatMap((t) => t.variables),
-    })
-  }
-  return topics;
+export const appendBaseUrlToCategories = (topicGroups: TopicGroup[], ctcfg: ContentConfig) => {
+  topicGroups.forEach((tg) => {
+    tg.topics.forEach((t) => {
+      t.variables.forEach((v) => {
+        v.classifications.forEach((c) => {
+          c.categories.forEach((ct) => {
+            ct.baseUrl = ctcfg.contentBaseUrl;
+          });
+        });
+      });
+    });
+  });
 };
-
 
 /*
   Iterate over list of TopicGroups and merge topic groups with the same name.
 */
-export const mergeTopicGroups = (topicGroups: [TopicGroup]) => {
+export const mergeTopicGroups = (topicGroups: TopicGroup[]) => {
   const topicGroupNames = new Set(topicGroups.map((tg) => tg.name));
   const mergedTopicGroups = [];
   for (const topicGroupName of topicGroupNames) {
@@ -41,7 +39,7 @@ export const mergeTopicGroups = (topicGroups: [TopicGroup]) => {
 /*
   Iterate over list of Topics and merge topics with the same name.
 */
-export const mergeTopics = (topics: [Topic]) => {
+export const mergeTopics = (topics: Topic[]) => {
   const topicNames = new Set(topics.map((t) => t.name));
   const mergedTopics = [];
   for (const topicName of topicNames) {
@@ -91,4 +89,21 @@ const dedupeClassifications = (classifications: [Classification]) => {
     mergedCls.push(clsToMerge[0]);
   }
   return mergedCls;
+};
+
+/*
+  Iterate over list of TopicGroups and convert each to a topic by moving the variables in side each of their child
+  topics to a new key in the TopicGroup, then removing the topics themselves
+*/
+export const flattenTopicGroupsToTopics = (topicGroups: [TopicGroup]) => {
+  const topics = [];
+  for (const topicGroup of topicGroups) {
+    topics.push({
+      name: topicGroup.name,
+      slug: topicGroup.slug,
+      desc: topicGroup.desc,
+      variables: topicGroup.topics.flatMap((t) => t.variables),
+    })
+  }
+  return topics;
 };

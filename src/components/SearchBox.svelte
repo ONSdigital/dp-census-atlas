@@ -2,11 +2,11 @@
   import Badge from "./Badge.svelte";
   import SearchBoxItem from "./SearchBoxItem.svelte";
   import { highlightText, searchCensus } from "../helpers/searchCensusHelper";
-  import { topicStore } from "../stores/stores"
+  import { contentStore } from "../stores/stores"
 
   export let name: string;
   let val = "";
-  $: results = searchCensus(val, $topicStore);
+  $: results = searchCensus(val, $contentStore.topics);
 </script>
 
 <div class="">

@@ -1,5 +1,5 @@
 import { writable } from "svelte/store";
-import type { MapState, VizData, SelectedGeographyData, Topic } from "../types";
+import type { MapState, SelectedGeographyData, ContentStore, VizData } from "../types";
 
 /**
  * A Svelte store containing any map state we need to be aware of within the Svelte app.
@@ -24,9 +24,4 @@ export const preventFlyToGeographyStore = writable<string | undefined>(undefined
 /**
  * A Svelte store containing all topics
  */
-export const topicStore = writable<[Topic] | undefined>(undefined);
-
-/**
- * A Svelte store containing the base URL for accessing census tile data
- */
- export const geodataBaseUrlStore = writable<string | undefined>(undefined);
+export const contentStore = writable<ContentStore | undefined>(undefined);

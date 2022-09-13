@@ -41,11 +41,11 @@
     {$_("locationPage.suggestions.title.text")}
   </p>
   <ul class="ons-list ons-list--bare">
-    {#each suggestions as { topic, variable, category, label }}
+    {#each suggestions as { variableGroup: variableGroup, variable, category, label }}
       <li class="ons-list__item">
         <a
           href={buildHyperlink($page.url, {
-            topic,
+            variableGroup,
             variable,
             category,
           })}

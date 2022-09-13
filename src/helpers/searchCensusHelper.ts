@@ -1,26 +1,28 @@
-export const searchCensus = (q: string, topics) => {
-  if (!topics) {
+import type { VariableGroup } from "src/types";
+
+export const searchCensus = (q: string, variableGroups: VariableGroup[]) => {
+  if (!variableGroups) {
     return {
-      topics: [],
+      variableGroups: [],
       variables: [],
       categories: [],
     };
   }
   const s = q.toLowerCase();
-  const topicResults = topics.filter((t) => t.name.toLowerCase().includes(s) || t.desc.toLowerCase().includes(s));
+  const variableGroupResults = variableGroups.filter((vg) => vg.name.toLowerCase().includes(s) || vg.desc.toLowerCase().includes(s));
 
-  const allVariables = topics.flatMap((t) => t.variables.map((v) => ({ topic: t, variable: v })));
+  const allVariables = variableGroups.flatMap((vg) => vg.variables.map((v) => ({ variableGroup: vg, variable: v })));
   const variableResults = allVariables.filter(
     (v) => v.variable.name.toLowerCase().includes(s) || v.variable.desc.toLowerCase().includes(s),
   );
 
   const allClassifications = allVariables.flatMap((v) =>
-    v.variable.classifications.map((c) => ({ topic: v.topic, variable: v, classification: c })),
+    v.variable.classifications.map((c) => ({ variableGroup: v.variableGroup, variable: v, classification: c })),
   );
 
   const allCategories = allClassifications.flatMap((c) =>
     c.classification.categories.map((cat) => ({
-      topic: c.topic,
+      variableGroup: c.variableGroup,
       variable: c.variable,
       classification: c,
       category: cat,
@@ -31,7 +33,7 @@ export const searchCensus = (q: string, topics) => {
   );
 
   return {
-    topics: topicResults,
+    variableGroups: variableGroupResults,
     variables: variableResults,
     categories: categoryResults,
   };

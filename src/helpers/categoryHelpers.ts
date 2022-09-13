@@ -1,15 +1,15 @@
 import { englandAndWales } from "./spatialHelper";
-import { GeoTypes, type Variable, type Category, type Topic } from "../types";
+import { GeoTypes, type Variable, type Category, type VariableGroup } from "../types";
 import { unCapitalizeFirstLetter } from "../util/stringUtil";
 
-export const getCategoryInfo = (categoryCode: string, topics: [Topic]) => {
-  const allVariables = topics.flatMap((t) => t.variables.map((v) => ({ topic: t, variable: v })));
+export const getCategoryInfo = (categoryCode: string, variableGroups: VariableGroup[]) => {
+  const allVariables = variableGroups.flatMap((vg) => vg.variables.map((v) => ({ variableGroup: vg, variable: v })));
   const allClassifications = allVariables.flatMap((v) =>
-    v.variable.classifications.map((c) => ({ topic: v.topic, variable: v, classification: c })),
+    v.variable.classifications.map((c) => ({ variableGroup: v.variableGroup, variable: v, classification: c })),
   );
   const allCategories = allClassifications.flatMap((c) =>
     c.classification.categories.map((cat) => ({
-      topic: c.topic,
+      variableGroup: c.variableGroup,
       variable: c.variable,
       classification: c,
       category: cat,
@@ -18,7 +18,7 @@ export const getCategoryInfo = (categoryCode: string, topics: [Topic]) => {
   const match = allCategories.find((c) => c.category.code === categoryCode);
 
   return {
-    topic: match.topic,
+    variableGroup: match.variableGroup,
     variable: match.variable.variable,
     category: match.category,
   };

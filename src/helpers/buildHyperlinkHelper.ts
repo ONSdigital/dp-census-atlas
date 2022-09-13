@@ -1,27 +1,27 @@
 import { appBasePath } from "../buildEnv";
 
-interface TopicPageParams {
-  topic: string;
+interface VariableGroupPageParams {
+  variableGroup: string;
 }
 
 interface VariablePageParams {
-  topic: string;
+  variableGroup: string;
   variable: string;
 }
 
 interface CategoryPageParams {
-  topic: string;
+  variableGroup: string;
   variable: string;
   classification?: string;
   category: string;
 }
 
-type UrlParams = TopicPageParams | VariablePageParams | CategoryPageParams;
+type UrlParams = VariableGroupPageParams | VariablePageParams | CategoryPageParams;
 
 /**
  * Function takes in current url and (optionally)
- * topic / variable / classification / category in
- * urlParams object or (optionally) a static path e.g. "topics"
+ * variableGroup / variable / classification / category in
+ * urlParams object or (optionally) a static path e.g. "variableGroups"
  * and returns complete hyperlink string.
  * Omitting the urlParams parameter will return a link
  * to the index page.
@@ -34,8 +34,8 @@ export const buildHyperlink = (url: URL, urlParams?: UrlParams, staticPath?: str
     return `${appBasePath}/2021/${staticPath}${url.search}`;
   }
   let link = `${appBasePath}/2021`;
-  if ("topic" in urlParams) {
-    link = `${link}/${urlParams.topic}`;
+  if ("variableGroup" in urlParams) {
+    link = `${link}/${urlParams.variableGroup}`;
   }
   if ("variable" in urlParams) {
     link = `${link}/${urlParams.variable}`;

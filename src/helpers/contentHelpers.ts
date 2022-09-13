@@ -1,16 +1,14 @@
-import type { ContentConfig, Classification, Topic, TopicGroup, Variable } from "../types";
+import type { ContentConfig, Classification, Variable, VariableGroup } from "../types";
 
 /*
-  Iterate through topic groups and append the data baseUrl to each.
+  Iterate through variable groups and append the data baseUrl to each category of each classification of each variable.
 */
-export const appendBaseUrlToCategories = (topicGroups: TopicGroup[], ctcfg: ContentConfig) => {
-  topicGroups.forEach((tg) => {
-    tg.topics.forEach((t) => {
-      t.variables.forEach((v) => {
-        v.classifications.forEach((c) => {
-          c.categories.forEach((ct) => {
-            ct.baseUrl = ctcfg.contentBaseUrl;
-          });
+export const appendBaseUrlToCategories = (variableGroups: VariableGroup[], ctcfg: ContentConfig) => {
+  variableGroups.forEach((vg) => {
+    vg.variables.forEach((v) => {
+      v.classifications.forEach((c) => {
+        c.categories.forEach((ct) => {
+          ct.baseUrl = ctcfg.contentBaseUrl;
         });
       });
     });
@@ -18,49 +16,30 @@ export const appendBaseUrlToCategories = (topicGroups: TopicGroup[], ctcfg: Cont
 };
 
 /*
-  Iterate over list of TopicGroups and merge topic groups with the same name.
+  Iterate over list of variable groups and merge variable groups with the same name.
 */
-export const mergeTopicGroups = (topicGroups: TopicGroup[]) => {
-  const topicGroupNames = new Set(topicGroups.map((tg) => tg.name));
-  const mergedTopicGroups = [];
-  for (const topicGroupName of topicGroupNames) {
-    const topicGroupsToMerge = topicGroups.filter((tg) => tg.name === topicGroupName);
-    const allTopics = topicGroupsToMerge.flatMap((tg) => tg.topics);
-    mergedTopicGroups.push({
-      name: topicGroupsToMerge[0].name,
-      slug: topicGroupsToMerge[0].slug,
-      desc: topicGroupsToMerge[0].desc,
-      topics: mergeTopics(allTopics as [Topic]),
+export const mergeVariableGroups = (variableGroups: VariableGroup[]): VariableGroup[] => {
+  const variableGroupNames = new Set(variableGroups.map((t) => t.name));
+  const mergedVariableGroups = [];
+  for (const variableGroupName of variableGroupNames) {
+    const variableGroupsToMerge = variableGroups.filter((t) => t.name === variableGroupName);
+    const allVariables = variableGroupsToMerge.flatMap((t) => t.variables);
+    mergedVariableGroups.push({
+      name: variableGroupsToMerge[0].name,
+      slug: variableGroupsToMerge[0].slug,
+      desc: variableGroupsToMerge[0].desc,
+      variables: mergeVariables(allVariables as Variable[]),
     });
   }
-  return mergedTopicGroups;
+  return mergedVariableGroups;
 };
 
 /*
-  Iterate over list of Topics and merge topics with the same name.
-*/
-export const mergeTopics = (topics: Topic[]) => {
-  const topicNames = new Set(topics.map((t) => t.name));
-  const mergedTopics = [];
-  for (const topicName of topicNames) {
-    const topicsToMerge = topics.filter((t) => t.name === topicName);
-    const allVariables = topicsToMerge.flatMap((t) => t.variables);
-    mergedTopics.push({
-      name: topicsToMerge[0].name,
-      slug: topicsToMerge[0].slug,
-      desc: topicsToMerge[0].desc,
-      variables: mergeVariables(allVariables as [Variable]),
-    });
-  }
-  return mergedTopics;
-};
-
-/*
-  Iterate over list of Variables and merge topics with the same name. ToDo - at the moment this just dedupes categories
+  Iterate over list of Variables and merge variables with the same name. ToDo - at the moment this just dedupes categories
   with no concept of precendence in different variable definitions from different content.jsons. This will need 
   extending once we have thought about how clashes between different content.json files should be handled...
 */
-const mergeVariables = (variables: [Variable]) => {
+const mergeVariables = (variables: Variable[]) => {
   const varNames = new Set(variables.map((v) => v.name));
   const mergedVariables = [];
   for (const varName of varNames) {
@@ -72,7 +51,8 @@ const mergeVariables = (variables: [Variable]) => {
       code: variablesToMerge[0].code,
       desc: variablesToMerge[0].desc,
       units: variablesToMerge[0].units,
-      classifications: dedupeClassifications(allClassifications as [Classification]),
+      topic_code: variablesToMerge[0].topic_code,
+      classifications: dedupeClassifications(allClassifications as Classification[]),
     });
   }
   return mergedVariables;
@@ -81,7 +61,7 @@ const mergeVariables = (variables: [Variable]) => {
 /*
   Iterate over list of classifications and ensure theres none with the same name (classifications cannot be merged!)
 */
-const dedupeClassifications = (classifications: [Classification]) => {
+const dedupeClassifications = (classifications: Classification[]) => {
   const clsCodes = new Set(classifications.map((c) => c.code));
   const mergedCls = [];
   for (const clsCode of clsCodes) {
@@ -89,21 +69,4 @@ const dedupeClassifications = (classifications: [Classification]) => {
     mergedCls.push(clsToMerge[0]);
   }
   return mergedCls;
-};
-
-/*
-  Iterate over list of TopicGroups and convert each to a topic by moving the variables in side each of their child
-  topics to a new key in the TopicGroup, then removing the topics themselves
-*/
-export const flattenTopicGroupsToTopics = (topicGroups: [TopicGroup]) => {
-  const topics = [];
-  for (const topicGroup of topicGroups) {
-    topics.push({
-      name: topicGroup.name,
-      slug: topicGroup.slug,
-      desc: topicGroup.desc,
-      variables: topicGroup.topics.flatMap((t) => t.variables),
-    })
-  }
-  return topics;
 };

@@ -24,7 +24,7 @@
         Where are people who are
         <a
           href={buildHyperlink($page.url, {
-            topic: "health",
+            variableGroup: "health",
             variable: "general-health",
             category: "very-good-health",
           })}
@@ -37,7 +37,7 @@
         Where are the
         <a
           href={buildHyperlink($page.url, {
-            topic: "housing",
+            variableGroup: "housing",
             variable: "heating",
             category: "no-central-heating",
           })}
@@ -50,7 +50,7 @@
         Which areas have the
         <a
           href={buildHyperlink($page.url, {
-            topic: "housing",
+            variableGroup: "housing",
             variable: "owned-or-renting",
             category: "shared-ownership-homes",
           })}

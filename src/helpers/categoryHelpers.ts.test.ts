@@ -30,6 +30,7 @@ describe("formatTemplateString", () => {
     code: "testVarCode",
     desc: "",
     units: "testUnits",
+    topic_code: "testTopicCode",
     classifications: [] as Classification[],
   };
   const testLocation = "testLocation";

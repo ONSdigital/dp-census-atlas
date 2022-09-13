@@ -22,6 +22,6 @@ export const selectedGeographyStore = writable<SelectedGeographyData | undefined
 export const preventFlyToGeographyStore = writable<string | undefined>(undefined);
 
 /**
- * A Svelte store containing all topics
+ * A Svelte store containing all loaded variableGroups and their metadata
  */
 export const contentStore = writable<ContentStore | undefined>(undefined);

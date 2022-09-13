@@ -13,10 +13,10 @@
     (p) => p.geoCode === $selectedGeographyStore?.geoCode,
   )?.ratioToTotal;
   $: params = $page.params;
-  $: topicSlug = params.topic;
-  $: topic = $contentStore.topics.find((t) => t.slug === topicSlug);
+  $: variableGroupSlug = params.variableGroup;
+  $: variableGroup = $contentStore.variableGroups.find((t) => t.slug === variableGroupSlug);
   $: variableSlug = params.variable;
-  $: variable = topic ? topic.variables.find((v) => v.slug === variableSlug) : undefined;
+  $: variable = variableGroup ? variableGroup.variables.find((v) => v.slug === variableSlug) : undefined;
   $: selectedGeographyDisplayName = $selectedGeographyStore?.displayName;
   $: defaultChoroplethClassification = getDefaultChoroplethClassification(variable);
   $: categorySlug = params.category;

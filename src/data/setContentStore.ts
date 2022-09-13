@@ -1,9 +1,9 @@
 import { get } from "svelte/store";
 import { appBasePath } from "../buildEnv";
 import content from "./content";
-import { appendBaseUrlToCategories, flattenTopicGroupsToTopics, mergeTopicGroups } from "../helpers/contentHelpers";
+import { appendBaseUrlToCategories, mergeVariableGroups } from "../helpers/contentHelpers";
 import { contentStore } from "../stores/stores";
-import type { ContentStore, Topic, TopicGroup } from "../types";
+import type { ContentConfig, ContentStore, VariableGroup } from "../types";
 
 /*
   Fetch all content.json files referenced in content.ts for the current env (specified in a back-end env var, fetched
@@ -13,7 +13,7 @@ import type { ContentStore, Topic, TopicGroup } from "../types";
 const fetchContent = async () => {
   const runtimeEnv = await (await fetch(`${appBasePath}/runtime-env`)).json();
   const contentForEnv = content[runtimeEnv.envName];
-  const topicsGroups = await Promise.all(
+  const rawContent = await Promise.all(
     contentForEnv.map(async (ctcfg) => {
       const resp = await fetch(ctcfg.contentJsonUrl);
       if (resp.status != 200) {
@@ -35,37 +35,35 @@ const fetchContent = async () => {
     // filter out nulls from failed loads here
     return responseArry.filter((tg) => tg != null).flat();
   });
-  return topicsGroups;
+  return rawContent;
 };
 
 /*
-  Fetch and collate all content.json files for current env, then set them in the contentStore. NB - topics are not
-  expected to change during the apps runtime and so this will only set the contentStore if it is not already set!
+  Fetch and collate all content.json files for current env, then set them in the contentStore. NB - variableGroups are
+  not expected to change during the apps runtime and so this will only set the contentStore if it is not already set!
 */
 export const setContentStoreOnce = async () => {
   if (get(contentStore)) {
     return;
   }
   // fetch content
-  const content = await fetchContent();
+  const rawContent = await fetchContent();
 
   // append the data baseUrl from each release to each associated category to simplify data fetching later on
-  content.forEach((ct) => {
-    appendBaseUrlToCategories(ct.contentJson.content, ct.contentConfig);
+  rawContent.forEach((ct) => {
+    appendBaseUrlToCategories(ct.contentJson.content as VariableGroup[], ct.contentConfig as ContentConfig);
   });
 
   // extract all successfully loaded releases
-  const releases = content.map((ct) => ct.contentJson.meta.release);
+  const releases = rawContent.map((ct) => ct.contentJson.meta.release);
 
-  // merge topicGroups and flatten to topics
-  const allTopicGroups = content.flatMap((ct) => ct.contentJson.content);
-  const mergedTopicGroups = mergeTopicGroups(allTopicGroups as [TopicGroup]);
-  const topics = flattenTopicGroupsToTopics(mergedTopicGroups as [TopicGroup]);
+  // merge variableGroups
+  const allVariableGroups = rawContent.flatMap((ct) => ct.contentJson.content);
+  const mergedVariableGroups = mergeVariableGroups(allVariableGroups as VariableGroup[]);
 
   // write to store
   contentStore.set({
     releases: releases,
-    topics: topics as [Topic],
+    variableGroups: mergedVariableGroups as VariableGroup[],
   } as ContentStore);
 };
-

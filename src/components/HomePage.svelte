@@ -1,7 +1,7 @@
 <script>
   import { _ } from "svelte-i18n";
   import Heading from "./Heading.svelte";
-  import TopicList from "./TopicList.svelte";
+  import VariableGroupList from "./VariableGroupList.svelte";
   import AreaPanel from "./AreaPanel.svelte";
   import SearchBox from "./SearchBox.svelte";
   import Icon from "./MaterialIcon.svelte";
@@ -23,7 +23,7 @@
     <div class="mb-6">
       <SearchBox name="search-census" />
     </div>
-    <TopicList />
+    <VariableGroupList />
   </section>
 
   <!-- <br class="" />

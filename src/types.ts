@@ -145,6 +145,6 @@ export type ContentConfig = {
 };
 
 export type ContentStore = {
-  releases: [string];
-  topics: [Topic];
+  releases: string[];
+  topics: Topic[];
 };

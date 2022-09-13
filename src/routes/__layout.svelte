@@ -11,8 +11,8 @@
   import { onMount } from 'svelte';
 
   /* 
-    Most components loaded will need the topicStore to be populated before they will work properly. As this component 
-    loads first, populate the topicStore here! NB - setTopicStoreOnce will only set the topicStore if it is not
+    Most components loaded will need the contentStore to be populated before they will work properly. As this component 
+    loads first, populate the contentStore here! NB - setContentStoreOnce will only set the contentStore if it is not
     already populated, so can be called every time this component is mounted without doing uneccessary work.
   */
   onMount(async () => setContentStoreOnce())

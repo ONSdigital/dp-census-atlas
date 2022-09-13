@@ -4,8 +4,7 @@ from fixtures import (
     get_test_category,
     get_test_classification,
     get_test_variable,
-    get_test_topic,
-    get_test_topic_grouping
+    get_test_variable_group
 )
 
 
@@ -178,6 +177,7 @@ def test_census_variable_to_jsonable():
         "slug": test_variable.slug,
         "desc": test_variable.desc,
         "units": test_variable.units,
+        "topic_code": test_variable.topic_code,
         "classifications": ["test_classification","test_classification","test_classification"]
     }
     assert returned == expected
@@ -280,22 +280,22 @@ def test_census_variable_make_legend_strings():
     assert test_variable.classifications[0].categories[0].legend_str_3 == "test_category"
 
 
-# --------------------------------------------------- CensusTopic ---------------------------------------------------- #
+# ----------------------------------------------- CensusVariableGroup ------------------------------------------------ #
 
 
-def test_census_topic_to_jsonable():
-    # GIVEN we instatiate a CensusTopic with a set of test properties
+def test_census_variable_group_to_jsonable():
+    # GIVEN we instatiate a CensusVariableGroup with a set of test properties
     mock_variables = [MagicMock(), MagicMock(), MagicMock()]
     for mv in mock_variables:
         mv.to_jsonable.return_value = "test_variable"
-    test_topic  = get_test_topic(variables=mock_variables)
+    test_variable_group  = get_test_variable_group(variables=mock_variables)
     # WHEN we invoke the to_jsonable method
-    returned = test_topic.to_jsonable()
+    returned = test_variable_group.to_jsonable()
     # THEN we expect to get the correct json-friendly object back
     expected =  {
-        "name": test_topic.name,
-        "slug": test_topic.slug,
-        "desc": test_topic.desc,
+        "name": test_variable_group.name,
+        "slug": test_variable_group.slug,
+        "desc": test_variable_group.desc,
         "variables": ["test_variable","test_variable","test_variable"]
     }
     assert returned == expected
@@ -305,115 +305,55 @@ def test_census_topic_to_jsonable():
         mv.to_jsonable.assert_called
 
 
-def test_census_topic_is_valid():
-    # GIVEN we instatiate a CensusTopic with all required properties
+def test_census_variable_group_is_valid():
+    # GIVEN we instatiate a CensusVariableGroup with all required properties
     mock_variable = MagicMock()
     mock_variable.is_valid.return_value = True
-    test_topic = get_test_topic(variables=[mock_variable])
+    test_variable_group  = get_test_variable_group(variables=[mock_variable])
     # WHEN we invoke the is_valid method, THEN we expect to get True
-    assert test_topic.is_valid() is True
+    assert test_variable_group.is_valid() is True
 
 
-def test_census_topic_not_valid_blank_public_property():
-    # GIVEN we instatiate a CensusTopic with all required properties except a blank public property
+def test_census_variable_group_not_valid_blank_public_property():
+    # GIVEN we instatiate a CensusVariableGroup with all required properties except a blank public property
     mock_variable = MagicMock()
     mock_variable.is_valid.return_value = True
-    test_topic = get_test_topic(name="", variables=[mock_variable])
+    test_variable_group = get_test_variable_group(name="", variables=[mock_variable])
     # WHEN we invoke the is_valid method, THEN we expect to get false
-    assert test_topic.is_valid() is False
+    assert test_variable_group.is_valid() is False
 
 
-def test_census_topic_not_valid_no_variables():
-    # GIVEN we instatiate a CensusTopic with no variables (default)
-    test_topic = get_test_topic()
+def test_census_variable_group_not_valid_no_variables():
+    # GIVEN we instatiate a CensusVariableGroup with no variables (default)
+    test_variable_group = get_test_variable_group()
     # WHEN we invoke the is_valid method, THEN we expect to get false
-    assert test_topic.is_valid() is False
+    assert test_variable_group.is_valid() is False
 
 
-def test_census_topic_not_valid_invalid_variable():
-    # GIVEN we instantiate a CensusTopic a mocked invalid variable
+def test_census_variable_group_not_valid_invalid_variable():
+    # GIVEN we instantiate a CensusVariableGroup with a mocked invalid variable
     mock_variable = MagicMock()
     mock_variable.is_valid.return_value = False
-    test_topic = get_test_topic(variables=[mock_variable])
+    test_variable_group = get_test_variable_group(variables=[mock_variable])
     # WHEN we invoke the is_valid method, THEN we expect to get false
-    assert test_topic.is_valid() is False
+    assert test_variable_group.is_valid() is False
 
 
 def test_census_topic_gather_variables_filters_for_associated_variables():
-   # GIVEN we instantiate a test topic
-    test_topic  = get_test_topic()
+   # GIVEN we instantiate a CensusVariableGroup
+    test_variable_group = get_test_variable_group(_topic_codes=["tp1"])
     # AND we make a list of variables, some of which reference our test topic and some which do not
     mock_variables = [MagicMock(), MagicMock(), MagicMock(), MagicMock(), MagicMock()]
     for i in range(3):
-        mock_variables[i]._topic_code = test_topic._code
-    mock_variables[3]._variable_code = "not_our_t_1"
-    mock_variables[4]._variable_code = "not_our_t_2"
-    # WHEN we invoke the gather_categories method against our test categories
-    test_topic.gather_variables(mock_variables)
-    # THEN we expect the classification to NOT have the categories that do NOT reference it
-    assert len(test_topic.variables) == 3
-    for t_cd in ["not_our_t_1", "not_our_t_2"]:
-        assert any(v.topic_code == t_cd for v in test_topic.variables) is False
-
-
-# ---------------------------------------------- CensusTopicGrouping ------------------------------------------------- #
-
-
-def test_census_topic_grouping_to_jsonable():
-    # GIVEN we instatiate a CensusTopicGrouping with a set of test properties
-    mock_topics = [MagicMock(), MagicMock(), MagicMock()]
-    mock_topics[0].name = "test_topic_b"
-    mock_topics[0].to_jsonable.return_value = "test_topic_b"
-    mock_topics[1].name = "test_topic_a"
-    mock_topics[1].to_jsonable.return_value = "test_topic_a"
-    mock_topics[2].name = "test_topic_c"
-    mock_topics[2].to_jsonable.return_value = "test_topic_c"
-    test_topic_grouping = get_test_topic_grouping(topics=mock_topics)
-    # WHEN we invoke the to_jsonable method
-    returned = test_topic_grouping.to_jsonable()
-    # THEN we expect to get the correct json-friendly object back, with topics sorted in lexical order
-    expected = {
-        "name": test_topic_grouping.name,
-        "slug": test_topic_grouping.slug,
-        "desc": test_topic_grouping.desc,
-        "topics": ["test_topic_a","test_topic_b","test_topic_c"]
-    }
-    assert returned == expected
-    # AND we expect the to_jsonable method to have been called on all
-    # mock_variables
-    for mt in mock_topics:
-        mt.to_jsonable.assert_called
-
-
-def test_census_topic_grouping__is_valid():
-    # GIVEN we instatiate a CensusTopicGrouping with all required properties
-    mock_topic = MagicMock()
-    mock_topic.is_valid.return_value = True
-    test_topic_grouping = get_test_topic_grouping(topics=[mock_topic])
-    # WHEN we invoke the is_valid method, THEN we expect to get True
-    assert test_topic_grouping.is_valid() is True
-
-
-def test_census_topic_grouping_not_valid_no_topics():
-    # GIVEN we instatiate a CensusTopicGrouping with no topics (default)
-    test_topic_grouping = get_test_topic_grouping()
-    # WHEN we invoke the is_valid method, THEN we expect to get false
-    assert test_topic_grouping.is_valid() is False
-
-
-def test_census_topic_grouping_not_valid_repeated_topics():
-    # GIVEN we instatiate a CensusTopicGrouping with repeated topics
-    mock_topic = MagicMock()
-    mock_topic.is_valid.return_value = True
-    test_topic_grouping = get_test_topic_grouping(topics=[mock_topic, mock_topic])
-    # WHEN we invoke the is_valid method, THEN we expect to get False
-    assert test_topic_grouping.is_valid() is False
-
-
-def test_census_topic_grouping_not_valid_invalid_topic():
-    # GIVEN we instantiate a CensusTopicGrouping with a mocked invalid topic
-    mock_topic = MagicMock()
-    mock_topic.is_valid.return_value = False
-    test_topic_grouping = get_test_topic_grouping(topics=[mock_topic])
-    # WHEN we invoke the is_valid method, THEN we expect to get false
-    assert test_topic_grouping.is_valid() is False
+        mock_variables[i].topic_code = "tp1"
+    mock_variables[3].topic_code = "tp2"
+    mock_variables[4].topic_code = "tp3"
+    # WHEN we invoke the gather_variables method against our test variables
+    test_variable_group.gather_variables(mock_variables)
+    # THEN we expect the CensusVariableGroup to NOT have the variables that do NOT reference it
+    assert len(test_variable_group.variables) == 3
+    for t_cd in ["tp2", "tp3"]:
+        assert any(v.topic_code == t_cd for v in test_variable_group.variables) is False
+    # AND we expect the CensusVariableGroup to have the variables that DO reference it
+    assert len(test_variable_group.variables) == 3
+    assert all(v.topic_code == "tp1" for v in test_variable_group.variables)

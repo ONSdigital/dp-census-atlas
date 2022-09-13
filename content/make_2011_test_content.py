@@ -54,13 +54,12 @@ def main() -> None:
         "converted_to_2011_test_data_at": now
     })
 
-    for topic_group in content["content"]:
-        for topic in topic_group.topics:
-            for variable in topic.variables:
-                for classification in variable.classifications:
-                    for category in classification.categories:
-                        category.name = f"2011_TEST-{category.name}"
-                        category.code = random.choice(test_cat_codes)
+    for variable_group in content["content"]:
+        for variable in variable_group.variables:
+            for classification in variable.classifications:
+                for category in classification.categories:
+                    category.name = f"2011_TEST-{category.name}"
+                    category.code = random.choice(test_cat_codes)
 
     output_filename = content_json_fn.parent.joinpath(f"2011-TEST-{content_json_fn.stem}.json")
     write_content(content, output_filename)

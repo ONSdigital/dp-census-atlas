@@ -17,11 +17,10 @@ def main():
         "placeholder_variable_descs_inserted_at": now
     })
 
-    for topic_group in content["content"]:
-        for topic in topic_group.topics:
-            for variable in topic.variables:
-                if ("\n" in variable.desc) or len(variable.desc) > MAX_L:
-                    variable.desc = LOREM_IPSUM_250
+    for variable_group in content["content"]:
+        for variable in variable_group.variables:
+            if ("\n" in variable.desc) or len(variable.desc) > MAX_L:
+                variable.desc = LOREM_IPSUM_250
 
     output_filename = content_json_fn.parent.joinpath(f"PLACEHOLDER-VAR-DESCS-{content_json_fn.stem}.json")
     write_content(content, output_filename)

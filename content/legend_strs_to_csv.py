@@ -26,24 +26,22 @@ def main():
     content = load_content(content_json_fn)
     
     csv_content = []
-    for topic_group in content["content"]:
-        for topic in topic_group.topics:
-            for variable in topic.variables:
-                for classification in variable.classifications:
-                    for category in classification.categories:
-                        csv_content.append({
-                            "ADMIN_topic_group": topic_group.name,
-                            "ADMIN_topic": topic.name,
-                            "ADMIN_variable": variable.name,
-                            "ADMIN_classification": classification.code,
-                            "ADMIN_category_code": category.code,
-                            "ADMIN_category_name": category.name,
-                            "ADMIN_legend_start_str": "{PERCENTAGE}%",
-                            "EDIT_THIS_legend_str_1": category.legend_str_1,
-                            "EDIT_THIS_legend_str_2": category.legend_str_2,
-                            "EDIT_THIS_legend_str_3": category.legend_str_3,
-                        })
-    
+    for variable_group in content["content"]:
+        for variable in variable_group.variables:
+            for classification in variable.classifications:
+                for category in classification.categories:
+                    csv_content.append({
+                        "ADMIN_variable_group": variable_group.name,
+                        "ADMIN_variable": variable.name,
+                        "ADMIN_classification": classification.code,
+                        "ADMIN_category_code": category.code,
+                        "ADMIN_category_name": category.name,
+                        "ADMIN_legend_start_str": "{PERCENTAGE}%",
+                        "EDIT_THIS_legend_str_1": category.legend_str_1,
+                        "EDIT_THIS_legend_str_2": category.legend_str_2,
+                        "EDIT_THIS_legend_str_3": category.legend_str_3,
+                    })
+
     with open(output_filename, "w") as f:
         writer = csv.DictWriter(f, fieldnames=csv_content[0].keys(), quoting=csv.QUOTE_ALL)
         writer.writeheader()

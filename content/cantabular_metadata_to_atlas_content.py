@@ -1,15 +1,18 @@
 #!/usr/bin/env python
 
 """
-Create atlas content.json file containing ALL census objects defined in cantabular_metadata_dir, which is assumed
-to be an unzipped cantabular metadata archive containing csv files. This script consumes four of these - assumed to be
-found as: '<cantabular_metadata_dir>/Topic.csv', '<cantabular_metadata_dir>/Variable.csv',
-'<cantabular_metadata_dir>/Classification.csv'and '<cantabular_metadata_dir>/Category_Mapping.csv'.
+Create atlas content.json file containing census objects defined in metadata_dir (assumed to be an unzipped cantabular
+metadata archive containing csv files), with the census topics re-packaged as atlas-specific variable groups (defined in
+the variable_groups_json_fn, assumed to be a JSON file specifying the atlas variable groups), and then filtered to the
+list of variables specified in the rich_content_spec_fn (assumed to be exported from the confluence Rich Content Product
+Specifications table, here: https://confluence.ons.gov.uk/display/ODADH/Rich+content+product+specifications).
 
-Parse topics and their child variables, classifications and categories from these files, collates,
-and output as <output_dir>/<lowest level of cantabular_metada_dir>-content.json, e.g. if
-cantabular_metadata_dir="path/to/my-cantabular-metadata-dir" and output_dir="content_jsons", the output will be written
-to "content_jsons/my-cantabular-metadata-dir-content.json".
+This script consumes three files from the cantabular metata directory - assumed to be found as:
+    - <cantabular_metadata_dir>/Variable.csv,
+    - <cantabular_metadata_dir>/Classification.csv
+    - <cantabular_metadata_dir>/Category.csv
+
+Output will be written to <output_dir>/all-atlas-content-<datetime of writing>.json
 """
 
 import csv
@@ -102,7 +105,7 @@ def filter_content(spec_rows: list[RichContentSpecRow], all_variable_groups: lis
     """
     filtered_content = []
     for vg in all_variable_groups:
-        
+
         filtered_vg = CensusVariableGroup(
             name=vg.name,
             slug=vg.slug,
@@ -112,11 +115,11 @@ def filter_content(spec_rows: list[RichContentSpecRow], all_variable_groups: lis
         )
 
         for sr in spec_rows:
-            
+
             # extract classification codes from spec row NB ensure no duplication here
             required_cls_codes = [sr.dataset_classification]
             required_cls_codes.extend(sr.additional_atlas_classifications)
-            
+
             # NB use list of dict keys here rather than set to preserve category order
             # see https://stackoverflow.com/questions/1653970/does-python-have-an-ordered-set
             required_cls_codes = list(dict.fromkeys(required_cls_codes))
@@ -126,7 +129,7 @@ def filter_content(spec_rows: list[RichContentSpecRow], all_variable_groups: lis
                 (v for v in vg.variables if required_cls_codes[0] in [c.code for c in v.classifications]),
                 None
             )
-            
+
             # if we get no variable match, assume this spec row refers to a variable from a different topic grouping
             if matched_variable is None:
                 continue
@@ -147,8 +150,8 @@ def filter_content(spec_rows: list[RichContentSpecRow], all_variable_groups: lis
             processed_variable = next((v for v in filtered_vg.variables if v.code == matched_variable.code), None)
             if processed_variable is not None:
                 processed_variable.classifications.extend(matched_classifications)
-            
-            # otherwise add shallow copy of matched variable with only the classifications needed 
+
+            # otherwise add shallow copy of matched variable with only the classifications needed
             else:
                 filtered_vg.variables.append(
                     CensusVariable(
@@ -161,8 +164,8 @@ def filter_content(spec_rows: list[RichContentSpecRow], all_variable_groups: lis
                         classifications=matched_classifications,
                     )
                 )
-        
-        if len(filtered_vg.variables) > 0: 
+
+        if len(filtered_vg.variables) > 0:
             filtered_content.append(filtered_vg)
 
     return filtered_content
@@ -187,7 +190,7 @@ def main(cantabular_metadata_dir: Path, output_dir: Path):
     with open(rich_content_spec_fn, "r") as f:
         # nb filter out rows that do not apply to the atlas
         spec_rows = [
-            spec_row_from_csv_row(sr_raw) for sr_raw in csv.DictReader(f) 
+            spec_row_from_csv_row(sr_raw) for sr_raw in csv.DictReader(f)
             if sr_raw["2021 data Required for Census Atlas?"].strip().lower() == "y"
         ]
 
@@ -220,7 +223,7 @@ def main(cantabular_metadata_dir: Path, output_dir: Path):
         "release": "TESTDEV this file has all atlas variables, not intended for release as-is."
     }
     json_ready_content = [vg.to_jsonable() for vg in sorted(filtered_content, key=lambda x: x.name)]
-    
+
     # write
     output = {
         "meta": meta,

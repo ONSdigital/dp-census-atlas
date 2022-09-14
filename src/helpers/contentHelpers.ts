@@ -63,10 +63,10 @@ const mergeVariables = (variables: Variable[]) => {
 */
 const dedupeClassifications = (classifications: Classification[]) => {
   const clsCodes = new Set(classifications.map((c) => c.code));
-  const mergedCls = [];
+  const dedupedClassifications = [];
   for (const clsCode of clsCodes) {
     const clsToMerge = classifications.filter((c) => c.code == clsCode);
-    mergedCls.push(clsToMerge[0]);
+    dedupedClassifications.push(clsToMerge[0]);
   }
-  return mergedCls;
+  return dedupedClassifications;
 };

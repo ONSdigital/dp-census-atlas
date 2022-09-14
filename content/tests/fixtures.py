@@ -2,10 +2,9 @@ from census_objects import (
     CensusCategory,
     CensusClassification,
     CensusVariable,
-    CensusTopic,
-    CensusTopicGroup,
+    CensusVariableGroup,
+    RichContentSpecRow
 )
-from filter_atlas_content import RichContentSpecRow
 
 
 def get_test_category(**kwargs) -> CensusCategory:
@@ -41,28 +40,18 @@ def get_test_variable(**kwargs) -> CensusVariable:
         slug=kwargs.get("slug", "test_slug"),
         desc=kwargs.get("desc", "test_desc"),
         units=kwargs.get("units", "person"),
+        topic_code=kwargs.get("topic_code", "test_topic_code"),
         classifications=kwargs.get("classifications", []),
-        _topic_code=kwargs.get("_topic_code", "test_topic_code"),
     )
 
 
-def get_test_topic(**kwargs) -> CensusTopic:
-    return CensusTopic(
+def get_test_variable_group(**kwargs) -> CensusVariableGroup:
+    return CensusVariableGroup(
         name=kwargs.get("name", "test_name"),
         slug=kwargs.get("slug", "test_slug"),
         desc=kwargs.get("desc", "test_desc"),
         variables=kwargs.get("variables", []),
-        _code=kwargs.get("_code", "test_code"),
-    )
-
-
-def get_test_topic_grouping(**kwargs) -> CensusTopicGroup:
-    return CensusTopicGroup(
-        name=kwargs.get("name", "test_name"),
-        slug=kwargs.get("slug", "test_slug"),
-        desc=kwargs.get("desc", "test_desc"),
-        topics=kwargs.get("topics", []),
-        _topic_names=kwargs.get("to_topic_namesics", []),
+        _topic_codes=kwargs.get("_topic_codes", []),
     )
 
 

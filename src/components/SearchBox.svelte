@@ -6,7 +6,7 @@
 
   export let name: string;
   let val = "";
-  $: results = searchCensus(val, $contentStore.topics);
+  $: results = searchCensus(val, $contentStore.variableGroups);
 </script>
 
 <div class="">
@@ -44,19 +44,19 @@
         class="absolute left-0 right-0 z-50 max-h-[30rem] overflow-y-auto p-3 pt-2 border-[1px] border-slate-600 bg-white"
       >
         <ul>
-          {#each results.topics as t}
-            <SearchBoxItem link={`/2021/${t.slug}`}>
+          {#each results.variableGroups as vg}
+            <SearchBoxItem link={`/2021/${vg.slug}`}>
               <div class="flex items-center gap-2">
                 <Badge className="bg-slate-500">TOPIC</Badge>
-                <div class="text-xl">{@html highlightText(t.name, val)}</div>
+                <div class="text-xl">{@html highlightText(vg.name, val)}</div>
               </div>
               <div class="">
-                {@html highlightText(t.desc, val)}
+                {@html highlightText(vg.desc, val)}
               </div>
             </SearchBoxItem>
           {/each}
           {#each results.variables as v}
-            <SearchBoxItem link={`/2021/${v.topic.slug}/${v.variable.slug}`}>
+            <SearchBoxItem link={`/2021/${v.variableGroup.slug}/${v.variable.slug}`}>
               <div class="flex items-center gap-2">
                 <Badge className="bg-slate-500">VARIABLE</Badge>
                 <div class="text-xl">{@html highlightText(v.variable.name, val)}</div>
@@ -67,7 +67,7 @@
             </SearchBoxItem>
           {/each}
           {#each results.categories as c}
-            <SearchBoxItem link={`/2021/${c.topic.slug}/${c.variable.variable.slug}/default/${c.category.slug}`}>
+            <SearchBoxItem link={`/2021/${c.variableGroup.slug}/${c.variable.variable.slug}/default/${c.category.slug}`}>
               <div class="flex items-center gap-2">
                 <Badge className="bg-slate-500">CATEGORY</Badge>
                 <div class="text-xl">{@html highlightText(c.category.name, val)}</div>
@@ -79,7 +79,7 @@
           {/each}
         </ul>
         <div class="pt-3 pb-1 px-1">
-          {results.topics.length + results.variables.length + results.categories.length}
+          {results.variableGroups.length + results.variables.length + results.categories.length}
           results
         </div>
       </div>

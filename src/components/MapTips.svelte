@@ -9,10 +9,10 @@
   import { geoTypeDescriptions } from "../helpers/geographyHelper";
 
   $: params = $page.params;
-  $: topicSlug = params.topic;
-  $: topic = $contentStore.topics.find((t) => t.slug === topicSlug);
+  $: variableGroupSlug = params.variableGroup;
+  $: variableGroup = $contentStore.variableGroups.find((t) => t.slug === variableGroupSlug);
   $: variableSlug = params.variable;
-  $: variable = topic ? topic.variables.find((v) => v.slug === variableSlug) : undefined;
+  $: variable = variableGroup ? variableGroup.variables.find((v) => v.slug === variableSlug) : undefined;
   $: defaultChoroplethClassification = getDefaultChoroplethClassification(variable);
   $: categorySlug = params.category;
   $: category = variable ? defaultChoroplethClassification.categories.find((c) => c.slug === categorySlug) : undefined;

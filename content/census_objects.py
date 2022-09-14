@@ -131,7 +131,7 @@ class CensusVariable:
     desc: str
     units: str
     classifications: list[CensusClassification]
-    _topic_code: str = ""
+    topic_code: str = ""
 
     def gather_classifications(self, classification_list: list[CensusClassification]) -> None:
         """
@@ -187,23 +187,27 @@ class CensusVariable:
             "slug": self.slug,
             "desc": self.desc,
             "units": self.units,
+            "topic_code": self.topic_code,
             "classifications": [c.to_jsonable() for c in self.classifications],
         }
 
 
 @dataclass
-class CensusTopic:
-    """A topic as found in content.json."""
+class CensusVariableGroup:
+    """An atlas-specific group of census variables as found in content.json."""
 
     name: str
     slug: str
     desc: str
     variables: list[CensusVariable]
-    _code: str = ""
+    _topic_codes: list[str]
 
     def gather_variables(self, variable_list: list[CensusVariable]) -> None:
-        """Append all variable with matching topic code to self."""
-        self.variables = [v for v in variable_list if v._topic_code == self._code]
+        """Append all variables with topic codes referenced in self._topic_codes to self then sort by topic code."""
+        self.variables = sorted(
+            [v for v in variable_list if v.topic_code in self._topic_codes], 
+            key=lambda x: x.topic_code
+        )
 
     def is_valid(self) -> bool:
         """
@@ -237,47 +241,18 @@ class CensusTopic:
 
 
 @dataclass
-class CensusTopicGroup:
-    """Atlas-specific group of topics."""
+class RichContentSpecRow:
+    """All needed config values from a row from the rich content spec csv file."""
+    dataset: str
+    dataset_classification: str
+    additional_atlas_classifications: list[str]
+    choropleth_default_classification: str
+    dot_density_default_classification: str
+    comparison_2011: bool
 
-    name: str
-    slug: str
-    desc: str
-    topics: list[CensusTopic]
-    _topic_names: list[str]
-
-    def gather_topics(self, topic_list: list[CensusTopic]) -> None:
-        """Append all topics with listed in self._topic_names."""
-        self.topics = [t for t in topic_list if t.name in self._topic_names]
-
-    def is_valid(self) -> bool:
-        """
-        Return False if there are no topics, topics are repeated, or if any topic is invalid.
-        """
-        is_valid = True
-        if len(self.topics) == 0:
-            print(f"** Topic Group {self.name} has no topics **")
-            is_valid = False
-
-        if len(set(t.name for t in self.topics)) != len(self.topics):
-            print(f"Topic Group {self.name} contains repeated topics - something has gone wrong!")
-            is_valid = False
-
-        for t in self.topics:
-            if not t.is_valid():
-                print(f"Topic Group {self.name} has invalid topics - something has gone wrong!")
-                is_valid = False
-
-        return is_valid
-
-    def to_jsonable(self):
-        """Topic group in json-friendly form, with topics sorted alphabetically."""
-        return {
-            "name": self.name,
-            "slug": self.slug,
-            "desc": self.desc,
-            "topics": [t.to_jsonable() for t in sorted(self.topics, key=lambda x: x.name)],
-        }
+    def to_str(self):
+        """Simple string representation for error logging"""
+        return f"topic: {self.dataset}, variable: {self.variable}"
 
 
 # ================================================ CLASS FACTORIES =================================================== #
@@ -315,37 +290,29 @@ def variable_from_content_json(content_json: dict) -> CensusVariable:
         slug=content_json["slug"],
         desc=content_json["desc"],
         units=content_json["units"],
+        topic_code=content_json["topic_code"],
         classifications=[classification_from_content_json(c) for c in content_json["classifications"]],
     )
 
 
-def topic_from_content_json(content_json: dict) -> CensusTopic:
-    """Make CensusTopic dictionary extracted from a content.json file"""
-    return CensusTopic(
+def variable_group_from_content_json(content_json: dict) -> CensusVariableGroup:
+    """Make CensusAtlasGroup dictionary extracted from a content.json file"""
+    return CensusVariableGroup(
         name=content_json["name"],
         slug=content_json["slug"],
         desc=content_json["desc"],
         variables=[variable_from_content_json(v) for v in content_json["variables"]],
-    )
-
-def topic_grouping_from_content_json(content_json: dict) -> CensusTopic:
-    """Make CensusTopicGrouping dictionary extracted from a content.json file"""
-    return CensusTopicGroup(
-        name=content_json["name"],
-        slug=content_json["slug"],
-        desc=content_json["desc"],
-        topics=[topic_from_content_json(t) for t in content_json["topics"]],
-        _topic_names=[],
+        _topic_codes=[],
     )
 
 
-def load_content(content_file: Path) -> list[CensusTopicGroup]:
+def load_content(content_file: Path) -> list[CensusVariableGroup]:
     """Load all census objects defined in content_file."""
     with open(content_file, "r") as f:
         raw_content = json.load(f)
     return {
         "meta": raw_content["meta"],
-        "content": [topic_grouping_from_content_json(tg) for tg in raw_content["content"]]
+        "content": [variable_group_from_content_json(tg) for tg in raw_content["content"]]
     }
 
 

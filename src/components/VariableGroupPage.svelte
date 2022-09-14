@@ -12,8 +12,8 @@
   import Heading from "./Heading.svelte";
   import AreaPanel from "./AreaPanel.svelte";
 
-  $: topicSlug = $page.params.topic;
-  $: topic = $contentStore.topics.find((t) => t.slug === topicSlug);
+  $: variableGroupSlug = $page.params.variableGroup;
+  $: variableGroup = $contentStore.variableGroups.find((vg) => vg.slug === variableGroupSlug);
 
   // $: if ($mapStore) {
   //   vizStore.set(undefined);
@@ -31,17 +31,17 @@
   <div class="flex items-center gap-2 text-xl">
     <a class="hyperlink" href={buildHyperlink($page.url)}>Home</a>
     <div class="text-sm font-extrabold text-slate-500">&gt;</div>
-    <div class=" ">{topic.name}</div>
+    <div class=" ">{variableGroup.name}</div>
   </div>
   <div class="mt-4 mb-2 ">
-    {topic.desc}
+    {variableGroup.desc}
   </div>
   <div class="flex flex-col mb-6 last:border-b-[1px] border-b-slate-300">
-    {#each topic.variables as variable}
+    {#each variableGroup.variables as variable}
       <a
         class="border-t-[1px] border-t-slate-300 py-2 group"
         href={buildHyperlink($page.url, {
-          topic: topic.slug,
+          variableGroup: variableGroup.slug,
           variable: variable.slug,
           category: getDefaultChoroplethClassification(variable).categories[0].slug,
         })}

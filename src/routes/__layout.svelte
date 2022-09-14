@@ -18,10 +18,10 @@
   onMount(async () => setContentStoreOnce())
 </script>
 
-<!-- Display blank page until topicStore is populated... -->
+<!-- Display blank page until contentStore is populated... -->
 {#if $contentStore}
-  {#if $contentStore.topics.length > 0}
-    <!-- Display app if some topics were successfully loaded... -->
+  {#if $contentStore.variableGroups.length > 0}
+    <!-- Display app if some variableGroups were successfully loaded... -->
     <Layout>
         <slot />
     </Layout>

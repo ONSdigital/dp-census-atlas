@@ -16,8 +16,8 @@ from census_objects import (
 
 def main():
     content_json_fn = Path(sys.argv[1])
-    topic_groups = load_content(content_json_fn)["content"]
-    is_valid = all([tg.is_valid() for tg in topic_groups])
+    variable_groups = load_content(content_json_fn)["content"]
+    is_valid = all([vg.is_valid() for vg in variable_groups])
     if is_valid:
         print("All content passes validation!")
 

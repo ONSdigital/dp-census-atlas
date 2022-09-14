@@ -5,10 +5,10 @@
   import { contentStore } from "../stores/stores"
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
 
-  $: topicSlug = $page.params.topic;
-  $: topic = $contentStore.topics.find((t) => t.slug === topicSlug);
+  $: variableGroupSlug = $page.params.variableGroup;
+  $: variableGroup = $contentStore.variableGroups.find((vg) => vg.slug === variableGroupSlug);
   $: variableSlug = $page.params.variable;
-  $: variable = topic.variables.find((v) => v.slug === variableSlug);
+  $: variable = variableGroup.variables.find((v) => v.slug === variableSlug);
 </script>
 
 <div class="p-6 bg-onspale mb-6">
@@ -17,8 +17,8 @@
   <a
     class="hyperlink"
     href={buildHyperlink($page.url, {
-      topic: topicSlug,
-    })}>{topic.name}</a
+      variableGroup: variableGroupSlug,
+    })}>{variableGroup.name}</a
   >
   <span class="hidden xl:inline">
     <span class="mx-1">&gt;</span>
@@ -41,14 +41,14 @@
     <a
       class="border-t-[1px] border-t-slate-300 py-2 group"
       href={buildHyperlink($page.url, {
-        topic: topic.slug,
+        variableGroup: variableGroup.slug,
         variable: variable.slug,
-        category: variable.categories[0].slug,
+        category: variable.classifications[0].categories[0].slug,
       })}
     >
       <div class="flex justify-between">
         <div class="text-xl hyperlink">
-          {numberToWords(variable.categories.length)} categories ({variable.categories.length})
+          {numberToWords(variable.classifications[0].categories.length)} categories ({variable.classifications[0].categories.length})
         </div>
         <RightChevron />
       </div>

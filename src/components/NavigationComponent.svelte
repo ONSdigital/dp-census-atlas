@@ -2,7 +2,7 @@
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
   import { page } from "$app/stores";
 
-  export let topicSlug, search, currentURL, onClick;
+  export let variableGroupSlug, search, currentURL, onClick;
 
   $: currentLocationLink = search ? `${currentURL}${search}` : currentURL;
 </script>
@@ -12,7 +12,7 @@
     <a
       class="text-white"
       href={buildHyperlink($page.url, {
-        topic: topicSlug,
+        variableGroup: variableGroupSlug,
       })}>New category</a
     >
   </div>

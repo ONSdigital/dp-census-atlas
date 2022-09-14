@@ -7,14 +7,7 @@ export type MapState = {
   zoom: number;
 };
 
-export type TopicGroup = {
-  name: string;
-  slug: string;
-  desc: string;
-  topics: Topic[];
-};
-
-export type Topic = {
+export type VariableGroup = {
   name: string;
   slug: string;
   desc: string;
@@ -27,6 +20,7 @@ export type Variable = {
   code: string;
   desc: string;
   units: string;
+  topic_code: string;
   classifications: Classification[];
 };
 
@@ -56,7 +50,7 @@ export type VizData = {
   minMaxVals: number[];
   places: { geoCode: string; ratioToTotal: number }[];
   params: {
-    topic: Topic;
+    variableGroup: VariableGroup;
     variable: Variable;
     category: Category;
   };
@@ -118,7 +112,7 @@ export type Bbox = {
 export type LocaleSuggestions = [
   {
     label: string;
-    topic: string;
+    variableGroup: string;
     variable: string;
     category: string;
   },
@@ -146,5 +140,5 @@ export type ContentConfig = {
 
 export type ContentStore = {
   releases: string[];
-  topics: Topic[];
+  variableGroups: VariableGroup[];
 };

@@ -11,10 +11,10 @@
   import RadioButton from "./RadioButton.svelte";
 
   $: params = $page.params;
-  $: topicSlug = params.topic;
-  $: topic = $contentStore.topics.find((t) => t.slug === topicSlug);
+  $: variableGroupSlug = params.variableGroup;
+  $: variableGroup = $contentStore.variableGroups.find((vg) => vg.slug === variableGroupSlug);
   $: variableSlug = params.variable;
-  $: variable = topic.variables.find((v) => v.slug === variableSlug);
+  $: variable = variableGroup.variables.find((v) => v.slug === variableSlug);
   $: selectedGeographyDisplayName = $selectedGeographyStore?.displayName;
   $: selectedGeographyGeoCode = $selectedGeographyStore?.geoCode;
   $: defaultChoroplethClassification = getDefaultChoroplethClassification(variable);
@@ -28,7 +28,7 @@
       geoCode: selectedGeographyGeoCode,
       bbox: $mapStore.bbox,
       zoom: $mapStore.zoom,
-      topics: $contentStore.topics,
+      variableGroups: $contentStore.variableGroups,
     });
   }
 </script>
@@ -52,7 +52,7 @@
     <nav class="flex flex-wrap items-center gap-2 text-xl" aria-label="Breadcrumb">
       <a class="hyperlink" href={buildHyperlink($page.url)}>Home</a>
       <div class="text-sm font-extrabold text-slate-500" aria-hidden>&gt;</div>
-      <a class="hyperlink" href={buildHyperlink($page.url, { topic: topic.slug })}>{topic.name}</a>
+      <a class="hyperlink" href={buildHyperlink($page.url, { variableGroup: variableGroup.slug })}>{variableGroup.name}</a>
       <div class="text-sm font-extrabold text-slate-500" aria-hidden>&gt;</div>
       <div class=" ">{variable.name}</div>
     </nav>
@@ -68,7 +68,7 @@
       {#each defaultChoroplethClassification.categories as category}
         <li class="">
           <a
-            href={buildHyperlink($page.url, { topic: topic.slug, variable: variable.slug, category: category.slug })}
+            href={buildHyperlink($page.url, { variableGroup: variableGroup.slug, variable: variable.slug, category: category.slug })}
             class="flex gap-2 items-center p-2 border-t-[1px] border-t-slate-300 cursor-pointer
               {category.slug === categorySlug ? 'bg-onspale' : ''}"
           >

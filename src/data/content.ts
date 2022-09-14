@@ -22,4 +22,6 @@ export default {
       contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/newquads",
     },
   ],
+  staging: [],
+  prod: [],
 };

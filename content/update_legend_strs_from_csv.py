@@ -1,13 +1,12 @@
 #!/usr/bin/env python
 
 """
-Take manually reviewed / edited legend_strs from a csv file produced by content_json_legend_strs_to_csv.py and use them
+Take manually reviewed / edited legend_strs from a csv file produced by legend_strs_to_csv.py and use them
 to update values in an atlas content.json.
 """
 
 import csv
 from datetime import datetime
-import json
 from pathlib import Path
 import sys
 

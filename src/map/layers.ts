@@ -3,27 +3,27 @@ import type { GeoType } from "../types";
 export const layers = [
   {
     name: "lad" as GeoType,
-    urlTemplate: "https://cdn.jsdelivr.net/gh/VivianAllen/maptiles/authorities-2011/v4/{z}/{x}/{y}.pbf",
+    urlTemplate: "https://cdn.ons.gov.uk/maptiles/administrative/2021/authorities-ew/v1/boundaries/{z}/{x}/{y}.pbf",
     minZoom: 5,
     sourceMaxZoom: 12, // The maximum zoom level that the tiles are available for
-    idProperty: "lad11cd",
-    sourceLayer: "lad",
+    idProperty: "areacd",
+    sourceLayer: "authority",
   },
   {
     name: "msoa" as GeoType,
-    urlTemplate: "https://cdn.jsdelivr.net/gh/bothness/map-tiles/msoa/{z}/{x}/{y}.pbf",
+    urlTemplate: "https://cdn.ons.gov.uk/maptiles/administrative/2021/msoa/v2/boundaries/{z}/{x}/{y}.pbf",
     minZoom: 6,
     sourceMaxZoom: 12,
     idProperty: "areacd",
-    sourceLayer: "boundaries",
+    sourceLayer: "msoa",
   },
   {
     name: "oa" as GeoType,
-    urlTemplate: "https://cdn.jsdelivr.net/gh/bothness/map-tiles/oa/{z}/{x}/{y}.pbf",
+    urlTemplate: "https://cdn.ons.gov.uk/maptiles/administrative/2021/oa/v2/boundaries/{z}/{x}/{y}.pbf",
     minZoom: 8,
     sourceMaxZoom: 12,
     idProperty: "areacd",
-    sourceLayer: "boundaries",
+    sourceLayer: "oa",
   },
 ];
 

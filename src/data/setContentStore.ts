@@ -3,7 +3,7 @@ import { appBasePath } from "../buildEnv";
 import content from "./content";
 import { appendBaseUrlToCategories, mergeVariableGroups } from "../helpers/contentHelpers";
 import { contentStore } from "../stores/stores";
-import type { ContentConfig, ContentStore, VariableGroup } from "../types";
+import type { ContentConfig, ContentTree, VariableGroup } from "../types";
 
 /*
   Fetch all content.json files referenced in content.ts for the current env (specified in a back-end env var, fetched
@@ -65,5 +65,5 @@ export const setContentStoreOnce = async () => {
   contentStore.set({
     releases: releases,
     variableGroups: mergedVariableGroups as VariableGroup[],
-  } as ContentStore);
+  } as ContentTree);
 };

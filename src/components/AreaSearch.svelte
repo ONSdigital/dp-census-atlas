@@ -1,9 +1,10 @@
 <script lang="ts">
+  import { page } from "$app/stores";
   import Select from "svelte-select";
   import { SvelteSubject } from "../util/rxUtil";
   import { composeAreaSearch } from "../helpers/areaSearchHelper";
   import { highlightText } from "../helpers/searchCensusHelper";
-  import { selectGeography } from "../helpers/geographyHelper";
+  import { selectGeography } from "../helpers/appParamsHelper";
   import type { GeographySearchItem, PostcodeSearchItem } from "../types";
   import { appBasePath } from "../buildEnv";
 
@@ -14,7 +15,7 @@
   async function handleSelect(event) {
     if (event?.detail?.kind === "Geography") {
       const geo = event.detail as GeographySearchItem;
-      selectGeography(geo);
+      selectGeography($page.url.searchParams, geo);
     } else if (event?.detail?.kind === "Postcode") {
       const postcode = event.detail as PostcodeSearchItem;
       let detailsRes = await fetch(`https://api.postcodes.io/postcodes/${postcode.value}`);
@@ -22,7 +23,7 @@
       let geosRes = await fetch(`${appBasePath}/geo?q=${details.result.admin_district}`);
       let geos = await geosRes.json();
       if (geos.length > 0) {
-        selectGeography(geos[0]);
+        selectGeography($page.url.searchParams, geos[0]);
       }
     }
   }

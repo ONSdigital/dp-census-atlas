@@ -1,14 +1,13 @@
 <script lang="ts">
   import { page } from "$app/stores";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
-  import Button2 from "./Button2.svelte";
   import MaterialIcon from "./MaterialIcon.svelte";
 
   let suggestions = false;
 </script>
 
 <div class="">
-  <span class="mr-2"> Use our interactive map to find out what people's lives are like across England and Wales.</span>
+  <span class="mr-2">Use our interactive map to find out what people's lives are like across England and Wales.</span>
   <div class="inline-flex items-center gap-0.5">
     <div class="text-xs">
       <MaterialIcon kind="arrowForwardIos" orientation={suggestions ? "e" : "n"} />

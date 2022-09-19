@@ -1,8 +1,9 @@
 <script lang="ts">
+  import { page } from "$app/stores";
   import { selectedGeographyStore } from "../stores/stores";
   import GeoSearch from "./AreaSearch.svelte";
   import Icon from "./MaterialIcon.svelte";
-  import { deselectGeography } from "../helpers/geographyHelper";
+  import { deselectGeography } from "../helpers/appParamsHelper";
 
   $: selectedGeographyDisplayName = $selectedGeographyStore?.displayName;
   $: selectedGeographyGeoType = $selectedGeographyStore?.geoType.toUpperCase();
@@ -14,7 +15,7 @@
   $: openOrCloseAreaSearchPanelText = open ? "Close area search panel" : "Open area search panel";
 
   const resetSelectedGeography = () => {
-    deselectGeography();
+    deselectGeography($page.url.searchParams);
   };
 </script>
 

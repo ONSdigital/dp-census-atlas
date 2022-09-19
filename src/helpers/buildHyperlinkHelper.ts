@@ -31,9 +31,9 @@ export const buildHyperlink = (url: URL, urlParams?: UrlParams, staticPath?: str
     return `${appBasePath}/${url.search}`;
   }
   if (staticPath) {
-    return `${appBasePath}/2021/${staticPath}${url.search}`;
+    return `${appBasePath}/univariate/${staticPath}${url.search}`;
   }
-  let link = `${appBasePath}/2021`;
+  let link = `${appBasePath}/univariate`;
   if ("variableGroup" in urlParams) {
     link = `${link}/${urlParams.variableGroup}`;
   }

@@ -1,0 +1,28 @@
+node_modules
+/build
+/.svelte-kit
+/package
+.env
+.env.*
+!.env.example
+coverage/
+content/env
+content/**/*.pyc
+content/metadata_files/*
+!content/metadata_files/keep.me
+content/content_jsons/*
+!content/content_jsons/keep.me
+
+# Mac
+.DS_Store
+
+# Intellij
+.idea/
+*.iml
+*.iws
+
+# Nodenv
+.node-version
+
+# Pyenv
+.python-version

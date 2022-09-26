@@ -1,0 +1,125 @@
+{
+  "defaultGeography": "England and Wales",
+
+  "heading": {},
+  "homePage": {
+    "html": {
+      "title": "2021 Census Data Atlas",
+      "meta": "Explore 2021 census data for England and Wales at a neighbourhood level."
+    },
+    "heading": {
+      "serviceTitle": "Explore Census",
+      "description": "Use our interactive map to find out how people in England and Wales answered Census 2021 questions about themselves, their health and how they live and work."
+    },
+    "topicList": {
+      "title": "Select a topic",
+      "description": "We have grouped census information into topics, categories and subjects to help you find what you are looking for."
+    },
+    "suggestions": {
+      "title": "Popular topic searches",
+      "content": [
+        {
+          "label": "Which areas have the highest levels of shared ownership properties?",
+          "topic": "housing",
+          "variable": "owned-or-renting",
+          "category": "shared-ownership-homes"
+        },
+        {
+          "label": "Which areas of the country are the most healthy?",
+          "topic": "health",
+          "variable": "general-health",
+          "category": "very-good-health"
+        },
+        {
+          "label": "Where are the highest levels of homes without central heating?",
+          "topic": "housing",
+          "variable": "heating",
+          "category": "no-central-heating"
+        }
+      ]
+    }
+  },
+  "locationPage": {
+    "html": {
+      "title": "2021 Census Data Atlas | {selectedGeographyDisplayName} Census"
+    },
+    "suggestions": {
+      "title": {
+        "hyperlink": "Choose a topic from the full list ",
+        "text": "or explore one of these suggestions.",
+        "slug": "topics"
+      },
+      "content": [
+        {
+          "label": "People with a Level 4 education or above.",
+          "topic": "education",
+          "variable": "highest-level-of-qualification-gained",
+          "category": "level-4-qualifications-and-above"
+        },
+        {
+          "label": "Residents general health.",
+          "topic": "health",
+          "variable": "general-health",
+          "category": "good-health"
+        },
+        {
+          "label": "What is the most common household size?",
+          "topic": "housing",
+          "variable": "size-of-household",
+          "category": "2-person-households"
+        }
+      ]
+    }
+  },
+  "topicPage": {
+    "heading": {
+      "serviceTitle": "Select {topicArticle} {topicName} category to explore in {selectedGeographyDisplayName}"
+    }
+  },
+  "topicsPage": {
+    "heading": {
+      "serviceTitle": "Select a topic to explore census results for {selectedGeographyDisplayName}"
+    }
+  },
+  "categoryPage": {
+    "html": {
+      "title": "2021 Census Data Atlas | {categoryName} in {selectedGeographyDisplayName}"
+    }
+  },
+  "share": {
+    "title": "Share this page"
+  },
+  "locationOverview": {
+    "title": "Explore {selectedGeographyDisplayName}",
+    "peopleSubTitle": "All people (usual residents)",
+    "householdsSubTitle": "All households",
+    "content": "The 2021 Census tells us a lot about how people in {selectedGeographyDisplayName} live and work."
+  },
+  "search": {
+    "title": "Search by area",
+    "label": "Enter a local council.",
+    "button": "Choose",
+    "error": "You must enter the name of the local council or city.",
+    "reset": "See data for all England and Wales",
+    "close": "Close"
+  },
+  "mapKey": {
+    "button": "Collapse"
+  },
+  "explore": {
+    "title": "Explore something else",
+    "newTopicLabel": "New topic",
+    "newCategoryLabel": "New Category",
+    "chooseLocationLabel": "Choose location",
+    "newLocationLabel": "New location",
+    "backToStartLabel": "Back to start"
+  },
+  "footer": {
+    "label": "Is this page useful?",
+    "links": [
+      { "label": "Yes", "href": "/" },
+      { "label": "No", "href": "/" }
+    ],
+    "help": { "label": "Can’t find what you’re looking for?", "href": "/" }
+  }
+}

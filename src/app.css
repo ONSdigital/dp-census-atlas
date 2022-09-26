@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .custom-ring {
+    @apply focus:outline-none focus-visible:ring focus-visible:ring-ons-sun-yellow;
+  }
+  .custom-focus {
+    @apply focus:outline-none focus:bg-inherit focus-visible:bg-ons-sun-yellow;
+  }
+  .hyperlink {
+    @apply custom-ring  text-onsblue underline underline-offset-[3px] decoration-[1px] hover:decoration-[3px] group-hover:decoration-[2px];
+  }
+  .hyperlink-reverse {
+    @apply custom-ring text-ons-grey-5 underline underline-offset-[3px] decoration-[1px] hover:decoration-[2px] group-hover:decoration-[2px];
+  }
+  .hoverable {
+    @apply cursor-pointer;
+  }
+  .mark {
+    @apply bg-yellow-300 font-bold;
+  }
+}
+
+/* @layer base {
+  a {
+    @apply underline;
+  }
+} */

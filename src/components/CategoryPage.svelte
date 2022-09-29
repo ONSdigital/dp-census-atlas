@@ -48,7 +48,7 @@
 <Heading />
 <div class="px-6">
   <AreaPanel />
-  <section class="mb-5">
+  <section class="mb-8">
     <h2 class="pt-3 font-bold text-slate-500">Topic</h2>
     <nav class="flex flex-wrap items-center gap-2 text-xl" aria-label="Breadcrumb">
       <a class="hyperlink" href={buildHyperlink($page.url)}>Home</a>

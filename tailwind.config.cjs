@@ -3,6 +3,9 @@ module.exports = {
   theme: {
     // screens: { xxs: "300px", xs: "400px", sm: "500px", md: "740px", lg: "980px", xl: "1300px", xxl: "1600px" },
     extend: {
+      borderRadius: {
+        DEFAULT: "3px",
+      },
       // https://ons-design-system.netlify.app/foundations/colours/
       colors: {
         // Primary brand pallete

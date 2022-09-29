@@ -6,7 +6,7 @@ import { delay, throttleTime } from "rxjs/operators";
 import type { GeoType } from "../types";
 import { vizStore, mapStore, selectedGeographyStore, preventFlyToGeographyStore } from "../stores/stores";
 import { englandAndWalesBbox, preventFlyToGeography } from "../helpers/geographyHelper";
-import { selectGeography } from "../helpers/appParamsHelper";
+import { selectGeography } from "../helpers/navigationHelper";
 import { initMapLayers } from "./initMapLayers";
 import { renderMapViz } from "./renderMapViz";
 import { layers, layersWithSiblings } from "./layers";

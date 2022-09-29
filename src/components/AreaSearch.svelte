@@ -4,7 +4,7 @@
   import { SvelteSubject } from "../util/rxUtil";
   import { composeAreaSearch } from "../helpers/areaSearchHelper";
   import { highlightText } from "../helpers/searchCensusHelper";
-  import { selectGeography } from "../helpers/appParamsHelper";
+  import { selectGeography } from "../helpers/navigationHelper";
   import type { GeographySearchItem, PostcodeSearchItem } from "../types";
   import { appBasePath } from "../buildEnv";
 

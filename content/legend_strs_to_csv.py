@@ -6,7 +6,6 @@ them for readability.
 """
 
 import csv
-import json
 from pathlib import Path
 import sys
 

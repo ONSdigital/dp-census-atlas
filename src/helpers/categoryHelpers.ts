@@ -1,5 +1,4 @@
-import { englandAndWales } from "./spatialHelper";
-import { GeoTypes, type Variable, type Category, type VariableGroup } from "../types";
+import type { Variable, Category, VariableGroup } from "../types";
 import { unCapitalizeFirstLetter } from "../util/stringUtil";
 
 export const getCategoryInfo = (categoryCode: string, variableGroups: VariableGroup[]) => {
@@ -23,19 +22,6 @@ export const getCategoryInfo = (categoryCode: string, variableGroups: VariableGr
     category: match.category,
   };
 };
-
-export function getSelectedGeography(pageUrl) {
-  const urlParams = new URLSearchParams(pageUrl.search);
-  for (const g of GeoTypes) {
-    if (urlParams.has(g)) {
-      return {
-        geoType: g,
-        geoCode: urlParams.get(g),
-      };
-    }
-  }
-  return { geoType: englandAndWales.meta.geotype, geoCode: englandAndWales.meta.code };
-}
 
 export const formatPercentage = (percentage: number) => {
   return (Math.round(percentage * 10) / 10).toFixed(1);

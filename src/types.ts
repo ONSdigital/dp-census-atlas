@@ -138,7 +138,14 @@ export type ContentConfig = {
   contentJsonUrl: string;
 };
 
-export type ContentStore = {
+export type ContentTree = {
   releases: string[];
   variableGroups: VariableGroup[];
+};
+
+export type AppParams = {
+  geoType: GeoType;
+  geoCode: string;
+  embed: boolean;
+  // pym: string;
 };

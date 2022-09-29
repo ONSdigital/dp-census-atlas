@@ -5,13 +5,13 @@ Interpretation:
 - this is a thorough redesign, plus significant additional vision / future roadmap
   - (there is far more potential dev work here than we've been considering so far)
 - redesign aims:
-  - support multiple viz modes (but release simple univariate first)
+  - support multiple viz modes (but release simple choropleth first)
   - much more compact
   - far less (almost no?) extraneous information about "areas"
 
 Immediate response:
 
-- `mode: Single Indicator` as the first thing you see / main thing is super scary. Just this will scare off most of our potential users. So, move to a separate "Choose" screen, with more space for explanation and context, BUT you don't see it first time - first time users go to the simple (univariate) mode. `[icon, eg globe-alt or sparkles, switch-horizontal, view-list] One indicator - Change`
+- `mode: Single Indicator` as the first thing you see / main thing is super scary. Just this will scare off most of our potential users. So, move to a separate "Choose" screen, with more space for explanation and context, BUT you don't see it first time - first time users go to the simple (choropleth) mode. `[icon, eg globe-alt or sparkles, switch-horizontal, view-list] One indicator - Change`
 - love the thumbnail previews of the modes / map types
 - what is the big percentage? what does it _mean_?
   - 51.9% of people in Newport 0140 identify as English / Welsh / Scottish / Northern Irish / British

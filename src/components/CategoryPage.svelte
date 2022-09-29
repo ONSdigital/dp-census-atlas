@@ -6,6 +6,7 @@
   import { setVizStore } from "../data/setVizStore";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
   import { getDefaultChoroplethClassification } from "../helpers/variableHelpers";
+  import CategoryPageLinks from "./CategoryPageLinks.svelte";
   import Heading from "./Heading.svelte";
   import AreaPanel from "./AreaPanel.svelte";
   import RadioButton from "./RadioButton.svelte";
@@ -47,12 +48,14 @@
 <Heading />
 <div class="px-6">
   <AreaPanel />
-  <section class="">
+  <section class="mb-8">
     <h2 class="pt-3 font-bold text-slate-500">Topic</h2>
     <nav class="flex flex-wrap items-center gap-2 text-xl" aria-label="Breadcrumb">
       <a class="hyperlink" href={buildHyperlink($page.url)}>Home</a>
       <div class="text-sm font-extrabold text-slate-500" aria-hidden>&gt;</div>
-      <a class="hyperlink" href={buildHyperlink($page.url, { variableGroup: variableGroup.slug })}>{variableGroup.name}</a>
+      <a class="hyperlink" href={buildHyperlink($page.url, { variableGroup: variableGroup.slug })}
+        >{variableGroup.name}</a
+      >
       <div class="text-sm font-extrabold text-slate-500" aria-hidden>&gt;</div>
       <div class=" ">{variable.name}</div>
     </nav>
@@ -64,11 +67,15 @@
         {variable.code}
       </div>
     </div>
-    <ul class="flex flex-col last:border-b-[1px] border-b-red">
+    <ul class="flex flex-col last:border-b-[1px]">
       {#each defaultChoroplethClassification.categories as category}
         <li class="">
           <a
-            href={buildHyperlink($page.url, { variableGroup: variableGroup.slug, variable: variable.slug, category: category.slug })}
+            href={buildHyperlink($page.url, {
+              variableGroup: variableGroup.slug,
+              variable: variable.slug,
+              category: category.slug,
+            })}
             class="flex gap-2 items-center p-2 border-t-[1px] border-t-slate-300 cursor-pointer
               {category.slug === categorySlug ? 'bg-onspale' : ''}"
           >
@@ -79,4 +86,5 @@
       {/each}
     </ul>
   </section>
+  <CategoryPageLinks />
 </div>

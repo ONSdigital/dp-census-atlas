@@ -1,10 +1,12 @@
 import { get } from "svelte/store";
+import { page } from "$app/stores";
 import mapboxgl, { GeoJSONSource, Map } from "mapbox-gl";
 import { fromEvent, merge } from "rxjs";
 import { delay, throttleTime } from "rxjs/operators";
 import type { GeoType } from "../types";
 import { vizStore, mapStore, selectedGeographyStore, preventFlyToGeographyStore } from "../stores/stores";
-import { englandAndWalesBbox, preventFlyToGeography, selectGeography } from "../helpers/geographyHelper";
+import { englandAndWalesBbox, preventFlyToGeography } from "../helpers/geographyHelper";
+import { selectGeography } from "../helpers/navigationHelper";
 import { initMapLayers } from "./initMapLayers";
 import { renderMapViz } from "./renderMapViz";
 import { layers, layersWithSiblings } from "./layers";
@@ -54,7 +56,7 @@ export const initMap = (container) => {
     map.on("click", `${l.name}-features`, (e) => {
       const geoCode = e.features[0].properties[l.idProperty];
       preventFlyToGeography(geoCode);
-      selectGeography({ geoType: l.name, geoCode });
+      selectGeography(get(page).url.searchParams, { geoType: l.name, geoCode });
     });
   });
 

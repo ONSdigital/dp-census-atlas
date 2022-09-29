@@ -4,8 +4,6 @@
   import VariableGroupList from "./VariableGroupList.svelte";
   import AreaPanel from "./AreaPanel.svelte";
   import SearchBox from "./SearchBox.svelte";
-  import Icon from "./MaterialIcon.svelte";
-  import { selectGeography } from "../helpers/geographyHelper";
 </script>
 
 <svelte:head>

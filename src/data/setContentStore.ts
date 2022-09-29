@@ -57,6 +57,16 @@ export const setContentStoreOnce = async () => {
   // extract all successfully loaded releases
   const releases = rawContent.map((ct) => ct.contentJson.meta.release);
 
+  // get fakeDataLoaded flag
+  let fakeDataLoaded = false;
+  const fakeDataUrlComponent = "/FAKE";
+  for (const ct of rawContent) {
+    if (ct.contentConfig.contentBaseUrl.includes(fakeDataUrlComponent)) {
+      fakeDataLoaded = true;
+      break;
+    }
+  }
+
   // merge variableGroups
   const allVariableGroups = rawContent.flatMap((ct) => ct.contentJson.content);
   const mergedVariableGroups = mergeVariableGroups(allVariableGroups as VariableGroup[]);
@@ -65,5 +75,6 @@ export const setContentStoreOnce = async () => {
   contentStore.set({
     releases: releases,
     variableGroups: mergedVariableGroups as VariableGroup[],
+    fakeDataLoaded: fakeDataLoaded,
   } as ContentTree);
 };

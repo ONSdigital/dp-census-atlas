@@ -141,6 +141,7 @@ export type ContentConfig = {
 export type ContentTree = {
   releases: string[];
   variableGroups: VariableGroup[];
+  fakeDataLoaded: boolean;
 };
 
 export type AppParams = {

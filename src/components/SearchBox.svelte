@@ -45,7 +45,7 @@
       >
         <ul>
           {#each results.variableGroups as vg}
-            <SearchBoxItem link={`/univariate/${vg.slug}`}>
+            <SearchBoxItem link={`/choropleth/${vg.slug}`}>
               <div class="flex items-center gap-2">
                 <Badge className="bg-slate-500">TOPIC</Badge>
                 <div class="text-xl">{@html highlightText(vg.name, val)}</div>
@@ -56,7 +56,7 @@
             </SearchBoxItem>
           {/each}
           {#each results.variables as v}
-            <SearchBoxItem link={`/univariate/${v.variableGroup.slug}/${v.variable.slug}`}>
+            <SearchBoxItem link={`/choropleth/${v.variableGroup.slug}/${v.variable.slug}`}>
               <div class="flex items-center gap-2">
                 <Badge className="bg-slate-500">VARIABLE</Badge>
                 <div class="text-xl">{@html highlightText(v.variable.name, val)}</div>
@@ -68,7 +68,7 @@
           {/each}
           {#each results.categories as c}
             <SearchBoxItem
-              link={`/univariate/${c.variableGroup.slug}/${c.variable.variable.slug}/default/${c.category.slug}`}
+              link={`/choropleth/${c.variableGroup.slug}/${c.variable.variable.slug}/default/${c.category.slug}`}
             >
               <div class="flex items-center gap-2">
                 <Badge className="bg-slate-500">CATEGORY</Badge>

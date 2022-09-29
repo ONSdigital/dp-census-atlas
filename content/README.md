@@ -33,6 +33,19 @@ Utility scripts for making and editing content.json files for consumption by the
 
 ## How to use
 
+### Quick version (see below for more details)
+
+1. Download latest cantabular metadata archive from https://confluence.ons.gov.uk/pages/viewpage.action?spaceKey=ODADH&title=Upload+Metadata+Files+to+support+NOMIS%2C+Testing+etc
+2. Unzip cantabular metadata
+3. Download atlas variable group specification json: https://confluence.ons.gov.uk/download/attachments/107087117/Atlas_Variable_Groups.json?api=v2
+4. Download latest rich content product specification sheet as csv (export this table as csv: https://confluence.ons.gov.uk/display/ODADH/Rich+content+product+specifications)
+5. create initial (all variables) content.json with `./cantabular_metadata_to_atlas_content.py <path to unzipped cantabular metadata> <path to variable group specification json> <path to rich content product specification csv>`. This will create a new content.json file in `content/content_jsons`, called `all-atlas-content-<date and time of creation>.json`
+6. Download legend strings csv: https://confluence.ons.gov.uk/download/attachments/107087117/atlas-legend-strs-2022-09-14.csv?api=v2
+7. Append legend strings to the new content.json with `./update_legend_strs_from_csv.py <path to content json> <path to legend strings csv>`. This will create a new content.json file in `content/content_jsons`, called `all-atlas-content-<date and time of creation>.json`. The `meta` section of the new content json will have details on when and with what file the legend strings were updated.
+8. Download short variable descriptions csv: https://confluence.ons.gov.uk/download/attachments/107087117/atlas_variables_short_descriptions.csv?api=v2
+9. Update the variable descriptions in the content json with shorter versions using `./update_variable_desc_from_csv.py <path to content json> <path to short variable descriptions csv>`. This will create a new content.json file in `content/content_jsons`, called `all-atlas-content-<date and time of creation>.json`. The `meta` section of the new content json will have details on when and with what file the variable descriptions were updated.
+10. Split the content.json file into seperate ones for each ONS topic (NB these are the 'offical' topics, rather than the variable groups we defined for the atlas), using `./split_content_by_topic.py <paht to content json>`. This will create a seperate content json in `content/content_jsons` for each topic. This step is needed as data is released per-topic by the ONS.
+
 ### creating content.json files
 
 - Ensure code dependencies are installed, an archive of cantabular metadata has been extracted in the `metadata_files` directory, and other required files are available locally.
@@ -54,10 +67,6 @@ To manually edit these strings, the content.json file itself can just be edited,
 To make a csv file from a given content.json, invoke `./legend_strs_to_csv.py` with a path to an input content.json file, e.g. `./legend_strs_to_csv.py demography-release-1-content.json`. This will create a csv file with a row for each category found in the input content.json file, e.g. `demography-release-1-content-legend-strs.csv`. The last three columns (called `EDIT_THIS_legend_str_1`, `EDIT_THIS_legend_str_2` and `EDIT_THIS_legend_str_3`) are the only ones that should be changed, all over columns (prefixed `ADMIN_`) are to keep track of which variable group, variable and classification a category belongs to, and so should not be changed. The aim when editing is to make the last three columns of the csv make sense as a sentence.
 
 When you have finished editing the legend strings in a csv file, to update a content.json with the new legend strings invoke `./update_legend_strs_from_csv.py` with a path to the content.json file to be updated and a path for the csv file with the new legend strings, e.g. `./update_legend_strs_from_csv.py demography-release-1-content.json demography-release-1-content-legend-strs.csv`.
-
-### editing content.json variable description strings
-
-
 
 ### listing census content in more readable csv files
 

@@ -2,7 +2,7 @@
   import "mapbox-gl/dist/mapbox-gl.css";
   import "../app.css";
   import "../i18n/i18n.ts";
-  import pym from "pym.js";
+  // import pym from "pym.js";
   import { onMount } from "svelte";
   import { setContentStoreOnce } from "../data/setContentStore";
   import { contentStore } from "../stores/stores";
@@ -16,7 +16,7 @@
     setContentStoreOnce();
 
     // tell iframe host using pym.js to set iframe height to 600px
-    new pym.Child().sendMessage("height", "600");
+    // new pym.Child().sendMessage("height", "600");
   });
 
   $: if ($page) {

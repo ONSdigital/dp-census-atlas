@@ -20,7 +20,7 @@
       const postcode = event.detail as PostcodeSearchItem;
       let detailsRes = await fetch(`https://api.postcodes.io/postcodes/${postcode.value}`);
       let details = await detailsRes.json();
-      let geosRes = await fetch(`${appBasePath}/geo?q=${details.result.admin_district}`);
+      let geosRes = await fetch(`${appBasePath}/api/geo?q=${details.result.admin_district}`);
       let geos = await geosRes.json();
       if (geos.length > 0) {
         selectGeography($page.url.searchParams, geos[0]);

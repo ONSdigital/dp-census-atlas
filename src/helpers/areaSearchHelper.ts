@@ -14,7 +14,7 @@ export const composeAreaSearch = (query: SvelteSubject<string>): Observable<Area
       if (q.length < 3) {
         return of([]);
       } else {
-        const geographies = fromFetch(`${appBasePath}/geo?q=${q}`).pipe(
+        const geographies = fromFetch(`${appBasePath}/api/geo?q=${q}`).pipe(
           mergeMap((response) => response.json()),
           map(parseGeographySearchItems),
           catchError(handleGeographySearchError),

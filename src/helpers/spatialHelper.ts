@@ -1,5 +1,5 @@
 import type { Bbox, DataTileGrid, GeographyInfo, GeoType } from "../types";
-import censusDataTileGrid from "../../data-tile-grids/quadsDataTileGrid.json";
+import censusDataTileGrid from "../quadsDataTileGrid.json";
 import booleanIntersects from "@turf/boolean-intersects";
 import bboxPolygon from "@turf/bbox-polygon";
 

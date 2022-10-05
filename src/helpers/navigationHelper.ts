@@ -4,6 +4,9 @@ import { GeoTypes } from "../types";
 
 export const selectGeography = (params: URLSearchParams, g: { geoType: GeoType; geoCode: string }) => {
   const newer = new URLSearchParams(params);
+  for (const param of GeoTypes) {
+    newer.delete(param);
+  }
   newer.set(g.geoType.toLowerCase(), g.geoCode);
   gotoParams(newer);
 };

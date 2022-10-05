@@ -1,0 +1,8 @@
+/env
+/**/*.pyc
+/input_metadata_files/*
+!/input_metadata_files/keep.me
+!/input_metadata_files/Atlas_variable_groups.json
+!/input_metadata_files/Atlas_legend_strings.csv
+!/input_metadata_files/Atlas_variables_short_descriptions.csv
+!/input_metadata_files/Rich_content_product_specifications.csv

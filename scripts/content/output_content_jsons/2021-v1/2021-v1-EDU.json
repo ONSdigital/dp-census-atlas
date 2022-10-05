@@ -1,0 +1,141 @@
+{
+  "meta": {
+    "created_at": "2022-10-05-14-20-03",
+    "cantabular_metadata_source": "ar2776-c21ew_metadata-v1-3_cantab_20220927-20",
+    "rich_content_spec_file_used_to_filter": "Rich_content_product_specifications.csv",
+    "legend_strs_file": "Rich_content_product_specifications.csv",
+    "variable_desc_file": "Atlas_variables_short_descriptions.csv",
+    "release": "2021-v1-EDU"
+  },
+  "content": [
+    {
+      "name": "Education",
+      "slug": "education",
+      "desc": "People in education and qualifications they hold.",
+      "variables": [
+        {
+          "name": "Highest level of qualification",
+          "code": "highest_qualification",
+          "slug": "highest-level-of-qualification",
+          "desc": "The highest level of qualification is derived from questions asking people to indicate all qualifications held, or their nearest equivalent.",
+          "units": "Person",
+          "topic_code": "EDU",
+          "classifications": [
+            {
+              "code": "highest_qualification_6a",
+              "slug": "highest-qualification-6a",
+              "desc": "Highest level of qualification (6 categories)",
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "categories": [
+                {
+                  "name": "No qualifications",
+                  "slug": "no-qualifications",
+                  "code": "highest_qualification_6a-000",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "no qualifications"
+                },
+                {
+                  "name": "Highest level of qualification: Level 1, 2 or 3 qualifications",
+                  "slug": "highest-level-of-qualification-level-1-2-or-3-qualifications",
+                  "code": "highest_qualification_6a-001",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "level 1, 2 or 3 qualifications"
+                },
+                {
+                  "name": "Highest level of qualification: Apprenticeship",
+                  "slug": "highest-level-of-qualification-apprenticeship",
+                  "code": "highest_qualification_6a-002",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "an apprenticeship"
+                },
+                {
+                  "name": "Highest level of qualification: Level 4 qualifications and above",
+                  "slug": "highest-level-of-qualification-level-4-qualifications-and-above",
+                  "code": "highest_qualification_6a-003",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "level 4 qualifications and above"
+                },
+                {
+                  "name": "Highest level of qualification: Other qualifications",
+                  "slug": "highest-level-of-qualification-other-qualifications",
+                  "code": "highest_qualification_6a-004",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "other qualifications"
+                }
+              ]
+            },
+            {
+              "code": "highest_qualification",
+              "slug": "highest-qualification",
+              "desc": "Highest level of qualification (8 categories)",
+              "categories": [
+                {
+                  "name": "No qualifications",
+                  "slug": "no-qualifications",
+                  "code": "highest_qualification-000",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "no qualifications"
+                },
+                {
+                  "name": "Level 1 and entry level qualifications: 1 to 4 GCSEs grade A* to C , Any GCSEs at other grades, O levels or CSEs (any grades), 1 AS level, NVQ level 1, Foundation GNVQ, Basic or Essential Skills",
+                  "slug": "level-1-and-entry-level-qualifications-1-to-4-gcses-grade-a-to-c-any-gcses-at-other-grades-o-levels-or-cses-any-grades-1-as-level-nvq-level-1-foundation-gnvq-basic-or-essential-skills",
+                  "code": "highest_qualification-001",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "level 1 and entry level qualifications"
+                },
+                {
+                  "name": "Level 2 qualifications: 5 or more GCSEs (A* to C or 9 to 4), O levels (passes), CSEs (grade 1), School Certification, 1 A level, 2 to 3 AS levels, VCEs, Intermediate or Higher Diploma, Welsh Baccalaureate Intermediate Diploma, NVQ level 2, Intermediate GNVQ, City and Guilds Craft, BTEC First or General Diploma, RSA Diploma",
+                  "slug": "level-2-qualifications-5-or-more-gcses-a-to-c-or-9-to-4-o-levels-passes-cses-grade-1-school-certification-1-a-level-2-to-3-as-levels-vces-intermediate-or-higher-diploma-welsh-baccalaureate-intermediate-diploma-nvq-level-2-intermediate-gnvq-city-and-guilds-craft-btec-first-or-general-diploma-rsa-diploma",
+                  "code": "highest_qualification-002",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "level 2 qualifications"
+                },
+                {
+                  "name": "Apprenticeship",
+                  "slug": "apprenticeship",
+                  "code": "highest_qualification-003",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "an apprenticeship"
+                },
+                {
+                  "name": "Level 3 qualifications: 2 or more A levels or VCEs, 4 or more AS levels, Higher School Certificate, Progression or Advanced Diploma, Welsh Baccalaureate Advance Diploma, NVQ level 3; Advanced GNVQ, City and Guilds Advanced Craft, ONC, OND, BTEC National, RSA Advanced Diploma",
+                  "slug": "level-3-qualifications-2-or-more-a-levels-or-vces-4-or-more-as-levels-higher-school-certificate-progression-or-advanced-diploma-welsh-baccalaureate-advance-diploma-nvq-level-3-advanced-gnvq-city-and-guilds-advanced-craft-onc-ond-btec-national-rsa-advanced-diploma",
+                  "code": "highest_qualification-004",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "level 3 qualifications"
+                },
+                {
+                  "name": "Level 4 qualifications and above: degree (BA, BSc), higher degree (MA, PhD, PGCE), NVQ level 4 to 5, HNC, HND, RSA Higher Diploma, BTEC Higher level, professional qualifications (for example, teaching, nursing, accountancy)",
+                  "slug": "level-4-qualifications-and-above-degree-ba-bsc-higher-degree-ma-phd-pgce-nvq-level-4-to-5-hnc-hnd-rsa-higher-diploma-btec-higher-level-professional-qualifications-for-example-teaching-nursing-accountancy",
+                  "code": "highest_qualification-005",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "level 4 qualifications and above"
+                },
+                {
+                  "name": "Other: vocational or work-related qualifications, other qualifications achieved in England or Wales, qualifications achieved outside England or Wales (equivalent not stated or unknown)",
+                  "slug": "other-vocational-or-work-related-qualifications-other-qualifications-achieved-in-england-or-wales-qualifications-achieved-outside-england-or-wales-equivalent-not-stated-or-unknown",
+                  "code": "highest_qualification-006",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "other qualifications"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

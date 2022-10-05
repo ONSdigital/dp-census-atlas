@@ -1,0 +1,1741 @@
+{
+  "meta": {
+    "created_at": "2022-10-05-14-20-03",
+    "cantabular_metadata_source": "ar2776-c21ew_metadata-v1-3_cantab_20220927-20",
+    "rich_content_spec_file_used_to_filter": "Rich_content_product_specifications.csv",
+    "legend_strs_file": "Rich_content_product_specifications.csv",
+    "variable_desc_file": "Atlas_variables_short_descriptions.csv",
+    "release": "2021-v1-DEM"
+  },
+  "content": [
+    {
+      "name": "Population",
+      "slug": "population",
+      "desc": "People, their living arrangements and where they come from.",
+      "variables": [
+        {
+          "name": "Household deprivation",
+          "code": "hh_deprivation",
+          "slug": "household-deprivation",
+          "desc": "If a household is deprived, based on employment, education, health and disability, and overcrowding.",
+          "units": "Household",
+          "topic_code": "DEM",
+          "classifications": [
+            {
+              "code": "hh_deprivation",
+              "slug": "hh-deprivation",
+              "desc": "Household deprivation (6 categories)",
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "categories": [
+                {
+                  "name": "Household is not deprived in any dimension",
+                  "slug": "household-is-not-deprived-in-any-dimension",
+                  "code": "hh_deprivation-001",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "not deprived in any dimension"
+                },
+                {
+                  "name": "Household is deprived in one dimension",
+                  "slug": "household-is-deprived-in-one-dimension",
+                  "code": "hh_deprivation-002",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "deprived in one dimension"
+                },
+                {
+                  "name": "Household is deprived in two dimensions",
+                  "slug": "household-is-deprived-in-two-dimensions",
+                  "code": "hh_deprivation-003",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "deprived in two dimensions"
+                },
+                {
+                  "name": "Household is deprived in three dimensions",
+                  "slug": "household-is-deprived-in-three-dimensions",
+                  "code": "hh_deprivation-004",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "deprived in three dimensions"
+                },
+                {
+                  "name": "Household is deprived in four dimensions",
+                  "slug": "household-is-deprived-in-four-dimensions",
+                  "code": "hh_deprivation-005",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "deprived in four dimensions"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Household composition",
+          "code": "hh_family_composition",
+          "slug": "household-composition",
+          "desc": "Households according to the relationships between members.",
+          "units": "Household",
+          "topic_code": "DEM",
+          "classifications": [
+            {
+              "code": "hh_family_composition_4a",
+              "slug": "hh-family-composition-4a",
+              "desc": "Household composition (4 categories)",
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "categories": [
+                {
+                  "name": "Multiple family household",
+                  "slug": "multiple-family-household",
+                  "code": "hh_family_composition_4a-001",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "multiple family households"
+                },
+                {
+                  "name": "One person household",
+                  "slug": "one-person-household",
+                  "code": "hh_family_composition_4a-002",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "one person households"
+                },
+                {
+                  "name": "Single family household",
+                  "slug": "single-family-household",
+                  "code": "hh_family_composition_4a-003",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "single family households"
+                }
+              ]
+            },
+            {
+              "code": "hh_family_composition_15a",
+              "slug": "hh-family-composition-15a",
+              "desc": "Household composition (15 categories)",
+              "categories": [
+                {
+                  "name": "One person household: Aged 66 years and over",
+                  "slug": "one-person-household-aged-66-years-and-over",
+                  "code": "hh_family_composition_15a-001",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "households with one person aged 66 years and over"
+                },
+                {
+                  "name": "One person household: Other",
+                  "slug": "one-person-household-other",
+                  "code": "hh_family_composition_15a-002",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "househols with one person aged less than 66 years"
+                },
+                {
+                  "name": "Single family household: All aged 66 years and over",
+                  "slug": "single-family-household-all-aged-66-years-and-over",
+                  "code": "hh_family_composition_15a-003",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "single family households in which all people are aged 66 years and over"
+                },
+                {
+                  "name": "Single family household: Married or civil partnership couple: No children",
+                  "slug": "single-family-household-married-or-civil-partnership-couple-no-children",
+                  "code": "hh_family_composition_15a-004",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "single family households of a married or civil partnership couple with no children"
+                },
+                {
+                  "name": "Single family household: Married or civil partnership couple: Dependent children",
+                  "slug": "single-family-household-married-or-civil-partnership-couple-dependent-children",
+                  "code": "hh_family_composition_15a-005",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "single family households of a married or civil partnership couple with dependent children"
+                },
+                {
+                  "name": "Single family household: Married or civil partnership couple: All children non-dependent",
+                  "slug": "single-family-household-married-or-civil-partnership-couple-all-children-non-dependent",
+                  "code": "hh_family_composition_15a-006",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "single family households of a married or civil partnership couple with all children non-dependent"
+                },
+                {
+                  "name": "Single family household: Cohabiting couple family: No children",
+                  "slug": "single-family-household-cohabiting-couple-family-no-children",
+                  "code": "hh_family_composition_15a-007",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "single family households of a cohabiting couple family with no children"
+                },
+                {
+                  "name": "Single family household: Cohabiting couple family: With dependent children",
+                  "slug": "single-family-household-cohabiting-couple-family-with-dependent-children",
+                  "code": "hh_family_composition_15a-008",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "single family households of a cohabiting couple family with dependent children"
+                },
+                {
+                  "name": "Single family household: Cohabiting couple family: All children non-dependent",
+                  "slug": "single-family-household-cohabiting-couple-family-all-children-non-dependent",
+                  "code": "hh_family_composition_15a-009",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "single family households of a cohabiting couple family with all children non-dependent"
+                },
+                {
+                  "name": "Single family household: Lone parent family: With dependent children",
+                  "slug": "single-family-household-lone-parent-family-with-dependent-children",
+                  "code": "hh_family_composition_15a-010",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "single family households of a lone parent family with dependent children"
+                },
+                {
+                  "name": "Single family household: Lone parent family: All children non-dependent",
+                  "slug": "single-family-household-lone-parent-family-all-children-non-dependent",
+                  "code": "hh_family_composition_15a-011",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "single family households of a lone parent family with all children non-dependent"
+                },
+                {
+                  "name": "Single family household: Other single family household: Other family composition",
+                  "slug": "single-family-household-other-single-family-household-other-family-composition",
+                  "code": "hh_family_composition_15a-012",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "single family households with other family composition"
+                },
+                {
+                  "name": "Multiple-family household: With dependent children",
+                  "slug": "multiple-family-household-with-dependent-children",
+                  "code": "hh_family_composition_15a-013",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "multiple-family households with dependent children"
+                },
+                {
+                  "name": "Multiple-family household: Other, including all full-time students and all aged 66 years and over",
+                  "slug": "multiple-family-household-other-including-all-full-time-students-and-all-aged-66-years-and-over",
+                  "code": "hh_family_composition_15a-014",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "multiple-family households with other composition, including all full-time students and all aged 66 years and over"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Multiple ethnic groups in household",
+          "code": "hh_multi_ethnic_group",
+          "slug": "multiple-ethnic-groups-in-household",
+          "desc": "Single or multiple ethnic groups within the household, and whether ethnic groups differ between generations or partnerships within the household.",
+          "units": "Household",
+          "topic_code": "DEM",
+          "classifications": [
+            {
+              "code": "hh_multi_ethnic_group",
+              "slug": "hh-multi-ethnic-group",
+              "desc": "Multiple ethnic groups in household (6 categories)",
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "categories": [
+                {
+                  "name": "One-person household",
+                  "slug": "one-person-household",
+                  "code": "hh_multi_ethnic_group-001",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "one-person households"
+                },
+                {
+                  "name": "All household members have the same ethnic group",
+                  "slug": "all-household-members-have-the-same-ethnic-group",
+                  "code": "hh_multi_ethnic_group-002",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "members that all have the same ethnic group"
+                },
+                {
+                  "name": "Ethnic groups differ between generations but not within partnerships",
+                  "slug": "ethnic-groups-differ-between-generations-but-not-within-partnerships",
+                  "code": "hh_multi_ethnic_group-003",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "members from ethnic groups that differ between generations but not within partnerships"
+                },
+                {
+                  "name": "Ethnic groups differ within partnerships",
+                  "slug": "ethnic-groups-differ-within-partnerships",
+                  "code": "hh_multi_ethnic_group-004",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "members from ethnic groups that differ within partnerships"
+                },
+                {
+                  "name": "Any other combination of multiple ethnic identities",
+                  "slug": "any-other-combination-of-multiple-ethnic-identities",
+                  "code": "hh_multi_ethnic_group-005",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "members with any other combination of multiple ethnic identities"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Marital and civil partnership status",
+          "code": "legal_partnership_status",
+          "slug": "marital-and-civil-partnership-status",
+          "desc": "Classifies a person according to their legal marital or registered civil partnership status on 21 March 2021.",
+          "units": "Person",
+          "topic_code": "DEM",
+          "classifications": [
+            {
+              "code": "legal_partnership_status_3a",
+              "slug": "legal-partnership-status-3a",
+              "desc": "Marital and civil partnership status (3 categories)",
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "categories": [
+                {
+                  "name": "Married or in a registered civil partnership",
+                  "slug": "married-or-in-a-registered-civil-partnership",
+                  "code": "legal_partnership_status_3a-001",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "married or in a registered civil partnership"
+                },
+                {
+                  "name": "Other marital or civil partnership status",
+                  "slug": "other-marital-or-civil-partnership-status",
+                  "code": "legal_partnership_status_3a-002",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "other marital or civil partnership status"
+                }
+              ]
+            },
+            {
+              "code": "legal_partnership_status_6a",
+              "slug": "legal-partnership-status-6a",
+              "desc": "Marital and civil partnership status (6 categories)",
+              "categories": [
+                {
+                  "name": "Never married and never registered a civil partnership",
+                  "slug": "never-married-and-never-registered-a-civil-partnership",
+                  "code": "legal_partnership_status_6a-001",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "never married and never registered a civil partnership"
+                },
+                {
+                  "name": "Married or in a registered civil partnership",
+                  "slug": "married-or-in-a-registered-civil-partnership",
+                  "code": "legal_partnership_status_6a-002",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "married or in a registered civil partnership"
+                },
+                {
+                  "name": "Separated, but still legally married or still legally in a civil partnership",
+                  "slug": "separated-but-still-legally-married-or-still-legally-in-a-civil-partnership",
+                  "code": "legal_partnership_status_6a-003",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "separated, but still legally married or still legally in a civil partnership"
+                },
+                {
+                  "name": "Divorced or civil partnership dissolved",
+                  "slug": "divorced-or-civil-partnership-dissolved",
+                  "code": "legal_partnership_status_6a-004",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "divorced or have had their civil partnership dissolved"
+                },
+                {
+                  "name": "Widowed or surviving civil partnership partner",
+                  "slug": "widowed-or-surviving-civil-partnership-partner",
+                  "code": "legal_partnership_status_6a-005",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "widowed or the surviving civil partnership partner"
+                }
+              ]
+            },
+            {
+              "code": "legal_partnership_status",
+              "slug": "legal-partnership-status",
+              "desc": "Marital and civil partnership status (12 categories)",
+              "categories": [
+                {
+                  "name": "Never married and never registered a civil partnership",
+                  "slug": "never-married-and-never-registered-a-civil-partnership",
+                  "code": "legal_partnership_status-001",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "never married and never registered a civil partnership"
+                },
+                {
+                  "name": "Married: Opposite sex",
+                  "slug": "married-opposite-sex",
+                  "code": "legal_partnership_status-002",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "married to the opposite sex"
+                },
+                {
+                  "name": "Married: Same sex",
+                  "slug": "married-same-sex",
+                  "code": "legal_partnership_status-003",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "married to the same sex"
+                },
+                {
+                  "name": "In a registered civil partnership: Opposite sex",
+                  "slug": "in-a-registered-civil-partnership-opposite-sex",
+                  "code": "legal_partnership_status-004",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "in a registered civil partnership with the opposite sex"
+                },
+                {
+                  "name": "In a registered civil partnership: Same sex",
+                  "slug": "in-a-registered-civil-partnership-same-sex",
+                  "code": "legal_partnership_status-005",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "in a registered civil partnership with the same sex"
+                },
+                {
+                  "name": "Separated, but still married",
+                  "slug": "separated-but-still-married",
+                  "code": "legal_partnership_status-006",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "separated, but still married"
+                },
+                {
+                  "name": "Separated, but still in a registered civil partnership",
+                  "slug": "separated-but-still-in-a-registered-civil-partnership",
+                  "code": "legal_partnership_status-007",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "separated, but still in a registered civil partnership"
+                },
+                {
+                  "name": "Divorced",
+                  "slug": "divorced",
+                  "code": "legal_partnership_status-008",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "divorced"
+                },
+                {
+                  "name": "Formerly in a civil partnership now legally dissolved",
+                  "slug": "formerly-in-a-civil-partnership-now-legally-dissolved",
+                  "code": "legal_partnership_status-009",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "were",
+                  "legend_str_3": "formerly in a civil partnership now legally dissolved"
+                },
+                {
+                  "name": "Widowed",
+                  "slug": "widowed",
+                  "code": "legal_partnership_status-010",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "widowed"
+                },
+                {
+                  "name": "Surviving partner from civil partnership",
+                  "slug": "surviving-partner-from-civil-partnership",
+                  "code": "legal_partnership_status-011",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "the surviving partner from civil partnership"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Living arrangements",
+          "code": "living_arrangements",
+          "slug": "living-arrangements",
+          "desc": "If a person is living in a couple or not, by their legal partnership status.",
+          "units": "Person",
+          "topic_code": "DEM",
+          "classifications": [
+            {
+              "code": "living_arrangements_11a",
+              "slug": "living-arrangements-11a",
+              "desc": "Living arrangements (11 categories)",
+              "choropleth_default": true,
+              "categories": [
+                {
+                  "name": "Living in an opposite-sex couple: Married or in a civil partnership",
+                  "slug": "living-in-an-opposite-sex-couple-married-or-in-a-civil-partnership",
+                  "code": "living_arrangements_11a-001",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "living in an opposite-sex couple that is married or in a civil partnership"
+                },
+                {
+                  "name": "Living in a same-sex couple: Married or in a civil partnership",
+                  "slug": "living-in-a-same-sex-couple-married-or-in-a-civil-partnership",
+                  "code": "living_arrangements_11a-002",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "living in a same-sex couple that is married or in a civil partnership"
+                },
+                {
+                  "name": "Living in a couple: Separated, but still married or in a civil partnership",
+                  "slug": "living-in-a-couple-separated-but-still-married-or-in-a-civil-partnership",
+                  "code": "living_arrangements_11a-003",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "living in a couple that is separated, but still married or in a civil partnership"
+                },
+                {
+                  "name": "Living in an opposite-sex couple: Cohabiting",
+                  "slug": "living-in-an-opposite-sex-couple-cohabiting",
+                  "code": "living_arrangements_11a-004",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "living in an opposite-sex couple that is cohabiting"
+                },
+                {
+                  "name": "Living in a same-sex couple: Cohabiting",
+                  "slug": "living-in-a-same-sex-couple-cohabiting",
+                  "code": "living_arrangements_11a-005",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "living in a same-sex couple that is cohabiting"
+                },
+                {
+                  "name": "Not living in a couple: Single (never married and never registered a same-sex civil partnership)",
+                  "slug": "not-living-in-a-couple-single-never-married-and-never-registered-a-same-sex-civil-partnership",
+                  "code": "living_arrangements_11a-006",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "single (never married and never registered a same-sex civil partnership)"
+                },
+                {
+                  "name": "Not living in a couple: Married or in a registered civil partnership",
+                  "slug": "not-living-in-a-couple-married-or-in-a-registered-civil-partnership",
+                  "code": "living_arrangements_11a-007",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "not living in a couple, but married or in a registered civil partnership"
+                },
+                {
+                  "name": "Not living in a couple: Separated (including those who are married and those who are in civil partnerships)",
+                  "slug": "not-living-in-a-couple-separated-including-those-who-are-married-and-those-who-are-in-civil-partnerships",
+                  "code": "living_arrangements_11a-008",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "separated (including those who are married and those who are in civil partnerships)"
+                },
+                {
+                  "name": "Not living in a couple: Divorced or formerly in a civil partnership which is now legally dissolved",
+                  "slug": "not-living-in-a-couple-divorced-or-formerly-in-a-civil-partnership-which-is-now-legally-dissolved",
+                  "code": "living_arrangements_11a-009",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "divorced or formerly in a civil partnership which is now legally dissolved"
+                },
+                {
+                  "name": "Not living in a couple: Widowed or surviving partner from a civil partnership",
+                  "slug": "not-living-in-a-couple-widowed-or-surviving-partner-from-a-civil-partnership",
+                  "code": "living_arrangements_11a-010",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "widowed or surviving partner from a civil partnership"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Number of cars or vans",
+          "code": "number_of_cars",
+          "slug": "number-of-cars-or-vans",
+          "desc": "The number of cars or vans owned or available for use by household members.",
+          "units": "Household",
+          "topic_code": "DEM",
+          "classifications": [
+            {
+              "code": "number_of_cars_3a",
+              "slug": "number-of-cars-3a",
+              "desc": "Car or van availability (3 categories)",
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "categories": [
+                {
+                  "name": "No cars or vans in household",
+                  "slug": "no-cars-or-vans-in-household",
+                  "code": "number_of_cars_3a-000",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "no cars or vans in household"
+                },
+                {
+                  "name": "1 or more cars or vans in household",
+                  "slug": "1-or-more-cars-or-vans-in-household",
+                  "code": "number_of_cars_3a-001",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "1 or more cars or vans in household"
+                }
+              ]
+            },
+            {
+              "code": "number_of_cars_5a",
+              "slug": "number-of-cars-5a",
+              "desc": "Car or van availability (5 categories)",
+              "categories": [
+                {
+                  "name": "No cars or vans in household",
+                  "slug": "no-cars-or-vans-in-household",
+                  "code": "number_of_cars_5a-000",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "no cars or vans in household"
+                },
+                {
+                  "name": "1 car or van in household",
+                  "slug": "1-car-or-van-in-household",
+                  "code": "number_of_cars_5a-001",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "1 car or van in household"
+                },
+                {
+                  "name": "2 cars or vans in household",
+                  "slug": "2-cars-or-vans-in-household",
+                  "code": "number_of_cars_5a-002",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "2 cars or vans in household"
+                },
+                {
+                  "name": "3 or more cars or vans in household",
+                  "slug": "3-or-more-cars-or-vans-in-household",
+                  "code": "number_of_cars_5a-003",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "3 or more cars or vans in household"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Age",
+          "code": "resident_age",
+          "slug": "age",
+          "desc": "A persons age on Census Day, 21 March 2021 in England and Wales. Infants aged under 1 year are classified as 0 years of age",
+          "units": "Person",
+          "topic_code": "DEM",
+          "classifications": [
+            {
+              "code": "resident_age_3a",
+              "slug": "resident-age-3a",
+              "desc": "Age (3 categories)",
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "categories": [
+                {
+                  "name": "Aged 15 years and under",
+                  "slug": "aged-15-years-and-under",
+                  "code": "resident_age_3a-001",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 15 years and under"
+                },
+                {
+                  "name": "Aged 16 to 64 years",
+                  "slug": "aged-16-to-64-years",
+                  "code": "resident_age_3a-002",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 16 to 64 years"
+                },
+                {
+                  "name": "Aged 65 years and over",
+                  "slug": "aged-65-years-and-over",
+                  "code": "resident_age_3a-003",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 65 years and over"
+                }
+              ]
+            },
+            {
+              "code": "resident_age_8c",
+              "slug": "resident-age-8c",
+              "desc": "Age (C) (8 categories)",
+              "categories": [
+                {
+                  "name": "Aged 14 years and under",
+                  "slug": "aged-14-years-and-under",
+                  "code": "resident_age_8c-001",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 14 years and under"
+                },
+                {
+                  "name": "Aged 15 to 24 years",
+                  "slug": "aged-15-to-24-years",
+                  "code": "resident_age_8c-002",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 15 to 24 years"
+                },
+                {
+                  "name": "Aged 25 to 34 years",
+                  "slug": "aged-25-to-34-years",
+                  "code": "resident_age_8c-003",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 25 to 34 years"
+                },
+                {
+                  "name": "Aged 35 to 44 years",
+                  "slug": "aged-35-to-44-years",
+                  "code": "resident_age_8c-004",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 35 to 44 years"
+                },
+                {
+                  "name": "Aged 45 to 54 years",
+                  "slug": "aged-45-to-54-years",
+                  "code": "resident_age_8c-005",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 45 to 54 years"
+                },
+                {
+                  "name": "Aged 55 to 64 years",
+                  "slug": "aged-55-to-64-years",
+                  "code": "resident_age_8c-006",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 55 to 64 years"
+                },
+                {
+                  "name": "Aged 65 to 74 years",
+                  "slug": "aged-65-to-74-years",
+                  "code": "resident_age_8c-007",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 65 to 74 years"
+                },
+                {
+                  "name": "Aged 75 years and over",
+                  "slug": "aged-75-years-and-over",
+                  "code": "resident_age_8c-008",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 75 years and over"
+                }
+              ]
+            },
+            {
+              "code": "resident_age_11a",
+              "slug": "resident-age-11a",
+              "desc": "Age (11 categories)",
+              "categories": [
+                {
+                  "name": "Aged 4 years and under",
+                  "slug": "aged-4-years-and-under",
+                  "code": "resident_age_11a-001",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 4 years and under"
+                },
+                {
+                  "name": "Aged 5 to 9 years",
+                  "slug": "aged-5-to-9-years",
+                  "code": "resident_age_11a-002",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 5 to 9 years"
+                },
+                {
+                  "name": "Aged 10 to 15 years",
+                  "slug": "aged-10-to-15-years",
+                  "code": "resident_age_11a-003",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 10 to 15 years"
+                },
+                {
+                  "name": "Aged 16 to 19 years",
+                  "slug": "aged-16-to-19-years",
+                  "code": "resident_age_11a-004",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 16 to 19 years"
+                },
+                {
+                  "name": "Aged 20 to 24 years",
+                  "slug": "aged-20-to-24-years",
+                  "code": "resident_age_11a-005",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 20 to 24 years"
+                },
+                {
+                  "name": "Aged 25 to 34 years",
+                  "slug": "aged-25-to-34-years",
+                  "code": "resident_age_11a-006",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 25 to 34 years"
+                },
+                {
+                  "name": "Aged 35 to 49 years",
+                  "slug": "aged-35-to-49-years",
+                  "code": "resident_age_11a-007",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 35 to 49 years"
+                },
+                {
+                  "name": "Aged 50 to 64 years",
+                  "slug": "aged-50-to-64-years",
+                  "code": "resident_age_11a-008",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 50 to 64 years"
+                },
+                {
+                  "name": "Aged 65 to 74 years",
+                  "slug": "aged-65-to-74-years",
+                  "code": "resident_age_11a-009",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 65 to 74 years"
+                },
+                {
+                  "name": "Aged 75 to 84 years",
+                  "slug": "aged-75-to-84-years",
+                  "code": "resident_age_11a-010",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 75 to 84 years"
+                },
+                {
+                  "name": "Aged 85 years and over",
+                  "slug": "aged-85-years-and-over",
+                  "code": "resident_age_11a-011",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 85 years and over"
+                }
+              ]
+            },
+            {
+              "code": "resident_age_101a",
+              "slug": "resident-age-101a",
+              "desc": "Age (101 categories)",
+              "categories": [
+                {
+                  "name": "Aged under 1 year",
+                  "slug": "aged-under-1-year",
+                  "code": "resident_age_101a-000",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged under 1 year"
+                },
+                {
+                  "name": "Aged 1 year",
+                  "slug": "aged-1-year",
+                  "code": "resident_age_101a-001",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 1 year"
+                },
+                {
+                  "name": "Aged 2 years",
+                  "slug": "aged-2-years",
+                  "code": "resident_age_101a-002",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 2 years"
+                },
+                {
+                  "name": "Aged 3 years",
+                  "slug": "aged-3-years",
+                  "code": "resident_age_101a-003",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 3 years"
+                },
+                {
+                  "name": "Aged 4 years",
+                  "slug": "aged-4-years",
+                  "code": "resident_age_101a-004",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 4 years"
+                },
+                {
+                  "name": "Aged 5 years",
+                  "slug": "aged-5-years",
+                  "code": "resident_age_101a-005",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 5 years"
+                },
+                {
+                  "name": "Aged 6 years",
+                  "slug": "aged-6-years",
+                  "code": "resident_age_101a-006",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 6 years"
+                },
+                {
+                  "name": "Aged 7 years",
+                  "slug": "aged-7-years",
+                  "code": "resident_age_101a-007",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 7 years"
+                },
+                {
+                  "name": "Aged 8 years",
+                  "slug": "aged-8-years",
+                  "code": "resident_age_101a-008",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 8 years"
+                },
+                {
+                  "name": "Aged 9 years",
+                  "slug": "aged-9-years",
+                  "code": "resident_age_101a-009",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 9 years"
+                },
+                {
+                  "name": "Aged 10 years",
+                  "slug": "aged-10-years",
+                  "code": "resident_age_101a-010",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 10 years"
+                },
+                {
+                  "name": "Aged 11 years",
+                  "slug": "aged-11-years",
+                  "code": "resident_age_101a-011",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 11 years"
+                },
+                {
+                  "name": "Aged 12 years",
+                  "slug": "aged-12-years",
+                  "code": "resident_age_101a-012",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 12 years"
+                },
+                {
+                  "name": "Aged 13 years",
+                  "slug": "aged-13-years",
+                  "code": "resident_age_101a-013",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 13 years"
+                },
+                {
+                  "name": "Aged 14 years",
+                  "slug": "aged-14-years",
+                  "code": "resident_age_101a-014",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 14 years"
+                },
+                {
+                  "name": "Aged 15 years",
+                  "slug": "aged-15-years",
+                  "code": "resident_age_101a-015",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 15 years"
+                },
+                {
+                  "name": "Aged 16 years",
+                  "slug": "aged-16-years",
+                  "code": "resident_age_101a-016",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 16 years"
+                },
+                {
+                  "name": "Aged 17 years",
+                  "slug": "aged-17-years",
+                  "code": "resident_age_101a-017",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 17 years"
+                },
+                {
+                  "name": "Aged 18 years",
+                  "slug": "aged-18-years",
+                  "code": "resident_age_101a-018",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 18 years"
+                },
+                {
+                  "name": "Aged 19 years",
+                  "slug": "aged-19-years",
+                  "code": "resident_age_101a-019",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 19 years"
+                },
+                {
+                  "name": "Aged 20 years",
+                  "slug": "aged-20-years",
+                  "code": "resident_age_101a-020",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 20 years"
+                },
+                {
+                  "name": "Aged 21 years",
+                  "slug": "aged-21-years",
+                  "code": "resident_age_101a-021",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 21 years"
+                },
+                {
+                  "name": "Aged 22 years",
+                  "slug": "aged-22-years",
+                  "code": "resident_age_101a-022",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 22 years"
+                },
+                {
+                  "name": "Aged 23 years",
+                  "slug": "aged-23-years",
+                  "code": "resident_age_101a-023",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 23 years"
+                },
+                {
+                  "name": "Aged 24 years",
+                  "slug": "aged-24-years",
+                  "code": "resident_age_101a-024",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 24 years"
+                },
+                {
+                  "name": "Aged 25 years",
+                  "slug": "aged-25-years",
+                  "code": "resident_age_101a-025",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 25 years"
+                },
+                {
+                  "name": "Aged 26 years",
+                  "slug": "aged-26-years",
+                  "code": "resident_age_101a-026",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 26 years"
+                },
+                {
+                  "name": "Aged 27 years",
+                  "slug": "aged-27-years",
+                  "code": "resident_age_101a-027",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 27 years"
+                },
+                {
+                  "name": "Aged 28 years",
+                  "slug": "aged-28-years",
+                  "code": "resident_age_101a-028",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 28 years"
+                },
+                {
+                  "name": "Aged 29 years",
+                  "slug": "aged-29-years",
+                  "code": "resident_age_101a-029",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 29 years"
+                },
+                {
+                  "name": "Aged 30 years",
+                  "slug": "aged-30-years",
+                  "code": "resident_age_101a-030",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 30 years"
+                },
+                {
+                  "name": "Aged 31 years",
+                  "slug": "aged-31-years",
+                  "code": "resident_age_101a-031",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 31 years"
+                },
+                {
+                  "name": "Aged 32 years",
+                  "slug": "aged-32-years",
+                  "code": "resident_age_101a-032",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 32 years"
+                },
+                {
+                  "name": "Aged 33 years",
+                  "slug": "aged-33-years",
+                  "code": "resident_age_101a-033",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 33 years"
+                },
+                {
+                  "name": "Aged 34 years",
+                  "slug": "aged-34-years",
+                  "code": "resident_age_101a-034",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 34 years"
+                },
+                {
+                  "name": "Aged 35 years",
+                  "slug": "aged-35-years",
+                  "code": "resident_age_101a-035",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 35 years"
+                },
+                {
+                  "name": "Aged 36 years",
+                  "slug": "aged-36-years",
+                  "code": "resident_age_101a-036",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 36 years"
+                },
+                {
+                  "name": "Aged 37 years",
+                  "slug": "aged-37-years",
+                  "code": "resident_age_101a-037",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 37 years"
+                },
+                {
+                  "name": "Aged 38 years",
+                  "slug": "aged-38-years",
+                  "code": "resident_age_101a-038",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 38 years"
+                },
+                {
+                  "name": "Aged 39 years",
+                  "slug": "aged-39-years",
+                  "code": "resident_age_101a-039",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 39 years"
+                },
+                {
+                  "name": "Aged 40 years",
+                  "slug": "aged-40-years",
+                  "code": "resident_age_101a-040",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 40 years"
+                },
+                {
+                  "name": "Aged 41 years",
+                  "slug": "aged-41-years",
+                  "code": "resident_age_101a-041",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 41 years"
+                },
+                {
+                  "name": "Aged 42 years",
+                  "slug": "aged-42-years",
+                  "code": "resident_age_101a-042",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 42 years"
+                },
+                {
+                  "name": "Aged 43 years",
+                  "slug": "aged-43-years",
+                  "code": "resident_age_101a-043",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 43 years"
+                },
+                {
+                  "name": "Aged 44 years",
+                  "slug": "aged-44-years",
+                  "code": "resident_age_101a-044",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 44 years"
+                },
+                {
+                  "name": "Aged 45 years",
+                  "slug": "aged-45-years",
+                  "code": "resident_age_101a-045",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 45 years"
+                },
+                {
+                  "name": "Aged 46 years",
+                  "slug": "aged-46-years",
+                  "code": "resident_age_101a-046",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 46 years"
+                },
+                {
+                  "name": "Aged 47 years",
+                  "slug": "aged-47-years",
+                  "code": "resident_age_101a-047",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 47 years"
+                },
+                {
+                  "name": "Aged 48 years",
+                  "slug": "aged-48-years",
+                  "code": "resident_age_101a-048",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 48 years"
+                },
+                {
+                  "name": "Aged 49 years",
+                  "slug": "aged-49-years",
+                  "code": "resident_age_101a-049",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 49 years"
+                },
+                {
+                  "name": "Aged 50 years",
+                  "slug": "aged-50-years",
+                  "code": "resident_age_101a-050",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 50 years"
+                },
+                {
+                  "name": "Aged 51 years",
+                  "slug": "aged-51-years",
+                  "code": "resident_age_101a-051",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 51 years"
+                },
+                {
+                  "name": "Aged 52 years",
+                  "slug": "aged-52-years",
+                  "code": "resident_age_101a-052",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 52 years"
+                },
+                {
+                  "name": "Aged 53 years",
+                  "slug": "aged-53-years",
+                  "code": "resident_age_101a-053",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 53 years"
+                },
+                {
+                  "name": "Aged 54 years",
+                  "slug": "aged-54-years",
+                  "code": "resident_age_101a-054",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 54 years"
+                },
+                {
+                  "name": "Aged 55 years",
+                  "slug": "aged-55-years",
+                  "code": "resident_age_101a-055",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 55 years"
+                },
+                {
+                  "name": "Aged 56 years",
+                  "slug": "aged-56-years",
+                  "code": "resident_age_101a-056",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 56 years"
+                },
+                {
+                  "name": "Aged 57 years",
+                  "slug": "aged-57-years",
+                  "code": "resident_age_101a-057",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 57 years"
+                },
+                {
+                  "name": "Aged 58 years",
+                  "slug": "aged-58-years",
+                  "code": "resident_age_101a-058",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 58 years"
+                },
+                {
+                  "name": "Aged 59 years",
+                  "slug": "aged-59-years",
+                  "code": "resident_age_101a-059",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 59 years"
+                },
+                {
+                  "name": "Aged 60 years",
+                  "slug": "aged-60-years",
+                  "code": "resident_age_101a-060",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 60 years"
+                },
+                {
+                  "name": "Aged 61 years",
+                  "slug": "aged-61-years",
+                  "code": "resident_age_101a-061",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 61 years"
+                },
+                {
+                  "name": "Aged 62 years",
+                  "slug": "aged-62-years",
+                  "code": "resident_age_101a-062",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 62 years"
+                },
+                {
+                  "name": "Aged 63 years",
+                  "slug": "aged-63-years",
+                  "code": "resident_age_101a-063",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 63 years"
+                },
+                {
+                  "name": "Aged 64 years",
+                  "slug": "aged-64-years",
+                  "code": "resident_age_101a-064",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 64 years"
+                },
+                {
+                  "name": "Aged 65 years",
+                  "slug": "aged-65-years",
+                  "code": "resident_age_101a-065",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 65 years"
+                },
+                {
+                  "name": "Aged 66 years",
+                  "slug": "aged-66-years",
+                  "code": "resident_age_101a-066",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 66 years"
+                },
+                {
+                  "name": "Aged 67 years",
+                  "slug": "aged-67-years",
+                  "code": "resident_age_101a-067",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 67 years"
+                },
+                {
+                  "name": "Aged 68 years",
+                  "slug": "aged-68-years",
+                  "code": "resident_age_101a-068",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 68 years"
+                },
+                {
+                  "name": "Aged 69 years",
+                  "slug": "aged-69-years",
+                  "code": "resident_age_101a-069",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 69 years"
+                },
+                {
+                  "name": "Aged 70 years",
+                  "slug": "aged-70-years",
+                  "code": "resident_age_101a-070",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 70 years"
+                },
+                {
+                  "name": "Aged 71 years",
+                  "slug": "aged-71-years",
+                  "code": "resident_age_101a-071",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 71 years"
+                },
+                {
+                  "name": "Aged 72 years",
+                  "slug": "aged-72-years",
+                  "code": "resident_age_101a-072",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 72 years"
+                },
+                {
+                  "name": "Aged 73 years",
+                  "slug": "aged-73-years",
+                  "code": "resident_age_101a-073",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 73 years"
+                },
+                {
+                  "name": "Aged 74 years",
+                  "slug": "aged-74-years",
+                  "code": "resident_age_101a-074",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 74 years"
+                },
+                {
+                  "name": "Aged 75 years",
+                  "slug": "aged-75-years",
+                  "code": "resident_age_101a-075",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 75 years"
+                },
+                {
+                  "name": "Aged 76 years",
+                  "slug": "aged-76-years",
+                  "code": "resident_age_101a-076",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 76 years"
+                },
+                {
+                  "name": "Aged 77 years",
+                  "slug": "aged-77-years",
+                  "code": "resident_age_101a-077",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 77 years"
+                },
+                {
+                  "name": "Aged 78 years",
+                  "slug": "aged-78-years",
+                  "code": "resident_age_101a-078",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 78 years"
+                },
+                {
+                  "name": "Aged 79 years",
+                  "slug": "aged-79-years",
+                  "code": "resident_age_101a-079",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 79 years"
+                },
+                {
+                  "name": "Aged 80 years",
+                  "slug": "aged-80-years",
+                  "code": "resident_age_101a-080",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 80 years"
+                },
+                {
+                  "name": "Aged 81 years",
+                  "slug": "aged-81-years",
+                  "code": "resident_age_101a-081",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 81 years"
+                },
+                {
+                  "name": "Aged 82 years",
+                  "slug": "aged-82-years",
+                  "code": "resident_age_101a-082",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 82 years"
+                },
+                {
+                  "name": "Aged 83 years",
+                  "slug": "aged-83-years",
+                  "code": "resident_age_101a-083",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 83 years"
+                },
+                {
+                  "name": "Aged 84 years",
+                  "slug": "aged-84-years",
+                  "code": "resident_age_101a-084",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 84 years"
+                },
+                {
+                  "name": "Aged 85 years",
+                  "slug": "aged-85-years",
+                  "code": "resident_age_101a-085",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 85 years"
+                },
+                {
+                  "name": "Aged 86 years",
+                  "slug": "aged-86-years",
+                  "code": "resident_age_101a-086",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 86 years"
+                },
+                {
+                  "name": "Aged 87 years",
+                  "slug": "aged-87-years",
+                  "code": "resident_age_101a-087",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 87 years"
+                },
+                {
+                  "name": "Aged 88 years",
+                  "slug": "aged-88-years",
+                  "code": "resident_age_101a-088",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 88 years"
+                },
+                {
+                  "name": "Aged 89 years",
+                  "slug": "aged-89-years",
+                  "code": "resident_age_101a-089",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 89 years"
+                },
+                {
+                  "name": "Aged 90 years",
+                  "slug": "aged-90-years",
+                  "code": "resident_age_101a-090",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 90 years"
+                },
+                {
+                  "name": "Aged 91 years",
+                  "slug": "aged-91-years",
+                  "code": "resident_age_101a-091",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 91 years"
+                },
+                {
+                  "name": "Aged 92 years",
+                  "slug": "aged-92-years",
+                  "code": "resident_age_101a-092",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 92 years"
+                },
+                {
+                  "name": "Aged 93 years",
+                  "slug": "aged-93-years",
+                  "code": "resident_age_101a-093",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 93 years"
+                },
+                {
+                  "name": "Aged 94 years",
+                  "slug": "aged-94-years",
+                  "code": "resident_age_101a-094",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 94 years"
+                },
+                {
+                  "name": "Aged 95 years",
+                  "slug": "aged-95-years",
+                  "code": "resident_age_101a-095",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 95 years"
+                },
+                {
+                  "name": "Aged 96 years",
+                  "slug": "aged-96-years",
+                  "code": "resident_age_101a-096",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 96 years"
+                },
+                {
+                  "name": "Aged 97 years",
+                  "slug": "aged-97-years",
+                  "code": "resident_age_101a-097",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 97 years"
+                },
+                {
+                  "name": "Aged 98 years",
+                  "slug": "aged-98-years",
+                  "code": "resident_age_101a-098",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 98 years"
+                },
+                {
+                  "name": "Aged 99 years",
+                  "slug": "aged-99-years",
+                  "code": "resident_age_101a-099",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 99 years"
+                },
+                {
+                  "name": "Aged 100 years and over",
+                  "slug": "aged-100-years-and-over",
+                  "code": "resident_age_101a-100",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "aged 100 years and over"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Sex",
+          "code": "sex",
+          "slug": "sex",
+          "desc": "This is the sex recorded by the person completing the census. The options were Female and Male.",
+          "units": "Person",
+          "topic_code": "DEM",
+          "classifications": [
+            {
+              "code": "sex",
+              "slug": "sex",
+              "desc": "Sex (2 categories)",
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "categories": [
+                {
+                  "name": "Female",
+                  "slug": "female",
+                  "code": "sex-001",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "female"
+                },
+                {
+                  "name": "Male",
+                  "slug": "male",
+                  "code": "sex-002",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "male"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Usual resident indicator",
+          "code": "usual_resident_ind",
+          "slug": "usual-resident-indicator",
+          "desc": "Identifies if a person usually lives in England or Wales.",
+          "units": "Person",
+          "topic_code": "DEM",
+          "classifications": [
+            {
+              "code": "usual_resident_ind",
+              "slug": "usual-resident-ind",
+              "desc": "Usual resident indicator (2 categories)",
+              "choropleth_default": true,
+              "categories": [
+                {
+                  "name": "Not a usual resident",
+                  "slug": "not-a-usual-resident",
+                  "code": "usual_resident_ind-000",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "not a usual resident"
+                },
+                {
+                  "name": "Usual resident",
+                  "slug": "usual-resident",
+                  "code": "usual_resident_ind-001",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "a usual resident"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

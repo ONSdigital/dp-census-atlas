@@ -1,0 +1,63 @@
+﻿variable_mnemonic,Short definition
+uk_armed_forces,People who have previously served in the regular UK Armed Forces or reserve UK Armed Forces or both.
+hh_dependent_children,"Classifies the number of dependent children in a household, by the age of the youngest child."
+hh_deprivation,"If a household is deprived, based on employment, education, health and disability, and overcrowding."
+hh_deprivation_education,A household where no one has at least a level 2 education and no one aged 16 to 18 years is a full-time student
+hh_deprivation_employment,"A household where any member, not a full-time student, is either unemployed or long-term sick. "
+hh_deprivation_health,A household where any member is disabled or describes their health as bad or very bad.
+hh_deprivation_housing,"A household that is either overcrowded, in a shared dwelling, or has no central heating."
+hh_families_count,Number of families in household
+hh_families_type,The type of family present in a household.
+hh_family_composition,Households according to the relationships between members.
+hh_multi_ethnic_group,"Single or multiple ethnic groups within the household, and whether ethnic groups differ between generations or partnerships within the household."
+legal_partnership_status,Classifies a person according to their legal marital or registered civil partnership status on 21 March 2021.
+number_of_cars,The number of cars or vans owned or available for use by household members.
+resident_age,"A person’s age on Census Day, 21 March 2021 in England and Wales. Infants aged under 1 year are classified as 0 years of age"
+sex,This is the sex recorded by the person completing the census. The options were “Female” and “Male”. 
+living_arrangements,"If a person is living in a couple or not, by their legal partnership status."
+highest_qualification,"The highest level of qualification is derived from questions asking people to indicate all qualifications held, or their nearest equivalent."
+english_proficiency,How well people whose main language is not English (English or Welsh in Wales) speak English.
+ethnic_group_tb,"The ethnic group that the person completing the census feels they belong to. This could be based on their culture, family background, identity or physical appearance."
+hh_language,Classifies households by the combination of adults and children (aged 3 to 15 years) within a household that have English (English or Welsh in Wales) as their main language.
+hh_multi_language,People within the same household who have a different main language categorised by whether the difference is between generations or partnerships within the household.
+hh_multi_religion,Classifies all household members who identify as belonging to the same or different religion or religions. Households are categorised by whether the difference is between generations or partnerships.
+hh_multi_religion_combination,Classifies combinations of religious identities within a household.
+main_language_detailed,A person's first or preferred language.
+national_identity_all,A person's national identity could be the country or countries where they feel they belong or could think of as home. It is not dependent on ethnic group or citizenship.
+national_identity_detailed,A person's national identity could be the country or countries where they feel they belong or could think of as home. It is not dependent on ethnic group or citizenship.
+religion,"The religion people connect or identify with (their religious affiliation), whether or not they practice or have belief in it."
+religion_tb,"The religion people connect or identify with (their religious affiliation), whether or not they practice or have belief in it."
+welsh_skills_all,"Whether a person can understand, speak, read, or write Welsh. This question was only asked in Wales."
+welsh_skills_speak,"This classifies a person as being able to speak Welsh if they ticked ""Speak Welsh"" in the census questionnaire."
+disability,"A long-term health problem or disability that limits a person's day-to-day activities, and has lasted, or is expected to last, at least 12 months. This includes problems that are related to old age."
+health_in_general,A person's assessment of the general state of their health from very good to very bad. This assessment is not based on a person's health over any specified period of time. 
+hh_disabled,"The number of people in a household with a long-term health problem or disability that limits a person's day-to-day activities, and has lasted, or is expected to last, at least 12 months."
+is_carer,"An unpaid carer may look after, or give help or support to, anyone who has long-term physical or mental health conditions or illnesses, or problems related to old age."
+accommodation_type,The type of building or structure used or available by an individual or household.
+alternative_address_indicator,An address (in or out of the UK) a person stays at for more than 30 days per year that is not their place of usual residence.
+heating_type,Central heating is a heating system used to heat multiple rooms in a building.
+hh_persons_per_bedroom,The number of household members is divided by the number of bedrooms in the household.
+hh_size,The number of people in the household.
+hh_tenure,Whether a household owns or rents the accommodation that it occupies.
+number_bedrooms,The number of bedrooms in a household’s accommodation.
+second_address_type_priority,Indicates whether a person has an alternative address (somewhere they stay for more than 30 days per year) and the type of second address this is.
+age_arrival_uk,The age that someone who was not born in the UK was when they last arrived to live in the UK. This does not include returning from a holiday or short stay outside of the UK.
+country_of_birth,The country in which a person was born.
+multi_passports,"
+Classifies a person according to the passport or passports they held at the time of the census. This included expired passports or travel documents people were entitled to renew. 
+"
+passports_all,"Classifies a person according to the passport or passports they held at the time of the census. This included expired passports or travel documents people were entitled to renew. Where a person recorded having more than one passport, they were counted only once, categorised in the following priority order: 1. UK passport, 2. Irish passport, 3. Other passport."
+residence_length,"The length of stay in the UK for someone who was not born in the UK. This is based on when someone last arrived to live in the UK, not including returning from a holiday or short stay outside the UK."
+year_arrival_uk,The year that someone who was not born in the UK last arrived in the UK. This does not include returning from a holiday or short stay outside the UK.
+economic_activity,"People aged 16 years and over who were in employment, looking for work or waiting to start a job. "
+has_ever_worked,"Classifies people who are unemployed into short-term unemployment, long-term unemployment and those who have never worked."
+hh_adults_employment,The number of employed adults in a household.
+hours_per_week_worked,The number of hours worked per week before the census including paid and unpaid overtime.
+industry_current,The industry in which a person works relates to their main job.
+ns_sec,Classifies people's socioeconomic position based on their occupation and other job characteristics.
+occupation_current,Classifies what people aged 16 years and over do as their main job.  
+place_of_work_ind,Place of work indicator classifies people to the address of their main job. 
+gender_identity,Classifies people according to the responses to the gender identity question.
+sexual_orientation,Classifies people according to the responses to the sexual orientation question.
+workplace_travel,"The distance, in kilometres, between a person's residential postcode and their workplace postcode measured in a straight line."
+occupancy_rating_bedrooms,"Whether a household's accommodation is overcrowded, ideally occupied or under-occupied. This is calculated by comparing the number of required bedrooms to the number of available bedrooms."

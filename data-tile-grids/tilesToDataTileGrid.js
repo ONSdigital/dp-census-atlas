@@ -31,4 +31,4 @@ for (const key in quadTiles) {
 }
 
 const tileJSONfnNoEx = tileJSONfn.split(".")[0];
-writeFileSync(`${tileJSONfnNoEx}DataTileGrid.json`, JSON.stringify(quadBBoxes));
+writeFileSync(`../src/${tileJSONfnNoEx}DataTileGrid2.json`, JSON.stringify(quadBBoxes));

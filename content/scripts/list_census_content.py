@@ -14,6 +14,7 @@ import sys
 def main():
     content_json_fp = Path(sys.argv[1])
     census_data_type = sys.argv[2] if len(sys.argv) > 2 else "categories"
+    output_filename = Path(sys.argv[3])
     additional_output_fields = sys.argv[3].split(",") if len(sys.argv) > 3 else []
 
     with open(content_json_fp, "r") as f:
@@ -65,8 +66,6 @@ def main():
                     }
                     output.update({k: category[k] for k in additional_output_fields})
                     csv_content.append(output)
-
-    output_filename = f"{content_json_fp.stem}-all-{census_data_type}-{datetime.today().strftime('%Y-%m-%d')}.csv"
 
     with open(output_filename, "w") as f:
         writer = csv.DictWriter(f, fieldnames=csv_content[0].keys(), quoting=csv.QUOTE_ALL)

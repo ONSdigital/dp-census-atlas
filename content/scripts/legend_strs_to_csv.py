@@ -9,12 +9,12 @@ import csv
 from pathlib import Path
 import sys
 
-from census_objects import load_content
+from scripts.census_objects import load_content
 
 
 def main():
     content_json_fn = Path(sys.argv[1])
-    output_filename = content_json_fn.parent.joinpath(f"{content_json_fn.stem}-legend-strs.csv")
+    output_filename = Path(sys.argv[2])
     if output_filename.exists():
         print(
             f"target file {output_filename} already exists! Will not overwrite to avoid loss of work. "

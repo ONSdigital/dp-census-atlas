@@ -1,9 +1,8 @@
-from census_objects import (
+from scripts.census_objects import (
     CensusCategory,
     CensusClassification,
     CensusVariable,
     CensusVariableGroup,
-    RichContentSpecRow
 )
 
 
@@ -52,15 +51,4 @@ def get_test_variable_group(**kwargs) -> CensusVariableGroup:
         desc=kwargs.get("desc", "test_desc"),
         variables=kwargs.get("variables", []),
         _topic_codes=kwargs.get("_topic_codes", []),
-    )
-
-
-def get_test_spec_row(**kwargs) -> RichContentSpecRow:
-    return RichContentSpecRow(
-        dataset=kwargs.get("dataset", "test_dataset"),
-        dataset_classification=kwargs.get("dataset_classification", "test_dataset_classification"),
-        additional_atlas_classifications=kwargs.get("additional_atlas_classifications", []),
-        choropleth_default_classification=kwargs.get("choropleth_default_classification", False),
-        dot_density_default_classification=kwargs.get("dot_density_default_classification", False),
-        comparison_2011=kwargs.get("comparison_2011", False)
     )

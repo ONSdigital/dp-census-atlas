@@ -240,21 +240,6 @@ class CensusVariableGroup:
         }
 
 
-@dataclass
-class RichContentSpecRow:
-    """All needed config values from a row from the rich content spec csv file."""
-    dataset: str
-    dataset_classification: str
-    additional_atlas_classifications: list[str]
-    choropleth_default_classification: str
-    dot_density_default_classification: str
-    comparison_2011: bool
-
-    def to_str(self):
-        """Simple string representation for error logging"""
-        return f"topic: {self.dataset}, variable: {self.variable}"
-
-
 # ================================================ CLASS FACTORIES =================================================== #
 
 

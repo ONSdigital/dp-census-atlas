@@ -1,0 +1,8 @@
+{
+    "cantabular_metadata_dir": "CHANGE ME - name of unzipped cantabular metadata archive from https://confluence.ons.gov.uk/pages/viewpage.action?spaceKey=ODADH&title=Upload+Metadata+Files+to+support+NOMIS%2C+Testing+etc goes here (NB must in input_metadata_files dir)",
+    "variable_groups_spec_file": "Atlas_variable_groups.json",
+    "rich_content_spec_file": "Rich_content_product_specifications.csv",
+    "category_legend_strs_file": "Atlas_legend_strings.csv",
+    "variable_descriptions_file": "Atlas_variables_short_descriptions.csv",
+    "version": "CHANGE ME - short descriptive label for this iteration of content jsons"
+}

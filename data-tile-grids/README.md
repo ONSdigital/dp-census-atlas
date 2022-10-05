@@ -4,6 +4,7 @@ Script for converting JSON file with arrays of tiles as used in mapping data gri
 
 ## Usage
 
-- download map tile grid JSON file (e.g [quads.json](https://github.com/bothness/oa-map/blob/main/public/data/quads.json), as mentioned above) to `dp-census-atlas/data-tile-grids`
+- download map tile grid JSON file (e.g [quads.json](https://github.com/bothness/oa-map/blob/main/public/data/quads.json), as mentioned above) to `dp-census-atlas/data-tile-grids`, or
+use the `quads.json` file already downloaded from the above link. 
 - (assuming you have installed the project dependencies with `npm install` from project root folder `dp-census-atlas`), `cd data-tile-grids` and `node tilesToDataTileGrid.js <your tile JSON filename here>`, e.g. `node tilesToDataTileGrid.js quads.json`
-- JSON file with grid bboxes (as long,lat coordinates) will be written to `dp-census-atlas/data-tile-grids/<your tile JSON filename minus .json extension>DataTileGrid.json`, e.g. `dp-census-atlas/data-tile-grids/quadsDataTileGrid.json`
+- JSON file with grid bboxes (as long,lat coordinates) will be written to `dp-census-atlas/src/<your tile JSON filename minus .json extension>DataTileGrid.json`, e.g. `dp-census-atlas/src/quadsDataTileGrid.json`

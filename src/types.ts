@@ -1,4 +1,4 @@
-export const GeoTypes = ["ew", "lad", "msoa", "oa"];
+export const GeoTypes = ["ew", "lad", "msoa", "oa"] as const;
 export type GeoType = typeof GeoTypes[number];
 
 export type MapState = {

@@ -12,10 +12,3 @@ pushd ./build/client
     mkdir -p "$APP_BASE_PATH_NO_LEADING_SLASH"
     mv _app "$APP_BASE_PATH_NO_LEADING_SLASH"/_app
 popd
-
-pushd ./build/static
-    # mv ignores .hidden objects (so don't move the destination dir into itself)
-    mkdir -p ."$APP_BASE_PATH_NO_LEADING_SLASH"
-    mv * ."$APP_BASE_PATH_NO_LEADING_SLASH"
-    mv ."$APP_BASE_PATH_NO_LEADING_SLASH" "$APP_BASE_PATH_NO_LEADING_SLASH"
-popd

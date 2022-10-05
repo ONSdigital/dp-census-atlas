@@ -28,13 +28,13 @@ const config = {
     paths: {
       base: process.env.VITE_APP_BASE_PATH,
     },
-    vite: {
-      server: {
-        fs: {
-          allow: ["data-tile-grids"],
-        },
-      },
-    },
+    // vite: {
+    //   server: {
+    //     fs: {
+    //       allow: ["data-tile-grids"],
+    //     },
+    //   },
+    // },
   },
 };
 

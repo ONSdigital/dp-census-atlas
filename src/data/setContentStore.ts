@@ -11,7 +11,7 @@ import type { ContentConfig, ContentTree, VariableGroup } from "../types";
   with the loaded content.json.
 */
 const fetchContent = async () => {
-  const runtimeEnv = await (await fetch(`${appBasePath}/runtime-env`)).json();
+  const runtimeEnv = await (await fetch(`${appBasePath}/api/runtime-env`)).json();
   const contentForEnv = content[runtimeEnv.envName];
   const rawContent = await Promise.all(
     contentForEnv.map(async (ctcfg) => {

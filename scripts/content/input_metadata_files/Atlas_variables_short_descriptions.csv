@@ -44,9 +44,9 @@ second_address_type_priority,Indicates whether a person has an alternative addre
 age_arrival_uk,The age that someone who was not born in the UK was when they last arrived to live in the UK. This does not include returning from a holiday or short stay outside of the UK.
 country_of_birth,The country in which a person was born.
 multi_passports,"
-Classifies a person according to the passport or passports they held at the time of the census. This included expired passports or travel documents people were entitled to renew. 
+Classifies a person according to the passport or passports they held at the time of the census. This included expired passports or travel documents people were entitled to renew.
 "
-passports_all,"Classifies a person according to the passport or passports they held at the time of the census. This included expired passports or travel documents people were entitled to renew. Where a person recorded having more than one passport, they were counted only once, categorised in the following priority order: 1. UK passport, 2. Irish passport, 3. Other passport."
+passports_all,"Classifies a person according to the passport or passports they held. This included expired passports or travel documents people were entitled to renew."
 residence_length,"The length of stay in the UK for someone who was not born in the UK. This is based on when someone last arrived to live in the UK, not including returning from a holiday or short stay outside the UK."
 year_arrival_uk,The year that someone who was not born in the UK last arrived in the UK. This does not include returning from a holiday or short stay outside the UK.
 economic_activity,"People aged 16 years and over who were in employment, looking for work or waiting to start a job. "

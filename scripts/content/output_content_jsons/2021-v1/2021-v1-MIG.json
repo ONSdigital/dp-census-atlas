@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-10-05-14-20-03",
+    "created_at": "2022-10-05-15-58-18",
     "cantabular_metadata_source": "ar2776-c21ew_metadata-v1-3_cantab_20220927-20",
     "rich_content_spec_file_used_to_filter": "Rich_content_product_specifications.csv",
     "legend_strs_file": "Rich_content_product_specifications.csv",
@@ -894,7 +894,7 @@
           "name": "Passports held",
           "code": "passports_all",
           "slug": "passports-held",
-          "desc": "Classifies a person according to the passport or passports they held at the time of the census. This included expired passports or travel documents people were entitled to renew. Where a person recorded having more than one passport, they were counted only once, categorised in the following priority order: 1. UK passport, 2. Irish passport, 3. Other passport.",
+          "desc": "Classifies a person according to the passport or passports they held. This included expired passports or travel documents people were entitled to renew.",
           "units": "Person",
           "topic_code": "MIG",
           "classifications": [

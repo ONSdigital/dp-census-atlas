@@ -21,6 +21,7 @@ export type Variable = {
   desc: string;
   units: string;
   topic_code: string;
+  available_geotypes: typeof GeoTypes[];
   classifications: Classification[];
 };
 

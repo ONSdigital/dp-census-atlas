@@ -17,7 +17,7 @@ sex,This is the sex recorded by the person completing the census. The options we
 living_arrangements,"If a person is living in a couple or not, by their legal partnership status.","People living in couples, by their legal partnership status."
 highest_qualification,"The highest level of qualification is derived from questions asking people to indicate all qualifications held, or their nearest equivalent.",Highest level of qualification gained.
 english_proficiency,How well people whose main language is not English (English or Welsh in Wales) speak English.,"How well people whose main language is not English (or in Wales, English or Welsh) speak English."
-ethnic_group_tb,"The ethnic group that the person completing the census feels they belong to. This could be based on their culture, family background, identity or physical appearance.",The ethnic group that the person completing the census feels they belong to.
+ethnic_group_tb,"The ethnic group that the person completing the census feels they belong to. This could be based on their culture, family background, identity or physical appearance.",The ethnic group a person feels they belong to.
 hh_language,Classifies households by the combination of adults and children (aged 3 to 15 years) within a household that have English (English or Welsh in Wales) as their main language.,UNCLEAR
 hh_multi_language,People within the same household who have a different main language categorised by whether the difference is between generations or partnerships within the household.,UNCLEAR
 hh_multi_religion,Classifies all household members who identify as belonging to the same or different religion or religions. Households are categorised by whether the difference is between generations or partnerships.,UNCLEAR

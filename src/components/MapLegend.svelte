@@ -3,7 +3,7 @@
   import { vizStore, selectedGeographyStore } from "../stores/stores";
   import { contentStore } from "../stores/stores";
   import { formatTemplateString } from "../helpers/categoryHelpers";
-  import { minDecimalPlacesToAntialias, ratioToPercentage } from "../util/numberUtil";
+  import { ratioToPercentage } from "../util/numberUtil";
   import { choroplethColours } from "../helpers/choroplethHelpers";
   import { getDefaultChoroplethClassification } from "../helpers/variableHelpers";
 
@@ -22,7 +22,7 @@
   $: categorySlug = params.category;
   $: category = variable ? defaultChoroplethClassification.categories.find((c) => c.slug === categorySlug) : undefined;
   $: breaks = $vizStore ? [$vizStore?.minMaxVals[0], ...$vizStore.breaks] : undefined
-  $: decimalPlaces = breaks ? minDecimalPlacesToAntialias(breaks) : 0
+  $: decimalPlaces = 1
 </script>
 
 <!-- todo: new design for all four states -->
@@ -38,7 +38,7 @@
         <!-- big percantage -->
         {#if category && categoryValueForSelectedGeography}
           <div class="whitespace-nowrap">
-            <span class="text-5xl font-bold"> {ratioToPercentage(categoryValueForSelectedGeography, 1)}</span><span
+            <span class="text-5xl font-bold"> {ratioToPercentage(categoryValueForSelectedGeography, decimalPlaces)}</span><span
               class="text-4xl font-bold">%</span
             >
           </div>

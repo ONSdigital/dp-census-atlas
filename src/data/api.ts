@@ -2,6 +2,7 @@ import * as dsv from "d3-dsv"; // https://github.com/d3/d3/issues/3469
 import type { Bbox, Category, DataTile, GeoType } from "src/types";
 import { bboxToDataTiles, englandAndWales } from "../helpers/spatialHelper";
 import { geoBaseUrl } from "../buildEnv";
+import { roundNumber, uniqueRoundedNumbers } from "../util/numberUtil";
 
 /*
   Fetch place data files for all data 'tiles' (predefined coordinate grid squares) that intersect with current viewport 
@@ -67,12 +68,22 @@ export const fetchBreaks = async (args: {
     }
     ToDo - refactor json files to match required format (see function output defintions above)
   */
+  // NB - use 3 decimal places in ratios for 0.1 percent precision
+  const decimalPlaces = 3;
   const breaks = Object.fromEntries(
-    Object.keys(breaksRaw).map((code) => [code, breaksRaw[code][args.geoType.toUpperCase()]]),
+    Object.keys(breaksRaw).map((code) => [
+      code, 
+      uniqueRoundedNumbers({numbers: breaksRaw[code][args.geoType.toUpperCase()], decimalPlaces: decimalPlaces})
+    ]),
   );
   const minMax = Object.fromEntries(
-    Object.keys(breaksRaw).map((code) => [code, breaksRaw[code][`${args.geoType.toUpperCase()}_min_max`]]),
+    Object.keys(breaksRaw).map((code) => [
+      code, 
+      breaksRaw[code][`${args.geoType.toUpperCase()}_min_max`].map((n) => roundNumber({number: n, decimalPlaces: decimalPlaces}))
+    ]),
   );
+  console.log(breaksRaw)
+  console.log(breaks)
   return { breaks, minMax };
 };
 

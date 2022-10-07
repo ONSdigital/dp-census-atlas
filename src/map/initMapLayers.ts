@@ -135,8 +135,8 @@ export const initMapLayers = (map) => {
     type: "circle",
     source: "centroids",
     paint: {
-      "circle-radius": 2,
-      "circle-color": "red"
+      "circle-radius": 1,
+      "circle-color": "rgba(255,255,255,0)"
     }
   });
 

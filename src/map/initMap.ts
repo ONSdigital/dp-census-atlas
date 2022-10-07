@@ -2,7 +2,7 @@ import { get } from "svelte/store";
 import { page } from "$app/stores";
 import mapboxgl, { GeoJSONSource, Map } from "mapbox-gl";
 import { fromEvent, merge } from "rxjs";
-import { delay, throttleTime } from "rxjs/operators";
+import { delay, map, throttleTime } from "rxjs/operators";
 import type { GeoType } from "../types";
 import { vizStore, mapStore, selectedGeographyStore, preventFlyToGeographyStore } from "../stores/stores";
 import { englandAndWalesBbox, preventFlyToGeography } from "../helpers/geographyHelper";
@@ -68,20 +68,49 @@ const setMapStore = (map: mapboxgl.Map) => {
   const bbox = { east: b.getEast(), north: b.getNorth(), west: b.getWest(), south: b.getSouth() };
   const zoom = map.getZoom();
 
+  const geoType = getGeoTypeForFeatureDensity(map);
+  setMapLayerVisibility(map, geoType);
+
   mapStore.set({
     bbox,
-    geoType: getGeoTypeForCurrentZoom(zoom),
+    geoType: geoType,
     zoom: zoom,
   });
 };
 
-const getGeoTypeForCurrentZoom = (zoom: number): GeoType => {
-  for (const x of layersWithSiblings()) {
-    if (zoom >= x.layer.minZoom && (!x.next || zoom < x.next.minZoom)) {
-      return x.layer.name;
-    }
+const getGeoTypeForFeatureDensity = (map: mapboxgl.Map): GeoType => {
+  console.log("checking feature density");
+  let features = map.queryRenderedFeatures({layers: ["centroids"]}); // This should not be giving a type error
+  if (Array.isArray(features)) {
+    let count = features.length;
+    let canvas = map.getCanvas();
+    let pixelArea = canvas.clientWidth * canvas.clientHeight;
+    return (count * 1e6) / pixelArea > 40 ? "lad" : (count * 1e6) / pixelArea > 3 ? "msoa" : "oa";
+  } else {
+    return "lad";
   }
 };
+
+const setMapLayerVisibility = (map: mapboxgl.Map, geoType: GeoType) => {
+  ["lad", "msoa", "oa"].forEach(type => {
+    // Set layer visibility based on geoType (always keep lad-outlines visible)
+    map.setLayoutProperty(`${type}-features`, "visibility", type == geoType ? "visible" : "none");
+    map.setLayoutProperty(`${type}-outlines`, "visibility", type == geoType || type == "lad" ? "visible" : "none");
+    // Make lines thicker for lad-outlines when OAs or MSOAs visible
+    let lineWidthStyle = geoType == "lad" ?
+      ["case", ["==", ["feature-state", "selected"], true], 3, ["==", ["feature-state", "hovered"], true], 2, 0.5] :
+      1.5;
+    map.setPaintProperty('lad-outlines', 'line-width', lineWidthStyle);
+  });
+}
+
+// const getGeoTypeForCurrentZoom = (zoom: number): GeoType => {
+//   for (const x of layersWithSiblings()) {
+//     if (zoom >= x.layer.minZoom && (!x.next || zoom < x.next.minZoom)) {
+//       return x.layer.name;
+//     }
+//   }
+// };
 
 const listenToSelectedGeographyStore = (map: mapboxgl.Map) => {
   selectedGeographyStore.subscribe((geography) => {

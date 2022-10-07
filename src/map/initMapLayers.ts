@@ -1,6 +1,7 @@
 // import { filter, fromEvent, throttleTime } from "rxjs";
 import { maxAllowedZoom } from "./initMap";
 import { layers, layersWithSiblings } from "./layers";
+import quadCentroids from "./quadCentroids";
 
 export const initMapLayers = (map) => {
   layersWithSiblings().forEach((l) => {
@@ -18,7 +19,8 @@ export const initMapLayers = (map) => {
         source: l.layer.name,
         "source-layer": l.layer.sourceLayer,
         type: "fill",
-        maxzoom: l.next ? l.next.minZoom : maxAllowedZoom,
+        // maxzoom: l.next ? l.next.minZoom : maxAllowedZoom,
+        layout: {"visibility": l.layer.name == "lad" ? "visible" : "none"},
         paint: {
           "fill-color": [
             "case",
@@ -38,7 +40,8 @@ export const initMapLayers = (map) => {
         source: l.layer.name,
         "source-layer": l.layer.sourceLayer,
         minzoom: l.layer.minZoom,
-        maxzoom: l.next ? l.next.minZoom : maxAllowedZoom,
+        // maxzoom: l.next ? l.next.minZoom : maxAllowedZoom,
+        layout: {"visibility": l.layer.name == "lad" ? "visible" : "none"},
         paint: {
           "line-color": [
             "case",
@@ -119,6 +122,22 @@ export const initMapLayers = (map) => {
       "text-halo-color": "#fff",
       "text-halo-width": 100,
     },
+  });
+
+  // Add OA quad layer for feature density calculation
+  map.addSource("centroids", {
+    type: "geojson",
+    data: quadCentroids
+  });
+
+  map.addLayer({
+    id: "centroids",
+    type: "circle",
+    source: "centroids",
+    paint: {
+      "circle-radius": 2,
+      "circle-color": "red"
+    }
   });
 
   // todo: use rxjs to implement better hover

@@ -16,7 +16,7 @@ Spec json file assumed to be in this format:
 This script outputs several content json files to content/output_content_jsons/<"version" from spec json file>/. One
 json will be produced for each census topic, plus an additional one with ALL topics included.
 
-e.g. if spec json "version" is 'My-Test', and there are three topics in the ouput (T1, T2, T3), you will get the 
+e.g. if spec json "version" is 'My-Test', and there are three topics in the ouput (T1, T2, T3), you will get the
 following output:
 content/
     output_content_jsons/
@@ -50,8 +50,6 @@ from scripts.update_legend_strs_from_csv import update_legend_strs_from_file
 from scripts.update_variable_desc_from_csv import update_variable_descs_from_file
 from scripts.validate_content import validate_variable_groups
 
-
-# class factories
 
 def category_from_cantabular_csv_row(csv_row: dict) -> CensusCategory:
     """Make CensusCategory from row in Category.csv"""
@@ -89,9 +87,10 @@ def variable_from_cantabular_csv_row(csv_row: dict) -> CensusVariable:
         slug=slugify(csv_row["Variable_Title"].strip()),
         desc=csv_row["Variable_Description"].strip(),
         units=csv_row["Statistical_Unit"].strip(),
-        classifications=[],
         # sometimes things don't have topics??
-        topic_code=csv_row["Topic_Mnemonic"] if csv_row["Topic_Mnemonic"] != "" else "NO_TOPIC"
+        topic_code=csv_row["Topic_Mnemonic"] if csv_row["Topic_Mnemonic"] != "" else "NO_TOPIC",
+        available_geotypes=[],
+        classifications=[],
     )
 
 
@@ -105,10 +104,24 @@ def variable_group_from_dict(raw_tg: dict) -> CensusVariableGroup:
         _topic_codes=raw_tg["topic_codes"],
     )
 
-# main
 
 def input_full_path(input_partial_path: str) -> Path:
     return Path("input_metadata_files").joinpath(input_partial_path)
+
+
+def available_geotypes_for_variables_from_file(available_geotypes_for_variables_file: str) -> dict:
+    geotypes = ["OA", "MSOA", "LA"]
+
+    with open(available_geotypes_for_variables_file, "r", encoding="ascii", errors="ignore") as f:
+        all_raw_avgs = list(csv.DictReader(f))
+
+    avgs = {}
+    for raw_avg in all_raw_avgs:
+        variable = raw_avg["variable1"]
+        raw_geos = list(filter(lambda x: x in geotypes, raw_avg["geographies"].split(",")))
+        geos = ["LAD" if g == "LA" else g for g in raw_geos]
+        avgs[variable] = geos
+    return avgs
 
 
 def variable_groups_from_metadata(cantabular_metadata_dir: Path, variable_groups_spec_file: str) -> list[CensusVariableGroup]:
@@ -116,7 +129,7 @@ def variable_groups_from_metadata(cantabular_metadata_dir: Path, variable_groups
     with open(cantabular_metadata_dir.joinpath("Category.csv"), "r", encoding="ascii", errors="ignore") as f:
         # nb filter out 'minus' categories (generally 'Does Not Apply' or similar) and non-numeric strings
         categories = [
-            category_from_cantabular_csv_row(csv_row) for csv_row in csv.DictReader(f) 
+            category_from_cantabular_csv_row(csv_row) for csv_row in csv.DictReader(f)
             if csv_row["Category_Code"].isnumeric()
         ]
 
@@ -156,7 +169,7 @@ def main(spec: dict):
     # get raw content from metadata
     print(f"Loading cantabular metadata from {spec['cantabular_metadata_dir']}...")
     content_iterations["ALL"] = variable_groups_from_metadata(
-        input_full_path(spec["cantabular_metadata_dir"]), 
+        input_full_path(spec["cantabular_metadata_dir"]),
         input_full_path(spec["variable_groups_spec_file"])
     )
     print("... done.")
@@ -164,7 +177,7 @@ def main(spec: dict):
     # filter to atlas content
     print(f"Filtering atlas content to spec from {spec['rich_content_spec_file']}...")
     content_iterations["ALL"] = filter_content_to_atlas_spec_from_file(
-        content_iterations["ALL"], 
+        content_iterations["ALL"],
         input_full_path(spec["rich_content_spec_file"])
     )
     print("... done.")
@@ -172,7 +185,7 @@ def main(spec: dict):
     # update legend strings
     print(f"Inserting new legend strings from {spec['category_legend_strs_file']}...")
     content_iterations["ALL"] = update_legend_strs_from_file(
-        content_iterations["ALL"], 
+        content_iterations["ALL"],
         input_full_path(spec["category_legend_strs_file"])
     )
     print("... done.")
@@ -180,9 +193,18 @@ def main(spec: dict):
     # update variable descriptions
     print(f"Inserting new variable descriptions from {spec['variable_descriptions_file']}...")
     content_iterations["ALL"] = update_variable_descs_from_file(
-        content_iterations["ALL"], 
+        content_iterations["ALL"],
         input_full_path(spec["variable_descriptions_file"])
     )
+    print("... done.")
+
+    # append available geotypes for variables
+    print(f"Inserting available geotypes for variables from {spec['variable_geotype_availability_file']}")
+    available_geotypes_for_variables = available_geotypes_for_variables_from_file(
+        input_full_path(spec["variable_geotype_availability_file"])
+    )
+    for vg in content_iterations["ALL"]:
+        vg.set_available_geotypes(available_geotypes_for_variables)
     print("... done.")
 
     # make topic splits

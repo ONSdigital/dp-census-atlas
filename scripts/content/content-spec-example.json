@@ -4,5 +4,6 @@
     "rich_content_spec_file": "Rich_content_product_specifications.csv",
     "category_legend_strs_file": "Atlas_legend_strings.csv",
     "variable_descriptions_file": "Atlas_variables_short_descriptions.csv",
+    "variable_geotype_availability_file": "Available_geotypes_for_variables.csv",
     "version": "CHANGE ME - short descriptive label for this iteration of content jsons"
 }

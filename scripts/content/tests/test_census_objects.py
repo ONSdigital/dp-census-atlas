@@ -167,7 +167,7 @@ def test_census_variable_to_jsonable():
     mock_classifications = [MagicMock(), MagicMock(), MagicMock()]
     for mc in mock_classifications:
         mc.to_jsonable.return_value = "test_classification"
-    test_variable  = get_test_variable(classifications=mock_classifications)
+    test_variable  = get_test_variable(available_geotypes=["OA", "MSOA", "LAD"], classifications=mock_classifications)
     # WHEN we invoke the to_jsonable method
     returned = test_variable.to_jsonable()
     # THEN we expect to get the correct json-friendly object back
@@ -178,6 +178,7 @@ def test_census_variable_to_jsonable():
         "desc": test_variable.desc,
         "units": test_variable.units,
         "topic_code": test_variable.topic_code,
+        "available_geotypes": test_variable.available_geotypes,
         "classifications": ["test_classification","test_classification","test_classification"]
     }
     assert returned == expected

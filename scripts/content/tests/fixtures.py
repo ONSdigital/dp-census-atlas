@@ -40,6 +40,7 @@ def get_test_variable(**kwargs) -> CensusVariable:
         desc=kwargs.get("desc", "test_desc"),
         units=kwargs.get("units", "person"),
         topic_code=kwargs.get("topic_code", "test_topic_code"),
+        available_geotypes=kwargs.get("available_geotypes", []),
         classifications=kwargs.get("classifications", []),
     )
 

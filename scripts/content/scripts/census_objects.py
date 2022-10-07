@@ -130,6 +130,7 @@ class CensusVariable:
     slug: str
     desc: str
     units: str
+    available_geotypes: list[str]
     classifications: list[CensusClassification]
     topic_code: str = ""
 
@@ -155,8 +156,8 @@ class CensusVariable:
 
     def is_valid(self) -> bool:
         """
-        Return False if public properties are blank strings, classifications is empty list, there is no choropleth
-        default classification set, or any classifications are not valid.
+        Return False if public properties are blank strings, classifications is empty list, available_geotypes is an
+        empty list, there is no choropleth default classification set, or any classifications are not valid.
         """
         is_valid = True
 
@@ -167,6 +168,10 @@ class CensusVariable:
 
         if len(self.classifications) == 0:
             print(f"** Variable {self.name} has no classifications **")
+            is_valid = False
+
+        if len(self.available_geotypes) == 0:
+            print(f"** Variable {self.name} has no available geotypes **")
             is_valid = False
 
         if not any(getattr(c, "choropleth_default", False) == True for c in self.classifications):
@@ -188,6 +193,7 @@ class CensusVariable:
             "desc": self.desc,
             "units": self.units,
             "topic_code": self.topic_code,
+            "available_geotypes": self.available_geotypes,
             "classifications": [c.to_jsonable() for c in self.classifications],
         }
 
@@ -205,9 +211,17 @@ class CensusVariableGroup:
     def gather_variables(self, variable_list: list[CensusVariable]) -> None:
         """Append all variables with topic codes referenced in self._topic_codes to self then sort by topic code."""
         self.variables = sorted(
-            [v for v in variable_list if v.topic_code in self._topic_codes], 
+            [v for v in variable_list if v.topic_code in self._topic_codes],
             key=lambda x: x.topic_code
         )
+
+    def set_available_geotypes(self, available_geotypes_for_variables: dict) -> None:
+        """
+        Make first-attempt at legend strings for all categories in all classifications
+        (intention is these are then manually reviewed / edited)
+        """
+        for v in self.variables:
+            v.available_geotypes = available_geotypes_for_variables.get(v.code, [])
 
     def is_valid(self) -> bool:
         """

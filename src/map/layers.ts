@@ -12,7 +12,7 @@ export const layers = [
   {
     name: "msoa" as GeoType,
     urlTemplate: "https://cdn.jsdelivr.net/gh/bothness/map-tiles/msoa/{z}/{x}/{y}.pbf",
-    minZoom: 9,
+    minZoom: 6,
     sourceMaxZoom: 12,
     idProperty: "areacd",
     sourceLayer: "boundaries",
@@ -20,7 +20,7 @@ export const layers = [
   {
     name: "oa" as GeoType,
     urlTemplate: "https://cdn.jsdelivr.net/gh/bothness/map-tiles/oa/{z}/{x}/{y}.pbf",
-    minZoom: 11,
+    minZoom: 8,
     sourceMaxZoom: 12,
     idProperty: "areacd",
     sourceLayer: "boundaries",

@@ -3,11 +3,11 @@ import type { GeoType } from "../types";
 export const layers = [
   {
     name: "lad" as GeoType,
-    urlTemplate: "https://cdn.ons.gov.uk/maptiles/administrative/2021/authorities-ew/v1/boundaries/{z}/{x}/{y}.pbf",
+    urlTemplate: "https://cdn.ons.gov.uk/maptiles/administrative/2021/authorities-ew/v2/boundaries/{z}/{x}/{y}.pbf",
     minZoom: 5,
     sourceMaxZoom: 12, // The maximum zoom level that the tiles are available for
     idProperty: "areacd",
-    sourceLayer: "authority",
+    sourceLayer: "lad",
   },
   {
     name: "msoa" as GeoType,

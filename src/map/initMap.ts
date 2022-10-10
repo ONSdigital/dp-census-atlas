@@ -83,10 +83,15 @@ const getGeoTypeForFeatureDensity = (map: mapboxgl.Map): GeoType => {
   // @ts-ignore (queryRenderedFeatures typings appear to be wrong)
   const features = map.queryRenderedFeatures({ layers: ["centroids"] });
   if (Array.isArray(features)) {
+    // Get the geotype based on the density of features on the map
     const count = features.length;
     const canvas = map.getCanvas();
     const pixelArea = canvas.clientWidth * canvas.clientHeight;
-    return (count * 1e6) / pixelArea > 40 ? "lad" : (count * 1e6) / pixelArea > 3 ? "msoa" : "oa";
+    const geotype = (count * 1e6) / pixelArea > 40 ? "lad" : (count * 1e6) / pixelArea > 3 ? "msoa" : "oa";
+    // Check that the selected dataset has data for this geotype
+    const vizStoreVal = get(vizStore);
+    const available_geotypes = vizStoreVal ? vizStoreVal.params.variable.available_geotypes.map(d => d.toLowerCase()): null;
+    return !available_geotypes || available_geotypes.includes(geotype) ? geotype : available_geotypes[0].toLowerCase();
   } else {
     return "lad";
   }

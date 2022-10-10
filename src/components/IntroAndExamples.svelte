@@ -25,7 +25,7 @@
           href={buildHyperlink($page.url, {
             variableGroup: "health",
             variable: "general-health",
-            category: "very-good-health",
+            category: "good-health",
           })}
           class="hyperlink-reverse"
         >
@@ -37,8 +37,8 @@
         <a
           href={buildHyperlink($page.url, {
             variableGroup: "housing",
-            variable: "heating",
-            category: "no-central-heating",
+            variable: "type-of-central-heating-in-household",
+            category: "does-not-have-central-heating",
           })}
           class="hyperlink-reverse"
         >
@@ -46,16 +46,16 @@
         >?
       </li>
       <li class="pb-1">
-        Which areas have the
+        Where do people
         <a
           href={buildHyperlink($page.url, {
             variableGroup: "housing",
-            variable: "owned-or-renting",
-            category: "shared-ownership-homes",
+            variable: "tenure-of-household",
+            category: "owned-owns-outright",
           })}
           class="hyperlink-reverse"
         >
-          highest levels of shared ownership properties</a
+          own their own home</a
         >?
       </li>
     </ul>

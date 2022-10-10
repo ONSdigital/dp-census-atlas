@@ -102,6 +102,18 @@ export const initMapLayers = (map) => {
     });
   });
 
+  // add OA quad centroid layer for feature density calculation
+  map.addSource("centroids", centroidsGeojson);
+  map.addLayer({
+    id: "centroids",
+    type: "circle",
+    source: "centroids",
+    paint: {
+      "circle-radius": 1,
+      "circle-color": "rgba(255,255,255,0)",
+    },
+  });
+
   // todo: use rxjs to implement better hover
   // fromEvent(map, "mousemove")
   //   .pipe(

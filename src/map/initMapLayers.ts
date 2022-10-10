@@ -102,26 +102,6 @@ export const initMapLayers = (map) => {
     });
   });
 
-  // add/demo MSOA names/labels
-  const msoaLayerInfo = layers.find((l) => l.name === `msoa`);
-  map.addLayer({
-    id: "msoa-labels",
-    type: "symbol",
-    source: "msoa",
-    "source-layer": "msoa",
-    minzoom: msoaLayerInfo.minZoom,
-    layout: {
-      "text-field": ["get", "hclnm"], // 'hclnm' is the feature property name of the display name
-      "text-size": 13,
-      "text-justify": "auto",
-    },
-    paint: {
-      "text-color": "#000",
-      "text-halo-color": "#fff",
-      "text-halo-width": 100,
-    },
-  });
-
   // add OA quad centroid layer for feature density calculation
   map.addSource("centroids", centroidsGeojson);
   map.addLayer({

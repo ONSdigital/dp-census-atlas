@@ -1,7 +1,6 @@
 <script>
   import { page } from "$app/stores";
-  import { vizStore, selectedGeographyStore } from "../stores/stores";
-  import { contentStore } from "../stores/stores";
+  import { contentStore, dataUpdateInProgressStore, selectedGeographyStore, vizStore, } from "../stores/stores";
   import { formatTemplateString } from "../helpers/categoryHelpers";
   import { choroplethColours } from "../helpers/choroplethHelpers";
   import { getDefaultChoroplethClassification } from "../helpers/variableHelpers";
@@ -44,23 +43,32 @@
         {/if}
         <div class="flex-grow">
           {#if category && categoryValueForSelectedGeography}
-            <div class="text-base leading-5">
-              <span>
-                {formatTemplateString(variable, category, selectedGeographyDisplayName, category.legend_str_1)}
-                {formatTemplateString(variable, category, selectedGeographyDisplayName, category.legend_str_2)}
-              </span>
+            <div class="whitespace-nowrap">
+              <span class="text-5xl font-bold"> {ratioToRoundedPercentageString(categoryValueForSelectedGeography, 1)}</span><span
+                class="text-4xl font-bold">%</span
+              >
             </div>
-            <div class="-mt-0.5 text-lg font-bold">
-              {formatTemplateString(variable, category, selectedGeographyDisplayName, category.legend_str_3)}
-            </div>
-          {:else if category}
-            <div class="">{selectedGeographyDisplayName}</div>
-            <div class="text-lg font-bold">
-              {category.name}
-            </div>
-          {:else if $selectedGeographyStore?.geoType !== "ew"}
-            <div class="">{selectedGeographyDisplayName}</div>
           {/if}
+          <div class="flex-grow">
+            {#if category && categoryValueForSelectedGeography}
+              <div class="text-base leading-5">
+                <span>
+                  {formatTemplateString(variable, category, selectedGeographyDisplayName, category.legend_str_1)}
+                  {formatTemplateString(variable, category, selectedGeographyDisplayName, category.legend_str_2)}
+                </span>
+              </div>
+              <div class="-mt-0.5 text-lg font-bold">
+                {formatTemplateString(variable, category, selectedGeographyDisplayName, category.legend_str_3)}
+              </div>
+            {:else if category}
+              <div class="">{selectedGeographyDisplayName}</div>
+              <div class="text-lg font-bold">
+                {category.name}
+              </div>
+            {:else if $selectedGeographyStore?.geoType !== "ew"}
+              <div class="">{selectedGeographyDisplayName}</div>
+            {/if}
+          </div>
         </div>
       </div>
       {#if category && $vizStore}

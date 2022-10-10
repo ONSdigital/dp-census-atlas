@@ -1,12 +1,13 @@
 import { choroplethColours } from "../helpers/choroplethHelpers";
 import type { VizData } from "../types";
 import { layers } from "./layers";
+import { dataUpdateInProgressStore } from "../stores/stores";
 
 export const renderMapViz = (map: mapboxgl.Map, data: VizData) => {
   if (!data) {
     return;
   }
-
+  dataUpdateInProgressStore.set(true)
   const layer = layers.find((l) => l.name == data.geoType);
 
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -22,6 +23,7 @@ export const renderMapViz = (map: mapboxgl.Map, data: VizData) => {
       );
     }
   });
+  dataUpdateInProgressStore.set(false)
 };
 
 const getChoroplethColour = (value: number, breaks: number[]) => {

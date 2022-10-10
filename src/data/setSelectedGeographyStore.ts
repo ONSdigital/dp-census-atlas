@@ -1,8 +1,9 @@
 import { englandAndWalesBbox } from "../helpers/geographyHelper";
-import { selectedGeographyStore } from "../stores/stores";
+import { selectedGeographyStore, dataUpdateInProgressStore } from "../stores/stores";
 import { fetchGeographyInfo } from "./api";
 
 export const setSelectedGeographyStore = async (geoCode: string) => {
+  dataUpdateInProgressStore.set(true)
   const geographyInfo = await fetchGeographyInfo(geoCode).then((result) => JSON.parse(result));
 
   const geoType = geographyInfo.meta.geotype.toLowerCase();
@@ -23,6 +24,6 @@ export const setSelectedGeographyStore = async (geoCode: string) => {
     displayName,
     ...geographies,
   });
-
+  dataUpdateInProgressStore.set(false)
   return Promise.resolve();
 };

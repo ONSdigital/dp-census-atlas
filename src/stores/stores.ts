@@ -30,3 +30,8 @@ export const contentStore = writable<ContentTree | undefined>(undefined);
  * A Svelte store containing the app params from the current URL
  */
 export const appParamsStore = writable<AppParams | undefined>(undefined);
+
+/**
+ * A Svelte store indicating whether or not data is currently being updated
+ */
+ export const dataUpdateInProgressStore= writable<boolean>(false);

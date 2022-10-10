@@ -1,7 +1,7 @@
 import type * as dsv from "d3-dsv"; // https://github.com/d3/d3/issues/3469
 import { fetchTileDataForBbox, fetchBreaks } from "./api";
 import type { Bbox, Category, GeoType, VariableGroup } from "../types";
-import { vizStore } from "../stores/stores";
+import { vizStore, dataUpdateInProgressStore } from "../stores/stores";
 import { getCategoryInfo } from "../helpers/categoryHelpers";
 
 export const setVizStore = async (args: {
@@ -12,6 +12,7 @@ export const setVizStore = async (args: {
   zoom: number;
   variableGroups: VariableGroup[];
 }) => {
+  dataUpdateInProgressStore.set(true)
   const [places, breaksData] = await Promise.all([fetchTileDataForBbox(args), fetchBreaks(args)]);
   vizStore.set({
     geoType: args.geoType,
@@ -20,6 +21,7 @@ export const setVizStore = async (args: {
     places: places.map((row) => parsePlaceData(row, args.category.code)),
     params: getCategoryInfo(args.category.code, args.variableGroups),
   });
+  dataUpdateInProgressStore.set(false)
   return Promise.resolve();
 };
 

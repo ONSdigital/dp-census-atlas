@@ -27,15 +27,22 @@ export function ratioToPercentage(r: number, decimalPlaces?: number): string {
 }
 
 /*
-  Return minimum decimal places needed to round ratios while ensuring they remain unique
+  Round number to decimalPlaces
 */
-export function minDecimalPlacesToAntialias(ratios: number[]): number {
-  let decimalPlaces = 0;
-  let percentages = ratios.map((n) => ratioToPercentage(n, decimalPlaces));
-  // iterate decimalPlaces until percentages contains only unique values
-  while (new Set(percentages).size != ratios.length) {
-    decimalPlaces += 1;
-    percentages = ratios.map((n) => ratioToPercentage(n, decimalPlaces));
-  }
-  return decimalPlaces;
+export function roundNumber(args: {number: number, decimalPlaces: number}): number {
+  const roundingFactor = 10 ** args.decimalPlaces;
+  return Math.round(args.number * roundingFactor) / roundingFactor;
+}
+
+/*
+  Return numbers rounded to decimalPlaces with repeated numbers removed.
+*/
+export function uniqueRoundedNumbers(args: {numbers: number[], decimalPlaces: number}): number[] {
+  return [
+    ...new Set(
+      args.numbers.map((n) => {
+        return roundNumber({number:n, decimalPlaces:args.decimalPlaces});
+      })
+    )
+  ];
 }

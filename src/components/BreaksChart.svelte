@@ -1,11 +1,10 @@
 <script lang="ts">
-  import { ratioToPercentage } from "../util/numberUtil";
+  import { ratioToRoundedPercentageString } from "../helpers/ratioHelpers";
 
   export let hovered = null;
   export let selected = null;
   export let lineWidth = 3;
   export let breaks = [0, 20, 40, 60, 80, 100];
-  export let decimalPlaces = 0
   export let colors = ["rgba(234,236,177)", "rgba(169,216,145)", "rgba(0,167,186)", "rgba(0,78,166)", "rgba(0,13,84)"];
   export let suffix = "";
   export let snapTicks = true;
@@ -34,12 +33,12 @@
       class="tick"
       style="left: {i * (100 / (breaks.length - 1))}%; transform: translateX({i == 0 && snapTicks ? '-2px' : '-50%'});"
     >
-      {ratioToPercentage(breaks[i], decimalPlaces)}<span class="tick-suffix">{suffix}</span>
+      {ratioToRoundedPercentageString(breaks[i])}<span class="tick-suffix">{suffix}</span>
     </div>
   {/each}
   <div class="line" style="right: 0;" />
   <div class="tick" style="right: 0; transform: translateX({snapTicks ? '2px' : '50%'});">
-    {ratioToPercentage(breaks[breaks.length - 1], decimalPlaces)}<span class="tick-suffix">{suffix}</span>
+    {ratioToRoundedPercentageString(breaks[breaks.length - 1])}<span class="tick-suffix">{suffix}</span>
   </div>
   {#if selected}
     <!-- <div class="marker" style="width: 4px; left: calc({pos(selected, breaks)}% - {lineWidth / 2}px);" /> -->

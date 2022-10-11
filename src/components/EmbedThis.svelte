@@ -25,7 +25,7 @@
     <div class="text-2xl text-ons-black">
       <Icon kind="code" />
     </div>
-    <div>Embed</div>
+    <div>Embed this map</div>
   </button>
 </div>
 

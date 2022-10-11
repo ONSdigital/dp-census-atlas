@@ -20,7 +20,9 @@
   // }
 </script>
 
-<Heading />
+<div class="hidden lg:block ">
+  <Heading />
+</div>
 
 <!-- {JSON.stringify($vizStore)} -->
 <div class="px-6">

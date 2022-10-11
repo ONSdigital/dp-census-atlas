@@ -5,7 +5,7 @@
   import { formatTemplateString } from "../helpers/categoryHelpers";
   import { choroplethColours } from "../helpers/choroplethHelpers";
   import { getDefaultChoroplethClassification } from "../helpers/variableHelpers";
-  import { ratioToRoundedPercentageString } from "../helpers/ratioHelpers"
+  import { ratioToRoundedPercentageString } from "../helpers/ratioHelpers";
 
   import BreaksChart from "./BreaksChart.svelte";
 
@@ -21,7 +21,7 @@
   $: defaultChoroplethClassification = getDefaultChoroplethClassification(variable);
   $: categorySlug = params.category;
   $: category = variable ? defaultChoroplethClassification.categories.find((c) => c.slug === categorySlug) : undefined;
-  $: breaks = $vizStore ? [$vizStore?.minMaxVals[0], ...$vizStore.breaks] : undefined
+  $: breaks = $vizStore ? [$vizStore?.minMaxVals[0], ...$vizStore.breaks] : undefined;
 </script>
 
 <!-- todo: new design for all four states -->
@@ -31,30 +31,35 @@
 <!--    category selected | show EW legend, no %   | full legend, with percentage  -->
 
 {#if category || $selectedGeographyStore?.geoType !== "ew"}
-  <div class={`absolute bottom-8 left-1/2 -translate-x-1/2 `}>
-    <div class="z-abovemap bg-white px-6 py-3 w-[40rem] h-[8.6rem]">
-      <div class="flex gap-3 mb-3">
+  <div class={`absolute bottom-3 lg:bottom-8 flex w-full px-3 justify-center`}>
+    <div class="z-abovemap bg-white bg-opacity-90 px-3 py-2 lg:px-5 lg:py-3">
+      <div class="flex gap-3 mb-3 items-center">
         <!-- big percantage -->
         {#if category && categoryValueForSelectedGeography}
           <div class="whitespace-nowrap">
-            <span class="text-5xl font-bold"> {ratioToRoundedPercentageString(categoryValueForSelectedGeography)}</span><span
-              class="text-4xl font-bold">%</span
-            >
+            <span class="text-4xl lg:text-5xl font-bold">
+              {ratioToRoundedPercentageString(categoryValueForSelectedGeography)}</span
+            ><span class="text-3xl lg:text-4xl font-bold">%</span>
           </div>
         {/if}
         <div class="flex-grow">
           {#if category && categoryValueForSelectedGeography}
-            <div class="text-base leading-5">
-              <span>
+            <div class="">
+              <span class="text-base lg:text-xl">
                 {formatTemplateString(variable, category, selectedGeographyDisplayName, category.legend_str_1)}
+              </span>
+              <span class="text-sm bg-ons-census text-white font-bold px-1 rounded-sm mx-1 align-text-top">
+                {$selectedGeographyStore?.geoType?.toUpperCase()}
+              </span>
+              <span class="text-base lg:text-xl">
                 {formatTemplateString(variable, category, selectedGeographyDisplayName, category.legend_str_2)}
               </span>
             </div>
-            <div class="-mt-0.5 text-lg font-bold">
+            <div class="text-base lg:text-xl font-bold -mt-0.5">
               {formatTemplateString(variable, category, selectedGeographyDisplayName, category.legend_str_3)}
             </div>
           {:else if category}
-            <div class="">{selectedGeographyDisplayName}</div>
+            <div class="text-xl">{selectedGeographyDisplayName}</div>
             <div class="text-lg font-bold">
               {category.name}
             </div>
@@ -64,12 +69,7 @@
         </div>
       </div>
       {#if category && $vizStore}
-        <BreaksChart
-          selected={categoryValueForSelectedGeography}
-          suffix="%"
-          breaks={breaks}
-          colors={choroplethColours}
-        />
+        <BreaksChart selected={categoryValueForSelectedGeography} suffix="%" {breaks} colors={choroplethColours} />
       {/if}
     </div>
   </div>

@@ -49,7 +49,7 @@
   <Heading />
 </div>
 <div class="h-full flex flex-col">
-  <div class="px-6 ">
+  <div class="px-6 border-t-[1px] border-t-ons-grey-15">
     <AreaPanel />
     <section class="mb-8">
       <h2 class="pt-3 font-bold text-slate-500">Topic</h2>
@@ -88,7 +88,7 @@
     </section>
   </div>
   <div class="grow" />
-  <div class="p-6 pt-4 bg-ons-grey-5">
+  <div class="p-6 pt-4 bg-ons-grey-5 border-t-ons-grey-15 border-t-[1px]">
     <CategoryPageLinks />
   </div>
 </div>

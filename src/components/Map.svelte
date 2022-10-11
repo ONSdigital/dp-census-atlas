@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount, onDestroy } from "svelte";
   import { initMap } from "../map/initMap";
+  import { appParamsStore } from "../stores/stores";
 
   let map;
   let mapContainer;
@@ -15,4 +16,4 @@
   });
 </script>
 
-<div class="w-full h-[35rem] lg:h-full" bind:this={mapContainer} />
+<div class="w-full lg:h-full" class:h-full={$appParamsStore.embed} bind:this={mapContainer} />

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-10-06-16-11-19",
+    "created_at": "2022-10-11-15-34-41",
     "cantabular_metadata_source": "ar2776-c21ew_metadata-v1-3_cantab_20220927-20",
     "rich_content_spec_file_used_to_filter": "Rich_content_product_specifications.csv",
     "legend_strs_file": "Rich_content_product_specifications.csv",
@@ -21,9 +21,9 @@
           "units": "Person",
           "topic_code": "EDU",
           "available_geotypes": [
-            "OA",
-            "MSOA",
-            "LAD"
+            "oa",
+            "msoa",
+            "lad"
           ],
           "classifications": [
             {
@@ -155,9 +155,9 @@
           "units": "Person",
           "topic_code": "HUC",
           "available_geotypes": [
-            "OA",
-            "MSOA",
-            "LAD"
+            "oa",
+            "msoa",
+            "lad"
           ],
           "classifications": [
             {
@@ -234,9 +234,9 @@
           "units": "Household",
           "topic_code": "HUC",
           "available_geotypes": [
-            "OA",
-            "MSOA",
-            "LAD"
+            "oa",
+            "msoa",
+            "lad"
           ],
           "classifications": [
             {
@@ -352,9 +352,9 @@
           "units": "Household",
           "topic_code": "HUC",
           "available_geotypes": [
-            "OA",
-            "MSOA",
-            "LAD"
+            "oa",
+            "msoa",
+            "lad"
           ],
           "classifications": [
             {
@@ -400,9 +400,9 @@
           "units": "Person",
           "topic_code": "HUC",
           "available_geotypes": [
-            "OA",
-            "MSOA",
-            "LAD"
+            "oa",
+            "msoa",
+            "lad"
           ],
           "classifications": [
             {
@@ -518,9 +518,9 @@
           "units": "Household",
           "topic_code": "HOU",
           "available_geotypes": [
-            "OA",
-            "MSOA",
-            "LAD"
+            "oa",
+            "msoa",
+            "lad"
           ],
           "classifications": [
             {
@@ -684,9 +684,9 @@
           "units": "Person",
           "topic_code": "HOU",
           "available_geotypes": [
-            "OA",
-            "MSOA",
-            "LAD"
+            "oa",
+            "msoa",
+            "lad"
           ],
           "classifications": [
             {
@@ -731,9 +731,9 @@
           "units": "Household",
           "topic_code": "HOU",
           "available_geotypes": [
-            "OA",
-            "MSOA",
-            "LAD"
+            "oa",
+            "msoa",
+            "lad"
           ],
           "classifications": [
             {
@@ -874,9 +874,9 @@
           "units": "Household",
           "topic_code": "HOU",
           "available_geotypes": [
-            "OA",
-            "MSOA",
-            "LAD"
+            "oa",
+            "msoa",
+            "lad"
           ],
           "classifications": [
             {
@@ -1017,9 +1017,9 @@
           "units": "Household",
           "topic_code": "HOU",
           "available_geotypes": [
-            "OA",
-            "MSOA",
-            "LAD"
+            "oa",
+            "msoa",
+            "lad"
           ],
           "classifications": [
             {
@@ -1144,9 +1144,9 @@
           "units": "Household",
           "topic_code": "HOU",
           "available_geotypes": [
-            "OA",
-            "MSOA",
-            "LAD"
+            "oa",
+            "msoa",
+            "lad"
           ],
           "classifications": [
             {
@@ -1200,9 +1200,9 @@
           "units": "Household",
           "topic_code": "HOU",
           "available_geotypes": [
-            "OA",
-            "MSOA",
-            "LAD"
+            "oa",
+            "msoa",
+            "lad"
           ],
           "classifications": [
             {
@@ -1259,13 +1259,13 @@
           "name": "Occupancy rating for rooms",
           "code": "occupancy_rating_rooms",
           "slug": "occupancy-rating-for-rooms",
-          "desc": "Whether a household's accommodation is overcrowded, ideally occupied or under-occupied. This is calculated by comparing the number of rooms the household requires to the number of available rooms. \n\nAdditional  \nThe number of rooms the household requires uses a formula which states that: \n* one-person households require three rooms comprised of two common rooms and one bedroom \n* two-or-more person households require a minimum of two common rooms and a bedroom for each person inline with the Bedroom Standard. \n\nPeople who should have their own room according to the Bedroom Standard.  \n  1) Married or cohabiting couple.  \n  2) Single parent.  \n  3) Person aged 16 years old or over.  \n  4) Pair of same-sex persons 10 to 15 years old.  \n  5) Person aged 10 to 15 years old paired with a person under 10 years old of the same sex.  \n  6) Pair of children under the age of 10, regardless of their sex.  \n  7) Person under 16 years old who cannot share a bedroom with someone in 4, 5 or 6 above.  \nAn occupancy rating of: \n * -1 or less implies that a households accommodation has fewer rooms than required (overcrowded) \n* +1 or more implies that a households accommodation has more rooms than required (under-occupied) \n* 0 suggests that a households accommodation has an ideal number of rooms",
+          "desc": "Whether a household's accommodation is overcrowded, ideally occupied or under-occupied. This is calculated by comparing the number of required rooms to the number of available rooms.",
           "units": "Household",
           "topic_code": "HOU",
           "available_geotypes": [
-            "OA",
-            "MSOA",
-            "LAD"
+            "oa",
+            "msoa",
+            "lad"
           ],
           "classifications": [
             {
@@ -1326,9 +1326,9 @@
           "units": "Person",
           "topic_code": "HOU",
           "available_geotypes": [
-            "OA",
-            "MSOA",
-            "LAD"
+            "oa",
+            "msoa",
+            "lad"
           ],
           "classifications": [
             {
@@ -1428,9 +1428,9 @@
           "units": "Household",
           "topic_code": "EILR",
           "available_geotypes": [
-            "OA",
-            "MSOA",
-            "LAD"
+            "oa",
+            "msoa",
+            "lad"
           ],
           "classifications": [
             {
@@ -1523,9 +1523,9 @@
           "units": "Family",
           "topic_code": "EILR",
           "available_geotypes": [
-            "OA",
-            "MSOA",
-            "LAD"
+            "oa",
+            "msoa",
+            "lad"
           ],
           "classifications": [
             {
@@ -1746,9 +1746,9 @@
           "units": "Household",
           "topic_code": "EILR",
           "available_geotypes": [
-            "OA",
-            "MSOA",
-            "LAD"
+            "oa",
+            "msoa",
+            "lad"
           ],
           "classifications": [
             {
@@ -1801,9 +1801,9 @@
           "units": "Household",
           "topic_code": "EILR",
           "available_geotypes": [
-            "OA",
-            "MSOA",
-            "LAD"
+            "oa",
+            "msoa",
+            "lad"
           ],
           "classifications": [
             {
@@ -1888,9 +1888,9 @@
           "units": "Household",
           "topic_code": "EILR",
           "available_geotypes": [
-            "OA",
-            "MSOA",
-            "LAD"
+            "oa",
+            "msoa",
+            "lad"
           ],
           "classifications": [
             {
@@ -1960,7 +1960,7 @@
           "units": "Person",
           "topic_code": "EILR",
           "available_geotypes": [
-            "LAD"
+            "lad"
           ],
           "classifications": [
             {
@@ -2916,9 +2916,9 @@
           "units": "Person",
           "topic_code": "EILR",
           "available_geotypes": [
-            "OA",
-            "MSOA",
-            "LAD"
+            "oa",
+            "msoa",
+            "lad"
           ],
           "classifications": [
             {
@@ -3170,8 +3170,8 @@
           "units": "Person",
           "topic_code": "EILR",
           "available_geotypes": [
-            "MSOA",
-            "LAD"
+            "msoa",
+            "lad"
           ],
           "classifications": [
             {
@@ -3768,9 +3768,9 @@
           "units": "Person",
           "topic_code": "EILR",
           "available_geotypes": [
-            "OA",
-            "MSOA",
-            "LAD"
+            "oa",
+            "msoa",
+            "lad"
           ],
           "classifications": [
             {
@@ -3863,9 +3863,9 @@
           "units": "Person",
           "topic_code": "EILR",
           "available_geotypes": [
-            "OA",
-            "MSOA",
-            "LAD"
+            "oa",
+            "msoa",
+            "lad"
           ],
           "classifications": [
             {
@@ -4037,7 +4037,7 @@
           "units": "Person",
           "topic_code": "EILR",
           "available_geotypes": [
-            "LAD"
+            "lad"
           ],
           "classifications": [
             {
@@ -4075,8 +4075,8 @@
           "units": "Family",
           "topic_code": "SOGI",
           "available_geotypes": [
-            "MSOA",
-            "LAD"
+            "msoa",
+            "lad"
           ],
           "classifications": [
             {
@@ -4185,8 +4185,8 @@
           "units": "Person",
           "topic_code": "SOGI",
           "available_geotypes": [
-            "MSOA",
-            "LAD"
+            "msoa",
+            "lad"
           ],
           "classifications": [
             {
@@ -4357,9 +4357,9 @@
           "units": "Household",
           "topic_code": "DEM",
           "available_geotypes": [
-            "OA",
-            "MSOA",
-            "LAD"
+            "oa",
+            "msoa",
+            "lad"
           ],
           "classifications": [
             {
@@ -4421,9 +4421,9 @@
           "units": "Household",
           "topic_code": "DEM",
           "available_geotypes": [
-            "OA",
-            "MSOA",
-            "LAD"
+            "oa",
+            "msoa",
+            "lad"
           ],
           "classifications": [
             {
@@ -4588,9 +4588,9 @@
           "units": "Household",
           "topic_code": "DEM",
           "available_geotypes": [
-            "OA",
-            "MSOA",
-            "LAD"
+            "oa",
+            "msoa",
+            "lad"
           ],
           "classifications": [
             {
@@ -4652,9 +4652,9 @@
           "units": "Person",
           "topic_code": "DEM",
           "available_geotypes": [
-            "OA",
-            "MSOA",
-            "LAD"
+            "oa",
+            "msoa",
+            "lad"
           ],
           "classifications": [
             {
@@ -4834,8 +4834,8 @@
           "units": "Person",
           "topic_code": "DEM",
           "available_geotypes": [
-            "MSOA",
-            "LAD"
+            "msoa",
+            "lad"
           ],
           "classifications": [
             {
@@ -4936,9 +4936,9 @@
           "units": "Household",
           "topic_code": "DEM",
           "available_geotypes": [
-            "OA",
-            "MSOA",
-            "LAD"
+            "oa",
+            "msoa",
+            "lad"
           ],
           "classifications": [
             {
@@ -5015,8 +5015,8 @@
           "units": "Person",
           "topic_code": "DEM",
           "available_geotypes": [
-            "MSOA",
-            "LAD"
+            "msoa",
+            "lad"
           ],
           "classifications": [
             {
@@ -6043,9 +6043,9 @@
           "units": "Person",
           "topic_code": "DEM",
           "available_geotypes": [
-            "OA",
-            "MSOA",
-            "LAD"
+            "oa",
+            "msoa",
+            "lad"
           ],
           "classifications": [
             {
@@ -6083,9 +6083,9 @@
           "units": "Person",
           "topic_code": "DEM",
           "available_geotypes": [
-            "OA",
-            "MSOA",
-            "LAD"
+            "oa",
+            "msoa",
+            "lad"
           ],
           "classifications": [
             {
@@ -6122,9 +6122,9 @@
           "units": "Person",
           "topic_code": "MIG",
           "available_geotypes": [
-            "OA",
-            "MSOA",
-            "LAD"
+            "oa",
+            "msoa",
+            "lad"
           ],
           "classifications": [
             {
@@ -6282,7 +6282,7 @@
           "units": "Person",
           "topic_code": "MIG",
           "available_geotypes": [
-            "LAD"
+            "lad"
           ],
           "classifications": [
             {
@@ -6957,9 +6957,9 @@
           "units": "Person",
           "topic_code": "MIG",
           "available_geotypes": [
-            "OA",
-            "MSOA",
-            "LAD"
+            "oa",
+            "msoa",
+            "lad"
           ],
           "classifications": [
             {
@@ -7008,12 +7008,12 @@
           "name": "Passports held",
           "code": "passports_all",
           "slug": "passports-held",
-          "desc": "Classifies a person according to the passport or passports they held at the time of the census. This included expired passports or travel documents people were entitled to renew. Where a person recorded having more than one passport, they were counted only once, categorised in the following priority order: 1. UK passport, 2. Irish passport, 3. Other passport.",
+          "desc": "Classifies a person according to the passport or passports they held. This included expired passports or travel documents people were entitled to renew.",
           "units": "Person",
           "topic_code": "MIG",
           "available_geotypes": [
-            "MSOA",
-            "LAD"
+            "msoa",
+            "lad"
           ],
           "classifications": [
             {
@@ -7945,9 +7945,9 @@
           "units": "Person",
           "topic_code": "MIG",
           "available_geotypes": [
-            "OA",
-            "MSOA",
-            "LAD"
+            "oa",
+            "msoa",
+            "lad"
           ],
           "classifications": [
             {
@@ -8009,9 +8009,9 @@
           "units": "Person",
           "topic_code": "MIG",
           "available_geotypes": [
-            "OA",
-            "MSOA",
-            "LAD"
+            "oa",
+            "msoa",
+            "lad"
           ],
           "classifications": [
             {
@@ -8183,9 +8183,9 @@
           "units": "Person",
           "topic_code": "LAB",
           "available_geotypes": [
-            "OA",
-            "MSOA",
-            "LAD"
+            "oa",
+            "msoa",
+            "lad"
           ],
           "classifications": [
             {
@@ -8349,9 +8349,9 @@
           "units": "Person",
           "topic_code": "LAB",
           "available_geotypes": [
-            "OA",
-            "MSOA",
-            "LAD"
+            "oa",
+            "msoa",
+            "lad"
           ],
           "classifications": [
             {
@@ -8397,9 +8397,9 @@
           "units": "Person",
           "topic_code": "LAB",
           "available_geotypes": [
-            "OA",
-            "MSOA",
-            "LAD"
+            "oa",
+            "msoa",
+            "lad"
           ],
           "classifications": [
             {
@@ -8476,8 +8476,8 @@
           "units": "Person",
           "topic_code": "LAB",
           "available_geotypes": [
-            "MSOA",
-            "LAD"
+            "msoa",
+            "lad"
           ],
           "classifications": [
             {
@@ -9194,9 +9194,9 @@
           "units": "Person",
           "topic_code": "LAB",
           "available_geotypes": [
-            "OA",
-            "MSOA",
-            "LAD"
+            "oa",
+            "msoa",
+            "lad"
           ],
           "classifications": [
             {
@@ -9289,8 +9289,8 @@
           "units": "Person",
           "topic_code": "LAB",
           "available_geotypes": [
-            "MSOA",
-            "LAD"
+            "msoa",
+            "lad"
           ],
           "classifications": [
             {
@@ -9383,8 +9383,8 @@
           "units": "Person",
           "topic_code": "TTW",
           "available_geotypes": [
-            "OA",
-            "MSOA"
+            "oa",
+            "msoa"
           ],
           "classifications": [
             {
@@ -9493,8 +9493,8 @@
           "units": "Person",
           "topic_code": "TTW",
           "available_geotypes": [
-            "OA",
-            "MSOA"
+            "oa",
+            "msoa"
           ],
           "classifications": [
             {

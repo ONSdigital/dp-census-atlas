@@ -110,7 +110,7 @@ def input_full_path(input_partial_path: str) -> Path:
 
 
 def available_geotypes_for_variables_from_file(available_geotypes_for_variables_file: str) -> dict:
-    geotypes = ["OA", "MSOA", "LA"]
+    geotypes_in_file = ["OA", "MSOA", "LA"]
 
     with open(available_geotypes_for_variables_file, "r", encoding="ascii", errors="ignore") as f:
         all_raw_avgs = list(csv.DictReader(f))
@@ -118,8 +118,8 @@ def available_geotypes_for_variables_from_file(available_geotypes_for_variables_
     avgs = {}
     for raw_avg in all_raw_avgs:
         variable = raw_avg["variable1"]
-        raw_geos = list(filter(lambda x: x in geotypes, raw_avg["geographies"].split(",")))
-        geos = ["LAD" if g == "LA" else g for g in raw_geos]
+        raw_geos = list(filter(lambda x: x in geotypes_in_file, raw_avg["geographies"].split(",")))
+        geos = ["lad" if g == "LA" else g.lower() for g in raw_geos]
         avgs[variable] = geos
     return avgs
 

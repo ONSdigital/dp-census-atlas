@@ -1,7 +1,8 @@
 import * as dsv from "d3-dsv"; // https://github.com/d3/d3/issues/3469
 import type { Bbox, Category, DataTile, GeoType } from "src/types";
 import { bboxToDataTiles, englandAndWales } from "../helpers/spatialHelper";
-import { geoBaseUrl } from "../buildEnv";
+
+const geoBaseUrl = "https://cdn.ons.gov.uk/maptiles/cm-geos/v1";
 
 /*
   Fetch place data files for all data 'tiles' (predefined coordinate grid squares) that intersect with current viewport 

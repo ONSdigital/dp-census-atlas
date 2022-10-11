@@ -45,7 +45,9 @@
   >
 </svelte:head>
 
-<Heading />
+<div class="hidden lg:block ">
+  <Heading />
+</div>
 <div class="h-full flex flex-col">
   <div class="px-6 ">
     <AreaPanel />
@@ -60,13 +62,15 @@
         <div class="text-sm font-extrabold text-slate-500" aria-hidden>&gt;</div>
         <div class=" ">{variable.name}</div>
       </nav>
-      <div class="mt-4 mb-2 flex items-center gap-2">
+      <div class="mt-4 mb-2">
         <div>
           {variable.desc}
         </div>
+        <!--
         <div class="ml-0.5 text-sm bg-ons-census text-white font-bold px-1 rounded-sm">
           {variable.code}
         </div>
+        -->
       </div>
       <ul class="flex flex-col last:border-b-[1px]">
         {#each defaultChoroplethClassification.categories as category}

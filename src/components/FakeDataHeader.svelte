@@ -14,5 +14,9 @@
   <div class="fill-ons-census p-3">
     <Census2021 />
   </div>
-  <strong class="text-white">WARNING! This is a prototype. Data is synthetic. It is NOT actual 2021 Census data.</strong>
+  <div class="truncate">
+    <strong class="text-white"
+      >WARNING! This is a prototype. Data is synthetic. It is NOT actual 2021 Census data.</strong
+    >
+  </div>
 </header>

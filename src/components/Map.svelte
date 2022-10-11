@@ -15,4 +15,4 @@
   });
 </script>
 
-<div class="w-full h-[20rem] lg:h-full" bind:this={mapContainer} />
+<div class="w-full h-[35rem] lg:h-full" bind:this={mapContainer} />

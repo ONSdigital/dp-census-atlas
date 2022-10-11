@@ -66,11 +66,6 @@
         <div>
           {variable.desc}
         </div>
-        <!--
-        <div class="ml-0.5 text-sm bg-ons-census text-white font-bold px-1 rounded-sm">
-          {variable.code}
-        </div>
-        -->
       </div>
       <ul class="flex flex-col last:border-b-[1px]">
         {#each defaultChoroplethClassification.categories as category}

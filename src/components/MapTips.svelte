@@ -31,7 +31,7 @@
 {/if}
 
 {#if $mapStore}
-  <div class={`absolute top-4 left-4 lg:top-8 lg:left-8 `}>
+  <div class={`absolute top-3 left-3 lg:top-8 lg:left-8 `}>
     <div class="flex gap-1">
       <div class="flex">
         <div class="z-abovemap px-3 py-1  rounded-l bg-ons-census text-ons-grey-5 font-bold">

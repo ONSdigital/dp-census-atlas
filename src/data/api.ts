@@ -3,7 +3,7 @@ import type { Bbox, Category, DataTile, GeoType } from "src/types";
 import { bboxToDataTiles, englandAndWales } from "../helpers/spatialHelper";
 import { uniqueRoundedBreaks, roundedRatio } from "../helpers/ratioHelpers";
 
-const geoBaseUrl = "https://cdn.ons.gov.uk/maptiles/cm-geos/v1";
+const geoBaseUrl = "https://cdn.ons.gov.uk/maptiles/cm-geos/v2";
 
 /*
   Fetch place data files for all data 'tiles' (predefined coordinate grid squares) that intersect with current viewport 

@@ -1,8 +1,8 @@
 <script>
   import App from "../components/App.svelte";
-  import AppLayout from "../components/AppLayout.svelte";
+  import Layout from "../components/Layout.svelte";
 </script>
 
 <App>
-  <AppLayout><slot /></AppLayout>
+  <slot />
 </App>

@@ -15,7 +15,6 @@
 
 <div class="px-6">
   <AreaPanel />
-
   <section>
     <h2 class="pt-3 pb-2 font-bold text-slate-500">Topic</h2>
     <div class="mb-6">
@@ -23,20 +22,4 @@
     </div>
     <VariableGroupList />
   </section>
-
-  <!-- <br class="" />
-  <div class="text-2xl">
-    <Icon kind="settings" />
-  </div> -->
-
-  <!-- <div class="">
-    <button
-      class=""
-      on:click={() => {
-        selectGeography({ geoType: "lad", geoCode: "E06000053" });
-      }}
-    >
-      Click me
-    </button>
-  </div> -->
 </div>

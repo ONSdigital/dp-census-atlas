@@ -1,11 +1,14 @@
 import { layers, layersWithSiblings } from "./layers";
 import { centroidsGeojson } from "../helpers/quadsHelper";
 
+export const layerBounds = [-6.418, 49.864, 1.764, 55.812];
+
 export const initMapLayers = (map) => {
   layersWithSiblings().forEach((l) => {
     map.addSource(l.layer.name, {
       type: "vector",
       tiles: [l.layer.urlTemplate],
+      bounds: layerBounds, // These are the bounds of the vector tiles sources
       promoteId: l.layer.idProperty, // tells mapbox which property to use as the feature id
       maxzoom: l.layer.sourceMaxZoom, // This is the maximum zoom level that the map tiles are available for (tiles can be over-zoomed)
     });

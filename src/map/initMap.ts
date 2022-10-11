@@ -14,6 +14,7 @@ import { style } from "./style";
 
 export const defaultZoom = 6;
 export const maxAllowedZoom = 16;
+export const maxBounds: mapboxgl.LngLatBoundsLike = [-9, 47, 4, 61];
 
 /** Configure the map's properties and subscribe to its events. */
 export const initMap = (container) => {
@@ -23,6 +24,7 @@ export const initMap = (container) => {
     center: new mapboxgl.LngLatBounds(englandAndWalesBbox).getCenter(),
     zoom: defaultZoom,
     maxZoom: maxAllowedZoom - 0.001, // prevent layers from disappearing at absolute max zoom
+    maxBounds
   });
 
   map.addControl(new mapboxgl.NavigationControl({ showCompass: false }));

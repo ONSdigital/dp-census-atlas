@@ -76,11 +76,11 @@
                 variable: variable.slug,
                 category: category.slug,
               })}
-              class="flex gap-2 items-center p-2 border-t-[1px] border-t-slate-300 cursor-pointer
-                {category.slug === categorySlug ? 'bg-onspale' : ''}"
+              class="flex gap-2 items-center p-2 border-t-[1px] border-t-slate-300 cursor-pointer custom-ring"
+              class:bg-onspale={category.slug === categorySlug}
             >
               <RadioButton selected={category.slug === categorySlug} />
-              {category.name}
+              <div>{category.name}</div>
             </a>
           </li>
         {/each}

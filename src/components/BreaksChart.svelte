@@ -18,9 +18,7 @@
   };
 </script>
 
-<!-- <div class="flex justify-center absolute bottom-8 left-1/2 -translate-x-1/2">
-  <div class="z-abovemap bg-white py-4"> -->
-<div class="box-border relative w-full h-5 mb-8">
+<div class="box-border relative w-full h-5 mb-8 text-xs sm:text-base">
   {#each breaks.slice(1) as brk, i}
     <div
       class="absolute top-0 h-full"
@@ -59,8 +57,6 @@
   {/if}
 </div>
 
-<!-- </div>
-</div> -->
 <style>
   .line {
     position: absolute;

@@ -33,51 +33,49 @@
 
 {#if category || $selectedGeographyStore?.geoType !== "ew"}
   <div class={`absolute bottom-3 lg:bottom-8 flex w-full justify-center`}>
-    <div class="z-abovemap w-full max-w-[50rem] mx-0 lg:mx-4 bg-white bg-opacity-90 px-4 py-2 lg:px-5 lg:py-3">
-      <div class="flex gap-3 mb-3 items-center">
-        <!-- big percantage -->
-        {#if category && categoryValueForSelectedGeography}
+    <div
+      class="z-abovemap w-full max-w-[50rem] mx-3 lg:mx-4 bg-white bg-opacity-90 px-3 lg:px-5 py-2 lg:py-3 border-[1px] lg:border-[1px] border-ons-grey-15"
+    >
+      {#if category && categoryValueForSelectedGeography}
+        <!-- full legend -->
+        <div class="flex gap-3 mb-3 items-center">
           <div class="whitespace-nowrap">
-            <span class="text-4xl lg:text-5xl font-bold">
+            <span class="text-4xl md:text-5xl font-bold">
               {ratioToRoundedPercentageString(categoryValueForSelectedGeography)}</span
-            ><span class="text-3xl lg:text-4xl font-bold">%</span>
+            ><span class="text-3xl md:text-4xl font-bold">%</span>
           </div>
-        {/if}
-        <!-- legend text -->
-        <div class="flex-grow">
-          {#if category && categoryValueForSelectedGeography}
+          <div class="flex-grow leading-[0px]">
             <div class="">
-              <span class="text-base lg:text-xl">
+              <span class="text-xs sm:text-base md:text-xl">
                 {formatTemplateString(variable, category, selectedGeographyDisplayName, category.legend_str_1)}
               </span>
               <GeoTypeBadge geoType={$selectedGeographyStore?.geoType} />
-              <span class="text-base lg:text-xl">
+              <span class="text-xs sm:text-base md:text-xl">
                 {formatTemplateString(variable, category, selectedGeographyDisplayName, category.legend_str_2)}
               </span>
             </div>
-            <div class="text-xs lg:text-xl font-bold">
+            <div class="text-xs sm:text-base md:text-xl font-bold">
               {formatTemplateString(variable, category, selectedGeographyDisplayName, category.legend_str_3)}
             </div>
-          {:else if category}
-            <div class="">
-              <span class="text-xl">
-                {selectedGeographyDisplayName}
-              </span>
-              <GeoTypeBadge geoType={$selectedGeographyStore?.geoType} />
-            </div>
-            <div class="text-lg font-bold">
+          </div>
+        </div>
+      {:else}
+        <!-- partial legend -->
+        <div class="mb-3">
+          <div class="">
+            <span class="text-xs sm:text-base md:text-xl">
+              {selectedGeographyDisplayName}
+            </span>
+            <GeoTypeBadge geoType={$selectedGeographyStore?.geoType} />
+          </div>
+          {#if category}
+            <div class="text-xs sm:text-base md:text-xl font-bold">
               {category.name}
-            </div>
-          {:else if $selectedGeographyStore?.geoType !== "ew"}
-            <div class="">
-              <span class="text-xl">
-                {selectedGeographyDisplayName}
-              </span>
-              <GeoTypeBadge geoType={$selectedGeographyStore?.geoType} />
             </div>
           {/if}
         </div>
-      </div>
+      {/if}
+
       {#if category && $vizStore}
         <BreaksChart selected={categoryValueForSelectedGeography} suffix="%" {breaks} colors={choroplethColours} />
       {/if}

@@ -12,7 +12,7 @@
 
 {#if $contentStore}
   {#if $contentStore.variableGroups.length > 0}
-    <div class="inset-0 absolute lg:flex flex-col text-onsblack" class:flex={$appParamsStore.embed}>
+    <div class="inset-0 absolute lg:flex flex-col min-w-[370px] text-onsblack" class:flex={$appParamsStore.embed}>
       <Header />
       <div class="flex-1 flex flex-col-reverse lg:flex-row overflow-y-auto">
         <div

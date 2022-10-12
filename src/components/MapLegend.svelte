@@ -37,6 +37,7 @@
       legendStrings.third = category.legend_str_3
     }
   }
+  // the arrow moves! needs to nail that down
   dataUpdateInProgressStore.subscribe( (val) => {
     if (!val) {
       updateLegendStrs()

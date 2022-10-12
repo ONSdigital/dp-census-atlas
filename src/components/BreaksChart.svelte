@@ -18,7 +18,7 @@
   };
 </script>
 
-<div class="box-border relative w-full h-5 mb-8 text-xs sm:text-base">
+<div class="mt-3 box-border relative w-full h-5 mb-8 text-xs sm:text-base">
   {#each breaks.slice(1) as brk, i}
     <div
       class="absolute top-0 h-full"

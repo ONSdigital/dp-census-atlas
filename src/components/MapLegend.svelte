@@ -38,7 +38,7 @@
     >
       {#if category && categoryValueForSelectedGeography}
         <!-- full legend -->
-        <div class="flex gap-3 mb-3 items-center">
+        <div class="flex gap-3 items-center">
           <div class="whitespace-nowrap">
             <span class="text-4xl md:text-5xl font-bold">
               {ratioToRoundedPercentageString(categoryValueForSelectedGeography)}</span
@@ -61,7 +61,7 @@
         </div>
       {:else}
         <!-- partial legend -->
-        <div class="mb-3">
+        <div class="">
           <div class="">
             <span class="text-xs sm:text-base md:text-xl">
               {selectedGeographyDisplayName}

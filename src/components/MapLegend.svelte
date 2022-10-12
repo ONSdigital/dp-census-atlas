@@ -37,8 +37,10 @@
       legendStrings.third = category.legend_str_3
     }
   }
-  dataUpdateInProgressStore.subscribe( () => {
-    updateLegendStrs()
+  dataUpdateInProgressStore.subscribe( (val) => {
+    if (!val) {
+      updateLegendStrs()
+    }
   })
 </script>
 

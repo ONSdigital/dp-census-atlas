@@ -32,7 +32,7 @@
 
 {#if $mapStore}
   <div class={`absolute top-3 left-3 lg:top-8 lg:left-8 `}>
-    <div class="flex gap-1">
+    <div class="flex gap-1 text-sm lg:text-base">
       <div class="flex">
         <div class="z-abovemap px-3 py-1  rounded-l bg-ons-census text-ons-grey-5 font-bold">
           {$mapStore.geoType.toUpperCase()}

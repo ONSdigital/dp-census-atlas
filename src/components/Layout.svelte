@@ -12,7 +12,7 @@
 
 {#if $contentStore}
   {#if $contentStore.variableGroups.length > 0}
-    <div class="inset-0 lg:absolute lg:flex flex-col text-onsblack">
+    <div class="inset-0 absolute lg:flex flex-col text-onsblack" class:flex={$appParamsStore.embed}>
       <Header />
       <div class="flex-1 flex flex-col-reverse lg:flex-row overflow-y-auto">
         <div
@@ -22,7 +22,6 @@
           <slot />
         </div>
         <div class:hidden={hideMapOnMobile} class="lg:block flex-1 grow-[7] relative">
-          foo
           <Map />
           <MapTips />
           <MapLegend />

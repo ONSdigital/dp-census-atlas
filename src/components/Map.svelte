@@ -16,4 +16,9 @@
   });
 </script>
 
-<div class="w-full lg:h-full" class:h-full={$appParamsStore.embed} bind:this={mapContainer} />
+<div
+  class="w-full lg:h-full"
+  class:h-[34rem]={!$appParamsStore.embed}
+  class:h-full={$appParamsStore.embed}
+  bind:this={mapContainer}
+/>

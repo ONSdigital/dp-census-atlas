@@ -99,6 +99,8 @@ const getGeoTypeForFeatureDensity = (map: mapboxgl.Map): GeoType => {
     } else {
       return available_geotypes[available_geotypes.length - 1];
     }
+  } else {
+    return "lad";
   }
 };
 

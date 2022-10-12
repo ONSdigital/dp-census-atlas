@@ -4,10 +4,10 @@ import mapboxgl, { GeoJSONSource, Map } from "mapbox-gl";
 import { fromEvent, merge } from "rxjs";
 import { delay, throttleTime } from "rxjs/operators";
 import type { GeoType } from "../types";
-import { vizStore, mapStore, selectedGeographyStore, preventFlyToGeographyStore } from "../stores/stores";
+import { vizStore, categoryStore, mapStore, selectedGeographyStore, preventFlyToGeographyStore } from "../stores/stores";
 import { englandAndWalesBbox, preventFlyToGeography } from "../helpers/geographyHelper";
 import { selectGeography } from "../helpers/navigationHelper";
-import { initMapLayers } from "./initMapLayers";
+import { initMapLayers, refreshMapLayers } from "./initMapLayers";
 import { renderMapViz } from "./renderMapViz";
 import { layers } from "./layers";
 import { style } from "./style";
@@ -32,6 +32,7 @@ export const initMap = (container) => {
   map.on("load", () => {
     initMapLayers(map);
     initSelectedGeographyLayers(map);
+    categoryStore.subscribe(() => refreshMapLayers(map)); // Removes feature states when data changes
   });
 
   fromEvent(map, "load")

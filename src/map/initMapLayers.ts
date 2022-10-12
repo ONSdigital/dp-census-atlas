@@ -3,6 +3,17 @@ import { centroidsGeojson } from "../helpers/quadsHelper";
 
 export const layerBounds = [-6.418, 49.864, 1.764, 55.812];
 
+export const refreshMapLayers = (map) => {
+  layersWithSiblings().forEach((l) => {
+    if (map.getSource(l.layer.name)) {
+      if (map.getLayer(`${l.layer.name}-features`)) map.removeLayer(`${l.layer.name}-features`);
+      if (map.getLayer(`${l.layer.name}-outlines`)) map.removeLayer(`${l.layer.name}-outlines`);
+      map.removeSource(l.layer.name);
+    }
+  });
+  initMapLayers(map);
+}
+
 export const initMapLayers = (map) => {
   layersWithSiblings().forEach((l) => {
     map.addSource(l.layer.name, {
@@ -106,16 +117,18 @@ export const initMapLayers = (map) => {
   });
 
   // add OA quad centroid layer for feature density calculation
-  map.addSource("centroids", centroidsGeojson);
-  map.addLayer({
-    id: "centroids",
-    type: "circle",
-    source: "centroids",
-    paint: {
-      "circle-radius": 1,
-      "circle-color": "rgba(255,255,255,0)",
-    },
-  });
+  if (!map.getSource("centroids")) {
+    map.addSource("centroids", centroidsGeojson);
+    map.addLayer({
+      id: "centroids",
+      type: "circle",
+      source: "centroids",
+      paint: {
+        "circle-radius": 1,
+        "circle-color": "rgba(255,255,255,0)",
+      },
+    });
+  }
 
   // todo: use rxjs to implement better hover
   // fromEvent(map, "mousemove")

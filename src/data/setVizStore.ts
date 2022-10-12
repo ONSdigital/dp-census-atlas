@@ -1,7 +1,8 @@
 import type * as dsv from "d3-dsv"; // https://github.com/d3/d3/issues/3469
+import { get } from "svelte/store";
 import { fetchTileDataForBbox, fetchBreaks } from "./api";
 import type { Bbox, Category, GeoType, VariableGroup } from "../types";
-import { vizStore } from "../stores/stores";
+import { vizStore, categoryStore } from "../stores/stores";
 import { getCategoryInfo } from "../helpers/categoryHelpers";
 
 export const setVizStore = async (args: {
@@ -12,6 +13,8 @@ export const setVizStore = async (args: {
   zoom: number;
   variableGroups: VariableGroup[];
 }) => {
+  // Setting categoryStore before visStore seems to avoid a race condition
+  if (get(categoryStore) !== args.category) categoryStore.set(args.category);
   const [places, breaksData] = await Promise.all([fetchTileDataForBbox(args), fetchBreaks(args)]);
   vizStore.set({
     geoType: args.geoType,

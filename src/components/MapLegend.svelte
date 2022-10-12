@@ -32,52 +32,54 @@
 {#if category || $selectedGeographyStore?.geoType !== "ew"}
   <div class={`absolute bottom-8 left-1/2 -translate-x-1/2 `}>
     <div class="z-abovemap bg-white px-6 py-3 w-[40rem] h-[8.6rem]">
-      <div class="flex gap-3 mb-3">
-        <!-- big percantage -->
-        {#if category && categoryValueForSelectedGeography}
-          <div class="whitespace-nowrap">
-            <span class="text-5xl font-bold"> {ratioToRoundedPercentageString(categoryValueForSelectedGeography)}</span><span
-              class="text-4xl font-bold">%</span
-            >
-          </div>
-        {/if}
-        <div class="flex-grow">
+      {#if $dataUpdateInProgressStore}
+        <div class="flex gap-3 mb-3">
+          <!-- big percantage -->
           {#if category && categoryValueForSelectedGeography}
             <div class="whitespace-nowrap">
-              <span class="text-5xl font-bold"> {ratioToRoundedPercentageString(categoryValueForSelectedGeography, 1)}</span><span
+              <span class="text-5xl font-bold"> {ratioToRoundedPercentageString(categoryValueForSelectedGeography)}</span><span
                 class="text-4xl font-bold">%</span
               >
             </div>
           {/if}
           <div class="flex-grow">
             {#if category && categoryValueForSelectedGeography}
-              <div class="text-base leading-5">
-                <span>
-                  {formatTemplateString(variable, category, selectedGeographyDisplayName, category.legend_str_1)}
-                  {formatTemplateString(variable, category, selectedGeographyDisplayName, category.legend_str_2)}
-                </span>
+              <div class="whitespace-nowrap">
+                <span class="text-5xl font-bold"> {ratioToRoundedPercentageString(categoryValueForSelectedGeography, 1)}</span><span
+                  class="text-4xl font-bold">%</span
+                >
               </div>
-              <div class="-mt-0.5 text-lg font-bold">
-                {formatTemplateString(variable, category, selectedGeographyDisplayName, category.legend_str_3)}
-              </div>
-            {:else if category}
-              <div class="">{selectedGeographyDisplayName}</div>
-              <div class="text-lg font-bold">
-                {category.name}
-              </div>
-            {:else if $selectedGeographyStore?.geoType !== "ew"}
-              <div class="">{selectedGeographyDisplayName}</div>
             {/if}
+            <div class="flex-grow">
+              {#if category && categoryValueForSelectedGeography}
+                <div class="text-base leading-5">
+                  <span>
+                    {formatTemplateString(variable, category, selectedGeographyDisplayName, category.legend_str_1)}
+                    {formatTemplateString(variable, category, selectedGeographyDisplayName, category.legend_str_2)}
+                  </span>
+                </div>
+                <div class="-mt-0.5 text-lg font-bold">
+                  {formatTemplateString(variable, category, selectedGeographyDisplayName, category.legend_str_3)}
+                </div>
+              {:else if category}
+                <div class="">{selectedGeographyDisplayName}</div>
+                <div class="text-lg font-bold">
+                  {category.name}
+                </div>
+              {:else if $selectedGeographyStore?.geoType !== "ew"}
+                <div class="">{selectedGeographyDisplayName}</div>
+              {/if}
+            </div>
           </div>
         </div>
-      </div>
-      {#if category && $vizStore}
-        <BreaksChart
-          selected={categoryValueForSelectedGeography}
-          suffix="%"
-          breaks={breaks}
-          colors={choroplethColours}
-        />
+        {#if category && $vizStore}
+          <BreaksChart
+            selected={categoryValueForSelectedGeography}
+            suffix="%"
+            breaks={breaks}
+            colors={choroplethColours}
+          />
+        {/if}
       {/if}
     </div>
   </div>

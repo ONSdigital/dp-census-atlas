@@ -22,6 +22,24 @@
   $: categorySlug = params.category;
   $: category = variable ? defaultChoroplethClassification.categories.find((c) => c.slug === categorySlug) : undefined;
   $: breaks = $vizStore ? [$vizStore?.minMaxVals[0], ...$vizStore.breaks] : undefined
+
+  const legendStrings = {
+    bigPercentage: "",
+    first: "",
+    second: "",
+    third: "",
+  }
+  const updateLegendStrs = () => {
+    if (category && categoryValueForSelectedGeography && !$dataUpdateInProgressStore) {
+      legendStrings.bigPercentage = ratioToRoundedPercentageString(categoryValueForSelectedGeography)
+      legendStrings.first = category.legend_str_1.replace(new RegExp('{location}', 'g'), selectedGeographyDisplayName)
+      legendStrings.second = category.legend_str_2
+      legendStrings.third = category.legend_str_3
+    }
+  }
+  dataUpdateInProgressStore.subscribe( () => {
+    updateLegendStrs()
+  })
 </script>
 
 <!-- todo: new design for all four states -->
@@ -33,12 +51,11 @@
 {#if category || $selectedGeographyStore?.geoType !== "ew"}
   <div class={`absolute bottom-8 left-1/2 -translate-x-1/2 `}>
     <div class="z-abovemap bg-white px-6 py-3 w-[40rem] h-[8.6rem]">
-      {#if !$dataUpdateInProgressStore}
         <div class="flex gap-3 mb-3">
           <!-- big percantage -->
           {#if category && categoryValueForSelectedGeography}
             <div class="whitespace-nowrap">
-              <span class="text-5xl font-bold"> {ratioToRoundedPercentageString(categoryValueForSelectedGeography)}</span><span
+              <span class="text-5xl font-bold"> {legendStrings.bigPercentage}</span><span
                 class="text-4xl font-bold">%</span
               >
             </div>
@@ -47,12 +64,12 @@
             {#if category && categoryValueForSelectedGeography}
               <div class="text-base leading-5">
                 <span>
-                  {formatTemplateString(variable, category, selectedGeographyDisplayName, category.legend_str_1)}
-                  {formatTemplateString(variable, category, selectedGeographyDisplayName, category.legend_str_2)}
+                  {legendStrings.first}
+                  {legendStrings.second}
                 </span>
               </div>
               <div class="-mt-0.5 text-lg font-bold">
-                {formatTemplateString(variable, category, selectedGeographyDisplayName, category.legend_str_3)}
+                {legendStrings.third}
               </div>
             {:else if category}
               <div class="">{selectedGeographyDisplayName}</div>
@@ -72,7 +89,6 @@
             colors={choroplethColours}
           />
         {/if}
-      {/if}
     </div>
   </div>
 {/if}

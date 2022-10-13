@@ -1,0 +1,9 @@
+{
+    "cantabular_metadata_dir": "ar2776-c21ew_metadata-v1-3_cantab_20221011-22",
+    "variable_groups_spec_file": "Atlas_variable_groups.json",
+    "rich_content_spec_file": "Rich_content_product_specifications.csv",
+    "category_legend_strs_file": "Atlas_legend_strings.csv",
+    "variable_descriptions_file": "Atlas_variables_short_descriptions.csv",
+    "variable_geotype_availability_file": "Available_geotypes_for_variables.csv",
+    "version": "2021-v3"
+}

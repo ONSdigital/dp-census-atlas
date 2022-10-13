@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/ONSdigital/dp-census-atlas/mktiles/types"
+	"github.com/ONSdigital/dp-census-atlas/scripts/mktiles/types"
 
 	"github.com/jszwec/csvutil"
 	"github.com/spkg/bom"

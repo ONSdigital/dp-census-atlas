@@ -6,7 +6,7 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/ONSdigital/dp-census-atlas/mktiles/types"
+	"github.com/ONSdigital/dp-census-atlas/scripts/mktiles/types"
 
 	"github.com/twpayne/go-geom"
 	"github.com/twpayne/go-geom/encoding/geojson"

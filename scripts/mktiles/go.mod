@@ -1,4 +1,4 @@
-module github.com/ONSdigital/dp-census-atlas/mktiles
+module github.com/ONSdigital/dp-census-atlas/scripts/mktiles
 
 go 1.19
 

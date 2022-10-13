@@ -10,7 +10,7 @@ import (
 	"regexp"
 	"strconv"
 
-	"github.com/ONSdigital/dp-census-atlas/mktiles/types"
+	"github.com/ONSdigital/dp-census-atlas/scripts/mktiles/types"
 )
 
 // LoadAll loads metrics CSV files from dir.

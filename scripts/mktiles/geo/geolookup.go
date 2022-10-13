@@ -3,7 +3,7 @@ package geo
 import (
 	"fmt"
 
-	"github.com/ONSdigital/dp-census-atlas/mktiles/types"
+	"github.com/ONSdigital/dp-census-atlas/scripts/mktiles/types"
 )
 
 // Lookup is not a good name for this.

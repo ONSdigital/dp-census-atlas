@@ -1,7 +1,7 @@
 package metric
 
 import (
-	"github.com/ONSdigital/dp-census-atlas/mktiles/types"
+	"github.com/ONSdigital/dp-census-atlas/scripts/mktiles/types"
 )
 
 // A Table holds a table of metric (category) values.

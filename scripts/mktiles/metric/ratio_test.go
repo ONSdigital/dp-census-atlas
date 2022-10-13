@@ -3,7 +3,7 @@ package metric
 import (
 	"testing"
 
-	"github.com/ONSdigital/dp-census-atlas/mktiles/types"
+	"github.com/ONSdigital/dp-census-atlas/scripts/mktiles/types"
 )
 
 func Test_CalcRatios(t *testing.T) {

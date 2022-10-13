@@ -6,8 +6,8 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/ONSdigital/dp-census-atlas/mktiles/files"
-	"github.com/ONSdigital/dp-census-atlas/mktiles/types"
+	"github.com/ONSdigital/dp-census-atlas/scripts/mktiles/files"
+	"github.com/ONSdigital/dp-census-atlas/scripts/mktiles/types"
 
 	"github.com/jtrim-ons/ckmeans/pkg/ckmeans"
 )

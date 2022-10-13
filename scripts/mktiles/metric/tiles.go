@@ -5,8 +5,8 @@ import (
 	"path/filepath"
 	"strconv"
 
-	"github.com/ONSdigital/dp-census-atlas/mktiles/files"
-	"github.com/ONSdigital/dp-census-atlas/mktiles/types"
+	"github.com/ONSdigital/dp-census-atlas/scripts/mktiles/files"
+	"github.com/ONSdigital/dp-census-atlas/scripts/mktiles/types"
 )
 
 // Temporarily emulate previous version by not including category in header

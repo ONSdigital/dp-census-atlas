@@ -5,7 +5,7 @@ import (
 	"math/rand"
 	"os"
 
-	"github.com/ONSdigital/dp-census-atlas/mktiles/types"
+	"github.com/ONSdigital/dp-census-atlas/scripts/mktiles/types"
 )
 
 // Fake generates fake metric data.

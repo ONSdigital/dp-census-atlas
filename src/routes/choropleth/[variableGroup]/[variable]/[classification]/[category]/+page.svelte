@@ -3,6 +3,6 @@
   import CategoryPage from "../../../../../../components/CategoryPage.svelte";
 </script>
 
-<Layout>
+<Layout hideMapOnMobile={false}>
   <CategoryPage />
 </Layout>

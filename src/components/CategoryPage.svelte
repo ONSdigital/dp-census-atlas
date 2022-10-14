@@ -49,7 +49,7 @@
   <Heading />
 </div>
 <div class="h-full flex flex-col">
-  <div class="px-6 ">
+  <div class="px-6 border-t-[1px] border-t-ons-grey-15">
     <AreaPanel />
     <section class="mb-8">
       <h2 class="pt-3 font-bold text-slate-500">Topic</h2>
@@ -66,11 +66,6 @@
         <div>
           {variable.desc}
         </div>
-        <!--
-        <div class="ml-0.5 text-sm bg-ons-census text-white font-bold px-1 rounded-sm">
-          {variable.code}
-        </div>
-        -->
       </div>
       <ul class="flex flex-col last:border-b-[1px]">
         {#each defaultChoroplethClassification.categories as category}
@@ -81,11 +76,11 @@
                 variable: variable.slug,
                 category: category.slug,
               })}
-              class="flex gap-2 items-center p-2 border-t-[1px] border-t-slate-300 cursor-pointer
-                {category.slug === categorySlug ? 'bg-onspale' : ''}"
+              class="flex gap-2 items-center p-2 border-t-[1px] border-t-slate-300 cursor-pointer custom-ring"
+              class:bg-onspale={category.slug === categorySlug}
             >
               <RadioButton selected={category.slug === categorySlug} />
-              {category.name}
+              <div>{category.name}</div>
             </a>
           </li>
         {/each}
@@ -93,7 +88,7 @@
     </section>
   </div>
   <div class="grow" />
-  <div class="p-6 pt-4 bg-ons-grey-5">
+  <div class="p-6 pt-4 bg-ons-grey-5 border-t-ons-grey-15 border-t-[1px]">
     <CategoryPageLinks />
   </div>
 </div>

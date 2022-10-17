@@ -70,17 +70,14 @@ export const fetchBreaks = async (args: {
     ToDo - refactor json files to match required format (see function output defintions above)
   */
   const breaks = Object.fromEntries(
-    Object.keys(breaksRaw).map((code) => [code, uniqueRoundedBreaks(breaksRaw[code][args.geoType.toUpperCase()])
-    ]),
+    Object.keys(breaksRaw).map((code) => [code, uniqueRoundedBreaks(breaksRaw[code][args.geoType.toUpperCase()])]),
   );
   const minMax = Object.fromEntries(
     Object.keys(breaksRaw).map((code) => [
-      code, 
-      breaksRaw[code][`${args.geoType.toUpperCase()}_min_max`].map((n) => roundedRatio(n))
+      code,
+      breaksRaw[code][`${args.geoType.toUpperCase()}_min_max`].map((n) => roundedRatio(n)),
     ]),
   );
-  console.log(breaksRaw)
-  console.log(breaks)
   return { breaks, minMax };
 };
 

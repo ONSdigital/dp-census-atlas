@@ -5,10 +5,21 @@
   import Map from "./Map.svelte";
   import MapTips from "./MapTips.svelte";
   import MapLegend from "./MapLegend.svelte";
+  import OnsAnalyticsBanner from "./OnsAnalyticsBanner.svelte";
   import { appParamsStore, contentStore } from "../stores/stores";
 
   export let hideMapOnMobile = true;
+
+  // Google Analytics
+  const analyticsId = "GTM-MBCBVQS";
+  const analyticsProps = {
+    contentTitle: "Census maps",
+    releaseDate: "20221018",
+    contentType: "exploratory",
+  };
 </script>
+
+<OnsAnalyticsBanner {analyticsId} {analyticsProps} />
 
 {#if $contentStore}
   {#if $contentStore.variableGroups.length > 0}

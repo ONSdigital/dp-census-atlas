@@ -65,7 +65,7 @@
       <div class="mt-4 mb-2">
         {variable.desc}
       </div>
-      <ul class="flex flex-col last:border-b-[1px] mb-5">
+      <ul class="flex flex-col last:border-b-[1px] mb-4">
         {#each classification.categories as category}
           <li class="">
             <a

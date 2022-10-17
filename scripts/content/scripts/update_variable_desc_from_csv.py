@@ -12,7 +12,7 @@ import sys
 from scripts.census_objects import load_content, write_content, CensusVariableGroup
 
 
-SHORT_DEFINITION_HEADER = "Short definition"
+SHORT_DEFINITION_HEADER = "Atlas short description"
 
 
 def variable_desc_spec_rows_from_csv(variable_desc_file: Path or str) -> list[dict]:

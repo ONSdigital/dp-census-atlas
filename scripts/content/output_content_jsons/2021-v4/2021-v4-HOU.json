@@ -1,0 +1,787 @@
+{
+  "meta": {
+    "created_at": "2022-10-18-09-26-27",
+    "cantabular_metadata_source": "ar2776-c21ew_metadata-v1-3_cantab_20221011-22",
+    "rich_content_spec_file_used_to_filter": "Rich_content_product_specifications.csv",
+    "legend_strs_file": "Rich_content_product_specifications.csv",
+    "variable_desc_file": "Atlas_variables_short_descriptions.csv",
+    "release": "2021-v4-HOU"
+  },
+  "content": [
+    {
+      "name": "Housing",
+      "slug": "housing",
+      "desc": "Types of homes and the people living in them.",
+      "variables": [
+        {
+          "name": "Accommodation type",
+          "code": "accommodation_type",
+          "slug": "accommodation-type",
+          "desc": "The type of buildings people live in.",
+          "long_desc": "The type of building or structure used or available by an individual or household.\n\nThis could be:\n* the whole house or bungalow\n* a flat in a purpose-built block of flats in a converted house\n* a flat in a converted house\n* a temporary or mobile structure, such as a caravan\n\nAdditional information\n\nMore information about accommodation types\n\nWhole house or bungalow\nThis property type is not divided into flats or other living accommodation. There are three types of whole houses or bungalows.\n\nDetached\nNone of the living accommodation is attached to another property but can be attached to a garage.\n\nSemi-detached\nThe living accommodation is joined to another house or bungalow by a common wall that they share.\n\nTerraced\nA mid-terraced house is located between two other houses and shares two common walls. An end-of-terrace house is part of a terraced development but only shares one common wall.\n\nFlats (Apartments) and maisonettes\nAn apartment is another word for a flat. A maisonette is a 2-storey flat.",
+          "units": "Household",
+          "topic_code": "HOU",
+          "available_geotypes": [
+            "oa",
+            "msoa",
+            "lad"
+          ],
+          "classifications": [
+            {
+              "code": "accommodation_type_3a",
+              "slug": "accommodation-type-3a",
+              "desc": "Accommodation type (3 categories)",
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "categories": [
+                {
+                  "name": "Whole house or bungalow",
+                  "slug": "whole-house-or-bungalow",
+                  "code": "accommodation_type_3a-001",
+                  "legend_str_1": "of homes in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "whole houses or bungalows"
+                },
+                {
+                  "name": "Flat, maisonette or apartment",
+                  "slug": "flat-maisonette-or-apartment",
+                  "code": "accommodation_type_3a-002",
+                  "legend_str_1": "of homes in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "flats, maisonettes or apartments"
+                },
+                {
+                  "name": "A caravan or other mobile or temporary structure",
+                  "slug": "a-caravan-or-other-mobile-or-temporary-structure",
+                  "code": "accommodation_type_3a-003",
+                  "legend_str_1": "of homes in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "a caravan or other mobile or temporary structure"
+                }
+              ]
+            },
+            {
+              "code": "accommodation_type_5a",
+              "slug": "accommodation-type-5a",
+              "desc": "Accommodation type (5 categories)",
+              "categories": [
+                {
+                  "name": "Whole house or bungalow: Detached",
+                  "slug": "whole-house-or-bungalow-detached",
+                  "code": "accommodation_type_5a-001",
+                  "legend_str_1": "of homes in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "detached whole houses or bungalows"
+                },
+                {
+                  "name": "Whole house or bungalow: Semi-detached",
+                  "slug": "whole-house-or-bungalow-semi-detached",
+                  "code": "accommodation_type_5a-002",
+                  "legend_str_1": "of homes in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "semi-detached whole houses or bungalows"
+                },
+                {
+                  "name": "Whole house or bungalow: Terraced",
+                  "slug": "whole-house-or-bungalow-terraced",
+                  "code": "accommodation_type_5a-003",
+                  "legend_str_1": "of homes in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "terraced whole houses or bungalows"
+                },
+                {
+                  "name": "Flat, maisonette or apartment",
+                  "slug": "flat-maisonette-or-apartment",
+                  "code": "accommodation_type_5a-004",
+                  "legend_str_1": "of homes in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "flats, maisonettes or apartments"
+                },
+                {
+                  "name": "A caravan or other mobile or temporary structure",
+                  "slug": "a-caravan-or-other-mobile-or-temporary-structure",
+                  "code": "accommodation_type_5a-005",
+                  "legend_str_1": "of homes in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "a caravan or other mobile or temporary structure"
+                }
+              ]
+            },
+            {
+              "code": "accommodation_type",
+              "slug": "accommodation-type",
+              "desc": "Accommodation type (8 categories)",
+              "categories": [
+                {
+                  "name": "Detached",
+                  "slug": "detached",
+                  "code": "accommodation_type-001",
+                  "legend_str_1": "of homes in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "detached"
+                },
+                {
+                  "name": "Semi-detached",
+                  "slug": "semi-detached",
+                  "code": "accommodation_type-002",
+                  "legend_str_1": "of homes in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "semi-detached"
+                },
+                {
+                  "name": "Terraced",
+                  "slug": "terraced",
+                  "code": "accommodation_type-003",
+                  "legend_str_1": "of homes in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "terraced"
+                },
+                {
+                  "name": "In a purpose-built block of flats or tenement",
+                  "slug": "in-a-purpose-built-block-of-flats-or-tenement",
+                  "code": "accommodation_type-004",
+                  "legend_str_1": "of homes in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "in a purpose-built block of flats or tenement"
+                },
+                {
+                  "name": "Part of a converted or shared house, including bedsits",
+                  "slug": "part-of-a-converted-or-shared-house-including-bedsits",
+                  "code": "accommodation_type-005",
+                  "legend_str_1": "of homes in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "part of a converted or shared house, including bedsits"
+                },
+                {
+                  "name": "Part of another converted building, for example, former school, church or warehouse",
+                  "slug": "part-of-another-converted-building-for-example-former-school-church-or-warehouse",
+                  "code": "accommodation_type-006",
+                  "legend_str_1": "of homes in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "part of another converted building, for example, former school, church or warehouse"
+                },
+                {
+                  "name": "In a commercial building, for example, in an office building, hotel or over a shop",
+                  "slug": "in-a-commercial-building-for-example-in-an-office-building-hotel-or-over-a-shop",
+                  "code": "accommodation_type-007",
+                  "legend_str_1": "of homes in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "in a commercial building, for example, in an office building, hotel or over a shop"
+                },
+                {
+                  "name": "A caravan or other mobile or temporary structure",
+                  "slug": "a-caravan-or-other-mobile-or-temporary-structure",
+                  "code": "accommodation_type-008",
+                  "legend_str_1": "of homes in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "a caravan or other mobile or temporary structure"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Second address indicator",
+          "code": "alternative_address_indicator",
+          "slug": "second-address-indicator",
+          "desc": "An address (in or out of the UK) a person stays at for more than 30 days per year that is not their place of usual residence.",
+          "long_desc": "\"An address (in or out of the UK) a person stays at for more than 30 days per year that is not their place of usual residence. \n \nAdditional \nSecond addresses typically include: \n* armed forces bases\n* addresses used by people working away from home\n* a students home address\n* the address of another parent or guardian\n* a holiday home\n  \nIf a person with a second address was staying there on census night, they were classed as a visitor to the second address but counted as a usual resident at their home address.",
+          "units": "Person",
+          "topic_code": "HOU",
+          "available_geotypes": [
+            "oa",
+            "msoa",
+            "lad"
+          ],
+          "classifications": [
+            {
+              "code": "alternative_address_indicator",
+              "slug": "alternative-address-indicator",
+              "desc": "Second address indicator (3 categories)",
+              "choropleth_default": true,
+              "categories": [
+                {
+                  "name": "No second address",
+                  "slug": "no-second-address",
+                  "code": "alternative_address_indicator-001",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "no second address"
+                },
+                {
+                  "name": "Second address is in the UK",
+                  "slug": "second-address-is-in-the-uk",
+                  "code": "alternative_address_indicator-002",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "a second address in the UK"
+                },
+                {
+                  "name": "Second address is outside the UK",
+                  "slug": "second-address-is-outside-the-uk",
+                  "code": "alternative_address_indicator-003",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "a second address outside the UK"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Type of central heating in household",
+          "code": "heating_type",
+          "slug": "type-of-central-heating-in-household",
+          "desc": "Central heating is a heating system used to heat multiple rooms in a building.",
+          "long_desc": "Central heating is a heating system used to heat multiple rooms in a building by circulating air or heated water through pipes to radiators or vents. Single or multiple fuel sources can fuel these systems. \n\nAdditional \nCentral heating systems that are unused or not working are still considered. No information is available for household spaces with no usual residents.",
+          "units": "Household",
+          "topic_code": "HOU",
+          "available_geotypes": [
+            "oa",
+            "msoa",
+            "lad"
+          ],
+          "classifications": [
+            {
+              "code": "heating_type_3a",
+              "slug": "heating-type-3a",
+              "desc": "Type of central heating in household (3 categories)",
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "categories": [
+                {
+                  "name": "Does not have central heating",
+                  "slug": "does-not-have-central-heating",
+                  "code": "heating_type_3a-001",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "no central heating"
+                },
+                {
+                  "name": "Does have central heating",
+                  "slug": "does-have-central-heating",
+                  "code": "heating_type_3a-002",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have ",
+                  "legend_str_3": "central heating"
+                }
+              ]
+            },
+            {
+              "code": "heating_type",
+              "slug": "heating-type",
+              "desc": "Type of central heating in household (13 categories)",
+              "categories": [
+                {
+                  "name": "No central heating",
+                  "slug": "no-central-heating",
+                  "code": "heating_type-001",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have ",
+                  "legend_str_3": "no central heating"
+                },
+                {
+                  "name": "Mains gas only",
+                  "slug": "mains-gas-only",
+                  "code": "heating_type-002",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have ",
+                  "legend_str_3": "mains gas central heating"
+                },
+                {
+                  "name": "Tank or bottled gas only",
+                  "slug": "tank-or-bottled-gas-only",
+                  "code": "heating_type-003",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have ",
+                  "legend_str_3": "tank or bottled gas central heating"
+                },
+                {
+                  "name": "Electric only",
+                  "slug": "electric-only",
+                  "code": "heating_type-004",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have ",
+                  "legend_str_3": "electric central heating"
+                },
+                {
+                  "name": "Oil only",
+                  "slug": "oil-only",
+                  "code": "heating_type-005",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have ",
+                  "legend_str_3": "oil central heating"
+                },
+                {
+                  "name": "Wood only",
+                  "slug": "wood-only",
+                  "code": "heating_type-006",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have ",
+                  "legend_str_3": "wood central heating"
+                },
+                {
+                  "name": "Solid fuel only",
+                  "slug": "solid-fuel-only",
+                  "code": "heating_type-007",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have ",
+                  "legend_str_3": "solid fuel central heating"
+                },
+                {
+                  "name": "Renewable energy only",
+                  "slug": "renewable-energy-only",
+                  "code": "heating_type-008",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have ",
+                  "legend_str_3": "renewables central heating"
+                },
+                {
+                  "name": "District or communal heat networks only",
+                  "slug": "district-or-communal-heat-networks-only",
+                  "code": "heating_type-009",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "part of a district or communal heat network"
+                },
+                {
+                  "name": "Other central heating only",
+                  "slug": "other-central-heating-only",
+                  "code": "heating_type-010",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have ",
+                  "legend_str_3": "another type of central heating"
+                },
+                {
+                  "name": "Two or more types of central heating (not including renewable energy)",
+                  "slug": "two-or-more-types-of-central-heating-not-including-renewable-energy",
+                  "code": "heating_type-011",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have ",
+                  "legend_str_3": "two or more types of central heating (not including renewable energy)"
+                },
+                {
+                  "name": "Two or more types of central heating (including renewable energy)",
+                  "slug": "two-or-more-types-of-central-heating-including-renewable-energy",
+                  "code": "heating_type-012",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have ",
+                  "legend_str_3": "two or more types of central heating (including renewable energy)"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Tenure of household",
+          "code": "hh_tenure",
+          "slug": "tenure-of-household",
+          "desc": "Whether a household owns or rents.",
+          "long_desc": "Whether a household owns or rents the accommodation that it occupies.  \n\nAdditional  \nOwner-occupied accommodation can be: \n* owned outright, which is where the household owns all of the accommodation \n* with a mortgage or loan \n* part-owned on a shared ownership scheme \n\n Rented accommodation can be: \n* private rented, for example, rented through a private landlord or letting agent \n* social rented through a local council or housing association) \nThis information is not available for household spaces with no usual residents.",
+          "units": "Household",
+          "topic_code": "HOU",
+          "available_geotypes": [
+            "oa",
+            "msoa",
+            "lad"
+          ],
+          "classifications": [
+            {
+              "code": "hh_tenure_5a",
+              "slug": "hh-tenure-5a",
+              "desc": "Tenure of household (5 categories)",
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "categories": [
+                {
+                  "name": "Owned: Owns outright",
+                  "slug": "owned-owns-outright",
+                  "code": "hh_tenure_5a-000",
+                  "legend_str_1": "of homes in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "owned outright"
+                },
+                {
+                  "name": "Owned: Owns with a mortgage or loan or shared ownership",
+                  "slug": "owned-owns-with-a-mortgage-or-loan-or-shared-ownership",
+                  "code": "hh_tenure_5a-001",
+                  "legend_str_1": "of homes in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "owned with a mortgage, loan, or shared ownership"
+                },
+                {
+                  "name": "Rented: Social rented",
+                  "slug": "rented-social-rented",
+                  "code": "hh_tenure_5a-002",
+                  "legend_str_1": "of homes in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "social rented"
+                },
+                {
+                  "name": "Private rented or lives rent free",
+                  "slug": "private-rented-or-lives-rent-free",
+                  "code": "hh_tenure_5a-003",
+                  "legend_str_1": "of homes in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "privately rented or rent free"
+                }
+              ]
+            },
+            {
+              "code": "hh_tenure_9a",
+              "slug": "hh-tenure-9a",
+              "desc": "Tenure of household (9 categories)",
+              "categories": [
+                {
+                  "name": "Owned: Owns outright",
+                  "slug": "owned-owns-outright",
+                  "code": "hh_tenure_9a-000",
+                  "legend_str_1": "of homes in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "owned outright"
+                },
+                {
+                  "name": "Owned: Owns with a mortgage or loan",
+                  "slug": "owned-owns-with-a-mortgage-or-loan",
+                  "code": "hh_tenure_9a-001",
+                  "legend_str_1": "of homes in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "owned with a mortgage or loan"
+                },
+                {
+                  "name": "Shared ownership: Shared ownership",
+                  "slug": "shared-ownership-shared-ownership",
+                  "code": "hh_tenure_9a-002",
+                  "legend_str_1": "of homes in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "under shared ownership"
+                },
+                {
+                  "name": "Social rented: Rents from council or Local Authority",
+                  "slug": "social-rented-rents-from-council-or-local-authority",
+                  "code": "hh_tenure_9a-003",
+                  "legend_str_1": "of homes in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "socially rented from a council or local authority"
+                },
+                {
+                  "name": "Social rented: Other social rented",
+                  "slug": "social-rented-other-social-rented",
+                  "code": "hh_tenure_9a-004",
+                  "legend_str_1": "of homes in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "otherwise socially rented"
+                },
+                {
+                  "name": "Private rented: Private landlord or letting agency",
+                  "slug": "private-rented-private-landlord-or-letting-agency",
+                  "code": "hh_tenure_9a-005",
+                  "legend_str_1": "of homes in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "privately rented from a landlord or letting agency"
+                },
+                {
+                  "name": "Private rented: Other private rented",
+                  "slug": "private-rented-other-private-rented",
+                  "code": "hh_tenure_9a-006",
+                  "legend_str_1": "of homes in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "otherwise privately rented"
+                },
+                {
+                  "name": "Lives rent free",
+                  "slug": "lives-rent-free",
+                  "code": "hh_tenure_9a-007",
+                  "legend_str_1": "of homes in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "rent free"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Number of bedrooms",
+          "code": "number_bedrooms",
+          "slug": "number-of-bedrooms",
+          "desc": "The number of bedrooms in a household.",
+          "long_desc": "The number of bedrooms in a households accommodation. \n\nAdditional \nThis number is not available for household spaces with no usual residents.",
+          "units": "Household",
+          "topic_code": "HOU",
+          "available_geotypes": [
+            "oa",
+            "msoa",
+            "lad"
+          ],
+          "classifications": [
+            {
+              "code": "number_bedrooms_5a",
+              "slug": "number-bedrooms-5a",
+              "desc": "Number of Bedrooms (5 categories)",
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "categories": [
+                {
+                  "name": "1 bedroom",
+                  "slug": "1-bedroom",
+                  "code": "number_bedrooms_5a-001",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have ",
+                  "legend_str_3": "1 bedroom"
+                },
+                {
+                  "name": "2 bedrooms",
+                  "slug": "2-bedrooms",
+                  "code": "number_bedrooms_5a-002",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have ",
+                  "legend_str_3": "2 bedrooms"
+                },
+                {
+                  "name": "3 bedrooms",
+                  "slug": "3-bedrooms",
+                  "code": "number_bedrooms_5a-003",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have ",
+                  "legend_str_3": "3 bedrooms"
+                },
+                {
+                  "name": "4 or more bedrooms",
+                  "slug": "4-or-more-bedrooms",
+                  "code": "number_bedrooms_5a-004",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have ",
+                  "legend_str_3": "4 or more bedrooms"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Occupancy rating for bedrooms",
+          "code": "occupancy_rating_bedrooms",
+          "slug": "occupancy-rating-for-bedrooms",
+          "desc": "Whether homes are overcrowded, ideally occupied or under-occupied, based on bedrooms.",
+          "long_desc": "Whether a household's accommodation is overcrowded, ideally occupied or under-occupied. This is calculated by comparing the number of bedrooms the household requires (the Bedroom Standard) to the number of available bedrooms.  \n \nAdditional  \nPeople that should have their own room according to the Bedroom Standard.\n 1) A married or co-habiting couple.  \n 2) Someone 21 years old or over.  \n 3) A pair of same-sex aged between 10 and 20 years.  \n 4) A pair of children aged under 10 years regardless of their sex.  \n 5) One person aged between 10 to 20 years paired with a child aged under 10 years of the same sex.  \n 6) Any other person aged under 21 years who cannot share a bedroom with someone in 3, 4 or 5 above. \nAn occupancy rating of:  \n*  -1 or less implies that a households accommodation has fewer bedrooms than required (overcrowded)  \n* +1 or more implies that a households accommodation has more bedrooms than required (under-occupied)  \n* 0 suggests that a households accommodation has an ideal number of bedrooms",
+          "units": "Household",
+          "topic_code": "HOU",
+          "available_geotypes": [
+            "oa",
+            "msoa",
+            "lad"
+          ],
+          "classifications": [
+            {
+              "code": "occupancy_rating_bedrooms_6a",
+              "slug": "occupancy-rating-bedrooms-6a",
+              "desc": "Occupancy rating for bedrooms (6 categories)",
+              "choropleth_default": true,
+              "categories": [
+                {
+                  "name": "Occupancy rating of bedrooms: +2 or more",
+                  "slug": "occupancy-rating-of-bedrooms-2-or-more",
+                  "code": "occupancy_rating_bedrooms_6a-001",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "an occupancy rating of +2 or more for bedrooms"
+                },
+                {
+                  "name": "Occupancy rating of bedrooms: +1",
+                  "slug": "occupancy-rating-of-bedrooms-1",
+                  "code": "occupancy_rating_bedrooms_6a-002",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "an occupancy rating of +1 for bedrooms"
+                },
+                {
+                  "name": "Occupancy rating of bedrooms: 0",
+                  "slug": "occupancy-rating-of-bedrooms-0",
+                  "code": "occupancy_rating_bedrooms_6a-003",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "an occupancy rating of 0 for bedrooms"
+                },
+                {
+                  "name": "Occupancy rating of bedrooms: -1",
+                  "slug": "occupancy-rating-of-bedrooms-1",
+                  "code": "occupancy_rating_bedrooms_6a-004",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "an occupancy rating of -1 for bedrooms"
+                },
+                {
+                  "name": "Occupancy rating of bedrooms: -2 or less",
+                  "slug": "occupancy-rating-of-bedrooms-2-or-less",
+                  "code": "occupancy_rating_bedrooms_6a-005",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "an occupancy rating of -2 for bedrooms"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Occupancy rating for rooms",
+          "code": "occupancy_rating_rooms",
+          "slug": "occupancy-rating-for-rooms",
+          "desc": "Whether homes are overcrowded, ideally occupied or under-occupied, based on rooms.",
+          "long_desc": "Whether a household's accommodation is overcrowded, ideally occupied or under-occupied. This is calculated by comparing the number of rooms the household requires to the number of available rooms. \n\nAdditional  \nThe number of rooms the household requires uses a formula which states that: \n* one-person households require three rooms comprised of two common rooms and one bedroom \n* two-or-more person households require a minimum of two common rooms and a bedroom for each person inline with the Bedroom Standard. \n\nPeople who should have their own room according to the Bedroom Standard.  \n  1) Married or cohabiting couple.  \n  2) Single parent.  \n  3) Person aged 16 years old or over.  \n  4) Pair of same-sex persons 10 to 15 years old.  \n  5) Person aged 10 to 15 years old paired with a person under 10 years old of the same sex.  \n  6) Pair of children under the age of 10, regardless of their sex.  \n  7) Person under 16 years old who cannot share a bedroom with someone in 4, 5 or 6 above.  \nAn occupancy rating of: \n * -1 or less implies that a households accommodation has fewer rooms than required (overcrowded) \n* +1 or more implies that a households accommodation has more rooms than required (under-occupied) \n* 0 suggests that a households accommodation has an ideal number of rooms",
+          "units": "Household",
+          "topic_code": "HOU",
+          "available_geotypes": [
+            "oa",
+            "msoa",
+            "lad"
+          ],
+          "classifications": [
+            {
+              "code": "occupancy_rating_rooms_6a",
+              "slug": "occupancy-rating-rooms-6a",
+              "desc": "Occupancy rating for rooms (6 categories)",
+              "choropleth_default": true,
+              "categories": [
+                {
+                  "name": "Occupancy rating of rooms: +2 or more",
+                  "slug": "occupancy-rating-of-rooms-2-or-more",
+                  "code": "occupancy_rating_rooms_6a-001",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "an occupancy rating of +2 or more for rooms"
+                },
+                {
+                  "name": "Occupancy rating of rooms: +1",
+                  "slug": "occupancy-rating-of-rooms-1",
+                  "code": "occupancy_rating_rooms_6a-002",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "an occupancy rating of +1 for rooms"
+                },
+                {
+                  "name": "Occupancy rating of rooms: 0",
+                  "slug": "occupancy-rating-of-rooms-0",
+                  "code": "occupancy_rating_rooms_6a-003",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "an occupancy rating of 0 for rooms"
+                },
+                {
+                  "name": "Occupancy rating of rooms: -1",
+                  "slug": "occupancy-rating-of-rooms-1",
+                  "code": "occupancy_rating_rooms_6a-004",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "an occupancy rating of -1 for rooms"
+                },
+                {
+                  "name": "Occupancy rating of rooms: -2 or less",
+                  "slug": "occupancy-rating-of-rooms-2-or-less",
+                  "code": "occupancy_rating_rooms_6a-005",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "an occupancy rating of -2 for rooms"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Second address type",
+          "code": "second_address_type_priority",
+          "slug": "second-address-type",
+          "desc": "Whether people have an alternative address (somewhere they stay for more than 30 days per year) and the type of address this is.",
+          "long_desc": "Indicates whether a person has an alternative address (somewhere they stay for more than 30 days per year) and the type of second address this is.   \n\n'Not applicable' applies to people without an alternative address.",
+          "units": "Person",
+          "topic_code": "HOU",
+          "available_geotypes": [
+            "oa",
+            "msoa",
+            "lad"
+          ],
+          "classifications": [
+            {
+              "code": "second_address_type_priority",
+              "slug": "second-address-type-priority",
+              "desc": "Second address type (10 categories)",
+              "choropleth_default": true,
+              "categories": [
+                {
+                  "name": "Armed forces base address",
+                  "slug": "armed-forces-base-address",
+                  "code": "second_address_type_priority-001",
+                  "legend_str_1": "of people in {location}'s second address",
+                  "legend_str_2": "is",
+                  "legend_str_3": "an armed forces base address"
+                },
+                {
+                  "name": "Another address when working away from home",
+                  "slug": "another-address-when-working-away-from-home",
+                  "code": "second_address_type_priority-002",
+                  "legend_str_1": "of people in {location}'s second address",
+                  "legend_str_2": "is",
+                  "legend_str_3": "another address when working away from home"
+                },
+                {
+                  "name": "Holiday home",
+                  "slug": "holiday-home",
+                  "code": "second_address_type_priority-003",
+                  "legend_str_1": "of people in {location}'s second address",
+                  "legend_str_2": "is",
+                  "legend_str_3": "a holiday home"
+                },
+                {
+                  "name": "Student's term-time address",
+                  "slug": "student-s-term-time-address",
+                  "code": "second_address_type_priority-004",
+                  "legend_str_1": "of people in {location}'s second address",
+                  "legend_str_2": "is",
+                  "legend_str_3": "a student's term-time address"
+                },
+                {
+                  "name": "Student's home address",
+                  "slug": "student-s-home-address",
+                  "code": "second_address_type_priority-005",
+                  "legend_str_1": "of people in {location}'s second address",
+                  "legend_str_2": "is",
+                  "legend_str_3": "a student's home address"
+                },
+                {
+                  "name": "Another parent or guardian's address",
+                  "slug": "another-parent-or-guardian-s-address",
+                  "code": "second_address_type_priority-006",
+                  "legend_str_1": "of people in {location}'s second address",
+                  "legend_str_2": "is",
+                  "legend_str_3": "another parent or guardian's address"
+                },
+                {
+                  "name": "Partner's address",
+                  "slug": "partner-s-address",
+                  "code": "second_address_type_priority-007",
+                  "legend_str_1": "of people in {location}'s second address",
+                  "legend_str_2": "is",
+                  "legend_str_3": "a partner's address"
+                },
+                {
+                  "name": "Other",
+                  "slug": "other",
+                  "code": "second_address_type_priority-008",
+                  "legend_str_1": "of people in {location}'s second address",
+                  "legend_str_2": "is",
+                  "legend_str_3": "another form of second address"
+                },
+                {
+                  "name": "Second address type not specified",
+                  "slug": "second-address-type-not-specified",
+                  "code": "second_address_type_priority-009",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "a second address of a type not specified"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -12,8 +12,7 @@ interface VariablePageParams {
 interface CategoryPageParams {
   variableGroup: string;
   variable: string;
-  classification?: string;
-  category: string;
+  category: { classification: string; category: string };
 }
 
 type UrlParams = VariableGroupPageParams | VariablePageParams | CategoryPageParams;
@@ -40,15 +39,8 @@ export const buildHyperlink = (url: URL, urlParams?: UrlParams, staticPath?: str
   if ("variable" in urlParams) {
     link = `${link}/${urlParams.variable}`;
   }
-  if ("classification" in urlParams) {
-    link = `${link}/${urlParams.classification}`;
-  }
   if ("category" in urlParams) {
-    if (!("classification" in urlParams)) {
-      link = `${link}/default/${urlParams.category}`;
-    } else {
-      link = `${link}/${urlParams.category}`;
-    }
+    link = `${link}/${urlParams.category.classification}/${urlParams.category.category}`;
   }
   return `${link}${url.search}`;
 };

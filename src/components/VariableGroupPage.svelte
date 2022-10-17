@@ -43,7 +43,10 @@
         href={buildHyperlink($page.url, {
           variableGroup: variableGroup.slug,
           variable: variable.slug,
-          category: getDefaultChoroplethClassification(variable).categories[0].slug,
+          category: {
+            classification: getDefaultChoroplethClassification(variable).slug,
+            category: getDefaultChoroplethClassification(variable).categories[0].slug,
+          },
         })}
       >
         <div class="flex justify-between">

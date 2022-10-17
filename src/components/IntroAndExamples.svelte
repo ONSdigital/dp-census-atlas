@@ -25,7 +25,7 @@
           href={buildHyperlink($page.url, {
             variableGroup: "health",
             variable: "general-health",
-            category: "good-health",
+            category: { classification: "health-in-general-3a", category: "good-health" },
           })}
           class="hyperlink-reverse"
         >
@@ -38,7 +38,7 @@
           href={buildHyperlink($page.url, {
             variableGroup: "housing",
             variable: "type-of-central-heating-in-household",
-            category: "does-not-have-central-heating",
+            category: { classification: "heating-type", category: "no-central-heating" },
           })}
           class="hyperlink-reverse"
         >
@@ -51,7 +51,7 @@
           href={buildHyperlink($page.url, {
             variableGroup: "housing",
             variable: "tenure-of-household",
-            category: "owned-owns-outright",
+            category: { classification: "hh-tenure-5a", category: "owned-owns-outright" },
           })}
           class="hyperlink-reverse"
         >

@@ -4,7 +4,6 @@
   import { contentStore } from "../stores/stores";
   import { formatTemplateString } from "../helpers/categoryHelpers";
   import { choroplethColours } from "../helpers/choroplethHelpers";
-  import { getDefaultChoroplethClassification } from "../helpers/variableHelpers";
   import { ratioToRoundedPercentageString } from "../helpers/ratioHelpers";
 
   import BreaksChart from "./BreaksChart.svelte";
@@ -18,10 +17,11 @@
   $: variableGroup = $contentStore.variableGroups.find((t) => t.slug === variableGroupSlug);
   $: variableSlug = params.variable;
   $: variable = variableGroup ? variableGroup.variables.find((v) => v.slug === variableSlug) : undefined;
+  $: classificationSlug = params?.classification;
+  $: classification = variable?.classifications.find((c) => c.slug === classificationSlug);
   $: selectedGeographyDisplayName = $selectedGeographyStore?.displayName;
-  $: defaultChoroplethClassification = getDefaultChoroplethClassification(variable);
   $: categorySlug = params.category;
-  $: category = variable ? defaultChoroplethClassification.categories.find((c) => c.slug === categorySlug) : undefined;
+  $: category = variable ? classification?.categories.find((c) => c.slug === categorySlug) : undefined;
   $: breaks = $vizStore ? [$vizStore?.minMaxVals[0], ...$vizStore.breaks] : undefined;
 </script>
 

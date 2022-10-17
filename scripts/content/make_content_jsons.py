@@ -50,6 +50,11 @@ from scripts.update_legend_strs_from_csv import update_legend_strs_from_file
 from scripts.update_variable_desc_from_csv import update_variable_descs_from_file
 from scripts.validate_content import validate_variable_groups
 
+# dict defining any needed variable topic overrides
+VARIABLE_TOPIC_OVERRIDES = {
+    "hh_size": "DEM",
+}
+
 
 def category_from_cantabular_csv_row(csv_row: dict) -> CensusCategory:
     """Make CensusCategory from row in Category.csv"""
@@ -81,18 +86,21 @@ def classification_from_cantabular_csv_row(csv_row: dict) -> CensusClassificatio
 
 def variable_from_cantabular_csv_row(csv_row: dict) -> CensusVariable:
     """Make CensusVariable from row in Variable.csv"""
-    return CensusVariable(
+    variable = CensusVariable(
         name=csv_row["Variable_Title"].strip(),
         code=csv_row["Variable_Mnemonic"].strip(),
         slug=slugify(csv_row["Variable_Title"].strip()),
         desc=csv_row["Variable_Description"].strip(),
+        long_desc=csv_row["Variable_Description"].strip(),
         units=csv_row["Statistical_Unit"].strip(),
         # sometimes things don't have topics??
         topic_code=csv_row["Topic_Mnemonic"] if csv_row["Topic_Mnemonic"] != "" else "NO_TOPIC",
         available_geotypes=[],
         classifications=[],
     )
-
+    if variable.code in VARIABLE_TOPIC_OVERRIDES:
+        variable.topic_code = VARIABLE_TOPIC_OVERRIDES[variable.code]
+    return variable
 
 def variable_group_from_dict(raw_tg: dict) -> CensusVariableGroup:
     """Make CensusVariableGroup from object in variable group definition json"""

@@ -12,6 +12,9 @@ import sys
 from scripts.census_objects import load_content, write_content, CensusVariableGroup
 
 
+SHORT_DEFINITION_HEADER = "Short definition"
+
+
 def variable_desc_spec_rows_from_csv(variable_desc_file: Path or str) -> list[dict]:
     with open(variable_desc_file, "r", encoding="ascii", errors="ignore") as f:
         reader = csv.DictReader(f)
@@ -25,7 +28,7 @@ def update_variable_descs(all_variable_groups: list[CensusVariableGroup], variab
         for variable_group in all_variable_groups:
             for variable in variable_group.variables:
                 if variable.code == variable_code:
-                    variable.desc = row["Short definition"].strip()
+                    variable.desc = row[SHORT_DEFINITION_HEADER].strip()
                     target_variable_found = True
         if target_variable_found is False:
             print(f"New variable desc for {variable_code} could not be applied - variable not found.")

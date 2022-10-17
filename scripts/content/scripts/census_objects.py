@@ -129,6 +129,7 @@ class CensusVariable:
     code: str
     slug: str
     desc: str
+    long_desc: str
     units: str
     available_geotypes: list[str]
     classifications: list[CensusClassification]
@@ -191,6 +192,7 @@ class CensusVariable:
             "code": self.code,
             "slug": self.slug,
             "desc": self.desc,
+            "long_desc": self.long_desc,
             "units": self.units,
             "topic_code": self.topic_code,
             "available_geotypes": self.available_geotypes,
@@ -288,6 +290,7 @@ def variable_from_content_json(content_json: dict) -> CensusVariable:
         code=content_json["code"],
         slug=content_json["slug"],
         desc=content_json["desc"],
+        long_desc=content_json["long_desc"],
         units=content_json["units"],
         topic_code=content_json["topic_code"],
         classifications=[classification_from_content_json(c) for c in content_json["classifications"]],

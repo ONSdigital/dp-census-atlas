@@ -9,6 +9,7 @@
   import Heading from "./Heading.svelte";
   import AreaPanel from "./AreaPanel.svelte";
   import RadioButton from "./RadioButton.svelte";
+  import VariableDescription from "./VariableDescription.svelte";
 
   $: params = $page.params;
   $: variableGroupSlug = params.variableGroup;
@@ -55,15 +56,15 @@
       <h2 class="pt-3 font-bold text-slate-500">Topic</h2>
       <nav class="flex flex-wrap items-center gap-2 text-xl" aria-label="Breadcrumb">
         <a class="hyperlink" href={buildHyperlink($page.url)}>Home</a>
-        <div class="text-sm font-extrabold text-slate-500" aria-hidden>&gt;</div>
+        <div class="text-sm font-extrabold text-ons-grey-75" aria-hidden>&gt;</div>
         <a class="hyperlink" href={buildHyperlink($page.url, { variableGroup: variableGroup.slug })}
           >{variableGroup.name}</a
         >
-        <div class="text-sm font-extrabold text-slate-500" aria-hidden>&gt;</div>
+        <div class="text-sm font-extrabold text-ons-grey-75" aria-hidden>&gt;</div>
         <div class="">{variable.name}</div>
       </nav>
       <div class="mt-4 mb-2">
-        {variable.desc}
+        <VariableDescription shortDescription={variable.desc} longDescription={variable.long_desc} />
       </div>
       <ul class="flex flex-col last:border-b-[1px] mb-4">
         {#each classification.categories as category}
@@ -78,7 +79,7 @@
                 },
               })}
               class="flex gap-2 items-center p-2 border-t-[1px] border-t-slate-300 cursor-pointer custom-ring"
-              class:bg-onspale={category.slug === categorySlug}
+              class:bg-ons-grey-5={category.slug === categorySlug}
             >
               <RadioButton selected={category.slug === categorySlug} />
               <div>{category.name}</div>

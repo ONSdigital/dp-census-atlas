@@ -19,6 +19,7 @@ export type Variable = {
   slug: string;
   code: string;
   desc: string;
+  long_desc: string;
   units: string;
   topic_code: string;
   available_geotypes: GeoType[];

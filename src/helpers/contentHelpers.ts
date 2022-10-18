@@ -50,6 +50,7 @@ const mergeVariables = (variables: Variable[]) => {
       slug: variablesToMerge[0].slug,
       code: variablesToMerge[0].code,
       desc: variablesToMerge[0].desc,
+      long_desc: variablesToMerge[0].long_desc,
       units: variablesToMerge[0].units,
       topic_code: variablesToMerge[0].topic_code,
       available_geotypes: variablesToMerge[0].available_geotypes,

@@ -1,10 +1,21 @@
 <script lang="ts">
   import EmbedThis from "./EmbedThis.svelte";
+  import Icon from "./MaterialIcon.svelte";
 </script>
 
 <section class="">
-  <h2 class="mb-1 text-md font-semibold md:text-lg ">Use and share</h2>
-  <div class="flex items-center">
+  <h2 class="mb-2 text-md font-semibold md:text-lg ">Use and share</h2>
+  <div class="flex items-center gap-6">
+    <a
+      href="https://example.com/"
+      download="file-not-yet-available.cvs"
+      class="flex items-center gap-2 custom-ring hyperlink -ml-0.5"
+    >
+      <div class="text-2xl text-ons-black">
+        <Icon kind="fileDownload" />
+      </div>
+      <div>Download data</div>
+    </a>
     <div class="">
       <EmbedThis />
     </div>

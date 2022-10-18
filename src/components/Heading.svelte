@@ -2,7 +2,7 @@
   import Icon from "./MaterialIcon.svelte";
   import IntroAndExamples from "./IntroAndExamples.svelte";
 
-  $: open = true;
+  let open = true;
   const toggleOpen = () => {
     open = !open;
   };

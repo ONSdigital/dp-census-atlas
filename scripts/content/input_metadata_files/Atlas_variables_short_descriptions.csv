@@ -43,6 +43,7 @@ resident_age,"A person’s age on Census Day, 21 March 2021 in England and Wales
 second_address_type_priority,Indicates whether a person has an alternative address (somewhere they stay for more than 30 days per year) and the type of second address this is.,Whether people have an alternative address (somewhere they stay for more than 30 days per year) and the type of address this is.,
 sex,This is the sex recorded by the person completing the census. The options were “Female” and “Male”. ,The sex recorded by the person completing the census.,
 sexual_orientation,Classifies people according to the responses to the sexual orientation question.,The sexual orientation recorded by the person completing the census.,
+transport_to_workplace,Method of travel to workplace.,Method of travel to workplace.,
 welsh_skills_all,"Whether a person can understand, speak, read, or write Welsh. This question was only asked in Wales.","Whether people can understand, speak, read, or write Welsh. This question was only asked in Wales.",
 welsh_skills_speak,"This classifies a person as being able to speak Welsh if they ticked ""Speak Welsh"" in the census questionnaire.",People who can speak Welsh.,
 workplace_travel,"The distance, in kilometres, between a person's residential postcode and their workplace postcode measured in a straight line.","The distance between home and work, in kilometres.",

@@ -659,17 +659,17 @@ Work,Distance travelled to work,workplace_travel_10a,workplace_travel_10a-007,40
 Work,Distance travelled to work,workplace_travel_10a,workplace_travel_10a-008,60km and over,{PERCENTAGE}%,of people in {location},travel,60km and over to work,60km and over
 Work,Distance travelled to work,workplace_travel_10a,workplace_travel_10a-009,Works mainly from home,{PERCENTAGE}%,of people in {location},work,mainly from home,works mainly from home
 Work,Distance travelled to work,workplace_travel_10a,workplace_travel_10a-010,Other,{PERCENTAGE}%,of people in {location},have,other forms of travel to work,other
-Work,Method of travel to work,transport_to_work,transport_to_work-001,Work mainly at or from home,{PERCENTAGE}%,of people in {location},work,mainly at or from home,work mainly at or from home
-Work,Method of travel to work,transport_to_work,transport_to_work-002,"Underground, metro, light rail or tram",{PERCENTAGE}%,of people in {location},travel to work by,"underground, metro, light rail or tram","underground, metro, light rail or tram"
-Work,Method of travel to work,transport_to_work,transport_to_work-003,Train,{PERCENTAGE}%,of people in {location},travel to work by,train,train
-Work,Method of travel to work,transport_to_work,transport_to_work-004,"Bus, minibus or coach",{PERCENTAGE}%,of people in {location},travel to work by,"bus, minibus or coach","bus, minibus or coach"
-Work,Method of travel to work,transport_to_work,transport_to_work-005,Taxi,{PERCENTAGE}%,of people in {location},travel to work by,taxi,taxi
-Work,Method of travel to work,transport_to_work,transport_to_work-006,"Motorcycle, scooter or moped",{PERCENTAGE}%,of people in {location},travel to work by,"motorcycle, scooter or moped","motorcycle, scooter or moped"
-Work,Method of travel to work,transport_to_work,transport_to_work-007,Driving a car or van,{PERCENTAGE}%,of people in {location},travel to work by,driving a car or van,driving a car or van
-Work,Method of travel to work,transport_to_work,transport_to_work-008,Passenger in a car or van,{PERCENTAGE}%,of people in {location},travel to work by,passenger in a car or van,passenger in a car or van
-Work,Method of travel to work,transport_to_work,transport_to_work-009,Bicycle,{PERCENTAGE}%,of people in {location},travel to work by,bicycle,bicycle
-Work,Method of travel to work,transport_to_work,transport_to_work-010,On foot,{PERCENTAGE}%,of people in {location},travel to work,on foot,on foot
-Work,Method of travel to work,transport_to_work,transport_to_work-011,Other,{PERCENTAGE}%,of people in {location},travel to work,using other means,other
+Work,Method of travel to work,transport_to_workplace_12a,transport_to_workplace_12a-001,Work mainly at or from home,{PERCENTAGE}%,of people in {location},work,mainly at or from home,work mainly at or from home
+Work,Method of travel to work,transport_to_workplace_12a,transport_to_workplace_12a-002,"Underground, metro, light rail or tram",{PERCENTAGE}%,of people in {location},travel to work by,"underground, metro, light rail or tram","underground, metro, light rail or tram"
+Work,Method of travel to work,transport_to_workplace_12a,transport_to_workplace_12a-003,Train,{PERCENTAGE}%,of people in {location},travel to work by,train,train
+Work,Method of travel to work,transport_to_workplace_12a,transport_to_workplace_12a-004,"Bus, minibus or coach",{PERCENTAGE}%,of people in {location},travel to work by,"bus, minibus or coach","bus, minibus or coach"
+Work,Method of travel to work,transport_to_workplace_12a,transport_to_workplace_12a-005,Taxi,{PERCENTAGE}%,of people in {location},travel to work by,taxi,taxi
+Work,Method of travel to work,transport_to_workplace_12a,transport_to_workplace_12a-006,"Motorcycle, scooter or moped",{PERCENTAGE}%,of people in {location},travel to work by,"motorcycle, scooter or moped","motorcycle, scooter or moped"
+Work,Method of travel to work,transport_to_workplace_12a,transport_to_workplace_12a-007,Driving a car or van,{PERCENTAGE}%,of people in {location},travel to work by,driving a car or van,driving a car or van
+Work,Method of travel to work,transport_to_workplace_12a,transport_to_workplace_12a-008,Passenger in a car or van,{PERCENTAGE}%,of people in {location},travel to work by,passenger in a car or van,passenger in a car or van
+Work,Method of travel to work,transport_to_workplace_12a,transport_to_workplace_12a-009,Bicycle,{PERCENTAGE}%,of people in {location},travel to work by,bicycle,bicycle
+Work,Method of travel to work,transport_to_workplace_12a,transport_to_workplace_12a-010,On foot,{PERCENTAGE}%,of people in {location},travel to work,on foot,on foot
+Work,Method of travel to work,transport_to_workplace_12a,transport_to_workplace_12a-011,Other,{PERCENTAGE}%,of people in {location},travel to work,using other means,other
 Health,General health,health_in_general_3a,health_in_general_3a-001,Good health,{PERCENTAGE}%,of households in {location},have,good health,good health
 Health,General health,health_in_general_3a,health_in_general_3a-002,Not good health,{PERCENTAGE}%,of households in {location},have,not good health,not good health
 Health,General health,health_in_general_4a,health_in_general_4a-001,Very good or good health,{PERCENTAGE}%,of households in {location},have,very good or good health,very good or good health

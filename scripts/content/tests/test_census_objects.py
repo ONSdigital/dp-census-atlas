@@ -176,6 +176,7 @@ def test_census_variable_to_jsonable():
         "code": test_variable.code,
         "slug": test_variable.slug,
         "desc": test_variable.desc,
+        "long_desc": test_variable.long_desc,
         "units": test_variable.units,
         "topic_code": test_variable.topic_code,
         "available_geotypes": test_variable.available_geotypes,
@@ -279,6 +280,66 @@ def test_census_variable_make_legend_strings():
     assert test_variable.classifications[0].categories[0].legend_str_1 == "of households in {location}"
     assert test_variable.classifications[0].categories[0].legend_str_2 == "are"
     assert test_variable.classifications[0].categories[0].legend_str_3 == "test_category"
+
+
+def test_census_variable_gather_ts_datasets_filters_for_closest_ts_dataset():
+    # GIVEN we instantiate a test variable with four classifications that have one, two, three categories, in order
+    test_cls1 = get_test_classification(
+        name="Test_Classification_1",
+        code="test_cls_1",
+        categories = ["test_classification"] * 1
+    )
+    test_cls2 = get_test_classification(
+        name="Test_Classification_2",
+        code="test_cls_2",
+        categories = ["test_classification"] * 2
+    )
+    test_cls3 = get_test_classification(
+        name="Test_Classification_3",
+        code="test_cls_3",
+        categories = ["test_classification"] * 3
+    )
+    test_cls4 = get_test_classification(
+        name="Test_Classification_4",
+        code="test_cls_4",
+        categories = ["test_classification"] * 4
+    )
+    test_variable = get_test_variable(
+        units="household",
+        classifications=[test_cls1, test_cls2, test_cls3, test_cls4]
+    )
+    # AND GIVEN we have a dataset dict that includes TS datasets for classifications two and four, a Non-TS dataset
+    # for classification three, and no dataset for classification one.
+    test_datasets = {
+        "test_cls_2": "TS0001",
+        "test_cls_3": "DA1111",
+        "test_cls_4": "TS1221",
+    }
+    # WHEN we invoke the gather_ts_datasets method
+    test_variable.gather_ts_datasets(test_datasets)
+    # THEN we expect classifications two and four to have the expected datasets
+    assert test_variable.classifications[1].dataset == "TS0001"
+    assert test_variable.classifications[3].dataset == "TS1221"
+    # AND THEN we expect classification one to have been assigned the dataset from classification two (closest match)
+    assert test_variable.classifications[0].dataset == "TS0001"
+    # AND THEN we expect classification three to have been assigned the dataset from classification four (closest match)
+    assert test_variable.classifications[2].dataset == "TS1221"
+
+
+def test_census_variable_gather_ts_leaves_blank_if_no_dataset():
+    # GIVEN we instantiate a test variable with a classifications
+    test_variable = get_test_variable(
+        units="household",
+        classifications=[get_test_classification(dataset="")]
+    )
+    # AND GIVEN we have a dataset dict that does not reference that classification.
+    test_datasets = {
+        "not_a_classification": "TS0001",
+    }
+    # WHEN we invoke the gather_ts_datasets method
+    test_variable.gather_ts_datasets(test_datasets)
+    # THEN we expect classifications one to have no dataset
+    assert test_variable.classifications[0].dataset == ""
 
 
 # ----------------------------------------------- CensusVariableGroup ------------------------------------------------ #

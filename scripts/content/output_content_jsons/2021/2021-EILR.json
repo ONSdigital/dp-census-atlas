@@ -1,11 +1,11 @@
 {
   "meta": {
-    "created_at": "2022-10-06-08-21-31",
-    "cantabular_metadata_source": "ar2776-c21ew_metadata-v1-3_cantab_20220927-20",
+    "created_at": "2022-10-19-12-05-41",
+    "cantabular_metadata_source": "ar2776-c21ew_metadata-v1-3_cantab_20221011-22",
     "rich_content_spec_file_used_to_filter": "Rich_content_product_specifications.csv",
     "legend_strs_file": "Rich_content_product_specifications.csv",
     "variable_desc_file": "Atlas_variables_short_descriptions.csv",
-    "release": "2021-v1-EILR"
+    "release": "2021-EILR"
   },
   "content": [
     {
@@ -17,14 +17,21 @@
           "name": "Proficiency in English language",
           "code": "english_proficiency",
           "slug": "proficiency-in-english-language",
-          "desc": "How well people whose main language is not English (English or Welsh in Wales) speak English.",
+          "desc": "How well people whose main language is not English (or in Wales, English or Welsh) speak English.",
+          "long_desc": "How well people whose main language is not English (English or Welsh in Wales) speak English.",
           "units": "Household",
           "topic_code": "EILR",
+          "available_geotypes": [
+            "oa",
+            "msoa",
+            "lad"
+          ],
           "classifications": [
             {
               "code": "english_proficiency_4a",
               "slug": "english-proficiency-4a",
               "desc": "Proficiency in English language (4 categories)",
+              "dataset": "TS029",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -58,6 +65,7 @@
               "code": "english_proficiency",
               "slug": "english-proficiency",
               "desc": "Proficiency in English language (6 categories)",
+              "dataset": "TS029",
               "categories": [
                 {
                   "name": "Main language is English (English or Welsh in Wales)",
@@ -107,14 +115,21 @@
           "name": "Ethnic group",
           "code": "ethnic_group_tb",
           "slug": "ethnic-group",
-          "desc": "The ethnic group that the person completing the census feels they belong to. This could be based on their culture, family background, identity or physical appearance.",
+          "desc": "The ethnic group a person feels they belong to.",
+          "long_desc": "The ethnic group that the person completing the census feels they belong to. This could be based on their culture, family background, identity, religion, language or physical appearance. \n\nRespondents were presented with a choice of 19 categories.",
           "units": "Family",
           "topic_code": "EILR",
+          "available_geotypes": [
+            "oa",
+            "msoa",
+            "lad"
+          ],
           "classifications": [
             {
               "code": "ethnic_group_tb_6a",
               "slug": "ethnic-group-tb-6a",
               "desc": "Ethnic group (6 categories)",
+              "dataset": "TS021",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -164,6 +179,7 @@
               "code": "ethnic_group_tb",
               "slug": "ethnic-group-tb",
               "desc": "Ethnic group (unordered) (20 categories)",
+              "dataset": "TS021",
               "categories": [
                 {
                   "name": "White: English, Welsh, Scottish, Northern Irish or British",
@@ -326,13 +342,20 @@
           "code": "hh_language",
           "slug": "household-language-english-and-welsh",
           "desc": "Classifies households by the combination of adults and children (aged 3 to 15 years) within a household that have English (English or Welsh in Wales) as their main language.",
+          "long_desc": "Household language classifies households by combining adults and children (aged 3 to 15 years) within a household that has English (English or Welsh for households in Wales) as the main language.",
           "units": "Household",
           "topic_code": "EILR",
+          "available_geotypes": [
+            "oa",
+            "msoa",
+            "lad"
+          ],
           "classifications": [
             {
               "code": "hh_language",
               "slug": "hh-language",
               "desc": "Household language (English and Welsh) (5 categories)",
+              "dataset": "TS025",
               "choropleth_default": true,
               "categories": [
                 {
@@ -376,13 +399,20 @@
           "code": "hh_multi_language",
           "slug": "multiple-main-languages-in-household",
           "desc": "People within the same household who have a different main language categorised by whether the difference is between generations or partnerships within the household.",
+          "long_desc": "People within the same household who identify as speaking the same or different main language. \nIt is categorised by whether the main language spoken difference is between generations or partnerships within the household.",
           "units": "Household",
           "topic_code": "EILR",
+          "available_geotypes": [
+            "oa",
+            "msoa",
+            "lad"
+          ],
           "classifications": [
             {
               "code": "hh_multi_language_3a",
               "slug": "hh-multi-language-3a",
               "desc": "Multiple main languages in household (3 categories)",
+              "dataset": "TS026",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -408,6 +438,7 @@
               "code": "hh_multi_language",
               "slug": "hh-multi-language",
               "desc": "Multiple main languages in household (6 categories)",
+              "dataset": "TS026",
               "categories": [
                 {
                   "name": "One person household",
@@ -457,14 +488,21 @@
           "name": "Multiple religions in household",
           "code": "hh_multi_religion",
           "slug": "multiple-religions-in-household",
-          "desc": "Classifies all household members who identify as belonging to the same or different religion or religions. Households are categorised by whether the difference is between generations or partnerships.",
+          "desc": "Classifies all household members who identify as belonging to the same or different religion or religions.",
+          "long_desc": "Classifies all household members who identify as belonging to the same or different religion or religions. Households are categorised by whether the difference is between generations or partnerships.",
           "units": "Household",
           "topic_code": "EILR",
+          "available_geotypes": [
+            "oa",
+            "msoa",
+            "lad"
+          ],
           "classifications": [
             {
               "code": "hh_multi_religion_7a",
               "slug": "hh-multi-religion-7a",
               "desc": "Multiple religions in household (7 categories)",
+              "dataset": "TS075",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -524,14 +562,19 @@
           "name": "Main language (detailed)",
           "code": "main_language_detailed",
           "slug": "main-language-detailed",
-          "desc": "A person's first or preferred language.",
+          "desc": "People's first or preferred language.",
+          "long_desc": "The main languages spoken for people whose main language is not English in England or Welsh in Wales.  \n\nThis breaks down the responses given in the write-in option Other, write in (including British Sign Language.",
           "units": "Person",
           "topic_code": "EILR",
+          "available_geotypes": [
+            "lad"
+          ],
           "classifications": [
             {
               "code": "main_language_detailed_23a",
               "slug": "main-language-detailed-23a",
               "desc": "Main language (detailed) (23 categories)",
+              "dataset": "TS024",
               "choropleth_default": true,
               "categories": [
                 {
@@ -716,6 +759,7 @@
               "code": "main_language_detailed",
               "slug": "main-language-detailed",
               "desc": "Main language (detailed) (95 categories)",
+              "dataset": "TS024",
               "categories": [
                 {
                   "name": "English (English or Welsh in Wales)",
@@ -1477,14 +1521,21 @@
           "name": "National identity",
           "code": "national_identity_all",
           "slug": "national-identity",
-          "desc": "A person's national identity could be the country or countries where they feel they belong or could think of as home. It is not dependent on ethnic group or citizenship.",
+          "desc": "People's national identity (where they feel they belong or could think of as home).",
+          "long_desc": "A person's national identity could be the country or countries where they feel they belong or could think of as home. It is not dependent on ethnic group or citizenship.",
           "units": "Person",
           "topic_code": "EILR",
+          "available_geotypes": [
+            "oa",
+            "msoa",
+            "lad"
+          ],
           "classifications": [
             {
               "code": "national_identity_all_4a",
               "slug": "national-identity-all-4a",
               "desc": "National identity (4 categories)",
+              "dataset": "TS027",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -1518,6 +1569,7 @@
               "code": "national_identity_all_9a",
               "slug": "national-identity-all-9a",
               "desc": "National identity (9 categories)",
+              "dataset": "TS027",
               "categories": [
                 {
                   "name": "British only identity",
@@ -1589,6 +1641,7 @@
               "code": "national_identity_all",
               "slug": "national-identity-all",
               "desc": "National identity (17 categories)",
+              "dataset": "TS027",
               "categories": [
                 {
                   "name": "British only identity",
@@ -1726,14 +1779,20 @@
           "name": "National identity (detailed)",
           "code": "national_identity_detailed",
           "slug": "national-identity-detailed",
-          "desc": "A person's national identity could be the country or countries where they feel they belong or could think of as home. It is not dependent on ethnic group or citizenship.",
+          "desc": "People's national identity (where they feel they belong or could think of as home).",
+          "long_desc": "This variable indicates the national identity people connect to or identify with. A person's national identity is a self-determined assessment of their own identity with respect to the country or countries with which they feel an affiliation. It is not dependent on ethnic group or citizenship",
           "units": "Person",
           "topic_code": "EILR",
+          "available_geotypes": [
+            "msoa",
+            "lad"
+          ],
           "classifications": [
             {
               "code": "national_identity_detailed",
               "slug": "national-identity-detailed",
               "desc": "National identity (detailed) (73 categories)",
+              "dataset": "TS028",
               "choropleth_default": true,
               "categories": [
                 {
@@ -2320,14 +2379,21 @@
           "name": "Religion",
           "code": "religion_tb",
           "slug": "religion",
-          "desc": "The religion people connect or identify with (their religious affiliation), whether or not they practice or have belief in it.",
+          "desc": "The religion people connect or identify with.",
+          "long_desc": "The religion with which people connect or identify. They have to neither practice nor believe in it.  \n\nThis question was voluntary and classified people who identified with one of 8 response options, including No religion, alongside those who chose not to answer this question.",
           "units": "Person",
           "topic_code": "EILR",
+          "available_geotypes": [
+            "oa",
+            "msoa",
+            "lad"
+          ],
           "classifications": [
             {
               "code": "religion_tb",
               "slug": "religion-tb",
               "desc": "Religion (10 categories)",
+              "dataset": "TS030",
               "choropleth_default": true,
               "categories": [
                 {
@@ -2410,14 +2476,21 @@
           "name": "Welsh language skills",
           "code": "welsh_skills_all",
           "slug": "welsh-language-skills",
-          "desc": "Whether a person can understand, speak, read, or write Welsh. This question was only asked in Wales.",
+          "desc": "Whether people can understand, speak, read, or write Welsh. This question was only asked in Wales.",
+          "long_desc": "Whether a person has Welsh language skills.  If they do, can they do any of the following: \n* understand spoken Welsh \n* speak Welsh \n* read Welsh \n* write Welsh \n\nThe census questionnaire only asked this question to people in Wales.  \n\nAdditional info: \nIn results that classify people by Welsh language skills, a person may appear in more than one category depending on which combination of skills they have.",
           "units": "Person",
           "topic_code": "EILR",
+          "available_geotypes": [
+            "oa",
+            "msoa",
+            "lad"
+          ],
           "classifications": [
             {
               "code": "welsh_skills_all_4b",
               "slug": "welsh-skills-all-4b",
               "desc": "Welsh language skills (B) (4 categories)",
+              "dataset": "TS032",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -2451,6 +2524,7 @@
               "code": "welsh_skills_all_6a",
               "slug": "welsh-skills-all-6a",
               "desc": "Welsh language skills (6 categories)",
+              "dataset": "TS032",
               "categories": [
                 {
                   "name": "Can understand spoken Welsh only",
@@ -2498,6 +2572,7 @@
               "code": "welsh_skills_all",
               "slug": "welsh-skills-all",
               "desc": "Welsh language skills (10 categories)",
+              "dataset": "TS032",
               "categories": [
                 {
                   "name": "Can understand spoken Welsh only",
@@ -2579,14 +2654,19 @@
           "name": "Welsh speaking ability",
           "code": "welsh_skills_speak",
           "slug": "welsh-speaking-ability",
-          "desc": "This classifies a person as being able to speak Welsh if they ticked \"Speak Welsh\" in the census questionnaire.",
+          "desc": "People who can speak Welsh.",
+          "long_desc": "This classifies a person as being able to speak Welsh if they ticked \"Speak Welsh\" in the census questionnaire. They may have also ticked one or more of the following:  \n\n* understand spoken Welsh  \n* read Welsh \n* write Welsh \n\nAdditional info: \nIn results that classify people by Welsh language skills, a person may appear in more than one category depending on which combination of skills they have.",
           "units": "Person",
           "topic_code": "EILR",
+          "available_geotypes": [
+            "lad"
+          ],
           "classifications": [
             {
               "code": "welsh_skills_speak",
               "slug": "welsh-skills-speak",
               "desc": "Welsh speaking ability (3 categories)",
+              "dataset": "TS076",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [

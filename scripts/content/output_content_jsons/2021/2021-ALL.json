@@ -1,11 +1,11 @@
 {
   "meta": {
-    "created_at": "2022-10-11-15-34-41",
-    "cantabular_metadata_source": "ar2776-c21ew_metadata-v1-3_cantab_20220927-20",
+    "created_at": "2022-10-19-12-05-41",
+    "cantabular_metadata_source": "ar2776-c21ew_metadata-v1-3_cantab_20221011-22",
     "rich_content_spec_file_used_to_filter": "Rich_content_product_specifications.csv",
     "legend_strs_file": "Rich_content_product_specifications.csv",
     "variable_desc_file": "Atlas_variables_short_descriptions.csv",
-    "release": "2021-v2-ALL"
+    "release": "2021-ALL"
   },
   "content": [
     {
@@ -17,7 +17,8 @@
           "name": "Highest level of qualification",
           "code": "highest_qualification",
           "slug": "highest-level-of-qualification",
-          "desc": "The highest level of qualification is derived from questions asking people to indicate all qualifications held, or their nearest equivalent.",
+          "desc": "Highest level of qualification gained.",
+          "long_desc": "The highest level of qualification is derived from the question asking people to indicate all qualifications held, or their nearest equivalent.  \n\nThis may include foreign qualifications where they were matched to the closest UK equivalent.",
           "units": "Person",
           "topic_code": "EDU",
           "available_geotypes": [
@@ -30,6 +31,7 @@
               "code": "highest_qualification_6a",
               "slug": "highest-qualification-6a",
               "desc": "Highest level of qualification (6 categories)",
+              "dataset": "TS067",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -79,6 +81,7 @@
               "code": "highest_qualification",
               "slug": "highest-qualification",
               "desc": "Highest level of qualification (8 categories)",
+              "dataset": "TS067",
               "categories": [
                 {
                   "name": "No qualifications",
@@ -151,7 +154,8 @@
           "name": "Disability",
           "code": "disability",
           "slug": "disability",
-          "desc": "A long-term health problem or disability that limits a person's day-to-day activities, and has lasted, or is expected to last, at least 12 months. This includes problems that are related to old age.",
+          "desc": "People with a long-term health problem or disability, including relating to old-age.",
+          "long_desc": "People who assessed their day-to-day activities as limited by long-term physical or mental health conditions or illnesses are considered disabled. This definition of a disabled person meets the harmonised standard for measuring disability and is in line with the Equality Act (2010). \n\nAdditional \nCensus 2021 asks the Government Statistical Service harmonised questions (used on several existing large surveys), which are two separate questions designed to capture a person's disability according to the Equality Act (2010). These replace a single question in the 2011 census that showed whether a long-term health problem or disability limited a person's day-to-day activities. \n  \nThe Census 2021 questions indicate: \n* whether a person has long term physical or mental health conditions or illnesses \n* the extent to which any indicated long term physical or mental health conditions or illnesses limit their day-to-day activities \n\nTo allow comparability with Census 2011, Scotland and Northern Ireland Census 2021 continue to ask the same question as the in the Census 2011. In Northern Ireland, disability status is defined according to the Disability Discrimination Act (1995). Please see the Health and Unpaid Care topic report for more details.",
           "units": "Person",
           "topic_code": "HUC",
           "available_geotypes": [
@@ -164,6 +168,7 @@
               "code": "disability_3a",
               "slug": "disability-3a",
               "desc": "Disability (3 categories)",
+              "dataset": "TS038ASR",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -189,6 +194,7 @@
               "code": "disability",
               "slug": "disability",
               "desc": "Disability (5 categories)",
+              "dataset": "TS038",
               "categories": [
                 {
                   "name": "Disabled under the Equality Act: Day-to-day activities limited a lot",
@@ -230,7 +236,8 @@
           "name": "General health",
           "code": "health_in_general",
           "slug": "general-health",
-          "desc": "A person's assessment of the general state of their health from very good to very bad. This assessment is not based on a person's health over any specified period of time.",
+          "desc": "How people rate their general health.",
+          "long_desc": "A person's assessment of the general state of their health from very good to very bad. This assessment is not based on a person's health over any specified period of time.",
           "units": "Household",
           "topic_code": "HUC",
           "available_geotypes": [
@@ -243,6 +250,7 @@
               "code": "health_in_general_3a",
               "slug": "health-in-general-3a",
               "desc": "General health (3 categories)",
+              "dataset": "TS037ASR",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -268,6 +276,7 @@
               "code": "health_in_general_4a",
               "slug": "health-in-general-4a",
               "desc": "General health (4 categories)",
+              "dataset": "TS037ASR",
               "categories": [
                 {
                   "name": "Very good or good health",
@@ -299,6 +308,7 @@
               "code": "health_in_general",
               "slug": "health-in-general",
               "desc": "General health (6 categories)",
+              "dataset": "TS037ASR",
               "categories": [
                 {
                   "name": "Very good health",
@@ -348,7 +358,8 @@
           "name": "Number of disabled people in household",
           "code": "hh_disabled",
           "slug": "number-of-disabled-people-in-household",
-          "desc": "The number of people in a household with a long-term health problem or disability that limits a person's day-to-day activities, and has lasted, or is expected to last, at least 12 months.",
+          "desc": "The number of people in a household with a disability or long-term health problem.",
+          "long_desc": "The number of people in a household who assessed their day-to-day activities as limited by long-term physical or mental health conditions or illnesses and are considered disabled.  This definition of a disabled person meets the harmonised standard for measuring disability and is in line with the Equality Act (2010).",
           "units": "Household",
           "topic_code": "HUC",
           "available_geotypes": [
@@ -361,6 +372,7 @@
               "code": "hh_disabled_4a",
               "slug": "hh-disabled-4a",
               "desc": "Number of disabled people in household (4 categories)",
+              "dataset": "TS040",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -396,7 +408,8 @@
           "name": "Provision of unpaid care",
           "code": "is_carer",
           "slug": "provision-of-unpaid-care",
-          "desc": "An unpaid carer may look after, or give help or support to, anyone who has long-term physical or mental health conditions or illnesses, or problems related to old age.",
+          "desc": "People who are unpaid carers.",
+          "long_desc": "An unpaid carer may look after, give help or support to anyone who has long-term physical or mental ill-health conditions, illness or problems related to old age.  \n\nThis does not include any activities as part of paid employment. \n\nThis help can be within or outside of the carer's household. \n\nAdditional  \n\nSince the Census 2011, this question has changed in England and Wales in the following ways. \n\nThe reference to disability has been removed. \n\n'Anyone' replaces specific groups, i.e. family members, friends, neighbours. \n\nThe additional option to break down the hours of unpaid hours worked.   \n\nScotland have retained the Census 2011 question for consistency. Northern Ireland have used a similar Census 2021 question as England and Wales but with the same response options as their Census 2011. Please see the Health and Unpaid Care topic report for more details.",
           "units": "Person",
           "topic_code": "HUC",
           "available_geotypes": [
@@ -409,6 +422,7 @@
               "code": "is_carer_5a",
               "slug": "is-carer-5a",
               "desc": "Unpaid care (5 categories)",
+              "dataset": "TS039ASR",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -450,6 +464,7 @@
               "code": "is_carer",
               "slug": "is-carer",
               "desc": "Unpaid care (7 categories)",
+              "dataset": "TS039",
               "categories": [
                 {
                   "name": "Provides no unpaid care",
@@ -514,7 +529,8 @@
           "name": "Accommodation type",
           "code": "accommodation_type",
           "slug": "accommodation-type",
-          "desc": "The type of building or structure used or available by an individual or household.",
+          "desc": "The type of buildings people live in.",
+          "long_desc": "The type of building or structure used or available by an individual or household.\n\nThis could be:\n* the whole house or bungalow\n* a flat in a purpose-built block of flats in a converted house\n* a flat in a converted house\n* a temporary or mobile structure, such as a caravan\n\nAdditional information\n\nMore information about accommodation types\n\nWhole house or bungalow\nThis property type is not divided into flats or other living accommodation. There are three types of whole houses or bungalows.\n\nDetached\nNone of the living accommodation is attached to another property but can be attached to a garage.\n\nSemi-detached\nThe living accommodation is joined to another house or bungalow by a common wall that they share.\n\nTerraced\nA mid-terraced house is located between two other houses and shares two common walls. An end-of-terrace house is part of a terraced development but only shares one common wall.\n\nFlats (Apartments) and maisonettes\nAn apartment is another word for a flat. A maisonette is a 2-storey flat.",
           "units": "Household",
           "topic_code": "HOU",
           "available_geotypes": [
@@ -527,6 +543,7 @@
               "code": "accommodation_type_3a",
               "slug": "accommodation-type-3a",
               "desc": "Accommodation type (3 categories)",
+              "dataset": "TS044",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -560,6 +577,7 @@
               "code": "accommodation_type_5a",
               "slug": "accommodation-type-5a",
               "desc": "Accommodation type (5 categories)",
+              "dataset": "TS044",
               "categories": [
                 {
                   "name": "Whole house or bungalow: Detached",
@@ -607,6 +625,7 @@
               "code": "accommodation_type",
               "slug": "accommodation-type",
               "desc": "Accommodation type (8 categories)",
+              "dataset": "TS044",
               "categories": [
                 {
                   "name": "Detached",
@@ -681,6 +700,7 @@
           "code": "alternative_address_indicator",
           "slug": "second-address-indicator",
           "desc": "An address (in or out of the UK) a person stays at for more than 30 days per year that is not their place of usual residence.",
+          "long_desc": "\"An address (in or out of the UK) a person stays at for more than 30 days per year that is not their place of usual residence. \n \nAdditional \nSecond addresses typically include: \n* armed forces bases\n* addresses used by people working away from home\n* a students home address\n* the address of another parent or guardian\n* a holiday home\n  \nIf a person with a second address was staying there on census night, they were classed as a visitor to the second address but counted as a usual resident at their home address.",
           "units": "Person",
           "topic_code": "HOU",
           "available_geotypes": [
@@ -693,6 +713,7 @@
               "code": "alternative_address_indicator",
               "slug": "alternative-address-indicator",
               "desc": "Second address indicator (3 categories)",
+              "dataset": "TS056",
               "choropleth_default": true,
               "categories": [
                 {
@@ -728,6 +749,7 @@
           "code": "heating_type",
           "slug": "type-of-central-heating-in-household",
           "desc": "Central heating is a heating system used to heat multiple rooms in a building.",
+          "long_desc": "Central heating is a heating system used to heat multiple rooms in a building by circulating air or heated water through pipes to radiators or vents. Single or multiple fuel sources can fuel these systems. \n\nAdditional \nCentral heating systems that are unused or not working are still considered. No information is available for household spaces with no usual residents.",
           "units": "Household",
           "topic_code": "HOU",
           "available_geotypes": [
@@ -740,6 +762,7 @@
               "code": "heating_type_3a",
               "slug": "heating-type-3a",
               "desc": "Type of central heating in household (3 categories)",
+              "dataset": "TS046",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -765,6 +788,7 @@
               "code": "heating_type",
               "slug": "heating-type",
               "desc": "Type of central heating in household (13 categories)",
+              "dataset": "TS046",
               "categories": [
                 {
                   "name": "No central heating",
@@ -867,153 +891,11 @@
           ]
         },
         {
-          "name": "Household size",
-          "code": "hh_size",
-          "slug": "household-size",
-          "desc": "The number of people in the household.",
-          "units": "Household",
-          "topic_code": "HOU",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
-          "classifications": [
-            {
-              "code": "hh_size_5a",
-              "slug": "hh-size-5a",
-              "desc": "Household size (5 categories)",
-              "choropleth_default": true,
-              "dot_density_default": true,
-              "categories": [
-                {
-                  "name": "0 people in household",
-                  "slug": "0-people-in-household",
-                  "code": "hh_size_5a-000",
-                  "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "0 people in household"
-                },
-                {
-                  "name": "1 person in household",
-                  "slug": "1-person-in-household",
-                  "code": "hh_size_5a-001",
-                  "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "1 person in household"
-                },
-                {
-                  "name": "2 people in household",
-                  "slug": "2-people-in-household",
-                  "code": "hh_size_5a-002",
-                  "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "2 people in household"
-                },
-                {
-                  "name": "3 people in household",
-                  "slug": "3-people-in-household",
-                  "code": "hh_size_5a-003",
-                  "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "3 people in household"
-                },
-                {
-                  "name": "4 or more people in household",
-                  "slug": "4-or-more-people-in-household",
-                  "code": "hh_size_5a-004",
-                  "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "4 or more people in household"
-                }
-              ]
-            },
-            {
-              "code": "hh_size_9a",
-              "slug": "hh-size-9a",
-              "desc": "Household size (9 categories)",
-              "categories": [
-                {
-                  "name": "0 people in household",
-                  "slug": "0-people-in-household",
-                  "code": "hh_size_9a-000",
-                  "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "0 people in household"
-                },
-                {
-                  "name": "1 person in household",
-                  "slug": "1-person-in-household",
-                  "code": "hh_size_9a-001",
-                  "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "1 person in household"
-                },
-                {
-                  "name": "2 people in household",
-                  "slug": "2-people-in-household",
-                  "code": "hh_size_9a-002",
-                  "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "2 people in household"
-                },
-                {
-                  "name": "3 people in household",
-                  "slug": "3-people-in-household",
-                  "code": "hh_size_9a-003",
-                  "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "3 people in household"
-                },
-                {
-                  "name": "4 people in household",
-                  "slug": "4-people-in-household",
-                  "code": "hh_size_9a-004",
-                  "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "4 people in household"
-                },
-                {
-                  "name": "5 people in household",
-                  "slug": "5-people-in-household",
-                  "code": "hh_size_9a-005",
-                  "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "5 people in household"
-                },
-                {
-                  "name": "6 people in household",
-                  "slug": "6-people-in-household",
-                  "code": "hh_size_9a-006",
-                  "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "6 people in household"
-                },
-                {
-                  "name": "7 people in household",
-                  "slug": "7-people-in-household",
-                  "code": "hh_size_9a-007",
-                  "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "7 people in household"
-                },
-                {
-                  "name": "8 or more people in household",
-                  "slug": "8-or-more-people-in-household",
-                  "code": "hh_size_9a-008",
-                  "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "8 or more people in household"
-                }
-              ]
-            }
-          ]
-        },
-        {
           "name": "Tenure of household",
           "code": "hh_tenure",
           "slug": "tenure-of-household",
-          "desc": "Whether a household owns or rents the accommodation that it occupies.",
+          "desc": "Whether a household owns or rents.",
+          "long_desc": "Whether a household owns or rents the accommodation that it occupies.  \n\nAdditional  \nOwner-occupied accommodation can be: \n* owned outright, which is where the household owns all of the accommodation \n* with a mortgage or loan \n* part-owned on a shared ownership scheme \n\n Rented accommodation can be: \n* private rented, for example, rented through a private landlord or letting agent \n* social rented through a local council or housing association) \nThis information is not available for household spaces with no usual residents.",
           "units": "Household",
           "topic_code": "HOU",
           "available_geotypes": [
@@ -1026,6 +908,7 @@
               "code": "hh_tenure_5a",
               "slug": "hh-tenure-5a",
               "desc": "Tenure of household (5 categories)",
+              "dataset": "TS054",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -1067,6 +950,7 @@
               "code": "hh_tenure_9a",
               "slug": "hh-tenure-9a",
               "desc": "Tenure of household (9 categories)",
+              "dataset": "TS054",
               "categories": [
                 {
                   "name": "Owned: Owns outright",
@@ -1140,7 +1024,8 @@
           "name": "Number of bedrooms",
           "code": "number_bedrooms",
           "slug": "number-of-bedrooms",
-          "desc": "The number of bedrooms in a households accommodation.",
+          "desc": "The number of bedrooms in a household.",
+          "long_desc": "The number of bedrooms in a households accommodation. \n\nAdditional \nThis number is not available for household spaces with no usual residents.",
           "units": "Household",
           "topic_code": "HOU",
           "available_geotypes": [
@@ -1153,6 +1038,7 @@
               "code": "number_bedrooms_5a",
               "slug": "number-bedrooms-5a",
               "desc": "Number of Bedrooms (5 categories)",
+              "dataset": "TS050",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -1196,7 +1082,8 @@
           "name": "Occupancy rating for bedrooms",
           "code": "occupancy_rating_bedrooms",
           "slug": "occupancy-rating-for-bedrooms",
-          "desc": "Whether a household's accommodation is overcrowded, ideally occupied or under-occupied. This is calculated by comparing the number of required bedrooms to the number of available bedrooms.",
+          "desc": "Whether homes are overcrowded, ideally occupied or under-occupied, based on bedrooms.",
+          "long_desc": "Whether a household's accommodation is overcrowded, ideally occupied or under-occupied. This is calculated by comparing the number of bedrooms the household requires (the Bedroom Standard) to the number of available bedrooms.  \n \nAdditional  \nPeople that should have their own room according to the Bedroom Standard.\n 1) A married or co-habiting couple.  \n 2) Someone 21 years old or over.  \n 3) A pair of same-sex aged between 10 and 20 years.  \n 4) A pair of children aged under 10 years regardless of their sex.  \n 5) One person aged between 10 to 20 years paired with a child aged under 10 years of the same sex.  \n 6) Any other person aged under 21 years who cannot share a bedroom with someone in 3, 4 or 5 above. \nAn occupancy rating of:  \n*  -1 or less implies that a households accommodation has fewer bedrooms than required (overcrowded)  \n* +1 or more implies that a households accommodation has more bedrooms than required (under-occupied)  \n* 0 suggests that a households accommodation has an ideal number of bedrooms",
           "units": "Household",
           "topic_code": "HOU",
           "available_geotypes": [
@@ -1209,6 +1096,7 @@
               "code": "occupancy_rating_bedrooms_6a",
               "slug": "occupancy-rating-bedrooms-6a",
               "desc": "Occupancy rating for bedrooms (6 categories)",
+              "dataset": "TS052",
               "choropleth_default": true,
               "categories": [
                 {
@@ -1259,7 +1147,8 @@
           "name": "Occupancy rating for rooms",
           "code": "occupancy_rating_rooms",
           "slug": "occupancy-rating-for-rooms",
-          "desc": "Whether a household's accommodation is overcrowded, ideally occupied or under-occupied. This is calculated by comparing the number of required rooms to the number of available rooms.",
+          "desc": "Whether homes are overcrowded, ideally occupied or under-occupied, based on rooms.",
+          "long_desc": "Whether a household's accommodation is overcrowded, ideally occupied or under-occupied. This is calculated by comparing the number of rooms the household requires to the number of available rooms. \n\nAdditional  \nThe number of rooms the household requires uses a formula which states that: \n* one-person households require three rooms comprised of two common rooms and one bedroom \n* two-or-more person households require a minimum of two common rooms and a bedroom for each person inline with the Bedroom Standard. \n\nPeople who should have their own room according to the Bedroom Standard.  \n  1) Married or cohabiting couple.  \n  2) Single parent.  \n  3) Person aged 16 years old or over.  \n  4) Pair of same-sex persons 10 to 15 years old.  \n  5) Person aged 10 to 15 years old paired with a person under 10 years old of the same sex.  \n  6) Pair of children under the age of 10, regardless of their sex.  \n  7) Person under 16 years old who cannot share a bedroom with someone in 4, 5 or 6 above.  \nAn occupancy rating of: \n * -1 or less implies that a households accommodation has fewer rooms than required (overcrowded) \n* +1 or more implies that a households accommodation has more rooms than required (under-occupied) \n* 0 suggests that a households accommodation has an ideal number of rooms",
           "units": "Household",
           "topic_code": "HOU",
           "available_geotypes": [
@@ -1272,6 +1161,7 @@
               "code": "occupancy_rating_rooms_6a",
               "slug": "occupancy-rating-rooms-6a",
               "desc": "Occupancy rating for rooms (6 categories)",
+              "dataset": "TS053",
               "choropleth_default": true,
               "categories": [
                 {
@@ -1322,7 +1212,8 @@
           "name": "Second address type",
           "code": "second_address_type_priority",
           "slug": "second-address-type",
-          "desc": "Indicates whether a person has an alternative address (somewhere they stay for more than 30 days per year) and the type of second address this is.",
+          "desc": "Whether people have an alternative address (somewhere they stay for more than 30 days per year) and the type of address this is.",
+          "long_desc": "Indicates whether a person has an alternative address (somewhere they stay for more than 30 days per year) and the type of second address this is.   \n\n'Not applicable' applies to people without an alternative address.",
           "units": "Person",
           "topic_code": "HOU",
           "available_geotypes": [
@@ -1335,6 +1226,7 @@
               "code": "second_address_type_priority",
               "slug": "second-address-type-priority",
               "desc": "Second address type (10 categories)",
+              "dataset": "TS055",
               "choropleth_default": true,
               "categories": [
                 {
@@ -1424,7 +1316,8 @@
           "name": "Proficiency in English language",
           "code": "english_proficiency",
           "slug": "proficiency-in-english-language",
-          "desc": "How well people whose main language is not English (English or Welsh in Wales) speak English.",
+          "desc": "How well people whose main language is not English (or in Wales, English or Welsh) speak English.",
+          "long_desc": "How well people whose main language is not English (English or Welsh in Wales) speak English.",
           "units": "Household",
           "topic_code": "EILR",
           "available_geotypes": [
@@ -1437,6 +1330,7 @@
               "code": "english_proficiency_4a",
               "slug": "english-proficiency-4a",
               "desc": "Proficiency in English language (4 categories)",
+              "dataset": "TS029",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -1470,6 +1364,7 @@
               "code": "english_proficiency",
               "slug": "english-proficiency",
               "desc": "Proficiency in English language (6 categories)",
+              "dataset": "TS029",
               "categories": [
                 {
                   "name": "Main language is English (English or Welsh in Wales)",
@@ -1519,7 +1414,8 @@
           "name": "Ethnic group",
           "code": "ethnic_group_tb",
           "slug": "ethnic-group",
-          "desc": "The ethnic group that the person completing the census feels they belong to. This could be based on their culture, family background, identity or physical appearance.",
+          "desc": "The ethnic group a person feels they belong to.",
+          "long_desc": "The ethnic group that the person completing the census feels they belong to. This could be based on their culture, family background, identity, religion, language or physical appearance. \n\nRespondents were presented with a choice of 19 categories.",
           "units": "Family",
           "topic_code": "EILR",
           "available_geotypes": [
@@ -1532,6 +1428,7 @@
               "code": "ethnic_group_tb_6a",
               "slug": "ethnic-group-tb-6a",
               "desc": "Ethnic group (6 categories)",
+              "dataset": "TS021",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -1581,6 +1478,7 @@
               "code": "ethnic_group_tb",
               "slug": "ethnic-group-tb",
               "desc": "Ethnic group (unordered) (20 categories)",
+              "dataset": "TS021",
               "categories": [
                 {
                   "name": "White: English, Welsh, Scottish, Northern Irish or British",
@@ -1743,6 +1641,7 @@
           "code": "hh_language",
           "slug": "household-language-english-and-welsh",
           "desc": "Classifies households by the combination of adults and children (aged 3 to 15 years) within a household that have English (English or Welsh in Wales) as their main language.",
+          "long_desc": "Household language classifies households by combining adults and children (aged 3 to 15 years) within a household that has English (English or Welsh for households in Wales) as the main language.",
           "units": "Household",
           "topic_code": "EILR",
           "available_geotypes": [
@@ -1755,6 +1654,7 @@
               "code": "hh_language",
               "slug": "hh-language",
               "desc": "Household language (English and Welsh) (5 categories)",
+              "dataset": "TS025",
               "choropleth_default": true,
               "categories": [
                 {
@@ -1798,6 +1698,7 @@
           "code": "hh_multi_language",
           "slug": "multiple-main-languages-in-household",
           "desc": "People within the same household who have a different main language categorised by whether the difference is between generations or partnerships within the household.",
+          "long_desc": "People within the same household who identify as speaking the same or different main language. \nIt is categorised by whether the main language spoken difference is between generations or partnerships within the household.",
           "units": "Household",
           "topic_code": "EILR",
           "available_geotypes": [
@@ -1810,6 +1711,7 @@
               "code": "hh_multi_language_3a",
               "slug": "hh-multi-language-3a",
               "desc": "Multiple main languages in household (3 categories)",
+              "dataset": "TS026",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -1835,6 +1737,7 @@
               "code": "hh_multi_language",
               "slug": "hh-multi-language",
               "desc": "Multiple main languages in household (6 categories)",
+              "dataset": "TS026",
               "categories": [
                 {
                   "name": "One person household",
@@ -1884,7 +1787,8 @@
           "name": "Multiple religions in household",
           "code": "hh_multi_religion",
           "slug": "multiple-religions-in-household",
-          "desc": "Classifies all household members who identify as belonging to the same or different religion or religions. Households are categorised by whether the difference is between generations or partnerships.",
+          "desc": "Classifies all household members who identify as belonging to the same or different religion or religions.",
+          "long_desc": "Classifies all household members who identify as belonging to the same or different religion or religions. Households are categorised by whether the difference is between generations or partnerships.",
           "units": "Household",
           "topic_code": "EILR",
           "available_geotypes": [
@@ -1897,6 +1801,7 @@
               "code": "hh_multi_religion_7a",
               "slug": "hh-multi-religion-7a",
               "desc": "Multiple religions in household (7 categories)",
+              "dataset": "TS075",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -1956,7 +1861,8 @@
           "name": "Main language (detailed)",
           "code": "main_language_detailed",
           "slug": "main-language-detailed",
-          "desc": "A person's first or preferred language.",
+          "desc": "People's first or preferred language.",
+          "long_desc": "The main languages spoken for people whose main language is not English in England or Welsh in Wales.  \n\nThis breaks down the responses given in the write-in option Other, write in (including British Sign Language.",
           "units": "Person",
           "topic_code": "EILR",
           "available_geotypes": [
@@ -1967,6 +1873,7 @@
               "code": "main_language_detailed_23a",
               "slug": "main-language-detailed-23a",
               "desc": "Main language (detailed) (23 categories)",
+              "dataset": "TS024",
               "choropleth_default": true,
               "categories": [
                 {
@@ -2151,6 +2058,7 @@
               "code": "main_language_detailed",
               "slug": "main-language-detailed",
               "desc": "Main language (detailed) (95 categories)",
+              "dataset": "TS024",
               "categories": [
                 {
                   "name": "English (English or Welsh in Wales)",
@@ -2912,7 +2820,8 @@
           "name": "National identity",
           "code": "national_identity_all",
           "slug": "national-identity",
-          "desc": "A person's national identity could be the country or countries where they feel they belong or could think of as home. It is not dependent on ethnic group or citizenship.",
+          "desc": "People's national identity (where they feel they belong or could think of as home).",
+          "long_desc": "A person's national identity could be the country or countries where they feel they belong or could think of as home. It is not dependent on ethnic group or citizenship.",
           "units": "Person",
           "topic_code": "EILR",
           "available_geotypes": [
@@ -2925,6 +2834,7 @@
               "code": "national_identity_all_4a",
               "slug": "national-identity-all-4a",
               "desc": "National identity (4 categories)",
+              "dataset": "TS027",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -2958,6 +2868,7 @@
               "code": "national_identity_all_9a",
               "slug": "national-identity-all-9a",
               "desc": "National identity (9 categories)",
+              "dataset": "TS027",
               "categories": [
                 {
                   "name": "British only identity",
@@ -3029,6 +2940,7 @@
               "code": "national_identity_all",
               "slug": "national-identity-all",
               "desc": "National identity (17 categories)",
+              "dataset": "TS027",
               "categories": [
                 {
                   "name": "British only identity",
@@ -3166,7 +3078,8 @@
           "name": "National identity (detailed)",
           "code": "national_identity_detailed",
           "slug": "national-identity-detailed",
-          "desc": "A person's national identity could be the country or countries where they feel they belong or could think of as home. It is not dependent on ethnic group or citizenship.",
+          "desc": "People's national identity (where they feel they belong or could think of as home).",
+          "long_desc": "This variable indicates the national identity people connect to or identify with. A person's national identity is a self-determined assessment of their own identity with respect to the country or countries with which they feel an affiliation. It is not dependent on ethnic group or citizenship",
           "units": "Person",
           "topic_code": "EILR",
           "available_geotypes": [
@@ -3178,6 +3091,7 @@
               "code": "national_identity_detailed",
               "slug": "national-identity-detailed",
               "desc": "National identity (detailed) (73 categories)",
+              "dataset": "TS028",
               "choropleth_default": true,
               "categories": [
                 {
@@ -3764,7 +3678,8 @@
           "name": "Religion",
           "code": "religion_tb",
           "slug": "religion",
-          "desc": "The religion people connect or identify with (their religious affiliation), whether or not they practice or have belief in it.",
+          "desc": "The religion people connect or identify with.",
+          "long_desc": "The religion with which people connect or identify. They have to neither practice nor believe in it.  \n\nThis question was voluntary and classified people who identified with one of 8 response options, including No religion, alongside those who chose not to answer this question.",
           "units": "Person",
           "topic_code": "EILR",
           "available_geotypes": [
@@ -3777,6 +3692,7 @@
               "code": "religion_tb",
               "slug": "religion-tb",
               "desc": "Religion (10 categories)",
+              "dataset": "TS030",
               "choropleth_default": true,
               "categories": [
                 {
@@ -3859,7 +3775,8 @@
           "name": "Welsh language skills",
           "code": "welsh_skills_all",
           "slug": "welsh-language-skills",
-          "desc": "Whether a person can understand, speak, read, or write Welsh. This question was only asked in Wales.",
+          "desc": "Whether people can understand, speak, read, or write Welsh. This question was only asked in Wales.",
+          "long_desc": "Whether a person has Welsh language skills.  If they do, can they do any of the following: \n* understand spoken Welsh \n* speak Welsh \n* read Welsh \n* write Welsh \n\nThe census questionnaire only asked this question to people in Wales.  \n\nAdditional info: \nIn results that classify people by Welsh language skills, a person may appear in more than one category depending on which combination of skills they have.",
           "units": "Person",
           "topic_code": "EILR",
           "available_geotypes": [
@@ -3872,6 +3789,7 @@
               "code": "welsh_skills_all_4b",
               "slug": "welsh-skills-all-4b",
               "desc": "Welsh language skills (B) (4 categories)",
+              "dataset": "TS032",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -3905,6 +3823,7 @@
               "code": "welsh_skills_all_6a",
               "slug": "welsh-skills-all-6a",
               "desc": "Welsh language skills (6 categories)",
+              "dataset": "TS032",
               "categories": [
                 {
                   "name": "Can understand spoken Welsh only",
@@ -3952,6 +3871,7 @@
               "code": "welsh_skills_all",
               "slug": "welsh-skills-all",
               "desc": "Welsh language skills (10 categories)",
+              "dataset": "TS032",
               "categories": [
                 {
                   "name": "Can understand spoken Welsh only",
@@ -4033,7 +3953,8 @@
           "name": "Welsh speaking ability",
           "code": "welsh_skills_speak",
           "slug": "welsh-speaking-ability",
-          "desc": "This classifies a person as being able to speak Welsh if they ticked \"Speak Welsh\" in the census questionnaire.",
+          "desc": "People who can speak Welsh.",
+          "long_desc": "This classifies a person as being able to speak Welsh if they ticked \"Speak Welsh\" in the census questionnaire. They may have also ticked one or more of the following:  \n\n* understand spoken Welsh  \n* read Welsh \n* write Welsh \n\nAdditional info: \nIn results that classify people by Welsh language skills, a person may appear in more than one category depending on which combination of skills they have.",
           "units": "Person",
           "topic_code": "EILR",
           "available_geotypes": [
@@ -4044,6 +3965,7 @@
               "code": "welsh_skills_speak",
               "slug": "welsh-skills-speak",
               "desc": "Welsh speaking ability (3 categories)",
+              "dataset": "TS076",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -4071,7 +3993,8 @@
           "name": "Gender identity",
           "code": "gender_identity",
           "slug": "gender-identity",
-          "desc": "Classifies people according to the responses to the gender identity question.",
+          "desc": "The gender identity recorded by the person completing the census.",
+          "long_desc": "Classifies people according to the responses to the gender identity question. This question was voluntary and was only asked of people aged 16 years and over.",
           "units": "Family",
           "topic_code": "SOGI",
           "available_geotypes": [
@@ -4083,6 +4006,7 @@
               "code": "gender_identity_4a",
               "slug": "gender-identity-4a",
               "desc": "Gender identity (4 categories)",
+              "dataset": "TS078",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -4116,6 +4040,7 @@
               "code": "gender_identity_8a",
               "slug": "gender-identity-8a",
               "desc": "Gender identity (8 categories)",
+              "dataset": "TS070",
               "categories": [
                 {
                   "name": "Gender identity the same as sex registered at birth",
@@ -4181,7 +4106,8 @@
           "name": "Sexual orientation",
           "code": "sexual_orientation",
           "slug": "sexual-orientation",
-          "desc": "Classifies people according to the responses to the sexual orientation question.",
+          "desc": "The sexual orientation recorded by the person completing the census.",
+          "long_desc": "Classifies people according to the responses to the sexual orientation question. This question was voluntary and was only asked of people aged 16 years and over.",
           "units": "Person",
           "topic_code": "SOGI",
           "available_geotypes": [
@@ -4193,6 +4119,7 @@
               "code": "sexual_orientation_4a",
               "slug": "sexual-orientation-4a",
               "desc": "Sexual orientation (4 categories)",
+              "dataset": "TS077",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -4205,8 +4132,8 @@
                   "legend_str_3": "straight or heterosexual"
                 },
                 {
-                  "name": "Lesbian, Gay, Bisexual, or Other (LGBO)",
-                  "slug": "lesbian-gay-bisexual-or-other-lgbo",
+                  "name": "Lesbian, Gay, Bisexual, or Other (LGB+)",
+                  "slug": "lesbian-gay-bisexual-or-other-lgb",
                   "code": "sexual_orientation_4a-002",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "are",
@@ -4226,6 +4153,7 @@
               "code": "sexual_orientation_6a",
               "slug": "sexual-orientation-6a",
               "desc": "Sexual orientation (6 categories)",
+              "dataset": "TS077",
               "categories": [
                 {
                   "name": "Straight or Heterosexual",
@@ -4273,6 +4201,7 @@
               "code": "sexual_orientation_9a",
               "slug": "sexual-orientation-9a",
               "desc": "Sexual orientation (9 categories)",
+              "dataset": "TS079",
               "categories": [
                 {
                   "name": "Straight or Heterosexual",
@@ -4353,7 +4282,8 @@
           "name": "Household deprivation",
           "code": "hh_deprivation",
           "slug": "household-deprivation",
-          "desc": "If a household is deprived, based on employment, education, health and disability, and overcrowding.",
+          "desc": "Whether a household is deprived in one or more ways.",
+          "long_desc": "The dimensions of deprivation used to classify households are indicators based on four selected household characteristics.\n\nEducation\nA household is classified as deprived in the education dimension if no one has at least level 2 education and no one aged 16 to 18 years is a full-time student.\n\nEmployment\nA household is classified as deprived in the employment dimension if any member, not a full-time student, is either unemployed or long-term sick.\n\nHealth\nA household is classified as deprived in the health dimension if any member is disabled.\n\nHousing\nA household is classified as deprived in the housing dimension if the household's accommodation is either overcrowded, in a shared dwelling, or has no central heating.",
           "units": "Household",
           "topic_code": "DEM",
           "available_geotypes": [
@@ -4366,6 +4296,7 @@
               "code": "hh_deprivation",
               "slug": "hh-deprivation",
               "desc": "Household deprivation (6 categories)",
+              "dataset": "TS011",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -4418,6 +4349,7 @@
           "code": "hh_family_composition",
           "slug": "household-composition",
           "desc": "Households according to the relationships between members.",
+          "long_desc": "Households according to the relationships between members. \n\nOne-family households are classified by: \n* the number of dependent children \n* family type (married, civil partnership or cohabiting couple family, or lone parent family) \n\nOther households are classified by: \n* the number of people \n* the number of dependent children \n* whether the household consists only of students or only of people aged 66 and over",
           "units": "Household",
           "topic_code": "DEM",
           "available_geotypes": [
@@ -4430,6 +4362,7 @@
               "code": "hh_family_composition_4a",
               "slug": "hh-family-composition-4a",
               "desc": "Household composition (4 categories)",
+              "dataset": "TS003",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -4463,6 +4396,7 @@
               "code": "hh_family_composition_15a",
               "slug": "hh-family-composition-15a",
               "desc": "Household composition (15 categories)",
+              "dataset": "TS003",
               "categories": [
                 {
                   "name": "One person household: Aged 66 years and over",
@@ -4585,6 +4519,7 @@
           "code": "hh_multi_ethnic_group",
           "slug": "multiple-ethnic-groups-in-household",
           "desc": "Single or multiple ethnic groups within the household, and whether ethnic groups differ between generations or partnerships within the household.",
+          "long_desc": "Single or multiple ethnic groups within the household.  \nIf multiple ethnic groups are present, this identifies whether ethnic groups differ between generations or partnerships within the household.",
           "units": "Household",
           "topic_code": "DEM",
           "available_geotypes": [
@@ -4597,6 +4532,7 @@
               "code": "hh_multi_ethnic_group",
               "slug": "hh-multi-ethnic-group",
               "desc": "Multiple ethnic groups in household (6 categories)",
+              "dataset": "TS023",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -4645,10 +4581,157 @@
           ]
         },
         {
+          "name": "Household size",
+          "code": "hh_size",
+          "slug": "household-size",
+          "desc": "The number of people in a household.",
+          "long_desc": "The number of people in the household.   \n\nAdditional  \nVisitors staying at an address do not count to that households size.",
+          "units": "Household",
+          "topic_code": "DEM",
+          "available_geotypes": [
+            "oa",
+            "msoa",
+            "lad"
+          ],
+          "classifications": [
+            {
+              "code": "hh_size_5a",
+              "slug": "hh-size-5a",
+              "desc": "Household size (5 categories)",
+              "dataset": "TS017",
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "categories": [
+                {
+                  "name": "0 people in household",
+                  "slug": "0-people-in-household",
+                  "code": "hh_size_5a-000",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "0 people in household"
+                },
+                {
+                  "name": "1 person in household",
+                  "slug": "1-person-in-household",
+                  "code": "hh_size_5a-001",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "1 person in household"
+                },
+                {
+                  "name": "2 people in household",
+                  "slug": "2-people-in-household",
+                  "code": "hh_size_5a-002",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "2 people in household"
+                },
+                {
+                  "name": "3 people in household",
+                  "slug": "3-people-in-household",
+                  "code": "hh_size_5a-003",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "3 people in household"
+                },
+                {
+                  "name": "4 or more people in household",
+                  "slug": "4-or-more-people-in-household",
+                  "code": "hh_size_5a-004",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "4 or more people in household"
+                }
+              ]
+            },
+            {
+              "code": "hh_size_9a",
+              "slug": "hh-size-9a",
+              "desc": "Household size (9 categories)",
+              "dataset": "TS017",
+              "categories": [
+                {
+                  "name": "0 people in household",
+                  "slug": "0-people-in-household",
+                  "code": "hh_size_9a-000",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "0 people in household"
+                },
+                {
+                  "name": "1 person in household",
+                  "slug": "1-person-in-household",
+                  "code": "hh_size_9a-001",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "1 person in household"
+                },
+                {
+                  "name": "2 people in household",
+                  "slug": "2-people-in-household",
+                  "code": "hh_size_9a-002",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "2 people in household"
+                },
+                {
+                  "name": "3 people in household",
+                  "slug": "3-people-in-household",
+                  "code": "hh_size_9a-003",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "3 people in household"
+                },
+                {
+                  "name": "4 people in household",
+                  "slug": "4-people-in-household",
+                  "code": "hh_size_9a-004",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "4 people in household"
+                },
+                {
+                  "name": "5 people in household",
+                  "slug": "5-people-in-household",
+                  "code": "hh_size_9a-005",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "5 people in household"
+                },
+                {
+                  "name": "6 people in household",
+                  "slug": "6-people-in-household",
+                  "code": "hh_size_9a-006",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "6 people in household"
+                },
+                {
+                  "name": "7 people in household",
+                  "slug": "7-people-in-household",
+                  "code": "hh_size_9a-007",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "7 people in household"
+                },
+                {
+                  "name": "8 or more people in household",
+                  "slug": "8-or-more-people-in-household",
+                  "code": "hh_size_9a-008",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "8 or more people in household"
+                }
+              ]
+            }
+          ]
+        },
+        {
           "name": "Marital and civil partnership status",
           "code": "legal_partnership_status",
           "slug": "marital-and-civil-partnership-status",
-          "desc": "Classifies a person according to their legal marital or registered civil partnership status on 21 March 2021.",
+          "desc": "People's marital or civil partnership status.",
+          "long_desc": "Classifies a person according to their legal marital or registered civil partnership status on 21 March 2021.\n\n It is the same as the 2011 census variable \"Marital status\" but has been updated for Census 2021 to reflect the revised Civil Partnership Act that came into force in 2019.\n\nIn Census 2021 results, \"single\" refers only to someone who has never been married or in a registered civil partnership.",
           "units": "Person",
           "topic_code": "DEM",
           "available_geotypes": [
@@ -4661,6 +4744,7 @@
               "code": "legal_partnership_status_3a",
               "slug": "legal-partnership-status-3a",
               "desc": "Marital and civil partnership status (3 categories)",
+              "dataset": "TS002",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -4686,6 +4770,7 @@
               "code": "legal_partnership_status_6a",
               "slug": "legal-partnership-status-6a",
               "desc": "Marital and civil partnership status (6 categories)",
+              "dataset": "TS002",
               "categories": [
                 {
                   "name": "Never married and never registered a civil partnership",
@@ -4733,6 +4818,7 @@
               "code": "legal_partnership_status",
               "slug": "legal-partnership-status",
               "desc": "Marital and civil partnership status (12 categories)",
+              "dataset": "TS002",
               "categories": [
                 {
                   "name": "Never married and never registered a civil partnership",
@@ -4830,7 +4916,8 @@
           "name": "Living arrangements",
           "code": "living_arrangements",
           "slug": "living-arrangements",
-          "desc": "If a person is living in a couple or not, by their legal partnership status.",
+          "desc": "People living in couples, by their legal partnership status.",
+          "long_desc": "Living arrangements",
           "units": "Person",
           "topic_code": "DEM",
           "available_geotypes": [
@@ -4842,6 +4929,7 @@
               "code": "living_arrangements_11a",
               "slug": "living-arrangements-11a",
               "desc": "Living arrangements (11 categories)",
+              "dataset": "TS010",
               "choropleth_default": true,
               "categories": [
                 {
@@ -4932,7 +5020,8 @@
           "name": "Number of cars or vans",
           "code": "number_of_cars",
           "slug": "number-of-cars-or-vans",
-          "desc": "The number of cars or vans owned or available for use by household members.",
+          "desc": "The number of cars or vans owned or available for use by a household.",
+          "long_desc": "The number of cars or vans owned or available for use by household members.  \nVehicles included: \n* pick-ups, camper vans and motor homes  \n* vehicles that are temporarily not working  \n* vehicles that have failed their MOT   \n* vehicles owned or used by a lodger  \n* company cars or vans if they're available for private use \n\nVehicles not included:  \n* motorbikes, trikes, quad bikes or mobility scooters  \n* vehicles that have a Statutory Off Road Notification (SORN)  \n* vehicles owned or used only by a visitor  \n* vehicles that are kept at another address or not easily accessed  \n\nThe number of cars or vans in an area relates only to households. Cars or vans used by communal establishment residents are not counted.   \nHouseholds with 10 to 20 cars or vans are counted as having only 10.  \nHouseholds with more than 20 cars or vans were treated as invalid and a value imputed.",
           "units": "Household",
           "topic_code": "DEM",
           "available_geotypes": [
@@ -4945,6 +5034,7 @@
               "code": "number_of_cars_3a",
               "slug": "number-of-cars-3a",
               "desc": "Car or van availability (3 categories)",
+              "dataset": "TS045",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -4970,6 +5060,7 @@
               "code": "number_of_cars_5a",
               "slug": "number-of-cars-5a",
               "desc": "Car or van availability (5 categories)",
+              "dataset": "TS045",
               "categories": [
                 {
                   "name": "No cars or vans in household",
@@ -5011,7 +5102,8 @@
           "name": "Age",
           "code": "resident_age",
           "slug": "age",
-          "desc": "A persons age on Census Day, 21 March 2021 in England and Wales. Infants aged under 1 year are classified as 0 years of age",
+          "desc": "The age of a person on Census Day, 21 March 2021.",
+          "long_desc": "A persons age on Census Day, 21 March 2021 in England and Wales. Infants aged under 1 year are classified as 0 years of age",
           "units": "Person",
           "topic_code": "DEM",
           "available_geotypes": [
@@ -5023,6 +5115,7 @@
               "code": "resident_age_3a",
               "slug": "resident-age-3a",
               "desc": "Age (3 categories)",
+              "dataset": "TS076",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -5056,6 +5149,7 @@
               "code": "resident_age_8c",
               "slug": "resident-age-8c",
               "desc": "Age (C) (8 categories)",
+              "dataset": "TS076",
               "categories": [
                 {
                   "name": "Aged 14 years and under",
@@ -5127,6 +5221,7 @@
               "code": "resident_age_11a",
               "slug": "resident-age-11a",
               "desc": "Age (11 categories)",
+              "dataset": "TS076",
               "categories": [
                 {
                   "name": "Aged 4 years and under",
@@ -5222,6 +5317,7 @@
               "code": "resident_age_101a",
               "slug": "resident-age-101a",
               "desc": "Age (101 categories)",
+              "dataset": "TS007",
               "categories": [
                 {
                   "name": "Aged under 1 year",
@@ -6039,7 +6135,8 @@
           "name": "Sex",
           "code": "sex",
           "slug": "sex",
-          "desc": "This is the sex recorded by the person completing the census. The options were Female and Male.",
+          "desc": "The sex recorded by the person completing the census.",
+          "long_desc": "This is the sex recorded by the person completing the census. The options were Female and Male.",
           "units": "Person",
           "topic_code": "DEM",
           "available_geotypes": [
@@ -6052,6 +6149,7 @@
               "code": "sex",
               "slug": "sex",
               "desc": "Sex (2 categories)",
+              "dataset": "TS020",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -6076,49 +6174,11 @@
           ]
         },
         {
-          "name": "Usual resident indicator",
-          "code": "usual_resident_ind",
-          "slug": "usual-resident-indicator",
-          "desc": "Identifies if a person usually lives in England or Wales.",
-          "units": "Person",
-          "topic_code": "DEM",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
-          "classifications": [
-            {
-              "code": "usual_resident_ind",
-              "slug": "usual-resident-ind",
-              "desc": "Usual resident indicator (2 categories)",
-              "choropleth_default": true,
-              "categories": [
-                {
-                  "name": "Not a usual resident",
-                  "slug": "not-a-usual-resident",
-                  "code": "usual_resident_ind-000",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "not a usual resident"
-                },
-                {
-                  "name": "Usual resident",
-                  "slug": "usual-resident",
-                  "code": "usual_resident_ind-001",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "a usual resident"
-                }
-              ]
-            }
-          ]
-        },
-        {
           "name": "Age of arrival in the UK",
           "code": "age_arrival_uk",
           "slug": "age-of-arrival-in-the-uk",
-          "desc": "The age that someone who was not born in the UK was when they last arrived to live in the UK. This does not include returning from a holiday or short stay outside of the UK.",
+          "desc": "The age people not born in the UK were when they last arrived to live in the UK.",
+          "long_desc": "The date a person last arrived to live in the UK and their age. Arrival dates do not include returning from short trips away from the UK.  \n\nAge of arrival only applies to usual residents not born in the UK. It does not include usual residents born in the UK who have emigrated and since returned. These are recorded in the category born in the UK.",
           "units": "Person",
           "topic_code": "MIG",
           "available_geotypes": [
@@ -6131,6 +6191,7 @@
               "code": "age_arrival_uk_18a",
               "slug": "age-arrival-uk-18a",
               "desc": "Age of arrival in the UK (18 categories)",
+              "dataset": "TS018",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -6278,7 +6339,8 @@
           "name": "Country of birth",
           "code": "country_of_birth",
           "slug": "country-of-birth",
-          "desc": "The country in which a person was born.",
+          "desc": "Where people were born.",
+          "long_desc": "The country in which a person was born.  \n\nAdditional  \nFor people not born in one of in the four parts of the UK, there was an option to select \"elsewhere\".\n\nPeople who selected \"elsewhere'\" were asked to write in the current name for their country of birth.",
           "units": "Person",
           "topic_code": "MIG",
           "available_geotypes": [
@@ -6289,6 +6351,7 @@
               "code": "country_of_birth_3a",
               "slug": "country-of-birth-3a",
               "desc": "Country of birth (UK) (3 categories)",
+              "dataset": "TS004",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -6314,6 +6377,7 @@
               "code": "country_of_birth_8a",
               "slug": "country-of-birth-8a",
               "desc": "Country of birth (8 categories)",
+              "dataset": "TS004",
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
@@ -6377,6 +6441,7 @@
               "code": "country_of_birth_12a",
               "slug": "country-of-birth-12a",
               "desc": "Country of birth (12 categories)",
+              "dataset": "TS004",
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
@@ -6472,6 +6537,7 @@
               "code": "country_of_birth_60a",
               "slug": "country-of-birth-60a",
               "desc": "Country of birth (60 categories)",
+              "dataset": "TS012",
               "categories": [
                 {
                   "name": "Europe: United Kingdom: England",
@@ -6954,6 +7020,7 @@
           "code": "migrant_ind",
           "slug": "migrant-indicator",
           "desc": "Migrant indicator",
+          "long_desc": "Migrant indicator",
           "units": "Person",
           "topic_code": "MIG",
           "available_geotypes": [
@@ -6966,6 +7033,7 @@
               "code": "migrant_ind",
               "slug": "migrant-ind",
               "desc": "Migrant indicator (5 categories)",
+              "dataset": "TS019",
               "choropleth_default": true,
               "categories": [
                 {
@@ -7008,7 +7076,8 @@
           "name": "Passports held",
           "code": "passports_all",
           "slug": "passports-held",
-          "desc": "Classifies a person according to the passport or passports they held. This included expired passports or travel documents people were entitled to renew.",
+          "desc": "The passports people hold.",
+          "long_desc": "Passports held",
           "units": "Person",
           "topic_code": "MIG",
           "available_geotypes": [
@@ -7020,6 +7089,7 @@
               "code": "passports_all_4a",
               "slug": "passports-all-4a",
               "desc": "Passports held (4 categories)",
+              "dataset": "TS005",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -7053,6 +7123,7 @@
               "code": "passports_all_13a",
               "slug": "passports-all-13a",
               "desc": "Passports held (13 categories)",
+              "dataset": "TS005",
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
@@ -7156,6 +7227,7 @@
               "code": "passports_all_18a",
               "slug": "passports-all-18a",
               "desc": "Passports held (18 categories)",
+              "dataset": "TS005",
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
@@ -7299,6 +7371,7 @@
               "code": "passports_all_27a",
               "slug": "passports-all-27a",
               "desc": "Passports held (27 categories)",
+              "dataset": "TS005",
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
@@ -7511,16 +7584,15 @@
               ]
             },
             {
-              "code": "passports_all",
-              "slug": "passports-all",
-              "desc": "Passports held (53 categories)",
-              "choropleth_default": true,
-              "dot_density_default": true,
+              "code": "passports_all_52a",
+              "slug": "passports-all-52a",
+              "desc": "Passports held (52 categories)",
+              "dataset": "TS013",
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
                   "slug": "europe-united-kingdom",
-                  "code": "passports_all-001",
+                  "code": "passports_all_52a-001",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a UK passport"
@@ -7528,95 +7600,87 @@
                 {
                   "name": "Europe: Ireland",
                   "slug": "europe-ireland",
-                  "code": "passports_all-002",
+                  "code": "passports_all_52a-002",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "an Irish passport"
                 },
                 {
-                  "name": "Europe: Other Europe: EU countries: Member countries in March 2001: France",
-                  "slug": "europe-other-europe-eu-countries-member-countries-in-march-2001-france",
-                  "code": "passports_all-003",
+                  "name": "Europe: Other Europe: EU Member countries: France",
+                  "slug": "europe-other-europe-eu-member-countries-france",
+                  "code": "passports_all_52a-003",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a French passport"
                 },
                 {
-                  "name": "Europe: Other Europe: EU countries: Member countries in March 2001: Germany",
-                  "slug": "europe-other-europe-eu-countries-member-countries-in-march-2001-germany",
-                  "code": "passports_all-004",
+                  "name": "Europe: Other Europe: EU Member countries: Germany",
+                  "slug": "europe-other-europe-eu-member-countries-germany",
+                  "code": "passports_all_52a-004",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a German passport"
                 },
                 {
-                  "name": "Europe: Other Europe: EU countries: Member countries in March 2001: Italy",
-                  "slug": "europe-other-europe-eu-countries-member-countries-in-march-2001-italy",
-                  "code": "passports_all-005",
+                  "name": "Europe: Other Europe: EU Member countries: Italy",
+                  "slug": "europe-other-europe-eu-member-countries-italy",
+                  "code": "passports_all_52a-005",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "an Italian passport"
                 },
                 {
-                  "name": "Europe: Other Europe: EU countries: Member countries in March 2001: Portugal",
-                  "slug": "europe-other-europe-eu-countries-member-countries-in-march-2001-portugal",
-                  "code": "passports_all-006",
+                  "name": "Europe: Other Europe: EU Member countries: Portugal",
+                  "slug": "europe-other-europe-eu-member-countries-portugal",
+                  "code": "passports_all_52a-006",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a Portugese passport"
                 },
                 {
-                  "name": "Europe: Other Europe: EU countries: Member countries in March 2001: Spain",
-                  "slug": "europe-other-europe-eu-countries-member-countries-in-march-2001-spain",
-                  "code": "passports_all-007",
+                  "name": "Europe: Other Europe: EU Member countries: Spain",
+                  "slug": "europe-other-europe-eu-member-countries-spain",
+                  "code": "passports_all_52a-007",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a Spanish passport"
                 },
                 {
-                  "name": "Europe: Other Europe: EU countries: Member countries in March 2001: Other member countries in March 2001",
-                  "slug": "europe-other-europe-eu-countries-member-countries-in-march-2001-other-member-countries-in-march-2001",
-                  "code": "passports_all-008",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "a passport from another country that was an EU member in March 2001"
-                },
-                {
-                  "name": "Europe: Other Europe: EU countries: Countries that joined the EU between April 2001 and March 2021: Lithuania",
-                  "slug": "europe-other-europe-eu-countries-countries-that-joined-the-eu-between-april-2001-and-march-2021-lithuania",
-                  "code": "passports_all-009",
+                  "name": "Europe: Other Europe: EU Member countries: Lithuania",
+                  "slug": "europe-other-europe-eu-member-countries-lithuania",
+                  "code": "passports_all_52a-008",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a Lithuanian passport"
                 },
                 {
-                  "name": "Europe: Other Europe: EU countries: Countries that joined the EU between April 2001 and March 2021: Poland",
-                  "slug": "europe-other-europe-eu-countries-countries-that-joined-the-eu-between-april-2001-and-march-2021-poland",
-                  "code": "passports_all-010",
+                  "name": "Europe: Other Europe: EU Member countries: Poland",
+                  "slug": "europe-other-europe-eu-member-countries-poland",
+                  "code": "passports_all_52a-009",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a Polish passport"
                 },
                 {
-                  "name": "Europe: Other Europe: EU countries: Countries that joined the EU between April 2001 and March 2021: Romania",
-                  "slug": "europe-other-europe-eu-countries-countries-that-joined-the-eu-between-april-2001-and-march-2021-romania",
-                  "code": "passports_all-011",
+                  "name": "Europe: Other Europe: EU Member countries: Romania",
+                  "slug": "europe-other-europe-eu-member-countries-romania",
+                  "code": "passports_all_52a-010",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a Romanian passport"
                 },
                 {
-                  "name": "Europe: Other Europe: EU countries: Countries that joined the EU between April 2001 and March 2021: Other EU countries",
-                  "slug": "europe-other-europe-eu-countries-countries-that-joined-the-eu-between-april-2001-and-march-2021-other-eu-countries",
-                  "code": "passports_all-012",
+                  "name": "Europe: Other Europe: EU Member countries: Other EU countries",
+                  "slug": "europe-other-europe-eu-member-countries-other-eu-countries",
+                  "code": "passports_all_52a-011",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "a passport from another country that joined the EU between April 2001 and March 2021"
+                  "legend_str_3": "a passport from another EU country that"
                 },
                 {
                   "name": "Europe: Other Europe: Rest of Europe: Turkey",
                   "slug": "europe-other-europe-rest-of-europe-turkey",
-                  "code": "passports_all-013",
+                  "code": "passports_all_52a-012",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a Turkish passport"
@@ -7624,7 +7688,7 @@
                 {
                   "name": "Europe: Other Europe: Rest of Europe: Other Europe",
                   "slug": "europe-other-europe-rest-of-europe-other-europe",
-                  "code": "passports_all-014",
+                  "code": "passports_all_52a-013",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a passport from another European country"
@@ -7632,7 +7696,7 @@
                 {
                   "name": "Africa: North Africa",
                   "slug": "africa-north-africa",
-                  "code": "passports_all-015",
+                  "code": "passports_all_52a-014",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a North African passport"
@@ -7640,7 +7704,7 @@
                 {
                   "name": "Africa: Central and Western Africa: Ghana",
                   "slug": "africa-central-and-western-africa-ghana",
-                  "code": "passports_all-016",
+                  "code": "passports_all_52a-015",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a Ghanaian passport"
@@ -7648,7 +7712,7 @@
                 {
                   "name": "Africa: Central and Western Africa: Nigeria",
                   "slug": "africa-central-and-western-africa-nigeria",
-                  "code": "passports_all-017",
+                  "code": "passports_all_52a-016",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a Nigerian passport"
@@ -7656,7 +7720,7 @@
                 {
                   "name": "Africa: Central and Western Africa: Other Central and Western Africa",
                   "slug": "africa-central-and-western-africa-other-central-and-western-africa",
-                  "code": "passports_all-018",
+                  "code": "passports_all_52a-017",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a passport from another Central or West African country"
@@ -7664,7 +7728,7 @@
                 {
                   "name": "Africa: South and Eastern Africa: Kenya",
                   "slug": "africa-south-and-eastern-africa-kenya",
-                  "code": "passports_all-019",
+                  "code": "passports_all_52a-018",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a Kenyan passport"
@@ -7672,7 +7736,7 @@
                 {
                   "name": "Africa: South and Eastern Africa: Somalia",
                   "slug": "africa-south-and-eastern-africa-somalia",
-                  "code": "passports_all-020",
+                  "code": "passports_all_52a-019",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a Somalian passport"
@@ -7680,7 +7744,7 @@
                 {
                   "name": "Africa: South and Eastern Africa: South Africa",
                   "slug": "africa-south-and-eastern-africa-south-africa",
-                  "code": "passports_all-021",
+                  "code": "passports_all_52a-020",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a South African passport"
@@ -7688,7 +7752,7 @@
                 {
                   "name": "Africa: South and Eastern Africa: Zimbabwe",
                   "slug": "africa-south-and-eastern-africa-zimbabwe",
-                  "code": "passports_all-022",
+                  "code": "passports_all_52a-021",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a Zimbabwean passport"
@@ -7696,7 +7760,7 @@
                 {
                   "name": "Africa: South and Eastern Africa: Other South and Eastern Africa",
                   "slug": "africa-south-and-eastern-africa-other-south-and-eastern-africa",
-                  "code": "passports_all-023",
+                  "code": "passports_all_52a-022",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a passport from another South or East African country"
@@ -7704,7 +7768,7 @@
                 {
                   "name": "Middle East and Asia: Middle East: Iran",
                   "slug": "middle-east-and-asia-middle-east-iran",
-                  "code": "passports_all-024",
+                  "code": "passports_all_52a-023",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "an Iranian passport"
@@ -7712,7 +7776,7 @@
                 {
                   "name": "Middle East and Asia: Middle East: Iraq",
                   "slug": "middle-east-and-asia-middle-east-iraq",
-                  "code": "passports_all-025",
+                  "code": "passports_all_52a-024",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "an Iraqi passport"
@@ -7720,7 +7784,7 @@
                 {
                   "name": "Middle East and Asia: Middle East: Other Middle East",
                   "slug": "middle-east-and-asia-middle-east-other-middle-east",
-                  "code": "passports_all-026",
+                  "code": "passports_all_52a-025",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a passport from another Middle Eastern country"
@@ -7728,7 +7792,7 @@
                 {
                   "name": "Middle East and Asia: Eastern Asia: China",
                   "slug": "middle-east-and-asia-eastern-asia-china",
-                  "code": "passports_all-027",
+                  "code": "passports_all_52a-026",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a Chinese passport"
@@ -7736,7 +7800,7 @@
                 {
                   "name": "Middle East and Asia: Eastern Asia: Hong Kong (Special Administrative Region of China)",
                   "slug": "middle-east-and-asia-eastern-asia-hong-kong-special-administrative-region-of-china",
-                  "code": "passports_all-028",
+                  "code": "passports_all_52a-027",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a passport from Hong Kong"
@@ -7744,7 +7808,7 @@
                 {
                   "name": "Middle East and Asia: Eastern Asia: Japan",
                   "slug": "middle-east-and-asia-eastern-asia-japan",
-                  "code": "passports_all-029",
+                  "code": "passports_all_52a-028",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a Japanese passport"
@@ -7752,7 +7816,7 @@
                 {
                   "name": "Middle East and Asia: Eastern Asia: Other Eastern Asia",
                   "slug": "middle-east-and-asia-eastern-asia-other-eastern-asia",
-                  "code": "passports_all-030",
+                  "code": "passports_all_52a-029",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a passport from another East Asian country"
@@ -7760,7 +7824,7 @@
                 {
                   "name": "Middle East and Asia: Southern Asia: Afghanistan",
                   "slug": "middle-east-and-asia-southern-asia-afghanistan",
-                  "code": "passports_all-031",
+                  "code": "passports_all_52a-030",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "an Afghan passport"
@@ -7768,7 +7832,7 @@
                 {
                   "name": "Middle East and Asia: Southern Asia: Bangladesh",
                   "slug": "middle-east-and-asia-southern-asia-bangladesh",
-                  "code": "passports_all-032",
+                  "code": "passports_all_52a-031",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a Bangladeshi passport"
@@ -7776,7 +7840,7 @@
                 {
                   "name": "Middle East and Asia: Southern Asia: India",
                   "slug": "middle-east-and-asia-southern-asia-india",
-                  "code": "passports_all-033",
+                  "code": "passports_all_52a-032",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "an Indian passport"
@@ -7784,7 +7848,7 @@
                 {
                   "name": "Middle East and Asia: Southern Asia: Pakistan",
                   "slug": "middle-east-and-asia-southern-asia-pakistan",
-                  "code": "passports_all-034",
+                  "code": "passports_all_52a-033",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a Pakistani passport"
@@ -7792,7 +7856,7 @@
                 {
                   "name": "Middle East and Asia: Southern Asia: Sri Lanka",
                   "slug": "middle-east-and-asia-southern-asia-sri-lanka",
-                  "code": "passports_all-035",
+                  "code": "passports_all_52a-034",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a Sri Lankan passport"
@@ -7800,7 +7864,7 @@
                 {
                   "name": "Middle East and Asia: Southern Asia: Other Southern Asia",
                   "slug": "middle-east-and-asia-southern-asia-other-southern-asia",
-                  "code": "passports_all-036",
+                  "code": "passports_all_52a-035",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a passport from another South Asian country"
@@ -7808,7 +7872,7 @@
                 {
                   "name": "Middle East and Asia: South-East Asia: Malaysia",
                   "slug": "middle-east-and-asia-south-east-asia-malaysia",
-                  "code": "passports_all-037",
+                  "code": "passports_all_52a-036",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a Malaysian passport"
@@ -7816,7 +7880,7 @@
                 {
                   "name": "Middle East and Asia: South-East Asia: Philippines",
                   "slug": "middle-east-and-asia-south-east-asia-philippines",
-                  "code": "passports_all-038",
+                  "code": "passports_all_52a-037",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a Filipino passport"
@@ -7824,7 +7888,7 @@
                 {
                   "name": "Middle East and Asia: South-East Asia: Singapore",
                   "slug": "middle-east-and-asia-south-east-asia-singapore",
-                  "code": "passports_all-039",
+                  "code": "passports_all_52a-038",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a Singaporean passport"
@@ -7832,7 +7896,7 @@
                 {
                   "name": "Middle East and Asia: South-East Asia: Other South-East Asia",
                   "slug": "middle-east-and-asia-south-east-asia-other-south-east-asia",
-                  "code": "passports_all-040",
+                  "code": "passports_all_52a-039",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a passport from another South-East Asian country"
@@ -7840,7 +7904,7 @@
                 {
                   "name": "Middle East and Asia: Central Asia",
                   "slug": "middle-east-and-asia-central-asia",
-                  "code": "passports_all-041",
+                  "code": "passports_all_52a-040",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a Central Asian passport"
@@ -7848,7 +7912,7 @@
                 {
                   "name": "The Americas and the Caribbean: North America: Canada",
                   "slug": "the-americas-and-the-caribbean-north-america-canada",
-                  "code": "passports_all-042",
+                  "code": "passports_all_52a-041",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a Canadian passport"
@@ -7856,7 +7920,7 @@
                 {
                   "name": "The Americas and the Caribbean: North America: United States",
                   "slug": "the-americas-and-the-caribbean-north-america-united-states",
-                  "code": "passports_all-043",
+                  "code": "passports_all_52a-042",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a United States passport"
@@ -7864,7 +7928,7 @@
                 {
                   "name": "The Americas and the Caribbean: Central America",
                   "slug": "the-americas-and-the-caribbean-central-america",
-                  "code": "passports_all-044",
+                  "code": "passports_all_52a-043",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a Central American passport"
@@ -7872,7 +7936,7 @@
                 {
                   "name": "The Americas and the Caribbean: South America",
                   "slug": "the-americas-and-the-caribbean-south-america",
-                  "code": "passports_all-045",
+                  "code": "passports_all_52a-044",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a South American passport"
@@ -7880,7 +7944,7 @@
                 {
                   "name": "The Americas and the Caribbean: The Caribbean: Jamaica",
                   "slug": "the-americas-and-the-caribbean-the-caribbean-jamaica",
-                  "code": "passports_all-046",
+                  "code": "passports_all_52a-045",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a Jamaican passport"
@@ -7888,7 +7952,7 @@
                 {
                   "name": "The Americas and the Caribbean: The Caribbean: Other Caribbean",
                   "slug": "the-americas-and-the-caribbean-the-caribbean-other-caribbean",
-                  "code": "passports_all-047",
+                  "code": "passports_all_52a-046",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a passport from another Caribbean country"
@@ -7896,7 +7960,7 @@
                 {
                   "name": "Antarctica and Oceania: Australasia: Australia",
                   "slug": "antarctica-and-oceania-australasia-australia",
-                  "code": "passports_all-048",
+                  "code": "passports_all_52a-047",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "an Australian passport"
@@ -7904,7 +7968,7 @@
                 {
                   "name": "Antarctica and Oceania: Australasia: New Zealand",
                   "slug": "antarctica-and-oceania-australasia-new-zealand",
-                  "code": "passports_all-049",
+                  "code": "passports_all_52a-048",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a New Zealand passport"
@@ -7912,7 +7976,7 @@
                 {
                   "name": "Antarctica and Oceania: Other Antarctica and Oceania",
                   "slug": "antarctica-and-oceania-other-antarctica-and-oceania",
-                  "code": "passports_all-050",
+                  "code": "passports_all_52a-049",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a passport from another country in Oceania and Antartica"
@@ -7920,7 +7984,7 @@
                 {
                   "name": "British Overseas Territories",
                   "slug": "british-overseas-territories",
-                  "code": "passports_all-051",
+                  "code": "passports_all_52a-050",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a passport from the British Overseas Territories"
@@ -7928,7 +7992,7 @@
                 {
                   "name": "No passport held",
                   "slug": "no-passport-held",
-                  "code": "passports_all-052",
+                  "code": "passports_all_52a-051",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "no passport"
@@ -7941,7 +8005,8 @@
           "name": "Length of residence in the UK",
           "code": "residence_length",
           "slug": "length-of-residence-in-the-uk",
-          "desc": "The length of stay in the UK for someone who was not born in the UK. This is based on when someone last arrived to live in the UK, not including returning from a holiday or short stay outside the UK.",
+          "desc": "Length of stay in the UK (for people not born in the UK).",
+          "long_desc": "Length of residence in the UK",
           "units": "Person",
           "topic_code": "MIG",
           "available_geotypes": [
@@ -7954,6 +8019,7 @@
               "code": "residence_length_6b",
               "slug": "residence-length-6b",
               "desc": "Length of residence in the UK (6 categories)",
+              "dataset": "TS016",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -8005,7 +8071,8 @@
           "name": "Year of arrival in the UK",
           "code": "year_arrival_uk",
           "slug": "year-of-arrival-in-the-uk",
-          "desc": "The year that someone who was not born in the UK last arrived in the UK. This does not include returning from a holiday or short stay outside the UK.",
+          "desc": "The year people arrived to live in the UK (for people not born in the UK).",
+          "long_desc": "The year someone not born in the UK last arrived in the UK. This does not include returning from short visits away from the UK.",
           "units": "Person",
           "topic_code": "MIG",
           "available_geotypes": [
@@ -8018,6 +8085,7 @@
               "code": "year_arrival_uk_6a",
               "slug": "year-arrival-uk-6a",
               "desc": "Year of arrival in the UK (6 categories)",
+              "dataset": "TS015",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -8067,6 +8135,7 @@
               "code": "year_arrival_uk",
               "slug": "year-arrival-uk",
               "desc": "Year of arrival in the UK (13 categories)",
+              "dataset": "TS015",
               "categories": [
                 {
                   "name": "Born in the UK",
@@ -8179,7 +8248,8 @@
           "name": "Economic activity status",
           "code": "economic_activity",
           "slug": "economic-activity-status",
-          "desc": "People aged 16 years and over who were in employment, looking for work or waiting to start a job.",
+          "desc": "People in employment, looking for work or waiting to start a job.",
+          "long_desc": "Economic activity status",
           "units": "Person",
           "topic_code": "LAB",
           "available_geotypes": [
@@ -8192,6 +8262,7 @@
               "code": "economic_activity_status_3a",
               "slug": "economic-activity-status-3a",
               "desc": "Economic activity status (3 categories)",
+              "dataset": "TS066",
               "choropleth_default": true,
               "categories": [
                 {
@@ -8216,6 +8287,7 @@
               "code": "economic_activity_status_4a",
               "slug": "economic-activity-status-4a",
               "desc": "Economic activity status (4 categories)",
+              "dataset": "TS066",
               "dot_density_default": true,
               "categories": [
                 {
@@ -8248,6 +8320,7 @@
               "code": "economic_activity_status_12a",
               "slug": "economic-activity-status-12a",
               "desc": "Economic activity status (12 categories)",
+              "dataset": "TS066",
               "categories": [
                 {
                   "name": "Economically active (excluding full-time students): In employment: Employee",
@@ -8346,6 +8419,7 @@
           "code": "has_ever_worked",
           "slug": "unemployment-history",
           "desc": "Classifies people who are unemployed into short-term unemployment, long-term unemployment and those who have never worked.",
+          "long_desc": "Unemployment history",
           "units": "Person",
           "topic_code": "LAB",
           "available_geotypes": [
@@ -8358,6 +8432,7 @@
               "code": "has_ever_worked",
               "slug": "has-ever-worked",
               "desc": "Unemployment history (4 categories)",
+              "dataset": "TS065",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -8393,7 +8468,8 @@
           "name": "Hours worked",
           "code": "hours_per_week_worked",
           "slug": "hours-worked",
-          "desc": "The number of hours worked per week before the census including paid and unpaid overtime.",
+          "desc": "The number of hours people work per week.",
+          "long_desc": "Hours worked",
           "units": "Person",
           "topic_code": "LAB",
           "available_geotypes": [
@@ -8406,6 +8482,7 @@
               "code": "hours_per_week_worked_3a",
               "slug": "hours-per-week-worked-3a",
               "desc": "Hours worked (3 categories)",
+              "dataset": "TS059",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -8431,6 +8508,7 @@
               "code": "hours_per_week_worked",
               "slug": "hours-per-week-worked",
               "desc": "Hours worked (5 categories)",
+              "dataset": "TS059",
               "categories": [
                 {
                   "name": "Part-time: 15 hours or less worked",
@@ -8472,7 +8550,8 @@
           "name": "Industry (current)",
           "code": "industry_current",
           "slug": "industry-current",
-          "desc": "The industry in which a person works relates to their main job.",
+          "desc": "The industry people work in.",
+          "long_desc": "Industry (current)",
           "units": "Person",
           "topic_code": "LAB",
           "available_geotypes": [
@@ -8484,6 +8563,7 @@
               "code": "industry_current_88a",
               "slug": "industry-current-88a",
               "desc": "Industry (current) (88 categories)",
+              "dataset": "TS060",
               "choropleth_default": true,
               "categories": [
                 {
@@ -9191,6 +9271,7 @@
           "code": "ns_sec",
           "slug": "national-statistics-socio-economic-classification-ns-sec",
           "desc": "Classifies people's socioeconomic position based on their occupation and other job characteristics.",
+          "long_desc": "National Statistics Socio-economic Classification (NS-SeC)",
           "units": "Person",
           "topic_code": "LAB",
           "available_geotypes": [
@@ -9203,6 +9284,7 @@
               "code": "ns_sec_10a",
               "slug": "ns-sec-10a",
               "desc": "National Statistics Socio-economic Classification (NS-SeC) (10 categories)",
+              "dataset": "TS062",
               "choropleth_default": true,
               "categories": [
                 {
@@ -9285,7 +9367,8 @@
           "name": "Occupation (current)",
           "code": "occupation_current",
           "slug": "occupation-current",
-          "desc": "Classifies what people aged 16 years and over do as their main job.",
+          "desc": "The jobs people work in.",
+          "long_desc": "Occupation (current)",
           "units": "Person",
           "topic_code": "LAB",
           "available_geotypes": [
@@ -9297,6 +9380,7 @@
               "code": "occupation_current_10a",
               "slug": "occupation-current-10a",
               "desc": "Occupation (current) (10 categories)",
+              "dataset": "TS063",
               "choropleth_default": true,
               "categories": [
                 {
@@ -9376,10 +9460,11 @@
           ]
         },
         {
-          "name": "Method of travel to work",
-          "code": "transport_to_work",
-          "slug": "method-of-travel-to-work",
-          "desc": "This is the method of travel someone usually uses for the longest part, by distance, of their journey to their main job.",
+          "name": "Method of travel to workplace",
+          "code": "transport_to_workplace",
+          "slug": "method-of-travel-to-workplace",
+          "desc": "Method of travel to workplace.",
+          "long_desc": "A person's place of work and their method of travel to work. This is the 2001 method of producing travel to work variables.\n \n\"Work mainly from home\" applies to someone who indicated their place of work as their home address and travelled to work by driving a car or van (e.g. visiting clients).",
           "units": "Person",
           "topic_code": "TTW",
           "available_geotypes": [
@@ -9388,23 +9473,24 @@
           ],
           "classifications": [
             {
-              "code": "transport_to_work",
-              "slug": "transport-to-work",
-              "desc": "Method used to travel to work (12 categories)",
+              "code": "transport_to_workplace_12a",
+              "slug": "transport-to-workplace-12a",
+              "desc": "Method used to travel to workplace (12 categories)",
+              "dataset": "TS061",
               "choropleth_default": true,
               "categories": [
                 {
                   "name": "Work mainly at or from home",
                   "slug": "work-mainly-at-or-from-home",
-                  "code": "transport_to_work-001",
+                  "code": "transport_to_workplace_12a-001",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "work",
                   "legend_str_3": "mainly at or from home"
                 },
                 {
-                  "name": "Underground, metro, light rail or tram",
-                  "slug": "underground-metro-light-rail-or-tram",
-                  "code": "transport_to_work-002",
+                  "name": "Underground, metro, light rail, tram",
+                  "slug": "underground-metro-light-rail-tram",
+                  "code": "transport_to_workplace_12a-002",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "travel to work by",
                   "legend_str_3": "underground, metro, light rail or tram"
@@ -9412,7 +9498,7 @@
                 {
                   "name": "Train",
                   "slug": "train",
-                  "code": "transport_to_work-003",
+                  "code": "transport_to_workplace_12a-003",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "travel to work by",
                   "legend_str_3": "train"
@@ -9420,7 +9506,7 @@
                 {
                   "name": "Bus, minibus or coach",
                   "slug": "bus-minibus-or-coach",
-                  "code": "transport_to_work-004",
+                  "code": "transport_to_workplace_12a-004",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "travel to work by",
                   "legend_str_3": "bus, minibus or coach"
@@ -9428,7 +9514,7 @@
                 {
                   "name": "Taxi",
                   "slug": "taxi",
-                  "code": "transport_to_work-005",
+                  "code": "transport_to_workplace_12a-005",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "travel to work by",
                   "legend_str_3": "taxi"
@@ -9436,7 +9522,7 @@
                 {
                   "name": "Motorcycle, scooter or moped",
                   "slug": "motorcycle-scooter-or-moped",
-                  "code": "transport_to_work-006",
+                  "code": "transport_to_workplace_12a-006",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "travel to work by",
                   "legend_str_3": "motorcycle, scooter or moped"
@@ -9444,7 +9530,7 @@
                 {
                   "name": "Driving a car or van",
                   "slug": "driving-a-car-or-van",
-                  "code": "transport_to_work-007",
+                  "code": "transport_to_workplace_12a-007",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "travel to work by",
                   "legend_str_3": "driving a car or van"
@@ -9452,7 +9538,7 @@
                 {
                   "name": "Passenger in a car or van",
                   "slug": "passenger-in-a-car-or-van",
-                  "code": "transport_to_work-008",
+                  "code": "transport_to_workplace_12a-008",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "travel to work by",
                   "legend_str_3": "passenger in a car or van"
@@ -9460,7 +9546,7 @@
                 {
                   "name": "Bicycle",
                   "slug": "bicycle",
-                  "code": "transport_to_work-009",
+                  "code": "transport_to_workplace_12a-009",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "travel to work by",
                   "legend_str_3": "bicycle"
@@ -9468,18 +9554,26 @@
                 {
                   "name": "On foot",
                   "slug": "on-foot",
-                  "code": "transport_to_work-010",
+                  "code": "transport_to_workplace_12a-010",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "travel to work",
                   "legend_str_3": "on foot"
                 },
                 {
-                  "name": "Other",
-                  "slug": "other",
-                  "code": "transport_to_work-011",
+                  "name": "Other method of travel to work",
+                  "slug": "other-method-of-travel-to-work",
+                  "code": "transport_to_workplace_12a-011",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "travel to work",
                   "legend_str_3": "using other means"
+                },
+                {
+                  "name": "Not in employment or aged 15 years and under",
+                  "slug": "not-in-employment-or-aged-15-years-and-under",
+                  "code": "transport_to_workplace_12a-012",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "not in employment or aged 15 years and under"
                 }
               ]
             }
@@ -9489,7 +9583,8 @@
           "name": "Distance travelled to work",
           "code": "workplace_travel",
           "slug": "distance-travelled-to-work",
-          "desc": "The distance, in kilometres, between a person's residential postcode and their workplace postcode measured in a straight line.",
+          "desc": "The distance between home and work, in kilometres.",
+          "long_desc": "The distance, in kilometres, between a person's residential postcode and their workplace postcode measured in a straight line. A distance travelled of 0.1km indicates that the workplace postcode is the same as the residential postcode. Distances over 1200km are treated as invalid, and an imputed or estimated value is added.\n\nWork mainly at or from home is made up of those that ticked either the 'Mainly work at or from home' box for the address of workplace question, or the Work mainly at or from home box for the method of travel to work question.\n\nOther includes no fixed place of work, working on an offshore installation and working outside of the UK.\n\nDistance is calculated as the straight line distance between the enumeration postcode and the workplace postcode.",
           "units": "Person",
           "topic_code": "TTW",
           "available_geotypes": [
@@ -9501,6 +9596,7 @@
               "code": "workplace_travel_4a",
               "slug": "workplace-travel-4a",
               "desc": "Distance travelled to work (4 categories)",
+              "dataset": "TS058",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -9542,6 +9638,7 @@
               "code": "workplace_travel_5a",
               "slug": "workplace-travel-5a",
               "desc": "Distance travelled to work (5 categories)",
+              "dataset": "TS058",
               "categories": [
                 {
                   "name": "Less than 10km",
@@ -9589,6 +9686,7 @@
               "code": "workplace_travel_10a",
               "slug": "workplace-travel-10a",
               "desc": "Distance travelled to work (10 categories)",
+              "dataset": "TS058",
               "categories": [
                 {
                   "name": "Less than 2km",

@@ -79,6 +79,7 @@ def classification_from_cantabular_csv_row(csv_row: dict) -> CensusClassificatio
         desc=csv_row["External_Classification_Label_English"].strip(),
         choropleth_default=False,
         dot_density_default=False,
+        dataset = "",
         categories=[],
         _variable_code=csv_row["Variable_Mnemonic"],
     )
@@ -102,6 +103,7 @@ def variable_from_cantabular_csv_row(csv_row: dict) -> CensusVariable:
         variable.topic_code = VARIABLE_TOPIC_OVERRIDES[variable.code]
     return variable
 
+
 def variable_group_from_dict(raw_tg: dict) -> CensusVariableGroup:
     """Make CensusVariableGroup from object in variable group definition json"""
     return CensusVariableGroup(
@@ -111,6 +113,12 @@ def variable_group_from_dict(raw_tg: dict) -> CensusVariableGroup:
         variables=[],
         _topic_codes=raw_tg["topic_codes"],
     )
+
+
+def datasets_classifications_from_cantabular(dataset_variable_csv_file: str) -> dict:
+    with open(dataset_variable_csv_file, "r") as f:
+        raw_dvs =  list(csv.DictReader(f))
+    return {raw_dv["Classification_Mnemonic"]: raw_dv["Dataset_Mnemonic"] for raw_dv in raw_dvs}
 
 
 def input_full_path(input_partial_path: str) -> Path:
@@ -150,6 +158,8 @@ def variable_groups_from_metadata(cantabular_metadata_dir: Path, variable_groups
     with open(variable_groups_spec_file, "r") as f:
         variable_groups = [variable_group_from_dict(tg_raw) for tg_raw in json.load(f)]
 
+    datasets = datasets_classifications_from_cantabular(cantabular_metadata_dir.joinpath("Dataset_Variable.csv"))
+
     # filter out blanks (these happen when blank rows are in the csvs, etc)
     categories = list(filter(lambda x: x.name != "", categories))
     classifications = list(filter(lambda x: x.code != "", classifications))
@@ -163,6 +173,7 @@ def variable_groups_from_metadata(cantabular_metadata_dir: Path, variable_groups
     for v in variables:
         v.gather_classifications(classifications)
         v.make_legend_strings()
+        v.gather_ts_datasets(datasets)
 
     for vg in variable_groups:
         vg.gather_variables(variables)
@@ -190,7 +201,7 @@ def main(spec: dict):
     )
     print("... done.")
 
-    # update legend strings
+    # # update legend strings
     print(f"Inserting new legend strings from {spec['category_legend_strs_file']}...")
     content_iterations["ALL"] = update_legend_strs_from_file(
         content_iterations["ALL"],

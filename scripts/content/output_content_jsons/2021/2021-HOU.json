@@ -1,11 +1,11 @@
 {
   "meta": {
-    "created_at": "2022-10-18-09-26-27",
+    "created_at": "2022-10-19-12-05-41",
     "cantabular_metadata_source": "ar2776-c21ew_metadata-v1-3_cantab_20221011-22",
     "rich_content_spec_file_used_to_filter": "Rich_content_product_specifications.csv",
     "legend_strs_file": "Rich_content_product_specifications.csv",
     "variable_desc_file": "Atlas_variables_short_descriptions.csv",
-    "release": "2021-v4-HOU"
+    "release": "2021-HOU"
   },
   "content": [
     {
@@ -31,6 +31,7 @@
               "code": "accommodation_type_3a",
               "slug": "accommodation-type-3a",
               "desc": "Accommodation type (3 categories)",
+              "dataset": "TS044",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -64,6 +65,7 @@
               "code": "accommodation_type_5a",
               "slug": "accommodation-type-5a",
               "desc": "Accommodation type (5 categories)",
+              "dataset": "TS044",
               "categories": [
                 {
                   "name": "Whole house or bungalow: Detached",
@@ -111,6 +113,7 @@
               "code": "accommodation_type",
               "slug": "accommodation-type",
               "desc": "Accommodation type (8 categories)",
+              "dataset": "TS044",
               "categories": [
                 {
                   "name": "Detached",
@@ -198,6 +201,7 @@
               "code": "alternative_address_indicator",
               "slug": "alternative-address-indicator",
               "desc": "Second address indicator (3 categories)",
+              "dataset": "TS056",
               "choropleth_default": true,
               "categories": [
                 {
@@ -246,6 +250,7 @@
               "code": "heating_type_3a",
               "slug": "heating-type-3a",
               "desc": "Type of central heating in household (3 categories)",
+              "dataset": "TS046",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -271,6 +276,7 @@
               "code": "heating_type",
               "slug": "heating-type",
               "desc": "Type of central heating in household (13 categories)",
+              "dataset": "TS046",
               "categories": [
                 {
                   "name": "No central heating",
@@ -390,6 +396,7 @@
               "code": "hh_tenure_5a",
               "slug": "hh-tenure-5a",
               "desc": "Tenure of household (5 categories)",
+              "dataset": "TS054",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -431,6 +438,7 @@
               "code": "hh_tenure_9a",
               "slug": "hh-tenure-9a",
               "desc": "Tenure of household (9 categories)",
+              "dataset": "TS054",
               "categories": [
                 {
                   "name": "Owned: Owns outright",
@@ -518,6 +526,7 @@
               "code": "number_bedrooms_5a",
               "slug": "number-bedrooms-5a",
               "desc": "Number of Bedrooms (5 categories)",
+              "dataset": "TS050",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -575,6 +584,7 @@
               "code": "occupancy_rating_bedrooms_6a",
               "slug": "occupancy-rating-bedrooms-6a",
               "desc": "Occupancy rating for bedrooms (6 categories)",
+              "dataset": "TS052",
               "choropleth_default": true,
               "categories": [
                 {
@@ -639,6 +649,7 @@
               "code": "occupancy_rating_rooms_6a",
               "slug": "occupancy-rating-rooms-6a",
               "desc": "Occupancy rating for rooms (6 categories)",
+              "dataset": "TS053",
               "choropleth_default": true,
               "categories": [
                 {
@@ -703,6 +714,7 @@
               "code": "second_address_type_priority",
               "slug": "second-address-type-priority",
               "desc": "Second address type (10 categories)",
+              "dataset": "TS055",
               "choropleth_default": true,
               "categories": [
                 {

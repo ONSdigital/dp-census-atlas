@@ -58,7 +58,7 @@ TS056,RT072,Usual_Residents,"OA,LSOA,MSOA,LA,Region,Country,National",Second add
 TS058,RT082,Usual_Residents,"OA,LSOA,MSOA,LTLA,UTLA.Region,Country,National",Distance travelled to work,workplace_travel,
 TS059,RT036,Usual_Residents,"OA,LSOA,MSOA,LA,Region,Country,National",Hours worked,hours_per_week_worked,
 TS060,RT037,Usual_Residents,"MSOA,LA,Region,Country,National",Industry,industry_current,
-TS061,RT083,Usual_Residents,"OA,LSOA,MSOA,LTLA,UTLA,Region,Country,National",Method used to travel to work,transport_to_work,
+TS061,RT083,Usual_Residents,"OA,LSOA,MSOA,LTLA,UTLA,Region,Country,National",Method used to travel to workplace,transport_to_workplace,
 TS062,RT084,Usual_Residents,"OA,LSOA,MSOA,LA,Region,Country,National",NS-SeC,ns_sec,
 TS063,,Usual_Residents,"OA,LSOA,MSOA,LA,Region,Country,National",Occupation,occupation_current,
 TS064,,Usual_Residents,"MSOA,LA,Region,Country,National",Occupation - minor groups,occupation_current,

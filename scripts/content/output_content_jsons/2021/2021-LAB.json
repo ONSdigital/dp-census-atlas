@@ -1,11 +1,11 @@
 {
   "meta": {
-    "created_at": "2022-10-11-15-34-41",
-    "cantabular_metadata_source": "ar2776-c21ew_metadata-v1-3_cantab_20220927-20",
+    "created_at": "2022-10-19-12-05-41",
+    "cantabular_metadata_source": "ar2776-c21ew_metadata-v1-3_cantab_20221011-22",
     "rich_content_spec_file_used_to_filter": "Rich_content_product_specifications.csv",
     "legend_strs_file": "Rich_content_product_specifications.csv",
     "variable_desc_file": "Atlas_variables_short_descriptions.csv",
-    "release": "2021-v2-LAB"
+    "release": "2021-LAB"
   },
   "content": [
     {
@@ -17,7 +17,8 @@
           "name": "Economic activity status",
           "code": "economic_activity",
           "slug": "economic-activity-status",
-          "desc": "People aged 16 years and over who were in employment, looking for work or waiting to start a job.",
+          "desc": "People in employment, looking for work or waiting to start a job.",
+          "long_desc": "Economic activity status",
           "units": "Person",
           "topic_code": "LAB",
           "available_geotypes": [
@@ -30,6 +31,7 @@
               "code": "economic_activity_status_3a",
               "slug": "economic-activity-status-3a",
               "desc": "Economic activity status (3 categories)",
+              "dataset": "TS066",
               "choropleth_default": true,
               "categories": [
                 {
@@ -54,6 +56,7 @@
               "code": "economic_activity_status_4a",
               "slug": "economic-activity-status-4a",
               "desc": "Economic activity status (4 categories)",
+              "dataset": "TS066",
               "dot_density_default": true,
               "categories": [
                 {
@@ -86,6 +89,7 @@
               "code": "economic_activity_status_12a",
               "slug": "economic-activity-status-12a",
               "desc": "Economic activity status (12 categories)",
+              "dataset": "TS066",
               "categories": [
                 {
                   "name": "Economically active (excluding full-time students): In employment: Employee",
@@ -184,6 +188,7 @@
           "code": "has_ever_worked",
           "slug": "unemployment-history",
           "desc": "Classifies people who are unemployed into short-term unemployment, long-term unemployment and those who have never worked.",
+          "long_desc": "Unemployment history",
           "units": "Person",
           "topic_code": "LAB",
           "available_geotypes": [
@@ -196,6 +201,7 @@
               "code": "has_ever_worked",
               "slug": "has-ever-worked",
               "desc": "Unemployment history (4 categories)",
+              "dataset": "TS065",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -231,7 +237,8 @@
           "name": "Hours worked",
           "code": "hours_per_week_worked",
           "slug": "hours-worked",
-          "desc": "The number of hours worked per week before the census including paid and unpaid overtime.",
+          "desc": "The number of hours people work per week.",
+          "long_desc": "Hours worked",
           "units": "Person",
           "topic_code": "LAB",
           "available_geotypes": [
@@ -244,6 +251,7 @@
               "code": "hours_per_week_worked_3a",
               "slug": "hours-per-week-worked-3a",
               "desc": "Hours worked (3 categories)",
+              "dataset": "TS059",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -269,6 +277,7 @@
               "code": "hours_per_week_worked",
               "slug": "hours-per-week-worked",
               "desc": "Hours worked (5 categories)",
+              "dataset": "TS059",
               "categories": [
                 {
                   "name": "Part-time: 15 hours or less worked",
@@ -310,7 +319,8 @@
           "name": "Industry (current)",
           "code": "industry_current",
           "slug": "industry-current",
-          "desc": "The industry in which a person works relates to their main job.",
+          "desc": "The industry people work in.",
+          "long_desc": "Industry (current)",
           "units": "Person",
           "topic_code": "LAB",
           "available_geotypes": [
@@ -322,6 +332,7 @@
               "code": "industry_current_88a",
               "slug": "industry-current-88a",
               "desc": "Industry (current) (88 categories)",
+              "dataset": "TS060",
               "choropleth_default": true,
               "categories": [
                 {
@@ -1029,6 +1040,7 @@
           "code": "ns_sec",
           "slug": "national-statistics-socio-economic-classification-ns-sec",
           "desc": "Classifies people's socioeconomic position based on their occupation and other job characteristics.",
+          "long_desc": "National Statistics Socio-economic Classification (NS-SeC)",
           "units": "Person",
           "topic_code": "LAB",
           "available_geotypes": [
@@ -1041,6 +1053,7 @@
               "code": "ns_sec_10a",
               "slug": "ns-sec-10a",
               "desc": "National Statistics Socio-economic Classification (NS-SeC) (10 categories)",
+              "dataset": "TS062",
               "choropleth_default": true,
               "categories": [
                 {
@@ -1123,7 +1136,8 @@
           "name": "Occupation (current)",
           "code": "occupation_current",
           "slug": "occupation-current",
-          "desc": "Classifies what people aged 16 years and over do as their main job.",
+          "desc": "The jobs people work in.",
+          "long_desc": "Occupation (current)",
           "units": "Person",
           "topic_code": "LAB",
           "available_geotypes": [
@@ -1135,6 +1149,7 @@
               "code": "occupation_current_10a",
               "slug": "occupation-current-10a",
               "desc": "Occupation (current) (10 categories)",
+              "dataset": "TS063",
               "choropleth_default": true,
               "categories": [
                 {

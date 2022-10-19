@@ -1,11 +1,11 @@
 {
   "meta": {
-    "created_at": "2022-10-12-15-28-37",
+    "created_at": "2022-10-19-12-05-41",
     "cantabular_metadata_source": "ar2776-c21ew_metadata-v1-3_cantab_20221011-22",
     "rich_content_spec_file_used_to_filter": "Rich_content_product_specifications.csv",
     "legend_strs_file": "Rich_content_product_specifications.csv",
     "variable_desc_file": "Atlas_variables_short_descriptions.csv",
-    "release": "2021-v3-SOGI"
+    "release": "2021-SOGI"
   },
   "content": [
     {
@@ -17,7 +17,8 @@
           "name": "Gender identity",
           "code": "gender_identity",
           "slug": "gender-identity",
-          "desc": "Classifies people according to the responses to the gender identity question.",
+          "desc": "The gender identity recorded by the person completing the census.",
+          "long_desc": "Classifies people according to the responses to the gender identity question. This question was voluntary and was only asked of people aged 16 years and over.",
           "units": "Family",
           "topic_code": "SOGI",
           "available_geotypes": [
@@ -29,6 +30,7 @@
               "code": "gender_identity_4a",
               "slug": "gender-identity-4a",
               "desc": "Gender identity (4 categories)",
+              "dataset": "TS078",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -62,6 +64,7 @@
               "code": "gender_identity_8a",
               "slug": "gender-identity-8a",
               "desc": "Gender identity (8 categories)",
+              "dataset": "TS070",
               "categories": [
                 {
                   "name": "Gender identity the same as sex registered at birth",
@@ -127,7 +130,8 @@
           "name": "Sexual orientation",
           "code": "sexual_orientation",
           "slug": "sexual-orientation",
-          "desc": "Classifies people according to the responses to the sexual orientation question.",
+          "desc": "The sexual orientation recorded by the person completing the census.",
+          "long_desc": "Classifies people according to the responses to the sexual orientation question. This question was voluntary and was only asked of people aged 16 years and over.",
           "units": "Person",
           "topic_code": "SOGI",
           "available_geotypes": [
@@ -139,6 +143,7 @@
               "code": "sexual_orientation_4a",
               "slug": "sexual-orientation-4a",
               "desc": "Sexual orientation (4 categories)",
+              "dataset": "TS077",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -172,6 +177,7 @@
               "code": "sexual_orientation_6a",
               "slug": "sexual-orientation-6a",
               "desc": "Sexual orientation (6 categories)",
+              "dataset": "TS077",
               "categories": [
                 {
                   "name": "Straight or Heterosexual",
@@ -219,6 +225,7 @@
               "code": "sexual_orientation_9a",
               "slug": "sexual-orientation-9a",
               "desc": "Sexual orientation (9 categories)",
+              "dataset": "TS079",
               "categories": [
                 {
                   "name": "Straight or Heterosexual",

@@ -104,6 +104,6 @@
   </div>
   <div class="grow" />
   <div class="p-6 pt-4 bg-ons-grey-5 border-t-ons-grey-15 border-t-[1px]">
-    <CategoryPageLinks />
+    <CategoryPageLinks dataset={classification.dataset} />
   </div>
 </div>

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { contentStore } from "../../../stores/stores";
+  import { contentStore } from "../../../../stores/stores";
 </script>
 
 <pre>

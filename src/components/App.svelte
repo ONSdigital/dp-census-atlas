@@ -5,6 +5,9 @@
   import pym from "pym.js";
   import { onMount } from "svelte";
   import { setContentStoreOnce } from "../data/setContentStore";
+  import { contentStore } from "../stores/stores";
+  import Loading from "./Loading.svelte";
+  import ServiceUnavailablePage from "./ServiceUnavailablePage.svelte";
   import { page } from "$app/stores";
   import { parseAppParams, setAppParamsStore } from "../helpers/appParamsHelper";
   import { setSelectedGeographyStore } from "../data/setSelectedGeographyStore";
@@ -28,4 +31,12 @@
   }
 </script>
 
-<slot />
+{#if $page && $contentStore}
+  {#if $contentStore.variableGroups.length > 0}
+    <slot />
+  {:else}
+    <ServiceUnavailablePage />
+  {/if}
+{:else}
+  <Loading />
+{/if}

@@ -68,6 +68,7 @@ class CensusClassification:
     desc: str
     choropleth_default: bool
     dot_density_default: bool
+    dataset: str
     categories: list[CensusCategory]
     comparison_2011_data_available: bool = False
     _variable_code: str = ""
@@ -104,7 +105,8 @@ class CensusClassification:
         output_params = {
             "code": self.code,
             "slug": self.slug,
-            "desc": self.desc
+            "desc": self.desc,
+            "dataset": self.dataset,
         }
 
         if self.choropleth_default:
@@ -154,6 +156,25 @@ class CensusVariable:
                 c.legend_str_1 = f"of {UNIT_PLURALS[self.units.lower()]} in {{location}}"
                 c.legend_str_2 = "are"
                 c.legend_str_3 = c.name.lower()
+
+    def gather_ts_datasets(self, datasets: dict) -> None:
+        """
+        Append datasets to all classifications, if the dataset starts with 'TS'. If no TS dataset found for 
+        classification in the datasets dict, look for a TS dataset for a classification with more categories (i.e a less
+        derived dataset) - NB this relies on self.classifications being ordered from less -> more categoreis. 
+        If none found, leave dataset blank.
+        """
+        for i, cl in enumerate(self.classifications):
+            if cl.code in datasets and datasets[cl.code].startswith("TS"):
+                cl.dataset = datasets[cl.code]
+            else:
+                tried_cls_index = i + 1
+                while tried_cls_index < len(self.classifications):
+                    cls_code_to_try = self.classifications[tried_cls_index].code
+                    if cls_code_to_try in datasets and datasets[cls_code_to_try].startswith("TS"):
+                        cl.dataset = datasets[cls_code_to_try]
+                        break
+                    tried_cls_index += 1
 
     def is_valid(self) -> bool:
         """
@@ -279,6 +300,7 @@ def classification_from_content_json(content_json: dict) -> CensusClassification
         desc=content_json["desc"],
         choropleth_default=content_json.get("choropleth_default", False),
         dot_density_default=content_json.get("dot_density_default", False),
+        dataset=content_json["dataset"],
         comparison_2011_data_available=content_json.get("comparison_2011_data_available", False),
         categories=[category_from_content_json(c) for c in content_json["categories"]],
     )
@@ -292,6 +314,7 @@ def variable_from_content_json(content_json: dict) -> CensusVariable:
         desc=content_json["desc"],
         long_desc=content_json["long_desc"],
         units=content_json["units"],
+        available_geotypes=content_json["available_geotypes"],
         topic_code=content_json["topic_code"],
         classifications=[classification_from_content_json(c) for c in content_json["classifications"]],
     )

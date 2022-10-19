@@ -1,11 +1,11 @@
 {
   "meta": {
-    "created_at": "2022-10-18-09-26-27",
+    "created_at": "2022-10-19-12-05-41",
     "cantabular_metadata_source": "ar2776-c21ew_metadata-v1-3_cantab_20221011-22",
     "rich_content_spec_file_used_to_filter": "Rich_content_product_specifications.csv",
     "legend_strs_file": "Rich_content_product_specifications.csv",
     "variable_desc_file": "Atlas_variables_short_descriptions.csv",
-    "release": "2021-v4-MIG"
+    "release": "2021-MIG"
   },
   "content": [
     {
@@ -31,6 +31,7 @@
               "code": "age_arrival_uk_18a",
               "slug": "age-arrival-uk-18a",
               "desc": "Age of arrival in the UK (18 categories)",
+              "dataset": "TS018",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -190,6 +191,7 @@
               "code": "country_of_birth_3a",
               "slug": "country-of-birth-3a",
               "desc": "Country of birth (UK) (3 categories)",
+              "dataset": "TS004",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -215,6 +217,7 @@
               "code": "country_of_birth_8a",
               "slug": "country-of-birth-8a",
               "desc": "Country of birth (8 categories)",
+              "dataset": "TS004",
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
@@ -278,6 +281,7 @@
               "code": "country_of_birth_12a",
               "slug": "country-of-birth-12a",
               "desc": "Country of birth (12 categories)",
+              "dataset": "TS004",
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
@@ -373,6 +377,7 @@
               "code": "country_of_birth_60a",
               "slug": "country-of-birth-60a",
               "desc": "Country of birth (60 categories)",
+              "dataset": "TS012",
               "categories": [
                 {
                   "name": "Europe: United Kingdom: England",
@@ -868,6 +873,7 @@
               "code": "migrant_ind",
               "slug": "migrant-ind",
               "desc": "Migrant indicator (5 categories)",
+              "dataset": "TS019",
               "choropleth_default": true,
               "categories": [
                 {
@@ -923,6 +929,7 @@
               "code": "passports_all_4a",
               "slug": "passports-all-4a",
               "desc": "Passports held (4 categories)",
+              "dataset": "TS005",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -956,6 +963,7 @@
               "code": "passports_all_13a",
               "slug": "passports-all-13a",
               "desc": "Passports held (13 categories)",
+              "dataset": "TS005",
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
@@ -1059,6 +1067,7 @@
               "code": "passports_all_18a",
               "slug": "passports-all-18a",
               "desc": "Passports held (18 categories)",
+              "dataset": "TS005",
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
@@ -1202,6 +1211,7 @@
               "code": "passports_all_27a",
               "slug": "passports-all-27a",
               "desc": "Passports held (27 categories)",
+              "dataset": "TS005",
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
@@ -1414,16 +1424,15 @@
               ]
             },
             {
-              "code": "passports_all",
-              "slug": "passports-all",
-              "desc": "Passports held (53 categories)",
-              "choropleth_default": true,
-              "dot_density_default": true,
+              "code": "passports_all_52a",
+              "slug": "passports-all-52a",
+              "desc": "Passports held (52 categories)",
+              "dataset": "TS013",
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
                   "slug": "europe-united-kingdom",
-                  "code": "passports_all-001",
+                  "code": "passports_all_52a-001",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a UK passport"
@@ -1431,95 +1440,87 @@
                 {
                   "name": "Europe: Ireland",
                   "slug": "europe-ireland",
-                  "code": "passports_all-002",
+                  "code": "passports_all_52a-002",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "an Irish passport"
                 },
                 {
-                  "name": "Europe: Other Europe: EU countries: Member countries in March 2001: France",
-                  "slug": "europe-other-europe-eu-countries-member-countries-in-march-2001-france",
-                  "code": "passports_all-003",
+                  "name": "Europe: Other Europe: EU Member countries: France",
+                  "slug": "europe-other-europe-eu-member-countries-france",
+                  "code": "passports_all_52a-003",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a French passport"
                 },
                 {
-                  "name": "Europe: Other Europe: EU countries: Member countries in March 2001: Germany",
-                  "slug": "europe-other-europe-eu-countries-member-countries-in-march-2001-germany",
-                  "code": "passports_all-004",
+                  "name": "Europe: Other Europe: EU Member countries: Germany",
+                  "slug": "europe-other-europe-eu-member-countries-germany",
+                  "code": "passports_all_52a-004",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a German passport"
                 },
                 {
-                  "name": "Europe: Other Europe: EU countries: Member countries in March 2001: Italy",
-                  "slug": "europe-other-europe-eu-countries-member-countries-in-march-2001-italy",
-                  "code": "passports_all-005",
+                  "name": "Europe: Other Europe: EU Member countries: Italy",
+                  "slug": "europe-other-europe-eu-member-countries-italy",
+                  "code": "passports_all_52a-005",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "an Italian passport"
                 },
                 {
-                  "name": "Europe: Other Europe: EU countries: Member countries in March 2001: Portugal",
-                  "slug": "europe-other-europe-eu-countries-member-countries-in-march-2001-portugal",
-                  "code": "passports_all-006",
+                  "name": "Europe: Other Europe: EU Member countries: Portugal",
+                  "slug": "europe-other-europe-eu-member-countries-portugal",
+                  "code": "passports_all_52a-006",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a Portugese passport"
                 },
                 {
-                  "name": "Europe: Other Europe: EU countries: Member countries in March 2001: Spain",
-                  "slug": "europe-other-europe-eu-countries-member-countries-in-march-2001-spain",
-                  "code": "passports_all-007",
+                  "name": "Europe: Other Europe: EU Member countries: Spain",
+                  "slug": "europe-other-europe-eu-member-countries-spain",
+                  "code": "passports_all_52a-007",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a Spanish passport"
                 },
                 {
-                  "name": "Europe: Other Europe: EU countries: Member countries in March 2001: Other member countries in March 2001",
-                  "slug": "europe-other-europe-eu-countries-member-countries-in-march-2001-other-member-countries-in-march-2001",
-                  "code": "passports_all-008",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "a passport from another country that was an EU member in March 2001"
-                },
-                {
-                  "name": "Europe: Other Europe: EU countries: Countries that joined the EU between April 2001 and March 2021: Lithuania",
-                  "slug": "europe-other-europe-eu-countries-countries-that-joined-the-eu-between-april-2001-and-march-2021-lithuania",
-                  "code": "passports_all-009",
+                  "name": "Europe: Other Europe: EU Member countries: Lithuania",
+                  "slug": "europe-other-europe-eu-member-countries-lithuania",
+                  "code": "passports_all_52a-008",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a Lithuanian passport"
                 },
                 {
-                  "name": "Europe: Other Europe: EU countries: Countries that joined the EU between April 2001 and March 2021: Poland",
-                  "slug": "europe-other-europe-eu-countries-countries-that-joined-the-eu-between-april-2001-and-march-2021-poland",
-                  "code": "passports_all-010",
+                  "name": "Europe: Other Europe: EU Member countries: Poland",
+                  "slug": "europe-other-europe-eu-member-countries-poland",
+                  "code": "passports_all_52a-009",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a Polish passport"
                 },
                 {
-                  "name": "Europe: Other Europe: EU countries: Countries that joined the EU between April 2001 and March 2021: Romania",
-                  "slug": "europe-other-europe-eu-countries-countries-that-joined-the-eu-between-april-2001-and-march-2021-romania",
-                  "code": "passports_all-011",
+                  "name": "Europe: Other Europe: EU Member countries: Romania",
+                  "slug": "europe-other-europe-eu-member-countries-romania",
+                  "code": "passports_all_52a-010",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a Romanian passport"
                 },
                 {
-                  "name": "Europe: Other Europe: EU countries: Countries that joined the EU between April 2001 and March 2021: Other EU countries",
-                  "slug": "europe-other-europe-eu-countries-countries-that-joined-the-eu-between-april-2001-and-march-2021-other-eu-countries",
-                  "code": "passports_all-012",
+                  "name": "Europe: Other Europe: EU Member countries: Other EU countries",
+                  "slug": "europe-other-europe-eu-member-countries-other-eu-countries",
+                  "code": "passports_all_52a-011",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "a passport from another country that joined the EU between April 2001 and March 2021"
+                  "legend_str_3": "a passport from another EU country that"
                 },
                 {
                   "name": "Europe: Other Europe: Rest of Europe: Turkey",
                   "slug": "europe-other-europe-rest-of-europe-turkey",
-                  "code": "passports_all-013",
+                  "code": "passports_all_52a-012",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a Turkish passport"
@@ -1527,7 +1528,7 @@
                 {
                   "name": "Europe: Other Europe: Rest of Europe: Other Europe",
                   "slug": "europe-other-europe-rest-of-europe-other-europe",
-                  "code": "passports_all-014",
+                  "code": "passports_all_52a-013",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a passport from another European country"
@@ -1535,7 +1536,7 @@
                 {
                   "name": "Africa: North Africa",
                   "slug": "africa-north-africa",
-                  "code": "passports_all-015",
+                  "code": "passports_all_52a-014",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a North African passport"
@@ -1543,7 +1544,7 @@
                 {
                   "name": "Africa: Central and Western Africa: Ghana",
                   "slug": "africa-central-and-western-africa-ghana",
-                  "code": "passports_all-016",
+                  "code": "passports_all_52a-015",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a Ghanaian passport"
@@ -1551,7 +1552,7 @@
                 {
                   "name": "Africa: Central and Western Africa: Nigeria",
                   "slug": "africa-central-and-western-africa-nigeria",
-                  "code": "passports_all-017",
+                  "code": "passports_all_52a-016",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a Nigerian passport"
@@ -1559,7 +1560,7 @@
                 {
                   "name": "Africa: Central and Western Africa: Other Central and Western Africa",
                   "slug": "africa-central-and-western-africa-other-central-and-western-africa",
-                  "code": "passports_all-018",
+                  "code": "passports_all_52a-017",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a passport from another Central or West African country"
@@ -1567,7 +1568,7 @@
                 {
                   "name": "Africa: South and Eastern Africa: Kenya",
                   "slug": "africa-south-and-eastern-africa-kenya",
-                  "code": "passports_all-019",
+                  "code": "passports_all_52a-018",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a Kenyan passport"
@@ -1575,7 +1576,7 @@
                 {
                   "name": "Africa: South and Eastern Africa: Somalia",
                   "slug": "africa-south-and-eastern-africa-somalia",
-                  "code": "passports_all-020",
+                  "code": "passports_all_52a-019",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a Somalian passport"
@@ -1583,7 +1584,7 @@
                 {
                   "name": "Africa: South and Eastern Africa: South Africa",
                   "slug": "africa-south-and-eastern-africa-south-africa",
-                  "code": "passports_all-021",
+                  "code": "passports_all_52a-020",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a South African passport"
@@ -1591,7 +1592,7 @@
                 {
                   "name": "Africa: South and Eastern Africa: Zimbabwe",
                   "slug": "africa-south-and-eastern-africa-zimbabwe",
-                  "code": "passports_all-022",
+                  "code": "passports_all_52a-021",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a Zimbabwean passport"
@@ -1599,7 +1600,7 @@
                 {
                   "name": "Africa: South and Eastern Africa: Other South and Eastern Africa",
                   "slug": "africa-south-and-eastern-africa-other-south-and-eastern-africa",
-                  "code": "passports_all-023",
+                  "code": "passports_all_52a-022",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a passport from another South or East African country"
@@ -1607,7 +1608,7 @@
                 {
                   "name": "Middle East and Asia: Middle East: Iran",
                   "slug": "middle-east-and-asia-middle-east-iran",
-                  "code": "passports_all-024",
+                  "code": "passports_all_52a-023",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "an Iranian passport"
@@ -1615,7 +1616,7 @@
                 {
                   "name": "Middle East and Asia: Middle East: Iraq",
                   "slug": "middle-east-and-asia-middle-east-iraq",
-                  "code": "passports_all-025",
+                  "code": "passports_all_52a-024",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "an Iraqi passport"
@@ -1623,7 +1624,7 @@
                 {
                   "name": "Middle East and Asia: Middle East: Other Middle East",
                   "slug": "middle-east-and-asia-middle-east-other-middle-east",
-                  "code": "passports_all-026",
+                  "code": "passports_all_52a-025",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a passport from another Middle Eastern country"
@@ -1631,7 +1632,7 @@
                 {
                   "name": "Middle East and Asia: Eastern Asia: China",
                   "slug": "middle-east-and-asia-eastern-asia-china",
-                  "code": "passports_all-027",
+                  "code": "passports_all_52a-026",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a Chinese passport"
@@ -1639,7 +1640,7 @@
                 {
                   "name": "Middle East and Asia: Eastern Asia: Hong Kong (Special Administrative Region of China)",
                   "slug": "middle-east-and-asia-eastern-asia-hong-kong-special-administrative-region-of-china",
-                  "code": "passports_all-028",
+                  "code": "passports_all_52a-027",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a passport from Hong Kong"
@@ -1647,7 +1648,7 @@
                 {
                   "name": "Middle East and Asia: Eastern Asia: Japan",
                   "slug": "middle-east-and-asia-eastern-asia-japan",
-                  "code": "passports_all-029",
+                  "code": "passports_all_52a-028",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a Japanese passport"
@@ -1655,7 +1656,7 @@
                 {
                   "name": "Middle East and Asia: Eastern Asia: Other Eastern Asia",
                   "slug": "middle-east-and-asia-eastern-asia-other-eastern-asia",
-                  "code": "passports_all-030",
+                  "code": "passports_all_52a-029",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a passport from another East Asian country"
@@ -1663,7 +1664,7 @@
                 {
                   "name": "Middle East and Asia: Southern Asia: Afghanistan",
                   "slug": "middle-east-and-asia-southern-asia-afghanistan",
-                  "code": "passports_all-031",
+                  "code": "passports_all_52a-030",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "an Afghan passport"
@@ -1671,7 +1672,7 @@
                 {
                   "name": "Middle East and Asia: Southern Asia: Bangladesh",
                   "slug": "middle-east-and-asia-southern-asia-bangladesh",
-                  "code": "passports_all-032",
+                  "code": "passports_all_52a-031",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a Bangladeshi passport"
@@ -1679,7 +1680,7 @@
                 {
                   "name": "Middle East and Asia: Southern Asia: India",
                   "slug": "middle-east-and-asia-southern-asia-india",
-                  "code": "passports_all-033",
+                  "code": "passports_all_52a-032",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "an Indian passport"
@@ -1687,7 +1688,7 @@
                 {
                   "name": "Middle East and Asia: Southern Asia: Pakistan",
                   "slug": "middle-east-and-asia-southern-asia-pakistan",
-                  "code": "passports_all-034",
+                  "code": "passports_all_52a-033",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a Pakistani passport"
@@ -1695,7 +1696,7 @@
                 {
                   "name": "Middle East and Asia: Southern Asia: Sri Lanka",
                   "slug": "middle-east-and-asia-southern-asia-sri-lanka",
-                  "code": "passports_all-035",
+                  "code": "passports_all_52a-034",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a Sri Lankan passport"
@@ -1703,7 +1704,7 @@
                 {
                   "name": "Middle East and Asia: Southern Asia: Other Southern Asia",
                   "slug": "middle-east-and-asia-southern-asia-other-southern-asia",
-                  "code": "passports_all-036",
+                  "code": "passports_all_52a-035",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a passport from another South Asian country"
@@ -1711,7 +1712,7 @@
                 {
                   "name": "Middle East and Asia: South-East Asia: Malaysia",
                   "slug": "middle-east-and-asia-south-east-asia-malaysia",
-                  "code": "passports_all-037",
+                  "code": "passports_all_52a-036",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a Malaysian passport"
@@ -1719,7 +1720,7 @@
                 {
                   "name": "Middle East and Asia: South-East Asia: Philippines",
                   "slug": "middle-east-and-asia-south-east-asia-philippines",
-                  "code": "passports_all-038",
+                  "code": "passports_all_52a-037",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a Filipino passport"
@@ -1727,7 +1728,7 @@
                 {
                   "name": "Middle East and Asia: South-East Asia: Singapore",
                   "slug": "middle-east-and-asia-south-east-asia-singapore",
-                  "code": "passports_all-039",
+                  "code": "passports_all_52a-038",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a Singaporean passport"
@@ -1735,7 +1736,7 @@
                 {
                   "name": "Middle East and Asia: South-East Asia: Other South-East Asia",
                   "slug": "middle-east-and-asia-south-east-asia-other-south-east-asia",
-                  "code": "passports_all-040",
+                  "code": "passports_all_52a-039",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a passport from another South-East Asian country"
@@ -1743,7 +1744,7 @@
                 {
                   "name": "Middle East and Asia: Central Asia",
                   "slug": "middle-east-and-asia-central-asia",
-                  "code": "passports_all-041",
+                  "code": "passports_all_52a-040",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a Central Asian passport"
@@ -1751,7 +1752,7 @@
                 {
                   "name": "The Americas and the Caribbean: North America: Canada",
                   "slug": "the-americas-and-the-caribbean-north-america-canada",
-                  "code": "passports_all-042",
+                  "code": "passports_all_52a-041",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a Canadian passport"
@@ -1759,7 +1760,7 @@
                 {
                   "name": "The Americas and the Caribbean: North America: United States",
                   "slug": "the-americas-and-the-caribbean-north-america-united-states",
-                  "code": "passports_all-043",
+                  "code": "passports_all_52a-042",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a United States passport"
@@ -1767,7 +1768,7 @@
                 {
                   "name": "The Americas and the Caribbean: Central America",
                   "slug": "the-americas-and-the-caribbean-central-america",
-                  "code": "passports_all-044",
+                  "code": "passports_all_52a-043",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a Central American passport"
@@ -1775,7 +1776,7 @@
                 {
                   "name": "The Americas and the Caribbean: South America",
                   "slug": "the-americas-and-the-caribbean-south-america",
-                  "code": "passports_all-045",
+                  "code": "passports_all_52a-044",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a South American passport"
@@ -1783,7 +1784,7 @@
                 {
                   "name": "The Americas and the Caribbean: The Caribbean: Jamaica",
                   "slug": "the-americas-and-the-caribbean-the-caribbean-jamaica",
-                  "code": "passports_all-046",
+                  "code": "passports_all_52a-045",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a Jamaican passport"
@@ -1791,7 +1792,7 @@
                 {
                   "name": "The Americas and the Caribbean: The Caribbean: Other Caribbean",
                   "slug": "the-americas-and-the-caribbean-the-caribbean-other-caribbean",
-                  "code": "passports_all-047",
+                  "code": "passports_all_52a-046",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a passport from another Caribbean country"
@@ -1799,7 +1800,7 @@
                 {
                   "name": "Antarctica and Oceania: Australasia: Australia",
                   "slug": "antarctica-and-oceania-australasia-australia",
-                  "code": "passports_all-048",
+                  "code": "passports_all_52a-047",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "an Australian passport"
@@ -1807,7 +1808,7 @@
                 {
                   "name": "Antarctica and Oceania: Australasia: New Zealand",
                   "slug": "antarctica-and-oceania-australasia-new-zealand",
-                  "code": "passports_all-049",
+                  "code": "passports_all_52a-048",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a New Zealand passport"
@@ -1815,7 +1816,7 @@
                 {
                   "name": "Antarctica and Oceania: Other Antarctica and Oceania",
                   "slug": "antarctica-and-oceania-other-antarctica-and-oceania",
-                  "code": "passports_all-050",
+                  "code": "passports_all_52a-049",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a passport from another country in Oceania and Antartica"
@@ -1823,7 +1824,7 @@
                 {
                   "name": "British Overseas Territories",
                   "slug": "british-overseas-territories",
-                  "code": "passports_all-051",
+                  "code": "passports_all_52a-050",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a passport from the British Overseas Territories"
@@ -1831,7 +1832,7 @@
                 {
                   "name": "No passport held",
                   "slug": "no-passport-held",
-                  "code": "passports_all-052",
+                  "code": "passports_all_52a-051",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "no passport"
@@ -1858,6 +1859,7 @@
               "code": "residence_length_6b",
               "slug": "residence-length-6b",
               "desc": "Length of residence in the UK (6 categories)",
+              "dataset": "TS016",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -1923,6 +1925,7 @@
               "code": "year_arrival_uk_6a",
               "slug": "year-arrival-uk-6a",
               "desc": "Year of arrival in the UK (6 categories)",
+              "dataset": "TS015",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -1972,6 +1975,7 @@
               "code": "year_arrival_uk",
               "slug": "year-arrival-uk",
               "desc": "Year of arrival in the UK (13 categories)",
+              "dataset": "TS015",
               "categories": [
                 {
                   "name": "Born in the UK",

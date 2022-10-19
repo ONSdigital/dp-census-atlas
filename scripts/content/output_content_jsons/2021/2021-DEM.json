@@ -1,11 +1,11 @@
 {
   "meta": {
-    "created_at": "2022-10-18-09-26-27",
+    "created_at": "2022-10-19-12-05-41",
     "cantabular_metadata_source": "ar2776-c21ew_metadata-v1-3_cantab_20221011-22",
     "rich_content_spec_file_used_to_filter": "Rich_content_product_specifications.csv",
     "legend_strs_file": "Rich_content_product_specifications.csv",
     "variable_desc_file": "Atlas_variables_short_descriptions.csv",
-    "release": "2021-v4-DEM"
+    "release": "2021-DEM"
   },
   "content": [
     {
@@ -31,6 +31,7 @@
               "code": "hh_deprivation",
               "slug": "hh-deprivation",
               "desc": "Household deprivation (6 categories)",
+              "dataset": "TS011",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -96,6 +97,7 @@
               "code": "hh_family_composition_4a",
               "slug": "hh-family-composition-4a",
               "desc": "Household composition (4 categories)",
+              "dataset": "TS003",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -129,6 +131,7 @@
               "code": "hh_family_composition_15a",
               "slug": "hh-family-composition-15a",
               "desc": "Household composition (15 categories)",
+              "dataset": "TS003",
               "categories": [
                 {
                   "name": "One person household: Aged 66 years and over",
@@ -264,6 +267,7 @@
               "code": "hh_multi_ethnic_group",
               "slug": "hh-multi-ethnic-group",
               "desc": "Multiple ethnic groups in household (6 categories)",
+              "dataset": "TS023",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -329,6 +333,7 @@
               "code": "hh_size_5a",
               "slug": "hh-size-5a",
               "desc": "Household size (5 categories)",
+              "dataset": "TS017",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -378,6 +383,7 @@
               "code": "hh_size_9a",
               "slug": "hh-size-9a",
               "desc": "Household size (9 categories)",
+              "dataset": "TS017",
               "categories": [
                 {
                   "name": "0 people in household",
@@ -473,6 +479,7 @@
               "code": "legal_partnership_status_3a",
               "slug": "legal-partnership-status-3a",
               "desc": "Marital and civil partnership status (3 categories)",
+              "dataset": "TS002",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -498,6 +505,7 @@
               "code": "legal_partnership_status_6a",
               "slug": "legal-partnership-status-6a",
               "desc": "Marital and civil partnership status (6 categories)",
+              "dataset": "TS002",
               "categories": [
                 {
                   "name": "Never married and never registered a civil partnership",
@@ -545,6 +553,7 @@
               "code": "legal_partnership_status",
               "slug": "legal-partnership-status",
               "desc": "Marital and civil partnership status (12 categories)",
+              "dataset": "TS002",
               "categories": [
                 {
                   "name": "Never married and never registered a civil partnership",
@@ -655,6 +664,7 @@
               "code": "living_arrangements_11a",
               "slug": "living-arrangements-11a",
               "desc": "Living arrangements (11 categories)",
+              "dataset": "TS010",
               "choropleth_default": true,
               "categories": [
                 {
@@ -759,6 +769,7 @@
               "code": "number_of_cars_3a",
               "slug": "number-of-cars-3a",
               "desc": "Car or van availability (3 categories)",
+              "dataset": "TS045",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -784,6 +795,7 @@
               "code": "number_of_cars_5a",
               "slug": "number-of-cars-5a",
               "desc": "Car or van availability (5 categories)",
+              "dataset": "TS045",
               "categories": [
                 {
                   "name": "No cars or vans in household",
@@ -838,6 +850,7 @@
               "code": "resident_age_3a",
               "slug": "resident-age-3a",
               "desc": "Age (3 categories)",
+              "dataset": "TS076",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -871,6 +884,7 @@
               "code": "resident_age_8c",
               "slug": "resident-age-8c",
               "desc": "Age (C) (8 categories)",
+              "dataset": "TS076",
               "categories": [
                 {
                   "name": "Aged 14 years and under",
@@ -942,6 +956,7 @@
               "code": "resident_age_11a",
               "slug": "resident-age-11a",
               "desc": "Age (11 categories)",
+              "dataset": "TS076",
               "categories": [
                 {
                   "name": "Aged 4 years and under",
@@ -1037,6 +1052,7 @@
               "code": "resident_age_101a",
               "slug": "resident-age-101a",
               "desc": "Age (101 categories)",
+              "dataset": "TS007",
               "categories": [
                 {
                   "name": "Aged under 1 year",
@@ -1868,6 +1884,7 @@
               "code": "sex",
               "slug": "sex",
               "desc": "Sex (2 categories)",
+              "dataset": "TS020",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -1886,46 +1903,6 @@
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "male"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Usual resident indicator",
-          "code": "usual_resident_ind",
-          "slug": "usual-resident-indicator",
-          "desc": "Identifies if a person usually lives in England or Wales.",
-          "long_desc": "Identifies if a person usually lives in England or Wales.",
-          "units": "Person",
-          "topic_code": "DEM",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
-          "classifications": [
-            {
-              "code": "usual_resident_ind",
-              "slug": "usual-resident-ind",
-              "desc": "Usual resident indicator (2 categories)",
-              "choropleth_default": true,
-              "categories": [
-                {
-                  "name": "Not a usual resident",
-                  "slug": "not-a-usual-resident",
-                  "code": "usual_resident_ind-000",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "not a usual resident"
-                },
-                {
-                  "name": "Usual resident",
-                  "slug": "usual-resident",
-                  "code": "usual_resident_ind-001",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "a usual resident"
                 }
               ]
             }

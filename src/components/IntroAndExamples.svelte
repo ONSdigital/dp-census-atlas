@@ -7,9 +7,11 @@
 </script>
 
 <div class="">
-  <span class="mr-2">Use our interactive map to find out what people's lives are like across England and Wales.</span>
-  <div class="inline-flex items-center gap-0.5">
-    <div class="text-xs">
+  <span class="pr-3"
+    >Use our maps to find out what people's lives were like across England and Wales in March 2021.</span
+  >
+  <div class="inline-flex items-center gap-1">
+    <div class="text-xs -ml-0.5">
       <MaterialIcon kind="arrowForwardIos" orientation={suggestions ? "e" : "n"} />
     </div>
     <button class="hyperlink-reverse" on:click={() => (suggestions = !suggestions)}> Show me examples </button>
@@ -17,45 +19,76 @@
 </div>
 
 {#if suggestions}
-  <div class="mt-3 border-l-4 border-l-ons-grey-5 p-3 ">
+  <div class="mt-3 border-l-4 border-l-ons-grey-5 p-3 pt-2 ">
     <ul class="pl-4 list-disc list-outside">
       <li class="pb-1">
-        Where are people who are
+        Where are there larger proportions of
         <a
           href={buildHyperlink($page.url, {
-            variableGroup: "health",
-            variable: "general-health",
-            category: { classification: "health-in-general-3a", category: "good-health" },
+            variableGroup: "population",
+            variable: "age",
+            category: { classification: "resident-age-3a", category: "aged-15-years-and-under" },
           })}
           class="hyperlink-reverse"
         >
-          most healthy</a
+          young people</a
         >?
       </li>
       <li class="pb-1">
-        Where are the
+        Compare levels of
         <a
-          href={buildHyperlink($page.url, {
-            variableGroup: "housing",
-            variable: "type-of-central-heating-in-household",
-            category: { classification: "heating-type", category: "no-central-heating" },
-          })}
+          href={buildHyperlink(
+            $page.url,
+            {
+              variableGroup: "population",
+              variable: "marital-and-civil-partnership-status",
+              category: {
+                classification: "legal-partnership-status-3a",
+                category: "married-or-in-a-registered-civil-partnership",
+              },
+            },
+            undefined,
+            { geoType: "msoa", geoCode: "E02000910" },
+          )}
           class="hyperlink-reverse"
         >
-          highest levels of homes without central heating</a
-        >?
+          marriage and civil partnerships across Walthamstow</a
+        > in London.
       </li>
       <li class="pb-1">
-        Where do people
+        How is
         <a
-          href={buildHyperlink($page.url, {
-            variableGroup: "housing",
-            variable: "tenure-of-household",
-            category: { classification: "hh-tenure-5a", category: "owned-owns-outright" },
-          })}
+          href={buildHyperlink(
+            $page.url,
+            {
+              variableGroup: "population",
+              variable: "household-deprivation",
+              category: { classification: "hh-deprivation", category: "household-is-deprived-in-one-dimension" },
+            },
+            undefined,
+            { geoType: "lad", geoCode: "E08000035" },
+          )}
           class="hyperlink-reverse"
         >
-          own their own home</a
+          household deprivation in Leeds</a
+        > distributed?
+      </li>
+      <li class="pb-1">
+        Where do
+        <a
+          href={buildHyperlink(
+            $page.url,
+            {
+              variableGroup: "population",
+              variable: "household-size",
+              category: { classification: "hh-size-5a", category: "1-person-in-household" },
+            },
+            undefined,
+            { geoType: "oa", geoCode: "W00010584" },
+          )}
+          class="hyperlink-reverse"
+        >
+          people in Cardiff tend to live by themselves</a
         >?
       </li>
     </ul>

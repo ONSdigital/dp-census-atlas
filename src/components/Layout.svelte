@@ -23,7 +23,7 @@
   <Header />
   <div class="flex-1 flex flex-col-reverse lg:flex-row overflow-y-auto">
     <div
-      class="flex-1 grow-[4] lg:min-w-[30rem] lg:max-w-[35rem] overflow-y-auto flex flex-col"
+      class="flex-1 grow-[3] lg:min-w-[25rem] xl:min-w-[30rem] xl:max-w-[35rem] overflow-y-auto flex flex-col"
       class:hidden={$appParamsStore.embed}
     >
       <slot />

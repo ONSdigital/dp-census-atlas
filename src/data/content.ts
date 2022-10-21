@@ -110,6 +110,13 @@ const fakeCensus2021preview = {
   },
 }
 
+const Census2021preview = {
+  zero: {
+    contentJsonUrl: "https://publishing.dp.aws.onsdigital.uk/visualisations/dvc691/release-0.json",
+    contentBaseUrl: "",
+  },
+}
+
 export default {
   dev: {
     web: [
@@ -164,6 +171,12 @@ export default {
       fakeCensus2021.ttw,
     ],
   },
-  staging: [],
-  prod: [],
+  staging: {
+    web: [],
+    publishing: []
+  },
+  prod: {
+    web: [],
+    publishing: []
+  },
 };

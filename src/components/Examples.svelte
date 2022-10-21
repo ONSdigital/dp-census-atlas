@@ -7,7 +7,19 @@
 
 <ul class="pl-4 list-disc list-outside">
   <li class="pb-1">
-    Where are there larger proportions of
+    Which areas have the
+    <a
+      href={buildHyperlink($page.url, {
+        variableGroup: "population",
+        variable: "age",
+        category: { classification: "resident-age-3a", category: "aged-65-years-and-over" },
+      })}
+      class:hyperlink={!reverseType}
+      class:hyperlink-reverse={reverseType}
+    >
+      oldest populations</a
+    >
+    and
     <a
       href={buildHyperlink($page.url, {
         variableGroup: "population",
@@ -17,11 +29,34 @@
       class:hyperlink={!reverseType}
       class:hyperlink-reverse={reverseType}
     >
-      young people</a
+      youngest populations</a
+    >
+    ?
+  </li>
+  <li class="pb-1">
+    Which neighbourhoods of
+    <a
+      href={buildHyperlink(
+        $page.url,
+        {
+          variableGroup: "population",
+          variable: "household-size",
+          category: {
+            classification: "hh-size-5a",
+            category: "1-person-in-household",
+          },
+        },
+        undefined,
+        { geoType: "lad", geoCode: "W06000011" },
+      )}
+      class:hyperlink={!reverseType}
+      class:hyperlink-reverse={reverseType}
+    >
+      Swansea have the highest percentages of people living alone</a
     >?
   </li>
   <li class="pb-1">
-    Compare levels of
+    Compare the percentages of
     <a
       href={buildHyperlink(
         $page.url,
@@ -34,50 +69,12 @@
           },
         },
         undefined,
-        { geoType: "msoa", geoCode: "E02000910" },
+        { geoType: "msoa", geoCode: "E02006875" },
       )}
       class:hyperlink={!reverseType}
       class:hyperlink-reverse={reverseType}
     >
-      marriage and civil partnerships across Walthamstow</a
-    > in London.
-  </li>
-  <li class="pb-1">
-    How is
-    <a
-      href={buildHyperlink(
-        $page.url,
-        {
-          variableGroup: "population",
-          variable: "household-deprivation",
-          category: { classification: "hh-deprivation", category: "household-is-deprived-in-one-dimension" },
-        },
-        undefined,
-        { geoType: "lad", geoCode: "E08000035" },
-      )}
-      class:hyperlink={!reverseType}
-      class:hyperlink-reverse={reverseType}
-    >
-      household deprivation in Leeds</a
-    > distributed?
-  </li>
-  <li class="pb-1">
-    Where do
-    <a
-      href={buildHyperlink(
-        $page.url,
-        {
-          variableGroup: "population",
-          variable: "household-size",
-          category: { classification: "hh-size-5a", category: "1-person-in-household" },
-        },
-        undefined,
-        { geoType: "oa", geoCode: "W00010584" },
-      )}
-      class:hyperlink={!reverseType}
-      class:hyperlink-reverse={reverseType}
-    >
-      people in Cardiff tend to live by themselves</a
-    >?
+      people who are married or in civil partnerships in Leeds</a
+    >.
   </li>
 </ul>

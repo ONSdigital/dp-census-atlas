@@ -185,19 +185,15 @@ func (m *M) mapCSVgeos(records [][]string) map[int]int {
 }
 
 // MakeTiles creates data tile CSVs in dir.
-// XXX for compatibility with old version, leave out geography code
-// if there are no records
 func (m *M) MakeTiles(geos []types.Geocode, dir string) error {
 	tabrows := m.mapGeos(geos)
 
 	for cat, tabcol := range m.catidx {
 		records := [][]string{
-			{"geography_code"},
+			{"geography_code", string(cat)},
 		}
-		//records := [][]string{
-		//	{"geography_code", string(cat)},
-		//}
 
+		found := false
 		for i, geocode := range geos {
 			tabrow := tabrows[i]
 			if tabrow == -1 {
@@ -206,17 +202,21 @@ func (m *M) MakeTiles(geos []types.Geocode, dir string) error {
 			}
 			val := float64(m.tab[tabrow][tabcol])
 			if math.IsNaN(val) {
-				log.Printf("%s %s: value not found", cat, geocode)
+				//log.Printf("%s %s: value not found", cat, geocode)
 				continue
 			}
 			cell := strconv.FormatFloat(val, 'g', 13, 64)
 			records = append(records, []string{string(geocode), cell})
-		}
-		if len(records) > 1 {
-			records[0] = append(records[0], string(cat))
+			found = true
 		}
 
-		if err := files.SaveCSV(filepath.Join(dir, string(cat)+".csv"), records); err != nil {
+		fname := filepath.Join(dir, string(cat)+".csv")
+		if !found {
+			log.Printf("%s: no matching geos; not creating", fname)
+			continue
+		}
+
+		if err := files.SaveCSV(fname, records); err != nil {
 			return err
 		}
 	}

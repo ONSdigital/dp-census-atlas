@@ -1,6 +1,7 @@
 import { GeoTypes, type Variable, type Category, type Classification } from "../types";
 import { englandAndWales } from "./spatialHelper";
-import { getSelectedGeography, formatPercentage, formatTemplateString } from "./categoryHelpers";
+import { formatPercentage, formatTemplateString } from "./categoryHelpers";
+import { getSelectedGeography } from "./appParamsHelper";
 
 describe("formatPercentage", () => {
   test("rounds percentage to nearest single decimal place and returns as string - single decimal place input", () => {
@@ -80,7 +81,7 @@ describe("formatTemplateString", () => {
 describe("getSelectedGeography", () => {
   test("returns ew when no geography in url", () => {
     const testURL = new URL("https://dp.aws.onsdigital.uk/census-atlas");
-    expect(getSelectedGeography(testURL)).toEqual({
+    expect(getSelectedGeography(testURL.searchParams)).toEqual({
       geoType: englandAndWales.meta.geotype,
       geoCode: englandAndWales.meta.code,
     });
@@ -95,19 +96,19 @@ describe("getSelectedGeography", () => {
       const testURL = new URL(
         `https://dp.aws.onsdigital.uk/census-atlas?${testSelectedGeography.geoType}=${testSelectedGeography.geoCode}`,
       );
-      expect(getSelectedGeography(testURL)).toEqual(testSelectedGeography);
+      expect(getSelectedGeography(testURL.searchParams)).toEqual(testSelectedGeography);
     });
     test("retrives selected geography from longer url", () => {
       const testURL = new URL(
-        `https://dp.aws.onsdigital.uk/census-atlas/2021/population?${testSelectedGeography.geoType}=${testSelectedGeography.geoCode}`,
+        `https://dp.aws.onsdigital.uk/census-atlas/choropleth/population?${testSelectedGeography.geoType}=${testSelectedGeography.geoCode}`,
       );
-      expect(getSelectedGeography(testURL)).toEqual(testSelectedGeography);
+      expect(getSelectedGeography(testURL.searchParams)).toEqual(testSelectedGeography);
     });
     test("retrives selected geography from longest url", () => {
       const testURL = new URL(
-        `https://dp.aws.onsdigital.uk/census-atlas/2021/population/marital-status/default/single-never-married-or-in-a-civil-partnership?${testSelectedGeography.geoType}=${testSelectedGeography.geoCode}`,
+        `https://dp.aws.onsdigital.uk/census-atlas/choropleth/population/marital-status/default/single-never-married-or-in-a-civil-partnership?${testSelectedGeography.geoType}=${testSelectedGeography.geoCode}`,
       );
-      expect(getSelectedGeography(testURL)).toEqual(testSelectedGeography);
+      expect(getSelectedGeography(testURL.searchParams)).toEqual(testSelectedGeography);
     });
   }
 });

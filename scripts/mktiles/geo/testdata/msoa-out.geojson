@@ -1,0 +1,44 @@
+{
+  "type": "FeatureCollection",
+  "name": "Test MSOAs",
+  "bbox": null,
+  "crs": null,
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "MSOA11CD": "no change",
+        "MSOA11NM": "City of London 001",
+        "MSOA11NMW": "City of London 001"
+      },
+      "geometry": null
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "MSOA11CD": "only english",
+        "MSOA11NM": "english name 1",
+        "MSOA11NMW": "english name 1"
+      },
+      "geometry": null
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "MSOA11CD": "only welsh",
+        "MSOA11NM": "Barking and Dagenham 002",
+        "MSOA11NMW": "welsh name 1"
+      },
+      "geometry": null
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "MSOA11CD": "english and welsh",
+        "MSOA11NM": "english name 2",
+        "MSOA11NMW": "welsh name 2"
+      },
+      "geometry": null
+    }
+  ]
+}

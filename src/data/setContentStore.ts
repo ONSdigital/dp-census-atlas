@@ -3,7 +3,7 @@ import { appBasePath } from "../buildEnv";
 import content from "./content";
 import { appendBaseUrlToCategories, mergeVariableGroups } from "../helpers/contentHelpers";
 import { contentStore } from "../stores/stores";
-import type { ContentConfig, ContentStore, VariableGroup } from "../types";
+import type { ContentConfig, ContentTree, VariableGroup } from "../types";
 
 /*
   Fetch all content.json files referenced in content.ts for the current env (specified in a back-end env var, fetched
@@ -11,24 +11,32 @@ import type { ContentConfig, ContentStore, VariableGroup } from "../types";
   with the loaded content.json.
 */
 const fetchContent = async () => {
-  const runtimeEnv = await (await fetch(`${appBasePath}/runtime-env`)).json();
-  const contentForEnv = content[runtimeEnv.envName];
+  // get content for current env and mode (publishing or web)
+  const runtimeEnv = await (await fetch(`${appBasePath}/api/runtime-env`)).json();
+  const envMode = runtimeEnv.isPublishing ? "publishing" : "web";
+  const contentForEnvAndMode = content[runtimeEnv.envName][envMode];
+  // fetch content
   const rawContent = await Promise.all(
-    contentForEnv.map(async (ctcfg) => {
-      const resp = await fetch(ctcfg.contentJsonUrl);
-      if (resp.status != 200) {
-        console.log(`Content json file ${ctcfg.contentJsonUr} could not be fetched.`);
-        return null;
-      } else {
-        try {
+    contentForEnvAndMode.map(async (ctcfg) => {
+      try {
+        const resp = await fetch(ctcfg.contentJsonUrl);
+        if (resp.status != 200) {
+          console.log(`Content json file ${ctcfg.contentJsonUrl} could not be fetched.`);
+          return null;
+        } else {
           const contentJson = await resp.json();
-          return {
-            contentConfig: ctcfg,
-            contentJson: contentJson,
-          };
-        } catch (e) {
-          console.log(`Content json file ${ctcfg.contentJsonUr} could not be parsed: ${e}`);
+          if (typeof contentJson === "string") {
+            console.log(`Content json file ${ctcfg.contentJsonUrl} could not be fetched: ${contentJson}.`);
+            return null
+          } else {
+            return {
+              contentConfig: ctcfg,
+              contentJson: contentJson,
+            };
+          }
         }
+      } catch (e) {
+        console.log(`Error fetching / parsing content json file ${ctcfg.contentJsonUrl}: ${e}`);
       }
     }),
   ).then((responseArry) => {
@@ -57,6 +65,16 @@ export const setContentStoreOnce = async () => {
   // extract all successfully loaded releases
   const releases = rawContent.map((ct) => ct.contentJson.meta.release);
 
+  // get fakeDataLoaded flag
+  let fakeDataLoaded = false;
+  const fakeDataUrlComponent = "/FAKE";
+  for (const ct of rawContent) {
+    if (ct.contentConfig.contentBaseUrl.includes(fakeDataUrlComponent)) {
+      fakeDataLoaded = true;
+      break;
+    }
+  }
+
   // merge variableGroups
   const allVariableGroups = rawContent.flatMap((ct) => ct.contentJson.content);
   const mergedVariableGroups = mergeVariableGroups(allVariableGroups as VariableGroup[]);
@@ -65,5 +83,6 @@ export const setContentStoreOnce = async () => {
   contentStore.set({
     releases: releases,
     variableGroups: mergedVariableGroups as VariableGroup[],
-  } as ContentStore);
+    fakeDataLoaded: fakeDataLoaded,
+  } as ContentTree);
 };

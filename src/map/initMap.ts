@@ -1,13 +1,15 @@
 import { get } from "svelte/store";
+import { page } from "$app/stores";
 import mapboxgl, { GeoJSONSource, Map } from "mapbox-gl";
 import { fromEvent, merge } from "rxjs";
 import { delay, throttleTime } from "rxjs/operators";
 import type { GeoType } from "../types";
 import { vizStore, mapStore, selectedGeographyStore, preventFlyToGeographyStore } from "../stores/stores";
-import { englandAndWalesBbox, preventFlyToGeography, selectGeography } from "../helpers/geographyHelper";
+import { englandAndWalesBbox, preventFlyToGeography } from "../helpers/geographyHelper";
+import { selectGeography } from "../helpers/navigationHelper";
 import { initMapLayers } from "./initMapLayers";
 import { renderMapViz } from "./renderMapViz";
-import { layers, layersWithSiblings } from "./layers";
+import { layers } from "./layers";
 import { style } from "./style";
 
 export const defaultZoom = 6;
@@ -38,7 +40,7 @@ export const initMap = (container) => {
       vizStore.subscribe((value) => {
         renderMapViz(map, value);
       });
-      setMapStore(map);
+      setMapStoreAndLayerVisibility(map);
       listenToSelectedGeographyStore(map);
     });
 
@@ -47,38 +49,65 @@ export const initMap = (container) => {
       throttleTime(1000, undefined, { leading: false, trailing: true }), // don't discard the final movement
     )
     .subscribe(() => {
-      setMapStore(map);
+      setMapStoreAndLayerVisibility(map);
     });
 
   layers.forEach((l) => {
     map.on("click", `${l.name}-features`, (e) => {
       const geoCode = e.features[0].properties[l.idProperty];
       preventFlyToGeography(geoCode);
-      selectGeography({ geoType: l.name, geoCode });
+      selectGeography(get(page).url.searchParams, { geoType: l.name, geoCode });
     });
   });
 
   return map;
 };
 
-const setMapStore = (map: mapboxgl.Map) => {
+const setMapStoreAndLayerVisibility = (map: mapboxgl.Map) => {
   const b = map.getBounds();
   const bbox = { east: b.getEast(), north: b.getNorth(), west: b.getWest(), south: b.getSouth() };
   const zoom = map.getZoom();
+  const geoType = getGeoTypeForFeatureDensity(map);
+
+  setMapLayerVisibility(map, geoType);
 
   mapStore.set({
     bbox,
-    geoType: getGeoTypeForCurrentZoom(zoom),
+    geoType: geoType,
     zoom: zoom,
   });
 };
 
-const getGeoTypeForCurrentZoom = (zoom: number): GeoType => {
-  for (const x of layersWithSiblings()) {
-    if (zoom >= x.layer.minZoom && (!x.next || zoom < x.next.minZoom)) {
-      return x.layer.name;
-    }
+const getGeoTypeForFeatureDensity = (map: mapboxgl.Map): GeoType => {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore (queryRenderedFeatures typings appear to be wrong)
+  const features = map.queryRenderedFeatures({ layers: ["centroids"] });
+  if (Array.isArray(features)) {
+    const count = features.length;
+    const canvas = map.getCanvas();
+    const pixelArea = canvas.clientWidth * canvas.clientHeight;
+    return (count * 1e6) / pixelArea > 40 ? "lad" : (count * 1e6) / pixelArea > 3 ? "msoa" : "oa";
+  } else {
+    return "lad";
   }
+};
+
+const setMapLayerVisibility = (map: mapboxgl.Map, geoType: GeoType) => {
+  layers.forEach((l) => {
+    // set layer visibility based on geoType (always keep lad-outlines visible)
+    map.setLayoutProperty(`${l.name}-features`, "visibility", l.name == geoType ? "visible" : "none");
+    map.setLayoutProperty(
+      `${l.name}-outlines`,
+      "visibility",
+      l.name === geoType || l.name === "lad" ? "visible" : "none",
+    );
+    // make lines thicker for lad-outlines when OAs or MSOAs visible
+    const lineWidthStyle =
+      geoType === "lad"
+        ? ["case", ["==", ["feature-state", "selected"], true], 3, ["==", ["feature-state", "hovered"], true], 2, 0.5]
+        : 1.5;
+    map.setPaintProperty("lad-outlines", "line-width", lineWidthStyle);
+  });
 };
 
 const listenToSelectedGeographyStore = (map: mapboxgl.Map) => {

@@ -1,4 +1,4 @@
-export const GeoTypes = ["ew", "lad", "msoa", "oa"];
+export const GeoTypes = ["ew", "lad", "msoa", "oa"] as const;
 export type GeoType = typeof GeoTypes[number];
 
 export type MapState = {
@@ -19,6 +19,7 @@ export type Variable = {
   slug: string;
   code: string;
   desc: string;
+  long_desc: string;
   units: string;
   topic_code: string;
   classifications: Classification[];
@@ -28,6 +29,8 @@ export type Classification = {
   code: string;
   slug: string;
   desc: string;
+  dataset: string;
+  available_geotypes: GeoType[];
   choropleth_default: boolean;
   dot_density_default: boolean;
   categories: Category[];
@@ -138,7 +141,15 @@ export type ContentConfig = {
   contentJsonUrl: string;
 };
 
-export type ContentStore = {
+export type ContentTree = {
   releases: string[];
   variableGroups: VariableGroup[];
+  fakeDataLoaded: boolean;
+};
+
+export type AppParams = {
+  geoType: GeoType;
+  geoCode: string;
+  embed: boolean;
+  // pym: string;
 };

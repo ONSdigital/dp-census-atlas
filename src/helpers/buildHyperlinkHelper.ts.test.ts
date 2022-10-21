@@ -8,11 +8,13 @@ test("returns correct url given all inputs", () => {
   const urlParams = {
     variableGroup: "variableGroup",
     variable: "variable",
-    classification: "classification",
-    category: "category",
+    category: {
+      classification: "classification",
+      category: "category",
+    },
   };
   expect(buildHyperlink(ladSelectedUrl, urlParams)).toEqual(
-    `${appBasePath}/2021/variableGroup/variable/classification/category?lad=ladCode`,
+    `${appBasePath}/choropleth/variableGroup/variable/classification/category?lad=ladCode`,
   );
 });
 
@@ -27,10 +29,10 @@ describe("variableGroup url", () => {
     variableGroup: "variableGroup",
   };
   test("returns variableGroup url with geography query param given an LAD in input url", () => {
-    expect(buildHyperlink(ladSelectedUrl, urlParams)).toEqual(`${appBasePath}/2021/variableGroup?lad=ladCode`);
+    expect(buildHyperlink(ladSelectedUrl, urlParams)).toEqual(`${appBasePath}/choropleth/variableGroup?lad=ladCode`);
   });
   test("returns variableGroup url without geography query param given no geography in input url", () => {
-    expect(buildHyperlink(ewSelectedUrl, urlParams)).toEqual(`${appBasePath}/2021/variableGroup`);
+    expect(buildHyperlink(ewSelectedUrl, urlParams)).toEqual(`${appBasePath}/choropleth/variableGroup`);
   });
 });
 
@@ -40,26 +42,12 @@ describe("variable url", () => {
     variable: "variable",
   };
   test("returns variable url with geography query param given an LAD in input url", () => {
-    expect(buildHyperlink(ladSelectedUrl, urlParams)).toEqual(`${appBasePath}/2021/variableGroup/variable?lad=ladCode`);
-  });
-  test("returns variable url without geography query param given no geography in input url", () => {
-    expect(buildHyperlink(ewSelectedUrl, urlParams)).toEqual(`${appBasePath}/2021/variableGroup/variable`);
-  });
-});
-
-describe("classification url", () => {
-  const urlParams = {
-    variableGroup: "variableGroup",
-    variable: "variable",
-    classification: "classification",
-  };
-  test("returns classification url with geography query param given an LAD in input url", () => {
     expect(buildHyperlink(ladSelectedUrl, urlParams)).toEqual(
-      `${appBasePath}/2021/variableGroup/variable/classification?lad=ladCode`,
+      `${appBasePath}/choropleth/variableGroup/variable?lad=ladCode`,
     );
   });
-  test("returns classification url without geography query param given no geography in input url", () => {
-    expect(buildHyperlink(ewSelectedUrl, urlParams)).toEqual(`${appBasePath}/2021/variableGroup/variable/classification`);
+  test("returns variable url without geography query param given no geography in input url", () => {
+    expect(buildHyperlink(ewSelectedUrl, urlParams)).toEqual(`${appBasePath}/choropleth/variableGroup/variable`);
   });
 });
 
@@ -67,33 +55,32 @@ describe("category url", () => {
   const urlParams = {
     variableGroup: "variableGroup",
     variable: "variable",
-    classification: "classification",
-    category: "category",
+    category: {
+      classification: "classification",
+      category: "category",
+    },
   };
   test("returns category url with specified classification and geography query param given an LAD in input url", () => {
     expect(buildHyperlink(ladSelectedUrl, urlParams)).toEqual(
-      `${appBasePath}/2021/variableGroup/variable/classification/category?lad=ladCode`,
+      `${appBasePath}/choropleth/variableGroup/variable/classification/category?lad=ladCode`,
     );
   });
 
   test("returns category url with specified classification value but without geography query param given no geography in input url", () => {
     expect(buildHyperlink(ewSelectedUrl, urlParams)).toEqual(
-      `${appBasePath}/2021/variableGroup/variable/classification/category`,
+      `${appBasePath}/choropleth/variableGroup/variable/classification/category`,
     );
-  });
-
-  test("returns category url with default classification value if not specified", () => {
-    delete urlParams.classification;
-    expect(buildHyperlink(ewSelectedUrl, urlParams)).toEqual(`${appBasePath}/2021/variableGroup/variable/default/category`);
   });
 });
 
 describe("variableGroups url", () => {
   const staticPath = "variableGroups";
   test("returns variableGroups path with geography query param given an LAD in input url", () => {
-    expect(buildHyperlink(ladSelectedUrl, null, staticPath)).toEqual(`${appBasePath}/2021/variableGroups?lad=ladCode`);
+    expect(buildHyperlink(ladSelectedUrl, null, staticPath)).toEqual(
+      `${appBasePath}/choropleth/variableGroups?lad=ladCode`,
+    );
   });
   test("returns variableGroups url without geography query param given no geography in input url", () => {
-    expect(buildHyperlink(ewSelectedUrl, null, staticPath)).toEqual(`${appBasePath}/2021/variableGroups`);
+    expect(buildHyperlink(ewSelectedUrl, null, staticPath)).toEqual(`${appBasePath}/choropleth/variableGroups`);
   });
 });

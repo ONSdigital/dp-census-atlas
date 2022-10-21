@@ -4,7 +4,6 @@
   import { selectedGeographyStore, mapStore, contentStore } from "../stores/stores";
   import tipStore from "../stores/tipStore";
   import { getDefaultChoroplethClassification } from "../helpers/variableHelpers";
-
   import Icon from "./MaterialIcon.svelte";
   import { geoTypeDescriptions } from "../helpers/geographyHelper";
 
@@ -19,12 +18,12 @@
 </script>
 
 {#if $mapStore && $selectedGeographyStore && !category}
-  <div class={`absolute top-[40%] left-1/2 -translate-x-1/2`}>
-    <div class="z-abovemap px-3 py-1  rounded bg-ons-census text-ons-white">
+  <div class={`absolute top-[48%] left-1/2 -translate-x-1/2`}>
+    <div class="z-abovemap px-3 py-1  rounded bg-ons-census-secondary text-ons-white">
       <div class="flex gap-2 items-center">
-        <!-- <div class="text-xl">
-          <Icon kind="west" />
-        </div> -->
+        <div class="text-2xl">
+          <Icon kind="keyboardBackspace" />
+        </div>
         <div>Select a topic to visualise</div>
       </div>
     </div>
@@ -32,8 +31,8 @@
 {/if}
 
 {#if $mapStore}
-  <div class={`absolute top-8 left-8 `}>
-    <div class="flex gap-1">
+  <div class={`absolute top-3 left-3 lg:top-8 lg:left-8 `}>
+    <div class="flex gap-1 text-sm lg:text-base">
       <div class="flex">
         <div class="z-abovemap px-3 py-1  rounded-l bg-ons-census text-ons-grey-5 font-bold">
           {$mapStore.geoType.toUpperCase()}

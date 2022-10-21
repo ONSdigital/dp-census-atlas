@@ -3,11 +3,11 @@
   import { vizStore, selectedGeographyStore } from "../stores/stores";
   import { contentStore } from "../stores/stores";
   import { formatTemplateString } from "../helpers/categoryHelpers";
-  import { minDecimalPlacesToAntialias, ratioToPercentage } from "../util/numberUtil";
   import { choroplethColours } from "../helpers/choroplethHelpers";
-  import { getDefaultChoroplethClassification } from "../helpers/variableHelpers";
+  import { ratioToRoundedPercentageString } from "../helpers/ratioHelpers";
 
   import BreaksChart from "./BreaksChart.svelte";
+  import GeoTypeBadge from "./GeoTypeBadge.svelte";
 
   $: categoryValueForSelectedGeography = $vizStore?.places.find(
     (p) => p.geoCode === $selectedGeographyStore?.geoCode,
@@ -17,12 +17,12 @@
   $: variableGroup = $contentStore.variableGroups.find((t) => t.slug === variableGroupSlug);
   $: variableSlug = params.variable;
   $: variable = variableGroup ? variableGroup.variables.find((v) => v.slug === variableSlug) : undefined;
+  $: classificationSlug = params?.classification;
+  $: classification = variable?.classifications.find((c) => c.slug === classificationSlug);
   $: selectedGeographyDisplayName = $selectedGeographyStore?.displayName;
-  $: defaultChoroplethClassification = getDefaultChoroplethClassification(variable);
   $: categorySlug = params.category;
-  $: category = variable ? defaultChoroplethClassification.categories.find((c) => c.slug === categorySlug) : undefined;
-  $: breaks = $vizStore ? [$vizStore?.minMaxVals[0], ...$vizStore.breaks] : undefined
-  $: decimalPlaces = breaks ? minDecimalPlacesToAntialias(breaks) : 0
+  $: category = variable ? classification?.categories.find((c) => c.slug === categorySlug) : undefined;
+  $: breaks = $vizStore ? [$vizStore?.minMaxVals[0], ...$vizStore.breaks] : undefined;
 </script>
 
 <!-- todo: new design for all four states -->
@@ -32,46 +32,52 @@
 <!--    category selected | show EW legend, no %   | full legend, with percentage  -->
 
 {#if category || $selectedGeographyStore?.geoType !== "ew"}
-  <div class={`absolute bottom-8 left-1/2 -translate-x-1/2 `}>
-    <div class="z-abovemap bg-white px-6 py-3 w-[40rem] h-[8.6rem]">
-      <div class="flex gap-3 mb-3">
-        <!-- big percantage -->
-        {#if category && categoryValueForSelectedGeography}
+  <div class={`absolute bottom-3 lg:bottom-8 flex w-full justify-center`}>
+    <div
+      class="z-abovemap w-full max-w-[50rem] mx-3 lg:mx-4 bg-white bg-opacity-90 px-3 lg:px-5 py-2 lg:py-3 border-[1px] lg:border-[1px] border-ons-grey-15"
+    >
+      {#if category && categoryValueForSelectedGeography}
+        <!-- full legend -->
+        <div class="flex gap-3 items-center">
           <div class="whitespace-nowrap">
-            <span class="text-5xl font-bold"> {ratioToPercentage(categoryValueForSelectedGeography, 1)}</span><span
-              class="text-4xl font-bold">%</span
-            >
+            <span class="text-4xl md:text-5xl font-bold">
+              {ratioToRoundedPercentageString(categoryValueForSelectedGeography)}</span
+            ><span class="text-3xl md:text-4xl font-bold">%</span>
           </div>
-        {/if}
-        <div class="flex-grow">
-          {#if category && categoryValueForSelectedGeography}
-            <div class="text-base leading-5">
-              <span>
+          <div class="flex-grow leading-[0px]">
+            <div class="">
+              <span class="text-xs sm:text-base md:text-xl">
                 {formatTemplateString(variable, category, selectedGeographyDisplayName, category.legend_str_1)}
+              </span>
+              <GeoTypeBadge geoType={$selectedGeographyStore?.geoType} />
+              <span class="text-xs sm:text-base md:text-xl">
                 {formatTemplateString(variable, category, selectedGeographyDisplayName, category.legend_str_2)}
               </span>
             </div>
-            <div class="-mt-0.5 text-lg font-bold">
+            <div class="text-xs sm:text-base md:text-xl font-bold">
               {formatTemplateString(variable, category, selectedGeographyDisplayName, category.legend_str_3)}
             </div>
-          {:else if category}
-            <div class="">{selectedGeographyDisplayName}</div>
-            <div class="text-lg font-bold">
+          </div>
+        </div>
+      {:else}
+        <!-- partial legend -->
+        <div class="">
+          <div class="">
+            <span class="text-xs sm:text-base md:text-xl">
+              {selectedGeographyDisplayName}
+            </span>
+            <GeoTypeBadge geoType={$selectedGeographyStore?.geoType} />
+          </div>
+          {#if category}
+            <div class="text-xs sm:text-base md:text-xl font-bold">
               {category.name}
             </div>
-          {:else if $selectedGeographyStore?.geoType !== "ew"}
-            <div class="">{selectedGeographyDisplayName}</div>
           {/if}
         </div>
-      </div>
+      {/if}
+
       {#if category && $vizStore}
-        <BreaksChart
-          selected={categoryValueForSelectedGeography}
-          suffix="%"
-          breaks={breaks}
-          decimalPlaces = {decimalPlaces}
-          colors={choroplethColours}
-        />
+        <BreaksChart selected={categoryValueForSelectedGeography} suffix="%" {breaks} colors={choroplethColours} />
       {/if}
     </div>
   </div>

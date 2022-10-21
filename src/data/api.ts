@@ -1,7 +1,9 @@
 import * as dsv from "d3-dsv"; // https://github.com/d3/d3/issues/3469
 import type { Bbox, Category, DataTile, GeoType } from "src/types";
 import { bboxToDataTiles, englandAndWales } from "../helpers/spatialHelper";
-import { geoBaseUrl } from "../buildEnv";
+import { uniqueRoundedBreaks, roundedRatio } from "../helpers/ratioHelpers";
+
+const geoBaseUrl = "https://cdn.ons.gov.uk/maptiles/cm-geos/v2";
 
 /*
   Fetch place data files for all data 'tiles' (predefined coordinate grid squares) that intersect with current viewport 
@@ -68,10 +70,13 @@ export const fetchBreaks = async (args: {
     ToDo - refactor json files to match required format (see function output defintions above)
   */
   const breaks = Object.fromEntries(
-    Object.keys(breaksRaw).map((code) => [code, breaksRaw[code][args.geoType.toUpperCase()]]),
+    Object.keys(breaksRaw).map((code) => [code, uniqueRoundedBreaks(breaksRaw[code][args.geoType.toUpperCase()])]),
   );
   const minMax = Object.fromEntries(
-    Object.keys(breaksRaw).map((code) => [code, breaksRaw[code][`${args.geoType.toUpperCase()}_min_max`]]),
+    Object.keys(breaksRaw).map((code) => [
+      code,
+      breaksRaw[code][`${args.geoType.toUpperCase()}_min_max`].map((n) => roundedRatio(n)),
+    ]),
   );
   return { breaks, minMax };
 };

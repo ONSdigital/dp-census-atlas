@@ -1,0 +1,19 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "bbox": [
+        -1.383763952999971,
+        54.621901035000064,
+        -1.157637137999927,
+        54.72716868800006
+      ],
+      "properties": {
+        "ename": "Hartlepool",
+        "geocode": "E06000001",
+        "geotype": "LAD"
+      }
+    }
+  ]
+}

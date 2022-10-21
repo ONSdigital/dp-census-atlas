@@ -1,0 +1,1562 @@
+{
+  "meta": {
+    "release": "TESTDEV-2011-all-topics"
+  },
+  "content": [
+    {
+      "name": "Population",
+      "slug": "population",
+      "desc": "People, their living arrangements and where they come from.",
+      "variables": [
+        {
+          "name": "Marital status",
+          "slug": "marital-status",
+          "code": "KS103EW",
+          "desc": "People married or in civil partnerships.",
+          "units": "Person",
+          "classifications": [
+            {
+              "code": "KS103EW",
+              "slug": "marital-status",
+              "desc": "People married or in civil partnerships.",
+              "choropleth_default": true,
+              "categories": [
+                {
+                  "name": "Single never married or in a civil partnership",
+                  "slug": "single-never-married-or-in-a-civil-partnership",
+                  "code": "KS103EW0002",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "single never married or in a civil partnership"
+                },
+                {
+                  "name": "Married",
+                  "slug": "married",
+                  "code": "KS103EW0003",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "married"
+                },
+                {
+                  "name": "In a registered civil partnership",
+                  "slug": "in-a-registered-civil-partnership",
+                  "code": "KS103EW0004",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "in a registered civil partnership"
+                },
+                {
+                  "name": "Separated (but still legally married)",
+                  "slug": "separated-but-still-legally-married",
+                  "code": "KS103EW0005",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "separated (but still legally married)"
+                },
+                {
+                  "name": "Divorced or civil partnership dissolved",
+                  "slug": "divorced-or-civil-partnership-dissolved",
+                  "code": "KS103EW0006",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "divorced or civil partnership dissolved"
+                },
+                {
+                  "name": "Widowed or surviving civil partnership partner",
+                  "slug": "widowed-or-surviving-civil-partnership-partner",
+                  "code": "KS103EW0007",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "widowed or surviving civil partnership partner"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Families living in the same home",
+          "slug": "families-living-in-the-same-home",
+          "code": "QS113EW",
+          "desc": "Types of families living in the same home.",
+          "units": "Household",
+          "classifications": [
+            {
+              "code": "QS113EW",
+              "slug": "families-living-in-the-same-home",
+              "desc": "Types of families living in the same home.",
+              "choropleth_default": true,
+              "categories": [
+                {
+                  "name": "One person households",
+                  "slug": "one-person-households",
+                  "code": "QS113EW0002",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "one person households"
+                },
+                {
+                  "name": "Single family households",
+                  "slug": "single-family-households",
+                  "code": "QS113EW0005",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "single family households"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Length of time people have lived in the UK",
+          "slug": "length-of-time-people-have-lived-in-the-uk",
+          "code": "QS803EW",
+          "desc": "People born or have moved to the UK.",
+          "units": "Person",
+          "classifications": [
+            {
+              "code": "QS803EW",
+              "slug": "length-of-time-people-have-lived-in-the-uk",
+              "desc": "People born or have moved to the UK.",
+              "choropleth_default": true,
+              "categories": [
+                {
+                  "name": "Born in the UK",
+                  "slug": "born-in-the-uk",
+                  "code": "QS803EW0002",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "were",
+                  "legend_str_3": "born in the UK"
+                },
+                {
+                  "name": "Less than 2 years",
+                  "slug": "less-than-2-years",
+                  "code": "QS803EW0003",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have lived in the UK",
+                  "legend_str_3": "less than 2 years"
+                },
+                {
+                  "name": "2 to 4 years",
+                  "slug": "2-to-4-years",
+                  "code": "QS803EW0004",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have lived in the UK",
+                  "legend_str_3": "2 to 4 years"
+                },
+                {
+                  "name": "5 to 9 years",
+                  "slug": "5-to-9-years",
+                  "code": "QS803EW0005",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have lived in the UK",
+                  "legend_str_3": "5 to 9 years"
+                },
+                {
+                  "name": "10 years or more",
+                  "slug": "10-years-or-more",
+                  "code": "QS803EW0006",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have lived in the UK",
+                  "legend_str_3": "10 years or more"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Education",
+      "slug": "education",
+      "desc": "People in education and qualifications they hold.",
+      "variables": [
+        {
+          "name": "Highest level of qualification gained",
+          "slug": "highest-level-of-qualification-gained",
+          "code": "QS501EW",
+          "desc": "Highest qualification gained by residents.",
+          "units": "Person",
+          "classifications": [
+            {
+              "code": "QS501EW",
+              "slug": "highest-level-of-qualification-gained",
+              "desc": "Highest qualification gained by residents.",
+              "choropleth_default": true,
+              "categories": [
+                {
+                  "name": "No qualifications",
+                  "slug": "no-qualifications",
+                  "code": "QS501EW0002",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "no qualifications"
+                },
+                {
+                  "name": "Level 1 qualifications",
+                  "slug": "level-1-qualifications",
+                  "code": "QS501EW0003",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "level 1 qualifications"
+                },
+                {
+                  "name": "Level 2 qualifications",
+                  "slug": "level-2-qualifications",
+                  "code": "QS501EW0004",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "level 2 qualifications"
+                },
+                {
+                  "name": "Level 3 qualifications",
+                  "slug": "level-3-qualifications",
+                  "code": "QS501EW0006",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "level 3 qualifications"
+                },
+                {
+                  "name": "Level 4 qualifications and above",
+                  "slug": "level-4-qualifications-and-above",
+                  "code": "QS501EW0007",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "level 4 qualifications and above"
+                },
+                {
+                  "name": "Apprenticeship",
+                  "slug": "apprenticeship",
+                  "code": "QS501EW0005",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have an",
+                  "legend_str_3": "apprenticeship"
+                },
+                {
+                  "name": "Other qualifications",
+                  "slug": "other-qualifications",
+                  "code": "QS501EW0008",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "other qualifications"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Housing",
+      "slug": "housing",
+      "desc": "Types of homes and the people living in them.",
+      "variables": [
+        {
+          "name": "Size of household",
+          "slug": "size-of-household",
+          "code": "QS406EW",
+          "desc": "Number of people who usually live together in the same home.",
+          "units": "Household",
+          "classifications": [
+            {
+              "code": "QS406EW",
+              "slug": "size-of-household",
+              "desc": "Number of people who usually live together in the same home.",
+              "choropleth_default": true,
+              "categories": [
+                {
+                  "name": "1 person households",
+                  "slug": "1-person-households",
+                  "code": "QS406EW0002",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "1 person households"
+                },
+                {
+                  "name": "2 person households",
+                  "slug": "2-person-households",
+                  "code": "QS406EW0003",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "2 person households"
+                },
+                {
+                  "name": "3 person households",
+                  "slug": "3-person-households",
+                  "code": "QS406EW0004",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "3 person households"
+                },
+                {
+                  "name": "4 person households",
+                  "slug": "4-person-households",
+                  "code": "QS406EW0005",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "4 person households"
+                },
+                {
+                  "name": "5 person households",
+                  "slug": "5-person-households",
+                  "code": "QS406EW0006",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "5 person households"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Type of home",
+          "slug": "type-of-home",
+          "code": "QS402EW",
+          "desc": "Types of homes people live in.",
+          "units": "Household",
+          "classifications": [
+            {
+              "code": "QS402EW",
+              "slug": "type-of-home",
+              "desc": "Types of homes people live in.",
+              "choropleth_default": true,
+              "categories": [
+                {
+                  "name": "Whole houses or bungalows",
+                  "slug": "whole-houses-or-bungalows",
+                  "code": "QS402EW0003",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "whole houses or bungalows"
+                },
+                {
+                  "name": "Flats, maisonettes or apartments",
+                  "slug": "flats-maisonettes-or-apartments",
+                  "code": "QS402EW0007",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "flats, maisonettes or apartments"
+                },
+                {
+                  "name": "Caravans or other temporary structures",
+                  "slug": "caravans-or-other-temporary-structures",
+                  "code": "QS402EW0011",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "caravans or other temporary structures"
+                },
+                {
+                  "name": "Shared homes",
+                  "slug": "shared-homes",
+                  "code": "QS402EW0012",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "shared homes"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Number of bedrooms",
+          "slug": "number-of-bedrooms",
+          "code": "QS411EW",
+          "desc": "The number of dedicated bedrooms in a home",
+          "units": "Household",
+          "classifications": [
+            {
+              "code": "QS411EW",
+              "slug": "number-of-bedrooms",
+              "desc": "The number of dedicated bedrooms in a home",
+              "choropleth_default": true,
+              "categories": [
+                {
+                  "name": "No dedicated bedroom",
+                  "slug": "no-dedicated-bedroom",
+                  "code": "QS411EW0002",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "no dedicated bedroom"
+                },
+                {
+                  "name": "1 bedroom",
+                  "slug": "1-bedroom",
+                  "code": "QS411EW0003",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "1 bedroom"
+                },
+                {
+                  "name": "2 bedrooms",
+                  "slug": "2-bedrooms",
+                  "code": "QS411EW0004",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "2 bedrooms"
+                },
+                {
+                  "name": "3 bedrooms",
+                  "slug": "3-bedrooms",
+                  "code": "QS411EW0005",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "3 bedrooms"
+                },
+                {
+                  "name": "4 bedrooms",
+                  "slug": "4-bedrooms",
+                  "code": "QS411EW0006",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "4 bedrooms"
+                },
+                {
+                  "name": "5 or more bedrooms",
+                  "slug": "5-or-more-bedrooms",
+                  "code": "QS411EW0007",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "5 or more bedrooms"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Owned or renting",
+          "slug": "owned-or-renting",
+          "code": "QS403EW",
+          "desc": "People that live in a home they rent or own.",
+          "units": "Person",
+          "classifications": [
+            {
+              "code": "QS403EW",
+              "slug": "owned-or-renting",
+              "desc": "People that live in a home they rent or own.",
+              "choropleth_default": true,
+              "categories": [
+                {
+                  "name": "Owned homes",
+                  "slug": "owned-homes",
+                  "code": "QS403EW0002",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "live in",
+                  "legend_str_3": "owned homes"
+                },
+                {
+                  "name": "Shared ownership homes",
+                  "slug": "shared-ownership-homes",
+                  "code": "QS403EW0005",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "live in",
+                  "legend_str_3": "shared ownership homes"
+                },
+                {
+                  "name": "Social rented homes",
+                  "slug": "social-rented-homes",
+                  "code": "QS403EW0006",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "live in",
+                  "legend_str_3": "social rented homes"
+                },
+                {
+                  "name": "Private rented homes",
+                  "slug": "private-rented-homes",
+                  "code": "QS403EW0009",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "live in",
+                  "legend_str_3": "private rented homes"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Car or van availability",
+          "slug": "car-or-van-availability",
+          "code": "QS416EW",
+          "desc": "People living in the same home that have use of or own a car or van.",
+          "units": "Household",
+          "classifications": [
+            {
+              "code": "QS416EW",
+              "slug": "car-or-van-availability",
+              "desc": "People living in the same home that have use of or own a car or van.",
+              "choropleth_default": true,
+              "categories": [
+                {
+                  "name": "No cars or vans available",
+                  "slug": "no-cars-or-vans-available",
+                  "code": "QS416EW0002",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "no cars or vans available"
+                },
+                {
+                  "name": "1 car or van",
+                  "slug": "1-car-or-van",
+                  "code": "QS416EW0003",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "1 car or van available"
+                },
+                {
+                  "name": "2 cars or vans",
+                  "slug": "2-cars-or-vans",
+                  "code": "QS416EW0004",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "2 cars or vans available"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Heating",
+          "slug": "heating",
+          "code": "QS415EW",
+          "desc": "Types of central heating available for use in the home.",
+          "units": "Household",
+          "classifications": [
+            {
+              "code": "QS415EW",
+              "slug": "heating",
+              "desc": "Types of central heating available for use in the home.",
+              "choropleth_default": true,
+              "categories": [
+                {
+                  "name": "No central heating",
+                  "slug": "no-central-heating",
+                  "code": "QS415EW0002",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "no central heating"
+                },
+                {
+                  "name": "Gas central heating",
+                  "slug": "gas-central-heating",
+                  "code": "QS415EW0003",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "gas central heating"
+                },
+                {
+                  "name": "Electric central heating (including storage heaters)",
+                  "slug": "electric-central-heating-including-storage-heaters",
+                  "code": "QS415EW0004",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "electric central heating (including storage heaters)"
+                },
+                {
+                  "name": "Oil central heating",
+                  "slug": "oil-central-heating",
+                  "code": "QS415EW0005",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "oil central heating"
+                },
+                {
+                  "name": "Solid fuel central heating (for example wood, coal)",
+                  "slug": "solid-fuel-central-heating-for-example-wood-coal",
+                  "code": "QS415EW0006",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "solid fuel central heating (for example wood, coal)"
+                },
+                {
+                  "name": "Other central heating",
+                  "slug": "other-central-heating",
+                  "code": "QS415EW0007",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "other central heating"
+                },
+                {
+                  "name": "Two or more types of central heating",
+                  "slug": "two-or-more-types-of-central-heating",
+                  "code": "QS415EW0008",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "two or more types of central heating"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Residence type",
+          "slug": "residence-type",
+          "code": "QS101EW",
+          "desc": "Families and other groups living in the same home or communal establishment.",
+          "units": "Person",
+          "classifications": [
+            {
+              "code": "QS101EW",
+              "slug": "residence-type",
+              "desc": "Families and other groups living in the same home or communal establishment.",
+              "choropleth_default": true,
+              "categories": [
+                {
+                  "name": "Live in a household",
+                  "slug": "live-in-a-household",
+                  "code": "QS101EW0002",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "",
+                  "legend_str_3": "live in a household"
+                },
+                {
+                  "name": "Live in a communal establishment",
+                  "slug": "live-in-a-communal-establishment",
+                  "code": "QS101EW0003",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "",
+                  "legend_str_3": "live in a communal establishment"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Work",
+      "slug": "work",
+      "desc": "People's employment status.",
+      "variables": [
+        {
+          "name": "Economic activity",
+          "slug": "economic-activity",
+          "code": "QS601EW",
+          "desc": "People who are in work, starting work, looking for or do not work.",
+          "units": "Person",
+          "classifications": [
+            {
+              "code": "QS601EW",
+              "slug": "economic-activity",
+              "desc": "People who are in work, starting work, looking for or do not work.",
+              "choropleth_default": true,
+              "categories": [
+                {
+                  "name": "Economically active",
+                  "slug": "economically-active",
+                  "code": "QS601EW0002",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "economically active"
+                },
+                {
+                  "name": "Economically inactive",
+                  "slug": "economically-inactive",
+                  "code": "QS601EW0011",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "economically inactive"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Working hours",
+          "slug": "working-hours",
+          "code": "QS604EW",
+          "desc": "Hours people work per week.",
+          "units": "Person",
+          "classifications": [
+            {
+              "code": "QS604EW",
+              "slug": "working-hours",
+              "desc": "Hours people work per week.",
+              "choropleth_default": true,
+              "categories": [
+                {
+                  "name": "Part-time",
+                  "slug": "part-time",
+                  "code": "QS604EW0002",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "work",
+                  "legend_str_3": "part-time"
+                },
+                {
+                  "name": "Full-time",
+                  "slug": "full-time",
+                  "code": "QS604EW0005",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "work",
+                  "legend_str_3": "full-time"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Job",
+          "slug": "job",
+          "code": "KS608EW",
+          "desc": "The types of jobs people do or did.",
+          "units": "Person",
+          "classifications": [
+            {
+              "code": "KS608EW",
+              "slug": "job",
+              "desc": "The types of jobs people do or did.",
+              "choropleth_default": true,
+              "categories": [
+                {
+                  "name": "Managers, directors and senior officials",
+                  "slug": "managers-directors-and-senior-officials",
+                  "code": "KS608EW0002",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "managers, directors and senior officials"
+                },
+                {
+                  "name": "Professional occupations",
+                  "slug": "professional-occupations",
+                  "code": "KS608EW0003",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "professional occupations"
+                },
+                {
+                  "name": "Associate professionals and technical occupations",
+                  "slug": "associate-professionals-and-technical-occupations",
+                  "code": "KS608EW0004",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "associate professionals and technical occupations"
+                },
+                {
+                  "name": "Administrative and secretarial occupations",
+                  "slug": "administrative-and-secretarial-occupations",
+                  "code": "KS608EW0005",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "administrative and secretarial occupations"
+                },
+                {
+                  "name": "Process, plant and machine operatives",
+                  "slug": "process-plant-and-machine-operatives",
+                  "code": "KS608EW0009",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "process, plant and machine operatives"
+                },
+                {
+                  "name": "Unskilled or semi-skilled occupations",
+                  "slug": "unskilled-or-semi-skilled-occupations",
+                  "code": "KS608EW0010",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "unskilled or semi-skilled occupations"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Travel to work",
+          "slug": "travel-to-work",
+          "code": "QS701EW",
+          "desc": "Types of transport people use to travel to work.",
+          "units": "Person",
+          "classifications": [
+            {
+              "code": "QS701EW",
+              "slug": "travel-to-work",
+              "desc": "Types of transport people use to travel to work.",
+              "choropleth_default": true,
+              "categories": [
+                {
+                  "name": "Work mainly from home",
+                  "slug": "work-mainly-from-home",
+                  "code": "QS701EW0002",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "",
+                  "legend_str_3": "work mainly from home"
+                },
+                {
+                  "name": "London Underground, metro, light rail, or tram",
+                  "slug": "london-underground-metro-light-rail-or-tram",
+                  "code": "QS701EW0003",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "travel to work by",
+                  "legend_str_3": "london Underground, metro, light rail, or tram"
+                },
+                {
+                  "name": "Train",
+                  "slug": "train",
+                  "code": "QS701EW0004",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "travel to work by",
+                  "legend_str_3": "train"
+                },
+                {
+                  "name": "Bus, minibus or coach",
+                  "slug": "bus-minibus-or-coach",
+                  "code": "QS701EW0005",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "travel to work by",
+                  "legend_str_3": "bus, minibus or coach"
+                },
+                {
+                  "name": "Motorcycle, scooter or moped",
+                  "slug": "motorcycle-scooter-or-moped",
+                  "code": "QS701EW0007",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "travel to work by",
+                  "legend_str_3": "motorcycle, scooter or moped"
+                },
+                {
+                  "name": "Bicycle",
+                  "slug": "bicycle",
+                  "code": "QS701EW0010",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "travel to work by",
+                  "legend_str_3": "bicycle"
+                },
+                {
+                  "name": "Walk",
+                  "slug": "walk",
+                  "code": "QS701EW0011",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "",
+                  "legend_str_3": "walk to work"
+                },
+                {
+                  "name": "Other",
+                  "slug": "other",
+                  "code": "QS701EW0012",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "travel to work by",
+                  "legend_str_3": "alternative methods"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Distance travelled to work",
+          "slug": "distance-travelled-to-work",
+          "code": "QS702EW",
+          "desc": "The daily distance travelled to work.",
+          "units": "Person",
+          "classifications": [
+            {
+              "code": "QS702EW",
+              "slug": "distance-travelled-to-work",
+              "desc": "The daily distance travelled to work.",
+              "choropleth_default": true,
+              "categories": [
+                {
+                  "name": "Less than 2km",
+                  "slug": "less-than-2km",
+                  "code": "QS702EW0002",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "travel",
+                  "legend_str_3": "less than 2km to work"
+                },
+                {
+                  "name": "2km to less than 5km",
+                  "slug": "2km-to-less-than-5km",
+                  "code": "QS702EW0003",
+                  "legend_str_1": "of peoples in {location}",
+                  "legend_str_2": "travel from",
+                  "legend_str_3": "2km to less than 5km"
+                },
+                {
+                  "name": "5km to less than 10km",
+                  "slug": "5km-to-less-than-10km",
+                  "code": "QS702EW0004",
+                  "legend_str_1": "of peoples in {location}",
+                  "legend_str_2": "travel from",
+                  "legend_str_3": "5km to less than 10km"
+                },
+                {
+                  "name": "10km to less than 20km",
+                  "slug": "10km-to-less-than-20km",
+                  "code": "QS702EW0005",
+                  "legend_str_1": "of peoples in {location}",
+                  "legend_str_2": "travel from",
+                  "legend_str_3": "10km to less than 20km"
+                },
+                {
+                  "name": "20km to less than 30km",
+                  "slug": "20km-to-less-than-30km",
+                  "code": "QS702EW0006",
+                  "legend_str_1": "of peoples in {location}",
+                  "legend_str_2": "travel from",
+                  "legend_str_3": "20km to less than 30km"
+                },
+                {
+                  "name": "30km to less than 40km",
+                  "slug": "30km-to-less-than-40km",
+                  "code": "QS702EW0007",
+                  "legend_str_1": "of peoples in {location}",
+                  "legend_str_2": "travel from",
+                  "legend_str_3": "30km to less than 40km"
+                },
+                {
+                  "name": "40km to less than 60km",
+                  "slug": "40km-to-less-than-60km",
+                  "code": "QS702EW0008",
+                  "legend_str_1": "of peoples in {location}",
+                  "legend_str_2": "travel from",
+                  "legend_str_3": "40km to less than 60km"
+                },
+                {
+                  "name": "60km and over",
+                  "slug": "60km-and-over",
+                  "code": "QS702EW0009",
+                  "legend_str_1": "of peoples in {location}",
+                  "legend_str_2": "travel",
+                  "legend_str_3": "60km and over."
+                },
+                {
+                  "name": "Mainly work from home",
+                  "slug": "mainly-work-from-home",
+                  "code": "QS702EW0010",
+                  "legend_str_1": "of peoples in {location}",
+                  "legend_str_2": "",
+                  "legend_str_3": "mainy work from home."
+                },
+                {
+                  "name": "Other",
+                  "slug": "other",
+                  "code": "QS702EW0011",
+                  "legend_str_1": "of peoples in {location}",
+                  "legend_str_2": "",
+                  "legend_str_3": "work offshore, outside of UK or at no fixed location"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Health",
+      "slug": "health",
+      "desc": "People's general health and caring responsibilities.",
+      "variables": [
+        {
+          "name": "General health",
+          "slug": "general-health",
+          "code": "QS302EW",
+          "desc": "How people rate their general health.",
+          "units": "Person",
+          "classifications": [
+            {
+              "code": "QS302EW",
+              "slug": "general-health",
+              "desc": "How people rate their general health.",
+              "choropleth_default": true,
+              "categories": [
+                {
+                  "name": "Very good health",
+                  "slug": "very-good-health",
+                  "code": "QS302EW0002",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "very good health"
+                },
+                {
+                  "name": "Good health",
+                  "slug": "good-health",
+                  "code": "QS302EW0003",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "good health"
+                },
+                {
+                  "name": "Fair health",
+                  "slug": "fair-health",
+                  "code": "QS302EW0004",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "fair health"
+                },
+                {
+                  "name": "Bad health",
+                  "slug": "bad-health",
+                  "code": "QS302EW0005",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "bad health"
+                },
+                {
+                  "name": "Very bad health",
+                  "slug": "very-bad-health",
+                  "code": "QS302EW0006",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "very bad health"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Long-term conditions",
+          "slug": "long-term-conditions",
+          "code": "QS303EW",
+          "desc": "How people's health affects their day-to-day activities.",
+          "units": "Person",
+          "classifications": [
+            {
+              "code": "QS303EW",
+              "slug": "long-term-conditions",
+              "desc": "How people's health affects their day-to-day activities.",
+              "choropleth_default": true,
+              "categories": [
+                {
+                  "name": "No long-term condition",
+                  "slug": "no-long-term-condition",
+                  "code": "QS303EW0004",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "no long-term condition"
+                },
+                {
+                  "name": "Day-to-day activities limited a little",
+                  "slug": "day-to-day-activities-limited-a-little",
+                  "code": "QS303EW0003",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have their",
+                  "legend_str_3": "day-to-day activities limited a little"
+                },
+                {
+                  "name": "Day-to-day activities limited a lot",
+                  "slug": "day-to-day-activities-limited-a-lot",
+                  "code": "QS303EW0002",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have their",
+                  "legend_str_3": "day-to-day activities limited a lot"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Unpaid care",
+          "slug": "unpaid-care",
+          "code": "QS301EW",
+          "desc": "People who provide unpaid care.",
+          "units": "Person",
+          "classifications": [
+            {
+              "code": "QS301EW",
+              "slug": "unpaid-care",
+              "desc": "People who provide unpaid care.",
+              "choropleth_default": true,
+              "categories": [
+                {
+                  "name": "Do not provide unpaid care",
+                  "slug": "do-not-provide-unpaid-care",
+                  "code": "QS301EW0002",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "",
+                  "legend_str_3": "do not provide unpaid care"
+                },
+                {
+                  "name": "Provide 1 to 19 hours unpaid care a week",
+                  "slug": "provide-1-to-19-hours-unpaid-care-a-week",
+                  "code": "QS301EW0003",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "",
+                  "legend_str_3": "provide 1 to 19 hours unpaid care a week"
+                },
+                {
+                  "name": "Provide 20 to 49 hours unpaid care a week",
+                  "slug": "provide-20-to-49-hours-unpaid-care-a-week",
+                  "code": "QS301EW0004",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "",
+                  "legend_str_3": "provide 20 to 49 hours unpaid care a week"
+                },
+                {
+                  "name": "Provide 50 or more hours unpaid care a week",
+                  "slug": "provide-50-or-more-hours-unpaid-care-a-week",
+                  "code": "QS301EW0005",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "",
+                  "legend_str_3": "provide 50 or more hours unpaid care a week"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Identity",
+      "slug": "identity",
+      "desc": "How people identify themselves and their beliefs.",
+      "variables": [
+        {
+          "name": "Ethnicity",
+          "slug": "ethnicity",
+          "code": "QS201EW",
+          "desc": "People who feel they belong to an ethnic group.",
+          "units": "Person",
+          "classifications": [
+            {
+              "code": "QS201EW",
+              "slug": "ethnicity",
+              "desc": "People who feel they belong to an ethnic group.",
+              "choropleth_default": true,
+              "categories": [
+                {
+                  "name": "Asian/Asian British: Indian",
+                  "slug": "asian-asian-british-indian",
+                  "code": "QS201EW0010",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "asian/Asian British: Indian"
+                },
+                {
+                  "name": "Asian/Asian British: Pakistani",
+                  "slug": "asian-asian-british-pakistani",
+                  "code": "QS201EW0011",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "asian/Asian British: Pakistani"
+                },
+                {
+                  "name": "Asian/Asian British: Bangladeshi",
+                  "slug": "asian-asian-british-bangladeshi",
+                  "code": "QS201EW0012",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "asian/Asian British: Bangladeshi"
+                },
+                {
+                  "name": "Asian/Asian British: Chinese",
+                  "slug": "asian-asian-british-chinese",
+                  "code": "QS201EW0013",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "asian/Asian British: Chinese"
+                },
+                {
+                  "name": "Asian/Asian British: Other Asian",
+                  "slug": "asian-asian-british-other-asian",
+                  "code": "QS201EW0014",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "asian/Asian British: Other Asian"
+                },
+                {
+                  "name": "Black/African/Caribbean/Black British: African",
+                  "slug": "black-african-caribbean-black-british-african",
+                  "code": "QS201EW0015",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "black/African/Caribbean/Black British: African"
+                },
+                {
+                  "name": "Black/African/Caribbean/Black British: Caribbean",
+                  "slug": "black-african-caribbean-black-british-caribbean",
+                  "code": "QS201EW0016",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "black/African/Caribbean/Black British: Caribbean"
+                },
+                {
+                  "name": "Black/African/Caribbean/Black British: Other Black",
+                  "slug": "black-african-caribbean-black-british-other-black",
+                  "code": "QS201EW0017",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "black/African/Caribbean/Black British: Other Black"
+                },
+                {
+                  "name": "Mixed/multiple ethnic group: White and Black Caribbean",
+                  "slug": "mixed-multiple-ethnic-group-white-and-black-caribbean",
+                  "code": "QS201EW0006",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "mixed/multiple ethnic group: White and Black Caribbean"
+                },
+                {
+                  "name": "Mixed/multiple ethnic group: White and Black African",
+                  "slug": "mixed-multiple-ethnic-group-white-and-black-african",
+                  "code": "QS201EW0007",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "mixed/multiple ethnic group: White and Black African"
+                },
+                {
+                  "name": "Mixed/multiple ethnic group: White and Asian",
+                  "slug": "mixed-multiple-ethnic-group-white-and-asian",
+                  "code": "QS201EW0008",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "mixed/multiple ethnic group: White and Asian"
+                },
+                {
+                  "name": "Mixed/multiple ethnic group: Other Mixed",
+                  "slug": "mixed-multiple-ethnic-group-other-mixed",
+                  "code": "QS201EW0009",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "mixed/multiple ethnic group: Other Mixed"
+                },
+                {
+                  "name": "White: English/Welsh/Scottish/Northern Irish/British",
+                  "slug": "white-english-welsh-scottish-northern-irish-british",
+                  "code": "QS201EW0002",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "white: English/Welsh/Scottish/Northern Irish/British"
+                },
+                {
+                  "name": "White: Irish",
+                  "slug": "white-irish",
+                  "code": "QS201EW0003",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "white: Irish"
+                },
+                {
+                  "name": "White: Gypsy or Irish Traveller",
+                  "slug": "white-gypsy-or-irish-traveller",
+                  "code": "QS201EW0004",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "white: Gypsy or Irish Traveller"
+                },
+                {
+                  "name": "White: Other White",
+                  "slug": "white-other-white",
+                  "code": "QS201EW0005",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "white: Other White"
+                },
+                {
+                  "name": "Other ethnic group: Arab",
+                  "slug": "other-ethnic-group-arab",
+                  "code": "QS201EW0018",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "other ethnic group: Arab"
+                },
+                {
+                  "name": "Other ethnic group: Any other ethnic group",
+                  "slug": "other-ethnic-group-any-other-ethnic-group",
+                  "code": "QS201EW0019",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "other ethnic group: Any other ethnic group"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Ethnic groups living together",
+          "slug": "ethnic-groups-living-together",
+          "code": "QS202EW",
+          "desc": "The mixture of ethnic groups in a single household.",
+          "units": "Household",
+          "classifications": [
+            {
+              "code": "QS202EW",
+              "slug": "ethnic-groups-living-together",
+              "desc": "The mixture of ethnic groups in a single household.",
+              "choropleth_default": true,
+              "categories": [
+                {
+                  "name": "All household members from the same ethnic group",
+                  "slug": "all-household-members-from-the-same-ethnic-group",
+                  "code": "QS202EW0003",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "all household members from the same ethnic group"
+                },
+                {
+                  "name": "Different ethnic groups between the generations only",
+                  "slug": "different-ethnic-groups-between-the-generations-only",
+                  "code": "QS202EW0004",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "different ethnic groups between the generations only"
+                },
+                {
+                  "name": "Different ethnic groups within partnerships",
+                  "slug": "different-ethnic-groups-within-partnerships",
+                  "code": "QS202EW0005",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "different ethnic groups within partnerships"
+                },
+                {
+                  "name": "Any other combination of multiple ethnic groups",
+                  "slug": "any-other-combination-of-multiple-ethnic-groups",
+                  "code": "QS202EW0006",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "any other combination of multiple ethnic groups"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Religion and beliefs",
+          "slug": "religion-and-beliefs",
+          "code": "QS208EW",
+          "desc": "People's religion and beliefs.",
+          "units": "Person",
+          "classifications": [
+            {
+              "code": "QS208EW",
+              "slug": "religion-and-beliefs",
+              "desc": "People's religion and beliefs.",
+              "choropleth_default": true,
+              "categories": [
+                {
+                  "name": "No religion",
+                  "slug": "no-religion",
+                  "code": "QS208EW0009",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "no religion"
+                },
+                {
+                  "name": "Christian",
+                  "slug": "christian",
+                  "code": "QS208EW0002",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "Christian"
+                },
+                {
+                  "name": "Buddhist",
+                  "slug": "buddhist",
+                  "code": "QS208EW0003",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "Buddhist"
+                },
+                {
+                  "name": "Hindu",
+                  "slug": "hindu",
+                  "code": "QS208EW0004",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "Hindu"
+                },
+                {
+                  "name": "Jewish",
+                  "slug": "jewish",
+                  "code": "QS208EW0005",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "Jewish"
+                },
+                {
+                  "name": "Muslim",
+                  "slug": "muslim",
+                  "code": "QS208EW0006",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "Muslim"
+                },
+                {
+                  "name": "Sikh",
+                  "slug": "sikh",
+                  "code": "QS208EW0007",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "Sikh"
+                },
+                {
+                  "name": "Other religion",
+                  "slug": "other-religion",
+                  "code": "QS208EW0008",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "",
+                  "legend_str_3": "do not follow one of the main religions"
+                },
+                {
+                  "name": "Not stated",
+                  "slug": "not-stated",
+                  "code": "QS208EW0010",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "not stated their religion"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Country of birth",
+          "slug": "country-of-birth",
+          "code": "QS203EW",
+          "desc": "People born in or outside the UK.",
+          "units": "Person",
+          "classifications": [
+            {
+              "code": "QS203EW",
+              "slug": "country-of-birth",
+              "desc": "People born in or outside the UK.",
+              "choropleth_default": true,
+              "categories": [
+                {
+                  "name": "Europe, United Kingdom",
+                  "slug": "europe-united-kingdom",
+                  "code": "QS203EW0003",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "were born in",
+                  "legend_str_3": "The United Kingdom"
+                },
+                {
+                  "name": "Europe, Ireland",
+                  "slug": "europe-ireland",
+                  "code": "QS203EW0014",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "were born in",
+                  "legend_str_3": "Ireland"
+                },
+                {
+                  "name": "Other Europe",
+                  "slug": "other-europe",
+                  "code": "QS203EW0015",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "were born in",
+                  "legend_str_3": "Europe (excluding The United Kingdom or Ireland)."
+                },
+                {
+                  "name": "Africa",
+                  "slug": "africa",
+                  "code": "QS203EW0032",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "were born in",
+                  "legend_str_3": "Africa"
+                },
+                {
+                  "name": "Middle East and Asia",
+                  "slug": "middle-east-and-asia",
+                  "code": "QS203EW0045",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "were born in",
+                  "legend_str_3": "the Middle East or Asia"
+                },
+                {
+                  "name": "The Americas and the Caribbean",
+                  "slug": "the-americas-and-the-caribbean",
+                  "code": "QS203EW0063",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "were born in",
+                  "legend_str_3": "North and South America or the Caribbean."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Understand, speak, read or write Welsh",
+          "slug": "understand-speak-read-or-write-welsh",
+          "code": "KS207WA",
+          "desc": "People that speak, read or write Welsh.",
+          "units": "Person",
+          "classifications": [
+            {
+              "code": "KS207WA",
+              "slug": "understand-speak-read-or-write-welsh",
+              "desc": "People that speak, read or write Welsh.",
+              "choropleth_default": true,
+              "categories": [
+                {
+                  "name": "Can understand spoken Welsh only",
+                  "slug": "can-understand-spoken-welsh-only",
+                  "code": "KS207WA0003",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "",
+                  "legend_str_3": "can understand spoken Welsh only"
+                },
+                {
+                  "name": "Can speak, read or write Welsh",
+                  "slug": "can-speak-read-or-write-welsh",
+                  "code": "KS207WA0007",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "",
+                  "legend_str_3": "can speak, read or write Welsh"
+                },
+                {
+                  "name": "No Welsh skills",
+                  "slug": "no-welsh-skills",
+                  "code": "KS207WA0002",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "no Welsh skills"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Household deprivation",
+          "slug": "household-deprivation",
+          "code": "QS119EW",
+          "desc": "Households that are deprived in the 4 dimentions of: Employment, Education, Health and disability, and Household overcrowding",
+          "units": "Household",
+          "classifications": [
+            {
+              "code": "QS119EW",
+              "slug": "household-deprivation",
+              "desc": "Households that are deprived in the 4 dimentions of: Employment, Education, Health and disability, and Household overcrowding",
+              "choropleth_default": true,
+              "categories": [
+                {
+                  "name": "Not deprived in any dimension",
+                  "slug": "not-deprived-in-any-dimension",
+                  "code": "QS119EW0002",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "not deprived in any dimension"
+                },
+                {
+                  "name": "Deprived in 1 dimension",
+                  "slug": "deprived-in-1-dimension",
+                  "code": "QS119EW0003",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "deprived in 1 dimension"
+                },
+                {
+                  "name": "Deprived in 2 dimensions",
+                  "slug": "deprived-in-2-dimensions",
+                  "code": "QS119EW0004",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "deprived in 2 dimensions"
+                },
+                {
+                  "name": "Deprived in 3 dimensions",
+                  "slug": "deprived-in-3-dimensions",
+                  "code": "QS119EW0005",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "deprived in 3 dimensions"
+                },
+                {
+                  "name": "Deprived in 4 dimensions",
+                  "slug": "deprived-in-4-dimensions",
+                  "code": "QS119EW0006",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "deprived in 4 dimensions"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

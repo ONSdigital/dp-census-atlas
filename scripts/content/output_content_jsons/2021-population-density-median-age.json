@@ -1,0 +1,79 @@
+{
+  "meta": {
+    "release": "2021-population-density-median-age"
+  },
+  "content": [
+    {
+      "name": "Population",
+      "slug": "population",
+      "desc": "People, their living arrangements and where they come from.",
+      "variables": [
+        {
+          "name": "Population density",
+          "code": "population_density",
+          "slug": "population-density",
+          "desc": "The number of people per square kilometre.",
+          "long_desc": "The number of usual residents per square kilometre, calculated based on total land area excluding inland water.",
+          "units": "Persons per square kilometre",
+          "topic_code": "DEM",
+          "available_geotypes": [
+            "oa",
+            "msoa",
+            "lad"
+          ],
+          "classifications": [
+            {
+              "code": "population_density",
+              "slug": "population-density",
+              "desc": "Population density",
+              "dataset": "TS006",
+              "choropleth_default": true,
+              "categories": [
+                {
+                  "name": "Persons per square kilometre",
+                  "slug": "persons-per-square-kilometre",
+                  "code": "population_density-001",
+                  "legend_str_1": "Population density of {location}",
+                  "legend_str_2": "in",
+                  "legend_str_3": "persons per square kilometre"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Average (median) age",
+          "code": "median_age",
+          "slug": "median-age",
+          "desc": "Average age on Census Day, 21 March 2021.",
+          "long_desc": "Average (median) age is calculated from the age of residents on Census Day, 21 March 2021 in England and Wales.",
+          "units": "Years",
+          "topic_code": "DEM",
+          "available_geotypes": [
+            "msoa",
+            "lad"
+          ],
+          "classifications": [
+            {
+              "code": "median_age",
+              "slug": "median-age",
+              "desc": "Median age",
+              "dataset": "TS007a",
+              "choropleth_default": true,
+              "categories": [
+                {
+                  "name": "Median age",
+                  "slug": "median-age",
+                  "code": "median_age-001",
+                  "legend_str_1": "Average (median) age of people in {location}",
+                  "legend_str_2": "in",
+                  "legend_str_3": "years"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,4 +1,6 @@
+import type { GeoType } from "../types";
 import { appBasePath } from "../buildEnv";
+import { setGeographyParam } from "./urlHelper";
 
 interface VariableGroupPageParams {
   variableGroup: string;
@@ -12,8 +14,7 @@ interface VariablePageParams {
 interface CategoryPageParams {
   variableGroup: string;
   variable: string;
-  classification?: string;
-  category: string;
+  category: { classification: string; category: string };
 }
 
 type UrlParams = VariableGroupPageParams | VariablePageParams | CategoryPageParams;
@@ -26,12 +27,22 @@ type UrlParams = VariableGroupPageParams | VariablePageParams | CategoryPagePara
  * Omitting the urlParams parameter will return a link
  * to the index page.
  */
-export const buildHyperlink = (url: URL, urlParams?: UrlParams, staticPath?: string) => {
+export const buildHyperlink = (
+  url: URL,
+  urlParams?: UrlParams,
+  staticPath?: string,
+  geography?: { geoType: GeoType; geoCode: string },
+) => {
+  // update the geography param if given (all other queryparams should pass through unscathed)
+  const searchParams = geography ? setGeographyParam(url.searchParams, geography) : url.searchParams;
+  // get an actual querystring beginning with "?" else an empty string
+  const search = Array.from(searchParams).length > 0 ? "?" + searchParams.toString() : "";
+
   if (!urlParams && !staticPath) {
-    return `${appBasePath}/${url.search}`;
+    return `${appBasePath}/${search}`;
   }
   if (staticPath) {
-    return `${appBasePath}/choropleth/${staticPath}${url.search}`;
+    return `${appBasePath}/choropleth/${staticPath}${search}`;
   }
   let link = `${appBasePath}/choropleth`;
   if ("variableGroup" in urlParams) {
@@ -40,15 +51,8 @@ export const buildHyperlink = (url: URL, urlParams?: UrlParams, staticPath?: str
   if ("variable" in urlParams) {
     link = `${link}/${urlParams.variable}`;
   }
-  if ("classification" in urlParams) {
-    link = `${link}/${urlParams.classification}`;
-  }
   if ("category" in urlParams) {
-    if (!("classification" in urlParams)) {
-      link = `${link}/default/${urlParams.category}`;
-    } else {
-      link = `${link}/${urlParams.category}`;
-    }
+    link = `${link}/${urlParams.category.classification}/${urlParams.category.category}`;
   }
-  return `${link}${url.search}`;
+  return `${link}${search}`;
 };

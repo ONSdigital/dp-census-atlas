@@ -21,13 +21,16 @@ def legend_strs_spec_rows_from_csv(legend_str_file: Path or str) -> list[dict]:
 
 def update_legend_strs(all_variable_groups: list[CensusVariableGroup], legend_strs_spec_rows: list[dict]) -> list[CensusVariableGroup]:
     for row in legend_strs_spec_rows:
-        variable_group = next(vg for vg in all_variable_groups if vg.name == row["ADMIN_variable_group"])
-        variable = next(v for v in variable_group.variables if v.name == row["ADMIN_variable"])
-        classification = next(c for c in variable.classifications if c.code == row["ADMIN_classification"])
-        category = next(c for c in classification.categories if  c.code == row["ADMIN_category_code"])
-        category.legend_str_1 = row["EDIT_THIS_legend_str_1"]
-        category.legend_str_2 = row["EDIT_THIS_legend_str_2"]
-        category.legend_str_3 = row["EDIT_THIS_legend_str_3"]
+        try:
+            variable_group = next((vg for vg in all_variable_groups if vg.name == row["ADMIN_variable_group"]), None)
+            variable = next(v for v in variable_group.variables if v.name == row["ADMIN_variable"])
+            classification = next(c for c in variable.classifications if c.code == row["ADMIN_classification"])
+            category = next(c for c in classification.categories if  c.code == row["ADMIN_category_code"])
+            category.legend_str_1 = row["EDIT_THIS_legend_str_1"]
+            category.legend_str_2 = row["EDIT_THIS_legend_str_2"]
+            category.legend_str_3 = row["EDIT_THIS_legend_str_3"]
+        except StopIteration:
+            print(f"No matching category could be found for {row}: skipping.")
     return all_variable_groups
 
 

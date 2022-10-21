@@ -42,7 +42,8 @@ from scripts.census_objects import (
     CensusClassification,
     CensusVariable,
     CensusVariableGroup,
-    write_content
+    write_content,
+    variable_from_content_json
 )
 from scripts.filter_content_to_atlas_spec import filter_content_to_atlas_spec_from_file
 from scripts.split_content_by_topic import split_content_by_topic
@@ -72,26 +73,31 @@ def classification_from_cantabular_csv_row(csv_row: dict) -> CensusClassificatio
         code=csv_row["Classification_Mnemonic"].strip(),
         slug=slugify(csv_row["Classification_Mnemonic"].strip()),
         desc=csv_row["External_Classification_Label_English"].strip(),
+        available_geotypes=[],
         choropleth_default=False,
         dot_density_default=False,
+        dataset = "",
         categories=[],
         _variable_code=csv_row["Variable_Mnemonic"],
     )
 
 
-def variable_from_cantabular_csv_row(csv_row: dict) -> CensusVariable:
+def variable_from_cantabular_csv_row(csv_row: dict, variable_topic_overrides) -> CensusVariable:
     """Make CensusVariable from row in Variable.csv"""
-    return CensusVariable(
+    variable = CensusVariable(
         name=csv_row["Variable_Title"].strip(),
         code=csv_row["Variable_Mnemonic"].strip(),
         slug=slugify(csv_row["Variable_Title"].strip()),
         desc=csv_row["Variable_Description"].strip(),
+        long_desc=csv_row["Variable_Description"].strip(),
         units=csv_row["Statistical_Unit"].strip(),
         # sometimes things don't have topics??
         topic_code=csv_row["Topic_Mnemonic"] if csv_row["Topic_Mnemonic"] != "" else "NO_TOPIC",
-        available_geotypes=[],
         classifications=[],
     )
+    if variable.code in variable_topic_overrides:
+        variable.topic_code = variable_topic_overrides[variable.code]
+    return variable
 
 
 def variable_group_from_dict(raw_tg: dict) -> CensusVariableGroup:
@@ -105,26 +111,31 @@ def variable_group_from_dict(raw_tg: dict) -> CensusVariableGroup:
     )
 
 
+def datasets_classifications_from_cantabular(dataset_variable_csv_file: str) -> dict:
+    with open(dataset_variable_csv_file, "r") as f:
+        raw_dvs =  list(csv.DictReader(f))
+    return {raw_dv["Classification_Mnemonic"]: raw_dv["Dataset_Mnemonic"] for raw_dv in raw_dvs}
+
+
 def input_full_path(input_partial_path: str) -> Path:
     return Path("input_metadata_files").joinpath(input_partial_path)
 
 
-def available_geotypes_for_variables_from_file(available_geotypes_for_variables_file: str) -> dict:
-    geotypes = ["OA", "MSOA", "LA"]
-
+def available_geotypes_for_classifications_from_file(available_geotypes_for_variables_file: str) -> dict:
     with open(available_geotypes_for_variables_file, "r", encoding="ascii", errors="ignore") as f:
         all_raw_avgs = list(csv.DictReader(f))
-
     avgs = {}
     for raw_avg in all_raw_avgs:
-        variable = raw_avg["variable1"]
-        raw_geos = list(filter(lambda x: x in geotypes, raw_avg["geographies"].split(",")))
-        geos = ["LAD" if g == "LA" else g for g in raw_geos]
-        avgs[variable] = geos
+        classification = raw_avg["classification_mnemonic"]
+        avgs[classification] = raw_avg["available_geotypes"].split(",")
     return avgs
 
 
-def variable_groups_from_metadata(cantabular_metadata_dir: Path, variable_groups_spec_file: str) -> list[CensusVariableGroup]:
+def variable_groups_from_metadata(
+    cantabular_metadata_dir: Path,
+    variable_groups_spec_file: str,
+    variable_topic_overrides: dict
+) -> list[CensusVariableGroup]:
     # load all census objects, ignoring non-ACSII characters
     with open(cantabular_metadata_dir.joinpath("Category.csv"), "r", encoding="ascii", errors="ignore") as f:
         # nb filter out 'minus' categories (generally 'Does Not Apply' or similar) and non-numeric strings
@@ -137,10 +148,12 @@ def variable_groups_from_metadata(cantabular_metadata_dir: Path, variable_groups
         classifications = [classification_from_cantabular_csv_row(csv_row) for csv_row in csv.DictReader(f)]
 
     with open(cantabular_metadata_dir.joinpath("Variable.csv"), "r", encoding="ascii", errors="ignore") as f:
-        variables = [variable_from_cantabular_csv_row(csv_row) for csv_row in csv.DictReader(f)]
+        variables = [variable_from_cantabular_csv_row(csv_row, variable_topic_overrides) for csv_row in csv.DictReader(f)]
 
     with open(variable_groups_spec_file, "r") as f:
         variable_groups = [variable_group_from_dict(tg_raw) for tg_raw in json.load(f)]
+
+    datasets = datasets_classifications_from_cantabular(cantabular_metadata_dir.joinpath("Dataset_Variable.csv"))
 
     # filter out blanks (these happen when blank rows are in the csvs, etc)
     categories = list(filter(lambda x: x.name != "", categories))
@@ -155,6 +168,7 @@ def variable_groups_from_metadata(cantabular_metadata_dir: Path, variable_groups
     for v in variables:
         v.gather_classifications(classifications)
         v.make_legend_strings()
+        v.gather_ts_datasets(datasets)
 
     for vg in variable_groups:
         vg.gather_variables(variables)
@@ -162,7 +176,9 @@ def variable_groups_from_metadata(cantabular_metadata_dir: Path, variable_groups
     return sorted(variable_groups, key=lambda vg: vg.name)
 
 
-def main(spec: dict):
+def main(spec_fn: str):
+    with open(spec_fn, "r") as f:
+        spec = json.load(f)
     # init content iterations container
     content_iterations = {}
 
@@ -170,7 +186,8 @@ def main(spec: dict):
     print(f"Loading cantabular metadata from {spec['cantabular_metadata_dir']}...")
     content_iterations["ALL"] = variable_groups_from_metadata(
         input_full_path(spec["cantabular_metadata_dir"]),
-        input_full_path(spec["variable_groups_spec_file"])
+        input_full_path(spec["variable_groups_spec_file"]),
+        spec["variable_topic_overrides"]
     )
     print("... done.")
 
@@ -182,7 +199,19 @@ def main(spec: dict):
     )
     print("... done.")
 
-    # update legend strings
+    # remove any dropped categories
+    print(f"Removing dropped categories...")
+    for vg in content_iterations["ALL"]:
+        for v in vg.variables:
+            for c in v.classifications:
+                if c.code in spec["classification_dropped_categories"]:
+                    all_cats_to_drop = spec["classification_dropped_categories"][c.code]
+                    for cat_to_drop in all_cats_to_drop:
+                        print(f"Removing {vg.name}.{v.code}.{c.code}.{cat_to_drop}.")
+                    c.categories = list(filter(lambda c: c.code not in all_cats_to_drop, c.categories))
+    print("... done.")
+
+    # # update legend strings
     print(f"Inserting new legend strings from {spec['category_legend_strs_file']}...")
     content_iterations["ALL"] = update_legend_strs_from_file(
         content_iterations["ALL"],
@@ -198,13 +227,24 @@ def main(spec: dict):
     )
     print("... done.")
 
-    # append available geotypes for variables
-    print(f"Inserting available geotypes for variables from {spec['variable_geotype_availability_file']}")
-    available_geotypes_for_variables = available_geotypes_for_variables_from_file(
-        input_full_path(spec["variable_geotype_availability_file"])
+    # append available geotypes for classifications
+    print(f"Inserting available geotypes for classifications from {spec['classification_geotype_availability_file']}")
+    available_geotypes_for_classifications = available_geotypes_for_classifications_from_file(
+        input_full_path(spec["classification_geotype_availability_file"])
     )
     for vg in content_iterations["ALL"]:
-        vg.set_available_geotypes(available_geotypes_for_variables)
+        for v in vg.variables:
+            v.set_available_geotypes(available_geotypes_for_classifications)
+    print("... done.")
+
+    # insert any extra variables
+    print("Inserting extra variables...")
+    for vg in content_iterations["ALL"]:
+        if vg.name in spec["extra_variables"]:
+            for ev in spec["extra_variables"][vg.name]:
+                print(f'Inserting {ev["variable"]["name"]} before {vg.name}.{ev["insert_before"]}')
+                insert_index = next(i for i,v in enumerate(vg.variables) if v.code == ev["insert_before"])
+                vg.variables.insert(insert_index, variable_from_content_json(ev["variable"]))
     print("... done.")
 
     # make topic splits
@@ -228,10 +268,7 @@ def main(spec: dict):
     now = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
     meta = {
         "created_at": now,
-        "cantabular_metadata_source": spec["cantabular_metadata_dir"],
-        "rich_content_spec_file_used_to_filter": spec["rich_content_spec_file"],
-        "legend_strs_file": spec["rich_content_spec_file"],
-        "variable_desc_file": spec["variable_descriptions_file"],
+        "spec_file": spec_fn,
     }
 
     # output
@@ -247,7 +284,5 @@ def main(spec: dict):
 
 
 if __name__ == "__main__":
-    spec_file = Path(sys.argv[1])
-    with open(spec_file, "r") as f:
-        spec = json.load(f)
-    main(spec)
+    spec_fn = sys.argv[1]
+    main(spec_fn)

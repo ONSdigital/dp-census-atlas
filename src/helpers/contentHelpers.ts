@@ -1,4 +1,4 @@
-import type { ContentConfig, Classification, Variable, VariableGroup } from "../types";
+import type { ContentConfig, Classification, Variable, VariableGroup, ContentTree } from "../types";
 
 /*
   Iterate through variable groups and append the data baseUrl to each category of each classification of each variable.
@@ -50,9 +50,9 @@ const mergeVariables = (variables: Variable[]) => {
       slug: variablesToMerge[0].slug,
       code: variablesToMerge[0].code,
       desc: variablesToMerge[0].desc,
+      long_desc: variablesToMerge[0].long_desc,
       units: variablesToMerge[0].units,
       topic_code: variablesToMerge[0].topic_code,
-      available_geotypes: variablesToMerge[0].available_geotypes,
       classifications: dedupeClassifications(allClassifications as Classification[]),
     });
   }
@@ -70,4 +70,8 @@ const dedupeClassifications = (classifications: Classification[]) => {
     dedupedClassifications.push(clsToMerge[0]);
   }
   return dedupedClassifications;
+};
+
+export const isInitialReleasePeriod = (content: ContentTree) => {
+  return content.variableGroups.length <= 8;
 };

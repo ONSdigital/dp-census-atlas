@@ -1,6 +1,6 @@
 ﻿variable_mnemonic,Short definition,Atlas short description,Atlas notes
 accommodation_type,The type of building or structure used or available by an individual or household.,The type of buildings people live in.,
-age_arrival_uk,The age that someone who was not born in the UK was when they last arrived to live in the UK. This does not include returning from a holiday or short stay outside of the UK.,The age people not born in the UK were when they last arrived to live in the UK.,
+age_arrival_uk,The age that someone who was not born in the UK was when they last arrived to live in the UK. This does not include returning from a holiday or short stay outside of the UK.,The age people were when they arrived to live in the UK (for people not born in the UK).,
 alternative_address_indicator,An address (in or out of the UK) a person stays at for more than 30 days per year that is not their place of usual residence.,An address (in or out of the UK) a person stays at for more than 30 days per year that is not their place of usual residence.,Unclear?
 country_of_birth,The country in which a person was born.,Where people were born.,
 disability,"A long-term health problem or disability that limits a person's day-to-day activities, and has lasted, or is expected to last, at least 12 months. This includes problems that are related to old age.","People with a long-term health problem or disability, including relating to old-age.",
@@ -15,7 +15,7 @@ hh_deprivation,"If a household is deprived, based on employment, education, heal
 hh_disabled,"The number of people in a household with a long-term health problem or disability that limits a person's day-to-day activities, and has lasted, or is expected to last, at least 12 months.",The number of people in a household with a disability or long-term health problem.,
 hh_family_composition,Households according to the relationships between members.,Households according to the relationships between members.,Unclear?
 hh_language,Classifies households by the combination of adults and children (aged 3 to 15 years) within a household that have English (English or Welsh in Wales) as their main language.,Classifies households by the combination of adults and children (aged 3 to 15 years) within a household that have English (English or Welsh in Wales) as their main language.,Unclear? Too long?
-hh_multi_ethnic_group,"Single or multiple ethnic groups within the household, and whether ethnic groups differ between generations or partnerships within the household.","Single or multiple ethnic groups within the household, and whether ethnic groups differ between generations or partnerships within the household.",Unclear? Too long?
+hh_multi_ethnic_group,"Single or multiple ethnic groups within the household, and whether ethnic groups differ between generations or partnerships within the household.","Ethnic groups within a household.",
 hh_multi_language,People within the same household who have a different main language categorised by whether the difference is between generations or partnerships within the household.,People within the same household who have a different main language categorised by whether the difference is between generations or partnerships within the household.,Too long?
 hh_multi_religion,Classifies all household members who identify as belonging to the same or different religion or religions. Households are categorised by whether the difference is between generations or partnerships.,Classifies all household members who identify as belonging to the same or different religion or religions.,Unclear?
 hh_size,The number of people in the household.,The number of people in a household.,
@@ -25,14 +25,14 @@ hours_per_week_worked,The number of hours worked per week before the census incl
 industry_current,The industry in which a person works relates to their main job.,The industry people work in.,Unclear?
 is_carer,"An unpaid carer may look after, or give help or support to, anyone who has long-term physical or mental health conditions or illnesses, or problems related to old age.",People who are unpaid carers.,
 legal_partnership_status,Classifies a person according to their legal marital or registered civil partnership status on 21 March 2021.,People's marital or civil partnership status.,
-living_arrangements,"If a person is living in a couple or not, by their legal partnership status.","People living in couples, by their legal partnership status.",
+living_arrangements,"If a person is living in a couple or not, by their legal partnership status.","People's living arrangements, by their legal partnership status.",
 main_language_detailed,A person's first or preferred language.,People's first or preferred language.,
 migrant_ind,Migrant indicator,Migrant indicator,
 national_identity_all,A person's national identity could be the country or countries where they feel they belong or could think of as home. It is not dependent on ethnic group or citizenship.,People's national identity (where they feel they belong or could think of as home).,
 national_identity_detailed,A person's national identity could be the country or countries where they feel they belong or could think of as home. It is not dependent on ethnic group or citizenship.,People's national identity (where they feel they belong or could think of as home).,
 ns_sec,Classifies people's socioeconomic position based on their occupation and other job characteristics.,Classifies people's socioeconomic position based on their occupation and other job characteristics.,Unclear?
 number_bedrooms,The number of bedrooms in a household’s accommodation.,The number of bedrooms in a household.,
-number_of_cars,The number of cars or vans owned or available for use by household members.,The number of cars or vans owned or available for use by a household.,
+number_of_cars,The number of cars or vans owned or available for use by household members.,Vehicles owned or available for use by a household.,
 occupancy_rating_bedrooms,"Whether a household's accommodation is overcrowded, ideally occupied or under-occupied. This is calculated by comparing the number of required bedrooms to the number of available bedrooms.","Whether homes are overcrowded, ideally occupied or under-occupied, based on bedrooms.",
 occupancy_rating_rooms,"Whether a household's accommodation is overcrowded, ideally occupied or under-occupied. This is calculated by comparing the number of required rooms to the number of available rooms.","Whether homes are overcrowded, ideally occupied or under-occupied, based on rooms.",
 occupation_current,Classifies what people aged 16 years and over do as their main job.,The jobs people work in.,

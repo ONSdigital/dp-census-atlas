@@ -1,8 +1,10 @@
 <script lang="ts">
+  import { page } from "$app/stores";
   import Badge from "./Badge.svelte";
   import SearchBoxItem from "./SearchBoxItem.svelte";
   import { highlightText, searchCensus } from "../helpers/searchCensusHelper";
   import { contentStore } from "../stores/stores";
+  import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
 
   export let name: string;
   let val = "";
@@ -45,7 +47,11 @@
       >
         <ul>
           {#each results.variableGroups as vg}
-            <SearchBoxItem link={`/choropleth/${vg.slug}`}>
+            <SearchBoxItem
+              link={buildHyperlink($page.url, {
+                variableGroup: vg.slug,
+              })}
+            >
               <div class="flex items-center gap-2">
                 <Badge className="bg-slate-500">TOPIC</Badge>
                 <div class="text-xl">{@html highlightText(vg.name, val)}</div>
@@ -56,7 +62,16 @@
             </SearchBoxItem>
           {/each}
           {#each results.variables as v}
-            <SearchBoxItem link={`/choropleth/${v.variableGroup.slug}/${v.variable.slug}`}>
+            <SearchBoxItem
+              link={buildHyperlink($page.url, {
+                variableGroup: v.variableGroup.slug,
+                variable: v.variable.slug,
+                category: {
+                  classification: v.variable.classifications.find((c) => c.choropleth_default).slug,
+                  category: v.variable.classifications.find((c) => c.choropleth_default).categories[0].slug,
+                },
+              })}
+            >
               <div class="flex items-center gap-2">
                 <Badge className="bg-slate-500">VARIABLE</Badge>
                 <div class="text-xl">{@html highlightText(v.variable.name, val)}</div>
@@ -68,7 +83,14 @@
           {/each}
           {#each results.categories as c}
             <SearchBoxItem
-              link={`/choropleth/${c.variableGroup.slug}/${c.variable.variable.slug}/default/${c.category.slug}`}
+              link={buildHyperlink($page.url, {
+                variableGroup: c.variableGroup.slug,
+                variable: c.variable.variable.slug,
+                category: {
+                  classification: c.classification.classification.slug,
+                  category: c.category.slug,
+                },
+              })}
             >
               <div class="flex items-center gap-2">
                 <Badge className="bg-slate-500">CATEGORY</Badge>

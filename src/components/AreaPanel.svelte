@@ -23,7 +23,7 @@
   <h2 class="font-bold text-slate-500">Area</h2>
   <!-- nested buttons are invalid html, so workaround with a clickable label -->
   <label for="area-input" on:click={toggleOpen} class="group w-full text-left hoverable custom-ring">
-    <div class="flex items-center gap-1">
+    <div class="flex items-center gap-2">
       <div class="text-xl">
         {selectedGeographyDisplayName}
       </div>
@@ -35,7 +35,7 @@
           on:click={resetSelectedGeography}
           title="Clear selected area"
           aria-label="Clear selected area"
-          class="flex ml-2.5 text-2xl hover:scale-105 custom-ring bg-ons-grey-15 hover:bg-ons-grey-35 rounded"
+          class="flex ml-1 text-2xl hover:scale-105 custom-ring bg-ons-grey-15 hover:bg-ons-grey-35 rounded"
         >
           <Icon kind="close" />
         </button>
@@ -45,7 +45,7 @@
         title={openOrCloseAreaSearchPanelText}
         aria-label={openOrCloseAreaSearchPanelText}
       >
-        <div class="text-2xl group-hover:scale-125 transition-all">
+        <div class="text-2xl group-hover:scale-125 transition-all ml-2">
           <Icon kind="arrowForwardIos" orientation={open ? "w" : "e"} />
         </div>
       </button>

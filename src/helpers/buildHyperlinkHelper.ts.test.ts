@@ -8,8 +8,10 @@ test("returns correct url given all inputs", () => {
   const urlParams = {
     variableGroup: "variableGroup",
     variable: "variable",
-    classification: "classification",
-    category: "category",
+    category: {
+      classification: "classification",
+      category: "category",
+    },
   };
   expect(buildHyperlink(ladSelectedUrl, urlParams)).toEqual(
     `${appBasePath}/choropleth/variableGroup/variable/classification/category?lad=ladCode`,
@@ -49,30 +51,14 @@ describe("variable url", () => {
   });
 });
 
-describe("classification url", () => {
-  const urlParams = {
-    variableGroup: "variableGroup",
-    variable: "variable",
-    classification: "classification",
-  };
-  test("returns classification url with geography query param given an LAD in input url", () => {
-    expect(buildHyperlink(ladSelectedUrl, urlParams)).toEqual(
-      `${appBasePath}/choropleth/variableGroup/variable/classification?lad=ladCode`,
-    );
-  });
-  test("returns classification url without geography query param given no geography in input url", () => {
-    expect(buildHyperlink(ewSelectedUrl, urlParams)).toEqual(
-      `${appBasePath}/choropleth/variableGroup/variable/classification`,
-    );
-  });
-});
-
 describe("category url", () => {
   const urlParams = {
     variableGroup: "variableGroup",
     variable: "variable",
-    classification: "classification",
-    category: "category",
+    category: {
+      classification: "classification",
+      category: "category",
+    },
   };
   test("returns category url with specified classification and geography query param given an LAD in input url", () => {
     expect(buildHyperlink(ladSelectedUrl, urlParams)).toEqual(
@@ -83,13 +69,6 @@ describe("category url", () => {
   test("returns category url with specified classification value but without geography query param given no geography in input url", () => {
     expect(buildHyperlink(ewSelectedUrl, urlParams)).toEqual(
       `${appBasePath}/choropleth/variableGroup/variable/classification/category`,
-    );
-  });
-
-  test("returns category url with default classification value if not specified", () => {
-    delete urlParams.classification;
-    expect(buildHyperlink(ewSelectedUrl, urlParams)).toEqual(
-      `${appBasePath}/choropleth/variableGroup/variable/default/category`,
     );
   });
 });

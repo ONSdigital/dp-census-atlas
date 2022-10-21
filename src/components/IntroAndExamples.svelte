@@ -1,64 +1,29 @@
 <script lang="ts">
-  import { page } from "$app/stores";
-  import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
+  import { isInitialReleasePeriod } from "../helpers/contentHelpers";
+  import { contentStore } from "../stores/stores";
   import MaterialIcon from "./MaterialIcon.svelte";
+  import Examples from "./Examples.svelte";
 
   let suggestions = false;
 </script>
 
 <div class="">
-  <span class="mr-2">Use our interactive map to find out what people's lives are like across England and Wales.</span>
-  <div class="inline-flex items-center gap-0.5">
-    <div class="text-xs">
-      <MaterialIcon kind="arrowForwardIos" orientation={suggestions ? "e" : "n"} />
+  <span class="pr-3"
+    >Use our maps to find out what people's lives were like across England and Wales in March 2021.</span
+  >
+  {#if !isInitialReleasePeriod($contentStore)}
+    <div class="inline-flex items-center gap-1">
+      <div class="text-xs -ml-0.5">
+        <MaterialIcon kind="arrowForwardIos" orientation={suggestions ? "e" : "n"} />
+      </div>
+      <button class="hyperlink-reverse" on:click={() => (suggestions = !suggestions)}> Show me examples </button>
     </div>
-    <button class="hyperlink-reverse" on:click={() => (suggestions = !suggestions)}> Show me examples </button>
-  </div>
+  {/if}
 </div>
 
 {#if suggestions}
-  <div class="mt-3 border-l-4 border-l-ons-grey-5 p-3 ">
-    <ul class="pl-4 list-disc list-outside">
-      <li class="pb-1">
-        Where are people who are
-        <a
-          href={buildHyperlink($page.url, {
-            variableGroup: "health",
-            variable: "general-health",
-            category: "good-health",
-          })}
-          class="hyperlink-reverse"
-        >
-          most healthy</a
-        >?
-      </li>
-      <li class="pb-1">
-        Where are the
-        <a
-          href={buildHyperlink($page.url, {
-            variableGroup: "housing",
-            variable: "type-of-central-heating-in-household",
-            category: "does-not-have-central-heating",
-          })}
-          class="hyperlink-reverse"
-        >
-          highest levels of homes without central heating</a
-        >?
-      </li>
-      <li class="pb-1">
-        Where do people
-        <a
-          href={buildHyperlink($page.url, {
-            variableGroup: "housing",
-            variable: "tenure-of-household",
-            category: "owned-owns-outright",
-          })}
-          class="hyperlink-reverse"
-        >
-          own their own home</a
-        >?
-      </li>
-    </ul>
+  <div class="mt-3 border-l-4 border-l-ons-grey-5 p-3 pt-2 ">
+    <Examples reverseType />
     <div class="mt-5">
       <button
         on:click={() => {

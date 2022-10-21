@@ -19,7 +19,7 @@
 
 {#if $mapStore && $selectedGeographyStore && !category}
   <div class={`absolute top-[48%] left-1/2 -translate-x-1/2`}>
-    <div class="z-abovemap px-3 py-1  rounded bg-ons-census text-ons-white">
+    <div class="z-abovemap px-3 py-1  rounded bg-ons-census-secondary text-ons-white">
       <div class="flex gap-2 items-center">
         <div class="text-2xl">
           <Icon kind="keyboardBackspace" />
@@ -31,8 +31,8 @@
 {/if}
 
 {#if $mapStore}
-  <div class={`absolute top-4 left-4 lg:top-8 lg:left-8 `}>
-    <div class="flex gap-1">
+  <div class={`absolute top-3 left-3 lg:top-8 lg:left-8 `}>
+    <div class="flex gap-1 text-sm lg:text-base">
       <div class="flex">
         <div class="z-abovemap px-3 py-1  rounded-l bg-ons-census text-ons-grey-5 font-bold">
           {$mapStore.geoType.toUpperCase()}

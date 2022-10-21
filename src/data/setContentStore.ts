@@ -11,24 +11,32 @@ import type { ContentConfig, ContentTree, VariableGroup } from "../types";
   with the loaded content.json.
 */
 const fetchContent = async () => {
+  // get content for current env and mode (publishing or web)
   const runtimeEnv = await (await fetch(`${appBasePath}/api/runtime-env`)).json();
-  const contentForEnv = content[runtimeEnv.envName];
+  const envMode = runtimeEnv.isPublishing ? "publishing" : "web";
+  const contentForEnvAndMode = content[runtimeEnv.envName][envMode];
+  // fetch content
   const rawContent = await Promise.all(
-    contentForEnv.map(async (ctcfg) => {
-      const resp = await fetch(ctcfg.contentJsonUrl);
-      if (resp.status != 200) {
-        console.log(`Content json file ${ctcfg.contentJsonUr} could not be fetched.`);
-        return null;
-      } else {
-        try {
+    contentForEnvAndMode.map(async (ctcfg) => {
+      try {
+        const resp = await fetch(ctcfg.contentJsonUrl);
+        if (resp.status != 200) {
+          console.log(`Content json file ${ctcfg.contentJsonUrl} could not be fetched.`);
+          return null;
+        } else {
           const contentJson = await resp.json();
-          return {
-            contentConfig: ctcfg,
-            contentJson: contentJson,
-          };
-        } catch (e) {
-          console.log(`Content json file ${ctcfg.contentJsonUr} could not be parsed: ${e}`);
+          if (typeof contentJson === "string") {
+            console.log(`Content json file ${ctcfg.contentJsonUrl} could not be fetched: ${contentJson}.`);
+            return null
+          } else {
+            return {
+              contentConfig: ctcfg,
+              contentJson: contentJson,
+            };
+          }
         }
+      } catch (e) {
+        console.log(`Error fetching / parsing content json file ${ctcfg.contentJsonUrl}: ${e}`);
       }
     }),
   ).then((responseArry) => {

@@ -66,8 +66,10 @@ class CensusClassification:
     code: str
     slug: str
     desc: str
+    available_geotypes: list[str]
     choropleth_default: bool
     dot_density_default: bool
+    dataset: str
     categories: list[CensusCategory]
     comparison_2011_data_available: bool = False
     _variable_code: str = ""
@@ -93,6 +95,10 @@ class CensusClassification:
             print(f"** Classification {self.code} has no categories **")
             is_valid = False
 
+        if len(self.available_geotypes) == 0:
+            print(f"** Classification {self.code} has no available geotypes **")
+            is_valid = False
+
         for c in self.categories:
             if not c.is_valid():
                 is_valid = False
@@ -104,7 +110,9 @@ class CensusClassification:
         output_params = {
             "code": self.code,
             "slug": self.slug,
-            "desc": self.desc
+            "desc": self.desc,
+            "available_geotypes":  self.available_geotypes,
+            "dataset": self.dataset,
         }
 
         if self.choropleth_default:
@@ -129,8 +137,8 @@ class CensusVariable:
     code: str
     slug: str
     desc: str
+    long_desc: str
     units: str
-    available_geotypes: list[str]
     classifications: list[CensusClassification]
     topic_code: str = ""
 
@@ -154,6 +162,33 @@ class CensusVariable:
                 c.legend_str_2 = "are"
                 c.legend_str_3 = c.name.lower()
 
+    def gather_ts_datasets(self, datasets: dict) -> None:
+        """
+        Append datasets to all classifications, if the dataset starts with 'TS'. If no TS dataset found for 
+        classification in the datasets dict, look for a TS dataset for a classification with more categories (i.e a less
+        derived dataset) - NB this relies on self.classifications being ordered from less -> more categoreis. 
+        If none found, leave dataset blank.
+        """
+        for i, cl in enumerate(self.classifications):
+            if cl.code in datasets and datasets[cl.code].startswith("TS"):
+                cl.dataset = datasets[cl.code]
+            else:
+                tried_cls_index = i + 1
+                while tried_cls_index < len(self.classifications):
+                    cls_code_to_try = self.classifications[tried_cls_index].code
+                    if cls_code_to_try in datasets and datasets[cls_code_to_try].startswith("TS"):
+                        cl.dataset = datasets[cls_code_to_try]
+                        break
+                    tried_cls_index += 1
+
+    def set_available_geotypes(self, available_geotypes_for_classifications: dict) -> None:
+        """
+        Make first-attempt at legend strings for all categories in all classifications
+        (intention is these are then manually reviewed / edited)
+        """
+        for c in self.classifications:
+            c.available_geotypes = available_geotypes_for_classifications.get(c.code, [])
+
     def is_valid(self) -> bool:
         """
         Return False if public properties are blank strings, classifications is empty list, available_geotypes is an
@@ -168,10 +203,6 @@ class CensusVariable:
 
         if len(self.classifications) == 0:
             print(f"** Variable {self.name} has no classifications **")
-            is_valid = False
-
-        if len(self.available_geotypes) == 0:
-            print(f"** Variable {self.name} has no available geotypes **")
             is_valid = False
 
         if not any(getattr(c, "choropleth_default", False) == True for c in self.classifications):
@@ -191,9 +222,9 @@ class CensusVariable:
             "code": self.code,
             "slug": self.slug,
             "desc": self.desc,
+            "long_desc": self.long_desc,
             "units": self.units,
             "topic_code": self.topic_code,
-            "available_geotypes": self.available_geotypes,
             "classifications": [c.to_jsonable() for c in self.classifications],
         }
 
@@ -214,14 +245,6 @@ class CensusVariableGroup:
             [v for v in variable_list if v.topic_code in self._topic_codes],
             key=lambda x: x.topic_code
         )
-
-    def set_available_geotypes(self, available_geotypes_for_variables: dict) -> None:
-        """
-        Make first-attempt at legend strings for all categories in all classifications
-        (intention is these are then manually reviewed / edited)
-        """
-        for v in self.variables:
-            v.available_geotypes = available_geotypes_for_variables.get(v.code, [])
 
     def is_valid(self) -> bool:
         """
@@ -275,8 +298,10 @@ def classification_from_content_json(content_json: dict) -> CensusClassification
         code=content_json["code"],
         slug=content_json["slug"],
         desc=content_json["desc"],
+        available_geotypes=content_json["available_geotypes"],
         choropleth_default=content_json.get("choropleth_default", False),
         dot_density_default=content_json.get("dot_density_default", False),
+        dataset=content_json["dataset"],
         comparison_2011_data_available=content_json.get("comparison_2011_data_available", False),
         categories=[category_from_content_json(c) for c in content_json["categories"]],
     )
@@ -288,6 +313,7 @@ def variable_from_content_json(content_json: dict) -> CensusVariable:
         code=content_json["code"],
         slug=content_json["slug"],
         desc=content_json["desc"],
+        long_desc=content_json["long_desc"],
         units=content_json["units"],
         topic_code=content_json["topic_code"],
         classifications=[classification_from_content_json(c) for c in content_json["classifications"]],

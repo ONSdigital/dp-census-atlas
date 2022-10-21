@@ -33,14 +33,16 @@ func main() {
 	outdir := flag.String("O", "./out/", "directory to hold output files (must be empty)")
 	doRatios := flag.Bool("R", false, "calculate ratios (eg 2011 data)")
 	doFake := flag.Bool("F", false, "generate fake metrics")
+	force := flag.Bool("f", false, "force using an existing out directory")
 	flag.Parse()
 
 	log.Printf("            input dir: %s", *indir)
 	log.Printf("           output dir: %s", *outdir)
 	log.Printf("          calc ratios: %t", *doRatios)
 	log.Printf("generate fake metrics: %t", *doFake)
+	log.Printf("                force: %t", *force)
 
-	if err := setupOutDir(*outdir); err != nil {
+	if err := setupOutDir(*outdir, *force); err != nil {
 		log.Fatal(err)
 	}
 
@@ -112,9 +114,12 @@ func main() {
 	}
 }
 
-func setupOutDir(dir string) error {
+func setupOutDir(dir string, force bool) error {
 	if err := os.MkdirAll(dir, 0755); err != nil {
 		return err
+	}
+	if force {
+		return nil
 	}
 
 	f, err := os.Open(dir)

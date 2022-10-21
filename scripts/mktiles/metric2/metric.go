@@ -202,7 +202,6 @@ func (m *M) MakeTiles(geos []types.Geocode, dir string) error {
 			}
 			val := float64(m.tab[tabrow][tabcol])
 			if math.IsNaN(val) {
-				//log.Printf("%s %s: value not found", cat, geocode)
 				continue
 			}
 			cell := strconv.FormatFloat(val, 'g', 13, 64)
@@ -256,7 +255,7 @@ func (m *M) MakeBreaks(dir string, lookup TypeLookupFunc) error {
 			for _, tabrow := range tabrows {
 				val := float64(m.tab[tabrow][tabcol])
 				if math.IsNaN(val) {
-					log.Printf("MakeBreaks: %s %s: NaN", cat, geotype)
+					//log.Printf("MakeBreaks: %s %s: NaN", cat, geotype)
 					continue
 				}
 				valsbytype[geotype] = append(valsbytype[geotype], val)
@@ -265,6 +264,10 @@ func (m *M) MakeBreaks(dir string, lookup TypeLookupFunc) error {
 
 		// calculate breaks and stats over each geotype's slice of values
 		for geotype, vals := range valsbytype {
+			if len(vals) == 0 {
+				log.Printf("%s %s: no metrics", cat, geotype)
+				continue
+			}
 			breaks, err := calcBreaks(vals, 5)
 			if err != nil {
 				return fmt.Errorf(

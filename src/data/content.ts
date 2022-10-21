@@ -119,12 +119,30 @@ const Census2021preview = {
     contentJsonUrl: "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusatlasdryrun/release-0.json",
     contentBaseUrl: "",
   },
+  dem:  {
+    contentJsonUrl:
+      "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusmapsconfig/2021-DEM.json",
+    contentBaseUrl: "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+  },
+  mig:  {
+    contentJsonUrl:
+      "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusmapsconfig/2021-MIG.json",
+    contentBaseUrl: "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+  },
 }
 
 const Census2021 = {
   zero: {
     contentJsonUrl: "https://www.ons.gov.uk/visualisations/censusatlasdryrun/release-0.json",
     contentBaseUrl: "",
+  },
+  dem:  {
+    contentJsonUrl: "https://www.ons.gov.uk/visualisations/censusmapsconfig/2021-DEM.json",
+    contentBaseUrl: "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+  },
+  mig:  {
+    contentJsonUrl: "https://www.ons.gov.uk/visualisations/censusmapsconfig/2021-MIG.json",
+    contentBaseUrl: "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
   },
 }
 

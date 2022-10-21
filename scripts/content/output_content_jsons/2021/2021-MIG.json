@@ -1,10 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-10-19-12-05-41",
-    "cantabular_metadata_source": "ar2776-c21ew_metadata-v1-3_cantab_20221011-22",
-    "rich_content_spec_file_used_to_filter": "Rich_content_product_specifications.csv",
-    "legend_strs_file": "Rich_content_product_specifications.csv",
-    "variable_desc_file": "Atlas_variables_short_descriptions.csv",
+    "created_at": "2022-10-20-21-48-15",
+    "spec_file": "2021-content-spec.json",
     "release": "2021-MIG"
   },
   "content": [
@@ -21,16 +18,16 @@
           "long_desc": "The date a person last arrived to live in the UK and their age. Arrival dates do not include returning from short trips away from the UK.  \n\nAge of arrival only applies to usual residents not born in the UK. It does not include usual residents born in the UK who have emigrated and since returned. These are recorded in the category born in the UK.",
           "units": "Person",
           "topic_code": "MIG",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "age_arrival_uk_18a",
               "slug": "age-arrival-uk-18a",
               "desc": "Age of arrival in the UK (18 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS018",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -183,14 +180,14 @@
           "long_desc": "The country in which a person was born.  \n\nAdditional  \nFor people not born in one of in the four parts of the UK, there was an option to select \"elsewhere\".\n\nPeople who selected \"elsewhere'\" were asked to write in the current name for their country of birth.",
           "units": "Person",
           "topic_code": "MIG",
-          "available_geotypes": [
-            "lad"
-          ],
           "classifications": [
             {
               "code": "country_of_birth_3a",
               "slug": "country-of-birth-3a",
               "desc": "Country of birth (UK) (3 categories)",
+              "available_geotypes": [
+                "lad"
+              ],
               "dataset": "TS004",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -217,6 +214,9 @@
               "code": "country_of_birth_8a",
               "slug": "country-of-birth-8a",
               "desc": "Country of birth (8 categories)",
+              "available_geotypes": [
+                "lad"
+              ],
               "dataset": "TS004",
               "categories": [
                 {
@@ -281,6 +281,9 @@
               "code": "country_of_birth_12a",
               "slug": "country-of-birth-12a",
               "desc": "Country of birth (12 categories)",
+              "available_geotypes": [
+                "lad"
+              ],
               "dataset": "TS004",
               "categories": [
                 {
@@ -377,6 +380,9 @@
               "code": "country_of_birth_60a",
               "slug": "country-of-birth-60a",
               "desc": "Country of birth (60 categories)",
+              "available_geotypes": [
+                "lad"
+              ],
               "dataset": "TS012",
               "categories": [
                 {
@@ -863,16 +869,16 @@
           "long_desc": "Migrant indicator",
           "units": "Person",
           "topic_code": "MIG",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "migrant_ind",
               "slug": "migrant-ind",
               "desc": "Migrant indicator (5 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS019",
               "choropleth_default": true,
               "categories": [
@@ -920,15 +926,15 @@
           "long_desc": "Passports held",
           "units": "Person",
           "topic_code": "MIG",
-          "available_geotypes": [
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "passports_all_4a",
               "slug": "passports-all-4a",
               "desc": "Passports held (4 categories)",
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS005",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -963,6 +969,10 @@
               "code": "passports_all_13a",
               "slug": "passports-all-13a",
               "desc": "Passports held (13 categories)",
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS005",
               "categories": [
                 {
@@ -1067,6 +1077,10 @@
               "code": "passports_all_18a",
               "slug": "passports-all-18a",
               "desc": "Passports held (18 categories)",
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS005",
               "categories": [
                 {
@@ -1211,6 +1225,10 @@
               "code": "passports_all_27a",
               "slug": "passports-all-27a",
               "desc": "Passports held (27 categories)",
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS005",
               "categories": [
                 {
@@ -1427,6 +1445,10 @@
               "code": "passports_all_52a",
               "slug": "passports-all-52a",
               "desc": "Passports held (52 categories)",
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS013",
               "categories": [
                 {
@@ -1849,16 +1871,16 @@
           "long_desc": "Length of residence in the UK",
           "units": "Person",
           "topic_code": "MIG",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "residence_length_6b",
               "slug": "residence-length-6b",
               "desc": "Length of residence in the UK (6 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS016",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -1915,16 +1937,16 @@
           "long_desc": "The year someone not born in the UK last arrived in the UK. This does not include returning from short visits away from the UK.",
           "units": "Person",
           "topic_code": "MIG",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "year_arrival_uk_6a",
               "slug": "year-arrival-uk-6a",
               "desc": "Year of arrival in the UK (6 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS015",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -1975,6 +1997,11 @@
               "code": "year_arrival_uk",
               "slug": "year-arrival-uk",
               "desc": "Year of arrival in the UK (13 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS015",
               "categories": [
                 {

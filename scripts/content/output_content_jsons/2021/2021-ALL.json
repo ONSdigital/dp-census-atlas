@@ -1,10 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-10-19-12-05-41",
-    "cantabular_metadata_source": "ar2776-c21ew_metadata-v1-3_cantab_20221011-22",
-    "rich_content_spec_file_used_to_filter": "Rich_content_product_specifications.csv",
-    "legend_strs_file": "Rich_content_product_specifications.csv",
-    "variable_desc_file": "Atlas_variables_short_descriptions.csv",
+    "created_at": "2022-10-20-21-48-15",
+    "spec_file": "2021-content-spec.json",
     "release": "2021-ALL"
   },
   "content": [
@@ -21,16 +18,16 @@
           "long_desc": "The highest level of qualification is derived from the question asking people to indicate all qualifications held, or their nearest equivalent.  \n\nThis may include foreign qualifications where they were matched to the closest UK equivalent.",
           "units": "Person",
           "topic_code": "EDU",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "highest_qualification_6a",
               "slug": "highest-qualification-6a",
               "desc": "Highest level of qualification (6 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS067",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -81,6 +78,11 @@
               "code": "highest_qualification",
               "slug": "highest-qualification",
               "desc": "Highest level of qualification (8 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS067",
               "categories": [
                 {
@@ -158,16 +160,16 @@
           "long_desc": "People who assessed their day-to-day activities as limited by long-term physical or mental health conditions or illnesses are considered disabled. This definition of a disabled person meets the harmonised standard for measuring disability and is in line with the Equality Act (2010). \n\nAdditional \nCensus 2021 asks the Government Statistical Service harmonised questions (used on several existing large surveys), which are two separate questions designed to capture a person's disability according to the Equality Act (2010). These replace a single question in the 2011 census that showed whether a long-term health problem or disability limited a person's day-to-day activities. \n  \nThe Census 2021 questions indicate: \n* whether a person has long term physical or mental health conditions or illnesses \n* the extent to which any indicated long term physical or mental health conditions or illnesses limit their day-to-day activities \n\nTo allow comparability with Census 2011, Scotland and Northern Ireland Census 2021 continue to ask the same question as the in the Census 2011. In Northern Ireland, disability status is defined according to the Disability Discrimination Act (1995). Please see the Health and Unpaid Care topic report for more details.",
           "units": "Person",
           "topic_code": "HUC",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "disability_3a",
               "slug": "disability-3a",
               "desc": "Disability (3 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS038ASR",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -194,6 +196,11 @@
               "code": "disability",
               "slug": "disability",
               "desc": "Disability (5 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS038",
               "categories": [
                 {
@@ -240,16 +247,16 @@
           "long_desc": "A person's assessment of the general state of their health from very good to very bad. This assessment is not based on a person's health over any specified period of time.",
           "units": "Household",
           "topic_code": "HUC",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "health_in_general_3a",
               "slug": "health-in-general-3a",
               "desc": "General health (3 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS037ASR",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -276,6 +283,11 @@
               "code": "health_in_general_4a",
               "slug": "health-in-general-4a",
               "desc": "General health (4 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS037ASR",
               "categories": [
                 {
@@ -308,6 +320,11 @@
               "code": "health_in_general",
               "slug": "health-in-general",
               "desc": "General health (6 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS037ASR",
               "categories": [
                 {
@@ -362,16 +379,16 @@
           "long_desc": "The number of people in a household who assessed their day-to-day activities as limited by long-term physical or mental health conditions or illnesses and are considered disabled.  This definition of a disabled person meets the harmonised standard for measuring disability and is in line with the Equality Act (2010).",
           "units": "Household",
           "topic_code": "HUC",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "hh_disabled_4a",
               "slug": "hh-disabled-4a",
               "desc": "Number of disabled people in household (4 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS040",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -412,16 +429,16 @@
           "long_desc": "An unpaid carer may look after, give help or support to anyone who has long-term physical or mental ill-health conditions, illness or problems related to old age.  \n\nThis does not include any activities as part of paid employment. \n\nThis help can be within or outside of the carer's household. \n\nAdditional  \n\nSince the Census 2011, this question has changed in England and Wales in the following ways. \n\nThe reference to disability has been removed. \n\n'Anyone' replaces specific groups, i.e. family members, friends, neighbours. \n\nThe additional option to break down the hours of unpaid hours worked.   \n\nScotland have retained the Census 2011 question for consistency. Northern Ireland have used a similar Census 2021 question as England and Wales but with the same response options as their Census 2011. Please see the Health and Unpaid Care topic report for more details.",
           "units": "Person",
           "topic_code": "HUC",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "is_carer_5a",
               "slug": "is-carer-5a",
               "desc": "Unpaid care (5 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS039ASR",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -464,6 +481,11 @@
               "code": "is_carer",
               "slug": "is-carer",
               "desc": "Unpaid care (7 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS039",
               "categories": [
                 {
@@ -533,16 +555,16 @@
           "long_desc": "The type of building or structure used or available by an individual or household.\n\nThis could be:\n* the whole house or bungalow\n* a flat in a purpose-built block of flats in a converted house\n* a flat in a converted house\n* a temporary or mobile structure, such as a caravan\n\nAdditional information\n\nMore information about accommodation types\n\nWhole house or bungalow\nThis property type is not divided into flats or other living accommodation. There are three types of whole houses or bungalows.\n\nDetached\nNone of the living accommodation is attached to another property but can be attached to a garage.\n\nSemi-detached\nThe living accommodation is joined to another house or bungalow by a common wall that they share.\n\nTerraced\nA mid-terraced house is located between two other houses and shares two common walls. An end-of-terrace house is part of a terraced development but only shares one common wall.\n\nFlats (Apartments) and maisonettes\nAn apartment is another word for a flat. A maisonette is a 2-storey flat.",
           "units": "Household",
           "topic_code": "HOU",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "accommodation_type_3a",
               "slug": "accommodation-type-3a",
               "desc": "Accommodation type (3 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS044",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -577,6 +599,11 @@
               "code": "accommodation_type_5a",
               "slug": "accommodation-type-5a",
               "desc": "Accommodation type (5 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS044",
               "categories": [
                 {
@@ -625,6 +652,11 @@
               "code": "accommodation_type",
               "slug": "accommodation-type",
               "desc": "Accommodation type (8 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS044",
               "categories": [
                 {
@@ -703,16 +735,16 @@
           "long_desc": "\"An address (in or out of the UK) a person stays at for more than 30 days per year that is not their place of usual residence. \n \nAdditional \nSecond addresses typically include: \n* armed forces bases\n* addresses used by people working away from home\n* a students home address\n* the address of another parent or guardian\n* a holiday home\n  \nIf a person with a second address was staying there on census night, they were classed as a visitor to the second address but counted as a usual resident at their home address.",
           "units": "Person",
           "topic_code": "HOU",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "alternative_address_indicator",
               "slug": "alternative-address-indicator",
               "desc": "Second address indicator (3 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS056",
               "choropleth_default": true,
               "categories": [
@@ -752,16 +784,16 @@
           "long_desc": "Central heating is a heating system used to heat multiple rooms in a building by circulating air or heated water through pipes to radiators or vents. Single or multiple fuel sources can fuel these systems. \n\nAdditional \nCentral heating systems that are unused or not working are still considered. No information is available for household spaces with no usual residents.",
           "units": "Household",
           "topic_code": "HOU",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "heating_type_3a",
               "slug": "heating-type-3a",
               "desc": "Type of central heating in household (3 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS046",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -788,6 +820,11 @@
               "code": "heating_type",
               "slug": "heating-type",
               "desc": "Type of central heating in household (13 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS046",
               "categories": [
                 {
@@ -898,16 +935,16 @@
           "long_desc": "Whether a household owns or rents the accommodation that it occupies.  \n\nAdditional  \nOwner-occupied accommodation can be: \n* owned outright, which is where the household owns all of the accommodation \n* with a mortgage or loan \n* part-owned on a shared ownership scheme \n\n Rented accommodation can be: \n* private rented, for example, rented through a private landlord or letting agent \n* social rented through a local council or housing association) \nThis information is not available for household spaces with no usual residents.",
           "units": "Household",
           "topic_code": "HOU",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "hh_tenure_5a",
               "slug": "hh-tenure-5a",
               "desc": "Tenure of household (5 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS054",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -950,6 +987,11 @@
               "code": "hh_tenure_9a",
               "slug": "hh-tenure-9a",
               "desc": "Tenure of household (9 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS054",
               "categories": [
                 {
@@ -1028,16 +1070,16 @@
           "long_desc": "The number of bedrooms in a households accommodation. \n\nAdditional \nThis number is not available for household spaces with no usual residents.",
           "units": "Household",
           "topic_code": "HOU",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "number_bedrooms_5a",
               "slug": "number-bedrooms-5a",
               "desc": "Number of Bedrooms (5 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS050",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -1086,16 +1128,16 @@
           "long_desc": "Whether a household's accommodation is overcrowded, ideally occupied or under-occupied. This is calculated by comparing the number of bedrooms the household requires (the Bedroom Standard) to the number of available bedrooms.  \n \nAdditional  \nPeople that should have their own room according to the Bedroom Standard.\n 1) A married or co-habiting couple.  \n 2) Someone 21 years old or over.  \n 3) A pair of same-sex aged between 10 and 20 years.  \n 4) A pair of children aged under 10 years regardless of their sex.  \n 5) One person aged between 10 to 20 years paired with a child aged under 10 years of the same sex.  \n 6) Any other person aged under 21 years who cannot share a bedroom with someone in 3, 4 or 5 above. \nAn occupancy rating of:  \n*  -1 or less implies that a households accommodation has fewer bedrooms than required (overcrowded)  \n* +1 or more implies that a households accommodation has more bedrooms than required (under-occupied)  \n* 0 suggests that a households accommodation has an ideal number of bedrooms",
           "units": "Household",
           "topic_code": "HOU",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "occupancy_rating_bedrooms_6a",
               "slug": "occupancy-rating-bedrooms-6a",
               "desc": "Occupancy rating for bedrooms (6 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS052",
               "choropleth_default": true,
               "categories": [
@@ -1151,16 +1193,16 @@
           "long_desc": "Whether a household's accommodation is overcrowded, ideally occupied or under-occupied. This is calculated by comparing the number of rooms the household requires to the number of available rooms. \n\nAdditional  \nThe number of rooms the household requires uses a formula which states that: \n* one-person households require three rooms comprised of two common rooms and one bedroom \n* two-or-more person households require a minimum of two common rooms and a bedroom for each person inline with the Bedroom Standard. \n\nPeople who should have their own room according to the Bedroom Standard.  \n  1) Married or cohabiting couple.  \n  2) Single parent.  \n  3) Person aged 16 years old or over.  \n  4) Pair of same-sex persons 10 to 15 years old.  \n  5) Person aged 10 to 15 years old paired with a person under 10 years old of the same sex.  \n  6) Pair of children under the age of 10, regardless of their sex.  \n  7) Person under 16 years old who cannot share a bedroom with someone in 4, 5 or 6 above.  \nAn occupancy rating of: \n * -1 or less implies that a households accommodation has fewer rooms than required (overcrowded) \n* +1 or more implies that a households accommodation has more rooms than required (under-occupied) \n* 0 suggests that a households accommodation has an ideal number of rooms",
           "units": "Household",
           "topic_code": "HOU",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "occupancy_rating_rooms_6a",
               "slug": "occupancy-rating-rooms-6a",
               "desc": "Occupancy rating for rooms (6 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS053",
               "choropleth_default": true,
               "categories": [
@@ -1216,16 +1258,16 @@
           "long_desc": "Indicates whether a person has an alternative address (somewhere they stay for more than 30 days per year) and the type of second address this is.   \n\n'Not applicable' applies to people without an alternative address.",
           "units": "Person",
           "topic_code": "HOU",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "second_address_type_priority",
               "slug": "second-address-type-priority",
               "desc": "Second address type (10 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS055",
               "choropleth_default": true,
               "categories": [
@@ -1320,16 +1362,16 @@
           "long_desc": "How well people whose main language is not English (English or Welsh in Wales) speak English.",
           "units": "Household",
           "topic_code": "EILR",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "english_proficiency_4a",
               "slug": "english-proficiency-4a",
               "desc": "Proficiency in English language (4 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS029",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -1364,6 +1406,11 @@
               "code": "english_proficiency",
               "slug": "english-proficiency",
               "desc": "Proficiency in English language (6 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS029",
               "categories": [
                 {
@@ -1418,16 +1465,16 @@
           "long_desc": "The ethnic group that the person completing the census feels they belong to. This could be based on their culture, family background, identity, religion, language or physical appearance. \n\nRespondents were presented with a choice of 19 categories.",
           "units": "Family",
           "topic_code": "EILR",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "ethnic_group_tb_6a",
               "slug": "ethnic-group-tb-6a",
               "desc": "Ethnic group (6 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS021",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -1478,6 +1525,11 @@
               "code": "ethnic_group_tb",
               "slug": "ethnic-group-tb",
               "desc": "Ethnic group (unordered) (20 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS021",
               "categories": [
                 {
@@ -1644,16 +1696,16 @@
           "long_desc": "Household language classifies households by combining adults and children (aged 3 to 15 years) within a household that has English (English or Welsh for households in Wales) as the main language.",
           "units": "Household",
           "topic_code": "EILR",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "hh_language",
               "slug": "hh-language",
               "desc": "Household language (English and Welsh) (5 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS025",
               "choropleth_default": true,
               "categories": [
@@ -1701,16 +1753,16 @@
           "long_desc": "People within the same household who identify as speaking the same or different main language. \nIt is categorised by whether the main language spoken difference is between generations or partnerships within the household.",
           "units": "Household",
           "topic_code": "EILR",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "hh_multi_language_3a",
               "slug": "hh-multi-language-3a",
               "desc": "Multiple main languages in household (3 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS026",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -1737,6 +1789,11 @@
               "code": "hh_multi_language",
               "slug": "hh-multi-language",
               "desc": "Multiple main languages in household (6 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS026",
               "categories": [
                 {
@@ -1791,16 +1848,16 @@
           "long_desc": "Classifies all household members who identify as belonging to the same or different religion or religions. Households are categorised by whether the difference is between generations or partnerships.",
           "units": "Household",
           "topic_code": "EILR",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "hh_multi_religion_7a",
               "slug": "hh-multi-religion-7a",
               "desc": "Multiple religions in household (7 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS075",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -1865,14 +1922,14 @@
           "long_desc": "The main languages spoken for people whose main language is not English in England or Welsh in Wales.  \n\nThis breaks down the responses given in the write-in option Other, write in (including British Sign Language.",
           "units": "Person",
           "topic_code": "EILR",
-          "available_geotypes": [
-            "lad"
-          ],
           "classifications": [
             {
               "code": "main_language_detailed_23a",
               "slug": "main-language-detailed-23a",
               "desc": "Main language (detailed) (23 categories)",
+              "available_geotypes": [
+                "lad"
+              ],
               "dataset": "TS024",
               "choropleth_default": true,
               "categories": [
@@ -2058,6 +2115,9 @@
               "code": "main_language_detailed",
               "slug": "main-language-detailed",
               "desc": "Main language (detailed) (95 categories)",
+              "available_geotypes": [
+                "lad"
+              ],
               "dataset": "TS024",
               "categories": [
                 {
@@ -2824,16 +2884,16 @@
           "long_desc": "A person's national identity could be the country or countries where they feel they belong or could think of as home. It is not dependent on ethnic group or citizenship.",
           "units": "Person",
           "topic_code": "EILR",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "national_identity_all_4a",
               "slug": "national-identity-all-4a",
               "desc": "National identity (4 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS027",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -2868,6 +2928,11 @@
               "code": "national_identity_all_9a",
               "slug": "national-identity-all-9a",
               "desc": "National identity (9 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS027",
               "categories": [
                 {
@@ -2940,6 +3005,11 @@
               "code": "national_identity_all",
               "slug": "national-identity-all",
               "desc": "National identity (17 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS027",
               "categories": [
                 {
@@ -3082,15 +3152,15 @@
           "long_desc": "This variable indicates the national identity people connect to or identify with. A person's national identity is a self-determined assessment of their own identity with respect to the country or countries with which they feel an affiliation. It is not dependent on ethnic group or citizenship",
           "units": "Person",
           "topic_code": "EILR",
-          "available_geotypes": [
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "national_identity_detailed",
               "slug": "national-identity-detailed",
               "desc": "National identity (detailed) (73 categories)",
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS028",
               "choropleth_default": true,
               "categories": [
@@ -3682,16 +3752,16 @@
           "long_desc": "The religion with which people connect or identify. They have to neither practice nor believe in it.  \n\nThis question was voluntary and classified people who identified with one of 8 response options, including No religion, alongside those who chose not to answer this question.",
           "units": "Person",
           "topic_code": "EILR",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "religion_tb",
               "slug": "religion-tb",
               "desc": "Religion (10 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS030",
               "choropleth_default": true,
               "categories": [
@@ -3779,16 +3849,16 @@
           "long_desc": "Whether a person has Welsh language skills.  If they do, can they do any of the following: \n* understand spoken Welsh \n* speak Welsh \n* read Welsh \n* write Welsh \n\nThe census questionnaire only asked this question to people in Wales.  \n\nAdditional info: \nIn results that classify people by Welsh language skills, a person may appear in more than one category depending on which combination of skills they have.",
           "units": "Person",
           "topic_code": "EILR",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "welsh_skills_all_4b",
               "slug": "welsh-skills-all-4b",
               "desc": "Welsh language skills (B) (4 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS032",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -3823,6 +3893,11 @@
               "code": "welsh_skills_all_6a",
               "slug": "welsh-skills-all-6a",
               "desc": "Welsh language skills (6 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS032",
               "categories": [
                 {
@@ -3871,6 +3946,11 @@
               "code": "welsh_skills_all",
               "slug": "welsh-skills-all",
               "desc": "Welsh language skills (10 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS032",
               "categories": [
                 {
@@ -3957,14 +4037,14 @@
           "long_desc": "This classifies a person as being able to speak Welsh if they ticked \"Speak Welsh\" in the census questionnaire. They may have also ticked one or more of the following:  \n\n* understand spoken Welsh  \n* read Welsh \n* write Welsh \n\nAdditional info: \nIn results that classify people by Welsh language skills, a person may appear in more than one category depending on which combination of skills they have.",
           "units": "Person",
           "topic_code": "EILR",
-          "available_geotypes": [
-            "lad"
-          ],
           "classifications": [
             {
               "code": "welsh_skills_speak",
               "slug": "welsh-skills-speak",
               "desc": "Welsh speaking ability (3 categories)",
+              "available_geotypes": [
+                "lad"
+              ],
               "dataset": "TS076",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -3997,15 +4077,15 @@
           "long_desc": "Classifies people according to the responses to the gender identity question. This question was voluntary and was only asked of people aged 16 years and over.",
           "units": "Family",
           "topic_code": "SOGI",
-          "available_geotypes": [
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "gender_identity_4a",
               "slug": "gender-identity-4a",
               "desc": "Gender identity (4 categories)",
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS078",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -4040,6 +4120,10 @@
               "code": "gender_identity_8a",
               "slug": "gender-identity-8a",
               "desc": "Gender identity (8 categories)",
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS070",
               "categories": [
                 {
@@ -4110,15 +4194,15 @@
           "long_desc": "Classifies people according to the responses to the sexual orientation question. This question was voluntary and was only asked of people aged 16 years and over.",
           "units": "Person",
           "topic_code": "SOGI",
-          "available_geotypes": [
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "sexual_orientation_4a",
               "slug": "sexual-orientation-4a",
               "desc": "Sexual orientation (4 categories)",
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS077",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -4153,6 +4237,10 @@
               "code": "sexual_orientation_6a",
               "slug": "sexual-orientation-6a",
               "desc": "Sexual orientation (6 categories)",
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS077",
               "categories": [
                 {
@@ -4201,6 +4289,10 @@
               "code": "sexual_orientation_9a",
               "slug": "sexual-orientation-9a",
               "desc": "Sexual orientation (9 categories)",
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS079",
               "categories": [
                 {
@@ -4279,6 +4371,39 @@
       "desc": "People, their living arrangements and where they come from.",
       "variables": [
         {
+          "name": "Population density",
+          "code": "population_density",
+          "slug": "population-density",
+          "desc": "The number of people per square kilometre.",
+          "long_desc": "The number of usual residents per square kilometre, calculated based on total land area excluding inland water.",
+          "units": "Persons per square kilometre",
+          "topic_code": "DEM",
+          "classifications": [
+            {
+              "code": "population_density",
+              "slug": "population-density",
+              "desc": "Population density",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
+              "dataset": "TS006",
+              "choropleth_default": true,
+              "categories": [
+                {
+                  "name": "Persons per square kilometre",
+                  "slug": "persons-per-square-kilometre",
+                  "code": "population_density-001",
+                  "legend_str_1": "Population density of {location}",
+                  "legend_str_2": "in",
+                  "legend_str_3": "persons per square kilometre"
+                }
+              ]
+            }
+          ]
+        },
+        {
           "name": "Household deprivation",
           "code": "hh_deprivation",
           "slug": "household-deprivation",
@@ -4286,16 +4411,16 @@
           "long_desc": "The dimensions of deprivation used to classify households are indicators based on four selected household characteristics.\n\nEducation\nA household is classified as deprived in the education dimension if no one has at least level 2 education and no one aged 16 to 18 years is a full-time student.\n\nEmployment\nA household is classified as deprived in the employment dimension if any member, not a full-time student, is either unemployed or long-term sick.\n\nHealth\nA household is classified as deprived in the health dimension if any member is disabled.\n\nHousing\nA household is classified as deprived in the housing dimension if the household's accommodation is either overcrowded, in a shared dwelling, or has no central heating.",
           "units": "Household",
           "topic_code": "DEM",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "hh_deprivation",
               "slug": "hh-deprivation",
               "desc": "Household deprivation (6 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS011",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -4352,16 +4477,16 @@
           "long_desc": "Households according to the relationships between members. \n\nOne-family households are classified by: \n* the number of dependent children \n* family type (married, civil partnership or cohabiting couple family, or lone parent family) \n\nOther households are classified by: \n* the number of people \n* the number of dependent children \n* whether the household consists only of students or only of people aged 66 and over",
           "units": "Household",
           "topic_code": "DEM",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "hh_family_composition_4a",
               "slug": "hh-family-composition-4a",
               "desc": "Household composition (4 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS003",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -4396,6 +4521,11 @@
               "code": "hh_family_composition_15a",
               "slug": "hh-family-composition-15a",
               "desc": "Household composition (15 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS003",
               "categories": [
                 {
@@ -4522,16 +4652,16 @@
           "long_desc": "Single or multiple ethnic groups within the household.  \nIf multiple ethnic groups are present, this identifies whether ethnic groups differ between generations or partnerships within the household.",
           "units": "Household",
           "topic_code": "DEM",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "hh_multi_ethnic_group",
               "slug": "hh-multi-ethnic-group",
               "desc": "Multiple ethnic groups in household (6 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS023",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -4588,28 +4718,20 @@
           "long_desc": "The number of people in the household.   \n\nAdditional  \nVisitors staying at an address do not count to that households size.",
           "units": "Household",
           "topic_code": "DEM",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "hh_size_5a",
               "slug": "hh-size-5a",
               "desc": "Household size (5 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS017",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
-                {
-                  "name": "0 people in household",
-                  "slug": "0-people-in-household",
-                  "code": "hh_size_5a-000",
-                  "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "0 people in household"
-                },
                 {
                   "name": "1 person in household",
                   "slug": "1-person-in-household",
@@ -4648,6 +4770,11 @@
               "code": "hh_size_9a",
               "slug": "hh-size-9a",
               "desc": "Household size (9 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS017",
               "categories": [
                 {
@@ -4734,16 +4861,16 @@
           "long_desc": "Classifies a person according to their legal marital or registered civil partnership status on 21 March 2021.\n\n It is the same as the 2011 census variable \"Marital status\" but has been updated for Census 2021 to reflect the revised Civil Partnership Act that came into force in 2019.\n\nIn Census 2021 results, \"single\" refers only to someone who has never been married or in a registered civil partnership.",
           "units": "Person",
           "topic_code": "DEM",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "legal_partnership_status_3a",
               "slug": "legal-partnership-status-3a",
               "desc": "Marital and civil partnership status (3 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS002",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -4770,6 +4897,11 @@
               "code": "legal_partnership_status_6a",
               "slug": "legal-partnership-status-6a",
               "desc": "Marital and civil partnership status (6 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS002",
               "categories": [
                 {
@@ -4818,6 +4950,11 @@
               "code": "legal_partnership_status",
               "slug": "legal-partnership-status",
               "desc": "Marital and civil partnership status (12 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS002",
               "categories": [
                 {
@@ -4920,15 +5057,15 @@
           "long_desc": "Living arrangements",
           "units": "Person",
           "topic_code": "DEM",
-          "available_geotypes": [
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "living_arrangements_11a",
               "slug": "living-arrangements-11a",
               "desc": "Living arrangements (11 categories)",
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS010",
               "choropleth_default": true,
               "categories": [
@@ -5024,16 +5161,16 @@
           "long_desc": "The number of cars or vans owned or available for use by household members.  \nVehicles included: \n* pick-ups, camper vans and motor homes  \n* vehicles that are temporarily not working  \n* vehicles that have failed their MOT   \n* vehicles owned or used by a lodger  \n* company cars or vans if they're available for private use \n\nVehicles not included:  \n* motorbikes, trikes, quad bikes or mobility scooters  \n* vehicles that have a Statutory Off Road Notification (SORN)  \n* vehicles owned or used only by a visitor  \n* vehicles that are kept at another address or not easily accessed  \n\nThe number of cars or vans in an area relates only to households. Cars or vans used by communal establishment residents are not counted.   \nHouseholds with 10 to 20 cars or vans are counted as having only 10.  \nHouseholds with more than 20 cars or vans were treated as invalid and a value imputed.",
           "units": "Household",
           "topic_code": "DEM",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "number_of_cars_3a",
               "slug": "number-of-cars-3a",
               "desc": "Car or van availability (3 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS045",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -5060,6 +5197,11 @@
               "code": "number_of_cars_5a",
               "slug": "number-of-cars-5a",
               "desc": "Car or van availability (5 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS045",
               "categories": [
                 {
@@ -5106,15 +5248,15 @@
           "long_desc": "A persons age on Census Day, 21 March 2021 in England and Wales. Infants aged under 1 year are classified as 0 years of age",
           "units": "Person",
           "topic_code": "DEM",
-          "available_geotypes": [
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "resident_age_3a",
               "slug": "resident-age-3a",
               "desc": "Age (3 categories)",
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS076",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -5149,6 +5291,10 @@
               "code": "resident_age_8c",
               "slug": "resident-age-8c",
               "desc": "Age (C) (8 categories)",
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS076",
               "categories": [
                 {
@@ -5221,6 +5367,10 @@
               "code": "resident_age_11a",
               "slug": "resident-age-11a",
               "desc": "Age (11 categories)",
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS076",
               "categories": [
                 {
@@ -5317,6 +5467,10 @@
               "code": "resident_age_101a",
               "slug": "resident-age-101a",
               "desc": "Age (101 categories)",
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS007",
               "categories": [
                 {
@@ -6132,6 +6286,39 @@
           ]
         },
         {
+          "name": "Average (median) age",
+          "code": "median_age",
+          "slug": "median-age",
+          "desc": "Average age on Census Day, 21 March 2021.",
+          "long_desc": "Average (median) age is calculated from the age of residents on Census Day, 21 March 2021 in England and Wales.",
+          "units": "Years",
+          "topic_code": "DEM",
+          "classifications": [
+            {
+              "code": "median_age",
+              "slug": "median-age",
+              "desc": "Median age",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
+              "dataset": "TS007a",
+              "choropleth_default": true,
+              "categories": [
+                {
+                  "name": "Median age",
+                  "slug": "median-age",
+                  "code": "median_age-001",
+                  "legend_str_1": "Average (median) age of people in {location}",
+                  "legend_str_2": "in",
+                  "legend_str_3": "years"
+                }
+              ]
+            }
+          ]
+        },
+        {
           "name": "Sex",
           "code": "sex",
           "slug": "sex",
@@ -6139,16 +6326,16 @@
           "long_desc": "This is the sex recorded by the person completing the census. The options were Female and Male.",
           "units": "Person",
           "topic_code": "DEM",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "sex",
               "slug": "sex",
               "desc": "Sex (2 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS020",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -6181,16 +6368,16 @@
           "long_desc": "The date a person last arrived to live in the UK and their age. Arrival dates do not include returning from short trips away from the UK.  \n\nAge of arrival only applies to usual residents not born in the UK. It does not include usual residents born in the UK who have emigrated and since returned. These are recorded in the category born in the UK.",
           "units": "Person",
           "topic_code": "MIG",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "age_arrival_uk_18a",
               "slug": "age-arrival-uk-18a",
               "desc": "Age of arrival in the UK (18 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS018",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -6343,14 +6530,14 @@
           "long_desc": "The country in which a person was born.  \n\nAdditional  \nFor people not born in one of in the four parts of the UK, there was an option to select \"elsewhere\".\n\nPeople who selected \"elsewhere'\" were asked to write in the current name for their country of birth.",
           "units": "Person",
           "topic_code": "MIG",
-          "available_geotypes": [
-            "lad"
-          ],
           "classifications": [
             {
               "code": "country_of_birth_3a",
               "slug": "country-of-birth-3a",
               "desc": "Country of birth (UK) (3 categories)",
+              "available_geotypes": [
+                "lad"
+              ],
               "dataset": "TS004",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -6377,6 +6564,9 @@
               "code": "country_of_birth_8a",
               "slug": "country-of-birth-8a",
               "desc": "Country of birth (8 categories)",
+              "available_geotypes": [
+                "lad"
+              ],
               "dataset": "TS004",
               "categories": [
                 {
@@ -6441,6 +6631,9 @@
               "code": "country_of_birth_12a",
               "slug": "country-of-birth-12a",
               "desc": "Country of birth (12 categories)",
+              "available_geotypes": [
+                "lad"
+              ],
               "dataset": "TS004",
               "categories": [
                 {
@@ -6537,6 +6730,9 @@
               "code": "country_of_birth_60a",
               "slug": "country-of-birth-60a",
               "desc": "Country of birth (60 categories)",
+              "available_geotypes": [
+                "lad"
+              ],
               "dataset": "TS012",
               "categories": [
                 {
@@ -7023,16 +7219,16 @@
           "long_desc": "Migrant indicator",
           "units": "Person",
           "topic_code": "MIG",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "migrant_ind",
               "slug": "migrant-ind",
               "desc": "Migrant indicator (5 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS019",
               "choropleth_default": true,
               "categories": [
@@ -7080,15 +7276,15 @@
           "long_desc": "Passports held",
           "units": "Person",
           "topic_code": "MIG",
-          "available_geotypes": [
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "passports_all_4a",
               "slug": "passports-all-4a",
               "desc": "Passports held (4 categories)",
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS005",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -7123,6 +7319,10 @@
               "code": "passports_all_13a",
               "slug": "passports-all-13a",
               "desc": "Passports held (13 categories)",
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS005",
               "categories": [
                 {
@@ -7227,6 +7427,10 @@
               "code": "passports_all_18a",
               "slug": "passports-all-18a",
               "desc": "Passports held (18 categories)",
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS005",
               "categories": [
                 {
@@ -7371,6 +7575,10 @@
               "code": "passports_all_27a",
               "slug": "passports-all-27a",
               "desc": "Passports held (27 categories)",
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS005",
               "categories": [
                 {
@@ -7587,6 +7795,10 @@
               "code": "passports_all_52a",
               "slug": "passports-all-52a",
               "desc": "Passports held (52 categories)",
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS013",
               "categories": [
                 {
@@ -8009,16 +8221,16 @@
           "long_desc": "Length of residence in the UK",
           "units": "Person",
           "topic_code": "MIG",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "residence_length_6b",
               "slug": "residence-length-6b",
               "desc": "Length of residence in the UK (6 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS016",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -8075,16 +8287,16 @@
           "long_desc": "The year someone not born in the UK last arrived in the UK. This does not include returning from short visits away from the UK.",
           "units": "Person",
           "topic_code": "MIG",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "year_arrival_uk_6a",
               "slug": "year-arrival-uk-6a",
               "desc": "Year of arrival in the UK (6 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS015",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -8135,6 +8347,11 @@
               "code": "year_arrival_uk",
               "slug": "year-arrival-uk",
               "desc": "Year of arrival in the UK (13 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS015",
               "categories": [
                 {
@@ -8252,16 +8469,16 @@
           "long_desc": "Economic activity status",
           "units": "Person",
           "topic_code": "LAB",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "economic_activity_status_3a",
               "slug": "economic-activity-status-3a",
               "desc": "Economic activity status (3 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS066",
               "choropleth_default": true,
               "categories": [
@@ -8287,6 +8504,11 @@
               "code": "economic_activity_status_4a",
               "slug": "economic-activity-status-4a",
               "desc": "Economic activity status (4 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS066",
               "dot_density_default": true,
               "categories": [
@@ -8320,6 +8542,11 @@
               "code": "economic_activity_status_12a",
               "slug": "economic-activity-status-12a",
               "desc": "Economic activity status (12 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS066",
               "categories": [
                 {
@@ -8422,16 +8649,16 @@
           "long_desc": "Unemployment history",
           "units": "Person",
           "topic_code": "LAB",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "has_ever_worked",
               "slug": "has-ever-worked",
               "desc": "Unemployment history (4 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS065",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -8472,16 +8699,16 @@
           "long_desc": "Hours worked",
           "units": "Person",
           "topic_code": "LAB",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "hours_per_week_worked_3a",
               "slug": "hours-per-week-worked-3a",
               "desc": "Hours worked (3 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS059",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -8508,6 +8735,11 @@
               "code": "hours_per_week_worked",
               "slug": "hours-per-week-worked",
               "desc": "Hours worked (5 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS059",
               "categories": [
                 {
@@ -8554,15 +8786,15 @@
           "long_desc": "Industry (current)",
           "units": "Person",
           "topic_code": "LAB",
-          "available_geotypes": [
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "industry_current_88a",
               "slug": "industry-current-88a",
               "desc": "Industry (current) (88 categories)",
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS060",
               "choropleth_default": true,
               "categories": [
@@ -9274,16 +9506,16 @@
           "long_desc": "National Statistics Socio-economic Classification (NS-SeC)",
           "units": "Person",
           "topic_code": "LAB",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "ns_sec_10a",
               "slug": "ns-sec-10a",
               "desc": "National Statistics Socio-economic Classification (NS-SeC) (10 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS062",
               "choropleth_default": true,
               "categories": [
@@ -9371,15 +9603,15 @@
           "long_desc": "Occupation (current)",
           "units": "Person",
           "topic_code": "LAB",
-          "available_geotypes": [
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "occupation_current_10a",
               "slug": "occupation-current-10a",
               "desc": "Occupation (current) (10 categories)",
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS063",
               "choropleth_default": true,
               "categories": [
@@ -9467,15 +9699,15 @@
           "long_desc": "A person's place of work and their method of travel to work. This is the 2001 method of producing travel to work variables.\n \n\"Work mainly from home\" applies to someone who indicated their place of work as their home address and travelled to work by driving a car or van (e.g. visiting clients).",
           "units": "Person",
           "topic_code": "TTW",
-          "available_geotypes": [
-            "oa",
-            "msoa"
-          ],
           "classifications": [
             {
               "code": "transport_to_workplace_12a",
               "slug": "transport-to-workplace-12a",
               "desc": "Method used to travel to workplace (12 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa"
+              ],
               "dataset": "TS061",
               "choropleth_default": true,
               "categories": [
@@ -9587,15 +9819,15 @@
           "long_desc": "The distance, in kilometres, between a person's residential postcode and their workplace postcode measured in a straight line. A distance travelled of 0.1km indicates that the workplace postcode is the same as the residential postcode. Distances over 1200km are treated as invalid, and an imputed or estimated value is added.\n\nWork mainly at or from home is made up of those that ticked either the 'Mainly work at or from home' box for the address of workplace question, or the Work mainly at or from home box for the method of travel to work question.\n\nOther includes no fixed place of work, working on an offshore installation and working outside of the UK.\n\nDistance is calculated as the straight line distance between the enumeration postcode and the workplace postcode.",
           "units": "Person",
           "topic_code": "TTW",
-          "available_geotypes": [
-            "oa",
-            "msoa"
-          ],
           "classifications": [
             {
               "code": "workplace_travel_4a",
               "slug": "workplace-travel-4a",
               "desc": "Distance travelled to work (4 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa"
+              ],
               "dataset": "TS058",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -9638,6 +9870,10 @@
               "code": "workplace_travel_5a",
               "slug": "workplace-travel-5a",
               "desc": "Distance travelled to work (5 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa"
+              ],
               "dataset": "TS058",
               "categories": [
                 {
@@ -9686,6 +9922,10 @@
               "code": "workplace_travel_10a",
               "slug": "workplace-travel-10a",
               "desc": "Distance travelled to work (10 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa"
+              ],
               "dataset": "TS058",
               "categories": [
                 {

@@ -1,10 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-10-19-12-05-41",
-    "cantabular_metadata_source": "ar2776-c21ew_metadata-v1-3_cantab_20221011-22",
-    "rich_content_spec_file_used_to_filter": "Rich_content_product_specifications.csv",
-    "legend_strs_file": "Rich_content_product_specifications.csv",
-    "variable_desc_file": "Atlas_variables_short_descriptions.csv",
+    "created_at": "2022-10-20-21-48-15",
+    "spec_file": "2021-content-spec.json",
     "release": "2021-SOGI"
   },
   "content": [
@@ -21,15 +18,15 @@
           "long_desc": "Classifies people according to the responses to the gender identity question. This question was voluntary and was only asked of people aged 16 years and over.",
           "units": "Family",
           "topic_code": "SOGI",
-          "available_geotypes": [
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "gender_identity_4a",
               "slug": "gender-identity-4a",
               "desc": "Gender identity (4 categories)",
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS078",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -64,6 +61,10 @@
               "code": "gender_identity_8a",
               "slug": "gender-identity-8a",
               "desc": "Gender identity (8 categories)",
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS070",
               "categories": [
                 {
@@ -134,15 +135,15 @@
           "long_desc": "Classifies people according to the responses to the sexual orientation question. This question was voluntary and was only asked of people aged 16 years and over.",
           "units": "Person",
           "topic_code": "SOGI",
-          "available_geotypes": [
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "sexual_orientation_4a",
               "slug": "sexual-orientation-4a",
               "desc": "Sexual orientation (4 categories)",
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS077",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -177,6 +178,10 @@
               "code": "sexual_orientation_6a",
               "slug": "sexual-orientation-6a",
               "desc": "Sexual orientation (6 categories)",
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS077",
               "categories": [
                 {
@@ -225,6 +230,10 @@
               "code": "sexual_orientation_9a",
               "slug": "sexual-orientation-9a",
               "desc": "Sexual orientation (9 categories)",
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS079",
               "categories": [
                 {

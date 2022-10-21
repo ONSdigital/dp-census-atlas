@@ -24,6 +24,7 @@ def get_test_classification(**kwargs) -> CensusClassification:
         code=kwargs.get("code", "test_code"),
         slug=kwargs.get("slug", "test_slug"),
         desc=kwargs.get("desc", "test_desc"),
+        available_geotypes=kwargs.get("available_geotypes", ["OA"]),
         choropleth_default=kwargs.get("choropleth_default", False),
         dot_density_default=kwargs.get("dot_density_default", False),
         dataset=kwargs.get("dataset", "test_dataset"),
@@ -42,7 +43,6 @@ def get_test_variable(**kwargs) -> CensusVariable:
         long_desc=kwargs.get("long_desc", "test_long_desc"),
         units=kwargs.get("units", "person"),
         topic_code=kwargs.get("topic_code", "test_topic_code"),
-        available_geotypes=kwargs.get("available_geotypes", ["OA"]),
         classifications=kwargs.get("classifications", []),
     )
 

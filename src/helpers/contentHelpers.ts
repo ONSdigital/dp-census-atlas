@@ -53,7 +53,6 @@ const mergeVariables = (variables: Variable[]) => {
       long_desc: variablesToMerge[0].long_desc,
       units: variablesToMerge[0].units,
       topic_code: variablesToMerge[0].topic_code,
-      available_geotypes: variablesToMerge[0].available_geotypes,
       classifications: dedupeClassifications(allClassifications as Classification[]),
     });
   }

@@ -1,6 +1,6 @@
 import type { GeoType } from "../types";
 import { appBasePath } from "../buildEnv";
-import { setGeographyParam } from "./navigationHelper";
+import { setGeographyParam } from "./urlHelper";
 
 interface VariableGroupPageParams {
   variableGroup: string;

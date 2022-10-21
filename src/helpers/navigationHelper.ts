@@ -1,15 +1,7 @@
 import { goto } from "$app/navigation";
 import type { GeoType } from "../types";
 import { GeoTypes } from "../types";
-
-export const setGeographyParam = (params: URLSearchParams, g: { geoType: GeoType; geoCode: string }) => {
-  const newer = new URLSearchParams(params);
-  for (const param of GeoTypes) {
-    newer.delete(param);
-  }
-  newer.set(g.geoType.toLowerCase(), g.geoCode);
-  return newer;
-};
+import { setGeographyParam } from "./urlHelper";
 
 export const selectGeography = (params: URLSearchParams, g: { geoType: GeoType; geoCode: string }) => {
   const newer = setGeographyParam(params, g);

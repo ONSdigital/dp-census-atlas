@@ -369,7 +369,7 @@ func Test_MakeTiles(t *testing.T) {
 			So(err, ShouldBeNil)
 
 			// Request tiles without any geos.
-			// Should generate only CSV header line
+			// Should not be generated.
 			Convey("empty geo list generates only headers", withTempDir(func(tmpdir string) {
 				err := m.MakeTiles(nil, tmpdir)
 				So(err, ShouldBeNil)

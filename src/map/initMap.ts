@@ -32,7 +32,7 @@ export const initMap = (container) => {
   map.on("load", () => {
     initMapLayers(map);
     initSelectedGeographyLayers(map);
-    categoryStore.subscribe(() => refreshMapLayers(map)); // Removes feature states when data changes
+    categoryStore.subscribe(() => {if (map) refreshMapLayers(map);}); // Removes feature states when data changes
   });
 
   fromEvent(map, "load")

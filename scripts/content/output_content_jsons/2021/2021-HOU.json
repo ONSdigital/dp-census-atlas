@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-10-20-21-48-15",
+    "created_at": "2022-10-21-11-51-31",
     "spec_file": "2021-content-spec.json",
     "release": "2021-HOU"
   },
@@ -578,6 +578,93 @@
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have ",
                   "legend_str_3": "4 or more bedrooms"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Number of cars or vans",
+          "code": "number_of_cars",
+          "slug": "number-of-cars-or-vans",
+          "desc": "Vehicles owned or available for use by a household.",
+          "long_desc": "The number of cars or vans owned or available for use by household members.  \nVehicles included: \n* pick-ups, camper vans and motor homes  \n* vehicles that are temporarily not working  \n* vehicles that have failed their MOT   \n* vehicles owned or used by a lodger  \n* company cars or vans if they're available for private use \n\nVehicles not included:  \n* motorbikes, trikes, quad bikes or mobility scooters  \n* vehicles that have a Statutory Off Road Notification (SORN)  \n* vehicles owned or used only by a visitor  \n* vehicles that are kept at another address or not easily accessed  \n\nThe number of cars or vans in an area relates only to households. Cars or vans used by communal establishment residents are not counted.   \nHouseholds with 10 to 20 cars or vans are counted as having only 10.  \nHouseholds with more than 20 cars or vans were treated as invalid and a value imputed.",
+          "units": "Household",
+          "topic_code": "HOU",
+          "classifications": [
+            {
+              "code": "number_of_cars_3a",
+              "slug": "number-of-cars-3a",
+              "desc": "Car or van availability (3 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
+              "dataset": "TS045",
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "categories": [
+                {
+                  "name": "No cars or vans in household",
+                  "slug": "no-cars-or-vans-in-household",
+                  "code": "number_of_cars_3a-000",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "no cars or vans in household"
+                },
+                {
+                  "name": "1 or more cars or vans in household",
+                  "slug": "1-or-more-cars-or-vans-in-household",
+                  "code": "number_of_cars_3a-001",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "1 or more cars or vans in household"
+                }
+              ]
+            },
+            {
+              "code": "number_of_cars_5a",
+              "slug": "number-of-cars-5a",
+              "desc": "Car or van availability (5 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
+              "dataset": "TS045",
+              "categories": [
+                {
+                  "name": "No cars or vans in household",
+                  "slug": "no-cars-or-vans-in-household",
+                  "code": "number_of_cars_5a-000",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "no cars or vans in household"
+                },
+                {
+                  "name": "1 car or van in household",
+                  "slug": "1-car-or-van-in-household",
+                  "code": "number_of_cars_5a-001",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "1 car or van in household"
+                },
+                {
+                  "name": "2 cars or vans in household",
+                  "slug": "2-cars-or-vans-in-household",
+                  "code": "number_of_cars_5a-002",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "2 cars or vans in household"
+                },
+                {
+                  "name": "3 or more cars or vans in household",
+                  "slug": "3-or-more-cars-or-vans-in-household",
+                  "code": "number_of_cars_5a-003",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "3 or more cars or vans in household"
                 }
               ]
             }

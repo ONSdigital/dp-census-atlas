@@ -1,4 +1,13 @@
 // A list of env-specific content.json file URLS
+
+// fake / demo data
+const fakeCensus2021preview = {
+  zero: {
+    contentJsonUrl: "https://publishing.dp.aws.onsdigital.uk/visualisations/dvc691/release-0.json",
+    contentBaseUrl: "",
+  },
+}
+
 const fakeCensus2021 = {
   zero: {
     contentJsonUrl: "https://dp.aws.onsdigital.uk/visualisations/dvc691/release-0.json",
@@ -103,14 +112,25 @@ const fakeCensus2021Local = {
   },
 }
 
-const fakeCensus2021preview = {
+// REAL CENSUS 2021 DATA!
+
+const Census2021preview = {
   zero: {
-    contentJsonUrl: "https://publishing.dp.aws.onsdigital.uk/visualisations/dvc691/release-0.json",
+    contentJsonUrl: "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusatlasdryrun/release-0.json",
     contentBaseUrl: "",
   },
 }
 
+const Census2021 = {
+  zero: {
+    contentJsonUrl: "https://www.ons.gov.uk/visualisations/censusatlasdryrun/release-0.json",
+    contentBaseUrl: "",
+  },
+}
+
+
 export default {
+  // local dev
   dev: {
     web: [
       fakeCensus2021Local.dem,
@@ -125,6 +145,7 @@ export default {
     ],
     publishing:[]
   },
+  // netlify
   netlify: {
     web: [
       fakeCensus2021.dem,
@@ -139,6 +160,7 @@ export default {
     ],
     publishing: []
   },
+  // ONS sandbox
   sandbox: {
     web: [
       fakeCensus2021.dem,
@@ -164,6 +186,18 @@ export default {
       fakeCensus2021.ttw,
     ],
   },
-  staging: [],
-  prod: [],
+  // ONS staging
+  staging: {
+    web: [],
+    publishing: []
+  },
+  // ONS producution!
+  prod: {
+    web: [
+      Census2021.zero,
+    ],
+    publishing: [
+      Census2021preview.zero,
+    ]
+  },
 };

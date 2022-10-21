@@ -1,10 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-10-19-12-05-41",
-    "cantabular_metadata_source": "ar2776-c21ew_metadata-v1-3_cantab_20221011-22",
-    "rich_content_spec_file_used_to_filter": "Rich_content_product_specifications.csv",
-    "legend_strs_file": "Rich_content_product_specifications.csv",
-    "variable_desc_file": "Atlas_variables_short_descriptions.csv",
+    "created_at": "2022-10-20-21-48-15",
+    "spec_file": "2021-content-spec.json",
     "release": "2021-LAB"
   },
   "content": [
@@ -21,16 +18,16 @@
           "long_desc": "Economic activity status",
           "units": "Person",
           "topic_code": "LAB",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "economic_activity_status_3a",
               "slug": "economic-activity-status-3a",
               "desc": "Economic activity status (3 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS066",
               "choropleth_default": true,
               "categories": [
@@ -56,6 +53,11 @@
               "code": "economic_activity_status_4a",
               "slug": "economic-activity-status-4a",
               "desc": "Economic activity status (4 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS066",
               "dot_density_default": true,
               "categories": [
@@ -89,6 +91,11 @@
               "code": "economic_activity_status_12a",
               "slug": "economic-activity-status-12a",
               "desc": "Economic activity status (12 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS066",
               "categories": [
                 {
@@ -191,16 +198,16 @@
           "long_desc": "Unemployment history",
           "units": "Person",
           "topic_code": "LAB",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "has_ever_worked",
               "slug": "has-ever-worked",
               "desc": "Unemployment history (4 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS065",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -241,16 +248,16 @@
           "long_desc": "Hours worked",
           "units": "Person",
           "topic_code": "LAB",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "hours_per_week_worked_3a",
               "slug": "hours-per-week-worked-3a",
               "desc": "Hours worked (3 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS059",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -277,6 +284,11 @@
               "code": "hours_per_week_worked",
               "slug": "hours-per-week-worked",
               "desc": "Hours worked (5 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS059",
               "categories": [
                 {
@@ -323,15 +335,15 @@
           "long_desc": "Industry (current)",
           "units": "Person",
           "topic_code": "LAB",
-          "available_geotypes": [
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "industry_current_88a",
               "slug": "industry-current-88a",
               "desc": "Industry (current) (88 categories)",
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS060",
               "choropleth_default": true,
               "categories": [
@@ -1043,16 +1055,16 @@
           "long_desc": "National Statistics Socio-economic Classification (NS-SeC)",
           "units": "Person",
           "topic_code": "LAB",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "ns_sec_10a",
               "slug": "ns-sec-10a",
               "desc": "National Statistics Socio-economic Classification (NS-SeC) (10 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS062",
               "choropleth_default": true,
               "categories": [
@@ -1140,15 +1152,15 @@
           "long_desc": "Occupation (current)",
           "units": "Person",
           "topic_code": "LAB",
-          "available_geotypes": [
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "occupation_current_10a",
               "slug": "occupation-current-10a",
               "desc": "Occupation (current) (10 categories)",
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS063",
               "choropleth_default": true,
               "categories": [

@@ -1,10 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-10-19-12-05-41",
-    "cantabular_metadata_source": "ar2776-c21ew_metadata-v1-3_cantab_20221011-22",
-    "rich_content_spec_file_used_to_filter": "Rich_content_product_specifications.csv",
-    "legend_strs_file": "Rich_content_product_specifications.csv",
-    "variable_desc_file": "Atlas_variables_short_descriptions.csv",
+    "created_at": "2022-10-20-21-48-15",
+    "spec_file": "2021-content-spec.json",
     "release": "2021-DEM"
   },
   "content": [
@@ -14,6 +11,39 @@
       "desc": "People, their living arrangements and where they come from.",
       "variables": [
         {
+          "name": "Population density",
+          "code": "population_density",
+          "slug": "population-density",
+          "desc": "The number of people per square kilometre.",
+          "long_desc": "The number of usual residents per square kilometre, calculated based on total land area excluding inland water.",
+          "units": "Persons per square kilometre",
+          "topic_code": "DEM",
+          "classifications": [
+            {
+              "code": "population_density",
+              "slug": "population-density",
+              "desc": "Population density",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
+              "dataset": "TS006",
+              "choropleth_default": true,
+              "categories": [
+                {
+                  "name": "Persons per square kilometre",
+                  "slug": "persons-per-square-kilometre",
+                  "code": "population_density-001",
+                  "legend_str_1": "Population density of {location}",
+                  "legend_str_2": "in",
+                  "legend_str_3": "persons per square kilometre"
+                }
+              ]
+            }
+          ]
+        },
+        {
           "name": "Household deprivation",
           "code": "hh_deprivation",
           "slug": "household-deprivation",
@@ -21,16 +51,16 @@
           "long_desc": "The dimensions of deprivation used to classify households are indicators based on four selected household characteristics.\n\nEducation\nA household is classified as deprived in the education dimension if no one has at least level 2 education and no one aged 16 to 18 years is a full-time student.\n\nEmployment\nA household is classified as deprived in the employment dimension if any member, not a full-time student, is either unemployed or long-term sick.\n\nHealth\nA household is classified as deprived in the health dimension if any member is disabled.\n\nHousing\nA household is classified as deprived in the housing dimension if the household's accommodation is either overcrowded, in a shared dwelling, or has no central heating.",
           "units": "Household",
           "topic_code": "DEM",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "hh_deprivation",
               "slug": "hh-deprivation",
               "desc": "Household deprivation (6 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS011",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -87,16 +117,16 @@
           "long_desc": "Households according to the relationships between members. \n\nOne-family households are classified by: \n* the number of dependent children \n* family type (married, civil partnership or cohabiting couple family, or lone parent family) \n\nOther households are classified by: \n* the number of people \n* the number of dependent children \n* whether the household consists only of students or only of people aged 66 and over",
           "units": "Household",
           "topic_code": "DEM",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "hh_family_composition_4a",
               "slug": "hh-family-composition-4a",
               "desc": "Household composition (4 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS003",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -131,6 +161,11 @@
               "code": "hh_family_composition_15a",
               "slug": "hh-family-composition-15a",
               "desc": "Household composition (15 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS003",
               "categories": [
                 {
@@ -257,16 +292,16 @@
           "long_desc": "Single or multiple ethnic groups within the household.  \nIf multiple ethnic groups are present, this identifies whether ethnic groups differ between generations or partnerships within the household.",
           "units": "Household",
           "topic_code": "DEM",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "hh_multi_ethnic_group",
               "slug": "hh-multi-ethnic-group",
               "desc": "Multiple ethnic groups in household (6 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS023",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -323,28 +358,20 @@
           "long_desc": "The number of people in the household.   \n\nAdditional  \nVisitors staying at an address do not count to that households size.",
           "units": "Household",
           "topic_code": "DEM",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "hh_size_5a",
               "slug": "hh-size-5a",
               "desc": "Household size (5 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS017",
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
-                {
-                  "name": "0 people in household",
-                  "slug": "0-people-in-household",
-                  "code": "hh_size_5a-000",
-                  "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "0 people in household"
-                },
                 {
                   "name": "1 person in household",
                   "slug": "1-person-in-household",
@@ -383,6 +410,11 @@
               "code": "hh_size_9a",
               "slug": "hh-size-9a",
               "desc": "Household size (9 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS017",
               "categories": [
                 {
@@ -469,16 +501,16 @@
           "long_desc": "Classifies a person according to their legal marital or registered civil partnership status on 21 March 2021.\n\n It is the same as the 2011 census variable \"Marital status\" but has been updated for Census 2021 to reflect the revised Civil Partnership Act that came into force in 2019.\n\nIn Census 2021 results, \"single\" refers only to someone who has never been married or in a registered civil partnership.",
           "units": "Person",
           "topic_code": "DEM",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "legal_partnership_status_3a",
               "slug": "legal-partnership-status-3a",
               "desc": "Marital and civil partnership status (3 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS002",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -505,6 +537,11 @@
               "code": "legal_partnership_status_6a",
               "slug": "legal-partnership-status-6a",
               "desc": "Marital and civil partnership status (6 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS002",
               "categories": [
                 {
@@ -553,6 +590,11 @@
               "code": "legal_partnership_status",
               "slug": "legal-partnership-status",
               "desc": "Marital and civil partnership status (12 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS002",
               "categories": [
                 {
@@ -655,15 +697,15 @@
           "long_desc": "Living arrangements",
           "units": "Person",
           "topic_code": "DEM",
-          "available_geotypes": [
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "living_arrangements_11a",
               "slug": "living-arrangements-11a",
               "desc": "Living arrangements (11 categories)",
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS010",
               "choropleth_default": true,
               "categories": [
@@ -759,16 +801,16 @@
           "long_desc": "The number of cars or vans owned or available for use by household members.  \nVehicles included: \n* pick-ups, camper vans and motor homes  \n* vehicles that are temporarily not working  \n* vehicles that have failed their MOT   \n* vehicles owned or used by a lodger  \n* company cars or vans if they're available for private use \n\nVehicles not included:  \n* motorbikes, trikes, quad bikes or mobility scooters  \n* vehicles that have a Statutory Off Road Notification (SORN)  \n* vehicles owned or used only by a visitor  \n* vehicles that are kept at another address or not easily accessed  \n\nThe number of cars or vans in an area relates only to households. Cars or vans used by communal establishment residents are not counted.   \nHouseholds with 10 to 20 cars or vans are counted as having only 10.  \nHouseholds with more than 20 cars or vans were treated as invalid and a value imputed.",
           "units": "Household",
           "topic_code": "DEM",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "number_of_cars_3a",
               "slug": "number-of-cars-3a",
               "desc": "Car or van availability (3 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS045",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -795,6 +837,11 @@
               "code": "number_of_cars_5a",
               "slug": "number-of-cars-5a",
               "desc": "Car or van availability (5 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS045",
               "categories": [
                 {
@@ -841,15 +888,15 @@
           "long_desc": "A persons age on Census Day, 21 March 2021 in England and Wales. Infants aged under 1 year are classified as 0 years of age",
           "units": "Person",
           "topic_code": "DEM",
-          "available_geotypes": [
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "resident_age_3a",
               "slug": "resident-age-3a",
               "desc": "Age (3 categories)",
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS076",
               "choropleth_default": true,
               "dot_density_default": true,
@@ -884,6 +931,10 @@
               "code": "resident_age_8c",
               "slug": "resident-age-8c",
               "desc": "Age (C) (8 categories)",
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS076",
               "categories": [
                 {
@@ -956,6 +1007,10 @@
               "code": "resident_age_11a",
               "slug": "resident-age-11a",
               "desc": "Age (11 categories)",
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS076",
               "categories": [
                 {
@@ -1052,6 +1107,10 @@
               "code": "resident_age_101a",
               "slug": "resident-age-101a",
               "desc": "Age (101 categories)",
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS007",
               "categories": [
                 {
@@ -1867,6 +1926,39 @@
           ]
         },
         {
+          "name": "Average (median) age",
+          "code": "median_age",
+          "slug": "median-age",
+          "desc": "Average age on Census Day, 21 March 2021.",
+          "long_desc": "Average (median) age is calculated from the age of residents on Census Day, 21 March 2021 in England and Wales.",
+          "units": "Years",
+          "topic_code": "DEM",
+          "classifications": [
+            {
+              "code": "median_age",
+              "slug": "median-age",
+              "desc": "Median age",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
+              "dataset": "TS007a",
+              "choropleth_default": true,
+              "categories": [
+                {
+                  "name": "Median age",
+                  "slug": "median-age",
+                  "code": "median_age-001",
+                  "legend_str_1": "Average (median) age of people in {location}",
+                  "legend_str_2": "in",
+                  "legend_str_3": "years"
+                }
+              ]
+            }
+          ]
+        },
+        {
           "name": "Sex",
           "code": "sex",
           "slug": "sex",
@@ -1874,16 +1966,16 @@
           "long_desc": "This is the sex recorded by the person completing the census. The options were Female and Male.",
           "units": "Person",
           "topic_code": "DEM",
-          "available_geotypes": [
-            "oa",
-            "msoa",
-            "lad"
-          ],
           "classifications": [
             {
               "code": "sex",
               "slug": "sex",
               "desc": "Sex (2 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dataset": "TS020",
               "choropleth_default": true,
               "dot_density_default": true,

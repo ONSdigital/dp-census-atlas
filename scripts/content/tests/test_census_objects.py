@@ -60,6 +60,8 @@ def test_census_classification_to_jsonable_no_vis_flags():
         "code": test_classification.code,
         "slug": test_classification.slug,
         "desc": test_classification.desc,
+        "available_geotypes": test_classification.available_geotypes,
+        "dataset": test_classification.dataset,
         "categories": ["test_category","test_category","test_category"]
     }
     assert returned == expected
@@ -88,8 +90,10 @@ def test_census_classification_to_jsonable_vis_flags():
         "code": test_classification.code,
         "slug": test_classification.slug,
         "desc": test_classification.desc,
+        "available_geotypes": test_classification.available_geotypes,
         "choropleth_default": test_classification.choropleth_default,
         "dot_density_default": test_classification.dot_density_default,
+        "dataset": test_classification.dataset,
         "categories": ["test_category","test_category","test_category"]
     }
     assert returned == expected
@@ -179,7 +183,6 @@ def test_census_variable_to_jsonable():
         "long_desc": test_variable.long_desc,
         "units": test_variable.units,
         "topic_code": test_variable.topic_code,
-        "available_geotypes": test_variable.available_geotypes,
         "classifications": ["test_classification","test_classification","test_classification"]
     }
     assert returned == expected

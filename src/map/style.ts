@@ -17,6 +17,7 @@ export const style: mapboxgl.Style = {
       tiles: ["https://cdn.ons.gov.uk/maptiles/buildingmask/{z}/{x}/{y}.png"],
       tileSize: 256,
       maxzoom: 14,
+      bounds: [-20, 45, 10, 65],
       attribution: "&copy; Ordnance Survey",
     },
   },

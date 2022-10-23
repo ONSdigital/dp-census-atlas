@@ -4,16 +4,17 @@ import mapboxgl, { GeoJSONSource, Map } from "mapbox-gl";
 import { fromEvent, merge } from "rxjs";
 import { delay, throttleTime } from "rxjs/operators";
 import type { GeoType } from "../types";
-import { vizStore, mapStore, selectedGeographyStore, preventFlyToGeographyStore } from "../stores/stores";
+import { vizStore, categoryStore, mapStore, selectedGeographyStore, preventFlyToGeographyStore } from "../stores/stores";
 import { englandAndWalesBbox, preventFlyToGeography } from "../helpers/geographyHelper";
 import { selectGeography } from "../helpers/navigationHelper";
-import { initMapLayers } from "./initMapLayers";
+import { initMapLayers, refreshMapLayers } from "./initMapLayers";
 import { renderMapViz } from "./renderMapViz";
 import { layers } from "./layers";
 import { style } from "./style";
 
 export const defaultZoom = 6;
 export const maxAllowedZoom = 16;
+export const maxBounds: mapboxgl.LngLatBoundsLike = [-9, 47, 4, 61];
 
 /** Configure the map's properties and subscribe to its events. */
 export const initMap = (container) => {
@@ -23,6 +24,7 @@ export const initMap = (container) => {
     center: new mapboxgl.LngLatBounds(englandAndWalesBbox).getCenter(),
     zoom: defaultZoom,
     maxZoom: maxAllowedZoom - 0.001, // prevent layers from disappearing at absolute max zoom
+    maxBounds
   });
 
   map.addControl(new mapboxgl.NavigationControl({ showCompass: false }));
@@ -30,6 +32,7 @@ export const initMap = (container) => {
   map.on("load", () => {
     initMapLayers(map);
     initSelectedGeographyLayers(map);
+    categoryStore.subscribe(() => {if (map) refreshMapLayers(map);}); // Removes feature states when data changes
   });
 
   fromEvent(map, "load")
@@ -83,10 +86,19 @@ const getGeoTypeForFeatureDensity = (map: mapboxgl.Map): GeoType => {
   // @ts-ignore (queryRenderedFeatures typings appear to be wrong)
   const features = map.queryRenderedFeatures({ layers: ["centroids"] });
   if (Array.isArray(features)) {
+    // Get the available geotypes for the dataset
+    const available_geotypes = get(vizStore)?.params?.variable?.available_geotypes || ["lad", "msoa", "oa"];
+    // Get the preferred geotype based on the density of features on the map
     const count = features.length;
     const canvas = map.getCanvas();
     const pixelArea = canvas.clientWidth * canvas.clientHeight;
-    return (count * 1e6) / pixelArea > 40 ? "lad" : (count * 1e6) / pixelArea > 3 ? "msoa" : "oa";
+    const geotype = (count * 1e6) / pixelArea > 40 ? "lad" : (count * 1e6) / pixelArea > 3 ? "msoa" : "oa";
+    // If the preferred geotype is available, then return it. Otherwise return the most granular available
+    if (available_geotypes.includes(geotype)) {
+      return geotype;
+    } else {
+      return available_geotypes[available_geotypes.length - 1];
+    }
   } else {
     return "lad";
   }

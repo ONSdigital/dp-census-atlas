@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { ratioToRoundedPercentageString } from "../helpers/ratioHelpers";
+  import { dataToRoundedString } from "../helpers/percentageHelpers";
 
   export let hovered = null;
   export let selected = null;
@@ -31,12 +31,12 @@
       class="tick"
       style="left: {i * (100 / (breaks.length - 1))}%; transform: translateX({i == 0 && snapTicks ? '-2px' : '-50%'});"
     >
-      {ratioToRoundedPercentageString(breaks[i])}<span class="tick-suffix">{suffix}</span>
+      {dataToRoundedString(breaks[i])}<span class="tick-suffix">{suffix}</span>
     </div>
   {/each}
   <div class="line" style="right: 0;" />
   <div class="tick" style="right: 0; transform: translateX({snapTicks ? '2px' : '50%'});">
-    {ratioToRoundedPercentageString(breaks[breaks.length - 1])}<span class="tick-suffix">{suffix}</span>
+    {dataToRoundedString(breaks[breaks.length - 1])}<span class="tick-suffix">{suffix}</span>
   </div>
   {#if selected}
     <!-- <div class="marker" style="width: 4px; left: calc({pos(selected, breaks)}% - {lineWidth / 2}px);" /> -->

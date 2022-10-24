@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-10-21-11-51-31",
+    "created_at": "2022-10-24-13-50-41",
     "spec_file": "2021-content-spec.json",
     "release": "2021-EDU"
   },
@@ -14,7 +14,7 @@
           "name": "Highest level of qualification",
           "code": "highest_qualification",
           "slug": "highest-level-of-qualification",
-          "desc": "Highest level of qualification gained.",
+          "desc": "The highest level of qualification gained.",
           "long_desc": "The highest level of qualification is derived from the question asking people to indicate all qualifications held, or their nearest equivalent.  \n\nThis may include foreign qualifications where they were matched to the closest UK equivalent.",
           "units": "Person",
           "topic_code": "EDU",

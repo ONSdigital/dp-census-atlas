@@ -7,19 +7,7 @@
 
 <ul class="pl-4 list-disc list-outside">
   <li class="pb-1">
-    Which areas have the
-    <a
-      href={buildHyperlink($page.url, {
-        variableGroup: "population",
-        variable: "age",
-        category: { classification: "resident-age-3a", category: "aged-65-years-and-over" },
-      })}
-      class:hyperlink={!reverseType}
-      class:hyperlink-reverse={reverseType}
-    >
-      oldest populations</a
-    >
-    and
+    Which areas have larger populations of
     <a
       href={buildHyperlink($page.url, {
         variableGroup: "population",
@@ -29,9 +17,20 @@
       class:hyperlink={!reverseType}
       class:hyperlink-reverse={reverseType}
     >
-      youngest populations</a
+      younger people</a
     >
-    ?
+    or
+    <a
+      href={buildHyperlink($page.url, {
+        variableGroup: "population",
+        variable: "age",
+        category: { classification: "resident-age-3a", category: "aged-65-years-and-over" },
+      })}
+      class:hyperlink={!reverseType}
+      class:hyperlink-reverse={reverseType}
+    >
+      older people</a
+    >?
   </li>
   <li class="pb-1">
     Which neighbourhoods of

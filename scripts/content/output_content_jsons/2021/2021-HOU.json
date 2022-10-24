@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-10-21-11-51-31",
+    "created_at": "2022-10-24-13-50-41",
     "spec_file": "2021-content-spec.json",
     "release": "2021-HOU"
   },
@@ -194,7 +194,7 @@
           "name": "Second address indicator",
           "code": "alternative_address_indicator",
           "slug": "second-address-indicator",
-          "desc": "An address (in or out of the UK) a person stays at for more than 30 days per year that is not their place of usual residence.",
+          "desc": "An address (in or out of the UK) a person stays at for more than 30 days per year that isn't their place of usual residence.",
           "long_desc": "\"An address (in or out of the UK) a person stays at for more than 30 days per year that is not their place of usual residence. \n \nAdditional \nSecond addresses typically include: \n* armed forces bases\n* addresses used by people working away from home\n* a students home address\n* the address of another parent or guardian\n* a holiday home\n  \nIf a person with a second address was staying there on census night, they were classed as a visitor to the second address but counted as a usual resident at their home address.",
           "units": "Person",
           "topic_code": "HOU",

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-10-21-11-51-31",
+    "created_at": "2022-10-24-13-50-41",
     "spec_file": "2021-content-spec.json",
     "release": "2021-EILR"
   },
@@ -348,7 +348,7 @@
           "name": "Household language (English and Welsh)",
           "code": "hh_language",
           "slug": "household-language-english-and-welsh",
-          "desc": "Classifies households by the combination of adults and children (aged 3 to 15 years) within a household that have English (English or Welsh in Wales) as their main language.",
+          "desc": "People who have English in England, or in Wales English or Welsh, as their main language.",
           "long_desc": "Household language classifies households by combining adults and children (aged 3 to 15 years) within a household that has English (English or Welsh for households in Wales) as the main language.",
           "units": "Household",
           "topic_code": "EILR",
@@ -405,7 +405,7 @@
           "name": "Multiple main languages in household",
           "code": "hh_multi_language",
           "slug": "multiple-main-languages-in-household",
-          "desc": "People within the same household who have a different main language categorised by whether the difference is between generations or partnerships within the household.",
+          "desc": "Whether there are multiple languages in a household.",
           "long_desc": "People within the same household who identify as speaking the same or different main language. \nIt is categorised by whether the main language spoken difference is between generations or partnerships within the household.",
           "units": "Household",
           "topic_code": "EILR",
@@ -500,7 +500,7 @@
           "name": "Multiple religions in household",
           "code": "hh_multi_religion",
           "slug": "multiple-religions-in-household",
-          "desc": "Classifies all household members who identify as belonging to the same or different religion or religions.",
+          "desc": "Whether there are multiple religions in a household.",
           "long_desc": "Classifies all household members who identify as belonging to the same or different religion or religions. Households are categorised by whether the difference is between generations or partnerships.",
           "units": "Household",
           "topic_code": "EILR",
@@ -1804,7 +1804,7 @@
           "name": "National identity (detailed)",
           "code": "national_identity_detailed",
           "slug": "national-identity-detailed",
-          "desc": "People's national identity (where they feel they belong or could think of as home).",
+          "desc": "People's national identity (where they feel they belong or could think of as home) broken down by country.",
           "long_desc": "This variable indicates the national identity people connect to or identify with. A person's national identity is a self-determined assessment of their own identity with respect to the country or countries with which they feel an affiliation. It is not dependent on ethnic group or citizenship",
           "units": "Person",
           "topic_code": "EILR",

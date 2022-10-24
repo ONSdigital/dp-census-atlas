@@ -9,7 +9,9 @@ export const searchCensus = (q: string, variableGroups: VariableGroup[]) => {
     };
   }
   const s = q.toLowerCase();
-  const variableGroupResults = variableGroups.filter((vg) => vg.name.toLowerCase().includes(s) || vg.desc.toLowerCase().includes(s));
+  const variableGroupResults = variableGroups.filter(
+    (vg) => vg.name.toLowerCase().includes(s) || vg.desc.toLowerCase().includes(s),
+  );
 
   const allVariables = variableGroups.flatMap((vg) => vg.variables.map((v) => ({ variableGroup: vg, variable: v })));
   const variableResults = allVariables.filter(

@@ -7,7 +7,8 @@
   "classification_geotype_availability_file": "Available_geotypes_for_classifications.csv",
   "version": "2021",
   "variable_topic_overrides": {
-    "hh_size": "DEM"
+    "hh_size": "DEM",
+    "number_of_cars": "HOU"
   },
   "classification_dropped_categories": {
     "hh_size_5a": ["hh_size_5a-000", "hh_size_9a-000"]

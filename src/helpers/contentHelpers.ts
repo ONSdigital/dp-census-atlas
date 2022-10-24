@@ -1,4 +1,4 @@
-import type { ContentConfig, Classification, Variable, VariableGroup } from "../types";
+import type { ContentConfig, Classification, Variable, VariableGroup, ContentTree } from "../types";
 
 /*
   Iterate through variable groups and append the data baseUrl to each category of each classification of each variable.
@@ -70,4 +70,8 @@ const dedupeClassifications = (classifications: Classification[]) => {
     dedupedClassifications.push(clsToMerge[0]);
   }
   return dedupedClassifications;
+};
+
+export const isInitialReleasePeriod = (content: ContentTree) => {
+  return content.variableGroups.length <= 8;
 };

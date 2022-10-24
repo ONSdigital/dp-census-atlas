@@ -1,4 +1,6 @@
+import type { GeoType } from "../types";
 import { appBasePath } from "../buildEnv";
+import { setGeographyParam } from "./urlHelper";
 
 interface VariableGroupPageParams {
   variableGroup: string;
@@ -25,12 +27,22 @@ type UrlParams = VariableGroupPageParams | VariablePageParams | CategoryPagePara
  * Omitting the urlParams parameter will return a link
  * to the index page.
  */
-export const buildHyperlink = (url: URL, urlParams?: UrlParams, staticPath?: string) => {
+export const buildHyperlink = (
+  url: URL,
+  urlParams?: UrlParams,
+  staticPath?: string,
+  geography?: { geoType: GeoType; geoCode: string },
+) => {
+  // update the geography param if given (all other queryparams should pass through unscathed)
+  const searchParams = geography ? setGeographyParam(url.searchParams, geography) : url.searchParams;
+  // get an actual querystring beginning with "?" else an empty string
+  const search = Array.from(searchParams).length > 0 ? "?" + searchParams.toString() : "";
+
   if (!urlParams && !staticPath) {
-    return `${appBasePath}/${url.search}`;
+    return `${appBasePath}/${search}`;
   }
   if (staticPath) {
-    return `${appBasePath}/choropleth/${staticPath}${url.search}`;
+    return `${appBasePath}/choropleth/${staticPath}${search}`;
   }
   let link = `${appBasePath}/choropleth`;
   if ("variableGroup" in urlParams) {
@@ -42,5 +54,5 @@ export const buildHyperlink = (url: URL, urlParams?: UrlParams, staticPath?: str
   if ("category" in urlParams) {
     link = `${link}/${urlParams.category.classification}/${urlParams.category.category}`;
   }
-  return `${link}${url.search}`;
+  return `${link}${search}`;
 };

@@ -100,7 +100,7 @@ type GeographyFeature = {
   id: string;
   geometry: {
     type: string;
-    coordinates: [number, number, number, number];
+    coordinates: [[number, number], [number, number]];
   };
   properties?: any;
 };

@@ -46,7 +46,13 @@ export const englandAndWales: GeographyData = {
       {
         id: "bbox",
         type: "blah",
-        geometry: { type: "blah", coordinates: [2.08, 55.68, -6.59, 48.53] },
+        geometry: {
+          type: "blah",
+          coordinates: [
+            [2.08, 55.68],
+            [-6.59, 48.53],
+          ],
+        },
       },
     ],
   },

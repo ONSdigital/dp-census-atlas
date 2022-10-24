@@ -90,9 +90,8 @@ const compareNames = (obj1, obj2) => {
 }
 
 /*
-  Sort all variables within a variable group alphabetically, then sort variable groups
+  Sort all variables within a variable group alphabetically
 */
-export const sortVariableGroupsAndVariables = (variableGroups: VariableGroup[]) => {
+export const sortVariableGroupVariables = (variableGroups: VariableGroup[]) => {
   variableGroups.forEach( (vg) => {vg.variables.sort(compareNames)})
-  variableGroups.sort(compareNames)
 };

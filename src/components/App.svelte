@@ -6,10 +6,10 @@
   import { onMount } from "svelte";
   import { setContentStoreOnce } from "../data/setContentStore";
   import { contentStore } from "../stores/stores";
+  import { selection } from "../stores/selection";
   import Loading from "./Loading.svelte";
   import ServiceUnavailablePage from "./ServiceUnavailablePage.svelte";
   import { page } from "$app/stores";
-  import { parseAppParams, setAppParamsStore } from "../helpers/appParamsHelper";
   import { setSelectedGeographyStore } from "../data/setSelectedGeographyStore";
 
   onMount(async () => {
@@ -20,14 +20,9 @@
   });
 
   $: if ($page) {
-    // the AppParams store is logically a 'derived' store, since it depends
-    // only on the page store - could we use derived stores instead of doing this here?
-    const params = parseAppParams($page.url.searchParams);
-    setAppParamsStore(params);
-
     // the SelectedGeographyStore is logically a 'derived' store, since it depends
     // only on the AppParams store, but it seems derived stores can't be set async
-    setSelectedGeographyStore(params.geoCode);
+    setSelectedGeographyStore($selection.geoCode);
   }
 </script>
 

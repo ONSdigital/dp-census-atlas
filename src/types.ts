@@ -146,10 +146,3 @@ export type ContentTree = {
   variableGroups: VariableGroup[];
   fakeDataLoaded: boolean;
 };
-
-export type AppParams = {
-  geoType: GeoType;
-  geoCode: string;
-  embed: boolean;
-  // pym: string;
-};

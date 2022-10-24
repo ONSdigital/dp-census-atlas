@@ -1,5 +1,5 @@
 import { writable } from "svelte/store";
-import type { MapState, SelectedGeographyData, ContentTree, VizData, AppParams } from "../types";
+import type { MapState, SelectedGeographyData, ContentTree, VizData } from "../types";
 
 /**
  * A Svelte store containing any map state we need to be aware of within the Svelte app.
@@ -25,8 +25,3 @@ export const preventFlyToGeographyStore = writable<string | undefined>(undefined
  * A Svelte store containing all loaded variableGroups and their metadata
  */
 export const contentStore = writable<ContentTree | undefined>(undefined);
-
-/**
- * A Svelte store containing the app params from the current URL
- */
-export const appParamsStore = writable<AppParams | undefined>(undefined);

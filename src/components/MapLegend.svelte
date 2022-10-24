@@ -4,7 +4,7 @@
   import { contentStore } from "../stores/stores";
   import { formatTemplateString } from "../helpers/categoryHelpers";
   import { choroplethColours } from "../helpers/choroplethHelpers";
-  import { ratioToRoundedPercentageString } from "../helpers/ratioHelpers";
+  import { dataToRoundedString } from "../helpers/percentageHelpers";
 
   import BreaksChart from "./BreaksChart.svelte";
   import GeoTypeBadge from "./GeoTypeBadge.svelte";
@@ -41,7 +41,7 @@
         <div class="flex gap-3 items-center">
           <div class="whitespace-nowrap">
             <span class="text-4xl md:text-5xl font-bold">
-              {ratioToRoundedPercentageString(categoryValueForSelectedGeography)}</span
+              {dataToRoundedString(categoryValueForSelectedGeography)}</span
             ><span class="text-3xl md:text-4xl font-bold">%</span>
           </div>
           <div class="flex-grow leading-[0px]">

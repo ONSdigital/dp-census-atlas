@@ -7,8 +7,6 @@
   let mapContainer;
 
   onMount(() => {
-    /* Svelte issue: Runs twice locally causing a map flicker issue: https://github.com/sveltejs/kit/issues/2130 */
-    /* Fixed once the project is built */
     map = initMap(mapContainer);
   });
   onDestroy(() => {

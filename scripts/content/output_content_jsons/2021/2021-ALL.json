@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-10-24-13-50-41",
+    "created_at": "2022-10-24-15-46-15",
     "spec_file": "2021-content-spec.json",
     "release": "2021-ALL"
   },
@@ -1827,6 +1827,72 @@
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "no members that have English or Welsh as their main language."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Multiple ethnic groups in household",
+          "code": "hh_multi_ethnic_group",
+          "slug": "multiple-ethnic-groups-in-household",
+          "desc": "Ethnic groups within a household.",
+          "long_desc": "Single or multiple ethnic groups within the household.  \nIf multiple ethnic groups are present, this identifies whether ethnic groups differ between generations or partnerships within the household.",
+          "units": "Household",
+          "topic_code": "EILR",
+          "classifications": [
+            {
+              "code": "hh_multi_ethnic_group",
+              "slug": "hh-multi-ethnic-group",
+              "desc": "Multiple ethnic groups in household (6 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
+              "dataset": "TS023",
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "categories": [
+                {
+                  "name": "One-person household",
+                  "slug": "one-person-household",
+                  "code": "hh_multi_ethnic_group-001",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "one-person households"
+                },
+                {
+                  "name": "All household members have the same ethnic group",
+                  "slug": "all-household-members-have-the-same-ethnic-group",
+                  "code": "hh_multi_ethnic_group-002",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "members that all have the same ethnic group"
+                },
+                {
+                  "name": "Ethnic groups differ between generations but not within partnerships",
+                  "slug": "ethnic-groups-differ-between-generations-but-not-within-partnerships",
+                  "code": "hh_multi_ethnic_group-003",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "members from ethnic groups that differ between generations but not within partnerships"
+                },
+                {
+                  "name": "Ethnic groups differ within partnerships",
+                  "slug": "ethnic-groups-differ-within-partnerships",
+                  "code": "hh_multi_ethnic_group-004",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "members from ethnic groups that differ within partnerships"
+                },
+                {
+                  "name": "Any other combination of multiple ethnic identities",
+                  "slug": "any-other-combination-of-multiple-ethnic-identities",
+                  "code": "hh_multi_ethnic_group-005",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "members with any other combination of multiple ethnic identities"
                 }
               ]
             }
@@ -4732,72 +4798,6 @@
           ]
         },
         {
-          "name": "Multiple ethnic groups in household",
-          "code": "hh_multi_ethnic_group",
-          "slug": "multiple-ethnic-groups-in-household",
-          "desc": "Ethnic groups within a household.",
-          "long_desc": "Single or multiple ethnic groups within the household.  \nIf multiple ethnic groups are present, this identifies whether ethnic groups differ between generations or partnerships within the household.",
-          "units": "Household",
-          "topic_code": "DEM",
-          "classifications": [
-            {
-              "code": "hh_multi_ethnic_group",
-              "slug": "hh-multi-ethnic-group",
-              "desc": "Multiple ethnic groups in household (6 categories)",
-              "available_geotypes": [
-                "oa",
-                "msoa",
-                "lad"
-              ],
-              "dataset": "TS023",
-              "choropleth_default": true,
-              "dot_density_default": true,
-              "categories": [
-                {
-                  "name": "One-person household",
-                  "slug": "one-person-household",
-                  "code": "hh_multi_ethnic_group-001",
-                  "legend_str_1": "of households in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "one-person households"
-                },
-                {
-                  "name": "All household members have the same ethnic group",
-                  "slug": "all-household-members-have-the-same-ethnic-group",
-                  "code": "hh_multi_ethnic_group-002",
-                  "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "members that all have the same ethnic group"
-                },
-                {
-                  "name": "Ethnic groups differ between generations but not within partnerships",
-                  "slug": "ethnic-groups-differ-between-generations-but-not-within-partnerships",
-                  "code": "hh_multi_ethnic_group-003",
-                  "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "members from ethnic groups that differ between generations but not within partnerships"
-                },
-                {
-                  "name": "Ethnic groups differ within partnerships",
-                  "slug": "ethnic-groups-differ-within-partnerships",
-                  "code": "hh_multi_ethnic_group-004",
-                  "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "members from ethnic groups that differ within partnerships"
-                },
-                {
-                  "name": "Any other combination of multiple ethnic identities",
-                  "slug": "any-other-combination-of-multiple-ethnic-identities",
-                  "code": "hh_multi_ethnic_group-005",
-                  "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "members with any other combination of multiple ethnic identities"
-                }
-              ]
-            }
-          ]
-        },
-        {
           "name": "Household size",
           "code": "hh_size",
           "slug": "household-size",
@@ -4864,14 +4864,6 @@
               ],
               "dataset": "TS017",
               "categories": [
-                {
-                  "name": "0 people in household",
-                  "slug": "0-people-in-household",
-                  "code": "hh_size_9a-000",
-                  "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "0 people in household"
-                },
                 {
                   "name": "1 person in household",
                   "slug": "1-person-in-household",

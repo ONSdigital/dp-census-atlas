@@ -213,9 +213,13 @@ export default {
   prod: {
     web: [
       Census2021.zero,
+      Census2021.dem,
+      Census2021.mig
     ],
     publishing: [
       Census2021preview.zero,
+      Census2021preview.dem,
+      Census2021preview.mig,
     ]
   },
 };

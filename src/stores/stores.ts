@@ -1,5 +1,5 @@
 import { writable } from "svelte/store";
-import type { MapState, ContentTree, VizData } from "../types";
+import type { MapState, VizData } from "../types";
 
 /**
  * A Svelte store containing any map state we need to be aware of within the Svelte app.
@@ -15,8 +15,3 @@ export const vizStore = writable<VizData | undefined>(undefined);
  * A Svelte store ...
  */
 export const preventFlyToGeographyStore = writable<string | undefined>(undefined);
-
-/**
- * A Svelte store containing all loaded variableGroups and their metadata
- */
-export const contentStore = writable<ContentTree | undefined>(undefined);

@@ -4,7 +4,7 @@
   import { mapStore } from "../stores/stores";
   import { selection } from "../stores/selection";
   import { geography } from "../stores/geography";
-  import { contentStore } from "../stores/stores";
+  import { content } from "../stores/content";
   import { setVizStore } from "../data/setVizStore";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
   import CategoryPageLinks from "./CategoryPageLinks.svelte";
@@ -20,7 +20,7 @@
       geoCode: $geography.geoCode,
       bbox: $mapStore.bbox,
       zoom: $mapStore.zoom,
-      variableGroups: $contentStore.variableGroups,
+      variableGroups: $content.variableGroups,
     });
   }
 </script>

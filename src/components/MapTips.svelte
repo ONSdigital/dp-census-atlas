@@ -1,7 +1,8 @@
 <script>
   import { fade } from "svelte/transition";
   import { page } from "$app/stores";
-  import { mapStore, contentStore } from "../stores/stores";
+  import { mapStore } from "../stores/stores";
+  import { content } from "../stores/content";
   import tipStore from "../stores/tipStore";
   import { getDefaultChoroplethClassification } from "../helpers/variableHelpers";
   import Icon from "./MaterialIcon.svelte";
@@ -9,7 +10,7 @@
 
   $: params = $page.params;
   $: variableGroupSlug = params.variableGroup;
-  $: variableGroup = $contentStore.variableGroups.find((t) => t.slug === variableGroupSlug);
+  $: variableGroup = $content.variableGroups.find((t) => t.slug === variableGroupSlug);
   $: variableSlug = params.variable;
   $: variable = variableGroup ? variableGroup.variables.find((v) => v.slug === variableSlug) : undefined;
   $: defaultChoroplethClassification = getDefaultChoroplethClassification(variable);

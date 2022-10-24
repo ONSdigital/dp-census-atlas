@@ -3,12 +3,12 @@
   import Badge from "./Badge.svelte";
   import SearchBoxItem from "./SearchBoxItem.svelte";
   import { highlightText, searchCensus } from "../helpers/searchCensusHelper";
-  import { contentStore } from "../stores/stores";
+  import { content } from "../stores/content";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
 
   export let name: string;
   let val = "";
-  $: results = searchCensus(val, $contentStore.variableGroups);
+  $: results = searchCensus(val, $content.variableGroups);
 </script>
 
 <div class="">

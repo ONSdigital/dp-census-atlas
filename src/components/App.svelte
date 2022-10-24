@@ -5,7 +5,7 @@
   import pym from "pym.js";
   import { onMount } from "svelte";
   import { setContentStoreOnce } from "../data/setContentStore";
-  import { contentStore } from "../stores/stores";
+  import { content } from "../stores/content";
   import Loading from "./Loading.svelte";
   import ServiceUnavailablePage from "./ServiceUnavailablePage.svelte";
   import { page } from "$app/stores";
@@ -18,8 +18,8 @@
   });
 </script>
 
-{#if $page && $contentStore}
-  {#if $contentStore.variableGroups.length > 0}
+{#if $page && $content}
+  {#if $content.variableGroups.length > 0}
     <slot />
   {:else}
     <ServiceUnavailablePage />

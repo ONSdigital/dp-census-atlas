@@ -36,7 +36,7 @@ export const mergeVariableGroups = (variableGroups: VariableGroup[]): VariableGr
 
 /*
   Iterate over list of Variables and merge variables with the same name. ToDo - at the moment this just dedupes categories
-  with no concept of precendence in different variable definitions from different content.jsons. This will need 
+  with no concept of precendence in different variable definitions from different content.jsons. This will need
   extending once we have thought about how clashes between different content.json files should be handled...
 */
 const mergeVariables = (variables: Variable[]) => {
@@ -74,4 +74,25 @@ const dedupeClassifications = (classifications: Classification[]) => {
 
 export const isInitialReleasePeriod = (content: ContentTree) => {
   return content.variableGroups.length <= 8;
+};
+
+/*
+  Compare object name properties for lexical order
+*/
+const compareNames = (obj1, obj2) => {
+ const obj1Name = obj1.name.toLowerCase();
+ const obj2Name = obj2.name.toLowerCase();
+ if (obj1Name < obj2Name) //sort string ascending
+  return -1;
+ if (obj1Name > obj2Name)
+  return 1;
+ return 0; //default return value (no sorting)
+}
+
+/*
+  Sort all variables within a variable group alphabetically, then sort variable groups
+*/
+export const sortVariableGroupsAndVariables = (variableGroups: VariableGroup[]) => {
+  variableGroups.forEach( (vg) => {vg.variables.sort(compareNames)})
+  variableGroups.sort(compareNames)
 };

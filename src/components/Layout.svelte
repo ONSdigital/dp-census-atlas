@@ -6,8 +6,6 @@
   import OnsAnalyticsBanner from "./OnsAnalyticsBanner.svelte";
   import { selection } from "../stores/selection";
 
-  export let hideMapOnMobile = true;
-
   // Google Analytics
   const analyticsId = "GTM-MBCBVQS";
   const analyticsProps = {
@@ -21,14 +19,14 @@
 
 <div class="inset-0 absolute lg:flex flex-col min-w-[370px] text-onsblack" class:flex={$selection.embed}>
   <Header />
-  <div class="flex-1 flex flex-col-reverse lg:flex-row overflow-y-auto">
+  <div class="flex-1 flex flex-col lg:flex-row overflow-y-auto" class:flex-col-reverse={$selection.category}>
     <div
       class="flex-1 grow-[3] lg:min-w-[25rem] xl:min-w-[30rem] xl:max-w-[35rem] overflow-y-auto flex flex-col"
       class:hidden={$selection.embed}
     >
       <slot />
     </div>
-    <div class:hidden={hideMapOnMobile} class="lg:block flex-1 grow-[7] relative">
+    <div class="lg:block flex-1 grow-[7] relative">
       <Map />
       <MapTips />
       <MapLegend />

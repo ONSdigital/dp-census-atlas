@@ -59,7 +59,7 @@ export type VizData = {
   };
 };
 
-export type SelectedGeographyData = {
+export type GeographyInfo = {
   geoType: GeoType;
   geoCode: string;
   displayName: string;
@@ -81,7 +81,7 @@ export type PostcodeSearchItem = {
 };
 export type AreaSearchItem = GeographySearchItem | PostcodeSearchItem;
 
-export type GeographyInfo = {
+export type GeographyData = {
   meta: {
     name: string;
     code: string;

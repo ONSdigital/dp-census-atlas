@@ -49,6 +49,7 @@
   },
   "type": "module",
   "dependencies": {
+    "@square/svelte-store": "^1.0.1",
     "@turf/bbox-polygon": "^6.5.0",
     "@turf/boolean-intersects": "^6.5.0",
     "d3-dsv": "^3.0.1",

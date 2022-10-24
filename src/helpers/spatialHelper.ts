@@ -1,4 +1,4 @@
-import type { Bbox, DataTileGrid, GeographyInfo, GeoType } from "../types";
+import type { Bbox, DataTileGrid, GeographyData, GeoType } from "../types";
 import censusDataTileGrid from "../quadsDataTileGrid.json";
 import booleanIntersects from "@turf/boolean-intersects";
 import bboxPolygon from "@turf/bbox-polygon";
@@ -34,7 +34,7 @@ export const bboxToDataTiles = (bbox: Bbox, geoType: GeoType, dataTileGrid: Data
   });
 };
 
-export const englandAndWales: GeographyInfo = {
+export const englandAndWales: GeographyData = {
   meta: {
     name: "England and Wales",
     code: "K04000001",

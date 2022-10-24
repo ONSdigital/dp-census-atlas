@@ -7,6 +7,7 @@
   import AreaPanel from "./AreaPanel.svelte";
   import SearchBox from "./SearchBox.svelte";
   import Examples from "./Examples.svelte";
+  import { geography } from "../stores/geography";
 </script>
 
 <svelte:head>
@@ -16,6 +17,7 @@
 
 <Heading />
 
+<pre class="">{JSON.stringify($geography)}</pre>
 <div class="px-6">
   <AreaPanel />
   <section>

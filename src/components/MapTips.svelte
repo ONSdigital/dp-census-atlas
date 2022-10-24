@@ -1,7 +1,7 @@
 <script>
   import { fade } from "svelte/transition";
   import { page } from "$app/stores";
-  import { selectedGeographyStore, mapStore, contentStore } from "../stores/stores";
+  import { mapStore, contentStore } from "../stores/stores";
   import tipStore from "../stores/tipStore";
   import { getDefaultChoroplethClassification } from "../helpers/variableHelpers";
   import Icon from "./MaterialIcon.svelte";
@@ -17,7 +17,7 @@
   $: category = variable ? defaultChoroplethClassification.categories.find((c) => c.slug === categorySlug) : undefined;
 </script>
 
-{#if $mapStore && $selectedGeographyStore && !category}
+{#if $mapStore && !category}
   <div class={`absolute top-[48%] left-1/2 -translate-x-1/2`}>
     <div class="z-abovemap px-3 py-1  rounded bg-ons-census-secondary text-ons-white">
       <div class="flex gap-2 items-center">

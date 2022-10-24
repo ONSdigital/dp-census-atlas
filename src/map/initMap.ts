@@ -4,7 +4,8 @@ import mapboxgl, { GeoJSONSource, Map } from "mapbox-gl";
 import { fromEvent, merge } from "rxjs";
 import { delay, throttleTime } from "rxjs/operators";
 import type { GeoType } from "../types";
-import { vizStore, mapStore, selectedGeographyStore, preventFlyToGeographyStore } from "../stores/stores";
+import { vizStore, mapStore, preventFlyToGeographyStore } from "../stores/stores";
+import { geography } from "../stores/geography";
 import { englandAndWalesBbox, preventFlyToGeography } from "../helpers/geographyHelper";
 import { selectGeography } from "../helpers/navigationHelper";
 import { initMapLayers } from "./initMapLayers";
@@ -111,7 +112,7 @@ const setMapLayerVisibility = (map: mapboxgl.Map, geoType: GeoType) => {
 };
 
 const listenToSelectedGeographyStore = (map: mapboxgl.Map) => {
-  selectedGeographyStore.subscribe((geography) => {
+  geography.subscribe((geography) => {
     if (geography && map.isStyleLoaded()) {
       if (geography.geoType === "ew") {
         // do we want to reset the map view?

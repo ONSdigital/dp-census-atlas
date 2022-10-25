@@ -4,6 +4,7 @@
   import { geography } from "../stores/geography";
   import { formatTemplateString } from "../helpers/categoryHelpers";
   import { choroplethColours } from "../helpers/choroplethHelpers";
+  import { getVariableDataSuffix } from "../helpers/contentHelpers";
   import { dataToRoundedString } from "../helpers/percentageHelpers";
   import BreaksChart from "./BreaksChart.svelte";
   import GeoTypeBadge from "./GeoTypeBadge.svelte";
@@ -29,7 +30,7 @@
           <div class="whitespace-nowrap">
             <span class="text-4xl md:text-5xl font-bold">
               {dataToRoundedString(categoryValueForSelectedGeography)}</span
-            ><span class="text-3xl md:text-4xl font-bold">%</span>
+            ><span class="text-3xl md:text-4xl font-bold">{getVariableDataSuffix($selection.variable)}</span>
           </div>
           <div class="flex-grow leading-[0px]">
             <div class="">
@@ -79,7 +80,12 @@
       {/if}
 
       {#if $selection.category && $viz}
-        <BreaksChart selected={categoryValueForSelectedGeography} suffix="%" {breaks} colors={choroplethColours} />
+        <BreaksChart
+          selected={categoryValueForSelectedGeography}
+          suffix={getVariableDataSuffix($selection.variable)}
+          {breaks}
+          colors={choroplethColours}
+        />
       {/if}
     </div>
   </div>

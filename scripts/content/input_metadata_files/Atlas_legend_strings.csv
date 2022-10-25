@@ -1015,5 +1015,5 @@ Identity,Gender identity,gender_identity_8a,gender_identity_8a-004,Trans man,{PE
 Identity,Gender identity,gender_identity_8a,gender_identity_8a-005,Non-binary,{PERCENTAGE}%,of families in {location},are,non-binary,non-binary
 Identity,Gender identity,gender_identity_8a,gender_identity_8a-006,All other gender identities,{PERCENTAGE}%,of families in {location},have,another gender identity,all other gender identities
 Identity,Gender identity,gender_identity_8a,gender_identity_8a-007,Not answered,{PERCENTAGE}%,of families in {location},did,not answer,not answered
-Population,Population density,population_density,population_density-001,Persons per square kilometre,{PERCENTAGE}%,(population density of {location},in,persons per square kilometre),
-Population,Average (median) age,median_age,median_age-001,Median age,{PERCENTAGE}%,(average (median) age of people in {location},in,years),
+Population,Population density,population_density,population_density-001,Persons per square kilometre,{PERCENTAGE}%,population density of {location},in,persons per square kilometre,
+Population,Average (median) age,median_age,median_age-001,Median age,{PERCENTAGE}%,average (median) age of people in {location},in,years,

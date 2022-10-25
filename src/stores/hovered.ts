@@ -4,4 +4,4 @@ import type { GeoType } from "../types";
 /**
  * A Svelte store reflecting the currently-hovered geography
  */
-export const hovered = writable<{ geoType: GeoType; geoCode: string } | undefined>(undefined);
+export const hovered = writable<{ geoType: GeoType; geoCode: string; displayName: string } | undefined>(undefined);

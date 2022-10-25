@@ -69,11 +69,15 @@ export const initMapLayers = (map) => {
       map.on("mousemove", `${l.layer.name}-features`, handler);
     })
       .pipe(
-        project((e: any) => ({ geoType: l.layer.name, geoCode: e.features[0].id })),
+        project((e: any) => ({
+          geoType: l.layer.name,
+          geoCode: e?.features?.[0].id,
+          displayName: e?.features?.[0].properties?.[l.layer.displayNameProperty],
+        })),
         distinctUntilChanged((prev, curr) => prev.geoCode === curr.geoCode),
       )
       .subscribe((g) => {
-        hovered.set(g);
+        hovered.set({ ...g });
       });
 
     // cursor to pointer when hovered

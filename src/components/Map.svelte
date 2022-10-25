@@ -1,7 +1,9 @@
 <script lang="ts">
   import { onMount, onDestroy } from "svelte";
+  import { page } from "$app/stores";
   import { initMap } from "../map/initMap";
-  import { appParamsStore } from "../stores/stores";
+  import { appParamsStore, vizLoaded } from "../stores/stores";
+  import { resetMapViz } from "../map/resetMapViz";
 
   let map;
   let mapContainer;
@@ -11,7 +13,24 @@
   });
   onDestroy(() => {
     if (map) map.remove();
+    map = undefined;
   });
+
+  // Reset the loaded map feature states when category changes
+  function resetStates(page) {
+    if (map && page) {
+      const catCode = page.params.category;
+      if ($vizLoaded && catCode != $vizLoaded.catCode) {
+        console.log("resetting feature states", catCode, $vizLoaded.catCode);
+        resetMapViz(map, $vizLoaded);
+        vizLoaded.set({
+          catCode: catCode,
+          geoCodes: { lad: new Set([]), msoa: new Set([]), oa: new Set([]) },
+        });
+      }
+    }
+  }
+  $: resetStates($page);
 </script>
 
 <div

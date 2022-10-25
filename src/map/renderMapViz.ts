@@ -12,15 +12,14 @@ export const renderMapViz = (map: mapboxgl.Map, data: VizData) => {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore (typings for this overload are currently missing)
   const features = map.queryRenderedFeatures({ layers: [`${layer.name}-features`] });
+  const geoCodes = features.map((f) => f.id);
+  const filteredPlaces = data.places.filter(p => geoCodes.includes(p.geoCode));
 
-  features.forEach((f) => {
-    const dataForFeature = data.places.find((p) => p.geoCode === f.id);
-    if (dataForFeature) {
-      map.setFeatureState(
-        { source: layer.name, sourceLayer: layer.sourceLayer, id: f.id },
-        { colour: getChoroplethColour(dataForFeature.ratioToTotal, data.breaks) },
-      );
-    }
+  filteredPlaces.forEach((p) => {
+    map.setFeatureState(
+      { source: layer.name, sourceLayer: layer.sourceLayer, id: p.geoCode },
+      { colour: getChoroplethColour(p.ratioToTotal, data.breaks) },
+    );
   });
 };
 

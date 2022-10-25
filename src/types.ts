@@ -59,6 +59,15 @@ export type VizData = {
   };
 };
 
+export type LoadedGeos = {
+  catCode: string;
+  geoCodes: {
+    lad: Set<string>;
+    msoa: Set<string>;
+    oa: Set<string>;
+  };
+};
+
 export type SelectedGeographyData = {
   geoType: GeoType;
   geoCode: string;

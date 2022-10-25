@@ -1,5 +1,5 @@
 import { writable } from "svelte/store";
-import type { MapState, SelectedGeographyData, ContentTree, VizData, AppParams } from "../types";
+import type { MapState, SelectedGeographyData, ContentTree, VizData, LoadedGeos, AppParams } from "../types";
 
 /**
  * A Svelte store containing any map state we need to be aware of within the Svelte app.
@@ -10,6 +10,11 @@ export const mapStore = writable<MapState | undefined>(undefined);
  * A Svelte store containing all the data we need in order to show a vizualisation.
  * */
 export const vizStore = writable<VizData | undefined>(undefined);
+
+/**
+ * A Svelte store containing the places with data loaded/styled on the map.
+ * */
+export const vizLoaded = writable<LoadedGeos | undefined>(undefined);
 
 /**
  * A Svelte store containing all the data we need to show the selected geography.

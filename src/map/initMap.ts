@@ -21,16 +21,25 @@ export const initMap = (container) => {
   const map = new Map({
     container,
     style,
-    center: new mapboxgl.LngLatBounds(englandAndWalesBbox).getCenter(),
-    zoom: defaultZoom,
     maxZoom: maxAllowedZoom - 0.001, // prevent layers from disappearing at absolute max zoom
   });
+
+  const geo = get(geography);
+  console.log(geo);
+  if (geo.geoType === "ew") {
+    console.log("ew");
+    map.setCenter(new mapboxgl.LngLatBounds(englandAndWalesBbox).getCenter());
+    map.setZoom(defaultZoom);
+  } else {
+    console.log("other");
+    const bounds = new mapboxgl.LngLatBounds(geo.bbox);
+    map.fitBounds(bounds, { padding: 50, animate: false });
+  }
 
   map.addControl(new mapboxgl.NavigationControl({ showCompass: false }));
 
   map.on("load", () => {
     initMapLayers(map);
-    initSelectedGeographyLayers(map);
   });
 
   fromEvent(map, "load")
@@ -42,7 +51,7 @@ export const initMap = (container) => {
         renderMapViz(map, value);
       });
       setMapStoreAndLayerVisibility(map);
-      listenToSelectedGeographyStore(map);
+      // listenToSelectedGeographyStore(map);
     });
 
   merge(fromEvent(map, "move"), fromEvent(map, "zoom"))
@@ -132,29 +141,5 @@ const listenToSelectedGeographyStore = (map: mapboxgl.Map) => {
         }
       }
     }
-  });
-};
-
-const initSelectedGeographyLayers = (map: mapboxgl.Map) => {
-  map.addSource("selected-geography", {
-    type: "geojson",
-    data: {
-      type: "Feature",
-      properties: {},
-      geometry: {
-        type: "Polygon",
-        coordinates: [],
-      },
-    },
-  });
-  map.addLayer({
-    id: "selected-geography-outline",
-    type: "line",
-    source: "selected-geography",
-    layout: {},
-    paint: {
-      "line-color": "#000",
-      "line-width": 3,
-    },
   });
 };

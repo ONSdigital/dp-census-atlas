@@ -13,7 +13,7 @@ export const geography = asyncDerived(
     const data = $selection.geoType === "ew" ? englandAndWales : await fetchGeography($selection.geoCode);
     return getGeographyInfo(data);
   },
-  { initial: getGeographyInfo(englandAndWales), reloadable: true },
+  { reloadable: true },
 );
 
 function getGeographyInfo(data: GeographyData): GeographyInfo {

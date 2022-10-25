@@ -11,7 +11,4 @@ export const mapStore = writable<MapState | undefined>(undefined);
  * */
 export const vizStore = writable<VizData | undefined>(undefined);
 
-/**
- * A Svelte store ...
- */
 export const preventFlyToGeographyStore = writable<string | undefined>(undefined);

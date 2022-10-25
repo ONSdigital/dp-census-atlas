@@ -6,9 +6,9 @@
   import { onMount } from "svelte";
   import { setContentStoreOnce } from "../data/setContentStore";
   import { content } from "../stores/content";
+  import { geography } from "../stores/geography";
   import Loading from "./Loading.svelte";
   import ServiceUnavailablePage from "./ServiceUnavailablePage.svelte";
-  import { page } from "$app/stores";
 
   onMount(async () => {
     setContentStoreOnce();
@@ -18,7 +18,7 @@
   });
 </script>
 
-{#if $page && $content}
+{#if $content && $geography}
   {#if $content.variableGroups.length > 0}
     <slot />
   {:else}

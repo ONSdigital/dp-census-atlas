@@ -102,6 +102,29 @@ export const initMapLayers = (map) => {
     });
   });
 
+  // selected geography layer
+  map.addSource("selected-geography", {
+    type: "geojson",
+    data: {
+      type: "Feature",
+      properties: {},
+      geometry: {
+        type: "Polygon",
+        coordinates: [],
+      },
+    },
+  });
+  map.addLayer({
+    id: "selected-geography-outline",
+    type: "line",
+    source: "selected-geography",
+    layout: {},
+    paint: {
+      "line-color": "#000",
+      "line-width": 3,
+    },
+  });
+
   // add OA quad centroid layer for feature density calculation
   map.addSource("centroids", centroidsGeojson);
   map.addLayer({

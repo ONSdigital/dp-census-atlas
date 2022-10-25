@@ -1,11 +1,6 @@
 export const GeoTypes = ["ew", "lad", "msoa", "oa"] as const;
 export type GeoType = typeof GeoTypes[number];
 
-export type MapViewport = {
-  bbox: Bbox;
-  geoType: GeoType;
-};
-
 export type VariableGroup = {
   name: string;
   slug: string;

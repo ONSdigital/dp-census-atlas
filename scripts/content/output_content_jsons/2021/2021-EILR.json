@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-10-25-10-43-10",
-    "spec_file": "2021-content-spec.json",
+    "created_at": "2022-10-25-11-02-08",
+    "spec_file": "2021-content-spec-v2.json",
     "release": "2021-EILR"
   },
   "content": [
@@ -406,7 +406,7 @@
           "code": "hh_multi_ethnic_group",
           "slug": "multiple-ethnic-groups-in-household",
           "desc": "Ethnic groups within a household.",
-          "long_desc": "Single or multiple ethnic groups within the household.  \nIf multiple ethnic groups are present, this identifies whether ethnic groups differ between generations or partnerships within the household.",
+          "long_desc": "Classifies households by whether members identify as having the same or different ethnic groups. \n\nIf multiple ethnic groups are present, this identifies whether they differ between generations or partnerships within the household.",
           "units": "Household",
           "topic_code": "EILR",
           "classifications": [
@@ -519,7 +519,7 @@
               "dataset": "TS026",
               "categories": [
                 {
-                  "name": "One person household",
+                  "name": "One-person household",
                   "slug": "one-person-household",
                   "code": "hh_multi_language-001",
                   "legend_str_1": "of households in {location}",
@@ -641,7 +641,7 @@
           "code": "main_language_detailed",
           "slug": "main-language-detailed",
           "desc": "People's first or preferred language.",
-          "long_desc": "The main languages spoken for people whose main language is not English in England or Welsh in Wales.  \n\nThis breaks down the responses given in the write-in option Other, write in (including British Sign Language.",
+          "long_desc": "The main languages spoken for people whose main language is not English in England or Welsh in Wales.  \n\nThis breaks down the responses given in the write-in option Other, write in (including British Sign Language).",
           "units": "Person",
           "topic_code": "EILR",
           "classifications": [
@@ -2568,7 +2568,7 @@
           "code": "welsh_skills_all",
           "slug": "welsh-language-skills",
           "desc": "Whether people can understand, speak, read, or write Welsh. This question was only asked in Wales.",
-          "long_desc": "Whether a person has Welsh language skills.  If they do, can they do any of the following: \n* understand spoken Welsh \n* speak Welsh \n* read Welsh \n* write Welsh \n\nThe census questionnaire only asked this question to people in Wales.  \n\nAdditional info: \nIn results that classify people by Welsh language skills, a person may appear in more than one category depending on which combination of skills they have.",
+          "long_desc": "Whether a person has Welsh language skills.  If they do, can they do any of the following:\n\n* understand spoken Welsh \n* speak Welsh \n* read Welsh \n* write Welsh \n\nThe census questionnaire only asked this question to people in Wales.  \n\nAdditional info: \nIn results that classify people by Welsh language skills, a person may appear in more than one category depending on which combination of skills they have.",
           "units": "Person",
           "topic_code": "EILR",
           "classifications": [

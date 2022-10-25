@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-10-25-10-43-10",
-    "spec_file": "2021-content-spec.json",
+    "created_at": "2022-10-25-11-02-08",
+    "spec_file": "2021-content-spec-v2.json",
     "release": "2021-DEM"
   },
   "content": [
@@ -48,7 +48,7 @@
           "code": "hh_deprivation",
           "slug": "household-deprivation",
           "desc": "Whether a household is deprived in one or more ways.",
-          "long_desc": "The dimensions of deprivation used to classify households are indicators based on four selected household characteristics.\n\nEducation\nA household is classified as deprived in the education dimension if no one has at least level 2 education and no one aged 16 to 18 years is a full-time student.\n\nEmployment\nA household is classified as deprived in the employment dimension if any member, not a full-time student, is either unemployed or long-term sick.\n\nHealth\nA household is classified as deprived in the health dimension if any member is disabled.\n\nHousing\nA household is classified as deprived in the housing dimension if the household's accommodation is either overcrowded, in a shared dwelling, or has no central heating.",
+          "long_desc": "The dimensions of deprivation used to classify households are indicators based on four selected household characteristics.\n\nEducation\nA household is classified as deprived in the education dimension if no one has at least level 2 education and no one aged 16 to 18 years is a full-time student.\n\nEmployment\nA household is classified as deprived in the employment dimension if any member, not a full-time student, is either unemployed or disabled.\n\nHealth\nA household is classified as deprived in the health dimension if any member is disabled.\n\nHousing\nA household is classified as deprived in the housing dimension if the household's accommodation is either overcrowded, in a shared dwelling, or has no central heating.",
           "units": "Household",
           "topic_code": "DEM",
           "classifications": [
@@ -114,7 +114,7 @@
           "code": "hh_family_composition",
           "slug": "household-composition",
           "desc": "Households according to the relationships between members.",
-          "long_desc": "Households according to the relationships between members. \n\nOne-family households are classified by: \n* the number of dependent children \n* family type (married, civil partnership or cohabiting couple family, or lone parent family) \n\nOther households are classified by: \n* the number of people \n* the number of dependent children \n* whether the household consists only of students or only of people aged 66 and over",
+          "long_desc": "Households according to the relationships between members. \n\nOne-family households are classified by:\n\n* the number of dependent children \n* family type (married, civil partnership or cohabiting couple family, or lone parent family) \n\nOther households are classified by:\n\n* the number of people \n* the number of dependent children \n* whether the household consists only of students or only of people aged 66 and over",
           "units": "Household",
           "topic_code": "DEM",
           "classifications": [
@@ -140,7 +140,7 @@
                   "legend_str_3": "multiple family households"
                 },
                 {
-                  "name": "One person household",
+                  "name": "One-person household",
                   "slug": "one-person-household",
                   "code": "hh_family_composition_4a-002",
                   "legend_str_1": "of households in {location}",
@@ -169,7 +169,7 @@
               "dataset": "TS003",
               "categories": [
                 {
-                  "name": "One person household: Aged 66 years and over",
+                  "name": "One-person household: Aged 66 years and over",
                   "slug": "one-person-household-aged-66-years-and-over",
                   "code": "hh_family_composition_15a-001",
                   "legend_str_1": "of households in {location}",
@@ -177,7 +177,7 @@
                   "legend_str_3": "households with one person aged 66 years and over"
                 },
                 {
-                  "name": "One person household: Other",
+                  "name": "One-person household: Other",
                   "slug": "one-person-household-other",
                   "code": "hh_family_composition_15a-002",
                   "legend_str_1": "of households in {location}",
@@ -265,16 +265,16 @@
                   "legend_str_3": "single family households with other family composition"
                 },
                 {
-                  "name": "Multiple-family household: With dependent children",
-                  "slug": "multiple-family-household-with-dependent-children",
+                  "name": "Other household types: With dependent children",
+                  "slug": "other-household-types-with-dependent-children",
                   "code": "hh_family_composition_15a-013",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "multiple-family households with dependent children"
                 },
                 {
-                  "name": "Multiple-family household: Other, including all full-time students and all aged 66 years and over",
-                  "slug": "multiple-family-household-other-including-all-full-time-students-and-all-aged-66-years-and-over",
+                  "name": "Other household types: Other, including all full-time students and all aged 66 years and over",
+                  "slug": "other-household-types-other-including-all-full-time-students-and-all-aged-66-years-and-over",
                   "code": "hh_family_composition_15a-014",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
@@ -289,7 +289,7 @@
           "code": "hh_size",
           "slug": "household-size",
           "desc": "The number of people in a household.",
-          "long_desc": "The number of people in the household.   \n\nAdditional  \nVisitors staying at an address do not count to that households size.",
+          "long_desc": "The number of people in the household. \n\nVisitors staying at an address do not count to that households size.",
           "units": "Household",
           "topic_code": "DEM",
           "classifications": [
@@ -424,7 +424,7 @@
           "code": "legal_partnership_status",
           "slug": "marital-and-civil-partnership-status",
           "desc": "People's marital or civil partnership status.",
-          "long_desc": "Classifies a person according to their legal marital or registered civil partnership status on 21 March 2021.\n\n It is the same as the 2011 census variable \"Marital status\" but has been updated for Census 2021 to reflect the revised Civil Partnership Act that came into force in 2019.\n\nIn Census 2021 results, \"single\" refers only to someone who has never been married or in a registered civil partnership.",
+          "long_desc": "Classifies a person according to their legal marital or registered civil partnership status on Census Day 21 March 2021.\n\nIt is the same as the 2011 census variable \"Marital status\" but has been updated for Census 2021 to reflect the revised Civil Partnership Act that came into force in 2019.\n\nIn Census 2021 results, \"single\" refers only to someone who has never been married or in a registered civil partnership.",
           "units": "Person",
           "topic_code": "DEM",
           "classifications": [
@@ -620,7 +620,7 @@
           "code": "living_arrangements",
           "slug": "living-arrangements",
           "desc": "People's living arrangements, by their legal partnership status.",
-          "long_desc": "Living arrangements",
+          "long_desc": "The living arrangements classification combines responses to the question on marital and civil partnership status with information about whether or not a person is living in a couple. This topic is only applicable to people in households. Living arrangements differs from marital and civil partnership status because cohabiting takes priority over other categories. For example, if a person is divorced and cohabiting, then in results for living arrangements they are classified as cohabiting.",
           "units": "Person",
           "topic_code": "DEM",
           "classifications": [

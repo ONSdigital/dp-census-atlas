@@ -1,5 +1,6 @@
 import type { Variable, Category, VariableGroup } from "../types";
 import { unCapitalizeFirstLetter } from "../util/stringUtil";
+import { dataToRoundedString } from "./percentageHelpers";
 
 export const getCategoryInfo = (categoryCode: string, variableGroups: VariableGroup[]) => {
   const allVariables = variableGroups.flatMap((vg) => vg.variables.map((v) => ({ variableGroup: vg, variable: v })));
@@ -21,10 +22,6 @@ export const getCategoryInfo = (categoryCode: string, variableGroups: VariableGr
     variable: match.variable.variable,
     category: match.category,
   };
-};
-
-export const formatPercentage = (percentage: number) => {
-  return (Math.round(percentage * 10) / 10).toFixed(1);
 };
 
 export const formatTemplateString = (variable: Variable, category: Category, location: string, templateStr: string) => {

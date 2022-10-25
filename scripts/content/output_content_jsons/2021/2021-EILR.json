@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-10-24-15-46-15",
+    "created_at": "2022-10-25-10-43-10",
     "spec_file": "2021-content-spec.json",
     "release": "2021-EILR"
   },
@@ -437,7 +437,7 @@
                   "code": "hh_multi_ethnic_group-002",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "members that all have the same ethnic group"
+                  "legend_str_3": "members that are all from the same ethnic group"
                 },
                 {
                   "name": "Ethnic groups differ between generations but not within partnerships",
@@ -461,7 +461,7 @@
                   "code": "hh_multi_ethnic_group-005",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "members with any other combination of multiple ethnic identities"
+                  "legend_str_3": "members with any other combination of ethnic identities"
                 }
               ]
             }

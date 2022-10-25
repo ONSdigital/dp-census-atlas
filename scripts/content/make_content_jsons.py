@@ -211,22 +211,6 @@ def main(spec_fn: str):
                     c.categories = list(filter(lambda c: c.code not in all_cats_to_drop, c.categories))
     print("... done.")
 
-    # # update legend strings
-    print(f"Inserting new legend strings from {spec['category_legend_strs_file']}...")
-    content_iterations["ALL"] = update_legend_strs_from_file(
-        content_iterations["ALL"],
-        input_full_path(spec["category_legend_strs_file"])
-    )
-    print("... done.")
-
-    # update variable descriptions
-    print(f"Inserting new variable descriptions from {spec['variable_descriptions_file']}...")
-    content_iterations["ALL"] = update_variable_descs_from_file(
-        content_iterations["ALL"],
-        input_full_path(spec["variable_descriptions_file"])
-    )
-    print("... done.")
-
     # append available geotypes for classifications
     print(f"Inserting available geotypes for classifications from {spec['classification_geotype_availability_file']}")
     available_geotypes_for_classifications = available_geotypes_for_classifications_from_file(
@@ -245,6 +229,22 @@ def main(spec_fn: str):
                 print(f'Inserting {ev["variable"]["name"]} before {vg.name}.{ev["insert_before"]}')
                 insert_index = next(i for i,v in enumerate(vg.variables) if v.code == ev["insert_before"])
                 vg.variables.insert(insert_index, variable_from_content_json(ev["variable"]))
+    print("... done.")
+
+    # update legend strings
+    print(f"Inserting new legend strings from {spec['category_legend_strs_file']}...")
+    content_iterations["ALL"] = update_legend_strs_from_file(
+        content_iterations["ALL"],
+        input_full_path(spec["category_legend_strs_file"])
+    )
+    print("... done.")
+
+    # update variable descriptions
+    print(f"Inserting new variable descriptions from {spec['variable_descriptions_file']}...")
+    content_iterations["ALL"] = update_variable_descs_from_file(
+        content_iterations["ALL"],
+        input_full_path(spec["variable_descriptions_file"])
+    )
     print("... done.")
 
     # make topic splits

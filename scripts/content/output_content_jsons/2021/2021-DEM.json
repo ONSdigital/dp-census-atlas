@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-10-24-15-46-15",
+    "created_at": "2022-10-25-10-43-10",
     "spec_file": "2021-content-spec.json",
     "release": "2021-DEM"
   },
@@ -14,7 +14,7 @@
           "name": "Population density",
           "code": "population_density",
           "slug": "population-density",
-          "desc": "The number of people per square kilometre.",
+          "desc": "The number of people resident per square kilometre.",
           "long_desc": "The number of usual residents per square kilometre, calculated based on total land area excluding inland water.",
           "units": "Persons per square kilometre",
           "topic_code": "DEM",
@@ -35,9 +35,9 @@
                   "name": "Persons per square kilometre",
                   "slug": "persons-per-square-kilometre",
                   "code": "population_density-001",
-                  "legend_str_1": "Population density of {location}",
+                  "legend_str_1": "(population density of {location}",
                   "legend_str_2": "in",
-                  "legend_str_3": "persons per square kilometre"
+                  "legend_str_3": "persons per square kilometre)"
                 }
               ]
             }
@@ -182,7 +182,7 @@
                   "code": "hh_family_composition_15a-002",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "househols with one person aged less than 66 years"
+                  "legend_str_3": "households with one person aged less than 66 years"
                 },
                 {
                   "name": "Single family household: All aged 66 years and over",
@@ -214,7 +214,7 @@
                   "code": "hh_family_composition_15a-006",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "single family households of a married or civil partnership couple with all children non-dependent"
+                  "legend_str_3": "single family households of a married or civil partnership couple with independent children"
                 },
                 {
                   "name": "Single family household: Cohabiting couple family: No children",
@@ -222,7 +222,7 @@
                   "code": "hh_family_composition_15a-007",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "single family households of a cohabiting couple family with no children"
+                  "legend_str_3": "single family households of a cohabiting couple with no children"
                 },
                 {
                   "name": "Single family household: Cohabiting couple family: With dependent children",
@@ -230,7 +230,7 @@
                   "code": "hh_family_composition_15a-008",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "single family households of a cohabiting couple family with dependent children"
+                  "legend_str_3": "single family households of a cohabiting couple with dependent children"
                 },
                 {
                   "name": "Single family household: Cohabiting couple family: All children non-dependent",
@@ -238,7 +238,7 @@
                   "code": "hh_family_composition_15a-009",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "single family households of a cohabiting couple family with all children non-dependent"
+                  "legend_str_3": "single family households of a cohabiting couple with independent children"
                 },
                 {
                   "name": "Single family household: Lone parent family: With dependent children",
@@ -254,7 +254,7 @@
                   "code": "hh_family_composition_15a-011",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "single family households of a lone parent family with all children non-dependent"
+                  "legend_str_3": "single family households of a lone parent family with independent children"
                 },
                 {
                   "name": "Single family household: Other single family household: Other family composition",
@@ -278,7 +278,7 @@
                   "code": "hh_family_composition_15a-014",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "multiple-family households with other composition, including all full-time students and all aged 66 years and over"
+                  "legend_str_3": "another type of multiple-family household, including all full-time students and all aged 66 years and over"
                 }
               ]
             }
@@ -508,7 +508,7 @@
                   "code": "legal_partnership_status_6a-005",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "widowed or the surviving civil partnership partner"
+                  "legend_str_3": "widowed or the surviving partner from a civil partnership"
                 }
               ]
             },
@@ -609,7 +609,7 @@
                   "code": "legal_partnership_status-011",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "the surviving partner from civil partnership"
+                  "legend_str_3": "the surviving partner from a civil partnership"
                 }
               ]
             }
@@ -640,40 +640,40 @@
                   "slug": "living-in-an-opposite-sex-couple-married-or-in-a-civil-partnership",
                   "code": "living_arrangements_11a-001",
                   "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "living in an opposite-sex couple that is married or in a civil partnership"
+                  "legend_str_2": "live together",
+                  "legend_str_3": "in a opposite-sex couple that is married or in a civil partnership"
                 },
                 {
                   "name": "Living in a same-sex couple: Married or in a civil partnership",
                   "slug": "living-in-a-same-sex-couple-married-or-in-a-civil-partnership",
                   "code": "living_arrangements_11a-002",
                   "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "living in a same-sex couple that is married or in a civil partnership"
+                  "legend_str_2": "live together",
+                  "legend_str_3": "in a same-sex couple that is married or in a civil partnership"
                 },
                 {
                   "name": "Living in a couple: Separated, but still married or in a civil partnership",
                   "slug": "living-in-a-couple-separated-but-still-married-or-in-a-civil-partnership",
                   "code": "living_arrangements_11a-003",
                   "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "living in a couple that is separated, but still married or in a civil partnership"
+                  "legend_str_2": "live together",
+                  "legend_str_3": "in a couple that is separated, but still married or in a civil partnership"
                 },
                 {
                   "name": "Living in an opposite-sex couple: Cohabiting",
                   "slug": "living-in-an-opposite-sex-couple-cohabiting",
                   "code": "living_arrangements_11a-004",
                   "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "living in an opposite-sex couple that is cohabiting"
+                  "legend_str_2": "live together",
+                  "legend_str_3": "in an opposite-sex couple that is cohabiting"
                 },
                 {
                   "name": "Living in a same-sex couple: Cohabiting",
                   "slug": "living-in-a-same-sex-couple-cohabiting",
                   "code": "living_arrangements_11a-005",
                   "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "living in a same-sex couple that is cohabiting"
+                  "legend_str_2": "live together",
+                  "legend_str_3": "in a same-sex couple that is cohabiting"
                 },
                 {
                   "name": "Not living in a couple: Single (never married and never registered a same-sex civil partnership)",
@@ -689,7 +689,7 @@
                   "code": "living_arrangements_11a-007",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "not living in a couple, but married or in a registered civil partnership"
+                  "legend_str_3": "not living in a couple, but are married or in a registered civil partnership"
                 },
                 {
                   "name": "Not living in a couple: Separated (including those who are married and those who are in civil partnerships)",
@@ -713,7 +713,7 @@
                   "code": "living_arrangements_11a-010",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "widowed or surviving partner from a civil partnership"
+                  "legend_str_3": "widowed or the surviving partner from a civil partnership"
                 }
               ]
             }
@@ -1768,7 +1768,7 @@
           "name": "Average (median) age",
           "code": "median_age",
           "slug": "median-age",
-          "desc": "Average age on Census Day, 21 March 2021.",
+          "desc": "The average (median) age of people on Census Day, 21 March 2021.",
           "long_desc": "Average (median) age is calculated from the age of residents on Census Day, 21 March 2021 in England and Wales.",
           "units": "Years",
           "topic_code": "DEM",
@@ -1789,9 +1789,9 @@
                   "name": "Median age",
                   "slug": "median-age",
                   "code": "median_age-001",
-                  "legend_str_1": "Average (median) age of people in {location}",
+                  "legend_str_1": "(average (median) age of people in {location}",
                   "legend_str_2": "in",
-                  "legend_str_3": "years"
+                  "legend_str_3": "years)"
                 }
               ]
             }

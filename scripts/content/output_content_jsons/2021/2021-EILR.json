@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-10-25-11-02-08",
+    "created_at": "2022-10-25-11-39-55",
     "spec_file": "2021-content-spec-v2.json",
     "release": "2021-EILR"
   },
@@ -524,7 +524,7 @@
                   "code": "hh_multi_language-001",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "not applicable (one person household)"
+                  "legend_str_3": "not applicable (one-person household)"
                 },
                 {
                   "name": "All household members have the same main language",
@@ -590,7 +590,7 @@
                   "code": "hh_multi_religion_7a-001",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "not applicable (one person household)"
+                  "legend_str_3": "not applicable (one-person household)"
                 },
                 {
                   "name": "Multi-person household: No people stated their religion",
@@ -669,7 +669,7 @@
                   "code": "main_language_detailed_23a-002",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "speak",
-                  "legend_str_3": "Any other UK language"
+                  "legend_str_3": "any other UK language"
                 },
                 {
                   "name": "French",
@@ -821,7 +821,7 @@
                   "code": "main_language_detailed_23a-021",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "speak",
-                  "legend_str_3": "a African language"
+                  "legend_str_3": "an African language"
                 },
                 {
                   "name": "Other language",

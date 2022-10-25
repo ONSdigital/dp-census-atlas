@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-10-25-11-02-08",
+    "created_at": "2022-10-25-11-39-55",
     "spec_file": "2021-content-spec-v2.json",
     "release": "2021-ALL"
   },
@@ -1955,7 +1955,7 @@
                   "code": "hh_multi_language-001",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "not applicable (one person household)"
+                  "legend_str_3": "not applicable (one-person household)"
                 },
                 {
                   "name": "All household members have the same main language",
@@ -2021,7 +2021,7 @@
                   "code": "hh_multi_religion_7a-001",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "not applicable (one person household)"
+                  "legend_str_3": "not applicable (one-person household)"
                 },
                 {
                   "name": "Multi-person household: No people stated their religion",
@@ -2100,7 +2100,7 @@
                   "code": "main_language_detailed_23a-002",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "speak",
-                  "legend_str_3": "Any other UK language"
+                  "legend_str_3": "any other UK language"
                 },
                 {
                   "name": "French",
@@ -2252,7 +2252,7 @@
                   "code": "main_language_detailed_23a-021",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "speak",
-                  "legend_str_3": "a African language"
+                  "legend_str_3": "an African language"
                 },
                 {
                   "name": "Other language",
@@ -4249,7 +4249,7 @@
                   "code": "gender_identity_4a-001",
                   "legend_str_1": "of families in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "a gender identity the same as sex registered at birth"
+                  "legend_str_3": "a gender identity the same as their sex registered at birth"
                 },
                 {
                   "name": "Gender identity different from sex registered at birth",
@@ -4257,7 +4257,7 @@
                   "code": "gender_identity_4a-002",
                   "legend_str_1": "of families in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "a gender identity different from sex registered at birth"
+                  "legend_str_3": "a gender identity different from their sex registered at birth"
                 },
                 {
                   "name": "Not answered",
@@ -4285,7 +4285,7 @@
                   "code": "gender_identity_8a-001",
                   "legend_str_1": "of families in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "a gender identity the same as sex registered at birth"
+                  "legend_str_3": "a gender identity the same as their sex registered at birth"
                 },
                 {
                   "name": "Gender identity different from sex registered at birth but no specific identity given",
@@ -4293,7 +4293,7 @@
                   "code": "gender_identity_8a-002",
                   "legend_str_1": "of families in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "a gender identity different from sex registered at birth but no specific identity given"
+                  "legend_str_3": "a gender identity different from their sex registered at birth but no specific identity given"
                 },
                 {
                   "name": "Trans woman",
@@ -4658,7 +4658,7 @@
                   "code": "hh_family_composition_4a-002",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "one person households"
+                  "legend_str_3": "one-person households"
                 },
                 {
                   "name": "Single family household",
@@ -4666,7 +4666,7 @@
                   "code": "hh_family_composition_4a-003",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "single family households"
+                  "legend_str_3": "single-family households"
                 }
               ]
             },
@@ -4703,7 +4703,7 @@
                   "code": "hh_family_composition_15a-003",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "single family households in which all people are aged 66 years and over"
+                  "legend_str_3": "single-family households in which all people are aged 66 years and over"
                 },
                 {
                   "name": "Single family household: Married or civil partnership couple: No children",
@@ -4711,7 +4711,7 @@
                   "code": "hh_family_composition_15a-004",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "single family households of a married or civil partnership couple with no children"
+                  "legend_str_3": "single-family households of a married or civil partnership couple with no children"
                 },
                 {
                   "name": "Single family household: Married or civil partnership couple: Dependent children",
@@ -4719,7 +4719,7 @@
                   "code": "hh_family_composition_15a-005",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "single family households of a married or civil partnership couple with dependent children"
+                  "legend_str_3": "single-family households of a married or civil partnership couple with dependent children"
                 },
                 {
                   "name": "Single family household: Married or civil partnership couple: All children non-dependent",
@@ -4727,7 +4727,7 @@
                   "code": "hh_family_composition_15a-006",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "single family households of a married or civil partnership couple with independent children"
+                  "legend_str_3": "single-family households of a married or civil partnership couple with independent children"
                 },
                 {
                   "name": "Single family household: Cohabiting couple family: No children",
@@ -4735,7 +4735,7 @@
                   "code": "hh_family_composition_15a-007",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "single family households of a cohabiting couple with no children"
+                  "legend_str_3": "single-family households of a cohabiting couple with no children"
                 },
                 {
                   "name": "Single family household: Cohabiting couple family: With dependent children",
@@ -4743,7 +4743,7 @@
                   "code": "hh_family_composition_15a-008",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "single family households of a cohabiting couple with dependent children"
+                  "legend_str_3": "single-family households of a cohabiting couple with dependent children"
                 },
                 {
                   "name": "Single family household: Cohabiting couple family: All children non-dependent",
@@ -4751,7 +4751,7 @@
                   "code": "hh_family_composition_15a-009",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "single family households of a cohabiting couple with independent children"
+                  "legend_str_3": "single-family households of a cohabiting couple with independent children"
                 },
                 {
                   "name": "Single family household: Lone parent family: With dependent children",
@@ -4759,7 +4759,7 @@
                   "code": "hh_family_composition_15a-010",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "single family households of a lone parent family with dependent children"
+                  "legend_str_3": "single-family households of a lone parent family with dependent children"
                 },
                 {
                   "name": "Single family household: Lone parent family: All children non-dependent",
@@ -4767,7 +4767,7 @@
                   "code": "hh_family_composition_15a-011",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "single family households of a lone parent family with independent children"
+                  "legend_str_3": "single-family households of a lone parent family with independent children"
                 },
                 {
                   "name": "Single family household: Other single family household: Other family composition",
@@ -4775,7 +4775,7 @@
                   "code": "hh_family_composition_15a-012",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "single family households with other family composition"
+                  "legend_str_3": "single-family households with other family composition"
                 },
                 {
                   "name": "Other household types: With dependent children",
@@ -9092,7 +9092,7 @@
                   "code": "industry_current_88a-038",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "work in",
-                  "legend_str_3": "construction of buildings,civil engineering or specialised construction activities"
+                  "legend_str_3": "construction of buildings, civil engineering or specialised construction activities"
                 },
                 {
                   "name": "45 Wholesale and retail trade and repair of motor vehicles and motorcycles",
@@ -9164,7 +9164,7 @@
                   "code": "industry_current_88a-047",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "work in",
-                  "legend_str_3": "postal orcourier activities"
+                  "legend_str_3": "postal or courier activities"
                 },
                 {
                   "name": "55 Accommodation",

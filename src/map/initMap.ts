@@ -2,9 +2,8 @@ import { get } from "svelte/store";
 import { page } from "$app/stores";
 import mapboxgl, { GeoJSONSource, Map } from "mapbox-gl";
 import { fromEvent, merge } from "rxjs";
-import { delay, throttleTime } from "rxjs/operators";
+import { throttleTime } from "rxjs/operators";
 import type { GeoType } from "../types";
-import { vizStore, mapStore, preventFlyToGeographyStore } from "../stores/stores";
 import { geography } from "../stores/geography";
 import { englandAndWalesBbox, preventFlyToGeography } from "../helpers/geographyHelper";
 import { selectGeography } from "../helpers/navigationHelper";
@@ -12,54 +11,39 @@ import { initMapLayers } from "./initMapLayers";
 import { renderMapViz } from "./renderMapViz";
 import { layers } from "./layers";
 import { style } from "./style";
+import { viewport } from "../stores/viewport";
+import { viz } from "../stores/viz";
+import { preventFlyToGeographyStore } from "../stores/flyto";
 
-export const defaultZoom = 6;
-export const maxAllowedZoom = 16;
+const defaultZoom = 6;
+const maxAllowedZoom = 16;
 
 /** Configure the map's properties and subscribe to its events. */
-export const initMap = (container) => {
+export const initMap = (container: HTMLElement) => {
   const map = new Map({
     container,
     style,
+    zoom: defaultZoom, // inexplicably necessary (even though we fitBounds next)
     maxZoom: maxAllowedZoom - 0.001, // prevent layers from disappearing at absolute max zoom
   });
 
-  const geo = get(geography);
-  console.log(geo);
-  if (geo.geoType === "ew") {
-    console.log("ew");
-    map.setCenter(new mapboxgl.LngLatBounds(englandAndWalesBbox).getCenter());
-    map.setZoom(defaultZoom);
-  } else {
-    console.log("other");
-    const bounds = new mapboxgl.LngLatBounds(geo.bbox);
-    map.fitBounds(bounds, { padding: 50, animate: false });
-  }
-
+  setPosition(map);
   map.addControl(new mapboxgl.NavigationControl({ showCompass: false }));
 
   map.on("load", () => {
     initMapLayers(map);
+    viz.subscribe((value) => {
+      renderMapViz(map, value);
+    });
+    //     // listenToSelectedGeographyStore(map);
   });
 
-  fromEvent(map, "load")
-    .pipe(
-      delay(1000), // leave some time between base layer and viz to avoid "flash" of base layer on first load
-    )
-    .subscribe(() => {
-      vizStore.subscribe((value) => {
-        renderMapViz(map, value);
-      });
-      setMapStoreAndLayerVisibility(map);
-      // listenToSelectedGeographyStore(map);
-    });
-
-  merge(fromEvent(map, "move"), fromEvent(map, "zoom"))
+  merge(fromEvent(map, "load"), fromEvent(map, "move"), fromEvent(map, "zoom"))
     .pipe(
       throttleTime(1000, undefined, { leading: false, trailing: true }), // don't discard the final movement
     )
     .subscribe(() => {
-      setMapStoreAndLayerVisibility(map);
+      setViewportStoreAndLayerVisibility(map);
     });
 
   layers.forEach((l) => {
@@ -73,18 +57,16 @@ export const initMap = (container) => {
   return map;
 };
 
-const setMapStoreAndLayerVisibility = (map: mapboxgl.Map) => {
+const setViewportStoreAndLayerVisibility = (map: mapboxgl.Map) => {
   const b = map.getBounds();
   const bbox = { east: b.getEast(), north: b.getNorth(), west: b.getWest(), south: b.getSouth() };
-  const zoom = map.getZoom();
   const geoType = getGeoTypeForFeatureDensity(map);
 
   setMapLayerVisibility(map, geoType);
 
-  mapStore.set({
+  viewport.set({
     bbox,
     geoType: geoType,
-    zoom: zoom,
   });
 };
 
@@ -142,4 +124,15 @@ const listenToSelectedGeographyStore = (map: mapboxgl.Map) => {
       }
     }
   });
+};
+
+const setPosition = (map: mapboxgl.Map, animate = false) => {
+  const g = get(geography);
+  if (g.geoType === "ew") {
+    const bounds = new mapboxgl.LngLatBounds(englandAndWalesBbox);
+    map.fitBounds(bounds, { padding: 0, animate });
+  } else {
+    const bounds = new mapboxgl.LngLatBounds(g.bbox);
+    map.fitBounds(bounds, { padding: 200, animate }); // todo: we want padding to be adaptive to screen size!
+  }
 };

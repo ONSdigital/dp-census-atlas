@@ -1,5 +1,5 @@
 <script>
-  import { vizStore } from "../stores/stores";
+  import { viz } from "../stores/viz";
   import { selection } from "../stores/selection";
   import { geography } from "../stores/geography";
   import { formatTemplateString } from "../helpers/categoryHelpers";
@@ -8,8 +8,9 @@
   import BreaksChart from "./BreaksChart.svelte";
   import GeoTypeBadge from "./GeoTypeBadge.svelte";
 
-  $: categoryValueForSelectedGeography = $vizStore?.places.find((p) => p.geoCode === $geography?.geoCode)?.ratioToTotal;
-  $: breaks = $vizStore ? [$vizStore?.minMaxVals[0], ...$vizStore.breaks] : undefined;
+  // todo: what's this?
+  $: categoryValueForSelectedGeography = $viz?.places.find((p) => p.geoCode === $geography?.geoCode)?.ratioToTotal;
+  $: breaks = $viz ? [$viz?.minMaxVals[0], ...$viz.breaks] : undefined;
 </script>
 
 <!--                      | no geography selected  |  geography selected    -->
@@ -77,7 +78,7 @@
         </div>
       {/if}
 
-      {#if $selection.category && $vizStore}
+      {#if $selection.category && $viz}
         <BreaksChart selected={categoryValueForSelectedGeography} suffix="%" {breaks} colors={choroplethColours} />
       {/if}
     </div>

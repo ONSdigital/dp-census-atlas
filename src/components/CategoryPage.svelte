@@ -1,28 +1,14 @@
 <script lang="ts">
   import { _ } from "svelte-i18n";
   import { page } from "$app/stores";
-  import { mapStore } from "../stores/stores";
   import { selection } from "../stores/selection";
   import { geography } from "../stores/geography";
-  import { content } from "../stores/content";
-  import { setVizStore } from "../data/setVizStore";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
   import CategoryPageLinks from "./CategoryPageLinks.svelte";
   import Heading from "./Heading.svelte";
   import AreaPanel from "./AreaPanel.svelte";
   import RadioButton from "./RadioButton.svelte";
   import VariableDescription from "./VariableDescription.svelte";
-
-  $: if ($mapStore) {
-    setVizStore({
-      category: $selection.category,
-      geoType: $mapStore.geoType,
-      geoCode: $geography.geoCode,
-      bbox: $mapStore.bbox,
-      zoom: $mapStore.zoom,
-      variableGroups: $content.variableGroups,
-    });
-  }
 </script>
 
 <svelte:head>

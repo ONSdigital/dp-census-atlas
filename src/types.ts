@@ -1,10 +1,9 @@
 export const GeoTypes = ["ew", "lad", "msoa", "oa"] as const;
 export type GeoType = typeof GeoTypes[number];
 
-export type MapState = {
+export type MapViewport = {
   bbox: Bbox;
   geoType: GeoType;
-  zoom: number;
 };
 
 export type VariableGroup = {

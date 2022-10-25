@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-10-21-11-51-31",
-    "spec_file": "2021-content-spec.json",
+    "created_at": "2022-10-25-11-39-55",
+    "spec_file": "2021-content-spec-v2.json",
     "release": "2021-TTW"
   },
   "content": [
@@ -14,7 +14,7 @@
           "name": "Method of travel to workplace",
           "code": "transport_to_workplace",
           "slug": "method-of-travel-to-workplace",
-          "desc": "Method of travel to workplace.",
+          "desc": "How people travel from their home to their workplace.",
           "long_desc": "A person's place of work and their method of travel to work. This is the 2001 method of producing travel to work variables.\n \n\"Work mainly from home\" applies to someone who indicated their place of work as their home address and travelled to work by driving a car or van (e.g. visiting clients).",
           "units": "Person",
           "topic_code": "TTW",

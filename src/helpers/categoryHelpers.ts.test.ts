@@ -1,19 +1,8 @@
 import { GeoTypes, type Variable, type Category, type Classification } from "../types";
 import { englandAndWales } from "./spatialHelper";
-import { formatPercentage, formatTemplateString } from "./categoryHelpers";
+import { formatTemplateString } from "./categoryHelpers";
 import { getSelectedGeography } from "./appParamsHelper";
 
-describe("formatPercentage", () => {
-  test("rounds percentage to nearest single decimal place and returns as string - single decimal place input", () => {
-    expect(formatPercentage(10.1)).toEqual("10.1");
-  });
-  test("rounds percentage to nearest single decimal place and returns as string - no decimal place input", () => {
-    expect(formatPercentage(10)).toEqual("10.0");
-  });
-  test("rounds percentage to nearest single decimal place and returns as string - multiple decimal place input", () => {
-    expect(formatPercentage(10.58098340980878)).toEqual("10.6");
-  });
-});
 
 describe("formatTemplateString", () => {
   const testCategory: Category = {
@@ -30,6 +19,7 @@ describe("formatTemplateString", () => {
     slug: "test-var",
     code: "testVarCode",
     desc: "",
+    long_desc: "",
     units: "testUnits",
     topic_code: "testTopicCode",
     classifications: [] as Classification[],

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-10-21-11-51-31",
-    "spec_file": "2021-content-spec.json",
+    "created_at": "2022-10-25-11-39-55",
+    "spec_file": "2021-content-spec-v2.json",
     "release": "2021-ALL"
   },
   "content": [
@@ -14,7 +14,7 @@
           "name": "Highest level of qualification",
           "code": "highest_qualification",
           "slug": "highest-level-of-qualification",
-          "desc": "Highest level of qualification gained.",
+          "desc": "The highest level of qualification gained.",
           "long_desc": "The highest level of qualification is derived from the question asking people to indicate all qualifications held, or their nearest equivalent.  \n\nThis may include foreign qualifications where they were matched to the closest UK equivalent.",
           "units": "Person",
           "topic_code": "EDU",
@@ -157,7 +157,7 @@
           "code": "disability",
           "slug": "disability",
           "desc": "People with a long-term health problem or disability, including relating to old-age.",
-          "long_desc": "People who assessed their day-to-day activities as limited by long-term physical or mental health conditions or illnesses are considered disabled. This definition of a disabled person meets the harmonised standard for measuring disability and is in line with the Equality Act (2010). \n\nAdditional \nCensus 2021 asks the Government Statistical Service harmonised questions (used on several existing large surveys), which are two separate questions designed to capture a person's disability according to the Equality Act (2010). These replace a single question in the 2011 census that showed whether a long-term health problem or disability limited a person's day-to-day activities. \n  \nThe Census 2021 questions indicate: \n* whether a person has long term physical or mental health conditions or illnesses \n* the extent to which any indicated long term physical or mental health conditions or illnesses limit their day-to-day activities \n\nTo allow comparability with Census 2011, Scotland and Northern Ireland Census 2021 continue to ask the same question as the in the Census 2011. In Northern Ireland, disability status is defined according to the Disability Discrimination Act (1995). Please see the Health and Unpaid Care topic report for more details.",
+          "long_desc": "People who assessed their day-to-day activities as limited by long-term physical or mental health conditions or illnesses are considered disabled. This definition of a disabled person meets the harmonised standard for measuring disability and is in line with the Equality Act (2010). \n\nAdditional \nCensus 2021 asks the Government Statistical Service harmonised questions (used on several existing large surveys), which are two separate questions designed to capture a person's disability according to the Equality Act (2010). These replace a single question in the 2011 census that showed whether a long-term health problem or disability limited a person's day-to-day activities. \n  \nThe Census 2021 questions indicate: \n\n* whether a person has long term physical or mental health conditions or illnesses \n* the extent to which any indicated long term physical or mental health conditions or illnesses limit their day-to-day activities \n\nTo allow comparability with Census 2011, Scotland and Northern Ireland Census 2021 continue to ask the same question as the in the Census 2011. In Northern Ireland, disability status is defined according to the Disability Discrimination Act (1995). Please see the Health and Unpaid Care topic report for more details.",
           "units": "Person",
           "topic_code": "HUC",
           "classifications": [
@@ -552,7 +552,7 @@
           "code": "accommodation_type",
           "slug": "accommodation-type",
           "desc": "The type of buildings people live in.",
-          "long_desc": "The type of building or structure used or available by an individual or household.\n\nThis could be:\n* the whole house or bungalow\n* a flat in a purpose-built block of flats in a converted house\n* a flat in a converted house\n* a temporary or mobile structure, such as a caravan\n\nAdditional information\n\nMore information about accommodation types\n\nWhole house or bungalow\nThis property type is not divided into flats or other living accommodation. There are three types of whole houses or bungalows.\n\nDetached\nNone of the living accommodation is attached to another property but can be attached to a garage.\n\nSemi-detached\nThe living accommodation is joined to another house or bungalow by a common wall that they share.\n\nTerraced\nA mid-terraced house is located between two other houses and shares two common walls. An end-of-terrace house is part of a terraced development but only shares one common wall.\n\nFlats (Apartments) and maisonettes\nAn apartment is another word for a flat. A maisonette is a 2-storey flat.",
+          "long_desc": "The type of building or structure used or available by an individual or household.\n\nThis could be:\n\n* the whole house or bungalow\n* a flat in a purpose-built block of flats in a converted house\n* a flat in a converted house\n* a temporary or mobile structure, such as a caravan\n\nAdditional information\n\nMore information about accommodation types\n\nWhole house or bungalow\nThis property type is not divided into flats or other living accommodation. There are three types of whole houses or bungalows.\n\nDetached\nNone of the living accommodation is attached to another property but can be attached to a garage.\n\nSemi-detached\nThe living accommodation is joined to another house or bungalow by a common wall that they share.\n\nTerraced\nA mid-terraced house is located between two other houses and shares two common walls. An end-of-terrace house is part of a terraced development but only shares one common wall.\n\nFlats (Apartments) and maisonettes\nAn apartment is another word for a flat. A maisonette is a 2-storey flat.",
           "units": "Household",
           "topic_code": "HOU",
           "classifications": [
@@ -731,8 +731,8 @@
           "name": "Second address indicator",
           "code": "alternative_address_indicator",
           "slug": "second-address-indicator",
-          "desc": "An address (in or out of the UK) a person stays at for more than 30 days per year that is not their place of usual residence.",
-          "long_desc": "\"An address (in or out of the UK) a person stays at for more than 30 days per year that is not their place of usual residence. \n \nAdditional \nSecond addresses typically include: \n* armed forces bases\n* addresses used by people working away from home\n* a students home address\n* the address of another parent or guardian\n* a holiday home\n  \nIf a person with a second address was staying there on census night, they were classed as a visitor to the second address but counted as a usual resident at their home address.",
+          "desc": "An address (in or out of the UK) a person stays at for more than 30 days per year that isn't their place of usual residence.",
+          "long_desc": "An address (in or out of the UK) a person stays at for more than 30 days per year that is not their place of usual residence. \n \nAdditional \nSecond addresses typically include:\n\n* armed forces bases\n* addresses used by people working away from home\n* a students home address\n* the address of another parent or guardian\n* a holiday home\n  \nIf a person with a second address was staying there on census night, they were classed as a visitor to the second address but counted as a usual resident at their home address.",
           "units": "Person",
           "topic_code": "HOU",
           "classifications": [
@@ -932,7 +932,7 @@
           "code": "hh_tenure",
           "slug": "tenure-of-household",
           "desc": "Whether a household owns or rents.",
-          "long_desc": "Whether a household owns or rents the accommodation that it occupies.  \n\nAdditional  \nOwner-occupied accommodation can be: \n* owned outright, which is where the household owns all of the accommodation \n* with a mortgage or loan \n* part-owned on a shared ownership scheme \n\n Rented accommodation can be: \n* private rented, for example, rented through a private landlord or letting agent \n* social rented through a local council or housing association) \nThis information is not available for household spaces with no usual residents.",
+          "long_desc": "Whether a household owns or rents the accommodation that it occupies. \n\nAdditional \nOwner-occupied accommodation can be:\n\n* owned outright, which is where the household owns all of the accommodation \n* with a mortgage or loan \n* part-owned on a shared ownership scheme \n\n Rented accommodation can be:\n\n* private rented (for example, rented through a private landlord or letting agent \n* social rented through a local council or housing association)\n\nThis information is not available for household spaces with no usual residents.",
           "units": "Household",
           "topic_code": "HOU",
           "classifications": [
@@ -1125,7 +1125,7 @@
           "code": "number_of_cars",
           "slug": "number-of-cars-or-vans",
           "desc": "Vehicles owned or available for use by a household.",
-          "long_desc": "The number of cars or vans owned or available for use by household members.  \nVehicles included: \n* pick-ups, camper vans and motor homes  \n* vehicles that are temporarily not working  \n* vehicles that have failed their MOT   \n* vehicles owned or used by a lodger  \n* company cars or vans if they're available for private use \n\nVehicles not included:  \n* motorbikes, trikes, quad bikes or mobility scooters  \n* vehicles that have a Statutory Off Road Notification (SORN)  \n* vehicles owned or used only by a visitor  \n* vehicles that are kept at another address or not easily accessed  \n\nThe number of cars or vans in an area relates only to households. Cars or vans used by communal establishment residents are not counted.   \nHouseholds with 10 to 20 cars or vans are counted as having only 10.  \nHouseholds with more than 20 cars or vans were treated as invalid and a value imputed.",
+          "long_desc": "The number of cars or vans owned or available for use by household members.\n\nVehicles included:\n\n* pick-ups, camper vans and motor homes  \n* vehicles that are temporarily not working  \n* vehicles that have failed their MOT   \n* vehicles owned or used by a lodger  \n* company cars or vans if they're available for private use \n\nVehicles not included:\n\n* motorbikes, trikes, quad bikes or mobility scooters  \n* vehicles that have a Statutory Off Road Notification (SORN)  \n* vehicles owned or used only by a visitor  \n* vehicles that are kept at another address or not easily accessed  \n\nThe number of cars or vans in an area relates only to households. Cars or vans used by communal establishment residents are not counted.   \nHouseholds with 10 to 20 cars or vans are counted as having only 10.  \nHouseholds with more than 20 cars or vans were treated as invalid and a value imputed.",
           "units": "Household",
           "topic_code": "HOU",
           "classifications": [
@@ -1212,7 +1212,7 @@
           "code": "occupancy_rating_bedrooms",
           "slug": "occupancy-rating-for-bedrooms",
           "desc": "Whether homes are overcrowded, ideally occupied or under-occupied, based on bedrooms.",
-          "long_desc": "Whether a household's accommodation is overcrowded, ideally occupied or under-occupied. This is calculated by comparing the number of bedrooms the household requires (the Bedroom Standard) to the number of available bedrooms.  \n \nAdditional  \nPeople that should have their own room according to the Bedroom Standard.\n 1) A married or co-habiting couple.  \n 2) Someone 21 years old or over.  \n 3) A pair of same-sex aged between 10 and 20 years.  \n 4) A pair of children aged under 10 years regardless of their sex.  \n 5) One person aged between 10 to 20 years paired with a child aged under 10 years of the same sex.  \n 6) Any other person aged under 21 years who cannot share a bedroom with someone in 3, 4 or 5 above. \nAn occupancy rating of:  \n*  -1 or less implies that a households accommodation has fewer bedrooms than required (overcrowded)  \n* +1 or more implies that a households accommodation has more bedrooms than required (under-occupied)  \n* 0 suggests that a households accommodation has an ideal number of bedrooms",
+          "long_desc": "Whether a household's accommodation is overcrowded, ideally occupied or under-occupied. This is calculated by comparing the number of bedrooms the household requires (the Bedroom Standard) to the number of available bedrooms.  \n \nAdditional  \nPeople that should have their own room according to the Bedroom Standard:\n\n 1) A married or co-habiting couple.  \n 2) Someone 21 years old or over.  \n 3) A pair of same-sex aged between 10 and 20 years.  \n 4) A pair of children aged under 10 years regardless of their sex.  \n 5) One person aged between 10 to 20 years paired with a child aged under 10 years of the same sex.  \n 6) Any other person aged under 21 years who cannot share a bedroom with someone in 3, 4 or 5 above.\n\nAn occupancy rating of:\n\n*  -1 or less implies that a households accommodation has fewer bedrooms than required (overcrowded)  \n* +1 or more implies that a households accommodation has more bedrooms than required (under-occupied)  \n* 0 suggests that a households accommodation has an ideal number of bedrooms",
           "units": "Household",
           "topic_code": "HOU",
           "classifications": [
@@ -1277,7 +1277,7 @@
           "code": "occupancy_rating_rooms",
           "slug": "occupancy-rating-for-rooms",
           "desc": "Whether homes are overcrowded, ideally occupied or under-occupied, based on rooms.",
-          "long_desc": "Whether a household's accommodation is overcrowded, ideally occupied or under-occupied. This is calculated by comparing the number of rooms the household requires to the number of available rooms. \n\nAdditional  \nThe number of rooms the household requires uses a formula which states that: \n* one-person households require three rooms comprised of two common rooms and one bedroom \n* two-or-more person households require a minimum of two common rooms and a bedroom for each person inline with the Bedroom Standard. \n\nPeople who should have their own room according to the Bedroom Standard.  \n  1) Married or cohabiting couple.  \n  2) Single parent.  \n  3) Person aged 16 years old or over.  \n  4) Pair of same-sex persons 10 to 15 years old.  \n  5) Person aged 10 to 15 years old paired with a person under 10 years old of the same sex.  \n  6) Pair of children under the age of 10, regardless of their sex.  \n  7) Person under 16 years old who cannot share a bedroom with someone in 4, 5 or 6 above.  \nAn occupancy rating of: \n * -1 or less implies that a households accommodation has fewer rooms than required (overcrowded) \n* +1 or more implies that a households accommodation has more rooms than required (under-occupied) \n* 0 suggests that a households accommodation has an ideal number of rooms",
+          "long_desc": "Whether a household's accommodation is overcrowded, ideally occupied or under-occupied. This is calculated by comparing the number of rooms the household requires to the number of available rooms. \n\nAdditional  \nThe number of rooms the household requires uses a formula which states that: \n* one-person households require three rooms comprised of two common rooms and one bedroom \n* two-or-more person households require a minimum of two common rooms and a bedroom for each person inline with the Bedroom Standard. \n\nPeople who should have their own room according to the Bedroom Standard:\n  1) Married or cohabiting couple.  \n  2) Single parent.  \n  3) Person aged 16 years old or over.  \n  4) Pair of same-sex persons 10 to 15 years old.  \n  5) Person aged 10 to 15 years old paired with a person under 10 years old of the same sex.  \n  6) Pair of children under the age of 10, regardless of their sex.  \n  7) Person under 16 years old who cannot share a bedroom with someone in 4, 5 or 6 above.\n\nAn occupancy rating of:\n\n * -1 or less implies that a households accommodation has fewer rooms than required (overcrowded) \n* +1 or more implies that a households accommodation has more rooms than required (under-occupied) \n* 0 suggests that a households accommodation has an ideal number of rooms",
           "units": "Household",
           "topic_code": "HOU",
           "classifications": [
@@ -1342,7 +1342,7 @@
           "code": "second_address_type_priority",
           "slug": "second-address-type",
           "desc": "Whether people have an alternative address (somewhere they stay for more than 30 days per year) and the type of address this is.",
-          "long_desc": "Indicates whether a person has an alternative address (somewhere they stay for more than 30 days per year) and the type of second address this is.   \n\n'Not applicable' applies to people without an alternative address.",
+          "long_desc": "Indicates whether a person has an alternative address (somewhere they stay for more than 30 days per year) and the type of second address this is. \n\n'Not applicable' applies to people without an alternative address.",
           "units": "Person",
           "topic_code": "HOU",
           "classifications": [
@@ -1779,7 +1779,7 @@
           "name": "Household language (English and Welsh)",
           "code": "hh_language",
           "slug": "household-language-english-and-welsh",
-          "desc": "Classifies households by the combination of adults and children (aged 3 to 15 years) within a household that have English (English or Welsh in Wales) as their main language.",
+          "desc": "People who have English in England, or in Wales English or Welsh, as their main language.",
           "long_desc": "Household language classifies households by combining adults and children (aged 3 to 15 years) within a household that has English (English or Welsh for households in Wales) as the main language.",
           "units": "Household",
           "topic_code": "EILR",
@@ -1833,10 +1833,76 @@
           ]
         },
         {
+          "name": "Multiple ethnic groups in household",
+          "code": "hh_multi_ethnic_group",
+          "slug": "multiple-ethnic-groups-in-household",
+          "desc": "Ethnic groups within a household.",
+          "long_desc": "Classifies households by whether members identify as having the same or different ethnic groups. \n\nIf multiple ethnic groups are present, this identifies whether they differ between generations or partnerships within the household.",
+          "units": "Household",
+          "topic_code": "EILR",
+          "classifications": [
+            {
+              "code": "hh_multi_ethnic_group",
+              "slug": "hh-multi-ethnic-group",
+              "desc": "Multiple ethnic groups in household (6 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
+              "dataset": "TS023",
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "categories": [
+                {
+                  "name": "One-person household",
+                  "slug": "one-person-household",
+                  "code": "hh_multi_ethnic_group-001",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "one-person households"
+                },
+                {
+                  "name": "All household members have the same ethnic group",
+                  "slug": "all-household-members-have-the-same-ethnic-group",
+                  "code": "hh_multi_ethnic_group-002",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "members that are all from the same ethnic group"
+                },
+                {
+                  "name": "Ethnic groups differ between generations but not within partnerships",
+                  "slug": "ethnic-groups-differ-between-generations-but-not-within-partnerships",
+                  "code": "hh_multi_ethnic_group-003",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "members from ethnic groups that differ between generations but not within partnerships"
+                },
+                {
+                  "name": "Ethnic groups differ within partnerships",
+                  "slug": "ethnic-groups-differ-within-partnerships",
+                  "code": "hh_multi_ethnic_group-004",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "members from ethnic groups that differ within partnerships"
+                },
+                {
+                  "name": "Any other combination of multiple ethnic identities",
+                  "slug": "any-other-combination-of-multiple-ethnic-identities",
+                  "code": "hh_multi_ethnic_group-005",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "members with any other combination of ethnic identities"
+                }
+              ]
+            }
+          ]
+        },
+        {
           "name": "Multiple main languages in household",
           "code": "hh_multi_language",
           "slug": "multiple-main-languages-in-household",
-          "desc": "People within the same household who have a different main language categorised by whether the difference is between generations or partnerships within the household.",
+          "desc": "Whether there are multiple languages in a household.",
           "long_desc": "People within the same household who identify as speaking the same or different main language. \nIt is categorised by whether the main language spoken difference is between generations or partnerships within the household.",
           "units": "Household",
           "topic_code": "EILR",
@@ -1884,12 +1950,12 @@
               "dataset": "TS026",
               "categories": [
                 {
-                  "name": "One person household",
+                  "name": "One-person household",
                   "slug": "one-person-household",
                   "code": "hh_multi_language-001",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "not applicable (one person household)"
+                  "legend_str_3": "not applicable (one-person household)"
                 },
                 {
                   "name": "All household members have the same main language",
@@ -1931,7 +1997,7 @@
           "name": "Multiple religions in household",
           "code": "hh_multi_religion",
           "slug": "multiple-religions-in-household",
-          "desc": "Classifies all household members who identify as belonging to the same or different religion or religions.",
+          "desc": "Whether there are multiple religions in a household.",
           "long_desc": "Classifies all household members who identify as belonging to the same or different religion or religions. Households are categorised by whether the difference is between generations or partnerships.",
           "units": "Household",
           "topic_code": "EILR",
@@ -1955,7 +2021,7 @@
                   "code": "hh_multi_religion_7a-001",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "not applicable (one person household)"
+                  "legend_str_3": "not applicable (one-person household)"
                 },
                 {
                   "name": "Multi-person household: No people stated their religion",
@@ -2006,7 +2072,7 @@
           "code": "main_language_detailed",
           "slug": "main-language-detailed",
           "desc": "People's first or preferred language.",
-          "long_desc": "The main languages spoken for people whose main language is not English in England or Welsh in Wales.  \n\nThis breaks down the responses given in the write-in option Other, write in (including British Sign Language.",
+          "long_desc": "The main languages spoken for people whose main language is not English in England or Welsh in Wales.  \n\nThis breaks down the responses given in the write-in option Other, write in (including British Sign Language).",
           "units": "Person",
           "topic_code": "EILR",
           "classifications": [
@@ -2034,7 +2100,7 @@
                   "code": "main_language_detailed_23a-002",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "speak",
-                  "legend_str_3": "Any other UK language"
+                  "legend_str_3": "any other UK language"
                 },
                 {
                   "name": "French",
@@ -2186,7 +2252,7 @@
                   "code": "main_language_detailed_23a-021",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "speak",
-                  "legend_str_3": "a African language"
+                  "legend_str_3": "an African language"
                 },
                 {
                   "name": "Other language",
@@ -3235,7 +3301,7 @@
           "name": "National identity (detailed)",
           "code": "national_identity_detailed",
           "slug": "national-identity-detailed",
-          "desc": "People's national identity (where they feel they belong or could think of as home).",
+          "desc": "People's national identity (where they feel they belong or could think of as home) broken down by country.",
           "long_desc": "This variable indicates the national identity people connect to or identify with. A person's national identity is a self-determined assessment of their own identity with respect to the country or countries with which they feel an affiliation. It is not dependent on ethnic group or citizenship",
           "units": "Person",
           "topic_code": "EILR",
@@ -3933,7 +3999,7 @@
           "code": "welsh_skills_all",
           "slug": "welsh-language-skills",
           "desc": "Whether people can understand, speak, read, or write Welsh. This question was only asked in Wales.",
-          "long_desc": "Whether a person has Welsh language skills.  If they do, can they do any of the following: \n* understand spoken Welsh \n* speak Welsh \n* read Welsh \n* write Welsh \n\nThe census questionnaire only asked this question to people in Wales.  \n\nAdditional info: \nIn results that classify people by Welsh language skills, a person may appear in more than one category depending on which combination of skills they have.",
+          "long_desc": "Whether a person has Welsh language skills.  If they do, can they do any of the following:\n\n* understand spoken Welsh \n* speak Welsh \n* read Welsh \n* write Welsh \n\nThe census questionnaire only asked this question to people in Wales.  \n\nAdditional info: \nIn results that classify people by Welsh language skills, a person may appear in more than one category depending on which combination of skills they have.",
           "units": "Person",
           "topic_code": "EILR",
           "classifications": [
@@ -4183,7 +4249,7 @@
                   "code": "gender_identity_4a-001",
                   "legend_str_1": "of families in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "a gender identity the same as sex registered at birth"
+                  "legend_str_3": "a gender identity the same as their sex registered at birth"
                 },
                 {
                   "name": "Gender identity different from sex registered at birth",
@@ -4191,7 +4257,7 @@
                   "code": "gender_identity_4a-002",
                   "legend_str_1": "of families in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "a gender identity different from sex registered at birth"
+                  "legend_str_3": "a gender identity different from their sex registered at birth"
                 },
                 {
                   "name": "Not answered",
@@ -4219,7 +4285,7 @@
                   "code": "gender_identity_8a-001",
                   "legend_str_1": "of families in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "a gender identity the same as sex registered at birth"
+                  "legend_str_3": "a gender identity the same as their sex registered at birth"
                 },
                 {
                   "name": "Gender identity different from sex registered at birth but no specific identity given",
@@ -4227,7 +4293,7 @@
                   "code": "gender_identity_8a-002",
                   "legend_str_1": "of families in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "a gender identity different from sex registered at birth but no specific identity given"
+                  "legend_str_3": "a gender identity different from their sex registered at birth but no specific identity given"
                 },
                 {
                   "name": "Trans woman",
@@ -4461,7 +4527,7 @@
           "name": "Population density",
           "code": "population_density",
           "slug": "population-density",
-          "desc": "The number of people per square kilometre.",
+          "desc": "The number of people resident per square kilometre.",
           "long_desc": "The number of usual residents per square kilometre, calculated based on total land area excluding inland water.",
           "units": "Persons per square kilometre",
           "topic_code": "DEM",
@@ -4482,9 +4548,9 @@
                   "name": "Persons per square kilometre",
                   "slug": "persons-per-square-kilometre",
                   "code": "population_density-001",
-                  "legend_str_1": "Population density of {location}",
+                  "legend_str_1": "(population density of {location}",
                   "legend_str_2": "in",
-                  "legend_str_3": "persons per square kilometre"
+                  "legend_str_3": "persons per square kilometre)"
                 }
               ]
             }
@@ -4495,7 +4561,7 @@
           "code": "hh_deprivation",
           "slug": "household-deprivation",
           "desc": "Whether a household is deprived in one or more ways.",
-          "long_desc": "The dimensions of deprivation used to classify households are indicators based on four selected household characteristics.\n\nEducation\nA household is classified as deprived in the education dimension if no one has at least level 2 education and no one aged 16 to 18 years is a full-time student.\n\nEmployment\nA household is classified as deprived in the employment dimension if any member, not a full-time student, is either unemployed or long-term sick.\n\nHealth\nA household is classified as deprived in the health dimension if any member is disabled.\n\nHousing\nA household is classified as deprived in the housing dimension if the household's accommodation is either overcrowded, in a shared dwelling, or has no central heating.",
+          "long_desc": "The dimensions of deprivation used to classify households are indicators based on four selected household characteristics.\n\nEducation\nA household is classified as deprived in the education dimension if no one has at least level 2 education and no one aged 16 to 18 years is a full-time student.\n\nEmployment\nA household is classified as deprived in the employment dimension if any member, not a full-time student, is either unemployed or disabled.\n\nHealth\nA household is classified as deprived in the health dimension if any member is disabled.\n\nHousing\nA household is classified as deprived in the housing dimension if the household's accommodation is either overcrowded, in a shared dwelling, or has no central heating.",
           "units": "Household",
           "topic_code": "DEM",
           "classifications": [
@@ -4561,7 +4627,7 @@
           "code": "hh_family_composition",
           "slug": "household-composition",
           "desc": "Households according to the relationships between members.",
-          "long_desc": "Households according to the relationships between members. \n\nOne-family households are classified by: \n* the number of dependent children \n* family type (married, civil partnership or cohabiting couple family, or lone parent family) \n\nOther households are classified by: \n* the number of people \n* the number of dependent children \n* whether the household consists only of students or only of people aged 66 and over",
+          "long_desc": "Households according to the relationships between members. \n\nOne-family households are classified by:\n\n* the number of dependent children \n* family type (married, civil partnership or cohabiting couple family, or lone parent family) \n\nOther households are classified by:\n\n* the number of people \n* the number of dependent children \n* whether the household consists only of students or only of people aged 66 and over",
           "units": "Household",
           "topic_code": "DEM",
           "classifications": [
@@ -4587,12 +4653,12 @@
                   "legend_str_3": "multiple family households"
                 },
                 {
-                  "name": "One person household",
+                  "name": "One-person household",
                   "slug": "one-person-household",
                   "code": "hh_family_composition_4a-002",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "one person households"
+                  "legend_str_3": "one-person households"
                 },
                 {
                   "name": "Single family household",
@@ -4600,7 +4666,7 @@
                   "code": "hh_family_composition_4a-003",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "single family households"
+                  "legend_str_3": "single-family households"
                 }
               ]
             },
@@ -4616,7 +4682,7 @@
               "dataset": "TS003",
               "categories": [
                 {
-                  "name": "One person household: Aged 66 years and over",
+                  "name": "One-person household: Aged 66 years and over",
                   "slug": "one-person-household-aged-66-years-and-over",
                   "code": "hh_family_composition_15a-001",
                   "legend_str_1": "of households in {location}",
@@ -4624,12 +4690,12 @@
                   "legend_str_3": "households with one person aged 66 years and over"
                 },
                 {
-                  "name": "One person household: Other",
+                  "name": "One-person household: Other",
                   "slug": "one-person-household-other",
                   "code": "hh_family_composition_15a-002",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "househols with one person aged less than 66 years"
+                  "legend_str_3": "households with one person aged less than 66 years"
                 },
                 {
                   "name": "Single family household: All aged 66 years and over",
@@ -4637,7 +4703,7 @@
                   "code": "hh_family_composition_15a-003",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "single family households in which all people are aged 66 years and over"
+                  "legend_str_3": "single-family households in which all people are aged 66 years and over"
                 },
                 {
                   "name": "Single family household: Married or civil partnership couple: No children",
@@ -4645,7 +4711,7 @@
                   "code": "hh_family_composition_15a-004",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "single family households of a married or civil partnership couple with no children"
+                  "legend_str_3": "single-family households of a married or civil partnership couple with no children"
                 },
                 {
                   "name": "Single family household: Married or civil partnership couple: Dependent children",
@@ -4653,7 +4719,7 @@
                   "code": "hh_family_composition_15a-005",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "single family households of a married or civil partnership couple with dependent children"
+                  "legend_str_3": "single-family households of a married or civil partnership couple with dependent children"
                 },
                 {
                   "name": "Single family household: Married or civil partnership couple: All children non-dependent",
@@ -4661,7 +4727,7 @@
                   "code": "hh_family_composition_15a-006",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "single family households of a married or civil partnership couple with all children non-dependent"
+                  "legend_str_3": "single-family households of a married or civil partnership couple with independent children"
                 },
                 {
                   "name": "Single family household: Cohabiting couple family: No children",
@@ -4669,7 +4735,7 @@
                   "code": "hh_family_composition_15a-007",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "single family households of a cohabiting couple family with no children"
+                  "legend_str_3": "single-family households of a cohabiting couple with no children"
                 },
                 {
                   "name": "Single family household: Cohabiting couple family: With dependent children",
@@ -4677,7 +4743,7 @@
                   "code": "hh_family_composition_15a-008",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "single family households of a cohabiting couple family with dependent children"
+                  "legend_str_3": "single-family households of a cohabiting couple with dependent children"
                 },
                 {
                   "name": "Single family household: Cohabiting couple family: All children non-dependent",
@@ -4685,7 +4751,7 @@
                   "code": "hh_family_composition_15a-009",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "single family households of a cohabiting couple family with all children non-dependent"
+                  "legend_str_3": "single-family households of a cohabiting couple with independent children"
                 },
                 {
                   "name": "Single family household: Lone parent family: With dependent children",
@@ -4693,7 +4759,7 @@
                   "code": "hh_family_composition_15a-010",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "single family households of a lone parent family with dependent children"
+                  "legend_str_3": "single-family households of a lone parent family with dependent children"
                 },
                 {
                   "name": "Single family household: Lone parent family: All children non-dependent",
@@ -4701,7 +4767,7 @@
                   "code": "hh_family_composition_15a-011",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "single family households of a lone parent family with all children non-dependent"
+                  "legend_str_3": "single-family households of a lone parent family with independent children"
                 },
                 {
                   "name": "Single family household: Other single family household: Other family composition",
@@ -4709,89 +4775,23 @@
                   "code": "hh_family_composition_15a-012",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "single family households with other family composition"
+                  "legend_str_3": "single-family households with other family composition"
                 },
                 {
-                  "name": "Multiple-family household: With dependent children",
-                  "slug": "multiple-family-household-with-dependent-children",
+                  "name": "Other household types: With dependent children",
+                  "slug": "other-household-types-with-dependent-children",
                   "code": "hh_family_composition_15a-013",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "multiple-family households with dependent children"
                 },
                 {
-                  "name": "Multiple-family household: Other, including all full-time students and all aged 66 years and over",
-                  "slug": "multiple-family-household-other-including-all-full-time-students-and-all-aged-66-years-and-over",
+                  "name": "Other household types: Other, including all full-time students and all aged 66 years and over",
+                  "slug": "other-household-types-other-including-all-full-time-students-and-all-aged-66-years-and-over",
                   "code": "hh_family_composition_15a-014",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "multiple-family households with other composition, including all full-time students and all aged 66 years and over"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Multiple ethnic groups in household",
-          "code": "hh_multi_ethnic_group",
-          "slug": "multiple-ethnic-groups-in-household",
-          "desc": "Ethnic groups within a household.",
-          "long_desc": "Single or multiple ethnic groups within the household.  \nIf multiple ethnic groups are present, this identifies whether ethnic groups differ between generations or partnerships within the household.",
-          "units": "Household",
-          "topic_code": "DEM",
-          "classifications": [
-            {
-              "code": "hh_multi_ethnic_group",
-              "slug": "hh-multi-ethnic-group",
-              "desc": "Multiple ethnic groups in household (6 categories)",
-              "available_geotypes": [
-                "oa",
-                "msoa",
-                "lad"
-              ],
-              "dataset": "TS023",
-              "choropleth_default": true,
-              "dot_density_default": true,
-              "categories": [
-                {
-                  "name": "One-person household",
-                  "slug": "one-person-household",
-                  "code": "hh_multi_ethnic_group-001",
-                  "legend_str_1": "of households in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "one-person households"
-                },
-                {
-                  "name": "All household members have the same ethnic group",
-                  "slug": "all-household-members-have-the-same-ethnic-group",
-                  "code": "hh_multi_ethnic_group-002",
-                  "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "members that all have the same ethnic group"
-                },
-                {
-                  "name": "Ethnic groups differ between generations but not within partnerships",
-                  "slug": "ethnic-groups-differ-between-generations-but-not-within-partnerships",
-                  "code": "hh_multi_ethnic_group-003",
-                  "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "members from ethnic groups that differ between generations but not within partnerships"
-                },
-                {
-                  "name": "Ethnic groups differ within partnerships",
-                  "slug": "ethnic-groups-differ-within-partnerships",
-                  "code": "hh_multi_ethnic_group-004",
-                  "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "members from ethnic groups that differ within partnerships"
-                },
-                {
-                  "name": "Any other combination of multiple ethnic identities",
-                  "slug": "any-other-combination-of-multiple-ethnic-identities",
-                  "code": "hh_multi_ethnic_group-005",
-                  "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "members with any other combination of multiple ethnic identities"
+                  "legend_str_3": "another type of multiple-family household, including all full-time students and all aged 66 years and over"
                 }
               ]
             }
@@ -4802,7 +4802,7 @@
           "code": "hh_size",
           "slug": "household-size",
           "desc": "The number of people in a household.",
-          "long_desc": "The number of people in the household.   \n\nAdditional  \nVisitors staying at an address do not count to that households size.",
+          "long_desc": "The number of people in the household. \n\nVisitors staying at an address do not count to that households size.",
           "units": "Household",
           "topic_code": "DEM",
           "classifications": [
@@ -4864,14 +4864,6 @@
               ],
               "dataset": "TS017",
               "categories": [
-                {
-                  "name": "0 people in household",
-                  "slug": "0-people-in-household",
-                  "code": "hh_size_9a-000",
-                  "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "0 people in household"
-                },
                 {
                   "name": "1 person in household",
                   "slug": "1-person-in-household",
@@ -4945,7 +4937,7 @@
           "code": "legal_partnership_status",
           "slug": "marital-and-civil-partnership-status",
           "desc": "People's marital or civil partnership status.",
-          "long_desc": "Classifies a person according to their legal marital or registered civil partnership status on 21 March 2021.\n\n It is the same as the 2011 census variable \"Marital status\" but has been updated for Census 2021 to reflect the revised Civil Partnership Act that came into force in 2019.\n\nIn Census 2021 results, \"single\" refers only to someone who has never been married or in a registered civil partnership.",
+          "long_desc": "Classifies a person according to their legal marital or registered civil partnership status on Census Day 21 March 2021.\n\nIt is the same as the 2011 census variable \"Marital status\" but has been updated for Census 2021 to reflect the revised Civil Partnership Act that came into force in 2019.\n\nIn Census 2021 results, \"single\" refers only to someone who has never been married or in a registered civil partnership.",
           "units": "Person",
           "topic_code": "DEM",
           "classifications": [
@@ -5029,7 +5021,7 @@
                   "code": "legal_partnership_status_6a-005",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "widowed or the surviving civil partnership partner"
+                  "legend_str_3": "widowed or the surviving partner from a civil partnership"
                 }
               ]
             },
@@ -5130,7 +5122,7 @@
                   "code": "legal_partnership_status-011",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "the surviving partner from civil partnership"
+                  "legend_str_3": "the surviving partner from a civil partnership"
                 }
               ]
             }
@@ -5141,7 +5133,7 @@
           "code": "living_arrangements",
           "slug": "living-arrangements",
           "desc": "People's living arrangements, by their legal partnership status.",
-          "long_desc": "Living arrangements",
+          "long_desc": "The living arrangements classification combines responses to the question on marital and civil partnership status with information about whether or not a person is living in a couple. This topic is only applicable to people in households. Living arrangements differs from marital and civil partnership status because cohabiting takes priority over other categories. For example, if a person is divorced and cohabiting, then in results for living arrangements they are classified as cohabiting.",
           "units": "Person",
           "topic_code": "DEM",
           "classifications": [
@@ -5161,40 +5153,40 @@
                   "slug": "living-in-an-opposite-sex-couple-married-or-in-a-civil-partnership",
                   "code": "living_arrangements_11a-001",
                   "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "living in an opposite-sex couple that is married or in a civil partnership"
+                  "legend_str_2": "live together",
+                  "legend_str_3": "in a opposite-sex couple that is married or in a civil partnership"
                 },
                 {
                   "name": "Living in a same-sex couple: Married or in a civil partnership",
                   "slug": "living-in-a-same-sex-couple-married-or-in-a-civil-partnership",
                   "code": "living_arrangements_11a-002",
                   "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "living in a same-sex couple that is married or in a civil partnership"
+                  "legend_str_2": "live together",
+                  "legend_str_3": "in a same-sex couple that is married or in a civil partnership"
                 },
                 {
                   "name": "Living in a couple: Separated, but still married or in a civil partnership",
                   "slug": "living-in-a-couple-separated-but-still-married-or-in-a-civil-partnership",
                   "code": "living_arrangements_11a-003",
                   "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "living in a couple that is separated, but still married or in a civil partnership"
+                  "legend_str_2": "live together",
+                  "legend_str_3": "in a couple that is separated, but still married or in a civil partnership"
                 },
                 {
                   "name": "Living in an opposite-sex couple: Cohabiting",
                   "slug": "living-in-an-opposite-sex-couple-cohabiting",
                   "code": "living_arrangements_11a-004",
                   "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "living in an opposite-sex couple that is cohabiting"
+                  "legend_str_2": "live together",
+                  "legend_str_3": "in an opposite-sex couple that is cohabiting"
                 },
                 {
                   "name": "Living in a same-sex couple: Cohabiting",
                   "slug": "living-in-a-same-sex-couple-cohabiting",
                   "code": "living_arrangements_11a-005",
                   "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "living in a same-sex couple that is cohabiting"
+                  "legend_str_2": "live together",
+                  "legend_str_3": "in a same-sex couple that is cohabiting"
                 },
                 {
                   "name": "Not living in a couple: Single (never married and never registered a same-sex civil partnership)",
@@ -5210,7 +5202,7 @@
                   "code": "living_arrangements_11a-007",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "not living in a couple, but married or in a registered civil partnership"
+                  "legend_str_3": "not living in a couple, but are married or in a registered civil partnership"
                 },
                 {
                   "name": "Not living in a couple: Separated (including those who are married and those who are in civil partnerships)",
@@ -5234,7 +5226,7 @@
                   "code": "living_arrangements_11a-010",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "widowed or surviving partner from a civil partnership"
+                  "legend_str_3": "widowed or the surviving partner from a civil partnership"
                 }
               ]
             }
@@ -6289,7 +6281,7 @@
           "name": "Average (median) age",
           "code": "median_age",
           "slug": "median-age",
-          "desc": "Average age on Census Day, 21 March 2021.",
+          "desc": "The average (median) age of people on Census Day, 21 March 2021.",
           "long_desc": "Average (median) age is calculated from the age of residents on Census Day, 21 March 2021 in England and Wales.",
           "units": "Years",
           "topic_code": "DEM",
@@ -6310,9 +6302,9 @@
                   "name": "Median age",
                   "slug": "median-age",
                   "code": "median_age-001",
-                  "legend_str_1": "Average (median) age of people in {location}",
+                  "legend_str_1": "(average (median) age of people in {location}",
                   "legend_str_2": "in",
-                  "legend_str_3": "years"
+                  "legend_str_3": "years)"
                 }
               ]
             }
@@ -6365,7 +6357,7 @@
           "code": "age_arrival_uk",
           "slug": "age-of-arrival-in-the-uk",
           "desc": "The age people were when they arrived to live in the UK (for people not born in the UK).",
-          "long_desc": "The date a person last arrived to live in the UK and their age. Arrival dates do not include returning from short trips away from the UK.  \n\nAge of arrival only applies to usual residents not born in the UK. It does not include usual residents born in the UK who have emigrated and since returned. These are recorded in the category born in the UK.",
+          "long_desc": "The date a person last arrived to live in the UK and their age. Arrival dates do not include returning from short trips away from the UK.\n\nAge of arrival only applies to usual residents not born in the UK. It does not include usual residents born in the UK who have emigrated and since returned. These are recorded in the category born in the UK.",
           "units": "Person",
           "topic_code": "MIG",
           "classifications": [
@@ -6527,7 +6519,7 @@
           "code": "country_of_birth",
           "slug": "country-of-birth",
           "desc": "Where people were born.",
-          "long_desc": "The country in which a person was born.  \n\nAdditional  \nFor people not born in one of in the four parts of the UK, there was an option to select \"elsewhere\".\n\nPeople who selected \"elsewhere'\" were asked to write in the current name for their country of birth.",
+          "long_desc": "The country in which a person was born. \n\nFor people not born in one of in the four parts of the UK, there was an option to select \"elsewhere\".\n\nPeople who selected \"elsewhere\" were asked to write in the current name for their country of birth.",
           "units": "Person",
           "topic_code": "MIG",
           "classifications": [
@@ -6548,7 +6540,7 @@
                   "code": "country_of_birth_3a-001",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "were",
-                  "legend_str_3": "born in the uk"
+                  "legend_str_3": "born in the UK"
                 },
                 {
                   "name": "Born outside the UK",
@@ -6556,7 +6548,7 @@
                   "code": "country_of_birth_3a-002",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "were",
-                  "legend_str_3": "born outside the uk"
+                  "legend_str_3": "born outside the UK"
                 }
               ]
             },
@@ -7215,8 +7207,8 @@
           "name": "Migrant indicator",
           "code": "migrant_ind",
           "slug": "migrant-indicator",
-          "desc": "Migrant indicator",
-          "long_desc": "Migrant indicator",
+          "desc": "People's movement both within and from outside the UK, in the one-year period before the census.",
+          "long_desc": "The migration indicator classifies people based on the difference between their current address and their address one year ago. It provides an indicator of the movement of people within the UK and from outside the UK, in the one-year period before the census.",
           "units": "Person",
           "topic_code": "MIG",
           "classifications": [
@@ -7246,7 +7238,7 @@
                   "code": "migrant_ind-001",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "were",
-                  "legend_str_3": "living at a student term-time or boarding school address one year ago"
+                  "legend_str_3": "living at a student or boarding school term-time address one year ago"
                 },
                 {
                   "name": "Migrant from within the UK: Address one year ago was in the UK",
@@ -7273,7 +7265,7 @@
           "code": "passports_all",
           "slug": "passports-held",
           "desc": "The passports people hold.",
-          "long_desc": "Passports held",
+          "long_desc": "All passports classifies a person according to the passport or passports they held at the time of the census. This included expired passports or travel documents people were entitled to renew. Where a person recorded having more than one passport, they were counted only once, categorised in the following priority order: 1. UK passport, 2. Irish passport, 3. Other passport.",
           "units": "Person",
           "topic_code": "MIG",
           "classifications": [
@@ -7887,7 +7879,7 @@
                   "code": "passports_all_52a-011",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "a passport from another EU country that"
+                  "legend_str_3": "a passport from another EU country"
                 },
                 {
                   "name": "Europe: Other Europe: Rest of Europe: Turkey",
@@ -7903,7 +7895,7 @@
                   "code": "passports_all_52a-013",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "a passport from another European country"
+                  "legend_str_3": "a passport from another non-EU European country"
                 },
                 {
                   "name": "Africa: North Africa",
@@ -8218,7 +8210,7 @@
           "code": "residence_length",
           "slug": "length-of-residence-in-the-uk",
           "desc": "Length of stay in the UK (for people not born in the UK).",
-          "long_desc": "Length of residence in the UK",
+          "long_desc": "The length of residence in the UK is derived from the date that a person most recently arrived to live in the UK. It does not include returning from a holiday or short stay outside the UK.\n\nLength of residence is only applicable to usual residents who were not born in the UK. It does not include usual residents born in the UK who have emigrated and since returned - \nthese are recorded in the category born in the UK.",
           "units": "Person",
           "topic_code": "MIG",
           "classifications": [
@@ -8257,7 +8249,7 @@
                   "code": "residence_length_6b-003",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "lived in the UK for 5 years or more, but less than 10 years"
+                  "legend_str_3": "lived in the UK for between 5 and 10 years"
                 },
                 {
                   "name": "2 years or more, but less than 5 years",
@@ -8265,7 +8257,7 @@
                   "code": "residence_length_6b-004",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "lived in the UK for 2 years or more, but less than 5 years"
+                  "legend_str_3": "lived in the UK for between 2 and 5 years"
                 },
                 {
                   "name": "Less than 2 years",
@@ -8645,7 +8637,7 @@
           "name": "Unemployment history",
           "code": "has_ever_worked",
           "slug": "unemployment-history",
-          "desc": "Classifies people who are unemployed into short-term unemployment, long-term unemployment and those who have never worked.",
+          "desc": "Whether people who are unemployed have been unemployed short-term, long-term, or have never worked.",
           "long_desc": "Unemployment history",
           "units": "Person",
           "topic_code": "LAB",
@@ -9100,7 +9092,7 @@
                   "code": "industry_current_88a-038",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "work in",
-                  "legend_str_3": "construction of buildings,civil engineering or specialised construction activities"
+                  "legend_str_3": "construction of buildings, civil engineering or specialised construction activities"
                 },
                 {
                   "name": "45 Wholesale and retail trade and repair of motor vehicles and motorcycles",
@@ -9172,7 +9164,7 @@
                   "code": "industry_current_88a-047",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "work in",
-                  "legend_str_3": "postal orcourier activities"
+                  "legend_str_3": "postal or courier activities"
                 },
                 {
                   "name": "55 Accommodation",
@@ -9502,7 +9494,7 @@
           "name": "National Statistics Socio-economic Classification (NS-SeC)",
           "code": "ns_sec",
           "slug": "national-statistics-socio-economic-classification-ns-sec",
-          "desc": "Classifies people's socioeconomic position based on their occupation and other job characteristics.",
+          "desc": "People's socioeconomic position based on their occupation and other job characteristics.",
           "long_desc": "National Statistics Socio-economic Classification (NS-SeC)",
           "units": "Person",
           "topic_code": "LAB",
@@ -9695,7 +9687,7 @@
           "name": "Method of travel to workplace",
           "code": "transport_to_workplace",
           "slug": "method-of-travel-to-workplace",
-          "desc": "Method of travel to workplace.",
+          "desc": "How people travel from their home to their workplace.",
           "long_desc": "A person's place of work and their method of travel to work. This is the 2001 method of producing travel to work variables.\n \n\"Work mainly from home\" applies to someone who indicated their place of work as their home address and travelled to work by driving a car or van (e.g. visiting clients).",
           "units": "Person",
           "topic_code": "TTW",

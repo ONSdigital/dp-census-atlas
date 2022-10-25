@@ -1,7 +1,7 @@
 import { get } from "svelte/store";
 import { appBasePath } from "../buildEnv";
 import content from "./content";
-import { appendBaseUrlToCategories, mergeVariableGroups } from "../helpers/contentHelpers";
+import { appendBaseUrlToCategories, mergeVariableGroups, sortVariableGroupVariables } from "../helpers/contentHelpers";
 import { contentStore } from "../stores/stores";
 import type { ContentConfig, ContentTree, VariableGroup } from "../types";
 
@@ -78,6 +78,9 @@ export const setContentStoreOnce = async () => {
   // merge variableGroups
   const allVariableGroups = rawContent.flatMap((ct) => ct.contentJson.content);
   const mergedVariableGroups = mergeVariableGroups(allVariableGroups as VariableGroup[]);
+
+  // alphabetically sort variables within their variableGroups
+  sortVariableGroupVariables(mergedVariableGroups)
 
   // write to store
   contentStore.set({

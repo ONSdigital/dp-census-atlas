@@ -48,7 +48,7 @@
 "Population","hh_deprivation","DEM","hh_deprivation","oa,msoa,lad"
 "Population","hh_family_composition","DEM","hh_family_composition_4a","oa,msoa,lad"
 "Population","hh_family_composition","DEM","hh_family_composition_15a","oa,msoa,lad"
-"Population","hh_multi_ethnic_group","DEM","hh_multi_ethnic_group","oa,msoa,lad"
+"Identity","hh_multi_ethnic_group","DEM","hh_multi_ethnic_group","oa,msoa,lad"
 "Population","hh_size","DEM","hh_size_5a","oa,msoa,lad"
 "Population","hh_size","DEM","hh_size_9a","oa,msoa,lad"
 "Population","legal_partnership_status","DEM","legal_partnership_status_3a","oa,msoa,lad"

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-10-21-11-51-31",
-    "spec_file": "2021-content-spec.json",
+    "created_at": "2022-10-25-11-39-55",
+    "spec_file": "2021-content-spec-v2.json",
     "release": "2021-LAB"
   },
   "content": [
@@ -194,7 +194,7 @@
           "name": "Unemployment history",
           "code": "has_ever_worked",
           "slug": "unemployment-history",
-          "desc": "Classifies people who are unemployed into short-term unemployment, long-term unemployment and those who have never worked.",
+          "desc": "Whether people who are unemployed have been unemployed short-term, long-term, or have never worked.",
           "long_desc": "Unemployment history",
           "units": "Person",
           "topic_code": "LAB",
@@ -649,7 +649,7 @@
                   "code": "industry_current_88a-038",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "work in",
-                  "legend_str_3": "construction of buildings,civil engineering or specialised construction activities"
+                  "legend_str_3": "construction of buildings, civil engineering or specialised construction activities"
                 },
                 {
                   "name": "45 Wholesale and retail trade and repair of motor vehicles and motorcycles",
@@ -721,7 +721,7 @@
                   "code": "industry_current_88a-047",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "work in",
-                  "legend_str_3": "postal orcourier activities"
+                  "legend_str_3": "postal or courier activities"
                 },
                 {
                   "name": "55 Accommodation",
@@ -1051,7 +1051,7 @@
           "name": "National Statistics Socio-economic Classification (NS-SeC)",
           "code": "ns_sec",
           "slug": "national-statistics-socio-economic-classification-ns-sec",
-          "desc": "Classifies people's socioeconomic position based on their occupation and other job characteristics.",
+          "desc": "People's socioeconomic position based on their occupation and other job characteristics.",
           "long_desc": "National Statistics Socio-economic Classification (NS-SeC)",
           "units": "Person",
           "topic_code": "LAB",

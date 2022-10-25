@@ -3,7 +3,7 @@ import { page } from "$app/stores";
 import mapboxgl, { GeoJSONSource, Map } from "mapbox-gl";
 import { fromEvent, merge } from "rxjs";
 import { throttleTime } from "rxjs/operators";
-import type { GeoType } from "../types";
+import type { GeoType, GeographyInfo } from "../types";
 import { geography } from "../stores/geography";
 import { englandAndWalesBbox, preventFlyToGeography } from "../helpers/geographyHelper";
 import { selectGeography } from "../helpers/navigationHelper";
@@ -35,7 +35,9 @@ export const initMap = (container: HTMLElement) => {
     viz.subscribe((value) => {
       renderMapViz(map, value);
     });
-    //     // listenToSelectedGeographyStore(map);
+    geography.subscribe((geography) => {
+      listenToSelectedGeographyStore(map, geography);
+    });
   });
 
   merge(fromEvent(map, "load"), fromEvent(map, "move"), fromEvent(map, "zoom"))
@@ -70,7 +72,7 @@ const setViewportStoreAndLayerVisibility = (map: mapboxgl.Map) => {
   });
 };
 
-const getGeoTypeForFeatureDensity = (map: mapboxgl.Map): GeoType => {
+const getGeoTypeForFeatureDensity = (map: mapboxgl.Map ): GeoType => {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore (queryRenderedFeatures typings appear to be wrong)
   const features = map.queryRenderedFeatures({ layers: ["centroids"] });
@@ -102,28 +104,26 @@ const setMapLayerVisibility = (map: mapboxgl.Map, geoType: GeoType) => {
   });
 };
 
-const listenToSelectedGeographyStore = (map: mapboxgl.Map) => {
-  geography.subscribe((geography) => {
-    if (geography && map.isStyleLoaded()) {
-      if (geography.geoType === "ew") {
-        // do we want to reset the map view?
-        map.setZoom(defaultZoom);
-        map.setCenter(new mapboxgl.LngLatBounds(englandAndWalesBbox).getCenter());
-      } else {
-        const bounds = new mapboxgl.LngLatBounds(geography.bbox);
-        const source = map.getSource("selected-geography") as GeoJSONSource;
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore the types here are useless
-        source.setData(geography.boundary);
-        // console.log("preventFlyToGeographyStore", get(preventFlyToGeographyStore));
-        // console.log("geography", geography.geoCode);
-        if (geography.geoCode !== get(preventFlyToGeographyStore)) {
-          map.fitBounds(bounds, { padding: 300, animate: false });
-          preventFlyToGeographyStore.set(undefined);
-        }
+const listenToSelectedGeographyStore = (map: mapboxgl.Map, geography: GeographyInfo) => {
+  if (geography && map.isStyleLoaded()) {
+    if (geography.geoType === "ew") {
+      // do we want to reset the map view?
+      map.setZoom(defaultZoom);
+      map.setCenter(new mapboxgl.LngLatBounds(englandAndWalesBbox).getCenter());
+    } else {
+      const bounds = new mapboxgl.LngLatBounds(geography.bbox);
+      const source = map.getSource("selected-geography") as GeoJSONSource;
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore the types here are useless
+      source.setData(geography.boundary);
+      // console.log("preventFlyToGeographyStore", get(preventFlyToGeographyStore));
+      // console.log("geography", geography.geoCode);
+      if (geography.geoCode !== get(preventFlyToGeographyStore)) {
+        map.fitBounds(bounds, { padding: 300, animate: false });
+        preventFlyToGeographyStore.set(undefined);
       }
     }
-  });
+  }
 };
 
 const setPosition = (map: mapboxgl.Map, animate = false) => {

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-10-24-15-46-15",
-    "spec_file": "2021-content-spec.json",
+    "created_at": "2022-10-25-11-39-55",
+    "spec_file": "2021-content-spec-v2.json",
     "release": "2021-LAB"
   },
   "content": [
@@ -649,7 +649,7 @@
                   "code": "industry_current_88a-038",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "work in",
-                  "legend_str_3": "construction of buildings,civil engineering or specialised construction activities"
+                  "legend_str_3": "construction of buildings, civil engineering or specialised construction activities"
                 },
                 {
                   "name": "45 Wholesale and retail trade and repair of motor vehicles and motorcycles",
@@ -721,7 +721,7 @@
                   "code": "industry_current_88a-047",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "work in",
-                  "legend_str_3": "postal orcourier activities"
+                  "legend_str_3": "postal or courier activities"
                 },
                 {
                   "name": "55 Accommodation",

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-10-24-15-46-15",
-    "spec_file": "2021-content-spec.json",
+    "created_at": "2022-10-25-11-39-55",
+    "spec_file": "2021-content-spec-v2.json",
     "release": "2021-HUC"
   },
   "content": [
@@ -15,7 +15,7 @@
           "code": "disability",
           "slug": "disability",
           "desc": "People with a long-term health problem or disability, including relating to old-age.",
-          "long_desc": "People who assessed their day-to-day activities as limited by long-term physical or mental health conditions or illnesses are considered disabled. This definition of a disabled person meets the harmonised standard for measuring disability and is in line with the Equality Act (2010). \n\nAdditional \nCensus 2021 asks the Government Statistical Service harmonised questions (used on several existing large surveys), which are two separate questions designed to capture a person's disability according to the Equality Act (2010). These replace a single question in the 2011 census that showed whether a long-term health problem or disability limited a person's day-to-day activities. \n  \nThe Census 2021 questions indicate: \n* whether a person has long term physical or mental health conditions or illnesses \n* the extent to which any indicated long term physical or mental health conditions or illnesses limit their day-to-day activities \n\nTo allow comparability with Census 2011, Scotland and Northern Ireland Census 2021 continue to ask the same question as the in the Census 2011. In Northern Ireland, disability status is defined according to the Disability Discrimination Act (1995). Please see the Health and Unpaid Care topic report for more details.",
+          "long_desc": "People who assessed their day-to-day activities as limited by long-term physical or mental health conditions or illnesses are considered disabled. This definition of a disabled person meets the harmonised standard for measuring disability and is in line with the Equality Act (2010). \n\nAdditional \nCensus 2021 asks the Government Statistical Service harmonised questions (used on several existing large surveys), which are two separate questions designed to capture a person's disability according to the Equality Act (2010). These replace a single question in the 2011 census that showed whether a long-term health problem or disability limited a person's day-to-day activities. \n  \nThe Census 2021 questions indicate: \n\n* whether a person has long term physical or mental health conditions or illnesses \n* the extent to which any indicated long term physical or mental health conditions or illnesses limit their day-to-day activities \n\nTo allow comparability with Census 2011, Scotland and Northern Ireland Census 2021 continue to ask the same question as the in the Census 2011. In Northern Ireland, disability status is defined according to the Disability Discrimination Act (1995). Please see the Health and Unpaid Care topic report for more details.",
           "units": "Person",
           "topic_code": "HUC",
           "classifications": [

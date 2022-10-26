@@ -1,17 +1,6 @@
 import type { Variable, Category, Classification } from "../types";
 import { formatPercentage, formatTemplateString } from "./categoryHelpers";
 
-describe("formatPercentage", () => {
-  test("rounds percentage to nearest single decimal place and returns as string - single decimal place input", () => {
-    expect(formatPercentage(10.1)).toEqual("10.1");
-  });
-  test("rounds percentage to nearest single decimal place and returns as string - no decimal place input", () => {
-    expect(formatPercentage(10)).toEqual("10.0");
-  });
-  test("rounds percentage to nearest single decimal place and returns as string - multiple decimal place input", () => {
-    expect(formatPercentage(10.58098340980878)).toEqual("10.6");
-  });
-});
 
 describe("formatTemplateString", () => {
   const testCategory: Category = {

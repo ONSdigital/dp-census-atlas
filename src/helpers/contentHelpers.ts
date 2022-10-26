@@ -95,3 +95,14 @@ const compareNames = (obj1, obj2) => {
 export const sortVariableGroupVariables = (variableGroups: VariableGroup[]) => {
   variableGroups.forEach( (vg) => {vg.variables.sort(compareNames)})
 };
+
+/*
+  Return "%" if variable is a percentage variable (all except two are!), otherwise return ""
+*/
+export const getVariableDataSuffix = (variable: Variable) => {
+  if (["population_density", "median_age"].includes(variable.code)) {
+    return ""
+  } else {
+    return "%"
+  }
+}

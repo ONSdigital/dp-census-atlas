@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-10-26-10-02-28",
+    "created_at": "2022-10-26-10-49-04",
     "spec_file": "2021-content-spec-v2.json",
     "release": "2021-ALL"
   },
@@ -4548,9 +4548,9 @@
                   "name": "Persons per square kilometre",
                   "slug": "persons-per-square-kilometre",
                   "code": "population_density-001",
-                  "legend_str_1": "(population density of {location}",
+                  "legend_str_1": "population density of {location}",
                   "legend_str_2": "in",
-                  "legend_str_3": "persons per square kilometre)"
+                  "legend_str_3": "persons per square kilometre"
                 }
               ]
             }
@@ -6302,9 +6302,9 @@
                   "name": "Median age",
                   "slug": "median-age",
                   "code": "median_age-001",
-                  "legend_str_1": "(average (median) age of people in {location}",
+                  "legend_str_1": "average (median) age of people in {location}",
                   "legend_str_2": "in",
-                  "legend_str_3": "years)"
+                  "legend_str_3": "years"
                 }
               ]
             }

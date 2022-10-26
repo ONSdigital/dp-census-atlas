@@ -12,6 +12,8 @@
   $: categoryValueForSelectedGeography = $viz?.places.find((p) => p.geoCode === $geography?.geoCode)?.ratioToTotal;
   $: categoryValueForHoveredGeography = $viz?.places.find((p) => p.geoCode === $hovered?.geoCode)?.ratioToTotal;
   $: breaks = $viz ? [$viz?.minMaxVals[0], ...$viz.breaks] : undefined;
+
+  const legendTextClass = "text-sm sm:text-base lg:text-lg xl:text-xl";
 </script>
 
 <!--                      | no geography selected  |  geography selected    -->
@@ -19,7 +21,7 @@
 <!-- no category selected | show no legend at all  | just show the geography name  -->
 <!--    category selected | show EW legend, no %   | full legend, with percentage  -->
 
-{#if $viz?.params?.category || $geography?.geoType !== "ew"}
+{#if $viz?.params?.category && $geography?.geoType !== "ew"}
   <div class={`absolute bottom-3 lg:bottom-8 flex w-full justify-center`}>
     <div
       class="z-abovemap w-full max-w-[50rem] mx-3 lg:mx-4 bg-white bg-opacity-90 px-3 lg:px-5 py-2 lg:py-3 border-[1px] lg:border-[1px] border-ons-grey-15"
@@ -42,7 +44,7 @@
           </div>
           <div class="flex-grow leading-[0px]">
             <div class="">
-              <span class="text-xs sm:text-base md:text-xl">
+              <span class={legendTextClass}>
                 {formatTemplateString(
                   $viz.params.variable,
                   $viz.params.category,
@@ -51,7 +53,7 @@
                 )}
               </span>
               <GeoTypeBadge geoType={$geography?.geoType} />
-              <span class="text-xs sm:text-base md:text-xl">
+              <span class={legendTextClass}>
                 {formatTemplateString(
                   $viz.params.variable,
                   $viz.params.category,
@@ -60,7 +62,7 @@
                 )}
               </span>
             </div>
-            <div class="text-xs sm:text-base md:text-xl font-bold">
+            <div class={`${legendTextClass} font-bold`}>
               {formatTemplateString(
                 $viz.params.variable,
                 $viz.params.category,
@@ -74,13 +76,13 @@
         <!-- partial legend -->
         <div class="">
           <div class="">
-            <span class="text-xs sm:text-base md:text-xl">
+            <span class={legendTextClass}>
               {$geography.displayName}
             </span>
             <GeoTypeBadge geoType={$geography?.geoType} />
           </div>
           {#if $viz?.params?.category}
-            <div class="text-xs sm:text-base md:text-xl font-bold">
+            <div class={`${legendTextClass} font-bold`}>
               {$viz.params.category.name}
             </div>
           {/if}

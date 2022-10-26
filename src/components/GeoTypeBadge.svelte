@@ -5,7 +5,9 @@
 </script>
 
 {#if geoType && geoType !== "ew"}
-  <span class="text-xs md:text-sm bg-ons-census text-white font-bold px-1 rounded-sm mx-0 md:mx-1 mb-5">
+  <div
+    class="inline-block align-middle text-xs md:text-sm bg-ons-census text-white font-bold px-1 rounded-sm mx-0 md:mx-1 -mt-0.5 lg:-mt-1"
+  >
     {geoType.toUpperCase()}
-  </span>
+  </div>
 {/if}

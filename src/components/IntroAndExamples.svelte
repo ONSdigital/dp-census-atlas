@@ -1,6 +1,6 @@
 <script lang="ts">
   import { isInitialReleasePeriod } from "../helpers/contentHelpers";
-  import { contentStore } from "../stores/stores";
+  import { content } from "../stores/content";
   import MaterialIcon from "./MaterialIcon.svelte";
   import Examples from "./Examples.svelte";
 
@@ -11,7 +11,7 @@
   <span class="pr-3"
     >Use our maps to find out what people's lives were like across England and Wales in March 2021.</span
   >
-  {#if !isInitialReleasePeriod($contentStore)}
+  {#if !isInitialReleasePeriod($content)}
     <div class="inline-flex items-center gap-1">
       <div class="text-xs -ml-0.5">
         <MaterialIcon kind="arrowForwardIos" orientation={suggestions ? "e" : "n"} />

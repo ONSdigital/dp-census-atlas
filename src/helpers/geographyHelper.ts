@@ -1,6 +1,6 @@
-import { preventFlyToGeographyStore } from "../stores/stores";
+import { preventFlyToGeographyStore } from "../stores/flyto";
 
-export const englandAndWalesBbox = [2, 58, -6, 48] as [number, number, number, number];
+export const englandAndWalesBbox = [1, 55.8, -5, 49.7] as [number, number, number, number];
 
 export const preventFlyToGeography = (geoCode: string) => {
   preventFlyToGeographyStore.set(geoCode);

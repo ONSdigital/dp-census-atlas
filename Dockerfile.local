@@ -1,0 +1,8 @@
+FROM node:latest
+
+COPY build build
+COPY package.json .
+
+RUN npm install --silent
+
+CMD PORT=${PORT:-28100} ENV_NAME=netlify node build/index.js

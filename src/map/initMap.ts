@@ -31,7 +31,7 @@ export const initMap = (container: HTMLElement) => {
   map.addControl(new mapboxgl.NavigationControl({ showCompass: false }));
 
   map.on("load", () => {
-    initMapLayers(map);
+    initMapLayers(map, get(geography));
     viz.subscribe((value) => {
       renderMapViz(map, value);
     });

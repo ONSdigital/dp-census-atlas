@@ -106,6 +106,15 @@ export type Bbox = {
   south: number;
 };
 
+export type LoadedGeographies = {
+  categoryCode: string;
+  geoCodes: {
+    lad: Set<string>;
+    msoa: Set<string>;
+    oa: Set<string>;
+  };
+};
+
 export type LocaleSuggestions = [
   {
     label: string;

@@ -72,7 +72,7 @@ const setViewportStoreAndLayerVisibility = (map: mapboxgl.Map) => {
   });
 };
 
-const getGeoTypeForFeatureDensity = (map: mapboxgl.Map ): GeoType => {
+const getGeoTypeForFeatureDensity = (map: mapboxgl.Map): GeoType => {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore (queryRenderedFeatures typings appear to be wrong)
   const features = map.queryRenderedFeatures({ layers: ["centroids"] });

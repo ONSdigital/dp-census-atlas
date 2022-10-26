@@ -40,7 +40,7 @@ export const initMap = (container: HTMLElement) => {
     });
   });
 
-  merge(fromEvent(map, "load"), fromEvent(map, "move"), fromEvent(map, "zoom"))
+  merge(fromEvent(map, "load"), fromEvent(map, "move"))
     .pipe(
       throttleTime(1000, undefined, { leading: false, trailing: true }), // don't discard the final movement
     )

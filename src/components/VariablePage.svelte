@@ -1,18 +1,11 @@
 <script lang="ts">
   import { page } from "$app/stores";
+  import { selection } from "../stores/selection";
   import { number2words } from "../util/numberUtil";
   import { capitalizeFirstLetter } from "../util/stringUtil";
-  import RightChevron from "./RightChevron.svelte";
-  import { contentStore } from "../stores/stores";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
   import Heading from "./Heading.svelte";
   import AreaPanel from "./AreaPanel.svelte";
-
-  $: params = $page.params;
-  $: variableGroupSlug = params.variableGroup;
-  $: variableGroup = $contentStore.variableGroups.find((vg) => vg.slug === variableGroupSlug);
-  $: variableSlug = params.variable;
-  $: variable = variableGroup.variables.find((v) => v.slug === variableSlug);
 </script>
 
 <!-- todo: <svelte:head> page title -->
@@ -28,24 +21,23 @@
       <nav class="flex flex-wrap items-center gap-2 text-xl" aria-label="Breadcrumb">
         <a class="hyperlink" href={buildHyperlink($page.url)}>Home</a>
         <div class="text-sm font-extrabold text-slate-500" aria-hidden>&gt;</div>
-        <a class="hyperlink" href={buildHyperlink($page.url, { variableGroup: variableGroup.slug })}
-          >{variableGroup.name}</a
+        <a class="hyperlink" href={buildHyperlink($page.url, { variableGroup: $selection.variableGroup.slug })}
+          >{$selection.variableGroup.name}</a
         >
         <div class="text-sm font-extrabold text-slate-500" aria-hidden>&gt;</div>
-        <div class="">{variable.name}</div>
+        <div class="">{$selection.variable.name}</div>
       </nav>
       <div class="mt-4 mb-2">
-        <!-- {variable.desc} -->
-        This variable is available in {number2words(variable.classifications.length)} classifications
+        This variable is available in {number2words($selection.variable.classifications.length)} classifications
       </div>
 
       <div class="flex flex-col mb-6 last:border-b-[1px] border-b-slate-300">
-        {#each variable.classifications as classification}
+        {#each $selection.variable.classifications as classification}
           <a
             class="border-t-[1px] border-t-slate-300 py-2 group"
             href={buildHyperlink($page.url, {
-              variableGroup: variableGroup.slug,
-              variable: variable.slug,
+              variableGroup: $selection.variableGroup.slug,
+              variable: $selection.variable.slug,
               category: {
                 classification: classification.slug,
                 category: classification.categories[0].slug,
@@ -69,7 +61,7 @@
               </div>
             </div>
             <div class="">
-              {variable.name} in {classification.categories.length} categories.
+              {$selection.variable.name} in {classification.categories.length} categories.
             </div>
           </a>
         {/each}
@@ -77,7 +69,7 @@
     </section>
   </div>
 
-  {#if variable.classifications.length === 1}
+  {#if $selection.variable.classifications.length === 1}
     <div class="px-6">This is the only classification available</div>
   {/if}
 </div>

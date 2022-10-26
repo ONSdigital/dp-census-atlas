@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { contentStore } from "../../../../stores/stores";
+  import { content } from "../../../../stores/content";
 </script>
 
 <pre>
-  {JSON.stringify($contentStore, null, 2)}
+  {JSON.stringify($content, null, 2)}
 </pre>

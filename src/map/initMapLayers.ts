@@ -1,5 +1,8 @@
-import { layers, layersWithSiblings } from "./layers";
+import { hovered } from "../stores/hovered";
+import { layersWithSiblings } from "./layers";
 import { centroidsGeojson } from "../helpers/quadsHelper";
+import { distinctUntilChanged, fromEventPattern } from "rxjs";
+import { map as project } from "rxjs/operators";
 
 export const initMapLayers = (map) => {
   layersWithSiblings().forEach((l) => {
@@ -62,6 +65,21 @@ export const initMapLayers = (map) => {
       "place_other",
     );
 
+    fromEventPattern((handler) => {
+      map.on("mousemove", `${l.layer.name}-features`, handler);
+    })
+      .pipe(
+        project((e: any) => ({
+          geoType: l.layer.name,
+          geoCode: e?.features?.[0].id,
+          displayName: e?.features?.[0].properties?.[l.layer.displayNameProperty],
+        })),
+        distinctUntilChanged((prev, curr) => prev.geoCode === curr.geoCode),
+      )
+      .subscribe((g) => {
+        hovered.set({ ...g });
+      });
+
     // cursor to pointer when hovered
     map.on("mouseenter", `${l.layer.name}-features`, () => {
       map.getCanvas().style.cursor = "pointer";
@@ -102,6 +120,29 @@ export const initMapLayers = (map) => {
     });
   });
 
+  // selected geography layer
+  map.addSource("selected-geography", {
+    type: "geojson",
+    data: {
+      type: "Feature",
+      properties: {},
+      geometry: {
+        type: "Polygon",
+        coordinates: [],
+      },
+    },
+  });
+  map.addLayer({
+    id: "selected-geography-outline",
+    type: "line",
+    source: "selected-geography",
+    layout: {},
+    paint: {
+      "line-color": "#000",
+      "line-width": 3,
+    },
+  });
+
   // add OA quad centroid layer for feature density calculation
   map.addSource("centroids", centroidsGeojson);
   map.addLayer({
@@ -113,23 +154,4 @@ export const initMapLayers = (map) => {
       "circle-color": "rgba(255,255,255,0)",
     },
   });
-
-  // todo: use rxjs to implement better hover
-  // fromEvent(map, "mousemove")
-  //   .pipe(
-  //     throttleTime(1000),
-  //     filter((e: any) => {
-  //       console.log(e);
-  //       const features = map.queryRenderedFeatures(e.point);
-  //       // console.log(features);
-  //       return true;
-  //     }),
-  //   )
-  //   .subscribe((e: any) => {
-  //     // console.log(features);
-  //   });
-
-  // map.on("mousemove", "lad-features", (e) => {
-  //   console.log(e);
-  // });
 };

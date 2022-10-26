@@ -7,6 +7,7 @@ export const layers = [
     minZoom: 5,
     sourceMaxZoom: 12, // The maximum zoom level that the tiles are available for
     idProperty: "areacd",
+    displayNameProperty: "areanm",
     sourceLayer: "lad",
   },
   {
@@ -15,6 +16,7 @@ export const layers = [
     minZoom: 6,
     sourceMaxZoom: 12,
     idProperty: "areacd",
+    displayNameProperty: "hclnm",
     sourceLayer: "msoa",
   },
   {
@@ -23,6 +25,7 @@ export const layers = [
     minZoom: 8,
     sourceMaxZoom: 12,
     idProperty: "areacd",
+    displayNameProperty: "areacd",
     sourceLayer: "oa",
   },
 ];

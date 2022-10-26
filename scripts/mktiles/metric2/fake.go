@@ -31,7 +31,7 @@ func (m *M) Fake(geos []types.Geocode, seed int64) {
 			if stride == 0 || n%stride == 0 {
 				fmt.Fprintf(os.Stderr, " %d/%d %d%%\r", n, ncells, (n*100)/ncells)
 			}
-			m.tab[tabrow][tabcol] = types.Value(rnd.Float64())
+			m.tab[tabrow][tabcol] = types.Value(rnd.Float64() * 100.0)
 		}
 	}
 	fmt.Fprintf(os.Stderr, " %d/%d %d%%\n", ncells, ncells, 100)

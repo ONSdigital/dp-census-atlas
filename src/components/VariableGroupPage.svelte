@@ -4,11 +4,8 @@
   import { selection } from "../stores/selection";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
   import { getDefaultChoroplethClassification } from "../helpers/variableHelpers";
-  import Heading from "./Heading.svelte";
   import AreaPanel from "./AreaPanel.svelte";
 </script>
-
-<Heading />
 
 <div class="px-6">
   <AreaPanel />

@@ -3,6 +3,7 @@
   import Map from "./Map.svelte";
   import MapTips from "./MapTips.svelte";
   import MapLegend from "./MapLegend.svelte";
+  import Heading from "./Heading.svelte";
   import OnsAnalyticsBanner from "./OnsAnalyticsBanner.svelte";
   import { selection } from "../stores/selection";
 
@@ -24,6 +25,7 @@
       class="flex-1 grow-[3] lg:min-w-[25rem] xl:min-w-[30rem] xl:max-w-[35rem] overflow-y-auto flex flex-col"
       class:hidden={$selection.embed}
     >
+      <Heading />
       <slot />
     </div>
     <div class="lg:block flex-1 grow-[7] relative">

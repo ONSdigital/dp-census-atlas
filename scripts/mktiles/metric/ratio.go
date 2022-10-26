@@ -25,7 +25,7 @@ func (m *M) CalcRatios() error {
 				return fmt.Errorf("bad total for cat %s geo %s", totcat, geo)
 			}
 
-			m.tab[cat][geo] = val / tot
+			m.tab[cat][geo] = val / tot * 100.0
 		}
 	}
 	return nil

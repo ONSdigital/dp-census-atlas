@@ -31,7 +31,7 @@ const (
 func main() {
 	indir := flag.String("I", "./in/", "directory holding input files")
 	outdir := flag.String("O", "./out/", "directory to hold output files (must be empty)")
-	doRatios := flag.Bool("R", false, "calculate ratios (eg 2011 data)")
+	doRatios := flag.Bool("R", false, "calculate percentages (eg 2011 data)")
 	doFake := flag.Bool("F", false, "generate fake metrics")
 	force := flag.Bool("f", false, "force using an existing out directory")
 	flag.Parse()

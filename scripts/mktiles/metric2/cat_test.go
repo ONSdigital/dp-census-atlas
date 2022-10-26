@@ -102,12 +102,12 @@ func Test_CalcRatios(t *testing.T) {
 					cat  string
 					want float64
 				}{
-					{"geoA", "CAT1A2", 0.25},
-					{"geoA", "CAT1A3", 0.5},
-					{"geoB", "CAT1A2", 0.125},
-					{"geoB", "CAT1A3", 0.25},
-					{"geoC", "CAT1A2", 0.25},
-					{"geoC", "CAT1A3", 0.20},
+					{"geoA", "CAT1A2", 25},
+					{"geoA", "CAT1A3", 50},
+					{"geoB", "CAT1A2", 12.5},
+					{"geoB", "CAT1A3", 25},
+					{"geoC", "CAT1A2", 25},
+					{"geoC", "CAT1A3", 20},
 				}
 				for _, t := range want {
 					tabrow := m.geoidx[types.Geocode(t.geo)]

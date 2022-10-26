@@ -43,7 +43,7 @@ func (m *M) CalcRatios() error {
 				return fmt.Errorf("CalcRatio: %s %s: total is 0", geo, cat)
 			}
 
-			m.tab[tabrow][tabcol] = types.Value(val/tot)
+			m.tab[tabrow][tabcol] = types.Value(val/tot * 100.0)
 		}
 	}
 	return nil

@@ -1,6 +1,7 @@
 <script>
   import { viz } from "../stores/viz";
   import { geography } from "../stores/geography";
+  import { hovered } from "../stores/hovered";
   import { formatTemplateString } from "../helpers/categoryHelpers";
   import { choroplethColours } from "../helpers/choroplethHelpers";
   import { getVariableDataSuffix } from "../helpers/contentHelpers";
@@ -9,6 +10,7 @@
   import GeoTypeBadge from "./GeoTypeBadge.svelte";
 
   $: categoryValueForSelectedGeography = $viz?.places.find((p) => p.geoCode === $geography?.geoCode)?.ratioToTotal;
+  $: categoryValueForHoveredGeography = $viz?.places.find((p) => p.geoCode === $hovered?.geoCode)?.ratioToTotal;
   $: breaks = $viz ? [$viz?.minMaxVals[0], ...$viz.breaks] : undefined;
 </script>
 
@@ -22,6 +24,14 @@
     <div
       class="z-abovemap w-full max-w-[50rem] mx-3 lg:mx-4 bg-white bg-opacity-90 px-3 lg:px-5 py-2 lg:py-3 border-[1px] lg:border-[1px] border-ons-grey-15"
     >
+      <!-- <div class="mb-3">
+        <div class="">
+          {categoryValueForHoveredGeography}
+        </div>
+        <div class="">
+          {JSON.stringify($hovered)}
+        </div>
+      </div> -->
       {#if $viz?.params?.category && categoryValueForSelectedGeography}
         <!-- full legend -->
         <div class="flex gap-3 items-center">

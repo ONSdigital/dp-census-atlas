@@ -1,5 +1,5 @@
 import * as dsv from "d3-dsv"; // https://github.com/d3/d3/issues/3469
-import type { Bbox, Category, DataTile, GeoType } from "src/types";
+import type { Bbox, Category, DataTile, GeographyData, GeoType } from "src/types";
 import { bboxToDataTiles, englandAndWales } from "../helpers/spatialHelper";
 import { uniqueRoundedBreaks, roundedData } from "../helpers/percentageHelpers";
 
@@ -84,12 +84,9 @@ export const fetchBreaks = async (args: {
 /*
   Fetch json with bounding box for geography.
 */
-export const fetchGeographyInfo = async (geoCode: string) => {
-  if (geoCode === englandAndWales.meta.code) {
-    return JSON.stringify(englandAndWales);
-  }
+export const fetchGeography = async (geoCode: string) => {
+  // : Promise<GeographyData>
   const url = `${geoBaseUrl}/${geoCode}.geojson`;
   const response = await fetch(url);
-  const data = await response.text();
-  return data;
+  return await response.json();
 };

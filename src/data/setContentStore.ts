@@ -2,7 +2,7 @@ import { get } from "svelte/store";
 import { appBasePath } from "../buildEnv";
 import content from "./content";
 import { appendBaseUrlToCategories, mergeVariableGroups, sortVariableGroupVariables } from "../helpers/contentHelpers";
-import { contentStore } from "../stores/stores";
+import { content as contentStore } from "../stores/content";
 import type { ContentConfig, ContentTree, VariableGroup } from "../types";
 
 /*
@@ -27,7 +27,7 @@ const fetchContent = async () => {
           const contentJson = await resp.json();
           if (typeof contentJson === "string") {
             console.log(`Content json file ${ctcfg.contentJsonUrl} could not be fetched: ${contentJson}.`);
-            return null
+            return null;
           } else {
             return {
               contentConfig: ctcfg,
@@ -80,7 +80,7 @@ export const setContentStoreOnce = async () => {
   const mergedVariableGroups = mergeVariableGroups(allVariableGroups as VariableGroup[]);
 
   // alphabetically sort variables within their variableGroups
-  sortVariableGroupVariables(mergedVariableGroups)
+  sortVariableGroupVariables(mergedVariableGroups);
 
   // write to store
   contentStore.set({

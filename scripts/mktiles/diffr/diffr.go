@@ -23,10 +23,12 @@ func CompareDirs(left, right string) error {
 	}
 
 	for name, leftbuf := range leftFiles {
+		leftbuf = bytes.ReplaceAll(leftbuf, []byte("\r"), nil)
 		rightbuf, ok := rightFiles[name]
 		if !ok {
 			return fmt.Errorf("file %s not in dir %s", name, right)
 		}
+		rightbuf = bytes.ReplaceAll(rightbuf, []byte("\r"), nil)
 		if !bytes.Equal(rightbuf, leftbuf) {
 			return fmt.Errorf("file %s does not match", name)
 		}

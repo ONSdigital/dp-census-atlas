@@ -1,12 +1,9 @@
 <script lang="ts">
   import { page } from "$app/stores";
-  import { selectedGeographyStore } from "../stores/stores";
+  import { geography } from "../stores/geography";
   import GeoSearch from "./AreaSearch.svelte";
   import Icon from "./MaterialIcon.svelte";
   import { deselectGeography } from "../helpers/navigationHelper";
-
-  $: selectedGeographyDisplayName = $selectedGeographyStore?.displayName;
-  $: selectedGeographyGeoType = $selectedGeographyStore?.geoType.toUpperCase();
 
   $: open = false;
   const toggleOpen = () => {
@@ -25,11 +22,11 @@
   <label for="area-input" on:click={toggleOpen} class="group w-full text-left hoverable custom-ring">
     <div class="flex items-center gap-2">
       <div class="text-xl">
-        {selectedGeographyDisplayName}
+        {$geography.displayName}
       </div>
-      {#if selectedGeographyGeoType !== "EW"}
+      {#if $geography?.geoType.toUpperCase() !== "EW"}
         <div class="ml-1 text-sm bg-ons-census text-white font-bold px-1 rounded-sm">
-          {selectedGeographyGeoType}
+          {$geography?.geoType.toUpperCase()}
         </div>
         <button
           on:click={resetSelectedGeography}

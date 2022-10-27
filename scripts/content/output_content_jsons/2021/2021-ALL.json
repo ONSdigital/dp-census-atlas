@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-10-27-12-06-38",
+    "created_at": "2022-10-27-12-16-28",
     "spec_file": "2021-content-spec-v2.json",
     "release": "2021-ALL"
   },
@@ -8213,7 +8213,7 @@
           "name": "Length of residence in the UK",
           "code": "residence_length",
           "slug": "length-of-residence-in-the-uk",
-          "desc": "Length of stay in the UK (for people not born in the UK).",
+          "desc": "Length of residence in the UK.",
           "long_desc": "The length of residence in the UK is derived from the date that a person most recently arrived to live in the UK. It does not include returning from a holiday or short stay outside the UK.\n\nLength of residence is only applicable to usual residents who were not born in the UK. It does not include usual residents born in the UK who have emigrated and since returned - \nthese are recorded in the category born in the UK.",
           "units": "Person",
           "topic_code": "MIG",

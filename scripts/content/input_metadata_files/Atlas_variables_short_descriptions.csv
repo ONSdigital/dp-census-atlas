@@ -38,7 +38,7 @@ occupancy_rating_rooms,"Whether a household's accommodation is overcrowded, idea
 occupation_current,Classifies what people aged 16 years and over do as their main job.,The jobs people work in.,
 passports_all,Classifies a person according to the passport or passports they held. This included expired passports or travel documents people were entitled to renew.,The passports people hold.,
 religion_tb,"The religion people connect or identify with (their religious affiliation), whether or not they practice or have belief in it.",The religion people connect or identify with.,
-residence_length,"The length of stay in the UK for someone who was not born in the UK. This is based on when someone last arrived to live in the UK, not including returning from a holiday or short stay outside the UK.",Length of stay in the UK (for people not born in the UK).,
+residence_length,"The length of stay in the UK for someone who was not born in the UK. This is based on when someone last arrived to live in the UK, not including returning from a holiday or short stay outside the UK.",Length of residence in the UK.,
 resident_age,"A person’s age on Census Day, 21 March 2021 in England and Wales. Infants aged under 1 year are classified as 0 years of age","The age of a person on Census Day, 21 March 2021.",
 second_address_type_priority,Indicates whether a person has an alternative address (somewhere they stay for more than 30 days per year) and the type of second address this is.,Whether people have an alternative address (somewhere they stay for more than 30 days per year) and the type of address this is.,
 sex,This is the sex recorded by the person completing the census. The options were “Female” and “Male”. ,The sex recorded by the person completing the census.,

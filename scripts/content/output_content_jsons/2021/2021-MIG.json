@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-10-27-11-52-41",
+    "created_at": "2022-10-27-11-57-51",
     "spec_file": "2021-content-spec-v2.json",
     "release": "2021-MIG"
   },
@@ -14,7 +14,7 @@
           "name": "Age of arrival in the UK",
           "code": "age_arrival_uk",
           "slug": "age-of-arrival-in-the-uk",
-          "desc": "The age people were when they arrived to live in the UK (for people not born in the UK).",
+          "desc": "The age people were when they arrived to live in the UK.",
           "long_desc": "The date a person last arrived to live in the UK and their age. Arrival dates do not include returning from short trips away from the UK.\n\nAge of arrival only applies to usual residents not born in the UK. It does not include usual residents born in the UK who have emigrated and since returned. These are recorded in the category born in the UK.",
           "units": "Person",
           "topic_code": "MIG",

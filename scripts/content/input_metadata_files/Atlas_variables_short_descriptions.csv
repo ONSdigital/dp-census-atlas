@@ -1,6 +1,6 @@
 ﻿variable_mnemonic,Short definition,Atlas short description,Atlas notes
 accommodation_type,The type of building or structure used or available by an individual or household.,The type of buildings people live in.,
-age_arrival_uk,The age that someone who was not born in the UK was when they last arrived to live in the UK. This does not include returning from a holiday or short stay outside of the UK.,The age people were when they arrived to live in the UK (for people not born in the UK).,
+age_arrival_uk,The age that someone who was not born in the UK was when they last arrived to live in the UK. This does not include returning from a holiday or short stay outside of the UK.,The age people were when they arrived to live in the UK.,
 alternative_address_indicator,An address (in or out of the UK) a person stays at for more than 30 days per year that is not their place of usual residence.,An address (in or out of the UK) a person stays at for more than 30 days per year that isn't their place of usual residence.,
 country_of_birth,The country in which a person was born.,Where people were born.,
 disability,"A long-term health problem or disability that limits a person's day-to-day activities, and has lasted, or is expected to last, at least 12 months. This includes problems that are related to old age.","People with a long-term health problem or disability, including relating to old-age.",

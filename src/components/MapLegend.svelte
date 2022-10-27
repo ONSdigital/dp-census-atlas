@@ -51,7 +51,7 @@
 <!-- no category selected | show no legend at all  | just show the geography name  -->
 <!--    category selected | show EW legend, no %   | full legend, with percentage  -->
 
-{#if active.geoType !== "ew" && ($viz?.params?.category || active.geoCode)}
+{#if $viz?.params?.category || active.geoCode}
   <div class={`absolute bottom-3 lg:bottom-8 flex w-full justify-center`}>
     <div
       class="z-abovemap w-full max-w-[50rem] mx-3 lg:mx-4 bg-white bg-opacity-90 px-3 lg:px-5 py-2 lg:py-3 border-[1px] lg:border-[1px] border-ons-grey-15"

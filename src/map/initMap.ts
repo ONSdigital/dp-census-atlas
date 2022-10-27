@@ -13,7 +13,6 @@ import { layers } from "./layers";
 import { style } from "./style";
 import { viewport } from "../stores/viewport";
 import { viz } from "../stores/viz";
-import { preventFlyToGeographyStore } from "../stores/flyto";
 
 const defaultZoom = 6;
 const maxAllowedZoom = 16;
@@ -28,7 +27,7 @@ export const initMap = (container: HTMLElement) => {
     maxZoom: maxAllowedZoom - 0.001, // prevent layers from disappearing at absolute max zoom
   });
 
-  setPosition(map);
+  setPosition(map, get(geography));
   map.addControl(new mapboxgl.NavigationControl({ showCompass: false }));
 
   map.on("load", () => {
@@ -107,33 +106,35 @@ const setMapLayerVisibility = (map: mapboxgl.Map, geoType: GeoType) => {
 
 const listenToSelectedGeographyStore = (map: mapboxgl.Map, geography: GeographyInfo) => {
   if (geography && map.isStyleLoaded()) {
-    if (geography.geoType === "ew") {
-      // do we want to reset the map view?
-      map.setZoom(defaultZoom);
-      map.setCenter(new mapboxgl.LngLatBounds(englandAndWalesBbox).getCenter());
-    } else {
-      const bounds = new mapboxgl.LngLatBounds(geography.bbox);
-      const source = map.getSource("selected-geography") as GeoJSONSource;
-      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-      // @ts-ignore the types here are useless
-      source.setData(geography.boundary);
-      // console.log("preventFlyToGeographyStore", get(preventFlyToGeographyStore));
-      // console.log("geography", geography.geoCode);
-      if (geography.geoCode !== get(preventFlyToGeographyStore)) {
-        map.fitBounds(bounds, { padding: 300, animate: false });
-        preventFlyToGeographyStore.set(undefined);
-      }
+    // set the selected lasso
+    const source = map.getSource("selected-geography") as GeoJSONSource;
+    const boundary = geography.geoType === "ew" ? emptyFeatureCollection : geography.boundary;
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore types here are no good
+    source.setData(boundary);
+
+    // zoom there
+    if (geography.geoType !== "ew") {
+      setPosition(map, geography, { animate: true });
     }
   }
 };
 
-const setPosition = (map: mapboxgl.Map, animate = false) => {
-  const g = get(geography);
+const setPosition = (map: mapboxgl.Map, g: GeographyInfo, options: { animate: boolean } = { animate: false }) => {
   if (g.geoType === "ew") {
     const bounds = new mapboxgl.LngLatBounds(englandAndWalesBbox);
-    map.fitBounds(bounds, { padding: 0, animate });
+    map.fitBounds(bounds, { padding: 0, animate: false });
   } else {
+    // map.flyTo({ center: bounds.getCenter(), zoom: 12, animate: options.animate });
+    const width = map.getContainer().offsetWidth;
     const bounds = new mapboxgl.LngLatBounds(g.bbox);
-    map.fitBounds(bounds, { padding: 200, animate }); // todo: we want padding to be adaptive to screen size!
+    const layer = layers.find((l) => l.name === g.geoType);
+    const geoPadFactor = layer.geoPadFactor;
+    map.fitBounds(bounds, { padding: width / geoPadFactor, animate: options.animate });
   }
+};
+
+const emptyFeatureCollection = {
+  type: "FeatureCollection",
+  features: [],
 };

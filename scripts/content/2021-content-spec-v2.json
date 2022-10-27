@@ -52,11 +52,11 @@
       {
         "insert_before": "sex",
         "variable": {
-          "name": "Average age",
+          "name": "Median age",
           "code": "median_age",
           "slug": "median-age",
-          "desc": "Average age on Census Day, 21 March 2021.",
-          "long_desc": "Average age is calculated from the age of residents on Census Day, 21 March 2021 in England and Wales.",
+          "desc": "Median age on Census Day, 21 March 2021.",
+          "long_desc": "Median age is calculated from the age of residents on Census Day, 21 March 2021 in England and Wales.",
           "units": "Years",
           "topic_code": "DEM",
           "available_geotypes": ["msoa", "lad"],
@@ -73,7 +73,7 @@
                   "name": "Median age",
                   "slug": "median-age",
                   "code": "median_age-001",
-                  "legend_str_1": "Average age of people in {location}",
+                  "legend_str_1": "Median age of people in {location}",
                   "legend_str_2": "in",
                   "legend_str_3": "years"
                 }

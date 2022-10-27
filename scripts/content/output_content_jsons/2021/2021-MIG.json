@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-10-27-11-57-51",
+    "created_at": "2022-10-27-12-06-38",
     "spec_file": "2021-content-spec-v2.json",
     "release": "2021-MIG"
   },
@@ -1937,7 +1937,7 @@
           "name": "Year of arrival in the UK",
           "code": "year_arrival_uk",
           "slug": "year-of-arrival-in-the-uk",
-          "desc": "The year people arrived to live in the UK (for people not born in the UK).",
+          "desc": "The year people arrived to live in the UK.",
           "long_desc": "The year someone not born in the UK last arrived in the UK. This does not include returning from short visits away from the UK.",
           "units": "Person",
           "topic_code": "MIG",

@@ -47,6 +47,6 @@ transport_to_workplace,Method of travel to workplace.,How people travel from the
 welsh_skills_all,"Whether a person can understand, speak, read, or write Welsh. This question was only asked in Wales.","Whether people can understand, speak, read, or write Welsh. This question was only asked in Wales.",
 welsh_skills_speak,"This classifies a person as being able to speak Welsh if they ticked ""Speak Welsh"" in the census questionnaire.",People who can speak Welsh.,
 workplace_travel,"The distance, in kilometres, between a person's residential postcode and their workplace postcode measured in a straight line.","The distance between home and work, in kilometres.",
-year_arrival_uk,The year that someone who was not born in the UK last arrived in the UK. This does not include returning from a holiday or short stay outside the UK.,The year people arrived to live in the UK (for people not born in the UK).,
+year_arrival_uk,The year that someone who was not born in the UK last arrived in the UK. This does not include returning from a holiday or short stay outside the UK.,The year people arrived to live in the UK.,
 population_density,,The number of people resident per square kilometre.,
 median_age,,"The average (median) age of people on Census Day, 21 March 2021.",

@@ -12,6 +12,7 @@ type Selected = {
 
 export const selected: Readable<Selected> = derived([geography, viz], ([$geography, $viz], set) => {
   // only update when we should...
+  console.log("selected updating...");
   if ($geography && $viz && $viz.geoType === $geography.geoType) {
     const val: Selected = {
       geoType: $geography.geoType,

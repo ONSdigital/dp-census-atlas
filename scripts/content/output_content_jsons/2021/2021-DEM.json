@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-10-26-10-49-04",
+    "created_at": "2022-10-27-11-29-07",
     "spec_file": "2021-content-spec-v2.json",
     "release": "2021-DEM"
   },
@@ -1765,11 +1765,11 @@
           ]
         },
         {
-          "name": "Average (median) age",
+          "name": "Average age",
           "code": "median_age",
           "slug": "median-age",
           "desc": "The average (median) age of people on Census Day, 21 March 2021.",
-          "long_desc": "Average (median) age is calculated from the age of residents on Census Day, 21 March 2021 in England and Wales.",
+          "long_desc": "Average age is calculated from the age of residents on Census Day, 21 March 2021 in England and Wales.",
           "units": "Years",
           "topic_code": "DEM",
           "classifications": [
@@ -1789,7 +1789,7 @@
                   "name": "Median age",
                   "slug": "median-age",
                   "code": "median_age-001",
-                  "legend_str_1": "average (median) age of people in {location}",
+                  "legend_str_1": "average age of people in {location}",
                   "legend_str_2": "in",
                   "legend_str_3": "years"
                 }

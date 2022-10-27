@@ -4,7 +4,11 @@
   import { geography } from "../stores/geography";
   import { formatTemplateString } from "../helpers/categoryHelpers";
   import { choroplethColours } from "../helpers/choroplethHelpers";
-  import { getCategoryDataSuffix, roundCategoryDataToString } from "../helpers/categoryHelpers";
+  import {
+    getCategoryDataSuffix,
+    roundCategoryDataToString,
+    uniqueRoundedCategoryBreaks
+  } from "../helpers/categoryHelpers";
   import BreaksChart from "./BreaksChart.svelte";
   import GeoTypeBadge from "./GeoTypeBadge.svelte";
 
@@ -82,7 +86,7 @@
         <BreaksChart
           selected={categoryValueForSelectedGeography}
           suffix={getCategoryDataSuffix($selection.category.code)}
-          {breaks}
+          breaks={uniqueRoundedCategoryBreaks($selection.category.code, breaks)}
           colors={choroplethColours}
           categoryCode={$selection.category.code}
         />

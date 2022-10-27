@@ -1,6 +1,6 @@
 <script lang="ts">
   import { page } from "$app/stores";
-  import Select from "svelte-select";
+  import Select from "./Select.svelte";
   import { SvelteSubject } from "../util/rxUtil";
   import { composeAreaSearch } from "../helpers/areaSearchHelper";
   import { highlightText } from "../helpers/searchCensusHelper";
@@ -29,16 +29,18 @@
   }
 </script>
 
-<div class="themed max-w-[25rem]">
+<div class="themed max-w-[30rem]">
   <Select
-    placeholder=""
+    id="area-input"
+    mode="search"
+    placeholder="Search areas"
     bind:filterText={$query}
     items={$results}
-    optionIdentifier="value"
-    labelIdentifier="value"
+    idKey="value"
+    labelKey="value"
+    groupKey="geoType"
     on:select={handleSelect}
-    containerClasses=""
-    {noOptionsMessage}
+    autoClear
   />
 </div>
 <!-- <div class="">{query2}</div> -->

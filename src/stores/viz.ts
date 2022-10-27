@@ -14,6 +14,11 @@ export const viz = asyncDerived([selection, viewport], async ([$selection, $view
     bbox: $viewport.bbox,
   };
 
+  // important for feature state purging
+  if (!args.category) {
+    return undefined;
+  }
+
   const [data, breaks] = await Promise.all([fetchTileDataForBbox(args), fetchBreaks(args)]);
 
   return {

@@ -4,7 +4,7 @@ import { centroidsGeojson } from "../helpers/quadsHelper";
 import { distinctUntilChanged, fromEventPattern } from "rxjs";
 import { map as project } from "rxjs/operators";
 
-export const initMapLayers = (map) => {
+export const initMapLayers = (map, geo) => {
   layersWithSiblings().forEach((l) => {
     map.addSource(l.layer.name, {
       type: "vector",
@@ -123,13 +123,9 @@ export const initMapLayers = (map) => {
   // selected geography layer
   map.addSource("selected-geography", {
     type: "geojson",
-    data: {
-      type: "Feature",
-      properties: {},
-      geometry: {
-        type: "Polygon",
-        coordinates: [],
-      },
+    data: geo?.boundary ?? {
+      type: "FeatureCollection",
+      features: [],
     },
   });
   map.addLayer({

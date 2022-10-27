@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-10-27-14-14-33",
+    "created_at": "2022-10-27-16-48-27",
     "spec_file": "2021-content-spec-v2.json",
     "release": "2021-ALL"
   },
@@ -4645,12 +4645,12 @@
               "dot_density_default": true,
               "categories": [
                 {
-                  "name": "Multiple family household",
+                  "name": "Other household types",
                   "slug": "multiple-family-household",
                   "code": "hh_family_composition_4a-001",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "multiple family households"
+                  "legend_str_3": "other household types"
                 },
                 {
                   "name": "One-person household",
@@ -4933,7 +4933,7 @@
           ]
         },
         {
-          "name": "Marital and civil partnership status",
+          "name": "Legal partnership status",
           "code": "legal_partnership_status",
           "slug": "marital-and-civil-partnership-status",
           "desc": "People's marital or civil partnership status.",

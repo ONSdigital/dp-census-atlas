@@ -15,6 +15,12 @@
     "hh_size_5a": ["hh_size_5a-000"],
     "hh_size_9a": ["hh_size_9a-000"]
   },
+  "variable_renames": {
+    "legal_partnership_status": "Legal partnership status"
+  },
+  "category_renames": {
+    "hh_family_composition_4a-001": "Other household types"
+  },
   "extra_variables": {
     "Population": [
       {

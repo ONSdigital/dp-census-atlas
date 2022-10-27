@@ -4,8 +4,11 @@
   import { geography } from "../stores/geography";
   import { formatTemplateString } from "../helpers/categoryHelpers";
   import { choroplethColours } from "../helpers/choroplethHelpers";
-  import { getVariableDataSuffix } from "../helpers/contentHelpers";
-  import { dataToRoundedString } from "../helpers/percentageHelpers";
+  import {
+    getCategoryDataSuffix,
+    roundCategoryDataToString,
+    uniqueRoundedCategoryBreaks
+  } from "../helpers/categoryHelpers";
   import BreaksChart from "./BreaksChart.svelte";
   import GeoTypeBadge from "./GeoTypeBadge.svelte";
 
@@ -24,13 +27,13 @@
     <div
       class="z-abovemap w-full max-w-[50rem] mx-3 lg:mx-4 bg-white bg-opacity-90 px-3 lg:px-5 py-2 lg:py-3 border-[1px] lg:border-[1px] border-ons-grey-15"
     >
-      {#if $selection.category && categoryValueForSelectedGeography}
+      {#if $selection.category && categoryValueForSelectedGeography != null}
         <!-- full legend -->
         <div class="flex gap-3 items-center">
           <div class="whitespace-nowrap">
             <span class="text-4xl md:text-5xl font-bold">
-              {dataToRoundedString(categoryValueForSelectedGeography)}</span
-            ><span class="text-3xl md:text-4xl font-bold">{getVariableDataSuffix($selection.variable)}</span>
+              {roundCategoryDataToString($selection.category.code, categoryValueForSelectedGeography)}</span
+            ><span class="text-3xl md:text-4xl font-bold">{getCategoryDataSuffix($selection.category.code)}</span>
           </div>
           <div class="flex-grow leading-[0px]">
             <div class="">
@@ -82,9 +85,10 @@
       {#if $selection.category && $viz}
         <BreaksChart
           selected={categoryValueForSelectedGeography}
-          suffix={getVariableDataSuffix($selection.variable)}
-          {breaks}
+          suffix={getCategoryDataSuffix($selection.category.code)}
+          breaks={uniqueRoundedCategoryBreaks($selection.category.code, breaks)}
           colors={choroplethColours}
+          categoryCode={$selection.category.code}
         />
       {/if}
     </div>

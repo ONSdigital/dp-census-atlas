@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-10-27-12-16-28",
+    "created_at": "2022-10-27-12-26-23",
     "spec_file": "2021-content-spec-v2.json",
     "release": "2021-ALL"
   },
@@ -7240,23 +7240,23 @@
                   "code": "migrant_ind-001",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "were",
-                  "legend_str_3": "living at a student or boarding school term-time address one year ago"
+                  "legend_str_3": "living at a student or boarding school term-time address in the UK one year ago"
                 },
                 {
                   "name": "Migrant from within the UK: Address one year ago was in the UK",
                   "slug": "migrant-from-within-the-uk-address-one-year-ago-was-in-the-uk",
                   "code": "migrant_ind-002",
                   "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "living in an address within the UK one year ago"
+                  "legend_str_2": "were",
+                  "legend_str_3": "living at a different address within the UK one year ago"
                 },
                 {
                   "name": "Migrant from outside the UK: Address one year ago was outside the UK",
                   "slug": "migrant-from-outside-the-uk-address-one-year-ago-was-outside-the-uk",
                   "code": "migrant_ind-003",
                   "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "living in an address outside the UK one year ago"
+                  "legend_str_2": "were",
+                  "legend_str_3": "living at an address outside the UK one year ago"
                 }
               ]
             }

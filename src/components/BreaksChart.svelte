@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { dataToRoundedString } from "../helpers/percentageHelpers";
+  import { roundCategoryDataToString } from "../helpers/categoryHelpers";
 
   export let hovered = null;
   export let selected = null;
@@ -8,6 +8,7 @@
   export let colors = ["rgba(234,236,177)", "rgba(169,216,145)", "rgba(0,167,186)", "rgba(0,78,166)", "rgba(0,13,84)"];
   export let suffix = "";
   export let snapTicks = true;
+  export let categoryCode = "";
 
   const pos = (val, breaks) => {
     let i = 0;
@@ -31,12 +32,12 @@
       class="tick"
       style="left: {i * (100 / (breaks.length - 1))}%; transform: translateX({i == 0 && snapTicks ? '-2px' : '-50%'});"
     >
-      {dataToRoundedString(breaks[i])}<span class="tick-suffix">{suffix}</span>
+      {roundCategoryDataToString(categoryCode, breaks[i])}<span class="tick-suffix">{suffix}</span>
     </div>
   {/each}
   <div class="line" style="right: 0;" />
   <div class="tick" style="right: 0; transform: translateX({snapTicks ? '2px' : '50%'});">
-    {dataToRoundedString(breaks[breaks.length - 1])}<span class="tick-suffix">{suffix}</span>
+    {roundCategoryDataToString(categoryCode, breaks[breaks.length - 1])}<span class="tick-suffix">{suffix}</span>
   </div>
   {#if selected}
     <!-- <div class="marker" style="width: 4px; left: calc({pos(selected, breaks)}% - {lineWidth / 2}px);" /> -->

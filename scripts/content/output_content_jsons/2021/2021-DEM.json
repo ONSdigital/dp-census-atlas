@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-10-27-11-29-07",
+    "created_at": "2022-10-27-11-52-41",
     "spec_file": "2021-content-spec-v2.json",
     "release": "2021-DEM"
   },
@@ -312,7 +312,7 @@
                   "code": "hh_size_5a-001",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "1 person in household"
+                  "legend_str_3": "1 person per household"
                 },
                 {
                   "name": "2 people in household",
@@ -320,7 +320,7 @@
                   "code": "hh_size_5a-002",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "2 people in household"
+                  "legend_str_3": "2 people per household"
                 },
                 {
                   "name": "3 people in household",
@@ -328,7 +328,7 @@
                   "code": "hh_size_5a-003",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "3 people in household"
+                  "legend_str_3": "3 people per household"
                 },
                 {
                   "name": "4 or more people in household",
@@ -336,7 +336,7 @@
                   "code": "hh_size_5a-004",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "4 or more people in household"
+                  "legend_str_3": "4 or more people per household"
                 }
               ]
             },
@@ -357,7 +357,7 @@
                   "code": "hh_size_9a-001",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "1 person in household"
+                  "legend_str_3": "1 person per household"
                 },
                 {
                   "name": "2 people in household",
@@ -365,7 +365,7 @@
                   "code": "hh_size_9a-002",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "2 people in household"
+                  "legend_str_3": "2 people per household"
                 },
                 {
                   "name": "3 people in household",
@@ -373,7 +373,7 @@
                   "code": "hh_size_9a-003",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "3 people in household"
+                  "legend_str_3": "3 people per household"
                 },
                 {
                   "name": "4 people in household",
@@ -381,7 +381,7 @@
                   "code": "hh_size_9a-004",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "4 people in household"
+                  "legend_str_3": "4 people per household"
                 },
                 {
                   "name": "5 people in household",
@@ -389,7 +389,7 @@
                   "code": "hh_size_9a-005",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "5 people in household"
+                  "legend_str_3": "5 people per household"
                 },
                 {
                   "name": "6 people in household",
@@ -397,7 +397,7 @@
                   "code": "hh_size_9a-006",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "6 people in household"
+                  "legend_str_3": "6 people per household"
                 },
                 {
                   "name": "7 people in household",
@@ -405,7 +405,7 @@
                   "code": "hh_size_9a-007",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "7 people in household"
+                  "legend_str_3": "7 people per household"
                 },
                 {
                   "name": "8 or more people in household",
@@ -413,7 +413,7 @@
                   "code": "hh_size_9a-008",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "8 or more people in household"
+                  "legend_str_3": "8 or more people per household"
                 }
               ]
             }

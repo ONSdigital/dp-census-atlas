@@ -3,7 +3,8 @@ import { page } from "$app/stores";
 import mapboxgl, { GeoJSONSource, Map } from "mapbox-gl";
 import { fromEvent, merge } from "rxjs";
 import { throttleTime } from "rxjs/operators";
-import type { GeoType, GeographyInfo } from "../types";
+import type { GeoType, GeographyInfo, Classification } from "../types";
+import { selection } from "../stores/selection";
 import { geography } from "../stores/geography";
 import { englandAndWalesBbox, preventFlyToGeography } from "../helpers/geographyHelper";
 import { selectGeography } from "../helpers/navigationHelper";
@@ -45,7 +46,7 @@ export const initMap = (container: HTMLElement) => {
       throttleTime(1000, undefined, { leading: false, trailing: true }), // don't discard the final movement
     )
     .subscribe(() => {
-      setViewportStoreAndLayerVisibility(map);
+      setViewportStoreAndLayerVisibility(map, get(selection).classification);
     });
 
   layers.forEach((l) => {
@@ -59,10 +60,10 @@ export const initMap = (container: HTMLElement) => {
   return map;
 };
 
-const setViewportStoreAndLayerVisibility = (map: mapboxgl.Map) => {
+const setViewportStoreAndLayerVisibility = (map: mapboxgl.Map, classification: Classification) => {
   const b = map.getBounds();
   const bbox = { east: b.getEast(), north: b.getNorth(), west: b.getWest(), south: b.getSouth() };
-  const geoType = getGeoTypeForFeatureDensity(map);
+  const geoType = getGeoType(map, classification);
 
   setMapLayerVisibility(map, geoType);
 
@@ -72,7 +73,7 @@ const setViewportStoreAndLayerVisibility = (map: mapboxgl.Map) => {
   });
 };
 
-const getGeoTypeForFeatureDensity = (map: mapboxgl.Map): GeoType => {
+const getGeoType = (map: mapboxgl.Map, classification?: Classification): GeoType => {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore (queryRenderedFeatures typings appear to be wrong)
   const features = map.queryRenderedFeatures({ layers: ["centroids"] });
@@ -80,7 +81,14 @@ const getGeoTypeForFeatureDensity = (map: mapboxgl.Map): GeoType => {
     const count = features.length;
     const canvas = map.getCanvas();
     const pixelArea = canvas.clientWidth * canvas.clientHeight;
-    return (count * 1e6) / pixelArea > 40 ? "lad" : (count * 1e6) / pixelArea > 3 ? "msoa" : "oa";
+    const preferredGeotype = (count * 1e6) / pixelArea > 40 ? "lad" : (count * 1e6) / pixelArea > 3 ? "msoa" : "oa";
+    const availableGeotypes = classification?.available_geotypes;
+    if (availableGeotypes) {
+      // the first available_geotype is the lowest-level
+      return availableGeotypes.includes(preferredGeotype) ? preferredGeotype : availableGeotypes[0];
+    } else {
+      return preferredGeotype;
+    }
   } else {
     return "lad";
   }

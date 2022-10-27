@@ -97,15 +97,22 @@
       {:else}
         <!-- partial legend -->
         <div class="">
-          <div class="">
-            <span class={legendTextClass}>
-              {active.displayName}
-            </span>
-            <GeoTypeBadge geoType={active.geoType} />
-          </div>
           {#if $viz?.params?.category}
+            <div>
+              <span class={legendTextClass}>
+                {active.displayName}
+              </span>
+              <GeoTypeBadge geoType={active.geoType} />
+            </div>
             <div class={`${legendTextClass} font-bold`}>
               {$viz.params.category.name}
+            </div>
+          {:else}
+            <div class="text-center">
+              <span class={legendTextClass}>
+                {active.displayName}
+              </span>
+              <GeoTypeBadge geoType={active.geoType} />
             </div>
           {/if}
         </div>

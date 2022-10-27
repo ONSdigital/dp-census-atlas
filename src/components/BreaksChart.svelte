@@ -39,7 +39,7 @@
   <div class="tick" style="right: 0; transform: translateX({snapTicks ? '2px' : '50%'});">
     {roundCategoryDataToString(categoryCode, breaks[breaks.length - 1])}<span class="tick-suffix">{suffix}</span>
   </div>
-  {#if selected}
+  {#if selected != null}
     <!-- <div class="marker" style="width: 4px; left: calc({pos(selected, breaks)}% - {lineWidth / 2}px);" /> -->
     <div class="absolute z-10 -top-2.5" style="left: calc({pos(selected, breaks)}% - {28 / 2}px);">
       <svg class="h-7 w-7" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">

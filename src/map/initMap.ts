@@ -3,7 +3,7 @@ import { page } from "$app/stores";
 import mapboxgl, { GeoJSONSource, Map } from "mapbox-gl";
 import { fromEvent, merge } from "rxjs";
 import { throttleTime } from "rxjs/operators";
-import type { GeoType, GeographyInfo } from "../types";
+import type { GeoType, GeographyInfo, VizData } from "../types";
 import { geography } from "../stores/geography";
 import { englandAndWalesBbox, preventFlyToGeography } from "../helpers/geographyHelper";
 import { selectGeography } from "../helpers/navigationHelper";
@@ -45,7 +45,7 @@ export const initMap = (container: HTMLElement) => {
       throttleTime(1000, undefined, { leading: false, trailing: true }), // don't discard the final movement
     )
     .subscribe(() => {
-      setViewportStoreAndLayerVisibility(map);
+      setViewportStoreAndLayerVisibility(map, get(viz));
     });
 
   layers.forEach((l) => {
@@ -59,10 +59,10 @@ export const initMap = (container: HTMLElement) => {
   return map;
 };
 
-const setViewportStoreAndLayerVisibility = (map: mapboxgl.Map) => {
+const setViewportStoreAndLayerVisibility = (map: mapboxgl.Map, viz: VizData | undefined) => {
   const b = map.getBounds();
   const bbox = { east: b.getEast(), north: b.getNorth(), west: b.getWest(), south: b.getSouth() };
-  const geoType = getGeoTypeForFeatureDensity(map);
+  const geoType = getGeoTypeForFeatureDensity(map, viz);
 
   setMapLayerVisibility(map, geoType);
 
@@ -72,15 +72,23 @@ const setViewportStoreAndLayerVisibility = (map: mapboxgl.Map) => {
   });
 };
 
-const getGeoTypeForFeatureDensity = (map: mapboxgl.Map): GeoType => {
+const getGeoTypeForFeatureDensity = (map: mapboxgl.Map, viz: VizData | undefined): GeoType => {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore (queryRenderedFeatures typings appear to be wrong)
   const features = map.queryRenderedFeatures({ layers: ["centroids"] });
+
   if (Array.isArray(features)) {
     const count = features.length;
     const canvas = map.getCanvas();
     const pixelArea = canvas.clientWidth * canvas.clientHeight;
-    return (count * 1e6) / pixelArea > 40 ? "lad" : (count * 1e6) / pixelArea > 3 ? "msoa" : "oa";
+    const preferedGeotype = (count * 1e6) / pixelArea > 40 ? "lad" : (count * 1e6) / pixelArea > 3 ? "msoa" : "oa";
+    const availableGeotypes = viz?.params?.classification?.available_geotypes;
+
+    if (Array.isArray(availableGeotypes)) {
+      return availableGeotypes.includes(preferedGeotype) ? preferedGeotype : availableGeotypes[0];
+    } else {
+      return preferedGeotype;
+    }
   } else {
     return "lad";
   }

@@ -49,6 +49,7 @@ export type VizData = {
   params: {
     variableGroup: VariableGroup;
     variable: Variable;
+    classification: Classification;
     category: Category;
   };
 };

@@ -8,6 +8,11 @@ import { viewport } from "./viewport";
  * A Svelte store containing all the data we need in order to show a vizualisation.
  * */
 export const viz = asyncDerived([selection, viewport], async ([$selection, $viewport]) => {
+  // no-op if current geotype is unavailable for current selection
+  if (!$selection.classification.available_geotypes.includes($viewport.geoType)) {
+    return
+  }
+
   const args = {
     category: $selection.category,
     geoType: $viewport.geoType,

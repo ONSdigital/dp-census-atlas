@@ -17,8 +17,6 @@
     // tell iframe host using pym.js to set iframe height to 600px
     new pym.Child().sendMessage("height", "600");
   });
-
-  $: console.log($page);
 </script>
 
 <svelte:head>

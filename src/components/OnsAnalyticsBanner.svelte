@@ -1,13 +1,13 @@
 <script lang="ts">
   import { onMount } from "svelte";
+  import { page } from "$app/stores";
 
   export let analyticsId; // Required. Google analytics/tag manager ID
   export let analyticsProps = {}; // Optional props to describe the content
   export let usageCookies = false; // True if usage cookies are allowed (to be read from parent component)
-  export let page = null; // Pass Svelte Kit's $page to track navigation in multi-page apps
   export let fixed = true; // Fixed positioning of banner (instead of inline)
 
-  let live; // Don't run analytics unless page is live on ONS site (re-set in the onMount function)
+  let allowLoad; // Fill be set to false if on embed url
 
   let showBanner = false;
   let showConfirm = false;
@@ -73,27 +73,30 @@
   }
 
   // This code is only relevant for multi-page Svelte Kit apps. It sends an analytics event when the URL changes
-  $: if (live && usageCookies && page) {
-    let newlocation = $page.url.hostname + $page.url.pathname + $page.url.searchParams;
+  $: if (allowLoad && usageCookies && page) {
+    let newlocation = $page.url.href;
     if (newlocation !== location) {
       location = newlocation;
 
+      let areaData = {};
+      ["oa", "msoa", "lad"].forEach((key) => {
+        let code = $page.url.searchParams.get(key);
+        if (code) areaData = { areaCode: code, areaType: key };
+      });
+
       window.dataLayer.push({
         event: "pageView",
-        page_path: $page.url.pathname,
-        page_location: location,
-        page_title: document ? document.title : null,
+        pageURL: newlocation,
+        ...areaData,
+        contentType: "exploratory",
       });
-      console.log("navigated to " + location);
     }
   }
 
   onMount(() => {
-    live = true;
-    //live = window.location.hostname == "www.ons.gov.uk" || window.location.hostname == "cy.ons.gov.uk";
-    showBanner = !hasCookiesPreferencesSet();
-    usageCookies = getUsageCookieValue();
-    if (usageCookies && live) initAnalytics();
+    allowLoad = !$page.url.searchParams.get("embed");
+    showBanner = allowLoad && !hasCookiesPreferencesSet();
+    if (allowLoad && getUsageCookieValue()) initAnalytics();
   });
 </script>
 

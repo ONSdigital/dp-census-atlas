@@ -20,7 +20,7 @@ export const geography = asyncDerived([geoCode, geoType], async ([$geoCode, $geo
 
 function getGeographyInfo(data: GeographyData): GeographyInfo {
   return {
-    geoType: data.meta.geotype as GeoType,
+    geoType: data.meta.geotype.toLowerCase() as GeoType,
     geoCode: data.meta.code,
     displayName: data.meta.name,
     bbox: data.geo_json.features.find((f) => f.id === "bbox").geometry.coordinates,

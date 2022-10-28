@@ -22,9 +22,6 @@
   >
 </svelte:head>
 
-<div class="hidden lg:block ">
-  <Heading />
-</div>
 <div class="h-full flex flex-col">
   <div class="px-6 border-t-[1px] border-t-ons-grey-15">
     <AreaPanel />

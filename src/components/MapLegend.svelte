@@ -5,8 +5,11 @@
   // import { selected } from "../stores/selected";
   import { formatTemplateString } from "../helpers/categoryHelpers";
   import { choroplethColours } from "../helpers/choroplethHelpers";
-  import { getVariableDataSuffix } from "../helpers/contentHelpers";
-  import { dataToRoundedString } from "../helpers/percentageHelpers";
+  import {
+    getCategoryDataSuffix,
+    roundCategoryDataToString,
+    uniqueRoundedCategoryBreaks,
+  } from "../helpers/categoryHelpers";
   import BreaksChart from "./BreaksChart.svelte";
   import GeoTypeBadge from "./GeoTypeBadge.svelte";
 
@@ -56,13 +59,13 @@
     <div
       class="z-abovemap w-full max-w-[50rem] mx-3 lg:mx-4 bg-white bg-opacity-90 px-3 lg:px-5 py-2 lg:py-3 border-[1px] lg:border-[1px] border-ons-grey-15"
     >
-      {#if $viz?.params?.category && active.value}
+      {#if $viz?.params?.category && active?.value !== undefined}
         <!-- full legend -->
         <div class="flex gap-3 items-center">
           <div class="whitespace-nowrap">
-            <span class="text-4xl md:text-5xl font-bold"> {dataToRoundedString(active.value)}</span><span
-              class="text-3xl md:text-4xl font-bold">{getVariableDataSuffix($viz.params.variable)}</span
-            >
+            <span class="text-4xl md:text-5xl font-bold">
+              {roundCategoryDataToString($viz.params.category.code, active.value)}</span
+            ><span class="text-3xl md:text-4xl font-bold">{getCategoryDataSuffix($viz.params.category.code)}</span>
           </div>
           <div class="flex-grow leading-[0px]">
             <div class="">
@@ -121,9 +124,10 @@
       {#if $viz?.params?.category && $viz?.breaks}
         <BreaksChart
           selected={active.value}
-          suffix={getVariableDataSuffix($viz.params.variable)}
-          {breaks}
+          suffix={getCategoryDataSuffix($viz.params.category.code)}
+          breaks={uniqueRoundedCategoryBreaks($viz.params.category.code, breaks)}
           colors={choroplethColours}
+          categoryCode={$viz.params.category.code}
         />
       {/if}
     </div>

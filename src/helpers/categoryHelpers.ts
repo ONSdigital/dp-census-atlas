@@ -1,6 +1,13 @@
 import type { Variable, Category, VariableGroup } from "../types";
 import { unCapitalizeFirstLetter } from "../util/stringUtil";
-import { dataToRoundedString } from "./percentageHelpers";
+import {
+  roundedPercentageData,
+  roundedNonPercentageData,
+  nonPercentageToRoundedString,
+  percentageToRoundedString,
+  uniqueRoundedNonPercentageBreaks,
+  uniqueRoundedPercentageBreaks
+} from "./percentageHelpers";
 
 export const getCategoryInfo = (categoryCode: string, variableGroups: VariableGroup[]) => {
   const allVariables = variableGroups.flatMap((vg) => vg.variables.map((v) => ({ variableGroup: vg, variable: v })));
@@ -36,3 +43,56 @@ export const formatTemplateString = (variable: Variable, category: Category, loc
   });
   return templateStr;
 };
+
+
+export const isNonPercentageCategoryCode = (categoryCode: string) => {
+  return ["population_density-001", "median_age-001"].includes(categoryCode)
+}
+
+
+/*
+  Return "%" if variable is a percentage variable (all except two are!), otherwise return ""
+*/
+export const getCategoryDataSuffix = (categoryCode: string) => {
+  if (isNonPercentageCategoryCode(categoryCode)) {
+    return ""
+  } else {
+    return "%"
+  }
+}
+
+/*
+  Convert number to rounded string for display.
+  NB Different functions needed for percentage and non-percentage variables.
+*/
+export const roundCategoryDataToString = (categoryCode: string, r) => {
+  if (isNonPercentageCategoryCode(categoryCode)) {
+    return nonPercentageToRoundedString(r)
+  } else {
+    return percentageToRoundedString(r)
+  }
+}
+
+/*
+  Get unique rounded breaks.
+  NB Different functions needed for percentage and non-percentage variables.
+*/
+export const uniqueRoundedCategoryBreaks = (categoryCode: string, breaks: number[]) => {
+  if (isNonPercentageCategoryCode(categoryCode)) {
+    return uniqueRoundedNonPercentageBreaks(breaks)
+  } else {
+    return uniqueRoundedPercentageBreaks(breaks)
+  }
+}
+
+/*
+  Round number to standard decimal places.
+  NB Different functions needed for percentage and non-percentage variables.
+*/
+export const roundedCategoryData = (categoryCode: string, r: number) => {
+  if (isNonPercentageCategoryCode(categoryCode)) {
+    return roundedNonPercentageData(r)
+  } else {
+    return roundedPercentageData(r)
+  }
+}

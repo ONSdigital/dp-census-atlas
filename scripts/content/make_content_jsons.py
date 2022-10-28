@@ -247,6 +247,27 @@ def main(spec_fn: str):
     )
     print("... done.")
 
+    # rename variables
+    print(f"Renaming variables...")
+    for vg in content_iterations["ALL"]:
+        for v in vg.variables:
+            if v.code in spec["variable_renames"]:
+                print(f"Renaming {v.code}:{v.name} to {spec['variable_renames'][v.code]}")
+                v.name = spec['variable_renames'][v.code]
+    print("... done.")
+
+    # rename categories
+    print(f"Renaming categories...")
+    for vg in content_iterations["ALL"]:
+        for v in vg.variables:
+            for cls in v.classifications:
+                for c in cls.categories:
+                    if c.code in spec["category_renames"]:
+                        print(f"Renaming {c.code}:{c.name} to {spec['category_renames'][c.code]}")
+                        c.name = spec['category_renames'][c.code]
+    print("... done.")
+
+
     # make topic splits
     print("Splitting content by topic...")
     content_iterations.update(split_content_by_topic(content_iterations["ALL"]))

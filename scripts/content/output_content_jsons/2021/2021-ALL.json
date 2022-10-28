@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-10-26-10-49-04",
+    "created_at": "2022-10-27-16-48-27",
     "spec_file": "2021-content-spec-v2.json",
     "release": "2021-ALL"
   },
@@ -4548,7 +4548,7 @@
                   "name": "Persons per square kilometre",
                   "slug": "persons-per-square-kilometre",
                   "code": "population_density-001",
-                  "legend_str_1": "population density of {location}",
+                  "legend_str_1": "Population density of {location}",
                   "legend_str_2": "in",
                   "legend_str_3": "persons per square kilometre"
                 }
@@ -4645,12 +4645,12 @@
               "dot_density_default": true,
               "categories": [
                 {
-                  "name": "Multiple family household",
+                  "name": "Other household types",
                   "slug": "multiple-family-household",
                   "code": "hh_family_composition_4a-001",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "multiple family households"
+                  "legend_str_3": "other household types"
                 },
                 {
                   "name": "One-person household",
@@ -4825,7 +4825,7 @@
                   "code": "hh_size_5a-001",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "1 person in household"
+                  "legend_str_3": "1 person per household"
                 },
                 {
                   "name": "2 people in household",
@@ -4833,7 +4833,7 @@
                   "code": "hh_size_5a-002",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "2 people in household"
+                  "legend_str_3": "2 people per household"
                 },
                 {
                   "name": "3 people in household",
@@ -4841,7 +4841,7 @@
                   "code": "hh_size_5a-003",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "3 people in household"
+                  "legend_str_3": "3 people per household"
                 },
                 {
                   "name": "4 or more people in household",
@@ -4849,7 +4849,7 @@
                   "code": "hh_size_5a-004",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "4 or more people in household"
+                  "legend_str_3": "4 or more people per household"
                 }
               ]
             },
@@ -4870,7 +4870,7 @@
                   "code": "hh_size_9a-001",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "1 person in household"
+                  "legend_str_3": "1 person per household"
                 },
                 {
                   "name": "2 people in household",
@@ -4878,7 +4878,7 @@
                   "code": "hh_size_9a-002",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "2 people in household"
+                  "legend_str_3": "2 people per household"
                 },
                 {
                   "name": "3 people in household",
@@ -4886,7 +4886,7 @@
                   "code": "hh_size_9a-003",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "3 people in household"
+                  "legend_str_3": "3 people per household"
                 },
                 {
                   "name": "4 people in household",
@@ -4894,7 +4894,7 @@
                   "code": "hh_size_9a-004",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "4 people in household"
+                  "legend_str_3": "4 people per household"
                 },
                 {
                   "name": "5 people in household",
@@ -4902,7 +4902,7 @@
                   "code": "hh_size_9a-005",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "5 people in household"
+                  "legend_str_3": "5 people per household"
                 },
                 {
                   "name": "6 people in household",
@@ -4910,7 +4910,7 @@
                   "code": "hh_size_9a-006",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "6 people in household"
+                  "legend_str_3": "6 people per household"
                 },
                 {
                   "name": "7 people in household",
@@ -4918,7 +4918,7 @@
                   "code": "hh_size_9a-007",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "7 people in household"
+                  "legend_str_3": "7 people per household"
                 },
                 {
                   "name": "8 or more people in household",
@@ -4926,14 +4926,14 @@
                   "code": "hh_size_9a-008",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "8 or more people in household"
+                  "legend_str_3": "8 or more people per household"
                 }
               ]
             }
           ]
         },
         {
-          "name": "Marital and civil partnership status",
+          "name": "Legal partnership status",
           "code": "legal_partnership_status",
           "slug": "marital-and-civil-partnership-status",
           "desc": "People's marital or civil partnership status.",
@@ -6278,11 +6278,11 @@
           ]
         },
         {
-          "name": "Average (median) age",
+          "name": "Median age",
           "code": "median_age",
           "slug": "median-age",
-          "desc": "The average (median) age of people on Census Day, 21 March 2021.",
-          "long_desc": "Average (median) age is calculated from the age of residents on Census Day, 21 March 2021 in England and Wales.",
+          "desc": "The median age of people on Census Day, 21 March 2021.",
+          "long_desc": "Median age is calculated from the age of residents on Census Day, 21 March 2021 in England and Wales.",
           "units": "Years",
           "topic_code": "DEM",
           "classifications": [
@@ -6302,7 +6302,7 @@
                   "name": "Median age",
                   "slug": "median-age",
                   "code": "median_age-001",
-                  "legend_str_1": "average (median) age of people in {location}",
+                  "legend_str_1": "Median age of people in {location}",
                   "legend_str_2": "in",
                   "legend_str_3": "years"
                 }
@@ -6356,7 +6356,7 @@
           "name": "Age of arrival in the UK",
           "code": "age_arrival_uk",
           "slug": "age-of-arrival-in-the-uk",
-          "desc": "The age people were when they arrived to live in the UK (for people not born in the UK).",
+          "desc": "The age people were when they arrived to live in the UK.",
           "long_desc": "The date a person last arrived to live in the UK and their age. Arrival dates do not include returning from short trips away from the UK.\n\nAge of arrival only applies to usual residents not born in the UK. It does not include usual residents born in the UK who have emigrated and since returned. These are recorded in the category born in the UK.",
           "units": "Person",
           "topic_code": "MIG",
@@ -6660,7 +6660,7 @@
                   "code": "country_of_birth_12a-004",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "were",
-                  "legend_str_3": "born in the EU2 (countries that joined the EU in 2007"
+                  "legend_str_3": "born in the EU2 (countries that joined the EU in 2007)"
                 },
                 {
                   "name": "Europe: EU countries: All other EU countries",
@@ -7103,7 +7103,7 @@
                   "code": "country_of_birth_60a-047",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "were",
-                  "legend_str_3": "born in Centra Asia"
+                  "legend_str_3": "born in Central Asia"
                 },
                 {
                   "name": "The Americas and the Caribbean: North America: United States",
@@ -7240,23 +7240,23 @@
                   "code": "migrant_ind-001",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "were",
-                  "legend_str_3": "living at a student or boarding school term-time address one year ago"
+                  "legend_str_3": "living at a student or boarding school term-time address in the UK one year ago"
                 },
                 {
                   "name": "Migrant from within the UK: Address one year ago was in the UK",
                   "slug": "migrant-from-within-the-uk-address-one-year-ago-was-in-the-uk",
                   "code": "migrant_ind-002",
                   "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "living in an address within the UK one year ago"
+                  "legend_str_2": "were",
+                  "legend_str_3": "living at a different address within the UK one year ago"
                 },
                 {
                   "name": "Migrant from outside the UK: Address one year ago was outside the UK",
                   "slug": "migrant-from-outside-the-uk-address-one-year-ago-was-outside-the-uk",
                   "code": "migrant_ind-003",
                   "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "living in an address outside the UK one year ago"
+                  "legend_str_2": "were",
+                  "legend_str_3": "living at an address outside the UK one year ago"
                 }
               ]
             }
@@ -8213,7 +8213,7 @@
           "name": "Length of residence in the UK",
           "code": "residence_length",
           "slug": "length-of-residence-in-the-uk",
-          "desc": "Length of stay in the UK (for people not born in the UK).",
+          "desc": "Length of residence in the UK.",
           "long_desc": "The length of residence in the UK is derived from the date that a person most recently arrived to live in the UK. It does not include returning from a holiday or short stay outside the UK.\n\nLength of residence is only applicable to usual residents who were not born in the UK. It does not include usual residents born in the UK who have emigrated and since returned - \nthese are recorded in the category born in the UK.",
           "units": "Person",
           "topic_code": "MIG",
@@ -8279,7 +8279,7 @@
           "name": "Year of arrival in the UK",
           "code": "year_arrival_uk",
           "slug": "year-of-arrival-in-the-uk",
-          "desc": "The year people arrived to live in the UK (for people not born in the UK).",
+          "desc": "The year people arrived to live in the UK.",
           "long_desc": "The year someone not born in the UK last arrived in the UK. This does not include returning from short visits away from the UK.",
           "units": "Person",
           "topic_code": "MIG",

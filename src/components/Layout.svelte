@@ -3,10 +3,9 @@
   import Map from "./Map.svelte";
   import MapTips from "./MapTips.svelte";
   import MapLegend from "./MapLegend.svelte";
+  import Heading from "./Heading.svelte";
   import OnsAnalyticsBanner from "./OnsAnalyticsBanner.svelte";
-  import { appParamsStore } from "../stores/stores";
-
-  export let hideMapOnMobile = true;
+  import { selection } from "../stores/selection";
 
   // Google Analytics
   const analyticsId = "GTM-MBCBVQS";
@@ -19,16 +18,17 @@
 
 <OnsAnalyticsBanner {analyticsId} {analyticsProps} />
 
-<div class="inset-0 absolute lg:flex flex-col min-w-[370px] text-onsblack" class:flex={$appParamsStore.embed}>
+<div class="inset-0 absolute lg:flex flex-col min-w-[370px] text-onsblack" class:flex={$selection.embed}>
   <Header />
-  <div class="flex-1 flex flex-col-reverse lg:flex-row overflow-y-auto">
+  <div class="flex-1 flex flex-col lg:flex-row overflow-y-auto" class:flex-col-reverse={$selection.category}>
     <div
       class="flex-1 grow-[3] lg:min-w-[25rem] xl:min-w-[30rem] xl:max-w-[35rem] overflow-y-auto flex flex-col"
-      class:hidden={$appParamsStore.embed}
+      class:hidden={$selection.embed}
     >
+      <Heading />
       <slot />
     </div>
-    <div class:hidden={hideMapOnMobile} class="lg:block flex-1 grow-[7] relative">
+    <div class="lg:block flex-1 grow-[7] relative">
       <Map />
       <MapTips />
       <MapLegend />

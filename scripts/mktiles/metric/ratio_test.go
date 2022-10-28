@@ -31,7 +31,7 @@ func Test_CalcRatios(t *testing.T) {
 	}
 
 	got := float64(m.tab[CAT2][GEO1])
-	want := 0.5
+	want := 50.0
 	if got != want {
 		t.Fatalf("got %f, want %f", got, want)
 	}

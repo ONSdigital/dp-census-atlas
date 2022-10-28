@@ -1,6 +1,6 @@
 <script>
   import { _ } from "svelte-i18n";
-  import { contentStore } from "../stores/stores";
+  import { content } from "../stores/content";
   import { isInitialReleasePeriod } from "../helpers/contentHelpers";
   import Heading from "./Heading.svelte";
   import VariableGroupList from "./VariableGroupList.svelte";
@@ -14,8 +14,6 @@
   <meta name="description" content={$_("homePage.html.meta")} />
 </svelte:head>
 
-<Heading />
-
 <div class="px-6">
   <AreaPanel />
   <section>
@@ -25,7 +23,7 @@
     </div>
     <VariableGroupList />
 
-    {#if isInitialReleasePeriod($contentStore)}
+    {#if isInitialReleasePeriod($content)}
       <div class="bg-ons-grey-5 p-6 mb-6">
         <h3 class="pb-2 text-xl font-semibold ">Examples</h3>
         <ul>

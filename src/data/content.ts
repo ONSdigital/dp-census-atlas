@@ -6,6 +6,16 @@ const fakeCensus2021preview = {
     contentJsonUrl: "https://publishing.dp.aws.onsdigital.uk/visualisations/dvc691/release-0.json",
     contentBaseUrl: "",
   },
+  dem:  {
+    contentJsonUrl:
+      "https://publishing.dp.aws.onsdigital.uk/visualisations/dvc691/2021-DEM.json",
+    contentBaseUrl: "https://ons-dp-sandbox-census-maps-dem-mig.s3.eu-west-2.amazonaws.com/FAKE",
+  },
+  mig:  {
+    contentJsonUrl:
+      "https://publishing.dp.aws.onsdigital.uk/visualisations/dvc691/2021-MIG.json",
+    contentBaseUrl: "https://ons-dp-sandbox-census-maps-dem-mig.s3.eu-west-2.amazonaws.com/FAKE",
+  },
 }
 
 const fakeCensus2021 = {
@@ -15,48 +25,61 @@ const fakeCensus2021 = {
   },
   dem:  {
     contentJsonUrl:
+      "https://dp.aws.onsdigital.uk/visualisations/dvc691/2021-DEM.json",
+    contentBaseUrl: "https://ons-dp-sandbox-census-maps-dem-mig.s3.eu-west-2.amazonaws.com/FAKE",
+  },
+  mig:  {
+    contentJsonUrl:
+      "https://dp.aws.onsdigital.uk/visualisations/dvc691/2021-MIG.json",
+    contentBaseUrl: "https://ons-dp-sandbox-census-maps-dem-mig.s3.eu-west-2.amazonaws.com/FAKE",
+  },
+}
+
+const fakeCensus2021Public = {
+  dem:  {
+    contentJsonUrl:
       "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-DEM.json",
-    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021",
+    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021v2",
   },
   edu: {
     contentJsonUrl:
       "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-EDU.json",
-    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021",
+    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021v2",
   },
   eilr: {
     contentJsonUrl:
       "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-EILR.json",
-    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021",
+    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021v2",
   },
   hou: {
     contentJsonUrl:
       "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-HOU.json",
-    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021",
+    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021v2",
   },
   huc: {
     contentJsonUrl:
       "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-HUC.json",
-    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021",
+    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021v2",
   },
   lab: {
     contentJsonUrl:
       "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-LAB.json",
-    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021",
+    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021v2",
   },
   mig: {
     contentJsonUrl:
       "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-MIG.json",
-    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021",
+    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021v2",
   },
   sogi: {
     contentJsonUrl:
       "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-SOGI.json",
-    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021",
+    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021v2",
   },
   ttw: {
     contentJsonUrl:
       "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-TTW.json",
-    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021",
+    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021v2",
   },
 }
 
@@ -68,47 +91,47 @@ const fakeCensus2021Local = {
   dem:  {
     contentJsonUrl:
       "http://localhost:8090/2021/2021-DEM.json",
-    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021",
+    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021v2",
   },
   edu: {
     contentJsonUrl:
       "http://localhost:8090/2021/2021-EDU.json",
-    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021",
+    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021v2",
   },
   eilr: {
     contentJsonUrl:
       "http://localhost:8090/2021/2021-EILR.json",
-    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021",
+    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021v2",
   },
   hou: {
     contentJsonUrl:
       "http://localhost:8090/2021/2021-HOU.json",
-    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021",
+    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021v2",
   },
   huc: {
     contentJsonUrl:
       "http://localhost:8090/2021/2021-HUC.json",
-    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021",
+    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021v2",
   },
   lab: {
     contentJsonUrl:
       "http://localhost:8090/2021/2021-LAB.json",
-    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021",
+    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021v2",
   },
   mig: {
     contentJsonUrl:
       "http://localhost:8090/2021/2021-MIG.json",
-    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021",
+    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021v2",
   },
   sogi: {
     contentJsonUrl:
       "http://localhost:8090/2021/2021-SOGI.json",
-    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021",
+    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021v2",
   },
   ttw: {
     contentJsonUrl:
       "http://localhost:8090/2021/2021-TTW.json",
-    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021",
+    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021v2",
   },
 }
 
@@ -166,42 +189,29 @@ export default {
   // netlify
   netlify: {
     web: [
-      fakeCensus2021.dem,
-      fakeCensus2021.edu,
-      fakeCensus2021.eilr,
-      fakeCensus2021.hou,
-      fakeCensus2021.huc,
-      fakeCensus2021.lab,
-      fakeCensus2021.mig,
-      fakeCensus2021.sogi,
-      fakeCensus2021.ttw,
+      fakeCensus2021Public.dem,
+      fakeCensus2021Public.edu,
+      fakeCensus2021Public.eilr,
+      fakeCensus2021Public.hou,
+      fakeCensus2021Public.huc,
+      fakeCensus2021Public.lab,
+      fakeCensus2021Public.mig,
+      fakeCensus2021Public.sogi,
+      fakeCensus2021Public.ttw,
     ],
     publishing: []
   },
   // ONS sandbox
   sandbox: {
     web: [
+      fakeCensus2021.zero,
       fakeCensus2021.dem,
-      fakeCensus2021.edu,
-      fakeCensus2021.eilr,
-      fakeCensus2021.hou,
-      fakeCensus2021.huc,
-      fakeCensus2021.lab,
       fakeCensus2021.mig,
-      fakeCensus2021.sogi,
-      fakeCensus2021.ttw,
     ],
     publishing:[
       fakeCensus2021preview.zero,
-      fakeCensus2021.dem,
-      fakeCensus2021.edu,
-      fakeCensus2021.eilr,
-      fakeCensus2021.hou,
-      fakeCensus2021.huc,
-      fakeCensus2021.lab,
-      fakeCensus2021.mig,
-      fakeCensus2021.sogi,
-      fakeCensus2021.ttw,
+      fakeCensus2021preview.dem,
+      fakeCensus2021preview.mig,
     ],
   },
   // ONS staging

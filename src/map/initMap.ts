@@ -2,54 +2,52 @@ import { get } from "svelte/store";
 import { page } from "$app/stores";
 import mapboxgl, { GeoJSONSource, Map } from "mapbox-gl";
 import { fromEvent, merge } from "rxjs";
-import { delay, throttleTime } from "rxjs/operators";
-import type { GeoType } from "../types";
-import { vizStore, mapStore, selectedGeographyStore, preventFlyToGeographyStore } from "../stores/stores";
+import { throttleTime } from "rxjs/operators";
+import type { GeoType, GeographyInfo, Classification } from "../types";
+import { selection } from "../stores/selection";
+import { geography } from "../stores/geography";
 import { englandAndWalesBbox, preventFlyToGeography } from "../helpers/geographyHelper";
 import { selectGeography } from "../helpers/navigationHelper";
 import { initMapLayers } from "./initMapLayers";
 import { renderMapViz } from "./renderMapViz";
 import { layers } from "./layers";
-import { style } from "./style";
+import { style, maxBounds } from "./style";
+import { viewport } from "../stores/viewport";
+import { viz } from "../stores/viz";
 
-export const defaultZoom = 6;
-export const maxAllowedZoom = 16;
+const defaultZoom = 6;
+const maxAllowedZoom = 16;
 
 /** Configure the map's properties and subscribe to its events. */
-export const initMap = (container) => {
+export const initMap = (container: HTMLElement) => {
   const map = new Map({
     container,
     style,
-    center: new mapboxgl.LngLatBounds(englandAndWalesBbox).getCenter(),
-    zoom: defaultZoom,
+    zoom: defaultZoom, // inexplicably necessary to set (even though we fitBounds next)
+    minZoom: 5, // prevent accidental zoom out, especially on mobile
     maxZoom: maxAllowedZoom - 0.001, // prevent layers from disappearing at absolute max zoom
+    maxBounds,
   });
 
+  setPosition(map, get(geography));
   map.addControl(new mapboxgl.NavigationControl({ showCompass: false }));
 
   map.on("load", () => {
-    initMapLayers(map);
-    initSelectedGeographyLayers(map);
+    initMapLayers(map, get(geography));
+    viz.subscribe((value) => {
+      renderMapViz(map, value);
+    });
+    geography.subscribe((geography) => {
+      listenToSelectedGeographyStore(map, geography);
+    });
   });
 
-  fromEvent(map, "load")
-    .pipe(
-      delay(1000), // leave some time between base layer and viz to avoid "flash" of base layer on first load
-    )
-    .subscribe(() => {
-      vizStore.subscribe((value) => {
-        renderMapViz(map, value);
-      });
-      setMapStoreAndLayerVisibility(map);
-      listenToSelectedGeographyStore(map);
-    });
-
-  merge(fromEvent(map, "move"), fromEvent(map, "zoom"))
+  merge(fromEvent(map, "load"), fromEvent(map, "move"))
     .pipe(
       throttleTime(1000, undefined, { leading: false, trailing: true }), // don't discard the final movement
     )
     .subscribe(() => {
-      setMapStoreAndLayerVisibility(map);
+      setViewportStoreAndLayerVisibility(map, get(selection).classification);
     });
 
   layers.forEach((l) => {
@@ -63,22 +61,20 @@ export const initMap = (container) => {
   return map;
 };
 
-const setMapStoreAndLayerVisibility = (map: mapboxgl.Map) => {
+const setViewportStoreAndLayerVisibility = (map: mapboxgl.Map, classification: Classification) => {
   const b = map.getBounds();
   const bbox = { east: b.getEast(), north: b.getNorth(), west: b.getWest(), south: b.getSouth() };
-  const zoom = map.getZoom();
-  const geoType = getGeoTypeForFeatureDensity(map);
+  const geoType = getGeoType(map, classification);
 
   setMapLayerVisibility(map, geoType);
 
-  mapStore.set({
+  viewport.set({
     bbox,
     geoType: geoType,
-    zoom: zoom,
   });
 };
 
-const getGeoTypeForFeatureDensity = (map: mapboxgl.Map): GeoType => {
+const getGeoType = (map: mapboxgl.Map, classification?: Classification): GeoType => {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore (queryRenderedFeatures typings appear to be wrong)
   const features = map.queryRenderedFeatures({ layers: ["centroids"] });
@@ -86,7 +82,14 @@ const getGeoTypeForFeatureDensity = (map: mapboxgl.Map): GeoType => {
     const count = features.length;
     const canvas = map.getCanvas();
     const pixelArea = canvas.clientWidth * canvas.clientHeight;
-    return (count * 1e6) / pixelArea > 40 ? "lad" : (count * 1e6) / pixelArea > 3 ? "msoa" : "oa";
+    const preferredGeotype = (count * 1e6) / pixelArea > 40 ? "lad" : (count * 1e6) / pixelArea > 3 ? "msoa" : "oa";
+    const availableGeotypes = classification?.available_geotypes;
+    if (availableGeotypes) {
+      // the first available_geotype is the lowest-level
+      return availableGeotypes.includes(preferredGeotype) ? preferredGeotype : availableGeotypes[0];
+    } else {
+      return preferredGeotype;
+    }
   } else {
     return "lad";
   }
@@ -110,50 +113,37 @@ const setMapLayerVisibility = (map: mapboxgl.Map, geoType: GeoType) => {
   });
 };
 
-const listenToSelectedGeographyStore = (map: mapboxgl.Map) => {
-  selectedGeographyStore.subscribe((geography) => {
-    if (geography && map.isStyleLoaded()) {
-      if (geography.geoType === "ew") {
-        // do we want to reset the map view?
-        map.setZoom(defaultZoom);
-        map.setCenter(new mapboxgl.LngLatBounds(englandAndWalesBbox).getCenter());
-      } else {
-        const bounds = new mapboxgl.LngLatBounds(geography.bbox);
-        const source = map.getSource("selected-geography") as GeoJSONSource;
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore the types here are useless
-        source.setData(geography.boundary);
-        // console.log("preventFlyToGeographyStore", get(preventFlyToGeographyStore));
-        // console.log("geography", geography.geoCode);
-        if (geography.geoCode !== get(preventFlyToGeographyStore)) {
-          map.fitBounds(bounds, { padding: 300, animate: false });
-          preventFlyToGeographyStore.set(undefined);
-        }
-      }
+const listenToSelectedGeographyStore = (map: mapboxgl.Map, geography: GeographyInfo) => {
+  if (geography && map.isStyleLoaded()) {
+    // set the selected lasso
+    const source = map.getSource("selected-geography") as GeoJSONSource;
+    const boundary = geography.geoType === "ew" ? emptyFeatureCollection : geography.boundary;
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore types here are no good
+    source.setData(boundary);
+
+    // zoom there
+    if (geography.geoType !== "ew") {
+      setPosition(map, geography, { animate: true });
     }
-  });
+  }
 };
 
-const initSelectedGeographyLayers = (map: mapboxgl.Map) => {
-  map.addSource("selected-geography", {
-    type: "geojson",
-    data: {
-      type: "Feature",
-      properties: {},
-      geometry: {
-        type: "Polygon",
-        coordinates: [],
-      },
-    },
-  });
-  map.addLayer({
-    id: "selected-geography-outline",
-    type: "line",
-    source: "selected-geography",
-    layout: {},
-    paint: {
-      "line-color": "#000",
-      "line-width": 3,
-    },
-  });
+const setPosition = (map: mapboxgl.Map, g: GeographyInfo, options: { animate: boolean } = { animate: false }) => {
+  if (g.geoType === "ew") {
+    const bounds = new mapboxgl.LngLatBounds(englandAndWalesBbox);
+    map.fitBounds(bounds, { padding: 0, animate: false });
+  } else {
+    // map.flyTo({ center: bounds.getCenter(), zoom: 12, animate: options.animate });
+    const width = map.getContainer().offsetWidth;
+    const bounds = new mapboxgl.LngLatBounds(g.bbox);
+    const layer = layers.find((l) => l.name === g.geoType);
+    const geoPadFactor = layer.geoPadFactor;
+    map.fitBounds(bounds, { padding: width / geoPadFactor, animate: options.animate });
+  }
+};
+
+const emptyFeatureCollection = {
+  type: "FeatureCollection",
+  features: [],
 };

@@ -1,5 +1,6 @@
 import type { ContentConfig, Classification, Variable, VariableGroup, ContentTree } from "../types";
 
+
 /*
   Iterate through variable groups and append the data baseUrl to each category of each classification of each variable.
 */

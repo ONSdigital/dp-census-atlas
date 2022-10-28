@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-10-24-13-50-41",
-    "spec_file": "2021-content-spec.json",
+    "created_at": "2022-10-27-16-48-27",
+    "spec_file": "2021-content-spec-v2.json",
     "release": "2021-MIG"
   },
   "content": [
@@ -14,8 +14,8 @@
           "name": "Age of arrival in the UK",
           "code": "age_arrival_uk",
           "slug": "age-of-arrival-in-the-uk",
-          "desc": "The age people were when they arrived to live in the UK (for people not born in the UK).",
-          "long_desc": "The date a person last arrived to live in the UK and their age. Arrival dates do not include returning from short trips away from the UK.  \n\nAge of arrival only applies to usual residents not born in the UK. It does not include usual residents born in the UK who have emigrated and since returned. These are recorded in the category born in the UK.",
+          "desc": "The age people were when they arrived to live in the UK.",
+          "long_desc": "The date a person last arrived to live in the UK and their age. Arrival dates do not include returning from short trips away from the UK.\n\nAge of arrival only applies to usual residents not born in the UK. It does not include usual residents born in the UK who have emigrated and since returned. These are recorded in the category born in the UK.",
           "units": "Person",
           "topic_code": "MIG",
           "classifications": [
@@ -177,7 +177,7 @@
           "code": "country_of_birth",
           "slug": "country-of-birth",
           "desc": "Where people were born.",
-          "long_desc": "The country in which a person was born.  \n\nAdditional  \nFor people not born in one of in the four parts of the UK, there was an option to select \"elsewhere\".\n\nPeople who selected \"elsewhere'\" were asked to write in the current name for their country of birth.",
+          "long_desc": "The country in which a person was born. \n\nFor people not born in one of in the four parts of the UK, there was an option to select \"elsewhere\".\n\nPeople who selected \"elsewhere\" were asked to write in the current name for their country of birth.",
           "units": "Person",
           "topic_code": "MIG",
           "classifications": [
@@ -198,7 +198,7 @@
                   "code": "country_of_birth_3a-001",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "were",
-                  "legend_str_3": "born in the uk"
+                  "legend_str_3": "born in the UK"
                 },
                 {
                   "name": "Born outside the UK",
@@ -206,7 +206,7 @@
                   "code": "country_of_birth_3a-002",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "were",
-                  "legend_str_3": "born outside the uk"
+                  "legend_str_3": "born outside the UK"
                 }
               ]
             },
@@ -282,6 +282,8 @@
               "slug": "country-of-birth-12a",
               "desc": "Country of birth (12 categories)",
               "available_geotypes": [
+                "oa",
+                "msoa",
                 "lad"
               ],
               "dataset": "TS004",
@@ -316,7 +318,7 @@
                   "code": "country_of_birth_12a-004",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "were",
-                  "legend_str_3": "born in the EU2 (countries that joined the EU in 2007"
+                  "legend_str_3": "born in the EU2 (countries that joined the EU in 2007)"
                 },
                 {
                   "name": "Europe: EU countries: All other EU countries",
@@ -759,7 +761,7 @@
                   "code": "country_of_birth_60a-047",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "were",
-                  "legend_str_3": "born in Centra Asia"
+                  "legend_str_3": "born in Central Asia"
                 },
                 {
                   "name": "The Americas and the Caribbean: North America: United States",
@@ -866,7 +868,7 @@
           "code": "migrant_ind",
           "slug": "migrant-indicator",
           "desc": "People's movement both within and from outside the UK, in the one-year period before the census.",
-          "long_desc": "Migrant indicator",
+          "long_desc": "The migration indicator classifies people based on the difference between their current address and their address one year ago. It provides an indicator of the movement of people within the UK and from outside the UK, in the one-year period before the census.",
           "units": "Person",
           "topic_code": "MIG",
           "classifications": [
@@ -896,23 +898,23 @@
                   "code": "migrant_ind-001",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "were",
-                  "legend_str_3": "living at a student term-time or boarding school address one year ago"
+                  "legend_str_3": "living at a student or boarding school term-time address in the UK one year ago"
                 },
                 {
                   "name": "Migrant from within the UK: Address one year ago was in the UK",
                   "slug": "migrant-from-within-the-uk-address-one-year-ago-was-in-the-uk",
                   "code": "migrant_ind-002",
                   "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "living in an address within the UK one year ago"
+                  "legend_str_2": "were",
+                  "legend_str_3": "living at a different address within the UK one year ago"
                 },
                 {
                   "name": "Migrant from outside the UK: Address one year ago was outside the UK",
                   "slug": "migrant-from-outside-the-uk-address-one-year-ago-was-outside-the-uk",
                   "code": "migrant_ind-003",
                   "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "living in an address outside the UK one year ago"
+                  "legend_str_2": "were",
+                  "legend_str_3": "living at an address outside the UK one year ago"
                 }
               ]
             }
@@ -923,7 +925,7 @@
           "code": "passports_all",
           "slug": "passports-held",
           "desc": "The passports people hold.",
-          "long_desc": "Passports held",
+          "long_desc": "All passports classifies a person according to the passport or passports they held at the time of the census. This included expired passports or travel documents people were entitled to renew. Where a person recorded having more than one passport, they were counted only once, categorised in the following priority order: 1. UK passport, 2. Irish passport, 3. Other passport.",
           "units": "Person",
           "topic_code": "MIG",
           "classifications": [
@@ -932,6 +934,7 @@
               "slug": "passports-all-4a",
               "desc": "Passports held (4 categories)",
               "available_geotypes": [
+                "oa",
                 "msoa",
                 "lad"
               ],
@@ -1226,6 +1229,7 @@
               "slug": "passports-all-27a",
               "desc": "Passports held (27 categories)",
               "available_geotypes": [
+                "oa",
                 "msoa",
                 "lad"
               ],
@@ -1537,7 +1541,7 @@
                   "code": "passports_all_52a-011",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "a passport from another EU country that"
+                  "legend_str_3": "a passport from another EU country"
                 },
                 {
                   "name": "Europe: Other Europe: Rest of Europe: Turkey",
@@ -1553,7 +1557,7 @@
                   "code": "passports_all_52a-013",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "a passport from another European country"
+                  "legend_str_3": "a passport from another non-EU European country"
                 },
                 {
                   "name": "Africa: North Africa",
@@ -1867,8 +1871,8 @@
           "name": "Length of residence in the UK",
           "code": "residence_length",
           "slug": "length-of-residence-in-the-uk",
-          "desc": "Length of stay in the UK (for people not born in the UK).",
-          "long_desc": "Length of residence in the UK",
+          "desc": "Length of residence in the UK.",
+          "long_desc": "The length of residence in the UK is derived from the date that a person most recently arrived to live in the UK. It does not include returning from a holiday or short stay outside the UK.\n\nLength of residence is only applicable to usual residents who were not born in the UK. It does not include usual residents born in the UK who have emigrated and since returned - \nthese are recorded in the category born in the UK.",
           "units": "Person",
           "topic_code": "MIG",
           "classifications": [
@@ -1907,7 +1911,7 @@
                   "code": "residence_length_6b-003",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "lived in the UK for 5 years or more, but less than 10 years"
+                  "legend_str_3": "lived in the UK for between 5 and 10 years"
                 },
                 {
                   "name": "2 years or more, but less than 5 years",
@@ -1915,7 +1919,7 @@
                   "code": "residence_length_6b-004",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "lived in the UK for 2 years or more, but less than 5 years"
+                  "legend_str_3": "lived in the UK for between 2 and 5 years"
                 },
                 {
                   "name": "Less than 2 years",
@@ -1933,7 +1937,7 @@
           "name": "Year of arrival in the UK",
           "code": "year_arrival_uk",
           "slug": "year-of-arrival-in-the-uk",
-          "desc": "The year people arrived to live in the UK (for people not born in the UK).",
+          "desc": "The year people arrived to live in the UK.",
           "long_desc": "The year someone not born in the UK last arrived in the UK. This does not include returning from short visits away from the UK.",
           "units": "Person",
           "topic_code": "MIG",

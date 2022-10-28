@@ -64,7 +64,7 @@ def main():
                         "variable_mnemonic": variable["code"],
                         "topic_code": variable["topic_code"],
                         "classification_mnemonic": classification["code"],
-                        "category": category["name"]
+                        "category": category["code"]
                     }
                     output.update({k: category[k] for k in additional_output_fields})
                     csv_content.append(output)

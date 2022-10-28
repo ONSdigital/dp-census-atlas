@@ -1,12 +1,6 @@
 export const GeoTypes = ["ew", "lad", "msoa", "oa"] as const;
 export type GeoType = typeof GeoTypes[number];
 
-export type MapState = {
-  bbox: Bbox;
-  geoType: GeoType;
-  zoom: number;
-};
-
 export type VariableGroup = {
   name: string;
   slug: string;
@@ -59,7 +53,7 @@ export type VizData = {
   };
 };
 
-export type SelectedGeographyData = {
+export type GeographyInfo = {
   geoType: GeoType;
   geoCode: string;
   displayName: string;
@@ -81,7 +75,7 @@ export type PostcodeSearchItem = {
 };
 export type AreaSearchItem = GeographySearchItem | PostcodeSearchItem;
 
-export type GeographyInfo = {
+export type GeographyData = {
   meta: {
     name: string;
     code: string;
@@ -100,7 +94,7 @@ type GeographyFeature = {
   id: string;
   geometry: {
     type: string;
-    coordinates: [number, number, number, number];
+    coordinates: [[number, number], [number, number]];
   };
   properties?: any;
 };
@@ -110,6 +104,15 @@ export type Bbox = {
   north: number;
   west: number;
   south: number;
+};
+
+export type LoadedGeographies = {
+  categoryCode: string;
+  geoCodes: {
+    lad: Set<string>;
+    msoa: Set<string>;
+    oa: Set<string>;
+  };
 };
 
 export type LocaleSuggestions = [
@@ -145,11 +148,4 @@ export type ContentTree = {
   releases: string[];
   variableGroups: VariableGroup[];
   fakeDataLoaded: boolean;
-};
-
-export type AppParams = {
-  geoType: GeoType;
-  geoCode: string;
-  embed: boolean;
-  // pym: string;
 };

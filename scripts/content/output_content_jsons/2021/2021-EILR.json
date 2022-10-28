@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-10-24-13-50-41",
-    "spec_file": "2021-content-spec.json",
+    "created_at": "2022-10-27-16-48-27",
+    "spec_file": "2021-content-spec-v2.json",
     "release": "2021-EILR"
   },
   "content": [
@@ -402,6 +402,72 @@
           ]
         },
         {
+          "name": "Multiple ethnic groups in household",
+          "code": "hh_multi_ethnic_group",
+          "slug": "multiple-ethnic-groups-in-household",
+          "desc": "Ethnic groups within a household.",
+          "long_desc": "Classifies households by whether members identify as having the same or different ethnic groups. \n\nIf multiple ethnic groups are present, this identifies whether they differ between generations or partnerships within the household.",
+          "units": "Household",
+          "topic_code": "EILR",
+          "classifications": [
+            {
+              "code": "hh_multi_ethnic_group",
+              "slug": "hh-multi-ethnic-group",
+              "desc": "Multiple ethnic groups in household (6 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
+              "dataset": "TS023",
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "categories": [
+                {
+                  "name": "One-person household",
+                  "slug": "one-person-household",
+                  "code": "hh_multi_ethnic_group-001",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "one-person households"
+                },
+                {
+                  "name": "All household members have the same ethnic group",
+                  "slug": "all-household-members-have-the-same-ethnic-group",
+                  "code": "hh_multi_ethnic_group-002",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "members that are all from the same ethnic group"
+                },
+                {
+                  "name": "Ethnic groups differ between generations but not within partnerships",
+                  "slug": "ethnic-groups-differ-between-generations-but-not-within-partnerships",
+                  "code": "hh_multi_ethnic_group-003",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "members from ethnic groups that differ between generations but not within partnerships"
+                },
+                {
+                  "name": "Ethnic groups differ within partnerships",
+                  "slug": "ethnic-groups-differ-within-partnerships",
+                  "code": "hh_multi_ethnic_group-004",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "members from ethnic groups that differ within partnerships"
+                },
+                {
+                  "name": "Any other combination of multiple ethnic identities",
+                  "slug": "any-other-combination-of-multiple-ethnic-identities",
+                  "code": "hh_multi_ethnic_group-005",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "members with any other combination of ethnic identities"
+                }
+              ]
+            }
+          ]
+        },
+        {
           "name": "Multiple main languages in household",
           "code": "hh_multi_language",
           "slug": "multiple-main-languages-in-household",
@@ -453,12 +519,12 @@
               "dataset": "TS026",
               "categories": [
                 {
-                  "name": "One person household",
+                  "name": "One-person household",
                   "slug": "one-person-household",
                   "code": "hh_multi_language-001",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "not applicable (one person household)"
+                  "legend_str_3": "not applicable (one-person household)"
                 },
                 {
                   "name": "All household members have the same main language",
@@ -524,7 +590,7 @@
                   "code": "hh_multi_religion_7a-001",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "not applicable (one person household)"
+                  "legend_str_3": "not applicable (one-person household)"
                 },
                 {
                   "name": "Multi-person household: No people stated their religion",
@@ -575,7 +641,7 @@
           "code": "main_language_detailed",
           "slug": "main-language-detailed",
           "desc": "People's first or preferred language.",
-          "long_desc": "The main languages spoken for people whose main language is not English in England or Welsh in Wales.  \n\nThis breaks down the responses given in the write-in option Other, write in (including British Sign Language.",
+          "long_desc": "The main languages spoken for people whose main language is not English in England or Welsh in Wales.  \n\nThis breaks down the responses given in the write-in option Other, write in (including British Sign Language).",
           "units": "Person",
           "topic_code": "EILR",
           "classifications": [
@@ -603,7 +669,7 @@
                   "code": "main_language_detailed_23a-002",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "speak",
-                  "legend_str_3": "Any other UK language"
+                  "legend_str_3": "any other UK language"
                 },
                 {
                   "name": "French",
@@ -755,7 +821,7 @@
                   "code": "main_language_detailed_23a-021",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "speak",
-                  "legend_str_3": "a African language"
+                  "legend_str_3": "an African language"
                 },
                 {
                   "name": "Other language",
@@ -2502,7 +2568,7 @@
           "code": "welsh_skills_all",
           "slug": "welsh-language-skills",
           "desc": "Whether people can understand, speak, read, or write Welsh. This question was only asked in Wales.",
-          "long_desc": "Whether a person has Welsh language skills.  If they do, can they do any of the following: \n* understand spoken Welsh \n* speak Welsh \n* read Welsh \n* write Welsh \n\nThe census questionnaire only asked this question to people in Wales.  \n\nAdditional info: \nIn results that classify people by Welsh language skills, a person may appear in more than one category depending on which combination of skills they have.",
+          "long_desc": "Whether a person has Welsh language skills.  If they do, can they do any of the following:\n\n* understand spoken Welsh \n* speak Welsh \n* read Welsh \n* write Welsh \n\nThe census questionnaire only asked this question to people in Wales.  \n\nAdditional info: \nIn results that classify people by Welsh language skills, a person may appear in more than one category depending on which combination of skills they have.",
           "units": "Person",
           "topic_code": "EILR",
           "classifications": [

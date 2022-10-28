@@ -1,54 +1,27 @@
 <script lang="ts">
   import { _ } from "svelte-i18n";
   import { page } from "$app/stores";
-  import { mapStore, selectedGeographyStore } from "../stores/stores";
-  import { contentStore } from "../stores/stores";
-  import { setVizStore } from "../data/setVizStore";
+  import { selection } from "../stores/selection";
+  import { geography } from "../stores/geography";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
   import CategoryPageLinks from "./CategoryPageLinks.svelte";
   import Heading from "./Heading.svelte";
   import AreaPanel from "./AreaPanel.svelte";
   import RadioButton from "./RadioButton.svelte";
   import VariableDescription from "./VariableDescription.svelte";
-
-  $: params = $page.params;
-  $: variableGroupSlug = params.variableGroup;
-  $: variableGroup = $contentStore.variableGroups.find((vg) => vg.slug === variableGroupSlug);
-  $: variableSlug = params.variable;
-  $: variable = variableGroup.variables.find((v) => v.slug === variableSlug);
-  $: classificationSlug = params.classification;
-  $: classification = variable.classifications.find((c) => c.slug === classificationSlug);
-  $: categorySlug = params.category;
-  $: category = classification.categories.find((c) => c.slug === categorySlug);
-  $: selectedGeographyDisplayName = $selectedGeographyStore?.displayName;
-  $: selectedGeographyGeoCode = $selectedGeographyStore?.geoCode;
-
-  $: if ($mapStore) {
-    setVizStore({
-      category: category,
-      geoType: $mapStore.geoType,
-      geoCode: selectedGeographyGeoCode,
-      bbox: $mapStore.bbox,
-      zoom: $mapStore.zoom,
-      variableGroups: $contentStore.variableGroups,
-    });
-  }
 </script>
 
 <svelte:head>
   <title
     >{$_("categoryPage.html.title", {
       values: {
-        categoryName: category.name,
-        selectedGeographyDisplayName: `${selectedGeographyDisplayName}`,
+        categoryName: $selection.category.name,
+        selectedGeographyDisplayName: `${$geography.displayName}`,
       },
     })}</title
   >
 </svelte:head>
 
-<div class="hidden lg:block ">
-  <Heading />
-</div>
 <div class="h-full flex flex-col">
   <div class="px-6 border-t-[1px] border-t-ons-grey-15">
     <AreaPanel />
@@ -57,42 +30,45 @@
       <nav class="flex flex-wrap items-center gap-2 text-xl" aria-label="Breadcrumb">
         <a class="hyperlink" href={buildHyperlink($page.url)}>Home</a>
         <div class="text-sm font-extrabold text-ons-grey-75" aria-hidden>&gt;</div>
-        <a class="hyperlink" href={buildHyperlink($page.url, { variableGroup: variableGroup.slug })}
-          >{variableGroup.name}</a
+        <a class="hyperlink" href={buildHyperlink($page.url, { variableGroup: $selection.variableGroup.slug })}
+          >{$selection.variableGroup.name}</a
         >
         <div class="text-sm font-extrabold text-ons-grey-75" aria-hidden>&gt;</div>
-        <div class="">{variable.name}</div>
+        <div class="">{$selection.variable.name}</div>
       </nav>
       <div class="mt-4 mb-2">
-        <VariableDescription shortDescription={variable.desc} longDescription={variable.long_desc} />
+        <VariableDescription
+          shortDescription={$selection.variable.desc}
+          longDescription={$selection.variable.long_desc}
+        />
       </div>
       <ul class="flex flex-col last:border-b-[1px] mb-4">
-        {#each classification.categories as category}
+        {#each $selection.classification.categories as category}
           <li class="">
             <a
               href={buildHyperlink($page.url, {
-                variableGroup: variableGroup.slug,
-                variable: variable.slug,
+                variableGroup: $selection.variableGroup.slug,
+                variable: $selection.variable.slug,
                 category: {
-                  classification: classification.slug,
+                  classification: $selection.classification.slug,
                   category: category.slug,
                 },
               })}
               class="flex gap-2 items-center p-2 border-t-[1px] border-t-slate-300 cursor-pointer custom-ring"
-              class:bg-ons-grey-5={category.slug === categorySlug}
+              class:bg-ons-grey-5={category === $selection.category}
             >
-              <RadioButton selected={category.slug === categorySlug} />
+              <RadioButton selected={category === $selection.category} />
               <div>{category.name}</div>
             </a>
           </li>
         {/each}
       </ul>
-      {#if variable.classifications.length > 1}
+      {#if $selection.variable.classifications.length > 1}
         <div class="mb-6">
           Change the <a
             href={buildHyperlink($page.url, {
-              variableGroup: variableGroup.slug,
-              variable: variable.slug,
+              variableGroup: $selection.variableGroup.slug,
+              variable: $selection.variable.slug,
             })}
             class="hyperlink custom-ring"
           >
@@ -104,6 +80,6 @@
   </div>
   <div class="grow" />
   <div class="p-6 pt-4 bg-ons-grey-5 border-t-ons-grey-15 border-t-[1px]">
-    <CategoryPageLinks dataset={classification.dataset} />
+    <CategoryPageLinks dataset={$selection.classification.dataset} />
   </div>
 </div>

@@ -1,19 +1,5 @@
-import { GeoTypes, type Variable, type Category, type Classification } from "../types";
-import { englandAndWales } from "./spatialHelper";
-import { formatPercentage, formatTemplateString } from "./categoryHelpers";
-import { getSelectedGeography } from "./appParamsHelper";
-
-describe("formatPercentage", () => {
-  test("rounds percentage to nearest single decimal place and returns as string - single decimal place input", () => {
-    expect(formatPercentage(10.1)).toEqual("10.1");
-  });
-  test("rounds percentage to nearest single decimal place and returns as string - no decimal place input", () => {
-    expect(formatPercentage(10)).toEqual("10.0");
-  });
-  test("rounds percentage to nearest single decimal place and returns as string - multiple decimal place input", () => {
-    expect(formatPercentage(10.58098340980878)).toEqual("10.6");
-  });
-});
+import type { Variable, Category, Classification } from "../types";
+import { formatTemplateString } from "./categoryHelpers";
 
 describe("formatTemplateString", () => {
   const testCategory: Category = {
@@ -30,6 +16,7 @@ describe("formatTemplateString", () => {
     slug: "test-var",
     code: "testVarCode",
     desc: "",
+    long_desc: "",
     units: "testUnits",
     topic_code: "testTopicCode",
     classifications: [] as Classification[],
@@ -76,39 +63,4 @@ describe("formatTemplateString", () => {
       ),
     ).toEqual("testVar, testVar, testCat, testCat in a sentence");
   });
-});
-
-describe("getSelectedGeography", () => {
-  test("returns ew when no geography in url", () => {
-    const testURL = new URL("https://dp.aws.onsdigital.uk/census-atlas");
-    expect(getSelectedGeography(testURL.searchParams)).toEqual({
-      geoType: englandAndWales.meta.geotype,
-      geoCode: englandAndWales.meta.code,
-    });
-  });
-  // test all known geotypes are found
-  for (const g of GeoTypes) {
-    const testSelectedGeography = {
-      geoType: g,
-      geoCode: `testGeoCode${g}`,
-    };
-    test("retrives selected geography from short url", () => {
-      const testURL = new URL(
-        `https://dp.aws.onsdigital.uk/census-atlas?${testSelectedGeography.geoType}=${testSelectedGeography.geoCode}`,
-      );
-      expect(getSelectedGeography(testURL.searchParams)).toEqual(testSelectedGeography);
-    });
-    test("retrives selected geography from longer url", () => {
-      const testURL = new URL(
-        `https://dp.aws.onsdigital.uk/census-atlas/choropleth/population?${testSelectedGeography.geoType}=${testSelectedGeography.geoCode}`,
-      );
-      expect(getSelectedGeography(testURL.searchParams)).toEqual(testSelectedGeography);
-    });
-    test("retrives selected geography from longest url", () => {
-      const testURL = new URL(
-        `https://dp.aws.onsdigital.uk/census-atlas/choropleth/population/marital-status/default/single-never-married-or-in-a-civil-partnership?${testSelectedGeography.geoType}=${testSelectedGeography.geoCode}`,
-      );
-      expect(getSelectedGeography(testURL.searchParams)).toEqual(testSelectedGeography);
-    });
-  }
 });

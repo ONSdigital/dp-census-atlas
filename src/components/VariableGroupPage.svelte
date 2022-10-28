@@ -1,28 +1,12 @@
 <script lang="ts">
   import { page } from "$app/stores";
   import { _ } from "svelte-i18n";
-
-  // import { mapStore, selectedGeographyStore, vizStore } from "../stores/stores";
-  // import { setVizStore } from "../data/setVizStore";
+  import { selection } from "../stores/selection";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
   import { getDefaultChoroplethClassification } from "../helpers/variableHelpers";
-
-  import { contentStore } from "../stores/stores";
-
-  import Heading from "./Heading.svelte";
   import AreaPanel from "./AreaPanel.svelte";
-
-  $: variableGroupSlug = $page.params.variableGroup;
-  $: variableGroup = $contentStore.variableGroups.find((vg) => vg.slug === variableGroupSlug);
-
-  // $: if ($mapStore) {
-  //   vizStore.set(undefined);
-  // }
 </script>
 
-<Heading />
-
-<!-- {JSON.stringify($vizStore)} -->
 <div class="px-6">
   <AreaPanel />
   <div class="pt-3 flex">
@@ -31,17 +15,17 @@
   <div class="flex items-center gap-2 text-xl">
     <a class="hyperlink" href={buildHyperlink($page.url)}>Home</a>
     <div class="text-sm font-extrabold text-slate-500">&gt;</div>
-    <div class=" ">{variableGroup.name}</div>
+    <div class=" ">{$selection.variableGroup.name}</div>
   </div>
   <div class="mt-4 mb-2 ">
-    {variableGroup.desc}
+    {$selection.variableGroup.desc}
   </div>
   <div class="flex flex-col mb-6 last:border-b-[1px] border-b-slate-300">
-    {#each variableGroup.variables as variable}
+    {#each $selection.variableGroup.variables as variable}
       <a
         class="border-t-[1px] border-t-slate-300 py-2 group"
         href={buildHyperlink($page.url, {
-          variableGroup: variableGroup.slug,
+          variableGroup: $selection.variableGroup.slug,
           variable: variable.slug,
           category: {
             classification: getDefaultChoroplethClassification(variable).slug,

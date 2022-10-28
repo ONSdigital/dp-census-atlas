@@ -19,7 +19,7 @@
   </button>
 </div>
 {#if showLongDescription}
-  <div class="my-5 border-l-4 border-l-ons-grey-75 p-4 bg-ons-grey-5">
+  <div class="my-5 border-l-4 border-l-ons-grey-75 p-4 bg-ons-grey-5" style="white-space:pre-wrap">
     {longDescription}
   </div>
 {/if}

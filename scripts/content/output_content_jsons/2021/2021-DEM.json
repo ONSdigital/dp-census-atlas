@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-10-24-13-50-41",
-    "spec_file": "2021-content-spec.json",
+    "created_at": "2022-10-27-16-48-27",
+    "spec_file": "2021-content-spec-v2.json",
     "release": "2021-DEM"
   },
   "content": [
@@ -14,7 +14,7 @@
           "name": "Population density",
           "code": "population_density",
           "slug": "population-density",
-          "desc": "The number of people per square kilometre.",
+          "desc": "The number of people resident per square kilometre.",
           "long_desc": "The number of usual residents per square kilometre, calculated based on total land area excluding inland water.",
           "units": "Persons per square kilometre",
           "topic_code": "DEM",
@@ -48,7 +48,7 @@
           "code": "hh_deprivation",
           "slug": "household-deprivation",
           "desc": "Whether a household is deprived in one or more ways.",
-          "long_desc": "The dimensions of deprivation used to classify households are indicators based on four selected household characteristics.\n\nEducation\nA household is classified as deprived in the education dimension if no one has at least level 2 education and no one aged 16 to 18 years is a full-time student.\n\nEmployment\nA household is classified as deprived in the employment dimension if any member, not a full-time student, is either unemployed or long-term sick.\n\nHealth\nA household is classified as deprived in the health dimension if any member is disabled.\n\nHousing\nA household is classified as deprived in the housing dimension if the household's accommodation is either overcrowded, in a shared dwelling, or has no central heating.",
+          "long_desc": "The dimensions of deprivation used to classify households are indicators based on four selected household characteristics.\n\nEducation\nA household is classified as deprived in the education dimension if no one has at least level 2 education and no one aged 16 to 18 years is a full-time student.\n\nEmployment\nA household is classified as deprived in the employment dimension if any member, not a full-time student, is either unemployed or disabled.\n\nHealth\nA household is classified as deprived in the health dimension if any member is disabled.\n\nHousing\nA household is classified as deprived in the housing dimension if the household's accommodation is either overcrowded, in a shared dwelling, or has no central heating.",
           "units": "Household",
           "topic_code": "DEM",
           "classifications": [
@@ -114,7 +114,7 @@
           "code": "hh_family_composition",
           "slug": "household-composition",
           "desc": "Households according to the relationships between members.",
-          "long_desc": "Households according to the relationships between members. \n\nOne-family households are classified by: \n* the number of dependent children \n* family type (married, civil partnership or cohabiting couple family, or lone parent family) \n\nOther households are classified by: \n* the number of people \n* the number of dependent children \n* whether the household consists only of students or only of people aged 66 and over",
+          "long_desc": "Households according to the relationships between members. \n\nOne-family households are classified by:\n\n* the number of dependent children \n* family type (married, civil partnership or cohabiting couple family, or lone parent family) \n\nOther households are classified by:\n\n* the number of people \n* the number of dependent children \n* whether the household consists only of students or only of people aged 66 and over",
           "units": "Household",
           "topic_code": "DEM",
           "classifications": [
@@ -132,20 +132,20 @@
               "dot_density_default": true,
               "categories": [
                 {
-                  "name": "Multiple family household",
+                  "name": "Other household types",
                   "slug": "multiple-family-household",
                   "code": "hh_family_composition_4a-001",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "multiple family households"
+                  "legend_str_3": "other household types"
                 },
                 {
-                  "name": "One person household",
+                  "name": "One-person household",
                   "slug": "one-person-household",
                   "code": "hh_family_composition_4a-002",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "one person households"
+                  "legend_str_3": "one-person households"
                 },
                 {
                   "name": "Single family household",
@@ -153,7 +153,7 @@
                   "code": "hh_family_composition_4a-003",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "single family households"
+                  "legend_str_3": "single-family households"
                 }
               ]
             },
@@ -169,7 +169,7 @@
               "dataset": "TS003",
               "categories": [
                 {
-                  "name": "One person household: Aged 66 years and over",
+                  "name": "One-person household: Aged 66 years and over",
                   "slug": "one-person-household-aged-66-years-and-over",
                   "code": "hh_family_composition_15a-001",
                   "legend_str_1": "of households in {location}",
@@ -177,12 +177,12 @@
                   "legend_str_3": "households with one person aged 66 years and over"
                 },
                 {
-                  "name": "One person household: Other",
+                  "name": "One-person household: Other",
                   "slug": "one-person-household-other",
                   "code": "hh_family_composition_15a-002",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "househols with one person aged less than 66 years"
+                  "legend_str_3": "households with one person aged less than 66 years"
                 },
                 {
                   "name": "Single family household: All aged 66 years and over",
@@ -190,7 +190,7 @@
                   "code": "hh_family_composition_15a-003",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "single family households in which all people are aged 66 years and over"
+                  "legend_str_3": "single-family households in which all people are aged 66 years and over"
                 },
                 {
                   "name": "Single family household: Married or civil partnership couple: No children",
@@ -198,7 +198,7 @@
                   "code": "hh_family_composition_15a-004",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "single family households of a married or civil partnership couple with no children"
+                  "legend_str_3": "single-family households of a married or civil partnership couple with no children"
                 },
                 {
                   "name": "Single family household: Married or civil partnership couple: Dependent children",
@@ -206,7 +206,7 @@
                   "code": "hh_family_composition_15a-005",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "single family households of a married or civil partnership couple with dependent children"
+                  "legend_str_3": "single-family households of a married or civil partnership couple with dependent children"
                 },
                 {
                   "name": "Single family household: Married or civil partnership couple: All children non-dependent",
@@ -214,7 +214,7 @@
                   "code": "hh_family_composition_15a-006",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "single family households of a married or civil partnership couple with all children non-dependent"
+                  "legend_str_3": "single-family households of a married or civil partnership couple with independent children"
                 },
                 {
                   "name": "Single family household: Cohabiting couple family: No children",
@@ -222,7 +222,7 @@
                   "code": "hh_family_composition_15a-007",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "single family households of a cohabiting couple family with no children"
+                  "legend_str_3": "single-family households of a cohabiting couple with no children"
                 },
                 {
                   "name": "Single family household: Cohabiting couple family: With dependent children",
@@ -230,7 +230,7 @@
                   "code": "hh_family_composition_15a-008",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "single family households of a cohabiting couple family with dependent children"
+                  "legend_str_3": "single-family households of a cohabiting couple with dependent children"
                 },
                 {
                   "name": "Single family household: Cohabiting couple family: All children non-dependent",
@@ -238,7 +238,7 @@
                   "code": "hh_family_composition_15a-009",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "single family households of a cohabiting couple family with all children non-dependent"
+                  "legend_str_3": "single-family households of a cohabiting couple with independent children"
                 },
                 {
                   "name": "Single family household: Lone parent family: With dependent children",
@@ -246,7 +246,7 @@
                   "code": "hh_family_composition_15a-010",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "single family households of a lone parent family with dependent children"
+                  "legend_str_3": "single-family households of a lone parent family with dependent children"
                 },
                 {
                   "name": "Single family household: Lone parent family: All children non-dependent",
@@ -254,7 +254,7 @@
                   "code": "hh_family_composition_15a-011",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "single family households of a lone parent family with all children non-dependent"
+                  "legend_str_3": "single-family households of a lone parent family with independent children"
                 },
                 {
                   "name": "Single family household: Other single family household: Other family composition",
@@ -262,89 +262,23 @@
                   "code": "hh_family_composition_15a-012",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "single family households with other family composition"
+                  "legend_str_3": "single-family households with other family composition"
                 },
                 {
-                  "name": "Multiple-family household: With dependent children",
-                  "slug": "multiple-family-household-with-dependent-children",
+                  "name": "Other household types: With dependent children",
+                  "slug": "other-household-types-with-dependent-children",
                   "code": "hh_family_composition_15a-013",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "multiple-family households with dependent children"
                 },
                 {
-                  "name": "Multiple-family household: Other, including all full-time students and all aged 66 years and over",
-                  "slug": "multiple-family-household-other-including-all-full-time-students-and-all-aged-66-years-and-over",
+                  "name": "Other household types: Other, including all full-time students and all aged 66 years and over",
+                  "slug": "other-household-types-other-including-all-full-time-students-and-all-aged-66-years-and-over",
                   "code": "hh_family_composition_15a-014",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "multiple-family households with other composition, including all full-time students and all aged 66 years and over"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Multiple ethnic groups in household",
-          "code": "hh_multi_ethnic_group",
-          "slug": "multiple-ethnic-groups-in-household",
-          "desc": "Ethnic groups within a household.",
-          "long_desc": "Single or multiple ethnic groups within the household.  \nIf multiple ethnic groups are present, this identifies whether ethnic groups differ between generations or partnerships within the household.",
-          "units": "Household",
-          "topic_code": "DEM",
-          "classifications": [
-            {
-              "code": "hh_multi_ethnic_group",
-              "slug": "hh-multi-ethnic-group",
-              "desc": "Multiple ethnic groups in household (6 categories)",
-              "available_geotypes": [
-                "oa",
-                "msoa",
-                "lad"
-              ],
-              "dataset": "TS023",
-              "choropleth_default": true,
-              "dot_density_default": true,
-              "categories": [
-                {
-                  "name": "One-person household",
-                  "slug": "one-person-household",
-                  "code": "hh_multi_ethnic_group-001",
-                  "legend_str_1": "of households in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "one-person households"
-                },
-                {
-                  "name": "All household members have the same ethnic group",
-                  "slug": "all-household-members-have-the-same-ethnic-group",
-                  "code": "hh_multi_ethnic_group-002",
-                  "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "members that all have the same ethnic group"
-                },
-                {
-                  "name": "Ethnic groups differ between generations but not within partnerships",
-                  "slug": "ethnic-groups-differ-between-generations-but-not-within-partnerships",
-                  "code": "hh_multi_ethnic_group-003",
-                  "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "members from ethnic groups that differ between generations but not within partnerships"
-                },
-                {
-                  "name": "Ethnic groups differ within partnerships",
-                  "slug": "ethnic-groups-differ-within-partnerships",
-                  "code": "hh_multi_ethnic_group-004",
-                  "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "members from ethnic groups that differ within partnerships"
-                },
-                {
-                  "name": "Any other combination of multiple ethnic identities",
-                  "slug": "any-other-combination-of-multiple-ethnic-identities",
-                  "code": "hh_multi_ethnic_group-005",
-                  "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "members with any other combination of multiple ethnic identities"
+                  "legend_str_3": "another type of multiple-family household, including all full-time students and all aged 66 years and over"
                 }
               ]
             }
@@ -355,7 +289,7 @@
           "code": "hh_size",
           "slug": "household-size",
           "desc": "The number of people in a household.",
-          "long_desc": "The number of people in the household.   \n\nAdditional  \nVisitors staying at an address do not count to that households size.",
+          "long_desc": "The number of people in the household. \n\nVisitors staying at an address do not count to that households size.",
           "units": "Household",
           "topic_code": "DEM",
           "classifications": [
@@ -378,7 +312,7 @@
                   "code": "hh_size_5a-001",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "1 person in household"
+                  "legend_str_3": "1 person per household"
                 },
                 {
                   "name": "2 people in household",
@@ -386,7 +320,7 @@
                   "code": "hh_size_5a-002",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "2 people in household"
+                  "legend_str_3": "2 people per household"
                 },
                 {
                   "name": "3 people in household",
@@ -394,7 +328,7 @@
                   "code": "hh_size_5a-003",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "3 people in household"
+                  "legend_str_3": "3 people per household"
                 },
                 {
                   "name": "4 or more people in household",
@@ -402,7 +336,7 @@
                   "code": "hh_size_5a-004",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "4 or more people in household"
+                  "legend_str_3": "4 or more people per household"
                 }
               ]
             },
@@ -418,20 +352,12 @@
               "dataset": "TS017",
               "categories": [
                 {
-                  "name": "0 people in household",
-                  "slug": "0-people-in-household",
-                  "code": "hh_size_9a-000",
-                  "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "0 people in household"
-                },
-                {
                   "name": "1 person in household",
                   "slug": "1-person-in-household",
                   "code": "hh_size_9a-001",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "1 person in household"
+                  "legend_str_3": "1 person per household"
                 },
                 {
                   "name": "2 people in household",
@@ -439,7 +365,7 @@
                   "code": "hh_size_9a-002",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "2 people in household"
+                  "legend_str_3": "2 people per household"
                 },
                 {
                   "name": "3 people in household",
@@ -447,7 +373,7 @@
                   "code": "hh_size_9a-003",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "3 people in household"
+                  "legend_str_3": "3 people per household"
                 },
                 {
                   "name": "4 people in household",
@@ -455,7 +381,7 @@
                   "code": "hh_size_9a-004",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "4 people in household"
+                  "legend_str_3": "4 people per household"
                 },
                 {
                   "name": "5 people in household",
@@ -463,7 +389,7 @@
                   "code": "hh_size_9a-005",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "5 people in household"
+                  "legend_str_3": "5 people per household"
                 },
                 {
                   "name": "6 people in household",
@@ -471,7 +397,7 @@
                   "code": "hh_size_9a-006",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "6 people in household"
+                  "legend_str_3": "6 people per household"
                 },
                 {
                   "name": "7 people in household",
@@ -479,7 +405,7 @@
                   "code": "hh_size_9a-007",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "7 people in household"
+                  "legend_str_3": "7 people per household"
                 },
                 {
                   "name": "8 or more people in household",
@@ -487,18 +413,18 @@
                   "code": "hh_size_9a-008",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "8 or more people in household"
+                  "legend_str_3": "8 or more people per household"
                 }
               ]
             }
           ]
         },
         {
-          "name": "Marital and civil partnership status",
+          "name": "Legal partnership status",
           "code": "legal_partnership_status",
           "slug": "marital-and-civil-partnership-status",
           "desc": "People's marital or civil partnership status.",
-          "long_desc": "Classifies a person according to their legal marital or registered civil partnership status on 21 March 2021.\n\n It is the same as the 2011 census variable \"Marital status\" but has been updated for Census 2021 to reflect the revised Civil Partnership Act that came into force in 2019.\n\nIn Census 2021 results, \"single\" refers only to someone who has never been married or in a registered civil partnership.",
+          "long_desc": "Classifies a person according to their legal marital or registered civil partnership status on Census Day 21 March 2021.\n\nIt is the same as the 2011 census variable \"Marital status\" but has been updated for Census 2021 to reflect the revised Civil Partnership Act that came into force in 2019.\n\nIn Census 2021 results, \"single\" refers only to someone who has never been married or in a registered civil partnership.",
           "units": "Person",
           "topic_code": "DEM",
           "classifications": [
@@ -582,7 +508,7 @@
                   "code": "legal_partnership_status_6a-005",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "widowed or the surviving civil partnership partner"
+                  "legend_str_3": "widowed or the surviving partner from a civil partnership"
                 }
               ]
             },
@@ -683,7 +609,7 @@
                   "code": "legal_partnership_status-011",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "the surviving partner from civil partnership"
+                  "legend_str_3": "the surviving partner from a civil partnership"
                 }
               ]
             }
@@ -694,7 +620,7 @@
           "code": "living_arrangements",
           "slug": "living-arrangements",
           "desc": "People's living arrangements, by their legal partnership status.",
-          "long_desc": "Living arrangements",
+          "long_desc": "The living arrangements classification combines responses to the question on marital and civil partnership status with information about whether or not a person is living in a couple. This topic is only applicable to people in households. Living arrangements differs from marital and civil partnership status because cohabiting takes priority over other categories. For example, if a person is divorced and cohabiting, then in results for living arrangements they are classified as cohabiting.",
           "units": "Person",
           "topic_code": "DEM",
           "classifications": [
@@ -714,40 +640,40 @@
                   "slug": "living-in-an-opposite-sex-couple-married-or-in-a-civil-partnership",
                   "code": "living_arrangements_11a-001",
                   "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "living in an opposite-sex couple that is married or in a civil partnership"
+                  "legend_str_2": "live together",
+                  "legend_str_3": "in a opposite-sex couple that is married or in a civil partnership"
                 },
                 {
                   "name": "Living in a same-sex couple: Married or in a civil partnership",
                   "slug": "living-in-a-same-sex-couple-married-or-in-a-civil-partnership",
                   "code": "living_arrangements_11a-002",
                   "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "living in a same-sex couple that is married or in a civil partnership"
+                  "legend_str_2": "live together",
+                  "legend_str_3": "in a same-sex couple that is married or in a civil partnership"
                 },
                 {
                   "name": "Living in a couple: Separated, but still married or in a civil partnership",
                   "slug": "living-in-a-couple-separated-but-still-married-or-in-a-civil-partnership",
                   "code": "living_arrangements_11a-003",
                   "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "living in a couple that is separated, but still married or in a civil partnership"
+                  "legend_str_2": "live together",
+                  "legend_str_3": "in a couple that is separated, but still married or in a civil partnership"
                 },
                 {
                   "name": "Living in an opposite-sex couple: Cohabiting",
                   "slug": "living-in-an-opposite-sex-couple-cohabiting",
                   "code": "living_arrangements_11a-004",
                   "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "living in an opposite-sex couple that is cohabiting"
+                  "legend_str_2": "live together",
+                  "legend_str_3": "in an opposite-sex couple that is cohabiting"
                 },
                 {
                   "name": "Living in a same-sex couple: Cohabiting",
                   "slug": "living-in-a-same-sex-couple-cohabiting",
                   "code": "living_arrangements_11a-005",
                   "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "living in a same-sex couple that is cohabiting"
+                  "legend_str_2": "live together",
+                  "legend_str_3": "in a same-sex couple that is cohabiting"
                 },
                 {
                   "name": "Not living in a couple: Single (never married and never registered a same-sex civil partnership)",
@@ -763,7 +689,7 @@
                   "code": "living_arrangements_11a-007",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "not living in a couple, but married or in a registered civil partnership"
+                  "legend_str_3": "not living in a couple, but are married or in a registered civil partnership"
                 },
                 {
                   "name": "Not living in a couple: Separated (including those who are married and those who are in civil partnerships)",
@@ -787,7 +713,7 @@
                   "code": "living_arrangements_11a-010",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "widowed or surviving partner from a civil partnership"
+                  "legend_str_3": "widowed or the surviving partner from a civil partnership"
                 }
               ]
             }
@@ -1839,11 +1765,11 @@
           ]
         },
         {
-          "name": "Average (median) age",
+          "name": "Median age",
           "code": "median_age",
           "slug": "median-age",
-          "desc": "Average age on Census Day, 21 March 2021.",
-          "long_desc": "Average (median) age is calculated from the age of residents on Census Day, 21 March 2021 in England and Wales.",
+          "desc": "The median age of people on Census Day, 21 March 2021.",
+          "long_desc": "Median age is calculated from the age of residents on Census Day, 21 March 2021 in England and Wales.",
           "units": "Years",
           "topic_code": "DEM",
           "classifications": [
@@ -1863,7 +1789,7 @@
                   "name": "Median age",
                   "slug": "median-age",
                   "code": "median_age-001",
-                  "legend_str_1": "Average (median) age of people in {location}",
+                  "legend_str_1": "Median age of people in {location}",
                   "legend_str_2": "in",
                   "legend_str_3": "years"
                 }

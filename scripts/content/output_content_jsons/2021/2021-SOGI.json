@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-10-24-13-50-41",
-    "spec_file": "2021-content-spec.json",
+    "created_at": "2022-10-27-16-48-27",
+    "spec_file": "2021-content-spec-v2.json",
     "release": "2021-SOGI"
   },
   "content": [
@@ -37,7 +37,7 @@
                   "code": "gender_identity_4a-001",
                   "legend_str_1": "of families in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "a gender identity the same as sex registered at birth"
+                  "legend_str_3": "a gender identity the same as their sex registered at birth"
                 },
                 {
                   "name": "Gender identity different from sex registered at birth",
@@ -45,7 +45,7 @@
                   "code": "gender_identity_4a-002",
                   "legend_str_1": "of families in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "a gender identity different from sex registered at birth"
+                  "legend_str_3": "a gender identity different from their sex registered at birth"
                 },
                 {
                   "name": "Not answered",
@@ -73,7 +73,7 @@
                   "code": "gender_identity_8a-001",
                   "legend_str_1": "of families in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "a gender identity the same as sex registered at birth"
+                  "legend_str_3": "a gender identity the same as their sex registered at birth"
                 },
                 {
                   "name": "Gender identity different from sex registered at birth but no specific identity given",
@@ -81,7 +81,7 @@
                   "code": "gender_identity_8a-002",
                   "legend_str_1": "of families in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "a gender identity different from sex registered at birth but no specific identity given"
+                  "legend_str_3": "a gender identity different from their sex registered at birth but no specific identity given"
                 },
                 {
                   "name": "Trans woman",

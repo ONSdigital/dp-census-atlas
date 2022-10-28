@@ -23,7 +23,6 @@
   export let fontSize = "1.1em";
   export let fontSizeInput = ".91em";
   export let height = 48;
-  export let isMulti = false;
   export let maxSelected = 4;
   export let colors = ["#206095", "#a8bd3a", "#871a5b", "#27a0cc"];
   export let darkMode = false;
@@ -82,30 +81,14 @@
       }
     }
   }
-
-  onMount(() => {
-    let style = el.style;
-    style.setProperty("--firstItem", colors[0 % colors.length]);
-    style.setProperty("--secondItem", colors[1 % colors.length]);
-    style.setProperty("--thirdItem", colors[2 % colors.length]);
-    style.setProperty("--fourthItem", colors[3 % colors.length]);
-    style.setProperty("--borderColor", borderColor);
-  });
 </script>
 
-<div
-  class="selectbox"
-  class:multi-selected={value && isMulti}
-  class:focused={isFocused}
-  class:selected={value && !listOpen && !isMulti}
-  bind:this={el}
->
+<div class="selectbox" class:focused={isFocused} class:selected={value && !listOpen} bind:this={el}>
   <Select
     {id}
     {container}
     {items}
     {placeholder}
-    {isMulti}
     {isSearchable}
     {groupBy}
     {loadOptions}
@@ -118,6 +101,7 @@
     {noOptionsMessage}
     {indicatorSvg}
     {containerStyles}
+    {isClearable}
     optionIdentifier={idKey}
     bind:isFocused
     bind:value
@@ -130,7 +114,6 @@
     on:loaded
     on:error
     showIndicator
-    isClearable={!isClearable ? false : !isMulti}
   />
 </div>
 
@@ -145,9 +128,7 @@
     --borderRadius: 0;
     --listBorderRadius: 0;
     --itemFirstBorderRadius: 0;
-    --multiItemBorderRadius: 0;
     --padding: 0 8px;
-    --multiSelectPadding: 0 8px;
     --clearSelectBottom: auto;
     --clearSelectRight: 8px;
     --clearSelectTop: auto;
@@ -168,12 +149,6 @@
     --clearSelectFocusColor: white;
     --clearSelectHoverColor: white;
     --indicatorColor: white;
-    --multiItemActiveColor: white;
-    --multiClearFill: white;
-    --multiClearBG: none;
-    --multiClearHoverBG: none;
-    --multiItemBG: grey;
-    --multiItemActiveBG: grey;
     --spinnerColor: rgba(255, 255, 255, 0);
   }
   :global(.selectbox, .selectbox input, .selectbox .item, .selectbox svg) {
@@ -184,9 +159,6 @@
   }
   :global(.selectbox > .selectContainer) {
     box-shadow: inset -46px 0px #206095;
-  }
-  :global(.selectbox.multi-selected > .selectContainer) {
-    box-shadow: none !important;
   }
   :global(.selectbox.focused > .selectContainer) {
     outline: 4px solid #fbc900;
@@ -211,22 +183,6 @@
     font-size: smaller;
     opacity: 0.7;
   }
-  :global(.selectbox .selectContainer > .multiSelectItem) {
-    color: white !important;
-    font-weight: bold;
-  }
-  :global(.selectbox .selectContainer > .multiSelectItem:nth-of-type(1)) {
-    background-color: var(--firstItem) !important;
-  }
-  :global(.selectbox .selectContainer > .multiSelectItem:nth-of-type(2)) {
-    background-color: var(--secondItem) !important;
-  }
-  :global(.selectbox .selectContainer > .multiSelectItem:nth-of-type(3)) {
-    background-color: var(--thirdItem) !important;
-  }
-  :global(.selectbox .selectContainer > .multiSelectItem:nth-of-type(4)) {
-    background-color: var(--fourthItem) !important;
-  }
   :global(.selectbox .indicator svg) {
     fill: white;
   }
@@ -240,8 +196,5 @@
     width: 24px;
     height: 24px;
     line-height: 1;
-  }
-  :global(.selectbox .multiSelectItem .group) {
-    display: none;
   }
 </style>

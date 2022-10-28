@@ -4,6 +4,10 @@ import { switchMap, mergeMap, map, debounceTime, distinctUntilChanged, catchErro
 import type { AreaSearchItem, GeographySearchItem, PostcodeSearchItem } from "../types";
 import type { SvelteSubject } from "../util/rxUtil";
 import { appBasePath } from "../buildEnv";
+import Pbf from "pbf";
+import vt from "@mapbox/vector-tile";
+import tb from "@mapbox/tilebelt";
+import inPolygon from "@turf/boolean-point-in-polygon";
 
 export const composeAreaSearch = (query: SvelteSubject<string>): Observable<AreaSearchItem[]> =>
   query.pipe(
@@ -50,4 +54,35 @@ function handlePostcodeSearchError(err: any): Observable<PostcodeSearchItem[]> {
   // an error during a typeahead search request isn't fatal
   console.error(err);
   return of([] as PostcodeSearchItem[]);
+}
+
+export async function getOAfromLngLat(lng, lat) {
+  let tile = tb.pointToTile(lng, lat, 12);
+  let url = `https://cdn.ons.gov.uk/maptiles/administrative/2021/oa/v2/boundaries/${tile[2]}/${tile[0]}/${tile[1]}.pbf`;
+  try {
+    let geojson = await getTileAsGeoJSON(url, tile);
+    let pt = {type: "Point", coordinates: [lng, lat]};
+    for (const f of geojson.features) {
+      if (inPolygon(pt, f.geometry)) return f.properties.areacd;
+    }
+    return null;
+  }
+  catch {
+    return null;
+  }
+}
+
+async function getTileAsGeoJSON(url, tile) {
+  console.log(`Getting tile ${url}`)
+  let res = await fetch(url);
+  let buf = await res.arrayBuffer();
+  let pbf = new Pbf(buf);
+  let geojson = {type: "FeatureCollection", features: []};
+  let t = new vt.VectorTile(pbf);
+  for (const key in t.layers) {
+    for (let i = 0; i < t.layers[key].length; i ++) {
+      geojson.features.push(t.layers[key].feature(i).toGeoJSON(...tile));
+    }
+  }
+  return geojson;
 }

@@ -2,16 +2,14 @@
   import { page } from "$app/stores";
   import Select from "./Select.svelte";
   import { SvelteSubject } from "../util/rxUtil";
-  import { composeAreaSearch } from "../helpers/areaSearchHelper";
-  import { highlightText } from "../helpers/searchCensusHelper";
+  import { composeAreaSearch, getOAfromLngLat } from "../helpers/areaSearchHelper";
   import { selectGeography } from "../helpers/navigationHelper";
   import type { GeographySearchItem, PostcodeSearchItem } from "../types";
-  import { appBasePath } from "../buildEnv";
 
   const query = new SvelteSubject("");
   const results = composeAreaSearch(query);
 
-  $: noOptionsMessage = $query.length < 3 ? "Type for suggestions..." : "";
+  // $: noOptionsMessage = $query.length < 3 ? "Type for suggestions..." : "";
   async function handleSelect(event) {
     if (event?.detail?.kind === "Geography") {
       const geo = event.detail as GeographySearchItem;
@@ -20,10 +18,9 @@
       const postcode = event.detail as PostcodeSearchItem;
       let detailsRes = await fetch(`https://api.postcodes.io/postcodes/${postcode.value}`);
       let details = await detailsRes.json();
-      let geosRes = await fetch(`${appBasePath}/api/geo?q=${details.result.admin_district}`);
-      let geos = await geosRes.json();
-      if (geos.length > 0) {
-        selectGeography($page.url.searchParams, geos[0]);
+      let geoCode = await getOAfromLngLat(details.result.longitude, details.result.latitude);
+      if (geoCode) {
+        selectGeography($page.url.searchParams, { geoType: "oa", geoCode });
       }
     }
   }

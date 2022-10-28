@@ -9,5 +9,5 @@ export const preventFlyToGeography = (geoCode: string) => {
 export const geoTypeDescriptions = {
   lad: "Local Authority Districts",
   msoa: "Middle Layer Super Output Areas",
-  oa: "Output Areas",
+  oa: "Census Output Areas",
 };

@@ -80,6 +80,12 @@ export const initMapLayers = (map, geo) => {
         hovered.set({ ...g });
       });
 
+    fromEventPattern((handler) => {
+      map.on("mouseleave", `${l.layer.name}-features`, handler);
+    }).subscribe(() => {
+      hovered.set(undefined);
+    });
+
     // cursor to pointer when hovered
     map.on("mouseenter", `${l.layer.name}-features`, () => {
       map.getCanvas().style.cursor = "pointer";

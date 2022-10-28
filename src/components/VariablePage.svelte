@@ -4,15 +4,11 @@
   import { number2words } from "../util/numberUtil";
   import { capitalizeFirstLetter } from "../util/stringUtil";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
-  import Heading from "./Heading.svelte";
   import AreaPanel from "./AreaPanel.svelte";
 </script>
 
 <!-- todo: <svelte:head> page title -->
 
-<div class="hidden lg:block ">
-  <Heading />
-</div>
 <div class="h-full flex flex-col">
   <div class="px-6 border-t-[1px] border-t-ons-grey-15">
     <AreaPanel />

@@ -14,8 +14,6 @@
   <meta name="description" content={$_("homePage.html.meta")} />
 </svelte:head>
 
-<Heading />
-
 <div class="px-6">
   <AreaPanel />
   <section>

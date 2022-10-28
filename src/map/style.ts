@@ -1,4 +1,5 @@
 import type mapboxgl from "mapbox-gl";
+export const maxBounds: [number, number, number, number] = [-9, 47, 4, 61];
 
 export const style: mapboxgl.Style = {
   version: 8,
@@ -17,6 +18,7 @@ export const style: mapboxgl.Style = {
       tiles: ["https://cdn.ons.gov.uk/maptiles/buildingmask/{z}/{x}/{y}.png"],
       tileSize: 256,
       maxzoom: 14,
+      bounds: maxBounds,
       attribution: "&copy; Ordnance Survey",
     },
   },

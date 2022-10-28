@@ -11,7 +11,7 @@ import { selectGeography } from "../helpers/navigationHelper";
 import { initMapLayers } from "./initMapLayers";
 import { renderMapViz } from "./renderMapViz";
 import { layers } from "./layers";
-import { style } from "./style";
+import { style, maxBounds } from "./style";
 import { viewport } from "../stores/viewport";
 import { viz } from "../stores/viz";
 
@@ -26,6 +26,7 @@ export const initMap = (container: HTMLElement) => {
     zoom: defaultZoom, // inexplicably necessary to set (even though we fitBounds next)
     minZoom: 5, // prevent accidental zoom out, especially on mobile
     maxZoom: maxAllowedZoom - 0.001, // prevent layers from disappearing at absolute max zoom
+    maxBounds,
   });
 
   setPosition(map, get(geography));

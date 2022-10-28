@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-10-27-16-48-27",
-    "spec_file": "2021-content-spec-v2.json",
+    "created_at": "2022-10-28-15-49-16",
+    "spec_file": "2021-content-spec-v3.json",
     "release": "2021-DEM"
   },
   "content": [
@@ -48,7 +48,7 @@
           "code": "hh_deprivation",
           "slug": "household-deprivation",
           "desc": "Whether a household is deprived in one or more ways.",
-          "long_desc": "The dimensions of deprivation used to classify households are indicators based on four selected household characteristics.\n\nEducation\nA household is classified as deprived in the education dimension if no one has at least level 2 education and no one aged 16 to 18 years is a full-time student.\n\nEmployment\nA household is classified as deprived in the employment dimension if any member, not a full-time student, is either unemployed or disabled.\n\nHealth\nA household is classified as deprived in the health dimension if any member is disabled.\n\nHousing\nA household is classified as deprived in the housing dimension if the household's accommodation is either overcrowded, in a shared dwelling, or has no central heating.",
+          "long_desc": "The dimensions of deprivation used to classify households are indicators based on four selected household characteristics.\n\nEducation\n\nA household is classified as deprived in the education dimension if no one has at least level 2 education and no one aged 16 to 18 years is a full-time student.\n\nEmployment\n\nA household is classified as deprived in the employment dimension if any member, not a full-time student, is either unemployed or disabled.\n\nHealth\n\nA household is classified as deprived in the health dimension if any member is disabled.\n\nHousing\n\nA household is classified as deprived in the housing dimension if the household's accommodation is either overcrowded, in a shared dwelling, or has no central heating.",
           "units": "Household",
           "topic_code": "DEM",
           "classifications": [
@@ -724,7 +724,7 @@
           "code": "resident_age",
           "slug": "age",
           "desc": "The age of a person on Census Day, 21 March 2021.",
-          "long_desc": "A persons age on Census Day, 21 March 2021 in England and Wales. Infants aged under 1 year are classified as 0 years of age",
+          "long_desc": "A persons age on Census Day, 21 March 2021 in England and Wales. Infants aged under 1 year are classified as 0 years of age.",
           "units": "Person",
           "topic_code": "DEM",
           "classifications": [

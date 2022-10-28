@@ -392,8 +392,8 @@ Population,Year of arrival in the UK,year_arrival_uk,year_arrival_uk-011,Arrived
 Population,Year of arrival in the UK,year_arrival_uk,year_arrival_uk-012,Arrived 2020 to 2021,{PERCENTAGE}%,of people in {location},arrived,in the UK between 2020 and 2021,arrived 2020 to 2021
 Population,Length of residence in the UK,residence_length_6b,residence_length_6b-001,Born in the UK,{PERCENTAGE}%,of people in {location},were,born in the UK,born in the uk
 Population,Length of residence in the UK,residence_length_6b,residence_length_6b-002,10 years or more,{PERCENTAGE}%,of people in {location},have,lived in the UK for 10 years or more,10 years or more
-Population,Length of residence in the UK,residence_length_6b,residence_length_6b-003,"5 years or more, but less than 10 years",{PERCENTAGE}%,of people in {location},have,lived in the UK for between 5 and 10 years,"5 years or more, but less than 10 years"
-Population,Length of residence in the UK,residence_length_6b,residence_length_6b-004,"2 years or more, but less than 5 years",{PERCENTAGE}%,of people in {location},have,lived in the UK for between 2 and 5 years,"2 years or more, but less than 5 years"
+Population,Length of residence in the UK,residence_length_6b,residence_length_6b-003,"5 years or more, but less than 10 years",{PERCENTAGE}%,of people in {location},have,"lived in the UK for 5 years or more, but less than 10 years","5 years or more, but less than 10 years"
+Population,Length of residence in the UK,residence_length_6b,residence_length_6b-004,"2 years or more, but less than 5 years",{PERCENTAGE}%,of people in {location},have,"lived in the UK for 2 years or more, but less than 5 years","2 years or more, but less than 5 years"
 Population,Length of residence in the UK,residence_length_6b,residence_length_6b-005,Less than 2 years,{PERCENTAGE}%,of people in {location},have,lived in the UK for less than 2 years,less than 2 years
 Population,Age of arrival in the UK,age_arrival_uk_18a,age_arrival_uk_18a-001,Born in the UK,{PERCENTAGE}%,of people in {location},were,born in the UK,born in the uk
 Population,Age of arrival in the UK,age_arrival_uk_18a,age_arrival_uk_18a-002,Arrived in the UK: Aged 0 to 4 years,{PERCENTAGE}%,of people in {location},arrived,in the UK aged 0 to 4 years,arrived in the uk: aged 0 to 4 years
@@ -1016,4 +1016,4 @@ Identity,Gender identity,gender_identity_8a,gender_identity_8a-005,Non-binary,{P
 Identity,Gender identity,gender_identity_8a,gender_identity_8a-006,All other gender identities,{PERCENTAGE}%,of families in {location},have,another gender identity,all other gender identities
 Identity,Gender identity,gender_identity_8a,gender_identity_8a-007,Not answered,{PERCENTAGE}%,of families in {location},did,not answer,not answered
 Population,Population density,population_density,population_density-001,Persons per square kilometre,{PERCENTAGE}%,Population density of {location},in,persons per square kilometre,
-Population,Average age,median_age,median_age-001,Median age,{PERCENTAGE}%,Median age of people in {location},in,years,
+Population,Median age,median_age,median_age-001,Median age,{PERCENTAGE}%,Median age of people in {location},in,years,

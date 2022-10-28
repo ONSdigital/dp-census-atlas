@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-10-27-16-48-27",
-    "spec_file": "2021-content-spec-v2.json",
+    "created_at": "2022-10-28-16-00-06",
+    "spec_file": "2021-content-spec-v3.json",
     "release": "2021-ALL"
   },
   "content": [
@@ -1780,7 +1780,7 @@
           "code": "hh_language",
           "slug": "household-language-english-and-welsh",
           "desc": "People who have English in England, or in Wales English or Welsh, as their main language.",
-          "long_desc": "Household language classifies households by combining adults and children (aged 3 to 15 years) within a household that has English (English or Welsh for households in Wales) as the main language.",
+          "long_desc": "Classifies households by the combination of adults and children (aged 3 to 15 years) within a household that have English (English or Welsh in Wales) as their main language.",
           "units": "Household",
           "topic_code": "EILR",
           "classifications": [
@@ -1903,7 +1903,7 @@
           "code": "hh_multi_language",
           "slug": "multiple-main-languages-in-household",
           "desc": "Whether there are multiple languages in a household.",
-          "long_desc": "People within the same household who identify as speaking the same or different main language. \nIt is categorised by whether the main language spoken difference is between generations or partnerships within the household.",
+          "long_desc": "Classifies households by whether members speak the same or different main language. If multiple main languages are spoken, this identifies whether they differ between generations or partnerships within the household.",
           "units": "Household",
           "topic_code": "EILR",
           "classifications": [
@@ -1998,7 +1998,7 @@
           "code": "hh_multi_religion",
           "slug": "multiple-religions-in-household",
           "desc": "Whether there are multiple religions in a household.",
-          "long_desc": "Classifies all household members who identify as belonging to the same or different religion or religions. Households are categorised by whether the difference is between generations or partnerships.",
+          "long_desc": "Classifies households by whether members identify with the same religion, no religion, did not answer the question, or a combination of these options.\n\nThis question was voluntary and the variable includes those who answered the question alongside those who chose not to.",
           "units": "Household",
           "topic_code": "EILR",
           "classifications": [
@@ -2072,7 +2072,7 @@
           "code": "main_language_detailed",
           "slug": "main-language-detailed",
           "desc": "People's first or preferred language.",
-          "long_desc": "The main languages spoken for people whose main language is not English in England or Welsh in Wales.  \n\nThis breaks down the responses given in the write-in option Other, write in (including British Sign Language).",
+          "long_desc": "A person's first or preferred language.\n\nThis shows a detailed breakdown of the responses given in the write-in option \"Other, write in\".",
           "units": "Person",
           "topic_code": "EILR",
           "classifications": [
@@ -3902,7 +3902,7 @@
           "code": "religion_tb",
           "slug": "religion",
           "desc": "The religion people connect or identify with.",
-          "long_desc": "The religion with which people connect or identify. They have to neither practice nor believe in it.  \n\nThis question was voluntary and classified people who identified with one of 8 response options, including No religion, alongside those who chose not to answer this question.",
+          "long_desc": "The religion people connect or identify with (their religious affiliation), whether or not they practice or have belief in it.\n\nThis question was voluntary and includes people who identified with one of 8 tick-box response options, including No religion, alongside those who chose not to answer this question.",
           "units": "Person",
           "topic_code": "EILR",
           "classifications": [
@@ -3999,7 +3999,7 @@
           "code": "welsh_skills_all",
           "slug": "welsh-language-skills",
           "desc": "Whether people can understand, speak, read, or write Welsh. This question was only asked in Wales.",
-          "long_desc": "Whether a person has Welsh language skills.  If they do, can they do any of the following:\n\n* understand spoken Welsh \n* speak Welsh \n* read Welsh \n* write Welsh \n\nThe census questionnaire only asked this question to people in Wales.  \n\nAdditional info: \nIn results that classify people by Welsh language skills, a person may appear in more than one category depending on which combination of skills they have.",
+          "long_desc": "Whether a person has Welsh language skills.  If they do, can they do any of the following:\n\n* understand spoken Welsh\n\n* speak Welsh\n\n* read Welsh\n\n* write Welsh\n\n* no skills in Welsh\n\nThe census questionnaire only asked this question to people in Wales. \n\nAdditional info:\n\nIn results that classify people by Welsh language skills, a person may appear in more than one category depending on which combination of skills they have.",
           "units": "Person",
           "topic_code": "EILR",
           "classifications": [
@@ -4187,7 +4187,7 @@
           "code": "welsh_skills_speak",
           "slug": "welsh-speaking-ability",
           "desc": "People who can speak Welsh.",
-          "long_desc": "This classifies a person as being able to speak Welsh if they ticked \"Speak Welsh\" in the census questionnaire. They may have also ticked one or more of the following:  \n\n* understand spoken Welsh  \n* read Welsh \n* write Welsh \n\nAdditional info: \nIn results that classify people by Welsh language skills, a person may appear in more than one category depending on which combination of skills they have.",
+          "long_desc": "This classifies a person as being able to \"Speak Welsh\". They may have also ticked one or more of the following:\n\n* understand spoken Welsh\n\n* read Welsh\n\n* write Welsh\n\nIn results that classify people by Welsh language skills, a person may appear in more than one category depending on which combination of skills they have.",
           "units": "Person",
           "topic_code": "EILR",
           "classifications": [
@@ -4561,7 +4561,7 @@
           "code": "hh_deprivation",
           "slug": "household-deprivation",
           "desc": "Whether a household is deprived in one or more ways.",
-          "long_desc": "The dimensions of deprivation used to classify households are indicators based on four selected household characteristics.\n\nEducation\nA household is classified as deprived in the education dimension if no one has at least level 2 education and no one aged 16 to 18 years is a full-time student.\n\nEmployment\nA household is classified as deprived in the employment dimension if any member, not a full-time student, is either unemployed or disabled.\n\nHealth\nA household is classified as deprived in the health dimension if any member is disabled.\n\nHousing\nA household is classified as deprived in the housing dimension if the household's accommodation is either overcrowded, in a shared dwelling, or has no central heating.",
+          "long_desc": "The dimensions of deprivation used to classify households are indicators based on four selected household characteristics.\n\nEducation\n\nA household is classified as deprived in the education dimension if no one has at least level 2 education and no one aged 16 to 18 years is a full-time student.\n\nEmployment\n\nA household is classified as deprived in the employment dimension if any member, not a full-time student, is either unemployed or disabled.\n\nHealth\n\nA household is classified as deprived in the health dimension if any member is disabled.\n\nHousing\n\nA household is classified as deprived in the housing dimension if the household's accommodation is either overcrowded, in a shared dwelling, or has no central heating.",
           "units": "Household",
           "topic_code": "DEM",
           "classifications": [
@@ -5237,7 +5237,7 @@
           "code": "resident_age",
           "slug": "age",
           "desc": "The age of a person on Census Day, 21 March 2021.",
-          "long_desc": "A persons age on Census Day, 21 March 2021 in England and Wales. Infants aged under 1 year are classified as 0 years of age",
+          "long_desc": "A persons age on Census Day, 21 March 2021 in England and Wales. Infants aged under 1 year are classified as 0 years of age.",
           "units": "Person",
           "topic_code": "DEM",
           "classifications": [
@@ -8253,7 +8253,7 @@
                   "code": "residence_length_6b-003",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "lived in the UK for between 5 and 10 years"
+                  "legend_str_3": "lived in the UK for 5 years or more, but less than 10 years"
                 },
                 {
                   "name": "2 years or more, but less than 5 years",
@@ -8261,7 +8261,7 @@
                   "code": "residence_length_6b-004",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "lived in the UK for between 2 and 5 years"
+                  "legend_str_3": "lived in the UK for 2 years or more, but less than 5 years"
                 },
                 {
                   "name": "Less than 2 years",

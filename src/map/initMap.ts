@@ -1,7 +1,7 @@
 import { get } from "svelte/store";
 import { page } from "$app/stores";
 import mapboxgl, { GeoJSONSource, Map } from "mapbox-gl";
-import { fromEvent, merge } from "rxjs";
+import { combineLatest, fromEvent, merge } from "rxjs";
 import { throttleTime } from "rxjs/operators";
 import type { GeoType, GeographyInfo, Classification } from "../types";
 import { selection } from "../stores/selection";
@@ -14,6 +14,7 @@ import { layers } from "./layers";
 import { style, maxBounds } from "./style";
 import { viewport } from "../stores/viewport";
 import { viz } from "../stores/viz";
+import { toObservable } from "../util/rxUtil";
 
 const defaultZoom = 6;
 const maxAllowedZoom = 16;
@@ -42,12 +43,13 @@ export const initMap = (container: HTMLElement) => {
     });
   });
 
-  merge(fromEvent(map, "load"), fromEvent(map, "move"))
+  // when the map loads or moves, or then when the selecion changes, emit an event at most once per second
+  combineLatest([merge(fromEvent(map, "load"), fromEvent(map, "move")), toObservable(selection)])
     .pipe(
       throttleTime(1000, undefined, { leading: false, trailing: true }), // don't discard the final movement
     )
-    .subscribe(() => {
-      setViewportStoreAndLayerVisibility(map, get(selection).classification);
+    .subscribe(([_, $selection]) => {
+      setViewportStoreAndLayerVisibility(map, $selection.classification);
     });
 
   layers.forEach((l) => {

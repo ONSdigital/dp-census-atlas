@@ -6,7 +6,7 @@ import { throttleTime } from "rxjs/operators";
 import type { GeoType, GeographyInfo, Classification } from "../types";
 import { selection } from "../stores/selection";
 import { geography } from "../stores/geography";
-import { englandAndWalesBbox, preventFlyToGeography } from "../helpers/geographyHelper";
+import { englandAndWalesBbox } from "../helpers/geographyHelper";
 import { selectGeography } from "../helpers/navigationHelper";
 import { initMapLayers } from "./initMapLayers";
 import { renderMapViz } from "./renderMapViz";
@@ -55,7 +55,6 @@ export const initMap = (container: HTMLElement) => {
   layers.forEach((l) => {
     map.on("click", `${l.name}-features`, (e) => {
       const geoCode = e.features[0].properties[l.idProperty];
-      preventFlyToGeography(geoCode);
       selectGeography(get(page).url.searchParams, { geoType: l.name, geoCode });
     });
   });
@@ -136,7 +135,6 @@ const setPosition = (map: mapboxgl.Map, g: GeographyInfo, options: { animate: bo
     const bounds = new mapboxgl.LngLatBounds(englandAndWalesBbox);
     map.fitBounds(bounds, { padding: 0, animate: false });
   } else {
-    // map.flyTo({ center: bounds.getCenter(), zoom: 12, animate: options.animate });
     const width = map.getContainer().offsetWidth;
     const bounds = new mapboxgl.LngLatBounds(g.bbox);
     const layer = layers.find((l) => l.name === g.geoType);

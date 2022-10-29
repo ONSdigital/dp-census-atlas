@@ -2,7 +2,7 @@
   import { viz } from "../stores/viz";
   import { geography } from "../stores/geography";
   import { hovered } from "../stores/hovered";
-  // import { selected } from "../stores/selected";
+  import { selected } from "../stores/selected";
   import { formatTemplateString } from "../helpers/categoryHelpers";
   import { choroplethColours } from "../helpers/choroplethHelpers";
   import {
@@ -59,6 +59,9 @@
     <div
       class="z-abovemap w-full max-w-[50rem] mx-3 lg:mx-4 bg-white bg-opacity-90 px-3 lg:px-5 py-2 lg:py-3 border-[1px] lg:border-[1px] border-ons-grey-15"
     >
+      <div class="">
+        {JSON.stringify($selected)}
+      </div>
       {#if $viz?.params?.category && active?.value !== undefined}
         <!-- full legend -->
         <div class="flex gap-3 items-center">

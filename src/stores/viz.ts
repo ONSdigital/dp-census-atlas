@@ -1,6 +1,6 @@
 import type * as dsv from "d3-dsv"; // https://github.com/d3/d3/issues/3469
 import { asyncDerived } from "@square/svelte-store";
-import { fetchBreaks, fetchTileDataForBbox } from "../data/api";
+import { fetchBreaks, fetchDataForBbox } from "../data/api";
 import { selection } from "./selection";
 import { viewport } from "./viewport";
 
@@ -23,21 +23,15 @@ export const viz = asyncDerived([selection, viewport], async ([$selection, $view
     return undefined;
   }
 
-  const [data, breaks] = await Promise.all([fetchTileDataForBbox(args), fetchBreaks(args)]);
+  const [data, breaks] = await Promise.all([fetchDataForBbox(args), fetchBreaks(args)]);
 
   return {
     geoType: args.geoType,
     breaks: breaks.breaks[args.category.code],
     minMaxVals: breaks.minMax[args.category.code],
-    places: data.map((row) => parsePlaceData(row, args.category.code)),
+    places: data,
     params: {
       ...$selection,
     },
   };
 });
-
-const parsePlaceData = (row: dsv.DSVRowString<string>, categoryCode: string) => {
-  const geoCode = row.geography_code;
-  const ratioToTotal = parseFloat(row[categoryCode]);
-  return { geoCode, ratioToTotal };
-};

@@ -1,0 +1,80 @@
+<script lang="ts">
+  import { selection } from "../stores/selection";
+  import { page } from "$app/stores";
+  import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
+  $: classifications = $selection.variable.classifications;
+  $: indexOfCurrent = classifications.indexOf($selection.classification);
+  $: next = classifications.length > indexOfCurrent + 1 ? classifications[indexOfCurrent + 1] : undefined;
+  $: prev = indexOfCurrent > 0 ? classifications[indexOfCurrent - 1] : undefined;
+  $: allPrev = classifications.slice(0, indexOfCurrent);
+  $: allNext = classifications.slice(indexOfCurrent + 1);
+</script>
+
+<div class="flex gap-3">
+  <div class="flex gap-3 ">
+    {#if prev}
+      &lt; <a
+        class="hyperlink-without-group-hover "
+        href={buildHyperlink($page.url, {
+          variableGroup: $selection.variableGroup.slug,
+          variable: $selection.variable.slug,
+          category: {
+            classification: prev.slug,
+            category: prev.categories[0].slug,
+          },
+        })}
+        >Fewer
+      </a>
+    {/if}
+    {#each allPrev as c}
+      <a
+        class={`hyperlink-without-group-hover ${c === prev ? "group-hover:decoration-[3px]" : ""}  `}
+        href={buildHyperlink($page.url, {
+          variableGroup: $selection.variableGroup.slug,
+          variable: $selection.variable.slug,
+          category: {
+            classification: c.slug,
+            category: c.categories[0].slug,
+          },
+        })}
+        aria-label={c.categories.length + " categories"}
+        >{c.categories.length}
+      </a>
+    {/each}
+  </div>
+  <div class="" aria-label={$selection.classification.categories.length + " categories"}>
+    {$selection.classification.categories.length}
+  </div>
+  <div class="flex gap-3">
+    {#each allNext as c}
+      <a
+        class={`hyperlink-without-group-hover ${c === next ? "group-hover:decoration-[3px]" : ""}  `}
+        href={buildHyperlink($page.url, {
+          variableGroup: $selection.variableGroup.slug,
+          variable: $selection.variable.slug,
+          category: {
+            classification: c.slug,
+            category: c.categories[0].slug,
+          },
+        })}
+        aria-label={c.categories.length + " categories"}
+        >{c.categories.length}
+      </a>
+    {/each}
+    {#if next}
+      <a
+        class="hyperlink-without-group-hover group-hover:decoration-[3px]"
+        href={buildHyperlink($page.url, {
+          variableGroup: $selection.variableGroup.slug,
+          variable: $selection.variable.slug,
+          category: {
+            classification: next.slug,
+            category: next.categories[0].slug,
+          },
+        })}
+        >More
+      </a>
+      &gt;
+    {/if}
+  </div>
+</div>

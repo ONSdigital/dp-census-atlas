@@ -5,10 +5,10 @@
   import { geography } from "../stores/geography";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
   import CategoryPageLinks from "./CategoryPageLinks.svelte";
-  import Heading from "./Heading.svelte";
   import AreaPanel from "./AreaPanel.svelte";
   import RadioButton from "./RadioButton.svelte";
   import VariableDescription from "./VariableDescription.svelte";
+  import ClassificationPager from "./ClassificationPager.svelte";
 </script>
 
 <svelte:head>
@@ -64,17 +64,7 @@
         {/each}
       </ul>
       {#if $selection.variable.classifications.length > 1}
-        <div class="mb-6">
-          Change the <a
-            href={buildHyperlink($page.url, {
-              variableGroup: $selection.variableGroup.slug,
-              variable: $selection.variable.slug,
-            })}
-            class="hyperlink custom-ring"
-          >
-            number of categories
-          </a>.
-        </div>
+        <ClassificationPager />
       {/if}
     </section>
   </div>

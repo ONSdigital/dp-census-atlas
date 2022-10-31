@@ -211,6 +211,16 @@ def main(spec_fn: str):
                     c.categories = list(filter(lambda c: c.code not in all_cats_to_drop, c.categories))
     print("... done.")
 
+    # insert any extra variables
+    print("Inserting extra variables...")
+    for vg in content_iterations["ALL"]:
+        if vg.name in spec["extra_variables"]:
+            for ev in spec["extra_variables"][vg.name]:
+                print(f'Inserting {ev["variable"]["name"]} before {vg.name}.{ev["insert_before"]}')
+                insert_index = next(i for i,v in enumerate(vg.variables) if v.code == ev["insert_before"])
+                vg.variables.insert(insert_index, variable_from_content_json(ev["variable"]))
+    print("... done.")
+
     # append available geotypes for classifications
     print(f"Inserting available geotypes for classifications from {spec['classification_geotype_availability_file']}")
     available_geotypes_for_classifications = available_geotypes_for_classifications_from_file(
@@ -221,15 +231,6 @@ def main(spec_fn: str):
             v.set_available_geotypes(available_geotypes_for_classifications)
     print("... done.")
 
-    # insert any extra variables
-    print("Inserting extra variables...")
-    for vg in content_iterations["ALL"]:
-        if vg.name in spec["extra_variables"]:
-            for ev in spec["extra_variables"][vg.name]:
-                print(f'Inserting {ev["variable"]["name"]} before {vg.name}.{ev["insert_before"]}')
-                insert_index = next(i for i,v in enumerate(vg.variables) if v.code == ev["insert_before"])
-                vg.variables.insert(insert_index, variable_from_content_json(ev["variable"]))
-    print("... done.")
 
     # update legend strings
     print(f"Inserting new legend strings from {spec['category_legend_strs_file']}...")

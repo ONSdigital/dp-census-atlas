@@ -1,6 +1,6 @@
 import * as dsv from "d3-dsv"; // https://github.com/d3/d3/issues/3469
-import type { Bbox, Category, DataTile, GeoType } from "src/types";
-import { bboxToDataTiles  } from "../helpers/spatialHelper";
+import type { Bbox, Category, DataTile, GeographyData, GeoType } from "src/types";
+import { bboxToDataTiles } from "../helpers/spatialHelper";
 import { roundedCategoryData, uniqueRoundedCategoryBreaks } from "../helpers/categoryHelpers";
 
 const geoBaseUrl = "https://cdn.ons.gov.uk/maptiles/cm-geos/v2";
@@ -9,12 +9,17 @@ const geoBaseUrl = "https://cdn.ons.gov.uk/maptiles/cm-geos/v2";
   Fetch place data files for all data 'tiles' (predefined coordinate grid squares) that intersect with current viewport 
   bounding box.
 */
-export const fetchTileDataForBbox = async (args: { category: Category; geoType: GeoType; bbox: Bbox }) => {
+export const fetchDataForBbox = async (args: { category: Category; geoType: GeoType; bbox: Bbox }) => {
+  const data = await fetchTileDataForBbox(args);
+  return data.map((row) => parsePlaceData(row, args.category.code));
+};
+
+const fetchTileDataForBbox = async (args: { category: Category; geoType: GeoType; bbox: Bbox }) => {
   // get all intersecting data tiles
   const dataTiles = bboxToDataTiles(args.bbox, args.geoType);
 
   // fetch data from data tile files
-  const fetchedData = await Promise.all(
+  const fetched = await Promise.all(
     dataTiles.map((dataTile) => {
       return fetchTileData({
         category: args.category,
@@ -22,10 +27,15 @@ export const fetchTileDataForBbox = async (args: { category: Category; geoType: 
         tile: dataTile,
       });
     }),
-  ).then((responseArry) => {
-    return responseArry.flat();
-  });
-  return Promise.resolve(fetchedData);
+  );
+
+  return fetched.flat();
+};
+
+const parsePlaceData = (row: dsv.DSVRowString<string>, categoryCode: string) => {
+  const geoCode = row.geography_code;
+  const ratioToTotal = parseFloat(row[categoryCode]);
+  return { geoCode, ratioToTotal };
 };
 
 /*
@@ -48,7 +58,8 @@ export const fetchBreaks = async (args: {
   geoType: GeoType;
 }): Promise<{ breaks: { [categoryCode: string]: number[] }; minMax: { [categoryCode: string]: number[] } }> => {
   const url = `${args.category.baseUrl}/breaks/${args.geoType}/${args.category.code}.json`;
-  const breaksRaw = await fetch(url).then((resp) => resp.json());
+  const response = await fetch(url);
+  const breaksRaw = await response.json();
   /* 
     breaks json files have legacy format from when it was an API response:
     e.g. 
@@ -67,12 +78,11 @@ export const fetchBreaks = async (args: {
         ]
       }
     }
-    ToDo - refactor json files to match required format (see function output defintions above)
   */
   const breaks = Object.fromEntries(
     Object.keys(breaksRaw).map((code) => [
-      code, 
-      uniqueRoundedCategoryBreaks(args.category.code, breaksRaw[code][args.geoType.toUpperCase()])
+      code,
+      uniqueRoundedCategoryBreaks(args.category.code, breaksRaw[code][args.geoType.toUpperCase()]),
     ]),
   );
   const minMax = Object.fromEntries(
@@ -87,8 +97,7 @@ export const fetchBreaks = async (args: {
 /*
   Fetch json with bounding box for geography.
 */
-export const fetchGeography = async (geoCode: string) => {
-  // : Promise<GeographyData>
+export const fetchGeography = async (geoCode: string): Promise<GeographyData> => {
   const url = `${geoBaseUrl}/${geoCode}.geojson`;
   const response = await fetch(url);
   return await response.json();

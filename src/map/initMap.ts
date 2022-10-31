@@ -1,12 +1,12 @@
 import { get } from "svelte/store";
 import { page } from "$app/stores";
 import mapboxgl, { GeoJSONSource, Map } from "mapbox-gl";
-import { fromEvent, merge } from "rxjs";
+import { combineLatest, fromEvent, merge } from "rxjs";
 import { throttleTime } from "rxjs/operators";
 import type { GeoType, GeographyInfo, Classification } from "../types";
 import { selection } from "../stores/selection";
 import { geography } from "../stores/geography";
-import { englandAndWalesBbox, preventFlyToGeography } from "../helpers/geographyHelper";
+import { englandAndWalesBbox } from "../helpers/geographyHelper";
 import { selectGeography } from "../helpers/navigationHelper";
 import { initMapLayers } from "./initMapLayers";
 import { renderMapViz } from "./renderMapViz";
@@ -14,12 +14,16 @@ import { layers } from "./layers";
 import { style, maxBounds } from "./style";
 import { viewport } from "../stores/viewport";
 import { viz } from "../stores/viz";
+import { toObservable } from "../util/rxUtil";
 
 const defaultZoom = 6;
 const maxAllowedZoom = 16;
 
 /** Configure the map's properties and subscribe to its events. */
 export const initMap = (container: HTMLElement) => {
+  const embed = get(selection).embed;
+  const interactive = !embed || embed.interactive;
+
   const map = new Map({
     container,
     style,
@@ -27,10 +31,13 @@ export const initMap = (container: HTMLElement) => {
     minZoom: 5, // prevent accidental zoom out, especially on mobile
     maxZoom: maxAllowedZoom - 0.001, // prevent layers from disappearing at absolute max zoom
     maxBounds,
+    interactive,
   });
 
   setPosition(map, get(geography));
-  map.addControl(new mapboxgl.NavigationControl({ showCompass: false }));
+  if (interactive) {
+    map.addControl(new mapboxgl.NavigationControl({ showCompass: false }));
+  }
 
   map.on("load", () => {
     initMapLayers(map, get(geography));
@@ -42,21 +49,23 @@ export const initMap = (container: HTMLElement) => {
     });
   });
 
-  merge(fromEvent(map, "load"), fromEvent(map, "move"))
+  // when the map loads or moves, or then when the selecion changes, emit an event at most once per second
+  combineLatest([merge(fromEvent(map, "load"), fromEvent(map, "move")), toObservable(selection)])
     .pipe(
       throttleTime(1000, undefined, { leading: false, trailing: true }), // don't discard the final movement
     )
-    .subscribe(() => {
-      setViewportStoreAndLayerVisibility(map, get(selection).classification);
+    .subscribe(([_, $selection]) => {
+      setViewportStoreAndLayerVisibility(map, $selection.classification);
     });
 
-  layers.forEach((l) => {
-    map.on("click", `${l.name}-features`, (e) => {
-      const geoCode = e.features[0].properties[l.idProperty];
-      preventFlyToGeography(geoCode);
-      selectGeography(get(page).url.searchParams, { geoType: l.name, geoCode });
+  if (interactive) {
+    layers.forEach((l) => {
+      map.on("click", `${l.name}-features`, (e) => {
+        const geoCode = e.features[0].properties[l.idProperty];
+        selectGeography(get(page).url.searchParams, { geoType: l.name, geoCode });
+      });
     });
-  });
+  }
 
   return map;
 };
@@ -134,7 +143,6 @@ const setPosition = (map: mapboxgl.Map, g: GeographyInfo, options: { animate: bo
     const bounds = new mapboxgl.LngLatBounds(englandAndWalesBbox);
     map.fitBounds(bounds, { padding: 0, animate: false });
   } else {
-    // map.flyTo({ center: bounds.getCenter(), zoom: 12, animate: options.animate });
     const width = map.getContainer().offsetWidth;
     const bounds = new mapboxgl.LngLatBounds(g.bbox);
     const layer = layers.find((l) => l.name === g.geoType);

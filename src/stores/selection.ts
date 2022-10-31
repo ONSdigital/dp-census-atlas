@@ -22,7 +22,14 @@ export const selection = derived([page, content], ([$page, $content]) => {
 
 const parseSearchParams = (params: URLSearchParams) => {
   return {
-    embed: params.get("embed") === "true",
     ...getSelectedGeography(params),
+    embed:
+      params.get("embed") === "true"
+        ? {
+            interactive: params.get("embedInteractive") === "true",
+            areaSearch: params.get("embedAreaSearch") === "true",
+            view: params.get("embedView"),
+          }
+        : undefined,
   };
 };

@@ -1,9 +1,9 @@
 <script lang="ts">
   import { roundCategoryDataToString } from "../helpers/categoryHelpers";
+  import BreaksMarker from "./BreaksMarker.svelte";
 
-  export let hovered = null;
-  export let selected = null;
-  export let lineWidth = 3;
+  export let hovered = undefined;
+  export let selected = undefined;
   export let breaks = [0, 20, 40, 60, 80, 100];
   export let colors = ["rgba(234,236,177)", "rgba(169,216,145)", "rgba(0,167,186)", "rgba(0,78,166)", "rgba(0,13,84)"];
   export let suffix = "";
@@ -11,11 +11,18 @@
   export let categoryCode = "";
 
   const pos = (val, breaks) => {
-    let i = 0;
-    while (val > breaks[i + 1]) i += 1;
-    let unit = 100 / (breaks.length - 1);
-    let offset = (val - breaks[i]) / (breaks[i + 1] - breaks[i]);
-    return (i + offset) * unit;
+    if (val < breaks[0]) {
+      return 0;
+    }
+    if (val >= breaks[breaks.length - 1]) {
+      return 100;
+    } else {
+      let i = 0;
+      while (val > breaks[i + 1]) i += 1;
+      let unit = 100 / (breaks.length - 1);
+      let offset = (val - breaks[i]) / (breaks[i + 1] - breaks[i]);
+      return (i + offset) * unit;
+    }
   };
 </script>
 
@@ -39,22 +46,15 @@
   <div class="tick" style="right: 0; transform: translateX({snapTicks ? '2px' : '50%'});">
     {roundCategoryDataToString(categoryCode, breaks[breaks.length - 1])}<span class="tick-suffix">{suffix}</span>
   </div>
-  {#if selected != null}
-    <!-- <div class="marker" style="width: 4px; left: calc({pos(selected, breaks)}% - {lineWidth / 2}px);" /> -->
+  {#if selected !== undefined}
     <div class="absolute z-10 -top-2.5" style="left: calc({pos(selected, breaks)}% - {28 / 2}px);">
-      <svg class="h-7 w-7" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <!-- <circle cx="50" cy="50" r="40" stroke="black" stroke-width="20" fill="white" /> -->
-        <polygon points="10,10 90,10 50,78 " stroke="black" stroke-width="19" stroke-linejoin="round" fill="white" />
-      </svg>
+      <BreaksMarker colour={hovered ? "#bcbcbd" : "black"} />
     </div>
-    <!-- <div class="value" style="left: {pos(selected, breaks)}%">{selected}{suffix}</div> -->
   {/if}
-  {#if hovered}
-    <div
-      class="marker marker-hovered"
-      style="width: {lineWidth}px; left: calc({pos(hovered, breaks)}% - {lineWidth / 2}px);"
-    />
-    <div class="value" style="left: {pos(hovered, breaks)}%">{hovered}{suffix}</div>
+  {#if hovered !== undefined}
+    <div class="absolute z-10 -top-2.5" style="left: calc({pos(hovered, breaks)}% - {28 / 2}px);">
+      <BreaksMarker />
+    </div>
   {/if}
 </div>
 
@@ -73,23 +73,5 @@
   }
   .tick-suffix {
     font-size: 90%;
-  }
-  .marker {
-    position: absolute;
-    z-index: 2;
-    /* top: -10px; */
-    /* height: calc(100% + 10px); */
-    height: calc(100%);
-    background-color: black;
-  }
-  .value {
-    position: absolute;
-    top: -32px;
-    text-align: center;
-    transform: translateX(-50%);
-    background-color: rgba(255, 255, 255, 0.8);
-  }
-  .marker-hovered {
-    background-color: orange;
   }
 </style>

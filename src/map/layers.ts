@@ -26,7 +26,7 @@ export const layers = [
     urlTemplate: "https://cdn.ons.gov.uk/maptiles/administrative/2021/oa/v2/boundaries/{z}/{x}/{y}.pbf",
     minZoom: 8,
     sourceMaxZoom: 12,
-    geoPadFactor: 2.1,
+    geoPadFactor: 3,
     idProperty: "areacd",
     displayNameProperty: "areacd",
     sourceLayer: "oa",

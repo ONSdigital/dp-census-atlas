@@ -17,19 +17,18 @@
   let embedAreaSearch = false;
   let embedView: "viewport" | "geography" = "geography";
 
-  $: embedEast = $viewport?.bbox.east;
-  $: embedNorth = $viewport?.bbox.north;
-  $: embedWest = $viewport?.bbox.west;
-  $: embedSouth = $viewport?.bbox.south;
+  $: embedBounds = [
+    $viewport?.bbox.west,
+    $viewport?.bbox.south,
+    $viewport?.bbox.east,
+    $viewport?.bbox.north
+  ]
   $: embedCode = getEmbedCode($page.url, {
     embed: true,
     embedInteractive,
     embedAreaSearch,
     embedView,
-    embedEast,
-    embedNorth,
-    embedWest,
-    embedSouth
+    embedBounds
   });
 
   onMount(() => {

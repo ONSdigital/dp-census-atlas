@@ -29,10 +29,7 @@ const parseSearchParams = (params: URLSearchParams) => {
       view: params.get("embedView"),
     }
     if  (params.get("embedView") === "viewport") {
-      embedParams.embedEast = params.get("embedEast");
-      embedParams.embedNorth = params.get("embedNorth");
-      embedParams.embedWest = params.get("embedWest");
-      embedParams.embedSouth = params.get("embedSouth");
+      embedParams.embedBounds = params.get("embedBounds").split(",").map((b) => parseFloat(b));
     }
   }
   return {

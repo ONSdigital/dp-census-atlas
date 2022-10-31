@@ -4,7 +4,7 @@ import mapboxgl, { GeoJSONSource, Map } from "mapbox-gl";
 import { combineLatest, fromEvent, merge } from "rxjs";
 import { throttleTime } from "rxjs/operators";
 import type { GeoType, GeographyInfo, Classification } from "../types";
-import { selection } from "../stores/selection";
+import { params } from "../stores/params";
 import { geography } from "../stores/geography";
 import { englandAndWalesBbox } from "../helpers/geographyHelper";
 import { selectGeography } from "../helpers/navigationHelper";
@@ -21,7 +21,7 @@ const maxAllowedZoom = 16;
 
 /** Configure the map's properties and subscribe to its events. */
 export const initMap = (container: HTMLElement) => {
-  const embed = get(selection).embed;
+  const embed = get(params).embed;
   const interactive = !embed || embed.interactive;
 
   const map = new Map({
@@ -50,12 +50,12 @@ export const initMap = (container: HTMLElement) => {
   });
 
   // when the map loads or moves, or then when the selecion changes, emit an event at most once per second
-  combineLatest([merge(fromEvent(map, "load"), fromEvent(map, "move")), toObservable(selection)])
+  combineLatest([merge(fromEvent(map, "load"), fromEvent(map, "move")), toObservable(params)])
     .pipe(
       throttleTime(1000, undefined, { leading: false, trailing: true }), // don't discard the final movement
     )
-    .subscribe(([_, $selection]) => {
-      setViewportStoreAndLayerVisibility(map, $selection.classification);
+    .subscribe(([_, $params]) => {
+      setViewportStoreAndLayerVisibility(map, $params.classification);
     });
 
   if (interactive) {

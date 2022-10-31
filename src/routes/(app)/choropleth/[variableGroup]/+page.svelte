@@ -1,8 +1,8 @@
 <script>
-  import { selection } from "../../../../stores/selection";
+  import { params } from "../../../../stores/params";
   import VariableGroupPage from "../../../../components/VariableGroupPage.svelte";
 </script>
 
-{#if $selection.variableGroup}
+{#if $params.variableGroup}
   <VariableGroupPage />
 {/if}

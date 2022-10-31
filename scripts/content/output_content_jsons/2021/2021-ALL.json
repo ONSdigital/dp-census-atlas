@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-10-31-10-56-07",
+    "created_at": "2022-10-31-14-17-50",
     "spec_file": "2021-content-spec-v3.json",
     "release": "2021-ALL"
   },
@@ -732,7 +732,7 @@
           "code": "alternative_address_indicator",
           "slug": "second-address-indicator",
           "desc": "An address (in or out of the UK) a person stays at for more than 30 days per year that isn't their place of usual residence.",
-          "long_desc": "An address (in or out of the UK) a person stays at for more than 30 days per year that is not their place of usual residence. \n \nAdditional \nSecond addresses typically include:\n\n* armed forces bases\n* addresses used by people working away from home\n* a students home address\n* the address of another parent or guardian\n* a holiday home\n  \nIf a person with a second address was staying there on census night, they were classed as a visitor to the second address but counted as a usual resident at their home address.",
+          "long_desc": "An address (in or out of the UK) a person stays at for more than 30 days per year that is not their place of usual residence. \n \nAdditional \nSecond addresses typically include:\n\n* armed forces bases\n* addresses used by people working away from home\n* a student\u2019s home address\n* the address of another parent or guardian\n* a holiday home\n  \nIf a person with a second address was staying there on census night, they were classed as a visitor to the second address but counted as a usual resident at their home address.",
           "units": "Person",
           "topic_code": "HOU",
           "classifications": [
@@ -1067,7 +1067,7 @@
           "code": "number_bedrooms",
           "slug": "number-of-bedrooms",
           "desc": "The number of bedrooms in a household.",
-          "long_desc": "The number of bedrooms in a households accommodation. \n\nAdditional \nThis number is not available for household spaces with no usual residents.",
+          "long_desc": "The number of bedrooms in a household\u2019s accommodation. \n\nAdditional \nThis number is not available for household spaces with no usual residents.",
           "units": "Household",
           "topic_code": "HOU",
           "classifications": [
@@ -1212,7 +1212,7 @@
           "code": "occupancy_rating_bedrooms",
           "slug": "occupancy-rating-for-bedrooms",
           "desc": "Whether homes are overcrowded, ideally occupied or under-occupied, based on bedrooms.",
-          "long_desc": "Whether a household's accommodation is overcrowded, ideally occupied or under-occupied. This is calculated by comparing the number of bedrooms the household requires (the Bedroom Standard) to the number of available bedrooms.  \n \nAdditional  \nPeople that should have their own room according to the Bedroom Standard:\n\n 1) A married or co-habiting couple.  \n 2) Someone 21 years old or over.  \n 3) A pair of same-sex aged between 10 and 20 years.  \n 4) A pair of children aged under 10 years regardless of their sex.  \n 5) One person aged between 10 to 20 years paired with a child aged under 10 years of the same sex.  \n 6) Any other person aged under 21 years who cannot share a bedroom with someone in 3, 4 or 5 above.\n\nAn occupancy rating of:\n\n*  -1 or less implies that a households accommodation has fewer bedrooms than required (overcrowded)  \n* +1 or more implies that a households accommodation has more bedrooms than required (under-occupied)  \n* 0 suggests that a households accommodation has an ideal number of bedrooms",
+          "long_desc": "Whether a household's accommodation is overcrowded, ideally occupied or under-occupied. This is calculated by comparing the number of bedrooms the household requires (the Bedroom Standard) to the number of available bedrooms.  \n \nAdditional  \nPeople that should have their own room according to the Bedroom Standard:\n\n 1) A married or co-habiting couple.  \n 2) Someone 21 years old or over.  \n 3) A pair of same-sex aged between 10 and 20 years.  \n 4) A pair of children aged under 10 years regardless of their sex.  \n 5) One person aged between 10 to 20 years paired with a child aged under 10 years of the same sex.  \n 6) Any other person aged under 21 years who cannot share a bedroom with someone in 3, 4 or 5 above.\n\nAn occupancy rating of:\n\n*  -1 or less implies that a household\u2019s accommodation has fewer bedrooms than required (overcrowded)  \n* +1 or more implies that a household\u2019s accommodation has more bedrooms than required (under-occupied)  \n* 0 suggests that a household\u2019s accommodation has an ideal number of bedrooms",
           "units": "Household",
           "topic_code": "HOU",
           "classifications": [
@@ -1277,7 +1277,7 @@
           "code": "occupancy_rating_rooms",
           "slug": "occupancy-rating-for-rooms",
           "desc": "Whether homes are overcrowded, ideally occupied or under-occupied, based on rooms.",
-          "long_desc": "Whether a household's accommodation is overcrowded, ideally occupied or under-occupied. This is calculated by comparing the number of rooms the household requires to the number of available rooms. \n\nAdditional  \nThe number of rooms the household requires uses a formula which states that: \n* one-person households require three rooms comprised of two common rooms and one bedroom \n* two-or-more person households require a minimum of two common rooms and a bedroom for each person inline with the Bedroom Standard. \n\nPeople who should have their own room according to the Bedroom Standard:\n  1) Married or cohabiting couple.  \n  2) Single parent.  \n  3) Person aged 16 years old or over.  \n  4) Pair of same-sex persons 10 to 15 years old.  \n  5) Person aged 10 to 15 years old paired with a person under 10 years old of the same sex.  \n  6) Pair of children under the age of 10, regardless of their sex.  \n  7) Person under 16 years old who cannot share a bedroom with someone in 4, 5 or 6 above.\n\nAn occupancy rating of:\n\n * -1 or less implies that a households accommodation has fewer rooms than required (overcrowded) \n* +1 or more implies that a households accommodation has more rooms than required (under-occupied) \n* 0 suggests that a households accommodation has an ideal number of rooms",
+          "long_desc": "Whether a household's accommodation is overcrowded, ideally occupied or under-occupied. This is calculated by comparing the number of rooms the household requires to the number of available rooms. \n\nAdditional  \nThe number of rooms the household requires uses a formula which states that: \n* one-person households require three rooms comprised of two common rooms and one bedroom \n* two-or-more person households require a minimum of two common rooms and a bedroom for each person inline with the Bedroom Standard. \n\nPeople who should have their own room according to the Bedroom Standard:\n  1) Married or cohabiting couple.  \n  2) Single parent.  \n  3) Person aged 16 years old or over.  \n  4) Pair of same-sex persons 10 to 15 years old.  \n  5) Person aged 10 to 15 years old paired with a person under 10 years old of the same sex.  \n  6) Pair of children under the age of 10, regardless of their sex.  \n  7) Person under 16 years old who cannot share a bedroom with someone in 4, 5 or 6 above.\n\nAn occupancy rating of:\n\n * -1 or less implies that a household\u2019s accommodation has fewer rooms than required (overcrowded) \n* +1 or more implies that a household\u2019s accommodation has more rooms than required (under-occupied) \n* 0 suggests that a household\u2019s accommodation has an ideal number of rooms",
           "units": "Household",
           "topic_code": "HOU",
           "classifications": [
@@ -3902,7 +3902,7 @@
           "code": "religion_tb",
           "slug": "religion",
           "desc": "The religion people connect or identify with.",
-          "long_desc": "The religion people connect or identify with (their religious affiliation), whether or not they practice or have belief in it.\n\nThis question was voluntary and includes people who identified with one of 8 tick-box response options, including No religion, alongside those who chose not to answer this question.",
+          "long_desc": "The religion people connect or identify with (their religious affiliation), whether or not they practice or have belief in it.\n\nThis question was voluntary and includes people who identified with one of 8 tick-box response options, including \u2018No religion\u2019, alongside those who chose not to answer this question.",
           "units": "Person",
           "topic_code": "EILR",
           "classifications": [
@@ -4802,7 +4802,7 @@
           "code": "hh_size",
           "slug": "household-size",
           "desc": "The number of people in a household.",
-          "long_desc": "The number of people in the household. \n\nVisitors staying at an address do not count to that households size.",
+          "long_desc": "The number of people in the household. \n\nVisitors staying at an address do not count to that household\u2019s size.",
           "units": "Household",
           "topic_code": "DEM",
           "classifications": [
@@ -5133,7 +5133,7 @@
           "code": "living_arrangements",
           "slug": "living-arrangements",
           "desc": "People's living arrangements, by their legal partnership status.",
-          "long_desc": "The living arrangements classification combines responses to the question on marital and civil partnership status with information about whether or not a person is living in a couple. This topic is only applicable to people in households. Living arrangements differs from marital and civil partnership status because cohabiting takes priority over other categories. For example, if a person is divorced and cohabiting, then in results for living arrangements they are classified as cohabiting.",
+          "long_desc": "The \u201cliving arrangements\u201d classification combines responses to the question on marital and civil partnership status with information about whether or not a person is living in a couple. This topic is only applicable to people in households. Living arrangements differs from marital and civil partnership status because cohabiting takes priority over other categories. For example, if a person is divorced and cohabiting, then in results for living arrangements they are classified as cohabiting.",
           "units": "Person",
           "topic_code": "DEM",
           "classifications": [
@@ -5237,7 +5237,7 @@
           "code": "resident_age",
           "slug": "age",
           "desc": "The age of a person on Census Day, 21 March 2021.",
-          "long_desc": "A persons age on Census Day, 21 March 2021 in England and Wales. Infants aged under 1 year are classified as 0 years of age.",
+          "long_desc": "A person\u2019s age on Census Day, 21 March 2021 in England and Wales. Infants aged under 1 year are classified as 0 years of age.",
           "units": "Person",
           "topic_code": "DEM",
           "classifications": [
@@ -6314,7 +6314,7 @@
           "code": "sex",
           "slug": "sex",
           "desc": "The sex recorded by the person completing the census.",
-          "long_desc": "This is the sex recorded by the person completing the census. The options were Female and Male.",
+          "long_desc": "This is the sex recorded by the person completing the census. The options were \u201cFemale\u201d and \u201cMale\u201d.",
           "units": "Person",
           "topic_code": "DEM",
           "classifications": [
@@ -6356,7 +6356,7 @@
           "code": "age_arrival_uk",
           "slug": "age-of-arrival-in-the-uk",
           "desc": "The age people were when they arrived to live in the UK.",
-          "long_desc": "The date a person last arrived to live in the UK and their age. Arrival dates do not include returning from short trips away from the UK.\n\nAge of arrival only applies to usual residents not born in the UK. It does not include usual residents born in the UK who have emigrated and since returned. These are recorded in the category born in the UK.",
+          "long_desc": "The date a person last arrived to live in the UK and their age. Arrival dates do not include returning from short trips away from the UK.\n\nAge of arrival only applies to usual residents not born in the UK. It does not include usual residents born in the UK who have emigrated and since returned. These are recorded in the category \u201cborn in the UK\u201d.",
           "units": "Person",
           "topic_code": "MIG",
           "classifications": [
@@ -8213,7 +8213,7 @@
           "code": "residence_length",
           "slug": "length-of-residence-in-the-uk",
           "desc": "Length of residence in the UK.",
-          "long_desc": "The length of residence in the UK is derived from the date that a person most recently arrived to live in the UK. It does not include returning from a holiday or short stay outside the UK.\n\nLength of residence is only applicable to usual residents who were not born in the UK. It does not include usual residents born in the UK who have emigrated and since returned - \nthese are recorded in the category born in the UK.",
+          "long_desc": "The length of residence in the UK is derived from the date that a person most recently arrived to live in the UK. It does not include returning from a holiday or short stay outside the UK.\n\nLength of residence is only applicable to usual residents who were not born in the UK. It does not include usual residents born in the UK who have emigrated and since returned - \nthese are recorded in the category \u201cborn in the UK\u201d.",
           "units": "Person",
           "topic_code": "MIG",
           "classifications": [
@@ -9811,7 +9811,7 @@
           "code": "workplace_travel",
           "slug": "distance-travelled-to-work",
           "desc": "The distance between home and work, in kilometres.",
-          "long_desc": "The distance, in kilometres, between a person's residential postcode and their workplace postcode measured in a straight line. A distance travelled of 0.1km indicates that the workplace postcode is the same as the residential postcode. Distances over 1200km are treated as invalid, and an imputed or estimated value is added.\n\nWork mainly at or from home is made up of those that ticked either the 'Mainly work at or from home' box for the address of workplace question, or the Work mainly at or from home box for the method of travel to work question.\n\nOther includes no fixed place of work, working on an offshore installation and working outside of the UK.\n\nDistance is calculated as the straight line distance between the enumeration postcode and the workplace postcode.",
+          "long_desc": "The distance, in kilometres, between a person's residential postcode and their workplace postcode measured in a straight line. A distance travelled of 0.1km indicates that the workplace postcode is the same as the residential postcode. Distances over 1200km are treated as invalid, and an imputed or estimated value is added.\n\n\u201cWork mainly at or from home\u201d is made up of those that ticked either the 'Mainly work at or from home' box for the address of workplace question, or the \u201cWork mainly at or from home\u201d box for the method of travel to work question.\n\n\u201cOther\u201d includes no fixed place of work, working on an offshore installation and working outside of the UK.\n\nDistance is calculated as the straight line distance between the enumeration postcode and the workplace postcode.",
           "units": "Person",
           "topic_code": "TTW",
           "classifications": [

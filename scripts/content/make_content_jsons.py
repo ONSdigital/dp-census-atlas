@@ -137,17 +137,17 @@ def variable_groups_from_metadata(
     variable_topic_overrides: dict
 ) -> list[CensusVariableGroup]:
     # load all census objects, ignoring non-ACSII characters
-    with open(cantabular_metadata_dir.joinpath("Category.csv"), "r", encoding="ascii", errors="ignore") as f:
+    with open(cantabular_metadata_dir.joinpath("Category.csv"), "r", encoding="utf-8") as f:
         # nb filter out 'minus' categories (generally 'Does Not Apply' or similar) and non-numeric strings
         categories = [
             category_from_cantabular_csv_row(csv_row) for csv_row in csv.DictReader(f)
             if csv_row["Category_Code"].isnumeric()
         ]
 
-    with open(cantabular_metadata_dir.joinpath("Classification.csv"), "r", encoding="ascii", errors="ignore") as f:
+    with open(cantabular_metadata_dir.joinpath("Classification.csv"), "r", encoding="utf-8") as f:
         classifications = [classification_from_cantabular_csv_row(csv_row) for csv_row in csv.DictReader(f)]
 
-    with open(cantabular_metadata_dir.joinpath("Variable.csv"), "r", encoding="ascii", errors="ignore") as f:
+    with open(cantabular_metadata_dir.joinpath("Variable.csv"), "r", encoding="utf-8") as f:
         variables = [variable_from_cantabular_csv_row(csv_row, variable_topic_overrides) for csv_row in csv.DictReader(f)]
 
     with open(variable_groups_spec_file, "r") as f:

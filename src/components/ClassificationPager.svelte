@@ -13,18 +13,21 @@
 <div class="flex gap-3">
   <div class="flex gap-3 ">
     {#if prev}
-      &lt; <a
-        class="hyperlink-without-group-hover "
-        href={buildHyperlink($page.url, {
-          variableGroup: $selection.variableGroup.slug,
-          variable: $selection.variable.slug,
-          category: {
-            classification: prev.slug,
-            category: prev.categories[0].slug,
-          },
-        })}
-        >Fewer
-      </a>
+      <div class="flex items-center gap-2">
+        <span> &lt; </span>
+        <a
+          class="hyperlink-without-group-hover "
+          href={buildHyperlink($page.url, {
+            variableGroup: $selection.variableGroup.slug,
+            variable: $selection.variable.slug,
+            category: {
+              classification: prev.slug,
+              category: prev.categories[0].slug,
+            },
+          })}
+          >Less detail
+        </a>
+      </div>
     {/if}
     {#each allPrev as c}
       <a
@@ -62,19 +65,21 @@
       </a>
     {/each}
     {#if next}
-      <a
-        class="hyperlink-without-group-hover group-hover:decoration-[3px]"
-        href={buildHyperlink($page.url, {
-          variableGroup: $selection.variableGroup.slug,
-          variable: $selection.variable.slug,
-          category: {
-            classification: next.slug,
-            category: next.categories[0].slug,
-          },
-        })}
-        >More
-      </a>
-      &gt;
+      <div class="flex items-center gap-2">
+        <a
+          class="hyperlink-without-group-hover group-hover:decoration-[3px]"
+          href={buildHyperlink($page.url, {
+            variableGroup: $selection.variableGroup.slug,
+            variable: $selection.variable.slug,
+            category: {
+              classification: next.slug,
+              category: next.categories[0].slug,
+            },
+          })}
+          >More detail
+        </a>
+        <span> &gt; </span>
+      </div>
     {/if}
   </div>
 </div>

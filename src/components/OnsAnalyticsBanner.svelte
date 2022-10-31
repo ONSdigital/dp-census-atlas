@@ -8,6 +8,7 @@
   export let fixed = true; // Fixed positioning of banner (instead of inline)
 
   let allowLoad; // Fill be set to false if on embed url
+  let initialised = false;
 
   let showBanner = false;
   let showConfirm = false;
@@ -70,6 +71,7 @@
       j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
       f.appendChild(j);
     })(window, document, "script", "dataLayer", analyticsId);
+    initialised = true;
   }
 
   // This code is only relevant for multi-page Svelte Kit apps. It sends an analytics event when the URL changes
@@ -93,7 +95,7 @@
       });
     }
   }
-  $: allowLoad && usageCookies && pageView($page);
+  $: initialised && pageView($page);
 
   onMount(() => {
     allowLoad = !$page.url.searchParams.get("embed");

@@ -42,7 +42,7 @@ export const initMap = (container: HTMLElement) => {
   map.touchZoomRotate.disableRotation();
 
   if (embedViewport) {
-    const bounds = new mapboxgl.LngLatBounds([embed.embedWest, embed.embedSouth], [embed.embedEast, embed.embedNorth]);
+    const bounds = new mapboxgl.LngLatBounds(embed.embedBounds);
     map.fitBounds(bounds, { padding: 0, animate: false });
   } else {
     setPosition(map, get(geography));

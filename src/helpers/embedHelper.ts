@@ -1,10 +1,7 @@
 export const getEmbedCode = (url: URL, embedParams: EmbedParams) => {
-  // delete bounding box properties to avoid long urls if not embedding in viewport mode
+  // delete bounds property if not embedding in viewport mode
   if (embedParams.embedView != "viewport") {
-    delete embedParams.embedEast;
-    delete embedParams.embedNorth;
-    delete embedParams.embedWest;
-    delete embedParams.embedSouth;
+    delete embedParams.embedBounds;
   }
 
   const params = new URLSearchParams({
@@ -27,10 +24,7 @@ export type EmbedParams = {
   embedAreaSearch: boolean;
   embedInteractive: boolean;
   embedView: "viewport" | "geography";
-  embedEast?: number;
-  embedNorth?: number;
-  embedWest?: number;
-  embedSouth?: number,
+  embedBounds?: number[];
 };
 
 

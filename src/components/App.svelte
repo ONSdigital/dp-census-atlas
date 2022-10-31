@@ -17,14 +17,27 @@
     // tell iframe host using pym.js to set iframe height to 600px
     new pym.Child().sendMessage("height", "600");
   });
+
+  function parseSlug(slug) {
+    let string = slug.replaceAll("-", " ").replace("uk", "UK");
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+  function parseParam(code) {
+    let slug = $page.params[code];
+    return slug ? parseSlug(slug) : undefined;
+  }
+  $: title = $page.params.variable
+    ? `${parseParam("variable")} - Census Maps, ONS`
+    : "Census Maps - Census 2021 data interactive, ONS";
+  $: url = $page.url.origin + $page.url.pathname;
 </script>
 
 <svelte:head>
-  <title>Census maps - Census 2021 data interactive, ONS</title>
-  <link rel="canonical" href="{$page.url.origin}{$page.url.pathname}" />
-  <meta property="og:title" content="Census maps - Census 2021 data interactive, ONS" />
+  <title>{title}</title>
+  <link rel="canonical" href={url} />
+  <meta property="og:title" content={title} />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="{$page.url.origin}{$page.url.pathname}" />
+  <meta property="og:url" content={url} />
   <meta property="og:image" content="https://www.ons.gov.uk/census/maps/img/og-image.png" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:width" content="940" />

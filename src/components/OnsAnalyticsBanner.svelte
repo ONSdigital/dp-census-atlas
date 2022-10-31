@@ -58,7 +58,7 @@
         ...analyticsProps,
       },
     ];
-    if (page) location = $page.url.hostname + $page.url.pathname + $page.url.searchParams;
+    location = $page.url.href;
 
     (function (w, d, s, l, i) {
       w[l] = w[l] || [];
@@ -73,14 +73,15 @@
   }
 
   // This code is only relevant for multi-page Svelte Kit apps. It sends an analytics event when the URL changes
-  $: if (allowLoad && usageCookies && page) {
-    let newlocation = $page.url.href;
+  function pageView(page) {
+    let newlocation = page.url.href;
     if (newlocation !== location) {
       location = newlocation;
+      // console.log("new page view " + location);
 
       let areaData = {};
       ["oa", "msoa", "lad"].forEach((key) => {
-        let code = $page.url.searchParams.get(key);
+        let code = page.url.searchParams.get(key);
         if (code) areaData = { areaCode: code, areaType: key };
       });
 
@@ -92,10 +93,12 @@
       });
     }
   }
+  $: allowLoad && usageCookies && pageView($page);
 
   onMount(() => {
     allowLoad = !$page.url.searchParams.get("embed");
-    showBanner = allowLoad && !hasCookiesPreferencesSet();
+    usageCookies = hasCookiesPreferencesSet();
+    showBanner = allowLoad && !usageCookies;
     if (allowLoad && getUsageCookieValue()) initAnalytics();
   });
 </script>

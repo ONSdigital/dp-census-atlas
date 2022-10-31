@@ -48,7 +48,7 @@
   </div>
   {#if selected !== undefined}
     <div class="absolute z-10 -top-2.5" style="left: calc({pos(selected, breaks)}% - {28 / 2}px);">
-      <BreaksMarker colour={hovered ? "#bcbcbd" : "black"} />
+      <BreaksMarker ghost={hovered} />
     </div>
   {/if}
   {#if hovered !== undefined}

@@ -31,7 +31,25 @@ its intended purpose (producing the data files and adding them to s3) none of th
         ]
     },
 ```
-8. The policy should now look something like this:
+8. Add `S3:PutObject` to the actions available to users able to access the bucket:
+
+```JSON
+ {
+    "Sid": "",
+    "Effect": "Allow",
+    "Principal": {
+        "AWS": "*"
+    },
+    "Action": [
+        "s3:GetObject",
+        "s3:PutObject"
+    ],
+    "Resource": "arn:aws:s3:::ons-dp-prod-census-maps-dem-mig/*"
+},
+```
+
+9. The policy should now look something like this:
+
 ```JSON
 {
     "Version": "2012-10-17",
@@ -42,7 +60,10 @@ its intended purpose (producing the data files and adding them to s3) none of th
             "Principal": {
                 "AWS": "*"
             },
-            "Action": "s3:GetObject",
+            "Action": [
+                "s3:GetObject",
+                "s3:PutObject"
+            ],
             "Resource": "arn:aws:s3:::ons-dp-prod-census-maps-dem-mig/*"
         },
         {
@@ -73,6 +94,7 @@ aws s3 sync tiles s3://<my target bucket>/tiles
 ```
 12. Once done and checked, **clean up!**: 
     - remove the reference to your user ID from the bucket policy.
+    - remove `S3:PutObject` from the list of permitted bucket actions.
     - remove the zip file and unzipped directory from the atlas host filesystem
     - logout from sso with `aws sso logout`
     - remove your AWS credenentials by either deleting or blanking `~/.aws/config`

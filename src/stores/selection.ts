@@ -26,8 +26,8 @@ const parseSearchParams = (params: URLSearchParams) => {
     embed:
       params.get("embed") === "true"
         ? {
+            interactive: params.get("embedInteractive") === "true",
             areaSearch: params.get("embedAreaSearch") === "true",
-            fixedGeo: params.get("embedMoveable") === "true",
             view: params.get("embedView"),
           }
         : undefined,

@@ -21,6 +21,9 @@ const maxAllowedZoom = 16;
 
 /** Configure the map's properties and subscribe to its events. */
 export const initMap = (container: HTMLElement) => {
+  const embed = get(selection).embed;
+  const interactive = !embed || embed.interactive;
+
   const map = new Map({
     container,
     style,
@@ -28,10 +31,13 @@ export const initMap = (container: HTMLElement) => {
     minZoom: 5, // prevent accidental zoom out, especially on mobile
     maxZoom: maxAllowedZoom - 0.001, // prevent layers from disappearing at absolute max zoom
     maxBounds,
+    interactive,
   });
 
   setPosition(map, get(geography));
-  map.addControl(new mapboxgl.NavigationControl({ showCompass: false }));
+  if (interactive) {
+    map.addControl(new mapboxgl.NavigationControl({ showCompass: false }));
+  }
 
   map.on("load", () => {
     initMapLayers(map, get(geography));
@@ -52,13 +58,15 @@ export const initMap = (container: HTMLElement) => {
       setViewportStoreAndLayerVisibility(map, $selection.classification);
     });
 
-  layers.forEach((l) => {
-    map.on("click", `${l.name}-features`, (e) => {
-      const geoCode = e.features[0].properties[l.idProperty];
-      preventFlyToGeography(geoCode);
-      selectGeography(get(page).url.searchParams, { geoType: l.name, geoCode });
+  if (interactive) {
+    layers.forEach((l) => {
+      map.on("click", `${l.name}-features`, (e) => {
+        const geoCode = e.features[0].properties[l.idProperty];
+        preventFlyToGeography(geoCode);
+        selectGeography(get(page).url.searchParams, { geoType: l.name, geoCode });
+      });
     });
-  });
+  }
 
   return map;
 };

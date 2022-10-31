@@ -16,7 +16,7 @@ export const getEmbedCode = (url: URL, embedParams: EmbedParams) => {
 export type EmbedParams = {
   embed: boolean;
   embedAreaSearch: boolean;
-  embedMoveable: boolean;
+  embedInteractive: boolean;
   embedView: "viewport" | "geography";
 };
 

@@ -12,14 +12,14 @@
   let button: HTMLButtonElement;
   let copied: Observable<boolean>;
 
+  let embedInteractive = false;
   let embedAreaSearch = false;
-  let embedMoveable = true;
   let embedView: "viewport" | "geography" = "geography";
 
   $: embedCode = getEmbedCode($page.url, {
     embed: true,
+    embedInteractive,
     embedAreaSearch,
-    embedMoveable,
     embedView,
   });
 
@@ -62,13 +62,13 @@
       </label>
       <label class="hoverable">
         <input disabled type="radio" bind:group={embedView} name="embedView" value={"viewport"} />
-        Use your exact current view
+        Use exact area
       </label>
     </div>
     <div class="">
       <label class="hoverable">
-        <input disabled type="checkbox" bind:checked={embedMoveable} class="custom-ring mr-1" />
-        Moveable map
+        <input type="checkbox" bind:checked={embedInteractive} class="custom-ring mr-1" />
+        Interactive map
       </label>
     </div>
     <div class="">

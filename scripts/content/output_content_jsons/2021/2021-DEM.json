@@ -724,7 +724,7 @@
           "code": "resident_age",
           "slug": "age",
           "desc": "The age of a person on Census Day, 21 March 2021.",
-          "long_desc": "A persons age on Census Day, 21 March 2021 in England and Wales. Infants aged under 1 year are classified as 0 years of age.",
+          "long_desc": "A person's age on Census Day, 21 March 2021 in England and Wales. Infants aged under 1 year are classified as 0 years of age.",
           "units": "Person",
           "topic_code": "DEM",
           "classifications": [

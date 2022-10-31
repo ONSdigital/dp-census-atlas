@@ -6,6 +6,7 @@
   import { fromEvent, Observable, of, concat } from "rxjs";
   import { delay, mergeMap, startWith, switchMap, tap, windowWhen } from "rxjs/operators";
   import { getEmbedCode } from "../helpers/embedHelper";
+  import { viewport } from "../stores/viewport";
   import Icon from "./MaterialIcon.svelte";
 
   let dialog: HTMLDialogElement;
@@ -16,11 +17,19 @@
   let embedAreaSearch = false;
   let embedView: "viewport" | "geography" = "geography";
 
+  $: embedEast = $viewport?.bbox.east;
+  $: embedNorth = $viewport?.bbox.north;
+  $: embedWest = $viewport?.bbox.west;
+  $: embedSouth = $viewport?.bbox.south;
   $: embedCode = getEmbedCode($page.url, {
     embed: true,
     embedInteractive,
     embedAreaSearch,
     embedView,
+    embedEast,
+    embedNorth,
+    embedWest,
+    embedSouth
   });
 
   onMount(() => {
@@ -73,11 +82,11 @@
     <!-- <h3 class="mb-4 text-lg font-semibold md:text-xl ">Options</h3> -->
     <div class="flex gap-4">
       <label class="hoverable">
-        <input disabled type="radio" bind:group={embedView} name="embedView" value={"geography"} />
+        <input type="radio" bind:group={embedView} name="embedView" value={"geography"} />
         Center on selected location ({$geography.displayName})
       </label>
       <label class="hoverable">
-        <input disabled type="radio" bind:group={embedView} name="embedView" value={"viewport"} />
+        <input type="radio" bind:group={embedView} name="embedView" value={"viewport"} />
         Use exact area
       </label>
     </div>

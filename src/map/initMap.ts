@@ -23,6 +23,7 @@ const maxAllowedZoom = 15;
 export const initMap = (container: HTMLElement) => {
   const embed = get(params).embed;
   const interactive = !embed || embed.interactive;
+  const embedViewport = embed && embed.view === "viewport";
 
   const map = new Map({
     container,
@@ -40,7 +41,13 @@ export const initMap = (container: HTMLElement) => {
   // disable touchscreen rotate while allowing pinch-to-zoom
   map.touchZoomRotate.disableRotation();
 
-  setPosition(map, get(geography));
+  if (embedViewport) {
+    const bounds = new mapboxgl.LngLatBounds([embed.embedWest, embed.embedSouth], [embed.embedEast, embed.embedNorth]);
+    map.fitBounds(bounds, { padding: 0, animate: false });
+  } else {
+    setPosition(map, get(geography));
+  }
+
   if (interactive) {
     map.addControl(new mapboxgl.NavigationControl({ showCompass: false }));
   }

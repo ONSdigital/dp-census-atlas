@@ -21,15 +21,22 @@ export const params = derived([page, content], ([$page, $content]) => {
 });
 
 const parseSearchParams = (params: URLSearchParams) => {
+  let embedParams = undefined;
+  if (params.get("embed") === "true") {
+    embedParams = {
+      interactive: params.get("embedInteractive") === "true",
+      areaSearch: params.get("embedAreaSearch") === "true",
+      view: params.get("embedView"),
+    }
+    if  (params.get("embedView") === "viewport") {
+      embedParams.embedEast = params.get("embedEast");
+      embedParams.embedNorth = params.get("embedNorth");
+      embedParams.embedWest = params.get("embedWest");
+      embedParams.embedSouth = params.get("embedSouth");
+    }
+  }
   return {
     ...getSelectedGeography(params),
-    embed:
-      params.get("embed") === "true"
-        ? {
-            interactive: params.get("embedInteractive") === "true",
-            areaSearch: params.get("embedAreaSearch") === "true",
-            view: params.get("embedView"),
-          }
-        : undefined,
+    embed: embedParams
   };
 };

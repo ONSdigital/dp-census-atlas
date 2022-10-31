@@ -62,7 +62,7 @@
           "code": "median_age",
           "slug": "median-age",
           "desc": "Median age on Census Day, 21 March 2021.",
-          "long_desc": "Median age is calculated from the age of residents on Census Day, 21 March 2021 in England and Wales.",
+          "long_desc": "Median age is calculated from the age of residents on Census Day, 21 March 2021 in England and Wales. The median age is the age of the person in the middle of the group, such that one half of the group is younger than that person and the other half is older.",
           "units": "Years",
           "topic_code": "DEM",
           "available_geotypes": ["msoa", "lad"],
@@ -71,7 +71,7 @@
               "code": "median_age",
               "slug": "median-age",
               "desc": "Median age",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": ["msoa", "lad"],
               "dataset": "TS007a",
               "choropleth_default": true,
               "categories": [

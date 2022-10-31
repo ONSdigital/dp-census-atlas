@@ -1,8 +1,7 @@
 <script>
   import { viz } from "../stores/viz";
-  import { geography } from "../stores/geography";
   import { hovered } from "../stores/hovered";
-  // import { selected } from "../stores/selected";
+  import { selected } from "../stores/selected";
   import { formatTemplateString } from "../helpers/categoryHelpers";
   import { choroplethColours } from "../helpers/choroplethHelpers";
   import {
@@ -13,37 +12,22 @@
   import BreaksChart from "./BreaksChart.svelte";
   import GeoTypeBadge from "./GeoTypeBadge.svelte";
 
-  $: valueForSelectedGeography = $viz?.places.find((p) => p.geoCode === $geography?.geoCode)?.ratioToTotal;
   $: valueForHoveredGeography = $viz?.places.find((p) => p.geoCode === $hovered?.geoCode)?.ratioToTotal;
   $: breaks = $viz ? [$viz?.minMaxVals[0], ...$viz.breaks] : undefined;
 
-  // use the hovered geo, otherwise the selected, otherwise the loaded geography
+  // the hovered, otherwise the selected, geography properties
   $: active = $hovered
     ? {
-        geoType: $hovered?.geoType,
-        geoCode: $hovered?.geoCode,
-        displayName: $hovered?.displayName,
+        geoType: $hovered.geoType,
+        geoCode: $hovered.geoCode,
+        displayName: $hovered.displayName,
         value: valueForHoveredGeography,
       }
-    : // : $selected
-    // ? {
-    //     geoType: $selected?.geoType,
-    //     geoCode: $selected?.geoCode,
-    //     displayName: $selected?.displayName,
-    //     value: $selected?.value,
-    //   }
-    valueForSelectedGeography
-    ? {
-        geoType: $geography?.geoType,
-        geoCode: $geography?.geoCode,
-        displayName: $geography?.displayName,
-        value: valueForSelectedGeography,
-      }
     : {
-        geoType: $geography?.geoType,
-        geoCode: $geography?.geoCode,
-        displayName: $geography?.displayName,
-        value: undefined,
+        geoType: $selected?.geoType,
+        geoCode: $selected?.geoCode,
+        displayName: $selected?.displayName,
+        value: $selected?.value,
       };
 
   const legendTextClass = "text-sm sm:text-base lg:text-lg xl:text-xl";
@@ -59,6 +43,9 @@
     <div
       class="z-abovemap w-full max-w-[50rem] mx-3 lg:mx-4 bg-white bg-opacity-90 px-3 lg:px-5 py-2 lg:py-3 border-[1px] lg:border-[1px] border-ons-grey-15"
     >
+      <!-- <div class="">
+        {JSON.stringify({ code: $selected?.geoCode, value: $selected?.value })}
+      </div> -->
       {#if $viz?.params?.category && active?.value !== undefined}
         <!-- full legend -->
         <div class="flex gap-3 items-center">
@@ -121,9 +108,10 @@
         </div>
       {/if}
 
-      {#if $viz?.params?.category && $viz?.breaks}
+      {#if $viz}
         <BreaksChart
-          selected={active.value}
+          selected={$selected?.value}
+          hovered={active.value}
           suffix={getCategoryDataSuffix($viz.params.category.code)}
           breaks={uniqueRoundedCategoryBreaks($viz.params.category.code, breaks)}
           colors={choroplethColours}

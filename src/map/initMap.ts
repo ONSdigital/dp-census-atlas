@@ -17,7 +17,7 @@ import { viz } from "../stores/viz";
 import { toObservable } from "../util/rxUtil";
 
 const defaultZoom = 6;
-const maxAllowedZoom = 16;
+const maxAllowedZoom = 15;
 
 /** Configure the map's properties and subscribe to its events. */
 export const initMap = (container: HTMLElement) => {
@@ -131,7 +131,7 @@ const listenToSelectedGeographyStore = (map: mapboxgl.Map, geography: GeographyI
     // @ts-ignore types here are no good
     source.setData(boundary);
 
-    // zoom there
+    // don't change position for EW
     if (geography.geoType !== "ew") {
       setPosition(map, geography, { animate: true });
     }
@@ -143,11 +143,14 @@ const setPosition = (map: mapboxgl.Map, g: GeographyInfo, options: { animate: bo
     const bounds = new mapboxgl.LngLatBounds(englandAndWalesBbox);
     map.fitBounds(bounds, { padding: 0, animate: false });
   } else {
-    const width = map.getContainer().offsetWidth;
     const bounds = new mapboxgl.LngLatBounds(g.bbox);
     const layer = layers.find((l) => l.name === g.geoType);
-    const geoPadFactor = layer.geoPadFactor;
-    map.fitBounds(bounds, { padding: width / geoPadFactor, animate: options.animate });
+    // ensure that we don't pad more than the viewport
+    const padding = Math.min(
+      map.getContainer().offsetWidth / layer.geoPadFactor,
+      map.getContainer().offsetHeight / layer.geoPadFactor,
+    );
+    map.fitBounds(bounds, { padding, animate: options.animate });
   }
 };
 

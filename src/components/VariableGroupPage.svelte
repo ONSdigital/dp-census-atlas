@@ -1,7 +1,7 @@
 <script lang="ts">
   import { page } from "$app/stores";
   import { _ } from "svelte-i18n";
-  import { selection } from "../stores/selection";
+  import { params } from "../stores/params";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
   import { getDefaultChoroplethClassification } from "../helpers/variableHelpers";
   import AreaPanel from "./AreaPanel.svelte";
@@ -15,17 +15,17 @@
   <div class="flex items-center gap-2 text-xl">
     <a class="hyperlink" href={buildHyperlink($page.url)}>Home</a>
     <div class="text-sm font-extrabold text-slate-500">&gt;</div>
-    <div class=" ">{$selection.variableGroup.name}</div>
+    <div class=" ">{$params.variableGroup.name}</div>
   </div>
   <div class="mt-4 mb-2 ">
-    {$selection.variableGroup.desc}
+    {$params.variableGroup.desc}
   </div>
   <div class="flex flex-col mb-6 last:border-b-[1px] border-b-slate-300">
-    {#each $selection.variableGroup.variables as variable}
+    {#each $params.variableGroup.variables as variable}
       <a
         class="border-t-[1px] border-t-slate-300 py-2 group"
         href={buildHyperlink($page.url, {
-          variableGroup: $selection.variableGroup.slug,
+          variableGroup: $params.variableGroup.slug,
           variable: variable.slug,
           category: {
             classification: getDefaultChoroplethClassification(variable).slug,

@@ -1,11 +1,11 @@
 <script>
   import Icon from "./MaterialIcon.svelte";
   import { geoTypeDescriptions } from "../helpers/geographyHelper";
-  import { selection } from "../stores/selection";
+  import { params } from "../stores/params";
   import { viewport } from "../stores/viewport";
 </script>
 
-{#if !$selection.category}
+{#if !$params.category}
   <div class={`absolute top-[48%] left-1/2 -translate-x-1/2`}>
     <div class="z-abovemap px-3 py-1  rounded bg-ons-census-supporting text-ons-white">
       <div class="flex gap-2 items-center">

@@ -1,8 +1,8 @@
 <script>
-  import { selection } from "../../../../../stores/selection";
+  import { params } from "../../../../../stores/params";
   import VariablePage from "../../../../../components/VariablePage.svelte";
 </script>
 
-{#if $selection.variable}
+{#if $params.variable}
   <VariablePage />
 {/if}

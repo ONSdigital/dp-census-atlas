@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-11-01-12-23-34",
+    "created_at": "2022-11-01-13-56-09",
     "spec_file": "2021-content-spec-v3.json",
     "release": "2021-DEM"
   },
@@ -639,15 +639,15 @@
                   "name": "Living in an opposite-sex couple: Married or in a civil partnership",
                   "slug": "living-in-an-opposite-sex-couple-married-or-in-a-civil-partnership",
                   "code": "living_arrangements_11a-001",
-                  "legend_str_1": "of people aged 16 years or over and living in a household in {location}",
+                  "legend_str_1": "of people aged 16 years or over in households in {location}",
                   "legend_str_2": "live together",
-                  "legend_str_3": "in a opposite-sex couple that is married or in a civil partnership"
+                  "legend_str_3": "in an opposite-sex couple that is married or in a civil partnership"
                 },
                 {
                   "name": "Living in a same-sex couple: Married or in a civil partnership",
                   "slug": "living-in-a-same-sex-couple-married-or-in-a-civil-partnership",
                   "code": "living_arrangements_11a-002",
-                  "legend_str_1": "of people aged 16 years or over and living in a household in {location}",
+                  "legend_str_1": "of people aged 16 years or over in households in {location}",
                   "legend_str_2": "live together",
                   "legend_str_3": "in a same-sex couple that is married or in a civil partnership"
                 },
@@ -655,7 +655,7 @@
                   "name": "Living in a couple: Separated, but still married or in a civil partnership",
                   "slug": "living-in-a-couple-separated-but-still-married-or-in-a-civil-partnership",
                   "code": "living_arrangements_11a-003",
-                  "legend_str_1": "of people aged 16 years or over and living in a household in {location}",
+                  "legend_str_1": "of people aged 16 years or over in households in {location}",
                   "legend_str_2": "live together",
                   "legend_str_3": "in a couple that is separated, but still married or in a civil partnership"
                 },
@@ -663,7 +663,7 @@
                   "name": "Living in an opposite-sex couple: Cohabiting",
                   "slug": "living-in-an-opposite-sex-couple-cohabiting",
                   "code": "living_arrangements_11a-004",
-                  "legend_str_1": "of people aged 16 years or over and living in a household in {location}",
+                  "legend_str_1": "of people aged 16 years or over in households in {location}",
                   "legend_str_2": "live together",
                   "legend_str_3": "in an opposite-sex couple that is cohabiting"
                 },
@@ -671,7 +671,7 @@
                   "name": "Living in a same-sex couple: Cohabiting",
                   "slug": "living-in-a-same-sex-couple-cohabiting",
                   "code": "living_arrangements_11a-005",
-                  "legend_str_1": "of people aged 16 years or over and living in a household in {location}",
+                  "legend_str_1": "of people aged 16 years or over in households in {location}",
                   "legend_str_2": "live together",
                   "legend_str_3": "in a same-sex couple that is cohabiting"
                 },
@@ -679,7 +679,7 @@
                   "name": "Not living in a couple: Single (never married and never registered a same-sex civil partnership)",
                   "slug": "not-living-in-a-couple-single-never-married-and-never-registered-a-same-sex-civil-partnership",
                   "code": "living_arrangements_11a-006",
-                  "legend_str_1": "of people aged 16 years or over and living in a household in {location}",
+                  "legend_str_1": "of people aged 16 years or over in households in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "single (never married and never registered a same-sex civil partnership)"
                 },
@@ -687,7 +687,7 @@
                   "name": "Not living in a couple: Married or in a registered civil partnership",
                   "slug": "not-living-in-a-couple-married-or-in-a-registered-civil-partnership",
                   "code": "living_arrangements_11a-007",
-                  "legend_str_1": "of people aged 16 years or over and living in a household in {location}",
+                  "legend_str_1": "of people aged 16 years or over in households in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "not living in a couple, but are married or in a registered civil partnership"
                 },
@@ -695,7 +695,7 @@
                   "name": "Not living in a couple: Separated (including those who are married and those who are in civil partnerships)",
                   "slug": "not-living-in-a-couple-separated-including-those-who-are-married-and-those-who-are-in-civil-partnerships",
                   "code": "living_arrangements_11a-008",
-                  "legend_str_1": "of people aged 16 years or over and living in a household in {location}",
+                  "legend_str_1": "of people aged 16 years or over in households in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "separated (including those who are married and those who are in civil partnerships)"
                 },
@@ -703,7 +703,7 @@
                   "name": "Not living in a couple: Divorced or formerly in a civil partnership which is now legally dissolved",
                   "slug": "not-living-in-a-couple-divorced-or-formerly-in-a-civil-partnership-which-is-now-legally-dissolved",
                   "code": "living_arrangements_11a-009",
-                  "legend_str_1": "of people aged 16 years or over and living in a household in {location}",
+                  "legend_str_1": "of people aged 16 years or over in households in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "divorced or formerly in a civil partnership which is now legally dissolved"
                 },
@@ -711,7 +711,7 @@
                   "name": "Not living in a couple: Widowed or surviving partner from a civil partnership",
                   "slug": "not-living-in-a-couple-widowed-or-surviving-partner-from-a-civil-partnership",
                   "code": "living_arrangements_11a-010",
-                  "legend_str_1": "of people aged 16 years or over and living in a household in {location}",
+                  "legend_str_1": "of people aged 16 years or over in households in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "widowed or the surviving partner from a civil partnership"
                 }

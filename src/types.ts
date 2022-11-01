@@ -63,7 +63,7 @@ export type GeographyInfo = {
 
 export type GeographySearchItem = {
   kind: "Geography";
-  geoType: string;
+  geoType: GeoType;
   geoCode: string;
   en: string;
   cy: string;

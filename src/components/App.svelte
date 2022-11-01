@@ -29,7 +29,7 @@
   $: title = $page.params.variable
     ? `${parseParam("variable")} - Census Maps, ONS`
     : "Census Maps - Census 2021 data interactive, ONS";
-  $: url = $page.url.origin + $page.url.pathname;
+  $: url = "https://www.ons.gov.uk" + $page.url.pathname;
 </script>
 
 <svelte:head>

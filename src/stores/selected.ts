@@ -18,6 +18,14 @@ export const selected = asyncDerived([geography, viz], async ([$geography, $viz]
       bbox: { south, west, north, east },
     };
 
+    // current geotype is unavailable for current params
+    if (!$viz.params.classification.available_geotypes.includes($geography.geoType)) {
+      return {
+        ...$geography,
+        value: undefined,
+      };;
+    }
+
     const data = await fetchDataForBbox(args);
 
     return {

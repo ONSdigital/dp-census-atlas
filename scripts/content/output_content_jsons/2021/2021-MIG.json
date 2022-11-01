@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-10-27-16-48-27",
-    "spec_file": "2021-content-spec-v2.json",
+    "created_at": "2022-11-01-13-56-09",
+    "spec_file": "2021-content-spec-v3.json",
     "release": "2021-MIG"
   },
   "content": [
@@ -15,7 +15,7 @@
           "code": "age_arrival_uk",
           "slug": "age-of-arrival-in-the-uk",
           "desc": "The age people were when they arrived to live in the UK.",
-          "long_desc": "The date a person last arrived to live in the UK and their age. Arrival dates do not include returning from short trips away from the UK.\n\nAge of arrival only applies to usual residents not born in the UK. It does not include usual residents born in the UK who have emigrated and since returned. These are recorded in the category born in the UK.",
+          "long_desc": "The date a person last arrived to live in the UK and their age. Arrival dates do not include returning from short trips away from the UK.\n\nAge of arrival only applies to usual residents not born in the UK. It does not include usual residents born in the UK who have emigrated and since returned. These are recorded in the category \u201cborn in the UK\u201d.",
           "units": "Person",
           "topic_code": "MIG",
           "classifications": [
@@ -1872,7 +1872,7 @@
           "code": "residence_length",
           "slug": "length-of-residence-in-the-uk",
           "desc": "Length of residence in the UK.",
-          "long_desc": "The length of residence in the UK is derived from the date that a person most recently arrived to live in the UK. It does not include returning from a holiday or short stay outside the UK.\n\nLength of residence is only applicable to usual residents who were not born in the UK. It does not include usual residents born in the UK who have emigrated and since returned - \nthese are recorded in the category born in the UK.",
+          "long_desc": "The length of residence in the UK is derived from the date that a person most recently arrived to live in the UK. It does not include returning from a holiday or short stay outside the UK.\n\nLength of residence is only applicable to usual residents who were not born in the UK. It does not include usual residents born in the UK who have emigrated and since returned - \nthese are recorded in the category \u201cborn in the UK\u201d.",
           "units": "Person",
           "topic_code": "MIG",
           "classifications": [
@@ -1911,7 +1911,7 @@
                   "code": "residence_length_6b-003",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "lived in the UK for between 5 and 10 years"
+                  "legend_str_3": "lived in the UK for 5 years or more, but less than 10 years"
                 },
                 {
                   "name": "2 years or more, but less than 5 years",
@@ -1919,7 +1919,7 @@
                   "code": "residence_length_6b-004",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "lived in the UK for between 2 and 5 years"
+                  "legend_str_3": "lived in the UK for 2 years or more, but less than 5 years"
                 },
                 {
                   "name": "Less than 2 years",

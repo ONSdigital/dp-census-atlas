@@ -3,6 +3,7 @@ import { layersWithSiblings } from "./layers";
 import { centroidsGeojson } from "../helpers/quadsHelper";
 import { distinctUntilChanged, fromEventPattern } from "rxjs";
 import { map as project } from "rxjs/operators";
+const layerBounds: [number, number, number, number] = [-6.418, 49.864, 1.764, 55.812];
 
 export const initMapLayers = (map, geo) => {
   layersWithSiblings().forEach((l) => {
@@ -11,6 +12,7 @@ export const initMapLayers = (map, geo) => {
       tiles: [l.layer.urlTemplate],
       promoteId: l.layer.idProperty, // tells mapbox which property to use as the feature id
       maxzoom: l.layer.sourceMaxZoom, // This is the maximum zoom level that the map tiles are available for (tiles can be over-zoomed)
+      layerBounds,
     });
 
     map.addLayer(
@@ -79,6 +81,12 @@ export const initMapLayers = (map, geo) => {
       .subscribe((g) => {
         hovered.set({ ...g });
       });
+
+    fromEventPattern((handler) => {
+      map.on("mouseleave", `${l.layer.name}-features`, handler);
+    }).subscribe(() => {
+      hovered.set(undefined);
+    });
 
     // cursor to pointer when hovered
     map.on("mouseenter", `${l.layer.name}-features`, () => {

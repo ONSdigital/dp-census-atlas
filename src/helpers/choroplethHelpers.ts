@@ -1,1 +1,1 @@
-export const choroplethColours = ["#d5f690", "#5bc4b1", "#2e9daa", "#0079a2", "#005583"];
+export const choroplethColours = ["#CDE594", "#80C6A3", "#1F9EB7", "#186290", "#080C54"];

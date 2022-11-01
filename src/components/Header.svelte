@@ -1,7 +1,7 @@
 <script>
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
   import { page } from "$app/stores";
-  import { selection } from "../stores/selection";
+  import { params } from "../stores/params";
   import Logo from "./icons/Logo.svelte";
   import Census2021 from "./icons/Census2021.svelte";
   import { content } from "../stores/content";
@@ -9,7 +9,7 @@
 
 <header
   class="flex items-center gap-1 h-[46px] p-2 px-5 border-b-[1px] border-b-ons-grey-15"
-  class:hidden={$selection.embed}
+  class:hidden={$params.embed}
   class:bg-ons-ruby-red={$content.fakeDataLoaded}
 >
   <div class="">

@@ -1,6 +1,5 @@
 import type { Variable, Category, Classification } from "../types";
-import { formatPercentage, formatTemplateString } from "./categoryHelpers";
-
+import { formatTemplateString } from "./categoryHelpers";
 
 describe("formatTemplateString", () => {
   const testCategory: Category = {

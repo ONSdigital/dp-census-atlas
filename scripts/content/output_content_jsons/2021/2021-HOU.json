@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-10-27-16-48-27",
-    "spec_file": "2021-content-spec-v2.json",
+    "created_at": "2022-11-01-13-56-09",
+    "spec_file": "2021-content-spec-v3.json",
     "release": "2021-HOU"
   },
   "content": [
@@ -195,7 +195,7 @@
           "code": "alternative_address_indicator",
           "slug": "second-address-indicator",
           "desc": "An address (in or out of the UK) a person stays at for more than 30 days per year that isn't their place of usual residence.",
-          "long_desc": "An address (in or out of the UK) a person stays at for more than 30 days per year that is not their place of usual residence. \n \nAdditional \nSecond addresses typically include:\n\n* armed forces bases\n* addresses used by people working away from home\n* a students home address\n* the address of another parent or guardian\n* a holiday home\n  \nIf a person with a second address was staying there on census night, they were classed as a visitor to the second address but counted as a usual resident at their home address.",
+          "long_desc": "An address (in or out of the UK) a person stays at for more than 30 days per year that is not their place of usual residence. \n \nAdditional \nSecond addresses typically include:\n\n* armed forces bases\n* addresses used by people working away from home\n* a student\u2019s home address\n* the address of another parent or guardian\n* a holiday home\n  \nIf a person with a second address was staying there on census night, they were classed as a visitor to the second address but counted as a usual resident at their home address.",
           "units": "Person",
           "topic_code": "HOU",
           "classifications": [
@@ -530,7 +530,7 @@
           "code": "number_bedrooms",
           "slug": "number-of-bedrooms",
           "desc": "The number of bedrooms in a household.",
-          "long_desc": "The number of bedrooms in a households accommodation. \n\nAdditional \nThis number is not available for household spaces with no usual residents.",
+          "long_desc": "The number of bedrooms in a household\u2019s accommodation. \n\nAdditional \nThis number is not available for household spaces with no usual residents.",
           "units": "Household",
           "topic_code": "HOU",
           "classifications": [
@@ -675,7 +675,7 @@
           "code": "occupancy_rating_bedrooms",
           "slug": "occupancy-rating-for-bedrooms",
           "desc": "Whether homes are overcrowded, ideally occupied or under-occupied, based on bedrooms.",
-          "long_desc": "Whether a household's accommodation is overcrowded, ideally occupied or under-occupied. This is calculated by comparing the number of bedrooms the household requires (the Bedroom Standard) to the number of available bedrooms.  \n \nAdditional  \nPeople that should have their own room according to the Bedroom Standard:\n\n 1) A married or co-habiting couple.  \n 2) Someone 21 years old or over.  \n 3) A pair of same-sex aged between 10 and 20 years.  \n 4) A pair of children aged under 10 years regardless of their sex.  \n 5) One person aged between 10 to 20 years paired with a child aged under 10 years of the same sex.  \n 6) Any other person aged under 21 years who cannot share a bedroom with someone in 3, 4 or 5 above.\n\nAn occupancy rating of:\n\n*  -1 or less implies that a households accommodation has fewer bedrooms than required (overcrowded)  \n* +1 or more implies that a households accommodation has more bedrooms than required (under-occupied)  \n* 0 suggests that a households accommodation has an ideal number of bedrooms",
+          "long_desc": "Whether a household's accommodation is overcrowded, ideally occupied or under-occupied. This is calculated by comparing the number of bedrooms the household requires (the Bedroom Standard) to the number of available bedrooms.  \n \nAdditional  \nPeople that should have their own room according to the Bedroom Standard:\n\n 1) A married or co-habiting couple.  \n 2) Someone 21 years old or over.  \n 3) A pair of same-sex aged between 10 and 20 years.  \n 4) A pair of children aged under 10 years regardless of their sex.  \n 5) One person aged between 10 to 20 years paired with a child aged under 10 years of the same sex.  \n 6) Any other person aged under 21 years who cannot share a bedroom with someone in 3, 4 or 5 above.\n\nAn occupancy rating of:\n\n*  -1 or less implies that a household\u2019s accommodation has fewer bedrooms than required (overcrowded)  \n* +1 or more implies that a household\u2019s accommodation has more bedrooms than required (under-occupied)  \n* 0 suggests that a household\u2019s accommodation has an ideal number of bedrooms",
           "units": "Household",
           "topic_code": "HOU",
           "classifications": [
@@ -740,7 +740,7 @@
           "code": "occupancy_rating_rooms",
           "slug": "occupancy-rating-for-rooms",
           "desc": "Whether homes are overcrowded, ideally occupied or under-occupied, based on rooms.",
-          "long_desc": "Whether a household's accommodation is overcrowded, ideally occupied or under-occupied. This is calculated by comparing the number of rooms the household requires to the number of available rooms. \n\nAdditional  \nThe number of rooms the household requires uses a formula which states that: \n* one-person households require three rooms comprised of two common rooms and one bedroom \n* two-or-more person households require a minimum of two common rooms and a bedroom for each person inline with the Bedroom Standard. \n\nPeople who should have their own room according to the Bedroom Standard:\n  1) Married or cohabiting couple.  \n  2) Single parent.  \n  3) Person aged 16 years old or over.  \n  4) Pair of same-sex persons 10 to 15 years old.  \n  5) Person aged 10 to 15 years old paired with a person under 10 years old of the same sex.  \n  6) Pair of children under the age of 10, regardless of their sex.  \n  7) Person under 16 years old who cannot share a bedroom with someone in 4, 5 or 6 above.\n\nAn occupancy rating of:\n\n * -1 or less implies that a households accommodation has fewer rooms than required (overcrowded) \n* +1 or more implies that a households accommodation has more rooms than required (under-occupied) \n* 0 suggests that a households accommodation has an ideal number of rooms",
+          "long_desc": "Whether a household's accommodation is overcrowded, ideally occupied or under-occupied. This is calculated by comparing the number of rooms the household requires to the number of available rooms. \n\nAdditional  \nThe number of rooms the household requires uses a formula which states that: \n* one-person households require three rooms comprised of two common rooms and one bedroom \n* two-or-more person households require a minimum of two common rooms and a bedroom for each person inline with the Bedroom Standard. \n\nPeople who should have their own room according to the Bedroom Standard:\n  1) Married or cohabiting couple.  \n  2) Single parent.  \n  3) Person aged 16 years old or over.  \n  4) Pair of same-sex persons 10 to 15 years old.  \n  5) Person aged 10 to 15 years old paired with a person under 10 years old of the same sex.  \n  6) Pair of children under the age of 10, regardless of their sex.  \n  7) Person under 16 years old who cannot share a bedroom with someone in 4, 5 or 6 above.\n\nAn occupancy rating of:\n\n * -1 or less implies that a household\u2019s accommodation has fewer rooms than required (overcrowded) \n* +1 or more implies that a household\u2019s accommodation has more rooms than required (under-occupied) \n* 0 suggests that a household\u2019s accommodation has an ideal number of rooms",
           "units": "Household",
           "topic_code": "HOU",
           "classifications": [

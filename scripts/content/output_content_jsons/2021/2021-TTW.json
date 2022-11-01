@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-10-27-16-48-27",
-    "spec_file": "2021-content-spec-v2.json",
+    "created_at": "2022-11-01-13-56-09",
+    "spec_file": "2021-content-spec-v3.json",
     "release": "2021-TTW"
   },
   "content": [
@@ -135,7 +135,7 @@
           "code": "workplace_travel",
           "slug": "distance-travelled-to-work",
           "desc": "The distance between home and work, in kilometres.",
-          "long_desc": "The distance, in kilometres, between a person's residential postcode and their workplace postcode measured in a straight line. A distance travelled of 0.1km indicates that the workplace postcode is the same as the residential postcode. Distances over 1200km are treated as invalid, and an imputed or estimated value is added.\n\nWork mainly at or from home is made up of those that ticked either the 'Mainly work at or from home' box for the address of workplace question, or the Work mainly at or from home box for the method of travel to work question.\n\nOther includes no fixed place of work, working on an offshore installation and working outside of the UK.\n\nDistance is calculated as the straight line distance between the enumeration postcode and the workplace postcode.",
+          "long_desc": "The distance, in kilometres, between a person's residential postcode and their workplace postcode measured in a straight line. A distance travelled of 0.1km indicates that the workplace postcode is the same as the residential postcode. Distances over 1200km are treated as invalid, and an imputed or estimated value is added.\n\n\u201cWork mainly at or from home\u201d is made up of those that ticked either the 'Mainly work at or from home' box for the address of workplace question, or the \u201cWork mainly at or from home\u201d box for the method of travel to work question.\n\n\u201cOther\u201d includes no fixed place of work, working on an offshore installation and working outside of the UK.\n\nDistance is calculated as the straight line distance between the enumeration postcode and the workplace postcode.",
           "units": "Person",
           "topic_code": "TTW",
           "classifications": [

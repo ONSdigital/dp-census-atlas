@@ -1,9 +1,9 @@
 import { derived } from "svelte/store";
 import { page } from "$app/stores";
 import { content } from "./content";
-import { getSelectedGeography } from "../helpers/selectionHelper";
+import { getSelectedGeography } from "../helpers/paramsHelper";
 
-export const selection = derived([page, content], ([$page, $content]) => {
+export const params = derived([page, content], ([$page, $content]) => {
   const params = $page.params;
 
   const variableGroup = $content?.variableGroups.find((vg) => vg.slug === params.variableGroup);
@@ -22,7 +22,14 @@ export const selection = derived([page, content], ([$page, $content]) => {
 
 const parseSearchParams = (params: URLSearchParams) => {
   return {
-    embed: params.get("embed") === "true",
     ...getSelectedGeography(params),
+    embed:
+      params.get("embed") === "true"
+        ? {
+            interactive: params.get("embedInteractive") === "true",
+            areaSearch: params.get("embedAreaSearch") === "true",
+            view: params.get("embedView"),
+          }
+        : undefined,
   };
 };

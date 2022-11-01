@@ -6,6 +6,7 @@ export const layers = [
     urlTemplate: "https://cdn.ons.gov.uk/maptiles/administrative/2021/authorities-ew/v2/boundaries/{z}/{x}/{y}.pbf",
     minZoom: 5,
     sourceMaxZoom: 12, // The maximum zoom level that the tiles are available for
+    geoPadFactor: 5,
     idProperty: "areacd",
     displayNameProperty: "areanm",
     sourceLayer: "lad",
@@ -15,6 +16,7 @@ export const layers = [
     urlTemplate: "https://cdn.ons.gov.uk/maptiles/administrative/2021/msoa/v2/boundaries/{z}/{x}/{y}.pbf",
     minZoom: 6,
     sourceMaxZoom: 12,
+    geoPadFactor: 5,
     idProperty: "areacd",
     displayNameProperty: "hclnm",
     sourceLayer: "msoa",
@@ -24,6 +26,7 @@ export const layers = [
     urlTemplate: "https://cdn.ons.gov.uk/maptiles/administrative/2021/oa/v2/boundaries/{z}/{x}/{y}.pbf",
     minZoom: 8,
     sourceMaxZoom: 12,
+    geoPadFactor: 3,
     idProperty: "areacd",
     displayNameProperty: "areacd",
     sourceLayer: "oa",

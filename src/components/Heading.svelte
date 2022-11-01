@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { params } from "../stores/params";
   import Icon from "./MaterialIcon.svelte";
   import IntroAndExamples from "./IntroAndExamples.svelte";
 
@@ -9,7 +10,11 @@
   $: showOrHideText = open ? "Hide heading and examples" : "Show heading and examples";
 </script>
 
-<div class="px-6 py-5 bg-ons-ocean-blue text-ons-grey-5">
+<div
+  class="px-6 py-5 bg-ons-ocean-blue text-ons-grey-5"
+  class:hidden={$params.category}
+  class:lg:block={$params.category}
+>
   <div class="flex items-center gap-3 group hoverable" on:click={toggleOpen}>
     <h1 class="text-3xl font-semibold break-words">Census maps</h1>
     <div class="flex-grow ">

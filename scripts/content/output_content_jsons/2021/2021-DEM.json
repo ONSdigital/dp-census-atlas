@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-10-27-16-48-27",
-    "spec_file": "2021-content-spec-v2.json",
+    "created_at": "2022-11-01-13-56-09",
+    "spec_file": "2021-content-spec-v3.json",
     "release": "2021-DEM"
   },
   "content": [
@@ -48,7 +48,7 @@
           "code": "hh_deprivation",
           "slug": "household-deprivation",
           "desc": "Whether a household is deprived in one or more ways.",
-          "long_desc": "The dimensions of deprivation used to classify households are indicators based on four selected household characteristics.\n\nEducation\nA household is classified as deprived in the education dimension if no one has at least level 2 education and no one aged 16 to 18 years is a full-time student.\n\nEmployment\nA household is classified as deprived in the employment dimension if any member, not a full-time student, is either unemployed or disabled.\n\nHealth\nA household is classified as deprived in the health dimension if any member is disabled.\n\nHousing\nA household is classified as deprived in the housing dimension if the household's accommodation is either overcrowded, in a shared dwelling, or has no central heating.",
+          "long_desc": "The dimensions of deprivation used to classify households are indicators based on four selected household characteristics.\n\nEducation\n\nA household is classified as deprived in the education dimension if no one has at least level 2 education and no one aged 16 to 18 years is a full-time student.\n\nEmployment\n\nA household is classified as deprived in the employment dimension if any member, not a full-time student, is either unemployed or disabled.\n\nHealth\n\nA household is classified as deprived in the health dimension if any member is disabled.\n\nHousing\n\nA household is classified as deprived in the housing dimension if the household's accommodation is either overcrowded, in a shared dwelling, or has no central heating.",
           "units": "Household",
           "topic_code": "DEM",
           "classifications": [
@@ -289,7 +289,7 @@
           "code": "hh_size",
           "slug": "household-size",
           "desc": "The number of people in a household.",
-          "long_desc": "The number of people in the household. \n\nVisitors staying at an address do not count to that households size.",
+          "long_desc": "The number of people in the household. \n\nVisitors staying at an address do not count to that household\u2019s size.",
           "units": "Household",
           "topic_code": "DEM",
           "classifications": [
@@ -445,7 +445,7 @@
                   "name": "Married or in a registered civil partnership",
                   "slug": "married-or-in-a-registered-civil-partnership",
                   "code": "legal_partnership_status_3a-001",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years or over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "married or in a registered civil partnership"
                 },
@@ -453,7 +453,7 @@
                   "name": "Other marital or civil partnership status",
                   "slug": "other-marital-or-civil-partnership-status",
                   "code": "legal_partnership_status_3a-002",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years or over in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "other marital or civil partnership status"
                 }
@@ -474,7 +474,7 @@
                   "name": "Never married and never registered a civil partnership",
                   "slug": "never-married-and-never-registered-a-civil-partnership",
                   "code": "legal_partnership_status_6a-001",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years or over in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "never married and never registered a civil partnership"
                 },
@@ -482,7 +482,7 @@
                   "name": "Married or in a registered civil partnership",
                   "slug": "married-or-in-a-registered-civil-partnership",
                   "code": "legal_partnership_status_6a-002",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years or over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "married or in a registered civil partnership"
                 },
@@ -490,7 +490,7 @@
                   "name": "Separated, but still legally married or still legally in a civil partnership",
                   "slug": "separated-but-still-legally-married-or-still-legally-in-a-civil-partnership",
                   "code": "legal_partnership_status_6a-003",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years or over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "separated, but still legally married or still legally in a civil partnership"
                 },
@@ -498,7 +498,7 @@
                   "name": "Divorced or civil partnership dissolved",
                   "slug": "divorced-or-civil-partnership-dissolved",
                   "code": "legal_partnership_status_6a-004",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years or over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "divorced or have had their civil partnership dissolved"
                 },
@@ -506,7 +506,7 @@
                   "name": "Widowed or surviving civil partnership partner",
                   "slug": "widowed-or-surviving-civil-partnership-partner",
                   "code": "legal_partnership_status_6a-005",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years or over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "widowed or the surviving partner from a civil partnership"
                 }
@@ -527,7 +527,7 @@
                   "name": "Never married and never registered a civil partnership",
                   "slug": "never-married-and-never-registered-a-civil-partnership",
                   "code": "legal_partnership_status-001",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years or over in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "never married and never registered a civil partnership"
                 },
@@ -535,7 +535,7 @@
                   "name": "Married: Opposite sex",
                   "slug": "married-opposite-sex",
                   "code": "legal_partnership_status-002",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years or over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "married to the opposite sex"
                 },
@@ -543,7 +543,7 @@
                   "name": "Married: Same sex",
                   "slug": "married-same-sex",
                   "code": "legal_partnership_status-003",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years or over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "married to the same sex"
                 },
@@ -551,7 +551,7 @@
                   "name": "In a registered civil partnership: Opposite sex",
                   "slug": "in-a-registered-civil-partnership-opposite-sex",
                   "code": "legal_partnership_status-004",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years or over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "in a registered civil partnership with the opposite sex"
                 },
@@ -559,7 +559,7 @@
                   "name": "In a registered civil partnership: Same sex",
                   "slug": "in-a-registered-civil-partnership-same-sex",
                   "code": "legal_partnership_status-005",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years or over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "in a registered civil partnership with the same sex"
                 },
@@ -567,7 +567,7 @@
                   "name": "Separated, but still married",
                   "slug": "separated-but-still-married",
                   "code": "legal_partnership_status-006",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years or over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "separated, but still married"
                 },
@@ -575,7 +575,7 @@
                   "name": "Separated, but still in a registered civil partnership",
                   "slug": "separated-but-still-in-a-registered-civil-partnership",
                   "code": "legal_partnership_status-007",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years or over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "separated, but still in a registered civil partnership"
                 },
@@ -583,7 +583,7 @@
                   "name": "Divorced",
                   "slug": "divorced",
                   "code": "legal_partnership_status-008",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years or over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "divorced"
                 },
@@ -591,7 +591,7 @@
                   "name": "Formerly in a civil partnership now legally dissolved",
                   "slug": "formerly-in-a-civil-partnership-now-legally-dissolved",
                   "code": "legal_partnership_status-009",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years or over in {location}",
                   "legend_str_2": "were",
                   "legend_str_3": "formerly in a civil partnership now legally dissolved"
                 },
@@ -599,7 +599,7 @@
                   "name": "Widowed",
                   "slug": "widowed",
                   "code": "legal_partnership_status-010",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years or over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "widowed"
                 },
@@ -607,7 +607,7 @@
                   "name": "Surviving partner from civil partnership",
                   "slug": "surviving-partner-from-civil-partnership",
                   "code": "legal_partnership_status-011",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years or over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "the surviving partner from a civil partnership"
                 }
@@ -620,7 +620,7 @@
           "code": "living_arrangements",
           "slug": "living-arrangements",
           "desc": "People's living arrangements, by their legal partnership status.",
-          "long_desc": "The living arrangements classification combines responses to the question on marital and civil partnership status with information about whether or not a person is living in a couple. This topic is only applicable to people in households. Living arrangements differs from marital and civil partnership status because cohabiting takes priority over other categories. For example, if a person is divorced and cohabiting, then in results for living arrangements they are classified as cohabiting.",
+          "long_desc": "The \u201cliving arrangements\u201d classification combines responses to the question on marital and civil partnership status with information about whether or not a person is living in a couple. This topic is only applicable to people in households. Living arrangements differs from marital and civil partnership status because cohabiting takes priority over other categories. For example, if a person is divorced and cohabiting, then in results for living arrangements they are classified as cohabiting.",
           "units": "Person",
           "topic_code": "DEM",
           "classifications": [
@@ -639,15 +639,15 @@
                   "name": "Living in an opposite-sex couple: Married or in a civil partnership",
                   "slug": "living-in-an-opposite-sex-couple-married-or-in-a-civil-partnership",
                   "code": "living_arrangements_11a-001",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years or over in households in {location}",
                   "legend_str_2": "live together",
-                  "legend_str_3": "in a opposite-sex couple that is married or in a civil partnership"
+                  "legend_str_3": "in an opposite-sex couple that is married or in a civil partnership"
                 },
                 {
                   "name": "Living in a same-sex couple: Married or in a civil partnership",
                   "slug": "living-in-a-same-sex-couple-married-or-in-a-civil-partnership",
                   "code": "living_arrangements_11a-002",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years or over in households in {location}",
                   "legend_str_2": "live together",
                   "legend_str_3": "in a same-sex couple that is married or in a civil partnership"
                 },
@@ -655,7 +655,7 @@
                   "name": "Living in a couple: Separated, but still married or in a civil partnership",
                   "slug": "living-in-a-couple-separated-but-still-married-or-in-a-civil-partnership",
                   "code": "living_arrangements_11a-003",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years or over in households in {location}",
                   "legend_str_2": "live together",
                   "legend_str_3": "in a couple that is separated, but still married or in a civil partnership"
                 },
@@ -663,7 +663,7 @@
                   "name": "Living in an opposite-sex couple: Cohabiting",
                   "slug": "living-in-an-opposite-sex-couple-cohabiting",
                   "code": "living_arrangements_11a-004",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years or over in households in {location}",
                   "legend_str_2": "live together",
                   "legend_str_3": "in an opposite-sex couple that is cohabiting"
                 },
@@ -671,7 +671,7 @@
                   "name": "Living in a same-sex couple: Cohabiting",
                   "slug": "living-in-a-same-sex-couple-cohabiting",
                   "code": "living_arrangements_11a-005",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years or over in households in {location}",
                   "legend_str_2": "live together",
                   "legend_str_3": "in a same-sex couple that is cohabiting"
                 },
@@ -679,7 +679,7 @@
                   "name": "Not living in a couple: Single (never married and never registered a same-sex civil partnership)",
                   "slug": "not-living-in-a-couple-single-never-married-and-never-registered-a-same-sex-civil-partnership",
                   "code": "living_arrangements_11a-006",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years or over in households in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "single (never married and never registered a same-sex civil partnership)"
                 },
@@ -687,7 +687,7 @@
                   "name": "Not living in a couple: Married or in a registered civil partnership",
                   "slug": "not-living-in-a-couple-married-or-in-a-registered-civil-partnership",
                   "code": "living_arrangements_11a-007",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years or over in households in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "not living in a couple, but are married or in a registered civil partnership"
                 },
@@ -695,7 +695,7 @@
                   "name": "Not living in a couple: Separated (including those who are married and those who are in civil partnerships)",
                   "slug": "not-living-in-a-couple-separated-including-those-who-are-married-and-those-who-are-in-civil-partnerships",
                   "code": "living_arrangements_11a-008",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years or over in households in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "separated (including those who are married and those who are in civil partnerships)"
                 },
@@ -703,7 +703,7 @@
                   "name": "Not living in a couple: Divorced or formerly in a civil partnership which is now legally dissolved",
                   "slug": "not-living-in-a-couple-divorced-or-formerly-in-a-civil-partnership-which-is-now-legally-dissolved",
                   "code": "living_arrangements_11a-009",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years or over in households in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "divorced or formerly in a civil partnership which is now legally dissolved"
                 },
@@ -711,7 +711,7 @@
                   "name": "Not living in a couple: Widowed or surviving partner from a civil partnership",
                   "slug": "not-living-in-a-couple-widowed-or-surviving-partner-from-a-civil-partnership",
                   "code": "living_arrangements_11a-010",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years or over in households in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "widowed or the surviving partner from a civil partnership"
                 }
@@ -724,7 +724,7 @@
           "code": "resident_age",
           "slug": "age",
           "desc": "The age of a person on Census Day, 21 March 2021.",
-          "long_desc": "A persons age on Census Day, 21 March 2021 in England and Wales. Infants aged under 1 year are classified as 0 years of age",
+          "long_desc": "A person\u2019s age on Census Day, 21 March 2021 in England and Wales. Infants aged under 1 year are classified as 0 years of age.",
           "units": "Person",
           "topic_code": "DEM",
           "classifications": [
@@ -1769,7 +1769,7 @@
           "code": "median_age",
           "slug": "median-age",
           "desc": "The median age of people on Census Day, 21 March 2021.",
-          "long_desc": "Median age is calculated from the age of residents on Census Day, 21 March 2021 in England and Wales.",
+          "long_desc": "Median age is calculated from the age of residents on Census Day, 21 March 2021 in England and Wales. The median age is the age of the person in the middle of the group, such that one half of the group is younger than that person and the other half is older.",
           "units": "Years",
           "topic_code": "DEM",
           "classifications": [
@@ -1778,7 +1778,6 @@
               "slug": "median-age",
               "desc": "Median age",
               "available_geotypes": [
-                "oa",
                 "msoa",
                 "lad"
               ],
@@ -1802,7 +1801,7 @@
           "code": "sex",
           "slug": "sex",
           "desc": "The sex recorded by the person completing the census.",
-          "long_desc": "This is the sex recorded by the person completing the census. The options were Female and Male.",
+          "long_desc": "This is the sex recorded by the person completing the census. The options were \u201cFemale\u201d and \u201cMale\u201d.",
           "units": "Person",
           "topic_code": "DEM",
           "classifications": [

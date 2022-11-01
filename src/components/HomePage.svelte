@@ -14,8 +14,6 @@
   <meta name="description" content={$_("homePage.html.meta")} />
 </svelte:head>
 
-<Heading />
-
 <div class="px-6">
   <AreaPanel />
   <section>
@@ -27,7 +25,7 @@
 
     {#if isInitialReleasePeriod($content)}
       <div class="bg-ons-grey-5 p-6 mb-6">
-        <h3 class="pb-2 text-xl font-semibold ">Examples</h3>
+        <h3 class="pb-3 text-xl font-semibold ">Examples</h3>
         <ul>
           <Examples />
         </ul>

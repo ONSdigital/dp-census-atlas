@@ -4,7 +4,7 @@
   import { geography } from "../stores/geography";
   import { fade } from "svelte/transition";
   import { fromEvent, Observable, of, concat } from "rxjs";
-  import { delay, mergeMap, startWith, switchMap, tap } from "rxjs/operators";
+  import { delay, mergeMap, startWith, switchMap, tap, windowWhen } from "rxjs/operators";
   import { getEmbedCode } from "../helpers/embedHelper";
   import Icon from "./MaterialIcon.svelte";
 
@@ -30,10 +30,26 @@
       startWith(false),
     );
   });
+
+  // This function will only fire if window.dataLayer exists (ie. if analytics enabled)
+  function pushAnalyticsEvent() {
+    if (window.dataLayer) {
+      window.dataLayer.push({
+        event: "embed",
+        pageURL: $page.url.href,
+      });
+    }
+  }
 </script>
 
 <div class="">
-  <button class="flex items-center gap-2 custom-ring hyperlink " on:click={() => dialog.showModal()}>
+  <button
+    class="flex items-center gap-2 custom-ring hyperlink "
+    on:click={() => {
+      dialog.showModal();
+      pushAnalyticsEvent();
+    }}
+  >
     <div class="text-2xl text-ons-black">
       <Icon kind="code" />
     </div>

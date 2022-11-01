@@ -1,13 +1,14 @@
 <script lang="ts">
   import { onMount } from "svelte";
+  import { page } from "$app/stores";
 
   export let analyticsId; // Required. Google analytics/tag manager ID
   export let analyticsProps = {}; // Optional props to describe the content
   export let usageCookies = false; // True if usage cookies are allowed (to be read from parent component)
-  export let page = null; // Pass Svelte Kit's $page to track navigation in multi-page apps
   export let fixed = true; // Fixed positioning of banner (instead of inline)
 
-  let live; // Don't run analytics unless page is live on ONS site (re-set in the onMount function)
+  let allowLoad; // Fill be set to false if on embed url
+  let initialised = false;
 
   let showBanner = false;
   let showConfirm = false;
@@ -58,7 +59,7 @@
         ...analyticsProps,
       },
     ];
-    if (page) location = $page.url.hostname + $page.url.pathname + $page.url.searchParams;
+    location = $page.url.href;
 
     (function (w, d, s, l, i) {
       w[l] = w[l] || [];
@@ -70,35 +71,42 @@
       j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
       f.appendChild(j);
     })(window, document, "script", "dataLayer", analyticsId);
+    initialised = true;
   }
 
   // This code is only relevant for multi-page Svelte Kit apps. It sends an analytics event when the URL changes
-  $: if (live && usageCookies && page) {
-    let newlocation = $page.url.hostname + $page.url.pathname + $page.url.searchParams;
+  function pageView(page) {
+    let newlocation = page.url.href;
     if (newlocation !== location) {
       location = newlocation;
+      // console.log("new page view " + location);
+
+      let areaData = {};
+      ["oa", "msoa", "lad"].forEach((key) => {
+        let code = page.url.searchParams.get(key);
+        if (code) areaData = { areaCode: code, areaType: key };
+      });
 
       window.dataLayer.push({
         event: "pageView",
-        page_path: $page.url.pathname,
-        page_location: location,
-        page_title: document ? document.title : null,
+        pageURL: newlocation,
+        ...areaData,
+        contentType: "exploratory",
       });
-      console.log("navigated to " + location);
     }
   }
+  $: initialised && pageView($page);
 
   onMount(() => {
-    live = true;
-    //live = window.location.hostname == "www.ons.gov.uk" || window.location.hostname == "cy.ons.gov.uk";
-    showBanner = !hasCookiesPreferencesSet();
-    usageCookies = getUsageCookieValue();
-    if (usageCookies && live) initAnalytics();
+    allowLoad = !$page.url.searchParams.get("embed");
+    usageCookies = hasCookiesPreferencesSet();
+    showBanner = allowLoad && !usageCookies;
+    if (allowLoad && getUsageCookieValue()) initAnalytics();
   });
 </script>
 
 {#if showBanner}
-  <section class:fixed>
+  <section>
     <form id="global-cookie-message" class="cookies-banner clearfix" aria-label="cookie banner">
       {#if !showConfirm}
         <div class="cookies-banner__wrapper wrapper">

@@ -6,7 +6,7 @@
 </script>
 
 <ul class="pl-4 list-disc list-outside">
-  <li class="pb-1">
+  <li class="pb-2">
     Which areas have larger populations of
     <a
       href={buildHyperlink($page.url, {
@@ -32,7 +32,7 @@
       older people</a
     >?
   </li>
-  <li class="pb-1">
+  <li class="pb-2">
     Which neighbourhoods of
     <a
       href={buildHyperlink(
@@ -54,7 +54,7 @@
       Swansea have the highest percentages of people living alone</a
     >?
   </li>
-  <li class="pb-1">
+  <li class="pb-2">
     Compare the percentages of
     <a
       href={buildHyperlink(

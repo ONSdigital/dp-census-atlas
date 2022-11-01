@@ -1,17 +1,14 @@
 <script lang="ts">
   import { page } from "$app/stores";
-  import Select from "svelte-select";
+  import Select from "./Select.svelte";
   import { SvelteSubject } from "../util/rxUtil";
-  import { composeAreaSearch } from "../helpers/areaSearchHelper";
-  import { highlightText } from "../helpers/searchCensusHelper";
+  import { composeAreaSearch, getOAfromLngLat } from "../helpers/areaSearchHelper";
   import { selectGeography } from "../helpers/navigationHelper";
   import type { GeographySearchItem, PostcodeSearchItem } from "../types";
-  import { appBasePath } from "../buildEnv";
 
   const query = new SvelteSubject("");
   const results = composeAreaSearch(query);
 
-  $: noOptionsMessage = $query.length < 3 ? "Type for suggestions..." : "";
   async function handleSelect(event) {
     if (event?.detail?.kind === "Geography") {
       const geo = event.detail as GeographySearchItem;
@@ -20,91 +17,30 @@
       const postcode = event.detail as PostcodeSearchItem;
       let detailsRes = await fetch(`https://api.postcodes.io/postcodes/${postcode.value}`);
       let details = await detailsRes.json();
-      let geosRes = await fetch(`${appBasePath}/api/geo?q=${details.result.admin_district}`);
-      let geos = await geosRes.json();
-      if (geos.length > 0) {
-        selectGeography($page.url.searchParams, geos[0]);
+      let geoCode = await getOAfromLngLat(details.result.longitude, details.result.latitude);
+      if (geoCode) {
+        selectGeography($page.url.searchParams, { geoType: "oa", geoCode });
       }
     }
   }
 </script>
 
-<div class="themed max-w-[25rem]">
+<div class="themed max-w-[30rem]">
   <Select
-    placeholder=""
+    id="area-input"
+    mode="search"
+    placeholder="Search areas"
     bind:filterText={$query}
     items={$results}
-    optionIdentifier="value"
-    labelIdentifier="value"
+    idKey="value"
+    labelKey="value"
+    groupKey="geoType"
     on:select={handleSelect}
-    containerClasses=""
-    {noOptionsMessage}
+    autoClear
   />
 </div>
-<!-- <div class="">{query2}</div> -->
-<!-- <div class="flex max-w-[25rem]">
-  <input
-    bind:value={$query}
-    id="area-input"
-    name="area-input"
-    type="search"
-    autocomplete="off"
-    class="flex items-center justify-center h-12 p-2 w-full border-l-2 border-t-2 border-b-2 border-black focus:border-4 custom-ring"
-  />
-  <button tabindex="-1" type="submit" class="bg-onsblue px-3">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      class="h-6 w-6 text-white "
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-    >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="3"
-        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-      />
-    </svg>
-  </button>
-</div> -->
-
-<!-- {#if $results && $results.length}
-  <div class="relative">
-    <div
-      class="absolute left-0 right-0 z-50 max-h-[30rem] overflow-y-auto p-3 pt-2 border-[1px] border-slate-600 bg-white"
-    >
-      <ul>
-        {#each $results as r}
-          {#if r.kind === "Geography"}
-            <li class="mb-1 border-b-[1px] border-b-slate-300 ">
-              <button class="block py-2 px-1 custom-ring">
-                {@html highlightText(r.en, $query)}
-              </button>
-            </li>
-          {/if}
-          {#if r.kind === "Postcode"}
-            <li class="mb-1 border-b-[1px] border-b-slate-300 ">
-              <button class="block py-2 px-1 custom-ring">
-                {@html highlightText(r.value, $query)}
-              </button>
-            </li>
-          {/if}
-        {/each}
-      </ul>
-      <div class="pt-3 pb-1 px-1 ">
-        {$results.length}
-        results
-      </div>
-    </div>
-  </div>
-{/if} -->
-
 <div class="mt-2 text-sm text-onsdark">For example, your home town, a postcode or district</div>
 
-<!-- <div class="p-5">
-  <pre>{JSON.stringify($results)}</pre>
-</div> -->
 <style>
   .themed {
     --border: 2px solid black;

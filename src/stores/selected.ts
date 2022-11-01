@@ -8,10 +8,13 @@ export const selected = asyncDerived([geography, viz], async ([$geography, $viz]
     return undefined;
   }
 
-  if (!$viz || $geography.geoType === "ew") {
+  const dataAvailableForClassification = $viz?.params?.classification?.available_geotypes?.includes($geography.geoType);
+
+  if (!$viz || $geography.geoType === "ew" || !dataAvailableForClassification) {
     return { ...$geography, value: undefined as number };
   } else {
     const [[west, south], [east, north]] = $geography.bbox;
+
     const args = {
       category: $viz.params.category,
       geoType: $geography.geoType,

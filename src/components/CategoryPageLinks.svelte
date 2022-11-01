@@ -12,6 +12,7 @@
     <a
       href={`https://www.ons.gov.uk/datasets/${dataset}/editions/2021/versions/1`}
       class="flex items-center gap-2 custom-ring hyperlink -ml-0.5"
+      data-gtm-type="data-download"
     >
       <div class="text-2xl text-ons-black">
         <Icon kind="fileDownload" />

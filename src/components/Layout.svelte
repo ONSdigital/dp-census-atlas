@@ -11,8 +11,9 @@
   const analyticsId = "GTM-MBCBVQS";
   const analyticsProps = {
     contentTitle: "Census maps",
-    releaseDate: "20221018",
+    releaseDate: "20221102",
     contentType: "exploratory",
+    outputSeries: "censusmaps",
   };
 </script>
 

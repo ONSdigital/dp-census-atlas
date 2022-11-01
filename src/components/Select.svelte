@@ -177,7 +177,7 @@
     color: white;
     background-color: rgb(144, 32, 130);
     padding: 0 4px;
-    margin: 0 4px;
+    margin-left: 8px;
     border-radius: 2px;
     font-weight: bold;
     font-size: smaller;

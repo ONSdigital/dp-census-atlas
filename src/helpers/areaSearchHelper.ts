@@ -1,4 +1,5 @@
-import { type Observable, of, forkJoin, tap } from "rxjs";
+import type { Coord } from "@turf/helpers";
+import { type Observable, of, forkJoin } from "rxjs";
 import { fromFetch } from "rxjs/fetch";
 import { switchMap, mergeMap, map, debounceTime, distinctUntilChanged, catchError } from "rxjs/operators";
 import type { AreaSearchItem, GeographySearchItem, PostcodeSearchItem } from "../types";
@@ -57,30 +58,28 @@ function handlePostcodeSearchError(err: any): Observable<PostcodeSearchItem[]> {
 }
 
 export async function getOAfromLngLat(lng, lat) {
-  let tile = tb.pointToTile(lng, lat, 12);
-  let url = `https://cdn.ons.gov.uk/maptiles/administrative/2021/oa/v2/boundaries/${tile[2]}/${tile[0]}/${tile[1]}.pbf`;
+  const tile = tb.pointToTile(lng, lat, 12);
+  const url = `https://cdn.ons.gov.uk/maptiles/administrative/2021/oa/v2/boundaries/${tile[2]}/${tile[0]}/${tile[1]}.pbf`;
   try {
-    let geojson = await getTileAsGeoJSON(url, tile);
-    let pt = {type: "Point", coordinates: [lng, lat]};
+    const geojson = await getTileAsGeoJSON(url, tile);
+    const pt = { type: "Point", coordinates: [lng, lat] };
     for (const f of geojson.features) {
-      if (inPolygon(pt, f.geometry)) return f.properties.areacd;
+      if (inPolygon(pt as Coord, f.geometry)) return f.properties.areacd;
     }
     return null;
-  }
-  catch {
+  } catch {
     return null;
   }
 }
 
 async function getTileAsGeoJSON(url, tile) {
-  console.log(`Getting tile ${url}`)
-  let res = await fetch(url);
-  let buf = await res.arrayBuffer();
-  let pbf = new Pbf(buf);
-  let geojson = {type: "FeatureCollection", features: []};
-  let t = new vt.VectorTile(pbf);
+  const res = await fetch(url);
+  const buf = await res.arrayBuffer();
+  const pbf = new Pbf(buf);
+  const geojson = { type: "FeatureCollection", features: [] };
+  const t = new vt.VectorTile(pbf);
   for (const key in t.layers) {
-    for (let i = 0; i < t.layers[key].length; i ++) {
+    for (let i = 0; i < t.layers[key].length; i++) {
       geojson.features.push(t.layers[key].feature(i).toGeoJSON(...tile));
     }
   }

@@ -49,9 +49,7 @@
     </div>
   </label>
 
-  {#if open}
-    <div class="mt-3 mb-1">
-      <GeoSearch />
-    </div>
-  {/if}
+  <div class="mt-3 mb-1" style:display={open ? "block" : "none"}>
+    <GeoSearch />
+  </div>
 </section>

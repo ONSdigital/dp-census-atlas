@@ -106,7 +106,7 @@
 </script>
 
 {#if showBanner}
-  <section class:fixed>
+  <section>
     <form id="global-cookie-message" class="cookies-banner clearfix" aria-label="cookie banner">
       {#if !showConfirm}
         <div class="cookies-banner__wrapper wrapper">

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-10-31-10-56-07",
+    "created_at": "2022-10-31-14-17-50",
     "spec_file": "2021-content-spec-v3.json",
     "release": "2021-DEM"
   },
@@ -289,7 +289,7 @@
           "code": "hh_size",
           "slug": "household-size",
           "desc": "The number of people in a household.",
-          "long_desc": "The number of people in the household. \n\nVisitors staying at an address do not count to that households size.",
+          "long_desc": "The number of people in the household. \n\nVisitors staying at an address do not count to that household\u2019s size.",
           "units": "Household",
           "topic_code": "DEM",
           "classifications": [
@@ -620,7 +620,7 @@
           "code": "living_arrangements",
           "slug": "living-arrangements",
           "desc": "People's living arrangements, by their legal partnership status.",
-          "long_desc": "The living arrangements classification combines responses to the question on marital and civil partnership status with information about whether or not a person is living in a couple. This topic is only applicable to people in households. Living arrangements differs from marital and civil partnership status because cohabiting takes priority over other categories. For example, if a person is divorced and cohabiting, then in results for living arrangements they are classified as cohabiting.",
+          "long_desc": "The \u201cliving arrangements\u201d classification combines responses to the question on marital and civil partnership status with information about whether or not a person is living in a couple. This topic is only applicable to people in households. Living arrangements differs from marital and civil partnership status because cohabiting takes priority over other categories. For example, if a person is divorced and cohabiting, then in results for living arrangements they are classified as cohabiting.",
           "units": "Person",
           "topic_code": "DEM",
           "classifications": [
@@ -724,7 +724,7 @@
           "code": "resident_age",
           "slug": "age",
           "desc": "The age of a person on Census Day, 21 March 2021.",
-          "long_desc": "A persons age on Census Day, 21 March 2021 in England and Wales. Infants aged under 1 year are classified as 0 years of age.",
+          "long_desc": "A person\u2019s age on Census Day, 21 March 2021 in England and Wales. Infants aged under 1 year are classified as 0 years of age.",
           "units": "Person",
           "topic_code": "DEM",
           "classifications": [
@@ -1801,7 +1801,7 @@
           "code": "sex",
           "slug": "sex",
           "desc": "The sex recorded by the person completing the census.",
-          "long_desc": "This is the sex recorded by the person completing the census. The options were Female and Male.",
+          "long_desc": "This is the sex recorded by the person completing the census. The options were \u201cFemale\u201d and \u201cMale\u201d.",
           "units": "Person",
           "topic_code": "DEM",
           "classifications": [

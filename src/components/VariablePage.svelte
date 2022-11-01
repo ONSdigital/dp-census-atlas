@@ -1,6 +1,6 @@
 <script lang="ts">
   import { page } from "$app/stores";
-  import { selection } from "../stores/selection";
+  import { params } from "../stores/params";
   import { number2words } from "../util/numberUtil";
   import { capitalizeFirstLetter } from "../util/stringUtil";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
@@ -17,23 +17,23 @@
       <nav class="flex flex-wrap items-center gap-2 text-xl" aria-label="Breadcrumb">
         <a class="hyperlink" href={buildHyperlink($page.url)}>Home</a>
         <div class="text-sm font-extrabold text-slate-500" aria-hidden>&gt;</div>
-        <a class="hyperlink" href={buildHyperlink($page.url, { variableGroup: $selection.variableGroup.slug })}
-          >{$selection.variableGroup.name}</a
+        <a class="hyperlink" href={buildHyperlink($page.url, { variableGroup: $params.variableGroup.slug })}
+          >{$params.variableGroup.name}</a
         >
         <div class="text-sm font-extrabold text-slate-500" aria-hidden>&gt;</div>
-        <div class="">{$selection.variable.name}</div>
+        <div class="">{$params.variable.name}</div>
       </nav>
       <div class="mt-4 mb-2">
-        This variable is available in {number2words($selection.variable.classifications.length)} classifications
+        This variable is available in {number2words($params.variable.classifications.length)} classifications
       </div>
 
       <div class="flex flex-col mb-6 last:border-b-[1px] border-b-slate-300">
-        {#each $selection.variable.classifications as classification}
+        {#each $params.variable.classifications as classification}
           <a
             class="border-t-[1px] border-t-slate-300 py-2 group"
             href={buildHyperlink($page.url, {
-              variableGroup: $selection.variableGroup.slug,
-              variable: $selection.variable.slug,
+              variableGroup: $params.variableGroup.slug,
+              variable: $params.variable.slug,
               category: {
                 classification: classification.slug,
                 category: classification.categories[0].slug,
@@ -57,7 +57,7 @@
               </div>
             </div>
             <div class="">
-              {$selection.variable.name} in {classification.categories.length} categories.
+              {$params.variable.name} in {classification.categories.length} categories.
             </div>
           </a>
         {/each}
@@ -65,7 +65,7 @@
     </section>
   </div>
 
-  {#if $selection.variable.classifications.length === 1}
+  {#if $params.variable.classifications.length === 1}
     <div class="px-6">This is the only classification available</div>
   {/if}
 </div>

@@ -2,13 +2,13 @@ import { derived } from "svelte/store";
 import { asyncDerived } from "@square/svelte-store";
 import type { GeoType, GeographyInfo, GeographyData } from "../types";
 import { fetchGeography } from "../data/api";
-import { selection } from "./selection";
+import { params } from "./params";
 import { englandAndWales } from "../helpers/spatialHelper";
 
 // primitive-valued derived stores don't emit when the value doesn't change
 // (we don't want the geography store to update unless the geoCode/geoType changes)
-const geoCode = derived(selection, ($selection) => $selection.geoCode);
-const geoType = derived(selection, ($selection) => $selection.geoType);
+const geoCode = derived(params, ($params) => $params.geoCode);
+const geoType = derived(params, ($params) => $params.geoType);
 
 /**
  * A Svelte store containing all the data we need to show the selected geography.

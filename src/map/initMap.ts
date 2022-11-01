@@ -4,7 +4,7 @@ import mapboxgl, { GeoJSONSource, Map } from "mapbox-gl";
 import { combineLatest, fromEvent, merge } from "rxjs";
 import { throttleTime } from "rxjs/operators";
 import type { GeoType, GeographyInfo, Classification } from "../types";
-import { selection } from "../stores/selection";
+import { params } from "../stores/params";
 import { geography } from "../stores/geography";
 import { englandAndWalesBbox } from "../helpers/geographyHelper";
 import { selectGeography } from "../helpers/navigationHelper";
@@ -17,11 +17,11 @@ import { viz } from "../stores/viz";
 import { toObservable } from "../util/rxUtil";
 
 const defaultZoom = 6;
-const maxAllowedZoom = 16;
+const maxAllowedZoom = 15;
 
 /** Configure the map's properties and subscribe to its events. */
 export const initMap = (container: HTMLElement) => {
-  const embed = get(selection).embed;
+  const embed = get(params).embed;
   const interactive = !embed || embed.interactive;
 
   const map = new Map({
@@ -50,12 +50,12 @@ export const initMap = (container: HTMLElement) => {
   });
 
   // when the map loads or moves, or then when the selecion changes, emit an event at most once per second
-  combineLatest([merge(fromEvent(map, "load"), fromEvent(map, "move")), toObservable(selection)])
+  combineLatest([merge(fromEvent(map, "load"), fromEvent(map, "move")), toObservable(params)])
     .pipe(
       throttleTime(1000, undefined, { leading: false, trailing: true }), // don't discard the final movement
     )
-    .subscribe(([_, $selection]) => {
-      setViewportStoreAndLayerVisibility(map, $selection.classification);
+    .subscribe(([_, $params]) => {
+      setViewportStoreAndLayerVisibility(map, $params.classification);
     });
 
   if (interactive) {
@@ -131,7 +131,7 @@ const listenToSelectedGeographyStore = (map: mapboxgl.Map, geography: GeographyI
     // @ts-ignore types here are no good
     source.setData(boundary);
 
-    // zoom there
+    // don't change position for EW
     if (geography.geoType !== "ew") {
       setPosition(map, geography, { animate: true });
     }
@@ -143,11 +143,14 @@ const setPosition = (map: mapboxgl.Map, g: GeographyInfo, options: { animate: bo
     const bounds = new mapboxgl.LngLatBounds(englandAndWalesBbox);
     map.fitBounds(bounds, { padding: 0, animate: false });
   } else {
-    const width = map.getContainer().offsetWidth;
     const bounds = new mapboxgl.LngLatBounds(g.bbox);
     const layer = layers.find((l) => l.name === g.geoType);
-    const geoPadFactor = layer.geoPadFactor;
-    map.fitBounds(bounds, { padding: width / geoPadFactor, animate: options.animate });
+    // ensure that we don't pad more than the viewport
+    const padding = Math.min(
+      map.getContainer().offsetWidth / layer.geoPadFactor,
+      map.getContainer().offsetHeight / layer.geoPadFactor,
+    );
+    map.fitBounds(bounds, { padding, animate: options.animate });
   }
 };
 

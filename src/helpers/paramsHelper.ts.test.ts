@@ -1,6 +1,6 @@
 import { GeoTypes } from "../types";
 import { englandAndWales } from "./spatialHelper";
-import { getSelectedGeography } from "./selectionHelper";
+import { getSelectedGeography } from "./paramsHelper";
 
 describe("getSelectedGeography", () => {
   test("returns ew when no geography in url", () => {

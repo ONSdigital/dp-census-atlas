@@ -29,7 +29,7 @@ export const initMap = (container: HTMLElement) => {
     style,
     zoom: defaultZoom, // inexplicably necessary to set (even though we fitBounds next)
     minZoom: 5, // prevent accidental zoom out, especially on mobile
-    maxZoom: maxAllowedZoom - 0.001, // prevent layers from disappearing at absolute max zoom
+    maxZoom: maxAllowedZoom, // prevent layers from disappearing at absolute max zoom
     maxBounds,
     interactive,
   });

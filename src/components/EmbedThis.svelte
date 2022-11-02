@@ -82,17 +82,17 @@
     <div class="flex gap-4">
       <label class="hoverable">
         <input type="radio" bind:group={embedView} name="embedView" value={"geography"} />
-        Center on selected location ({$geography.displayName})
+        Centre on selected location ({$geography.displayName})
       </label>
       <label class="hoverable">
         <input type="radio" bind:group={embedView} name="embedView" value={"viewport"} />
-        Use exact area
+        Use current map viewport
       </label>
     </div>
     <div class="">
       <label class="hoverable">
         <input type="checkbox" bind:checked={embedInteractive} class="custom-ring mr-1" />
-        Interactive map
+        Allow map zoom and pan
       </label>
     </div>
     <div class="">

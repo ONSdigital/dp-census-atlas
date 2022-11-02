@@ -109,7 +109,7 @@
           selected={$selected?.value}
           hovered={active.value}
           suffix={getCategoryDataSuffix($viz.params.category.code)}
-          breaks={breaks}
+          {breaks}
           colors={choroplethColours}
           categoryCode={$viz.params.category.code}
         />

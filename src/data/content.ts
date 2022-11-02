@@ -245,16 +245,8 @@ export default {
   prod: {
     web: [
       Census2021.zero,
-      {
-        contentJsonUrl:
-          "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-DEM.json",
-        contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/2021-dem-mig",
-      },
-      {
-        contentJsonUrl:
-          "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-MIG.json",
-        contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/2021-dem-mig",
-      },
+      Census2021.dem,
+      Census2021.mig
     ],
     publishing: [
       Census2021preview.zero,

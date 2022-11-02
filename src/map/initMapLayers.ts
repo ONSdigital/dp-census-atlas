@@ -44,7 +44,10 @@ export const initMapLayers = (map, geo) => {
         "source-layer": l.layer.sourceLayer,
         minzoom: l.layer.minZoom,
         // maxzoom: l.next ? l.next.minZoom : maxAllowedZoom,
-        layout: { visibility: l.layer.name == "lad" ? "visible" : "none" },
+        layout: {
+          "line-join": "round",
+          visibility: l.layer.name == "lad" ? "visible" : "none"
+        },
         paint: {
           "line-color": [
             "case",
@@ -137,10 +140,20 @@ export const initMapLayers = (map, geo) => {
     },
   });
   map.addLayer({
+    id: "selected-geography-highlight",
+    type: "line",
+    source: "selected-geography",
+    layout: {"line-join": "round"},
+    paint: {
+      "line-color": "#fff",
+      "line-width": 4.5,
+    },
+  });
+  map.addLayer({
     id: "selected-geography-outline",
     type: "line",
     source: "selected-geography",
-    layout: {},
+    layout: {"line-join": "round"},
     paint: {
       "line-color": "#000",
       "line-width": 3,

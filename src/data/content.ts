@@ -169,6 +169,17 @@ const Census2021 = {
   },
 }
 
+const Census2021NoFlorence = {
+  dem:  {
+    contentJsonUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-DEM.json",
+    contentBaseUrl: "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+  },
+  mig:  {
+    contentJsonUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-MIG.json",
+    contentBaseUrl: "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+  },
+}
+
 
 const Census2021Local = {
   dem:  {
@@ -200,13 +211,13 @@ export default {
   // netlify
   netlify: {
     web: [
-      Census2021.dem,
+      Census2021NoFlorence.dem,
       fakeCensus2021Public.edu,
       fakeCensus2021Public.eilr,
       fakeCensus2021Public.hou,
       fakeCensus2021Public.huc,
       fakeCensus2021Public.lab,
-      Census2021.mig,
+      Census2021NoFlorence.mig,
       fakeCensus2021Public.sogi,
       fakeCensus2021Public.ttw,
     ],

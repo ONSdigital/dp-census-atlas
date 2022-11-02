@@ -22,7 +22,13 @@ export const renderMapViz = (map: mapboxgl.Map, data: VizData | undefined) => {
 };
 
 const getChoroplethColour = (value: number, breaks: number[]) => {
-  for (const b of breaks.map((b, i) => ({ breakpoint: b, colour: choroplethColours[i] }))) {
+  let upperBreakBounds
+  if (breaks.length === 1) {
+    upperBreakBounds = breaks
+  } else {
+    upperBreakBounds = breaks.slice(1);
+  }
+  for (const b of upperBreakBounds.map((b, i) => ({ breakpoint: b, colour: choroplethColours[i] }))) {
     if (value <= b.breakpoint) return b.colour;
   }
 };

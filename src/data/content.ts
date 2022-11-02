@@ -170,17 +170,28 @@ const Census2021 = {
 }
 
 
+const Census2021Local = {
+  dem:  {
+    contentJsonUrl: "http://localhost:8090/2021/2021-DEM.json",
+    contentBaseUrl: "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+  },
+  mig:  {
+    contentJsonUrl: "http://localhost:8090/2021/2021-MIG.json",
+    contentBaseUrl: "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+  },
+}
+
 export default {
   // local dev
   dev: {
     web: [
-      fakeCensus2021Local.dem,
+      Census2021Local.dem,
       fakeCensus2021Local.edu,
       fakeCensus2021Local.eilr,
       fakeCensus2021Local.hou,
       fakeCensus2021Local.huc,
       fakeCensus2021Local.lab,
-      fakeCensus2021Local.mig,
+      Census2021Local.mig,
       fakeCensus2021Local.sogi,
       fakeCensus2021Local.ttw,
     ],
@@ -189,13 +200,13 @@ export default {
   // netlify
   netlify: {
     web: [
-      fakeCensus2021Public.dem,
+      Census2021.dem,
       fakeCensus2021Public.edu,
       fakeCensus2021Public.eilr,
       fakeCensus2021Public.hou,
       fakeCensus2021Public.huc,
       fakeCensus2021Public.lab,
-      fakeCensus2021Public.mig,
+      Census2021.mig,
       fakeCensus2021Public.sogi,
       fakeCensus2021Public.ttw,
     ],
@@ -223,8 +234,16 @@ export default {
   prod: {
     web: [
       Census2021.zero,
-      Census2021.dem,
-      Census2021.mig
+      {
+        contentJsonUrl:
+          "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-DEM.json",
+        contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/2021-dem-mig",
+      },
+      {
+        contentJsonUrl:
+          "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-MIG.json",
+        contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/2021-dem-mig",
+      },
     ],
     publishing: [
       Census2021preview.zero,

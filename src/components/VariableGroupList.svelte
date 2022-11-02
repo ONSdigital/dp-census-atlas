@@ -5,7 +5,7 @@
 </script>
 
 <div>
-  <div class="flex flex-wrap gap-x-8 gap-y-2 mb-8">
+  <div class="flex flex-wrap gap-x-8 gap-y-2 mb-5">
     {#each $content.variableGroups as variableGroup}
       <a
         class="flex-none w-48 flex-grow-[1] pb-3 border-b-[1px] border-b-slate-300 group custom-ring"

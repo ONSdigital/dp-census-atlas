@@ -6,7 +6,7 @@ import { roundedCategoryData, uniqueRoundedCategoryBreaks } from "../helpers/cat
 const geoBaseUrl = "https://cdn.ons.gov.uk/maptiles/cm-geos/v2";
 
 /*
-  Fetch place data files for all data 'tiles' (predefined coordinate grid squares) that intersect with current viewport 
+  Fetch place data files for all data 'tiles' (predefined coordinate grid squares) that intersect with current viewport
   bounding box.
 */
 export const fetchDataForBbox = async (args: { category: Category; geoType: GeoType; bbox: Bbox }) => {
@@ -39,7 +39,7 @@ const parsePlaceData = (row: dsv.DSVRowString<string>, categoryCode: string) => 
 };
 
 /*
-  Fetch json with census data by for categories categoryCode and totalCode for all geographies of type 'geoType' that 
+  Fetch json with census data by for categories categoryCode and totalCode for all geographies of type 'geoType' that
   fall within geographic bounding box represented by 'tile'.
 */
 export const fetchTileData = async (args: { category: Category; geoType: GeoType; tile: DataTile }) => {
@@ -56,13 +56,13 @@ export const fetchTileData = async (args: { category: Category; geoType: GeoType
 export const fetchBreaks = async (args: {
   category: Category;
   geoType: GeoType;
-}): Promise<{ breaks: { [categoryCode: string]: number[] }; minMax: { [categoryCode: string]: number[] } }> => {
+}): Promise<{ breaks: number[]; }> => {
   const url = `${args.category.baseUrl}/breaks/${args.geoType}/${args.category.code}.json`;
   const response = await fetch(url);
   const breaksRaw = await response.json();
-  /* 
+  /*
     breaks json files have legacy format from when it was an API response:
-    e.g. 
+    e.g.
     {
       "KS103EW0002": {
         "LAD": [
@@ -79,19 +79,14 @@ export const fetchBreaks = async (args: {
       }
     }
   */
-  const breaks = Object.fromEntries(
-    Object.keys(breaksRaw).map((code) => [
-      code,
-      uniqueRoundedCategoryBreaks(args.category.code, breaksRaw[code][args.geoType.toUpperCase()]),
-    ]),
-  );
-  const minMax = Object.fromEntries(
-    Object.keys(breaksRaw).map((code) => [
-      code,
-      breaksRaw[code][`${args.geoType.toUpperCase()}_min_max`].map((n) => roundedCategoryData(args.category.code, n)),
-    ]),
-  );
-  return { breaks, minMax };
+  const breaks = uniqueRoundedCategoryBreaks(
+    args.category.code,
+    [
+      breaksRaw[args.category.code][`${args.geoType.toUpperCase()}_min_max`][0],
+      ...breaksRaw[args.category.code][args.geoType.toUpperCase()]
+    ],
+  )
+  return { breaks };
 };
 
 /*

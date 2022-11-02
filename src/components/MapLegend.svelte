@@ -4,16 +4,12 @@
   import { selected } from "../stores/selected";
   import { formatTemplateString } from "../helpers/categoryHelpers";
   import { choroplethColours } from "../helpers/choroplethHelpers";
-  import {
-    getCategoryDataSuffix,
-    roundCategoryDataToString,
-    uniqueRoundedCategoryBreaks,
-  } from "../helpers/categoryHelpers";
+  import { getCategoryDataSuffix, roundCategoryDataToString } from "../helpers/categoryHelpers";
   import BreaksChart from "./BreaksChart.svelte";
   import GeoTypeBadge from "./GeoTypeBadge.svelte";
 
   $: valueForHoveredGeography = $viz?.places.find((p) => p.geoCode === $hovered?.geoCode)?.ratioToTotal;
-  $: breaks = $viz ? [$viz?.minMaxVals[0], ...$viz.breaks] : undefined;
+  $: breaks = $viz ? $viz.breaks : undefined;
 
   // the hovered, otherwise the selected, geography properties
   $: active = $hovered
@@ -113,7 +109,7 @@
           selected={$selected?.value}
           hovered={active.value}
           suffix={getCategoryDataSuffix($viz.params.category.code)}
-          breaks={uniqueRoundedCategoryBreaks($viz.params.category.code, breaks)}
+          {breaks}
           colors={choroplethColours}
           categoryCode={$viz.params.category.code}
         />

@@ -10,6 +10,9 @@
   export let snapTicks = true;
   export let categoryCode = "";
 
+  // handle case of only one breaks value
+  $: ticks = breaks.length === 1 ? [breaks[0], breaks[0]] : breaks;
+
   const pos = (val, breaks) => {
     if (val < breaks[0]) {
       return 0;
@@ -27,32 +30,32 @@
 </script>
 
 <div class="mt-3 box-border relative w-full h-5 mb-8 text-xs sm:text-base">
-  {#each breaks.slice(1) as brk, i}
+  {#each ticks.slice(1) as brk, i}
     <div
       class="absolute top-0 h-full"
-      style="width: {100 / (breaks.length - 1)}%; left: {i * (100 / (breaks.length - 1))}%; background-color: {colors[
+      style="width: {100 / (ticks.length - 1)}%; left: {i * (100 / (ticks.length - 1))}%; background-color: {colors[
         i
       ]};"
     />
-    <div class="line" style="left: {i * (100 / (breaks.length - 1))}%;" />
+    <div class="line" style="left: {i * (100 / (ticks.length - 1))}%;" />
     <div
       class="tick"
-      style="left: {i * (100 / (breaks.length - 1))}%; transform: translateX({i == 0 && snapTicks ? '-2px' : '-50%'});"
+      style="left: {i * (100 / (ticks.length - 1))}%; transform: translateX({i == 0 && snapTicks ? '-2px' : '-50%'});"
     >
-      {roundCategoryDataToString(categoryCode, breaks[i])}<span class="tick-suffix">{suffix}</span>
+      {roundCategoryDataToString(categoryCode, ticks[i])}<span class="tick-suffix">{suffix}</span>
     </div>
   {/each}
   <div class="line" style="right: 0;" />
   <div class="tick" style="right: 0; transform: translateX({snapTicks ? '2px' : '50%'});">
-    {roundCategoryDataToString(categoryCode, breaks[breaks.length - 1])}<span class="tick-suffix">{suffix}</span>
+    {roundCategoryDataToString(categoryCode, ticks[ticks.length - 1])}<span class="tick-suffix">{suffix}</span>
   </div>
   {#if selected !== undefined}
-    <div class="absolute z-10 -top-2.5" style="left: calc({pos(selected, breaks)}% - {28 / 2}px);">
+    <div class="absolute z-10 -top-2.5" style="left: calc({pos(selected, ticks)}% - {28 / 2}px);">
       <BreaksMarker ghost={hovered} />
     </div>
   {/if}
   {#if hovered !== undefined}
-    <div class="absolute z-10 -top-2.5" style="left: calc({pos(hovered, breaks)}% - {28 / 2}px);">
+    <div class="absolute z-10 -top-2.5" style="left: calc({pos(hovered, ticks)}% - {28 / 2}px);">
       <BreaksMarker />
     </div>
   {/if}

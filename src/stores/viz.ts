@@ -27,8 +27,7 @@ export const viz = asyncDerived([params, viewport], async ([$params, $viewport])
 
   return {
     geoType: args.geoType,
-    breaks: breaks.breaks[args.category.code],
-    minMaxVals: breaks.minMax[args.category.code],
+    breaks: breaks.breaks,
     places: data,
     params: {
       ...$params,

@@ -101,7 +101,6 @@ const getGeoType = (map: mapboxgl.Map, classification?: Classification): { actua
         ideal: idealGeotype,
       };
     } else {
-      // todo: is this branch needed?
       return { actual: idealGeotype, ideal: idealGeotype };
     }
   } else {

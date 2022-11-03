@@ -75,15 +75,16 @@ const setViewportStoreAndLayerVisibility = (map: mapboxgl.Map, classification: C
   const bbox = { east: b.getEast(), north: b.getNorth(), west: b.getWest(), south: b.getSouth() };
   const geoType = getGeoType(map, classification);
 
-  setMapLayerVisibility(map, geoType);
+  setMapLayerVisibility(map, geoType.actual);
 
   viewport.set({
     bbox,
-    geoType: geoType,
+    geoType: geoType.actual,
+    idealGeoType: geoType.ideal,
   });
 };
 
-const getGeoType = (map: mapboxgl.Map, classification?: Classification): GeoType => {
+const getGeoType = (map: mapboxgl.Map, classification?: Classification): { actual: GeoType; ideal: GeoType } => {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore (queryRenderedFeatures typings appear to be wrong)
   const features = map.queryRenderedFeatures({ layers: ["centroids"] });
@@ -91,16 +92,20 @@ const getGeoType = (map: mapboxgl.Map, classification?: Classification): GeoType
     const count = features.length;
     const canvas = map.getCanvas();
     const pixelArea = canvas.clientWidth * canvas.clientHeight;
-    const preferredGeotype = (count * 1e6) / pixelArea > 40 ? "lad" : (count * 1e6) / pixelArea > 3 ? "msoa" : "oa";
+    const idealGeotype = (count * 1e6) / pixelArea > 40 ? "lad" : (count * 1e6) / pixelArea > 3 ? "msoa" : "oa";
     const availableGeotypes = classification?.available_geotypes;
     if (availableGeotypes) {
       // the first available_geotype is the lowest-level
-      return availableGeotypes.includes(preferredGeotype) ? preferredGeotype : availableGeotypes[0];
+      return {
+        actual: availableGeotypes.includes(idealGeotype) ? idealGeotype : availableGeotypes[0],
+        ideal: idealGeotype,
+      };
     } else {
-      return preferredGeotype;
+      // todo: is this branch needed?
+      return { actual: idealGeotype, ideal: idealGeotype };
     }
   } else {
-    return "lad";
+    return { actual: "lad", ideal: "lad" };
   }
 };
 

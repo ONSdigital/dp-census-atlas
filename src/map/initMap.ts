@@ -23,7 +23,6 @@ const maxAllowedZoom = 15;
 export const initMap = (container: HTMLElement) => {
   const embed = get(params).embed;
   const interactive = !embed || embed.interactive;
-  const embedViewport = embed && embed.view === "viewport";
 
   const map = new Map({
     container,
@@ -41,12 +40,7 @@ export const initMap = (container: HTMLElement) => {
   // disable touchscreen rotate while allowing pinch-to-zoom
   map.touchZoomRotate.disableRotation();
 
-  if (embedViewport) {
-    const bounds = new mapboxgl.LngLatBounds(embed.embedBounds);
-    map.fitBounds(bounds, { padding: 0, animate: false });
-  } else {
-    setPosition(map, get(geography));
-  }
+  setInitialMapView(map, embed);
 
   if (interactive) {
     map.addControl(new mapboxgl.NavigationControl({ showCompass: false }));
@@ -171,3 +165,18 @@ const emptyFeatureCollection = {
   type: "FeatureCollection",
   features: [],
 };
+
+const setInitialMapView = (map, embed) => {
+  const embedViewport = embed && embed.view === "viewport";
+  const embedEW = embed && embed.view === "ew";
+
+  if (embedViewport) {
+    const bounds = new mapboxgl.LngLatBounds(embed.bounds);
+    map.fitBounds(bounds, { padding: 0, animate: false });
+  } else if (embedEW) {
+    const bounds = new mapboxgl.LngLatBounds(englandAndWalesBbox);
+    map.fitBounds(bounds, { padding: 0, animate: false });
+  } else {
+    setPosition(map, get(geography));
+  }
+}

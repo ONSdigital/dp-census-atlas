@@ -15,7 +15,8 @@
 
   let embedInteractive = false;
   let embedAreaSearch = false;
-  let embedView: "viewport" | "geography" = "geography";
+  let embedCategorySelection = false;
+  let embedView: "viewport" | "geography" | "ew" = "geography";
 
   $: embedBounds = [
     $viewport?.bbox.west,
@@ -27,6 +28,7 @@
     embed: true,
     embedInteractive,
     embedAreaSearch,
+    embedCategorySelection,
     embedView,
     embedBounds
   });
@@ -74,31 +76,41 @@
       </div>
     </div>
   </form>
-  <section class="mb-3">
-    <iframe height="600px" width="100%" title="ONS Census Maps" frameborder="0" src={embedCode.url} />
-  </section>
-  <section class="flex gap-8 bg-ons-grey-5 px-6 py-3 border-t-ons-grey-15 border-t-[1px] mb-5">
-    <!-- <h3 class="mb-4 text-lg font-semibold md:text-xl ">Options</h3> -->
-    <div class="flex gap-4">
-      <label class="hoverable">
-        <input type="radio" bind:group={embedView} name="embedView" value={"geography"} />
-        Centre on selected location ({$geography.displayName})
-      </label>
-      <label class="hoverable">
-        <input type="radio" bind:group={embedView} name="embedView" value={"viewport"} />
-        Use current map viewport
-      </label>
-    </div>
+  <div class="mb-4">Select your preferred embed options and copy the HTML code. There is a preview of the embedded map below.</div>
+  <section class="flex gap-8 px-3 py-1">
     <div class="">
       <label class="hoverable">
         <input type="checkbox" bind:checked={embedInteractive} class="custom-ring mr-1" />
-        Allow map zoom and pan
+        Enable map zoom and pan
       </label>
     </div>
     <div class="">
       <label class="hoverable">
         <input disabled type="checkbox" bind:checked={embedAreaSearch} class="custom-ring mr-1" />
-        Include area search
+        Enable area search
+      </label>
+    </div>
+    <div class="">
+      <label class="hoverable">
+        <input disabled type="checkbox" bind:checked={embedCategorySelection} class="custom-ring mr-1" />
+        Enable category selection
+      </label>
+    </div>
+  </section>
+  <section class="flex gap-8 px-3 py-1 mb-5">
+    <!-- <h3 class="mb-4 text-lg font-semibold md:text-xl ">Options</h3> -->
+    <div class="flex gap-4">
+      <label class="hoverable">
+        <input type="radio" bind:group={embedView} name="embedView" value={"geography"} />
+        Centre map on {$geography.displayName}
+      </label>
+      <label class="hoverable">
+        <input type="radio" bind:group={embedView} name="embedView" value={"viewport"} />
+        Fit map to current view
+      </label>
+      <label class="hoverable">
+        <input type="radio" bind:group={embedView} name="embedView" value={"ew"} />
+        Fit map to England and Wales
       </label>
     </div>
   </section>
@@ -122,4 +134,7 @@
       <div out:fade={{ duration: 1000 }}>Copied!</div>
     {/if}
   </div>
+  <section class="mt-5">
+    <iframe height="600px" width="100%" title="ONS Census Maps" frameborder="0" src={embedCode.url} />
+  </section>
 </dialog>

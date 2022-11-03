@@ -29,7 +29,7 @@ const parseSearchParams = (params: URLSearchParams) => {
       view: params.get("embedView"),
     }
     if  (params.get("embedView") === "viewport") {
-      embedParams.embedBounds = params.get("embedBounds").split(",").map((b) => parseFloat(b));
+      embedParams.bounds = params.get("embedBounds").split(",").map((b) => parseFloat(b));
     }
   }
   return {

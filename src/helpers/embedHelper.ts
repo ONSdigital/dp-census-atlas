@@ -23,8 +23,9 @@ export type EmbedParams = {
   embed: boolean;
   embedAreaSearch: boolean;
   embedInteractive: boolean;
-  embedView: "viewport" | "geography";
-  embedBounds?: number[];
+  embedCategorySelection: boolean,
+  embedView: "viewport" | "geography" | "ew";
+  embedBounds?: [number, number, number, number];
 };
 
 

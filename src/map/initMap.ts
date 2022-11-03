@@ -32,7 +32,13 @@ export const initMap = (container: HTMLElement) => {
     maxZoom: maxAllowedZoom,
     maxBounds,
     interactive,
+    dragRotate: false,
+    pitchWithRotate: false,
+    touchPitch: false,
   });
+
+  // disable touchscreen rotate while allowing pinch-to-zoom
+  map.touchZoomRotate.disableRotation();
 
   setPosition(map, get(geography));
   if (interactive) {

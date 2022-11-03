@@ -27,10 +27,10 @@
       {#each geoTypes as g, i}
         {#if i !== 0}
           <div
-            class="text-lg text-ons-grey-100 select-none"
+            class="text-xl text-ons-grey-100 select-none"
             class:hidden={i > geoTypes.indexOf($viewport.idealGeoType)}
           >
-            ▸
+            <Icon kind="arrowRightAlt" />
           </div>
         {/if}
         <div

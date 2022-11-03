@@ -5,19 +5,20 @@
   import { params } from "../stores/params";
   import { viewport, type Viewport } from "../stores/viewport";
 
-  $: geoTypesToShow = [...getGeoTypesToShow($viewport)];
+  const geoTypes = GeoTypes.filter((g) => g !== "ew");
+  // $: geoTypesToShow = [...getGeoTypesToShow($viewport)];
 
-  function* getGeoTypesToShow($viewport: Viewport): Generator<GeoType> {
-    if ($viewport) {
-      console.log("foo");
-      for (const g of GeoTypes.filter((g) => g !== "ew")) {
-        yield g;
-        if (g === $viewport.geoType) {
-          break;
-        }
-      }
-    }
-  }
+  // function* getGeoTypesToShow($viewport: Viewport): Generator<GeoType> {
+  //   if ($viewport) {
+  //     console.log("foo");
+  //     for (const g of GeoTypes.filter((g) => g !== "ew")) {
+  //       yield g;
+  //       if (g === $viewport.geoType) {
+  //         break;
+  //       }
+  //     }
+  //   }
+  // }
 </script>
 
 {#if !$params.category}
@@ -44,12 +45,12 @@
           {geoTypeDescriptions[$viewport.geoType]}
         </div>
       </div> -->
-      {#each geoTypesToShow as geoType, i}
-        {#if true}
+      {#each geoTypes as geoType, i}
+        <div class="flex items-center gap-2" class:hidden={i > geoTypes.indexOf($viewport.idealGeoType)}>
           {#if i !== 0}
             <div class="text-xl text-ons-grey-100 select-none">▸</div>
           {/if}
-          <div class="flex" class:opacity-80={geoType !== $viewport.geoType}>
+          <div class="flex" class:opacity-90={geoType !== $viewport.geoType}>
             <div
               class="z-abovemap px-3 py-1 rounded-l bg-ons-census text-ons-grey-5 font-bold"
               class:bg-ons-grey-55={geoType !== $viewport.geoType}
@@ -61,7 +62,7 @@
               {geoTypeDescriptions[geoType]}
             </div>
           </div>
-        {/if}
+        </div>
       {/each}
     </div>
   </div>

@@ -18,7 +18,7 @@
     </a>
   </div>
   <div class="fill-ons-census p-3">
-    <a href="https://census.gov.uk/" class="custom-ring">
+    <a href="/census" class="custom-ring">
       <Census2021 />
     </a>
   </div>

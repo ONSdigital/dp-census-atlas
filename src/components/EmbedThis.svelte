@@ -8,6 +8,7 @@
   import { getEmbedCode } from "../helpers/embedHelper";
   import { viewport } from "../stores/viewport";
   import Icon from "./MaterialIcon.svelte";
+  import type { FourNumberTuple } from "../types";
 
   let dialog: HTMLDialogElement;
   let button: HTMLButtonElement;
@@ -22,15 +23,15 @@
     $viewport?.bbox.west,
     $viewport?.bbox.south,
     $viewport?.bbox.east,
-    $viewport?.bbox.north
-  ]
+    $viewport?.bbox.north,
+  ] as FourNumberTuple;
   $: embedCode = getEmbedCode($page.url, {
     embed: true,
     embedInteractive,
     embedAreaSearch,
     embedCategorySelection,
     embedView,
-    embedBounds
+    embedBounds,
   });
 
   onMount(() => {
@@ -76,7 +77,9 @@
       </div>
     </div>
   </form>
-  <div class="mb-4">Select your preferred embed options and copy the HTML code. There is a preview of the embedded map below.</div>
+  <div class="mb-4">
+    Select your preferred embed options and copy the HTML code. There is a preview of the embedded map below.
+  </div>
   <section class="flex gap-8 px-3 py-1">
     <div class="">
       <label class="hoverable">
@@ -108,7 +111,7 @@
         <input type="radio" bind:group={embedView} name="embedView" value={"viewport"} />
         Fit map to current view
       </label>
-      {#if ($geography.geoType != "ew")}
+      {#if $geography.geoType !== "ew"}
         <label class="hoverable">
           <input type="radio" bind:group={embedView} name="embedView" value={"ew"} />
           Fit map to England and Wales

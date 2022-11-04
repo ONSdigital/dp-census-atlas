@@ -3,7 +3,9 @@ import { layersWithSiblings } from "./layers";
 import { centroidsGeojson } from "../helpers/quadsHelper";
 import { distinctUntilChanged, fromEventPattern } from "rxjs";
 import { map as project } from "rxjs/operators";
-const layerBounds: [number, number, number, number] = [-6.418, 49.864, 1.764, 55.812];
+import type { FourNumberTuple } from "../types";
+
+const layerBounds: FourNumberTuple = [-6.418, 49.864, 1.764, 55.812];
 
 export const initMapLayers = (map, geo) => {
   layersWithSiblings().forEach((l) => {
@@ -46,7 +48,7 @@ export const initMapLayers = (map, geo) => {
         // maxzoom: l.next ? l.next.minZoom : maxAllowedZoom,
         layout: {
           "line-join": "round",
-          visibility: l.layer.name == "lad" ? "visible" : "none"
+          visibility: l.layer.name == "lad" ? "visible" : "none",
         },
         paint: {
           "line-color": [
@@ -143,7 +145,7 @@ export const initMapLayers = (map, geo) => {
     id: "selected-geography-highlight",
     type: "line",
     source: "selected-geography",
-    layout: {"line-join": "round"},
+    layout: { "line-join": "round" },
     paint: {
       "line-color": "#fff",
       "line-width": 4.5,
@@ -153,7 +155,7 @@ export const initMapLayers = (map, geo) => {
     id: "selected-geography-outline",
     type: "line",
     source: "selected-geography",
-    layout: {"line-join": "round"},
+    layout: { "line-join": "round" },
     paint: {
       "line-color": "#000",
       "line-width": 3,

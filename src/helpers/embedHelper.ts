@@ -1,6 +1,11 @@
+import type { FourNumberTuple } from "../types";
+
 export const getEmbedCode = (url: URL, embedParams: EmbedParams) => {
+  //
+  // TODO: don't mutate a function parameter
+  //
   // delete bounds property if not embedding in viewport mode
-  if (embedParams.embedView != "viewport") {
+  if (embedParams.embedView !== "viewport") {
     delete embedParams.embedBounds;
   }
 
@@ -9,7 +14,6 @@ export const getEmbedCode = (url: URL, embedParams: EmbedParams) => {
     ...Object.fromEntries(Object.entries(embedParams)),
     embedView: embedParams.embedView, // avoid type error
   });
-
 
   const embedUrl = url.origin + url.pathname + "?" + params.toString();
 
@@ -23,11 +27,10 @@ export type EmbedParams = {
   embed: boolean;
   embedAreaSearch: boolean;
   embedInteractive: boolean;
-  embedCategorySelection: boolean,
+  embedCategorySelection: boolean;
   embedView: "viewport" | "geography" | "ew";
-  embedBounds?: [number, number, number, number];
+  embedBounds?: FourNumberTuple;
 };
-
 
 // type PickByType<T, Value> = {
 //   [P in keyof T as T[P] extends Value | undefined ? P : never]: T[P]

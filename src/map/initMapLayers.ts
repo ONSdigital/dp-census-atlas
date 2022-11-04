@@ -7,7 +7,7 @@ import type { FourNumberTuple } from "../types";
 
 const layerBounds: FourNumberTuple = [-6.418, 49.864, 1.764, 55.812];
 
-export const initMapLayers = (map, geo) => {
+export const initMapLayers = (map, geo, interactive: boolean) => {
   layersWithSiblings().forEach((l) => {
     map.addSource(l.layer.name, {
       type: "vector",
@@ -93,13 +93,15 @@ export const initMapLayers = (map, geo) => {
       hovered.set(undefined);
     });
 
-    // cursor to pointer when hovered
-    map.on("mouseenter", `${l.layer.name}-features`, () => {
-      map.getCanvas().style.cursor = "pointer";
-    });
-    map.on("mouseleave", `${l.layer.name}-features`, () => {
-      map.getCanvas().style.cursor = "";
-    });
+    if (interactive) {
+      // cursor to pointer when hovered
+      map.on("mouseenter", `${l.layer.name}-features`, () => {
+        map.getCanvas().style.cursor = "pointer";
+      });
+      map.on("mouseleave", `${l.layer.name}-features`, () => {
+        map.getCanvas().style.cursor = "";
+      });
+    }
 
     // when the user moves their mouse over the state-fill layer, we'll update the
     // feature state for the feature under the mouse.

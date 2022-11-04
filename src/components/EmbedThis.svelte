@@ -32,7 +32,7 @@
     embedAreaSearch,
     embedCategorySelection,
     embedView,
-    ...(embedView === "viewport" && {"embedBounds": embedBounds}), // don't include embed bounds unless we need to!
+    ...(embedView === "viewport" && { embedBounds: embedBounds }), // don't include embed bounds unless we need to!
   });
 
   onMount(() => {
@@ -123,7 +123,7 @@
     <div class="px-4 border-y-8 border-ons-grey-5 bg-ons-grey-5 text-sm font-mono break-all h-24 overflow-y-scroll">
       {embedCode.html}
     </div>
-    <div class="flex flex-col gap-3 pt-3">
+    <div class="flex flex-col gap-3 pt-1">
       <button
         class="flex items-center justify-center gap-2 custom-ring bg-ons-leaf-green hover:bg-[#0d753c] shadow shadow-[#073d20] text-onswhite font-semibold rounded py-3 px-4 whitespace-nowrap"
         style="text-rendering: optimizeLegibility"

@@ -1,14 +1,6 @@
 import type { FourNumberTuple } from "../types";
 
 export const getEmbedCode = (url: URL, embedParams: EmbedParams) => {
-  //
-  // TODO: don't mutate a function parameter
-  //
-  // delete bounds property if not embedding in viewport mode
-  if (embedParams.embedView !== "viewport") {
-    delete embedParams.embedBounds;
-  }
-
   const params = new URLSearchParams({
     ...Object.fromEntries(url.searchParams),
     ...Object.fromEntries(Object.entries(embedParams)),

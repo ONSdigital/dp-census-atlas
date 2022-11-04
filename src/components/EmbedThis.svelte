@@ -25,13 +25,14 @@
     $viewport?.bbox.east,
     $viewport?.bbox.north,
   ] as FourNumberTuple;
+
   $: embedCode = getEmbedCode($page.url, {
     embed: true,
     embedInteractive,
     embedAreaSearch,
     embedCategorySelection,
     embedView,
-    embedBounds,
+    ...(embedView === "viewport" && {"embedBounds": embedBounds}), // don't include embed bounds unless we need to!
   });
 
   onMount(() => {

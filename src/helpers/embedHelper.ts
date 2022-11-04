@@ -1,4 +1,4 @@
-import type { FourNumberTuple } from "../types";
+import { GeoTypes, type FourNumberTuple } from "../types";
 
 export const getEmbedCode = (url: URL, embedParams: EmbedParams) => {
   const params = new URLSearchParams({
@@ -20,10 +20,20 @@ export type EmbedParams = {
   embedAreaSearch: boolean;
   embedInteractive: boolean;
   embedCategorySelection: boolean;
-  embedView: "viewport" | "geography" | "ew";
+  embedView: "viewport" | "geography";
   embedBounds?: FourNumberTuple;
 };
 
 // type PickByType<T, Value> = {
 //   [P in keyof T as T[P] extends Value | undefined ? P : never]: T[P]
 // }
+
+export const getPageUrlNoGeoParam = (pageUrl) => {
+  const pageUrlNoGeoParam = new URL(pageUrl);
+  GeoTypes.forEach((geoParam) => {
+    if (pageUrlNoGeoParam.searchParams.has(geoParam)) {
+      pageUrlNoGeoParam.searchParams.delete(geoParam);
+    }
+  });
+  return pageUrlNoGeoParam;
+};

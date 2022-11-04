@@ -168,15 +168,10 @@ const emptyFeatureCollection = {
 
 const setInitialMapView = (map, embed) => {
   const embedViewport = embed && embed.view === "viewport";
-  const embedEW = embed && embed.view === "ew";
-
   if (embedViewport) {
     const bounds = new mapboxgl.LngLatBounds(embed.bounds);
-    map.fitBounds(bounds, { padding: 0, animate: false });
-  } else if (embedEW) {
-    const bounds = new mapboxgl.LngLatBounds(englandAndWalesBbox);
     map.fitBounds(bounds, { padding: 0, animate: false });
   } else {
     setPosition(map, get(geography));
   }
-}
+};

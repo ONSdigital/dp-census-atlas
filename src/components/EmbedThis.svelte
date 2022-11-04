@@ -5,19 +5,20 @@
   import { fade } from "svelte/transition";
   import { fromEvent, Observable, of, concat } from "rxjs";
   import { delay, mergeMap, startWith, switchMap, tap, windowWhen } from "rxjs/operators";
-  import { getEmbedCode } from "../helpers/embedHelper";
+  import { getEmbedCode, getPageUrlNoGeoParam } from "../helpers/embedHelper";
   import { viewport } from "../stores/viewport";
   import Icon from "./MaterialIcon.svelte";
-  import type { FourNumberTuple } from "../types";
+  import type { FourNumberTuple, GeoType } from "../types";
 
   let dialog: HTMLDialogElement;
   let button: HTMLButtonElement;
   let copied: Observable<boolean>;
 
-  let embedInteractive = false;
+  let embedInteractive = true;
   let embedAreaSearch = false;
   let embedCategorySelection = false;
-  let embedView: "viewport" | "geography" | "ew" = "geography";
+  let embedView: "viewport" | "geography" = "geography";
+  let embedSelectGeo = true;
 
   $: embedBounds = [
     $viewport?.bbox.west,
@@ -26,7 +27,9 @@
     $viewport?.bbox.north,
   ] as FourNumberTuple;
 
-  $: embedCode = getEmbedCode($page.url, {
+  $: pageUrlForEmbed = embedSelectGeo ? $page.url: getPageUrlNoGeoParam($page.url);
+
+  $: embedCode = getEmbedCode(pageUrlForEmbed, {
     embed: true,
     embedInteractive,
     embedAreaSearch,
@@ -85,7 +88,7 @@
     <div class="">
       <label class="hoverable">
         <input type="checkbox" bind:checked={embedInteractive} class="custom-ring mr-1" />
-        Enable zoom and pan
+        Enable interactivity
       </label>
     </div>
     <div class="">
@@ -103,20 +106,26 @@
   </section>
   <section class="flex gap-8 px-2 py-1 mb-5">
     <div class="flex gap-4">
+      {#if $geography.geoType !== "ew"}
+        <div class="">
+          <label class="hoverable">
+            <input type="checkbox" bind:checked={embedSelectGeo} class="custom-ring mr-1" />
+            {$geography.displayName} selected
+          </label>
+        </div>
+      {/if}
       <label class="hoverable">
         <input type="radio" bind:group={embedView} name="embedView" value={"geography"} class="custom-ring" />
-        Fit map to {$geography.displayName}
+        {#if embedSelectGeo}
+          Fit map to {$geography.displayName}
+        {:else}
+        Fit map to England and Wales
+        {/if}
       </label>
       <label class="hoverable">
         <input type="radio" bind:group={embedView} name="embedView" value={"viewport"} class="custom-ring" />
         Fit map to current view
       </label>
-      {#if $geography.geoType !== "ew"}
-        <label class="hoverable">
-          <input type="radio" bind:group={embedView} name="embedView" value={"ew"} class="custom-ring" />
-          Fit map to England and Wales
-        </label>
-      {/if}
     </div>
   </section>
   <section class="flex gap-6">

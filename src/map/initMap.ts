@@ -15,6 +15,7 @@ import { style, maxBounds } from "./style";
 import { viewport } from "../stores/viewport";
 import { viz } from "../stores/viz";
 import { toObservable } from "../util/rxUtil";
+import { commands } from "../stores/commands";
 
 const defaultZoom = 6;
 const maxAllowedZoom = 15;
@@ -46,6 +47,12 @@ export const initMap = (container: HTMLElement) => {
     });
     geography.subscribe((geography) => {
       listenToSelectedGeographyStore(map, geography);
+    });
+    commands.subscribe((command) => {
+      if (command?.kind === "zoom") {
+        const zoom = getSuitableZoomForGeoType(command.geoType);
+        map.zoomTo(zoom, { duration: 6000 });
+      }
     });
   });
 
@@ -161,4 +168,9 @@ const setPosition = (map: mapboxgl.Map, g: GeographyInfo, options: { animate: bo
 const emptyFeatureCollection = {
   type: "FeatureCollection",
   features: [],
+};
+
+const getSuitableZoomForGeoType = (g: GeoType) => {
+  // todo: improve this to use density centroids?
+  return layers.find((l) => l.name === g).defaultZoom;
 };

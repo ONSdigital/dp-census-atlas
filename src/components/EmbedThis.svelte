@@ -81,7 +81,7 @@
     <div class="">
       <label class="hoverable">
         <input type="checkbox" bind:checked={embedInteractive} class="custom-ring mr-1" />
-        Enable map zoom and pan
+        Enable zoom and pan
       </label>
     </div>
     <div class="">
@@ -102,24 +102,24 @@
     <div class="flex gap-4">
       <label class="hoverable">
         <input type="radio" bind:group={embedView} name="embedView" value={"geography"} />
-        Centre map on {$geography.displayName}
+        Fit map to {$geography.displayName}
       </label>
       <label class="hoverable">
         <input type="radio" bind:group={embedView} name="embedView" value={"viewport"} />
         Fit map to current view
       </label>
-      <label class="hoverable">
-        <input type="radio" bind:group={embedView} name="embedView" value={"ew"} />
-        Fit map to England and Wales
-      </label>
+      {#if ($geography.geoType != "ew")}
+        <label class="hoverable">
+          <input type="radio" bind:group={embedView} name="embedView" value={"ew"} />
+          Fit map to England and Wales
+        </label>
+      {/if}
     </div>
   </section>
-
-  <div class="mb-4">Use the following HTML code to add this map to your own website.</div>
   <div class="p-5 mb-5 bg-ons-grey-5 text-sm font-mono break-all">
     {embedCode.html}
   </div>
-  <div class="flex items-center gap-6">
+  <div class="flex items-center justify-end gap-6">
     <button
       class="flex items-center justify-center gap-2 custom-ring bg-ons-leaf-green hover:bg-[#0d753c] shadow shadow-[#073d20] text-onswhite font-semibold rounded py-3 px-4"
       style="text-rendering: optimizeLegibility"

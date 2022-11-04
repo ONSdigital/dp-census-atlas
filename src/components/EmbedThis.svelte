@@ -116,7 +116,7 @@
       {/if}
     </div>
   </section>
-  <div class="p-5 mb-5 bg-ons-grey-5 text-sm font-mono break-all">
+  <div class="p-5 mb-5 bg-ons-grey-5 text-sm font-mono break-all h-28">
     {embedCode.html}
   </div>
   <div class="flex items-center justify-end gap-6">

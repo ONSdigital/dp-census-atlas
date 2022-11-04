@@ -80,7 +80,7 @@
   <div class="mb-4">
     Select your preferred embed options and copy the HTML code. There is a preview of the embedded map below.
   </div>
-  <section class="flex gap-8 px-3 py-1">
+  <section class="flex gap-8 px-2 py-1">
     <div class="">
       <label class="hoverable">
         <input type="checkbox" bind:checked={embedInteractive} class="custom-ring mr-1" />
@@ -100,43 +100,45 @@
       </label>
     </div>
   </section>
-  <section class="flex gap-8 px-3 py-1 mb-5">
-    <!-- <h3 class="mb-4 text-lg font-semibold md:text-xl ">Options</h3> -->
+  <section class="flex gap-8 px-2 py-1 mb-5">
     <div class="flex gap-4">
       <label class="hoverable">
-        <input type="radio" bind:group={embedView} name="embedView" value={"geography"} />
+        <input type="radio" bind:group={embedView} name="embedView" value={"geography"} class="custom-ring" />
         Fit map to {$geography.displayName}
       </label>
       <label class="hoverable">
-        <input type="radio" bind:group={embedView} name="embedView" value={"viewport"} />
+        <input type="radio" bind:group={embedView} name="embedView" value={"viewport"} class="custom-ring" />
         Fit map to current view
       </label>
       {#if $geography.geoType !== "ew"}
         <label class="hoverable">
-          <input type="radio" bind:group={embedView} name="embedView" value={"ew"} />
+          <input type="radio" bind:group={embedView} name="embedView" value={"ew"} class="custom-ring" />
           Fit map to England and Wales
         </label>
       {/if}
     </div>
   </section>
-  <div class="p-5 mb-5 bg-ons-grey-5 text-sm font-mono break-all h-28">
-    {embedCode.html}
-  </div>
-  <div class="flex items-center justify-end gap-6">
-    <button
-      class="flex items-center justify-center gap-2 custom-ring bg-ons-leaf-green hover:bg-[#0d753c] shadow shadow-[#073d20] text-onswhite font-semibold rounded py-3 px-4"
-      style="text-rendering: optimizeLegibility"
-      bind:this={button}
-    >
-      <div>Copy to clipboard</div>
-      <div class="text-2xl">
-        <Icon kind="contentCopy" />
-      </div>
-    </button>
-    {#if $copied}
-      <div out:fade={{ duration: 1000 }}>Copied!</div>
-    {/if}
-  </div>
+  <section class="flex gap-6">
+    <div class="px-4 border-y-8 border-ons-grey-5 bg-ons-grey-5 text-sm font-mono break-all h-24 overflow-y-scroll">
+      {embedCode.html}
+    </div>
+    <div class="flex flex-col gap-3 pt-3">
+      <button
+        class="flex items-center justify-center gap-2 custom-ring bg-ons-leaf-green hover:bg-[#0d753c] shadow shadow-[#073d20] text-onswhite font-semibold rounded py-3 px-4 whitespace-nowrap"
+        style="text-rendering: optimizeLegibility"
+        bind:this={button}
+      >
+        <div>Copy to clipboard</div>
+        <div class="text-2xl">
+          <Icon kind="contentCopy" />
+        </div>
+      </button>
+      {#if $copied}
+        <div class="text-center" out:fade={{ duration: 1000 }}>Copied!</div>
+      {/if}
+    </div>
+  </section>
+
   <section class="mt-5">
     <iframe height="600px" width="100%" title="ONS Census Maps" frameborder="0" src={embedCode.url} />
   </section>

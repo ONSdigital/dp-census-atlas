@@ -46,7 +46,7 @@ export type FourNumberTuple = [number, number, number, number];
 export type VizData = {
   geoType: GeoType;
   breaks: number[];
-  places: { geoCode: string; ratioToTotal: number }[];
+  places: { geoCode: string; categoryValue: number }[];
   params: {
     variableGroup: VariableGroup;
     variable: Variable;

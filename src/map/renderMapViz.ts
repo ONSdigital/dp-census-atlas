@@ -16,15 +16,15 @@ export const renderMapViz = (map: mapboxgl.Map, data: VizData | undefined) => {
   data.places.forEach((p) => {
     map.setFeatureState(
       { source: layer.name, sourceLayer: layer.sourceLayer, id: p.geoCode },
-      { colour: getChoroplethColour(p.ratioToTotal, data.breaks) },
+      { colour: getChoroplethColour(p.categoryValue, data.breaks) },
     );
   });
 };
 
 const getChoroplethColour = (value: number, breaks: number[]) => {
-  let upperBreakBounds
+  let upperBreakBounds;
   if (breaks.length === 1) {
-    upperBreakBounds = breaks
+    upperBreakBounds = breaks;
   } else {
     upperBreakBounds = breaks.slice(1);
   }

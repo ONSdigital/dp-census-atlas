@@ -34,8 +34,8 @@ const fetchTileDataForBbox = async (args: { category: Category; geoType: GeoType
 
 const parsePlaceData = (row: dsv.DSVRowString<string>, categoryCode: string) => {
   const geoCode = row.geography_code;
-  const ratioToTotal = parseFloat(row[categoryCode]);
-  return { geoCode, ratioToTotal };
+  const categoryValue = parseFloat(row[categoryCode]);
+  return { geoCode, categoryValue };
 };
 
 /*
@@ -53,10 +53,7 @@ export const fetchTileData = async (args: { category: Category; geoType: GeoType
   Fetch json with estimated natural breakpoints (w. ckmeans algorithm) in data for all census category 'categoryCode'
   divided by total for that category.
 */
-export const fetchBreaks = async (args: {
-  category: Category;
-  geoType: GeoType;
-}): Promise<{ breaks: number[]; }> => {
+export const fetchBreaks = async (args: { category: Category; geoType: GeoType }): Promise<{ breaks: number[] }> => {
   const url = `${args.category.baseUrl}/breaks/${args.geoType}/${args.category.code}.json`;
   const response = await fetch(url);
   const breaksRaw = await response.json();
@@ -79,13 +76,10 @@ export const fetchBreaks = async (args: {
       }
     }
   */
-  const breaks = uniqueRoundedCategoryBreaks(
-    args.category.code,
-    [
-      breaksRaw[args.category.code][`${args.geoType.toUpperCase()}_min_max`][0],
-      ...breaksRaw[args.category.code][args.geoType.toUpperCase()]
-    ],
-  )
+  const breaks = uniqueRoundedCategoryBreaks(args.category.code, [
+    breaksRaw[args.category.code][`${args.geoType.toUpperCase()}_min_max`][0],
+    ...breaksRaw[args.category.code][args.geoType.toUpperCase()],
+  ]);
   return { breaks };
 };
 

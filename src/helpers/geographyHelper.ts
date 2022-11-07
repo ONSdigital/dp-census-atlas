@@ -1,4 +1,6 @@
-export const englandAndWalesBbox = [1, 55.8, -5, 49.7] as [number, number, number, number];
+import type { FourNumberTuple } from "../types";
+
+export const englandAndWalesBbox: FourNumberTuple = [1, 55.8, -5, 49.7];
 
 export const geoTypeDescriptions = {
   ew: "England & Wales",

@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { _ } from "svelte-i18n";
   import { page } from "$app/stores";
   import { params } from "../stores/params";
   import { geography } from "../stores/geography";
@@ -10,17 +9,6 @@
   import VariableDescription from "./VariableDescription.svelte";
   import ClassificationPager from "./ClassificationPager.svelte";
 </script>
-
-<svelte:head>
-  <title
-    >{$_("categoryPage.html.title", {
-      values: {
-        categoryName: $params.category.name,
-        selectedGeographyDisplayName: `${$geography.displayName}`,
-      },
-    })}</title
-  >
-</svelte:head>
 
 <div class="h-full flex flex-col">
   <div class="px-6 border-t-[1px] border-t-ons-grey-15">

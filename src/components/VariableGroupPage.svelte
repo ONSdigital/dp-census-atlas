@@ -1,6 +1,5 @@
 <script lang="ts">
   import { page } from "$app/stores";
-  import { _ } from "svelte-i18n";
   import { params } from "../stores/params";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
   import { getDefaultChoroplethClassification } from "../helpers/variableHelpers";

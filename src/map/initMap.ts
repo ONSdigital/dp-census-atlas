@@ -33,9 +33,16 @@ export const initMap = (container: HTMLElement) => {
     maxZoom: maxAllowedZoom,
     maxBounds,
     interactive,
+    dragRotate: false,
+    pitchWithRotate: false,
+    touchPitch: false,
   });
 
-  setPosition(map, get(geography));
+  // disable touchscreen rotate while allowing pinch-to-zoom
+  map.touchZoomRotate.disableRotation();
+
+  setInitialMapView(map, embed);
+
   if (interactive) {
     map.addControl(new mapboxgl.NavigationControl({ showCompass: false }));
   }
@@ -173,4 +180,14 @@ const emptyFeatureCollection = {
 const getSuitableZoomForGeoType = (g: GeoType) => {
   // todo: improve this to use density centroids?
   return layers.find((l) => l.name === g).defaultZoom;
+};
+
+const setInitialMapView = (map, embed) => {
+  const embedViewport = embed && embed.view === "viewport";
+  if (embedViewport) {
+    const bounds = new mapboxgl.LngLatBounds(embed.bounds);
+    map.fitBounds(bounds, { padding: 0, animate: false });
+  } else {
+    setPosition(map, get(geography));
+  }
 };

@@ -1,7 +1,6 @@
 <script lang="ts">
   import "mapbox-gl/dist/mapbox-gl.css";
   import "../app.css";
-  import "../i18n/i18n.ts";
   import pym from "pym.js";
   import { onMount } from "svelte";
   import { page } from "$app/stores";

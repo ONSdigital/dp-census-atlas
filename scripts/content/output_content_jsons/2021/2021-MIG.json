@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-11-01-13-56-09",
-    "spec_file": "2021-content-spec-v3.json",
+    "created_at": "2022-11-07-09-20-12",
+    "spec_file": "2021-content-spec-v4.json",
     "release": "2021-MIG"
   },
   "content": [
@@ -521,7 +521,7 @@
                   "code": "country_of_birth_60a-017",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "were",
-                  "legend_str_3": "born in other countries that joined the EU betweeen April 2001 - March 2011"
+                  "legend_str_3": "born in other countries that joined the EU between April 2001 - March 2011"
                 },
                 {
                   "name": "Europe: Other Europe: EU countries: Countries that joined the EU between April 2011 and March 2021: Croatia",
@@ -729,7 +729,7 @@
                   "code": "country_of_birth_60a-043",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "were",
-                  "legend_str_3": "born in the Phillipines"
+                  "legend_str_3": "born in the Philippines"
                 },
                 {
                   "name": "Middle East and Asia: South-East Asia: Malaysia",
@@ -841,7 +841,7 @@
                   "code": "country_of_birth_60a-057",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "were",
-                  "legend_str_3": "both in other Australiasian countries"
+                  "legend_str_3": "both in other Australasian countries"
                 },
                 {
                   "name": "Antarctica and Oceania: Other Oceania and Antarctica",
@@ -849,7 +849,7 @@
                   "code": "country_of_birth_60a-058",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "were",
-                  "legend_str_3": "born in other Oceanian countries or Antartica "
+                  "legend_str_3": "born in other Oceanian countries or Antarctica "
                 },
                 {
                   "name": "Other",
@@ -1056,7 +1056,7 @@
                   "code": "passports_all_13a-010",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "a passport from Antartica and Oceania (including Australia)"
+                  "legend_str_3": "a passport from Antarctica and Oceania (including Australia)"
                 },
                 {
                   "name": "British Overseas Territories",
@@ -1204,7 +1204,7 @@
                   "code": "passports_all_18a-015",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "a passport from Antartica and Oceania (including Australasia)"
+                  "legend_str_3": "a passport from Antarctica and Oceania (including Australasia)"
                 },
                 {
                   "name": "British Overseas Territories",
@@ -1281,7 +1281,7 @@
                   "code": "passports_all_27a-006",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "a Portugese passport"
+                  "legend_str_3": "a Portuguese passport"
                 },
                 {
                   "name": "Europe: Other Europe: EU Member countries: Spain",
@@ -1425,7 +1425,7 @@
                   "code": "passports_all_27a-024",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "a passport from Antartica and Oceania (including Australasia)"
+                  "legend_str_3": "a passport from Antarctica and Oceania (including Australasia)"
                 },
                 {
                   "name": "British Overseas Territories",
@@ -1501,7 +1501,7 @@
                   "code": "passports_all_52a-006",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "a Portugese passport"
+                  "legend_str_3": "a Portuguese passport"
                 },
                 {
                   "name": "Europe: Other Europe: EU Member countries: Spain",
@@ -1845,7 +1845,7 @@
                   "code": "passports_all_52a-049",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "a passport from another country in Oceania and Antartica"
+                  "legend_str_3": "a passport from another country in Oceania and Antarctica"
                 },
                 {
                   "name": "British Overseas Territories",

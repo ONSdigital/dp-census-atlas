@@ -1,6 +1,5 @@
 import type { ContentConfig, Classification, Variable, VariableGroup, ContentTree } from "../types";
 
-
 /*
   Iterate through variable groups and append the data baseUrl to each category of each classification of each variable.
 */
@@ -74,25 +73,27 @@ const dedupeClassifications = (classifications: Classification[]) => {
 };
 
 export const isInitialReleasePeriod = (content: ContentTree) => {
-  return content.variableGroups.length <= 8;
+  return content.variableGroups.length < 6;
 };
 
 /*
   Compare object name properties for lexical order
 */
 const compareNames = (obj1, obj2) => {
- const obj1Name = obj1.name.toLowerCase();
- const obj2Name = obj2.name.toLowerCase();
- if (obj1Name < obj2Name) //sort string ascending
-  return -1;
- if (obj1Name > obj2Name)
-  return 1;
- return 0; //default return value (no sorting)
-}
+  const obj1Name = obj1.name.toLowerCase();
+  const obj2Name = obj2.name.toLowerCase();
+  if (obj1Name < obj2Name)
+    //sort string ascending
+    return -1;
+  if (obj1Name > obj2Name) return 1;
+  return 0; //default return value (no sorting)
+};
 
 /*
   Sort all variables within a variable group alphabetically
 */
 export const sortVariableGroupVariables = (variableGroups: VariableGroup[]) => {
-  variableGroups.forEach( (vg) => {vg.variables.sort(compareNames)})
+  variableGroups.forEach((vg) => {
+    vg.variables.sort(compareNames);
+  });
 };

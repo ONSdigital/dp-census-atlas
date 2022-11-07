@@ -5,22 +5,37 @@
   import { fade } from "svelte/transition";
   import { fromEvent, Observable, of, concat } from "rxjs";
   import { delay, mergeMap, startWith, switchMap, tap, windowWhen } from "rxjs/operators";
-  import { getEmbedCode } from "../helpers/embedHelper";
+  import { getEmbedCode, getPageUrlNoGeoParam } from "../helpers/embedHelper";
+  import { viewport } from "../stores/viewport";
   import Icon from "./MaterialIcon.svelte";
+  import type { FourNumberTuple, GeoType } from "../types";
 
   let dialog: HTMLDialogElement;
   let button: HTMLButtonElement;
   let copied: Observable<boolean>;
 
-  let embedInteractive = false;
+  let embedInteractive = true;
   let embedAreaSearch = false;
+  let embedCategorySelection = false;
   let embedView: "viewport" | "geography" = "geography";
+  let embedSelectGeo = true;
 
-  $: embedCode = getEmbedCode($page.url, {
+  $: embedBounds = [
+    $viewport?.bbox.west,
+    $viewport?.bbox.south,
+    $viewport?.bbox.east,
+    $viewport?.bbox.north,
+  ] as FourNumberTuple;
+
+  $: pageUrlForEmbed = embedSelectGeo ? $page.url: getPageUrlNoGeoParam($page.url);
+
+  $: embedCode = getEmbedCode(pageUrlForEmbed, {
     embed: true,
     embedInteractive,
     embedAreaSearch,
+    embedCategorySelection,
     embedView,
+    ...(embedView === "viewport" && { embedBounds: embedBounds }), // don't include embed bounds unless we need to!
   });
 
   onMount(() => {
@@ -66,52 +81,75 @@
       </div>
     </div>
   </form>
-  <section class="mb-3">
-    <iframe height="600px" width="100%" title="ONS Census Maps" frameborder="0" src={embedCode.url} />
-  </section>
-  <section class="flex gap-8 bg-ons-grey-5 px-6 py-3 border-t-ons-grey-15 border-t-[1px] mb-5">
-    <!-- <h3 class="mb-4 text-lg font-semibold md:text-xl ">Options</h3> -->
-    <div class="flex gap-4">
-      <label class="hoverable">
-        <input disabled type="radio" bind:group={embedView} name="embedView" value={"geography"} />
-        Center on selected location ({$geography.displayName})
-      </label>
-      <label class="hoverable">
-        <input disabled type="radio" bind:group={embedView} name="embedView" value={"viewport"} />
-        Use exact area
-      </label>
-    </div>
+  <div class="mb-4">
+    Select your preferred embed options and copy the HTML code. There is a preview of the embedded map below.
+  </div>
+  <section class="flex gap-8 px-2 py-1">
     <div class="">
       <label class="hoverable">
         <input type="checkbox" bind:checked={embedInteractive} class="custom-ring mr-1" />
-        Interactive map
+        Enable interactivity
       </label>
     </div>
     <div class="">
       <label class="hoverable">
         <input disabled type="checkbox" bind:checked={embedAreaSearch} class="custom-ring mr-1" />
-        Include area search
+        Enable area search
+      </label>
+    </div>
+    <div class="">
+      <label class="hoverable">
+        <input disabled type="checkbox" bind:checked={embedCategorySelection} class="custom-ring mr-1" />
+        Enable category selection
       </label>
     </div>
   </section>
+  <section class="flex gap-8 px-2 py-1 mb-5">
+    <div class="flex gap-4">
+      {#if $geography.geoType !== "ew"}
+        <div class="">
+          <label class="hoverable">
+            <input type="checkbox" bind:checked={embedSelectGeo} class="custom-ring mr-1" />
+            {$geography.displayName} selected
+          </label>
+        </div>
+      {/if}
+      <label class="hoverable">
+        <input type="radio" bind:group={embedView} name="embedView" value={"geography"} class="custom-ring" />
+        {#if embedSelectGeo}
+          Fit map to {$geography.displayName}
+        {:else}
+        Fit map to England and Wales
+        {/if}
+      </label>
+      <label class="hoverable">
+        <input type="radio" bind:group={embedView} name="embedView" value={"viewport"} class="custom-ring" />
+        Fit map to current view
+      </label>
+    </div>
+  </section>
+  <section class="flex gap-6">
+    <div class="px-4 border-y-8 border-ons-grey-5 bg-ons-grey-5 text-sm font-mono break-all h-24 overflow-y-scroll">
+      {embedCode.html}
+    </div>
+    <div class="flex flex-col gap-3 pt-1">
+      <button
+        class="flex items-center justify-center gap-2 custom-ring bg-ons-leaf-green hover:bg-[#0d753c] shadow shadow-[#073d20] text-onswhite font-semibold rounded py-3 px-4 whitespace-nowrap"
+        style="text-rendering: optimizeLegibility"
+        bind:this={button}
+      >
+        <div>Copy to clipboard</div>
+        <div class="text-2xl">
+          <Icon kind="contentCopy" />
+        </div>
+      </button>
+      {#if $copied}
+        <div class="text-center" out:fade={{ duration: 1000 }}>Copied!</div>
+      {/if}
+    </div>
+  </section>
 
-  <div class="mb-4">Use the following HTML code to add this map to your own website.</div>
-  <div class="p-5 mb-5 bg-ons-grey-5 text-sm font-mono break-all">
-    {embedCode.html}
-  </div>
-  <div class="flex items-center gap-6">
-    <button
-      class="flex items-center justify-center gap-2 custom-ring bg-ons-leaf-green hover:bg-[#0d753c] shadow shadow-[#073d20] text-onswhite font-semibold rounded py-3 px-4"
-      style="text-rendering: optimizeLegibility"
-      bind:this={button}
-    >
-      <div>Copy to clipboard</div>
-      <div class="text-2xl">
-        <Icon kind="contentCopy" />
-      </div>
-    </button>
-    {#if $copied}
-      <div out:fade={{ duration: 1000 }}>Copied!</div>
-    {/if}
-  </div>
+  <section class="mt-5">
+    <iframe height="600px" width="100%" title="ONS Census Maps" frameborder="0" src={embedCode.url} />
+  </section>
 </dialog>

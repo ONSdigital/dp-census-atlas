@@ -40,7 +40,8 @@ export const initMap = (container: HTMLElement) => {
   // disable touchscreen rotate while allowing pinch-to-zoom
   map.touchZoomRotate.disableRotation();
 
-  setPosition(map, get(geography));
+  setInitialMapView(map, embed);
+
   if (interactive) {
     map.addControl(new mapboxgl.NavigationControl({ showCompass: false }));
   }
@@ -163,4 +164,14 @@ const setPosition = (map: mapboxgl.Map, g: GeographyInfo, options: { animate: bo
 const emptyFeatureCollection = {
   type: "FeatureCollection",
   features: [],
+};
+
+const setInitialMapView = (map, embed) => {
+  const embedViewport = embed && embed.view === "viewport";
+  if (embedViewport) {
+    const bounds = new mapboxgl.LngLatBounds(embed.bounds);
+    map.fitBounds(bounds, { padding: 0, animate: false });
+  } else {
+    setPosition(map, get(geography));
+  }
 };

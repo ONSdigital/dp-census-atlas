@@ -6,6 +6,8 @@
   import { selectGeography } from "../helpers/navigationHelper";
   import type { GeographySearchItem, PostcodeSearchItem } from "../types";
 
+  export let embedded = false;
+
   const query = new SvelteSubject("");
   const results = composeAreaSearch(query);
 
@@ -29,7 +31,7 @@
   <Select
     id="area-input"
     mode="search"
-    placeholder="Search areas"
+    placeholder="Search England and Wales"
     bind:filterText={$query}
     items={$results}
     idKey="value"
@@ -39,7 +41,10 @@
     autoClear
   />
 </div>
-<div class="mt-2 text-sm text-onsdark">For example, your home town, a postcode or district</div>
+
+{#if !embedded}
+  <div class="mt-2 text-sm text-onsdark">For example, your home town, a postcode or district</div>
+{/if}
 
 <style>
   .themed {

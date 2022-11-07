@@ -2,6 +2,7 @@ import { derived } from "svelte/store";
 import { page } from "$app/stores";
 import { content } from "./content";
 import { getSelectedGeography } from "../helpers/paramsHelper";
+import { parseEmbedParams } from "../helpers/embedHelper";
 
 /**
  * A Svelte store reflecting the parsed application URL parameters.
@@ -17,24 +18,7 @@ export const params = derived([page, content], ([$page, $content]) => {
     variable,
     classification,
     category,
-    ...parseSearchParams($page.url.searchParams),
+    ...getSelectedGeography($page.url.searchParams),
+    ...parseEmbedParams($page.url.searchParams),
   };
 });
-
-const parseSearchParams = (params: URLSearchParams) => {
-  let embedParams = undefined;
-  if (params.get("embed") === "true") {
-    embedParams = {
-      interactive: params.get("embedInteractive") === "true",
-      areaSearch: params.get("embedAreaSearch") === "true",
-      view: params.get("embedView"),
-    }
-    if  (params.get("embedView") === "viewport") {
-      embedParams.bounds = params.get("embedBounds").split(",").map((b) => parseFloat(b));
-    }
-  }
-  return {
-    ...getSelectedGeography(params),
-    embed: embedParams
-  };
-};

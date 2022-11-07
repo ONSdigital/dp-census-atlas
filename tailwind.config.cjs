@@ -29,7 +29,7 @@ module.exports = {
         "ons-black": "#222222",
         "ons-grey-100": "#414042",
         "ons-grey-75": "#707071",
-        "ons-grey-55": "#969697", // unoffical
+        "ons-grey-55": "#969697", // unofficial
         "ons-grey-35": "#bcbcbd",
         "ons-grey-15": "#e2e2e3",
         "ons-grey-5": "#f5f5f6",
@@ -53,7 +53,7 @@ module.exports = {
         sans: ["Open Sans", "Helvetica", "Arial", "sans-serif"],
       },
       zIndex: {
-        abovemap: 1001,
+        abovemap: 1,
       },
       animation: {
         delayedfadein: "delayedFadeIn 2s ease",

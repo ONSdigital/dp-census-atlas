@@ -3,9 +3,9 @@ import { layersWithSiblings } from "./layers";
 import { centroidsGeojson } from "../helpers/quadsHelper";
 import { distinctUntilChanged, fromEventPattern } from "rxjs";
 import { map as project } from "rxjs/operators";
-import type { FourNumberTuple } from "../types";
+import type { NumberQuadruple } from "../types";
 
-const layerBounds: FourNumberTuple = [-6.418, 49.864, 1.764, 55.812];
+const layerBounds: NumberQuadruple = [-6.418, 49.864, 1.764, 55.812];
 
 export const initMapLayers = (map, geo, interactive: boolean) => {
   layersWithSiblings().forEach((l) => {

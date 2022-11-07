@@ -1,257 +1,209 @@
-// A list of env-specific content.json file URLS
+// define content resources (content json files and census data) and their publication state
+import type { ContentIteration, ContentIterationName, ContentParams } from "../types";
 
-// fake / demo data
-const fakeCensus2021preview = {
-  zero: {
-    contentJsonUrl: "https://publishing.dp.aws.onsdigital.uk/visualisations/dvc691/release-0.json",
-    contentBaseUrl: "",
-  },
-  dem:  {
-    contentJsonUrl:
-      "https://publishing.dp.aws.onsdigital.uk/visualisations/dvc691/2021-DEM.json",
-    contentBaseUrl: "https://ons-dp-sandbox-census-maps-dem-mig.s3.eu-west-2.amazonaws.com/FAKE",
-  },
-  mig:  {
-    contentJsonUrl:
-      "https://publishing.dp.aws.onsdigital.uk/visualisations/dvc691/2021-MIG.json",
-    contentBaseUrl: "https://ons-dp-sandbox-census-maps-dem-mig.s3.eu-west-2.amazonaws.com/FAKE",
-  },
-}
+const getContentIteration = (fullConfig: ContentParams, iteration: ContentIterationName): ContentIteration => {
+  return {
+    localFake: { contentJsonUrl: fullConfig.localContentJsonUrl, contentBaseUrl: fullConfig.fakeDataBaseUrl },
+    localReal: { contentJsonUrl: fullConfig.localContentJsonUrl, contentBaseUrl: fullConfig.realDataBaseUrl },
+    publicFake: { contentJsonUrl: fullConfig.publicContentJsonUrl, contentBaseUrl: fullConfig.fakeDataBaseUrl },
+    prodPub: { contentJsonUrl: fullConfig.prodPubContentJsonUrl, contentBaseUrl: fullConfig.realDataBaseUrl },
+    prodWeb: { contentJsonUrl: fullConfig.prodWebContentJsonUrl, contentBaseUrl: fullConfig.realDataBaseUrl },
+  }[iteration];
+};
 
-const fakeCensus2021 = {
-  zero: {
-    contentJsonUrl: "https://dp.aws.onsdigital.uk/visualisations/dvc691/release-0.json",
-    contentBaseUrl: "",
+const topics = [
+  {
+    name: "zero",
+    localContentJsonUrl: "http://localhost:8090/2021/release-0.json",
+    publicContentJsonUrl:
+      "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/release-0.json",
+    prodPubContentJsonUrl:
+      "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusatlasdryrun/release-0.json",
+    prodWebContentJsonUrl: "https://www.ons.gov.uk/visualisations/censusatlasdryrun/release-0.json",
+    fakeDataBaseUrl: "",
+    realDataBaseUrl: "",
+    publicationState: "published",
   },
-  dem:  {
-    contentJsonUrl:
-      "https://dp.aws.onsdigital.uk/visualisations/dvc691/2021-DEM.json",
-    contentBaseUrl: "https://ons-dp-sandbox-census-maps-dem-mig.s3.eu-west-2.amazonaws.com/FAKE",
-  },
-  mig:  {
-    contentJsonUrl:
-      "https://dp.aws.onsdigital.uk/visualisations/dvc691/2021-MIG.json",
-    contentBaseUrl: "https://ons-dp-sandbox-census-maps-dem-mig.s3.eu-west-2.amazonaws.com/FAKE",
-  },
-}
-
-const fakeCensus2021Public = {
-  dem:  {
-    contentJsonUrl:
+  {
+    name: "dem",
+    localContentJsonUrl: "http://localhost:8090/2021/2021-DEM.json",
+    publicContentJsonUrl:
       "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-DEM.json",
-    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021v2",
+    prodPubContentJsonUrl: "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusmapsconfig/2021-DEM.json",
+    prodWebContentJsonUrl: "https://www.ons.gov.uk/visualisations/censusmapsconfig/2021-DEM.json",
+    fakeDataBaseUrl: "https://ons-dp-sandbox-census-maps-dem-mig.s3.eu-west-2.amazonaws.com/FAKE",
+    realDataBaseUrl: "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+    publicationState: "published",
   },
-  edu: {
-    contentJsonUrl:
+  {
+    name: "edu",
+    localContentJsonUrl: "http://localhost:8090/2021/2021-EDU.json",
+    publicContentJsonUrl:
       "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-EDU.json",
-    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021v2",
+    prodPubContentJsonUrl: "",
+    prodWebContentJsonUrl: "",
+    fakeDataBaseUrl: "https://ons-dp-sandbox-census-maps-dem-mig.s3.eu-west-2.amazonaws.com/FAKE",
+    realDataBaseUrl: "",
+    publicationState: "unpublished",
   },
-  eilr: {
-    contentJsonUrl:
+  {
+    name: "eilr",
+    localContentJsonUrl: "http://localhost:8090/2021/2021-EILR.json",
+    publicContentJsonUrl:
       "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-EILR.json",
-    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021v2",
+    prodPubContentJsonUrl: "",
+    prodWebContentJsonUrl: "",
+    fakeDataBaseUrl: "https://ons-dp-sandbox-census-maps-dem-mig.s3.eu-west-2.amazonaws.com/FAKE",
+    realDataBaseUrl: "",
+    publicationState: "unpublished",
   },
-  hou: {
-    contentJsonUrl:
+  {
+    name: "hou",
+    localContentJsonUrl: "http://localhost:8090/2021/2021-HOU.json",
+    publicContentJsonUrl:
       "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-HOU.json",
-    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021v2",
+    prodPubContentJsonUrl: "",
+    prodWebContentJsonUrl: "",
+    fakeDataBaseUrl: "https://ons-dp-sandbox-census-maps-dem-mig.s3.eu-west-2.amazonaws.com/FAKE",
+    realDataBaseUrl: "",
+    publicationState: "unpublished",
   },
-  huc: {
-    contentJsonUrl:
+  {
+    name: "huc",
+    localContentJsonUrl: "http://localhost:8090/2021/2021-HUC.json",
+    publicContentJsonUrl:
       "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-HUC.json",
-    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021v2",
+    prodPubContentJsonUrl: "",
+    prodWebContentJsonUrl: "",
+    fakeDataBaseUrl: "https://ons-dp-sandbox-census-maps-dem-mig.s3.eu-west-2.amazonaws.com/FAKE",
+    realDataBaseUrl: "",
+    publicationState: "unpublished",
   },
-  lab: {
-    contentJsonUrl:
+  {
+    name: "lab",
+    localContentJsonUrl: "http://localhost:8090/2021/2021-LAB.json",
+    publicContentJsonUrl:
       "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-LAB.json",
-    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021v2",
+    prodPubContentJsonUrl: "",
+    prodWebContentJsonUrl: "",
+    fakeDataBaseUrl: "https://ons-dp-sandbox-census-maps-dem-mig.s3.eu-west-2.amazonaws.com/FAKE",
+    realDataBaseUrl: "",
+    publicationState: "unpublished",
   },
-  mig: {
-    contentJsonUrl:
+  {
+    name: "mig",
+    localContentJsonUrl: "http://localhost:8090/2021/2021-MIG.json",
+    publicContentJsonUrl:
       "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-MIG.json",
-    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021v2",
+    prodPubContentJsonUrl: "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusmapsconfig/2021-MIG.json",
+    prodWebContentJsonUrl: "https://www.ons.gov.uk/visualisations/censusmapsconfig/2021-MIG.json",
+    fakeDataBaseUrl: "https://ons-dp-sandbox-census-maps-dem-mig.s3.eu-west-2.amazonaws.com/FAKE",
+    realDataBaseUrl: "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+    publicationState: "published",
   },
-  sogi: {
-    contentJsonUrl:
+  {
+    name: "sogi",
+    localContentJsonUrl: "http://localhost:8090/2021/2021-SOGI.json",
+    publicContentJsonUrl:
       "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-SOGI.json",
-    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021v2",
+    prodPubContentJsonUrl: "",
+    prodWebContentJsonUrl: "",
+    fakeDataBaseUrl: "https://ons-dp-sandbox-census-maps-dem-mig.s3.eu-west-2.amazonaws.com/FAKE",
+    realDataBaseUrl: "",
+    publicationState: "unpublished",
   },
-  ttw: {
-    contentJsonUrl:
+  {
+    name: "ttw",
+    localContentJsonUrl: "http://localhost:8090/2021/2021-TTW.json",
+    publicContentJsonUrl:
       "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-TTW.json",
-    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021v2",
+    prodPubContentJsonUrl: "",
+    prodWebContentJsonUrl: "",
+    fakeDataBaseUrl: "https://ons-dp-sandbox-census-maps-dem-mig.s3.eu-west-2.amazonaws.com/FAKE",
+    realDataBaseUrl: "",
+    publicationState: "unpublished",
   },
-}
+] as ContentParams[];
 
-const fakeCensus2021Local = {
-  zero: {
-    contentJsonUrl: "http://localhost:8090/release-0.json",
-    contentBaseUrl: "",
-  },
-  dem:  {
-    contentJsonUrl:
-      "http://localhost:8090/2021/2021-DEM.json",
-    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021v2",
-  },
-  edu: {
-    contentJsonUrl:
-      "http://localhost:8090/2021/2021-EDU.json",
-    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021v2",
-  },
-  eilr: {
-    contentJsonUrl:
-      "http://localhost:8090/2021/2021-EILR.json",
-    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021v2",
-  },
-  hou: {
-    contentJsonUrl:
-      "http://localhost:8090/2021/2021-HOU.json",
-    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021v2",
-  },
-  huc: {
-    contentJsonUrl:
-      "http://localhost:8090/2021/2021-HUC.json",
-    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021v2",
-  },
-  lab: {
-    contentJsonUrl:
-      "http://localhost:8090/2021/2021-LAB.json",
-    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021v2",
-  },
-  mig: {
-    contentJsonUrl:
-      "http://localhost:8090/2021/2021-MIG.json",
-    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021v2",
-  },
-  sogi: {
-    contentJsonUrl:
-      "http://localhost:8090/2021/2021-SOGI.json",
-    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021v2",
-  },
-  ttw: {
-    contentJsonUrl:
-      "http://localhost:8090/2021/2021-TTW.json",
-    contentBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021v2",
-  },
-}
-
-// REAL CENSUS 2021 DATA!
-
-const Census2021preview = {
-  zero: {
-    contentJsonUrl: "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusatlasdryrun/release-0.json",
-    contentBaseUrl: "",
-  },
-  dem:  {
-    contentJsonUrl:
-      "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusmapsconfig/2021-DEM.json",
-    contentBaseUrl: "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
-  },
-  mig:  {
-    contentJsonUrl:
-      "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusmapsconfig/2021-MIG.json",
-    contentBaseUrl: "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
-  },
-}
-
-const Census2021 = {
-  zero: {
-    contentJsonUrl: "https://www.ons.gov.uk/visualisations/censusatlasdryrun/release-0.json",
-    contentBaseUrl: "",
-  },
-  dem:  {
-    contentJsonUrl: "https://www.ons.gov.uk/visualisations/censusmapsconfig/2021-DEM.json",
-    contentBaseUrl: "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
-  },
-  mig:  {
-    contentJsonUrl: "https://www.ons.gov.uk/visualisations/censusmapsconfig/2021-MIG.json",
-    contentBaseUrl: "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
-  },
-}
-
-const Census2021NoFlorence = {
-  dem:  {
-    contentJsonUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-DEM.json",
-    contentBaseUrl: "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
-  },
-  mig:  {
-    contentJsonUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-MIG.json",
-    contentBaseUrl: "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
-  },
-}
-
-
-const Census2021Local = {
-  dem:  {
-    contentJsonUrl: "http://localhost:8090/2021/2021-DEM.json",
-    contentBaseUrl: "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
-  },
-  mig:  {
-    contentJsonUrl: "http://localhost:8090/2021/2021-MIG.json",
-    contentBaseUrl: "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
-  },
-}
+const published = topics.filter((t) => t.publicationState === "published");
+const prepublished = topics.filter((t) => t.publicationState === "prepublished");
+const unpublished = topics.filter((t) => t.publicationState === "unpublished");
 
 export default {
-  // local dev
+  // local dev - load everything with local content json here to preview local changes to content
   dev: {
+    publishing: [] as ContentIteration[],
     web: [
-      Census2021Local.dem,
-      fakeCensus2021Local.edu,
-      fakeCensus2021Local.eilr,
-      fakeCensus2021Local.hou,
-      fakeCensus2021Local.huc,
-      fakeCensus2021Local.lab,
-      Census2021Local.mig,
-      fakeCensus2021Local.sogi,
-      fakeCensus2021Local.ttw,
-    ],
-    publishing:[]
+      ...unpublished.map((t) => {
+        return getContentIteration(t, "localFake");
+      }),
+      ...prepublished.map((t) => {
+        return getContentIteration(t, "localFake");
+      }),
+      ...published.map((t) => {
+        return getContentIteration(t, "localReal");
+      }),
+    ] as ContentIteration[],
   },
-  // netlify
+
+  // netlify - load real published data and fake data for everything else
   netlify: {
+    publishing: [] as ContentIteration[],
     web: [
-      Census2021NoFlorence.dem,
-      fakeCensus2021Public.edu,
-      fakeCensus2021Public.eilr,
-      fakeCensus2021Public.hou,
-      fakeCensus2021Public.huc,
-      fakeCensus2021Public.lab,
-      Census2021NoFlorence.mig,
-      fakeCensus2021Public.sogi,
-      fakeCensus2021Public.ttw,
-    ],
-    publishing: []
+      ...unpublished.map((t) => {
+        return getContentIteration(t, "publicFake");
+      }),
+      ...prepublished.map((t) => {
+        return getContentIteration(t, "publicFake");
+      }),
+      ...published.map((t) => {
+        return getContentIteration(t, "prodWeb");
+      }),
+    ] as ContentIteration[],
   },
-  // ONS sandbox
+
+  // ONS sandbox - load real published data and fake data for everything else
   sandbox: {
+    publishing: [] as ContentIteration[],
     web: [
-      fakeCensus2021.zero,
-      fakeCensus2021.dem,
-      fakeCensus2021.mig,
-    ],
-    publishing:[
-      fakeCensus2021preview.zero,
-      fakeCensus2021preview.dem,
-      fakeCensus2021preview.mig,
-    ],
+      ...unpublished.map((t) => {
+        return getContentIteration(t, "publicFake");
+      }),
+      ...prepublished.map((t) => {
+        return getContentIteration(t, "publicFake");
+      }),
+      ...published.map((t) => {
+        return getContentIteration(t, "prodWeb");
+      }),
+    ] as ContentIteration[],
   },
-  // ONS staging
+
+  // ONS staging - unused at present
   staging: {
-    web: [],
-    publishing: []
+    publishing: [] as ContentIteration[],
+    web: [] as ContentIteration[],
   },
-  // ONS producution!
+
+  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! //
+  // ONS producution - only load published data / attempt to load prepublished data and load real data for everything
   prod: {
-    web: [
-      Census2021.zero,
-      Census2021.dem,
-      Census2021.mig
-    ],
     publishing: [
-      Census2021preview.zero,
-      Census2021preview.dem,
-      Census2021preview.mig,
-    ]
+      ...prepublished.map((t) => {
+        return getContentIteration(t, "prodPub");
+      }),
+      ...published.map((t) => {
+        return getContentIteration(t, "prodWeb");
+      }),
+    ] as ContentIteration[],
+    web: [
+      // attempt to load pre-published topics with prodWeb URLs to ensure they appear instantly at publication time
+      ...prepublished.map((t) => {
+        return getContentIteration(t, "prodWeb");
+      }),
+      ...published.map((t) => {
+        return getContentIteration(t, "prodWeb");
+      }),
+    ] as ContentIteration[],
   },
+  // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! //
 };

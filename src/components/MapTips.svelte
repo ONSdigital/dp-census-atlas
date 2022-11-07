@@ -25,6 +25,15 @@
 {#if $viewport}
   <div class="absolute top-3 lg:top-5 xl:top-8 left-3 lg:left-5 xl:left-8 right-16 lg:right-20">
     <div class="flex flex-wrap items-center gap-2 text-sm lg:text-base">
+      <div class="flex group">
+        <div class="z-abovemap px-3 py-1 rounded-l bg-ons-census text-ons-grey-5 font-bold">
+          {$viewport.geoType.toUpperCase()}
+        </div>
+        <div class={`z-abovemap px-3 py-1 rounded-r bg-ons-grey-75 text-ons-grey-5 `}>
+          {geoTypeDescriptions[$viewport.geoType]}
+        </div>
+      </div>
+      <!--
       {#each geoTypes as g, i}
         {#if i !== 0}
           <div
@@ -56,11 +65,11 @@
             {geoTypeDescriptions[g]}
             {#if i > geoTypes.indexOf($viewport.geoType)}
               <span class="">not available</span>
-              <!-- for {$params?.classification?.code} -->
             {/if}
           </div>
         </button>
       {/each}
+      -->
     </div>
   </div>
 {/if}

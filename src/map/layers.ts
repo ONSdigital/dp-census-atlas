@@ -5,7 +5,7 @@ export const layers = [
     name: "lad" as GeoType,
     urlTemplate: "https://cdn.ons.gov.uk/maptiles/administrative/2021/authorities-ew/v2/boundaries/{z}/{x}/{y}.pbf",
     minZoom: 5,
-    defaultZoom: 8,
+    defaultZoom: 7.5,
     sourceMaxZoom: 12, // The maximum zoom level that the tiles are available for
     geoPadFactor: 5,
     idProperty: "areacd",

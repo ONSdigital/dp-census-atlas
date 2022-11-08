@@ -13,13 +13,6 @@ export function number2words(n: number) {
   return number2words(~~(n / 1000)) + " thousand" + (n % 1000 != 0 ? " " + number2words(n % 1000) : "");
 }
 
-export function ratioToPercentage(r: number, decimalPlaces?: number): string {
-  if (typeof decimalPlaces !== undefined) {
-    return (r * 100).toFixed(decimalPlaces);
-  }
-  return (r * 100).toFixed(0);
-}
-
 /*
   Round number to decimalPlaces
 */

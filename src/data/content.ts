@@ -185,7 +185,7 @@ export default {
         if (t.publicationState === "prepublished") {
           return getContentIteration(t, "prodPub");
         } else if (t.publicationState === "published") {
-          return getContentIteration(t, "publicReal");
+          return getContentIteration(t, "prodPub");
         }
       }) as ContentIteration[],
     // attempt to load pre-published topics with prodWeb URLs to ensure they appear instantly at publication time

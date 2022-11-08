@@ -170,13 +170,6 @@
 {/if}
 
 <style>
-  .fixed {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 2000;
-  }
   .wrapper {
     width: 100%;
     margin: 0 auto;

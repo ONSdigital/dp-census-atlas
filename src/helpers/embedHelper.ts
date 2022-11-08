@@ -18,9 +18,9 @@ export const getEmbedCode = (url: URL, embedParams: EmbedUrlParams) => {
 
 export type EmbedUrlParams = {
   embed: boolean;
+  embedCarousel: boolean;
   embedAreaSearch: boolean;
   embedInteractive: boolean;
-  embedCategorySelection: boolean;
   embedView: "viewport" | "geography";
   embedBounds?: NumberQuadruple;
 };
@@ -42,6 +42,7 @@ export const parseEmbedParams = (params: URLSearchParams) => {
       params.get("embed") === "true"
         ? {
             interactive: params.get("embedInteractive") === "true",
+            carousel: params.get("embedCarousel") === "true",
             areaSearch: params.get("embedAreaSearch") === "true",
             view: view as typeof view,
             bounds: view === "viewport" ? parseBounds(params) : undefined,

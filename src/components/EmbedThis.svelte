@@ -15,8 +15,8 @@
   let copied: Observable<boolean>;
 
   let embedInteractive = true;
+  let embedCarousel = false;
   let embedAreaSearch = false;
-  let embedCategorySelection = false;
   let embedView: "viewport" | "geography" = "geography";
   let embedSelectGeo = true;
 
@@ -32,8 +32,8 @@
   $: embedCode = getEmbedCode(pageUrlForEmbed, {
     embed: true,
     embedInteractive,
+    embedCarousel,
     embedAreaSearch,
-    embedCategorySelection,
     embedView,
     ...(embedView === "viewport" && { embedBounds: embedBounds }), // don't include embed bounds unless we need to!
   });
@@ -88,19 +88,19 @@
     <div class="">
       <label class="hoverable">
         <input type="checkbox" bind:checked={embedInteractive} class="custom-ring mr-1" />
-        Enable interactivity
+        Interactivity
+      </label>
+    </div>
+    <div class="">
+      <label class="hoverable">
+        <input type="checkbox" bind:checked={embedCarousel} class="custom-ring mr-1" />
+        Category selection
       </label>
     </div>
     <div class="">
       <label class="hoverable">
         <input type="checkbox" bind:checked={embedAreaSearch} class="custom-ring mr-1" />
-        Enable area search
-      </label>
-    </div>
-    <div class="">
-      <label class="hoverable">
-        <input disabled type="checkbox" bind:checked={embedCategorySelection} class="custom-ring mr-1" />
-        Enable category selection
+        Area search
       </label>
     </div>
   </section>

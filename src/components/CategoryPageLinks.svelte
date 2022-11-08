@@ -19,7 +19,7 @@
       </div>
       <div>Download data</div>
     </a>
-    <div class="">
+    <div class="hidden lg:block">
       <EmbedThis />
     </div>
   </div>

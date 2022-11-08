@@ -15,7 +15,8 @@ import { style, maxBounds } from "./style";
 import { viewport } from "../stores/viewport";
 import { viz } from "../stores/viz";
 import { toObservable } from "../util/rxUtil";
-import { commands } from "../stores/commands";
+import { commands, type Command } from "../stores/commands";
+import type { EmbedParams } from "../helpers/embedHelper";
 
 const defaultZoom = 6;
 const maxAllowedZoom = 15;
@@ -38,29 +39,17 @@ export const initMap = (container: HTMLElement) => {
     touchPitch: false,
   });
 
-  // disable touchscreen rotate while allowing pinch-to-zoom
   map.touchZoomRotate.disableRotation();
-
-  setInitialMapView(map, embed);
 
   if (interactive) {
     map.addControl(new mapboxgl.NavigationControl({ showCompass: false }));
   }
 
   map.on("load", () => {
-    initMapLayers(map, get(geography));
-    viz.subscribe((value) => {
-      renderMapViz(map, value);
-    });
-    geography.subscribe((geography) => {
-      listenToSelectedGeographyStore(map, geography);
-    });
-    commands.subscribe((command) => {
-      if (command?.kind === "zoom") {
-        const zoom = getSuitableZoomForGeoType(command.geoType);
-        map.zoomTo(zoom, { duration: 6000 });
-      }
-    });
+    initMapLayers(map, get(geography), interactive);
+    viz.subscribe((value) => renderMapViz(map, value));
+    geography.subscribe((geography) => listenToGeographyStore(map, geography));
+    commands.subscribe((command) => listenToCommandStore(map, command));
   });
 
   // when the map loads or moves, or then when the selecion changes, emit an event at most once per second
@@ -80,6 +69,8 @@ export const initMap = (container: HTMLElement) => {
       });
     });
   }
+
+  setInitialPosition(map, embed);
 
   return map;
 };
@@ -140,7 +131,7 @@ const setMapLayerVisibility = (map: mapboxgl.Map, geoType: GeoType) => {
   });
 };
 
-const listenToSelectedGeographyStore = (map: mapboxgl.Map, geography: GeographyInfo) => {
+const listenToGeographyStore = (map: mapboxgl.Map, geography: GeographyInfo) => {
   if (geography && map.isStyleLoaded()) {
     // set the selected lasso
     const source = map.getSource("selected-geography") as GeoJSONSource;
@@ -153,6 +144,14 @@ const listenToSelectedGeographyStore = (map: mapboxgl.Map, geography: GeographyI
     if (geography.geoType !== "ew") {
       setPosition(map, geography, { animate: true });
     }
+  }
+};
+
+const setInitialPosition = (map: mapboxgl.Map, embed: EmbedParams) => {
+  if (embed?.view === "viewport") {
+    map.fitBounds(new mapboxgl.LngLatBounds(embed.bounds), { padding: 0, animate: false });
+  } else {
+    setPosition(map, get(geography));
   }
 };
 
@@ -182,12 +181,9 @@ const getSuitableZoomForGeoType = (g: GeoType) => {
   return layers.find((l) => l.name === g).defaultZoom;
 };
 
-const setInitialMapView = (map, embed) => {
-  const embedViewport = embed && embed.view === "viewport";
-  if (embedViewport) {
-    const bounds = new mapboxgl.LngLatBounds(embed.bounds);
-    map.fitBounds(bounds, { padding: 0, animate: false });
-  } else {
-    setPosition(map, get(geography));
+const listenToCommandStore = (map: mapboxgl.Map, command: Command) => {
+  if (command?.kind === "zoom") {
+    const zoom = getSuitableZoomForGeoType(command.geoType);
+    map.zoomTo(zoom, { duration: 6000 });
   }
 };

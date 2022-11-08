@@ -1,7 +1,7 @@
 <script>
   import Header from "./Header.svelte";
   import Map from "./Map.svelte";
-  import MapHeading from "./MapHeading.svelte";
+  import MapControls from "./MapControls.svelte";
   import MapTips from "./MapTips.svelte";
   import MapLegend from "./MapLegend.svelte";
   import Heading from "./Heading.svelte";
@@ -31,7 +31,7 @@
     </div>
     <div class="lg:block flex-1 grow-[7] relative">
       <Map />
-      <MapHeading />
+      <MapControls />
       <MapTips />
       <MapLegend />
     </div>

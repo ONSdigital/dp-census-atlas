@@ -12,9 +12,9 @@
 
 {#if $viewport}
   <div
-    class="absolute top-3 lg:top-5 xl:top-8 left-3 lg:left-5 xl:left-8 pr-16 lg:pr-20 min-w-[370px] md:min-w-[600px]"
+    class="absolute top-3 lg:top-5 xl:top-8 left-3 lg:left-5 xl:left-8 right-14 lg:right-16 xl:right-20 gap-3  flex justify-between flex-wrap "
   >
-    <div class="flex flex-wrap items-center gap-2 text-sm lg:text-base mb-3">
+    <div class="flex flex-wrap items-center gap-2 text-sm lg:text-base">
       <div class="flex group">
         <div class="z-abovemap px-3 py-1 rounded-l bg-ons-census text-ons-grey-5 font-bold">
           {$viewport.geoType.toUpperCase()}
@@ -64,7 +64,7 @@
     </div>
 
     {#if $params?.embed?.areaSearch}
-      <div class="lg:mt-6">
+      <div class="min-w-[20rem] md:w-[25rem] lg:w-[30rem] justify-self-center">
         <AreaSearch embedded />
       </div>
     {/if}

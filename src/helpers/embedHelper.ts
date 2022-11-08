@@ -1,7 +1,7 @@
 import { isNumeric } from "../util/numberUtil";
 import { GeoTypes, type NumberQuadruple } from "../types";
 
-export const getEmbedCode = (url: URL, embedParams: EmbedParams) => {
+export const getEmbedCode = (url: URL, embedParams: EmbedUrlParams) => {
   const params = new URLSearchParams({
     ...Object.fromEntries(url.searchParams),
     ...Object.fromEntries(Object.entries(embedParams)),
@@ -16,7 +16,7 @@ export const getEmbedCode = (url: URL, embedParams: EmbedParams) => {
   };
 };
 
-export type EmbedParams = {
+export type EmbedUrlParams = {
   embed: boolean;
   embedAreaSearch: boolean;
   embedInteractive: boolean;
@@ -49,6 +49,8 @@ export const parseEmbedParams = (params: URLSearchParams) => {
         : undefined,
   };
 };
+
+export type EmbedParams = ReturnType<typeof parseEmbedParams>["embed"];
 
 function parseBounds(params: URLSearchParams) {
   const array = params

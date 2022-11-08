@@ -6,7 +6,7 @@
     "tsc": "tsc --noEmit",
     "serve-local-content-jsons": "http-server scripts/content/output_content_jsons -p 8090 --cors",
     "dev": "npm run serve-local-content-jsons & . env/dev.sh && vite dev",
-    "build": "vite build",
+    "build": "npm run tsc && vite build",
     "build:dev": ". env/dev.sh && npm run build",
     "build:netlify": ". env/netlify.sh && npm run build",
     "build:ons": ". env/ons.sh && npm run build && ./workaround-sveltekit-3726.sh",

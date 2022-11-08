@@ -113,7 +113,7 @@ const getGeoType = (map: mapboxgl.Map, classification?: Classification): { actua
   }
 };
 
-const setMapLayerVisibility = (map: mapboxgl.Map, geoType: GeoType) => {
+const setMapLayerVisibility = (map: mapboxgl.Map, geoType: string) => {
   layers.forEach((l) => {
     // set layer visibility based on geoType (always keep lad-outlines visible)
     map.setLayoutProperty(`${l.name}-features`, "visibility", l.name == geoType ? "visible" : "none");

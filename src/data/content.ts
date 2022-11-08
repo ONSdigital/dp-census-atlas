@@ -126,57 +126,48 @@ const topics = [
   },
 ] as ContentParams[];
 
-const published = topics.filter((t) => t.publicationState === "published");
-const prepublished = topics.filter((t) => t.publicationState === "prepublished");
-const unpublished = topics.filter((t) => t.publicationState === "unpublished");
-
 export default {
-  // local dev - load everything with local content json here to preview local changes to content
+  // local dev - load everything with local content json here to preview local changes to content. Real published data
+  // and fake data for everything else
   dev: {
     publishing: [] as ContentIteration[],
-    web: [
-      ...unpublished.map((t) => {
+    web: topics.map((t) => {
+      if (t.publicationState === "unpublished") {
         return getContentIteration(t, "localFake");
-      }),
-      ...prepublished.map((t) => {
+      } else if (t.publicationState === "prepublished") {
         return getContentIteration(t, "localFake");
-      }),
-      ...published.map((t) => {
+      } else if (t.publicationState === "published") {
         return getContentIteration(t, "localReal");
-      }),
-    ] as ContentIteration[],
+      }
+    }) as ContentIteration[],
   },
 
   // netlify - load real published data and fake data for everything else
   netlify: {
     publishing: [] as ContentIteration[],
-    web: [
-      ...unpublished.map((t) => {
+    web: topics.map((t) => {
+      if (t.publicationState === "unpublished") {
         return getContentIteration(t, "publicFake");
-      }),
-      ...prepublished.map((t) => {
+      } else if (t.publicationState === "prepublished") {
         return getContentIteration(t, "publicFake");
-      }),
-      ...published.map((t) => {
+      } else if (t.publicationState === "published") {
         return getContentIteration(t, "publicReal");
-      }),
-    ] as ContentIteration[],
+      }
+    }) as ContentIteration[],
   },
 
   // ONS sandbox - load real published data and fake data for everything else
   sandbox: {
     publishing: [] as ContentIteration[],
-    web: [
-      ...unpublished.map((t) => {
+    web: topics.map((t) => {
+      if (t.publicationState === "unpublished") {
         return getContentIteration(t, "publicFake");
-      }),
-      ...prepublished.map((t) => {
+      } else if (t.publicationState === "prepublished") {
         return getContentIteration(t, "publicFake");
-      }),
-      ...published.map((t) => {
+      } else if (t.publicationState === "published") {
         return getContentIteration(t, "publicReal");
-      }),
-    ] as ContentIteration[],
+      }
+    }) as ContentIteration[],
   },
 
   // ONS staging - unused at present
@@ -188,23 +179,25 @@ export default {
   // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! //
   // ONS producution - only load published data / attempt to load prepublished data and load real data for everything
   prod: {
-    publishing: [
-      ...prepublished.map((t) => {
-        return getContentIteration(t, "prodPub");
-      }),
-      ...published.map((t) => {
-        return getContentIteration(t, "prodWeb");
-      }),
-    ] as ContentIteration[],
-    web: [
-      // attempt to load pre-published topics with prodWeb URLs to ensure they appear instantly at publication time
-      ...prepublished.map((t) => {
-        return getContentIteration(t, "prodWeb");
-      }),
-      ...published.map((t) => {
-        return getContentIteration(t, "prodWeb");
-      }),
-    ] as ContentIteration[],
+    publishing: topics
+      .filter((t) => t.publicationState != "unpublished")
+      .map((t) => {
+        if (t.publicationState === "prepublished") {
+          return getContentIteration(t, "prodPub");
+        } else if (t.publicationState === "published") {
+          return getContentIteration(t, "publicReal");
+        }
+      }) as ContentIteration[],
+    // attempt to load pre-published topics with prodWeb URLs to ensure they appear instantly at publication time
+    web: topics
+      .filter((t) => t.publicationState != "unpublished")
+      .map((t) => {
+        if (t.publicationState === "prepublished") {
+          return getContentIteration(t, "prodWeb");
+        } else if (t.publicationState === "published") {
+          return getContentIteration(t, "prodWeb");
+        }
+      }) as ContentIteration[],
   },
   // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! //
 };

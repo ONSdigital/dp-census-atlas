@@ -24,9 +24,10 @@
   export let fontSizeInput = ".91em";
   export let height = 48;
   export let maxSelected = 4;
-  export let colors = ["#206095", "#a8bd3a", "#871a5b", "#27a0cc"];
-  export let darkMode = false;
-  export let borderColor = darkMode ? "white" : "#206095";
+  // ToDo remove unused vars?
+  //export let colors = ["#206095", "#a8bd3a", "#871a5b", "#27a0cc"];
+  //export let darkMode = false;
+  //export let borderColor = darkMode ? "white" : "#206095";
 
   const getOptionLabel =
     groupKey && !groupItems

@@ -8,7 +8,7 @@
   import { getEmbedCode, getPageUrlNoGeoParam } from "../helpers/embedHelper";
   import { viewport } from "../stores/viewport";
   import Icon from "./MaterialIcon.svelte";
-  import type { FourNumberTuple, GeoType } from "../types";
+  import type { NumberQuadruple, GeoType } from "../types";
 
   let dialog: HTMLDialogElement;
   let button: HTMLButtonElement;
@@ -25,9 +25,9 @@
     $viewport?.bbox.south,
     $viewport?.bbox.east,
     $viewport?.bbox.north,
-  ] as FourNumberTuple;
+  ] as NumberQuadruple;
 
-  $: pageUrlForEmbed = embedSelectGeo ? $page.url: getPageUrlNoGeoParam($page.url);
+  $: pageUrlForEmbed = embedSelectGeo ? $page.url : getPageUrlNoGeoParam($page.url);
 
   $: embedCode = getEmbedCode(pageUrlForEmbed, {
     embed: true,
@@ -93,7 +93,7 @@
     </div>
     <div class="">
       <label class="hoverable">
-        <input disabled type="checkbox" bind:checked={embedAreaSearch} class="custom-ring mr-1" />
+        <input type="checkbox" bind:checked={embedAreaSearch} class="custom-ring mr-1" />
         Enable area search
       </label>
     </div>
@@ -119,7 +119,7 @@
         {#if embedSelectGeo}
           Fit map to {$geography.displayName}
         {:else}
-        Fit map to England and Wales
+          Fit map to England and Wales
         {/if}
       </label>
       <label class="hoverable">

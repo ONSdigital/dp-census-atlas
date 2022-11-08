@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "tsc": "tsc --noEmit",
+    "tsc": "npx tsc --noEmit",
     "serve-local-content-jsons": "http-server scripts/content/output_content_jsons -p 8090 --cors",
     "dev": "npm run serve-local-content-jsons & . env/dev.sh && vite dev",
     "build": "vite build",

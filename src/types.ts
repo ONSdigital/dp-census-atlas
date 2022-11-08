@@ -41,7 +41,7 @@ export type Category = {
 };
 export type VariableData = { [catCode: string]: { count: number; total: number; percentage: number } };
 
-export type FourNumberTuple = [number, number, number, number];
+export type NumberQuadruple = [number, number, number, number];
 
 export type VizData = {
   geoType: GeoType;

@@ -33,3 +33,6 @@ export function uniqueRoundedNumbers(args: { numbers: number[]; decimalPlaces: n
     ),
   ];
 }
+
+export const isNumeric = (num: unknown) =>
+  (typeof num === "number" || (typeof num === "string" && num.trim() !== "")) && !isNaN(num as number);

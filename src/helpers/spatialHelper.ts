@@ -1,4 +1,4 @@
-import type { Bbox, DataTileGrid, FourNumberTuple, GeographyData, GeoType } from "../types";
+import type { Bbox, DataTileGrid, NumberQuadruple, GeographyData, GeoType } from "../types";
 import censusDataTileGrid from "../quadsDataTileGrid.json";
 import booleanIntersects from "@turf/boolean-intersects";
 import bboxPolygon from "@turf/bbox-polygon";
@@ -16,7 +16,7 @@ export const doBboxesIntersect = (args: { bbox1: Bbox; bbox2: Bbox }) => {
   return booleanIntersects(bbox1Feature, bbox2Feature);
 };
 
-export const doBboxArraysIntersect = (bbox1: FourNumberTuple, bbox2: FourNumberTuple) => {
+export const doBboxArraysIntersect = (bbox1: NumberQuadruple, bbox2: NumberQuadruple) => {
   const bbox1Feature = bboxPolygon(bbox1);
   const bbox2Feature = bboxPolygon(bbox2);
   return booleanIntersects(bbox1Feature, bbox2Feature);

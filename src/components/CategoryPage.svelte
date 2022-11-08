@@ -17,11 +17,11 @@
       <h2 class="pt-3 font-bold text-slate-500">Topic</h2>
       <nav class="flex flex-wrap items-center gap-2 text-xl" aria-label="Breadcrumb">
         <a class="hyperlink" href={buildHyperlink($page.url)}>Home</a>
-        <div class="text-sm font-extrabold text-ons-grey-75" aria-hidden>&gt;</div>
+        <div class="text-sm font-extrabold text-ons-grey-75 select-none" aria-hidden>&gt;</div>
         <a class="hyperlink" href={buildHyperlink($page.url, { variableGroup: $params.variableGroup.slug })}
           >{$params.variableGroup.name}</a
         >
-        <div class="text-sm font-extrabold text-ons-grey-75" aria-hidden>&gt;</div>
+        <div class="text-sm font-extrabold text-ons-grey-75 select-none" aria-hidden>&gt;</div>
         <div class="">{$params.variable.name}</div>
       </nav>
       <div class="mt-4 mb-2">

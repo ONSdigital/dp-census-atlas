@@ -47,7 +47,7 @@
   $: noOptionsMessage = isWaiting
     ? "Loading..."
     : mode == "search" && filterText.length < 3
-    ? "Enter 3 or more characters for suggestions"
+    ? "For example, your home town, a postcode or district"
     : `No results match ${filterText}`;
   $: itemFilter =
     (Array.isArray(value) && value.length >= maxSelected) || (mode == "search" && filterText.length < 3)

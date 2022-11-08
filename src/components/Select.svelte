@@ -1,5 +1,5 @@
 <script>
-  import { onMount, createEventDispatcher } from "svelte";
+  import { createEventDispatcher } from "svelte";
   import Select from "svelte-select";
   const searchIcon = `<svg viewBox="0 0 20 20" fill-rule="evenodd"><path d="M0,8a8,8,0,1,0,16,0a8,8,0,1,0,-16,0ZM3,8a5,5,0,1,0,10,0a5,5,0,1,0,-10,0Z"/><path d="M18,20L20,18L14,12L12,14Z"/></svg>`;
   const chevronIcon = `<svg viewBox="0 0 20 20"><path d="M1,6L19,6L10,15Z"/></svg>`;
@@ -24,9 +24,6 @@
   export let fontSizeInput = ".91em";
   export let height = 48;
   export let maxSelected = 4;
-  export let colors = ["#206095", "#a8bd3a", "#871a5b", "#27a0cc"];
-  export let darkMode = false;
-  export let borderColor = darkMode ? "white" : "#206095";
 
   const getOptionLabel =
     groupKey && !groupItems

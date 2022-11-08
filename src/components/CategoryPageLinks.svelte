@@ -1,9 +1,9 @@
 <script lang="ts">
   import EmbedThis from "./EmbedThis.svelte";
   import Icon from "./MaterialIcon.svelte";
-
+  // ToDo revert this if / when the indiviudal datasets become available again!
   // href={`https://www.ons.gov.uk/datasets/${dataset}/editions/2021/versions/1`}
-  export let dataset: string;
+  // export let dataset: string;
 </script>
 
 <section class="">

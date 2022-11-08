@@ -5,7 +5,6 @@
   export let analyticsId; // Required. Google analytics/tag manager ID
   export let analyticsProps = {}; // Optional props to describe the content
   export let usageCookies = false; // True if usage cookies are allowed (to be read from parent component)
-  export let fixed = true; // Fixed positioning of banner (instead of inline)
 
   let element: HTMLElement;
   let allowLoad; // Fill be set to false if on embed url
@@ -169,13 +168,6 @@
 {/if}
 
 <style>
-  .fixed {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 2000;
-  }
   .wrapper {
     width: 100%;
     margin: 0 auto;

@@ -6,6 +6,7 @@ const getContentIteration = (fullConfig: ContentParams, iteration: ContentIterat
     localFake: { contentJsonUrl: fullConfig.localContentJsonUrl, contentBaseUrl: fullConfig.fakeDataBaseUrl },
     localReal: { contentJsonUrl: fullConfig.localContentJsonUrl, contentBaseUrl: fullConfig.realDataBaseUrl },
     publicFake: { contentJsonUrl: fullConfig.publicContentJsonUrl, contentBaseUrl: fullConfig.fakeDataBaseUrl },
+    publicReal: { contentJsonUrl: fullConfig.publicContentJsonUrl, contentBaseUrl: fullConfig.realDataBaseUrl },
     prodPub: { contentJsonUrl: fullConfig.prodPubContentJsonUrl, contentBaseUrl: fullConfig.realDataBaseUrl },
     prodWeb: { contentJsonUrl: fullConfig.prodWebContentJsonUrl, contentBaseUrl: fullConfig.realDataBaseUrl },
   }[iteration];
@@ -157,7 +158,7 @@ export default {
         return getContentIteration(t, "publicFake");
       }),
       ...published.map((t) => {
-        return getContentIteration(t, "prodWeb");
+        return getContentIteration(t, "publicReal");
       }),
     ] as ContentIteration[],
   },
@@ -173,7 +174,7 @@ export default {
         return getContentIteration(t, "publicFake");
       }),
       ...published.map((t) => {
-        return getContentIteration(t, "prodWeb");
+        return getContentIteration(t, "publicReal");
       }),
     ] as ContentIteration[],
   },

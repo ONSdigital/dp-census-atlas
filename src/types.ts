@@ -151,7 +151,7 @@ export type ContentTree = {
   fakeDataLoaded: boolean;
 };
 
-const contentIterationNames = ["localFake", "localReal", "publicFake", "prodPub", "prodWeb"];
+const contentIterationNames = ["localFake", "localReal", "publicFake", "publicReal", "prodPub", "prodWeb"];
 export type ContentIterationName = typeof contentIterationNames[number];
 
 const contentPublicationStates = ["unpublished", "prepublished", "published"];

@@ -150,25 +150,3 @@ export type ContentTree = {
   variableGroups: VariableGroup[];
   fakeDataLoaded: boolean;
 };
-
-const contentIterationNames = ["localFake", "localReal", "publicFake", "publicReal", "prodPub", "prodWeb"];
-export type ContentIterationName = typeof contentIterationNames[number];
-
-const contentPublicationStates = ["unpublished", "prepublished", "published"];
-export type ContentPublicationState = typeof contentPublicationStates[number];
-
-export type ContentParams = {
-  name: string;
-  localContentJsonUrl: string;
-  publicContentJsonUrl: string;
-  prodPubContentJsonUrl: string;
-  prodWebContentJsonUrl: string;
-  fakeDataBaseUrl: string;
-  realDataBaseUrl: string;
-  publicationState: ContentPublicationState;
-};
-
-export type ContentIteration = {
-  contentJsonUrl: string;
-  contentBaseUrl: string;
-};

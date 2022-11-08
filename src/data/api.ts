@@ -1,7 +1,7 @@
 import * as dsv from "d3-dsv"; // https://github.com/d3/d3/issues/3469
 import type { Bbox, Category, DataTile, GeographyData, GeoType } from "src/types";
 import { bboxToDataTiles } from "../helpers/spatialHelper";
-import { roundedCategoryData, uniqueRoundedCategoryBreaks } from "../helpers/categoryHelpers";
+import { uniqueRoundedCategoryBreaks } from "../helpers/categoryHelpers";
 
 const geoBaseUrl = "https://cdn.ons.gov.uk/maptiles/cm-geos/v2";
 

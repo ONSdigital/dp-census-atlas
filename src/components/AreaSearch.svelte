@@ -53,5 +53,9 @@
     --borderFocusColor: black;
     --borderRadius: 2px;
     --height: 3rem;
+    --listEmptyPadding: 10px;
+  }
+  :global(.selectbox .empty) {
+    font-size: 90%;
   }
 </style>

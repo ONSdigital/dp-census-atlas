@@ -8,7 +8,7 @@
   import BreaksChart from "./BreaksChart.svelte";
   import GeoTypeBadge from "./GeoTypeBadge.svelte";
 
-  $: valueForHoveredGeography = $viz?.places.find((p) => p.geoCode === $hovered?.geoCode)?.ratioToTotal;
+  $: valueForHoveredGeography = $viz?.places.find((p) => p.geoCode === $hovered?.geoCode)?.categoryValue;
   $: breaks = $viz ? $viz.breaks : undefined;
 
   // the hovered, otherwise the selected, geography properties

@@ -4,7 +4,7 @@ const publishedOrPrepublishedTopics = ["release-0", "dem", "mig"];
 
 describe("content", () => {
   test("prod web contains the expected content only", () => {
-    // !!! NB THIS TEST IS A SAFETY CATCH - UPDATE THE publishedTopics ARRAY AS NECCESSARY !!!
+    // !!! NB THIS TEST IS A SAFETY CATCH - UPDATE THE publishedOrPrepublishedTopics ARRAY AS NECCESSARY !!!
     let allPublished = true;
     publishedOrPrepublishedTopics.forEach((pt) => {
       const matchesPublishedTopic = content.prod.web.filter((t) => t.contentJsonUrl.toLowerCase().includes(pt));

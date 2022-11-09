@@ -280,9 +280,9 @@ export default {
         contentBaseUrl: mig.realDataBaseUrl,
       },
     ],
-    // web uses the web (ons.gov.uk) content JSON URLs for all published AND unpublished data (unpublished content json will fail to
-    // load until publication time, but having prod web configured to always try and load them ensures they appear
-    // instantly at publication time
+    // web uses the web (ons.gov.uk) content JSON URLs for all published AND unpublished data (unpublished content json
+    // will fail to load until publication time, but having prod web configured to always try and load them ensures they
+    // appear instantly at publication time
     web: [
       {
         contentJsonUrl: zero.prodWebContentJsonUrl,

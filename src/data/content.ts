@@ -9,6 +9,14 @@ const zero = {
   fakeDataBaseUrl: "",
   realDataBaseUrl: "",
 };
+const arm = {
+  localContentJsonUrl: "http://localhost:8090/2021/2021-ARM.json",
+  publicContentJsonUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-ARM.json",
+  prodPubContentJsonUrl: "",
+  prodWebContentJsonUrl: "",
+  fakeDataBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021",
+  realDataBaseUrl: "",
+};
 const dem = {
   localContentJsonUrl: "http://localhost:8090/2021/2021-DEM.json",
   publicContentJsonUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-DEM.json",
@@ -94,6 +102,11 @@ export default {
         contentJsonUrl: zero.localContentJsonUrl,
         contentBaseUrl: zero.realDataBaseUrl,
       },
+      // arm is not published
+      {
+        contentJsonUrl: arm.localContentJsonUrl,
+        contentBaseUrl: arm.fakeDataBaseUrl,
+      },
       // dem is published
       {
         contentJsonUrl: dem.localContentJsonUrl,
@@ -151,6 +164,11 @@ export default {
         contentJsonUrl: zero.publicContentJsonUrl,
         contentBaseUrl: zero.realDataBaseUrl,
       },
+      // arm is not published
+      {
+        contentJsonUrl: arm.publicContentJsonUrl,
+        contentBaseUrl: arm.fakeDataBaseUrl,
+      },
       // dem is published
       {
         contentJsonUrl: dem.publicContentJsonUrl,
@@ -207,6 +225,11 @@ export default {
       {
         contentJsonUrl: zero.publicContentJsonUrl,
         contentBaseUrl: zero.realDataBaseUrl,
+      },
+      // arm is not published
+      {
+        contentJsonUrl: arm.publicContentJsonUrl,
+        contentBaseUrl: arm.fakeDataBaseUrl,
       },
       // dem is published
       {

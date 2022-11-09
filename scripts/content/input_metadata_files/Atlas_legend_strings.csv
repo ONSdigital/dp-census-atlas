@@ -1017,3 +1017,7 @@ Identity,Gender identity,gender_identity_8a,gender_identity_8a-006,All other gen
 Identity,Gender identity,gender_identity_8a,gender_identity_8a-007,Not answered,{PERCENTAGE}%,of families in {location},did,not answer,not answered
 Population,Population density,population_density,population_density-001,Persons per square kilometre,{PERCENTAGE}%,Population density of {location},in,persons per square kilometre,
 Population,Median age,median_age,median_age-001,Median age,{PERCENTAGE}%,Median age of people in {location},in,years,
+Population,UK armed forces veteran indicator,uk_armed_forces,uk_armed_forces-001,Previously served in UK armed forces,{PERCENTAGE}%,of people in {location},have,previously served in the UK armed forces,
+Population,UK armed forces veteran indicator,uk_armed_forces,uk_armed_forces-002,Previously served in UK reserve armed forces,{PERCENTAGE}%,of people in {location},have,previously served in the UK reserve armed forces,
+Population,UK armed forces veteran indicator,uk_armed_forces,uk_armed_forces-003,Previously served in both regular and reserve UK armed forces,{PERCENTAGE}%,of people in {location},have,previously served in both the regular and reserve UK armed forces,
+Population,UK armed forces veteran indicator,uk_armed_forces,uk_armed_forces-004,Has not previously served in any UK armed forces,{PERCENTAGE}%,of people in {location},have,not previously served in any of the UK armed forces,

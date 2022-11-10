@@ -39,6 +39,8 @@ export const initMap = (container: HTMLElement) => {
     touchPitch: false,
   });
 
+  setInitialPosition(map, embed);
+
   map.touchZoomRotate.disableRotation();
 
   if (interactive) {
@@ -69,8 +71,6 @@ export const initMap = (container: HTMLElement) => {
       });
     });
   }
-
-  setInitialPosition(map, embed);
 
   return map;
 };

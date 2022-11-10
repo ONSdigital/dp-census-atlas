@@ -55,6 +55,8 @@
   </div>
   <div class="grow" />
   <div class="p-6 pt-4 bg-ons-grey-5 border-t-ons-grey-15 border-t-[1px]">
-    <CategoryPageLinks dataset={$params.classification.dataset} />
+    <!-- ToDO - put this back if we go back to using datasets for links!
+      <CategoryPageLinks dataset={$params.classification.dataset} /> -->
+    <CategoryPageLinks />
   </div>
 </div>

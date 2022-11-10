@@ -28,7 +28,7 @@ export const selected = asyncDerived([geography, viz], async ([$geography, $viz]
 
     return {
       ...$geography,
-      value: data.find((p) => p.geoCode === $geography.geoCode)?.ratioToTotal as number | undefined,
+      value: data.find((p) => p.geoCode === $geography.geoCode)?.categoryValue as number | undefined,
     };
   }
 });

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-11-01-13-56-09",
-    "spec_file": "2021-content-spec-v3.json",
+    "created_at": "2022-11-09-15-18-38",
+    "spec_file": "2021-content-spec-v5.json",
     "release": "2021-LAB"
   },
   "content": [
@@ -144,7 +144,7 @@
                   "code": "economic_activity_status_12a-006",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "unemployed full-time student seeking work or waitin to start a job already obtained"
+                  "legend_str_3": "unemployed full-time student seeking work or waiting to start a job already obtained"
                 },
                 {
                   "name": "Economically inactive: Retired",

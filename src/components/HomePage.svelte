@@ -1,5 +1,4 @@
 <script>
-  import { _ } from "svelte-i18n";
   import { content } from "../stores/content";
   import { isInitialReleasePeriod } from "../helpers/contentHelpers";
   import Heading from "./Heading.svelte";
@@ -8,11 +7,6 @@
   import SearchBox from "./SearchBox.svelte";
   import Examples from "./Examples.svelte";
 </script>
-
-<svelte:head>
-  <title>{$_("homePage.html.title")}</title>
-  <meta name="description" content={$_("homePage.html.meta")} />
-</svelte:head>
 
 <div class="px-6">
   <AreaPanel />

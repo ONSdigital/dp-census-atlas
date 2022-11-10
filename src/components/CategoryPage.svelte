@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { _ } from "svelte-i18n";
   import { page } from "$app/stores";
   import { params } from "../stores/params";
   import { geography } from "../stores/geography";
@@ -11,17 +10,6 @@
   import ClassificationPager from "./ClassificationPager.svelte";
 </script>
 
-<svelte:head>
-  <title
-    >{$_("categoryPage.html.title", {
-      values: {
-        categoryName: $params.category.name,
-        selectedGeographyDisplayName: `${$geography.displayName}`,
-      },
-    })}</title
-  >
-</svelte:head>
-
 <div class="h-full flex flex-col">
   <div class="px-6 border-t-[1px] border-t-ons-grey-15">
     <AreaPanel />
@@ -29,11 +17,11 @@
       <h2 class="pt-3 font-bold text-slate-500">Topic</h2>
       <nav class="flex flex-wrap items-center gap-2 text-xl" aria-label="Breadcrumb">
         <a class="hyperlink" href={buildHyperlink($page.url)}>Home</a>
-        <div class="text-sm font-extrabold text-ons-grey-75" aria-hidden>&gt;</div>
+        <div class="text-sm font-extrabold text-ons-grey-75 select-none" aria-hidden>&gt;</div>
         <a class="hyperlink" href={buildHyperlink($page.url, { variableGroup: $params.variableGroup.slug })}
           >{$params.variableGroup.name}</a
         >
-        <div class="text-sm font-extrabold text-ons-grey-75" aria-hidden>&gt;</div>
+        <div class="text-sm font-extrabold text-ons-grey-75 select-none" aria-hidden>&gt;</div>
         <div class="">{$params.variable.name}</div>
       </nav>
       <div class="mt-4 mb-2">
@@ -67,6 +55,8 @@
   </div>
   <div class="grow" />
   <div class="p-6 pt-4 bg-ons-grey-5 border-t-ons-grey-15 border-t-[1px]">
-    <CategoryPageLinks dataset={$params.classification.dataset} />
+    <!-- ToDO - put this back if we go back to using datasets for links!
+      <CategoryPageLinks dataset={$params.classification.dataset} /> -->
+    <CategoryPageLinks />
   </div>
 </div>

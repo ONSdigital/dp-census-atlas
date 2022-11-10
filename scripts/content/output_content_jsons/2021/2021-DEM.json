@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-11-01-13-56-09",
-    "spec_file": "2021-content-spec-v3.json",
+    "created_at": "2022-11-09-15-18-38",
+    "spec_file": "2021-content-spec-v5.json",
     "release": "2021-DEM"
   },
   "content": [
@@ -422,7 +422,7 @@
         {
           "name": "Legal partnership status",
           "code": "legal_partnership_status",
-          "slug": "marital-and-civil-partnership-status",
+          "slug": "legal-partnership-status",
           "desc": "People's marital or civil partnership status.",
           "long_desc": "Classifies a person according to their legal marital or registered civil partnership status on Census Day 21 March 2021.\n\nIt is the same as the 2011 census variable \"Marital status\" but has been updated for Census 2021 to reflect the revised Civil Partnership Act that came into force in 2019.\n\nIn Census 2021 results, \"single\" refers only to someone who has never been married or in a registered civil partnership.",
           "units": "Person",

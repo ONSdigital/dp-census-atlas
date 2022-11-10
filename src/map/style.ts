@@ -1,5 +1,7 @@
 import type mapboxgl from "mapbox-gl";
-export const maxBounds: [number, number, number, number] = [-9, 47, 4, 61];
+import type { NumberQuadruple } from "../types";
+
+export const maxBounds: NumberQuadruple = [-9, 47, 4, 61];
 
 export const style: mapboxgl.Style = {
   "version": 8,

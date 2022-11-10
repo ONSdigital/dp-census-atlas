@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-11-01-13-56-09",
-    "spec_file": "2021-content-spec-v3.json",
+    "created_at": "2022-11-09-15-18-38",
+    "spec_file": "2021-content-spec-v5.json",
     "release": "2021-ALL"
   },
   "content": [
@@ -4524,6 +4524,63 @@
       "desc": "People, their living arrangements and where they come from.",
       "variables": [
         {
+          "name": "UK armed forces veteran indicator",
+          "code": "uk_armed_forces",
+          "slug": "uk-armed-forces-veteran-indicator",
+          "desc": "People who have served in the UK armed forces.",
+          "long_desc": "Identifies people who have previously served in the UK armed forces. This includes those who have served for at least one day in armed forces, either regular or reserves, or Merchant Mariners who have seen duty on legally defined military operations.",
+          "units": "Person",
+          "topic_code": "ARM",
+          "classifications": [
+            {
+              "code": "uk_armed_forces",
+              "slug": "uk-armed-forces",
+              "desc": "UK armed forces veteran indicator (5 categories)",
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
+              "dataset": "TS071",
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "categories": [
+                {
+                  "name": "Previously served in UK armed forces",
+                  "slug": "previously-served-in-uk-armed-forces",
+                  "code": "uk_armed_forces-001",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "previously served in the UK armed forces"
+                },
+                {
+                  "name": "Previously served in UK reserve armed forces",
+                  "slug": "previously-served-in-uk-reserve-armed-forces",
+                  "code": "uk_armed_forces-002",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "previously served in the UK reserve armed forces"
+                },
+                {
+                  "name": "Previously served in both regular and reserve UK armed forces",
+                  "slug": "previously-served-in-both-regular-and-reserve-uk-armed-forces",
+                  "code": "uk_armed_forces-003",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "previously served in both the regular and reserve UK armed forces"
+                },
+                {
+                  "name": "Has not previously served in any UK armed forces",
+                  "slug": "has-not-previously-served-in-any-uk-armed-forces",
+                  "code": "uk_armed_forces-004",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "not previously served in any of the UK armed forces"
+                }
+              ]
+            }
+          ]
+        },
+        {
           "name": "Population density",
           "code": "population_density",
           "slug": "population-density",
@@ -4935,7 +4992,7 @@
         {
           "name": "Legal partnership status",
           "code": "legal_partnership_status",
-          "slug": "marital-and-civil-partnership-status",
+          "slug": "legal-partnership-status",
           "desc": "People's marital or civil partnership status.",
           "long_desc": "Classifies a person according to their legal marital or registered civil partnership status on Census Day 21 March 2021.\n\nIt is the same as the 2011 census variable \"Marital status\" but has been updated for Census 2021 to reflect the revised Civil Partnership Act that came into force in 2019.\n\nIn Census 2021 results, \"single\" refers only to someone who has never been married or in a registered civil partnership.",
           "units": "Person",
@@ -6862,7 +6919,7 @@
                   "code": "country_of_birth_60a-017",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "were",
-                  "legend_str_3": "born in other countries that joined the EU betweeen April 2001 - March 2011"
+                  "legend_str_3": "born in other countries that joined the EU between April 2001 - March 2011"
                 },
                 {
                   "name": "Europe: Other Europe: EU countries: Countries that joined the EU between April 2011 and March 2021: Croatia",
@@ -7070,7 +7127,7 @@
                   "code": "country_of_birth_60a-043",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "were",
-                  "legend_str_3": "born in the Phillipines"
+                  "legend_str_3": "born in the Philippines"
                 },
                 {
                   "name": "Middle East and Asia: South-East Asia: Malaysia",
@@ -7182,7 +7239,7 @@
                   "code": "country_of_birth_60a-057",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "were",
-                  "legend_str_3": "both in other Australiasian countries"
+                  "legend_str_3": "both in other Australasian countries"
                 },
                 {
                   "name": "Antarctica and Oceania: Other Oceania and Antarctica",
@@ -7190,7 +7247,7 @@
                   "code": "country_of_birth_60a-058",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "were",
-                  "legend_str_3": "born in other Oceanian countries or Antartica "
+                  "legend_str_3": "born in other Oceanian countries or Antarctica "
                 },
                 {
                   "name": "Other",
@@ -7397,7 +7454,7 @@
                   "code": "passports_all_13a-010",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "a passport from Antartica and Oceania (including Australia)"
+                  "legend_str_3": "a passport from Antarctica and Oceania (including Australia)"
                 },
                 {
                   "name": "British Overseas Territories",
@@ -7545,7 +7602,7 @@
                   "code": "passports_all_18a-015",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "a passport from Antartica and Oceania (including Australasia)"
+                  "legend_str_3": "a passport from Antarctica and Oceania (including Australasia)"
                 },
                 {
                   "name": "British Overseas Territories",
@@ -7622,7 +7679,7 @@
                   "code": "passports_all_27a-006",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "a Portugese passport"
+                  "legend_str_3": "a Portuguese passport"
                 },
                 {
                   "name": "Europe: Other Europe: EU Member countries: Spain",
@@ -7766,7 +7823,7 @@
                   "code": "passports_all_27a-024",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "a passport from Antartica and Oceania (including Australasia)"
+                  "legend_str_3": "a passport from Antarctica and Oceania (including Australasia)"
                 },
                 {
                   "name": "British Overseas Territories",
@@ -7842,7 +7899,7 @@
                   "code": "passports_all_52a-006",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "a Portugese passport"
+                  "legend_str_3": "a Portuguese passport"
                 },
                 {
                   "name": "Europe: Other Europe: EU Member countries: Spain",
@@ -8186,7 +8243,7 @@
                   "code": "passports_all_52a-049",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "a passport from another country in Oceania and Antartica"
+                  "legend_str_3": "a passport from another country in Oceania and Antarctica"
                 },
                 {
                   "name": "British Overseas Territories",
@@ -8590,7 +8647,7 @@
                   "code": "economic_activity_status_12a-006",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "unemployed full-time student seeking work or waitin to start a job already obtained"
+                  "legend_str_3": "unemployed full-time student seeking work or waiting to start a job already obtained"
                 },
                 {
                   "name": "Economically inactive: Retired",

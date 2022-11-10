@@ -41,10 +41,12 @@ export type Category = {
 };
 export type VariableData = { [catCode: string]: { count: number; total: number; percentage: number } };
 
+export type NumberQuadruple = [number, number, number, number];
+
 export type VizData = {
   geoType: GeoType;
   breaks: number[];
-  places: { geoCode: string; ratioToTotal: number }[];
+  places: { geoCode: string; categoryValue: number }[];
   params: {
     variableGroup: VariableGroup;
     variable: Variable;

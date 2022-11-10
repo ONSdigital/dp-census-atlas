@@ -15,6 +15,8 @@ import { style, maxBounds } from "./style";
 import { viewport } from "../stores/viewport";
 import { viz } from "../stores/viz";
 import { toObservable } from "../util/rxUtil";
+import { commands, type Command } from "../stores/commands";
+import type { EmbedParams } from "../helpers/embedHelper";
 
 const defaultZoom = 6;
 const maxAllowedZoom = 15;
@@ -32,21 +34,24 @@ export const initMap = (container: HTMLElement) => {
     maxZoom: maxAllowedZoom,
     maxBounds,
     interactive,
+    dragRotate: false,
+    pitchWithRotate: false,
+    touchPitch: false,
   });
 
-  setPosition(map, get(geography));
+  setInitialPosition(map, embed);
+
+  map.touchZoomRotate.disableRotation();
+
   if (interactive) {
     map.addControl(new mapboxgl.NavigationControl({ showCompass: false }));
   }
 
   map.on("load", () => {
-    initMapLayers(map, get(geography));
-    viz.subscribe((value) => {
-      renderMapViz(map, value);
-    });
-    geography.subscribe((geography) => {
-      listenToSelectedGeographyStore(map, geography);
-    });
+    initMapLayers(map, get(geography), interactive);
+    viz.subscribe((value) => renderMapViz(map, value));
+    geography.subscribe((geography) => listenToGeographyStore(map, geography));
+    commands.subscribe((command) => listenToCommandStore(map, command));
   });
 
   // when the map loads or moves, or then when the selecion changes, emit an event at most once per second
@@ -75,15 +80,16 @@ const setViewportStoreAndLayerVisibility = (map: mapboxgl.Map, classification: C
   const bbox = { east: b.getEast(), north: b.getNorth(), west: b.getWest(), south: b.getSouth() };
   const geoType = getGeoType(map, classification);
 
-  setMapLayerVisibility(map, geoType);
+  setMapLayerVisibility(map, geoType.actual);
 
   viewport.set({
     bbox,
-    geoType: geoType,
+    geoType: geoType.actual,
+    idealGeoType: geoType.ideal,
   });
 };
 
-const getGeoType = (map: mapboxgl.Map, classification?: Classification): GeoType => {
+const getGeoType = (map: mapboxgl.Map, classification?: Classification): { actual: GeoType; ideal: GeoType } => {
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore (queryRenderedFeatures typings appear to be wrong)
   const features = map.queryRenderedFeatures({ layers: ["centroids"] });
@@ -91,20 +97,23 @@ const getGeoType = (map: mapboxgl.Map, classification?: Classification): GeoType
     const count = features.length;
     const canvas = map.getCanvas();
     const pixelArea = canvas.clientWidth * canvas.clientHeight;
-    const preferredGeotype = (count * 1e6) / pixelArea > 40 ? "lad" : (count * 1e6) / pixelArea > 3 ? "msoa" : "oa";
+    const idealGeotype = (count * 1e6) / pixelArea > 40 ? "lad" : (count * 1e6) / pixelArea > 3 ? "msoa" : "oa";
     const availableGeotypes = classification?.available_geotypes;
     if (availableGeotypes) {
       // the first available_geotype is the lowest-level
-      return availableGeotypes.includes(preferredGeotype) ? preferredGeotype : availableGeotypes[0];
+      return {
+        actual: availableGeotypes.includes(idealGeotype) ? idealGeotype : availableGeotypes[0],
+        ideal: idealGeotype,
+      };
     } else {
-      return preferredGeotype;
+      return { actual: idealGeotype, ideal: idealGeotype };
     }
   } else {
-    return "lad";
+    return { actual: "lad", ideal: "lad" };
   }
 };
 
-const setMapLayerVisibility = (map: mapboxgl.Map, geoType: GeoType) => {
+const setMapLayerVisibility = (map: mapboxgl.Map, geoType: string) => {
   layers.forEach((l) => {
     // set layer visibility based on geoType (always keep lad-outlines visible)
     map.setLayoutProperty(`${l.name}-features`, "visibility", l.name == geoType ? "visible" : "none");
@@ -122,7 +131,7 @@ const setMapLayerVisibility = (map: mapboxgl.Map, geoType: GeoType) => {
   });
 };
 
-const listenToSelectedGeographyStore = (map: mapboxgl.Map, geography: GeographyInfo) => {
+const listenToGeographyStore = (map: mapboxgl.Map, geography: GeographyInfo) => {
   if (geography && map.isStyleLoaded()) {
     // set the selected lasso
     const source = map.getSource("selected-geography") as GeoJSONSource;
@@ -135,6 +144,14 @@ const listenToSelectedGeographyStore = (map: mapboxgl.Map, geography: GeographyI
     if (geography.geoType !== "ew") {
       setPosition(map, geography, { animate: true });
     }
+  }
+};
+
+const setInitialPosition = (map: mapboxgl.Map, embed: EmbedParams) => {
+  if (embed?.view === "viewport") {
+    map.fitBounds(new mapboxgl.LngLatBounds(embed.bounds), { padding: 0, animate: false });
+  } else {
+    setPosition(map, get(geography));
   }
 };
 
@@ -157,4 +174,16 @@ const setPosition = (map: mapboxgl.Map, g: GeographyInfo, options: { animate: bo
 const emptyFeatureCollection = {
   type: "FeatureCollection",
   features: [],
+};
+
+const getSuitableZoomForGeoType = (g: GeoType) => {
+  // todo: improve this to use density centroids?
+  return layers.find((l) => l.name === g).defaultZoom;
+};
+
+const listenToCommandStore = (map: mapboxgl.Map, command: Command) => {
+  if (command?.kind === "zoom") {
+    const zoom = getSuitableZoomForGeoType(command.geoType);
+    map.zoomTo(zoom, { duration: 6000 });
+  }
 };

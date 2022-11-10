@@ -13,12 +13,14 @@
   class:bg-ons-ruby-red={$content.fakeDataLoaded}
 >
   <div class="">
-    <a href={buildHyperlink($page.url)} class="custom-ring">
+    <a href="https://www.ons.gov.uk" class="custom-ring">
       <Logo />
     </a>
   </div>
   <div class="fill-ons-census p-3">
-    <Census2021 />
+    <a href="https://www.ons.gov.uk/census" class="custom-ring">
+      <Census2021 />
+    </a>
   </div>
   {#if $content.fakeDataLoaded}
     <div class="truncate">

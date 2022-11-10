@@ -1,6 +1,5 @@
 <script lang="ts">
   import { page } from "$app/stores";
-  import { _ } from "svelte-i18n";
   import { params } from "../stores/params";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
   import { getDefaultChoroplethClassification } from "../helpers/variableHelpers";
@@ -14,7 +13,7 @@
   </div>
   <div class="flex items-center gap-2 text-xl">
     <a class="hyperlink" href={buildHyperlink($page.url)}>Home</a>
-    <div class="text-sm font-extrabold text-slate-500">&gt;</div>
+    <div class="text-sm font-extrabold text-slate-500 select-none">&gt;</div>
     <div class=" ">{$params.variableGroup.name}</div>
   </div>
   <div class="mt-4 mb-2 ">

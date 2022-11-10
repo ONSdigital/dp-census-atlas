@@ -50,3 +50,4 @@ workplace_travel,"The distance, in kilometres, between a person's residential po
 year_arrival_uk,The year that someone who was not born in the UK last arrived in the UK. This does not include returning from a holiday or short stay outside the UK.,The year people arrived to live in the UK.,
 population_density,,The number of people resident per square kilometre.,
 median_age,,"The median age of people on Census Day, 21 March 2021.",
+uk_armed_forces,"Identifies people who have previously served in the UK armed forces. This includes those who have served for at least one day in armed forces, either regular or reserves, or Merchant Mariners who have seen duty on legally defined military operations.",People who have served in the UK armed forces. ,

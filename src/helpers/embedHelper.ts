@@ -1,4 +1,7 @@
-export const getEmbedCode = (url: URL, embedParams: EmbedParams) => {
+import { isNumeric } from "../util/numberUtil";
+import { GeoTypes, type NumberQuadruple } from "../types";
+
+export const getEmbedCode = (url: URL, embedParams: EmbedUrlParams) => {
   const params = new URLSearchParams({
     ...Object.fromEntries(url.searchParams),
     ...Object.fromEntries(Object.entries(embedParams)),
@@ -13,13 +16,51 @@ export const getEmbedCode = (url: URL, embedParams: EmbedParams) => {
   };
 };
 
-export type EmbedParams = {
+export type EmbedUrlParams = {
   embed: boolean;
   embedAreaSearch: boolean;
   embedInteractive: boolean;
+  embedCategorySelection: boolean;
   embedView: "viewport" | "geography";
+  embedBounds?: NumberQuadruple;
 };
 
-// type PickByType<T, Value> = {
-//   [P in keyof T as T[P] extends Value | undefined ? P : never]: T[P]
-// }
+export const getPageUrlNoGeoParam = (pageUrl) => {
+  const pageUrlNoGeoParam = new URL(pageUrl);
+  GeoTypes.forEach((geoParam) => {
+    if (pageUrlNoGeoParam.searchParams.has(geoParam)) {
+      pageUrlNoGeoParam.searchParams.delete(geoParam);
+    }
+  });
+  return pageUrlNoGeoParam;
+};
+
+export const parseEmbedParams = (params: URLSearchParams) => {
+  const view = params.get("embedView") === "viewport" ? "viewport" : "geography";
+  return {
+    embed:
+      params.get("embed") === "true"
+        ? {
+            interactive: params.get("embedInteractive") === "true",
+            areaSearch: params.get("embedAreaSearch") === "true",
+            view: view as typeof view,
+            bounds: view === "viewport" ? parseBounds(params) : undefined,
+          }
+        : undefined,
+  };
+};
+
+export type EmbedParams = ReturnType<typeof parseEmbedParams>["embed"];
+
+function parseBounds(params: URLSearchParams) {
+  const array = params
+    .get("embedBounds")
+    ?.split(",")
+    ?.map((b) => parseFloat(b));
+
+  return isNumberQuadruple(array) ? array : undefined;
+}
+
+export function isNumberQuadruple(input: unknown): input is NumberQuadruple {
+  return Array.isArray(input) && input.length === 4 && input.every((x) => isNumeric(x));
+}

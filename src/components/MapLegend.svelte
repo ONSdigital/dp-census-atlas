@@ -9,7 +9,6 @@
   import GeoTypeBadge from "./GeoTypeBadge.svelte";
 
   $: valueForHoveredGeography = $viz?.places.find((p) => p.geoCode === $hovered?.geoCode)?.categoryValue;
-  $: breaks = $viz ? $viz.breaks : undefined;
 
   // the hovered, otherwise the selected, geography properties
   $: active = $hovered
@@ -35,7 +34,7 @@
 <!--    category selected | show EW legend, no %   | full legend, with percentage  -->
 
 {#if $viz?.params?.category || active.geoCode}
-  <div class={`absolute bottom-3 lg:bottom-8 flex w-full justify-center`}>
+  <div class={`absolute bottom-3 sm:bottom-5 lg:bottom-8 flex w-full justify-center`}>
     <div
       class="z-abovemap w-full max-w-[50rem] mx-3 lg:mx-4 bg-white bg-opacity-90 px-3 lg:px-5 py-2 lg:py-3 border-[1px] lg:border-[1px] border-ons-grey-15"
     >
@@ -109,7 +108,7 @@
           selected={$selected?.value}
           hovered={active.value}
           suffix={getCategoryDataSuffix($viz.params.category.code)}
-          {breaks}
+          breaks={$viz.breaks}
           colors={choroplethColours}
           categoryCode={$viz.params.category.code}
         />

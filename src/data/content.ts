@@ -139,8 +139,8 @@ export default {
       },
       // mig is published
       {
-        contentJsonUrl: eilr.localContentJsonUrl,
-        contentBaseUrl: eilr.realDataBaseUrl,
+        contentJsonUrl: mig.localContentJsonUrl,
+        contentBaseUrl: mig.realDataBaseUrl,
       },
       // sogi is unpublished
       {
@@ -201,8 +201,8 @@ export default {
       },
       // mig is published
       {
-        contentJsonUrl: eilr.publicContentJsonUrl,
-        contentBaseUrl: eilr.realDataBaseUrl,
+        contentJsonUrl: mig.publicContentJsonUrl,
+        contentBaseUrl: mig.realDataBaseUrl,
       },
       // sogi is unpublished
       {
@@ -263,8 +263,8 @@ export default {
       },
       // mig is published
       {
-        contentJsonUrl: eilr.publicContentJsonUrl,
-        contentBaseUrl: eilr.realDataBaseUrl,
+        contentJsonUrl: mig.publicContentJsonUrl,
+        contentBaseUrl: mig.realDataBaseUrl,
       },
       // sogi is unpublished
       {

@@ -5,14 +5,21 @@ const publishedOrPrepublishedTopics = ["release-0", "dem", "mig"];
 describe("content", () => {
   test("prod web contains the expected content only", () => {
     // !!! NB THIS TEST IS A SAFETY CATCH - UPDATE THE publishedOrPrepublishedTopics ARRAY AS NECCESSARY !!!
-    let allPublished = true;
-    publishedOrPrepublishedTopics.forEach((pt) => {
-      const matchesPublishedTopic = content.prod.web.filter((t) => t.contentJsonUrl.toLowerCase().includes(pt));
-      if (matchesPublishedTopic.length === 0) {
-        allPublished = false;
+    let allProdWebTopicsArePublished = true;
+    // each prod web content json url must match one of the publishedOrPrepublishedTopics
+    const prodWebContentJsonURLs = content.prod.web.map((t) => t.contentJsonUrl.toLowerCase());
+    prodWebContentJsonURLs.forEach((contentJsonUrl) => {
+      let thisProdWebTopicIsPublished = false;
+      publishedOrPrepublishedTopics.forEach((t) => {
+        if (contentJsonUrl.includes(t)) {
+          thisProdWebTopicIsPublished = true;
+        }
+      });
+      if (thisProdWebTopicIsPublished === false) {
+        allProdWebTopicsArePublished = false;
       }
     });
-    expect(allPublished).toEqual(true);
+    expect(allProdWebTopicsArePublished).toEqual(true);
   });
   test("prod web contains only published prod content", () => {
     const nonPublishedNonProdContent = content.prod.web.filter((t) => {
@@ -22,23 +29,23 @@ describe("content", () => {
   });
   test("prod web does not contain any blanks", () => {
     const blankContent = content.prod.web.filter((t) => {
-      t.contentJsonUrl === "" || t.contentBaseUrl === "";
+      return t.contentJsonUrl === "" || t.contentBaseUrl === "";
     });
     expect(blankContent).toEqual([]);
   });
   test("prod publishing does not contain any blanks", () => {
     const blankContent = content.prod.publishing.filter((t) => {
-      t.contentJsonUrl === "" || t.contentBaseUrl === "";
+      return t.contentJsonUrl === "" || t.contentBaseUrl === "";
     });
     expect(blankContent).toEqual([]);
   });
   test("dev does not contain prepublished prod data", () => {
     const prodPrePublishedContent = [
       ...content.dev.web.filter((t) => {
-        !t.contentJsonUrl.includes("publishing.dp-prod");
+        return t.contentJsonUrl.includes("publishing.dp-prod");
       }),
       ...content.dev.publishing.filter((t) => {
-        !t.contentJsonUrl.includes("publishing.dp-prod");
+        return t.contentJsonUrl.includes("publishing.dp-prod");
       }),
     ];
     expect(prodPrePublishedContent).toEqual([]);
@@ -46,10 +53,10 @@ describe("content", () => {
   test("netlify does not contain prepublished prod data", () => {
     const prodPrePublishedContent = [
       ...content.netlify.web.filter((t) => {
-        !t.contentJsonUrl.includes("publishing.dp-prod");
+        return t.contentJsonUrl.includes("publishing.dp-prod");
       }),
       ...content.netlify.publishing.filter((t) => {
-        !t.contentJsonUrl.includes("publishing.dp-prod");
+        return t.contentJsonUrl.includes("publishing.dp-prod");
       }),
     ];
     expect(prodPrePublishedContent).toEqual([]);
@@ -57,10 +64,10 @@ describe("content", () => {
   test("sandbox does not contain prepublished prod data", () => {
     const prodPrePublishedContent = [
       ...content.sandbox.web.filter((t) => {
-        !t.contentJsonUrl.includes("publishing.dp-prod");
+        return t.contentJsonUrl.includes("publishing.dp-prod");
       }),
       ...content.sandbox.publishing.filter((t) => {
-        !t.contentJsonUrl.includes("publishing.dp-prod");
+        return t.contentJsonUrl.includes("publishing.dp-prod");
       }),
     ];
     expect(prodPrePublishedContent).toEqual([]);
@@ -68,10 +75,10 @@ describe("content", () => {
   test("staging does not contain prepublished prod data", () => {
     const prodPrePublishedContent = [
       ...content.staging.web.filter((t) => {
-        !t.contentJsonUrl.includes("publishing.dp-prod");
+        return t.contentJsonUrl.includes("publishing.dp-prod");
       }),
       ...content.staging.publishing.filter((t) => {
-        !t.contentJsonUrl.includes("publishing.dp-prod");
+        return t.contentJsonUrl.includes("publishing.dp-prod");
       }),
     ];
     expect(prodPrePublishedContent).toEqual([]);

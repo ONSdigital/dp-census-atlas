@@ -6,16 +6,16 @@ const zero = {
   publicContentJsonUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/release-0.json",
   prodPubContentJsonUrl: "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusatlasdryrun/release-0.json",
   prodWebContentJsonUrl: "https://www.ons.gov.uk/visualisations/censusatlasdryrun/release-0.json",
-  fakeDataBaseUrl: "",
-  realDataBaseUrl: "",
+  fakeDataBaseUrl: "no data to load",
+  realDataBaseUrl: "no data to load",
 };
 const arm = {
   localContentJsonUrl: "http://localhost:8090/2021/2021-ARM.json",
   publicContentJsonUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-ARM.json",
-  prodPubContentJsonUrl: "",
-  prodWebContentJsonUrl: "",
+  prodPubContentJsonUrl: "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusmapsconfig/2021-ARM.json",
+  prodWebContentJsonUrl: "https://www.ons.gov.uk/visualisations/censusmapsconfig/2021-ARM.json",
   fakeDataBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021",
-  realDataBaseUrl: "",
+  realDataBaseUrl: "https://ons-dp-prod-census-maps-arm-eilr.s3.eu-west-2.amazonaws.com",
 };
 const dem = {
   localContentJsonUrl: "http://localhost:8090/2021/2021-DEM.json",
@@ -36,10 +36,10 @@ const edu = {
 const eilr = {
   localContentJsonUrl: "http://localhost:8090/2021/2021-EILR.json",
   publicContentJsonUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-EILR.json",
-  prodPubContentJsonUrl: "",
-  prodWebContentJsonUrl: "",
+  prodPubContentJsonUrl: "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusmapsconfig/2021-EILR.json",
+  prodWebContentJsonUrl: "https://www.ons.gov.uk/visualisations/censusmapsconfig/2021-EILR.json",
   fakeDataBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021",
-  realDataBaseUrl: "",
+  realDataBaseUrl: "https://ons-dp-prod-census-maps-arm-eilr.s3.eu-west-2.amazonaws.com",
 };
 const hou = {
   localContentJsonUrl: "http://localhost:8090/2021/2021-HOU.json",
@@ -295,8 +295,16 @@ export default {
         contentBaseUrl: zero.realDataBaseUrl,
       },
       {
+        contentJsonUrl: arm.prodPubContentJsonUrl,
+        contentBaseUrl: arm.realDataBaseUrl,
+      },
+      {
         contentJsonUrl: dem.prodPubContentJsonUrl,
         contentBaseUrl: dem.realDataBaseUrl,
+      },
+      {
+        contentJsonUrl: eilr.prodPubContentJsonUrl,
+        contentBaseUrl: eilr.realDataBaseUrl,
       },
       {
         contentJsonUrl: mig.prodPubContentJsonUrl,
@@ -312,8 +320,16 @@ export default {
         contentBaseUrl: zero.realDataBaseUrl,
       },
       {
+        contentJsonUrl: arm.prodWebContentJsonUrl,
+        contentBaseUrl: arm.realDataBaseUrl,
+      },
+      {
         contentJsonUrl: dem.prodWebContentJsonUrl,
         contentBaseUrl: dem.realDataBaseUrl,
+      },
+      {
+        contentJsonUrl: eilr.prodWebContentJsonUrl,
+        contentBaseUrl: eilr.realDataBaseUrl,
       },
       {
         contentJsonUrl: mig.prodWebContentJsonUrl,

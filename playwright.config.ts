@@ -9,7 +9,8 @@ const config: PlaywrightTestConfig = {
     baseURL: "http://localhost:28100",
   },
   fullyParallel: true,
-  expect: { timeout: 30000 },
+  timeout: 60000,
+  expect: { timeout: 60000 },
 };
 
 export default config;

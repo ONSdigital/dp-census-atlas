@@ -11,7 +11,7 @@
     "build:netlify": ". env/netlify.sh && npm run build",
     "build:ons": ". env/ons.sh && npm run build && ./workaround-sveltekit-3726.sh",
     "preview": "vite preview",
-    "test": ". env/test.sh && vitest run",
+    "test": ". env/test.sh && vitest run src/",
     "test:ui": "playwright test e2e/",
     "test:ui:ci": "start-server-and-test dev http://localhost:28100 test:ui",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",

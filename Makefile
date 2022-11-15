@@ -31,4 +31,4 @@ audit: ## nothing yet,  but could probably use npm audit?
 
 .PHONY: component
 component: ## NB - assumed this will only be used by the CI
-	npm run test:ui:ci
+	npm run e2e:ci

@@ -1,53 +1,49 @@
-# Census Atlas
+# Census maps (né Atlas)
 
 Explore neighbourhood-level Census data on a map.
 
 ## State ownership
 
-In this app, there are three 'owners' of state:
+In this app, there are three possible 'owners' of state:
 
-- URL (app state)
-- Map instance (transitory map state, eg exact zoom and position)
-- Svelte components (transistory, local UI state, eg a [details](https://design-system.service.gov.uk/components/details/) component)
+- The URL (app state)
+- Map instance (transitory map state, eg the exact zoom and position)
+- Svelte components (transistory, local UI state, eg whether a modal is open)
 
-All _important_ state flows in one direction from the URL to the UI. This is a fundamental principle of web design and UX on the web. It enables link sharing and makes apps work on the web.
+All _important_ state flows in one direction from the URL to the UI. This enables link sharing and makes apps work properly on the web.
 
 - When a URL is shared, the app opens in the same state as when it was shared _in every important way_
-- The Back (and Forward) buttons should work completely correctly
-- Embedding is a special case of sharing - again, the URL needs to contain all the relevant state needed to show the embeddable content
+- The Back (and Forward) buttons work correctly
+- Embedding is a special case of sharing - the URL needs to contain all the relevant parameters to show the embeddable content
 
 ## URL structure
 
-    /population/sex/default/female          ? msoa=E02006827
-                    |                               |
-                    |                               |
+    /population/sex/sex/female              ? msoa=E02006827
+                  |                                |
+                  |                                |
     /topic/variable/classification/category ? geotype=geocode
-                    |                               |
+                  |                                |
           `path` picks a node                `query` selects
           in the content tree                 the geography
+                                            (and embed parameters, not shown)
 
-
-## Generating content files
-
-The main config files for the atlas are `content.json` files that list the census data that the atlas will show, and contain metadata (labels etc) for that content. These are generated
-from ONS metadata files by python scripts in the `content` directory found in the project root. See `content/README.md` for more details.
-
-## Developing
+## Develop
 
     npm install
     npm run dev
 
-NB - if you need to use locally-served content.json files (e.g. to test new or sensitive content metadata without hosting it on s3), you can serve all files found in content content_jsons on localhost:8090 using `npm run serve-local-content-jsons`, and set the dev version of the app to look for them by exporting the env var VITE_CONTENT_JSONS to a JSON string array referencing the content json(s) you want the local app to use, e.g. `export VITE_CONTENT_JSONS='["http://localhost:8090/MY_TEST_CONTENT.json"]' && npm run dev`. This will
-override the value for VITE_CONTENT_JSONS set in `env/dev.sh`.
+> If you need to use locally-served content.json files (e.g. to test new or sensitive content metadata without hosting it on s3), you can serve all files found in content content_jsons on localhost:8090 using `npm run serve-local-content-jsons`, and set the dev version of the app to look for them by exporting the env var VITE_CONTENT_JSONS to a JSON string array referencing the content json(s) you want the local app to use, e.g. `export VITE_CONTENT_JSONS='["http://localhost:8090/MY_TEST_CONTENT.json"]' && npm run dev`. This will override the value for VITE_CONTENT_JSONS set in `env/dev.sh`.
 
-## Building
+## Test
 
-    npm run build
+    npm run test   # run unit tests
+    npm run e2e    # run UI tests (needs npm run dev first)
 
-You can preview the production build with `npm run preview`.
-TODO: is this still the case?
+## Content.json
 
-To build specifically for node (required for production deployment), use `npm run build-node`. This is as above, but first sets an env var (`SKADAPTER=node`) that controls the adapter used to build.
+The `content.json` files list the census data that the app will show, and contain metadata (labels etc) for that content.
+
+These are generated from ONS metadata files by python scripts in the `content` directory found in the project root. See `content/README.md` for more details.
 
 ## Data
 
@@ -74,8 +70,6 @@ Example data:
     E07000178,0.13641   <--- 13.6% of people in Oxford LAD have no qualifications
     E07000179,0.16471
     ...
-
-We generally call this "percentage" a _ratio_ in the app, and it's expressed as a decimal. (We format it as a percentage in the UI.)
 
 ### 'Breaks' API
 
@@ -118,59 +112,9 @@ This simple API gets basic info about an area. For example, Oxford LAD:
         }
     }
 
-## Publishing architecture
+## Publishing
 
-There are two areas of deployment concern:
-
-(1) Frontend. The web app _must_ live under the production website, and therefore there's no real alternative to the DP publishing system. But we've already proved we can deploy to `develop` (now `sandbox`), and we're assured that the production environment is extremely similar. So this is low risk
-
-(2) Backend. 'Static data tiles' + DP Download Service
-
-                PRE-PROD (Publishing)    ‖        PROD
-                                         ‖
-      ===========       content.json?    ‖
-      | PostGIS |      tilelist (quads)  ‖
-      | loading |            ↓           ‖
-      |   DB    |   -->   ~~~~~~~~       ‖
-      ===========        |        |      ‖
-                         | Script |      ‖
-      ???????????   -->  |        |      ‖
-     ? Cantabular ?       ~~~~~~~~       ‖
-      ???????????            ↓           ‖
-                         collection      ‖
-                      e.g. "0000000038"  ‖
-                             ↓           ‖
-                     -------------------------------------------
-                    |  DP Download Service ("data tiles" on S3) |
-                    | "0000000004","0000000023","0000000038"... |
-                     -------------------------------------------
-                      Publishing mode    ‖       Web mode
-                             |           ‖          |
-                 --------------------    ‖      -----------
-                | preview web app(s) |   ‖     |  web app  |
-                 --------------------    ‖      -----------
-                                         ‖
-
-### Advantages and disadvantages of static data files
-
-- 😀 removes shipping dependency on DP infra - Plan B, we can publish the whole app + data manually to any CDN.
-- 😀 reliability (will not go down)
-- 😀 scalability (will handle any load or spike)
-- 😀 simplicity (no moving parts)
-- 😀 running cost (nearly free)
-- 😀 zero maintenance (no developers needed for long-term support)
-- 😕 time to generate / upload data tiles? (no, very quick)
-- 😕 publishing is a manual process, at least initally (no, see PoC 2 below)
-- 😕 where to host these tiles? (see Poc 2 below)
-
-### PoC 2 - proving the "publishing with Download Service" approach
-
-A collection uploaded to the File Service contains a set of files:
-
-    content.json  <-- the content.json that has been created for this publishing collection - it has the category codes
-    data/         <-- the set of data files
-    breaks/       <-- the set of breaks files
-    geo/          <-- the set of geography files, although this could be stored elsewhere
+TODO: update this proposal and process to reflect the built solution.
 
 Proposal: imagine we have a small list of “DP Collection ID”s committed into the front end code, like this:
 
@@ -200,7 +144,7 @@ Finally (since we've made sure that the collection ID is in the URL of our files
 - 😀 only authorised people can see “their” collections in pre-release (solves "auth" problem)
 - 😀 mechanism for removing / correcting published data (could simply start again with a single, replacement collection)
 
-### Publishing pocess
+### Publishing process
 
 1. a publishing "collection" is created manually on Zebedee (or its successor)
 2. someone runs the Script, supplying the `Collection ID` as an argument
@@ -216,34 +160,6 @@ Finally (since we've made sure that the collection ID is in the URL of our files
 7. the frontend code is deployed
 8. at the configured time, Zebedee sends a signal to the Download Service to publish the collection
 9. the `content.json` becomes visible to anyone who loads or refreshes the app
-
-### Thoughts
-
-- if we can make the `content.json` first, knowing the category codes, this would be ideal -- the script could then upload this along with the data
-- where to put the `geo` API (it could just be repeated per-collection, or could be hosted once, elsewhere, if we're sure is stable)
-- the Script will need rewriting as we get first access to real data in Cantabula -- it could be done before that, though, as there is an example Cantubula instance?
-
-### Next steps
-
-- use the DP Upload client in our magic Script instead of writing output locally
-- use the DP Download Service URLs in the front end
-
-### Questions for DP
-
-- mime types - file extension? set?
-- caching - we want to cache - it was unknown whether Download Service would be behind Cloudfront or what HTTP caching would be enabled
-- CORS - doens't look like we need to host `.js`, but...
-- there is no autoscaling on the Download Service -- it's a long-running server in a single instance
-- will it be live and tested before the univariate census release?
-
-### Notes from PM
-
-- files must be smaller than 50GB (no probs)
-- lots of small files is fine (good for our use case)
-- there's an HTTP API, but Go library ("upload client") easier to use, and handles chunking
-- we supply the `path` and the `filename`, so we can add the Collection ID to the path e.g.
-  - path: `atlas/0000000004/data/msoa/1-23-456` // let's use `atlas` as our "namespace"
-  - filename: `QS12345.csv`
 
 ## Contributing
 

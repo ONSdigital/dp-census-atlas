@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-11-09-15-18-38",
-    "spec_file": "2021-content-spec-v5.json",
+    "created_at": "2022-11-16-10-46-16",
+    "spec_file": "2021-content-spec-v6.json",
     "release": "2021-EILR"
   },
   "content": [
@@ -31,6 +31,7 @@
               "dataset": "TS029",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Main language is English (English or Welsh in Wales)",
@@ -68,6 +69,7 @@
                 "lad"
               ],
               "dataset": "TS029",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Main language is English (English or Welsh in Wales)",
@@ -118,8 +120,8 @@
           "code": "ethnic_group_tb",
           "slug": "ethnic-group",
           "desc": "The ethnic group a person feels they belong to.",
-          "long_desc": "The ethnic group that the person completing the census feels they belong to. This could be based on their culture, family background, identity, religion, language or physical appearance. \n\nRespondents were presented with a choice of 19 categories.",
-          "units": "Family",
+          "long_desc": "The ethnic group that the person completing the census feels they belong to. This could be based on their culture, family background, identity or physical appearance.\n\nRespondents could choose one out of 19 tick-box response categories, including write-in response options.",
+          "units": "Person",
           "topic_code": "EILR",
           "classifications": [
             {
@@ -134,6 +136,7 @@
               "dataset": "TS021",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Asian, Asian British or Asian Welsh",
@@ -187,6 +190,7 @@
                 "lad"
               ],
               "dataset": "TS021",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "White: English, Welsh, Scottish, Northern Irish or British",
@@ -364,6 +368,7 @@
               ],
               "dataset": "TS025",
               "choropleth_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "All adults in household have English in England, or English or Welsh in Wales as a main language",
@@ -422,6 +427,7 @@
               "dataset": "TS023",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "One-person household",
@@ -488,6 +494,7 @@
               "dataset": "TS026",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "All household members have the same main language",
@@ -517,6 +524,7 @@
                 "lad"
               ],
               "dataset": "TS026",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "One-person household",
@@ -583,6 +591,7 @@
               "dataset": "TS075",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "One-person household",
@@ -654,6 +663,7 @@
               ],
               "dataset": "TS024",
               "choropleth_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "English (English or Welsh if in Wales)",
@@ -841,6 +851,7 @@
                 "lad"
               ],
               "dataset": "TS024",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "English (English or Welsh in Wales)",
@@ -1619,6 +1630,7 @@
               "dataset": "TS027",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "One or more UK identity only",
@@ -1656,6 +1668,7 @@
                 "lad"
               ],
               "dataset": "TS027",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "British only identity",
@@ -1733,6 +1746,7 @@
                 "lad"
               ],
               "dataset": "TS027",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "British only identity",
@@ -1885,6 +1899,7 @@
               ],
               "dataset": "TS028",
               "choropleth_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "UK identity: British only identity",
@@ -2486,6 +2501,7 @@
               ],
               "dataset": "TS030",
               "choropleth_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "No religion",
@@ -2558,234 +2574,6 @@
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "did",
                   "legend_str_3": "not answer"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Welsh language skills",
-          "code": "welsh_skills_all",
-          "slug": "welsh-language-skills",
-          "desc": "Whether people can understand, speak, read, or write Welsh. This question was only asked in Wales.",
-          "long_desc": "Whether a person has Welsh language skills.  If they do, can they do any of the following:\n\n* understand spoken Welsh\n\n* speak Welsh\n\n* read Welsh\n\n* write Welsh\n\n* no skills in Welsh\n\nThe census questionnaire only asked this question to people in Wales. \n\nAdditional info:\n\nIn results that classify people by Welsh language skills, a person may appear in more than one category depending on which combination of skills they have.",
-          "units": "Person",
-          "topic_code": "EILR",
-          "classifications": [
-            {
-              "code": "welsh_skills_all_4b",
-              "slug": "welsh-skills-all-4b",
-              "desc": "Welsh language skills (B) (4 categories)",
-              "available_geotypes": [
-                "oa",
-                "msoa",
-                "lad"
-              ],
-              "dataset": "TS032",
-              "choropleth_default": true,
-              "dot_density_default": true,
-              "categories": [
-                {
-                  "name": "Can understand spoken Welsh only",
-                  "slug": "can-understand-spoken-welsh-only",
-                  "code": "welsh_skills_all_4b-000",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "can",
-                  "legend_str_3": "understand spoken Welsh only"
-                },
-                {
-                  "name": "Can speak, read or write Welsh",
-                  "slug": "can-speak-read-or-write-welsh",
-                  "code": "welsh_skills_all_4b-001",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "can",
-                  "legend_str_3": "speak, read or write Welsh"
-                },
-                {
-                  "name": "No skills in Welsh",
-                  "slug": "no-skills-in-welsh",
-                  "code": "welsh_skills_all_4b-002",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "no skills in Welsh"
-                }
-              ]
-            },
-            {
-              "code": "welsh_skills_all_6a",
-              "slug": "welsh-skills-all-6a",
-              "desc": "Welsh language skills (6 categories)",
-              "available_geotypes": [
-                "oa",
-                "msoa",
-                "lad"
-              ],
-              "dataset": "TS032",
-              "categories": [
-                {
-                  "name": "Can understand spoken Welsh only",
-                  "slug": "can-understand-spoken-welsh-only",
-                  "code": "welsh_skills_all_6a-000",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "can",
-                  "legend_str_3": "understand spoken Welsh only"
-                },
-                {
-                  "name": "Can speak, read and write Welsh",
-                  "slug": "can-speak-read-and-write-welsh",
-                  "code": "welsh_skills_all_6a-001",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "can",
-                  "legend_str_3": "speak, read and write Welsh"
-                },
-                {
-                  "name": "Can speak and other combinations of skills in Welsh",
-                  "slug": "can-speak-and-other-combinations-of-skills-in-welsh",
-                  "code": "welsh_skills_all_6a-002",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "can",
-                  "legend_str_3": "speak and other combinations of skills in Welsh"
-                },
-                {
-                  "name": "Other combination of skills in Welsh",
-                  "slug": "other-combination-of-skills-in-welsh",
-                  "code": "welsh_skills_all_6a-003",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "another combination of skills in Welsh"
-                },
-                {
-                  "name": "No skills in Welsh",
-                  "slug": "no-skills-in-welsh",
-                  "code": "welsh_skills_all_6a-004",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "no skills in Welsh"
-                }
-              ]
-            },
-            {
-              "code": "welsh_skills_all",
-              "slug": "welsh-skills-all",
-              "desc": "Welsh language skills (10 categories)",
-              "available_geotypes": [
-                "oa",
-                "msoa",
-                "lad"
-              ],
-              "dataset": "TS032",
-              "categories": [
-                {
-                  "name": "Can understand spoken Welsh only",
-                  "slug": "can-understand-spoken-welsh-only",
-                  "code": "welsh_skills_all-000",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "can",
-                  "legend_str_3": "understand spoken Welsh only"
-                },
-                {
-                  "name": "Can speak, read and write Welsh",
-                  "slug": "can-speak-read-and-write-welsh",
-                  "code": "welsh_skills_all-001",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "can",
-                  "legend_str_3": "speak, read and write Welsh"
-                },
-                {
-                  "name": "Can speak but cannot read or write Welsh",
-                  "slug": "can-speak-but-cannot-read-or-write-welsh",
-                  "code": "welsh_skills_all-002",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "can",
-                  "legend_str_3": "speak but cannot read or write Welsh"
-                },
-                {
-                  "name": "Can speak and read but cannot write Welsh",
-                  "slug": "can-speak-and-read-but-cannot-write-welsh",
-                  "code": "welsh_skills_all-003",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "can",
-                  "legend_str_3": "speak and read but cannot write Welsh"
-                },
-                {
-                  "name": "Can read but cannot speak or write Welsh",
-                  "slug": "can-read-but-cannot-speak-or-write-welsh",
-                  "code": "welsh_skills_all-004",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "can",
-                  "legend_str_3": "read but cannot speak or write Welsh"
-                },
-                {
-                  "name": "Can write but cannot speak or read Welsh",
-                  "slug": "can-write-but-cannot-speak-or-read-welsh",
-                  "code": "welsh_skills_all-005",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "can",
-                  "legend_str_3": "write but cannot speak or read Welsh"
-                },
-                {
-                  "name": "Can read and write but cannot speak Welsh",
-                  "slug": "can-read-and-write-but-cannot-speak-welsh",
-                  "code": "welsh_skills_all-006",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "can",
-                  "legend_str_3": "read and write but cannot speak Welsh"
-                },
-                {
-                  "name": "Can speak and other combinations of skills in Welsh",
-                  "slug": "can-speak-and-other-combinations-of-skills-in-welsh",
-                  "code": "welsh_skills_all-007",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "can",
-                  "legend_str_3": "speak and other combinations of skills in Welsh"
-                },
-                {
-                  "name": "No skills in Welsh",
-                  "slug": "no-skills-in-welsh",
-                  "code": "welsh_skills_all-008",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "no skills in Welsh"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Welsh speaking ability",
-          "code": "welsh_skills_speak",
-          "slug": "welsh-speaking-ability",
-          "desc": "People who can speak Welsh.",
-          "long_desc": "This classifies a person as being able to \"Speak Welsh\". They may have also ticked one or more of the following:\n\n* understand spoken Welsh\n\n* read Welsh\n\n* write Welsh\n\nIn results that classify people by Welsh language skills, a person may appear in more than one category depending on which combination of skills they have.",
-          "units": "Person",
-          "topic_code": "EILR",
-          "classifications": [
-            {
-              "code": "welsh_skills_speak",
-              "slug": "welsh-skills-speak",
-              "desc": "Welsh speaking ability (3 categories)",
-              "available_geotypes": [
-                "lad"
-              ],
-              "dataset": "TS076",
-              "choropleth_default": true,
-              "dot_density_default": true,
-              "categories": [
-                {
-                  "name": "Can speak Welsh",
-                  "slug": "can-speak-welsh",
-                  "code": "welsh_skills_speak-001",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "can",
-                  "legend_str_3": "speak Welsh"
-                },
-                {
-                  "name": "Cannot speak Welsh",
-                  "slug": "cannot-speak-welsh",
-                  "code": "welsh_skills_speak-000",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "can",
-                  "legend_str_3": "not speak Welsh"
                 }
               ]
             }

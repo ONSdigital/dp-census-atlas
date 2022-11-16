@@ -1,0 +1,382 @@
+{
+  "ARM": {
+    "uk_armed_forces": {
+      "classifications": ["uk_armed_forces"],
+      "choropleth_default_classification": "uk_armed_forces",
+      "dot_density_default_classification": "uk_armed_forces",
+      "classifications_with_2011_comparison_data": ["uk_armed_forces"]
+    }
+  },
+  "DEM": {
+    "population_density": {
+      "classifications": ["population_density"],
+      "choropleth_default_classification": "population_density",
+      "dot_density_default_classification": null,
+      "classifications_with_2011_comparison_data": ["population_density"]
+    },
+    "hh_deprivation": {
+      "classifications": ["hh_deprivation"],
+      "choropleth_default_classification": "hh_deprivation",
+      "dot_density_default_classification": "hh_deprivation",
+      "classifications_with_2011_comparison_data": ["hh_deprivation"]
+    },
+    "hh_family_composition": {
+      "classifications": ["hh_family_composition_4a", "hh_family_composition_15a"],
+      "choropleth_default_classification": "hh_family_composition_4a",
+      "dot_density_default_classification": "hh_family_composition_4a",
+      "classifications_with_2011_comparison_data": ["hh_family_composition_4a", "hh_family_composition_15a"]
+    },
+    "hh_size": {
+      "classifications": ["hh_size_5a", "hh_size_9a"],
+      "choropleth_default_classification": "hh_size_5a",
+      "dot_density_default_classification": "hh_size_5a",
+      "classifications_with_2011_comparison_data": ["hh_size_5a", "hh_size_9a"]
+    },
+    "legal_partnership_status": {
+      "classifications": ["legal_partnership_status_3a", "legal_partnership_status_6a", "legal_partnership_status"],
+      "choropleth_default_classification": "legal_partnership_status_3a",
+      "dot_density_default_classification": "legal_partnership_status_3a",
+      "classifications_with_2011_comparison_data": [
+        "legal_partnership_status_3a",
+        "legal_partnership_status_6a",
+        "legal_partnership_status"
+      ]
+    },
+    "living_arrangements": {
+      "classifications": ["living_arrangements_11a"],
+      "choropleth_default_classification": "living_arrangements_11a",
+      "dot_density_default_classification": null,
+      "classifications_with_2011_comparison_data": ["living_arrangements_11a"]
+    },
+    "resident_age": {
+      "classifications": ["resident_age_3a", "resident_age_8c", "resident_age_11a", "resident_age_101a"],
+      "choropleth_default_classification": "resident_age_3a",
+      "dot_density_default_classification": "resident_age_3a",
+      "classifications_with_2011_comparison_data": [
+        "resident_age_3a",
+        "resident_age_8c",
+        "resident_age_11a",
+        "resident_age_101a"
+      ]
+    },
+    "median_age": {
+      "classifications": ["median_age"],
+      "choropleth_default_classification": "median_age",
+      "dot_density_default_classification": null,
+      "classifications_with_2011_comparison_data": ["median_age"]
+    },
+    "sex": {
+      "classifications": ["sex"],
+      "choropleth_default_classification": "sex",
+      "dot_density_default_classification": "sex",
+      "classifications_with_2011_comparison_data": ["sex"]
+    }
+  },
+  "EDU": {
+    "highest_qualification": {
+      "classifications": ["highest_qualification_6a", "highest_qualification"],
+      "choropleth_default_classification": "highest_qualification_6a",
+      "dot_density_default_classification": "highest_qualification_6a",
+      "classifications_with_2011_comparison_data": ["highest_qualification_6a", "highest_qualification"]
+    }
+  },
+  "EILR": {
+    "english_proficiency": {
+      "classifications": ["english_proficiency_4a", "english_proficiency"],
+      "choropleth_default_classification": "english_proficiency_4a",
+      "dot_density_default_classification": "english_proficiency_4a",
+      "classifications_with_2011_comparison_data": ["english_proficiency_4a", "english_proficiency"]
+    },
+    "ethnic_group_tb": {
+      "classifications": ["ethnic_group_tb_6a", "ethnic_group_tb"],
+      "choropleth_default_classification": "ethnic_group_tb_6a",
+      "dot_density_default_classification": "ethnic_group_tb_6a",
+      "classifications_with_2011_comparison_data": ["ethnic_group_tb_6a", "ethnic_group_tb"]
+    },
+    "hh_language": {
+      "classifications": ["hh_language"],
+      "choropleth_default_classification": "hh_language",
+      "dot_density_default_classification": null,
+      "classifications_with_2011_comparison_data": ["hh_language"]
+    },
+    "hh_multi_ethnic_group": {
+      "classifications": ["hh_multi_ethnic_group"],
+      "choropleth_default_classification": "hh_multi_ethnic_group",
+      "dot_density_default_classification": "hh_multi_ethnic_group",
+      "classifications_with_2011_comparison_data": ["hh_multi_ethnic_group"]
+    },
+    "hh_multi_language": {
+      "classifications": ["hh_multi_language_3a", "hh_multi_language"],
+      "choropleth_default_classification": "hh_multi_language_3a",
+      "dot_density_default_classification": "hh_multi_language_3a",
+      "classifications_with_2011_comparison_data": ["hh_multi_language_3a", "hh_multi_language"]
+    },
+    "hh_multi_religion": {
+      "classifications": ["hh_multi_religion_7a"],
+      "choropleth_default_classification": "hh_multi_religion_7a",
+      "dot_density_default_classification": "hh_multi_religion_7a",
+      "classifications_with_2011_comparison_data": ["hh_multi_religion_7a"]
+    },
+    "main_language_detailed": {
+      "classifications": ["main_language_detailed_23a", "main_language_detailed"],
+      "choropleth_default_classification": "main_language_detailed_23a",
+      "dot_density_default_classification": null,
+      "classifications_with_2011_comparison_data": ["main_language_detailed_23a", "main_language_detailed"]
+    },
+    "national_identity_all": {
+      "classifications": ["national_identity_all_4a", "national_identity_all_9a", "national_identity_all"],
+      "choropleth_default_classification": "national_identity_all_4a",
+      "dot_density_default_classification": "national_identity_all_4a",
+      "classifications_with_2011_comparison_data": [
+        "national_identity_all_4a",
+        "national_identity_all_9a",
+        "national_identity_all"
+      ]
+    },
+    "national_identity_detailed": {
+      "classifications": ["national_identity_detailed"],
+      "choropleth_default_classification": "national_identity_detailed",
+      "dot_density_default_classification": null,
+      "classifications_with_2011_comparison_data": ["national_identity_detailed"]
+    },
+    "religion_tb": {
+      "classifications": ["religion_tb"],
+      "choropleth_default_classification": "religion_tb",
+      "dot_density_default_classification": null,
+      "classifications_with_2011_comparison_data": ["religion_tb"]
+    }
+  },
+  "HOU": {
+    "accommodation_type": {
+      "classifications": ["accommodation_type_3a", "accommodation_type_5a", "accommodation_type"],
+      "choropleth_default_classification": "accommodation_type_3a",
+      "dot_density_default_classification": "accommodation_type_3a",
+      "classifications_with_2011_comparison_data": [
+        "accommodation_type_3a",
+        "accommodation_type_5a",
+        "accommodation_type"
+      ]
+    },
+    "alternative_address_indicator": {
+      "classifications": ["alternative_address_indicator"],
+      "choropleth_default_classification": "alternative_address_indicator",
+      "dot_density_default_classification": null,
+      "classifications_with_2011_comparison_data": ["alternative_address_indicator"]
+    },
+    "heating_type": {
+      "classifications": ["heating_type_3a", "heating_type"],
+      "choropleth_default_classification": "heating_type_3a",
+      "dot_density_default_classification": "heating_type_3a",
+      "classifications_with_2011_comparison_data": ["heating_type_3a", "heating_type"]
+    },
+    "hh_tenure": {
+      "classifications": ["hh_tenure_5a", "hh_tenure_9a"],
+      "choropleth_default_classification": "hh_tenure_5a",
+      "dot_density_default_classification": "hh_tenure_5a",
+      "classifications_with_2011_comparison_data": ["hh_tenure_5a", "hh_tenure_9a"]
+    },
+    "number_bedrooms": {
+      "classifications": ["number_bedrooms_5a"],
+      "choropleth_default_classification": "number_bedrooms_5a",
+      "dot_density_default_classification": "number_bedrooms_5a",
+      "classifications_with_2011_comparison_data": ["number_bedrooms_5a"]
+    },
+    "number_of_cars": {
+      "classifications": ["number_of_cars_3a", "number_of_cars_5a"],
+      "choropleth_default_classification": "number_of_cars_3a",
+      "dot_density_default_classification": "number_of_cars_3a",
+      "classifications_with_2011_comparison_data": ["number_of_cars_3a", "number_of_cars_5a"]
+    },
+    "occupancy_rating_bedrooms": {
+      "classifications": ["occupancy_rating_bedrooms_6a"],
+      "choropleth_default_classification": "occupancy_rating_bedrooms_6a",
+      "dot_density_default_classification": null,
+      "classifications_with_2011_comparison_data": ["occupancy_rating_bedrooms_6a"]
+    },
+    "occupancy_rating_rooms": {
+      "classifications": ["occupancy_rating_rooms_6a"],
+      "choropleth_default_classification": "occupancy_rating_rooms_6a",
+      "dot_density_default_classification": null,
+      "classifications_with_2011_comparison_data": ["occupancy_rating_rooms_6a"]
+    },
+    "second_address_type_priority": {
+      "classifications": ["second_address_type_priority"],
+      "choropleth_default_classification": "second_address_type_priority",
+      "dot_density_default_classification": null,
+      "classifications_with_2011_comparison_data": ["second_address_type_priority"]
+    }
+  },
+  "HUC": {
+    "disability": {
+      "classifications": ["disability_3a", "disability"],
+      "choropleth_default_classification": "disability_3a",
+      "dot_density_default_classification": "disability_3a",
+      "classifications_with_2011_comparison_data": ["disability_3a", "disability"]
+    },
+    "health_in_general": {
+      "classifications": ["health_in_general_3a", "health_in_general_4a", "health_in_general"],
+      "choropleth_default_classification": "health_in_general_3a",
+      "dot_density_default_classification": "health_in_general_3a",
+      "classifications_with_2011_comparison_data": ["health_in_general_3a", "health_in_general_4a", "health_in_general"]
+    },
+    "hh_disabled": {
+      "classifications": ["hh_disabled_4a"],
+      "choropleth_default_classification": "hh_disabled_4a",
+      "dot_density_default_classification": "hh_disabled_4a",
+      "classifications_with_2011_comparison_data": ["hh_disabled_4a"]
+    },
+    "is_carer": {
+      "classifications": ["is_carer_5a", "is_carer"],
+      "choropleth_default_classification": "is_carer_5a",
+      "dot_density_default_classification": "is_carer_5a",
+      "classifications_with_2011_comparison_data": ["is_carer_5a", "is_carer"]
+    }
+  },
+  "LAB": {
+    "economic_activity": {
+      "classifications": ["economic_activity_status_3a", "economic_activity_status_4a", "economic_activity_status_12a"],
+      "choropleth_default_classification": "economic_activity_status_3a",
+      "dot_density_default_classification": "economic_activity_status_4a",
+      "classifications_with_2011_comparison_data": [
+        "economic_activity_status_3a",
+        "economic_activity_status_4a",
+        "economic_activity_status_12a"
+      ]
+    },
+    "has_ever_worked": {
+      "classifications": ["has_ever_worked"],
+      "choropleth_default_classification": "has_ever_worked",
+      "dot_density_default_classification": "has_ever_worked",
+      "classifications_with_2011_comparison_data": ["has_ever_worked"]
+    },
+    "hours_per_week_worked": {
+      "classifications": ["hours_per_week_worked_3a", "hours_per_week_worked"],
+      "choropleth_default_classification": "hours_per_week_worked_3a",
+      "dot_density_default_classification": "hours_per_week_worked_3a",
+      "classifications_with_2011_comparison_data": ["hours_per_week_worked_3a", "hours_per_week_worked"]
+    },
+    "industry_current": {
+      "classifications": ["industry_current_88a"],
+      "choropleth_default_classification": "industry_current_88a",
+      "dot_density_default_classification": null,
+      "classifications_with_2011_comparison_data": ["industry_current_88a"]
+    },
+    "ns_sec": {
+      "classifications": ["ns_sec_10a"],
+      "choropleth_default_classification": "ns_sec_10a",
+      "dot_density_default_classification": null,
+      "classifications_with_2011_comparison_data": ["ns_sec_10a"]
+    },
+    "occupation_current": {
+      "classifications": ["occupation_current_10a"],
+      "choropleth_default_classification": "occupation_current_10a",
+      "dot_density_default_classification": null,
+      "classifications_with_2011_comparison_data": ["occupation_current_10a"]
+    }
+  },
+  "MIG": {
+    "age_arrival_uk": {
+      "classifications": ["age_arrival_uk_18a"],
+      "choropleth_default_classification": "age_arrival_uk_18a",
+      "dot_density_default_classification": "age_arrival_uk_18a",
+      "classifications_with_2011_comparison_data": ["age_arrival_uk_18a"]
+    },
+    "country_of_birth": {
+      "classifications": ["country_of_birth_3a", "country_of_birth_8a", "country_of_birth_12a", "country_of_birth_60a"],
+      "choropleth_default_classification": "country_of_birth_3a",
+      "dot_density_default_classification": "country_of_birth_3a",
+      "classifications_with_2011_comparison_data": [
+        "country_of_birth_3a",
+        "country_of_birth_8a",
+        "country_of_birth_12a",
+        "country_of_birth_60a"
+      ]
+    },
+    "migrant_ind": {
+      "classifications": ["migrant_ind"],
+      "choropleth_default_classification": "migrant_ind",
+      "dot_density_default_classification": null,
+      "classifications_with_2011_comparison_data": ["migrant_ind"]
+    },
+    "passports_all": {
+      "classifications": [
+        "passports_all_4a",
+        "passports_all_13a",
+        "passports_all_18a",
+        "passports_all_27a",
+        "passports_all_52a"
+      ],
+      "choropleth_default_classification": "passports_all_4a",
+      "dot_density_default_classification": "passports_all_4a",
+      "classifications_with_2011_comparison_data": [
+        "passports_all_4a",
+        "passports_all_13a",
+        "passports_all_18a",
+        "passports_all_27a",
+        "passports_all_52a"
+      ]
+    },
+    "residence_length": {
+      "classifications": ["residence_length_6b"],
+      "choropleth_default_classification": "residence_length_6b",
+      "dot_density_default_classification": "residence_length_6b",
+      "classifications_with_2011_comparison_data": ["residence_length_6b"]
+    },
+    "year_arrival_uk": {
+      "classifications": ["year_arrival_uk_6a", "year_arrival_uk"],
+      "choropleth_default_classification": "year_arrival_uk_6a",
+      "dot_density_default_classification": "year_arrival_uk_6a",
+      "classifications_with_2011_comparison_data": ["year_arrival_uk_6a", "year_arrival_uk"]
+    }
+  },
+  "SOGI": {
+    "gender_identity": {
+      "classifications": ["gender_identity_4a", "gender_identity_8a"],
+      "choropleth_default_classification": "gender_identity_4a",
+      "dot_density_default_classification": "gender_identity_4a",
+      "classifications_with_2011_comparison_data": ["gender_identity_4a", "gender_identity_8a"]
+    },
+    "sexual_orientation": {
+      "classifications": ["sexual_orientation_4a", "sexual_orientation_6a", "sexual_orientation_9a"],
+      "choropleth_default_classification": "sexual_orientation_4a",
+      "dot_density_default_classification": "sexual_orientation_4a",
+      "classifications_with_2011_comparison_data": [
+        "sexual_orientation_4a",
+        "sexual_orientation_6a",
+        "sexual_orientation_9a"
+      ]
+    }
+  },
+  "TTW": {
+    "transport_to_workplace": {
+      "classifications": ["transport_to_workplace_12a"],
+      "choropleth_default_classification": "transport_to_workplace_12a",
+      "dot_density_default_classification": null,
+      "classifications_with_2011_comparison_data": ["transport_to_workplace_12a"]
+    },
+    "workplace_travel": {
+      "classifications": ["workplace_travel_4a", "workplace_travel_5a", "workplace_travel_10a"],
+      "choropleth_default_classification": "workplace_travel_4a",
+      "dot_density_default_classification": "workplace_travel_4a",
+      "classifications_with_2011_comparison_data": [
+        "workplace_travel_4a",
+        "workplace_travel_5a",
+        "workplace_travel_10a"
+      ]
+    }
+  },
+  "WELSH-SKILLS": {
+    "welsh_skills_all": {
+      "classifications": ["welsh_skills_all_4b", "welsh_skills_all_6a", "welsh_skills_all"],
+      "choropleth_default_classification": "welsh_skills_all_4b",
+      "dot_density_default_classification": "welsh_skills_all_4b",
+      "classifications_with_2011_comparison_data": ["welsh_skills_all_4b", "welsh_skills_all_6a", "welsh_skills_all"]
+    },
+    "welsh_skills_speak": {
+      "classifications": ["welsh_skills_speak"],
+      "choropleth_default_classification": "welsh_skills_speak",
+      "dot_density_default_classification": "welsh_skills_speak",
+      "classifications_with_2011_comparison_data": ["welsh_skills_speak"]
+    }
+  }
+}

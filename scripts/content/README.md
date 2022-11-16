@@ -32,13 +32,9 @@ Utility scripts for making and editing content.json files for consumption by the
 1. Ensure code dependencies are installed
 2. Download latest cantabular metadata archive from https://confluence.ons.gov.uk/pages/viewpage.action?spaceKey=ODADH&title=Upload+Metadata+Files+to+support+NOMIS%2C+Testing+etc
 3. Unzip cantabular metadata into a new directory within `input_metadata_files`
-4. Copy the `content-spec-example.json` to a new file (e.g. `my-content-spec.json`), and (minimally) fill in the bits with `CHANGE ME`:
-   * Change the value for `cantabular_metadata_dir` to the name of the unzipped cantabular metadata archive you added to `input_metadata_files` in step 2.
-   * Change the value for `version` to something that describes the content you're about to make (e.g. `My-New-Content`). This will go in the filenames, file metadata and the output path.
-5. Run `make_content_jsons.py`against your content-spec sheet, e.g. `./make_content_jsons.py my-content-spec.json`. This will output content json files to `output_content_jsons/<value of version in spec file>`,
-e.g `output_content_jsons/My-New-Content/`. There will be one content json for every topic specified in the rich content spec csv, with another one (`ALL`) containing all topics specified. 
-
+4. Copy the latest `2021-content-spec-vXX.json` to a new file, iterating `XX` to a new version number. Minimally change the `cantabular_metadata_dir` value to point at the new unzipped metadata archive made in step 2. See `2021-content-spec-example.json` for guidance.
+5. Run `make_content_jsons.py`against your content-spec sheet, e.g. `./make_content_jsons.py 2021-content-spec-vXXX.json`. This will output content json files to `output_content_jsons/2021`. There will be one content json for every topic specified in the Atlas_content_and_releases json, with another one (`ALL`) containing all topics specified.
 
 ### Changing the atlas content
 
-The master list for the classifications used in the atlas is found in the Rich content product specifications table on confluence, [here](https://confluence.ons.gov.uk/display/ODADH/Rich+content+product+specifications). If this has been updated, export it as csv and save over `input_metadata_files/Rich_content_product_specifications.csv` before re-running `make_content_json.py`.
+The master list for the classifications used in the atlas is found in `input_metadata_files/Atlas_content_and_releases.json`.

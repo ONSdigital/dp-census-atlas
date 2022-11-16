@@ -1,7 +1,6 @@
 <script>
   import { content } from "../stores/content";
   import { isInitialReleasePeriod } from "../helpers/contentHelpers";
-  import Heading from "./Heading.svelte";
   import VariableGroupList from "./VariableGroupList.svelte";
   import AreaPanel from "./AreaPanel.svelte";
   import SearchBox from "./SearchBox.svelte";
@@ -24,13 +23,13 @@
           class="hyperlink">release schedule</a
         >.
       </div>
-
-      <div class="bg-ons-grey-5 p-6 mb-6">
-        <h3 class="pb-3 text-xl font-semibold ">Examples</h3>
-        <ul>
-          <Examples />
-        </ul>
-      </div>
     {/if}
+
+    <div class="bg-ons-grey-5 p-6 mb-6">
+      <h3 class="pb-3 text-xl font-semibold ">Examples</h3>
+      <ul>
+        <Examples />
+      </ul>
+    </div>
   </section>
 </div>

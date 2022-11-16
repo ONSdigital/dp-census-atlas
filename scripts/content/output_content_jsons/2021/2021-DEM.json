@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-11-09-15-18-38",
-    "spec_file": "2021-content-spec-v5.json",
+    "created_at": "2022-11-16-10-46-16",
+    "spec_file": "2021-content-spec-v6.json",
     "release": "2021-DEM"
   },
   "content": [
@@ -64,6 +64,7 @@
               "dataset": "TS011",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Household is not deprived in any dimension",
@@ -130,6 +131,7 @@
               "dataset": "TS003",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Other household types",
@@ -167,6 +169,7 @@
                 "lad"
               ],
               "dataset": "TS003",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "One-person household: Aged 66 years and over",
@@ -305,6 +308,7 @@
               "dataset": "TS017",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "1 person in household",
@@ -350,6 +354,7 @@
                 "lad"
               ],
               "dataset": "TS017",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "1 person in household",
@@ -440,6 +445,7 @@
               "dataset": "TS002",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Married or in a registered civil partnership",
@@ -469,6 +475,7 @@
                 "lad"
               ],
               "dataset": "TS002",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Never married and never registered a civil partnership",
@@ -522,6 +529,7 @@
                 "lad"
               ],
               "dataset": "TS002",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Never married and never registered a civil partnership",
@@ -634,6 +642,7 @@
               ],
               "dataset": "TS010",
               "choropleth_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Living in an opposite-sex couple: Married or in a civil partnership",
@@ -739,6 +748,7 @@
               "dataset": "TS076",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Aged 15 years and under",
@@ -775,6 +785,7 @@
                 "lad"
               ],
               "dataset": "TS076",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Aged 14 years and under",
@@ -851,6 +862,7 @@
                 "lad"
               ],
               "dataset": "TS076",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Aged 4 years and under",
@@ -951,6 +963,7 @@
                 "lad"
               ],
               "dataset": "TS007",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Aged under 1 year",
@@ -1817,6 +1830,7 @@
               "dataset": "TS020",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Female",

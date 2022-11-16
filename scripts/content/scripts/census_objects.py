@@ -85,11 +85,12 @@ class CensusClassification:
         Return False if public properties are blank strings, categories is empty list, or any categories are not valid
         """
         is_valid = True
-
         for prop, value in vars(self).items():
-            if isinstance(value, str) and not prop.startswith("_") and value == "":
-                print(f"** Blank property {prop} found in classification {self.code} **")
-                is_valid = False
+            # blank datasets are allowed
+            if prop != "dataset":
+                if isinstance(value, str) and not prop.startswith("_") and value == "":
+                    print(f"** Blank property {prop} found in classification {self.code} **")
+                    is_valid = False
 
         if len(self.categories) == 0:
             print(f"** Classification {self.code} has no categories **")

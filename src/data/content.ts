@@ -89,6 +89,15 @@ const ttw = {
   fakeDataBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021",
   realDataBaseUrl: "",
 };
+const welshSkills = {
+  localContentJsonUrl: "http://localhost:8090/2021/2021-WELSH-SKILLS.json",
+  publicContentJsonUrl:
+    "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-WELSH-SKILLS.json",
+  prodPubContentJsonUrl: "",
+  prodWebContentJsonUrl: "",
+  fakeDataBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021",
+  realDataBaseUrl: "",
+};
 
 // envs / instances
 export default {
@@ -152,6 +161,11 @@ export default {
         contentJsonUrl: ttw.localContentJsonUrl,
         contentBaseUrl: ttw.fakeDataBaseUrl,
       },
+      // welshSkills is unpublished
+      {
+        contentJsonUrl: welshSkills.localContentJsonUrl,
+        contentBaseUrl: welshSkills.fakeDataBaseUrl,
+      },
     ],
   },
 
@@ -214,6 +228,11 @@ export default {
         contentJsonUrl: ttw.publicContentJsonUrl,
         contentBaseUrl: ttw.fakeDataBaseUrl,
       },
+      // welshSkills is unpublished
+      {
+        contentJsonUrl: welshSkills.publicContentJsonUrl,
+        contentBaseUrl: welshSkills.fakeDataBaseUrl,
+      },
     ],
   },
 
@@ -275,6 +294,11 @@ export default {
       {
         contentJsonUrl: ttw.publicContentJsonUrl,
         contentBaseUrl: ttw.fakeDataBaseUrl,
+      },
+      // welshSkills is unpublished
+      {
+        contentJsonUrl: welshSkills.publicContentJsonUrl,
+        contentBaseUrl: welshSkills.fakeDataBaseUrl,
       },
     ],
   },

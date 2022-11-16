@@ -46,7 +46,7 @@ from scripts.census_objects import (
     variable_from_content_json
 )
 from scripts.filter_content_to_atlas_spec import filter_content_to_atlas_spec_from_file
-from scripts.split_content_by_topic import split_content_by_topic
+from scripts.split_content import split_content
 from scripts.update_legend_strs_from_csv import update_legend_strs_from_file
 from scripts.update_variable_desc_from_csv import update_variable_descs_from_file
 from scripts.validate_content import validate_variable_groups
@@ -192,10 +192,10 @@ def main(spec_fn: str):
     print("... done.")
 
     # filter to atlas content
-    print(f"Filtering atlas content to spec from {spec['rich_content_spec_file']}...")
+    print(f"Filtering atlas content to spec from {spec['content_and_releases_spec_file']}...")
     content_iterations["ALL"] = filter_content_to_atlas_spec_from_file(
         content_iterations["ALL"],
-        input_full_path(spec["rich_content_spec_file"])
+        input_full_path(spec["content_and_releases_spec_file"])
     )
     print("... done.")
 
@@ -268,10 +268,11 @@ def main(spec_fn: str):
                         c.name = spec['category_renames'][c.code]
     print("... done.")
 
-
-    # make topic splits
-    print("Splitting content by topic...")
-    content_iterations.update(split_content_by_topic(content_iterations["ALL"]))
+    # make release splits
+    print("Splitting content by releases...")
+    content_iterations.update(split_content(
+        content_iterations["ALL"], 
+        input_full_path(spec["content_and_releases_spec_file"])))
     print("... done.")
 
     # validate

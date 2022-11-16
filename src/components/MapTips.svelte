@@ -10,7 +10,7 @@
         <div class="hidden lg:block text-2xl">
           <Icon kind="keyboardBackspace" />
         </div>
-        <div>Select a topic to visualise</div>
+        <div>Choose a topic to visualise</div>
       </div>
     </div>
   </div>

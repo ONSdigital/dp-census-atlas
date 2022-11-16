@@ -1,13 +1,12 @@
 <script lang="ts">
   import { params } from "../stores/params";
   import Icon from "./MaterialIcon.svelte";
-  import IntroAndExamples from "./IntroAndExamples.svelte";
 
   let open = true;
   const toggleOpen = () => {
     open = !open;
   };
-  $: showOrHideText = open ? "Hide heading and examples" : "Show heading and examples";
+  $: showOrHideText = open ? "Hide strapline" : "Show strapline";
 </script>
 
 <div
@@ -32,7 +31,7 @@
   </div>
   {#if open}
     <div class="mt-2">
-      <IntroAndExamples />
+      Use our maps to find out what people's lives were like across England and Wales in March 2021.
     </div>
   {/if}
 </div>

@@ -7,6 +7,7 @@
   import { getClassificationDataSuffix, roundedClassificationDataToString } from "../helpers/classificationHelpers";
   import BreaksChart from "./BreaksChart.svelte";
   import GeoTypeBadge from "./GeoTypeBadge.svelte";
+  import CategorySelector from "./CategorySelector.svelte";
 
   $: valueForHoveredGeography = $viz?.places.find((p) => p.geoCode === $hovered?.geoCode)?.categoryValue;
 
@@ -71,14 +72,18 @@
                 )}
               </span>
             </div>
-            <div class={`${legendTextClass} font-bold`}>
-              {formatTemplateString(
-                $viz.params.variable,
-                $viz.params.category,
-                active.displayName,
-                $viz.params.category.legend_str_3,
-              )}
-            </div>
+            {#if $viz?.params?.embed?.categorySelection}
+              <CategorySelector />
+            {:else}
+              <div class={`${legendTextClass} font-bold`}>
+                {formatTemplateString(
+                  $viz.params.variable,
+                  $viz.params.category,
+                  active.displayName,
+                  $viz.params.category.legend_str_3,
+                )}
+              </div>
+            {/if}
           </div>
         </div>
       {:else}

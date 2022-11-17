@@ -88,19 +88,19 @@
     <div class="">
       <label class="hoverable">
         <input type="checkbox" bind:checked={embedInteractive} class="custom-ring mr-1" />
-        Enable interactivity
+        Interactivity
       </label>
     </div>
     <div class="">
       <label class="hoverable">
         <input type="checkbox" bind:checked={embedAreaSearch} class="custom-ring mr-1" />
-        Enable area search
+        Area search
       </label>
     </div>
     <div class="">
       <label class="hoverable">
-        <input disabled type="checkbox" bind:checked={embedCategorySelection} class="custom-ring mr-1" />
-        Enable category selection
+        <input type="checkbox" bind:checked={embedCategorySelection} class="custom-ring mr-1" />
+        Category selection
       </label>
     </div>
   </section>

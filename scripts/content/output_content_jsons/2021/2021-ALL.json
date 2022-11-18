@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-11-16-10-46-16",
+    "created_at": "2022-11-18-15-09-11",
     "spec_file": "2021-content-spec-v6.json",
     "release": "2021-ALL"
   },
@@ -8648,17 +8648,17 @@
                   "name": "Economically active: In employment (including full-time students)",
                   "slug": "economically-active-in-employment-including-full-time-students",
                   "code": "economic_activity_status_4a-001",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people (including full-time students) in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "in employment (including full-time students)"
+                  "legend_str_3": "in employment"
                 },
                 {
                   "name": "Economically active: Unemployed (including full-time students)",
                   "slug": "economically-active-unemployed-including-full-time-students",
                   "code": "economic_activity_status_4a-002",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people (including full-time students) in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "unemployed (including full-time students)"
+                  "legend_str_3": "unemployed"
                 },
                 {
                   "name": "Economically inactive",
@@ -8671,9 +8671,9 @@
               ]
             },
             {
-              "code": "economic_activity_status_12a",
-              "slug": "economic-activity-status-12a",
-              "desc": "Economic activity status (12 categories)",
+              "code": "economic_activity_status_10a",
+              "slug": "economic-activity-status-10a",
+              "desc": "Economic activity status (10 categories)",
               "available_geotypes": [
                 "oa",
                 "msoa",
@@ -8683,57 +8683,41 @@
               "comparison_2011_data_available": true,
               "categories": [
                 {
-                  "name": "Economically active (excluding full-time students): In employment: Employee",
-                  "slug": "economically-active-excluding-full-time-students-in-employment-employee",
-                  "code": "economic_activity_status_12a-001",
+                  "name": "Economically active (excluding full-time students): In employment",
+                  "slug": "economically-active-excluding-full-time-students-in-employment",
+                  "code": "economic_activity_status_10a-001",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "employed"
-                },
-                {
-                  "name": "Economically active (excluding full-time students): In employment: Self-employed with employees",
-                  "slug": "economically-active-excluding-full-time-students-in-employment-self-employed-with-employees",
-                  "code": "economic_activity_status_12a-002",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "self-employed with employees"
-                },
-                {
-                  "name": "Economically active (excluding full-time students): In employment: Self-employed without employees",
-                  "slug": "economically-active-excluding-full-time-students-in-employment-self-employed-without-employees",
-                  "code": "economic_activity_status_12a-003",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "self-employed without employees"
+                  "legend_str_3": "in employment"
                 },
                 {
                   "name": "Economically active (excluding full-time students): Unemployed: Seeking work or waiting to start a job already obtained: Available to start working within 2 weeks",
                   "slug": "economically-active-excluding-full-time-students-unemployed-seeking-work-or-waiting-to-start-a-job-already-obtained-available-to-start-working-within-2-weeks",
-                  "code": "economic_activity_status_12a-004",
-                  "legend_str_1": "of people in {location}",
+                  "code": "economic_activity_status_10a-002",
+                  "legend_str_1": "of people (excluding full-time students) in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "seeking work or waiting to start a job already obtained"
+                  "legend_str_3": "unemployed, but seeking work or waiting to start a job already obtained."
                 },
                 {
                   "name": "Economically active and a full-time student: In employment",
                   "slug": "economically-active-and-a-full-time-student-in-employment",
-                  "code": "economic_activity_status_12a-005",
-                  "legend_str_1": "of people in {location}",
+                  "code": "economic_activity_status_10a-003",
+                  "legend_str_1": "of full-time students in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "employed full-time student"
+                  "legend_str_3": "in employment"
                 },
                 {
                   "name": "Economically active and a full-time student: Unemployed: Seeking work or waiting to start a job already obtained: Available to start working within 2 weeks",
                   "slug": "economically-active-and-a-full-time-student-unemployed-seeking-work-or-waiting-to-start-a-job-already-obtained-available-to-start-working-within-2-weeks",
-                  "code": "economic_activity_status_12a-006",
-                  "legend_str_1": "of people in {location}",
+                  "code": "economic_activity_status_10a-004",
+                  "legend_str_1": "of full-time students in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "unemployed full-time student seeking work or waiting to start a job already obtained"
+                  "legend_str_3": "unemployed, but seeking work or waiting to start a job already obtained."
                 },
                 {
                   "name": "Economically inactive: Retired",
                   "slug": "economically-inactive-retired",
-                  "code": "economic_activity_status_12a-007",
+                  "code": "economic_activity_status_10a-005",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "retired"
@@ -8741,31 +8725,31 @@
                 {
                   "name": "Economically inactive: Student",
                   "slug": "economically-inactive-student",
-                  "code": "economic_activity_status_12a-008",
-                  "legend_str_1": "of people in {location}",
+                  "code": "economic_activity_status_10a-006",
+                  "legend_str_1": "of students in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "unemployed students"
+                  "legend_str_3": "economically inactive"
                 },
                 {
                   "name": "Economically Inactive: Looking after home or family",
                   "slug": "economically-inactive-looking-after-home-or-family",
-                  "code": "economic_activity_status_12a-009",
+                  "code": "economic_activity_status_10a-007",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "full-time looking after home or family"
+                  "legend_str_3": "economically inactive due to looking after home or family"
                 },
                 {
                   "name": "Economically inactive: Long-term sick or disabled",
                   "slug": "economically-inactive-long-term-sick-or-disabled",
-                  "code": "economic_activity_status_12a-010",
+                  "code": "economic_activity_status_10a-008",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "long-term sick or disabled"
+                  "legend_str_3": "economically inactive due to long-term sickness or disability"
                 },
                 {
                   "name": "Economically inactive: Other",
                   "slug": "economically-inactive-other",
-                  "code": "economic_activity_status_12a-011",
+                  "code": "economic_activity_status_10a-009",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "otherwise economically inactive"

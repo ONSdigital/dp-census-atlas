@@ -234,13 +234,13 @@
   },
   "LAB": {
     "economic_activity": {
-      "classifications": ["economic_activity_status_3a", "economic_activity_status_4a", "economic_activity_status_12a"],
+      "classifications": ["economic_activity_status_3a", "economic_activity_status_4a", "economic_activity_status_10a"],
       "choropleth_default_classification": "economic_activity_status_3a",
       "dot_density_default_classification": "economic_activity_status_4a",
       "classifications_with_2011_comparison_data": [
         "economic_activity_status_3a",
         "economic_activity_status_4a",
-        "economic_activity_status_12a"
+        "economic_activity_status_10a"
       ]
     },
     "has_ever_worked": {

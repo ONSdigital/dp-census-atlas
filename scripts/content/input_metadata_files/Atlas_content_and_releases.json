@@ -355,14 +355,10 @@
       "classifications_with_2011_comparison_data": ["transport_to_workplace_12a"]
     },
     "workplace_travel": {
-      "classifications": ["workplace_travel_4a", "workplace_travel_5a", "workplace_travel_10a"],
+      "classifications": ["workplace_travel_4a", "workplace_travel_5a", "workplace_travel"],
       "choropleth_default_classification": "workplace_travel_4a",
       "dot_density_default_classification": "workplace_travel_4a",
-      "classifications_with_2011_comparison_data": [
-        "workplace_travel_4a",
-        "workplace_travel_5a",
-        "workplace_travel_10a"
-      ]
+      "classifications_with_2011_comparison_data": ["workplace_travel_4a", "workplace_travel_5a", "workplace_travel"]
     }
   },
   "WELSH-SKILLS": {

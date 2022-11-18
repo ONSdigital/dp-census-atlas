@@ -20,10 +20,10 @@ const testCases = [
   },
   {
     name: "EILR",
-    url: "/choropleth/identity/main-language-detailed/main-language-detailed-23a/portuguese?lad=E08000033",
-    legendText: "57.2% of people in Calderdale LAD speak Portuguese",
-    categoryCount: 22,
-    nextClassificationCategoryCount: 94,
+    url: "/choropleth/identity/gender-identity/gender-identity-4a/gender-identity-the-same-as-sex-registered-at-birth?lad=E09000012",
+    legendText: "35.5% of families in Hackney LAD have a gender identity the same as their sex registered at birth",
+    categoryCount: 3,
+    nextClassificationCategoryCount: 7,
   },
   {
     name: "HUC",
@@ -100,7 +100,7 @@ for (const c of testCases) {
       await page.getByText("More categories").click();
       await expect(page.locator("ul > li")).toHaveCount(c.nextClassificationCategoryCount);
 
-      // click on 'more categories' and expect the number of categories shown to change back
+      // click on 'fewer categories' and expect the number of categories shown to change back
       await page.getByText("Fewer categories").click();
       await expect(page.locator("ul > li")).toHaveCount(c.categoryCount);
     }

@@ -15,7 +15,7 @@ test("census maps shows a legend colorscheme of variable length depending on the
   await page.goto("/choropleth/population/age/resident-age-101a/aged-93-years");
   await expect(page.locator(legendColorsSelector)).toHaveCount(3);
 
-  // expect three legend colors for aged-99-years at MSOA level
+  // expect two legend colors for aged-99-years at MSOA level
   await page.goto("/choropleth/population/age/resident-age-101a/aged-99-years?msoa=E02005619");
   await expect(page.locator(legendColorsSelector)).toHaveCount(2);
 

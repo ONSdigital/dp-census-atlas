@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-11-16-10-46-16",
+    "created_at": "2022-11-18-16-41-19",
     "spec_file": "2021-content-spec-v6.json",
     "release": "2021-TTW"
   },
@@ -241,20 +241,20 @@
               ]
             },
             {
-              "code": "workplace_travel_10a",
-              "slug": "workplace-travel-10a",
-              "desc": "Distance travelled to work (10 categories)",
+              "code": "workplace_travel",
+              "slug": "workplace-travel",
+              "desc": "Distance travelled to work (11 categories)",
               "available_geotypes": [
                 "oa",
                 "msoa"
               ],
-              "dataset": "",
+              "dataset": "TS058",
               "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Less than 2km",
                   "slug": "less-than-2km",
-                  "code": "workplace_travel_10a-001",
+                  "code": "workplace_travel-001",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "travel",
                   "legend_str_3": "less than 2km to work"
@@ -262,7 +262,7 @@
                 {
                   "name": "2km to less than 5km",
                   "slug": "2km-to-less-than-5km",
-                  "code": "workplace_travel_10a-002",
+                  "code": "workplace_travel-002",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "travel",
                   "legend_str_3": "2km to less than 5km to work"
@@ -270,7 +270,7 @@
                 {
                   "name": "5km to less than 10km",
                   "slug": "5km-to-less-than-10km",
-                  "code": "workplace_travel_10a-003",
+                  "code": "workplace_travel-003",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "travel",
                   "legend_str_3": "5km to less than 10km to work"
@@ -278,7 +278,7 @@
                 {
                   "name": "10km to less than 20km",
                   "slug": "10km-to-less-than-20km",
-                  "code": "workplace_travel_10a-004",
+                  "code": "workplace_travel-004",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "travel",
                   "legend_str_3": "10km to less than 20km to work"
@@ -286,7 +286,7 @@
                 {
                   "name": "20km to less than 30km",
                   "slug": "20km-to-less-than-30km",
-                  "code": "workplace_travel_10a-005",
+                  "code": "workplace_travel-005",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "travel",
                   "legend_str_3": "20km to less than 30km to work"
@@ -294,7 +294,7 @@
                 {
                   "name": "30km to less than 40km",
                   "slug": "30km-to-less-than-40km",
-                  "code": "workplace_travel_10a-006",
+                  "code": "workplace_travel-006",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "travel",
                   "legend_str_3": "30km to less than 40km to work"
@@ -302,7 +302,7 @@
                 {
                   "name": "40km to less than 60km",
                   "slug": "40km-to-less-than-60km",
-                  "code": "workplace_travel_10a-007",
+                  "code": "workplace_travel-007",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "travel",
                   "legend_str_3": "40km to less than 60km to work"
@@ -310,7 +310,7 @@
                 {
                   "name": "60km and over",
                   "slug": "60km-and-over",
-                  "code": "workplace_travel_10a-008",
+                  "code": "workplace_travel-008",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "travel",
                   "legend_str_3": "60km and over to work"
@@ -318,18 +318,18 @@
                 {
                   "name": "Works mainly from home",
                   "slug": "works-mainly-from-home",
-                  "code": "workplace_travel_10a-009",
+                  "code": "workplace_travel-009",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "work",
                   "legend_str_3": "mainly from home"
                 },
                 {
-                  "name": "Other",
-                  "slug": "other",
-                  "code": "workplace_travel_10a-010",
+                  "name": "Works mainly at an offshore installation, in no fixed place, or outside the UK",
+                  "slug": "works-mainly-at-an-offshore-installation-in-no-fixed-place-or-outside-the-uk",
+                  "code": "workplace_travel-010",
                   "legend_str_1": "of people in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "other forms of travel to work"
+                  "legend_str_2": "work",
+                  "legend_str_3": "mainly at an offshore location, in no fixed place, or outside the UK"
                 }
               ]
             }

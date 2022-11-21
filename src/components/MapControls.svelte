@@ -14,16 +14,20 @@
   <div
     class="absolute top-3 lg:top-5 xl:top-8 left-3 lg:left-5 xl:left-8 right-16 lg:right-20 gap-3 flex items-start justify-between flex-wrap"
   >
-    <div class="flex flex-wrap items-center gap-2 text-sm lg:text-base">
-      <!-- <div class="flex group">
+    <!-- mobile - some repetition of non-mobile here as it makes the conditionals less hard to understand -->
+    <div class="md:hidden flex flex-wrap items-center gap-2 text-sm lg:text-base">
+      <div class="flex group">
         <div class="z-abovemap px-3 py-1 rounded-l bg-ons-census text-ons-grey-5 font-bold">
           {$viewport.geoType.toUpperCase()}
         </div>
         <div class={`z-abovemap px-3 py-1 rounded-r bg-ons-grey-75 text-ons-grey-5 `}>
           {geoTypeDescriptions[$viewport.geoType]}
         </div>
-      </div> -->
+      </div>
+    </div>
 
+    <!-- non-mobile -->
+    <div class="hidden md:flex flex-wrap items-center gap-2 text-sm lg:text-base">
       {#each geoTypes as g, i}
         {#if i !== 0}
           <div
@@ -41,7 +45,9 @@
           class:hidden={i > geoTypes.indexOf($viewport.idealGeoType)}
         >
           <div
-            class="z-abovemap px-3 py-1 rounded-l bg-ons-census text-ons-grey-5 font-bold"
+            class={`z-abovemap px-3 py-1 rounded-l bg-ons-census text-ons-grey-5 font-bold ${
+              g !== $viewport.geoType || g !== $viewport.idealGeoType ? "rounded-r 2xl:rounded-r-none" : ""
+            }`}
             class:bg-ons-grey-55={g !== $viewport.geoType}
             class:group-hover:bg-ons-census={i < geoTypes.indexOf($viewport.geoType)}
             class:bg-ons-census={g === $viewport.geoType}
@@ -49,7 +55,9 @@
             {g.toUpperCase()}
           </div>
           <div
-            class={`z-abovemap px-3 py-1 rounded-r bg-ons-grey-75 text-ons-grey-5 `}
+            class={`z-abovemap px-3 py-1 rounded-r bg-ons-grey-75 text-ons-grey-5 2xl:block ${
+              g === $viewport.geoType || g === $viewport.idealGeoType ? "block" : "hidden"
+            } `}
             class:group-hover:bg-ons-grey-55={i < geoTypes.indexOf($viewport.geoType)}
           >
             {geoTypeDescriptions[g]}

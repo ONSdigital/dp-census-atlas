@@ -29,7 +29,7 @@
     </div>
 
     <!-- non-mobile -->
-    <div class="hidden md:flex flex-wrap items-center gap-2 text-sm lg:text-base">
+    <div class="hidden md:flex flex-wrap items-center gap-1 text-sm lg:text-base">
       {#each geoTypes as g, i}
         {#if i !== 0}
           <div
@@ -66,7 +66,7 @@
           >
             {geoTypePluralDescriptions[g]}
             {#if i > geoTypes.indexOf($viewport.geoType)}
-              <span class="">unavailable</span>
+              <span>(unavailable)</span>
             {/if}
           </div>
         </button>

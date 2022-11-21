@@ -51,8 +51,7 @@
             class={`z-abovemap flex items-center  px-3 py-1 rounded-l bg-ons-census text-ons-grey-5 font-bold ${
               g === $viewport.geoType || g === $viewport.idealGeoType ? "" : "rounded-r"
             }`}
-            class:bg-ons-grey-75={g !== $viewport.geoType}
-            class:bg-ons-grey-55={i > geoTypes.indexOf($viewport.geoType)}
+            class:bg-ons-grey-55={g !== $viewport.geoType}
             class:group-hover:bg-ons-census={i < geoTypes.indexOf($viewport.geoType)}
             class:bg-ons-census={g === $viewport.geoType}
           >

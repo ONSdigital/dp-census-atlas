@@ -13,6 +13,7 @@ export const viz = asyncDerived([params, viewport], async ([$params, $viewport])
     return undefined;
   } else {
     const args = {
+      classification: $params.classification,
       category: $params.category,
       geoType: $viewport.geoType,
       bbox: $viewport.bbox,

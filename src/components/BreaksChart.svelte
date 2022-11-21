@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { roundCategoryDataToString } from "../helpers/categoryHelpers";
+  import { roundedClassificationDataToString } from "../helpers/classificationHelpers";
   import BreaksMarker from "./BreaksMarker.svelte";
 
   export let hovered = undefined;
@@ -8,7 +8,7 @@
   export let colors = ["rgba(234,236,177)", "rgba(169,216,145)", "rgba(0,167,186)", "rgba(0,78,166)", "rgba(0,13,84)"];
   export let suffix = "";
   export let snapTicks = true;
-  export let categoryCode = "";
+  export let classificationCode = "";
 
   // handle case of only one breaks value
   $: ticks = breaks.length === 1 ? [breaks[0], breaks[0]] : breaks;
@@ -42,12 +42,14 @@
       class="tick"
       style="left: {i * (100 / (ticks.length - 1))}%; transform: translateX({i == 0 && snapTicks ? '-2px' : '-50%'});"
     >
-      {roundCategoryDataToString(categoryCode, ticks[i])}<span class="tick-suffix">{suffix}</span>
+      {roundedClassificationDataToString(classificationCode, ticks[i])}<span class="tick-suffix">{suffix}</span>
     </div>
   {/each}
   <div class="line" style="right: 0;" />
   <div class="tick" style="right: 0; transform: translateX({snapTicks ? '2px' : '50%'});">
-    {roundCategoryDataToString(categoryCode, ticks[ticks.length - 1])}<span class="tick-suffix">{suffix}</span>
+    {roundedClassificationDataToString(classificationCode, ticks[ticks.length - 1])}<span class="tick-suffix"
+      >{suffix}</span
+    >
   </div>
   {#if selected !== undefined}
     <div class="absolute z-10 -top-2.5" style="left: calc({pos(selected, ticks)}% - {28 / 2}px);">

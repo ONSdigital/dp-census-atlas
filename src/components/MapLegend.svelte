@@ -4,7 +4,7 @@
   import { selected } from "../stores/selected";
   import { formatTemplateString } from "../helpers/categoryHelpers";
   import { choroplethColours } from "../helpers/choroplethHelpers";
-  import { getCategoryDataSuffix, roundCategoryDataToString } from "../helpers/categoryHelpers";
+  import { getClassificationDataSuffix, roundedClassificationDataToString } from "../helpers/classificationHelpers";
   import BreaksChart from "./BreaksChart.svelte";
   import GeoTypeBadge from "./GeoTypeBadge.svelte";
 
@@ -46,8 +46,10 @@
         <div class="flex gap-3 items-center">
           <div class="whitespace-nowrap">
             <span class="text-4xl md:text-5xl font-bold">
-              {roundCategoryDataToString($viz.params.category.code, active.value)}</span
-            ><span class="text-3xl md:text-4xl font-bold">{getCategoryDataSuffix($viz.params.category.code)}</span>
+              {roundedClassificationDataToString($viz.params.classification.code, active.value)}</span
+            ><span class="text-3xl md:text-4xl font-bold"
+              >{getClassificationDataSuffix($viz.params.classification.code)}</span
+            >
           </div>
           <div class="flex-grow leading-[0px]">
             <div class="">
@@ -107,10 +109,10 @@
         <BreaksChart
           selected={$selected?.value}
           hovered={active.value}
-          suffix={getCategoryDataSuffix($viz.params.category.code)}
+          suffix={getClassificationDataSuffix($viz.params.classification.code)}
           breaks={$viz.breaks}
           colors={choroplethColours}
-          categoryCode={$viz.params.category.code}
+          classificationCode={$viz.params.classification.code}
         />
       {/if}
     </div>

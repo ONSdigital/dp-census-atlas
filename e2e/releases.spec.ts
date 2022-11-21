@@ -42,7 +42,7 @@ const testCases = [
   {
     name: "LAB",
     url: "/choropleth/work/hours-worked/hours-per-week-worked-3a/part-time-30-hours-or-less-worked?lad=E07000203",
-    legendText: "3.5% of people in Mid Suffolk LAD work part-time: 30 hours or less",
+    legendText: "23.1% of people in Mid Suffolk LAD work part-time: 30 hours or less",
     categoryCount: 2,
     nextClassificationCategoryCount: 4,
   },
@@ -64,7 +64,7 @@ const testCases = [
   {
     name: "TTW",
     url: "/choropleth/work/distance-travelled-to-work/workplace-travel-4a/10km-and-over?oa=E00088941",
-    legendText: "16.1% of people in E00088941 OA travel 10km and over to work",
+    legendText: "49.8% of people in E00088941 OA travel 10km and over to work",
     categoryCount: 4,
     nextClassificationCategoryCount: 5,
   },

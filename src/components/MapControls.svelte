@@ -1,13 +1,13 @@
 <script lang="ts">
-  //   import Icon from "./MaterialIcon.svelte";
+  import Icon from "./MaterialIcon.svelte";
   import AreaSearch from "./AreaSearch.svelte";
   import { GeoTypes } from "../types";
   import { geoTypeDescriptions } from "../helpers/geographyHelper";
   import { params } from "../stores/params";
   import { viewport, type Viewport } from "../stores/viewport";
-  //   import { commands } from "../stores/commands";
+  import { commands } from "../stores/commands";
 
-  //   const geoTypes = GeoTypes.filter((g) => g !== "ew");
+  const geoTypes = GeoTypes.filter((g) => g !== "ew");
 </script>
 
 {#if $viewport}
@@ -15,16 +15,15 @@
     class="absolute top-3 lg:top-5 xl:top-8 left-3 lg:left-5 xl:left-8 right-16 lg:right-20 gap-3 flex items-start justify-between flex-wrap"
   >
     <div class="flex flex-wrap items-center gap-2 text-sm lg:text-base">
-      <div class="flex group">
+      <!-- <div class="flex group">
         <div class="z-abovemap px-3 py-1 rounded-l bg-ons-census text-ons-grey-5 font-bold">
           {$viewport.geoType.toUpperCase()}
         </div>
         <div class={`z-abovemap px-3 py-1 rounded-r bg-ons-grey-75 text-ons-grey-5 `}>
           {geoTypeDescriptions[$viewport.geoType]}
         </div>
-      </div>
+      </div> -->
 
-      <!--
       {#each geoTypes as g, i}
         {#if i !== 0}
           <div
@@ -60,7 +59,6 @@
           </div>
         </button>
       {/each}
-      -->
     </div>
 
     {#if $params?.embed?.areaSearch}

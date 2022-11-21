@@ -2,7 +2,7 @@
   import Icon from "./MaterialIcon.svelte";
   import AreaSearch from "./AreaSearch.svelte";
   import { GeoTypes } from "../types";
-  import { geoTypeDescriptions } from "../helpers/geographyHelper";
+  import { geoTypePluralDescriptions } from "../helpers/geographyHelper";
   import { params } from "../stores/params";
   import { viewport, type Viewport } from "../stores/viewport";
   import { commands } from "../stores/commands";
@@ -18,10 +18,10 @@
     <div class="md:hidden flex flex-wrap items-center gap-2 text-sm lg:text-base">
       <div class="flex group">
         <div class="z-abovemap px-3 py-1 rounded-l bg-ons-census text-ons-grey-5 font-bold">
-          {$viewport.geoType.toUpperCase()}
+          <abbr>{$viewport.geoType.toUpperCase()}</abbr>
         </div>
         <div class={`z-abovemap px-3 py-1 rounded-r bg-ons-grey-75 text-ons-grey-5 `}>
-          {geoTypeDescriptions[$viewport.geoType]}
+          {geoTypePluralDescriptions[$viewport.geoType]}
         </div>
       </div>
     </div>
@@ -43,6 +43,7 @@
           disabled={i >= geoTypes.indexOf($viewport.geoType)}
           class:opacity-70={i > geoTypes.indexOf($viewport.geoType)}
           class:hidden={i > geoTypes.indexOf($viewport.idealGeoType)}
+          title={geoTypePluralDescriptions[g]}
         >
           <div
             class={`z-abovemap px-3 py-1 rounded-l bg-ons-census text-ons-grey-5 font-bold ${
@@ -60,7 +61,7 @@
             } `}
             class:group-hover:bg-ons-grey-55={i < geoTypes.indexOf($viewport.geoType)}
           >
-            {geoTypeDescriptions[g]}
+            {geoTypePluralDescriptions[g]}
             {#if i > geoTypes.indexOf($viewport.geoType)}
               <span class="">not available</span>
             {/if}

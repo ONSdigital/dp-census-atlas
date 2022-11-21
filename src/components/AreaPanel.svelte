@@ -4,6 +4,8 @@
   import GeoSearch from "./AreaSearch.svelte";
   import Icon from "./MaterialIcon.svelte";
   import { deselectGeography } from "../helpers/navigationHelper";
+  import GeoTypeBadge from "./GeoTypeBadge.svelte";
+  import { geoTypeSingularDescriptions } from "../helpers/geographyHelper";
 
   $: open = false;
   const toggleOpen = () => {
@@ -25,8 +27,11 @@
         {$geography.displayName}
       </div>
       {#if $geography?.geoType.toUpperCase() !== "EW"}
-        <div class="ml-1 text-sm bg-ons-census text-white font-bold px-1 rounded-sm">
-          {$geography?.geoType.toUpperCase()}
+        <div
+          class="ml-1 text-sm bg-ons-census text-white font-bold px-1 rounded-sm"
+          title={geoTypeSingularDescriptions[$geography.geoType]}
+        >
+          <abbr>{$geography.geoType.toUpperCase()}</abbr>
         </div>
         <button
           on:click={resetSelectedGeography}

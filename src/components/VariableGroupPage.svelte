@@ -22,7 +22,7 @@
   <div class="flex flex-col mb-6 last:border-b-[1px] border-b-slate-300">
     {#each $params.variableGroup.variables as variable}
       <a
-        class="border-t-[1px] border-t-slate-300 py-2 group"
+        class="border-t-[1px] border-t-slate-300 py-2 group custom-ring"
         href={buildHyperlink($page.url, {
           variableGroup: $params.variableGroup.slug,
           variable: variable.slug,

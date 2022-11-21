@@ -17,8 +17,10 @@
     <!-- mobile - some repetition of non-mobile here as it makes the conditionals less hard to understand -->
     <div class="md:hidden flex flex-wrap items-center gap-2 text-sm lg:text-base">
       <div class="flex group">
-        <div class="z-abovemap px-3 py-1 rounded-l bg-ons-census text-ons-grey-5 font-bold">
-          <abbr>{$viewport.geoType.toUpperCase()}</abbr>
+        <div class="flex items-center z-abovemap px-3 py-1 rounded-l bg-ons-census text-ons-grey-5 font-bold">
+          <abbr title={geoTypePluralDescriptions[$viewport.geoType]} class="no-underline"
+            >{$viewport.geoType.toUpperCase()}</abbr
+          >
         </div>
         <div class={`z-abovemap px-3 py-1 rounded-r bg-ons-grey-75 text-ons-grey-5 `}>
           {geoTypePluralDescriptions[$viewport.geoType]}
@@ -31,7 +33,7 @@
       {#each geoTypes as g, i}
         {#if i !== 0}
           <div
-            class="text-xl text-ons-grey-100 select-none"
+            class="text-2xl text-ons-grey-100 select-none"
             class:hidden={i > geoTypes.indexOf($viewport.idealGeoType)}
           >
             <Icon kind="arrowRightAlt" />
@@ -41,29 +43,30 @@
           class="flex group"
           on:click={() => commands.set({ kind: "zoom", geoType: g })}
           disabled={i >= geoTypes.indexOf($viewport.geoType)}
-          class:opacity-70={i > geoTypes.indexOf($viewport.geoType)}
+          class:opacity-80={i > geoTypes.indexOf($viewport.geoType)}
           class:hidden={i > geoTypes.indexOf($viewport.idealGeoType)}
-          title={geoTypePluralDescriptions[g]}
         >
           <div
-            class={`z-abovemap px-3 py-1 rounded-l bg-ons-census text-ons-grey-5 font-bold ${
-              g !== $viewport.geoType || g !== $viewport.idealGeoType ? "rounded-r 2xl:rounded-r-none" : ""
+            title={geoTypePluralDescriptions[g]}
+            class={`z-abovemap flex items-center  px-3 py-1 rounded-l bg-ons-census text-ons-grey-5 font-bold ${
+              g === $viewport.geoType || g === $viewport.idealGeoType ? "" : "rounded-r"
             }`}
-            class:bg-ons-grey-55={g !== $viewport.geoType}
+            class:bg-ons-grey-75={g !== $viewport.geoType}
+            class:bg-ons-grey-55={i > geoTypes.indexOf($viewport.geoType)}
             class:group-hover:bg-ons-census={i < geoTypes.indexOf($viewport.geoType)}
             class:bg-ons-census={g === $viewport.geoType}
           >
-            {g.toUpperCase()}
+            <abbr title={geoTypePluralDescriptions[g]} class="no-underline">{g.toUpperCase()}</abbr>
           </div>
           <div
-            class={`z-abovemap px-3 py-1 rounded-r bg-ons-grey-75 text-ons-grey-5 2xl:block ${
+            class={`z-abovemap px-3 py-1 rounded-r bg-ons-grey-75 text-ons-grey-5 ${
               g === $viewport.geoType || g === $viewport.idealGeoType ? "block" : "hidden"
             } `}
             class:group-hover:bg-ons-grey-55={i < geoTypes.indexOf($viewport.geoType)}
           >
             {geoTypePluralDescriptions[g]}
             {#if i > geoTypes.indexOf($viewport.geoType)}
-              <span class="">not available</span>
+              <span class="">unavailable</span>
             {/if}
           </div>
         </button>

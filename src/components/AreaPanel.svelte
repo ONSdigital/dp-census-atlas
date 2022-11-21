@@ -27,11 +27,10 @@
         {$geography.displayName}
       </div>
       {#if $geography?.geoType.toUpperCase() !== "EW"}
-        <div
-          class="ml-1 text-sm bg-ons-census text-white font-bold px-1 rounded-sm"
-          title={geoTypeSingularDescriptions[$geography.geoType]}
-        >
-          <abbr>{$geography.geoType.toUpperCase()}</abbr>
+        <div class="ml-1 text-sm bg-ons-census text-white font-bold px-1 rounded-sm">
+          <abbr title={geoTypeSingularDescriptions[$geography.geoType]} class="no-underline"
+            >{$geography.geoType.toUpperCase()}</abbr
+          >
         </div>
         <button
           on:click={resetSelectedGeography}

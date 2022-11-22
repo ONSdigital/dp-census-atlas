@@ -15,7 +15,7 @@ const arm = {
   prodPubContentJsonUrl: "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusmapsconfig/2021-ARM.json",
   prodWebContentJsonUrl: "https://www.ons.gov.uk/visualisations/censusmapsconfig/2021-ARM.json",
   fakeDataBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021",
-  realDataBaseUrl: "https://ons-dp-prod-census-maps-arm-eilr.s3.eu-west-2.amazonaws.com",
+  realDataBaseUrl: "https://ons-dp-prod-census-maps-arm.s3.eu-west-2.amazonaws.com",
 };
 const dem = {
   localContentJsonUrl: "http://localhost:8090/2021/2021-DEM.json",
@@ -39,7 +39,7 @@ const eilr = {
   prodPubContentJsonUrl: "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusmapsconfig/2021-EILR.json",
   prodWebContentJsonUrl: "https://www.ons.gov.uk/visualisations/censusmapsconfig/2021-EILR.json",
   fakeDataBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021",
-  realDataBaseUrl: "https://ons-dp-prod-census-maps-arm-eilr.s3.eu-west-2.amazonaws.com",
+  realDataBaseUrl: "https://ons-dp-prod-census-maps-eilr.s3.eu-west-2.amazonaws.com",
 };
 const hou = {
   localContentJsonUrl: "http://localhost:8090/2021/2021-HOU.json",
@@ -60,10 +60,11 @@ const huc = {
 const lab = {
   localContentJsonUrl: "http://localhost:8090/2021/2021-LAB.json",
   publicContentJsonUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-LAB.json",
-  prodPubContentJsonUrl: "",
-  prodWebContentJsonUrl: "",
+  prodPubContentJsonUrl:
+    "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusmapsconfiglab/2021-LAB.json",
+  prodWebContentJsonUrl: "https://www.ons.gov.uk/visualisations/censusmapsconfiglab/2021-LAB.json",
   fakeDataBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021",
-  realDataBaseUrl: "",
+  realDataBaseUrl: "https://ons-dp-prod-census-maps-lab.s3.eu-west-2.amazonaws.com",
 };
 const mig = {
   localContentJsonUrl: "http://localhost:8090/2021/2021-MIG.json",
@@ -84,19 +85,21 @@ const sogi = {
 const ttw = {
   localContentJsonUrl: "http://localhost:8090/2021/2021-TTW.json",
   publicContentJsonUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-TTW.json",
-  prodPubContentJsonUrl: "",
-  prodWebContentJsonUrl: "",
+  prodPubContentJsonUrl:
+    "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusmapsconfiglab/2021-TTW.json",
+  prodWebContentJsonUrl: "https://www.ons.gov.uk/visualisations/censusmapsconfiglab/2021-TTW.json",
   fakeDataBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021",
-  realDataBaseUrl: "",
+  realDataBaseUrl: "https://ons-dp-prod-census-maps-ttw.s3.eu-west-2.amazonaws.com",
 };
 const welshSkills = {
   localContentJsonUrl: "http://localhost:8090/2021/2021-WELSH-SKILLS.json",
   publicContentJsonUrl:
     "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-WELSH-SKILLS.json",
-  prodPubContentJsonUrl: "",
-  prodWebContentJsonUrl: "",
+  prodPubContentJsonUrl:
+    "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusmapsconfiglab/2021-WELSH-SKILLS.json",
+  prodWebContentJsonUrl: "https://www.ons.gov.uk/visualisations/censusmapsconfiglab/2021-WELSH-SKILLS.json",
   fakeDataBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021",
-  realDataBaseUrl: "",
+  realDataBaseUrl: "https://ons-dp-prod-census-maps-welsh-skill.s3.eu-west-2.amazonaws.com",
 };
 
 // envs / instances
@@ -331,8 +334,20 @@ export default {
         contentBaseUrl: eilr.realDataBaseUrl,
       },
       {
+        contentJsonUrl: lab.prodPubContentJsonUrl,
+        contentBaseUrl: lab.realDataBaseUrl,
+      },
+      {
         contentJsonUrl: mig.prodPubContentJsonUrl,
         contentBaseUrl: mig.realDataBaseUrl,
+      },
+      {
+        contentJsonUrl: ttw.prodPubContentJsonUrl,
+        contentBaseUrl: ttw.realDataBaseUrl,
+      },
+      {
+        contentJsonUrl: welshSkills.prodPubContentJsonUrl,
+        contentBaseUrl: welshSkills.realDataBaseUrl,
       },
     ],
     // web uses the web (ons.gov.uk) content JSON URLs for all published AND unpublished data (unpublished content json
@@ -356,8 +371,20 @@ export default {
         contentBaseUrl: eilr.realDataBaseUrl,
       },
       {
+        contentJsonUrl: lab.prodWebContentJsonUrl,
+        contentBaseUrl: lab.realDataBaseUrl,
+      },
+      {
         contentJsonUrl: mig.prodWebContentJsonUrl,
         contentBaseUrl: mig.realDataBaseUrl,
+      },
+      {
+        contentJsonUrl: ttw.prodWebContentJsonUrl,
+        contentBaseUrl: ttw.realDataBaseUrl,
+      },
+      {
+        contentJsonUrl: welshSkills.prodWebContentJsonUrl,
+        contentBaseUrl: welshSkills.realDataBaseUrl,
       },
     ],
   },

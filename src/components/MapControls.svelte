@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { slide, fade } from "svelte/transition";
   import Icon from "./MaterialIcon.svelte";
   import AreaSearch from "./AreaSearch.svelte";
   import { GeoTypes } from "../types";
@@ -60,16 +61,18 @@
                 <abbr title={geoTypePluralDescriptions[g]} class="no-underline">{g.toUpperCase()}</abbr>
               </div>
             </button>
-            <div
-              class={`px-3 py-1 rounded-r bg-ons-grey-75 ${
-                g === $viewport.geoType || g === $viewport.idealGeoType ? "block" : "hidden"
-              } ${i > geoTypes.indexOf($viewport.geoType) ? " text-ons-white opacity-60" : "text-ons-grey-5"}`}
-            >
-              {geoTypePluralDescriptions[g]}
-              {#if i > geoTypes.indexOf($viewport.geoType)}
-                <span>(unavailable)</span>
-              {/if}
-            </div>
+            {#if g === $viewport.geoType || g === $viewport.idealGeoType}
+              <div
+                class={`px-3 py-1 rounded-r bg-ons-grey-75  ${
+                  i > geoTypes.indexOf($viewport.geoType) ? " text-ons-white opacity-60" : "text-ons-grey-5"
+                }`}
+              >
+                {geoTypePluralDescriptions[g]}
+                {#if i > geoTypes.indexOf($viewport.geoType)}
+                  <span>(unavailable)</span>
+                {/if}
+              </div>
+            {/if}
           </div>
         {/if}
       {/each}

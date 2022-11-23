@@ -1,13 +1,7 @@
 #!/usr/bin/env python
-
-"""
-Filter content.json to only those classifications referenced in the
-"""
-
-import csv
 from datetime import datetime
+import json
 from pathlib import Path
-import sys
 
 from scripts.census_objects import (
     load_content,
@@ -17,9 +11,9 @@ from scripts.census_objects import (
 )
 
 
-def atlas_spec_from_csv(atlas_spec_file:  Path or str) -> list[dict]:
+def atlas_spec_from_json(atlas_spec_file:  Path or str) -> list[dict]:
     with open(atlas_spec_file, "r") as f:
-        raw_spec_rows = list(csv.DictReader(f))
+        atlas_releases = json.load(f)
 
     atlas_spec = {
         "atlas_classifications": [],
@@ -28,27 +22,13 @@ def atlas_spec_from_csv(atlas_spec_file:  Path or str) -> list[dict]:
         "comparison_2011": [],
     }
 
-    for sr_raw in raw_spec_rows:
+    for _, r in atlas_releases.items():
+        for _, v in r.items():
+            atlas_spec["atlas_classifications"].extend(v["classifications"])
+            atlas_spec["choropleth_defaults"].append(v["choropleth_default_classification"])
+            atlas_spec["dot_density_defaults"].append(v["dot_density_default_classification"])
+            atlas_spec["comparison_2011"].extend(v["classifications_with_2011_comparison_data"])
 
-        # only process data rows for the atlas
-        if sr_raw["2021 data Required for Census Atlas?"].strip().lower() == "y":
-
-            # gather all classifications referenced
-            dataset_classification = sr_raw["classification_mnemonic"].split("(")[0].strip()
-            additional_atlas_classifications = [
-                c.strip() for c in sr_raw["Census Atlas derived classification"].split(",") if c.strip() != ""
-            ]
-            all_classifications_for_row = [dataset_classification] + additional_atlas_classifications
-            atlas_spec["atlas_classifications"].extend(all_classifications_for_row)
-
-            # gather rendering flags
-            atlas_spec["choropleth_defaults"].append(sr_raw["Census Atlas choropleth default classification"])
-            atlas_spec["dot_density_defaults"].append(sr_raw["Census Atlas dot density default classification"])
-
-            # NB - assume if we say 'yes' to 2011 data then it will be available for all requested classifications?
-            # ToDo - check this assumption against reality!
-            if sr_raw["2011 data Required for Census Atlas?(If available)"].lower() == "y":
-                atlas_spec["comparison_2011"].append(all_classifications_for_row)
 
     return atlas_spec
 
@@ -103,7 +83,7 @@ def filter_variable_groups_to_atlas_spec(all_variable_groups: list[CensusVariabl
 
 
 def filter_content_to_atlas_spec_from_file(all_variable_groups: list[CensusVariableGroup], atlas_spec_file: Path or str) -> list[CensusVariableGroup]:
-    atlas_spec = atlas_spec_from_csv(atlas_spec_file)
+    atlas_spec = atlas_spec_from_json(atlas_spec_file)
     return filter_variable_groups_to_atlas_spec(all_variable_groups, atlas_spec)
 
 
@@ -113,7 +93,6 @@ def main():
     output_filename = sys.argv[3]
 
     content = load_content(content_json_fn)
-    atlas_spec = atlas_spec_from_csv(atlas_spec_file)
     content["content"] = filter_content_to_atlas_spec_from_file(content["content"], atlas_spec)
 
     now = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")

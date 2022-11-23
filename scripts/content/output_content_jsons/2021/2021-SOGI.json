@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-11-09-15-18-38",
-    "spec_file": "2021-content-spec-v5.json",
+    "created_at": "2022-11-18-16-41-19",
+    "spec_file": "2021-content-spec-v6.json",
     "release": "2021-SOGI"
   },
   "content": [
@@ -30,6 +30,7 @@
               "dataset": "TS078",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Gender identity the same as sex registered at birth",
@@ -66,6 +67,7 @@
                 "lad"
               ],
               "dataset": "TS070",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Gender identity the same as sex registered at birth",
@@ -147,6 +149,7 @@
               "dataset": "TS077",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Straight or Heterosexual",
@@ -183,6 +186,7 @@
                 "lad"
               ],
               "dataset": "TS077",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Straight or Heterosexual",
@@ -235,6 +239,7 @@
                 "lad"
               ],
               "dataset": "TS079",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Straight or Heterosexual",

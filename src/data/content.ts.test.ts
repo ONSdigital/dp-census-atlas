@@ -1,6 +1,6 @@
 import content from "./content";
 
-const publishedOrPrepublishedTopics = ["release-0", "arm", "dem", "eilr", "mig"];
+const publishedOrPrepublishedTopics = ["release-0", "arm", "dem", "eilr", "lab", "mig", "ttw", "welsh-skills"];
 
 describe("content", () => {
   test("prod web contains the expected content only", () => {

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-11-09-15-18-38",
-    "spec_file": "2021-content-spec-v5.json",
+    "created_at": "2022-11-18-16-41-19",
+    "spec_file": "2021-content-spec-v6.json",
     "release": "2021-MIG"
   },
   "content": [
@@ -31,6 +31,7 @@
               "dataset": "TS018",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Born in the UK",
@@ -191,6 +192,7 @@
               "dataset": "TS004",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Born in the UK",
@@ -218,6 +220,7 @@
                 "lad"
               ],
               "dataset": "TS004",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
@@ -287,6 +290,7 @@
                 "lad"
               ],
               "dataset": "TS004",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
@@ -386,6 +390,7 @@
                 "lad"
               ],
               "dataset": "TS012",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Europe: United Kingdom: England",
@@ -883,6 +888,7 @@
               ],
               "dataset": "TS019",
               "choropleth_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Address one year ago is the same as the address of enumeration",
@@ -941,6 +947,7 @@
               "dataset": "TS005",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "UK passport",
@@ -977,6 +984,7 @@
                 "lad"
               ],
               "dataset": "TS005",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
@@ -1085,6 +1093,7 @@
                 "lad"
               ],
               "dataset": "TS005",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
@@ -1234,6 +1243,7 @@
                 "lad"
               ],
               "dataset": "TS005",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
@@ -1454,6 +1464,7 @@
                 "lad"
               ],
               "dataset": "TS013",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
@@ -1888,6 +1899,7 @@
               "dataset": "TS016",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Born in the UK",
@@ -1954,6 +1966,7 @@
               "dataset": "TS015",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Born in the UK",
@@ -2007,6 +2020,7 @@
                 "lad"
               ],
               "dataset": "TS015",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Born in the UK",

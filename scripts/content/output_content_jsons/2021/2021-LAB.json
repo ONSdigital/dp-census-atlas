@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-11-09-15-18-38",
-    "spec_file": "2021-content-spec-v5.json",
+    "created_at": "2022-11-18-16-41-19",
+    "spec_file": "2021-content-spec-v6.json",
     "release": "2021-LAB"
   },
   "content": [
@@ -15,7 +15,7 @@
           "code": "economic_activity",
           "slug": "economic-activity-status",
           "desc": "People in employment, looking for work or waiting to start a job.",
-          "long_desc": "Economic activity status",
+          "long_desc": "People aged 16 years and over are economically active if, between  15 March  21 March 2021, they were:\n\n* in employment (an employee or self-employed)\n* unemployed, but looking for work and could start within two weeks\n* unemployed, but waiting to start a job that had been offered and accepted\n\nIt is a measure of whether or not a person was an active participant in the labour market during this period. Economically inactive are those aged 16 years and over who did not have a job between 15 March to 21 March 2021 and had not looked for work between 22 February to 21 March 2021 or could not start work within two weeks.\n\nThe census definition differs from International Labour Organisation definition used on the Labour Force Survey, so estimates are not directly comparable.",
           "units": "Person",
           "topic_code": "LAB",
           "classifications": [
@@ -30,6 +30,7 @@
               ],
               "dataset": "TS066",
               "choropleth_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Economically active",
@@ -60,22 +61,23 @@
               ],
               "dataset": "TS066",
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Economically active: In employment (including full-time students)",
                   "slug": "economically-active-in-employment-including-full-time-students",
                   "code": "economic_activity_status_4a-001",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people (including full-time students) in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "in employment (including full-time students)"
+                  "legend_str_3": "in employment"
                 },
                 {
                   "name": "Economically active: Unemployed (including full-time students)",
                   "slug": "economically-active-unemployed-including-full-time-students",
                   "code": "economic_activity_status_4a-002",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people (including full-time students) in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "unemployed (including full-time students)"
+                  "legend_str_3": "unemployed"
                 },
                 {
                   "name": "Economically inactive",
@@ -88,68 +90,53 @@
               ]
             },
             {
-              "code": "economic_activity_status_12a",
-              "slug": "economic-activity-status-12a",
-              "desc": "Economic activity status (12 categories)",
+              "code": "economic_activity_status_10a",
+              "slug": "economic-activity-status-10a",
+              "desc": "Economic activity status (10 categories)",
               "available_geotypes": [
                 "oa",
                 "msoa",
                 "lad"
               ],
               "dataset": "TS066",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
-                  "name": "Economically active (excluding full-time students): In employment: Employee",
-                  "slug": "economically-active-excluding-full-time-students-in-employment-employee",
-                  "code": "economic_activity_status_12a-001",
+                  "name": "Economically active (excluding full-time students): In employment",
+                  "slug": "economically-active-excluding-full-time-students-in-employment",
+                  "code": "economic_activity_status_10a-001",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "employed"
-                },
-                {
-                  "name": "Economically active (excluding full-time students): In employment: Self-employed with employees",
-                  "slug": "economically-active-excluding-full-time-students-in-employment-self-employed-with-employees",
-                  "code": "economic_activity_status_12a-002",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "self-employed with employees"
-                },
-                {
-                  "name": "Economically active (excluding full-time students): In employment: Self-employed without employees",
-                  "slug": "economically-active-excluding-full-time-students-in-employment-self-employed-without-employees",
-                  "code": "economic_activity_status_12a-003",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "self-employed without employees"
+                  "legend_str_3": "in employment"
                 },
                 {
                   "name": "Economically active (excluding full-time students): Unemployed: Seeking work or waiting to start a job already obtained: Available to start working within 2 weeks",
                   "slug": "economically-active-excluding-full-time-students-unemployed-seeking-work-or-waiting-to-start-a-job-already-obtained-available-to-start-working-within-2-weeks",
-                  "code": "economic_activity_status_12a-004",
-                  "legend_str_1": "of people in {location}",
+                  "code": "economic_activity_status_10a-002",
+                  "legend_str_1": "of people (excluding full-time students) in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "seeking work or waiting to start a job already obtained"
+                  "legend_str_3": "unemployed, but seeking work or waiting to start a job already obtained."
                 },
                 {
                   "name": "Economically active and a full-time student: In employment",
                   "slug": "economically-active-and-a-full-time-student-in-employment",
-                  "code": "economic_activity_status_12a-005",
-                  "legend_str_1": "of people in {location}",
+                  "code": "economic_activity_status_10a-003",
+                  "legend_str_1": "of full-time students in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "employed full-time student"
+                  "legend_str_3": "in employment"
                 },
                 {
                   "name": "Economically active and a full-time student: Unemployed: Seeking work or waiting to start a job already obtained: Available to start working within 2 weeks",
                   "slug": "economically-active-and-a-full-time-student-unemployed-seeking-work-or-waiting-to-start-a-job-already-obtained-available-to-start-working-within-2-weeks",
-                  "code": "economic_activity_status_12a-006",
-                  "legend_str_1": "of people in {location}",
+                  "code": "economic_activity_status_10a-004",
+                  "legend_str_1": "of full-time students in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "unemployed full-time student seeking work or waiting to start a job already obtained"
+                  "legend_str_3": "unemployed, but seeking work or waiting to start a job already obtained."
                 },
                 {
                   "name": "Economically inactive: Retired",
                   "slug": "economically-inactive-retired",
-                  "code": "economic_activity_status_12a-007",
+                  "code": "economic_activity_status_10a-005",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "retired"
@@ -157,31 +144,31 @@
                 {
                   "name": "Economically inactive: Student",
                   "slug": "economically-inactive-student",
-                  "code": "economic_activity_status_12a-008",
-                  "legend_str_1": "of people in {location}",
+                  "code": "economic_activity_status_10a-006",
+                  "legend_str_1": "of students in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "unemployed students"
+                  "legend_str_3": "economically inactive"
                 },
                 {
                   "name": "Economically Inactive: Looking after home or family",
                   "slug": "economically-inactive-looking-after-home-or-family",
-                  "code": "economic_activity_status_12a-009",
+                  "code": "economic_activity_status_10a-007",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "full-time looking after home or family"
+                  "legend_str_3": "economically inactive due to looking after home or family"
                 },
                 {
                   "name": "Economically inactive: Long-term sick or disabled",
                   "slug": "economically-inactive-long-term-sick-or-disabled",
-                  "code": "economic_activity_status_12a-010",
+                  "code": "economic_activity_status_10a-008",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "long-term sick or disabled"
+                  "legend_str_3": "economically inactive due to long-term sickness or disability"
                 },
                 {
                   "name": "Economically inactive: Other",
                   "slug": "economically-inactive-other",
-                  "code": "economic_activity_status_12a-011",
+                  "code": "economic_activity_status_10a-009",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "otherwise economically inactive"
@@ -195,7 +182,7 @@
           "code": "has_ever_worked",
           "slug": "unemployment-history",
           "desc": "Whether people who are unemployed have been unemployed short-term, long-term, or have never worked.",
-          "long_desc": "Unemployment history",
+          "long_desc": "Classifies people who are unemployed into:\n\n* short-term unemployment (have worked within the last 12 months)\n* long-term unemployment (have worked, but not in the last 12 months)\n* those who have never worked",
           "units": "Person",
           "topic_code": "LAB",
           "classifications": [
@@ -211,6 +198,7 @@
               "dataset": "TS065",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Short-term unemployed: Worked in the last 12 months",
@@ -245,7 +233,7 @@
           "code": "hours_per_week_worked",
           "slug": "hours-worked",
           "desc": "The number of hours people work per week.",
-          "long_desc": "Hours worked",
+          "long_desc": "The number of hours worked per week before the census includes paid and unpaid overtime. This covers the main job of anyone aged 16 years and over.",
           "units": "Person",
           "topic_code": "LAB",
           "classifications": [
@@ -261,6 +249,7 @@
               "dataset": "TS059",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Part-time: 30 hours or less worked",
@@ -290,6 +279,7 @@
                 "lad"
               ],
               "dataset": "TS059",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Part-time: 15 hours or less worked",
@@ -332,7 +322,7 @@
           "code": "industry_current",
           "slug": "industry-current",
           "desc": "The industry people work in.",
-          "long_desc": "Industry (current)",
+          "long_desc": "Classifies people aged 16 years and over who were in employment between 15 March and 21 March 2021 by the Standard Industrial Classification (SIC) code that represents their current industry or business.\n\nThe SIC code is assigned based on the information provided about a firm or organisation\u2019s main activity.",
           "units": "Person",
           "topic_code": "LAB",
           "classifications": [
@@ -346,6 +336,7 @@
               ],
               "dataset": "TS060",
               "choropleth_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "01 Crop and animal production, hunting and related service activities",
@@ -1052,7 +1043,7 @@
           "code": "ns_sec",
           "slug": "national-statistics-socio-economic-classification-ns-sec",
           "desc": "People's socioeconomic position based on their occupation and other job characteristics.",
-          "long_desc": "National Statistics Socio-economic Classification (NS-SeC)",
+          "long_desc": "The National Statistics Socio-economic Classification (NS-SEC) indicates a person's socioeconomic position based on their occupation and other job characteristics.\n\nIt is an Office for National Statistics standard classification. NS-SEC categories are assigned based on a person's occupation, whether employed, self-employed, or supervising other employees.\n \nFull-time students are recorded in the \"full-time students\" category regardless of whether they are economically active.",
           "units": "Person",
           "topic_code": "LAB",
           "classifications": [
@@ -1067,6 +1058,7 @@
               ],
               "dataset": "TS062",
               "choropleth_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "L1, L2 and L3: Higher managerial, administrative and professional occupations",
@@ -1149,7 +1141,7 @@
           "code": "occupation_current",
           "slug": "occupation-current",
           "desc": "The jobs people work in.",
-          "long_desc": "Occupation (current)",
+          "long_desc": "Classifies what people aged 16 years and over does as their main. Their job title or details of activities they do in their job and any supervisory or management responsibilities form this classification. This information is used to code responses to an occupation using the Standards Occupation Classification (SOC) 2020.\n\nIt classifies people who were in employment between 15 March and 21 March 2021, by the SOC code that represents their current occupation.\nThe lowest level of detail available is the four-digit SOC code which includes all codes in three, two and one digit SOC code levels.",
           "units": "Person",
           "topic_code": "LAB",
           "classifications": [
@@ -1163,6 +1155,7 @@
               ],
               "dataset": "TS063",
               "choropleth_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "1. Managers, directors and senior officials",

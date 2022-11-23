@@ -1,6 +1,4 @@
 <script>
-  import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
-  import { page } from "$app/stores";
   import { params } from "../stores/params";
   import Logo from "./icons/Logo.svelte";
   import Census2021 from "./icons/Census2021.svelte";
@@ -8,7 +6,7 @@
 </script>
 
 <header
-  class="flex items-center gap-1 h-[46px] p-2 px-5 border-b-[1px] border-b-ons-grey-15"
+  class="flex items-center gap-2 h-[46px] p-2 px-5 border-b-[1px] border-b-ons-grey-15"
   class:hidden={$params.embed}
   class:bg-ons-ruby-red={$content.fakeDataLoaded}
 >
@@ -17,8 +15,8 @@
       <Logo />
     </a>
   </div>
-  <div class="fill-ons-census p-3">
-    <a href="https://www.ons.gov.uk/census" class="custom-ring">
+  <div class="p-3">
+    <a href="https://www.ons.gov.uk/census" class="fill-ons-census custom-ring">
       <Census2021 />
     </a>
   </div>

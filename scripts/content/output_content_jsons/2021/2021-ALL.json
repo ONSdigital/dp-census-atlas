@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-11-09-15-18-38",
-    "spec_file": "2021-content-spec-v5.json",
+    "created_at": "2022-11-18-16-41-19",
+    "spec_file": "2021-content-spec-v6.json",
     "release": "2021-ALL"
   },
   "content": [
@@ -31,6 +31,7 @@
               "dataset": "TS067",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "No qualifications",
@@ -84,6 +85,7 @@
                 "lad"
               ],
               "dataset": "TS067",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "No qualifications",
@@ -173,6 +175,7 @@
               "dataset": "TS038ASR",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Disabled under the Equality Act",
@@ -202,6 +205,7 @@
                 "lad"
               ],
               "dataset": "TS038",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Disabled under the Equality Act: Day-to-day activities limited a lot",
@@ -260,6 +264,7 @@
               "dataset": "TS037ASR",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Good health",
@@ -289,6 +294,7 @@
                 "lad"
               ],
               "dataset": "TS037ASR",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Very good or good health",
@@ -326,6 +332,7 @@
                 "lad"
               ],
               "dataset": "TS037ASR",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Very good health",
@@ -392,6 +399,7 @@
               "dataset": "TS040",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "No people disabled under the Equality Act in household",
@@ -442,6 +450,7 @@
               "dataset": "TS039ASR",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Provides no unpaid care",
@@ -487,6 +496,7 @@
                 "lad"
               ],
               "dataset": "TS039",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Provides no unpaid care",
@@ -568,6 +578,7 @@
               "dataset": "TS044",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Whole house or bungalow",
@@ -605,6 +616,7 @@
                 "lad"
               ],
               "dataset": "TS044",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Whole house or bungalow: Detached",
@@ -658,6 +670,7 @@
                 "lad"
               ],
               "dataset": "TS044",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Detached",
@@ -747,6 +760,7 @@
               ],
               "dataset": "TS056",
               "choropleth_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "No second address",
@@ -797,6 +811,7 @@
               "dataset": "TS046",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Does not have central heating",
@@ -826,6 +841,7 @@
                 "lad"
               ],
               "dataset": "TS046",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "No central heating",
@@ -948,6 +964,7 @@
               "dataset": "TS054",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Owned: Owns outright",
@@ -993,6 +1010,7 @@
                 "lad"
               ],
               "dataset": "TS054",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Owned: Owns outright",
@@ -1083,6 +1101,7 @@
               "dataset": "TS050",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "1 bedroom",
@@ -1141,6 +1160,7 @@
               "dataset": "TS045",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "No cars or vans in household",
@@ -1170,6 +1190,7 @@
                 "lad"
               ],
               "dataset": "TS045",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "No cars or vans in household",
@@ -1227,6 +1248,7 @@
               ],
               "dataset": "TS052",
               "choropleth_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Occupancy rating of bedrooms: +2 or more",
@@ -1292,6 +1314,7 @@
               ],
               "dataset": "TS053",
               "choropleth_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Occupancy rating of rooms: +2 or more",
@@ -1357,6 +1380,7 @@
               ],
               "dataset": "TS055",
               "choropleth_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Armed forces base address",
@@ -1462,6 +1486,7 @@
               "dataset": "TS029",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Main language is English (English or Welsh in Wales)",
@@ -1499,6 +1524,7 @@
                 "lad"
               ],
               "dataset": "TS029",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Main language is English (English or Welsh in Wales)",
@@ -1549,8 +1575,8 @@
           "code": "ethnic_group_tb",
           "slug": "ethnic-group",
           "desc": "The ethnic group a person feels they belong to.",
-          "long_desc": "The ethnic group that the person completing the census feels they belong to. This could be based on their culture, family background, identity, religion, language or physical appearance. \n\nRespondents were presented with a choice of 19 categories.",
-          "units": "Family",
+          "long_desc": "The ethnic group that the person completing the census feels they belong to. This could be based on their culture, family background, identity or physical appearance.\n\nRespondents could choose one out of 19 tick-box response categories, including write-in response options.",
+          "units": "Person",
           "topic_code": "EILR",
           "classifications": [
             {
@@ -1565,6 +1591,7 @@
               "dataset": "TS021",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Asian, Asian British or Asian Welsh",
@@ -1618,6 +1645,7 @@
                 "lad"
               ],
               "dataset": "TS021",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "White: English, Welsh, Scottish, Northern Irish or British",
@@ -1795,6 +1823,7 @@
               ],
               "dataset": "TS025",
               "choropleth_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "All adults in household have English in England, or English or Welsh in Wales as a main language",
@@ -1853,6 +1882,7 @@
               "dataset": "TS023",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "One-person household",
@@ -1919,6 +1949,7 @@
               "dataset": "TS026",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "All household members have the same main language",
@@ -1948,6 +1979,7 @@
                 "lad"
               ],
               "dataset": "TS026",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "One-person household",
@@ -2014,6 +2046,7 @@
               "dataset": "TS075",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "One-person household",
@@ -2085,6 +2118,7 @@
               ],
               "dataset": "TS024",
               "choropleth_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "English (English or Welsh if in Wales)",
@@ -2272,6 +2306,7 @@
                 "lad"
               ],
               "dataset": "TS024",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "English (English or Welsh in Wales)",
@@ -3050,6 +3085,7 @@
               "dataset": "TS027",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "One or more UK identity only",
@@ -3087,6 +3123,7 @@
                 "lad"
               ],
               "dataset": "TS027",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "British only identity",
@@ -3164,6 +3201,7 @@
                 "lad"
               ],
               "dataset": "TS027",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "British only identity",
@@ -3316,6 +3354,7 @@
               ],
               "dataset": "TS028",
               "choropleth_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "UK identity: British only identity",
@@ -3917,6 +3956,7 @@
               ],
               "dataset": "TS030",
               "choropleth_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "No religion",
@@ -3999,7 +4039,7 @@
           "code": "welsh_skills_all",
           "slug": "welsh-language-skills",
           "desc": "Whether people can understand, speak, read, or write Welsh. This question was only asked in Wales.",
-          "long_desc": "Whether a person has Welsh language skills.  If they do, can they do any of the following:\n\n* understand spoken Welsh\n\n* speak Welsh\n\n* read Welsh\n\n* write Welsh\n\n* no skills in Welsh\n\nThe census questionnaire only asked this question to people in Wales. \n\nAdditional info:\n\nIn results that classify people by Welsh language skills, a person may appear in more than one category depending on which combination of skills they have.",
+          "long_desc": "Whether a person has Welsh language skills.  If they do, can they do any of the following:\n\n* understand spoken Welsh\n* speak Welsh\n* read Welsh\n* write Welsh\n* no skills in Welsh\n\nThe census questionnaire only asked this question to people in Wales. \n\nAdditional info:\n\nIn results that classify people by Welsh language skills, a person may appear in more than one category depending on which combination of skills they have.",
           "units": "Person",
           "topic_code": "EILR",
           "classifications": [
@@ -4015,6 +4055,7 @@
               "dataset": "TS032",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Can understand spoken Welsh only",
@@ -4052,6 +4093,7 @@
                 "lad"
               ],
               "dataset": "TS032",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Can understand spoken Welsh only",
@@ -4105,6 +4147,7 @@
                 "lad"
               ],
               "dataset": "TS032",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Can understand spoken Welsh only",
@@ -4187,7 +4230,7 @@
           "code": "welsh_skills_speak",
           "slug": "welsh-speaking-ability",
           "desc": "People who can speak Welsh.",
-          "long_desc": "This classifies a person as being able to \"Speak Welsh\". They may have also ticked one or more of the following:\n\n* understand spoken Welsh\n\n* read Welsh\n\n* write Welsh\n\nIn results that classify people by Welsh language skills, a person may appear in more than one category depending on which combination of skills they have.",
+          "long_desc": "This classifies a person as being able to \"Speak Welsh\". They may have also ticked one or more of the following:\n\n* understand spoken Welsh\n* read Welsh\n* write Welsh\n\nIn results that classify people by Welsh language skills, a person may appear in more than one category depending on which combination of skills they have.",
           "units": "Person",
           "topic_code": "EILR",
           "classifications": [
@@ -4201,6 +4244,7 @@
               "dataset": "TS076",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Can speak Welsh",
@@ -4242,6 +4286,7 @@
               "dataset": "TS078",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Gender identity the same as sex registered at birth",
@@ -4278,6 +4323,7 @@
                 "lad"
               ],
               "dataset": "TS070",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Gender identity the same as sex registered at birth",
@@ -4359,6 +4405,7 @@
               "dataset": "TS077",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Straight or Heterosexual",
@@ -4395,6 +4442,7 @@
                 "lad"
               ],
               "dataset": "TS077",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Straight or Heterosexual",
@@ -4447,6 +4495,7 @@
                 "lad"
               ],
               "dataset": "TS079",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Straight or Heterosexual",
@@ -4543,6 +4592,7 @@
               "dataset": "TS071",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Previously served in UK armed forces",
@@ -4634,6 +4684,7 @@
               "dataset": "TS011",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Household is not deprived in any dimension",
@@ -4700,6 +4751,7 @@
               "dataset": "TS003",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Other household types",
@@ -4737,6 +4789,7 @@
                 "lad"
               ],
               "dataset": "TS003",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "One-person household: Aged 66 years and over",
@@ -4875,6 +4928,7 @@
               "dataset": "TS017",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "1 person in household",
@@ -4920,6 +4974,7 @@
                 "lad"
               ],
               "dataset": "TS017",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "1 person in household",
@@ -5010,6 +5065,7 @@
               "dataset": "TS002",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Married or in a registered civil partnership",
@@ -5039,6 +5095,7 @@
                 "lad"
               ],
               "dataset": "TS002",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Never married and never registered a civil partnership",
@@ -5092,6 +5149,7 @@
                 "lad"
               ],
               "dataset": "TS002",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Never married and never registered a civil partnership",
@@ -5204,6 +5262,7 @@
               ],
               "dataset": "TS010",
               "choropleth_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Living in an opposite-sex couple: Married or in a civil partnership",
@@ -5309,6 +5368,7 @@
               "dataset": "TS076",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Aged 15 years and under",
@@ -5345,6 +5405,7 @@
                 "lad"
               ],
               "dataset": "TS076",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Aged 14 years and under",
@@ -5421,6 +5482,7 @@
                 "lad"
               ],
               "dataset": "TS076",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Aged 4 years and under",
@@ -5521,6 +5583,7 @@
                 "lad"
               ],
               "dataset": "TS007",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Aged under 1 year",
@@ -6387,6 +6450,7 @@
               "dataset": "TS020",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Female",
@@ -6429,6 +6493,7 @@
               "dataset": "TS018",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Born in the UK",
@@ -6589,6 +6654,7 @@
               "dataset": "TS004",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Born in the UK",
@@ -6616,6 +6682,7 @@
                 "lad"
               ],
               "dataset": "TS004",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
@@ -6685,6 +6752,7 @@
                 "lad"
               ],
               "dataset": "TS004",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
@@ -6784,6 +6852,7 @@
                 "lad"
               ],
               "dataset": "TS012",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Europe: United Kingdom: England",
@@ -7281,6 +7350,7 @@
               ],
               "dataset": "TS019",
               "choropleth_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Address one year ago is the same as the address of enumeration",
@@ -7339,6 +7409,7 @@
               "dataset": "TS005",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "UK passport",
@@ -7375,6 +7446,7 @@
                 "lad"
               ],
               "dataset": "TS005",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
@@ -7483,6 +7555,7 @@
                 "lad"
               ],
               "dataset": "TS005",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
@@ -7632,6 +7705,7 @@
                 "lad"
               ],
               "dataset": "TS005",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
@@ -7852,6 +7926,7 @@
                 "lad"
               ],
               "dataset": "TS013",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
@@ -8286,6 +8361,7 @@
               "dataset": "TS016",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Born in the UK",
@@ -8352,6 +8428,7 @@
               "dataset": "TS015",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Born in the UK",
@@ -8405,6 +8482,7 @@
                 "lad"
               ],
               "dataset": "TS015",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Born in the UK",
@@ -8518,7 +8596,7 @@
           "code": "economic_activity",
           "slug": "economic-activity-status",
           "desc": "People in employment, looking for work or waiting to start a job.",
-          "long_desc": "Economic activity status",
+          "long_desc": "People aged 16 years and over are economically active if, between  15 March  21 March 2021, they were:\n\n* in employment (an employee or self-employed)\n* unemployed, but looking for work and could start within two weeks\n* unemployed, but waiting to start a job that had been offered and accepted\n\nIt is a measure of whether or not a person was an active participant in the labour market during this period. Economically inactive are those aged 16 years and over who did not have a job between 15 March to 21 March 2021 and had not looked for work between 22 February to 21 March 2021 or could not start work within two weeks.\n\nThe census definition differs from International Labour Organisation definition used on the Labour Force Survey, so estimates are not directly comparable.",
           "units": "Person",
           "topic_code": "LAB",
           "classifications": [
@@ -8533,6 +8611,7 @@
               ],
               "dataset": "TS066",
               "choropleth_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Economically active",
@@ -8563,22 +8642,23 @@
               ],
               "dataset": "TS066",
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Economically active: In employment (including full-time students)",
                   "slug": "economically-active-in-employment-including-full-time-students",
                   "code": "economic_activity_status_4a-001",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people (including full-time students) in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "in employment (including full-time students)"
+                  "legend_str_3": "in employment"
                 },
                 {
                   "name": "Economically active: Unemployed (including full-time students)",
                   "slug": "economically-active-unemployed-including-full-time-students",
                   "code": "economic_activity_status_4a-002",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people (including full-time students) in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "unemployed (including full-time students)"
+                  "legend_str_3": "unemployed"
                 },
                 {
                   "name": "Economically inactive",
@@ -8591,68 +8671,53 @@
               ]
             },
             {
-              "code": "economic_activity_status_12a",
-              "slug": "economic-activity-status-12a",
-              "desc": "Economic activity status (12 categories)",
+              "code": "economic_activity_status_10a",
+              "slug": "economic-activity-status-10a",
+              "desc": "Economic activity status (10 categories)",
               "available_geotypes": [
                 "oa",
                 "msoa",
                 "lad"
               ],
               "dataset": "TS066",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
-                  "name": "Economically active (excluding full-time students): In employment: Employee",
-                  "slug": "economically-active-excluding-full-time-students-in-employment-employee",
-                  "code": "economic_activity_status_12a-001",
+                  "name": "Economically active (excluding full-time students): In employment",
+                  "slug": "economically-active-excluding-full-time-students-in-employment",
+                  "code": "economic_activity_status_10a-001",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "employed"
-                },
-                {
-                  "name": "Economically active (excluding full-time students): In employment: Self-employed with employees",
-                  "slug": "economically-active-excluding-full-time-students-in-employment-self-employed-with-employees",
-                  "code": "economic_activity_status_12a-002",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "self-employed with employees"
-                },
-                {
-                  "name": "Economically active (excluding full-time students): In employment: Self-employed without employees",
-                  "slug": "economically-active-excluding-full-time-students-in-employment-self-employed-without-employees",
-                  "code": "economic_activity_status_12a-003",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "self-employed without employees"
+                  "legend_str_3": "in employment"
                 },
                 {
                   "name": "Economically active (excluding full-time students): Unemployed: Seeking work or waiting to start a job already obtained: Available to start working within 2 weeks",
                   "slug": "economically-active-excluding-full-time-students-unemployed-seeking-work-or-waiting-to-start-a-job-already-obtained-available-to-start-working-within-2-weeks",
-                  "code": "economic_activity_status_12a-004",
-                  "legend_str_1": "of people in {location}",
+                  "code": "economic_activity_status_10a-002",
+                  "legend_str_1": "of people (excluding full-time students) in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "seeking work or waiting to start a job already obtained"
+                  "legend_str_3": "unemployed, but seeking work or waiting to start a job already obtained."
                 },
                 {
                   "name": "Economically active and a full-time student: In employment",
                   "slug": "economically-active-and-a-full-time-student-in-employment",
-                  "code": "economic_activity_status_12a-005",
-                  "legend_str_1": "of people in {location}",
+                  "code": "economic_activity_status_10a-003",
+                  "legend_str_1": "of full-time students in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "employed full-time student"
+                  "legend_str_3": "in employment"
                 },
                 {
                   "name": "Economically active and a full-time student: Unemployed: Seeking work or waiting to start a job already obtained: Available to start working within 2 weeks",
                   "slug": "economically-active-and-a-full-time-student-unemployed-seeking-work-or-waiting-to-start-a-job-already-obtained-available-to-start-working-within-2-weeks",
-                  "code": "economic_activity_status_12a-006",
-                  "legend_str_1": "of people in {location}",
+                  "code": "economic_activity_status_10a-004",
+                  "legend_str_1": "of full-time students in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "unemployed full-time student seeking work or waiting to start a job already obtained"
+                  "legend_str_3": "unemployed, but seeking work or waiting to start a job already obtained."
                 },
                 {
                   "name": "Economically inactive: Retired",
                   "slug": "economically-inactive-retired",
-                  "code": "economic_activity_status_12a-007",
+                  "code": "economic_activity_status_10a-005",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "retired"
@@ -8660,31 +8725,31 @@
                 {
                   "name": "Economically inactive: Student",
                   "slug": "economically-inactive-student",
-                  "code": "economic_activity_status_12a-008",
-                  "legend_str_1": "of people in {location}",
+                  "code": "economic_activity_status_10a-006",
+                  "legend_str_1": "of students in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "unemployed students"
+                  "legend_str_3": "economically inactive"
                 },
                 {
                   "name": "Economically Inactive: Looking after home or family",
                   "slug": "economically-inactive-looking-after-home-or-family",
-                  "code": "economic_activity_status_12a-009",
+                  "code": "economic_activity_status_10a-007",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "full-time looking after home or family"
+                  "legend_str_3": "economically inactive due to looking after home or family"
                 },
                 {
                   "name": "Economically inactive: Long-term sick or disabled",
                   "slug": "economically-inactive-long-term-sick-or-disabled",
-                  "code": "economic_activity_status_12a-010",
+                  "code": "economic_activity_status_10a-008",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "long-term sick or disabled"
+                  "legend_str_3": "economically inactive due to long-term sickness or disability"
                 },
                 {
                   "name": "Economically inactive: Other",
                   "slug": "economically-inactive-other",
-                  "code": "economic_activity_status_12a-011",
+                  "code": "economic_activity_status_10a-009",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "otherwise economically inactive"
@@ -8698,7 +8763,7 @@
           "code": "has_ever_worked",
           "slug": "unemployment-history",
           "desc": "Whether people who are unemployed have been unemployed short-term, long-term, or have never worked.",
-          "long_desc": "Unemployment history",
+          "long_desc": "Classifies people who are unemployed into:\n\n* short-term unemployment (have worked within the last 12 months)\n* long-term unemployment (have worked, but not in the last 12 months)\n* those who have never worked",
           "units": "Person",
           "topic_code": "LAB",
           "classifications": [
@@ -8714,6 +8779,7 @@
               "dataset": "TS065",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Short-term unemployed: Worked in the last 12 months",
@@ -8748,7 +8814,7 @@
           "code": "hours_per_week_worked",
           "slug": "hours-worked",
           "desc": "The number of hours people work per week.",
-          "long_desc": "Hours worked",
+          "long_desc": "The number of hours worked per week before the census includes paid and unpaid overtime. This covers the main job of anyone aged 16 years and over.",
           "units": "Person",
           "topic_code": "LAB",
           "classifications": [
@@ -8764,6 +8830,7 @@
               "dataset": "TS059",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Part-time: 30 hours or less worked",
@@ -8793,6 +8860,7 @@
                 "lad"
               ],
               "dataset": "TS059",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Part-time: 15 hours or less worked",
@@ -8835,7 +8903,7 @@
           "code": "industry_current",
           "slug": "industry-current",
           "desc": "The industry people work in.",
-          "long_desc": "Industry (current)",
+          "long_desc": "Classifies people aged 16 years and over who were in employment between 15 March and 21 March 2021 by the Standard Industrial Classification (SIC) code that represents their current industry or business.\n\nThe SIC code is assigned based on the information provided about a firm or organisation\u2019s main activity.",
           "units": "Person",
           "topic_code": "LAB",
           "classifications": [
@@ -8849,6 +8917,7 @@
               ],
               "dataset": "TS060",
               "choropleth_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "01 Crop and animal production, hunting and related service activities",
@@ -9555,7 +9624,7 @@
           "code": "ns_sec",
           "slug": "national-statistics-socio-economic-classification-ns-sec",
           "desc": "People's socioeconomic position based on their occupation and other job characteristics.",
-          "long_desc": "National Statistics Socio-economic Classification (NS-SeC)",
+          "long_desc": "The National Statistics Socio-economic Classification (NS-SEC) indicates a person's socioeconomic position based on their occupation and other job characteristics.\n\nIt is an Office for National Statistics standard classification. NS-SEC categories are assigned based on a person's occupation, whether employed, self-employed, or supervising other employees.\n \nFull-time students are recorded in the \"full-time students\" category regardless of whether they are economically active.",
           "units": "Person",
           "topic_code": "LAB",
           "classifications": [
@@ -9570,6 +9639,7 @@
               ],
               "dataset": "TS062",
               "choropleth_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "L1, L2 and L3: Higher managerial, administrative and professional occupations",
@@ -9652,7 +9722,7 @@
           "code": "occupation_current",
           "slug": "occupation-current",
           "desc": "The jobs people work in.",
-          "long_desc": "Occupation (current)",
+          "long_desc": "Classifies what people aged 16 years and over does as their main. Their job title or details of activities they do in their job and any supervisory or management responsibilities form this classification. This information is used to code responses to an occupation using the Standards Occupation Classification (SOC) 2020.\n\nIt classifies people who were in employment between 15 March and 21 March 2021, by the SOC code that represents their current occupation.\nThe lowest level of detail available is the four-digit SOC code which includes all codes in three, two and one digit SOC code levels.",
           "units": "Person",
           "topic_code": "LAB",
           "classifications": [
@@ -9666,6 +9736,7 @@
               ],
               "dataset": "TS063",
               "choropleth_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "1. Managers, directors and senior officials",
@@ -9748,7 +9819,7 @@
           "code": "transport_to_workplace",
           "slug": "method-of-travel-to-workplace",
           "desc": "How people travel from their home to their workplace.",
-          "long_desc": "A person's place of work and their method of travel to work. This is the 2001 method of producing travel to work variables.\n \n\"Work mainly from home\" applies to someone who indicated their place of work as their home address and travelled to work by driving a car or van (e.g. visiting clients).",
+          "long_desc": "A person's place of work and their method of travel to work. This is the 2001 method of producing travel to work variables.\n \n\"Work mainly from home\" applies to someone who indicated their place of work as their home address and travelled to work by driving a car or van, for example visiting clients.",
           "units": "Person",
           "topic_code": "TTW",
           "classifications": [
@@ -9762,6 +9833,7 @@
               ],
               "dataset": "TS061",
               "choropleth_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Work mainly at or from home",
@@ -9883,6 +9955,7 @@
               "dataset": "TS058",
               "choropleth_default": true,
               "dot_density_default": true,
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Less than 10km",
@@ -9927,6 +10000,7 @@
                 "msoa"
               ],
               "dataset": "TS058",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Less than 10km",
@@ -9971,19 +10045,20 @@
               ]
             },
             {
-              "code": "workplace_travel_10a",
-              "slug": "workplace-travel-10a",
-              "desc": "Distance travelled to work (10 categories)",
+              "code": "workplace_travel",
+              "slug": "workplace-travel",
+              "desc": "Distance travelled to work (11 categories)",
               "available_geotypes": [
                 "oa",
                 "msoa"
               ],
               "dataset": "TS058",
+              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Less than 2km",
                   "slug": "less-than-2km",
-                  "code": "workplace_travel_10a-001",
+                  "code": "workplace_travel-001",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "travel",
                   "legend_str_3": "less than 2km to work"
@@ -9991,7 +10066,7 @@
                 {
                   "name": "2km to less than 5km",
                   "slug": "2km-to-less-than-5km",
-                  "code": "workplace_travel_10a-002",
+                  "code": "workplace_travel-002",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "travel",
                   "legend_str_3": "2km to less than 5km to work"
@@ -9999,7 +10074,7 @@
                 {
                   "name": "5km to less than 10km",
                   "slug": "5km-to-less-than-10km",
-                  "code": "workplace_travel_10a-003",
+                  "code": "workplace_travel-003",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "travel",
                   "legend_str_3": "5km to less than 10km to work"
@@ -10007,7 +10082,7 @@
                 {
                   "name": "10km to less than 20km",
                   "slug": "10km-to-less-than-20km",
-                  "code": "workplace_travel_10a-004",
+                  "code": "workplace_travel-004",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "travel",
                   "legend_str_3": "10km to less than 20km to work"
@@ -10015,7 +10090,7 @@
                 {
                   "name": "20km to less than 30km",
                   "slug": "20km-to-less-than-30km",
-                  "code": "workplace_travel_10a-005",
+                  "code": "workplace_travel-005",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "travel",
                   "legend_str_3": "20km to less than 30km to work"
@@ -10023,7 +10098,7 @@
                 {
                   "name": "30km to less than 40km",
                   "slug": "30km-to-less-than-40km",
-                  "code": "workplace_travel_10a-006",
+                  "code": "workplace_travel-006",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "travel",
                   "legend_str_3": "30km to less than 40km to work"
@@ -10031,7 +10106,7 @@
                 {
                   "name": "40km to less than 60km",
                   "slug": "40km-to-less-than-60km",
-                  "code": "workplace_travel_10a-007",
+                  "code": "workplace_travel-007",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "travel",
                   "legend_str_3": "40km to less than 60km to work"
@@ -10039,7 +10114,7 @@
                 {
                   "name": "60km and over",
                   "slug": "60km-and-over",
-                  "code": "workplace_travel_10a-008",
+                  "code": "workplace_travel-008",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "travel",
                   "legend_str_3": "60km and over to work"
@@ -10047,18 +10122,18 @@
                 {
                   "name": "Works mainly from home",
                   "slug": "works-mainly-from-home",
-                  "code": "workplace_travel_10a-009",
+                  "code": "workplace_travel-009",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "work",
                   "legend_str_3": "mainly from home"
                 },
                 {
-                  "name": "Other",
-                  "slug": "other",
-                  "code": "workplace_travel_10a-010",
+                  "name": "Works mainly at an offshore installation, in no fixed place, or outside the UK",
+                  "slug": "works-mainly-at-an-offshore-installation-in-no-fixed-place-or-outside-the-uk",
+                  "code": "workplace_travel-010",
                   "legend_str_1": "of people in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "other forms of travel to work"
+                  "legend_str_2": "work",
+                  "legend_str_3": "mainly at an offshore location, in no fixed place, or outside the UK"
                 }
               ]
             }

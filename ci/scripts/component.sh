@@ -1,6 +1,8 @@
 #!/bin/bash -eux
 
 pushd dp-census-atlas
-  # npm install --silent (ToDo add dep installation once this actually does something)
+  npm install --silent
+  # install additional playwright deps...
+  $(npm bin)/playwright install-deps
   make component
 popd

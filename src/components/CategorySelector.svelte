@@ -24,7 +24,7 @@
     bind:value={selected}
     on:change={handleChange}
     name="select"
-    class="text-sm sm:text-base lg:text-lg font-bold p-1 custom-ring border-2 border-ons-ocean-blue overflow-visible"
+    class="text-sm sm:text-base lg:text-lg font-bold p-1 custom-ring border-2 border-ons-ocean-blue max-w-[15rem] xs:max-w-[20rem] sm:max-w-[31rem] md:max-w-none"
   >
     {#each $viz.params.classification.categories as category}
       <option value={category.slug}>{category.legend_str_3}</option>

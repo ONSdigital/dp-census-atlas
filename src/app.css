@@ -26,8 +26,8 @@
   }
 }
 
-/* @layer base {
-  a {
-    @apply underline;
+@layer utilities {
+  abbr[title].no-underline {
+    text-decoration: none;
   }
-} */
+}

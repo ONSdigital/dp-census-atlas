@@ -8,6 +8,11 @@
   import RadioButton from "./RadioButton.svelte";
   import VariableDescription from "./VariableDescription.svelte";
   import ClassificationPager from "./ClassificationPager.svelte";
+  import CaveatWarning from "./CaveatWarning.svelte";
+  import CaveatInfo from "./CaveatInfo.svelte";
+  import { getCaveats } from "../helpers/caveatHelper";
+
+  $: caveats = getCaveats($params.variable);
 </script>
 
 <div class="h-full flex flex-col">
@@ -24,6 +29,9 @@
         <div class="text-sm font-extrabold text-ons-grey-75 select-none" aria-hidden>&gt;</div>
         <div class="">{$params.variable.name}</div>
       </nav>
+      {#if caveats.warn}
+        <CaveatWarning text={caveats.warn.text} link={caveats.warn.link} />
+      {/if}
       <div class="mt-4 mb-2">
         <VariableDescription shortDescription={$params.variable.desc} longDescription={$params.variable.long_desc} />
       </div>
@@ -50,6 +58,9 @@
       </ul>
       {#if $params.variable.classifications.length > 1}
         <ClassificationPager />
+      {/if}
+      {#if caveats.info}
+        <CaveatInfo text={caveats.info.text} link={caveats.info.link} />
       {/if}
     </section>
   </div>

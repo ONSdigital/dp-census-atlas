@@ -23,7 +23,7 @@
   </button>
 </div>
 {#if open}
-  <div class="my-5 border-l-4 border-l-ons-grey-75 p-4 bg-ons-grey-5" style="white-space:pre-wrap">
+  <div class="mt-3 mb-4 border-l-4 border-l-ons-grey-75 p-4 bg-ons-grey-5" style="white-space:pre-wrap">
     {longDescription}
   </div>
 {/if}

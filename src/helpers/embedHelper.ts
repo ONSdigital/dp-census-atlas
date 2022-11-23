@@ -65,3 +65,7 @@ function parseBounds(params: URLSearchParams) {
 export function isNumberQuadruple(input: unknown): input is NumberQuadruple {
   return Array.isArray(input) && input.length === 4 && input.every((x) => isNumeric(x));
 }
+
+export const isAppInteractive = (embedParams: EmbedParams) => {
+  return !embedParams || embedParams.interactive;
+};

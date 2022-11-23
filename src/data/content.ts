@@ -99,7 +99,7 @@ const welshSkills = {
     "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusmapsconfiglab/2021-WELSH-SKILLS.json",
   prodWebContentJsonUrl: "https://www.ons.gov.uk/visualisations/censusmapsconfiglab/2021-WELSH-SKILLS.json",
   fakeDataBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021",
-  realDataBaseUrl: "https://ons-dp-prod-census-maps-welsh-skill.s3.eu-west-2.amazonaws.com",
+  realDataBaseUrl: "https://ons-dp-prod-census-maps-welsh-skills.s3.eu-west-2.amazonaws.com",
 };
 
 // envs / instances

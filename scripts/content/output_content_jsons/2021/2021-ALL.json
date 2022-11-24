@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-11-24-12-12-41",
+    "created_at": "2022-11-24-15-42-31",
     "spec_file": "2021-content-spec-v6.json",
     "release": "2021-ALL"
   },
@@ -9950,7 +9950,8 @@
               "desc": "Distance travelled to work (4 categories)",
               "available_geotypes": [
                 "oa",
-                "msoa"
+                "msoa",
+                "lad"
               ],
               "dataset": "TS058",
               "choropleth_default": true,
@@ -9997,7 +9998,8 @@
               "desc": "Distance travelled to work (5 categories)",
               "available_geotypes": [
                 "oa",
-                "msoa"
+                "msoa",
+                "lad"
               ],
               "dataset": "TS058",
               "comparison_2011_data_available": true,
@@ -10050,7 +10052,8 @@
               "desc": "Distance travelled to work (11 categories)",
               "available_geotypes": [
                 "oa",
-                "msoa"
+                "msoa",
+                "lad"
               ],
               "dataset": "TS058",
               "comparison_2011_data_available": true,

@@ -13,7 +13,7 @@ export const getCaveats = (v: Variable): Caveats => {
         link: "https://www.ons.gov.uk/releases/labourmarketandtraveltoworkcensus2021inenglandandwales",
       },
     };
-  } else if (v.code === "national_identity_detailed") {
+  } else if (v.code === "national_identity" || v.code === "national_identity_detailed") {
     return {
       warn: {
         text: "There are quality considerations for this variable.",

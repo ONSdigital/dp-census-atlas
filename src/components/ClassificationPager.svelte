@@ -8,7 +8,7 @@
   $: prev = indexOfCurrent > 0 ? classifications[indexOfCurrent - 1] : undefined;
 </script>
 
-<div class="flex gap-3">
+<div class="flex gap-3 mb-6">
   {#if prev}
     <div class="flex items-center gap-1.5">
       <span class="select-none"> &lt; </span>

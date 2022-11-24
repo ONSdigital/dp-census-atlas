@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-11-24-10-51-10",
+    "created_at": "2022-11-24-12-12-41",
     "spec_file": "2021-content-spec-v6.json",
     "release": "2021-WELSH-SKILLS"
   },
@@ -223,20 +223,20 @@
               "comparison_2011_data_available": true,
               "categories": [
                 {
-                  "name": "Can speak Welsh",
-                  "slug": "can-speak-welsh",
-                  "code": "welsh_skills_speak-001",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "can",
-                  "legend_str_3": "speak Welsh"
-                },
-                {
                   "name": "Cannot speak Welsh",
                   "slug": "cannot-speak-welsh",
                   "code": "welsh_skills_speak-000",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "can",
                   "legend_str_3": "not speak Welsh"
+                },
+                {
+                  "name": "Can speak Welsh",
+                  "slug": "can-speak-welsh",
+                  "code": "welsh_skills_speak-001",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "can",
+                  "legend_str_3": "speak Welsh"
                 }
               ]
             }

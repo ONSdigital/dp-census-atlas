@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-11-24-10-51-10",
+    "created_at": "2022-11-24-12-12-41",
     "spec_file": "2021-content-spec-v6.json",
     "release": "2021-EILR"
   },
@@ -181,9 +181,9 @@
               ]
             },
             {
-              "code": "ethnic_group_tb",
-              "slug": "ethnic-group-tb",
-              "desc": "Ethnic group (unordered) (20 categories)",
+              "code": "ethnic_group_tb_20b",
+              "slug": "ethnic-group-tb-20b",
+              "desc": "Ethnic group (20 categories)",
               "available_geotypes": [
                 "oa",
                 "msoa",
@@ -193,97 +193,9 @@
               "comparison_2011_data_available": true,
               "categories": [
                 {
-                  "name": "White: English, Welsh, Scottish, Northern Irish or British",
-                  "slug": "white-english-welsh-scottish-northern-irish-or-british",
-                  "code": "ethnic_group_tb-001",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "White: English, Welsh, Scottish, Northern Irish or British"
-                },
-                {
-                  "name": "White: Irish",
-                  "slug": "white-irish",
-                  "code": "ethnic_group_tb-002",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "White: Irish"
-                },
-                {
-                  "name": "White: Gypsy or Irish Traveller",
-                  "slug": "white-gypsy-or-irish-traveller",
-                  "code": "ethnic_group_tb-003",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "White: Gypsy or Irish Traveller"
-                },
-                {
-                  "name": "White: Roma",
-                  "slug": "white-roma",
-                  "code": "ethnic_group_tb-004",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "White: Roma"
-                },
-                {
-                  "name": "White: Other White",
-                  "slug": "white-other-white",
-                  "code": "ethnic_group_tb-005",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "White: Other White"
-                },
-                {
-                  "name": "Mixed or Multiple ethnic groups: White and Black Caribbean",
-                  "slug": "mixed-or-multiple-ethnic-groups-white-and-black-caribbean",
-                  "code": "ethnic_group_tb-006",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "Mixed or Multiple ethnic groups: White and Black Caribbean"
-                },
-                {
-                  "name": "Mixed or Multiple ethnic groups: White and Black African",
-                  "slug": "mixed-or-multiple-ethnic-groups-white-and-black-african",
-                  "code": "ethnic_group_tb-007",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "Mixed or Multiple ethnic groups: White and Black African"
-                },
-                {
-                  "name": "Mixed or Multiple ethnic groups: White and Asian",
-                  "slug": "mixed-or-multiple-ethnic-groups-white-and-asian",
-                  "code": "ethnic_group_tb-008",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "Mixed or Multiple ethnic groups: White and Asian"
-                },
-                {
-                  "name": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
-                  "slug": "mixed-or-multiple-ethnic-groups-other-mixed-or-multiple-ethnic-groups",
-                  "code": "ethnic_group_tb-009",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups"
-                },
-                {
-                  "name": "Asian, Asian British or Asian Welsh: Indian",
-                  "slug": "asian-asian-british-or-asian-welsh-indian",
-                  "code": "ethnic_group_tb-010",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "Asian, Asian British or Asian Welsh: Indian"
-                },
-                {
-                  "name": "Asian, Asian British or Asian Welsh: Pakistani",
-                  "slug": "asian-asian-british-or-asian-welsh-pakistani",
-                  "code": "ethnic_group_tb-011",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "Asian, Asian British or Asian Welsh: Pakistani"
-                },
-                {
                   "name": "Asian, Asian British or Asian Welsh: Bangladeshi",
                   "slug": "asian-asian-british-or-asian-welsh-bangladeshi",
-                  "code": "ethnic_group_tb-012",
+                  "code": "ethnic_group_tb_20b-001",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "Asian, Asian British or Asian Welsh: Bangladeshi"
@@ -291,47 +203,135 @@
                 {
                   "name": "Asian, Asian British or Asian Welsh: Chinese",
                   "slug": "asian-asian-british-or-asian-welsh-chinese",
-                  "code": "ethnic_group_tb-013",
+                  "code": "ethnic_group_tb_20b-002",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "Asian, Asian British or Asian Welsh: Chinese"
                 },
                 {
+                  "name": "Asian, Asian British or Asian Welsh: Indian",
+                  "slug": "asian-asian-british-or-asian-welsh-indian",
+                  "code": "ethnic_group_tb_20b-003",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "Asian, Asian British or Asian Welsh: Indian"
+                },
+                {
+                  "name": "Asian, Asian British or Asian Welsh: Pakistani",
+                  "slug": "asian-asian-british-or-asian-welsh-pakistani",
+                  "code": "ethnic_group_tb_20b-004",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "Asian, Asian British or Asian Welsh: Pakistani"
+                },
+                {
                   "name": "Asian, Asian British or Asian Welsh: Other Asian",
                   "slug": "asian-asian-british-or-asian-welsh-other-asian",
-                  "code": "ethnic_group_tb-014",
+                  "code": "ethnic_group_tb_20b-005",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "Asian, Asian British or Asian Welsh: Other Asian"
                 },
                 {
-                  "name": "Black, Black British, Black Welsh, Caribbean or African: Caribbean",
-                  "slug": "black-black-british-black-welsh-caribbean-or-african-caribbean",
-                  "code": "ethnic_group_tb-015",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "Black, Black British, Black Welsh, Caribbean or African: Caribbean"
-                },
-                {
                   "name": "Black, Black British, Black Welsh, Caribbean or African: African",
                   "slug": "black-black-british-black-welsh-caribbean-or-african-african",
-                  "code": "ethnic_group_tb-016",
+                  "code": "ethnic_group_tb_20b-006",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "Black, Black British, Black Welsh, Caribbean or African: African"
                 },
                 {
+                  "name": "Black, Black British, Black Welsh, Caribbean or African: Caribbean",
+                  "slug": "black-black-british-black-welsh-caribbean-or-african-caribbean",
+                  "code": "ethnic_group_tb_20b-007",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "Black, Black British, Black Welsh, Caribbean or African: Caribbean"
+                },
+                {
                   "name": "Black, Black British, Black Welsh, Caribbean or African: Other Black",
                   "slug": "black-black-british-black-welsh-caribbean-or-african-other-black",
-                  "code": "ethnic_group_tb-017",
+                  "code": "ethnic_group_tb_20b-008",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "Black, Black British, Black Welsh, Caribbean or African: Other Black"
                 },
                 {
+                  "name": "Mixed or Multiple ethnic groups: White and Asian",
+                  "slug": "mixed-or-multiple-ethnic-groups-white-and-asian",
+                  "code": "ethnic_group_tb_20b-009",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "Mixed or Multiple ethnic groups: White and Asian"
+                },
+                {
+                  "name": "Mixed or Multiple ethnic groups: White and Black African",
+                  "slug": "mixed-or-multiple-ethnic-groups-white-and-black-african",
+                  "code": "ethnic_group_tb_20b-010",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "Mixed or Multiple ethnic groups: White and Black African"
+                },
+                {
+                  "name": "Mixed or Multiple ethnic groups: White and Black Caribbean",
+                  "slug": "mixed-or-multiple-ethnic-groups-white-and-black-caribbean",
+                  "code": "ethnic_group_tb_20b-011",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "Mixed or Multiple ethnic groups: White and Black Caribbean"
+                },
+                {
+                  "name": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
+                  "slug": "mixed-or-multiple-ethnic-groups-other-mixed-or-multiple-ethnic-groups",
+                  "code": "ethnic_group_tb_20b-012",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups"
+                },
+                {
+                  "name": "White: English, Welsh, Scottish, Northern Irish or British",
+                  "slug": "white-english-welsh-scottish-northern-irish-or-british",
+                  "code": "ethnic_group_tb_20b-013",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "White: English, Welsh, Scottish, Northern Irish or British"
+                },
+                {
+                  "name": "White: Irish",
+                  "slug": "white-irish",
+                  "code": "ethnic_group_tb_20b-014",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "White: Irish"
+                },
+                {
+                  "name": "White: Gypsy or Irish Traveller",
+                  "slug": "white-gypsy-or-irish-traveller",
+                  "code": "ethnic_group_tb_20b-015",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "White: Gypsy or Irish Traveller"
+                },
+                {
+                  "name": "White: Roma",
+                  "slug": "white-roma",
+                  "code": "ethnic_group_tb_20b-016",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "White: Roma"
+                },
+                {
+                  "name": "White: Other White",
+                  "slug": "white-other-white",
+                  "code": "ethnic_group_tb_20b-017",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "White: Other White"
+                },
+                {
                   "name": "Other ethnic group: Arab",
                   "slug": "other-ethnic-group-arab",
-                  "code": "ethnic_group_tb-018",
+                  "code": "ethnic_group_tb_20b-018",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "Arab"
@@ -339,7 +339,7 @@
                 {
                   "name": "Other ethnic group: Any other ethnic group",
                   "slug": "other-ethnic-group-any-other-ethnic-group",
-                  "code": "ethnic_group_tb-019",
+                  "code": "ethnic_group_tb_20b-019",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "from any other ethnic group"

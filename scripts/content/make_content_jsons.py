@@ -161,6 +161,9 @@ def variable_groups_from_metadata(
     variables = list(filter(lambda x: x.name != "", variables))
     variable_groups = list(filter(lambda x: x.name != "", variable_groups))
 
+    # sort categories (sometimes they aren't sorted!)
+    categories.sort(key=lambda x: int(x._category_code))
+
     # gather children and append any missing info
     for c in classifications:
         c.gather_categories(categories)

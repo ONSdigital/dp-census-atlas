@@ -88,10 +88,10 @@
       "classifications_with_2011_comparison_data": ["english_proficiency_4a", "english_proficiency"]
     },
     "ethnic_group_tb": {
-      "classifications": ["ethnic_group_tb_6a", "ethnic_group_tb"],
+      "classifications": ["ethnic_group_tb_6a", "ethnic_group_tb_20b"],
       "choropleth_default_classification": "ethnic_group_tb_6a",
       "dot_density_default_classification": "ethnic_group_tb_6a",
-      "classifications_with_2011_comparison_data": ["ethnic_group_tb_6a", "ethnic_group_tb"]
+      "classifications_with_2011_comparison_data": ["ethnic_group_tb_6a", "ethnic_group_tb_20b"]
     },
     "hh_language": {
       "classifications": ["hh_language"],

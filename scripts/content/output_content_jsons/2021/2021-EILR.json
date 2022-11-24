@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-11-24-08-57-57",
+    "created_at": "2022-11-24-09-10-32",
     "spec_file": "2021-content-spec-v6.json",
     "release": "2021-EILR"
   },
@@ -719,7 +719,7 @@
                   "code": "main_language_detailed_23a-007",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "speak",
-                  "legend_str_3": "any other European language (EU countries)"
+                  "legend_str_3": "any other European language (EU)"
                 },
                 {
                   "name": "European language (non-EU)",
@@ -727,7 +727,7 @@
                   "code": "main_language_detailed_23a-008",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "speak",
-                  "legend_str_3": "any other European language (non-EU countries)"
+                  "legend_str_3": "any other European language (non-EU)"
                 },
                 {
                   "name": "Russian",
@@ -1139,7 +1139,7 @@
                   "code": "main_language_detailed-036",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "speak",
-                  "legend_str_3": "any other Eastern European language (non EU)"
+                  "legend_str_3": "any other Eastern European language (non-EU)"
                 },
                 {
                   "name": "Other European language (non EU): Northern European language (non EU)",
@@ -1147,7 +1147,7 @@
                   "code": "main_language_detailed-037",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "speak",
-                  "legend_str_3": "any Northern European language (non EU)"
+                  "legend_str_3": "any Northern European language (non-EU)"
                 },
                 {
                   "name": "Other European language (EU and non-EU): Bosnian, Croatian, Serbian, and Montenegrin",

@@ -14,7 +14,7 @@ const classificationDataDisplayConfig = (classificationCode: string) => {
       roundBreaks: (breaks: number[]) => uniqueRoundedNumbers({ numbers: breaks, decimalPlaces: 0 }),
     };
   }
-  const twoDecimalPlaceClassifications = ["main_language_detailed_23a"];
+  const twoDecimalPlaceClassifications = ["main_language_detailed", "main_language_detailed_23a"];
   if (twoDecimalPlaceClassifications.includes(classificationCode)) {
     return {
       suffix: "%",

@@ -13,6 +13,10 @@ services:
       - type: bind
         source: /data
         target: /data
+    logging:
+      driver: local
+      options:
+        mode: non-blocking
     command: [ "sh", "-c", "/bin/chown ${ATLAS_USER}:${ATLAS_USER} /local; /usr/local/etc/sshd.sh" ]
     init: true
 

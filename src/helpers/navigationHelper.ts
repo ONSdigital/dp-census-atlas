@@ -17,5 +17,9 @@ export const deselectGeography = (params: URLSearchParams) => {
 };
 
 const gotoParams = (newer: URLSearchParams) => {
-  goto(`?${newer.toString()}`, { keepfocus: true, replaceState: false, noscroll: true });
+  goto(`?${newer.toString()}`, { keepfocus: true, noscroll: true });
+};
+
+export const gotoUrl = (url: string) => {
+  goto(url, { keepfocus: true, noscroll: true });
 };

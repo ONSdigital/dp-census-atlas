@@ -16,7 +16,7 @@ import { viewport } from "../stores/viewport";
 import { viz } from "../stores/viz";
 import { toObservable } from "../util/rxUtil";
 import { commands, type Command } from "../stores/commands";
-import type { EmbedParams } from "../helpers/embedHelper";
+import { isAppInteractive, type EmbedParams } from "../helpers/embedHelper";
 
 const defaultZoom = 6;
 const maxAllowedZoom = 15;
@@ -24,7 +24,7 @@ const maxAllowedZoom = 15;
 /** Configure the map's properties and subscribe to its events. */
 export const initMap = (container: HTMLElement) => {
   const embed = get(params).embed;
-  const interactive = !embed || embed.interactive;
+  const interactive = isAppInteractive(embed);
 
   const map = new Map({
     container,

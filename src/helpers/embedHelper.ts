@@ -43,6 +43,7 @@ export const parseEmbedParams = (params: URLSearchParams) => {
         ? {
             interactive: params.get("embedInteractive") === "true",
             areaSearch: params.get("embedAreaSearch") === "true",
+            categorySelection: params.get("embedCategorySelection") === "true",
             view: view as typeof view,
             bounds: view === "viewport" ? parseBounds(params) : undefined,
           }
@@ -64,3 +65,7 @@ function parseBounds(params: URLSearchParams) {
 export function isNumberQuadruple(input: unknown): input is NumberQuadruple {
   return Array.isArray(input) && input.length === 4 && input.every((x) => isNumeric(x));
 }
+
+export const isAppInteractive = (embedParams: EmbedParams) => {
+  return !embedParams || embedParams.interactive;
+};

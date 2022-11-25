@@ -1,8 +1,10 @@
 <script lang="ts">
   import { page } from "$app/stores";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
-
+  import { selected } from "../stores/selected";
   export let reverseType = false;
+
+  $: ewNotSelected = $selected && $selected.geoType != "ew";
 </script>
 
 <ul class="pl-4 list-disc list-outside">
@@ -21,12 +23,15 @@
           },
         },
         undefined,
-        { geoType: "lad", geoCode: "E09000025" },
+        {
+          geoType: ewNotSelected ? $selected.geoType : "lad",
+          geoCode: ewNotSelected ? $selected.geoCode : "E09000025",
+        },
       )}
       class:hyperlink={!reverseType}
       class:hyperlink-reverse={reverseType}
     >
-      Newham</a
+      {ewNotSelected ? $selected.displayName : "Newham"}</a
     >.
   </li>
   <!-- https://www.ons.gov.uk/census/maps/choropleth/identity/religion/religion-tb/no-religion?lad=W06000018 -->
@@ -44,17 +49,20 @@
           },
         },
         undefined,
-        { geoType: "lad", geoCode: "W06000018" },
+        {
+          geoType: ewNotSelected ? $selected.geoType : "lad",
+          geoCode: ewNotSelected ? $selected.geoCode : "W06000018",
+        },
       )}
       class:hyperlink={!reverseType}
       class:hyperlink-reverse={reverseType}
     >
-    Caerphilly</a
+      {ewNotSelected ? $selected.displayName : "Caerphilly"}</a
     >.
   </li>
   <!-- https://www.ons.gov.uk/census/maps/choropleth/population/uk-armed-forces-veteran-indicator/uk-armed-forces/previously-served-in-uk-armed-forces?lad=E07000088 -->
   <li class="pb-2">
-    Find out which neighbourhoods of Gosport had the highest percentages of
+    Find out which neighbourhoods of {ewNotSelected ? $selected.displayName : "Gosport"} had the highest percentages of
     <a
       href={buildHyperlink(
         $page.url,
@@ -67,12 +75,15 @@
           },
         },
         undefined,
-        { geoType: "lad", geoCode: "E07000088" },
+        {
+          geoType: ewNotSelected ? $selected.geoType : "lad",
+          geoCode: ewNotSelected ? $selected.geoCode : "E07000088",
+        },
       )}
       class:hyperlink={!reverseType}
       class:hyperlink-reverse={reverseType}
     >
-    UK armed forces veterans</a
+      UK armed forces veterans</a
     >.
   </li>
 </ul>

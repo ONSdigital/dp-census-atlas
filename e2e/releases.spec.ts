@@ -1,7 +1,8 @@
 import { test, expect } from "@playwright/test";
 
 // run tests in this file in parallel
-test.describe.configure({ mode: "parallel" });
+// linearise to see if solves concourse timeouts...
+// test.describe.configure({ mode: "parallel" });
 
 const testCases = [
   {

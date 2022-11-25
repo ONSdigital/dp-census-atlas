@@ -1,7 +1,7 @@
 <script lang="ts">
   import { page } from "$app/stores";
   import { params } from "../stores/params";
-  import { geography } from "../stores/geography";
+  import { gotoUrl } from "../helpers/navigationHelper";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
   import CategoryPageLinks from "./CategoryPageLinks.svelte";
   import AreaPanel from "./AreaPanel.svelte";
@@ -46,6 +46,18 @@
                   category: category.slug,
                 },
               })}
+              on:click|preventDefault={() => {
+                // use gotoUrl (with keepfocus: true) for better keyboard navigation
+                const link = buildHyperlink($page.url, {
+                  variableGroup: $params.variableGroup.slug,
+                  variable: $params.variable.slug,
+                  category: {
+                    classification: $params.classification.slug,
+                    category: category.slug,
+                  },
+                });
+                gotoUrl(link);
+              }}
               class="flex gap-2 items-center p-2 border-t-[1px] border-t-slate-300 cursor-pointer custom-ring"
               class:bg-ons-grey-5={category === $params.category}
             >

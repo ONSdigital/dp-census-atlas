@@ -97,3 +97,15 @@ export const sortVariableGroupVariables = (variableGroups: VariableGroup[]) => {
     vg.variables.sort(compareNames);
   });
 };
+
+/*
+  Return name of latest release. Update by adding returns statements above those currently here.
+*/
+export const getLatestRelease = (content: ContentTree) => {
+  if (content.releases.includes("2021-EILR")) {
+    return "ArmEilr";
+  }
+  if (content.releases.includes("2021-DEM")) {
+    return "DemMig";
+  }
+};

@@ -1,5 +1,4 @@
 <script lang="ts">
-  import { slide, fade } from "svelte/transition";
   import Icon from "./MaterialIcon.svelte";
   import AreaSearch from "./AreaSearch.svelte";
   import { GeoTypes } from "../types";
@@ -7,7 +6,6 @@
   import { params } from "../stores/params";
   import { viewport } from "../stores/viewport";
   import { commands } from "../stores/commands";
-  import { isAppInteractive } from "../helpers/embedHelper";
 
   const geoTypes = GeoTypes.filter((g) => g !== "ew");
 </script>
@@ -17,10 +15,7 @@
     class="absolute top-3 lg:top-5 xl:top-8 left-3 lg:left-5 xl:left-8 mr-16 lg:mr-20 gap-3 flex items-start justify-between flex-wrap"
   >
     <!-- no breadcrumb (mobile) -->
-    <div
-      class={`flex flex-wrap items-center gap-2 text-sm lg:text-base`}
-      class:md:hidden={isAppInteractive($params.embed)}
-    >
+    <div class={`flex flex-wrap items-center gap-2 text-sm lg:text-base`} class:md:hidden={!$params.embed}>
       <div class="flex">
         <div class="flex items-center z-abovemap px-3 py-1 rounded-l bg-ons-census text-ons-grey-5 font-bold">
           <abbr title={geoTypePluralDescriptions[$viewport.geoType]} class="no-underline"
@@ -36,7 +31,7 @@
     <!-- full breadcrumb (non-mobile) -->
     <div
       class={`z-abovemap hidden flex-wrap items-stretch gap-y-1.5 text-sm lg:text-base`}
-      class:md:flex={isAppInteractive($params.embed)}
+      class:md:flex={!$params.embed}
     >
       {#each geoTypes as g, i}
         {#if i <= geoTypes.indexOf($viewport.idealGeoType)}

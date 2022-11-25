@@ -73,7 +73,7 @@
               </span>
             </div>
             {#if $viz?.params?.embed?.categorySelection}
-              <CategorySelector />
+              <CategorySelector use="legendString" />
             {:else}
               <div class={`${legendTextClass} font-bold`}>
                 {formatTemplateString(
@@ -88,7 +88,7 @@
         </div>
       {:else}
         <!-- partial legend -->
-        <div class="">
+        <div>
           {#if $viz?.params?.category}
             <div>
               <span class={legendTextClass}>
@@ -96,9 +96,13 @@
               </span>
               <GeoTypeBadge geoType={active.geoType} />
             </div>
-            <div class={`${legendTextClass} font-bold`}>
-              {$viz.params.category.name}
-            </div>
+            {#if $viz?.params?.embed?.categorySelection}
+              <CategorySelector use="name" />
+            {:else}
+              <div class={`${legendTextClass} font-bold`}>
+                {$viz.params.category.name}
+              </div>
+            {/if}
           {:else}
             <div class="text-center">
               <span class={legendTextClass}>

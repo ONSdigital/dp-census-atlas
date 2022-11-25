@@ -1,0 +1,20 @@
+version: "3.0"
+
+services:
+  atlas:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    image: atlas-${ATLAS_USER}:latest
+    volumes:
+      - type: volume
+        source: local
+        target: /local
+      - type: bind
+        source: /data
+        target: /data
+    command: [ "sh", "-c", "/bin/chown ${ATLAS_USER}:${ATLAS_USER} /local; /usr/local/etc/sshd.sh" ]
+    init: true
+
+volumes:
+  local:

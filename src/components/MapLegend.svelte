@@ -7,6 +7,7 @@
   import { getClassificationDataSuffix, roundedClassificationDataToString } from "../helpers/classificationHelpers";
   import BreaksChart from "./BreaksChart.svelte";
   import GeoTypeBadge from "./GeoTypeBadge.svelte";
+  import CategorySelector from "./CategorySelector.svelte";
 
   $: valueForHoveredGeography = $viz?.places.find((p) => p.geoCode === $hovered?.geoCode)?.categoryValue;
 
@@ -71,19 +72,23 @@
                 )}
               </span>
             </div>
-            <div class={`${legendTextClass} font-bold`}>
-              {formatTemplateString(
-                $viz.params.variable,
-                $viz.params.category,
-                active.displayName,
-                $viz.params.category.legend_str_3,
-              )}
-            </div>
+            {#if $viz?.params?.embed?.categorySelection}
+              <CategorySelector use="legendString" />
+            {:else}
+              <div class={`${legendTextClass} font-bold`}>
+                {formatTemplateString(
+                  $viz.params.variable,
+                  $viz.params.category,
+                  active.displayName,
+                  $viz.params.category.legend_str_3,
+                )}
+              </div>
+            {/if}
           </div>
         </div>
       {:else}
         <!-- partial legend -->
-        <div class="">
+        <div>
           {#if $viz?.params?.category}
             <div>
               <span class={legendTextClass}>
@@ -91,9 +96,13 @@
               </span>
               <GeoTypeBadge geoType={active.geoType} />
             </div>
-            <div class={`${legendTextClass} font-bold`}>
-              {$viz.params.category.name}
-            </div>
+            {#if $viz?.params?.embed?.categorySelection}
+              <CategorySelector use="name" />
+            {:else}
+              <div class={`${legendTextClass} font-bold`}>
+                {$viz.params.category.name}
+              </div>
+            {/if}
           {:else}
             <div class="text-center">
               <span class={legendTextClass}>

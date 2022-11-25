@@ -1,7 +1,12 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
   content: ["./src/**/*.{html,js,svelte,ts}"],
   theme: {
-    // screens: { xxs: "300px", xs: "400px", sm: "500px", md: "740px", lg: "980px", xl: "1300px", xxl: "1600px" },
+    screens: {
+      xs: "475px",
+      ...defaultTheme.screens,
+    },
     extend: {
       borderRadius: {
         DEFAULT: "3px",

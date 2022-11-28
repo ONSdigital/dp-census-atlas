@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-11-28-15-49-47",
+    "created_at": "2022-11-28-16-05-33",
     "spec_file": "2021-content-spec-v7.json",
     "release": "2021-EILR"
   },
@@ -14,7 +14,7 @@
           "name": "Proficiency in English language",
           "code": "english_proficiency",
           "slug": "proficiency-in-english-language",
-          "desc": "How well people speak English (English or Welsh in Wales)",
+          "desc": "How well people whose main language is not English (or in Wales, English or Welsh) speak English",
           "long_desc": "How well people whose main language is not English (English or Welsh in Wales) speak English.",
           "units": "Household",
           "topic_code": "EILR",

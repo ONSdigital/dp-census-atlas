@@ -1,10 +1,11 @@
 <script>
   import { content } from "../stores/content";
-  import { isInitialReleasePeriod } from "../helpers/contentHelpers";
+  import { isInitialReleasePeriod, getLatestRelease } from "../helpers/contentHelpers";
   import VariableGroupList from "./VariableGroupList.svelte";
   import AreaPanel from "./AreaPanel.svelte";
   import SearchBox from "./SearchBox.svelte";
-  import Examples from "./Examples.svelte";
+  import DemMigExamples from "./DemMigExamples.svelte";
+  import ArmEilrExamples from "./ArmEilrExamples.svelte";
 </script>
 
 <div class="px-6">
@@ -28,7 +29,11 @@
     <div class="bg-ons-grey-5 p-6 mb-6">
       <h3 class="pb-3 text-xl font-semibold ">Examples</h3>
       <ul>
-        <Examples />
+        {#if getLatestRelease($content) === 'DemMig'}
+          <DemMigExamples />
+        {:else if getLatestRelease($content) === 'ArmEilr'}
+          <ArmEilrExamples />
+        {/if}
       </ul>
     </div>
   </section>

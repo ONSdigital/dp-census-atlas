@@ -142,6 +142,8 @@ class CensusVariable:
     units: str
     classifications: list[CensusClassification]
     topic_code: str = ""
+    caveat_text: str = ""
+    caveat_link: str = ""
 
     def gather_classifications(self, classification_list: list[CensusClassification]) -> None:
         """
@@ -196,9 +198,9 @@ class CensusVariable:
         empty list, there is no choropleth default classification set, or any classifications are not valid.
         """
         is_valid = True
-
+        blankable_props = ["caveat_text", "caveat_link"]
         for prop, value in vars(self).items():
-            if isinstance(value, str) and not prop.startswith("_") and value == "":
+            if isinstance(value, str) and not prop.startswith("_") and prop not in blankable_props and value == "":
                 print(f"** Blank property {prop} found in variable {self.name} **")
                 is_valid = False
 
@@ -218,7 +220,7 @@ class CensusVariable:
 
     def to_jsonable(self):
         """Variable in json-friendly form."""
-        return {
+        output_params = {
             "name": self.name,
             "code": self.code,
             "slug": self.slug,
@@ -226,8 +228,17 @@ class CensusVariable:
             "long_desc": self.long_desc,
             "units": self.units,
             "topic_code": self.topic_code,
-            "classifications": [c.to_jsonable() for c in self.classifications],
         }
+
+        if self.caveat_text != "":
+            output_params["caveat_text"] = self.caveat_text
+
+        if self.caveat_link != "":
+            output_params["caveat_link"] = self.caveat_link
+
+        output_params["classifications"] = [c.to_jsonable() for c in self.classifications]
+
+        return output_params
 
 
 @dataclass
@@ -317,6 +328,8 @@ def variable_from_content_json(content_json: dict) -> CensusVariable:
         long_desc=content_json["long_desc"],
         units=content_json["units"],
         topic_code=content_json["topic_code"],
+        caveat_text=content_json.get("caveat_text", ""),
+        caveat_link=content_json.get("caveat_link",""),
         classifications=[classification_from_content_json(c) for c in content_json["classifications"]],
     )
 

@@ -3,16 +3,6 @@
 """
 Make content.json(s) according to spec json file (arg 1).
 
-Spec json file assumed to be in this format:
-{
-    "cantabular_metadata_dir": "path to unzipped cantabular metadata archive from https://confluence.ons.gov.uk/pages/viewpage.action?spaceKey=ODADH&title=Upload+Metadata+Files+to+support+NOMIS%2C+Testing+etc goes here",
-    "variable_groups_spec_file": "this file is checked in, so shouldn't need to change: Atlas_Variable_Groups.json",
-    "rich_content_spec_file": "this file is checked in, so shouldn't need to change: Rich_content_product_specifications.csv",
-    "category_legend_strs_file": "this file is checked in, so shouldn't need to change: atlas-legend-strs-2022-09-14.csv",
-    "variable_descriptions_file": "this file is checked in, so shouldn't need to change:  atlas_variables_short_descriptions.csv",
-    "version": "label for this iteration of content should go here (will be included in metadata for all produced files)"
-}
-
 This script outputs several content json files to content/output_content_jsons/<"version" from spec json file>/. One
 json will be produced for each census topic, plus an additional one with ALL topics included.
 
@@ -49,6 +39,7 @@ from scripts.filter_content_to_atlas_spec import filter_content_to_atlas_spec_fr
 from scripts.split_content import split_content
 from scripts.update_legend_strs_from_csv import update_legend_strs_from_file
 from scripts.update_variable_desc_from_csv import update_variable_descs_from_file
+from scripts.update_caveats_from_csv import update_variable_caveats_from_file
 from scripts.validate_content import validate_variable_groups
 
 
@@ -250,6 +241,15 @@ def main(spec_fn: str):
         input_full_path(spec["variable_descriptions_file"])
     )
     print("... done.")
+
+    # update variable caveats
+    print(f"Inserting new variable caveats from {spec['variable_caveats_file']}...")
+    content_iterations["ALL"] = update_variable_caveats_from_file(
+        content_iterations["ALL"],
+        input_full_path(spec["variable_caveats_file"])
+    )
+    print("... done.")
+
 
     # rename variables
     print(f"Renaming variables...")

@@ -4,6 +4,7 @@
   "content_and_releases_spec_file": "Atlas_content_and_releases.json",
   "category_legend_strs_file": "Atlas_legend_strings.csv",
   "variable_descriptions_file": "Atlas_variables_short_descriptions.csv",
+  "variable_caveats_file": "Atlas_variables_caveats.csv",
   "classification_geotype_availability_file": "Available_geotypes_for_classifications.csv",
   "version": "2021",
   "variable_topic_overrides": {

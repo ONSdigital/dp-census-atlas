@@ -28,8 +28,8 @@
         <div class="text-sm font-extrabold text-ons-grey-75 select-none" aria-hidden>&gt;</div>
         <div class="">{$params.variable.name}</div>
       </nav>
-      {#if caveat}
-        <CaveatWarning text={caveat.text} link={caveat.link} />
+      {#if $params.variable.caveat_text !== ""}
+        <CaveatWarning text={$params.variable.caveat_text} link={$params.variable.caveat_link} />
       {/if}
       <div class="mt-4 mb-2">
         <VariableDescription shortDescription={$params.variable.desc} longDescription={$params.variable.long_desc} />

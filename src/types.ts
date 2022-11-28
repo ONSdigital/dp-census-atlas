@@ -16,6 +16,8 @@ export type Variable = {
   long_desc: string;
   units: string;
   topic_code: string;
+  caveat_text: string;
+  caveat_link: string;
   classifications: Classification[];
 };
 

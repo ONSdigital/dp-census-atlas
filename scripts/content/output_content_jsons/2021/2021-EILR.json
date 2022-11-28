@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-11-24-16-44-35",
+    "created_at": "2022-11-28-11-59-37",
     "spec_file": "2021-content-spec-v6.json",
     "release": "2021-EILR"
   },
@@ -1617,6 +1617,8 @@
           "long_desc": "A person's national identity could be the country or countries where they feel they belong or could think of as home. It is not dependent on ethnic group or citizenship.",
           "units": "Person",
           "topic_code": "EILR",
+          "caveat_text": "There are quality considerations for this variable.",
+          "caveat_link": "https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/ethnicity/methodologies/ethnicgroupnationalidentitylanguageandreligionqualityinformationforcensus2021",
           "classifications": [
             {
               "code": "national_identity_all_4a",
@@ -1888,6 +1890,8 @@
           "long_desc": "This variable indicates the national identity people connect to or identify with. A person's national identity is a self-determined assessment of their own identity with respect to the country or countries with which they feel an affiliation. It is not dependent on ethnic group or citizenship",
           "units": "Person",
           "topic_code": "EILR",
+          "caveat_text": "There are quality considerations for this variable.",
+          "caveat_link": "https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/ethnicity/methodologies/ethnicgroupnationalidentitylanguageandreligionqualityinformationforcensus2021",
           "classifications": [
             {
               "code": "national_identity_detailed",
@@ -2489,6 +2493,8 @@
           "long_desc": "The religion people connect or identify with (their religious affiliation), whether or not they practice or have belief in it.\n\nThis question was voluntary and includes people who identified with one of 8 tick-box response options, including \u2018No religion\u2019, alongside those who chose not to answer this question.",
           "units": "Person",
           "topic_code": "EILR",
+          "caveat_text": "There are quality considerations for the \"not answered\" category in university locations.",
+          "caveat_link": "https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/ethnicity/methodologies/ethnicgroupnationalidentitylanguageandreligionqualityinformationforcensus2021",
           "classifications": [
             {
               "code": "religion_tb",

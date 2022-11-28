@@ -45,15 +45,20 @@
       {#if $viz?.params?.category && active?.value !== undefined}
         <!-- full legend -->
         <div class="flex gap-3 items-center">
-          <div class="whitespace-nowrap">
-            <span class="text-4xl md:text-5xl font-bold">
+          <div class="hidden xs:block whitespace-nowrap">
+            <span class="xs:text-4xl sm:text-5xl font-bold">
               {roundedClassificationDataToString($viz.params.classification.code, active.value)}</span
-            ><span class="text-3xl md:text-4xl font-bold"
+            ><span class="xs:text-2xl sm:text-4xl font-bold"
               >{getClassificationDataSuffix($viz.params.classification.code)}</span
             >
           </div>
           <div class="flex-grow leading-[0px]">
             <div class="">
+              <span class="xs:hidden font-bold">
+                <span class="">
+                  {roundedClassificationDataToString($viz.params.classification.code, active.value)}</span
+                ><span class="text-sm">{getClassificationDataSuffix($viz.params.classification.code)}</span>
+              </span>
               <span class={legendTextClass}>
                 {formatTemplateString(
                   $viz.params.variable,

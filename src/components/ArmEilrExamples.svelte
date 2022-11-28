@@ -1,10 +1,10 @@
 <script lang="ts">
   import { page } from "$app/stores";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
-  import { selected } from "../stores/selected";
+  import { geography } from "../stores/geography";
   export let reverseType = false;
 
-  $: ewNotSelected = $selected && $selected.geoType != "ew";
+  $: ewNotSelected = $geography.geoType !== "ew";
 </script>
 
 <ul class="pl-4 list-disc list-outside">
@@ -24,14 +24,14 @@
         },
         undefined,
         {
-          geoType: ewNotSelected ? $selected.geoType : "lad",
-          geoCode: ewNotSelected ? $selected.geoCode : "E09000025",
+          geoType: ewNotSelected ? $geography.geoType : "lad",
+          geoCode: ewNotSelected ? $geography.geoCode : "E09000025",
         },
       )}
       class:hyperlink={!reverseType}
       class:hyperlink-reverse={reverseType}
     >
-      {ewNotSelected ? $selected.displayName : "Newham"}</a
+      {ewNotSelected ? $geography.displayName : "Newham"}</a
     >.
   </li>
   <!-- https://www.ons.gov.uk/census/maps/choropleth/identity/religion/religion-tb/no-religion?lad=W06000018 -->
@@ -50,19 +50,19 @@
         },
         undefined,
         {
-          geoType: ewNotSelected ? $selected.geoType : "lad",
-          geoCode: ewNotSelected ? $selected.geoCode : "W06000018",
+          geoType: ewNotSelected ? $geography.geoType : "lad",
+          geoCode: ewNotSelected ? $geography.geoCode : "W06000018",
         },
       )}
       class:hyperlink={!reverseType}
       class:hyperlink-reverse={reverseType}
     >
-      {ewNotSelected ? $selected.displayName : "Caerphilly"}</a
+      {ewNotSelected ? $geography.displayName : "Caerphilly"}</a
     >.
   </li>
   <!-- https://www.ons.gov.uk/census/maps/choropleth/population/uk-armed-forces-veteran-indicator/uk-armed-forces/previously-served-in-uk-armed-forces?lad=E07000088 -->
   <li class="pb-2">
-    Find out which neighbourhoods of {ewNotSelected ? $selected.displayName : "Gosport"} had the highest percentages of
+    Find out which neighbourhoods of {ewNotSelected ? $geography.displayName : "Gosport"} had the highest percentages of
     <a
       href={buildHyperlink(
         $page.url,
@@ -76,8 +76,8 @@
         },
         undefined,
         {
-          geoType: ewNotSelected ? $selected.geoType : "lad",
-          geoCode: ewNotSelected ? $selected.geoCode : "E07000088",
+          geoType: ewNotSelected ? $geography.geoType : "lad",
+          geoCode: ewNotSelected ? $geography.geoCode : "E07000088",
         },
       )}
       class:hyperlink={!reverseType}

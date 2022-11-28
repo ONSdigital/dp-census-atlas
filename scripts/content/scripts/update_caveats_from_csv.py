@@ -12,10 +12,6 @@ import sys
 from scripts.census_objects import load_content, write_content, CensusVariableGroup
 
 
-CAVEAT_TEXT_HEADER = "caveat_text"
-
-
-
 def variable_caveat_spec_rows_from_csv(variable_caveats_file: Path or str) -> list[dict]:
     with open(variable_caveats_file, "r", encoding="ascii", errors="ignore") as f:
         reader = csv.DictReader(f)
@@ -40,8 +36,8 @@ def update_variable_caveats(all_variable_groups: list[CensusVariableGroup], vari
     return all_variable_groups
 
 
-def update_variable_caveats_from_file(all_variable_groups: list[CensusVariableGroup], variable_desc_file: Path or str) -> list[CensusVariableGroup]:
-    variable_desc_spec_rows = variable_caveat_spec_rows_from_csv(variable_desc_file)
+def update_variable_caveats_from_file(all_variable_groups: list[CensusVariableGroup], variable_caveats_file: Path or str) -> list[CensusVariableGroup]:
+    variable_desc_spec_rows = variable_caveat_spec_rows_from_csv(variable_caveats_file)
     return update_variable_caveats(all_variable_groups, variable_desc_spec_rows)
 
 

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-11-28-11-59-37",
+    "created_at": "2022-11-28-12-40-51",
     "spec_file": "2021-content-spec-v6.json",
     "release": "2021-TTW"
   },
@@ -30,9 +30,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS061",
               "choropleth_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS061",
               "categories": [
                 {
                   "name": "Work mainly at or from home",
@@ -154,10 +154,10 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS058",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS058",
               "categories": [
                 {
                   "name": "Less than 10km",
@@ -202,8 +202,8 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS058",
               "comparison_2011_data_available": true,
+              "dataset": "TS058",
               "categories": [
                 {
                   "name": "Less than 10km",
@@ -256,8 +256,8 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS058",
               "comparison_2011_data_available": true,
+              "dataset": "TS058",
               "categories": [
                 {
                   "name": "Less than 2km",

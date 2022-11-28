@@ -40,6 +40,7 @@ from scripts.split_content import split_content
 from scripts.update_legend_strs_from_csv import update_legend_strs_from_file
 from scripts.update_variable_desc_from_csv import update_variable_descs_from_file
 from scripts.update_caveats_from_csv import update_variable_caveats_from_file
+from scripts.update_data_downloads_from_csv import update_classification_data_downloads_from_file
 from scripts.validate_content import validate_variable_groups
 
 
@@ -67,7 +68,8 @@ def classification_from_cantabular_csv_row(csv_row: dict) -> CensusClassificatio
         available_geotypes=[],
         choropleth_default=False,
         dot_density_default=False,
-        dataset = "",
+        dataset="",
+        data_download="",
         categories=[],
         _variable_code=csv_row["Variable_Mnemonic"],
     )
@@ -225,7 +227,6 @@ def main(spec_fn: str):
             v.set_available_geotypes(available_geotypes_for_classifications)
     print("... done.")
 
-
     # update legend strings
     print(f"Inserting new legend strings from {spec['category_legend_strs_file']}...")
     content_iterations["ALL"] = update_legend_strs_from_file(
@@ -247,6 +248,14 @@ def main(spec_fn: str):
     content_iterations["ALL"] = update_variable_caveats_from_file(
         content_iterations["ALL"],
         input_full_path(spec["variable_caveats_file"])
+    )
+    print("... done.")
+
+    # update classification data downloads
+    print(f"Inserting new classification data downloads from {spec['classifications_downloads_file']}...")
+    content_iterations["ALL"] = update_classification_data_downloads_from_file(
+        content_iterations["ALL"],
+        input_full_path(spec["classifications_downloads_file"])
     )
     print("... done.")
 
@@ -274,7 +283,7 @@ def main(spec_fn: str):
     # make release splits
     print("Splitting content by releases...")
     content_iterations.update(split_content(
-        content_iterations["ALL"], 
+        content_iterations["ALL"],
         input_full_path(spec["content_and_releases_spec_file"])))
     print("... done.")
 

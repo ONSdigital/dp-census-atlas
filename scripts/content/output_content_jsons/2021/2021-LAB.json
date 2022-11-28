@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-11-28-11-59-37",
+    "created_at": "2022-11-28-12-40-51",
     "spec_file": "2021-content-spec-v6.json",
     "release": "2021-LAB"
   },
@@ -30,9 +30,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS066",
               "choropleth_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS066",
               "categories": [
                 {
                   "name": "Economically active",
@@ -61,9 +61,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS066",
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS066",
               "categories": [
                 {
                   "name": "Economically active: In employment (including full-time students)",
@@ -100,8 +100,8 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS066",
               "comparison_2011_data_available": true,
+              "dataset": "TS066",
               "categories": [
                 {
                   "name": "Economically active (excluding full-time students): In employment",
@@ -199,10 +199,10 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS065",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS065",
               "categories": [
                 {
                   "name": "Short-term unemployed: Worked in the last 12 months",
@@ -252,10 +252,10 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS059",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS059",
               "categories": [
                 {
                   "name": "Part-time: 30 hours or less worked",
@@ -284,8 +284,8 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS059",
               "comparison_2011_data_available": true,
+              "dataset": "TS059",
               "categories": [
                 {
                   "name": "Part-time: 15 hours or less worked",
@@ -342,9 +342,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS060",
               "choropleth_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS060",
               "categories": [
                 {
                   "name": "01 Crop and animal production, hunting and related service activities",
@@ -1066,9 +1066,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS062",
               "choropleth_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS062",
               "categories": [
                 {
                   "name": "L1, L2 and L3: Higher managerial, administrative and professional occupations",
@@ -1165,9 +1165,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS063",
               "choropleth_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS063",
               "categories": [
                 {
                   "name": "1. Managers, directors and senior officials",

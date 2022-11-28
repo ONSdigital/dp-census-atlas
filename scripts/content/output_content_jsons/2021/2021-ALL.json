@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-11-28-11-59-37",
+    "created_at": "2022-11-28-12-40-51",
     "spec_file": "2021-content-spec-v6.json",
     "release": "2021-ALL"
   },
@@ -28,10 +28,10 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS067",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS067",
               "categories": [
                 {
                   "name": "No qualifications",
@@ -84,8 +84,8 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS067",
               "comparison_2011_data_available": true,
+              "dataset": "TS067",
               "categories": [
                 {
                   "name": "No qualifications",
@@ -172,10 +172,10 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS038ASR",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS038ASR",
               "categories": [
                 {
                   "name": "Disabled under the Equality Act",
@@ -204,8 +204,8 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS038",
               "comparison_2011_data_available": true,
+              "dataset": "TS038",
               "categories": [
                 {
                   "name": "Disabled under the Equality Act: Day-to-day activities limited a lot",
@@ -261,10 +261,10 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS037ASR",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS037ASR",
               "categories": [
                 {
                   "name": "Good health",
@@ -293,8 +293,8 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS037ASR",
               "comparison_2011_data_available": true,
+              "dataset": "TS037ASR",
               "categories": [
                 {
                   "name": "Very good or good health",
@@ -331,8 +331,8 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS037ASR",
               "comparison_2011_data_available": true,
+              "dataset": "TS037ASR",
               "categories": [
                 {
                   "name": "Very good health",
@@ -396,10 +396,10 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS040",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS040",
               "categories": [
                 {
                   "name": "No people disabled under the Equality Act in household",
@@ -447,10 +447,10 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS039ASR",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS039ASR",
               "categories": [
                 {
                   "name": "Provides no unpaid care",
@@ -495,8 +495,8 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS039",
               "comparison_2011_data_available": true,
+              "dataset": "TS039",
               "categories": [
                 {
                   "name": "Provides no unpaid care",
@@ -575,10 +575,10 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS044",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS044",
               "categories": [
                 {
                   "name": "Whole house or bungalow",
@@ -615,8 +615,8 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS044",
               "comparison_2011_data_available": true,
+              "dataset": "TS044",
               "categories": [
                 {
                   "name": "Whole house or bungalow: Detached",
@@ -669,8 +669,8 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS044",
               "comparison_2011_data_available": true,
+              "dataset": "TS044",
               "categories": [
                 {
                   "name": "Detached",
@@ -758,9 +758,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS056",
               "choropleth_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS056",
               "categories": [
                 {
                   "name": "No second address",
@@ -808,10 +808,10 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS046",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS046",
               "categories": [
                 {
                   "name": "Does not have central heating",
@@ -840,8 +840,8 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS046",
               "comparison_2011_data_available": true,
+              "dataset": "TS046",
               "categories": [
                 {
                   "name": "No central heating",
@@ -961,10 +961,10 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS054",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS054",
               "categories": [
                 {
                   "name": "Owned: Owns outright",
@@ -1009,8 +1009,8 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS054",
               "comparison_2011_data_available": true,
+              "dataset": "TS054",
               "categories": [
                 {
                   "name": "Owned: Owns outright",
@@ -1098,10 +1098,10 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS050",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS050",
               "categories": [
                 {
                   "name": "1 bedroom",
@@ -1157,10 +1157,10 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS045",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS045",
               "categories": [
                 {
                   "name": "No cars or vans in household",
@@ -1189,8 +1189,8 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS045",
               "comparison_2011_data_available": true,
+              "dataset": "TS045",
               "categories": [
                 {
                   "name": "No cars or vans in household",
@@ -1246,9 +1246,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS052",
               "choropleth_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS052",
               "categories": [
                 {
                   "name": "Occupancy rating of bedrooms: +2 or more",
@@ -1312,9 +1312,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS053",
               "choropleth_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS053",
               "categories": [
                 {
                   "name": "Occupancy rating of rooms: +2 or more",
@@ -1378,9 +1378,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS055",
               "choropleth_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS055",
               "categories": [
                 {
                   "name": "Armed forces base address",
@@ -1483,10 +1483,11 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS029",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS029",
+              "data_download": "https://www.ons.gov.uk/datasets/TS029/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "Main language is English (English or Welsh in Wales)",
@@ -1523,8 +1524,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS029",
               "comparison_2011_data_available": true,
+              "dataset": "TS029",
+              "data_download": "https://www.ons.gov.uk/datasets/TS029/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "Main language is English (English or Welsh in Wales)",
@@ -1588,10 +1590,11 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS021",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS021",
+              "data_download": "https://www.ons.gov.uk/datasets/TS021/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "Asian, Asian British or Asian Welsh",
@@ -1644,8 +1647,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS021",
               "comparison_2011_data_available": true,
+              "dataset": "TS021",
+              "data_download": "https://www.ons.gov.uk/datasets/TS021/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "Asian, Asian British or Asian Welsh: Bangladeshi",
@@ -1821,9 +1825,10 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS025",
               "choropleth_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS025",
+              "data_download": "https://www.ons.gov.uk/datasets/TS025/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "All adults in household have English in England, or English or Welsh in Wales as a main language",
@@ -1879,10 +1884,11 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS023",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS023",
+              "data_download": "https://www.ons.gov.uk/datasets/TS023/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "One-person household",
@@ -1946,10 +1952,11 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS026",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS026",
+              "data_download": "https://www.ons.gov.uk/datasets/TS026/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "All household members have the same main language",
@@ -1978,8 +1985,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS026",
               "comparison_2011_data_available": true,
+              "dataset": "TS026",
+              "data_download": "https://www.ons.gov.uk/datasets/TS026/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "One-person household",
@@ -2043,10 +2051,11 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS075",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS075",
+              "data_download": "https://www.ons.gov.uk/datasets/TS075/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "One-person household",
@@ -2116,9 +2125,10 @@
               "available_geotypes": [
                 "lad"
               ],
-              "dataset": "TS024",
               "choropleth_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS024",
+              "data_download": "https://www.ons.gov.uk/datasets/TS024/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "English (English or Welsh if in Wales)",
@@ -2305,8 +2315,9 @@
               "available_geotypes": [
                 "lad"
               ],
-              "dataset": "TS024",
               "comparison_2011_data_available": true,
+              "dataset": "TS024",
+              "data_download": "https://www.ons.gov.uk/datasets/TS024/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "English (English or Welsh in Wales)",
@@ -3084,10 +3095,11 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS027",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS027",
+              "data_download": "https://www.ons.gov.uk/datasets/TS027/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "One or more UK identity only",
@@ -3124,8 +3136,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS027",
               "comparison_2011_data_available": true,
+              "dataset": "TS027",
+              "data_download": "https://www.ons.gov.uk/datasets/TS027/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "British only identity",
@@ -3202,8 +3215,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS027",
               "comparison_2011_data_available": true,
+              "dataset": "TS027",
+              "data_download": "https://www.ons.gov.uk/datasets/TS027/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "British only identity",
@@ -3356,9 +3370,10 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS028",
               "choropleth_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS028",
+              "data_download": "https://www.ons.gov.uk/datasets/TS028/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "UK identity: British only identity",
@@ -3960,9 +3975,10 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS030",
               "choropleth_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS030",
+              "data_download": "https://www.ons.gov.uk/datasets/TS030/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "No religion",
@@ -4058,10 +4074,10 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS032",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS032",
               "categories": [
                 {
                   "name": "Can understand spoken Welsh only",
@@ -4098,8 +4114,8 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS032",
               "comparison_2011_data_available": true,
+              "dataset": "TS032",
               "categories": [
                 {
                   "name": "Can understand spoken Welsh only",
@@ -4152,8 +4168,8 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS032",
               "comparison_2011_data_available": true,
+              "dataset": "TS032",
               "categories": [
                 {
                   "name": "Can understand spoken Welsh only",
@@ -4247,10 +4263,10 @@
               "available_geotypes": [
                 "lad"
               ],
-              "dataset": "TS076",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS076",
               "categories": [
                 {
                   "name": "Cannot speak Welsh",
@@ -4289,10 +4305,10 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS078",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS078",
               "categories": [
                 {
                   "name": "Gender identity the same as sex registered at birth",
@@ -4328,8 +4344,8 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS070",
               "comparison_2011_data_available": true,
+              "dataset": "TS070",
               "categories": [
                 {
                   "name": "Gender identity the same as sex registered at birth",
@@ -4408,10 +4424,10 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS077",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS077",
               "categories": [
                 {
                   "name": "Straight or Heterosexual",
@@ -4447,8 +4463,8 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS077",
               "comparison_2011_data_available": true,
+              "dataset": "TS077",
               "categories": [
                 {
                   "name": "Straight or Heterosexual",
@@ -4500,8 +4516,8 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS079",
               "comparison_2011_data_available": true,
+              "dataset": "TS079",
               "categories": [
                 {
                   "name": "Straight or Heterosexual",
@@ -4595,10 +4611,10 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS071",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS071",
               "categories": [
                 {
                   "name": "Previously served in UK armed forces",
@@ -4654,8 +4670,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS006",
               "choropleth_default": true,
+              "dataset": "TS006",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Persons per square kilometre",
@@ -4687,10 +4704,11 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS011",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS011",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Household is not deprived in any dimension",
@@ -4754,10 +4772,11 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS003",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS003",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Other household types",
@@ -4794,8 +4813,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS003",
               "comparison_2011_data_available": true,
+              "dataset": "TS003",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "One-person household: Aged 66 years and over",
@@ -4931,10 +4951,11 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS017",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS017",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "1 person in household",
@@ -4979,8 +5000,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS017",
               "comparison_2011_data_available": true,
+              "dataset": "TS017",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "1 person in household",
@@ -5068,10 +5090,11 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS002",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS002",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Married or in a registered civil partnership",
@@ -5100,8 +5123,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS002",
               "comparison_2011_data_available": true,
+              "dataset": "TS002",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Never married and never registered a civil partnership",
@@ -5154,8 +5178,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS002",
               "comparison_2011_data_available": true,
+              "dataset": "TS002",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Never married and never registered a civil partnership",
@@ -5266,9 +5291,10 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS010",
               "choropleth_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS010",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Living in an opposite-sex couple: Married or in a civil partnership",
@@ -5371,10 +5397,11 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS076",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS076",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Aged 15 years and under",
@@ -5410,8 +5437,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS076",
               "comparison_2011_data_available": true,
+              "dataset": "TS076",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Aged 14 years and under",
@@ -5487,8 +5515,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS076",
               "comparison_2011_data_available": true,
+              "dataset": "TS076",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Aged 4 years and under",
@@ -5588,8 +5617,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS007",
               "comparison_2011_data_available": true,
+              "dataset": "TS007",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Aged under 1 year",
@@ -6420,8 +6450,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS007a",
               "choropleth_default": true,
+              "dataset": "TS007a",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Median age",
@@ -6453,10 +6484,11 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS020",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS020",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Female",
@@ -6496,10 +6528,11 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS018",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS018",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Born in the UK",
@@ -6657,10 +6690,11 @@
               "available_geotypes": [
                 "lad"
               ],
-              "dataset": "TS004",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS004",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Born in the UK",
@@ -6687,8 +6721,9 @@
               "available_geotypes": [
                 "lad"
               ],
-              "dataset": "TS004",
               "comparison_2011_data_available": true,
+              "dataset": "TS004",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
@@ -6757,8 +6792,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS004",
               "comparison_2011_data_available": true,
+              "dataset": "TS004",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
@@ -6857,8 +6893,9 @@
               "available_geotypes": [
                 "lad"
               ],
-              "dataset": "TS012",
               "comparison_2011_data_available": true,
+              "dataset": "TS012",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Europe: United Kingdom: England",
@@ -7354,9 +7391,10 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS019",
               "choropleth_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS019",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Address one year ago is the same as the address of enumeration",
@@ -7412,10 +7450,11 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS005",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS005",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "UK passport",
@@ -7451,8 +7490,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS005",
               "comparison_2011_data_available": true,
+              "dataset": "TS005",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
@@ -7560,8 +7600,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS005",
               "comparison_2011_data_available": true,
+              "dataset": "TS005",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
@@ -7710,8 +7751,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS005",
               "comparison_2011_data_available": true,
+              "dataset": "TS005",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
@@ -7931,8 +7973,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS013",
               "comparison_2011_data_available": true,
+              "dataset": "TS013",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
@@ -8364,10 +8407,11 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS016",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS016",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Born in the UK",
@@ -8431,10 +8475,11 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS015",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS015",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Born in the UK",
@@ -8487,8 +8532,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS015",
               "comparison_2011_data_available": true,
+              "dataset": "TS015",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Born in the UK",
@@ -8617,9 +8663,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS066",
               "choropleth_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS066",
               "categories": [
                 {
                   "name": "Economically active",
@@ -8648,9 +8694,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS066",
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS066",
               "categories": [
                 {
                   "name": "Economically active: In employment (including full-time students)",
@@ -8687,8 +8733,8 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS066",
               "comparison_2011_data_available": true,
+              "dataset": "TS066",
               "categories": [
                 {
                   "name": "Economically active (excluding full-time students): In employment",
@@ -8786,10 +8832,10 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS065",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS065",
               "categories": [
                 {
                   "name": "Short-term unemployed: Worked in the last 12 months",
@@ -8839,10 +8885,10 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS059",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS059",
               "categories": [
                 {
                   "name": "Part-time: 30 hours or less worked",
@@ -8871,8 +8917,8 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS059",
               "comparison_2011_data_available": true,
+              "dataset": "TS059",
               "categories": [
                 {
                   "name": "Part-time: 15 hours or less worked",
@@ -8929,9 +8975,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS060",
               "choropleth_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS060",
               "categories": [
                 {
                   "name": "01 Crop and animal production, hunting and related service activities",
@@ -9653,9 +9699,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS062",
               "choropleth_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS062",
               "categories": [
                 {
                   "name": "L1, L2 and L3: Higher managerial, administrative and professional occupations",
@@ -9752,9 +9798,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS063",
               "choropleth_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS063",
               "categories": [
                 {
                   "name": "1. Managers, directors and senior officials",
@@ -9852,9 +9898,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS061",
               "choropleth_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS061",
               "categories": [
                 {
                   "name": "Work mainly at or from home",
@@ -9976,10 +10022,10 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS058",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS058",
               "categories": [
                 {
                   "name": "Less than 10km",
@@ -10024,8 +10070,8 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS058",
               "comparison_2011_data_available": true,
+              "dataset": "TS058",
               "categories": [
                 {
                   "name": "Less than 10km",
@@ -10078,8 +10124,8 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS058",
               "comparison_2011_data_available": true,
+              "dataset": "TS058",
               "categories": [
                 {
                   "name": "Less than 2km",

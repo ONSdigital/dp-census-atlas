@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-11-28-11-59-37",
+    "created_at": "2022-11-28-12-40-51",
     "spec_file": "2021-content-spec-v6.json",
     "release": "2021-HOU"
   },
@@ -28,10 +28,10 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS044",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS044",
               "categories": [
                 {
                   "name": "Whole house or bungalow",
@@ -68,8 +68,8 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS044",
               "comparison_2011_data_available": true,
+              "dataset": "TS044",
               "categories": [
                 {
                   "name": "Whole house or bungalow: Detached",
@@ -122,8 +122,8 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS044",
               "comparison_2011_data_available": true,
+              "dataset": "TS044",
               "categories": [
                 {
                   "name": "Detached",
@@ -211,9 +211,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS056",
               "choropleth_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS056",
               "categories": [
                 {
                   "name": "No second address",
@@ -261,10 +261,10 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS046",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS046",
               "categories": [
                 {
                   "name": "Does not have central heating",
@@ -293,8 +293,8 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS046",
               "comparison_2011_data_available": true,
+              "dataset": "TS046",
               "categories": [
                 {
                   "name": "No central heating",
@@ -414,10 +414,10 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS054",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS054",
               "categories": [
                 {
                   "name": "Owned: Owns outright",
@@ -462,8 +462,8 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS054",
               "comparison_2011_data_available": true,
+              "dataset": "TS054",
               "categories": [
                 {
                   "name": "Owned: Owns outright",
@@ -551,10 +551,10 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS050",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS050",
               "categories": [
                 {
                   "name": "1 bedroom",
@@ -610,10 +610,10 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS045",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS045",
               "categories": [
                 {
                   "name": "No cars or vans in household",
@@ -642,8 +642,8 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS045",
               "comparison_2011_data_available": true,
+              "dataset": "TS045",
               "categories": [
                 {
                   "name": "No cars or vans in household",
@@ -699,9 +699,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS052",
               "choropleth_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS052",
               "categories": [
                 {
                   "name": "Occupancy rating of bedrooms: +2 or more",
@@ -765,9 +765,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS053",
               "choropleth_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS053",
               "categories": [
                 {
                   "name": "Occupancy rating of rooms: +2 or more",
@@ -831,9 +831,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS055",
               "choropleth_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS055",
               "categories": [
                 {
                   "name": "Armed forces base address",

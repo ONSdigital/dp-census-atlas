@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-11-28-11-59-37",
+    "created_at": "2022-11-28-12-40-51",
     "spec_file": "2021-content-spec-v6.json",
     "release": "2021-MIG"
   },
@@ -28,10 +28,11 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS018",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS018",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Born in the UK",
@@ -189,10 +190,11 @@
               "available_geotypes": [
                 "lad"
               ],
-              "dataset": "TS004",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS004",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Born in the UK",
@@ -219,8 +221,9 @@
               "available_geotypes": [
                 "lad"
               ],
-              "dataset": "TS004",
               "comparison_2011_data_available": true,
+              "dataset": "TS004",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
@@ -289,8 +292,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS004",
               "comparison_2011_data_available": true,
+              "dataset": "TS004",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
@@ -389,8 +393,9 @@
               "available_geotypes": [
                 "lad"
               ],
-              "dataset": "TS012",
               "comparison_2011_data_available": true,
+              "dataset": "TS012",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Europe: United Kingdom: England",
@@ -886,9 +891,10 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS019",
               "choropleth_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS019",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Address one year ago is the same as the address of enumeration",
@@ -944,10 +950,11 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS005",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS005",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "UK passport",
@@ -983,8 +990,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS005",
               "comparison_2011_data_available": true,
+              "dataset": "TS005",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
@@ -1092,8 +1100,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS005",
               "comparison_2011_data_available": true,
+              "dataset": "TS005",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
@@ -1242,8 +1251,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS005",
               "comparison_2011_data_available": true,
+              "dataset": "TS005",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
@@ -1463,8 +1473,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS013",
               "comparison_2011_data_available": true,
+              "dataset": "TS013",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
@@ -1896,10 +1907,11 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS016",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS016",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Born in the UK",
@@ -1963,10 +1975,11 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS015",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS015",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Born in the UK",
@@ -2019,8 +2032,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS015",
               "comparison_2011_data_available": true,
+              "dataset": "TS015",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Born in the UK",

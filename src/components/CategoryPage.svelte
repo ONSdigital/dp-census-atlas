@@ -9,9 +9,6 @@
   import VariableDescription from "./VariableDescription.svelte";
   import ClassificationPager from "./ClassificationPager.svelte";
   import CaveatWarning from "./CaveatWarning.svelte";
-  import { getCaveat } from "../helpers/caveatHelper";
-
-  $: caveat = getCaveat($params.variable);
 </script>
 
 <div class="h-full flex flex-col">
@@ -28,7 +25,7 @@
         <div class="text-sm font-extrabold text-ons-grey-75 select-none" aria-hidden>&gt;</div>
         <div class="">{$params.variable.name}</div>
       </nav>
-      {#if $params.variable.caveat_text !== ""}
+      {#if $params.variable.caveat_text}
         <CaveatWarning text={$params.variable.caveat_text} link={$params.variable.caveat_link} />
       {/if}
       <div class="mt-4 mb-2">

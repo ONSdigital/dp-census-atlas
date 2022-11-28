@@ -69,9 +69,10 @@ class CensusClassification:
     available_geotypes: list[str]
     choropleth_default: bool
     dot_density_default: bool
-    dataset: str
     categories: list[CensusCategory]
     comparison_2011_data_available: bool = False
+    dataset: str = ""
+    data_download: str = ""
     _variable_code: str = ""
 
     def gather_categories(self, category_list: list[CensusCategory]) -> None:
@@ -85,12 +86,11 @@ class CensusClassification:
         Return False if public properties are blank strings, categories is empty list, or any categories are not valid
         """
         is_valid = True
+        blankable_props = ["dataset", "data_download"]
         for prop, value in vars(self).items():
-            # blank datasets are allowed
-            if prop != "dataset":
-                if isinstance(value, str) and not prop.startswith("_") and value == "":
-                    print(f"** Blank property {prop} found in classification {self.code} **")
-                    is_valid = False
+            if isinstance(value, str) and not prop.startswith("_") and prop not in blankable_props and value == "":
+                print(f"** Blank property {prop} found in classification {self.code} **")
+                is_valid = False
 
         if len(self.categories) == 0:
             print(f"** Classification {self.code} has no categories **")
@@ -113,7 +113,6 @@ class CensusClassification:
             "slug": self.slug,
             "desc": self.desc,
             "available_geotypes":  self.available_geotypes,
-            "dataset": self.dataset,
         }
 
         if self.choropleth_default:
@@ -124,6 +123,12 @@ class CensusClassification:
 
         if self.comparison_2011_data_available:
             output_params["comparison_2011_data_available"] = self.comparison_2011_data_available
+
+        if self.dataset:
+            output_params["dataset"] = self.dataset
+
+        if self.data_download:
+            output_params["data_download"] = self.data_download
 
         output_params["categories"] = [c.to_jsonable() for c in self.categories]
 
@@ -142,6 +147,8 @@ class CensusVariable:
     units: str
     classifications: list[CensusClassification]
     topic_code: str = ""
+    caveat_text: str = ""
+    caveat_link: str = ""
 
     def gather_classifications(self, classification_list: list[CensusClassification]) -> None:
         """
@@ -165,9 +172,9 @@ class CensusVariable:
 
     def gather_ts_datasets(self, datasets: dict) -> None:
         """
-        Append datasets to all classifications, if the dataset starts with 'TS'. If no TS dataset found for 
+        Append datasets to all classifications, if the dataset starts with 'TS'. If no TS dataset found for
         classification in the datasets dict, look for a TS dataset for a classification with more categories (i.e a less
-        derived dataset) - NB this relies on self.classifications being ordered from less -> more categoreis. 
+        derived dataset) - NB this relies on self.classifications being ordered from less -> more categoreis.
         If none found, leave dataset blank.
         """
         for i, cl in enumerate(self.classifications):
@@ -196,9 +203,9 @@ class CensusVariable:
         empty list, there is no choropleth default classification set, or any classifications are not valid.
         """
         is_valid = True
-
+        blankable_props = ["caveat_text", "caveat_link"]
         for prop, value in vars(self).items():
-            if isinstance(value, str) and not prop.startswith("_") and value == "":
+            if isinstance(value, str) and not prop.startswith("_") and prop not in blankable_props and value == "":
                 print(f"** Blank property {prop} found in variable {self.name} **")
                 is_valid = False
 
@@ -218,7 +225,7 @@ class CensusVariable:
 
     def to_jsonable(self):
         """Variable in json-friendly form."""
-        return {
+        output_params = {
             "name": self.name,
             "code": self.code,
             "slug": self.slug,
@@ -226,8 +233,17 @@ class CensusVariable:
             "long_desc": self.long_desc,
             "units": self.units,
             "topic_code": self.topic_code,
-            "classifications": [c.to_jsonable() for c in self.classifications],
         }
+
+        if self.caveat_text != "":
+            output_params["caveat_text"] = self.caveat_text
+
+        if self.caveat_link != "":
+            output_params["caveat_link"] = self.caveat_link
+
+        output_params["classifications"] = [c.to_jsonable() for c in self.classifications]
+
+        return output_params
 
 
 @dataclass
@@ -302,8 +318,9 @@ def classification_from_content_json(content_json: dict) -> CensusClassification
         available_geotypes=content_json["available_geotypes"],
         choropleth_default=content_json.get("choropleth_default", False),
         dot_density_default=content_json.get("dot_density_default", False),
-        dataset=content_json["dataset"],
         comparison_2011_data_available=content_json.get("comparison_2011_data_available", False),
+        dataset=content_json.get("dataset", ""),
+        data_download=content_json.get("data_download", ""),
         categories=[category_from_content_json(c) for c in content_json["categories"]],
     )
 
@@ -317,6 +334,8 @@ def variable_from_content_json(content_json: dict) -> CensusVariable:
         long_desc=content_json["long_desc"],
         units=content_json["units"],
         topic_code=content_json["topic_code"],
+        caveat_text=content_json.get("caveat_text", ""),
+        caveat_link=content_json.get("caveat_link",""),
         classifications=[classification_from_content_json(c) for c in content_json["classifications"]],
     )
 

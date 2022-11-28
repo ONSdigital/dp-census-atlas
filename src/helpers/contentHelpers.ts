@@ -53,6 +53,8 @@ const mergeVariables = (variables: Variable[]) => {
       long_desc: variablesToMerge[0].long_desc,
       units: variablesToMerge[0].units,
       topic_code: variablesToMerge[0].topic_code,
+      caveat_text: variablesToMerge[0].caveat_text,
+      caveat_link: variablesToMerge[0].caveat_link,
       classifications: dedupeClassifications(allClassifications as Classification[]),
     });
   }

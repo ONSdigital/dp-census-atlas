@@ -9,9 +9,6 @@
   import VariableDescription from "./VariableDescription.svelte";
   import ClassificationPager from "./ClassificationPager.svelte";
   import CaveatWarning from "./CaveatWarning.svelte";
-  import { getCaveat } from "../helpers/caveatHelper";
-
-  $: caveat = getCaveat($params.variable);
 </script>
 
 <div class="h-full flex flex-col">
@@ -28,8 +25,8 @@
         <div class="text-sm font-extrabold text-ons-grey-75 select-none" aria-hidden>&gt;</div>
         <div class="">{$params.variable.name}</div>
       </nav>
-      {#if caveat}
-        <CaveatWarning text={caveat.text} link={caveat.link} />
+      {#if $params.variable.caveat_text}
+        <CaveatWarning text={$params.variable.caveat_text} link={$params.variable.caveat_link} />
       {/if}
       <div class="mt-4 mb-2">
         <VariableDescription shortDescription={$params.variable.desc} longDescription={$params.variable.long_desc} />
@@ -74,8 +71,6 @@
   </div>
   <div class="grow" />
   <div class="p-6 pt-4 bg-ons-grey-5 border-t-ons-grey-15 border-t-[1px]">
-    <!-- ToDO - put this back if we go back to using datasets for links!
-      <CategoryPageLinks dataset={$params.classification.dataset} /> -->
-    <CategoryPageLinks />
+    <CategoryPageLinks dataDownloadUrl={$params.classification.data_download} />
   </div>
 </div>

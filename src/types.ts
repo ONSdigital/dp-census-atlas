@@ -16,6 +16,8 @@ export type Variable = {
   long_desc: string;
   units: string;
   topic_code: string;
+  caveat_text: string;
+  caveat_link: string;
   classifications: Classification[];
 };
 
@@ -24,6 +26,7 @@ export type Classification = {
   slug: string;
   desc: string;
   dataset: string;
+  data_download: string;
   available_geotypes: GeoType[];
   choropleth_default: boolean;
   dot_density_default: boolean;

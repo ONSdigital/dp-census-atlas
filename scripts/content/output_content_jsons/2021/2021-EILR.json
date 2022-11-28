@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-11-24-16-44-35",
+    "created_at": "2022-11-28-12-40-51",
     "spec_file": "2021-content-spec-v6.json",
     "release": "2021-EILR"
   },
@@ -28,10 +28,11 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS029",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS029",
+              "data_download": "https://www.ons.gov.uk/datasets/TS029/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "Main language is English (English or Welsh in Wales)",
@@ -68,8 +69,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS029",
               "comparison_2011_data_available": true,
+              "dataset": "TS029",
+              "data_download": "https://www.ons.gov.uk/datasets/TS029/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "Main language is English (English or Welsh in Wales)",
@@ -133,10 +135,11 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS021",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS021",
+              "data_download": "https://www.ons.gov.uk/datasets/TS021/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "Asian, Asian British or Asian Welsh",
@@ -189,8 +192,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS021",
               "comparison_2011_data_available": true,
+              "dataset": "TS021",
+              "data_download": "https://www.ons.gov.uk/datasets/TS021/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "Asian, Asian British or Asian Welsh: Bangladeshi",
@@ -366,9 +370,10 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS025",
               "choropleth_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS025",
+              "data_download": "https://www.ons.gov.uk/datasets/TS025/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "All adults in household have English in England, or English or Welsh in Wales as a main language",
@@ -424,10 +429,11 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS023",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS023",
+              "data_download": "https://www.ons.gov.uk/datasets/TS023/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "One-person household",
@@ -491,10 +497,11 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS026",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS026",
+              "data_download": "https://www.ons.gov.uk/datasets/TS026/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "All household members have the same main language",
@@ -523,8 +530,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS026",
               "comparison_2011_data_available": true,
+              "dataset": "TS026",
+              "data_download": "https://www.ons.gov.uk/datasets/TS026/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "One-person household",
@@ -588,10 +596,11 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS075",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS075",
+              "data_download": "https://www.ons.gov.uk/datasets/TS075/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "One-person household",
@@ -661,9 +670,10 @@
               "available_geotypes": [
                 "lad"
               ],
-              "dataset": "TS024",
               "choropleth_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS024",
+              "data_download": "https://www.ons.gov.uk/datasets/TS024/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "English (English or Welsh if in Wales)",
@@ -850,8 +860,9 @@
               "available_geotypes": [
                 "lad"
               ],
-              "dataset": "TS024",
               "comparison_2011_data_available": true,
+              "dataset": "TS024",
+              "data_download": "https://www.ons.gov.uk/datasets/TS024/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "English (English or Welsh in Wales)",
@@ -1617,6 +1628,8 @@
           "long_desc": "A person's national identity could be the country or countries where they feel they belong or could think of as home. It is not dependent on ethnic group or citizenship.",
           "units": "Person",
           "topic_code": "EILR",
+          "caveat_text": "There are quality considerations for this variable.",
+          "caveat_link": "https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/ethnicity/methodologies/ethnicgroupnationalidentitylanguageandreligionqualityinformationforcensus2021",
           "classifications": [
             {
               "code": "national_identity_all_4a",
@@ -1627,10 +1640,11 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS027",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS027",
+              "data_download": "https://www.ons.gov.uk/datasets/TS027/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "One or more UK identity only",
@@ -1667,8 +1681,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS027",
               "comparison_2011_data_available": true,
+              "dataset": "TS027",
+              "data_download": "https://www.ons.gov.uk/datasets/TS027/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "British only identity",
@@ -1745,8 +1760,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS027",
               "comparison_2011_data_available": true,
+              "dataset": "TS027",
+              "data_download": "https://www.ons.gov.uk/datasets/TS027/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "British only identity",
@@ -1888,6 +1904,8 @@
           "long_desc": "This variable indicates the national identity people connect to or identify with. A person's national identity is a self-determined assessment of their own identity with respect to the country or countries with which they feel an affiliation. It is not dependent on ethnic group or citizenship",
           "units": "Person",
           "topic_code": "EILR",
+          "caveat_text": "There are quality considerations for this variable.",
+          "caveat_link": "https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/ethnicity/methodologies/ethnicgroupnationalidentitylanguageandreligionqualityinformationforcensus2021",
           "classifications": [
             {
               "code": "national_identity_detailed",
@@ -1897,9 +1915,10 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS028",
               "choropleth_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS028",
+              "data_download": "https://www.ons.gov.uk/datasets/TS028/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "UK identity: British only identity",
@@ -2489,6 +2508,8 @@
           "long_desc": "The religion people connect or identify with (their religious affiliation), whether or not they practice or have belief in it.\n\nThis question was voluntary and includes people who identified with one of 8 tick-box response options, including \u2018No religion\u2019, alongside those who chose not to answer this question.",
           "units": "Person",
           "topic_code": "EILR",
+          "caveat_text": "There are quality considerations for the \"not answered\" category in university locations.",
+          "caveat_link": "https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/ethnicity/methodologies/ethnicgroupnationalidentitylanguageandreligionqualityinformationforcensus2021",
           "classifications": [
             {
               "code": "religion_tb",
@@ -2499,9 +2520,10 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS030",
               "choropleth_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS030",
+              "data_download": "https://www.ons.gov.uk/datasets/TS030/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "No religion",

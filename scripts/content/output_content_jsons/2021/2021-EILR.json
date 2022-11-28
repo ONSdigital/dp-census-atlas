@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-11-28-12-40-51",
-    "spec_file": "2021-content-spec-v6.json",
+    "created_at": "2022-11-28-15-49-47",
+    "spec_file": "2021-content-spec-v7.json",
     "release": "2021-EILR"
   },
   "content": [
@@ -14,7 +14,7 @@
           "name": "Proficiency in English language",
           "code": "english_proficiency",
           "slug": "proficiency-in-english-language",
-          "desc": "How well people whose main language is not English (or in Wales, English or Welsh) speak English.",
+          "desc": "How well people speak English (English or Welsh in Wales)",
           "long_desc": "How well people whose main language is not English (English or Welsh in Wales) speak English.",
           "units": "Household",
           "topic_code": "EILR",
@@ -38,25 +38,25 @@
                   "name": "Main language is English (English or Welsh in Wales)",
                   "slug": "main-language-is-english-english-or-welsh-in-wales",
                   "code": "english_proficiency_4a-001",
-                  "legend_str_1": "of households in {location}",
+                  "legend_str_1": "of people in {location}",
                   "legend_str_2": "speak",
-                  "legend_str_3": "English (or Welsh in Wales) as their main language"
+                  "legend_str_3": "English (English or Welsh in Wales) as their main language"
                 },
                 {
                   "name": "Main language is not English (English or Welsh in Wales): Can speak English very well or well",
                   "slug": "main-language-is-not-english-english-or-welsh-in-wales-can-speak-english-very-well-or-well",
                   "code": "english_proficiency_4a-002",
-                  "legend_str_1": "of households in {location}",
-                  "legend_str_2": "speak",
-                  "legend_str_3": "a different main language, but speak English (or Welsh in Wales) well"
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "do not have",
+                  "legend_str_3": "English (English or Welsh in Wales) as their main language, but can speak English very well or well"
                 },
                 {
                   "name": "Main language is not English (English or Welsh in Wales): Cannot speak English or cannot speak English well",
                   "slug": "main-language-is-not-english-english-or-welsh-in-wales-cannot-speak-english-or-cannot-speak-english-well",
                   "code": "english_proficiency_4a-003",
-                  "legend_str_1": "of households in {location}",
-                  "legend_str_2": "speak",
-                  "legend_str_3": "a different main language, but cannot speak English (or Welsh in Wales) well"
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "do not have",
+                  "legend_str_3": "English (English or Welsh in Wales) as their main language, and cannot speak English or cannot speak English well"
                 }
               ]
             },
@@ -77,7 +77,7 @@
                   "name": "Main language is English (English or Welsh in Wales)",
                   "slug": "main-language-is-english-english-or-welsh-in-wales",
                   "code": "english_proficiency-001",
-                  "legend_str_1": "of households in {location}",
+                  "legend_str_1": "of people in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "English (or Welsh in Wales) as their main language"
                 },
@@ -85,7 +85,7 @@
                   "name": "Main language is not English (English or Welsh in Wales): Can speak English very well",
                   "slug": "main-language-is-not-english-english-or-welsh-in-wales-can-speak-english-very-well",
                   "code": "english_proficiency-002",
-                  "legend_str_1": "of households in {location}",
+                  "legend_str_1": "of people in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "a different main language, but speak English (or Welsh in Wales) very well"
                 },
@@ -93,7 +93,7 @@
                   "name": "Main language is not English (English or Welsh in Wales): Can speak English well",
                   "slug": "main-language-is-not-english-english-or-welsh-in-wales-can-speak-english-well",
                   "code": "english_proficiency-003",
-                  "legend_str_1": "of households in {location}",
+                  "legend_str_1": "of people in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "a different main language, but speak English (or Welsh in Wales) well"
                 },
@@ -101,7 +101,7 @@
                   "name": "Main language is not English (English or Welsh in Wales): Cannot speak English well",
                   "slug": "main-language-is-not-english-english-or-welsh-in-wales-cannot-speak-english-well",
                   "code": "english_proficiency-004",
-                  "legend_str_1": "of households in {location}",
+                  "legend_str_1": "of people in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "a different main language, but cannot speak English (or Welsh in Wales) well"
                 },
@@ -109,7 +109,7 @@
                   "name": "Main language is not English (English or Welsh in Wales): Cannot speak English",
                   "slug": "main-language-is-not-english-english-or-welsh-in-wales-cannot-speak-english",
                   "code": "english_proficiency-005",
-                  "legend_str_1": "of households in {location}",
+                  "legend_str_1": "of people in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "a different main language, but cannot speak English (or Welsh in Wales) at all"
                 }
@@ -138,7 +138,6 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "dataset": "TS021",
               "data_download": "https://www.ons.gov.uk/datasets/TS021/editions/2021/versions/1",
               "categories": [
                 {
@@ -193,7 +192,6 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "dataset": "TS021",
               "data_download": "https://www.ons.gov.uk/datasets/TS021/editions/2021/versions/1",
               "categories": [
                 {
@@ -381,7 +379,7 @@
                   "code": "hh_language-001",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "English or Welsh as the main language for all adults"
+                  "legend_str_3": "English in England, or English or Welsh in Wales, as the main language for all adults"
                 },
                 {
                   "name": "At least one but not all adults in household have English in England, or English or Welsh in Wales as a main language",
@@ -389,7 +387,7 @@
                   "code": "hh_language-002",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "English or Welsh as the main language for some but not all adults"
+                  "legend_str_3": "English in England, or English or Welsh in Wales, as the main language for some but not all adults"
                 },
                 {
                   "name": "No adults in household, but at least one person aged 3 to 15 years, has English in England or English or Welsh in Wales as a main language",
@@ -397,7 +395,7 @@
                   "code": "hh_language-003",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "English or Welsh as the main language for no adults but some children (aged 3-15 years)"
+                  "legend_str_3": "English in England, or English or Welsh in Wales, as the main language for no adults but some children (aged 3-15 years)"
                 },
                 {
                   "name": "No people in household have English in England, or English or Welsh in Wales as a main language",
@@ -405,7 +403,7 @@
                   "code": "hh_language-004",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "no members that have English or Welsh as their main language."
+                  "legend_str_3": "no members that have English in England, or English or Welsh in Wales, as their main language."
                 }
               ]
             }
@@ -1625,7 +1623,7 @@
           "code": "national_identity_all",
           "slug": "national-identity",
           "desc": "People's national identity (where they feel they belong or could think of as home).",
-          "long_desc": "A person's national identity could be the country or countries where they feel they belong or could think of as home. It is not dependent on ethnic group or citizenship.",
+          "long_desc": "Someone\u2019s national identity is a self-determined assessment of their own identity, it could be the country or countries where they feel they belong or think of as home. It is not dependent on ethnic group or citizenship.\n\nRespondents could select more than one national identity.",
           "units": "Person",
           "topic_code": "EILR",
           "caveat_text": "There are quality considerations for this variable.",
@@ -1901,7 +1899,7 @@
           "code": "national_identity_detailed",
           "slug": "national-identity-detailed",
           "desc": "People's national identity (where they feel they belong or could think of as home) broken down by country.",
-          "long_desc": "This variable indicates the national identity people connect to or identify with. A person's national identity is a self-determined assessment of their own identity with respect to the country or countries with which they feel an affiliation. It is not dependent on ethnic group or citizenship",
+          "long_desc": "Someone\u2019s national identity is a self-determined assessment of their own identity, it could be the country or countries where they feel they belong or think of as home. It is not dependent on ethnic group or citizenship.\n\nRespondents could select more than one national identity.",
           "units": "Person",
           "topic_code": "EILR",
           "caveat_text": "There are quality considerations for this variable.",
@@ -1945,7 +1943,7 @@
                   "legend_str_3": "English and British"
                 },
                 {
-                  "name": "UK identity:  Welsh only identity",
+                  "name": "UK identity: Welsh only identity",
                   "slug": "uk-identity-welsh-only-identity",
                   "code": "national_identity_detailed-004",
                   "legend_str_1": "of people in {location}",
@@ -1969,7 +1967,7 @@
                   "legend_str_3": "Scottish"
                 },
                 {
-                  "name": "UK identity:  Scottish and British only identity",
+                  "name": "UK identity: Scottish and British only identity",
                   "slug": "uk-identity-scottish-and-british-only-identity",
                   "code": "national_identity_detailed-007",
                   "legend_str_1": "of people in {location}",
@@ -2121,7 +2119,7 @@
                   "legend_str_3": "any other national identity from countries that were EU members in March 2001  "
                 },
                 {
-                  "name": "Other identity only: European: EU countries:  Lithuanian",
+                  "name": "Other identity only: European: EU countries: Lithuanian",
                   "slug": "other-identity-only-european-eu-countries-lithuanian",
                   "code": "national_identity_detailed-026",
                   "legend_str_1": "of people in {location}",
@@ -2129,7 +2127,7 @@
                   "legend_str_3": "Lithuanian"
                 },
                 {
-                  "name": "Other identity only: European: EU countries:  Polish",
+                  "name": "Other identity only: European: EU countries: Polish",
                   "slug": "other-identity-only-european-eu-countries-polish",
                   "code": "national_identity_detailed-027",
                   "legend_str_1": "of people in {location}",

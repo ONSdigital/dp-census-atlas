@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-11-28-12-40-51",
-    "spec_file": "2021-content-spec-v6.json",
+    "created_at": "2022-11-28-15-49-47",
+    "spec_file": "2021-content-spec-v7.json",
     "release": "2021-WELSH-SKILLS"
   },
   "content": [
@@ -15,7 +15,7 @@
           "code": "welsh_skills_all",
           "slug": "welsh-language-skills",
           "desc": "Whether people can understand, speak, read, or write Welsh. This question was only asked in Wales.",
-          "long_desc": "Whether a person has Welsh language skills.  If they do, can they do any of the following:\n\n* understand spoken Welsh\n* speak Welsh\n* read Welsh\n* write Welsh\n* no skills in Welsh\n\nThe census questionnaire only asked this question to people in Wales. \n\nAdditional info:\n\nIn results that classify people by Welsh language skills, a person may appear in more than one category depending on which combination of skills they have.",
+          "long_desc": "Whether a person has Welsh language skills. If they do, can they do any of the following:\n\n* understand spoken Welsh\n* speak Welsh\n* read Welsh\n* write Welsh\n* no skills in Welsh\n\nThe census questionnaire only asked this question to people in Wales.\n\nIn results that classify people by Welsh language skills, a person may appear in more than one category depending on which combination of skills they have.",
           "units": "Person",
           "topic_code": "EILR",
           "classifications": [

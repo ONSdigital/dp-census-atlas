@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-11-28-12-40-51",
-    "spec_file": "2021-content-spec-v6.json",
+    "created_at": "2022-11-28-15-49-47",
+    "spec_file": "2021-content-spec-v7.json",
     "release": "2021-ALL"
   },
   "content": [
@@ -175,7 +175,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "dataset": "TS038ASR",
+              "dataset": "TS038ASP",
               "categories": [
                 {
                   "name": "Disabled under the Equality Act",
@@ -264,7 +264,6 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "dataset": "TS037ASR",
               "categories": [
                 {
                   "name": "Good health",
@@ -294,7 +293,6 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "dataset": "TS037ASR",
               "categories": [
                 {
                   "name": "Very good or good health",
@@ -332,7 +330,6 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "dataset": "TS037ASR",
               "categories": [
                 {
                   "name": "Very good health",
@@ -450,7 +447,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "dataset": "TS039ASR",
+              "dataset": "TS039ASP",
               "categories": [
                 {
                   "name": "Provides no unpaid care",
@@ -1469,7 +1466,7 @@
           "name": "Proficiency in English language",
           "code": "english_proficiency",
           "slug": "proficiency-in-english-language",
-          "desc": "How well people whose main language is not English (or in Wales, English or Welsh) speak English.",
+          "desc": "How well people speak English (English or Welsh in Wales)",
           "long_desc": "How well people whose main language is not English (English or Welsh in Wales) speak English.",
           "units": "Household",
           "topic_code": "EILR",
@@ -1493,25 +1490,25 @@
                   "name": "Main language is English (English or Welsh in Wales)",
                   "slug": "main-language-is-english-english-or-welsh-in-wales",
                   "code": "english_proficiency_4a-001",
-                  "legend_str_1": "of households in {location}",
+                  "legend_str_1": "of people in {location}",
                   "legend_str_2": "speak",
-                  "legend_str_3": "English (or Welsh in Wales) as their main language"
+                  "legend_str_3": "English (English or Welsh in Wales) as their main language"
                 },
                 {
                   "name": "Main language is not English (English or Welsh in Wales): Can speak English very well or well",
                   "slug": "main-language-is-not-english-english-or-welsh-in-wales-can-speak-english-very-well-or-well",
                   "code": "english_proficiency_4a-002",
-                  "legend_str_1": "of households in {location}",
-                  "legend_str_2": "speak",
-                  "legend_str_3": "a different main language, but speak English (or Welsh in Wales) well"
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "do not have",
+                  "legend_str_3": "English (English or Welsh in Wales) as their main language, but can speak English very well or well"
                 },
                 {
                   "name": "Main language is not English (English or Welsh in Wales): Cannot speak English or cannot speak English well",
                   "slug": "main-language-is-not-english-english-or-welsh-in-wales-cannot-speak-english-or-cannot-speak-english-well",
                   "code": "english_proficiency_4a-003",
-                  "legend_str_1": "of households in {location}",
-                  "legend_str_2": "speak",
-                  "legend_str_3": "a different main language, but cannot speak English (or Welsh in Wales) well"
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "do not have",
+                  "legend_str_3": "English (English or Welsh in Wales) as their main language, and cannot speak English or cannot speak English well"
                 }
               ]
             },
@@ -1532,7 +1529,7 @@
                   "name": "Main language is English (English or Welsh in Wales)",
                   "slug": "main-language-is-english-english-or-welsh-in-wales",
                   "code": "english_proficiency-001",
-                  "legend_str_1": "of households in {location}",
+                  "legend_str_1": "of people in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "English (or Welsh in Wales) as their main language"
                 },
@@ -1540,7 +1537,7 @@
                   "name": "Main language is not English (English or Welsh in Wales): Can speak English very well",
                   "slug": "main-language-is-not-english-english-or-welsh-in-wales-can-speak-english-very-well",
                   "code": "english_proficiency-002",
-                  "legend_str_1": "of households in {location}",
+                  "legend_str_1": "of people in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "a different main language, but speak English (or Welsh in Wales) very well"
                 },
@@ -1548,7 +1545,7 @@
                   "name": "Main language is not English (English or Welsh in Wales): Can speak English well",
                   "slug": "main-language-is-not-english-english-or-welsh-in-wales-can-speak-english-well",
                   "code": "english_proficiency-003",
-                  "legend_str_1": "of households in {location}",
+                  "legend_str_1": "of people in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "a different main language, but speak English (or Welsh in Wales) well"
                 },
@@ -1556,7 +1553,7 @@
                   "name": "Main language is not English (English or Welsh in Wales): Cannot speak English well",
                   "slug": "main-language-is-not-english-english-or-welsh-in-wales-cannot-speak-english-well",
                   "code": "english_proficiency-004",
-                  "legend_str_1": "of households in {location}",
+                  "legend_str_1": "of people in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "a different main language, but cannot speak English (or Welsh in Wales) well"
                 },
@@ -1564,7 +1561,7 @@
                   "name": "Main language is not English (English or Welsh in Wales): Cannot speak English",
                   "slug": "main-language-is-not-english-english-or-welsh-in-wales-cannot-speak-english",
                   "code": "english_proficiency-005",
-                  "legend_str_1": "of households in {location}",
+                  "legend_str_1": "of people in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "a different main language, but cannot speak English (or Welsh in Wales) at all"
                 }
@@ -1593,7 +1590,6 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "dataset": "TS021",
               "data_download": "https://www.ons.gov.uk/datasets/TS021/editions/2021/versions/1",
               "categories": [
                 {
@@ -1648,7 +1644,6 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "dataset": "TS021",
               "data_download": "https://www.ons.gov.uk/datasets/TS021/editions/2021/versions/1",
               "categories": [
                 {
@@ -1836,7 +1831,7 @@
                   "code": "hh_language-001",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "English or Welsh as the main language for all adults"
+                  "legend_str_3": "English in England, or English or Welsh in Wales, as the main language for all adults"
                 },
                 {
                   "name": "At least one but not all adults in household have English in England, or English or Welsh in Wales as a main language",
@@ -1844,7 +1839,7 @@
                   "code": "hh_language-002",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "English or Welsh as the main language for some but not all adults"
+                  "legend_str_3": "English in England, or English or Welsh in Wales, as the main language for some but not all adults"
                 },
                 {
                   "name": "No adults in household, but at least one person aged 3 to 15 years, has English in England or English or Welsh in Wales as a main language",
@@ -1852,7 +1847,7 @@
                   "code": "hh_language-003",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "English or Welsh as the main language for no adults but some children (aged 3-15 years)"
+                  "legend_str_3": "English in England, or English or Welsh in Wales, as the main language for no adults but some children (aged 3-15 years)"
                 },
                 {
                   "name": "No people in household have English in England, or English or Welsh in Wales as a main language",
@@ -1860,7 +1855,7 @@
                   "code": "hh_language-004",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "no members that have English or Welsh as their main language."
+                  "legend_str_3": "no members that have English in England, or English or Welsh in Wales, as their main language."
                 }
               ]
             }
@@ -3080,7 +3075,7 @@
           "code": "national_identity_all",
           "slug": "national-identity",
           "desc": "People's national identity (where they feel they belong or could think of as home).",
-          "long_desc": "A person's national identity could be the country or countries where they feel they belong or could think of as home. It is not dependent on ethnic group or citizenship.",
+          "long_desc": "Someone\u2019s national identity is a self-determined assessment of their own identity, it could be the country or countries where they feel they belong or think of as home. It is not dependent on ethnic group or citizenship.\n\nRespondents could select more than one national identity.",
           "units": "Person",
           "topic_code": "EILR",
           "caveat_text": "There are quality considerations for this variable.",
@@ -3356,7 +3351,7 @@
           "code": "national_identity_detailed",
           "slug": "national-identity-detailed",
           "desc": "People's national identity (where they feel they belong or could think of as home) broken down by country.",
-          "long_desc": "This variable indicates the national identity people connect to or identify with. A person's national identity is a self-determined assessment of their own identity with respect to the country or countries with which they feel an affiliation. It is not dependent on ethnic group or citizenship",
+          "long_desc": "Someone\u2019s national identity is a self-determined assessment of their own identity, it could be the country or countries where they feel they belong or think of as home. It is not dependent on ethnic group or citizenship.\n\nRespondents could select more than one national identity.",
           "units": "Person",
           "topic_code": "EILR",
           "caveat_text": "There are quality considerations for this variable.",
@@ -3400,7 +3395,7 @@
                   "legend_str_3": "English and British"
                 },
                 {
-                  "name": "UK identity:  Welsh only identity",
+                  "name": "UK identity: Welsh only identity",
                   "slug": "uk-identity-welsh-only-identity",
                   "code": "national_identity_detailed-004",
                   "legend_str_1": "of people in {location}",
@@ -3424,7 +3419,7 @@
                   "legend_str_3": "Scottish"
                 },
                 {
-                  "name": "UK identity:  Scottish and British only identity",
+                  "name": "UK identity: Scottish and British only identity",
                   "slug": "uk-identity-scottish-and-british-only-identity",
                   "code": "national_identity_detailed-007",
                   "legend_str_1": "of people in {location}",
@@ -3576,7 +3571,7 @@
                   "legend_str_3": "any other national identity from countries that were EU members in March 2001  "
                 },
                 {
-                  "name": "Other identity only: European: EU countries:  Lithuanian",
+                  "name": "Other identity only: European: EU countries: Lithuanian",
                   "slug": "other-identity-only-european-eu-countries-lithuanian",
                   "code": "national_identity_detailed-026",
                   "legend_str_1": "of people in {location}",
@@ -3584,7 +3579,7 @@
                   "legend_str_3": "Lithuanian"
                 },
                 {
-                  "name": "Other identity only: European: EU countries:  Polish",
+                  "name": "Other identity only: European: EU countries: Polish",
                   "slug": "other-identity-only-european-eu-countries-polish",
                   "code": "national_identity_detailed-027",
                   "legend_str_1": "of people in {location}",
@@ -4061,7 +4056,7 @@
           "code": "welsh_skills_all",
           "slug": "welsh-language-skills",
           "desc": "Whether people can understand, speak, read, or write Welsh. This question was only asked in Wales.",
-          "long_desc": "Whether a person has Welsh language skills.  If they do, can they do any of the following:\n\n* understand spoken Welsh\n* speak Welsh\n* read Welsh\n* write Welsh\n* no skills in Welsh\n\nThe census questionnaire only asked this question to people in Wales. \n\nAdditional info:\n\nIn results that classify people by Welsh language skills, a person may appear in more than one category depending on which combination of skills they have.",
+          "long_desc": "Whether a person has Welsh language skills. If they do, can they do any of the following:\n\n* understand spoken Welsh\n* speak Welsh\n* read Welsh\n* write Welsh\n* no skills in Welsh\n\nThe census questionnaire only asked this question to people in Wales.\n\nIn results that classify people by Welsh language skills, a person may appear in more than one category depending on which combination of skills they have.",
           "units": "Person",
           "topic_code": "EILR",
           "classifications": [
@@ -4691,7 +4686,7 @@
           "code": "hh_deprivation",
           "slug": "household-deprivation",
           "desc": "Whether a household is deprived in one or more ways.",
-          "long_desc": "The dimensions of deprivation used to classify households are indicators based on four selected household characteristics.\n\nEducation\n\nA household is classified as deprived in the education dimension if no one has at least level 2 education and no one aged 16 to 18 years is a full-time student.\n\nEmployment\n\nA household is classified as deprived in the employment dimension if any member, not a full-time student, is either unemployed or disabled.\n\nHealth\n\nA household is classified as deprived in the health dimension if any member is disabled.\n\nHousing\n\nA household is classified as deprived in the housing dimension if the household's accommodation is either overcrowded, in a shared dwelling, or has no central heating.",
+          "long_desc": "The dimensions of deprivation used to classify households are indicators based on four selected household characteristics.\n\nEducation\n\nA household is classified as deprived in the education dimension if no one has at least level 2 education and no one aged 16 to 18 years is a full-time student.\n\nEmployment\n\nA household is classified as deprived in the employment dimension if any member, not a full-time student, is either unemployed or disabled.\n\nHealth\n\nA household is classified as deprived in the health dimension if any person in the household has general health that is bad or very bad or is identified as disabled\n\nHousing\n\nA household is classified as deprived in the housing dimension if the household's accommodation is either overcrowded, in a shared dwelling, or has no central heating.",
           "units": "Household",
           "topic_code": "DEM",
           "classifications": [
@@ -5400,7 +5395,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "dataset": "TS076",
+              "dataset": "TS009",
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -5438,7 +5433,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "dataset": "TS076",
+              "dataset": "TS009",
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -5516,7 +5511,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "dataset": "TS076",
+              "dataset": "TS009",
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -6487,7 +6482,6 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "dataset": "TS020",
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -7974,7 +7968,6 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "dataset": "TS013",
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -8648,7 +8641,7 @@
           "code": "economic_activity",
           "slug": "economic-activity-status",
           "desc": "People in employment, looking for work or waiting to start a job.",
-          "long_desc": "People aged 16 years and over are economically active if, between  15 March  21 March 2021, they were:\n\n* in employment (an employee or self-employed)\n* unemployed, but looking for work and could start within two weeks\n* unemployed, but waiting to start a job that had been offered and accepted\n\nIt is a measure of whether or not a person was an active participant in the labour market during this period. Economically inactive are those aged 16 years and over who did not have a job between 15 March to 21 March 2021 and had not looked for work between 22 February to 21 March 2021 or could not start work within two weeks.\n\nThe census definition differs from International Labour Organisation definition used on the Labour Force Survey, so estimates are not directly comparable.",
+          "long_desc": "People aged 16 years and over are economically active if, between  15 March and 21 March 2021, they were:\n\n* in employment (an employee or self-employed)\n* unemployed, but looking for work and could start within two weeks\n* unemployed, but waiting to start a job that had been offered and accepted\n\nIt is a measure of whether or not a person was an active participant in the labour market during this period. Economically inactive are those aged 16 years and over who did not have a job between 15 March to 21 March 2021 and had not looked for work between 22 February to 21 March 2021 or could not start work within two weeks.\n\nThe census definition differs from International Labour Organisation definition used on the Labour Force Survey, so estimates are not directly comparable.",
           "units": "Person",
           "topic_code": "LAB",
           "caveat_text": "There are pandemic-related quality considerations for this variable.",
@@ -8817,7 +8810,7 @@
           "code": "has_ever_worked",
           "slug": "unemployment-history",
           "desc": "Whether people who are unemployed have been unemployed short-term, long-term, or have never worked.",
-          "long_desc": "Classifies people who are unemployed into:\n\n* short-term unemployment (have worked within the last 12 months)\n* long-term unemployment (have worked, but not in the last 12 months)\n* those who have never worked",
+          "long_desc": "Classifies people currently not working into:\n\n* those who have not worked in the last 12 months (short-term unemployed)\n* those who have worked, but not in the last 12 months (long-term unemployed)\n* those who have never worked (includes those who are unemployed and economically inactive)",
           "units": "Person",
           "topic_code": "LAB",
           "caveat_text": "There are pandemic-related quality considerations for this variable.",
@@ -9684,7 +9677,7 @@
           "code": "ns_sec",
           "slug": "national-statistics-socio-economic-classification-ns-sec",
           "desc": "People's socioeconomic position based on their occupation and other job characteristics.",
-          "long_desc": "The National Statistics Socio-economic Classification (NS-SEC) indicates a person's socioeconomic position based on their occupation and other job characteristics.\n\nIt is an Office for National Statistics standard classification. NS-SEC categories are assigned based on a person's occupation, whether employed, self-employed, or supervising other employees.\n \nFull-time students are recorded in the \"full-time students\" category regardless of whether they are economically active.",
+          "long_desc": "The National Statistics Socio-economic Classification (NS-SEC) indicates a person's socio-economic position based on their occupation and other job characteristics.\n\nIt is an Office for National Statistics standard classification. NS-SEC categories are assigned based on a person's occupation, whether employed, self-employed, or supervising other employees.\n \nFull-time students are recorded in the \"full-time students\" category regardless of whether they are economically active.",
           "units": "Person",
           "topic_code": "LAB",
           "caveat_text": "There are pandemic-related quality considerations for this variable.",
@@ -9784,7 +9777,7 @@
           "code": "occupation_current",
           "slug": "occupation-current",
           "desc": "The jobs people work in.",
-          "long_desc": "Classifies what people aged 16 years and over does as their main. Their job title or details of activities they do in their job and any supervisory or management responsibilities form this classification. This information is used to code responses to an occupation using the Standards Occupation Classification (SOC) 2020.\n\nIt classifies people who were in employment between 15 March and 21 March 2021, by the SOC code that represents their current occupation.\nThe lowest level of detail available is the four-digit SOC code which includes all codes in three, two and one digit SOC code levels.",
+          "long_desc": "Classifies what people aged 16 years and over do as their main job. Their job title or details of activities they do in their job and any supervisory or management responsibilities form this classification. This information is used to code responses to an occupation using the Standards Occupation Classification (SOC) 2020.\n\nIt classifies people who were in employment between 15 March and 21 March 2021, by the SOC code that represents their current occupation.\nThe lowest level of detail available is the four-digit SOC code which includes all codes in three, two and one digit SOC code levels.",
           "units": "Person",
           "topic_code": "LAB",
           "caveat_text": "There are pandemic-related quality considerations for this variable.",
@@ -9800,7 +9793,7 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "dataset": "TS063",
+              "dataset": "TS064",
               "categories": [
                 {
                   "name": "1. Managers, directors and senior officials",

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-11-24-16-44-35",
+    "created_at": "2022-11-28-12-40-51",
     "spec_file": "2021-content-spec-v6.json",
     "release": "2021-DEM"
   },
@@ -28,8 +28,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS006",
               "choropleth_default": true,
+              "dataset": "TS006",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Persons per square kilometre",
@@ -61,10 +62,11 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS011",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS011",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Household is not deprived in any dimension",
@@ -128,10 +130,11 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS003",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS003",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Other household types",
@@ -168,8 +171,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS003",
               "comparison_2011_data_available": true,
+              "dataset": "TS003",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "One-person household: Aged 66 years and over",
@@ -305,10 +309,11 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS017",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS017",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "1 person in household",
@@ -353,8 +358,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS017",
               "comparison_2011_data_available": true,
+              "dataset": "TS017",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "1 person in household",
@@ -442,10 +448,11 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS002",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS002",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Married or in a registered civil partnership",
@@ -474,8 +481,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS002",
               "comparison_2011_data_available": true,
+              "dataset": "TS002",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Never married and never registered a civil partnership",
@@ -528,8 +536,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS002",
               "comparison_2011_data_available": true,
+              "dataset": "TS002",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Never married and never registered a civil partnership",
@@ -640,9 +649,10 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS010",
               "choropleth_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS010",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Living in an opposite-sex couple: Married or in a civil partnership",
@@ -745,10 +755,11 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS076",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS076",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Aged 15 years and under",
@@ -784,8 +795,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS076",
               "comparison_2011_data_available": true,
+              "dataset": "TS076",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Aged 14 years and under",
@@ -861,8 +873,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS076",
               "comparison_2011_data_available": true,
+              "dataset": "TS076",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Aged 4 years and under",
@@ -962,8 +975,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS007",
               "comparison_2011_data_available": true,
+              "dataset": "TS007",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Aged under 1 year",
@@ -1794,8 +1808,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS007a",
               "choropleth_default": true,
+              "dataset": "TS007a",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Median age",
@@ -1827,10 +1842,11 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS020",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS020",
+              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
                   "name": "Female",

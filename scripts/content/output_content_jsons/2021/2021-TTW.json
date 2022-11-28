@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-11-24-16-44-35",
+    "created_at": "2022-11-28-12-40-51",
     "spec_file": "2021-content-spec-v6.json",
     "release": "2021-TTW"
   },
@@ -18,6 +18,8 @@
           "long_desc": "A person's place of work and their method of travel to work. This is the 2001 method of producing travel to work variables.\n \n\"Work mainly from home\" applies to someone who indicated their place of work as their home address and travelled to work by driving a car or van, for example visiting clients.",
           "units": "Person",
           "topic_code": "TTW",
+          "caveat_text": "There are pandemic-related quality considerations for this variable.",
+          "caveat_link": "https://www.ons.gov.uk/releases/labourmarketandtraveltoworkcensus2021inenglandandwales",
           "classifications": [
             {
               "code": "transport_to_workplace_12a",
@@ -28,9 +30,9 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS061",
               "choropleth_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS061",
               "categories": [
                 {
                   "name": "Work mainly at or from home",
@@ -140,6 +142,8 @@
           "long_desc": "The distance, in kilometres, between a person's residential postcode and their workplace postcode measured in a straight line. A distance travelled of 0.1km indicates that the workplace postcode is the same as the residential postcode. Distances over 1200km are treated as invalid, and an imputed or estimated value is added.\n\n\u201cWork mainly at or from home\u201d is made up of those that ticked either the 'Mainly work at or from home' box for the address of workplace question, or the \u201cWork mainly at or from home\u201d box for the method of travel to work question.\n\n\u201cOther\u201d includes no fixed place of work, working on an offshore installation and working outside of the UK.\n\nDistance is calculated as the straight line distance between the enumeration postcode and the workplace postcode.",
           "units": "Person",
           "topic_code": "TTW",
+          "caveat_text": "There are pandemic-related quality considerations for this variable.",
+          "caveat_link": "https://www.ons.gov.uk/releases/labourmarketandtraveltoworkcensus2021inenglandandwales",
           "classifications": [
             {
               "code": "workplace_travel_4a",
@@ -150,10 +154,10 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS058",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS058",
               "categories": [
                 {
                   "name": "Less than 10km",
@@ -198,8 +202,8 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS058",
               "comparison_2011_data_available": true,
+              "dataset": "TS058",
               "categories": [
                 {
                   "name": "Less than 10km",
@@ -252,8 +256,8 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS058",
               "comparison_2011_data_available": true,
+              "dataset": "TS058",
               "categories": [
                 {
                   "name": "Less than 2km",

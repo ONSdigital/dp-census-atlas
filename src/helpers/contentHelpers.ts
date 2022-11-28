@@ -53,6 +53,8 @@ const mergeVariables = (variables: Variable[]) => {
       long_desc: variablesToMerge[0].long_desc,
       units: variablesToMerge[0].units,
       topic_code: variablesToMerge[0].topic_code,
+      caveat_text: variablesToMerge[0].caveat_text,
+      caveat_link: variablesToMerge[0].caveat_link,
       classifications: dedupeClassifications(allClassifications as Classification[]),
     });
   }
@@ -96,4 +98,16 @@ export const sortVariableGroupVariables = (variableGroups: VariableGroup[]) => {
   variableGroups.forEach((vg) => {
     vg.variables.sort(compareNames);
   });
+};
+
+/*
+  Return name of latest release. Update by adding returns statements above those currently here.
+*/
+export const getLatestRelease = (content: ContentTree) => {
+  if (content.releases.includes("2021-EILR")) {
+    return "ArmEilr";
+  }
+  if (content.releases.includes("2021-DEM")) {
+    return "DemMig";
+  }
 };

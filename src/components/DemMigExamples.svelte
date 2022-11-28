@@ -61,14 +61,14 @@
         $page.url,
         {
           variableGroup: "population",
-          variable: "marital-and-civil-partnership-status",
+          variable: "legal-partnership-status",
           category: {
             classification: "legal-partnership-status-3a",
             category: "married-or-in-a-registered-civil-partnership",
           },
         },
         undefined,
-        { geoType: "msoa", geoCode: "E02006875" },
+        { geoType: "lad", geoCode: "E08000035" },
       )}
       class:hyperlink={!reverseType}
       class:hyperlink-reverse={reverseType}

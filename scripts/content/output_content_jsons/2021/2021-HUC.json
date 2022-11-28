@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-11-24-16-44-35",
+    "created_at": "2022-11-28-12-40-51",
     "spec_file": "2021-content-spec-v6.json",
     "release": "2021-HUC"
   },
@@ -28,10 +28,10 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS038ASR",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS038ASR",
               "categories": [
                 {
                   "name": "Disabled under the Equality Act",
@@ -60,8 +60,8 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS038",
               "comparison_2011_data_available": true,
+              "dataset": "TS038",
               "categories": [
                 {
                   "name": "Disabled under the Equality Act: Day-to-day activities limited a lot",
@@ -117,10 +117,10 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS037ASR",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS037ASR",
               "categories": [
                 {
                   "name": "Good health",
@@ -149,8 +149,8 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS037ASR",
               "comparison_2011_data_available": true,
+              "dataset": "TS037ASR",
               "categories": [
                 {
                   "name": "Very good or good health",
@@ -187,8 +187,8 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS037ASR",
               "comparison_2011_data_available": true,
+              "dataset": "TS037ASR",
               "categories": [
                 {
                   "name": "Very good health",
@@ -252,10 +252,10 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS040",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS040",
               "categories": [
                 {
                   "name": "No people disabled under the Equality Act in household",
@@ -303,10 +303,10 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS039ASR",
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS039ASR",
               "categories": [
                 {
                   "name": "Provides no unpaid care",
@@ -351,8 +351,8 @@
                 "msoa",
                 "lad"
               ],
-              "dataset": "TS039",
               "comparison_2011_data_available": true,
+              "dataset": "TS039",
               "categories": [
                 {
                   "name": "Provides no unpaid care",

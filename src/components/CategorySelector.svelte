@@ -4,9 +4,8 @@
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
   import { gotoUrl } from "../helpers/navigationHelper";
 
+  export let selected: string;
   export let use: "name" | "legendString";
-
-  let selected: string;
 
   const handleChange = () => {
     const link = buildHyperlink($page.url, {

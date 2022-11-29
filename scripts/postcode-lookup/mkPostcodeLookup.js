@@ -28,6 +28,10 @@ const postcodeLookups = {
 
   - first four character lookups (the first four characters of the postcode after spaces are removed). This have no
     length restrictions, and will be much larger. In most cases the user will be getting results from these files.
+    NB - these are written after the district lookups, and WILL overwrite them - e.g. the complete, four-character
+    lookup for postcodes like `NW1 1AA` will overwrite the short district lookup for `NW11`. This is only avoidable if
+    you use five character lookups as well (so in the above you'd have a lookup for `NW11A` which would distinguish
+    `NW1 1AA` from NW11 postcodes), but this produces an large and unwieldy number of files.
 */
 createReadStream(rawPostcodeLookupFn)
   .pipe(csv())

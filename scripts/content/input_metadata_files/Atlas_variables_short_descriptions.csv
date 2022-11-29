@@ -5,7 +5,7 @@ alternative_address_indicator,An address (in or out of the UK) a person stays at
 country_of_birth,The country in which a person was born.,Where people were born.,
 disability,"A long-term health problem or disability that limits a person's day-to-day activities, and has lasted, or is expected to last, at least 12 months. This includes problems that are related to old age.","People with a long-term health problem or disability, including relating to old-age.",
 economic_activity,"People aged 16 years and over who were in employment, looking for work or waiting to start a job. ","People in employment, looking for work or waiting to start a job.",
-english_proficiency,How well people speak English.,"How well people whose main language is not English (or in Wales, English or Welsh) speak English.",
+english_proficiency,How well people speak English.,"How well people whose main language is not English (or in Wales, English or Welsh) speak English",
 ethnic_group_tb,"The ethnic group that the person completing the census feels they belong to. This could be based on their culture, family background, identity or physical appearance.",The ethnic group a person identifies with.,
 gender_identity,Classifies people according to the responses to the gender identity question.,The gender identity recorded by the person completing the census.,
 has_ever_worked,,"Whether people who are unemployed have been unemployed short-term, long-term, or have never worked.",

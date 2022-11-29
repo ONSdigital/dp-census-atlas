@@ -78,7 +78,7 @@
               </span>
             </div>
             {#if $viz?.params?.embed?.categorySelection}
-              <CategorySelector use="legendString" />
+              <CategorySelector selected={$viz.params.category.slug} use="legendString" />
             {:else}
               <div class={`${legendTextClass} font-bold`}>
                 {formatTemplateString(
@@ -102,7 +102,7 @@
               <GeoTypeBadge geoType={active.geoType} />
             </div>
             {#if $viz?.params?.embed?.categorySelection}
-              <CategorySelector use="name" />
+              <CategorySelector selected={$viz.params.category.slug} use="name" />
             {:else}
               <div class={`${legendTextClass} font-bold`}>
                 {$viz.params.category.name}

@@ -85,3 +85,30 @@ async function getTileAsGeoJSON(url, tile) {
   }
   return geojson;
 }
+
+export const getResults = async (q: string) => {
+  const fetched = await Promise.all([fetchParseGeographyResults(q), fetchParsePostcodeResults(q)]);
+  return fetched.flat();
+};
+
+export const fetchParseGeographyResults = async (q: string) => {
+  try {
+    const response = await fetch(`${appBasePath}/api/geo?q=${q}`);
+    const json = await response.json();
+    return parseGeographySearchItems(json);
+  } catch (err) {
+    console.error(err);
+    return [];
+  }
+};
+
+export const fetchParsePostcodeResults = async (q: string) => {
+  try {
+    const response = await fetch(`https://api.postcodes.io/postcodes/${q}/autocomplete`);
+    const json = await response.json();
+    return parsePostcodeSearchItems(json);
+  } catch (err) {
+    console.error(err);
+    return [];
+  }
+};

@@ -2,7 +2,7 @@
   import { page } from "$app/stores";
   import Select from "./Select.svelte";
   import { SvelteSubject } from "../util/rxUtil";
-  import { composeAreaSearch, getOAfromLngLat } from "../helpers/areaSearchHelper";
+  import { composeAreaSearch, getOAfromLngLat, getResults } from "../helpers/areaSearchHelper";
   import { selectGeography } from "../helpers/navigationHelper";
   import type { GeographySearchItem, PostcodeSearchItem } from "../types";
 
@@ -32,8 +32,8 @@
     id="area-input"
     mode="search"
     placeholder="Search England and Wales"
-    bind:filterText={$query}
-    items={$results}
+    items={[]}
+    loadOptions={getResults}
     idKey="value"
     labelKey="value"
     groupKey="geoType"

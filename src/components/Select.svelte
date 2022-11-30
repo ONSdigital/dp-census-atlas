@@ -46,11 +46,9 @@
   $: noOptionsMessage = isWaiting && isValidQ(filterText) ? "Loading..." : `No results match ${filterText}`;
   $: hideEmptyState = !isWaiting && !isValidQ(filterText);
 
-  $: itemFilter =
-    (Array.isArray(value) && value.length >= maxSelected) || (mode == "search" && !isValidQ(filterText))
-      ? (label, filterText, option) => false
-      : (label, filterText, option) =>
-          `${label}`.split("<")[0].toLowerCase().slice(0, filterText.length) == filterText.toLowerCase();
+  // filter results for matches with search term ignoring spaces, as some people don't use them searching for postcodes
+  const itemFilter = (label, filterText, option) =>
+    label.toLowerCase().replace(/\s/g, "").includes(filterText.toLowerCase().replace(/\s/g, ""));
 
   let el;
   let isFocused;

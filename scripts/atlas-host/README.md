@@ -12,8 +12,12 @@ The Atlas host mainly runs Docker, and most of the processing is done from withi
 
 The container image includes all the tools needed, and users shell in to do their work.
 Persistent data is held on an EFS mount or in a local docker volume.
-User homes are on EFS and a container's /local is on a docker volume.
-(Both survive host and container rebuilds.)
+User homes are on EFS and a container's `/local` is on a docker volume.
+
+(`/local` survives container resizes, and EFS homes survive host rebuilds.
+`/local` will also survive container resizes; if you change the container to a `t2.micro`, `/local` will be preserved.
+But don't change the size of `/local` or destroy and rebuild the instance.
+That *will* blow it away.)
 
 Although all users shell into the Atlas host as `ubuntu`, there is a notion of separate users inside containers.
 Unix accounts are set up within the container.
@@ -22,6 +26,15 @@ There are no passwords on user accounts; only ssh keys are allowed.
 
 The user mechanism is designed as a convenience to keep user work separate;
 it's not really secure since `ubuntu` is effectively superuser.
+
+
+## Building an Atlas host
+
+The Atlas host is built with terraform and ansible in the [dp-setup](https://github.com/ONSdigital/dp-setup) repo.
+
+Instructions are in [terraform/dp-census-atlas-ec2](https://github.com/ONSdigital/dp-setup/tree/awsb/terraform/dp-census-atlas-ec2).
+
+There is an instance in Sandbox and in Prod.
 
 
 ## Developer Prerequisites
@@ -127,6 +140,9 @@ The convention for image names is `atlas-$ATLAS_USER`, where `ATLAS_USER is set 
 If the ssh tunnel is up, and you are using the `atlas` context, you can do this:
 
 	make image
+
+Change `Dockerfile` and rebuild your image if you need to add/update/remove packages in your work environment.
+Since homes are located in a separate volume, you can replace your image as needed without having to set up your home again.
 
 
 ## Enabling logins in your Atlas Container

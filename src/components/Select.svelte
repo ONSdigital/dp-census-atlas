@@ -1,5 +1,6 @@
 <script>
   import { createEventDispatcher } from "svelte";
+  import { isValidQ } from "../helpers/areaSearchHelper";
   import Select from "svelte-select";
   const searchIcon = `<svg viewBox="0 0 20 20" fill-rule="evenodd"><path d="M0,8a8,8,0,1,0,16,0a8,8,0,1,0,-16,0ZM3,8a5,5,0,1,0,10,0a5,5,0,1,0,-10,0Z"/><path d="M18,20L20,18L14,12L12,14Z"/></svg>`;
   const chevronIcon = `<svg viewBox="0 0 20 20"><path d="M1,6L19,6L10,15Z"/></svg>`;
@@ -41,13 +42,12 @@
   const ariaListOpen = (label, count) => `You are currently focused on ${label}. There are ${count} results available.`;
   const ariaFocused = () => `Select is focused, type to refine list, press down to open the menu.`;
 
-  $: noOptionsMessage = isWaiting
-    ? "Loading..."
-    : mode == "search" && filterText.length < 3
-    ? "For example, your home town, a postcode or district"
-    : `No results match ${filterText}`;
+  // only report loading or no results strings if valid query string, otherwise hide noOptionsMessage entirely
+  $: noOptionsMessage = isWaiting && isValidQ(filterText) ? "Loading..." : `No results match ${filterText}`;
+  $: hideEmptyState = !isWaiting && !isValidQ(filterText);
+
   $: itemFilter =
-    (Array.isArray(value) && value.length >= maxSelected) || (mode == "search" && filterText.length < 3)
+    (Array.isArray(value) && value.length >= maxSelected) || (mode == "search" && !isValidQ(filterText))
       ? (label, filterText, option) => false
       : (label, filterText, option) =>
           `${label}`.split("<")[0].toLowerCase().slice(0, filterText.length) == filterText.toLowerCase();
@@ -96,6 +96,7 @@
     {ariaListOpen}
     {ariaFocused}
     {noOptionsMessage}
+    {hideEmptyState}
     {indicatorSvg}
     {containerStyles}
     {isClearable}

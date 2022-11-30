@@ -6,9 +6,16 @@ import vt from "@mapbox/vector-tile";
 import tb from "@mapbox/tilebelt";
 import inPolygon from "@turf/boolean-point-in-polygon";
 
+export const isValidQ = (q: string): boolean => {
+  return q.length >= 3;
+};
+
 export const composeAreaSearch = async (q: string) => {
-  const fetched = await Promise.all([fetchParseGeographyResults(q), fetchParsePostcodeResults(q)]);
-  return fetched.flat();
+  if (isValidQ(q)) {
+    const fetched = await Promise.all([fetchParseGeographyResults(q), fetchParsePostcodeResults(q)]);
+    return fetched.flat();
+  }
+  return Promise.resolve([]);
 };
 
 export const fetchParseGeographyResults = async (q: string) => {

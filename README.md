@@ -39,6 +39,30 @@ All _important_ state flows in one direction from the URL to the UI. This enable
     npm run test   # run unit tests
     npm run e2e    # run UI tests (needs npm run dev first)
 
+## Releases
+
+See the general [DP release process](https://github.com/ONSdigital/dp/blob/main/guides/RELEASES.md), but here are the specific steps for this app:
+
+- see existing releases <https://github.com/ONSdigital/dp-census-atlas/releases>
+- ensure your `develop` is up-to-date `git checkout develop`, `git pull`
+- create a 'release branch' from `develop` with an incremented release number `git checkout -b release/1.7.0` and push to Github
+- go to <https://github.com/ONSdigital/dp-census-atlas/branches> and make a PR with a base of `master`
+- add a list of changes (release notes) to the description (scan through the commit messages!)
+- get the PR approved
+- ensure your `master` is up-to-date - `git pull master`
+- merge the release into `master` - `git merge --no-ff release/1.7.0`
+- tag the release `git tag -s v1.7.0` and paste in the release notes here too to 'annotate' the tag
+- push the release `git push --follow-tags`
+- wait for the CI
+- go to <https://github.com/ONSdigital/dp-census-atlas/releases> and 'Draft a new release'
+- choose the tag
+- add a release title `Release 1.7.0`
+- paste in release notes again!
+- click 'Publish release'
+- go to Concourse
+- wait for release to go green
+- in 'production-ship-it', trigger a new build
+
 ## Content.json
 
 The `content.json` files list the census data that the app will show, and contain metadata (labels etc) for that content.

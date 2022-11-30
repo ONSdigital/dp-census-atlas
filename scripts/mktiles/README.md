@@ -17,6 +17,8 @@ Inputs are:
 * MSOA names file
 * optional LAD recoding file
 
+See [INPUTS](INPUTS.md) for more info on these input files.
+
 The program does the following:
 
 1. reads geojson files, extracts geocodes, Feature names, bounding boxes, and so on

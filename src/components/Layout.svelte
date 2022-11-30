@@ -18,7 +18,11 @@
   };
 </script>
 
-<div class="inset-0 absolute lg:flex flex-col min-w-[342px] text-onsblack" class:flex={$params.embed}>
+<div
+  class="inset-0 absolute lg:flex flex-col min-w-[342px] text-onsblack"
+  class:flex={$params.embed}
+  class:min-h-[600px]={$params.embed}
+>
   <OnsAnalyticsBanner {analyticsId} {analyticsProps} />
   <Header />
   <div class="flex-1 flex flex-col lg:flex-row overflow-y-auto" class:flex-col-reverse={$params.category}>

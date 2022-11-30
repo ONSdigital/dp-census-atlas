@@ -13,8 +13,8 @@
   onMount(async () => {
     setContentStoreOnce();
 
-    // tell iframe host using pym.js to set iframe height to 600px
-    new pym.Child().sendMessage("height", "600");
+    // tell iframe host using pym.js to set iframe height to 570px
+    new pym.Child().sendMessage("height", "570");
   });
 
   function parseSlug(slug) {

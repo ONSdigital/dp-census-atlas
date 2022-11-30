@@ -1,42 +1,35 @@
 import type { Coord } from "@turf/helpers";
-import { type Observable, of, forkJoin } from "rxjs";
-import { fromFetch } from "rxjs/fetch";
-import { switchMap, mergeMap, map, debounceTime, distinctUntilChanged, catchError } from "rxjs/operators";
-import type { AreaSearchItem, GeographySearchItem, PostcodeSearchItem } from "../types";
-import type { SvelteSubject } from "../util/rxUtil";
 import { appBasePath } from "../buildEnv";
+import type { GeographySearchItem, PostcodeSearchItem } from "../types";
 import Pbf from "pbf";
 import vt from "@mapbox/vector-tile";
 import tb from "@mapbox/tilebelt";
 import inPolygon from "@turf/boolean-point-in-polygon";
 
-export const composeAreaSearch = (query: SvelteSubject<string>): Observable<AreaSearchItem[]> =>
-  query.pipe(
-    debounceTime(400),
-    map((q) => q.trimStart()),
-    distinctUntilChanged(),
-    switchMap((q) => {
-      if (q.length < 3) {
-        return of([]);
-      } else {
-        const geographies = fromFetch(`${appBasePath}/api/geo?q=${q}`).pipe(
-          mergeMap((response) => response.json()),
-          map(parseGeographySearchItems),
-          catchError(handleGeographySearchError),
-        );
-        const postcodes = fromFetch(`https://api.postcodes.io/postcodes/${q}/autocomplete`).pipe(
-          mergeMap((response) => response.json()),
-          map(parsePostcodeSearchItems),
-          catchError(handlePostcodeSearchError),
-        );
-        return forkJoin({
-          geographies,
-          postcodes,
-        }).pipe(map((r) => [...r.geographies, ...r.postcodes]));
-      }
-    }),
-    // tap(console.log), // uncomment and import { tap } from "rxjs" to debug this pipeline
-  );
+export const composeAreaSearch = async (q: string) => {
+  const fetched = await Promise.all([fetchParseGeographyResults(q), fetchParsePostcodeResults(q)]);
+  return fetched.flat();
+};
+
+export const fetchParseGeographyResults = async (q: string) => {
+  try {
+    const response = await fetch(`${appBasePath}/api/geo?q=${q}`);
+    const json = await response.json();
+    return parseGeographySearchItems(json);
+  } catch (err) {
+    return handleGeographySearchError(err);
+  }
+};
+
+export const fetchParsePostcodeResults = async (q: string) => {
+  try {
+    const response = await fetch(`https://api.postcodes.io/postcodes/${q}/autocomplete`);
+    const json = await response.json();
+    return parsePostcodeSearchItems(json);
+  } catch (err) {
+    return handlePostcodeSearchError(err);
+  }
+};
 
 const parseGeographySearchItems = (json: any): GeographySearchItem[] => {
   return json.map((geo) => ({ kind: "Geography", value: geo.en, ...geo }));
@@ -46,15 +39,15 @@ const parsePostcodeSearchItems = (json: any): PostcodeSearchItem[] => {
 };
 
 // todo: DRY if we can figure out the type inference
-function handleGeographySearchError(err: any): Observable<GeographySearchItem[]> {
+function handleGeographySearchError(err: any): GeographySearchItem[] {
   // an error during a typeahead search request isn't fatal
   console.error(err);
-  return of([] as GeographySearchItem[]);
+  return [] as GeographySearchItem[];
 }
-function handlePostcodeSearchError(err: any): Observable<PostcodeSearchItem[]> {
+function handlePostcodeSearchError(err: any): PostcodeSearchItem[] {
   // an error during a typeahead search request isn't fatal
   console.error(err);
-  return of([] as PostcodeSearchItem[]);
+  return [] as PostcodeSearchItem[];
 }
 
 export async function getOAfromLngLat(lng, lat) {
@@ -85,30 +78,3 @@ async function getTileAsGeoJSON(url, tile) {
   }
   return geojson;
 }
-
-export const getResults = async (q: string) => {
-  const fetched = await Promise.all([fetchParseGeographyResults(q), fetchParsePostcodeResults(q)]);
-  return fetched.flat();
-};
-
-export const fetchParseGeographyResults = async (q: string) => {
-  try {
-    const response = await fetch(`${appBasePath}/api/geo?q=${q}`);
-    const json = await response.json();
-    return parseGeographySearchItems(json);
-  } catch (err) {
-    console.error(err);
-    return [];
-  }
-};
-
-export const fetchParsePostcodeResults = async (q: string) => {
-  try {
-    const response = await fetch(`https://api.postcodes.io/postcodes/${q}/autocomplete`);
-    const json = await response.json();
-    return parsePostcodeSearchItems(json);
-  } catch (err) {
-    console.error(err);
-    return [];
-  }
-};

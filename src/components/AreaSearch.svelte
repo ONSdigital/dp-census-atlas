@@ -1,7 +1,7 @@
 <script lang="ts">
   import { page } from "$app/stores";
   import Select from "./Select.svelte";
-  import { composeAreaSearch, getOAfromLngLat } from "../helpers/areaSearchHelper";
+  import { fetchGeoPostcodeSearchItems, getOAfromLngLat } from "../helpers/areaSearchHelper";
   import { selectGeography } from "../helpers/navigationHelper";
   import type { GeographySearchItem, PostcodeSearchItem } from "../types";
 
@@ -29,7 +29,7 @@
     mode="search"
     placeholder="Search England and Wales"
     items={[]}
-    loadOptions={composeAreaSearch}
+    loadOptions={fetchGeoPostcodeSearchItems}
     idKey="value"
     labelKey="value"
     groupKey="geoType"

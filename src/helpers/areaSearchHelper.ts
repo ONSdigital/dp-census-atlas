@@ -6,56 +6,39 @@ import vt from "@mapbox/vector-tile";
 import tb from "@mapbox/tilebelt";
 import inPolygon from "@turf/boolean-point-in-polygon";
 
-export const isValidQ = (q: string): boolean => {
-  return q.length >= 3;
+export const isSearchableQuery = (query: string): boolean => {
+  return query.length >= 3;
 };
 
-export const composeAreaSearch = async (q: string) => {
-  if (isValidQ(q)) {
-    const fetched = await Promise.all([fetchParseGeographyResults(q), fetchParsePostcodeResults(q)]);
+export const fetchGeoPostcodeSearchItems = async (q: string): Promise<(GeographySearchItem | PostcodeSearchItem)[]> => {
+  if (isSearchableQuery(q)) {
+    const fetched = await Promise.all([fetchGeographySearchItems(q), fetchPostcodeSearchItems(q)]);
     return fetched.flat();
   }
-  return Promise.resolve([]);
+  return Promise.resolve([] as GeographySearchItem[]);
 };
 
-export const fetchParseGeographyResults = async (q: string) => {
+const fetchGeographySearchItems = async (q: string): Promise<GeographySearchItem[]> => {
   try {
     const response = await fetch(`${appBasePath}/api/geo?q=${q}`);
     const json = await response.json();
-    return parseGeographySearchItems(json);
+    return json.map((geo) => ({ kind: "Geography", value: geo.en, ...geo }));
   } catch (err) {
-    return handleGeographySearchError(err);
+    console.error(err);
+    return Promise.resolve([] as GeographySearchItem[]);
   }
 };
 
-export const fetchParsePostcodeResults = async (q: string) => {
+const fetchPostcodeSearchItems = async (q: string): Promise<PostcodeSearchItem[]> => {
   try {
     const response = await fetch(`https://api.postcodes.io/postcodes/${q}/autocomplete`);
     const json = await response.json();
-    return parsePostcodeSearchItems(json);
+    return (json.result ?? []).map((postcode) => ({ kind: "Postcode", value: postcode }));
   } catch (err) {
-    return handlePostcodeSearchError(err);
+    console.error(err);
+    return Promise.resolve([] as PostcodeSearchItem[]);
   }
 };
-
-const parseGeographySearchItems = (json: any): GeographySearchItem[] => {
-  return json.map((geo) => ({ kind: "Geography", value: geo.en, ...geo }));
-};
-const parsePostcodeSearchItems = (json: any): PostcodeSearchItem[] => {
-  return (json.result ?? []).map((postcode) => ({ kind: "Postcode", value: postcode }));
-};
-
-// todo: DRY if we can figure out the type inference
-function handleGeographySearchError(err: any): GeographySearchItem[] {
-  // an error during a typeahead search request isn't fatal
-  console.error(err);
-  return [] as GeographySearchItem[];
-}
-function handlePostcodeSearchError(err: any): PostcodeSearchItem[] {
-  // an error during a typeahead search request isn't fatal
-  console.error(err);
-  return [] as PostcodeSearchItem[];
-}
 
 export async function getOAfromLngLat(lng, lat) {
   const tile = tb.pointToTile(lng, lat, 12);

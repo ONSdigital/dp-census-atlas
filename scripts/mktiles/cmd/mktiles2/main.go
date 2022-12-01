@@ -19,8 +19,9 @@ import (
 )
 
 const (
-	TILES_DIR  = "tiles"
-	BREAKS_DIR = "breaks"
+	TILES_DIR    = "tiles"
+	BREAKS_DIR   = "breaks"
+	CKBREAKS_DIR = "breaksCkmeans"
 
 	MSOA_NAMES_CSV  = "msoa-names.csv"
 	CONTENT_JSON    = "content.json"
@@ -109,7 +110,7 @@ func main() {
 	// generate breaks files
 	//
 	log.Printf("generating breaks")
-	if err := m.MakeBreaks(filepath.Join(*outdir, BREAKS_DIR), atlas.GeotypeOf); err != nil {
+	if err := m.MakeBreaks(filepath.Join(*outdir, BREAKS_DIR), filepath.Join(*outdir, CKBREAKS_DIR), atlas.GeotypeOf); err != nil {
 		log.Fatal(err)
 	}
 }

@@ -243,7 +243,7 @@ type stats map[types.Category]map[string][]float64
 type TypeLookupFunc func(types.Geocode) (types.Geotype, bool)
 
 // MakeBreaks creates breaks json in dir.
-func (m *M) MakeBreaks(dir string, lookup TypeLookupFunc) error {
+func (m *M) MakeBreaks(dir, ckdir string, lookup TypeLookupFunc) error {
 	rowsbytype := m.tabrowsByType(lookup)
 
 	for _, cat := range m.cats {
@@ -289,7 +289,11 @@ func (m *M) MakeBreaks(dir string, lookup TypeLookupFunc) error {
 			}
 
 			if err := saveStats(dir, geotype, cat, result); err != nil {
-				return fmt.Errorf("%s %s: %w", cat, geotype, err)
+				return fmt.Errorf("breaks %s %s: %w", cat, geotype, err)
+			}
+
+			if err := saveStats(ckdir, geotype, cat, append([]float64{minmax[0]}, breaks...)); err != nil {
+				return fmt.Errorf("ckbreaks %s %s: %w", cat, geotype, err)
 			}
 		}
 	}
@@ -343,7 +347,7 @@ func calcMinMax(values []float64) []float64 {
 }
 
 // saveStats writes a breaks file to dir/geotype/cat.json.
-func saveStats(dir string, geotype types.Geotype, cat types.Category, result stats) error {
+func saveStats(dir string, geotype types.Geotype, cat types.Category, result any) error {
 	d := filepath.Join(dir, geotype.Pathname())
 	if err := os.MkdirAll(d, 0755); err != nil {
 		return err

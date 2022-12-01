@@ -15,7 +15,7 @@ export const fetchGeoPostcodeSearchItems = async (q: string): Promise<(Geography
     const fetched = await Promise.all([fetchGeographySearchItems(q), fetchPostcodeSearchItems(q)]);
     return fetched.flat();
   }
-  return Promise.resolve([] as GeographySearchItem[]);
+  return [] as GeographySearchItem[];
 };
 
 const fetchGeographySearchItems = async (q: string): Promise<GeographySearchItem[]> => {
@@ -25,7 +25,7 @@ const fetchGeographySearchItems = async (q: string): Promise<GeographySearchItem
     return json.map((geo) => ({ kind: "Geography", value: geo.en, ...geo }));
   } catch (err) {
     console.error(err);
-    return Promise.resolve([] as GeographySearchItem[]);
+    return [] as GeographySearchItem[];
   }
 };
 
@@ -36,7 +36,7 @@ const fetchPostcodeSearchItems = async (q: string): Promise<PostcodeSearchItem[]
     return (json.result ?? []).map((postcode) => ({ kind: "Postcode", value: postcode }));
   } catch (err) {
     console.error(err);
-    return Promise.resolve([] as PostcodeSearchItem[]);
+    return [] as PostcodeSearchItem[];
   }
 };
 

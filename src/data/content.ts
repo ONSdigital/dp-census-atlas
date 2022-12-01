@@ -114,10 +114,10 @@ export default {
         contentJsonUrl: zero.localContentJsonUrl,
         contentBaseUrl: zero.realDataBaseUrl,
       },
-      // arm is not published
+      // arm is published
       {
         contentJsonUrl: arm.localContentJsonUrl,
-        contentBaseUrl: arm.fakeDataBaseUrl,
+        contentBaseUrl: arm.realDataBaseUrl,
       },
       // dem is published
       {
@@ -129,10 +129,10 @@ export default {
         contentJsonUrl: edu.localContentJsonUrl,
         contentBaseUrl: edu.fakeDataBaseUrl,
       },
-      // eilr is unpublished
+      // eilr is published
       {
         contentJsonUrl: eilr.localContentJsonUrl,
-        contentBaseUrl: eilr.fakeDataBaseUrl,
+        contentBaseUrl: eilr.realDataBaseUrl,
       },
       // hou is unpublished
       {
@@ -181,10 +181,10 @@ export default {
         contentJsonUrl: zero.publicContentJsonUrl,
         contentBaseUrl: zero.realDataBaseUrl,
       },
-      // arm is not published
+      // arm is published
       {
         contentJsonUrl: arm.publicContentJsonUrl,
-        contentBaseUrl: arm.fakeDataBaseUrl,
+        contentBaseUrl: arm.realDataBaseUrl,
       },
       // dem is published
       {
@@ -196,10 +196,10 @@ export default {
         contentJsonUrl: edu.publicContentJsonUrl,
         contentBaseUrl: edu.fakeDataBaseUrl,
       },
-      // eilr is unpublished
+      // eilr is published
       {
         contentJsonUrl: eilr.publicContentJsonUrl,
-        contentBaseUrl: eilr.fakeDataBaseUrl,
+        contentBaseUrl: eilr.realDataBaseUrl,
       },
       // hou is unpublished
       {
@@ -248,10 +248,10 @@ export default {
         contentJsonUrl: zero.publicContentJsonUrl,
         contentBaseUrl: zero.realDataBaseUrl,
       },
-      // arm is not published
+      // arm is published
       {
         contentJsonUrl: arm.publicContentJsonUrl,
-        contentBaseUrl: arm.fakeDataBaseUrl,
+        contentBaseUrl: arm.realDataBaseUrl,
       },
       // dem is published
       {
@@ -263,10 +263,10 @@ export default {
         contentJsonUrl: edu.publicContentJsonUrl,
         contentBaseUrl: edu.fakeDataBaseUrl,
       },
-      // eilr is unpublished
+      // eilr is published
       {
         contentJsonUrl: eilr.publicContentJsonUrl,
-        contentBaseUrl: eilr.fakeDataBaseUrl,
+        contentBaseUrl: eilr.realDataBaseUrl,
       },
       // hou is unpublished
       {

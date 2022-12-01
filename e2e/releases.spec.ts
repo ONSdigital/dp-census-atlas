@@ -21,10 +21,10 @@ const testCases = [
   },
   {
     name: "EILR",
-    url: "/choropleth/identity/gender-identity/gender-identity-4a/gender-identity-the-same-as-sex-registered-at-birth?lad=E09000012",
-    legendText: "65.9% of families in Hackney LAD have a gender identity the same as their sex registered at birth",
-    categoryCount: 3,
-    nextClassificationCategoryCount: 7,
+    url: "/choropleth/identity/multiple-main-languages-in-household/hh-multi-language-3a/all-household-members-have-the-same-main-language?lad=E06000055",
+    legendText: "91.8% of households in Bedford LAD have members that all have the same main language",
+    categoryCount: 2,
+    nextClassificationCategoryCount: 5,
   },
   {
     name: "HUC",
@@ -73,7 +73,7 @@ const testCases = [
     name: "ARM",
     url: "/choropleth/population/uk-armed-forces-veteran-indicator/uk-armed-forces/previously-served-in-both-regular-and-reserve-uk-armed-forces?msoa=E02002819",
     legendText:
-      "98.2% of people in Wilmorton & Alvaston Village MSOA have previously served in both the regular and reserve UK armed forces",
+      "0.3% of people in Wilmorton & Alvaston Village MSOA have previously served in both the regular and reserve UK armed forces",
     categoryCount: 4,
     nextClassificationCategoryCount: undefined,
   },

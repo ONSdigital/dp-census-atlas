@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-12-02-13-36-22",
+    "created_at": "2022-12-02-14-14-43",
     "spec_file": "2021-content-spec-v8.json",
     "release": "2021-ALL"
   },
@@ -9887,7 +9887,6 @@
               "slug": "transport-to-workplace-12a",
               "desc": "Method used to travel to workplace (12 categories)",
               "available_geotypes": [
-                "oa",
                 "msoa",
                 "lad"
               ],
@@ -10003,7 +10002,6 @@
               "slug": "workplace-travel-4a",
               "desc": "Distance travelled to work (4 categories)",
               "available_geotypes": [
-                "oa",
                 "msoa",
                 "lad"
               ],
@@ -10051,7 +10049,6 @@
               "slug": "workplace-travel-5a",
               "desc": "Distance travelled to work (5 categories)",
               "available_geotypes": [
-                "oa",
                 "msoa",
                 "lad"
               ],
@@ -10105,7 +10102,6 @@
               "slug": "workplace-travel",
               "desc": "Distance travelled to work (11 categories)",
               "available_geotypes": [
-                "oa",
                 "msoa",
                 "lad"
               ],

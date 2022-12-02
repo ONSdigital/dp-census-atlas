@@ -20,6 +20,9 @@
   },
   "variable_renames": {},
   "category_renames": {},
+  "category_slug_renames": {
+    "hh_family_composition_4a-001": "multiple-family-household"
+  },
   "extra_variables": {
     "Population": [
       {

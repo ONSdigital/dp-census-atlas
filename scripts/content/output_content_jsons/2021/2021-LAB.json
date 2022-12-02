@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-11-28-16-50-41",
-    "spec_file": "2021-content-spec-v7.json",
+    "created_at": "2022-12-02-13-36-22",
+    "spec_file": "2021-content-spec-v8.json",
     "release": "2021-LAB"
   },
   "content": [
@@ -15,7 +15,7 @@
           "code": "economic_activity",
           "slug": "economic-activity-status",
           "desc": "People in employment, looking for work or waiting to start a job.",
-          "long_desc": "People aged 16 years and over are economically active if, between  15 March and 21 March 2021, they were:\n\n* in employment (an employee or self-employed)\n* unemployed, but looking for work and could start within two weeks\n* unemployed, but waiting to start a job that had been offered and accepted\n\nIt is a measure of whether or not a person was an active participant in the labour market during this period. Economically inactive are those aged 16 years and over who did not have a job between 15 March to 21 March 2021 and had not looked for work between 22 February to 21 March 2021 or could not start work within two weeks.\n\nThe census definition differs from International Labour Organisation definition used on the Labour Force Survey, so estimates are not directly comparable.",
+          "long_desc": "People aged 16 years and over are economically active if, between 15 March and 21 March 2021, they were:\n\n* in employment (an employee or self-employed)\n* unemployed, but looking for work and could start within two weeks\n* unemployed, but waiting to start a job that had been offered and accepted\n\nIt is a measure of whether or not a person was an active participant in the labour market during this period. Economically inactive are those aged 16 years and over who did not have a job between 15 March to 21 March 2021 and had not looked for work between 22 February to 21 March 2021 or could not start work within two weeks.\n\nThe census definition differs from International Labour Organization definition used on the Labour Force Survey, so estimates are not directly comparable.",
           "units": "Person",
           "topic_code": "LAB",
           "caveat_text": "There are pandemic-related quality considerations for this variable.",
@@ -1047,11 +1047,11 @@
           ]
         },
         {
-          "name": "National Statistics Socio-economic Classification (NS-SeC)",
+          "name": "National Statistics Socio-economic Classification (NS-SEC)",
           "code": "ns_sec",
           "slug": "national-statistics-socio-economic-classification-ns-sec",
           "desc": "People's socioeconomic position based on their occupation and other job characteristics.",
-          "long_desc": "The National Statistics Socio-economic Classification (NS-SEC) indicates a person's socio-economic position based on their occupation and other job characteristics.\n\nIt is an Office for National Statistics standard classification. NS-SEC categories are assigned based on a person's occupation, whether employed, self-employed, or supervising other employees.\n \nFull-time students are recorded in the \"full-time students\" category regardless of whether they are economically active.",
+          "long_desc": "The National Statistics Socio-economic Classification (NS-SEC) indicates a person's socio-economic position based on their occupation and other job characteristics.\n\nIt is an Office for National Statistics standard classification. NS-SEC categories are assigned based on a person's occupation, whether employed, self-employed, or supervising other employees.\n\nFull-time students are recorded in the \"full-time students\" category regardless of whether they are economically active.",
           "units": "Person",
           "topic_code": "LAB",
           "caveat_text": "There are pandemic-related quality considerations for this variable.",
@@ -1151,7 +1151,7 @@
           "code": "occupation_current",
           "slug": "occupation-current",
           "desc": "The jobs people work in.",
-          "long_desc": "Classifies what people aged 16 years and over do as their main job. Their job title or details of activities they do in their job and any supervisory or management responsibilities form this classification. This information is used to code responses to an occupation using the Standards Occupation Classification (SOC) 2020.\n\nIt classifies people who were in employment between 15 March and 21 March 2021, by the SOC code that represents their current occupation.\nThe lowest level of detail available is the four-digit SOC code which includes all codes in three, two and one digit SOC code levels.",
+          "long_desc": "Classifies what people aged 16 years and over do as their main job. Their job title or details of activities they do in their job and any supervisory or management responsibilities form this classification. This information is used to code responses to an occupation using the Standard Occupational Classification (SOC) 2020.\n\nIt classifies people who were in employment between 15 March and 21 March 2021, by the SOC code that represents their current occupation.\nThe lowest level of detail available is the four-digit SOC code which includes all codes in three, two and one digit SOC code levels.",
           "units": "Person",
           "topic_code": "LAB",
           "caveat_text": "There are pandemic-related quality considerations for this variable.",

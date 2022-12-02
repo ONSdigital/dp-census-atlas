@@ -1,6 +1,8 @@
 import { appBasePath } from "../buildEnv";
 import type { GeographySearchItem, PostcodeSearchItem } from "../types";
 
+const maxPostcodeResults = 10;
+
 export const isSearchableQuery = (query: string): boolean => {
   return query.length >= 3;
 };
@@ -31,9 +33,16 @@ const fetchPostcodeSearchItems = async (q: string): Promise<PostcodeSearchItem[]
       `https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/postcodeLkup/${pcdPrefix}.json`,
     );
     const json = await response.json();
-    return json.map((postcode) => ({ kind: "Postcode", value: postcode.pcd, oa: postcode.oa }));
+    const postcodeResults = json.map((postcode) => ({ kind: "Postcode", value: postcode.pcd, oa: postcode.oa }));
+    return filterPostcodeResults(q, postcodeResults);
   } catch (err) {
     console.error(err);
     return [] as PostcodeSearchItem[];
   }
+};
+
+const filterPostcodeResults = (q: string, postcodes: PostcodeSearchItem[]): PostcodeSearchItem[] => {
+  return postcodes
+    .filter((pcd) => pcd.value.toUpperCase().replace(/\s/g, "").includes(q.toUpperCase().replace(/\s/g, "")))
+    .slice(0, maxPostcodeResults);
 };

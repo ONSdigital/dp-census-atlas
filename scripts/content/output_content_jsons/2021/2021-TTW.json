@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-11-28-16-50-41",
-    "spec_file": "2021-content-spec-v7.json",
+    "created_at": "2022-12-02-10-24-05",
+    "spec_file": "2021-content-spec-v8.json",
     "release": "2021-TTW"
   },
   "content": [
@@ -121,14 +121,6 @@
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "travel to work",
                   "legend_str_3": "using other means"
-                },
-                {
-                  "name": "Not in employment or aged 15 years and under",
-                  "slug": "not-in-employment-or-aged-15-years-and-under",
-                  "code": "transport_to_workplace_12a-012",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "not in employment or aged 15 years and under"
                 }
               ]
             }

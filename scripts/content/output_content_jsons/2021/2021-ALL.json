@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-11-28-16-50-41",
-    "spec_file": "2021-content-spec-v7.json",
+    "created_at": "2022-12-02-10-24-05",
+    "spec_file": "2021-content-spec-v8.json",
     "release": "2021-ALL"
   },
   "content": [
@@ -4686,7 +4686,7 @@
           "code": "hh_deprivation",
           "slug": "household-deprivation",
           "desc": "Whether a household is deprived in one or more ways.",
-          "long_desc": "The dimensions of deprivation used to classify households are indicators based on four selected household characteristics.\n\nEducation\n\nA household is classified as deprived in the education dimension if no one has at least level 2 education and no one aged 16 to 18 years is a full-time student.\n\nEmployment\n\nA household is classified as deprived in the employment dimension if any member, not a full-time student, is either unemployed or disabled.\n\nHealth\n\nA household is classified as deprived in the health dimension if any person in the household has general health that is bad or very bad or is identified as disabled\n\nHousing\n\nA household is classified as deprived in the housing dimension if the household's accommodation is either overcrowded, in a shared dwelling, or has no central heating.",
+          "long_desc": "The dimensions of deprivation used to classify households are indicators based on four selected household characteristics.\n\nEducation\n\nA household is classified as deprived in the education dimension if no one has at least level 2 education and no one aged 16 to 18 years is a full-time student.\n\nEmployment\n\nA household is classified as deprived in the employment dimension if any member, not a full-time student, is either unemployed or economically inactive due to long-term sickness or disability.\n\nHealth\n\nA household is classified as deprived in the health dimension if any person in the household has general health that is bad or very bad or is identified as disabled\n\nHousing\n\nA household is classified as deprived in the housing dimension if the household's accommodation is either overcrowded, in a shared dwelling, or has no central heating.",
           "units": "Household",
           "topic_code": "DEM",
           "classifications": [
@@ -4775,7 +4775,7 @@
               "categories": [
                 {
                   "name": "Other household types",
-                  "slug": "multiple-family-household",
+                  "slug": "other-household-types",
                   "code": "hh_family_composition_4a-001",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
@@ -8641,7 +8641,7 @@
           "code": "economic_activity",
           "slug": "economic-activity-status",
           "desc": "People in employment, looking for work or waiting to start a job.",
-          "long_desc": "People aged 16 years and over are economically active if, between  15 March and 21 March 2021, they were:\n\n* in employment (an employee or self-employed)\n* unemployed, but looking for work and could start within two weeks\n* unemployed, but waiting to start a job that had been offered and accepted\n\nIt is a measure of whether or not a person was an active participant in the labour market during this period. Economically inactive are those aged 16 years and over who did not have a job between 15 March to 21 March 2021 and had not looked for work between 22 February to 21 March 2021 or could not start work within two weeks.\n\nThe census definition differs from International Labour Organisation definition used on the Labour Force Survey, so estimates are not directly comparable.",
+          "long_desc": "People aged 16 years and over are economically active if, between 15 March and 21 March 2021, they were:\n\n* in employment (an employee or self-employed)\n* unemployed, but looking for work and could start within two weeks\n* unemployed, but waiting to start a job that had been offered and accepted\n\nIt is a measure of whether or not a person was an active participant in the labour market during this period. Economically inactive are those aged 16 years and over who did not have a job between 15 March to 21 March 2021 and had not looked for work between 22 February to 21 March 2021 or could not start work within two weeks.\n\nThe census definition differs from International Labour Organization definition used on the Labour Force Survey, so estimates are not directly comparable.",
           "units": "Person",
           "topic_code": "LAB",
           "caveat_text": "There are pandemic-related quality considerations for this variable.",
@@ -9673,11 +9673,11 @@
           ]
         },
         {
-          "name": "National Statistics Socio-economic Classification (NS-SeC)",
+          "name": "National Statistics Socio-economic Classification (NS-SEC)",
           "code": "ns_sec",
           "slug": "national-statistics-socio-economic-classification-ns-sec",
           "desc": "People's socioeconomic position based on their occupation and other job characteristics.",
-          "long_desc": "The National Statistics Socio-economic Classification (NS-SEC) indicates a person's socio-economic position based on their occupation and other job characteristics.\n\nIt is an Office for National Statistics standard classification. NS-SEC categories are assigned based on a person's occupation, whether employed, self-employed, or supervising other employees.\n \nFull-time students are recorded in the \"full-time students\" category regardless of whether they are economically active.",
+          "long_desc": "The National Statistics Socio-economic Classification (NS-SEC) indicates a person's socio-economic position based on their occupation and other job characteristics.\n\nIt is an Office for National Statistics standard classification. NS-SEC categories are assigned based on a person's occupation, whether employed, self-employed, or supervising other employees.\n\nFull-time students are recorded in the \"full-time students\" category regardless of whether they are economically active.",
           "units": "Person",
           "topic_code": "LAB",
           "caveat_text": "There are pandemic-related quality considerations for this variable.",
@@ -9777,7 +9777,7 @@
           "code": "occupation_current",
           "slug": "occupation-current",
           "desc": "The jobs people work in.",
-          "long_desc": "Classifies what people aged 16 years and over do as their main job. Their job title or details of activities they do in their job and any supervisory or management responsibilities form this classification. This information is used to code responses to an occupation using the Standards Occupation Classification (SOC) 2020.\n\nIt classifies people who were in employment between 15 March and 21 March 2021, by the SOC code that represents their current occupation.\nThe lowest level of detail available is the four-digit SOC code which includes all codes in three, two and one digit SOC code levels.",
+          "long_desc": "Classifies what people aged 16 years and over do as their main job. Their job title or details of activities they do in their job and any supervisory or management responsibilities form this classification. This information is used to code responses to an occupation using the Standard Occupational Classification (SOC) 2020.\n\nIt classifies people who were in employment between 15 March and 21 March 2021, by the SOC code that represents their current occupation.\nThe lowest level of detail available is the four-digit SOC code which includes all codes in three, two and one digit SOC code levels.",
           "units": "Person",
           "topic_code": "LAB",
           "caveat_text": "There are pandemic-related quality considerations for this variable.",
@@ -9982,14 +9982,6 @@
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "travel to work",
                   "legend_str_3": "using other means"
-                },
-                {
-                  "name": "Not in employment or aged 15 years and under",
-                  "slug": "not-in-employment-or-aged-15-years-and-under",
-                  "code": "transport_to_workplace_12a-012",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "not in employment or aged 15 years and under"
                 }
               ]
             }

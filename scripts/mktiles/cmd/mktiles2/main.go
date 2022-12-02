@@ -35,9 +35,14 @@ func main() {
 	doRatios := flag.Bool("R", false, "calculate percentages (eg 2011 data)")
 	doFake := flag.Bool("F", false, "generate fake metrics")
 	force := flag.Bool("f", false, "force using an existing out directory")
+	contentName := flag.String("c", "", "path to content.json (default content.json within input dir)")
 	flag.Parse()
 
+	if *contentName == "" {
+		*contentName = filepath.Join(*indir, CONTENT_JSON)
+	}
 	log.Printf("            input dir: %s", *indir)
+	log.Printf("         content.json: %s", *contentName)
 	log.Printf("           output dir: %s", *outdir)
 	log.Printf("          calc ratios: %t", *doRatios)
 	log.Printf("generate fake metrics: %t", *doFake)
@@ -73,7 +78,7 @@ func main() {
 	// load content.json
 	//
 	log.Printf("loading content.json")
-	cont, err := content.LoadName(filepath.Join(*indir, CONTENT_JSON))
+	cont, err := content.LoadName(*contentName)
 	if err != nil {
 		log.Fatal(err)
 	}

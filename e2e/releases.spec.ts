@@ -64,8 +64,8 @@ const testCases = [
   },
   {
     name: "TTW",
-    url: "/choropleth/work/distance-travelled-to-work/workplace-travel-4a/10km-and-over?oa=E00088941",
-    legendText: "96.7% of people in E00088941 OA travel 10km and over to work",
+    url: "/choropleth/work/distance-travelled-to-work/workplace-travel-4a/10km-and-over?msoa=E02003657",
+    legendText: "86.5% of people in Granborough, Stewkley & Great Brickhill MSOA travel 10km and over to work",
     categoryCount: 4,
     nextClassificationCategoryCount: 5,
   },

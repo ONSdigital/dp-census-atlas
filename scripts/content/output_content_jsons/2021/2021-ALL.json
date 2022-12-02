@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-12-02-14-14-43",
+    "created_at": "2022-12-02-14-54-42",
     "spec_file": "2021-content-spec-v8.json",
     "release": "2021-ALL"
   },
@@ -9898,7 +9898,7 @@
                   "name": "Work mainly at or from home",
                   "slug": "work-mainly-at-or-from-home",
                   "code": "transport_to_workplace_12a-001",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of employed people aged 16 years or over in {location}",
                   "legend_str_2": "work",
                   "legend_str_3": "mainly at or from home"
                 },

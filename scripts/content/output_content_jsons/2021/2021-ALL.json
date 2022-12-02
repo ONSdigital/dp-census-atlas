@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-12-02-12-19-26",
+    "created_at": "2022-12-02-13-36-22",
     "spec_file": "2021-content-spec-v8.json",
     "release": "2021-ALL"
   },
@@ -9907,7 +9907,7 @@
                   "name": "Underground, metro, light rail, tram",
                   "slug": "underground-metro-light-rail-tram",
                   "code": "transport_to_workplace_12a-002",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of employed people aged 16 years or over in {location}",
                   "legend_str_2": "travel to work by",
                   "legend_str_3": "underground, metro, light rail or tram"
                 },
@@ -9915,7 +9915,7 @@
                   "name": "Train",
                   "slug": "train",
                   "code": "transport_to_workplace_12a-003",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of employed people aged 16 years or over in {location}",
                   "legend_str_2": "travel to work by",
                   "legend_str_3": "train"
                 },
@@ -9923,7 +9923,7 @@
                   "name": "Bus, minibus or coach",
                   "slug": "bus-minibus-or-coach",
                   "code": "transport_to_workplace_12a-004",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of employed people aged 16 years or over in {location}",
                   "legend_str_2": "travel to work by",
                   "legend_str_3": "bus, minibus or coach"
                 },
@@ -9931,7 +9931,7 @@
                   "name": "Taxi",
                   "slug": "taxi",
                   "code": "transport_to_workplace_12a-005",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of employed people aged 16 years or over in {location}",
                   "legend_str_2": "travel to work by",
                   "legend_str_3": "taxi"
                 },
@@ -9939,7 +9939,7 @@
                   "name": "Motorcycle, scooter or moped",
                   "slug": "motorcycle-scooter-or-moped",
                   "code": "transport_to_workplace_12a-006",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of employed people aged 16 years or over in {location}",
                   "legend_str_2": "travel to work by",
                   "legend_str_3": "motorcycle, scooter or moped"
                 },
@@ -9947,7 +9947,7 @@
                   "name": "Driving a car or van",
                   "slug": "driving-a-car-or-van",
                   "code": "transport_to_workplace_12a-007",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of employed people aged 16 years or over in {location}",
                   "legend_str_2": "travel to work by",
                   "legend_str_3": "driving a car or van"
                 },
@@ -9955,7 +9955,7 @@
                   "name": "Passenger in a car or van",
                   "slug": "passenger-in-a-car-or-van",
                   "code": "transport_to_workplace_12a-008",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of employed people aged 16 years or over in {location}",
                   "legend_str_2": "travel to work by",
                   "legend_str_3": "passenger in a car or van"
                 },
@@ -9963,7 +9963,7 @@
                   "name": "Bicycle",
                   "slug": "bicycle",
                   "code": "transport_to_workplace_12a-009",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of employed people aged 16 years or over in {location}",
                   "legend_str_2": "travel to work by",
                   "legend_str_3": "bicycle"
                 },
@@ -9971,7 +9971,7 @@
                   "name": "On foot",
                   "slug": "on-foot",
                   "code": "transport_to_workplace_12a-010",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of employed people aged 16 years or over in {location}",
                   "legend_str_2": "travel to work",
                   "legend_str_3": "on foot"
                 },
@@ -9979,7 +9979,7 @@
                   "name": "Other method of travel to work",
                   "slug": "other-method-of-travel-to-work",
                   "code": "transport_to_workplace_12a-011",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of employed people aged 16 years or over in {location}",
                   "legend_str_2": "travel to work",
                   "legend_str_3": "using other means"
                 }

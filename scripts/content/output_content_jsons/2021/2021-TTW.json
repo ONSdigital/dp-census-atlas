@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-12-02-14-54-42",
+    "created_at": "2022-12-05-11-33-12",
     "spec_file": "2021-content-spec-v8.json",
     "release": "2021-TTW"
   },
@@ -153,7 +153,7 @@
                   "name": "Less than 10km",
                   "slug": "less-than-10km",
                   "code": "workplace_travel_4a-001",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of employed people aged 16 years or over in {location}",
                   "legend_str_2": "travel",
                   "legend_str_3": "less than 10km to work"
                 },
@@ -161,7 +161,7 @@
                   "name": "10km and over",
                   "slug": "10km-and-over",
                   "code": "workplace_travel_4a-002",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of employed people aged 16 years or over in {location}",
                   "legend_str_2": "travel",
                   "legend_str_3": "10km and over to work"
                 },
@@ -169,7 +169,7 @@
                   "name": "Works mainly from home",
                   "slug": "works-mainly-from-home",
                   "code": "workplace_travel_4a-003",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of employed people aged 16 years or over in {location}",
                   "legend_str_2": "work",
                   "legend_str_3": "mainly from home"
                 },
@@ -177,7 +177,7 @@
                   "name": "Other",
                   "slug": "other",
                   "code": "workplace_travel_4a-004",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of employed people aged 16 years or over in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "other forms of travel to work"
                 }
@@ -198,7 +198,7 @@
                   "name": "Less than 10km",
                   "slug": "less-than-10km",
                   "code": "workplace_travel_5a-001",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of employed people aged 16 years or over in {location}",
                   "legend_str_2": "travel",
                   "legend_str_3": "less than 10km to work"
                 },
@@ -206,7 +206,7 @@
                   "name": "10km to less than 30km",
                   "slug": "10km-to-less-than-30km",
                   "code": "workplace_travel_5a-002",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of employed people aged 16 years or over in {location}",
                   "legend_str_2": "travel",
                   "legend_str_3": "10km to less than 30km to work"
                 },
@@ -214,7 +214,7 @@
                   "name": "30km and over",
                   "slug": "30km-and-over",
                   "code": "workplace_travel_5a-003",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of employed people aged 16 years or over in {location}",
                   "legend_str_2": "travel",
                   "legend_str_3": "30km and over to work"
                 },
@@ -222,7 +222,7 @@
                   "name": "Works mainly from home",
                   "slug": "works-mainly-from-home",
                   "code": "workplace_travel_5a-004",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of employed people aged 16 years or over in {location}",
                   "legend_str_2": "work",
                   "legend_str_3": "mainly from home"
                 },
@@ -230,7 +230,7 @@
                   "name": "Other",
                   "slug": "other",
                   "code": "workplace_travel_5a-005",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of employed people aged 16 years or over in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "other forms of travel to work"
                 }
@@ -251,7 +251,7 @@
                   "name": "Less than 2km",
                   "slug": "less-than-2km",
                   "code": "workplace_travel-001",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of employed people aged 16 years or over in {location}",
                   "legend_str_2": "travel",
                   "legend_str_3": "less than 2km to work"
                 },
@@ -259,7 +259,7 @@
                   "name": "2km to less than 5km",
                   "slug": "2km-to-less-than-5km",
                   "code": "workplace_travel-002",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of employed people aged 16 years or over in {location}",
                   "legend_str_2": "travel",
                   "legend_str_3": "2km to less than 5km to work"
                 },
@@ -267,7 +267,7 @@
                   "name": "5km to less than 10km",
                   "slug": "5km-to-less-than-10km",
                   "code": "workplace_travel-003",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of employed people aged 16 years or over in {location}",
                   "legend_str_2": "travel",
                   "legend_str_3": "5km to less than 10km to work"
                 },
@@ -275,7 +275,7 @@
                   "name": "10km to less than 20km",
                   "slug": "10km-to-less-than-20km",
                   "code": "workplace_travel-004",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of employed people aged 16 years or over in {location}",
                   "legend_str_2": "travel",
                   "legend_str_3": "10km to less than 20km to work"
                 },
@@ -283,7 +283,7 @@
                   "name": "20km to less than 30km",
                   "slug": "20km-to-less-than-30km",
                   "code": "workplace_travel-005",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of employed people aged 16 years or over in {location}",
                   "legend_str_2": "travel",
                   "legend_str_3": "20km to less than 30km to work"
                 },
@@ -291,7 +291,7 @@
                   "name": "30km to less than 40km",
                   "slug": "30km-to-less-than-40km",
                   "code": "workplace_travel-006",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of employed people aged 16 years or over in {location}",
                   "legend_str_2": "travel",
                   "legend_str_3": "30km to less than 40km to work"
                 },
@@ -299,7 +299,7 @@
                   "name": "40km to less than 60km",
                   "slug": "40km-to-less-than-60km",
                   "code": "workplace_travel-007",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of employed people aged 16 years or over in {location}",
                   "legend_str_2": "travel",
                   "legend_str_3": "40km to less than 60km to work"
                 },
@@ -307,7 +307,7 @@
                   "name": "60km and over",
                   "slug": "60km-and-over",
                   "code": "workplace_travel-008",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of employed people aged 16 years or over in {location}",
                   "legend_str_2": "travel",
                   "legend_str_3": "60km and over to work"
                 },
@@ -315,7 +315,7 @@
                   "name": "Works mainly from home",
                   "slug": "works-mainly-from-home",
                   "code": "workplace_travel-009",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of employed people aged 16 years or over in {location}",
                   "legend_str_2": "work",
                   "legend_str_3": "mainly from home"
                 },
@@ -323,7 +323,7 @@
                   "name": "Works mainly at an offshore installation, in no fixed place, or outside the UK",
                   "slug": "works-mainly-at-an-offshore-installation-in-no-fixed-place-or-outside-the-uk",
                   "code": "workplace_travel-010",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of employed people aged 16 years or over in {location}",
                   "legend_str_2": "work",
                   "legend_str_3": "mainly at an offshore location, in no fixed place, or outside the UK"
                 }

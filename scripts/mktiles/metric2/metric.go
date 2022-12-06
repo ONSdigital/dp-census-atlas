@@ -51,21 +51,11 @@ func New(geos []types.Geocode, cats []types.Category, withTots bool) (*M, error)
 		}
 	}
 
-	// allocate notional spreadsheet and initialise with NaN cells
-	tab := make([][]types.Value, len(geos))
-	ncols := len(cats) + len(totcats)
-	for row := 0; row < len(geos); row++ {
-		tab[row] = make([]types.Value, ncols)
-		for col := 0; col < ncols; col++ {
-			tab[row][col] = types.Value(math.NaN())
-		}
-	}
+	// allocate empty notional spreadsheet
+	tab := [][]types.Value{}
 
-	// create mapping from geocode to row number
+	// create empty mapping from geocode to row number
 	geoidx := map[types.Geocode]int{}
-	for row, geocode := range geos {
-		geoidx[geocode] = row
-	}
 
 	// create mapping from category to column number
 	catidx := map[types.Category]int{}
@@ -86,7 +76,7 @@ func New(geos []types.Geocode, cats []types.Category, withTots bool) (*M, error)
 		geoidx:  geoidx,
 		catidx:  catidx,
 		totidx:  totidx,
-		geos:    geos,
+		geos:    []types.Geocode{},
 		cats:    cats,
 		totcats: totcats,
 	}, nil
@@ -169,15 +159,30 @@ func (m *M) ImportCSV(records [][]string) error {
 
 // mapCSVgeos creates a mapping from CSV row number to m.tab row number
 // based on each row's geocode.
+// A row will be created for this geocode in m.tab if it doesn't already exist.
 func (m *M) mapCSVgeos(records [][]string) map[int]int {
-	idx := make(map[int]int, len(records))
-	for csvrow, record := range records {
+	ncols := len(m.cats)+len(m.totcats)
+	idx := map[int]int{}
+	for csvrow, record := range records{
 		if csvrow == 0 {
-			continue // skip header line
+			continue // skip heder line
 		}
-		tabrow, ok := m.geoidx[types.Geocode(record[0])]
+		geocode := types.Geocode(record[0])
+		// is this geocode known already?
+		tabrow, ok := m.geoidx[geocode]
 		if !ok {
-			tabrow = -1
+			// create and initialise new row
+			newrow := make([]types.Value, ncols)
+			for col := 0; col < ncols; col++ {
+				newrow[col] = types.Value(math.NaN())
+			}
+			// add new row to m.tab
+			m.tab = append(m.tab, newrow)
+			tabrow = len(m.tab)-1
+			// add to list geos in table
+			m.geos = append(m.geos, geocode)
+			// add this geo to geoidx
+			m.geoidx[geocode] = tabrow
 		}
 		idx[csvrow] = tabrow
 	}

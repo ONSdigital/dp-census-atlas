@@ -1,6 +1,6 @@
 import type { LoadedGeographies, VizData } from "../types";
 import { layers } from "./layers";
-import { choroplethColours } from "../helpers/choroplethHelpers";
+import { getColoursForBreaks } from "../helpers/choroplethHelpers";
 
 let loadedGeographies: LoadedGeographies = undefined;
 
@@ -22,13 +22,14 @@ export const renderMapViz = (map: mapboxgl.Map, data: VizData | undefined) => {
 };
 
 const getChoroplethColour = (value: number, breaks: number[]) => {
+  const colors = getColoursForBreaks(breaks);
   let upperBreakBounds;
   if (breaks.length === 1) {
     upperBreakBounds = breaks;
   } else {
     upperBreakBounds = breaks.slice(1);
   }
-  for (const b of upperBreakBounds.map((b, i) => ({ breakpoint: b, colour: choroplethColours[i] }))) {
+  for (const b of upperBreakBounds.map((b, i) => ({ breakpoint: b, colour: colors[i] }))) {
     if (value <= b.breakpoint) return b.colour;
   }
 };

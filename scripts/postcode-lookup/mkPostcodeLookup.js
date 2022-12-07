@@ -1,5 +1,5 @@
-import csv from "csv-parser";
-import { createReadStream, writeFileSync } from "fs";
+import { csvParse } from "d3-dsv";
+import { readFileSync, writeFileSync } from "fs";
 
 if (process.argv.length < 3) {
   throw "Please supply the ONS Postcode to ONS lookup csv filename.";
@@ -33,71 +33,67 @@ const postcodeLookups = {
     you use five character lookups as well (so in the above you'd have a lookup for `NW11A` which would distinguish
     `NW1 1AA` from NW11 postcodes), but this produces an large and unwieldy number of files.
 */
-createReadStream(rawPostcodeLookupFn)
-  .pipe(csv())
-  .on("data", (data) => {
-    // ----------------------------------------- postcode district lookups ------------------------------------------ //
+const raw = readFileSync(rawPostcodeLookupFn, { encoding: "utf8" });
+const csv = csvParse(raw);
+for (const row of csv) {
+  // ----------------------------------------- postcode district lookups ------------------------------------------ //
 
-    // write at most maxSearchReturns for the pcd dist
-    if (!(data.pcd_dist in postcodeLookups.districts)) {
-      postcodeLookups.districts[data.pcd_dist] = [];
-    }
-    if (postcodeLookups.districts[data.pcd_dist].length <= maxSearchReturns) {
-      postcodeLookups.districts[data.pcd_dist].push({ pcd: data.pcds, oa: data.oa21 });
-    }
+  // write at most maxSearchReturns for the pcd dist
+  if (!(row.pcd_dist in postcodeLookups.districts)) {
+    postcodeLookups.districts[row.pcd_dist] = [];
+  }
+  if (postcodeLookups.districts[row.pcd_dist].length <= maxSearchReturns) {
+    postcodeLookups.districts[row.pcd_dist].push({ pcd: row.pcds, oa: row.oa21 });
+  }
 
-    // ----------------------------------------- first three char lookups ------------------------------------------- //
+  // ----------------------------------------- first three char lookups ------------------------------------------- //
 
-    // if this district has already been written as a three char prefix, remove it from the three char prefixes
-    if (data.pcd_dist in postcodeLookups.firstThree) {
-      delete postcodeLookups.firstThree[data.pcd_dist];
+  // if this district has already been written as a three char prefix, remove it from the three char prefixes
+  if (row.pcd_dist in postcodeLookups.firstThree) {
+    delete postcodeLookups.firstThree[row.pcd_dist];
+  }
+  // remove space and slice to first three, write at most maxSearchReturns. Don't write if the first three chars
+  // are already a pcd district
+  const pcdFirstThree = row.pcds.replace(/\s+/g, "").slice(0, 3);
+  if (!(pcdFirstThree in postcodeLookups.districts)) {
+    if (!(pcdFirstThree in postcodeLookups.firstThree)) {
+      postcodeLookups.firstThree[pcdFirstThree] = [];
     }
-    // remove space and slice to first three, write at most maxSearchReturns. Don't write if the first three chars
-    // are already a pcd district
-    const pcdFirstThree = data.pcds.replace(/\s+/g, "").slice(0, 3);
-    if (!(pcdFirstThree in postcodeLookups.districts)) {
-      if (!(pcdFirstThree in postcodeLookups.firstThree)) {
-        postcodeLookups.firstThree[pcdFirstThree] = [];
-      }
-      if (postcodeLookups.firstThree[pcdFirstThree].length <= maxSearchReturns) {
-        postcodeLookups.firstThree[pcdFirstThree].push({ pcd: data.pcds, oa: data.oa21 });
-      }
+    if (postcodeLookups.firstThree[pcdFirstThree].length <= maxSearchReturns) {
+      postcodeLookups.firstThree[pcdFirstThree].push({ pcd: row.pcds, oa: row.oa21 });
     }
+  }
 
-    // ------------------------------------------ first four char lookups ------------------------------------------- //
+  // ------------------------------------------ first four char lookups ------------------------------------------- //
 
-    // remove space and slice to first four
-    const pcdFirstFour = data.pcds.replace(/\s+/g, "").slice(0, 4);
-    // write all
-    if (!(pcdFirstFour in postcodeLookups.firstFour)) {
-      postcodeLookups.firstFour[pcdFirstFour] = [];
-    }
-    postcodeLookups.firstFour[pcdFirstFour].push({ pcd: data.pcds, oa: data.oa21 });
-  })
+  // remove space and slice to first four
+  const pcdFirstFour = row.pcds.replace(/\s+/g, "").slice(0, 4);
+  // write all
+  if (!(pcdFirstFour in postcodeLookups.firstFour)) {
+    postcodeLookups.firstFour[pcdFirstFour] = [];
+  }
+  postcodeLookups.firstFour[pcdFirstFour].push({ pcd: row.pcds, oa: row.oa21 });
+}
 
-  // --------------------------------------------------- output ----------------------------------------------------- //
-
-  .on("end", () => {
-    console.log("All postcodes loaded and parsed.");
-    const n =
-      Object.keys(postcodeLookups.districts).length +
-      Object.keys(postcodeLookups.firstThree).length +
-      Object.keys(postcodeLookups.firstFour).length;
-    var i = 1;
-    for (const [pcdArea, pcdLkup] of Object.entries(postcodeLookups.districts)) {
-      process.stdout.write(`Writing postcode lookup file ${i} of ${n}...\r`);
-      writeFileSync(`./output/${pcdArea}.json`, JSON.stringify(pcdLkup));
-      i += 1;
-    }
-    for (const [pcdArea, pcdLkup] of Object.entries(postcodeLookups.firstThree)) {
-      process.stdout.write(`Writing postcode lookup file ${i} of ${n}...\r`);
-      writeFileSync(`./output/${pcdArea}.json`, JSON.stringify(pcdLkup));
-      i += 1;
-    }
-    for (const [pcdArea, pcdLkup] of Object.entries(postcodeLookups.firstFour)) {
-      process.stdout.write(`Writing postcode lookup file ${i} of ${n}...\r`);
-      writeFileSync(`./output/${pcdArea}.json`, JSON.stringify(pcdLkup));
-      i += 1;
-    }
-    console.log("\r\n...done!");
-  });
+console.log("All postcodes loaded and parsed.");
+const n =
+  Object.keys(postcodeLookups.districts).length +
+  Object.keys(postcodeLookups.firstThree).length +
+  Object.keys(postcodeLookups.firstFour).length;
+var i = 1;
+for (const [pcdArea, pcdLkup] of Object.entries(postcodeLookups.districts)) {
+  process.stdout.write(`Writing postcode lookup file ${i} of ${n}...\r`);
+  writeFileSync(`./output/${pcdArea}.json`, JSON.stringify(pcdLkup));
+  i += 1;
+}
+for (const [pcdArea, pcdLkup] of Object.entries(postcodeLookups.firstThree)) {
+  process.stdout.write(`Writing postcode lookup file ${i} of ${n}...\r`);
+  writeFileSync(`./output/${pcdArea}.json`, JSON.stringify(pcdLkup));
+  i += 1;
+}
+for (const [pcdArea, pcdLkup] of Object.entries(postcodeLookups.firstFour)) {
+  process.stdout.write(`Writing postcode lookup file ${i} of ${n}...\r`);
+  writeFileSync(`./output/${pcdArea}.json`, JSON.stringify(pcdLkup));
+  i += 1;
+}
+console.log("\r\n...done!");

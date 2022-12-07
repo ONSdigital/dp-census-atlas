@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-12-02-14-54-42",
-    "spec_file": "2021-content-spec-v8.json",
+    "created_at": "2022-12-07-10-57-59",
+    "spec_file": "2021-content-spec-v33.json",
     "release": "2021-LAB"
   },
   "content": [
@@ -19,7 +19,7 @@
           "units": "Person",
           "topic_code": "LAB",
           "caveat_text": "There are pandemic-related quality considerations for this variable.",
-          "caveat_link": "https://www.ons.gov.uk/releases/labourmarketandtraveltoworkcensus2021inenglandandwales",
+          "caveat_link": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/methodologies/labourmarketqualityinformationforcensus2021",
           "classifications": [
             {
               "code": "economic_activity_status_3a",
@@ -33,12 +33,13 @@
               "choropleth_default": true,
               "comparison_2011_data_available": true,
               "dataset": "TS066",
+              "data_download": "https://www.ons.gov.uk/datasets/TS066/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "Economically active",
                   "slug": "economically-active",
                   "code": "economic_activity_status_3a-001",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "economically active"
                 },
@@ -46,7 +47,7 @@
                   "name": "Economically inactive",
                   "slug": "economically-inactive",
                   "code": "economic_activity_status_3a-002",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "economically inactive"
                 }
@@ -64,28 +65,29 @@
               "dot_density_default": true,
               "comparison_2011_data_available": true,
               "dataset": "TS066",
+              "data_download": "https://www.ons.gov.uk/datasets/TS066/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "Economically active: In employment (including full-time students)",
                   "slug": "economically-active-in-employment-including-full-time-students",
                   "code": "economic_activity_status_4a-001",
-                  "legend_str_1": "of people (including full-time students) in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "in employment"
+                  "legend_str_3": "in employment (including full-time students)"
                 },
                 {
                   "name": "Economically active: Unemployed (including full-time students)",
                   "slug": "economically-active-unemployed-including-full-time-students",
                   "code": "economic_activity_status_4a-002",
-                  "legend_str_1": "of people (including full-time students) in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "unemployed"
+                  "legend_str_3": "unemployed (including full-time students)"
                 },
                 {
                   "name": "Economically inactive",
                   "slug": "economically-inactive",
                   "code": "economic_activity_status_4a-003",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "economically inactive"
                 }
@@ -102,44 +104,45 @@
               ],
               "comparison_2011_data_available": true,
               "dataset": "TS066",
+              "data_download": "https://www.ons.gov.uk/datasets/TS066/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "Economically active (excluding full-time students): In employment",
                   "slug": "economically-active-excluding-full-time-students-in-employment",
                   "code": "economic_activity_status_10a-001",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "in employment"
+                  "legend_str_3": "in employment (excluding full-time students)"
                 },
                 {
                   "name": "Economically active (excluding full-time students): Unemployed: Seeking work or waiting to start a job already obtained: Available to start working within 2 weeks",
                   "slug": "economically-active-excluding-full-time-students-unemployed-seeking-work-or-waiting-to-start-a-job-already-obtained-available-to-start-working-within-2-weeks",
                   "code": "economic_activity_status_10a-002",
-                  "legend_str_1": "of people (excluding full-time students) in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "unemployed, but seeking work or waiting to start a job already obtained."
+                  "legend_str_3": "unemployed, but seeking work or waiting to start a job already obtained (excluding full-time students)"
                 },
                 {
                   "name": "Economically active and a full-time student: In employment",
                   "slug": "economically-active-and-a-full-time-student-in-employment",
                   "code": "economic_activity_status_10a-003",
-                  "legend_str_1": "of full-time students in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "in employment"
+                  "legend_str_3": "full-time students and in employment"
                 },
                 {
                   "name": "Economically active and a full-time student: Unemployed: Seeking work or waiting to start a job already obtained: Available to start working within 2 weeks",
                   "slug": "economically-active-and-a-full-time-student-unemployed-seeking-work-or-waiting-to-start-a-job-already-obtained-available-to-start-working-within-2-weeks",
                   "code": "economic_activity_status_10a-004",
-                  "legend_str_1": "of full-time students in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "unemployed, but seeking work or waiting to start a job already obtained."
+                  "legend_str_3": "full-time students and unemployed, but seeking work or waiting to start a job already obtained"
                 },
                 {
                   "name": "Economically inactive: Retired",
                   "slug": "economically-inactive-retired",
                   "code": "economic_activity_status_10a-005",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "retired"
                 },
@@ -147,15 +150,15 @@
                   "name": "Economically inactive: Student",
                   "slug": "economically-inactive-student",
                   "code": "economic_activity_status_10a-006",
-                  "legend_str_1": "of students in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "economically inactive"
+                  "legend_str_3": "students and economically inactive"
                 },
                 {
                   "name": "Economically Inactive: Looking after home or family",
                   "slug": "economically-inactive-looking-after-home-or-family",
                   "code": "economic_activity_status_10a-007",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "economically inactive due to looking after home or family"
                 },
@@ -163,7 +166,7 @@
                   "name": "Economically inactive: Long-term sick or disabled",
                   "slug": "economically-inactive-long-term-sick-or-disabled",
                   "code": "economic_activity_status_10a-008",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "economically inactive due to long-term sickness or disability"
                 },
@@ -171,7 +174,7 @@
                   "name": "Economically inactive: Other",
                   "slug": "economically-inactive-other",
                   "code": "economic_activity_status_10a-009",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "otherwise economically inactive"
                 }
@@ -180,15 +183,15 @@
           ]
         },
         {
-          "name": "Unemployment history",
+          "name": "Employment history",
           "code": "has_ever_worked",
           "slug": "unemployment-history",
-          "desc": "Whether people who are unemployed have been unemployed short-term, long-term, or have never worked.",
+          "desc": "The employment history of people who are currently not working.",
           "long_desc": "Classifies people currently not working into:\n\n* those who have not worked in the last 12 months (short-term unemployed)\n* those who have worked, but not in the last 12 months (long-term unemployed)\n* those who have never worked (includes those who are unemployed and economically inactive)",
           "units": "Person",
           "topic_code": "LAB",
           "caveat_text": "There are pandemic-related quality considerations for this variable.",
-          "caveat_link": "https://www.ons.gov.uk/releases/labourmarketandtraveltoworkcensus2021inenglandandwales",
+          "caveat_link": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/methodologies/labourmarketqualityinformationforcensus2021",
           "classifications": [
             {
               "code": "has_ever_worked",
@@ -203,28 +206,29 @@
               "dot_density_default": true,
               "comparison_2011_data_available": true,
               "dataset": "TS065",
+              "data_download": "https://www.nomisweb.co.uk/datasets/c2021ts065",
               "categories": [
                 {
-                  "name": "Short-term unemployed: Worked in the last 12 months",
-                  "slug": "short-term-unemployed-worked-in-the-last-12-months",
+                  "name": "Not in employment: Worked in the last 12 months",
+                  "slug": "not-in-employment-worked-in-the-last-12-months",
                   "code": "has_ever_worked-001",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "short-term unemployed: worked in the last 12 months"
+                  "legend_str_1": "of people aged 16 years and over not in employment in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "worked in the last 12 months"
                 },
                 {
-                  "name": "Long-term unemployed: Not worked in the last 12 months",
-                  "slug": "long-term-unemployed-not-worked-in-the-last-12-months",
+                  "name": "Not in employment: Not worked in the last 12 months",
+                  "slug": "not-in-employment-not-worked-in-the-last-12-months",
                   "code": "has_ever_worked-002",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "long-term unemployed: not worked in the last 12 months"
+                  "legend_str_1": "of people aged 16 years and over not in employment in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "not worked in the last 12 months"
                 },
                 {
-                  "name": "Never worked",
-                  "slug": "never-worked",
+                  "name": "Not in employment: Never worked",
+                  "slug": "not-in-employment-never-worked",
                   "code": "has_ever_worked-003",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over not in employment in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "never worked"
                 }
@@ -241,7 +245,7 @@
           "units": "Person",
           "topic_code": "LAB",
           "caveat_text": "There are pandemic-related quality considerations for this variable.",
-          "caveat_link": "https://www.ons.gov.uk/releases/labourmarketandtraveltoworkcensus2021inenglandandwales",
+          "caveat_link": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/methodologies/labourmarketqualityinformationforcensus2021",
           "classifications": [
             {
               "code": "hours_per_week_worked_3a",
@@ -256,12 +260,13 @@
               "dot_density_default": true,
               "comparison_2011_data_available": true,
               "dataset": "TS059",
+              "data_download": "https://www.ons.gov.uk/datasets/TS059/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "Part-time: 30 hours or less worked",
                   "slug": "part-time-30-hours-or-less-worked",
                   "code": "hours_per_week_worked_3a-001",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work",
                   "legend_str_3": "part-time: 30 hours or less"
                 },
@@ -269,7 +274,7 @@
                   "name": "Full-time: 31 or more hours worked",
                   "slug": "full-time-31-or-more-hours-worked",
                   "code": "hours_per_week_worked_3a-002",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work",
                   "legend_str_3": "full-time: 31 or more hours"
                 }
@@ -286,12 +291,13 @@
               ],
               "comparison_2011_data_available": true,
               "dataset": "TS059",
+              "data_download": "https://www.ons.gov.uk/datasets/TS059/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "Part-time: 15 hours or less worked",
                   "slug": "part-time-15-hours-or-less-worked",
                   "code": "hours_per_week_worked-001",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work",
                   "legend_str_3": "part-time: 15 hours or less"
                 },
@@ -299,7 +305,7 @@
                   "name": "Part-time: 16 to 30 hours worked",
                   "slug": "part-time-16-to-30-hours-worked",
                   "code": "hours_per_week_worked-002",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work",
                   "legend_str_3": "part-time: 16 to 30 hours"
                 },
@@ -307,7 +313,7 @@
                   "name": "Full-time: 31 to 48 hours worked",
                   "slug": "full-time-31-to-48-hours-worked",
                   "code": "hours_per_week_worked-003",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work",
                   "legend_str_3": "full-time: 31 to 48 hours"
                 },
@@ -315,7 +321,7 @@
                   "name": "Full-time: 49 or more hours worked",
                   "slug": "full-time-49-or-more-hours-worked",
                   "code": "hours_per_week_worked-004",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work",
                   "legend_str_3": "full-time: 49 or more hours"
                 }
@@ -332,7 +338,7 @@
           "units": "Person",
           "topic_code": "LAB",
           "caveat_text": "There are pandemic-related quality considerations for this variable.",
-          "caveat_link": "https://www.ons.gov.uk/releases/labourmarketandtraveltoworkcensus2021inenglandandwales",
+          "caveat_link": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/methodologies/labourmarketqualityinformationforcensus2021",
           "classifications": [
             {
               "code": "industry_current_88a",
@@ -345,12 +351,13 @@
               "choropleth_default": true,
               "comparison_2011_data_available": true,
               "dataset": "TS060",
+              "data_download": "https://www.ons.gov.uk/datasets/TS060/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "01 Crop and animal production, hunting and related service activities",
                   "slug": "01-crop-and-animal-production-hunting-and-related-service-activities",
                   "code": "industry_current_88a-001",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "crop or animal production, hunting or related service activities"
                 },
@@ -358,7 +365,7 @@
                   "name": "02 Forestry and logging",
                   "slug": "02-forestry-and-logging",
                   "code": "industry_current_88a-002",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "forestry or logging"
                 },
@@ -366,7 +373,7 @@
                   "name": "03 Fishing and aquaculture",
                   "slug": "03-fishing-and-aquaculture",
                   "code": "industry_current_88a-003",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "fishing or aquaculture"
                 },
@@ -374,7 +381,7 @@
                   "name": "05 Mining of coal and lignite",
                   "slug": "05-mining-of-coal-and-lignite",
                   "code": "industry_current_88a-004",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "mining of coal and lignite"
                 },
@@ -382,7 +389,7 @@
                   "name": "06 Extraction of crude petroleum and natural gas",
                   "slug": "06-extraction-of-crude-petroleum-and-natural-gas",
                   "code": "industry_current_88a-005",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "extraction of crude petroleum and natural gas"
                 },
@@ -390,7 +397,7 @@
                   "name": "07 Mining of metal ores",
                   "slug": "07-mining-of-metal-ores",
                   "code": "industry_current_88a-006",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "mining of metal ores"
                 },
@@ -398,7 +405,7 @@
                   "name": "08 Other mining and quarrying",
                   "slug": "08-other-mining-and-quarrying",
                   "code": "industry_current_88a-007",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "other mining or quarrying"
                 },
@@ -406,7 +413,7 @@
                   "name": "09 Mining support service activities",
                   "slug": "09-mining-support-service-activities",
                   "code": "industry_current_88a-008",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "mining support service activities"
                 },
@@ -414,7 +421,7 @@
                   "name": "10 Manufacture of food products",
                   "slug": "10-manufacture-of-food-products",
                   "code": "industry_current_88a-009",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "manufacture of food products"
                 },
@@ -422,7 +429,7 @@
                   "name": "11 Manufacture of beverages",
                   "slug": "11-manufacture-of-beverages",
                   "code": "industry_current_88a-010",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "manufacture of beverages"
                 },
@@ -430,7 +437,7 @@
                   "name": "12 Manufacture of tobacco products",
                   "slug": "12-manufacture-of-tobacco-products",
                   "code": "industry_current_88a-011",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "manufacture of tobacco products"
                 },
@@ -438,7 +445,7 @@
                   "name": "13 Manufacture of textiles",
                   "slug": "13-manufacture-of-textiles",
                   "code": "industry_current_88a-012",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "manufacture of textiles"
                 },
@@ -446,7 +453,7 @@
                   "name": "14 Manufacture of wearing apparel",
                   "slug": "14-manufacture-of-wearing-apparel",
                   "code": "industry_current_88a-013",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "manufacture of wearing apparel"
                 },
@@ -454,7 +461,7 @@
                   "name": "15 Manufacture of leather and related products",
                   "slug": "15-manufacture-of-leather-and-related-products",
                   "code": "industry_current_88a-014",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "manufacture of leather and related products"
                 },
@@ -462,7 +469,7 @@
                   "name": "16 Manufacture of wood and of products of wood and cork, except furniture; manufacture of articles of straw and plaiting materials",
                   "slug": "16-manufacture-of-wood-and-of-products-of-wood-and-cork-except-furniture-manufacture-of-articles-of-straw-and-plaiting-materials",
                   "code": "industry_current_88a-015",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "manufacture of wood and of products of wood or cork (except furniture) or manufacture of articles of straw or plaiting materials"
                 },
@@ -470,7 +477,7 @@
                   "name": "17 Manufacture of paper and paper products",
                   "slug": "17-manufacture-of-paper-and-paper-products",
                   "code": "industry_current_88a-016",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "manufacture of paper or paper products"
                 },
@@ -478,7 +485,7 @@
                   "name": "18 Printing and reproduction of recorded media",
                   "slug": "18-printing-and-reproduction-of-recorded-media",
                   "code": "industry_current_88a-017",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "printing and reproduction of recorded media"
                 },
@@ -486,7 +493,7 @@
                   "name": "19 Manufacture of coke and refined petroleum products",
                   "slug": "19-manufacture-of-coke-and-refined-petroleum-products",
                   "code": "industry_current_88a-018",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "manufacture of coke or refined petroleum products"
                 },
@@ -494,7 +501,7 @@
                   "name": "20 Manufacture of chemicals and chemical products",
                   "slug": "20-manufacture-of-chemicals-and-chemical-products",
                   "code": "industry_current_88a-019",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "manufacture of chemicals or chemical products"
                 },
@@ -502,7 +509,7 @@
                   "name": "21 Manufacture of basic pharmaceutical products and pharmaceutical preparations",
                   "slug": "21-manufacture-of-basic-pharmaceutical-products-and-pharmaceutical-preparations",
                   "code": "industry_current_88a-020",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "manufacture of basic pharmaceutical products or pharmaceutical preparations"
                 },
@@ -510,7 +517,7 @@
                   "name": "22 Manufacture of rubber and plastic products",
                   "slug": "22-manufacture-of-rubber-and-plastic-products",
                   "code": "industry_current_88a-021",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "manufacture of rubber or plastic products"
                 },
@@ -518,7 +525,7 @@
                   "name": "23 Manufacture of other non-metallic mineral products",
                   "slug": "23-manufacture-of-other-non-metallic-mineral-products",
                   "code": "industry_current_88a-022",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "manufacture of other non-metallic mineral products"
                 },
@@ -526,7 +533,7 @@
                   "name": "24 Manufacture of basic metals",
                   "slug": "24-manufacture-of-basic-metals",
                   "code": "industry_current_88a-023",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "manufacture of basic metals"
                 },
@@ -534,7 +541,7 @@
                   "name": "25 Manufacture of fabricated metal products, except machinery and equipment",
                   "slug": "25-manufacture-of-fabricated-metal-products-except-machinery-and-equipment",
                   "code": "industry_current_88a-024",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "manufacture of fabricated metal products, except machinery and equipment"
                 },
@@ -542,7 +549,7 @@
                   "name": "26 Manufacture of computer, electrical and optical products",
                   "slug": "26-manufacture-of-computer-electrical-and-optical-products",
                   "code": "industry_current_88a-025",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "manufacture of computer, electrical or optical products"
                 },
@@ -550,7 +557,7 @@
                   "name": "27 Manufacture of electrical equipment",
                   "slug": "27-manufacture-of-electrical-equipment",
                   "code": "industry_current_88a-026",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "manufacture of electrical equipment"
                 },
@@ -558,7 +565,7 @@
                   "name": "28 Manufacture of machinery and equipment not otherwise specified",
                   "slug": "28-manufacture-of-machinery-and-equipment-not-otherwise-specified",
                   "code": "industry_current_88a-027",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "manufacture of machinery and equipment not otherwise specified"
                 },
@@ -566,7 +573,7 @@
                   "name": "29 Manufacture of motor vehicles, trailers and semi-trailers",
                   "slug": "29-manufacture-of-motor-vehicles-trailers-and-semi-trailers",
                   "code": "industry_current_88a-028",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "manufacture of motor vehicles, trailers and semi-trailers"
                 },
@@ -574,7 +581,7 @@
                   "name": "30 Manufacture of other transport equipment",
                   "slug": "30-manufacture-of-other-transport-equipment",
                   "code": "industry_current_88a-029",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "manufacture of other transport equipment"
                 },
@@ -582,7 +589,7 @@
                   "name": "31 Manufacture of furniture",
                   "slug": "31-manufacture-of-furniture",
                   "code": "industry_current_88a-030",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "manufacture of furniture"
                 },
@@ -590,7 +597,7 @@
                   "name": "32 Other Manufacturing",
                   "slug": "32-other-manufacturing",
                   "code": "industry_current_88a-031",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "other manufacturing"
                 },
@@ -598,7 +605,7 @@
                   "name": "33 Repair and installation of machinery and equipment",
                   "slug": "33-repair-and-installation-of-machinery-and-equipment",
                   "code": "industry_current_88a-032",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "repair and installation of machinery or equipment"
                 },
@@ -606,7 +613,7 @@
                   "name": "35 Electricity, gas, steam and air conditioning supply",
                   "slug": "35-electricity-gas-steam-and-air-conditioning-supply",
                   "code": "industry_current_88a-033",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "electricity, gas, steam or air conditioning supply"
                 },
@@ -614,7 +621,7 @@
                   "name": "36 Water collection, treatment and supply",
                   "slug": "36-water-collection-treatment-and-supply",
                   "code": "industry_current_88a-034",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "water collection, treatment or supply"
                 },
@@ -622,7 +629,7 @@
                   "name": "37 Sewerage",
                   "slug": "37-sewerage",
                   "code": "industry_current_88a-035",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "sewerage"
                 },
@@ -630,7 +637,7 @@
                   "name": "38 Waste collection, treatment and disposal activities; materials recovery",
                   "slug": "38-waste-collection-treatment-and-disposal-activities-materials-recovery",
                   "code": "industry_current_88a-036",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "waste collection, treatment or disposal activities, or materials recovery"
                 },
@@ -638,7 +645,7 @@
                   "name": "39 Remediation activities and other waste management services",
                   "slug": "39-remediation-activities-and-other-waste-management-services",
                   "code": "industry_current_88a-037",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "remediation activities or other waste management services"
                 },
@@ -646,7 +653,7 @@
                   "name": "41 Construction of buildings; 42 Civil engineering; 43 Specialised construction activities",
                   "slug": "41-construction-of-buildings-42-civil-engineering-43-specialised-construction-activities",
                   "code": "industry_current_88a-038",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "construction of buildings, civil engineering or specialised construction activities"
                 },
@@ -654,7 +661,7 @@
                   "name": "45 Wholesale and retail trade and repair of motor vehicles and motorcycles",
                   "slug": "45-wholesale-and-retail-trade-and-repair-of-motor-vehicles-and-motorcycles",
                   "code": "industry_current_88a-039",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "wholesale or retail trade or repair of motor vehicles and motorcycles"
                 },
@@ -662,7 +669,7 @@
                   "name": "46 Wholesale trade, except of motor vehicles and motorcycles",
                   "slug": "46-wholesale-trade-except-of-motor-vehicles-and-motorcycles",
                   "code": "industry_current_88a-040",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "wholesale trade, except of motor vehicles and motorcycles"
                 },
@@ -670,7 +677,7 @@
                   "name": "47 Retail trade, except of motor vehicles and motorcycles",
                   "slug": "47-retail-trade-except-of-motor-vehicles-and-motorcycles",
                   "code": "industry_current_88a-041",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "retail trade, except of motor vehicles and motorcycles"
                 },
@@ -678,7 +685,7 @@
                   "name": "48 Wholesale and retail not otherwise specified",
                   "slug": "48-wholesale-and-retail-not-otherwise-specified",
                   "code": "industry_current_88a-042",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "wholesale or retail trade of a type not otherwise specified"
                 },
@@ -686,7 +693,7 @@
                   "name": "49 Land transport and transport via pipelines",
                   "slug": "49-land-transport-and-transport-via-pipelines",
                   "code": "industry_current_88a-043",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "land transport or transport via pipelines"
                 },
@@ -694,7 +701,7 @@
                   "name": "50 Water transport",
                   "slug": "50-water-transport",
                   "code": "industry_current_88a-044",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "water transport"
                 },
@@ -702,7 +709,7 @@
                   "name": "51 Air transport",
                   "slug": "51-air-transport",
                   "code": "industry_current_88a-045",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "air transport"
                 },
@@ -710,7 +717,7 @@
                   "name": "52 Warehousing and support activities for transportation",
                   "slug": "52-warehousing-and-support-activities-for-transportation",
                   "code": "industry_current_88a-046",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "warehousing or support activities for transportation"
                 },
@@ -718,7 +725,7 @@
                   "name": "53 Postal and courier activities",
                   "slug": "53-postal-and-courier-activities",
                   "code": "industry_current_88a-047",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "postal or courier activities"
                 },
@@ -726,7 +733,7 @@
                   "name": "55 Accommodation",
                   "slug": "55-accommodation",
                   "code": "industry_current_88a-048",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "accommodation"
                 },
@@ -734,7 +741,7 @@
                   "name": "56 Food and beverage service activities",
                   "slug": "56-food-and-beverage-service-activities",
                   "code": "industry_current_88a-049",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "food or beverage service activities"
                 },
@@ -742,7 +749,7 @@
                   "name": "58 Publishing activities",
                   "slug": "58-publishing-activities",
                   "code": "industry_current_88a-050",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "publishing activities"
                 },
@@ -750,7 +757,7 @@
                   "name": "59 Motion picture, video and television production, sound recording and music publishing activities",
                   "slug": "59-motion-picture-video-and-television-production-sound-recording-and-music-publishing-activities",
                   "code": "industry_current_88a-051",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "motion picture, video or television production, or sound recording or music publishing activities"
                 },
@@ -758,7 +765,7 @@
                   "name": "60 Programming and broadcasting activities",
                   "slug": "60-programming-and-broadcasting-activities",
                   "code": "industry_current_88a-052",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "programming and broadcasting activities"
                 },
@@ -766,7 +773,7 @@
                   "name": "61 Telecommunications",
                   "slug": "61-telecommunications",
                   "code": "industry_current_88a-053",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "telecommunications"
                 },
@@ -774,7 +781,7 @@
                   "name": "62 Computer programming, consultancy and related activities",
                   "slug": "62-computer-programming-consultancy-and-related-activities",
                   "code": "industry_current_88a-054",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "computer programming, consultancy or related activities"
                 },
@@ -782,7 +789,7 @@
                   "name": "63 Information service activities",
                   "slug": "63-information-service-activities",
                   "code": "industry_current_88a-055",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "information service activities"
                 },
@@ -790,7 +797,7 @@
                   "name": "64 Financial service activities, except insurance and pension funding",
                   "slug": "64-financial-service-activities-except-insurance-and-pension-funding",
                   "code": "industry_current_88a-056",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "financial service activities, except insurance and pension funding"
                 },
@@ -798,7 +805,7 @@
                   "name": "65 Insurance, reinsurance and pension funding, except compulsory social security",
                   "slug": "65-insurance-reinsurance-and-pension-funding-except-compulsory-social-security",
                   "code": "industry_current_88a-057",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "insurance, reinsurance or pension funding, except compulsory social security"
                 },
@@ -806,7 +813,7 @@
                   "name": "66 Activities auxiliary to financial services and insurance activities",
                   "slug": "66-activities-auxiliary-to-financial-services-and-insurance-activities",
                   "code": "industry_current_88a-058",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "activities auxiliary to financial services and insurance activities"
                 },
@@ -814,7 +821,7 @@
                   "name": "68 Real estate activities",
                   "slug": "68-real-estate-activities",
                   "code": "industry_current_88a-059",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "real estate activities"
                 },
@@ -822,7 +829,7 @@
                   "name": "69 Legal and accounting activities",
                   "slug": "69-legal-and-accounting-activities",
                   "code": "industry_current_88a-060",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "legal or accounting activities"
                 },
@@ -830,7 +837,7 @@
                   "name": "70 Activities of head offices; management consultancy activities",
                   "slug": "70-activities-of-head-offices-management-consultancy-activities",
                   "code": "industry_current_88a-061",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "activities of head offices or management consultancy activities"
                 },
@@ -838,7 +845,7 @@
                   "name": "71 Architectural and engineering activities; technical testing and analysis",
                   "slug": "71-architectural-and-engineering-activities-technical-testing-and-analysis",
                   "code": "industry_current_88a-062",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "architectural or engineering activities, or technical testing and analysis"
                 },
@@ -846,7 +853,7 @@
                   "name": "72 Scientific research and development",
                   "slug": "72-scientific-research-and-development",
                   "code": "industry_current_88a-063",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "scientific research and development"
                 },
@@ -854,7 +861,7 @@
                   "name": "73 Advertising and market research",
                   "slug": "73-advertising-and-market-research",
                   "code": "industry_current_88a-064",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "advertising or market research"
                 },
@@ -862,7 +869,7 @@
                   "name": "74 Other professional, scientific and technical activities",
                   "slug": "74-other-professional-scientific-and-technical-activities",
                   "code": "industry_current_88a-065",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "other professional, scientific or technical activities"
                 },
@@ -870,7 +877,7 @@
                   "name": "75 Veterinary activities",
                   "slug": "75-veterinary-activities",
                   "code": "industry_current_88a-066",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "veterinary activities"
                 },
@@ -878,7 +885,7 @@
                   "name": "77 Rental and leasing activities",
                   "slug": "77-rental-and-leasing-activities",
                   "code": "industry_current_88a-067",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "rental or leasing activities"
                 },
@@ -886,7 +893,7 @@
                   "name": "78 Employment activities",
                   "slug": "78-employment-activities",
                   "code": "industry_current_88a-068",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "employment activities"
                 },
@@ -894,7 +901,7 @@
                   "name": "79 Travel agency, tour operator and other reservation service and related activities",
                   "slug": "79-travel-agency-tour-operator-and-other-reservation-service-and-related-activities",
                   "code": "industry_current_88a-069",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "travel agency, tour operator or other reservation service and related activities"
                 },
@@ -902,7 +909,7 @@
                   "name": "80 Security and investigation activities",
                   "slug": "80-security-and-investigation-activities",
                   "code": "industry_current_88a-070",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "security or investigation activities"
                 },
@@ -910,7 +917,7 @@
                   "name": "81 Services to buildings and landscape activities",
                   "slug": "81-services-to-buildings-and-landscape-activities",
                   "code": "industry_current_88a-071",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "services to buildings or landscape activities"
                 },
@@ -918,7 +925,7 @@
                   "name": "82 Office administrative, office support and other business support activities",
                   "slug": "82-office-administrative-office-support-and-other-business-support-activities",
                   "code": "industry_current_88a-072",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "office administrative, office support or other business support activities"
                 },
@@ -926,7 +933,7 @@
                   "name": "84 Public administration and defence; compulsory social security",
                   "slug": "84-public-administration-and-defence-compulsory-social-security",
                   "code": "industry_current_88a-073",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "public administration or defence, or compulsory social security"
                 },
@@ -934,7 +941,7 @@
                   "name": "85 Education",
                   "slug": "85-education",
                   "code": "industry_current_88a-074",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "education"
                 },
@@ -942,7 +949,7 @@
                   "name": "86 Human health activities",
                   "slug": "86-human-health-activities",
                   "code": "industry_current_88a-075",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "human health activities"
                 },
@@ -950,7 +957,7 @@
                   "name": "87 Residential care activities",
                   "slug": "87-residential-care-activities",
                   "code": "industry_current_88a-076",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "residential care activities"
                 },
@@ -958,7 +965,7 @@
                   "name": "88 Social work activities without accommodation",
                   "slug": "88-social-work-activities-without-accommodation",
                   "code": "industry_current_88a-077",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "social work activities without accommodation"
                 },
@@ -966,7 +973,7 @@
                   "name": "90 Creative, arts and entertainment activities",
                   "slug": "90-creative-arts-and-entertainment-activities",
                   "code": "industry_current_88a-078",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "creative, arts and entertainment activities"
                 },
@@ -974,7 +981,7 @@
                   "name": "91 Libraries, archives, museums and other cultural activities",
                   "slug": "91-libraries-archives-museums-and-other-cultural-activities",
                   "code": "industry_current_88a-079",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "libraries, archives, museums and other cultural activities"
                 },
@@ -982,7 +989,7 @@
                   "name": "92 Gambling and betting activities",
                   "slug": "92-gambling-and-betting-activities",
                   "code": "industry_current_88a-080",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "gambling and betting activities"
                 },
@@ -990,7 +997,7 @@
                   "name": "93 Sports activities and amusement and recreation activities",
                   "slug": "93-sports-activities-and-amusement-and-recreation-activities",
                   "code": "industry_current_88a-081",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "sports activities and amusement and recreation activities"
                 },
@@ -998,7 +1005,7 @@
                   "name": "94 Activities of membership organisations",
                   "slug": "94-activities-of-membership-organisations",
                   "code": "industry_current_88a-082",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "activities of membership organisations"
                 },
@@ -1006,7 +1013,7 @@
                   "name": "95 Repair of computers and personal and household goods",
                   "slug": "95-repair-of-computers-and-personal-and-household-goods",
                   "code": "industry_current_88a-083",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "repair of computers or personal and household goods"
                 },
@@ -1014,7 +1021,7 @@
                   "name": "96 Other personal service activities",
                   "slug": "96-other-personal-service-activities",
                   "code": "industry_current_88a-084",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "other personal service activities"
                 },
@@ -1022,7 +1029,7 @@
                   "name": "97 Activities of households as employers of domestic personnel",
                   "slug": "97-activities-of-households-as-employers-of-domestic-personnel",
                   "code": "industry_current_88a-085",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "activities of households as employers of domestic personnel"
                 },
@@ -1030,7 +1037,7 @@
                   "name": "98 Undifferentiated goods- and services-producing activities of private households for own use",
                   "slug": "98-undifferentiated-goods-and-services-producing-activities-of-private-households-for-own-use",
                   "code": "industry_current_88a-086",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "undifferentiated goods- and services-producing activities of private households for own use"
                 },
@@ -1038,7 +1045,7 @@
                   "name": "99 Activities of extraterritorial organisations and bodies",
                   "slug": "99-activities-of-extraterritorial-organisations-and-bodies",
                   "code": "industry_current_88a-087",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "activities of extraterritorial organisations or bodies"
                 }
@@ -1055,7 +1062,7 @@
           "units": "Person",
           "topic_code": "LAB",
           "caveat_text": "There are pandemic-related quality considerations for this variable.",
-          "caveat_link": "https://www.ons.gov.uk/releases/labourmarketandtraveltoworkcensus2021inenglandandwales",
+          "caveat_link": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/methodologies/labourmarketqualityinformationforcensus2021",
           "classifications": [
             {
               "code": "ns_sec_10a",
@@ -1069,78 +1076,79 @@
               "choropleth_default": true,
               "comparison_2011_data_available": true,
               "dataset": "TS062",
+              "data_download": "https://www.ons.gov.uk/datasets/TS062/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "L1, L2 and L3: Higher managerial, administrative and professional occupations",
                   "slug": "l1-l2-and-l3-higher-managerial-administrative-and-professional-occupations",
                   "code": "ns_sec_10a-001",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "l1, l2 and l3: higher managerial, administrative and professional occupations"
+                  "legend_str_3": "L1, L2 and L3: higher managerial, administrative and professional occupations"
                 },
                 {
                   "name": "L4, L5 and L6: Lower managerial, administrative and professional occupations",
                   "slug": "l4-l5-and-l6-lower-managerial-administrative-and-professional-occupations",
                   "code": "ns_sec_10a-002",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "l4, l5 and l6: lower managerial, administrative and professional occupations"
+                  "legend_str_3": "L4, L5 and L6: lower managerial, administrative and professional occupations"
                 },
                 {
                   "name": "L7: Intermediate occupations",
                   "slug": "l7-intermediate-occupations",
                   "code": "ns_sec_10a-003",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "l7: intermediate occupations"
+                  "legend_str_3": "L7: intermediate occupations"
                 },
                 {
                   "name": "L8 and L9: Small employers and own account workers",
                   "slug": "l8-and-l9-small-employers-and-own-account-workers",
                   "code": "ns_sec_10a-004",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "l8 and l9: small employers and own account workers"
+                  "legend_str_3": "L8 and L9: small employers and own account workers"
                 },
                 {
                   "name": "L10 and L11: Lower supervisory and technical occupations",
                   "slug": "l10-and-l11-lower-supervisory-and-technical-occupations",
                   "code": "ns_sec_10a-005",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "l10 and l11: lower supervisory and technical occupations"
+                  "legend_str_3": "L10 and L11: lower supervisory and technical occupations"
                 },
                 {
                   "name": "L12: Semi-routine occupations",
                   "slug": "l12-semi-routine-occupations",
                   "code": "ns_sec_10a-006",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "l12: semi-routine occupations"
+                  "legend_str_3": "L12: semi-routine occupations"
                 },
                 {
                   "name": "L13: Routine occupations",
                   "slug": "l13-routine-occupations",
                   "code": "ns_sec_10a-007",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "l13: routine occupations"
+                  "legend_str_3": "L13: routine occupations"
                 },
                 {
                   "name": "L14.1 and L14.2: Never worked and long-term unemployed",
                   "slug": "l14-1-and-l14-2-never-worked-and-long-term-unemployed",
                   "code": "ns_sec_10a-008",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "l14.1 and l14.2: never worked and long-term unemployed"
+                  "legend_str_3": "L14.1 and L14.2: never worked and long-term unemployed"
                 },
                 {
                   "name": "L15: Full-time students",
                   "slug": "l15-full-time-students",
                   "code": "ns_sec_10a-009",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "l15: full-time students"
+                  "legend_str_3": "L15: full-time students"
                 }
               ]
             }
@@ -1155,7 +1163,7 @@
           "units": "Person",
           "topic_code": "LAB",
           "caveat_text": "There are pandemic-related quality considerations for this variable.",
-          "caveat_link": "https://www.ons.gov.uk/releases/labourmarketandtraveltoworkcensus2021inenglandandwales",
+          "caveat_link": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/methodologies/labourmarketqualityinformationforcensus2021",
           "classifications": [
             {
               "code": "occupation_current_10a",
@@ -1168,12 +1176,13 @@
               "choropleth_default": true,
               "comparison_2011_data_available": true,
               "dataset": "TS064",
+              "data_download": "https://www.ons.gov.uk/datasets/TS063/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "1. Managers, directors and senior officials",
                   "slug": "1-managers-directors-and-senior-officials",
                   "code": "occupation_current_10a-001",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "managers, directors or senior officials"
                 },
@@ -1181,7 +1190,7 @@
                   "name": "2. Professional occupations",
                   "slug": "2-professional-occupations",
                   "code": "occupation_current_10a-002",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "in professional occupations"
                 },
@@ -1189,7 +1198,7 @@
                   "name": "3. Associate professional and technical occupations",
                   "slug": "3-associate-professional-and-technical-occupations",
                   "code": "occupation_current_10a-003",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "in associate professional or technical occupations"
                 },
@@ -1197,7 +1206,7 @@
                   "name": "4. Administrative and secretarial occupations",
                   "slug": "4-administrative-and-secretarial-occupations",
                   "code": "occupation_current_10a-004",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "in administrative or secretarial occupations"
                 },
@@ -1205,7 +1214,7 @@
                   "name": "5. Skilled trades occupations",
                   "slug": "5-skilled-trades-occupations",
                   "code": "occupation_current_10a-005",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "in skilled trades occupations"
                 },
@@ -1213,7 +1222,7 @@
                   "name": "6. Caring, leisure and other service occupations",
                   "slug": "6-caring-leisure-and-other-service-occupations",
                   "code": "occupation_current_10a-006",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "in caring, leisure or other service occupations"
                 },
@@ -1221,7 +1230,7 @@
                   "name": "7. Sales and customer service occupations",
                   "slug": "7-sales-and-customer-service-occupations",
                   "code": "occupation_current_10a-007",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "in sales or customer service occupations"
                 },
@@ -1229,7 +1238,7 @@
                   "name": "8. Process, plant and machine operatives",
                   "slug": "8-process-plant-and-machine-operatives",
                   "code": "occupation_current_10a-008",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "process, plant or machine operatives"
                 },
@@ -1237,7 +1246,7 @@
                   "name": "9. Elementary occupations",
                   "slug": "9-elementary-occupations",
                   "code": "occupation_current_10a-009",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "in elementary occupations"
                 }

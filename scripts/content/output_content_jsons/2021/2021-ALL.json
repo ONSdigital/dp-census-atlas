@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-12-02-14-54-42",
-    "spec_file": "2021-content-spec-v8.json",
+    "created_at": "2022-12-07-10-57-59",
+    "spec_file": "2021-content-spec-v33.json",
     "release": "2021-ALL"
   },
   "content": [
@@ -559,7 +559,7 @@
           "code": "accommodation_type",
           "slug": "accommodation-type",
           "desc": "The type of buildings people live in.",
-          "long_desc": "The type of building or structure used or available by an individual or household.\n\nThis could be:\n\n* the whole house or bungalow\n* a flat in a purpose-built block of flats in a converted house\n* a flat in a converted house\n* a temporary or mobile structure, such as a caravan\n\nAdditional information\n\nMore information about accommodation types\n\nWhole house or bungalow\nThis property type is not divided into flats or other living accommodation. There are three types of whole houses or bungalows.\n\nDetached\nNone of the living accommodation is attached to another property but can be attached to a garage.\n\nSemi-detached\nThe living accommodation is joined to another house or bungalow by a common wall that they share.\n\nTerraced\nA mid-terraced house is located between two other houses and shares two common walls. An end-of-terrace house is part of a terraced development but only shares one common wall.\n\nFlats (Apartments) and maisonettes\nAn apartment is another word for a flat. A maisonette is a 2-storey flat.",
+          "long_desc": "The type of building or structure used or available by an individual or household.\n\nThis could be:\n\n* the whole house or bungalow\n* a flat, maisonette or apartment\n* a temporary or mobile structure, such as a caravan\n\nMore information about accommodation types\n\nWhole house or bungalow\nThis property type is not divided into flats or other living accommodation. There are three types of whole houses or bungalows.\n\nDetached\nNone of the living accommodation is attached to another property but can be attached to a garage.\n\nSemi-detached\nThe living accommodation is joined to another house or bungalow by a common wall that they share.\n\nTerraced\nA mid-terraced house is located between two other houses and shares two common walls. An end-of-terrace house is part of a terraced development but only shares one common wall.\n\nFlats (Apartments) and maisonettes\nAn apartment is another word for a flat. A maisonette is a 2-storey flat.",
           "units": "Household",
           "topic_code": "HOU",
           "classifications": [
@@ -742,7 +742,7 @@
           "code": "alternative_address_indicator",
           "slug": "second-address-indicator",
           "desc": "An address (in or out of the UK) a person stays at for more than 30 days per year that isn't their place of usual residence.",
-          "long_desc": "An address (in or out of the UK) a person stays at for more than 30 days per year that is not their place of usual residence. \n \nAdditional \nSecond addresses typically include:\n\n* armed forces bases\n* addresses used by people working away from home\n* a student\u2019s home address\n* the address of another parent or guardian\n* a holiday home\n  \nIf a person with a second address was staying there on census night, they were classed as a visitor to the second address but counted as a usual resident at their home address.",
+          "long_desc": "An address (in or out of the UK) a person stays at for more than 30 days per year that is not their place of usual residence. \n \nSecond addresses typically include:\n\n* armed forces bases\n* addresses used by people working away from home\n* a student\u2019s home address\n* the address of another parent or guardian\n* a holiday home\n  \nIf a person with a second address was staying there on census night, they were classed as a visitor to the second address but counted as a usual resident at their home address.",
           "units": "Person",
           "topic_code": "HOU",
           "classifications": [
@@ -792,7 +792,7 @@
           "code": "heating_type",
           "slug": "type-of-central-heating-in-household",
           "desc": "Central heating is a heating system used to heat multiple rooms in a building.",
-          "long_desc": "Central heating is a heating system used to heat multiple rooms in a building by circulating air or heated water through pipes to radiators or vents. Single or multiple fuel sources can fuel these systems. \n\nAdditional \nCentral heating systems that are unused or not working are still considered. No information is available for household spaces with no usual residents.",
+          "long_desc": "Central heating is a heating system used to heat multiple rooms in a building by circulating air or heated water through pipes to radiators or vents. Single or multiple fuel sources can fuel these systems. \n\nCentral heating systems that are unused or not working are still considered. No information is available for household spaces with no usual residents.",
           "units": "Household",
           "topic_code": "HOU",
           "classifications": [
@@ -945,7 +945,7 @@
           "code": "hh_tenure",
           "slug": "tenure-of-household",
           "desc": "Whether a household owns or rents.",
-          "long_desc": "Whether a household owns or rents the accommodation that it occupies. \n\nAdditional \nOwner-occupied accommodation can be:\n\n* owned outright, which is where the household owns all of the accommodation \n* with a mortgage or loan \n* part-owned on a shared ownership scheme \n\n Rented accommodation can be:\n\n* private rented (for example, rented through a private landlord or letting agent \n* social rented through a local council or housing association)\n\nThis information is not available for household spaces with no usual residents.",
+          "long_desc": "Whether a household owns or rents the accommodation that it occupies. \n\nOwner-occupied accommodation can be:\n\n* owned outright, which is where the household owns all of the accommodation \n* with a mortgage or loan \n* part-owned on a shared ownership scheme \n\n Rented accommodation can be:\n\n* private rented (for example, rented through a private landlord or letting agent \n* social rented through a local council or housing association\n\nThis information is not available for household spaces with no usual residents.",
           "units": "Household",
           "topic_code": "HOU",
           "classifications": [
@@ -1082,7 +1082,7 @@
           "code": "number_bedrooms",
           "slug": "number-of-bedrooms",
           "desc": "The number of bedrooms in a household.",
-          "long_desc": "The number of bedrooms in a household\u2019s accommodation. \n\nAdditional \nThis number is not available for household spaces with no usual residents.",
+          "long_desc": "The number of bedrooms in a household\u2019s accommodation. \n\nThis number is not available for household spaces with no usual residents.",
           "units": "Household",
           "topic_code": "HOU",
           "classifications": [
@@ -1230,7 +1230,7 @@
           "code": "occupancy_rating_bedrooms",
           "slug": "occupancy-rating-for-bedrooms",
           "desc": "Whether homes are overcrowded, ideally occupied or under-occupied, based on bedrooms.",
-          "long_desc": "Whether a household's accommodation is overcrowded, ideally occupied or under-occupied. This is calculated by comparing the number of bedrooms the household requires (the Bedroom Standard) to the number of available bedrooms.  \n \nAdditional  \nPeople that should have their own room according to the Bedroom Standard:\n\n 1) A married or co-habiting couple.  \n 2) Someone 21 years old or over.  \n 3) A pair of same-sex aged between 10 and 20 years.  \n 4) A pair of children aged under 10 years regardless of their sex.  \n 5) One person aged between 10 to 20 years paired with a child aged under 10 years of the same sex.  \n 6) Any other person aged under 21 years who cannot share a bedroom with someone in 3, 4 or 5 above.\n\nAn occupancy rating of:\n\n*  -1 or less implies that a household\u2019s accommodation has fewer bedrooms than required (overcrowded)  \n* +1 or more implies that a household\u2019s accommodation has more bedrooms than required (under-occupied)  \n* 0 suggests that a household\u2019s accommodation has an ideal number of bedrooms",
+          "long_desc": "Whether a household's accommodation is overcrowded, ideally occupied or under-occupied. This is calculated by comparing the number of bedrooms the household requires to the number of available bedrooms.\n\nThe number of bedrooms the household requires is calculated according to the Bedroom Standard, where the following should have their own bedroom:\n\n1. married or cohabiting couple\n2. single parent\n3. person aged 16 years and over\n4. pair of same-sex persons aged 10 to 15 years\n5. person aged 10 to 15 years paired with a person under 10 years of the same sex\n6. pair of children aged under 10 years, regardless of their sex\n7. person aged under 16 years who cannot share a bedroom with someone in 4, 5 or 6 above\n\nAn occupancy rating of:\n\n* -1 or less implies that a household\u2019s accommodation has fewer bedrooms than required (overcrowded)\n* +1 or more implies that a household\u2019s accommodation has more bedrooms than required (under-occupied)\n* 0 suggests that a household\u2019s accommodation has an ideal number of bedrooms",
           "units": "Household",
           "topic_code": "HOU",
           "classifications": [
@@ -1296,7 +1296,7 @@
           "code": "occupancy_rating_rooms",
           "slug": "occupancy-rating-for-rooms",
           "desc": "Whether homes are overcrowded, ideally occupied or under-occupied, based on rooms.",
-          "long_desc": "Whether a household's accommodation is overcrowded, ideally occupied or under-occupied. This is calculated by comparing the number of rooms the household requires to the number of available rooms. \n\nAdditional  \nThe number of rooms the household requires uses a formula which states that: \n* one-person households require three rooms comprised of two common rooms and one bedroom \n* two-or-more person households require a minimum of two common rooms and a bedroom for each person inline with the Bedroom Standard. \n\nPeople who should have their own room according to the Bedroom Standard:\n  1) Married or cohabiting couple.  \n  2) Single parent.  \n  3) Person aged 16 years old or over.  \n  4) Pair of same-sex persons 10 to 15 years old.  \n  5) Person aged 10 to 15 years old paired with a person under 10 years old of the same sex.  \n  6) Pair of children under the age of 10, regardless of their sex.  \n  7) Person under 16 years old who cannot share a bedroom with someone in 4, 5 or 6 above.\n\nAn occupancy rating of:\n\n * -1 or less implies that a household\u2019s accommodation has fewer rooms than required (overcrowded) \n* +1 or more implies that a household\u2019s accommodation has more rooms than required (under-occupied) \n* 0 suggests that a household\u2019s accommodation has an ideal number of rooms",
+          "long_desc": "Whether a household's accommodation is overcrowded, ideally occupied or under-occupied. This is calculated by comparing the number of rooms the household requires to the number of available rooms.\n\nThe number of rooms the household requires uses a formula which states that:\n\n* one-person households require three rooms comprised of two common rooms and one bedroom\n* two-or-more person households require a minimum of two common rooms and a bedroom for each person inline with the Bedroom Standard\n\nPeople who should have their own room according to the Bedroom Standard are:\n\n1. married or cohabiting couple\n2. single parent\n3. person aged 16 years and over\n4. pair of same-sex persons aged 10 to 15 years\n5. person aged 10 to 15 years paired with a person under 10 years of the same sex\n6. pair of children aged under 10 years, regardless of their sex\n7. person aged under 16 years who cannot share a bedroom with someone in 4, 5 or 6 above\n\nAn occupancy rating of:\n\n* -1 or less implies that a household\u2019s accommodation has fewer rooms than required (overcrowded)\n* +1 or more implies that a household\u2019s accommodation has more rooms than required (under-occupied)\n* 0 suggests that a household\u2019s accommodation has an ideal number of rooms\n\nThe number of rooms is taken from Valuation Office Agency (VOA) administrative data for the first time in 2021. The number of rooms is recorded at the address level, whilst the 2011 Census recorded the number of rooms at the household level.  This means that for households that live in a shared dwelling, the available number of rooms are counted for the whole dwelling in VOA, and not each individual household. \n\nVOA\u2019s definition of a room does not include bathrooms, toilets, halls or landings, kitchens, conservatories or utility rooms. All other rooms, for example, living rooms, studies, bedrooms, separate dining rooms and rooms that can only be used for storage are included. Please note that the 2011 Census question included kitchens, conservatories and utility rooms while excluding rooms that can only be used for storage. To adjust for the definitional difference, the number of rooms required is deducted from the actual number of rooms it has available, and then 1 is added.",
           "units": "Household",
           "topic_code": "HOU",
           "classifications": [
@@ -1362,7 +1362,7 @@
           "code": "second_address_type_priority",
           "slug": "second-address-type",
           "desc": "Whether people have an alternative address (somewhere they stay for more than 30 days per year) and the type of address this is.",
-          "long_desc": "Indicates whether a person has an alternative address (somewhere they stay for more than 30 days per year) and the type of second address this is. \n\n'Not applicable' applies to people without an alternative address.",
+          "long_desc": "Indicates whether a person has an alternative address (somewhere they stay for more than 30 days per year) and the type of second address this is. \n\nThe 'Not applicable' classification applies to people without an alternative address.",
           "units": "Person",
           "topic_code": "HOU",
           "classifications": [
@@ -4073,12 +4073,13 @@
               "dot_density_default": true,
               "comparison_2011_data_available": true,
               "dataset": "TS032",
+              "data_download": "https://www.ons.gov.uk/datasets/TS032/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "Can understand spoken Welsh only",
                   "slug": "can-understand-spoken-welsh-only",
                   "code": "welsh_skills_all_4b-000",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "can",
                   "legend_str_3": "understand spoken Welsh only"
                 },
@@ -4086,7 +4087,7 @@
                   "name": "Can speak, read or write Welsh",
                   "slug": "can-speak-read-or-write-welsh",
                   "code": "welsh_skills_all_4b-001",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "can",
                   "legend_str_3": "speak, read or write Welsh"
                 },
@@ -4094,7 +4095,7 @@
                   "name": "No skills in Welsh",
                   "slug": "no-skills-in-welsh",
                   "code": "welsh_skills_all_4b-002",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "no skills in Welsh"
                 }
@@ -4111,12 +4112,13 @@
               ],
               "comparison_2011_data_available": true,
               "dataset": "TS032",
+              "data_download": "https://www.ons.gov.uk/datasets/TS032/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "Can understand spoken Welsh only",
                   "slug": "can-understand-spoken-welsh-only",
                   "code": "welsh_skills_all_6a-000",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "can",
                   "legend_str_3": "understand spoken Welsh only"
                 },
@@ -4124,7 +4126,7 @@
                   "name": "Can speak, read and write Welsh",
                   "slug": "can-speak-read-and-write-welsh",
                   "code": "welsh_skills_all_6a-001",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "can",
                   "legend_str_3": "speak, read and write Welsh"
                 },
@@ -4132,7 +4134,7 @@
                   "name": "Can speak and other combinations of skills in Welsh",
                   "slug": "can-speak-and-other-combinations-of-skills-in-welsh",
                   "code": "welsh_skills_all_6a-002",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "can",
                   "legend_str_3": "speak and other combinations of skills in Welsh"
                 },
@@ -4140,7 +4142,7 @@
                   "name": "Other combination of skills in Welsh",
                   "slug": "other-combination-of-skills-in-welsh",
                   "code": "welsh_skills_all_6a-003",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "another combination of skills in Welsh"
                 },
@@ -4148,7 +4150,7 @@
                   "name": "No skills in Welsh",
                   "slug": "no-skills-in-welsh",
                   "code": "welsh_skills_all_6a-004",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "no skills in Welsh"
                 }
@@ -4165,12 +4167,13 @@
               ],
               "comparison_2011_data_available": true,
               "dataset": "TS032",
+              "data_download": "https://www.ons.gov.uk/datasets/TS032/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "Can understand spoken Welsh only",
                   "slug": "can-understand-spoken-welsh-only",
                   "code": "welsh_skills_all-000",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "can",
                   "legend_str_3": "understand spoken Welsh only"
                 },
@@ -4178,7 +4181,7 @@
                   "name": "Can speak, read and write Welsh",
                   "slug": "can-speak-read-and-write-welsh",
                   "code": "welsh_skills_all-001",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "can",
                   "legend_str_3": "speak, read and write Welsh"
                 },
@@ -4186,7 +4189,7 @@
                   "name": "Can speak but cannot read or write Welsh",
                   "slug": "can-speak-but-cannot-read-or-write-welsh",
                   "code": "welsh_skills_all-002",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "can",
                   "legend_str_3": "speak but cannot read or write Welsh"
                 },
@@ -4194,7 +4197,7 @@
                   "name": "Can speak and read but cannot write Welsh",
                   "slug": "can-speak-and-read-but-cannot-write-welsh",
                   "code": "welsh_skills_all-003",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "can",
                   "legend_str_3": "speak and read but cannot write Welsh"
                 },
@@ -4202,7 +4205,7 @@
                   "name": "Can read but cannot speak or write Welsh",
                   "slug": "can-read-but-cannot-speak-or-write-welsh",
                   "code": "welsh_skills_all-004",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "can",
                   "legend_str_3": "read but cannot speak or write Welsh"
                 },
@@ -4210,7 +4213,7 @@
                   "name": "Can write but cannot speak or read Welsh",
                   "slug": "can-write-but-cannot-speak-or-read-welsh",
                   "code": "welsh_skills_all-005",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "can",
                   "legend_str_3": "write but cannot speak or read Welsh"
                 },
@@ -4218,7 +4221,7 @@
                   "name": "Can read and write but cannot speak Welsh",
                   "slug": "can-read-and-write-but-cannot-speak-welsh",
                   "code": "welsh_skills_all-006",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "can",
                   "legend_str_3": "read and write but cannot speak Welsh"
                 },
@@ -4226,7 +4229,7 @@
                   "name": "Can speak and other combinations of skills in Welsh",
                   "slug": "can-speak-and-other-combinations-of-skills-in-welsh",
                   "code": "welsh_skills_all-007",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "can",
                   "legend_str_3": "speak and other combinations of skills in Welsh"
                 },
@@ -4234,7 +4237,7 @@
                   "name": "No skills in Welsh",
                   "slug": "no-skills-in-welsh",
                   "code": "welsh_skills_all-008",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "no skills in Welsh"
                 }
@@ -4262,12 +4265,13 @@
               "dot_density_default": true,
               "comparison_2011_data_available": true,
               "dataset": "TS076",
+              "data_download": "https://www.ons.gov.uk/datasets/TS033/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "Cannot speak Welsh",
                   "slug": "cannot-speak-welsh",
                   "code": "welsh_skills_speak-000",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "can",
                   "legend_str_3": "not speak Welsh"
                 },
@@ -4275,7 +4279,7 @@
                   "name": "Can speak Welsh",
                   "slug": "can-speak-welsh",
                   "code": "welsh_skills_speak-001",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "can",
                   "legend_str_3": "speak Welsh"
                 }
@@ -4612,7 +4616,7 @@
               "dataset": "TS071",
               "categories": [
                 {
-                  "name": "Previously served in UK armed forces",
+                  "name": "Previously served in the UK regular armed forces",
                   "slug": "previously-served-in-uk-armed-forces",
                   "code": "uk_armed_forces-001",
                   "legend_str_1": "of people in {location}",
@@ -4686,7 +4690,7 @@
           "code": "hh_deprivation",
           "slug": "household-deprivation",
           "desc": "Whether a household is deprived in one or more ways.",
-          "long_desc": "The dimensions of deprivation used to classify households are indicators based on four selected household characteristics.\n\nEducation\n\nA household is classified as deprived in the education dimension if no one has at least level 2 education and no one aged 16 to 18 years is a full-time student.\n\nEmployment\n\nA household is classified as deprived in the employment dimension if any member, not a full-time student, is either unemployed or economically inactive due to long-term sickness or disability.\n\nHealth\n\nA household is classified as deprived in the health dimension if any person in the household has general health that is bad or very bad or is identified as disabled\n\nHousing\n\nA household is classified as deprived in the housing dimension if the household's accommodation is either overcrowded, in a shared dwelling, or has no central heating.",
+          "long_desc": "The dimensions of deprivation used to classify households are indicators based on four selected household characteristics.\n\nEducation\n\nA household is classified as deprived in the education dimension if no one has at least level 2 education and no one aged 16 to 18 years is a full-time student.\n\nEmployment\n\nA household is classified as deprived in the employment dimension if any member, not a full-time student, is either unemployed or economically inactive due to long-term sickness or disability.\n\nHealth\n\nA household is classified as deprived in the health dimension if any person in the household has general health that is bad or very bad or is identified as disabled\n\nPeople who have assessed their day-to-day activities as limited by long-term physical or mental health conditions or illnesses are considered disabled.  This definition of a disabled person meets the harmonised standard for measuring disability and is in line with the Equality Act (2010).\n\nHousing\n\nA household is classified as deprived in the housing dimension if the household's accommodation is either overcrowded, in a shared dwelling, or has no central heating.",
           "units": "Household",
           "topic_code": "DEM",
           "classifications": [
@@ -5095,7 +5099,7 @@
                   "name": "Married or in a registered civil partnership",
                   "slug": "married-or-in-a-registered-civil-partnership",
                   "code": "legal_partnership_status_3a-001",
-                  "legend_str_1": "of people aged 16 years or over in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "married or in a registered civil partnership"
                 },
@@ -5103,7 +5107,7 @@
                   "name": "Other marital or civil partnership status",
                   "slug": "other-marital-or-civil-partnership-status",
                   "code": "legal_partnership_status_3a-002",
-                  "legend_str_1": "of people aged 16 years or over in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "other marital or civil partnership status"
                 }
@@ -5126,7 +5130,7 @@
                   "name": "Never married and never registered a civil partnership",
                   "slug": "never-married-and-never-registered-a-civil-partnership",
                   "code": "legal_partnership_status_6a-001",
-                  "legend_str_1": "of people aged 16 years or over in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "never married and never registered a civil partnership"
                 },
@@ -5134,7 +5138,7 @@
                   "name": "Married or in a registered civil partnership",
                   "slug": "married-or-in-a-registered-civil-partnership",
                   "code": "legal_partnership_status_6a-002",
-                  "legend_str_1": "of people aged 16 years or over in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "married or in a registered civil partnership"
                 },
@@ -5142,7 +5146,7 @@
                   "name": "Separated, but still legally married or still legally in a civil partnership",
                   "slug": "separated-but-still-legally-married-or-still-legally-in-a-civil-partnership",
                   "code": "legal_partnership_status_6a-003",
-                  "legend_str_1": "of people aged 16 years or over in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "separated, but still legally married or still legally in a civil partnership"
                 },
@@ -5150,7 +5154,7 @@
                   "name": "Divorced or civil partnership dissolved",
                   "slug": "divorced-or-civil-partnership-dissolved",
                   "code": "legal_partnership_status_6a-004",
-                  "legend_str_1": "of people aged 16 years or over in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "divorced or have had their civil partnership dissolved"
                 },
@@ -5158,7 +5162,7 @@
                   "name": "Widowed or surviving civil partnership partner",
                   "slug": "widowed-or-surviving-civil-partnership-partner",
                   "code": "legal_partnership_status_6a-005",
-                  "legend_str_1": "of people aged 16 years or over in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "widowed or the surviving partner from a civil partnership"
                 }
@@ -5181,7 +5185,7 @@
                   "name": "Never married and never registered a civil partnership",
                   "slug": "never-married-and-never-registered-a-civil-partnership",
                   "code": "legal_partnership_status-001",
-                  "legend_str_1": "of people aged 16 years or over in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "never married and never registered a civil partnership"
                 },
@@ -5189,7 +5193,7 @@
                   "name": "Married: Opposite sex",
                   "slug": "married-opposite-sex",
                   "code": "legal_partnership_status-002",
-                  "legend_str_1": "of people aged 16 years or over in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "married to the opposite sex"
                 },
@@ -5197,7 +5201,7 @@
                   "name": "Married: Same sex",
                   "slug": "married-same-sex",
                   "code": "legal_partnership_status-003",
-                  "legend_str_1": "of people aged 16 years or over in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "married to the same sex"
                 },
@@ -5205,7 +5209,7 @@
                   "name": "In a registered civil partnership: Opposite sex",
                   "slug": "in-a-registered-civil-partnership-opposite-sex",
                   "code": "legal_partnership_status-004",
-                  "legend_str_1": "of people aged 16 years or over in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "in a registered civil partnership with the opposite sex"
                 },
@@ -5213,7 +5217,7 @@
                   "name": "In a registered civil partnership: Same sex",
                   "slug": "in-a-registered-civil-partnership-same-sex",
                   "code": "legal_partnership_status-005",
-                  "legend_str_1": "of people aged 16 years or over in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "in a registered civil partnership with the same sex"
                 },
@@ -5221,7 +5225,7 @@
                   "name": "Separated, but still married",
                   "slug": "separated-but-still-married",
                   "code": "legal_partnership_status-006",
-                  "legend_str_1": "of people aged 16 years or over in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "separated, but still married"
                 },
@@ -5229,7 +5233,7 @@
                   "name": "Separated, but still in a registered civil partnership",
                   "slug": "separated-but-still-in-a-registered-civil-partnership",
                   "code": "legal_partnership_status-007",
-                  "legend_str_1": "of people aged 16 years or over in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "separated, but still in a registered civil partnership"
                 },
@@ -5237,7 +5241,7 @@
                   "name": "Divorced",
                   "slug": "divorced",
                   "code": "legal_partnership_status-008",
-                  "legend_str_1": "of people aged 16 years or over in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "divorced"
                 },
@@ -5245,7 +5249,7 @@
                   "name": "Formerly in a civil partnership now legally dissolved",
                   "slug": "formerly-in-a-civil-partnership-now-legally-dissolved",
                   "code": "legal_partnership_status-009",
-                  "legend_str_1": "of people aged 16 years or over in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "were",
                   "legend_str_3": "formerly in a civil partnership now legally dissolved"
                 },
@@ -5253,7 +5257,7 @@
                   "name": "Widowed",
                   "slug": "widowed",
                   "code": "legal_partnership_status-010",
-                  "legend_str_1": "of people aged 16 years or over in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "widowed"
                 },
@@ -5261,7 +5265,7 @@
                   "name": "Surviving partner from civil partnership",
                   "slug": "surviving-partner-from-civil-partnership",
                   "code": "legal_partnership_status-011",
-                  "legend_str_1": "of people aged 16 years or over in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "the surviving partner from a civil partnership"
                 }
@@ -5295,7 +5299,7 @@
                   "name": "Living in an opposite-sex couple: Married or in a civil partnership",
                   "slug": "living-in-an-opposite-sex-couple-married-or-in-a-civil-partnership",
                   "code": "living_arrangements_11a-001",
-                  "legend_str_1": "of people aged 16 years or over in households in {location}",
+                  "legend_str_1": "of people aged 16 years and over in households in {location}",
                   "legend_str_2": "live together",
                   "legend_str_3": "in an opposite-sex couple that is married or in a civil partnership"
                 },
@@ -5303,7 +5307,7 @@
                   "name": "Living in a same-sex couple: Married or in a civil partnership",
                   "slug": "living-in-a-same-sex-couple-married-or-in-a-civil-partnership",
                   "code": "living_arrangements_11a-002",
-                  "legend_str_1": "of people aged 16 years or over in households in {location}",
+                  "legend_str_1": "of people aged 16 years and over in households in {location}",
                   "legend_str_2": "live together",
                   "legend_str_3": "in a same-sex couple that is married or in a civil partnership"
                 },
@@ -5311,7 +5315,7 @@
                   "name": "Living in a couple: Separated, but still married or in a civil partnership",
                   "slug": "living-in-a-couple-separated-but-still-married-or-in-a-civil-partnership",
                   "code": "living_arrangements_11a-003",
-                  "legend_str_1": "of people aged 16 years or over in households in {location}",
+                  "legend_str_1": "of people aged 16 years and over in households in {location}",
                   "legend_str_2": "live together",
                   "legend_str_3": "in a couple that is separated, but still married or in a civil partnership"
                 },
@@ -5319,7 +5323,7 @@
                   "name": "Living in an opposite-sex couple: Cohabiting",
                   "slug": "living-in-an-opposite-sex-couple-cohabiting",
                   "code": "living_arrangements_11a-004",
-                  "legend_str_1": "of people aged 16 years or over in households in {location}",
+                  "legend_str_1": "of people aged 16 years and over in households in {location}",
                   "legend_str_2": "live together",
                   "legend_str_3": "in an opposite-sex couple that is cohabiting"
                 },
@@ -5327,7 +5331,7 @@
                   "name": "Living in a same-sex couple: Cohabiting",
                   "slug": "living-in-a-same-sex-couple-cohabiting",
                   "code": "living_arrangements_11a-005",
-                  "legend_str_1": "of people aged 16 years or over in households in {location}",
+                  "legend_str_1": "of people aged 16 years and over in households in {location}",
                   "legend_str_2": "live together",
                   "legend_str_3": "in a same-sex couple that is cohabiting"
                 },
@@ -5335,7 +5339,7 @@
                   "name": "Not living in a couple: Single (never married and never registered a same-sex civil partnership)",
                   "slug": "not-living-in-a-couple-single-never-married-and-never-registered-a-same-sex-civil-partnership",
                   "code": "living_arrangements_11a-006",
-                  "legend_str_1": "of people aged 16 years or over in households in {location}",
+                  "legend_str_1": "of people aged 16 years and over in households in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "single (never married and never registered a same-sex civil partnership)"
                 },
@@ -5343,7 +5347,7 @@
                   "name": "Not living in a couple: Married or in a registered civil partnership",
                   "slug": "not-living-in-a-couple-married-or-in-a-registered-civil-partnership",
                   "code": "living_arrangements_11a-007",
-                  "legend_str_1": "of people aged 16 years or over in households in {location}",
+                  "legend_str_1": "of people aged 16 years and over in households in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "not living in a couple, but are married or in a registered civil partnership"
                 },
@@ -5351,7 +5355,7 @@
                   "name": "Not living in a couple: Separated (including those who are married and those who are in civil partnerships)",
                   "slug": "not-living-in-a-couple-separated-including-those-who-are-married-and-those-who-are-in-civil-partnerships",
                   "code": "living_arrangements_11a-008",
-                  "legend_str_1": "of people aged 16 years or over in households in {location}",
+                  "legend_str_1": "of people aged 16 years and over in households in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "separated (including those who are married and those who are in civil partnerships)"
                 },
@@ -5359,7 +5363,7 @@
                   "name": "Not living in a couple: Divorced or formerly in a civil partnership which is now legally dissolved",
                   "slug": "not-living-in-a-couple-divorced-or-formerly-in-a-civil-partnership-which-is-now-legally-dissolved",
                   "code": "living_arrangements_11a-009",
-                  "legend_str_1": "of people aged 16 years or over in households in {location}",
+                  "legend_str_1": "of people aged 16 years and over in households in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "divorced or formerly in a civil partnership which is now legally dissolved"
                 },
@@ -5367,7 +5371,7 @@
                   "name": "Not living in a couple: Widowed or surviving partner from a civil partnership",
                   "slug": "not-living-in-a-couple-widowed-or-surviving-partner-from-a-civil-partnership",
                   "code": "living_arrangements_11a-010",
-                  "legend_str_1": "of people aged 16 years or over in households in {location}",
+                  "legend_str_1": "of people aged 16 years and over in households in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "widowed or the surviving partner from a civil partnership"
                 }
@@ -8645,7 +8649,7 @@
           "units": "Person",
           "topic_code": "LAB",
           "caveat_text": "There are pandemic-related quality considerations for this variable.",
-          "caveat_link": "https://www.ons.gov.uk/releases/labourmarketandtraveltoworkcensus2021inenglandandwales",
+          "caveat_link": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/methodologies/labourmarketqualityinformationforcensus2021",
           "classifications": [
             {
               "code": "economic_activity_status_3a",
@@ -8659,12 +8663,13 @@
               "choropleth_default": true,
               "comparison_2011_data_available": true,
               "dataset": "TS066",
+              "data_download": "https://www.ons.gov.uk/datasets/TS066/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "Economically active",
                   "slug": "economically-active",
                   "code": "economic_activity_status_3a-001",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "economically active"
                 },
@@ -8672,7 +8677,7 @@
                   "name": "Economically inactive",
                   "slug": "economically-inactive",
                   "code": "economic_activity_status_3a-002",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "economically inactive"
                 }
@@ -8690,28 +8695,29 @@
               "dot_density_default": true,
               "comparison_2011_data_available": true,
               "dataset": "TS066",
+              "data_download": "https://www.ons.gov.uk/datasets/TS066/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "Economically active: In employment (including full-time students)",
                   "slug": "economically-active-in-employment-including-full-time-students",
                   "code": "economic_activity_status_4a-001",
-                  "legend_str_1": "of people (including full-time students) in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "in employment"
+                  "legend_str_3": "in employment (including full-time students)"
                 },
                 {
                   "name": "Economically active: Unemployed (including full-time students)",
                   "slug": "economically-active-unemployed-including-full-time-students",
                   "code": "economic_activity_status_4a-002",
-                  "legend_str_1": "of people (including full-time students) in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "unemployed"
+                  "legend_str_3": "unemployed (including full-time students)"
                 },
                 {
                   "name": "Economically inactive",
                   "slug": "economically-inactive",
                   "code": "economic_activity_status_4a-003",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "economically inactive"
                 }
@@ -8728,44 +8734,45 @@
               ],
               "comparison_2011_data_available": true,
               "dataset": "TS066",
+              "data_download": "https://www.ons.gov.uk/datasets/TS066/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "Economically active (excluding full-time students): In employment",
                   "slug": "economically-active-excluding-full-time-students-in-employment",
                   "code": "economic_activity_status_10a-001",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "in employment"
+                  "legend_str_3": "in employment (excluding full-time students)"
                 },
                 {
                   "name": "Economically active (excluding full-time students): Unemployed: Seeking work or waiting to start a job already obtained: Available to start working within 2 weeks",
                   "slug": "economically-active-excluding-full-time-students-unemployed-seeking-work-or-waiting-to-start-a-job-already-obtained-available-to-start-working-within-2-weeks",
                   "code": "economic_activity_status_10a-002",
-                  "legend_str_1": "of people (excluding full-time students) in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "unemployed, but seeking work or waiting to start a job already obtained."
+                  "legend_str_3": "unemployed, but seeking work or waiting to start a job already obtained (excluding full-time students)"
                 },
                 {
                   "name": "Economically active and a full-time student: In employment",
                   "slug": "economically-active-and-a-full-time-student-in-employment",
                   "code": "economic_activity_status_10a-003",
-                  "legend_str_1": "of full-time students in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "in employment"
+                  "legend_str_3": "full-time students and in employment"
                 },
                 {
                   "name": "Economically active and a full-time student: Unemployed: Seeking work or waiting to start a job already obtained: Available to start working within 2 weeks",
                   "slug": "economically-active-and-a-full-time-student-unemployed-seeking-work-or-waiting-to-start-a-job-already-obtained-available-to-start-working-within-2-weeks",
                   "code": "economic_activity_status_10a-004",
-                  "legend_str_1": "of full-time students in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "unemployed, but seeking work or waiting to start a job already obtained."
+                  "legend_str_3": "full-time students and unemployed, but seeking work or waiting to start a job already obtained"
                 },
                 {
                   "name": "Economically inactive: Retired",
                   "slug": "economically-inactive-retired",
                   "code": "economic_activity_status_10a-005",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "retired"
                 },
@@ -8773,15 +8780,15 @@
                   "name": "Economically inactive: Student",
                   "slug": "economically-inactive-student",
                   "code": "economic_activity_status_10a-006",
-                  "legend_str_1": "of students in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "economically inactive"
+                  "legend_str_3": "students and economically inactive"
                 },
                 {
                   "name": "Economically Inactive: Looking after home or family",
                   "slug": "economically-inactive-looking-after-home-or-family",
                   "code": "economic_activity_status_10a-007",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "economically inactive due to looking after home or family"
                 },
@@ -8789,7 +8796,7 @@
                   "name": "Economically inactive: Long-term sick or disabled",
                   "slug": "economically-inactive-long-term-sick-or-disabled",
                   "code": "economic_activity_status_10a-008",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "economically inactive due to long-term sickness or disability"
                 },
@@ -8797,7 +8804,7 @@
                   "name": "Economically inactive: Other",
                   "slug": "economically-inactive-other",
                   "code": "economic_activity_status_10a-009",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "otherwise economically inactive"
                 }
@@ -8806,15 +8813,15 @@
           ]
         },
         {
-          "name": "Unemployment history",
+          "name": "Employment history",
           "code": "has_ever_worked",
           "slug": "unemployment-history",
-          "desc": "Whether people who are unemployed have been unemployed short-term, long-term, or have never worked.",
+          "desc": "The employment history of people who are currently not working.",
           "long_desc": "Classifies people currently not working into:\n\n* those who have not worked in the last 12 months (short-term unemployed)\n* those who have worked, but not in the last 12 months (long-term unemployed)\n* those who have never worked (includes those who are unemployed and economically inactive)",
           "units": "Person",
           "topic_code": "LAB",
           "caveat_text": "There are pandemic-related quality considerations for this variable.",
-          "caveat_link": "https://www.ons.gov.uk/releases/labourmarketandtraveltoworkcensus2021inenglandandwales",
+          "caveat_link": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/methodologies/labourmarketqualityinformationforcensus2021",
           "classifications": [
             {
               "code": "has_ever_worked",
@@ -8829,28 +8836,29 @@
               "dot_density_default": true,
               "comparison_2011_data_available": true,
               "dataset": "TS065",
+              "data_download": "https://www.nomisweb.co.uk/datasets/c2021ts065",
               "categories": [
                 {
-                  "name": "Short-term unemployed: Worked in the last 12 months",
-                  "slug": "short-term-unemployed-worked-in-the-last-12-months",
+                  "name": "Not in employment: Worked in the last 12 months",
+                  "slug": "not-in-employment-worked-in-the-last-12-months",
                   "code": "has_ever_worked-001",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "short-term unemployed: worked in the last 12 months"
+                  "legend_str_1": "of people aged 16 years and over not in employment in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "worked in the last 12 months"
                 },
                 {
-                  "name": "Long-term unemployed: Not worked in the last 12 months",
-                  "slug": "long-term-unemployed-not-worked-in-the-last-12-months",
+                  "name": "Not in employment: Not worked in the last 12 months",
+                  "slug": "not-in-employment-not-worked-in-the-last-12-months",
                   "code": "has_ever_worked-002",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "long-term unemployed: not worked in the last 12 months"
+                  "legend_str_1": "of people aged 16 years and over not in employment in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "not worked in the last 12 months"
                 },
                 {
-                  "name": "Never worked",
-                  "slug": "never-worked",
+                  "name": "Not in employment: Never worked",
+                  "slug": "not-in-employment-never-worked",
                   "code": "has_ever_worked-003",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over not in employment in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "never worked"
                 }
@@ -8867,7 +8875,7 @@
           "units": "Person",
           "topic_code": "LAB",
           "caveat_text": "There are pandemic-related quality considerations for this variable.",
-          "caveat_link": "https://www.ons.gov.uk/releases/labourmarketandtraveltoworkcensus2021inenglandandwales",
+          "caveat_link": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/methodologies/labourmarketqualityinformationforcensus2021",
           "classifications": [
             {
               "code": "hours_per_week_worked_3a",
@@ -8882,12 +8890,13 @@
               "dot_density_default": true,
               "comparison_2011_data_available": true,
               "dataset": "TS059",
+              "data_download": "https://www.ons.gov.uk/datasets/TS059/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "Part-time: 30 hours or less worked",
                   "slug": "part-time-30-hours-or-less-worked",
                   "code": "hours_per_week_worked_3a-001",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work",
                   "legend_str_3": "part-time: 30 hours or less"
                 },
@@ -8895,7 +8904,7 @@
                   "name": "Full-time: 31 or more hours worked",
                   "slug": "full-time-31-or-more-hours-worked",
                   "code": "hours_per_week_worked_3a-002",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work",
                   "legend_str_3": "full-time: 31 or more hours"
                 }
@@ -8912,12 +8921,13 @@
               ],
               "comparison_2011_data_available": true,
               "dataset": "TS059",
+              "data_download": "https://www.ons.gov.uk/datasets/TS059/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "Part-time: 15 hours or less worked",
                   "slug": "part-time-15-hours-or-less-worked",
                   "code": "hours_per_week_worked-001",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work",
                   "legend_str_3": "part-time: 15 hours or less"
                 },
@@ -8925,7 +8935,7 @@
                   "name": "Part-time: 16 to 30 hours worked",
                   "slug": "part-time-16-to-30-hours-worked",
                   "code": "hours_per_week_worked-002",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work",
                   "legend_str_3": "part-time: 16 to 30 hours"
                 },
@@ -8933,7 +8943,7 @@
                   "name": "Full-time: 31 to 48 hours worked",
                   "slug": "full-time-31-to-48-hours-worked",
                   "code": "hours_per_week_worked-003",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work",
                   "legend_str_3": "full-time: 31 to 48 hours"
                 },
@@ -8941,7 +8951,7 @@
                   "name": "Full-time: 49 or more hours worked",
                   "slug": "full-time-49-or-more-hours-worked",
                   "code": "hours_per_week_worked-004",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work",
                   "legend_str_3": "full-time: 49 or more hours"
                 }
@@ -8958,7 +8968,7 @@
           "units": "Person",
           "topic_code": "LAB",
           "caveat_text": "There are pandemic-related quality considerations for this variable.",
-          "caveat_link": "https://www.ons.gov.uk/releases/labourmarketandtraveltoworkcensus2021inenglandandwales",
+          "caveat_link": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/methodologies/labourmarketqualityinformationforcensus2021",
           "classifications": [
             {
               "code": "industry_current_88a",
@@ -8971,12 +8981,13 @@
               "choropleth_default": true,
               "comparison_2011_data_available": true,
               "dataset": "TS060",
+              "data_download": "https://www.ons.gov.uk/datasets/TS060/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "01 Crop and animal production, hunting and related service activities",
                   "slug": "01-crop-and-animal-production-hunting-and-related-service-activities",
                   "code": "industry_current_88a-001",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "crop or animal production, hunting or related service activities"
                 },
@@ -8984,7 +8995,7 @@
                   "name": "02 Forestry and logging",
                   "slug": "02-forestry-and-logging",
                   "code": "industry_current_88a-002",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "forestry or logging"
                 },
@@ -8992,7 +9003,7 @@
                   "name": "03 Fishing and aquaculture",
                   "slug": "03-fishing-and-aquaculture",
                   "code": "industry_current_88a-003",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "fishing or aquaculture"
                 },
@@ -9000,7 +9011,7 @@
                   "name": "05 Mining of coal and lignite",
                   "slug": "05-mining-of-coal-and-lignite",
                   "code": "industry_current_88a-004",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "mining of coal and lignite"
                 },
@@ -9008,7 +9019,7 @@
                   "name": "06 Extraction of crude petroleum and natural gas",
                   "slug": "06-extraction-of-crude-petroleum-and-natural-gas",
                   "code": "industry_current_88a-005",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "extraction of crude petroleum and natural gas"
                 },
@@ -9016,7 +9027,7 @@
                   "name": "07 Mining of metal ores",
                   "slug": "07-mining-of-metal-ores",
                   "code": "industry_current_88a-006",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "mining of metal ores"
                 },
@@ -9024,7 +9035,7 @@
                   "name": "08 Other mining and quarrying",
                   "slug": "08-other-mining-and-quarrying",
                   "code": "industry_current_88a-007",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "other mining or quarrying"
                 },
@@ -9032,7 +9043,7 @@
                   "name": "09 Mining support service activities",
                   "slug": "09-mining-support-service-activities",
                   "code": "industry_current_88a-008",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "mining support service activities"
                 },
@@ -9040,7 +9051,7 @@
                   "name": "10 Manufacture of food products",
                   "slug": "10-manufacture-of-food-products",
                   "code": "industry_current_88a-009",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "manufacture of food products"
                 },
@@ -9048,7 +9059,7 @@
                   "name": "11 Manufacture of beverages",
                   "slug": "11-manufacture-of-beverages",
                   "code": "industry_current_88a-010",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "manufacture of beverages"
                 },
@@ -9056,7 +9067,7 @@
                   "name": "12 Manufacture of tobacco products",
                   "slug": "12-manufacture-of-tobacco-products",
                   "code": "industry_current_88a-011",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "manufacture of tobacco products"
                 },
@@ -9064,7 +9075,7 @@
                   "name": "13 Manufacture of textiles",
                   "slug": "13-manufacture-of-textiles",
                   "code": "industry_current_88a-012",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "manufacture of textiles"
                 },
@@ -9072,7 +9083,7 @@
                   "name": "14 Manufacture of wearing apparel",
                   "slug": "14-manufacture-of-wearing-apparel",
                   "code": "industry_current_88a-013",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "manufacture of wearing apparel"
                 },
@@ -9080,7 +9091,7 @@
                   "name": "15 Manufacture of leather and related products",
                   "slug": "15-manufacture-of-leather-and-related-products",
                   "code": "industry_current_88a-014",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "manufacture of leather and related products"
                 },
@@ -9088,7 +9099,7 @@
                   "name": "16 Manufacture of wood and of products of wood and cork, except furniture; manufacture of articles of straw and plaiting materials",
                   "slug": "16-manufacture-of-wood-and-of-products-of-wood-and-cork-except-furniture-manufacture-of-articles-of-straw-and-plaiting-materials",
                   "code": "industry_current_88a-015",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "manufacture of wood and of products of wood or cork (except furniture) or manufacture of articles of straw or plaiting materials"
                 },
@@ -9096,7 +9107,7 @@
                   "name": "17 Manufacture of paper and paper products",
                   "slug": "17-manufacture-of-paper-and-paper-products",
                   "code": "industry_current_88a-016",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "manufacture of paper or paper products"
                 },
@@ -9104,7 +9115,7 @@
                   "name": "18 Printing and reproduction of recorded media",
                   "slug": "18-printing-and-reproduction-of-recorded-media",
                   "code": "industry_current_88a-017",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "printing and reproduction of recorded media"
                 },
@@ -9112,7 +9123,7 @@
                   "name": "19 Manufacture of coke and refined petroleum products",
                   "slug": "19-manufacture-of-coke-and-refined-petroleum-products",
                   "code": "industry_current_88a-018",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "manufacture of coke or refined petroleum products"
                 },
@@ -9120,7 +9131,7 @@
                   "name": "20 Manufacture of chemicals and chemical products",
                   "slug": "20-manufacture-of-chemicals-and-chemical-products",
                   "code": "industry_current_88a-019",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "manufacture of chemicals or chemical products"
                 },
@@ -9128,7 +9139,7 @@
                   "name": "21 Manufacture of basic pharmaceutical products and pharmaceutical preparations",
                   "slug": "21-manufacture-of-basic-pharmaceutical-products-and-pharmaceutical-preparations",
                   "code": "industry_current_88a-020",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "manufacture of basic pharmaceutical products or pharmaceutical preparations"
                 },
@@ -9136,7 +9147,7 @@
                   "name": "22 Manufacture of rubber and plastic products",
                   "slug": "22-manufacture-of-rubber-and-plastic-products",
                   "code": "industry_current_88a-021",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "manufacture of rubber or plastic products"
                 },
@@ -9144,7 +9155,7 @@
                   "name": "23 Manufacture of other non-metallic mineral products",
                   "slug": "23-manufacture-of-other-non-metallic-mineral-products",
                   "code": "industry_current_88a-022",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "manufacture of other non-metallic mineral products"
                 },
@@ -9152,7 +9163,7 @@
                   "name": "24 Manufacture of basic metals",
                   "slug": "24-manufacture-of-basic-metals",
                   "code": "industry_current_88a-023",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "manufacture of basic metals"
                 },
@@ -9160,7 +9171,7 @@
                   "name": "25 Manufacture of fabricated metal products, except machinery and equipment",
                   "slug": "25-manufacture-of-fabricated-metal-products-except-machinery-and-equipment",
                   "code": "industry_current_88a-024",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "manufacture of fabricated metal products, except machinery and equipment"
                 },
@@ -9168,7 +9179,7 @@
                   "name": "26 Manufacture of computer, electrical and optical products",
                   "slug": "26-manufacture-of-computer-electrical-and-optical-products",
                   "code": "industry_current_88a-025",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "manufacture of computer, electrical or optical products"
                 },
@@ -9176,7 +9187,7 @@
                   "name": "27 Manufacture of electrical equipment",
                   "slug": "27-manufacture-of-electrical-equipment",
                   "code": "industry_current_88a-026",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "manufacture of electrical equipment"
                 },
@@ -9184,7 +9195,7 @@
                   "name": "28 Manufacture of machinery and equipment not otherwise specified",
                   "slug": "28-manufacture-of-machinery-and-equipment-not-otherwise-specified",
                   "code": "industry_current_88a-027",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "manufacture of machinery and equipment not otherwise specified"
                 },
@@ -9192,7 +9203,7 @@
                   "name": "29 Manufacture of motor vehicles, trailers and semi-trailers",
                   "slug": "29-manufacture-of-motor-vehicles-trailers-and-semi-trailers",
                   "code": "industry_current_88a-028",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "manufacture of motor vehicles, trailers and semi-trailers"
                 },
@@ -9200,7 +9211,7 @@
                   "name": "30 Manufacture of other transport equipment",
                   "slug": "30-manufacture-of-other-transport-equipment",
                   "code": "industry_current_88a-029",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "manufacture of other transport equipment"
                 },
@@ -9208,7 +9219,7 @@
                   "name": "31 Manufacture of furniture",
                   "slug": "31-manufacture-of-furniture",
                   "code": "industry_current_88a-030",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "manufacture of furniture"
                 },
@@ -9216,7 +9227,7 @@
                   "name": "32 Other Manufacturing",
                   "slug": "32-other-manufacturing",
                   "code": "industry_current_88a-031",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "other manufacturing"
                 },
@@ -9224,7 +9235,7 @@
                   "name": "33 Repair and installation of machinery and equipment",
                   "slug": "33-repair-and-installation-of-machinery-and-equipment",
                   "code": "industry_current_88a-032",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "repair and installation of machinery or equipment"
                 },
@@ -9232,7 +9243,7 @@
                   "name": "35 Electricity, gas, steam and air conditioning supply",
                   "slug": "35-electricity-gas-steam-and-air-conditioning-supply",
                   "code": "industry_current_88a-033",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "electricity, gas, steam or air conditioning supply"
                 },
@@ -9240,7 +9251,7 @@
                   "name": "36 Water collection, treatment and supply",
                   "slug": "36-water-collection-treatment-and-supply",
                   "code": "industry_current_88a-034",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "water collection, treatment or supply"
                 },
@@ -9248,7 +9259,7 @@
                   "name": "37 Sewerage",
                   "slug": "37-sewerage",
                   "code": "industry_current_88a-035",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "sewerage"
                 },
@@ -9256,7 +9267,7 @@
                   "name": "38 Waste collection, treatment and disposal activities; materials recovery",
                   "slug": "38-waste-collection-treatment-and-disposal-activities-materials-recovery",
                   "code": "industry_current_88a-036",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "waste collection, treatment or disposal activities, or materials recovery"
                 },
@@ -9264,7 +9275,7 @@
                   "name": "39 Remediation activities and other waste management services",
                   "slug": "39-remediation-activities-and-other-waste-management-services",
                   "code": "industry_current_88a-037",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "remediation activities or other waste management services"
                 },
@@ -9272,7 +9283,7 @@
                   "name": "41 Construction of buildings; 42 Civil engineering; 43 Specialised construction activities",
                   "slug": "41-construction-of-buildings-42-civil-engineering-43-specialised-construction-activities",
                   "code": "industry_current_88a-038",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "construction of buildings, civil engineering or specialised construction activities"
                 },
@@ -9280,7 +9291,7 @@
                   "name": "45 Wholesale and retail trade and repair of motor vehicles and motorcycles",
                   "slug": "45-wholesale-and-retail-trade-and-repair-of-motor-vehicles-and-motorcycles",
                   "code": "industry_current_88a-039",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "wholesale or retail trade or repair of motor vehicles and motorcycles"
                 },
@@ -9288,7 +9299,7 @@
                   "name": "46 Wholesale trade, except of motor vehicles and motorcycles",
                   "slug": "46-wholesale-trade-except-of-motor-vehicles-and-motorcycles",
                   "code": "industry_current_88a-040",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "wholesale trade, except of motor vehicles and motorcycles"
                 },
@@ -9296,7 +9307,7 @@
                   "name": "47 Retail trade, except of motor vehicles and motorcycles",
                   "slug": "47-retail-trade-except-of-motor-vehicles-and-motorcycles",
                   "code": "industry_current_88a-041",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "retail trade, except of motor vehicles and motorcycles"
                 },
@@ -9304,7 +9315,7 @@
                   "name": "48 Wholesale and retail not otherwise specified",
                   "slug": "48-wholesale-and-retail-not-otherwise-specified",
                   "code": "industry_current_88a-042",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "wholesale or retail trade of a type not otherwise specified"
                 },
@@ -9312,7 +9323,7 @@
                   "name": "49 Land transport and transport via pipelines",
                   "slug": "49-land-transport-and-transport-via-pipelines",
                   "code": "industry_current_88a-043",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "land transport or transport via pipelines"
                 },
@@ -9320,7 +9331,7 @@
                   "name": "50 Water transport",
                   "slug": "50-water-transport",
                   "code": "industry_current_88a-044",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "water transport"
                 },
@@ -9328,7 +9339,7 @@
                   "name": "51 Air transport",
                   "slug": "51-air-transport",
                   "code": "industry_current_88a-045",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "air transport"
                 },
@@ -9336,7 +9347,7 @@
                   "name": "52 Warehousing and support activities for transportation",
                   "slug": "52-warehousing-and-support-activities-for-transportation",
                   "code": "industry_current_88a-046",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "warehousing or support activities for transportation"
                 },
@@ -9344,7 +9355,7 @@
                   "name": "53 Postal and courier activities",
                   "slug": "53-postal-and-courier-activities",
                   "code": "industry_current_88a-047",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "postal or courier activities"
                 },
@@ -9352,7 +9363,7 @@
                   "name": "55 Accommodation",
                   "slug": "55-accommodation",
                   "code": "industry_current_88a-048",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "accommodation"
                 },
@@ -9360,7 +9371,7 @@
                   "name": "56 Food and beverage service activities",
                   "slug": "56-food-and-beverage-service-activities",
                   "code": "industry_current_88a-049",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "food or beverage service activities"
                 },
@@ -9368,7 +9379,7 @@
                   "name": "58 Publishing activities",
                   "slug": "58-publishing-activities",
                   "code": "industry_current_88a-050",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "publishing activities"
                 },
@@ -9376,7 +9387,7 @@
                   "name": "59 Motion picture, video and television production, sound recording and music publishing activities",
                   "slug": "59-motion-picture-video-and-television-production-sound-recording-and-music-publishing-activities",
                   "code": "industry_current_88a-051",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "motion picture, video or television production, or sound recording or music publishing activities"
                 },
@@ -9384,7 +9395,7 @@
                   "name": "60 Programming and broadcasting activities",
                   "slug": "60-programming-and-broadcasting-activities",
                   "code": "industry_current_88a-052",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "programming and broadcasting activities"
                 },
@@ -9392,7 +9403,7 @@
                   "name": "61 Telecommunications",
                   "slug": "61-telecommunications",
                   "code": "industry_current_88a-053",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "telecommunications"
                 },
@@ -9400,7 +9411,7 @@
                   "name": "62 Computer programming, consultancy and related activities",
                   "slug": "62-computer-programming-consultancy-and-related-activities",
                   "code": "industry_current_88a-054",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "computer programming, consultancy or related activities"
                 },
@@ -9408,7 +9419,7 @@
                   "name": "63 Information service activities",
                   "slug": "63-information-service-activities",
                   "code": "industry_current_88a-055",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "information service activities"
                 },
@@ -9416,7 +9427,7 @@
                   "name": "64 Financial service activities, except insurance and pension funding",
                   "slug": "64-financial-service-activities-except-insurance-and-pension-funding",
                   "code": "industry_current_88a-056",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "financial service activities, except insurance and pension funding"
                 },
@@ -9424,7 +9435,7 @@
                   "name": "65 Insurance, reinsurance and pension funding, except compulsory social security",
                   "slug": "65-insurance-reinsurance-and-pension-funding-except-compulsory-social-security",
                   "code": "industry_current_88a-057",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "insurance, reinsurance or pension funding, except compulsory social security"
                 },
@@ -9432,7 +9443,7 @@
                   "name": "66 Activities auxiliary to financial services and insurance activities",
                   "slug": "66-activities-auxiliary-to-financial-services-and-insurance-activities",
                   "code": "industry_current_88a-058",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "activities auxiliary to financial services and insurance activities"
                 },
@@ -9440,7 +9451,7 @@
                   "name": "68 Real estate activities",
                   "slug": "68-real-estate-activities",
                   "code": "industry_current_88a-059",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "real estate activities"
                 },
@@ -9448,7 +9459,7 @@
                   "name": "69 Legal and accounting activities",
                   "slug": "69-legal-and-accounting-activities",
                   "code": "industry_current_88a-060",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "legal or accounting activities"
                 },
@@ -9456,7 +9467,7 @@
                   "name": "70 Activities of head offices; management consultancy activities",
                   "slug": "70-activities-of-head-offices-management-consultancy-activities",
                   "code": "industry_current_88a-061",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "activities of head offices or management consultancy activities"
                 },
@@ -9464,7 +9475,7 @@
                   "name": "71 Architectural and engineering activities; technical testing and analysis",
                   "slug": "71-architectural-and-engineering-activities-technical-testing-and-analysis",
                   "code": "industry_current_88a-062",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "architectural or engineering activities, or technical testing and analysis"
                 },
@@ -9472,7 +9483,7 @@
                   "name": "72 Scientific research and development",
                   "slug": "72-scientific-research-and-development",
                   "code": "industry_current_88a-063",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "scientific research and development"
                 },
@@ -9480,7 +9491,7 @@
                   "name": "73 Advertising and market research",
                   "slug": "73-advertising-and-market-research",
                   "code": "industry_current_88a-064",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "advertising or market research"
                 },
@@ -9488,7 +9499,7 @@
                   "name": "74 Other professional, scientific and technical activities",
                   "slug": "74-other-professional-scientific-and-technical-activities",
                   "code": "industry_current_88a-065",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "other professional, scientific or technical activities"
                 },
@@ -9496,7 +9507,7 @@
                   "name": "75 Veterinary activities",
                   "slug": "75-veterinary-activities",
                   "code": "industry_current_88a-066",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "veterinary activities"
                 },
@@ -9504,7 +9515,7 @@
                   "name": "77 Rental and leasing activities",
                   "slug": "77-rental-and-leasing-activities",
                   "code": "industry_current_88a-067",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "rental or leasing activities"
                 },
@@ -9512,7 +9523,7 @@
                   "name": "78 Employment activities",
                   "slug": "78-employment-activities",
                   "code": "industry_current_88a-068",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "employment activities"
                 },
@@ -9520,7 +9531,7 @@
                   "name": "79 Travel agency, tour operator and other reservation service and related activities",
                   "slug": "79-travel-agency-tour-operator-and-other-reservation-service-and-related-activities",
                   "code": "industry_current_88a-069",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "travel agency, tour operator or other reservation service and related activities"
                 },
@@ -9528,7 +9539,7 @@
                   "name": "80 Security and investigation activities",
                   "slug": "80-security-and-investigation-activities",
                   "code": "industry_current_88a-070",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "security or investigation activities"
                 },
@@ -9536,7 +9547,7 @@
                   "name": "81 Services to buildings and landscape activities",
                   "slug": "81-services-to-buildings-and-landscape-activities",
                   "code": "industry_current_88a-071",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "services to buildings or landscape activities"
                 },
@@ -9544,7 +9555,7 @@
                   "name": "82 Office administrative, office support and other business support activities",
                   "slug": "82-office-administrative-office-support-and-other-business-support-activities",
                   "code": "industry_current_88a-072",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "office administrative, office support or other business support activities"
                 },
@@ -9552,7 +9563,7 @@
                   "name": "84 Public administration and defence; compulsory social security",
                   "slug": "84-public-administration-and-defence-compulsory-social-security",
                   "code": "industry_current_88a-073",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "public administration or defence, or compulsory social security"
                 },
@@ -9560,7 +9571,7 @@
                   "name": "85 Education",
                   "slug": "85-education",
                   "code": "industry_current_88a-074",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "education"
                 },
@@ -9568,7 +9579,7 @@
                   "name": "86 Human health activities",
                   "slug": "86-human-health-activities",
                   "code": "industry_current_88a-075",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "human health activities"
                 },
@@ -9576,7 +9587,7 @@
                   "name": "87 Residential care activities",
                   "slug": "87-residential-care-activities",
                   "code": "industry_current_88a-076",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "residential care activities"
                 },
@@ -9584,7 +9595,7 @@
                   "name": "88 Social work activities without accommodation",
                   "slug": "88-social-work-activities-without-accommodation",
                   "code": "industry_current_88a-077",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "social work activities without accommodation"
                 },
@@ -9592,7 +9603,7 @@
                   "name": "90 Creative, arts and entertainment activities",
                   "slug": "90-creative-arts-and-entertainment-activities",
                   "code": "industry_current_88a-078",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "creative, arts and entertainment activities"
                 },
@@ -9600,7 +9611,7 @@
                   "name": "91 Libraries, archives, museums and other cultural activities",
                   "slug": "91-libraries-archives-museums-and-other-cultural-activities",
                   "code": "industry_current_88a-079",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "libraries, archives, museums and other cultural activities"
                 },
@@ -9608,7 +9619,7 @@
                   "name": "92 Gambling and betting activities",
                   "slug": "92-gambling-and-betting-activities",
                   "code": "industry_current_88a-080",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "gambling and betting activities"
                 },
@@ -9616,7 +9627,7 @@
                   "name": "93 Sports activities and amusement and recreation activities",
                   "slug": "93-sports-activities-and-amusement-and-recreation-activities",
                   "code": "industry_current_88a-081",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "sports activities and amusement and recreation activities"
                 },
@@ -9624,7 +9635,7 @@
                   "name": "94 Activities of membership organisations",
                   "slug": "94-activities-of-membership-organisations",
                   "code": "industry_current_88a-082",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "activities of membership organisations"
                 },
@@ -9632,7 +9643,7 @@
                   "name": "95 Repair of computers and personal and household goods",
                   "slug": "95-repair-of-computers-and-personal-and-household-goods",
                   "code": "industry_current_88a-083",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "repair of computers or personal and household goods"
                 },
@@ -9640,7 +9651,7 @@
                   "name": "96 Other personal service activities",
                   "slug": "96-other-personal-service-activities",
                   "code": "industry_current_88a-084",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "other personal service activities"
                 },
@@ -9648,7 +9659,7 @@
                   "name": "97 Activities of households as employers of domestic personnel",
                   "slug": "97-activities-of-households-as-employers-of-domestic-personnel",
                   "code": "industry_current_88a-085",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "activities of households as employers of domestic personnel"
                 },
@@ -9656,7 +9667,7 @@
                   "name": "98 Undifferentiated goods- and services-producing activities of private households for own use",
                   "slug": "98-undifferentiated-goods-and-services-producing-activities-of-private-households-for-own-use",
                   "code": "industry_current_88a-086",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "undifferentiated goods- and services-producing activities of private households for own use"
                 },
@@ -9664,7 +9675,7 @@
                   "name": "99 Activities of extraterritorial organisations and bodies",
                   "slug": "99-activities-of-extraterritorial-organisations-and-bodies",
                   "code": "industry_current_88a-087",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work in",
                   "legend_str_3": "activities of extraterritorial organisations or bodies"
                 }
@@ -9681,7 +9692,7 @@
           "units": "Person",
           "topic_code": "LAB",
           "caveat_text": "There are pandemic-related quality considerations for this variable.",
-          "caveat_link": "https://www.ons.gov.uk/releases/labourmarketandtraveltoworkcensus2021inenglandandwales",
+          "caveat_link": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/methodologies/labourmarketqualityinformationforcensus2021",
           "classifications": [
             {
               "code": "ns_sec_10a",
@@ -9695,78 +9706,79 @@
               "choropleth_default": true,
               "comparison_2011_data_available": true,
               "dataset": "TS062",
+              "data_download": "https://www.ons.gov.uk/datasets/TS062/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "L1, L2 and L3: Higher managerial, administrative and professional occupations",
                   "slug": "l1-l2-and-l3-higher-managerial-administrative-and-professional-occupations",
                   "code": "ns_sec_10a-001",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "l1, l2 and l3: higher managerial, administrative and professional occupations"
+                  "legend_str_3": "L1, L2 and L3: higher managerial, administrative and professional occupations"
                 },
                 {
                   "name": "L4, L5 and L6: Lower managerial, administrative and professional occupations",
                   "slug": "l4-l5-and-l6-lower-managerial-administrative-and-professional-occupations",
                   "code": "ns_sec_10a-002",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "l4, l5 and l6: lower managerial, administrative and professional occupations"
+                  "legend_str_3": "L4, L5 and L6: lower managerial, administrative and professional occupations"
                 },
                 {
                   "name": "L7: Intermediate occupations",
                   "slug": "l7-intermediate-occupations",
                   "code": "ns_sec_10a-003",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "l7: intermediate occupations"
+                  "legend_str_3": "L7: intermediate occupations"
                 },
                 {
                   "name": "L8 and L9: Small employers and own account workers",
                   "slug": "l8-and-l9-small-employers-and-own-account-workers",
                   "code": "ns_sec_10a-004",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "l8 and l9: small employers and own account workers"
+                  "legend_str_3": "L8 and L9: small employers and own account workers"
                 },
                 {
                   "name": "L10 and L11: Lower supervisory and technical occupations",
                   "slug": "l10-and-l11-lower-supervisory-and-technical-occupations",
                   "code": "ns_sec_10a-005",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "l10 and l11: lower supervisory and technical occupations"
+                  "legend_str_3": "L10 and L11: lower supervisory and technical occupations"
                 },
                 {
                   "name": "L12: Semi-routine occupations",
                   "slug": "l12-semi-routine-occupations",
                   "code": "ns_sec_10a-006",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "l12: semi-routine occupations"
+                  "legend_str_3": "L12: semi-routine occupations"
                 },
                 {
                   "name": "L13: Routine occupations",
                   "slug": "l13-routine-occupations",
                   "code": "ns_sec_10a-007",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "l13: routine occupations"
+                  "legend_str_3": "L13: routine occupations"
                 },
                 {
                   "name": "L14.1 and L14.2: Never worked and long-term unemployed",
                   "slug": "l14-1-and-l14-2-never-worked-and-long-term-unemployed",
                   "code": "ns_sec_10a-008",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "l14.1 and l14.2: never worked and long-term unemployed"
+                  "legend_str_3": "L14.1 and L14.2: never worked and long-term unemployed"
                 },
                 {
                   "name": "L15: Full-time students",
                   "slug": "l15-full-time-students",
                   "code": "ns_sec_10a-009",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "l15: full-time students"
+                  "legend_str_3": "L15: full-time students"
                 }
               ]
             }
@@ -9781,7 +9793,7 @@
           "units": "Person",
           "topic_code": "LAB",
           "caveat_text": "There are pandemic-related quality considerations for this variable.",
-          "caveat_link": "https://www.ons.gov.uk/releases/labourmarketandtraveltoworkcensus2021inenglandandwales",
+          "caveat_link": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/methodologies/labourmarketqualityinformationforcensus2021",
           "classifications": [
             {
               "code": "occupation_current_10a",
@@ -9794,12 +9806,13 @@
               "choropleth_default": true,
               "comparison_2011_data_available": true,
               "dataset": "TS064",
+              "data_download": "https://www.ons.gov.uk/datasets/TS063/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "1. Managers, directors and senior officials",
                   "slug": "1-managers-directors-and-senior-officials",
                   "code": "occupation_current_10a-001",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "managers, directors or senior officials"
                 },
@@ -9807,7 +9820,7 @@
                   "name": "2. Professional occupations",
                   "slug": "2-professional-occupations",
                   "code": "occupation_current_10a-002",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "in professional occupations"
                 },
@@ -9815,7 +9828,7 @@
                   "name": "3. Associate professional and technical occupations",
                   "slug": "3-associate-professional-and-technical-occupations",
                   "code": "occupation_current_10a-003",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "in associate professional or technical occupations"
                 },
@@ -9823,7 +9836,7 @@
                   "name": "4. Administrative and secretarial occupations",
                   "slug": "4-administrative-and-secretarial-occupations",
                   "code": "occupation_current_10a-004",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "in administrative or secretarial occupations"
                 },
@@ -9831,7 +9844,7 @@
                   "name": "5. Skilled trades occupations",
                   "slug": "5-skilled-trades-occupations",
                   "code": "occupation_current_10a-005",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "in skilled trades occupations"
                 },
@@ -9839,7 +9852,7 @@
                   "name": "6. Caring, leisure and other service occupations",
                   "slug": "6-caring-leisure-and-other-service-occupations",
                   "code": "occupation_current_10a-006",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "in caring, leisure or other service occupations"
                 },
@@ -9847,7 +9860,7 @@
                   "name": "7. Sales and customer service occupations",
                   "slug": "7-sales-and-customer-service-occupations",
                   "code": "occupation_current_10a-007",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "in sales or customer service occupations"
                 },
@@ -9855,7 +9868,7 @@
                   "name": "8. Process, plant and machine operatives",
                   "slug": "8-process-plant-and-machine-operatives",
                   "code": "occupation_current_10a-008",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "process, plant or machine operatives"
                 },
@@ -9863,7 +9876,7 @@
                   "name": "9. Elementary occupations",
                   "slug": "9-elementary-occupations",
                   "code": "occupation_current_10a-009",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "in elementary occupations"
                 }
@@ -9880,7 +9893,7 @@
           "units": "Person",
           "topic_code": "TTW",
           "caveat_text": "There are pandemic-related quality considerations for this variable.",
-          "caveat_link": "https://www.ons.gov.uk/releases/labourmarketandtraveltoworkcensus2021inenglandandwales",
+          "caveat_link": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/methodologies/traveltoworkqualityinformationforcensus2021",
           "classifications": [
             {
               "code": "transport_to_workplace_12a",
@@ -9893,12 +9906,13 @@
               "choropleth_default": true,
               "comparison_2011_data_available": true,
               "dataset": "TS061",
+              "data_download": "https://www.ons.gov.uk/datasets/TS061/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "Work mainly at or from home",
                   "slug": "work-mainly-at-or-from-home",
                   "code": "transport_to_workplace_12a-001",
-                  "legend_str_1": "of employed people aged 16 years or over in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work",
                   "legend_str_3": "mainly at or from home"
                 },
@@ -9906,7 +9920,7 @@
                   "name": "Underground, metro, light rail, tram",
                   "slug": "underground-metro-light-rail-tram",
                   "code": "transport_to_workplace_12a-002",
-                  "legend_str_1": "of employed people aged 16 years or over in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "travel to work by",
                   "legend_str_3": "underground, metro, light rail or tram"
                 },
@@ -9914,7 +9928,7 @@
                   "name": "Train",
                   "slug": "train",
                   "code": "transport_to_workplace_12a-003",
-                  "legend_str_1": "of employed people aged 16 years or over in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "travel to work by",
                   "legend_str_3": "train"
                 },
@@ -9922,7 +9936,7 @@
                   "name": "Bus, minibus or coach",
                   "slug": "bus-minibus-or-coach",
                   "code": "transport_to_workplace_12a-004",
-                  "legend_str_1": "of employed people aged 16 years or over in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "travel to work by",
                   "legend_str_3": "bus, minibus or coach"
                 },
@@ -9930,7 +9944,7 @@
                   "name": "Taxi",
                   "slug": "taxi",
                   "code": "transport_to_workplace_12a-005",
-                  "legend_str_1": "of employed people aged 16 years or over in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "travel to work by",
                   "legend_str_3": "taxi"
                 },
@@ -9938,7 +9952,7 @@
                   "name": "Motorcycle, scooter or moped",
                   "slug": "motorcycle-scooter-or-moped",
                   "code": "transport_to_workplace_12a-006",
-                  "legend_str_1": "of employed people aged 16 years or over in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "travel to work by",
                   "legend_str_3": "motorcycle, scooter or moped"
                 },
@@ -9946,7 +9960,7 @@
                   "name": "Driving a car or van",
                   "slug": "driving-a-car-or-van",
                   "code": "transport_to_workplace_12a-007",
-                  "legend_str_1": "of employed people aged 16 years or over in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "travel to work by",
                   "legend_str_3": "driving a car or van"
                 },
@@ -9954,7 +9968,7 @@
                   "name": "Passenger in a car or van",
                   "slug": "passenger-in-a-car-or-van",
                   "code": "transport_to_workplace_12a-008",
-                  "legend_str_1": "of employed people aged 16 years or over in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "travel to work by",
                   "legend_str_3": "passenger in a car or van"
                 },
@@ -9962,7 +9976,7 @@
                   "name": "Bicycle",
                   "slug": "bicycle",
                   "code": "transport_to_workplace_12a-009",
-                  "legend_str_1": "of employed people aged 16 years or over in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "travel to work by",
                   "legend_str_3": "bicycle"
                 },
@@ -9970,7 +9984,7 @@
                   "name": "On foot",
                   "slug": "on-foot",
                   "code": "transport_to_workplace_12a-010",
-                  "legend_str_1": "of employed people aged 16 years or over in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "travel to work",
                   "legend_str_3": "on foot"
                 },
@@ -9978,7 +9992,7 @@
                   "name": "Other method of travel to work",
                   "slug": "other-method-of-travel-to-work",
                   "code": "transport_to_workplace_12a-011",
-                  "legend_str_1": "of employed people aged 16 years or over in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "travel to work",
                   "legend_str_3": "using other means"
                 }
@@ -9995,7 +10009,7 @@
           "units": "Person",
           "topic_code": "TTW",
           "caveat_text": "There are pandemic-related quality considerations for this variable.",
-          "caveat_link": "https://www.ons.gov.uk/releases/labourmarketandtraveltoworkcensus2021inenglandandwales",
+          "caveat_link": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/methodologies/traveltoworkqualityinformationforcensus2021",
           "classifications": [
             {
               "code": "workplace_travel_4a",
@@ -10009,12 +10023,13 @@
               "dot_density_default": true,
               "comparison_2011_data_available": true,
               "dataset": "TS058",
+              "data_download": "https://www.ons.gov.uk/datasets/TS058/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "Less than 10km",
                   "slug": "less-than-10km",
                   "code": "workplace_travel_4a-001",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "travel",
                   "legend_str_3": "less than 10km to work"
                 },
@@ -10022,7 +10037,7 @@
                   "name": "10km and over",
                   "slug": "10km-and-over",
                   "code": "workplace_travel_4a-002",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "travel",
                   "legend_str_3": "10km and over to work"
                 },
@@ -10030,7 +10045,7 @@
                   "name": "Works mainly from home",
                   "slug": "works-mainly-from-home",
                   "code": "workplace_travel_4a-003",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work",
                   "legend_str_3": "mainly from home"
                 },
@@ -10038,7 +10053,7 @@
                   "name": "Other",
                   "slug": "other",
                   "code": "workplace_travel_4a-004",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "other forms of travel to work"
                 }
@@ -10054,12 +10069,13 @@
               ],
               "comparison_2011_data_available": true,
               "dataset": "TS058",
+              "data_download": "https://www.ons.gov.uk/datasets/TS058/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "Less than 10km",
                   "slug": "less-than-10km",
                   "code": "workplace_travel_5a-001",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "travel",
                   "legend_str_3": "less than 10km to work"
                 },
@@ -10067,7 +10083,7 @@
                   "name": "10km to less than 30km",
                   "slug": "10km-to-less-than-30km",
                   "code": "workplace_travel_5a-002",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "travel",
                   "legend_str_3": "10km to less than 30km to work"
                 },
@@ -10075,7 +10091,7 @@
                   "name": "30km and over",
                   "slug": "30km-and-over",
                   "code": "workplace_travel_5a-003",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "travel",
                   "legend_str_3": "30km and over to work"
                 },
@@ -10083,7 +10099,7 @@
                   "name": "Works mainly from home",
                   "slug": "works-mainly-from-home",
                   "code": "workplace_travel_5a-004",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work",
                   "legend_str_3": "mainly from home"
                 },
@@ -10091,7 +10107,7 @@
                   "name": "Other",
                   "slug": "other",
                   "code": "workplace_travel_5a-005",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "other forms of travel to work"
                 }
@@ -10107,12 +10123,13 @@
               ],
               "comparison_2011_data_available": true,
               "dataset": "TS058",
+              "data_download": "https://www.ons.gov.uk/datasets/TS058/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "Less than 2km",
                   "slug": "less-than-2km",
                   "code": "workplace_travel-001",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "travel",
                   "legend_str_3": "less than 2km to work"
                 },
@@ -10120,7 +10137,7 @@
                   "name": "2km to less than 5km",
                   "slug": "2km-to-less-than-5km",
                   "code": "workplace_travel-002",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "travel",
                   "legend_str_3": "2km to less than 5km to work"
                 },
@@ -10128,7 +10145,7 @@
                   "name": "5km to less than 10km",
                   "slug": "5km-to-less-than-10km",
                   "code": "workplace_travel-003",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "travel",
                   "legend_str_3": "5km to less than 10km to work"
                 },
@@ -10136,7 +10153,7 @@
                   "name": "10km to less than 20km",
                   "slug": "10km-to-less-than-20km",
                   "code": "workplace_travel-004",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "travel",
                   "legend_str_3": "10km to less than 20km to work"
                 },
@@ -10144,7 +10161,7 @@
                   "name": "20km to less than 30km",
                   "slug": "20km-to-less-than-30km",
                   "code": "workplace_travel-005",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "travel",
                   "legend_str_3": "20km to less than 30km to work"
                 },
@@ -10152,7 +10169,7 @@
                   "name": "30km to less than 40km",
                   "slug": "30km-to-less-than-40km",
                   "code": "workplace_travel-006",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "travel",
                   "legend_str_3": "30km to less than 40km to work"
                 },
@@ -10160,7 +10177,7 @@
                   "name": "40km to less than 60km",
                   "slug": "40km-to-less-than-60km",
                   "code": "workplace_travel-007",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "travel",
                   "legend_str_3": "40km to less than 60km to work"
                 },
@@ -10168,7 +10185,7 @@
                   "name": "60km and over",
                   "slug": "60km-and-over",
                   "code": "workplace_travel-008",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "travel",
                   "legend_str_3": "60km and over to work"
                 },
@@ -10176,7 +10193,7 @@
                   "name": "Works mainly from home",
                   "slug": "works-mainly-from-home",
                   "code": "workplace_travel-009",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work",
                   "legend_str_3": "mainly from home"
                 },
@@ -10184,7 +10201,7 @@
                   "name": "Works mainly at an offshore installation, in no fixed place, or outside the UK",
                   "slug": "works-mainly-at-an-offshore-installation-in-no-fixed-place-or-outside-the-uk",
                   "code": "workplace_travel-010",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "work",
                   "legend_str_3": "mainly at an offshore location, in no fixed place, or outside the UK"
                 }

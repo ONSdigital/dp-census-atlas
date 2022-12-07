@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-12-07-10-57-59",
+    "created_at": "2022-12-07-14-59-36",
     "spec_file": "2021-content-spec-v33.json",
     "release": "2021-WELSH-SKILLS"
   },
@@ -231,8 +231,8 @@
                   "slug": "cannot-speak-welsh",
                   "code": "welsh_skills_speak-000",
                   "legend_str_1": "of people aged 3 years and over in {location}",
-                  "legend_str_2": "can",
-                  "legend_str_3": "not speak Welsh"
+                  "legend_str_2": "cannot",
+                  "legend_str_3": "speak Welsh"
                 },
                 {
                   "name": "Can speak Welsh",

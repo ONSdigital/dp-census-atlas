@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-12-07-09-58-40",
+    "created_at": "2022-12-07-10-57-59",
     "spec_file": "2021-content-spec-v33.json",
     "release": "2021-TTW"
   },
@@ -19,7 +19,7 @@
           "units": "Person",
           "topic_code": "TTW",
           "caveat_text": "There are pandemic-related quality considerations for this variable.",
-          "caveat_link": "https://www.ons.gov.uk/releases/labourmarketandtraveltoworkcensus2021inenglandandwales",
+          "caveat_link": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/methodologies/traveltoworkqualityinformationforcensus2021",
           "classifications": [
             {
               "code": "transport_to_workplace_12a",
@@ -135,7 +135,7 @@
           "units": "Person",
           "topic_code": "TTW",
           "caveat_text": "There are pandemic-related quality considerations for this variable.",
-          "caveat_link": "https://www.ons.gov.uk/releases/labourmarketandtraveltoworkcensus2021inenglandandwales",
+          "caveat_link": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/methodologies/traveltoworkqualityinformationforcensus2021",
           "classifications": [
             {
               "code": "workplace_travel_4a",

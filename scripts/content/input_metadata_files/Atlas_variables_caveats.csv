@@ -43,11 +43,11 @@ Population,migrant_ind,MIG,,
 Population,passports_all,MIG,,
 Population,residence_length,MIG,,
 Population,year_arrival_uk,MIG,,
-Work,economic_activity,LAB,There are pandemic-related quality considerations for this variable.,https://www.ons.gov.uk/releases/labourmarketandtraveltoworkcensus2021inenglandandwales
-Work,has_ever_worked,LAB,There are pandemic-related quality considerations for this variable.,https://www.ons.gov.uk/releases/labourmarketandtraveltoworkcensus2021inenglandandwales
-Work,hours_per_week_worked,LAB,There are pandemic-related quality considerations for this variable.,https://www.ons.gov.uk/releases/labourmarketandtraveltoworkcensus2021inenglandandwales
-Work,industry_current,LAB,There are pandemic-related quality considerations for this variable.,https://www.ons.gov.uk/releases/labourmarketandtraveltoworkcensus2021inenglandandwales
-Work,ns_sec,LAB,There are pandemic-related quality considerations for this variable.,https://www.ons.gov.uk/releases/labourmarketandtraveltoworkcensus2021inenglandandwales
-Work,occupation_current,LAB,There are pandemic-related quality considerations for this variable.,https://www.ons.gov.uk/releases/labourmarketandtraveltoworkcensus2021inenglandandwales
-Work,transport_to_workplace,TTW,There are pandemic-related quality considerations for this variable.,https://www.ons.gov.uk/releases/labourmarketandtraveltoworkcensus2021inenglandandwales
-Work,workplace_travel,TTW,There are pandemic-related quality considerations for this variable.,https://www.ons.gov.uk/releases/labourmarketandtraveltoworkcensus2021inenglandandwales
+Work,economic_activity,LAB,There are pandemic-related quality considerations for this variable.,https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/methodologies/labourmarketqualityinformationforcensus2021
+Work,has_ever_worked,LAB,There are pandemic-related quality considerations for this variable.,https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/methodologies/labourmarketqualityinformationforcensus2021
+Work,hours_per_week_worked,LAB,There are pandemic-related quality considerations for this variable.,https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/methodologies/labourmarketqualityinformationforcensus2021
+Work,industry_current,LAB,There are pandemic-related quality considerations for this variable.,https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/methodologies/labourmarketqualityinformationforcensus2021
+Work,ns_sec,LAB,There are pandemic-related quality considerations for this variable.,https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/methodologies/labourmarketqualityinformationforcensus2021
+Work,occupation_current,LAB,There are pandemic-related quality considerations for this variable.,https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/methodologies/labourmarketqualityinformationforcensus2021
+Work,transport_to_workplace,TTW,There are pandemic-related quality considerations for this variable.,https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/methodologies/traveltoworkqualityinformationforcensus2021
+Work,workplace_travel,TTW,There are pandemic-related quality considerations for this variable.,https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/methodologies/traveltoworkqualityinformationforcensus2021

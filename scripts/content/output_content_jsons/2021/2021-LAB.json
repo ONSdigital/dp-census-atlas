@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-12-07-09-58-40",
+    "created_at": "2022-12-07-10-57-59",
     "spec_file": "2021-content-spec-v33.json",
     "release": "2021-LAB"
   },
@@ -19,7 +19,7 @@
           "units": "Person",
           "topic_code": "LAB",
           "caveat_text": "There are pandemic-related quality considerations for this variable.",
-          "caveat_link": "https://www.ons.gov.uk/releases/labourmarketandtraveltoworkcensus2021inenglandandwales",
+          "caveat_link": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/methodologies/labourmarketqualityinformationforcensus2021",
           "classifications": [
             {
               "code": "economic_activity_status_3a",
@@ -183,15 +183,15 @@
           ]
         },
         {
-          "name": "Unemployment history",
+          "name": "Employment history",
           "code": "has_ever_worked",
           "slug": "unemployment-history",
-          "desc": "Whether people who are unemployed have been unemployed short-term, long-term, or have never worked.",
+          "desc": "The employment history of people who are currently not working.",
           "long_desc": "Classifies people currently not working into:\n\n* those who have not worked in the last 12 months (short-term unemployed)\n* those who have worked, but not in the last 12 months (long-term unemployed)\n* those who have never worked (includes those who are unemployed and economically inactive)",
           "units": "Person",
           "topic_code": "LAB",
           "caveat_text": "There are pandemic-related quality considerations for this variable.",
-          "caveat_link": "https://www.ons.gov.uk/releases/labourmarketandtraveltoworkcensus2021inenglandandwales",
+          "caveat_link": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/methodologies/labourmarketqualityinformationforcensus2021",
           "classifications": [
             {
               "code": "has_ever_worked",
@@ -209,24 +209,24 @@
               "data_download": "https://www.nomisweb.co.uk/datasets/c2021ts065",
               "categories": [
                 {
-                  "name": "Short-term unemployed: Worked in the last 12 months",
-                  "slug": "short-term-unemployed-worked-in-the-last-12-months",
+                  "name": "Not in employment: Worked in the last 12 months",
+                  "slug": "not-in-employment-worked-in-the-last-12-months",
                   "code": "has_ever_worked-001",
                   "legend_str_1": "of people aged 16 years and over not in employment in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "short-term unemployed: worked in the last 12 months"
+                  "legend_str_2": "have",
+                  "legend_str_3": "worked in the last 12 months"
                 },
                 {
-                  "name": "Long-term unemployed: Not worked in the last 12 months",
-                  "slug": "long-term-unemployed-not-worked-in-the-last-12-months",
+                  "name": "Not in employment: Not worked in the last 12 months",
+                  "slug": "not-in-employment-not-worked-in-the-last-12-months",
                   "code": "has_ever_worked-002",
                   "legend_str_1": "of people aged 16 years and over not in employment in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "long-term unemployed: not worked in the last 12 months"
+                  "legend_str_2": "have",
+                  "legend_str_3": "not worked in the last 12 months"
                 },
                 {
-                  "name": "Never worked",
-                  "slug": "never-worked",
+                  "name": "Not in employment: Never worked",
+                  "slug": "not-in-employment-never-worked",
                   "code": "has_ever_worked-003",
                   "legend_str_1": "of people aged 16 years and over not in employment in {location}",
                   "legend_str_2": "have",
@@ -245,7 +245,7 @@
           "units": "Person",
           "topic_code": "LAB",
           "caveat_text": "There are pandemic-related quality considerations for this variable.",
-          "caveat_link": "https://www.ons.gov.uk/releases/labourmarketandtraveltoworkcensus2021inenglandandwales",
+          "caveat_link": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/methodologies/labourmarketqualityinformationforcensus2021",
           "classifications": [
             {
               "code": "hours_per_week_worked_3a",
@@ -338,7 +338,7 @@
           "units": "Person",
           "topic_code": "LAB",
           "caveat_text": "There are pandemic-related quality considerations for this variable.",
-          "caveat_link": "https://www.ons.gov.uk/releases/labourmarketandtraveltoworkcensus2021inenglandandwales",
+          "caveat_link": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/methodologies/labourmarketqualityinformationforcensus2021",
           "classifications": [
             {
               "code": "industry_current_88a",
@@ -1062,7 +1062,7 @@
           "units": "Person",
           "topic_code": "LAB",
           "caveat_text": "There are pandemic-related quality considerations for this variable.",
-          "caveat_link": "https://www.ons.gov.uk/releases/labourmarketandtraveltoworkcensus2021inenglandandwales",
+          "caveat_link": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/methodologies/labourmarketqualityinformationforcensus2021",
           "classifications": [
             {
               "code": "ns_sec_10a",
@@ -1163,7 +1163,7 @@
           "units": "Person",
           "topic_code": "LAB",
           "caveat_text": "There are pandemic-related quality considerations for this variable.",
-          "caveat_link": "https://www.ons.gov.uk/releases/labourmarketandtraveltoworkcensus2021inenglandandwales",
+          "caveat_link": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/methodologies/labourmarketqualityinformationforcensus2021",
           "classifications": [
             {
               "code": "occupation_current_10a",

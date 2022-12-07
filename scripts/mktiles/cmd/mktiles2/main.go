@@ -217,7 +217,7 @@ func loadMetrics(dir string, atlas *geo.Atlas, m *metric2.M, doFake, doRatios bo
 	//	}
 	//}
 	log.Printf("loading metrics files")
-	if err := m.LoadAll(dir); err != nil {
+	if err := m.LoadAll(dir, MSOA_NAMES_CSV); err != nil {
 		return err
 	}
 	if doRatios {

@@ -241,7 +241,7 @@ func Test_ImportCSV(t *testing.T) {
 
 		Convey("When a single-column CSV is imported", func() {
 			records := [][]string{
-				{"GeographyCode"},
+				{"Geography Code"}, // also tests fuzzy (0,0) comparison
 				{"geoA"},
 			}
 			err := m.ImportCSV(records)

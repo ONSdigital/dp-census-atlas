@@ -43,7 +43,8 @@ const testCases = [
   {
     name: "LAB",
     url: "/choropleth/work/hours-worked/hours-per-week-worked-3a/part-time-30-hours-or-less-worked?lad=E07000203",
-    legendText: "4.4% of employed people aged 16 years or over in Mid Suffolk LAD work part-time: 30 hours or less",
+    legendText:
+      "4.4% of people aged 16 years and over in employment in Mid Suffolk LAD work part-time: 30 hours or less",
     categoryCount: 2,
     nextClassificationCategoryCount: 4,
   },
@@ -66,7 +67,7 @@ const testCases = [
     name: "TTW",
     url: "/choropleth/work/distance-travelled-to-work/workplace-travel-4a/10km-and-over?msoa=E02003657",
     legendText:
-      "86.5% of employed people aged 16 years or over in Granborough, Stewkley & Great Brickhill MSOA travel 10km and over to work",
+      "86.5% of people aged 16 years and over in employment in Granborough, Stewkley & Great Brickhill MSOA travel 10km and over to work",
     categoryCount: 4,
     nextClassificationCategoryCount: 5,
   },

@@ -50,8 +50,8 @@ const filterPostcodeResults = (q: string, postcodes: PostcodeSearchItem[]): Post
   if (matchesOriginalQuery.length > 0) {
     return matchesOriginalQuery;
   }
-  const matchesWOSpaces = postcodes
+  const matchesQueryWithSpacesRemoved = postcodes
     .filter((pcd) => pcd.value.toUpperCase().replace(/\s/g, "").includes(q.toUpperCase().replace(/\s/g, "")))
     .slice(0, maxPostcodeResults);
-  return matchesWOSpaces;
+  return matchesQueryWithSpacesRemoved;
 };

@@ -1,4 +1,4 @@
-﻿variable_mnemonic,Short definition,Atlas short description,Atlas notes
+variable_mnemonic,Short definition,Atlas short description,Atlas notes
 accommodation_type,The type of building or structure used or available by an individual or household.,The type of buildings people live in.,
 age_arrival_uk,The age that someone who was not born in the UK was when they last arrived to live in the UK. This does not include returning from a holiday or short stay outside of the UK.,The age people were when they arrived to live in the UK.,
 alternative_address_indicator,An address (in or out of the UK) a person stays at for more than 30 days per year that is not their place of usual residence.,An address (in or out of the UK) a person stays at for more than 30 days per year that isn't their place of usual residence.,
@@ -8,7 +8,7 @@ economic_activity,"People aged 16 years and over who were in employment, looking
 english_proficiency,How well people speak English.,"How well people whose main language is not English (or in Wales, English or Welsh) speak English",
 ethnic_group_tb,"The ethnic group that the person completing the census feels they belong to. This could be based on their culture, family background, identity or physical appearance.",The ethnic group a person identifies with.,
 gender_identity,Classifies people according to the responses to the gender identity question.,The gender identity recorded by the person completing the census.,
-has_ever_worked,,"Whether people who are unemployed have been unemployed short-term, long-term, or have never worked.",
+has_ever_worked,,The employment history of people who are currently not working.,
 health_in_general,A person's assessment of the general state of their health from very good to very bad. This assessment is not based on a person's health over any specified period of time.,How people rate their general health.,
 heating_type,Central heating is a heating system used to heat multiple rooms in a building.,Central heating is a heating system used to heat multiple rooms in a building.,
 hh_deprivation,"If a household is deprived, based on employment, education, health and disability, and overcrowding.",Whether a household is deprived in one or more ways.,

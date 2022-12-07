@@ -29,9 +29,7 @@ const fetchGeographySearchItems = async (q: string): Promise<GeographySearchItem
 const fetchPostcodeSearchItems = async (q: string): Promise<PostcodeSearchItem[]> => {
   try {
     const pcdPrefix = q.toUpperCase().replace(/\s/g, "").slice(0, 4);
-    const response = await fetch(
-      `https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/postcodeLkup/${pcdPrefix}.json`,
-    );
+    const response = await fetch(`https://cdn.ons.gov.uk/maptiles/postcode-oa-lookup/2022-08/${pcdPrefix}.json`);
     const json = await response.json();
     const postcodeResults = json.map((postcode) => ({ kind: "Postcode", value: postcode.pcd, oa: postcode.oa }));
     return filterPostcodeResults(q, postcodeResults);

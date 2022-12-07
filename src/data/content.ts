@@ -105,6 +105,15 @@ const welshSkills = {
   fakeDataBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021",
   realDataBaseUrl: "https://ons-dp-prod-census-maps-welsh-skills.s3.eu-west-2.amazonaws.com",
 };
+const comp2011Test = {
+  localContentJsonUrl: "http://localhost:8090/2011-COMP-TEST.json",
+  publicContentJsonUrl:
+    "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2011-comparison-test/2011-COMP-TEST.json",
+  prodPubContentJsonUrl: "",
+  prodWebContentJsonUrl: "",
+  fakeDataBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
+  realDataBaseUrl: "",
+};
 
 // envs / instances
 export default {
@@ -113,7 +122,7 @@ export default {
   dev: {
     publishing: [],
     web: [
-      // zero is published
+      // // zero is published
       {
         contentJsonUrl: zero.localContentJsonUrl,
         contentBaseUrl: zero.realDataBaseUrl,

@@ -1,0 +1,74 @@
+{
+  "content": [
+    {
+      "topics": [
+        {
+          "variables": [
+            {
+              "classifications": [
+                {
+                  "code": "highest_qualification_6a",
+                  "categories": [
+                    {
+                      "name": "No qualifications",
+                      "code": "highest_qualification_6a-000"
+                    },
+                    {
+                      "name": "Highest level of qualification: Level 1, 2 or 3 qualifications",
+                      "code": "highest_qualification_6a-001"
+                    },
+                    {
+                      "name": "Highest level of qualification: Apprenticeship",
+                      "code": "highest_qualification_6a-002"
+                    },
+                    {
+                      "name": "Highest level of qualification: Level 4 qualifications and above",
+                      "code": "highest_qualification_6a-003"
+                    },
+                    {
+                      "name": "Highest level of qualification: Other qualifications",
+                      "code": "highest_qualification_6a-004"
+                    }
+                  ]
+                },
+                {
+                  "code": "highest_qualification",
+                  "categories": [
+                    {
+                      "name": "No qualifications",
+                      "code": "highest_qualification-000"
+                    },
+                    {
+                      "name": "Level 1 and entry level qualifications: 1 to 4 GCSEs grade A* to C , Any GCSEs at other grades, O levels or CSEs (any grades), 1 AS level, NVQ level 1, Foundation GNVQ, Basic or Essential Skills",
+                      "code": "highest_qualification-001"
+                    },
+                    {
+                      "name": "Level 2 qualifications: 5 or more GCSEs (A* to C or 9 to 4), O levels (passes), CSEs (grade 1), School Certification, 1 A level, 2 to 3 AS levels, VCEs, Intermediate or Higher Diploma, Welsh Baccalaureate Intermediate Diploma, NVQ level 2, Intermediate GNVQ, City and Guilds Craft, BTEC First or General Diploma, RSA Diploma",
+                      "code": "highest_qualification-002"
+                    },
+                    {
+                      "name": "Apprenticeship",
+                      "code": "highest_qualification-003"
+                    },
+                    {
+                      "name": "Level 3 qualifications: 2 or more A levels or VCEs, 4 or more AS levels, Higher School Certificate, Progression or Advanced Diploma, Welsh Baccalaureate Advance Diploma, NVQ level 3; Advanced GNVQ, City and Guilds Advanced Craft, ONC, OND, BTEC National, RSA Advanced Diploma",
+                      "code": "highest_qualification-004"
+                    },
+                    {
+                      "name": "Level 4 qualifications and above: degree (BA, BSc), higher degree (MA, PhD, PGCE), NVQ level 4 to 5, HNC, HND, RSA Higher Diploma, BTEC Higher level, professional qualifications (for example, teaching, nursing, accountancy)",
+                      "code": "highest_qualification-005"
+                    },
+                    {
+                      "name": "Other: vocational or work-related qualifications, other qualifications achieved in England or Wales, qualifications achieved outside England or Wales (equivalent not stated or unknown)",
+                      "code": "highest_qualification-006"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

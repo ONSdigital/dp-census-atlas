@@ -116,6 +116,8 @@ func (m *M) Load(fname string) error {
 }
 
 func (m *M) ImportCSV(records [][]string) error {
+	var imported int
+
 	if len(records) < 2 {
 		return errors.New("not enough rows")
 	}
@@ -125,6 +127,7 @@ func (m *M) ImportCSV(records [][]string) error {
 	if records[0][0] != "GeographyCode" {
 		return errors.New("not a metrics file")
 	}
+	log.Printf("%d data rows in CSV\n", len(records)-1)
 
 	// create mapping from CSV row number to m.tab row number
 	rowmap := m.mapCSVgeos(records)
@@ -137,6 +140,7 @@ func (m *M) ImportCSV(records [][]string) error {
 		if !ok {
 			tabcol, ok = m.totidx[types.Category(catcode)]
 			if !ok {
+				log.Printf("ignoring CSV col %q\n", catcode)
 				continue // this category not wanted
 			}
 		}
@@ -161,15 +165,18 @@ func (m *M) ImportCSV(records [][]string) error {
 				return fmt.Errorf("row %d: col %d: %w", csvrow, csvcol, err)
 			}
 			m.tab[tabrow][tabcol] = types.Value(v)
+			imported++
 		}
 	}
 
+	log.Printf("imported %d cells from CSV\n", imported)
 	return nil
 }
 
 // mapCSVgeos creates a mapping from CSV row number to m.tab row number
 // based on each row's geocode.
 func (m *M) mapCSVgeos(records [][]string) map[int]int {
+	var missing int
 	idx := make(map[int]int, len(records))
 	for csvrow, record := range records {
 		if csvrow == 0 {
@@ -178,9 +185,11 @@ func (m *M) mapCSVgeos(records [][]string) map[int]int {
 		tabrow, ok := m.geoidx[types.Geocode(record[0])]
 		if !ok {
 			tabrow = -1
+			missing++
 		}
 		idx[csvrow] = tabrow
 	}
+	log.Printf("%d geos in CSV, but not in geojson\n", missing)
 	return idx
 }
 

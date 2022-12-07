@@ -34,9 +34,11 @@ func main() {
 	doRatios := flag.Bool("R", false, "calculate percentages (eg 2011 data)")
 	doFake := flag.Bool("F", false, "generate fake metrics")
 	force := flag.Bool("f", false, "force using an existing out directory")
+	classCode := flag.String("C", "", "classification code to match in content.json (blank means all)")
 	flag.Parse()
 
 	log.Printf("            input dir: %s", *indir)
+	log.Printf("  classification code: %s", *classCode)
 	log.Printf("           output dir: %s", *outdir)
 	log.Printf("          calc ratios: %t", *doRatios)
 	log.Printf("generate fake metrics: %t", *doFake)
@@ -81,7 +83,11 @@ func main() {
 	//
 	// load metrics or generate fake metrics
 	//
-	m.WantCats(cont.Categories())
+	wantcats, err := cont.Categories(*classCode)
+	if err != nil {
+		log.Fatal(err)
+	}
+	m.WantCats(wantcats)
 	if err := loadMetrics(*indir, atlas, m, *doFake, *doRatios); err != nil {
 		log.Fatal(err)
 	}
@@ -140,7 +146,7 @@ func loadGeojson(dir string, atlas *geo.Atlas) error {
 	for _, geotype := range []types.Geotype{geo.LAD, geo.LSOA, geo.MSOA, geo.OA} {
 		fname := filepath.Join(dir, geotype.Pathname()+".geojson")
 		log.Printf("loading %ss", geotype)
-		if err := atlas.LoadCollection(fname, geotype); err != nil {
+		if _, err := atlas.LoadCollection(fname, geotype); err != nil {
 			if !errors.Is(err, fs.ErrNotExist) {
 				return err
 			}

@@ -1,0 +1,33 @@
+{
+  "content": [
+    {
+      "variables": [
+        {
+          "classifications": [
+            {
+              "code": "uk_armed_forces",
+              "categories": [
+                {
+                  "name": "Previously served in UK armed forces",
+                  "code": "uk_armed_forces-001"
+                },
+                {
+                  "name": "Previously served in UK reserve armed forces",
+                  "code": "uk_armed_forces-002"
+                },
+                {
+                  "name": "Previously served in both regular and reserve UK armed forces",
+                  "code": "uk_armed_forces-003"
+                },
+                {
+                  "name": "Has not previously served in any UK armed forces",
+                  "code": "uk_armed_forces-004"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

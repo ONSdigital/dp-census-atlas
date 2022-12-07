@@ -9,7 +9,7 @@ import (
 
 func Test_GeoLookup(t *testing.T) {
 	a := New()
-	if err := a.LoadCollection("testdata/geolookup-in.geojson", LAD); err != nil {
+	if _, err := a.LoadCollection("testdata/geolookup-in.geojson", LAD); err != nil {
 		t.Fatalf("%s", err)
 	}
 

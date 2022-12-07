@@ -36,6 +36,7 @@ func main() {
 	doFake := flag.Bool("F", false, "generate fake metrics")
 	force := flag.Bool("f", false, "force using an existing out directory")
 	contentName := flag.String("c", "", "path to content.json (default content.json within input dir)")
+	classCode := flag.String("C", "", "classification code to match in content.json (blank means all)")
 	flag.Parse()
 
 	if *contentName == "" {
@@ -43,6 +44,7 @@ func main() {
 	}
 	log.Printf("            input dir: %s", *indir)
 	log.Printf("         content.json: %s", *contentName)
+	log.Printf("  classification code: %s", *classCode)
 	log.Printf("           output dir: %s", *outdir)
 	log.Printf("          calc ratios: %t", *doRatios)
 	log.Printf("generate fake metrics: %t", *doFake)
@@ -86,7 +88,12 @@ func main() {
 	//
 	// load metrics or generate fake metrics
 	//
-	m, err := metric2.New(atlas.Geocodes(), strings2cats(cont.Categories()), *doRatios)
+	wantcats, err := cont.Categories(*classCode)
+	if err != nil {
+		log.Fatal(err)
+	}
+	log.Printf("found %d categories", len(wantcats))
+	m, err := metric2.New(atlas.Geocodes(), strings2cats(wantcats), *doRatios)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -101,6 +108,9 @@ func main() {
 	grid, err := grid.Load(filepath.Join(*indir, GRID_JSON))
 	if err != nil {
 		log.Fatal(err)
+	}
+	for geocode, items := range grid {
+		log.Printf("found %d %s quads in grid file\n", len(items), geocode)
 	}
 
 	//
@@ -148,13 +158,15 @@ func loadGeojson(dir string, atlas *geo.Atlas) error {
 	for _, geotype := range []types.Geotype{geo.LAD, geo.LSOA, geo.MSOA, geo.OA} {
 		fname := filepath.Join(dir, geotype.Pathname()+".geojson")
 		log.Printf("loading %ss", geotype)
-		if err := atlas.LoadCollection(fname, geotype); err != nil {
+		nfound, err := atlas.LoadCollection(fname, geotype)
+		if err != nil {
 			if !errors.Is(err, fs.ErrNotExist) {
 				return err
 			}
 			log.Printf("no %s file to load", fname)
 			continue
 		}
+		log.Printf("found %d %s geocodes", nfound, geotype)
 
 		if geotype == geo.MSOA {
 			log.Printf("loading MSOA names file")
@@ -238,6 +250,7 @@ func generateTiles(grid map[types.Geotype][]grid.Quad, dir string, atlas *geo.At
 				log.Print(err)
 				continue
 			}
+			log.Printf("%s %s: %d quad intersections\n", geotype, quad.Tilename, len(geos))
 			tiledir := filepath.Join(typedir, quad.Tilename)
 			if err := os.MkdirAll(tiledir, 0755); err != nil {
 				return err

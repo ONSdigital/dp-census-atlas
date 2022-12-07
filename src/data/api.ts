@@ -84,6 +84,11 @@ export const fetchBreaks = async (args: {
     breaksRaw[args.category.code][`${args.geoType.toUpperCase()}_min_max`][0],
     ...breaksRaw[args.category.code][args.geoType.toUpperCase()],
   ]);
+  // SPIIKKKEEE always include zero if there are both negative and positive numbers
+  if (breaks[0] < 0 && breaks[breaks.length - 1] > 0 && !breaks.includes(0)) {
+    breaks.push(0);
+    breaks.sort();
+  }
   return { breaks };
 };
 

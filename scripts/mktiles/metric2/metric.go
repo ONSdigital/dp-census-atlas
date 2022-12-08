@@ -167,6 +167,10 @@ func (m *M) ImportCSV(records [][]string) error {
 			if !math.IsNaN(float64(cur)) {
 				return fmt.Errorf("row %d: col %d: duplicate", csvrow, csvcol)
 			}
+			if record[csvcol] == "NA" {
+				log.Printf("NA in row %d: col %d: skipping", csvrow, csvcol)
+				continue // skip NA rows
+			}
 			v, err := strconv.ParseFloat(record[csvcol], 64)
 			if err != nil {
 				return fmt.Errorf("row %d: col %d: %w", csvrow, csvcol, err)

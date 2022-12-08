@@ -241,7 +241,7 @@ func Test_ImportCSV(t *testing.T) {
 
 		Convey("When a single-column CSV is imported", func() {
 			records := [][]string{
-				{"GeographyCode"},
+				{"Geography Code"}, // also tests fuzzy (0,0) comparison
 				{"geoA"},
 			}
 			err := m.ImportCSV(records)
@@ -419,12 +419,15 @@ func Test_MakeTiles(t *testing.T) {
 func withTempDir(f func(dir string)) func() {
 	return func() {
 		dir, err := os.MkdirTemp("", "mktiles")
-		Printf("tmpdir = %s", dir)
 		So(err, ShouldBeNil)
+		defer func() {
+			if os.Getenv("TEST_KEEP_TMP") != "" {
+				Printf("Test results are are in %s\n", dir)
+			} else {
+				os.RemoveAll(dir)
+			}
+		}()
 		f(dir)
-		// Don't use defer to remove dir.
-		// If a test fails we want to look at the output. XXX does this work?
-		os.RemoveAll(dir)
 	}
 }
 
@@ -508,21 +511,41 @@ func Test_MakeBreaks(t *testing.T) {
 			So(err, ShouldBeNil)
 
 			Convey("correct breaks files should be produced", withTempDir(func(tmpdir string) {
-				err := m.MakeBreaks(tmpdir, lookup)
+				bdir := filepath.Join(tmpdir, "breaks")
+				ckdir := filepath.Join(tmpdir, "ckbreaks")
+				err := m.MakeBreaks(bdir, ckdir, lookup)
+
 				Convey("no errors", func() {
 					So(err, ShouldBeNil)
 				})
-				Convey("type1 files correct", func() {
+
+				// diffr.CompareDirs doesn't follow subdirectories
+				// so we have to compare directory by directory
+				Convey("type1 breaks files correct", func() {
 					err := diffr.CompareDirs(
-						filepath.Join(tmpdir, "type1"),
+						filepath.Join(bdir, "type1"),
 						"testdata/breaks/type1",
 					)
 					So(err, ShouldBeNil)
 				})
-				Convey("type2 files correct", func() {
+				Convey("type2 breaks files correct", func() {
 					err := diffr.CompareDirs(
-						filepath.Join(tmpdir, "type2"),
+						filepath.Join(bdir, "type2"),
 						"testdata/breaks/type2",
+					)
+					So(err, ShouldBeNil)
+				})
+				Convey("type1 ckbreaks files correct", func() {
+					err := diffr.CompareDirs(
+						filepath.Join(ckdir, "type1"),
+						"testdata/ckbreaks/type1",
+					)
+					So(err, ShouldBeNil)
+				})
+				Convey("type2 ckbreaks files correct", func() {
+					err := diffr.CompareDirs(
+						filepath.Join(ckdir, "type2"),
+						"testdata/ckbreaks/type2",
 					)
 					So(err, ShouldBeNil)
 				})

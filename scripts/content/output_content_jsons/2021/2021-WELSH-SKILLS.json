@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-11-28-16-50-41",
-    "spec_file": "2021-content-spec-v7.json",
+    "created_at": "2022-12-07-14-59-36",
+    "spec_file": "2021-content-spec-v33.json",
     "release": "2021-WELSH-SKILLS"
   },
   "content": [
@@ -32,12 +32,13 @@
               "dot_density_default": true,
               "comparison_2011_data_available": true,
               "dataset": "TS032",
+              "data_download": "https://www.ons.gov.uk/datasets/TS032/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "Can understand spoken Welsh only",
                   "slug": "can-understand-spoken-welsh-only",
                   "code": "welsh_skills_all_4b-000",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "can",
                   "legend_str_3": "understand spoken Welsh only"
                 },
@@ -45,7 +46,7 @@
                   "name": "Can speak, read or write Welsh",
                   "slug": "can-speak-read-or-write-welsh",
                   "code": "welsh_skills_all_4b-001",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "can",
                   "legend_str_3": "speak, read or write Welsh"
                 },
@@ -53,7 +54,7 @@
                   "name": "No skills in Welsh",
                   "slug": "no-skills-in-welsh",
                   "code": "welsh_skills_all_4b-002",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "no skills in Welsh"
                 }
@@ -70,12 +71,13 @@
               ],
               "comparison_2011_data_available": true,
               "dataset": "TS032",
+              "data_download": "https://www.ons.gov.uk/datasets/TS032/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "Can understand spoken Welsh only",
                   "slug": "can-understand-spoken-welsh-only",
                   "code": "welsh_skills_all_6a-000",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "can",
                   "legend_str_3": "understand spoken Welsh only"
                 },
@@ -83,7 +85,7 @@
                   "name": "Can speak, read and write Welsh",
                   "slug": "can-speak-read-and-write-welsh",
                   "code": "welsh_skills_all_6a-001",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "can",
                   "legend_str_3": "speak, read and write Welsh"
                 },
@@ -91,7 +93,7 @@
                   "name": "Can speak and other combinations of skills in Welsh",
                   "slug": "can-speak-and-other-combinations-of-skills-in-welsh",
                   "code": "welsh_skills_all_6a-002",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "can",
                   "legend_str_3": "speak and other combinations of skills in Welsh"
                 },
@@ -99,7 +101,7 @@
                   "name": "Other combination of skills in Welsh",
                   "slug": "other-combination-of-skills-in-welsh",
                   "code": "welsh_skills_all_6a-003",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "another combination of skills in Welsh"
                 },
@@ -107,7 +109,7 @@
                   "name": "No skills in Welsh",
                   "slug": "no-skills-in-welsh",
                   "code": "welsh_skills_all_6a-004",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "no skills in Welsh"
                 }
@@ -124,12 +126,13 @@
               ],
               "comparison_2011_data_available": true,
               "dataset": "TS032",
+              "data_download": "https://www.ons.gov.uk/datasets/TS032/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "Can understand spoken Welsh only",
                   "slug": "can-understand-spoken-welsh-only",
                   "code": "welsh_skills_all-000",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "can",
                   "legend_str_3": "understand spoken Welsh only"
                 },
@@ -137,7 +140,7 @@
                   "name": "Can speak, read and write Welsh",
                   "slug": "can-speak-read-and-write-welsh",
                   "code": "welsh_skills_all-001",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "can",
                   "legend_str_3": "speak, read and write Welsh"
                 },
@@ -145,7 +148,7 @@
                   "name": "Can speak but cannot read or write Welsh",
                   "slug": "can-speak-but-cannot-read-or-write-welsh",
                   "code": "welsh_skills_all-002",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "can",
                   "legend_str_3": "speak but cannot read or write Welsh"
                 },
@@ -153,7 +156,7 @@
                   "name": "Can speak and read but cannot write Welsh",
                   "slug": "can-speak-and-read-but-cannot-write-welsh",
                   "code": "welsh_skills_all-003",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "can",
                   "legend_str_3": "speak and read but cannot write Welsh"
                 },
@@ -161,7 +164,7 @@
                   "name": "Can read but cannot speak or write Welsh",
                   "slug": "can-read-but-cannot-speak-or-write-welsh",
                   "code": "welsh_skills_all-004",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "can",
                   "legend_str_3": "read but cannot speak or write Welsh"
                 },
@@ -169,7 +172,7 @@
                   "name": "Can write but cannot speak or read Welsh",
                   "slug": "can-write-but-cannot-speak-or-read-welsh",
                   "code": "welsh_skills_all-005",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "can",
                   "legend_str_3": "write but cannot speak or read Welsh"
                 },
@@ -177,7 +180,7 @@
                   "name": "Can read and write but cannot speak Welsh",
                   "slug": "can-read-and-write-but-cannot-speak-welsh",
                   "code": "welsh_skills_all-006",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "can",
                   "legend_str_3": "read and write but cannot speak Welsh"
                 },
@@ -185,7 +188,7 @@
                   "name": "Can speak and other combinations of skills in Welsh",
                   "slug": "can-speak-and-other-combinations-of-skills-in-welsh",
                   "code": "welsh_skills_all-007",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "can",
                   "legend_str_3": "speak and other combinations of skills in Welsh"
                 },
@@ -193,7 +196,7 @@
                   "name": "No skills in Welsh",
                   "slug": "no-skills-in-welsh",
                   "code": "welsh_skills_all-008",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "no skills in Welsh"
                 }
@@ -221,20 +224,21 @@
               "dot_density_default": true,
               "comparison_2011_data_available": true,
               "dataset": "TS076",
+              "data_download": "https://www.ons.gov.uk/datasets/TS033/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "Cannot speak Welsh",
                   "slug": "cannot-speak-welsh",
                   "code": "welsh_skills_speak-000",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "can",
-                  "legend_str_3": "not speak Welsh"
+                  "legend_str_1": "of people aged 3 years and over in {location}",
+                  "legend_str_2": "cannot",
+                  "legend_str_3": "speak Welsh"
                 },
                 {
                   "name": "Can speak Welsh",
                   "slug": "can-speak-welsh",
                   "code": "welsh_skills_speak-001",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "can",
                   "legend_str_3": "speak Welsh"
                 }

@@ -19,6 +19,8 @@ describe("formatTemplateString", () => {
     long_desc: "",
     units: "testUnits",
     topic_code: "testTopicCode",
+    caveat_text: "testCaveatText",
+    caveat_link: "testCaveatLink",
     classifications: [] as Classification[],
   };
   const testLocation = "testLocation";

@@ -19,8 +19,9 @@ import (
 )
 
 const (
-	TILES_DIR  = "tiles"
-	BREAKS_DIR = "breaks"
+	TILES_DIR    = "tiles"
+	BREAKS_DIR   = "breaks"
+	CKBREAKS_DIR = "breaksCkmeans"
 
 	MSOA_NAMES_CSV  = "msoa-names.csv"
 	CONTENT_JSON    = "content.json"
@@ -34,9 +35,16 @@ func main() {
 	doRatios := flag.Bool("R", false, "calculate percentages (eg 2011 data)")
 	doFake := flag.Bool("F", false, "generate fake metrics")
 	force := flag.Bool("f", false, "force using an existing out directory")
+	contentName := flag.String("c", "", "path to content.json (default content.json within input dir)")
+	classCode := flag.String("C", "", "classification code to match in content.json (blank means all)")
 	flag.Parse()
 
+	if *contentName == "" {
+		*contentName = filepath.Join(*indir, CONTENT_JSON)
+	}
 	log.Printf("            input dir: %s", *indir)
+	log.Printf("         content.json: %s", *contentName)
+	log.Printf("  classification code: %s", *classCode)
 	log.Printf("           output dir: %s", *outdir)
 	log.Printf("          calc ratios: %t", *doRatios)
 	log.Printf("generate fake metrics: %t", *doFake)
@@ -72,7 +80,7 @@ func main() {
 	// load content.json
 	//
 	log.Printf("loading content.json")
-	cont, err := content.LoadName(filepath.Join(*indir, CONTENT_JSON))
+	cont, err := content.LoadName(*contentName)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -80,7 +88,12 @@ func main() {
 	//
 	// load metrics or generate fake metrics
 	//
-	m, err := metric2.New(atlas.Geocodes(), strings2cats(cont.Categories()), *doRatios)
+	wantcats, err := cont.Categories(*classCode)
+	if err != nil {
+		log.Fatal(err)
+	}
+	log.Printf("found %d categories", len(wantcats))
+	m, err := metric2.New(atlas.Geocodes(), strings2cats(wantcats), *doRatios)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -96,6 +109,9 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
+	for geocode, items := range grid {
+		log.Printf("found %d %s quads in grid file\n", len(items), geocode)
+	}
 
 	//
 	// generate data tiles
@@ -109,7 +125,7 @@ func main() {
 	// generate breaks files
 	//
 	log.Printf("generating breaks")
-	if err := m.MakeBreaks(filepath.Join(*outdir, BREAKS_DIR), atlas.GeotypeOf); err != nil {
+	if err := m.MakeBreaks(filepath.Join(*outdir, BREAKS_DIR), filepath.Join(*outdir, CKBREAKS_DIR), atlas.GeotypeOf); err != nil {
 		log.Fatal(err)
 	}
 }
@@ -142,13 +158,15 @@ func loadGeojson(dir string, atlas *geo.Atlas) error {
 	for _, geotype := range []types.Geotype{geo.LAD, geo.LSOA, geo.MSOA, geo.OA} {
 		fname := filepath.Join(dir, geotype.Pathname()+".geojson")
 		log.Printf("loading %ss", geotype)
-		if err := atlas.LoadCollection(fname, geotype); err != nil {
+		nfound, err := atlas.LoadCollection(fname, geotype)
+		if err != nil {
 			if !errors.Is(err, fs.ErrNotExist) {
 				return err
 			}
 			log.Printf("no %s file to load", fname)
 			continue
 		}
+		log.Printf("found %d %s geocodes", nfound, geotype)
 
 		if geotype == geo.MSOA {
 			log.Printf("loading MSOA names file")
@@ -199,7 +217,7 @@ func loadMetrics(dir string, atlas *geo.Atlas, m *metric2.M, doFake, doRatios bo
 	//	}
 	//}
 	log.Printf("loading metrics files")
-	if err := m.LoadAll(dir); err != nil {
+	if err := m.LoadAll(dir, MSOA_NAMES_CSV); err != nil {
 		return err
 	}
 	if doRatios {
@@ -232,6 +250,7 @@ func generateTiles(grid map[types.Geotype][]grid.Quad, dir string, atlas *geo.At
 				log.Print(err)
 				continue
 			}
+			log.Printf("%s %s: %d quad intersections\n", geotype, quad.Tilename, len(geos))
 			tiledir := filepath.Join(typedir, quad.Tilename)
 			if err := os.MkdirAll(tiledir, 0755); err != nil {
 				return err

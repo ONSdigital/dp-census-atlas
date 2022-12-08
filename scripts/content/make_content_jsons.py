@@ -280,6 +280,17 @@ def main(spec_fn: str):
                         c.name = spec['category_renames'][c.code]
     print("... done.")
 
+    # rename category slugs
+    print(f"Renaming category slugs..")
+    for vg in content_iterations["ALL"]:
+        for v in vg.variables:
+            for cls in v.classifications:
+                for c in cls.categories:
+                    if c.code in spec["category_slug_renames"]:
+                        print(f"Renaming slug {c.code}:{c.slug} to {spec['category_slug_renames'][c.code]}")
+                        c.slug = spec['category_slug_renames'][c.code]
+    print("... done.")
+
     # make release splits
     print("Splitting content by releases...")
     content_iterations.update(split_content(

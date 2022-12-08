@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-11-28-16-50-41",
-    "spec_file": "2021-content-spec-v7.json",
+    "created_at": "2022-12-07-14-59-36",
+    "spec_file": "2021-content-spec-v33.json",
     "release": "2021-HOU"
   },
   "content": [
@@ -15,7 +15,7 @@
           "code": "accommodation_type",
           "slug": "accommodation-type",
           "desc": "The type of buildings people live in.",
-          "long_desc": "The type of building or structure used or available by an individual or household.\n\nThis could be:\n\n* the whole house or bungalow\n* a flat in a purpose-built block of flats in a converted house\n* a flat in a converted house\n* a temporary or mobile structure, such as a caravan\n\nAdditional information\n\nMore information about accommodation types\n\nWhole house or bungalow\nThis property type is not divided into flats or other living accommodation. There are three types of whole houses or bungalows.\n\nDetached\nNone of the living accommodation is attached to another property but can be attached to a garage.\n\nSemi-detached\nThe living accommodation is joined to another house or bungalow by a common wall that they share.\n\nTerraced\nA mid-terraced house is located between two other houses and shares two common walls. An end-of-terrace house is part of a terraced development but only shares one common wall.\n\nFlats (Apartments) and maisonettes\nAn apartment is another word for a flat. A maisonette is a 2-storey flat.",
+          "long_desc": "The type of building or structure used or available by an individual or household.\n\nThis could be:\n\n* the whole house or bungalow\n* a flat, maisonette or apartment\n* a temporary or mobile structure, such as a caravan\n\nMore information about accommodation types\n\nWhole house or bungalow\nThis property type is not divided into flats or other living accommodation. There are three types of whole houses or bungalows.\n\nDetached\nNone of the living accommodation is attached to another property but can be attached to a garage.\n\nSemi-detached\nThe living accommodation is joined to another house or bungalow by a common wall that they share.\n\nTerraced\nA mid-terraced house is located between two other houses and shares two common walls. An end-of-terrace house is part of a terraced development but only shares one common wall.\n\nFlats (Apartments) and maisonettes\nAn apartment is another word for a flat. A maisonette is a 2-storey flat.",
           "units": "Household",
           "topic_code": "HOU",
           "classifications": [
@@ -198,7 +198,7 @@
           "code": "alternative_address_indicator",
           "slug": "second-address-indicator",
           "desc": "An address (in or out of the UK) a person stays at for more than 30 days per year that isn't their place of usual residence.",
-          "long_desc": "An address (in or out of the UK) a person stays at for more than 30 days per year that is not their place of usual residence. \n \nAdditional \nSecond addresses typically include:\n\n* armed forces bases\n* addresses used by people working away from home\n* a student\u2019s home address\n* the address of another parent or guardian\n* a holiday home\n  \nIf a person with a second address was staying there on census night, they were classed as a visitor to the second address but counted as a usual resident at their home address.",
+          "long_desc": "An address (in or out of the UK) a person stays at for more than 30 days per year that is not their place of usual residence. \n \nSecond addresses typically include:\n\n* armed forces bases\n* addresses used by people working away from home\n* a student\u2019s home address\n* the address of another parent or guardian\n* a holiday home\n  \nIf a person with a second address was staying there on census night, they were classed as a visitor to the second address but counted as a usual resident at their home address.",
           "units": "Person",
           "topic_code": "HOU",
           "classifications": [
@@ -248,7 +248,7 @@
           "code": "heating_type",
           "slug": "type-of-central-heating-in-household",
           "desc": "Central heating is a heating system used to heat multiple rooms in a building.",
-          "long_desc": "Central heating is a heating system used to heat multiple rooms in a building by circulating air or heated water through pipes to radiators or vents. Single or multiple fuel sources can fuel these systems. \n\nAdditional \nCentral heating systems that are unused or not working are still considered. No information is available for household spaces with no usual residents.",
+          "long_desc": "Central heating is a heating system used to heat multiple rooms in a building by circulating air or heated water through pipes to radiators or vents. Single or multiple fuel sources can fuel these systems. \n\nCentral heating systems that are unused or not working are still considered. No information is available for household spaces with no usual residents.",
           "units": "Household",
           "topic_code": "HOU",
           "classifications": [
@@ -401,7 +401,7 @@
           "code": "hh_tenure",
           "slug": "tenure-of-household",
           "desc": "Whether a household owns or rents.",
-          "long_desc": "Whether a household owns or rents the accommodation that it occupies. \n\nAdditional \nOwner-occupied accommodation can be:\n\n* owned outright, which is where the household owns all of the accommodation \n* with a mortgage or loan \n* part-owned on a shared ownership scheme \n\n Rented accommodation can be:\n\n* private rented (for example, rented through a private landlord or letting agent \n* social rented through a local council or housing association)\n\nThis information is not available for household spaces with no usual residents.",
+          "long_desc": "Whether a household owns or rents the accommodation that it occupies. \n\nOwner-occupied accommodation can be:\n\n* owned outright, which is where the household owns all of the accommodation \n* with a mortgage or loan \n* part-owned on a shared ownership scheme \n\n Rented accommodation can be:\n\n* private rented (for example, rented through a private landlord or letting agent \n* social rented through a local council or housing association\n\nThis information is not available for household spaces with no usual residents.",
           "units": "Household",
           "topic_code": "HOU",
           "classifications": [
@@ -538,7 +538,7 @@
           "code": "number_bedrooms",
           "slug": "number-of-bedrooms",
           "desc": "The number of bedrooms in a household.",
-          "long_desc": "The number of bedrooms in a household\u2019s accommodation. \n\nAdditional \nThis number is not available for household spaces with no usual residents.",
+          "long_desc": "The number of bedrooms in a household\u2019s accommodation. \n\nThis number is not available for household spaces with no usual residents.",
           "units": "Household",
           "topic_code": "HOU",
           "classifications": [
@@ -686,7 +686,7 @@
           "code": "occupancy_rating_bedrooms",
           "slug": "occupancy-rating-for-bedrooms",
           "desc": "Whether homes are overcrowded, ideally occupied or under-occupied, based on bedrooms.",
-          "long_desc": "Whether a household's accommodation is overcrowded, ideally occupied or under-occupied. This is calculated by comparing the number of bedrooms the household requires (the Bedroom Standard) to the number of available bedrooms.  \n \nAdditional  \nPeople that should have their own room according to the Bedroom Standard:\n\n 1) A married or co-habiting couple.  \n 2) Someone 21 years old or over.  \n 3) A pair of same-sex aged between 10 and 20 years.  \n 4) A pair of children aged under 10 years regardless of their sex.  \n 5) One person aged between 10 to 20 years paired with a child aged under 10 years of the same sex.  \n 6) Any other person aged under 21 years who cannot share a bedroom with someone in 3, 4 or 5 above.\n\nAn occupancy rating of:\n\n*  -1 or less implies that a household\u2019s accommodation has fewer bedrooms than required (overcrowded)  \n* +1 or more implies that a household\u2019s accommodation has more bedrooms than required (under-occupied)  \n* 0 suggests that a household\u2019s accommodation has an ideal number of bedrooms",
+          "long_desc": "Whether a household's accommodation is overcrowded, ideally occupied or under-occupied. This is calculated by comparing the number of bedrooms the household requires to the number of available bedrooms.\n\nThe number of bedrooms the household requires is calculated according to the Bedroom Standard, where the following should have their own bedroom:\n\n1. married or cohabiting couple\n2. single parent\n3. person aged 16 years and over\n4. pair of same-sex persons aged 10 to 15 years\n5. person aged 10 to 15 years paired with a person under 10 years of the same sex\n6. pair of children aged under 10 years, regardless of their sex\n7. person aged under 16 years who cannot share a bedroom with someone in 4, 5 or 6 above\n\nAn occupancy rating of:\n\n* -1 or less implies that a household\u2019s accommodation has fewer bedrooms than required (overcrowded)\n* +1 or more implies that a household\u2019s accommodation has more bedrooms than required (under-occupied)\n* 0 suggests that a household\u2019s accommodation has an ideal number of bedrooms",
           "units": "Household",
           "topic_code": "HOU",
           "classifications": [
@@ -752,7 +752,7 @@
           "code": "occupancy_rating_rooms",
           "slug": "occupancy-rating-for-rooms",
           "desc": "Whether homes are overcrowded, ideally occupied or under-occupied, based on rooms.",
-          "long_desc": "Whether a household's accommodation is overcrowded, ideally occupied or under-occupied. This is calculated by comparing the number of rooms the household requires to the number of available rooms. \n\nAdditional  \nThe number of rooms the household requires uses a formula which states that: \n* one-person households require three rooms comprised of two common rooms and one bedroom \n* two-or-more person households require a minimum of two common rooms and a bedroom for each person inline with the Bedroom Standard. \n\nPeople who should have their own room according to the Bedroom Standard:\n  1) Married or cohabiting couple.  \n  2) Single parent.  \n  3) Person aged 16 years old or over.  \n  4) Pair of same-sex persons 10 to 15 years old.  \n  5) Person aged 10 to 15 years old paired with a person under 10 years old of the same sex.  \n  6) Pair of children under the age of 10, regardless of their sex.  \n  7) Person under 16 years old who cannot share a bedroom with someone in 4, 5 or 6 above.\n\nAn occupancy rating of:\n\n * -1 or less implies that a household\u2019s accommodation has fewer rooms than required (overcrowded) \n* +1 or more implies that a household\u2019s accommodation has more rooms than required (under-occupied) \n* 0 suggests that a household\u2019s accommodation has an ideal number of rooms",
+          "long_desc": "Whether a household's accommodation is overcrowded, ideally occupied or under-occupied. This is calculated by comparing the number of rooms the household requires to the number of available rooms.\n\nThe number of rooms the household requires uses a formula which states that:\n\n* one-person households require three rooms comprised of two common rooms and one bedroom\n* two-or-more person households require a minimum of two common rooms and a bedroom for each person inline with the Bedroom Standard\n\nPeople who should have their own room according to the Bedroom Standard are:\n\n1. married or cohabiting couple\n2. single parent\n3. person aged 16 years and over\n4. pair of same-sex persons aged 10 to 15 years\n5. person aged 10 to 15 years paired with a person under 10 years of the same sex\n6. pair of children aged under 10 years, regardless of their sex\n7. person aged under 16 years who cannot share a bedroom with someone in 4, 5 or 6 above\n\nAn occupancy rating of:\n\n* -1 or less implies that a household\u2019s accommodation has fewer rooms than required (overcrowded)\n* +1 or more implies that a household\u2019s accommodation has more rooms than required (under-occupied)\n* 0 suggests that a household\u2019s accommodation has an ideal number of rooms\n\nThe number of rooms is taken from Valuation Office Agency (VOA) administrative data for the first time in 2021. The number of rooms is recorded at the address level, whilst the 2011 Census recorded the number of rooms at the household level.  This means that for households that live in a shared dwelling, the available number of rooms are counted for the whole dwelling in VOA, and not each individual household. \n\nVOA\u2019s definition of a room does not include bathrooms, toilets, halls or landings, kitchens, conservatories or utility rooms. All other rooms, for example, living rooms, studies, bedrooms, separate dining rooms and rooms that can only be used for storage are included. Please note that the 2011 Census question included kitchens, conservatories and utility rooms while excluding rooms that can only be used for storage. To adjust for the definitional difference, the number of rooms required is deducted from the actual number of rooms it has available, and then 1 is added.",
           "units": "Household",
           "topic_code": "HOU",
           "classifications": [
@@ -818,7 +818,7 @@
           "code": "second_address_type_priority",
           "slug": "second-address-type",
           "desc": "Whether people have an alternative address (somewhere they stay for more than 30 days per year) and the type of address this is.",
-          "long_desc": "Indicates whether a person has an alternative address (somewhere they stay for more than 30 days per year) and the type of second address this is. \n\n'Not applicable' applies to people without an alternative address.",
+          "long_desc": "Indicates whether a person has an alternative address (somewhere they stay for more than 30 days per year) and the type of second address this is. \n\nThe 'Not applicable' classification applies to people without an alternative address.",
           "units": "Person",
           "topic_code": "HOU",
           "classifications": [

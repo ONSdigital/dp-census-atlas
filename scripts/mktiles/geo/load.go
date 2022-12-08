@@ -11,13 +11,13 @@ import (
 
 // LoadCollection loads the geojson file fname into Atlas a.
 // Features within this geojson will be recorded as having type geotype.
-func (a *Atlas) LoadCollection(fname string, geotype types.Geotype) error {
+func (a *Atlas) LoadCollection(fname string, geotype types.Geotype) (int, error) {
 	col, err := LoadGeojson(fname)
 	if err != nil {
-		return err
+		return 0, err
 	}
 	a.Collections[geotype] = col
-	return nil
+	return len(col.Features), nil
 }
 
 // LoadGeojson loads a geojson file and returns it as a go-geom

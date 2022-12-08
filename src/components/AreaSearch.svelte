@@ -1,15 +1,11 @@
 <script lang="ts">
   import { page } from "$app/stores";
   import Select from "./Select.svelte";
-  import { SvelteSubject } from "../util/rxUtil";
-  import { composeAreaSearch, getOAfromLngLat } from "../helpers/areaSearchHelper";
+  import { fetchGeoPostcodeSearchItems } from "../helpers/areaSearchHelper";
   import { selectGeography } from "../helpers/navigationHelper";
   import type { GeographySearchItem, PostcodeSearchItem } from "../types";
 
   export let embedded = false;
-
-  const query = new SvelteSubject("");
-  const results = composeAreaSearch(query);
 
   async function handleSelect(event) {
     if (event?.detail?.kind === "Geography") {
@@ -17,12 +13,7 @@
       selectGeography($page.url.searchParams, geo);
     } else if (event?.detail?.kind === "Postcode") {
       const postcode = event.detail as PostcodeSearchItem;
-      let detailsRes = await fetch(`https://api.postcodes.io/postcodes/${postcode.value}`);
-      let details = await detailsRes.json();
-      let geoCode = await getOAfromLngLat(details.result.longitude, details.result.latitude);
-      if (geoCode) {
-        selectGeography($page.url.searchParams, { geoType: "oa", geoCode });
-      }
+      selectGeography($page.url.searchParams, { geoType: "oa", geoCode: postcode.oa });
     }
   }
 </script>
@@ -32,8 +23,8 @@
     id="area-input"
     mode="search"
     placeholder="Search England and Wales"
-    bind:filterText={$query}
-    items={$results}
+    items={[]}
+    loadOptions={fetchGeoPostcodeSearchItems}
     idKey="value"
     labelKey="value"
     groupKey="geoType"

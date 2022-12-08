@@ -76,6 +76,7 @@ export type GeographySearchItem = {
 export type PostcodeSearchItem = {
   kind: "Postcode";
   value: string;
+  oa: string;
 };
 export type AreaSearchItem = GeographySearchItem | PostcodeSearchItem;
 

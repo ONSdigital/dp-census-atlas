@@ -9,7 +9,7 @@ import (
 func Test_MSOAnames(t *testing.T) {
 	a := New()
 
-	if err := a.LoadCollection("testdata/msoa-in.geojson", MSOA); err != nil {
+	if _, err := a.LoadCollection("testdata/msoa-in.geojson", MSOA); err != nil {
 		t.Fatalf("%s", err)
 	}
 	enames, wnames, err := LoadMSOAnames("testdata/msoa-names.csv")

@@ -15,10 +15,14 @@ func Test_LoadGeojson(t *testing.T) {
 
 func Test_LoadCollection(t *testing.T) {
 	a := New()
-	if err := a.LoadCollection("noexist", LAD); err == nil {
+	if _, err := a.LoadCollection("noexist", LAD); err == nil {
 		t.Fatalf("expected error when geojson doesn't exist")
 	}
-	if err := a.LoadCollection("testdata/test.geojson", LAD); err != nil {
+	n, err := a.LoadCollection("testdata/test.geojson", LAD)
+	if err != nil {
 		t.Fatalf("%s", err)
+	}
+	if n != 1 {
+		t.Fatalf("loaded %d Features, expected 1", n)
 	}
 }

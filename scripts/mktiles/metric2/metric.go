@@ -8,6 +8,7 @@ import (
 	"os"
 	"path/filepath"
 	"strconv"
+	"strings"
 
 	"github.com/jtrim-ons/ckmeans/pkg/ckmeans"
 
@@ -92,13 +93,18 @@ func New(geos []types.Geocode, cats []types.Category, withTots bool) (*M, error)
 	}, nil
 }
 
-func (m *M) LoadAll(dir string) error {
-	fnames, err := filepath.Glob(filepath.Join(dir, "*.CSV"))
+func (m *M) LoadAll(dir, except string) error {
+	fnames, err := filepath.Glob(filepath.Join(dir, "*.[cC][sS][vV]"))
 	if err != nil {
 		return err
 	}
 
 	for _, fname := range fnames {
+		base := filepath.Base(fname)
+		if strings.EqualFold(base, except) {
+			log.Printf("skipping %s", fname)
+			continue
+		}
 		log.Printf("Loading %s", fname)
 		if err := m.Load(fname); err != nil {
 			return err
@@ -116,15 +122,19 @@ func (m *M) Load(fname string) error {
 }
 
 func (m *M) ImportCSV(records [][]string) error {
+	var imported int
+
 	if len(records) < 2 {
 		return errors.New("not enough rows")
 	}
 	if len(records[0]) < 2 {
 		return errors.New("not enough columns")
 	}
-	if records[0][0] != "GeographyCode" {
+	magic := strings.ReplaceAll(records[0][0], " ", "")
+	if !strings.EqualFold(magic, "GeographyCode") {
 		return errors.New("not a metrics file")
 	}
+	log.Printf("%d data rows in CSV\n", len(records)-1)
 
 	// create mapping from CSV row number to m.tab row number
 	rowmap := m.mapCSVgeos(records)
@@ -137,6 +147,7 @@ func (m *M) ImportCSV(records [][]string) error {
 		if !ok {
 			tabcol, ok = m.totidx[types.Category(catcode)]
 			if !ok {
+				log.Printf("ignoring CSV col %q\n", catcode)
 				continue // this category not wanted
 			}
 		}
@@ -161,15 +172,18 @@ func (m *M) ImportCSV(records [][]string) error {
 				return fmt.Errorf("row %d: col %d: %w", csvrow, csvcol, err)
 			}
 			m.tab[tabrow][tabcol] = types.Value(v)
+			imported++
 		}
 	}
 
+	log.Printf("imported %d cells from CSV\n", imported)
 	return nil
 }
 
 // mapCSVgeos creates a mapping from CSV row number to m.tab row number
 // based on each row's geocode.
 func (m *M) mapCSVgeos(records [][]string) map[int]int {
+	var missing int
 	idx := make(map[int]int, len(records))
 	for csvrow, record := range records {
 		if csvrow == 0 {
@@ -178,9 +192,11 @@ func (m *M) mapCSVgeos(records [][]string) map[int]int {
 		tabrow, ok := m.geoidx[types.Geocode(record[0])]
 		if !ok {
 			tabrow = -1
+			missing++
 		}
 		idx[csvrow] = tabrow
 	}
+	log.Printf("%d geos in CSV, but not in geojson\n", missing)
 	return idx
 }
 
@@ -243,7 +259,7 @@ type stats map[types.Category]map[string][]float64
 type TypeLookupFunc func(types.Geocode) (types.Geotype, bool)
 
 // MakeBreaks creates breaks json in dir.
-func (m *M) MakeBreaks(dir string, lookup TypeLookupFunc) error {
+func (m *M) MakeBreaks(dir, ckdir string, lookup TypeLookupFunc) error {
 	rowsbytype := m.tabrowsByType(lookup)
 
 	for _, cat := range m.cats {
@@ -289,7 +305,11 @@ func (m *M) MakeBreaks(dir string, lookup TypeLookupFunc) error {
 			}
 
 			if err := saveStats(dir, geotype, cat, result); err != nil {
-				return fmt.Errorf("%s %s: %w", cat, geotype, err)
+				return fmt.Errorf("breaks %s %s: %w", cat, geotype, err)
+			}
+
+			if err := saveStats(ckdir, geotype, cat, append([]float64{minmax[0]}, breaks...)); err != nil {
+				return fmt.Errorf("ckbreaks %s %s: %w", cat, geotype, err)
 			}
 		}
 	}
@@ -343,7 +363,7 @@ func calcMinMax(values []float64) []float64 {
 }
 
 // saveStats writes a breaks file to dir/geotype/cat.json.
-func saveStats(dir string, geotype types.Geotype, cat types.Category, result stats) error {
+func saveStats(dir string, geotype types.Geotype, cat types.Category, result any) error {
 	d := filepath.Join(dir, geotype.Pathname())
 	if err := os.MkdirAll(d, 0755); err != nil {
 		return err

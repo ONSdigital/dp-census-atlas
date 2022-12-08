@@ -6,6 +6,7 @@
   import SearchBox from "./SearchBox.svelte";
   import DemMigExamples from "./DemMigExamples.svelte";
   import ArmEilrExamples from "./ArmEilrExamples.svelte";
+  import LabTtwWelshSkills from "./LabTtwWelshSkillsExamples.svelte";
 </script>
 
 <div class="px-6">
@@ -29,10 +30,12 @@
     <div class="bg-ons-grey-5 p-6 mb-6">
       <h3 class="pb-3 text-xl font-semibold ">Examples</h3>
       <ul>
-        {#if getLatestRelease($content) === 'DemMig'}
+        {#if getLatestRelease($content) === "DemMig"}
           <DemMigExamples />
-        {:else if getLatestRelease($content) === 'ArmEilr'}
+        {:else if getLatestRelease($content) === "ArmEilr"}
           <ArmEilrExamples />
+        {:else if getLatestRelease($content) === "LabTtwWelshSkills"}
+          <LabTtwWelshSkills />
         {/if}
       </ul>
     </div>

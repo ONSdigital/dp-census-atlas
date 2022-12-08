@@ -47,7 +47,7 @@ const hou = {
   prodPubContentJsonUrl: "",
   prodWebContentJsonUrl: "",
   fakeDataBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021",
-  realDataBaseUrl: "",
+  realDataBaseUrl: "https://ons-dp-prod-census-maps-hou.s3.eu-west-2.amazonaws.com",
 };
 const huc = {
   localContentJsonUrl: "http://localhost:8090/2021/2021-HUC.json",
@@ -80,7 +80,7 @@ const sogi = {
   prodPubContentJsonUrl: "",
   prodWebContentJsonUrl: "",
   fakeDataBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021",
-  realDataBaseUrl: "",
+  realDataBaseUrl: "https://ons-dp-prod-census-maps-sogi.s3.eu-west-2.amazonaws.com",
 };
 const ttw = {
   localContentJsonUrl: "http://localhost:8090/2021/2021-TTW.json",
@@ -334,12 +334,20 @@ export default {
         contentBaseUrl: eilr.realDataBaseUrl,
       },
       {
+        contentJsonUrl: hou.prodPubContentJsonUrl,
+        contentBaseUrl: hou.realDataBaseUrl,
+      },
+      {
         contentJsonUrl: lab.prodPubContentJsonUrl,
         contentBaseUrl: lab.realDataBaseUrl,
       },
       {
         contentJsonUrl: mig.prodPubContentJsonUrl,
         contentBaseUrl: mig.realDataBaseUrl,
+      },
+      {
+        contentJsonUrl: sogi.prodPubContentJsonUrl,
+        contentBaseUrl: sogi.realDataBaseUrl,
       },
       {
         contentJsonUrl: ttw.prodPubContentJsonUrl,
@@ -371,12 +379,20 @@ export default {
         contentBaseUrl: eilr.realDataBaseUrl,
       },
       {
+        contentJsonUrl: hou.prodWebContentJsonUrl,
+        contentBaseUrl: hou.realDataBaseUrl,
+      },
+      {
         contentJsonUrl: lab.prodWebContentJsonUrl,
         contentBaseUrl: lab.realDataBaseUrl,
       },
       {
         contentJsonUrl: mig.prodWebContentJsonUrl,
         contentBaseUrl: mig.realDataBaseUrl,
+      },
+      {
+        contentJsonUrl: sogi.prodWebContentJsonUrl,
+        contentBaseUrl: sogi.realDataBaseUrl,
       },
       {
         contentJsonUrl: ttw.prodWebContentJsonUrl,

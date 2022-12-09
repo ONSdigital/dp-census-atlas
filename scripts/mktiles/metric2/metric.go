@@ -178,7 +178,7 @@ func (m *M) ImportCSV(records [][]string) error {
 // based on each row's geocode.
 // A row will be created for this geocode in m.tab if it doesn't already exist.
 func (m *M) mapCSVgeos(records [][]string) map[int]int {
-	ncols := len(m.cats)+len(m.totcats)
+	ncols := len(m.cats) + len(m.totcats)
 	idx := map[int]int{}
 	for csvrow, record := range records {
 		if csvrow == 0 {
@@ -195,7 +195,7 @@ func (m *M) mapCSVgeos(records [][]string) map[int]int {
 			}
 			// add new row to m.tab
 			m.tab = append(m.tab, newrow)
-			tabrow = len(m.tab)-1
+			tabrow = len(m.tab) - 1
 			// add to list geos in table
 			m.geos = append(m.geos, geocode)
 			// add this geo to geoidx

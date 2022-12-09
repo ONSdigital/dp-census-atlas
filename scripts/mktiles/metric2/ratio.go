@@ -1,7 +1,7 @@
 package metric2
 
 import (
-        "fmt"
+	"fmt"
 	"math"
 
 	"github.com/ONSdigital/dp-census-atlas/scripts/mktiles/types"
@@ -43,7 +43,7 @@ func (m *M) CalcRatios() error {
 				return fmt.Errorf("CalcRatio: %s %s: total is 0", geo, cat)
 			}
 
-			m.tab[tabrow][tabcol] = types.Value(val/tot * 100.0)
+			m.tab[tabrow][tabcol] = types.Value(val / tot * 100.0)
 		}
 	}
 	return nil

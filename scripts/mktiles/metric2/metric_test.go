@@ -197,7 +197,7 @@ func Test_New(t *testing.T) {
 }
 
 func Test_mapCSVgeos(t *testing.T) {
-	cats := []types.Category{cat1,cat2}
+	cats := []types.Category{cat1, cat2}
 	//catextra := types.Category("catextra")
 
 	Convey("Given an initialised M", t, func() {
@@ -216,7 +216,7 @@ func Test_mapCSVgeos(t *testing.T) {
 			idx := m.mapCSVgeos(records)
 
 			Convey("the resulting map is correct", func() {
-				So(idx, ShouldResemble, map[int]int{1:0, 2:1})
+				So(idx, ShouldResemble, map[int]int{1: 0, 2: 1})
 			})
 			Convey("the table has the right number of rows", func() {
 				So(len(m.tab), ShouldEqual, 2)
@@ -229,7 +229,7 @@ func Test_mapCSVgeos(t *testing.T) {
 				So(m.geoidx, ShouldResemble, want)
 			})
 			Convey("geos is correct", func() {
-				want := []types.Geocode{geoA,geoB}
+				want := []types.Geocode{geoA, geoB}
 				So(m.geos, ShouldResemble, want)
 			})
 		})
@@ -248,13 +248,13 @@ func Test_mapCSVgeos(t *testing.T) {
 			idx := m.mapCSVgeos(records)
 
 			Convey("the resulting map is correct", func() {
-				So(idx, ShouldResemble, map[int]int{1:0, 2:1, 3:2})
+				So(idx, ShouldResemble, map[int]int{1: 0, 2: 1, 3: 2})
 			})
 			Convey("the table has the right number of rows", func() {
 				So(len(m.tab), ShouldEqual, 3)
 			})
 			Convey("geoidx is correct", func() {
-				want := map[types.Geocode]int {
+				want := map[types.Geocode]int{
 					geoA: 0,
 					geoB: 1,
 					geoC: 2,
@@ -262,7 +262,7 @@ func Test_mapCSVgeos(t *testing.T) {
 				So(m.geoidx, ShouldResemble, want)
 			})
 			Convey("geos is correct", func() {
-				want := []types.Geocode{geoA,geoB,geoC}
+				want := []types.Geocode{geoA, geoB, geoC}
 				So(m.geos, ShouldResemble, want)
 			})
 		})

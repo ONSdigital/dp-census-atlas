@@ -48,7 +48,7 @@ const hou = {
     "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusmapsconfighou/2021-HOU.json",
   prodWebContentJsonUrl: "https://www.ons.gov.uk/visualisations/censusmapsconfighou/2021-HOU.json",
   fakeDataBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021",
-  realDataBaseUrl: "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+  realDataBaseUrl: "https://ons-dp-prod-census-maps-hou.s3.eu-west-2.amazonaws.com",
 };
 const huc = {
   localContentJsonUrl: "http://localhost:8090/2021/2021-HUC.json",
@@ -82,7 +82,7 @@ const sogi = {
     "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusmapsconfigsogi/2021-SOGI.json",
   prodWebContentJsonUrl: "https://www.ons.gov.uk/visualisations/censusmapsconfigsogi/2021-SOGI.json",
   fakeDataBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021",
-  realDataBaseUrl: "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+  realDataBaseUrl: "https://ons-dp-prod-census-maps-sogi.s3.eu-west-2.amazonaws.com",
 };
 const ttw = {
   localContentJsonUrl: "http://localhost:8090/2021/2021-TTW.json",

@@ -33,5 +33,9 @@ export const formatTemplateString = (variable: Variable, category: Category, loc
   Object.entries(stringReplaceMap).forEach(([strToReplace, replacementStr]) => {
     templateStr = templateStr.replace(new RegExp(strToReplace, "g"), replacementStr);
   });
-  return templateStr;
+  return hackTypoCorrection(templateStr);
+};
+
+const hackTypoCorrection = (s: string) => {
+  return s.replace(`both in Pakistan`, `born in Pakistan`);
 };

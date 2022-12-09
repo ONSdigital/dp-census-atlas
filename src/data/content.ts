@@ -44,10 +44,11 @@ const eilr = {
 const hou = {
   localContentJsonUrl: "http://localhost:8090/2021/2021-HOU.json",
   publicContentJsonUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-HOU.json",
-  prodPubContentJsonUrl: "",
-  prodWebContentJsonUrl: "",
+  prodPubContentJsonUrl:
+    "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusmapsconfighou/2021-HOU.json",
+  prodWebContentJsonUrl: "https://www.ons.gov.uk/visualisations/censusmapsconfighou/2021-HOU.json",
   fakeDataBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021",
-  realDataBaseUrl: "",
+  realDataBaseUrl: "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
 };
 const huc = {
   localContentJsonUrl: "http://localhost:8090/2021/2021-HUC.json",
@@ -77,10 +78,11 @@ const mig = {
 const sogi = {
   localContentJsonUrl: "http://localhost:8090/2021/2021-SOGI.json",
   publicContentJsonUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-SOGI.json",
-  prodPubContentJsonUrl: "",
-  prodWebContentJsonUrl: "",
+  prodPubContentJsonUrl:
+    "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusmapsconfigsogi/2021-SOGI.json",
+  prodWebContentJsonUrl: "https://www.ons.gov.uk/visualisations/censusmapsconfigsogi/2021-SOGI.json",
   fakeDataBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021",
-  realDataBaseUrl: "",
+  realDataBaseUrl: "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
 };
 const ttw = {
   localContentJsonUrl: "http://localhost:8090/2021/2021-TTW.json",
@@ -334,12 +336,20 @@ export default {
         contentBaseUrl: eilr.realDataBaseUrl,
       },
       {
+        contentJsonUrl: hou.prodPubContentJsonUrl,
+        contentBaseUrl: hou.realDataBaseUrl,
+      },
+      {
         contentJsonUrl: lab.prodPubContentJsonUrl,
         contentBaseUrl: lab.realDataBaseUrl,
       },
       {
         contentJsonUrl: mig.prodPubContentJsonUrl,
         contentBaseUrl: mig.realDataBaseUrl,
+      },
+      {
+        contentJsonUrl: sogi.prodPubContentJsonUrl,
+        contentBaseUrl: sogi.realDataBaseUrl,
       },
       {
         contentJsonUrl: ttw.prodPubContentJsonUrl,
@@ -371,12 +381,20 @@ export default {
         contentBaseUrl: eilr.realDataBaseUrl,
       },
       {
+        contentJsonUrl: hou.prodWebContentJsonUrl,
+        contentBaseUrl: hou.realDataBaseUrl,
+      },
+      {
         contentJsonUrl: lab.prodWebContentJsonUrl,
         contentBaseUrl: lab.realDataBaseUrl,
       },
       {
         contentJsonUrl: mig.prodWebContentJsonUrl,
         contentBaseUrl: mig.realDataBaseUrl,
+      },
+      {
+        contentJsonUrl: sogi.prodWebContentJsonUrl,
+        contentBaseUrl: sogi.realDataBaseUrl,
       },
       {
         contentJsonUrl: ttw.prodWebContentJsonUrl,

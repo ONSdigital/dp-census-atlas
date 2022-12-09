@@ -59,7 +59,7 @@ const testCases = [
     name: "SOGI",
     url: "/choropleth/identity/gender-identity/gender-identity-4a/gender-identity-different-from-sex-registered-at-birth?msoa=E02003604",
     legendText:
-      "22.8% of families in Biggleswade East MSOA have a gender identity different from their sex registered at birth",
+      "22.84% of families in Biggleswade East MSOA have a gender identity different from their sex registered at birth",
     categoryCount: 3,
     nextClassificationCategoryCount: 7,
   },

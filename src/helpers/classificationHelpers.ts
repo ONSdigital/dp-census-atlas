@@ -14,7 +14,15 @@ const classificationDataDisplayConfig = (classificationCode: string) => {
       roundBreaks: (breaks: number[]) => uniqueRoundedNumbers({ numbers: breaks, decimalPlaces: 0 }),
     };
   }
-  const twoDecimalPlaceClassifications = ["main_language_detailed", "main_language_detailed_23a"];
+  const twoDecimalPlaceClassifications = [
+    "main_language_detailed",
+    "main_language_detailed_23a",
+    "gender_identity_4a",
+    "gender_identity_8a",
+    "sexual_orientation_4a",
+    "sexual_orientation_6a",
+    "sexual_orientation_9a",
+  ];
   if (twoDecimalPlaceClassifications.includes(classificationCode)) {
     return {
       suffix: "%",

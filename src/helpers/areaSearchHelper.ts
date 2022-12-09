@@ -1,10 +1,7 @@
-import type { Coord } from "@turf/helpers";
 import { appBasePath } from "../buildEnv";
 import type { GeographySearchItem, PostcodeSearchItem } from "../types";
-import Pbf from "pbf";
-import vt from "@mapbox/vector-tile";
-import tb from "@mapbox/tilebelt";
-import inPolygon from "@turf/boolean-point-in-polygon";
+
+const maxPostcodeResults = 10;
 
 export const isSearchableQuery = (query: string): boolean => {
   return query.length >= 3;
@@ -31,40 +28,30 @@ const fetchGeographySearchItems = async (q: string): Promise<GeographySearchItem
 
 const fetchPostcodeSearchItems = async (q: string): Promise<PostcodeSearchItem[]> => {
   try {
-    const response = await fetch(`https://api.postcodes.io/postcodes/${q}/autocomplete`);
+    const pcdPrefix = q.toUpperCase().replace(/\s/g, "").slice(0, 4);
+    const response = await fetch(`https://cdn.ons.gov.uk/maptiles/postcode-oa-lookup/2022-08/${pcdPrefix}.json`);
     const json = await response.json();
-    return (json.result ?? []).map((postcode) => ({ kind: "Postcode", value: postcode }));
+    const postcodeResults = json.map((postcode) => ({ kind: "Postcode", value: postcode.pcd, oa: postcode.oa }));
+    return filterPostcodeResults(q, postcodeResults);
   } catch (err) {
     console.error(err);
     return [] as PostcodeSearchItem[];
   }
 };
 
-export async function getOAfromLngLat(lng, lat) {
-  const tile = tb.pointToTile(lng, lat, 12);
-  const url = `https://cdn.ons.gov.uk/maptiles/administrative/2021/oa/v2/boundaries/${tile[2]}/${tile[0]}/${tile[1]}.pbf`;
-  try {
-    const geojson = await getTileAsGeoJSON(url, tile);
-    const pt = { type: "Point", coordinates: [lng, lat] };
-    for (const f of geojson.features) {
-      if (inPolygon(pt as Coord, f.geometry)) return f.properties.areacd;
-    }
-    return null;
-  } catch {
-    return null;
+/*
+  Filter postcodes to first ten matches for query string. Prioritise matches with the query string as the user typed it
+  (after enforcing case) but if no matches found try to filter postcodes for the user query with spaces removed.
+*/
+const filterPostcodeResults = (q: string, postcodes: PostcodeSearchItem[]): PostcodeSearchItem[] => {
+  const matchesOriginalQuery = postcodes
+    .filter((pcd) => pcd.value.toUpperCase().includes(q.toUpperCase()))
+    .slice(0, maxPostcodeResults);
+  if (matchesOriginalQuery.length > 0) {
+    return matchesOriginalQuery;
   }
-}
-
-async function getTileAsGeoJSON(url, tile) {
-  const res = await fetch(url);
-  const buf = await res.arrayBuffer();
-  const pbf = new Pbf(buf);
-  const geojson = { type: "FeatureCollection", features: [] };
-  const t = new vt.VectorTile(pbf);
-  for (const key in t.layers) {
-    for (let i = 0; i < t.layers[key].length; i++) {
-      geojson.features.push(t.layers[key].feature(i).toGeoJSON(...tile));
-    }
-  }
-  return geojson;
-}
+  const matchesQueryWithSpacesRemoved = postcodes
+    .filter((pcd) => pcd.value.toUpperCase().replace(/\s/g, "").includes(q.toUpperCase().replace(/\s/g, "")))
+    .slice(0, maxPostcodeResults);
+  return matchesQueryWithSpacesRemoved;
+};

@@ -1,0 +1,33 @@
+{
+  "content": [
+    {
+      "classifications": [
+        {
+          "code": "hh_deprivation",
+          "categories": [
+            {
+              "name": "Household is not deprived in any dimension",
+              "code": "hh_deprivation-001"
+            },
+            {
+              "name": "Household is deprived in one dimension",
+              "code": "hh_deprivation-002"
+            },
+            {
+              "name": "Household is deprived in two dimensions",
+              "code": "hh_deprivation-003"
+            },
+            {
+              "name": "Household is deprived in three dimensions",
+              "code": "hh_deprivation-004"
+            },
+            {
+              "name": "Household is deprived in four dimensions",
+              "code": "hh_deprivation-005"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

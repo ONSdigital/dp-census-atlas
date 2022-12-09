@@ -8,6 +8,7 @@ import (
 	"os"
 	"path/filepath"
 	"strconv"
+	"strings"
 
 	"github.com/jtrim-ons/ckmeans/pkg/ckmeans"
 
@@ -82,13 +83,18 @@ func New(geos []types.Geocode, cats []types.Category, withTots bool) (*M, error)
 	}, nil
 }
 
-func (m *M) LoadAll(dir string) error {
-	fnames, err := filepath.Glob(filepath.Join(dir, "*.CSV"))
+func (m *M) LoadAll(dir, except string) error {
+	fnames, err := filepath.Glob(filepath.Join(dir, "*.[cC][sS][vV]"))
 	if err != nil {
 		return err
 	}
 
 	for _, fname := range fnames {
+		base := filepath.Base(fname)
+		if strings.EqualFold(base, except) {
+			log.Printf("skipping %s", fname)
+			continue
+		}
 		log.Printf("Loading %s", fname)
 		if err := m.Load(fname); err != nil {
 			return err
@@ -106,15 +112,19 @@ func (m *M) Load(fname string) error {
 }
 
 func (m *M) ImportCSV(records [][]string) error {
+	var imported int
+
 	if len(records) < 2 {
 		return errors.New("not enough rows")
 	}
 	if len(records[0]) < 2 {
 		return errors.New("not enough columns")
 	}
-	if records[0][0] != "GeographyCode" {
+	magic := strings.ReplaceAll(records[0][0], " ", "")
+	if !strings.EqualFold(magic, "GeographyCode") {
 		return errors.New("not a metrics file")
 	}
+	log.Printf("%d data rows in CSV\n", len(records)-1)
 
 	// create mapping from CSV row number to m.tab row number
 	rowmap := m.mapCSVgeos(records)
@@ -127,6 +137,7 @@ func (m *M) ImportCSV(records [][]string) error {
 		if !ok {
 			tabcol, ok = m.totidx[types.Category(catcode)]
 			if !ok {
+				log.Printf("ignoring CSV col %q\n", catcode)
 				continue // this category not wanted
 			}
 		}
@@ -146,14 +157,20 @@ func (m *M) ImportCSV(records [][]string) error {
 			if !math.IsNaN(float64(cur)) {
 				return fmt.Errorf("row %d: col %d: duplicate", csvrow, csvcol)
 			}
+			if record[csvcol] == "NA" {
+				log.Printf("NA in row %d: col %d: skipping", csvrow, csvcol)
+				continue // skip NA rows
+			}
 			v, err := strconv.ParseFloat(record[csvcol], 64)
 			if err != nil {
 				return fmt.Errorf("row %d: col %d: %w", csvrow, csvcol, err)
 			}
 			m.tab[tabrow][tabcol] = types.Value(v)
+			imported++
 		}
 	}
 
+	log.Printf("imported %d cells from CSV\n", imported)
 	return nil
 }
 
@@ -163,7 +180,7 @@ func (m *M) ImportCSV(records [][]string) error {
 func (m *M) mapCSVgeos(records [][]string) map[int]int {
 	ncols := len(m.cats)+len(m.totcats)
 	idx := map[int]int{}
-	for csvrow, record := range records{
+	for csvrow, record := range records {
 		if csvrow == 0 {
 			continue // skip heder line
 		}

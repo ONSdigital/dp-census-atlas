@@ -6,7 +6,7 @@ import (
 
 func Test_SetStandardProps(t *testing.T) {
 	a := New()
-	if err := a.LoadCollection("testdata/test.geojson", LAD); err != nil {
+	if _, err := a.LoadCollection("testdata/test.geojson", LAD); err != nil {
 		t.Fatalf("%s", err)
 	}
 	if err := a.SetStandardProps(LAD); err != nil {

@@ -1,8 +1,8 @@
 {
   "meta": {
-    "created_at": "2022-12-07-14-59-36",
-    "spec_file": "2021-content-spec-v33.json",
-    "release": "2021-EILR"
+    "created_at": "2022-12-12-11-41-24",
+    "spec_file": "2021-content-spec.json",
+    "release": "2021-EILR-ar2776-c21ew_metadata-v1-3_cantab_20221207-35"
   },
   "content": [
     {
@@ -138,6 +138,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "dataset": "TS021",
               "data_download": "https://www.ons.gov.uk/datasets/TS021/editions/2021/versions/1",
               "categories": [
                 {
@@ -192,6 +193,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
+              "dataset": "TS021",
               "data_download": "https://www.ons.gov.uk/datasets/TS021/editions/2021/versions/1",
               "categories": [
                 {

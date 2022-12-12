@@ -2,7 +2,7 @@
 
 // topics
 const zero = {
-  localContentJsonUrl: "http://localhost:8090/2021/release-0.json",
+  localContentJsonUrl: "http://localhost:8090/release-0.json",
   publicContentJsonUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/release-0.json",
   prodPubContentJsonUrl: "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusatlasdryrun/release-0.json",
   prodWebContentJsonUrl: "https://www.ons.gov.uk/visualisations/censusatlasdryrun/release-0.json",
@@ -10,7 +10,7 @@ const zero = {
   realDataBaseUrl: "no data to load",
 };
 const arm = {
-  localContentJsonUrl: "http://localhost:8090/2021/2021-ARM.json",
+  localContentJsonUrl: "http://localhost:8090/2021-ARM.json",
   publicContentJsonUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-ARM.json",
   prodPubContentJsonUrl: "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusmapsconfig/2021-ARM.json",
   prodWebContentJsonUrl: "https://www.ons.gov.uk/visualisations/censusmapsconfig/2021-ARM.json",
@@ -18,7 +18,7 @@ const arm = {
   realDataBaseUrl: "https://ons-dp-prod-census-maps-arm.s3.eu-west-2.amazonaws.com",
 };
 const dem = {
-  localContentJsonUrl: "http://localhost:8090/2021/2021-DEM.json",
+  localContentJsonUrl: "http://localhost:8090/2021-DEM.json",
   publicContentJsonUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-DEM.json",
   prodPubContentJsonUrl: "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusmapsconfig/2021-DEM.json",
   prodWebContentJsonUrl: "https://www.ons.gov.uk/visualisations/censusmapsconfig/2021-DEM.json",
@@ -26,7 +26,7 @@ const dem = {
   realDataBaseUrl: "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
 };
 const edu = {
-  localContentJsonUrl: "http://localhost:8090/2021/2021-EDU.json",
+  localContentJsonUrl: "http://localhost:8090/2021-EDU.json",
   publicContentJsonUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-EDU.json",
   prodPubContentJsonUrl: "",
   prodWebContentJsonUrl: "",
@@ -34,7 +34,7 @@ const edu = {
   realDataBaseUrl: "",
 };
 const eilr = {
-  localContentJsonUrl: "http://localhost:8090/2021/2021-EILR.json",
+  localContentJsonUrl: "http://localhost:8090/2021-EILR.json",
   publicContentJsonUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-EILR.json",
   prodPubContentJsonUrl: "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusmapsconfig/2021-EILR.json",
   prodWebContentJsonUrl: "https://www.ons.gov.uk/visualisations/censusmapsconfig/2021-EILR.json",
@@ -42,7 +42,7 @@ const eilr = {
   realDataBaseUrl: "https://ons-dp-prod-census-maps-eilr.s3.eu-west-2.amazonaws.com",
 };
 const hou = {
-  localContentJsonUrl: "http://localhost:8090/2021/2021-HOU.json",
+  localContentJsonUrl: "http://localhost:8090/2021-HOU.json",
   publicContentJsonUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-HOU.json",
   prodPubContentJsonUrl:
     "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusmapsconfighou/2021-HOU.json",
@@ -51,7 +51,7 @@ const hou = {
   realDataBaseUrl: "https://ons-dp-prod-census-maps-hou.s3.eu-west-2.amazonaws.com",
 };
 const huc = {
-  localContentJsonUrl: "http://localhost:8090/2021/2021-HUC.json",
+  localContentJsonUrl: "http://localhost:8090/2021-HUC.json",
   publicContentJsonUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-HUC.json",
   prodPubContentJsonUrl: "",
   prodWebContentJsonUrl: "",
@@ -59,7 +59,7 @@ const huc = {
   realDataBaseUrl: "",
 };
 const lab = {
-  localContentJsonUrl: "http://localhost:8090/2021/2021-LAB.json",
+  localContentJsonUrl: "http://localhost:8090/2021-LAB.json",
   publicContentJsonUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-LAB.json",
   prodPubContentJsonUrl:
     "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusmapsconfiglab/2021-LAB.json",
@@ -68,7 +68,7 @@ const lab = {
   realDataBaseUrl: "https://ons-dp-prod-census-maps-lab.s3.eu-west-2.amazonaws.com",
 };
 const mig = {
-  localContentJsonUrl: "http://localhost:8090/2021/2021-MIG.json",
+  localContentJsonUrl: "http://localhost:8090/2021-MIG.json",
   publicContentJsonUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-MIG.json",
   prodPubContentJsonUrl: "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusmapsconfig/2021-MIG.json",
   prodWebContentJsonUrl: "https://www.ons.gov.uk/visualisations/censusmapsconfig/2021-MIG.json",
@@ -76,7 +76,7 @@ const mig = {
   realDataBaseUrl: "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
 };
 const sogi = {
-  localContentJsonUrl: "http://localhost:8090/2021/2021-SOGI.json",
+  localContentJsonUrl: "http://localhost:8090/2021-SOGI.json",
   publicContentJsonUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-SOGI.json",
   prodPubContentJsonUrl:
     "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusmapsconfigsogi/2021-SOGI.json",
@@ -85,7 +85,7 @@ const sogi = {
   realDataBaseUrl: "https://ons-dp-prod-census-maps-sogi.s3.eu-west-2.amazonaws.com",
 };
 const ttw = {
-  localContentJsonUrl: "http://localhost:8090/2021/2021-TTW.json",
+  localContentJsonUrl: "http://localhost:8090/2021-TTW.json",
   publicContentJsonUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-TTW.json",
   prodPubContentJsonUrl:
     "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusmapsconfiglab/2021-TTW.json",
@@ -94,7 +94,7 @@ const ttw = {
   realDataBaseUrl: "https://ons-dp-prod-census-maps-ttw.s3.eu-west-2.amazonaws.com",
 };
 const welshSkills = {
-  localContentJsonUrl: "http://localhost:8090/2021/2021-WELSH-SKILLS.json",
+  localContentJsonUrl: "http://localhost:8090/2021-WELSH-SKILLS.json",
   publicContentJsonUrl:
     "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-WELSH-SKILLS.json",
   prodPubContentJsonUrl:

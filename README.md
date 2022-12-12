@@ -43,20 +43,19 @@ All _important_ state flows in one direction from the URL to the UI. This enable
 
 See the general [DP release process](https://github.com/ONSdigital/dp/blob/main/guides/RELEASES.md), but here are the specific steps for this app:
 
-- see existing releases <https://github.com/ONSdigital/dp-census-atlas/releases>
+- see existing releases <https://github.com/ONSdigital/dp-census-atlas/releases> and choose the next release name (if the latest `1.14.0`, the next will be `1.15.0`)
 - ensure your `develop` is up-to-date `git checkout develop`, `git pull`
-- create a 'release branch' from `develop` with an incremented release number `git checkout -b release/1.7.0` and push to Github
+- create a 'release branch' from `develop` with an incremented release number `git checkout -b release/0.0.0` and push to Github
 - go to <https://github.com/ONSdigital/dp-census-atlas/branches> and make a PR with a base of `master`
 - add a list of changes (release notes) to the description (scan through the commit messages!)
 - get the PR approved
-- ensure your `master` is up-to-date - `git pull master`
-- merge the release into `master` - `git merge --no-ff release/1.7.0`
-- tag the release `git tag -s v1.7.0` and paste in the release notes here too to 'annotate' the tag
+- ensure your `master` is up-to-date - `git checkout master`, `git pull`
+- merge the release into `master` - `git merge --no-ff release/0.0.0`
+- tag the release `git tag -s v0.0.0` and paste in the release notes here too to 'annotate' the tag
 - push the release `git push --follow-tags`
-- wait for the CI
 - go to <https://github.com/ONSdigital/dp-census-atlas/releases> and 'Draft a new release'
 - choose the tag
-- add a release title `Release 1.7.0`
+- add a release title `Release 0.0.0`
 - paste in release notes again!
 - click 'Publish release'
 - go to Concourse

@@ -318,12 +318,12 @@ def main(spec_fn: str):
     }
 
     # output
-    output_dir = Path("output_content_jsons").joinpath(spec["version"])
+    output_dir = Path("output_content_jsons")
     makedirs(output_dir, exist_ok=True)
     print(f"Writing content jsons to {output_dir}...")
     for content_iteration_name, content_iteration in content_iterations.items():
-        release_name = f"{spec['version']}-{content_iteration_name}"
-        meta["release"] = f"{spec['version']}-{content_iteration_name}"
+        release_name = f"{spec['census_year']}-{content_iteration_name}"
+        meta["release"] = f"{spec['census_year']}-{content_iteration_name}-{spec['cantabular_metadata_dir']}"
         output_filename = output_dir.joinpath(f"{release_name}.json")
         write_content({"meta": meta, "content": content_iteration}, output_filename)
     print("... done.")

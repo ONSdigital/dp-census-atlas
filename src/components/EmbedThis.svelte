@@ -12,6 +12,7 @@
 
   let dialog: HTMLDialogElement;
   let button: HTMLButtonElement;
+  $: open = false;
   let copied: Observable<boolean>;
 
   let embedInteractive = true;
@@ -61,6 +62,7 @@
   <button
     class="flex items-center gap-2 custom-ring hyperlink "
     on:click={() => {
+      open = true;
       dialog.showModal();
       pushAnalyticsEvent();
     }}
@@ -72,7 +74,7 @@
   </button>
 </div>
 
-<dialog bind:this={dialog} class="m-auto max-w-5xl p-6">
+<dialog bind:this={dialog} on:close={() => (open = false)} class="m-auto max-w-5xl p-6">
   <form method="dialog">
     <div class="flex justify-between">
       <h2 class="mb-4 text-xl font-semibold md:text-2xl ">Embed this map</h2>
@@ -149,7 +151,9 @@
     </div>
   </section>
 
-  <section class="mt-5">
-    <iframe height="600px" width="100%" title="ONS Census Maps" frameborder="0" src={embedCode.url} />
-  </section>
+  {#if open}
+    <section class="mt-5">
+      <iframe height="600px" width="100%" title="ONS Census Maps" frameborder="0" src={embedCode.url} />
+    </section>
+  {/if}
 </dialog>

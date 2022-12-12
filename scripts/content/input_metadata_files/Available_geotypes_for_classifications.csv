@@ -39,7 +39,7 @@ Identity,religion_tb,EILR,religion_tb,"oa,msoa,lad"
 Identity,welsh_skills_all,EILR,welsh_skills_all_4b,"oa,msoa,lad"
 Identity,welsh_skills_all,EILR,welsh_skills_all_6a,"oa,msoa,lad"
 Identity,welsh_skills_all,EILR,welsh_skills_all,"oa,msoa,lad"
-Identity,welsh_skills_speak,EILR,welsh_skills_speak,lad
+Identity,welsh_skills_speak,EILR,welsh_skills_speak,"oa,msoa,lad"
 Identity,gender_identity,SOGI,gender_identity_4a,"msoa,lad"
 Identity,gender_identity,SOGI,gender_identity_8a,"msoa,lad"
 Identity,sexual_orientation,SOGI,sexual_orientation_4a,"msoa,lad"

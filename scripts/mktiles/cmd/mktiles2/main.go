@@ -93,7 +93,7 @@ func main() {
 		log.Fatal(err)
 	}
 	log.Printf("found %d categories", len(wantcats))
-	m, err := metric2.New(atlas.Geocodes(), strings2cats(wantcats), *doRatios)
+	m, err := metric2.New(strings2cats(wantcats), *doRatios)
 	if err != nil {
 		log.Fatal(err)
 	}

@@ -57,7 +57,7 @@ func Test_IncludeTotalCats(t *testing.T) {
 			types.Category("A1A2"),
 			types.Category("A2A2"),
 		}
-		m, err := New(geos, cats, false)
+		m, err := New(cats, false)
 		So(err, ShouldBeNil)
 
 		Convey("totals categories should be calculated", func() {
@@ -75,12 +75,11 @@ func Test_IncludeTotalCats(t *testing.T) {
 
 func Test_CalcRatios(t *testing.T) {
 	Convey("Given an initialised M", t, func() {
-		geos := []types.Geocode{geoA, geoB, geoC}
 		cats := []types.Category{
 			types.Category("CAT1A2"),
 			types.Category("CAT1A3"),
 		}
-		m, err := New(geos, cats, true)
+		m, err := New(cats, true)
 		So(err, ShouldBeNil)
 
 		Convey("when a valid CSV is imported", func() {

@@ -42,9 +42,9 @@ type M struct {
 	totcats []types.Category
 }
 
-func New(geos []types.Geocode, cats []types.Category, withTots bool) (*M, error) {
+func New(/*geos []types.Geocode, */cats []types.Category, withTots bool) (*M, error) {
 	var err error
-	var totcats []types.Category
+	totcats := []types.Category{}
 	if withTots {
 		totcats, err = guessTotalsCats(cats)
 		if err != nil {
@@ -219,7 +219,7 @@ func (m *M) MakeTiles(geos []types.Geocode, dir string) error {
 		for i, geocode := range geos {
 			tabrow := tabrows[i]
 			if tabrow == -1 {
-				log.Printf("%s: geocode not in table", geocode)
+				//log.Printf("MakeTiles: %s: geocode not in table", geocode)
 				continue
 			}
 			val := float64(m.tab[tabrow][tabcol])
@@ -330,7 +330,7 @@ func (m *M) tabrowsByType(lookup TypeLookupFunc) map[types.Geotype][]int {
 	for tabrow, geocode := range m.geos {
 		geotype, found := lookup(geocode)
 		if !found {
-			log.Printf("tabrowsByType: geocode %s not found in table", geocode)
+			//log.Printf("tabrowsByType: geocode %s in metrics but not in geojson", geocode)
 			continue
 		}
 		res[geotype] = append(res[geotype], tabrow)

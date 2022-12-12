@@ -39,25 +39,13 @@ const (
 
 var (
 	cats = []types.Category{cat1, cat2}
-	nan = types.Value(math.NaN())
+	nan  = types.Value(math.NaN())
 )
-
-// goconvey custom assertion to verify a float64 is not NaN
-func shouldNotBeNaN(actual interface{}, expected ...interface{}) string {
-	v, ok := actual.(float64)
-	if !ok {
-		return "isnan wanted float64"
-	}
-	if math.IsNaN(v) {
-		return "is NaN"
-	}
-	return ""
-}
 
 // goconvey custom assertion to compare M structs
 // Cannot just use ShouldResemble because .tab may includes NaNs which aren't directly comparable.
 // (Unless goconvey handles NaNs specially, which I couldn't find.)
-func shouldBeEquivM(actual interface{}, expected ...interface{}) string{
+func shouldBeEquivM(actual interface{}, expected ...interface{}) string {
 	a, ok := actual.(*M)
 	if !ok {
 		return "shouldBeEquivM wanted actual *M"
@@ -109,27 +97,27 @@ func compareTab(a, x [][]types.Value) string {
 	}
 	for row := 0; row < len(x); row++ {
 		arow := a[row]
-                xrow := x[row]
-                if len(arow) != len(xrow) {
-                        return fmt.Sprintf("rows not same length (row %d, actual %d, expected %d)", row, len(arow), len(xrow))
-                }
-                for col := 0; col < len(xrow); col++ {
-                        want := float64(xrow[col])
-                        got := float64(arow[col])
-                        if math.IsNaN(want) {
-                                if !math.IsNaN(got) {
-                                        return fmt.Sprintf("row %d, cell %d: want NaN, got %f", row, col, got)
-                                }
-                        } else if got != want {
-                                return fmt.Sprintf("row %d, cell %d: want %f, got %f", row, col, want, got)
-                        }
-                }
+		xrow := x[row]
+		if len(arow) != len(xrow) {
+			return fmt.Sprintf("rows not same length (row %d, actual %d, expected %d)", row, len(arow), len(xrow))
+		}
+		for col := 0; col < len(xrow); col++ {
+			want := float64(xrow[col])
+			got := float64(arow[col])
+			if math.IsNaN(want) {
+				if !math.IsNaN(got) {
+					return fmt.Sprintf("row %d, cell %d: want NaN, got %f", row, col, got)
+				}
+			} else if got != want {
+				return fmt.Sprintf("row %d, cell %d: want %f, got %f", row, col, want, got)
+			}
+		}
 	}
 	return ""
 }
 
 func Test_New(t *testing.T) {
-	cat2a1 := types.Category("CAT2A1")	// totals category inferred
+	cat2a1 := types.Category("CAT2A1") // totals category inferred
 	cat2a2 := types.Category("CAT2A2")
 	cat2a3 := types.Category("CAT2A3")
 	cats := []types.Category{cat2a2, cat2a3}
@@ -139,15 +127,15 @@ func Test_New(t *testing.T) {
 		So(err, ShouldBeNil)
 
 		want := &M{
-			tab: [][]types.Value{},
+			tab:    [][]types.Value{},
 			geoidx: map[types.Geocode]int{},
 			catidx: map[types.Category]int{
 				cat2a2: 0,
 				cat2a3: 1,
 			},
-			totidx: map[types.Category]int{},
-			geos: []types.Geocode{},
-			cats: cats,
+			totidx:  map[types.Category]int{},
+			geos:    []types.Geocode{},
+			cats:    cats,
 			totcats: []types.Category{},
 		}
 		So(m, shouldBeEquivM, want)
@@ -158,10 +146,10 @@ func Test_New(t *testing.T) {
 		So(err, ShouldBeNil)
 
 		want := &M{
-			tab: [][]types.Value{},
+			tab:    [][]types.Value{},
 			geoidx: map[types.Geocode]int{},
 			catidx: map[types.Category]int{
-				cat2a2:0,
+				cat2a2: 0,
 				cat2a3: 1,
 			},
 			totidx: map[types.Category]int{
@@ -177,98 +165,60 @@ func Test_New(t *testing.T) {
 	})
 }
 
-func Test_mapCSVgeos(t *testing.T) {
-	cats := []types.Category{cat1, cat2}
-
-	// these fields do not change in the initialised M
-	catidx := map[types.Category]int{
-		cat1: 0,
-		cat2: 1,
-	}
-	totidx := map[types.Category]int{}
-	totcats := []types.Category{}
-
+func Test_getRowIdx(t *testing.T) {
 	Convey("Given an initialised M", t, func() {
 		m, err := New(cats, false)
 		So(err, ShouldBeNil)
 
-		// Load first CSV and verify m struct looks right
-		// First CSV has a category we are not interested in.
-		// New rows created in .tab are "empty", just NaNs; values filled in later.
-		Convey("When geocodes of the first CSV are mapped", func() {
-			records := [][]string{
-				{"GeographyCode", "cat1", "cat3"},
-				{"geoA", "1", "2"},
-				{"geoB", "3", "4"},
+		Convey("When new rows are added", func() {
+			tests := []struct {
+				geocode types.Geocode
+				wantidx int
+			}{
+				{geoA, 0},
+				{geoB, 1},
+				{geoC, 2},
+				{geoD, 3}, // deliberate repeats
+				{geoA, 0},
+				{geoB, 1},
+				{geoC, 2},
+				{geoD, 3},
 			}
-			idx := m.mapCSVgeos(records)
 
-			Convey("the resulting map is correct", func() {
-                                So(idx, ShouldResemble, map[int]int{1: 0, 2: 1})
-                        })
+			for _, test := range tests {
+				gotidx := m.getRowIdx(test.geocode)
+				So(gotidx, ShouldEqual, test.wantidx)
+			}
 
 			Convey("the resulting M struct is correct", func() {
 				want := &M{
 					tab: [][]types.Value{
 						{nan, nan},
 						{nan, nan},
+						{nan, nan},
+						{nan, nan},
 					},
 					geoidx: map[types.Geocode]int{
 						geoA: 0,
 						geoB: 1,
+						geoC: 2,
+						geoD: 3,
 					},
-					catidx: catidx,
-					totidx: totidx,
+					catidx: map[types.Category]int{
+						cat1: 0,
+						cat2: 1,
+					},
+					totidx: map[types.Category]int{},
 					geos: []types.Geocode{
 						geoA,
 						geoB,
+						geoC,
+						geoD,
 					},
-					cats: cats,
-					totcats: totcats,
+					cats:    cats,
+					totcats: []types.Category{},
 				}
 				So(m, shouldBeEquivM, want)
-			})
-
-			// Load second CSV and verify m struct still looks right.
-			// Second CSV has an additional geo that must be added, plus a
-			// category we are not interested in.
-			Convey("When geocodes of the second CSV are mapped", func() {
-				records := [][]string{
-					{"GeographyCode", "cat2", "cat3"},
-					{"geoA", "5", "6"},
-					{"geoB", "7", "8"},
-					{"geoC", "9", "10"},
-				}
-				idx := m.mapCSVgeos(records)
-
-				Convey("the resulting map is correct", func() {
-					So(idx, ShouldResemble, map[int]int{1: 0, 2: 1, 3: 2})
-				})
-
-				Convey("the resulting M struct is correct", func() {
-					want := &M{
-						tab: [][]types.Value{
-							{nan, nan},
-							{nan, nan},
-							{nan, nan},
-						},
-						geoidx: map[types.Geocode]int{
-							geoA: 0,
-							geoB: 1,
-							geoC: 2,
-						},
-						catidx: catidx,
-						totidx: totidx,
-						geos: []types.Geocode{
-							geoA,
-							geoB,
-							geoC,
-						},
-						cats: cats,
-						totcats: totcats,
-					}
-					So(m, shouldBeEquivM, want)
-				})
 			})
 		})
 	})
@@ -382,7 +332,7 @@ func Test_ImportCSV(t *testing.T) {
 						geoA,
 						geoC,
 					},
-					cats: cats,
+					cats:    cats,
 					totcats: totcats,
 				}
 				So(m, shouldBeEquivM, want)
@@ -418,7 +368,7 @@ func Test_ImportCSV(t *testing.T) {
 							geoC,
 							geoB,
 						},
-						cats: cats,
+						cats:    cats,
 						totcats: totcats,
 					}
 					So(m, shouldBeEquivM, want)
@@ -434,9 +384,9 @@ func Test_mapGeos(t *testing.T) {
 		So(err, ShouldBeNil)
 
 		records := [][]string{
-			{"GeographyCode", "cat1","cat2"},
-			{"geoA","1","2"},
-			{"geoB","3","4"},
+			{"GeographyCode", "cat1", "cat2"},
+			{"geoA", "1", "2"},
+			{"geoB", "3", "4"},
 		}
 		err = m.ImportCSV(records)
 		So(err, ShouldBeNil)
@@ -451,7 +401,7 @@ func Test_mapGeos(t *testing.T) {
 		})
 		Convey("known geos are indexed correctly", func() {
 			idx := m.mapGeos([]types.Geocode{geoB, geoA})
-			So(idx, ShouldResemble, []int{1,0})
+			So(idx, ShouldResemble, []int{1, 0})
 		})
 	})
 }
@@ -459,7 +409,7 @@ func Test_mapGeos(t *testing.T) {
 func Test_MakeTiles(t *testing.T) {
 	Convey("Given an initialised M", t, func() {
 		// initialise m with a 3 geos and 2 cats
-		m, err := New(/*[]types.Geocode{geoA, geoB, geoN},*/ cats, false)
+		m, err := New( /*[]types.Geocode{geoA, geoB, geoN},*/ cats, false)
 		So(err, ShouldBeNil)
 
 		Convey("after importing a valid CSV", func() {
@@ -602,7 +552,7 @@ func Test_MakeBreaks(t *testing.T) {
 	Convey("Given an initialised M", t, func() {
 		//geos := []types.Geocode{geoA, geoB, geoC, geoD, geoE, geoF, geoG, geoH, geoI, geoJ, geoK, geoL, geoM, geoN}
 
-		m, err := New(/*geos,*/ cats, false)
+		m, err := New( /*geos,*/ cats, false)
 		So(err, ShouldBeNil)
 
 		Convey("When a valid CSV is imported", func() {
@@ -666,22 +616,6 @@ func Test_MakeBreaks(t *testing.T) {
 					So(err, ShouldBeNil)
 				})
 			}))
-		})
-	})
-}
-
-func Test_Fake(t *testing.T) {
-	Convey("Given an initialised M", t, func() {
-		m, err := New(cats, false)
-		So(err, ShouldBeNil)
-
-		Convey("Fake fills table with random values", func() {
-			m.Fake(nil, 0)
-			for _, tabrow := range m.geoidx {
-				for _, tabcol := range m.catidx {
-					So(float64(m.tab[tabrow][tabcol]), shouldNotBeNaN)
-				}
-			}
 		})
 	})
 }

@@ -54,11 +54,54 @@ func main() {
 		log.Fatal(err)
 	}
 
-	atlas := geo.New()
+	//
+	// load content.json
+	//
+	log.Printf("loading content.json")
+	cont, err := content.LoadName(*contentName)
+	if err != nil {
+		log.Fatal(err)
+	}
+	wantcats, err := cont.Categories(*classCode)
+	if err != nil {
+		log.Fatal(err)
+	}
+	log.Printf("found %d categories", len(wantcats))
+
+	//
+	// load grid file
+	//
+	log.Printf("loading grid file")
+	grid, err := grid.Load(filepath.Join(*indir, GRID_JSON))
+	if err != nil {
+		log.Fatal(err)
+	}
+	for geocode, items := range grid {
+		log.Printf("found %d %s quads in grid file\n", len(items), geocode)
+	}
+
+	//
+	// set up notional spreadsheet
+	//
+	m, err := metric2.New(strings2cats(wantcats), *doRatios)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	//
+	// load metrics if not faking
+	//
+	if !*doFake {
+		log.Printf("loading metrics files")
+		if err := m.LoadAll(*indir, MSOA_NAMES_CSV); err != nil {
+			log.Fatal(err)
+		}
+	}
 
 	//
 	// Load and normalise geojson files
 	//
+	atlas := geo.New()
 	if err := loadGeojson(*indir, atlas); err != nil {
 		log.Fatal(err)
 	}
@@ -77,40 +120,20 @@ func main() {
 	}
 
 	//
-	// load content.json
+	// Generate fake data if faking
 	//
-	log.Printf("loading content.json")
-	cont, err := content.LoadName(*contentName)
-	if err != nil {
-		log.Fatal(err)
+	if *doFake {
+		log.Print("generating fake data")
+		m.Fake(atlas.Geocodes(), 0) // XXX first arg?
 	}
 
+	// ratios
 	//
-	// load metrics or generate fake metrics
-	//
-	wantcats, err := cont.Categories(*classCode)
-	if err != nil {
-		log.Fatal(err)
-	}
-	log.Printf("found %d categories", len(wantcats))
-	m, err := metric2.New(strings2cats(wantcats), *doRatios)
-	if err != nil {
-		log.Fatal(err)
-	}
-	if err := loadMetrics(*indir, atlas, m, *doFake, *doRatios); err != nil {
-		log.Fatal(err)
-	}
-
-	//
-	// load grid file
-	//
-	log.Printf("loading grid file")
-	grid, err := grid.Load(filepath.Join(*indir, GRID_JSON))
-	if err != nil {
-		log.Fatal(err)
-	}
-	for geocode, items := range grid {
-		log.Printf("found %d %s quads in grid file\n", len(items), geocode)
+	if *doRatios {
+		log.Printf("calculating ratios")
+		if err := m.CalcRatios(); err != nil {
+			log.Fatal(err)
+		}
 	}
 
 	//
@@ -198,32 +221,6 @@ func loadGeojson(dir string, atlas *geo.Atlas) error {
 			} else {
 				return err
 			}
-		}
-	}
-	return nil
-}
-
-func loadMetrics(dir string, atlas *geo.Atlas, m *metric2.M, doFake, doRatios bool) error {
-	if doFake {
-		log.Print("generating fake data")
-		// XXX get rid of first arg
-		m.Fake(atlas.Geocodes(), 0)
-		return nil
-	}
-
-	//if doRatios {
-	//	if err := m.IncludeTotalCats(); err != nil {
-	//		return err
-	//	}
-	//}
-	log.Printf("loading metrics files")
-	if err := m.LoadAll(dir, MSOA_NAMES_CSV); err != nil {
-		return err
-	}
-	if doRatios {
-		log.Printf("calculating ratios")
-		if err := m.CalcRatios(); err != nil {
-			return err
 		}
 	}
 	return nil

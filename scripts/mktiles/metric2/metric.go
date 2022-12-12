@@ -42,7 +42,7 @@ type M struct {
 	totcats []types.Category
 }
 
-func New(/*geos []types.Geocode, */cats []types.Category, withTots bool) (*M, error) {
+func New( /*geos []types.Geocode, */ cats []types.Category, withTots bool) (*M, error) {
 	var err error
 	totcats := []types.Category{}
 	if withTots {
@@ -126,9 +126,6 @@ func (m *M) ImportCSV(records [][]string) error {
 	}
 	log.Printf("%d data rows in CSV\n", len(records)-1)
 
-	// create mapping from CSV row number to m.tab row number
-	rowmap := m.mapCSVgeos(records)
-
 	for csvcol, catcode := range records[0] {
 		if csvcol == 0 {
 			continue // skip GeographyCode column
@@ -149,10 +146,7 @@ func (m *M) ImportCSV(records [][]string) error {
 			if len(record) != len(records[0]) {
 				return fmt.Errorf("row %d: should have %d cols", csvrow, len(records[0]))
 			}
-			tabrow := rowmap[csvrow]
-			if tabrow == -1 {
-				continue // not interested this geo
-			}
+			tabrow := m.getRowIdx(types.Geocode(record[0]))
 			cur := m.tab[tabrow][tabcol]
 			if !math.IsNaN(float64(cur)) {
 				return fmt.Errorf("row %d: col %d: duplicate", csvrow, csvcol)
@@ -174,36 +168,34 @@ func (m *M) ImportCSV(records [][]string) error {
 	return nil
 }
 
-// mapCSVgeos creates a mapping from CSV row number to m.tab row number
-// based on each row's geocode.
-// A row will be created for this geocode in m.tab if it doesn't already exist.
-func (m *M) mapCSVgeos(records [][]string) map[int]int {
-	ncols := len(m.cats) + len(m.totcats)
-	idx := map[int]int{}
-	for csvrow, record := range records {
-		if csvrow == 0 {
-			continue // skip heder line
-		}
-		geocode := types.Geocode(record[0])
-		// is this geocode known already?
-		tabrow, ok := m.geoidx[geocode]
-		if !ok {
-			// create and initialise new row
-			newrow := make([]types.Value, ncols)
-			for col := 0; col < ncols; col++ {
-				newrow[col] = types.Value(math.NaN())
-			}
-			// add new row to m.tab
-			m.tab = append(m.tab, newrow)
-			tabrow = len(m.tab) - 1
-			// add to list geos in table
-			m.geos = append(m.geos, geocode)
-			// add this geo to geoidx
-			m.geoidx[geocode] = tabrow
-		}
-		idx[csvrow] = tabrow
+// getRowIdx returns the row index in m.tab for geocode.
+// If geocode isn't already in m.tab, a row is created for it and filled with NaNs.
+func (m *M) getRowIdx(geocode types.Geocode) int {
+	// check if geocode is already in table
+	rowidx, ok := m.geoidx[geocode]
+	if ok {
+		return rowidx
 	}
-	return idx
+
+	// create and initialise new row
+	ncols := len(m.cats) + len(m.totcats)
+	nan := types.Value(math.NaN())
+	newrow := make([]types.Value, ncols)
+	for col := 0; col < ncols; col++ {
+		newrow[col] = nan
+	}
+
+	// add new row to m.tab
+	m.tab = append(m.tab, newrow)
+
+	// add this geocode to the geos list
+	m.geos = append(m.geos, geocode)
+
+	// add this geocode to geoidx
+	rowidx = len(m.tab) - 1
+	m.geoidx[geocode] = rowidx
+
+	return rowidx
 }
 
 // MakeTiles creates data tile CSVs in dir.

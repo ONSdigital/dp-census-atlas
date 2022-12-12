@@ -9,11 +9,10 @@ import (
 )
 
 // Fake generates fake metric data.
-// XXX geos is deprecated (metric2 knows all geos already)
 func (m *M) Fake(geos []types.Geocode, seed int64) {
 	rnd := rand.New(rand.NewSource(seed))
 
-	ncells := len(m.cats) * len(m.geos)
+	ncells := len(m.cats) * len(geos)
 	stride := ncells / 100
 	n := 0
 
@@ -25,7 +24,8 @@ func (m *M) Fake(geos []types.Geocode, seed int64) {
 		ncells,
 	)
 
-	for _, tabrow := range m.geoidx {
+	for _, geocode := range geos {
+		tabrow := m.getRowIdx(geocode)
 		for _, tabcol := range m.catidx {
 			n++
 			if stride == 0 || n%stride == 0 {

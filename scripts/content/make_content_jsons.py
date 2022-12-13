@@ -25,7 +25,7 @@ from os import makedirs
 from pathlib import Path
 import sys
 
-from slugify import slugify
+from slugify import slugify as python_slugify
 
 from scripts.census_objects import (
     CensusCategory,
@@ -42,6 +42,10 @@ from scripts.update_variable_desc_from_csv import update_variable_descs_from_fil
 from scripts.update_caveats_from_csv import update_variable_caveats_from_file
 from scripts.update_data_downloads_from_csv import update_classification_data_downloads_from_file
 from scripts.validate_content import validate_variable_groups
+
+
+def slugify(txt: str) -> str:
+    return python_slugify(txt.replace(" -", " minus ").replace(" +", " plus "))
 
 
 def category_from_cantabular_csv_row(csv_row: dict) -> CensusCategory:

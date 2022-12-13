@@ -84,3 +84,22 @@ func GuessTotalsCat(cat types.Category) (types.Category, error) {
 	s := fmt.Sprintf("%s%s%s%0*d", matches[1], matches[2], matches[3], digits, 1)
 	return types.Category(s), nil
 }
+
+// MissingCats returns a list of categories named in content.json, but not found
+// in any metrics CSV files.
+func (m *M) MissingCats() []types.Category {
+	missing := []types.Category{}
+	for _, cat := range m.cats {
+		_, ok := m.loadedCats[cat]
+		if !ok {
+			missing = append(missing, cat)
+		}
+	}
+	for _, cat := range m.totcats {
+		_, ok := m.loadedCats[cat]
+		if !ok {
+			missing = append(missing, cat)
+		}
+	}
+	return missing
+}

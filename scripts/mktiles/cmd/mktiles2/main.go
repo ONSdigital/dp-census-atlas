@@ -96,6 +96,14 @@ func main() {
 		if err := m.LoadAll(*indir, MSOA_NAMES_CSV); err != nil {
 			log.Fatal(err)
 		}
+		missingCats := m.MissingCats()
+		if len(missingCats) > 0 {
+			log.Printf("Categories in %s, but not in any metrics files:")
+			for _, cat := range missingCats {
+				log.Printf("\t%s", cat)
+			}
+			log.Fatal("missing categories in metrics files")
+		}
 	}
 
 	//

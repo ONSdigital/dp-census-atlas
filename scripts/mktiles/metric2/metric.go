@@ -37,7 +37,6 @@ type M struct {
 	geos []types.Geocode
 
 	// categories and totals categories in tab order.
-	// XXX cats... + totcats ... in table?
 	cats    []types.Category
 	totcats []types.Category
 
@@ -45,7 +44,7 @@ type M struct {
 	loadedCats map[types.Category]string
 }
 
-func New( /*geos []types.Geocode, */ cats []types.Category, withTots bool) (*M, error) {
+func New(cats []types.Category, withTots bool) (*M, error) {
 	var err error
 	totcats := []types.Category{}
 	if withTots {

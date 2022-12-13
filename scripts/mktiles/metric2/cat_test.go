@@ -119,3 +119,35 @@ func Test_CalcRatios(t *testing.T) {
 		})
 	})
 }
+
+func Test_MissingCats(t *testing.T) {
+	Convey("When all lists are empty", t, func() {
+		m := &M{
+			loadedCats: map[types.Category]string{},
+		}
+		Convey("there are no missing cats", func() {
+			missing := m.MissingCats()
+			So(len(missing), ShouldEqual, 0)
+		})
+	})
+	Convey("When there is a missing cat", t, func() {
+		m := &M{
+			cats:       []types.Category{cat1},
+			loadedCats: map[types.Category]string{},
+		}
+		Convey("it is found", func() {
+			missing := m.MissingCats()
+			So(missing, ShouldResemble, []types.Category{cat1})
+		})
+	})
+	Convey("When there is a missing totcat", t, func() {
+		m := &M{
+			totcats:    []types.Category{cat1},
+			loadedCats: map[types.Category]string{},
+		}
+		Convey("it is found", func() {
+			missing := m.MissingCats()
+			So(missing, ShouldResemble, []types.Category{cat1})
+		})
+	})
+}

@@ -31,7 +31,7 @@
 
     <div class="bg-ons-grey-5 p-6 mb-6">
       <h3 class="pb-3 text-xl font-semibold ">Examples</h3>
-      <ul>
+      <ul data-test-id="examples">
         {#if getLatestRelease($content) === "DemMig"}
           <DemMigExamples />
         {:else if getLatestRelease($content) === "ArmEilr"}

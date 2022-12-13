@@ -110,5 +110,11 @@ export const getLatestRelease = (content: ContentTree) => {
   if (content.releases.some((r) => r.includes("2021-EILR"))) {
     return "ArmEilr";
   }
+  if (content.releases.some((r) => r.includes("2021-HOU"))) {
+    return "Hou";
+  }
+  if (content.releases.some((r) => r.includes("2021-SOGI"))) {
+    return "Sogi";
+  }
   return "DemMig";
 };

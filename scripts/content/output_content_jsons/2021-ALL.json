@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-12-12-11-41-24",
+    "created_at": "2022-12-13-12-25-06",
     "spec_file": "2021-content-spec.json",
     "release": "2021-ALL-ar2776-c21ew_metadata-v1-3_cantab_20221207-35"
   },
@@ -1252,7 +1252,7 @@
               "categories": [
                 {
                   "name": "Occupancy rating of bedrooms: +2 or more",
-                  "slug": "occupancy-rating-of-bedrooms-2-or-more",
+                  "slug": "occupancy-rating-of-bedrooms-plus-2-or-more",
                   "code": "occupancy_rating_bedrooms_6a-001",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
@@ -1260,7 +1260,7 @@
                 },
                 {
                   "name": "Occupancy rating of bedrooms: +1",
-                  "slug": "occupancy-rating-of-bedrooms-1",
+                  "slug": "occupancy-rating-of-bedrooms-plus-1",
                   "code": "occupancy_rating_bedrooms_6a-002",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
@@ -1276,7 +1276,7 @@
                 },
                 {
                   "name": "Occupancy rating of bedrooms: -1",
-                  "slug": "occupancy-rating-of-bedrooms-1",
+                  "slug": "occupancy-rating-of-bedrooms-minus-1",
                   "code": "occupancy_rating_bedrooms_6a-004",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
@@ -1284,7 +1284,7 @@
                 },
                 {
                   "name": "Occupancy rating of bedrooms: -2 or less",
-                  "slug": "occupancy-rating-of-bedrooms-2-or-less",
+                  "slug": "occupancy-rating-of-bedrooms-minus-2-or-less",
                   "code": "occupancy_rating_bedrooms_6a-005",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
@@ -1318,7 +1318,7 @@
               "categories": [
                 {
                   "name": "Occupancy rating of rooms: +2 or more",
-                  "slug": "occupancy-rating-of-rooms-2-or-more",
+                  "slug": "occupancy-rating-of-rooms-plus-2-or-more",
                   "code": "occupancy_rating_rooms_6a-001",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
@@ -1326,7 +1326,7 @@
                 },
                 {
                   "name": "Occupancy rating of rooms: +1",
-                  "slug": "occupancy-rating-of-rooms-1",
+                  "slug": "occupancy-rating-of-rooms-plus-1",
                   "code": "occupancy_rating_rooms_6a-002",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
@@ -1342,7 +1342,7 @@
                 },
                 {
                   "name": "Occupancy rating of rooms: -1",
-                  "slug": "occupancy-rating-of-rooms-1",
+                  "slug": "occupancy-rating-of-rooms-minus-1",
                   "code": "occupancy_rating_rooms_6a-004",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
@@ -1350,7 +1350,7 @@
                 },
                 {
                   "name": "Occupancy rating of rooms: -2 or less",
-                  "slug": "occupancy-rating-of-rooms-2-or-less",
+                  "slug": "occupancy-rating-of-rooms-minus-2-or-less",
                   "code": "occupancy_rating_rooms_6a-005",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
@@ -4347,7 +4347,6 @@
               "slug": "gender-identity-8a",
               "desc": "Gender identity (8 categories)",
               "available_geotypes": [
-                "msoa",
                 "lad"
               ],
               "comparison_2011_data_available": true,

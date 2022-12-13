@@ -225,7 +225,7 @@ func (m *M) MakeTiles(geos []types.Geocode, dir string) error {
 
 		fname := filepath.Join(dir, string(cat)+".csv")
 		if !found {
-			log.Printf("%s: no matching geos; not creating", fname)
+			//log.Printf("%s: no matching geos; not creating", fname)
 			continue
 		}
 

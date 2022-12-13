@@ -247,7 +247,7 @@ func generateTiles(grid map[types.Geotype][]grid.Quad, dir string, atlas *geo.At
 				log.Print(err)
 				continue
 			}
-			log.Printf("%s %s: %d quad intersections\n", geotype, quad.Tilename, len(geos))
+			//log.Printf("%s %s: %d quad intersections\n", geotype, quad.Tilename, len(geos))
 			tiledir := filepath.Join(typedir, quad.Tilename)
 			if err := os.MkdirAll(tiledir, 0755); err != nil {
 				return err

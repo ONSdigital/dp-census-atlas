@@ -6,5 +6,9 @@
     "editor.defaultFormatter": "svelte.svelte-vscode"
   },
   "jest.showCoverageOnLoad": true,
-  "jest.jestCommandLine": "npm test --"
+  "jest.jestCommandLine": "npm test --",
+  "python.formatting.provider": "autopep8",
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python"
+  }
 }

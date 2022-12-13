@@ -17,6 +17,3 @@ coverage/
 
 # Nodenv
 .node-version
-
-# Pyenv
-.python-version

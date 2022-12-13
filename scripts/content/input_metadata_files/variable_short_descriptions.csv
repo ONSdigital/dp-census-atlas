@@ -1,0 +1,51 @@
+variable,short_desc
+accommodation_type,The type of buildings people live in.
+age_arrival_uk,The age people were when they arrived to live in the UK.
+alternative_address_indicator,An address (in or out of the UK) a person stays at for more than 30 days per year that isn't their place of usual residence.
+country_of_birth,Where people were born.
+disability,"People with a long-term health problem or disability, including relating to old-age."
+economic_activity,"People in employment, looking for work, waiting to start a job or economically inactive."
+english_proficiency,"How well people whose main language is not English (or in Wales, English or Welsh) speak English"
+ethnic_group_tb,The ethnic group a person identifies with.
+gender_identity,The gender identity recorded by the person completing the census.
+has_ever_worked,The employment history of people who are currently not working.
+health_in_general,How people rate their general health.
+heating_type,Central heating is a heating system used to heat multiple rooms in a building.
+hh_deprivation,Whether a household is deprived in one or more ways.
+hh_disabled,The number of people in a household with a disability or long-term health problem.
+hh_family_composition,Households according to the relationships between members.
+hh_language,"People who have English in England, or in Wales English or Welsh, as their main language."
+hh_multi_ethnic_group,Ethnic groups within a household.
+hh_multi_language,Whether there are multiple languages in a household.
+hh_multi_religion,Whether there are multiple religions in a household.
+hh_size,The number of people in a household.
+hh_tenure,Whether a household owns or rents.
+highest_qualification,The highest level of qualification gained.
+hours_per_week_worked,The number of hours people work per week.
+industry_current,The industry people work in.
+is_carer,People who are unpaid carers.
+legal_partnership_status,People's marital or civil partnership status.
+living_arrangements,"People's living arrangements, by their legal partnership status."
+main_language_detailed,People's first or preferred language.
+migrant_ind,"People's movement both within and from outside the UK, in the one-year period before the census."
+national_identity_all,People's national identity (where they feel they belong or could think of as home).
+national_identity_detailed,People's national identity (where they feel they belong or could think of as home) broken down by country.
+ns_sec,People's socioeconomic position based on their occupation and other job characteristics.
+number_bedrooms,The number of bedrooms in a household.
+number_of_cars,Vehicles owned or available for use by a household.
+occupancy_rating_bedrooms,"Whether homes are overcrowded, ideally occupied or under-occupied, based on bedrooms."
+occupancy_rating_rooms,"Whether homes are overcrowded, ideally occupied or under-occupied, based on rooms."
+occupation_current,People's main jobs.
+passports_all,The passports people hold.
+religion_tb,The religion people connect or identify with.
+residence_length,Length of residence in the UK.
+resident_age,"The age of a person on Census Day, 21 March 2021."
+second_address_type_priority,Whether people have an alternative address (somewhere they stay for more than 30 days per year) and the type of address this is.
+sex,The sex recorded by the person completing the census.
+sexual_orientation,The sexual orientation recorded by the person completing the census.
+transport_to_workplace,How people travel from their home to their workplace.
+welsh_skills_all,"Whether people can understand, speak, read, or write Welsh. This question was only asked in Wales."
+welsh_skills_speak,People who can speak Welsh.
+workplace_travel,"The distance between home and work, in kilometres."
+year_arrival_uk,The year people arrived to live in the UK.
+uk_armed_forces,People who have served in the UK armed forces. 

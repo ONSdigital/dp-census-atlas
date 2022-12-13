@@ -1,0 +1,1019 @@
+variable_group,content_json,variable,classification,category_code,legend_start_str,legend_str_1,legend_str_2,legend_str_3
+Education,2021-EDU,Highest level of qualification,highest_qualification,highest_qualification-000,{PERCENTAGE}%,of people in {location},have,no qualifications
+Education,2021-EDU,Highest level of qualification,highest_qualification,highest_qualification-001,{PERCENTAGE}%,of people in {location},have,level 1 and entry level qualifications
+Education,2021-EDU,Highest level of qualification,highest_qualification,highest_qualification-002,{PERCENTAGE}%,of people in {location},have,level 2 qualifications
+Education,2021-EDU,Highest level of qualification,highest_qualification,highest_qualification-003,{PERCENTAGE}%,of people in {location},have,an apprenticeship
+Education,2021-EDU,Highest level of qualification,highest_qualification,highest_qualification-004,{PERCENTAGE}%,of people in {location},have,level 3 qualifications
+Education,2021-EDU,Highest level of qualification,highest_qualification,highest_qualification-005,{PERCENTAGE}%,of people in {location},have,level 4 qualifications and above
+Education,2021-EDU,Highest level of qualification,highest_qualification,highest_qualification-006,{PERCENTAGE}%,of people in {location},have,other qualifications
+Education,2021-EDU,Highest level of qualification,highest_qualification_6a,highest_qualification_6a-000,{PERCENTAGE}%,of people in {location},have,no qualifications
+Education,2021-EDU,Highest level of qualification,highest_qualification_6a,highest_qualification_6a-001,{PERCENTAGE}%,of people in {location},have,"level 1, 2 or 3 qualifications"
+Education,2021-EDU,Highest level of qualification,highest_qualification_6a,highest_qualification_6a-002,{PERCENTAGE}%,of people in {location},have,an apprenticeship
+Education,2021-EDU,Highest level of qualification,highest_qualification_6a,highest_qualification_6a-003,{PERCENTAGE}%,of people in {location},have,level 4 qualifications and above
+Education,2021-EDU,Highest level of qualification,highest_qualification_6a,highest_qualification_6a-004,{PERCENTAGE}%,of people in {location},have,other qualifications
+Health,2021-HUC,Disability,disability,disability-001,{PERCENTAGE}%,of people in {location},are,disabled under the equality act: day-to-day activities limited a lot
+Health,2021-HUC,Disability,disability,disability-002,{PERCENTAGE}%,of people in {location},are,disabled under the equality act: day-to-day activities limited a little
+Health,2021-HUC,Disability,disability,disability-003,{PERCENTAGE}%,of people in {location},are,not disabled under the equality act: has long term physical or mental health condition but day-to-day activities are not limited
+Health,2021-HUC,Disability,disability,disability-004,{PERCENTAGE}%,of people in {location},are,not disabled under the equality act: no long term physical or mental health conditions
+Health,2021-HUC,Disability,disability_3a,disability_3a-001,{PERCENTAGE}%,of people in {location},are,disabled under the equality act
+Health,2021-HUC,Disability,disability_3a,disability_3a-002,{PERCENTAGE}%,of people in {location},are,not disabled under the equality act
+Health,2021-HUC,General health,health_in_general,health_in_general-001,{PERCENTAGE}%,of households in {location},have,very good health
+Health,2021-HUC,General health,health_in_general,health_in_general-002,{PERCENTAGE}%,of households in {location},have,good health
+Health,2021-HUC,General health,health_in_general,health_in_general-003,{PERCENTAGE}%,of households in {location},have,fair health
+Health,2021-HUC,General health,health_in_general,health_in_general-004,{PERCENTAGE}%,of households in {location},have,bad health
+Health,2021-HUC,General health,health_in_general,health_in_general-005,{PERCENTAGE}%,of households in {location},have,very bad health
+Health,2021-HUC,General health,health_in_general_3a,health_in_general_3a-001,{PERCENTAGE}%,of households in {location},have,good health
+Health,2021-HUC,General health,health_in_general_3a,health_in_general_3a-002,{PERCENTAGE}%,of households in {location},have,not good health
+Health,2021-HUC,General health,health_in_general_4a,health_in_general_4a-001,{PERCENTAGE}%,of households in {location},have,very good or good health
+Health,2021-HUC,General health,health_in_general_4a,health_in_general_4a-002,{PERCENTAGE}%,of households in {location},have,fair health
+Health,2021-HUC,General health,health_in_general_4a,health_in_general_4a-003,{PERCENTAGE}%,of households in {location},have,bad or very bad health
+Health,2021-HUC,Number of disabled people in household,hh_disabled_4a,hh_disabled_4a-000,{PERCENTAGE}%,of households in {location},have,no people disabled under the equality act in household
+Health,2021-HUC,Number of disabled people in household,hh_disabled_4a,hh_disabled_4a-001,{PERCENTAGE}%,of households in {location},have,1 person disabled under the equality act in household
+Health,2021-HUC,Number of disabled people in household,hh_disabled_4a,hh_disabled_4a-002,{PERCENTAGE}%,of households in {location},have,2 or more people disabled under the equality act in household
+Health,2021-HUC,Provision of unpaid care,is_carer,is_carer-001,{PERCENTAGE}%,of people in {location},provide,no unpaid care
+Health,2021-HUC,Provision of unpaid care,is_carer,is_carer-002,{PERCENTAGE}%,of people in {location},provide,9 hours or less unpaid care a week
+Health,2021-HUC,Provision of unpaid care,is_carer,is_carer-003,{PERCENTAGE}%,of people in {location},provide,10 to 19 hours unpaid care a week
+Health,2021-HUC,Provision of unpaid care,is_carer,is_carer-004,{PERCENTAGE}%,of people in {location},provide,20 to 34 hours unpaid care a week
+Health,2021-HUC,Provision of unpaid care,is_carer,is_carer-005,{PERCENTAGE}%,of people in {location},provide,35 to 49 hours unpaid care a week
+Health,2021-HUC,Provision of unpaid care,is_carer,is_carer-006,{PERCENTAGE}%,of people in {location},provide,50 or more hours unpaid care a week
+Health,2021-HUC,Provision of unpaid care,is_carer_5a,is_carer_5a-001,{PERCENTAGE}%,of people in {location},provide,no unpaid care
+Health,2021-HUC,Provision of unpaid care,is_carer_5a,is_carer_5a-002,{PERCENTAGE}%,of people in {location},provide,19 or less hours unpaid care a week
+Health,2021-HUC,Provision of unpaid care,is_carer_5a,is_carer_5a-003,{PERCENTAGE}%,of people in {location},provide,20 to 49 hours unpaid care a week
+Health,2021-HUC,Provision of unpaid care,is_carer_5a,is_carer_5a-004,{PERCENTAGE}%,of people in {location},provide,50 or more hours unpaid care a week
+Housing,2021-HOU,Accommodation type,accommodation_type,accommodation_type-001,{PERCENTAGE}%,of homes in {location},are,detached
+Housing,2021-HOU,Accommodation type,accommodation_type,accommodation_type-002,{PERCENTAGE}%,of homes in {location},are,semi-detached
+Housing,2021-HOU,Accommodation type,accommodation_type,accommodation_type-003,{PERCENTAGE}%,of homes in {location},are,terraced
+Housing,2021-HOU,Accommodation type,accommodation_type,accommodation_type-004,{PERCENTAGE}%,of homes in {location},are,in a purpose-built block of flats or tenement
+Housing,2021-HOU,Accommodation type,accommodation_type,accommodation_type-005,{PERCENTAGE}%,of homes in {location},are,"part of a converted or shared house, including bedsits"
+Housing,2021-HOU,Accommodation type,accommodation_type,accommodation_type-006,{PERCENTAGE}%,of homes in {location},are,"part of another converted building, for example, former school, church or warehouse"
+Housing,2021-HOU,Accommodation type,accommodation_type,accommodation_type-007,{PERCENTAGE}%,of homes in {location},are,"in a commercial building, for example, in an office building, hotel or over a shop"
+Housing,2021-HOU,Accommodation type,accommodation_type,accommodation_type-008,{PERCENTAGE}%,of homes in {location},are,a caravan or other mobile or temporary structure
+Housing,2021-HOU,Accommodation type,accommodation_type_3a,accommodation_type_3a-001,{PERCENTAGE}%,of homes in {location},are,whole houses or bungalows
+Housing,2021-HOU,Accommodation type,accommodation_type_3a,accommodation_type_3a-002,{PERCENTAGE}%,of homes in {location},are,"flats, maisonettes or apartments"
+Housing,2021-HOU,Accommodation type,accommodation_type_3a,accommodation_type_3a-003,{PERCENTAGE}%,of homes in {location},are,a caravan or other mobile or temporary structure
+Housing,2021-HOU,Accommodation type,accommodation_type_5a,accommodation_type_5a-001,{PERCENTAGE}%,of homes in {location},are,detached whole houses or bungalows
+Housing,2021-HOU,Accommodation type,accommodation_type_5a,accommodation_type_5a-002,{PERCENTAGE}%,of homes in {location},are,semi-detached whole houses or bungalows
+Housing,2021-HOU,Accommodation type,accommodation_type_5a,accommodation_type_5a-003,{PERCENTAGE}%,of homes in {location},are,terraced whole houses or bungalows
+Housing,2021-HOU,Accommodation type,accommodation_type_5a,accommodation_type_5a-004,{PERCENTAGE}%,of homes in {location},are,"flats, maisonettes or apartments"
+Housing,2021-HOU,Accommodation type,accommodation_type_5a,accommodation_type_5a-005,{PERCENTAGE}%,of homes in {location},are,a caravan or other mobile or temporary structure
+Housing,2021-HOU,Number of bedrooms,number_bedrooms_5a,number_bedrooms_5a-001,{PERCENTAGE}%,of households in {location},have ,1 bedroom
+Housing,2021-HOU,Number of bedrooms,number_bedrooms_5a,number_bedrooms_5a-002,{PERCENTAGE}%,of households in {location},have ,2 bedrooms
+Housing,2021-HOU,Number of bedrooms,number_bedrooms_5a,number_bedrooms_5a-003,{PERCENTAGE}%,of households in {location},have ,3 bedrooms
+Housing,2021-HOU,Number of bedrooms,number_bedrooms_5a,number_bedrooms_5a-004,{PERCENTAGE}%,of households in {location},have ,4 or more bedrooms
+Housing,2021-HOU,Number of cars or vans,number_of_cars_3a,number_of_cars_3a-000,{PERCENTAGE}%,of households in {location},have,no cars or vans in household
+Housing,2021-HOU,Number of cars or vans,number_of_cars_3a,number_of_cars_3a-001,{PERCENTAGE}%,of households in {location},have,1 or more cars or vans in household
+Housing,2021-HOU,Number of cars or vans,number_of_cars_5a,number_of_cars_5a-000,{PERCENTAGE}%,of households in {location},have,no cars or vans in household
+Housing,2021-HOU,Number of cars or vans,number_of_cars_5a,number_of_cars_5a-001,{PERCENTAGE}%,of households in {location},have,1 car or van in household
+Housing,2021-HOU,Number of cars or vans,number_of_cars_5a,number_of_cars_5a-002,{PERCENTAGE}%,of households in {location},have,2 cars or vans in household
+Housing,2021-HOU,Number of cars or vans,number_of_cars_5a,number_of_cars_5a-003,{PERCENTAGE}%,of households in {location},have,3 or more cars or vans in household
+Housing,2021-HOU,Occupancy rating for bedrooms,occupancy_rating_bedrooms_6a,occupancy_rating_bedrooms_6a-001,{PERCENTAGE}%,of households in {location},have,an occupancy rating of +2 or more for bedrooms
+Housing,2021-HOU,Occupancy rating for bedrooms,occupancy_rating_bedrooms_6a,occupancy_rating_bedrooms_6a-002,{PERCENTAGE}%,of households in {location},have,an occupancy rating of +1 for bedrooms
+Housing,2021-HOU,Occupancy rating for bedrooms,occupancy_rating_bedrooms_6a,occupancy_rating_bedrooms_6a-003,{PERCENTAGE}%,of households in {location},have,an occupancy rating of 0 for bedrooms
+Housing,2021-HOU,Occupancy rating for bedrooms,occupancy_rating_bedrooms_6a,occupancy_rating_bedrooms_6a-004,{PERCENTAGE}%,of households in {location},have,an occupancy rating of -1 for bedrooms
+Housing,2021-HOU,Occupancy rating for bedrooms,occupancy_rating_bedrooms_6a,occupancy_rating_bedrooms_6a-005,{PERCENTAGE}%,of households in {location},have,an occupancy rating of -2 for bedrooms
+Housing,2021-HOU,Occupancy rating for rooms,occupancy_rating_rooms_6a,occupancy_rating_rooms_6a-001,{PERCENTAGE}%,of households in {location},have,an occupancy rating of +2 or more for rooms
+Housing,2021-HOU,Occupancy rating for rooms,occupancy_rating_rooms_6a,occupancy_rating_rooms_6a-002,{PERCENTAGE}%,of households in {location},have,an occupancy rating of +1 for rooms
+Housing,2021-HOU,Occupancy rating for rooms,occupancy_rating_rooms_6a,occupancy_rating_rooms_6a-003,{PERCENTAGE}%,of households in {location},have,an occupancy rating of 0 for rooms
+Housing,2021-HOU,Occupancy rating for rooms,occupancy_rating_rooms_6a,occupancy_rating_rooms_6a-004,{PERCENTAGE}%,of households in {location},have,an occupancy rating of -1 for rooms
+Housing,2021-HOU,Occupancy rating for rooms,occupancy_rating_rooms_6a,occupancy_rating_rooms_6a-005,{PERCENTAGE}%,of households in {location},have,an occupancy rating of -2 for rooms
+Housing,2021-HOU,Second address indicator,alternative_address_indicator,alternative_address_indicator-001,{PERCENTAGE}%,of people in {location},have,no second address
+Housing,2021-HOU,Second address indicator,alternative_address_indicator,alternative_address_indicator-002,{PERCENTAGE}%,of people in {location},have,a second address in the UK
+Housing,2021-HOU,Second address indicator,alternative_address_indicator,alternative_address_indicator-003,{PERCENTAGE}%,of people in {location},have,a second address outside the UK
+Housing,2021-HOU,Second address type,second_address_type_priority,second_address_type_priority-001,{PERCENTAGE}%,of people in {location}'s second address,is,an armed forces base address
+Housing,2021-HOU,Second address type,second_address_type_priority,second_address_type_priority-002,{PERCENTAGE}%,of people in {location}'s second address,is,another address when working away from home
+Housing,2021-HOU,Second address type,second_address_type_priority,second_address_type_priority-003,{PERCENTAGE}%,of people in {location}'s second address,is,a holiday home
+Housing,2021-HOU,Second address type,second_address_type_priority,second_address_type_priority-004,{PERCENTAGE}%,of people in {location}'s second address,is,a student's term-time address
+Housing,2021-HOU,Second address type,second_address_type_priority,second_address_type_priority-005,{PERCENTAGE}%,of people in {location}'s second address,is,a student's home address
+Housing,2021-HOU,Second address type,second_address_type_priority,second_address_type_priority-006,{PERCENTAGE}%,of people in {location}'s second address,is,another parent or guardian's address
+Housing,2021-HOU,Second address type,second_address_type_priority,second_address_type_priority-007,{PERCENTAGE}%,of people in {location}'s second address,is,a partner's address
+Housing,2021-HOU,Second address type,second_address_type_priority,second_address_type_priority-008,{PERCENTAGE}%,of people in {location}'s second address,is,another form of second address
+Housing,2021-HOU,Second address type,second_address_type_priority,second_address_type_priority-009,{PERCENTAGE}%,of people in {location},have,a second address of a type not specified
+Housing,2021-HOU,Tenure of household,hh_tenure_5a,hh_tenure_5a-000,{PERCENTAGE}%,of homes in {location},are,owned outright
+Housing,2021-HOU,Tenure of household,hh_tenure_5a,hh_tenure_5a-001,{PERCENTAGE}%,of homes in {location},are,"owned with a mortgage, loan, or shared ownership"
+Housing,2021-HOU,Tenure of household,hh_tenure_5a,hh_tenure_5a-002,{PERCENTAGE}%,of homes in {location},are,social rented
+Housing,2021-HOU,Tenure of household,hh_tenure_5a,hh_tenure_5a-003,{PERCENTAGE}%,of homes in {location},are,privately rented or rent free
+Housing,2021-HOU,Tenure of household,hh_tenure_9a,hh_tenure_9a-000,{PERCENTAGE}%,of homes in {location},are,owned outright
+Housing,2021-HOU,Tenure of household,hh_tenure_9a,hh_tenure_9a-001,{PERCENTAGE}%,of homes in {location},are,owned with a mortgage or loan
+Housing,2021-HOU,Tenure of household,hh_tenure_9a,hh_tenure_9a-002,{PERCENTAGE}%,of homes in {location},are,under shared ownership
+Housing,2021-HOU,Tenure of household,hh_tenure_9a,hh_tenure_9a-003,{PERCENTAGE}%,of homes in {location},are,socially rented from a council or local authority
+Housing,2021-HOU,Tenure of household,hh_tenure_9a,hh_tenure_9a-004,{PERCENTAGE}%,of homes in {location},are,otherwise socially rented
+Housing,2021-HOU,Tenure of household,hh_tenure_9a,hh_tenure_9a-005,{PERCENTAGE}%,of homes in {location},are,privately rented from a landlord or letting agency
+Housing,2021-HOU,Tenure of household,hh_tenure_9a,hh_tenure_9a-006,{PERCENTAGE}%,of homes in {location},are,otherwise privately rented
+Housing,2021-HOU,Tenure of household,hh_tenure_9a,hh_tenure_9a-007,{PERCENTAGE}%,of homes in {location},are,rent free
+Housing,2021-HOU,Type of central heating in household,heating_type,heating_type-001,{PERCENTAGE}%,of households in {location},have ,no central heating
+Housing,2021-HOU,Type of central heating in household,heating_type,heating_type-002,{PERCENTAGE}%,of households in {location},have ,mains gas central heating
+Housing,2021-HOU,Type of central heating in household,heating_type,heating_type-003,{PERCENTAGE}%,of households in {location},have ,tank or bottled gas central heating
+Housing,2021-HOU,Type of central heating in household,heating_type,heating_type-004,{PERCENTAGE}%,of households in {location},have ,electric central heating
+Housing,2021-HOU,Type of central heating in household,heating_type,heating_type-005,{PERCENTAGE}%,of households in {location},have ,oil central heating
+Housing,2021-HOU,Type of central heating in household,heating_type,heating_type-006,{PERCENTAGE}%,of households in {location},have ,wood central heating
+Housing,2021-HOU,Type of central heating in household,heating_type,heating_type-007,{PERCENTAGE}%,of households in {location},have ,solid fuel central heating
+Housing,2021-HOU,Type of central heating in household,heating_type,heating_type-008,{PERCENTAGE}%,of households in {location},have ,renewables central heating
+Housing,2021-HOU,Type of central heating in household,heating_type,heating_type-009,{PERCENTAGE}%,of households in {location},are,part of a district or communal heat network
+Housing,2021-HOU,Type of central heating in household,heating_type,heating_type-010,{PERCENTAGE}%,of households in {location},have ,another type of central heating
+Housing,2021-HOU,Type of central heating in household,heating_type,heating_type-011,{PERCENTAGE}%,of households in {location},have ,two or more types of central heating (not including renewable energy)
+Housing,2021-HOU,Type of central heating in household,heating_type,heating_type-012,{PERCENTAGE}%,of households in {location},have ,two or more types of central heating (including renewable energy)
+Housing,2021-HOU,Type of central heating in household,heating_type_3a,heating_type_3a-001,{PERCENTAGE}%,of households in {location},have,no central heating
+Housing,2021-HOU,Type of central heating in household,heating_type_3a,heating_type_3a-002,{PERCENTAGE}%,of households in {location},have ,central heating
+Identity,2021-EILR,Ethnic group,ethnic_group_tb_20b,ethnic_group_tb_20b-001,{PERCENTAGE}%,of people in {location},are,"Asian, Asian British or Asian Welsh: Bangladeshi"
+Identity,2021-EILR,Ethnic group,ethnic_group_tb_20b,ethnic_group_tb_20b-002,{PERCENTAGE}%,of people in {location},are,"Asian, Asian British or Asian Welsh: Chinese"
+Identity,2021-EILR,Ethnic group,ethnic_group_tb_20b,ethnic_group_tb_20b-003,{PERCENTAGE}%,of people in {location},are,"Asian, Asian British or Asian Welsh: Indian"
+Identity,2021-EILR,Ethnic group,ethnic_group_tb_20b,ethnic_group_tb_20b-004,{PERCENTAGE}%,of people in {location},are,"Asian, Asian British or Asian Welsh: Pakistani"
+Identity,2021-EILR,Ethnic group,ethnic_group_tb_20b,ethnic_group_tb_20b-005,{PERCENTAGE}%,of people in {location},are,"Asian, Asian British or Asian Welsh: Other Asian"
+Identity,2021-EILR,Ethnic group,ethnic_group_tb_20b,ethnic_group_tb_20b-006,{PERCENTAGE}%,of people in {location},are,"Black, Black British, Black Welsh, Caribbean or African: African"
+Identity,2021-EILR,Ethnic group,ethnic_group_tb_20b,ethnic_group_tb_20b-007,{PERCENTAGE}%,of people in {location},are,"Black, Black British, Black Welsh, Caribbean or African: Caribbean"
+Identity,2021-EILR,Ethnic group,ethnic_group_tb_20b,ethnic_group_tb_20b-008,{PERCENTAGE}%,of people in {location},are,"Black, Black British, Black Welsh, Caribbean or African: Other Black"
+Identity,2021-EILR,Ethnic group,ethnic_group_tb_20b,ethnic_group_tb_20b-009,{PERCENTAGE}%,of people in {location},are,Mixed or Multiple ethnic groups: White and Asian
+Identity,2021-EILR,Ethnic group,ethnic_group_tb_20b,ethnic_group_tb_20b-010,{PERCENTAGE}%,of people in {location},are,Mixed or Multiple ethnic groups: White and Black African
+Identity,2021-EILR,Ethnic group,ethnic_group_tb_20b,ethnic_group_tb_20b-011,{PERCENTAGE}%,of people in {location},are,Mixed or Multiple ethnic groups: White and Black Caribbean
+Identity,2021-EILR,Ethnic group,ethnic_group_tb_20b,ethnic_group_tb_20b-012,{PERCENTAGE}%,of people in {location},are,Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups
+Identity,2021-EILR,Ethnic group,ethnic_group_tb_20b,ethnic_group_tb_20b-013,{PERCENTAGE}%,of people in {location},are,"White: English, Welsh, Scottish, Northern Irish or British"
+Identity,2021-EILR,Ethnic group,ethnic_group_tb_20b,ethnic_group_tb_20b-014,{PERCENTAGE}%,of people in {location},are,White: Irish
+Identity,2021-EILR,Ethnic group,ethnic_group_tb_20b,ethnic_group_tb_20b-015,{PERCENTAGE}%,of people in {location},are,White: Gypsy or Irish Traveller
+Identity,2021-EILR,Ethnic group,ethnic_group_tb_20b,ethnic_group_tb_20b-016,{PERCENTAGE}%,of people in {location},are,White: Roma
+Identity,2021-EILR,Ethnic group,ethnic_group_tb_20b,ethnic_group_tb_20b-017,{PERCENTAGE}%,of people in {location},are,White: Other White
+Identity,2021-EILR,Ethnic group,ethnic_group_tb_20b,ethnic_group_tb_20b-018,{PERCENTAGE}%,of people in {location},are,Arab
+Identity,2021-EILR,Ethnic group,ethnic_group_tb_20b,ethnic_group_tb_20b-019,{PERCENTAGE}%,of people in {location},are,from any other ethnic group
+Identity,2021-EILR,Ethnic group,ethnic_group_tb_6a,ethnic_group_tb_6a-001,{PERCENTAGE}%,of people in {location},are,"Asian, Asian British or Asian Welsh"
+Identity,2021-EILR,Ethnic group,ethnic_group_tb_6a,ethnic_group_tb_6a-002,{PERCENTAGE}%,of people in {location},are,"Black, Black British, Black Welsh, Caribbean or African"
+Identity,2021-EILR,Ethnic group,ethnic_group_tb_6a,ethnic_group_tb_6a-003,{PERCENTAGE}%,of people in {location},are,from mixed or multiple ethnic groups
+Identity,2021-EILR,Ethnic group,ethnic_group_tb_6a,ethnic_group_tb_6a-004,{PERCENTAGE}%,of people in {location},are,White
+Identity,2021-EILR,Ethnic group,ethnic_group_tb_6a,ethnic_group_tb_6a-005,{PERCENTAGE}%,of people in {location},are,from any other ethnic group
+Identity,2021-EILR,Household language (English and Welsh),hh_language,hh_language-001,{PERCENTAGE}%,of households in {location},have,"English in England, or English or Welsh in Wales, as the main language for all adults"
+Identity,2021-EILR,Household language (English and Welsh),hh_language,hh_language-002,{PERCENTAGE}%,of households in {location},have,"English in England, or English or Welsh in Wales, as the main language for some but not all adults"
+Identity,2021-EILR,Household language (English and Welsh),hh_language,hh_language-003,{PERCENTAGE}%,of households in {location},have,"English in England, or English or Welsh in Wales, as the main language for no adults but some children (aged 3-15 years)"
+Identity,2021-EILR,Household language (English and Welsh),hh_language,hh_language-004,{PERCENTAGE}%,of households in {location},have,"no members that have English in England, or English or Welsh in Wales, as their main language."
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-001,{PERCENTAGE}%,of people in {location},speak,English (English or Welsh in Wales) as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-002,{PERCENTAGE}%,of people in {location},speak,Welsh or Cymraeg (in England only) as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-003,{PERCENTAGE}%,of people in {location},speak,Gaelic (Irish) as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-004,{PERCENTAGE}%,of people in {location},speak,Gaelic (Scottish) as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-005,{PERCENTAGE}%,of people in {location},speak,Manx Gaelic as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-006,{PERCENTAGE}%,of people in {location},speak,Gaelic (Not otherwise specified) as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-007,{PERCENTAGE}%,of people in {location},speak,Cornish as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-008,{PERCENTAGE}%,of people in {location},speak,Scots as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-009,{PERCENTAGE}%,of people in {location},speak,Ulster Scots as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-010,{PERCENTAGE}%,of people in {location},speak,Romany English as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-011,{PERCENTAGE}%,of people in {location},speak,Irish Traveller Cant as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-012,{PERCENTAGE}%,of people in {location},speak,French as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-013,{PERCENTAGE}%,of people in {location},speak,Portuguese as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-014,{PERCENTAGE}%,of people in {location},speak,Spanish as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-015,{PERCENTAGE}%,of people in {location},speak,Italian as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-016,{PERCENTAGE}%,of people in {location},speak,German as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-017,{PERCENTAGE}%,of people in {location},speak,Polish as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-018,{PERCENTAGE}%,of people in {location},speak,Slovak as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-019,{PERCENTAGE}%,of people in {location},speak,Czech as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-020,{PERCENTAGE}%,of people in {location},speak,Romanian as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-021,{PERCENTAGE}%,of people in {location},speak,Lithuanian as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-022,{PERCENTAGE}%,of people in {location},speak,Latvian as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-023,{PERCENTAGE}%,of people in {location},speak,Hungarian as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-024,{PERCENTAGE}%,of people in {location},speak,Bulgarian as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-025,{PERCENTAGE}%,of people in {location},speak,Greek as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-026,{PERCENTAGE}%,of people in {location},speak,Dutch as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-027,{PERCENTAGE}%,of people in {location},speak,Swedish as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-028,{PERCENTAGE}%,of people in {location},speak,Danish as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-029,{PERCENTAGE}%,of people in {location},speak,Finnish as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-030,{PERCENTAGE}%,of people in {location},speak,Estonian as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-031,{PERCENTAGE}%,of people in {location},speak,Slovenian as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-032,{PERCENTAGE}%,of people in {location},speak,Maltese as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-033,{PERCENTAGE}%,of people in {location},speak,any other European language (EU) as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-034,{PERCENTAGE}%,of people in {location},speak,Albanian as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-035,{PERCENTAGE}%,of people in {location},speak,Ukrainian as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-036,{PERCENTAGE}%,of people in {location},speak,any other Eastern European language (non-EU) as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-037,{PERCENTAGE}%,of people in {location},speak,any Northern European language (non-EU) as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-038,{PERCENTAGE}%,of people in {location},speak,"Bosnian, Croatian, Serbian, or Montenegrin as their main language"
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-039,{PERCENTAGE}%,of people in {location},speak,any Romani language as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-040,{PERCENTAGE}%,of people in {location},speak,Yiddish as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-041,{PERCENTAGE}%,of people in {location},speak,Russian as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-042,{PERCENTAGE}%,of people in {location},speak,Turkish as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-043,{PERCENTAGE}%,of people in {location},speak,Arabic as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-044,{PERCENTAGE}%,of people in {location},speak,Hebrew as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-045,{PERCENTAGE}%,of people in {location},speak,Kurdish as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-046,{PERCENTAGE}%,of people in {location},speak,Persian or Farsi as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-047,{PERCENTAGE}%,of people in {location},speak,Pashto as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-048,{PERCENTAGE}%,of people in {location},speak,any other West or Central Asian language as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-049,{PERCENTAGE}%,of people in {location},speak,Urdu as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-050,{PERCENTAGE}%,of people in {location},speak,Hindi as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-051,{PERCENTAGE}%,of people in {location},speak,Panjabi as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-052,{PERCENTAGE}%,of people in {location},speak,Pakistani Pahari (with Mirpuri and Potwari) as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-053,{PERCENTAGE}%,of people in {location},speak,Bengali (with Sylheti and Chatgaya) as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-054,{PERCENTAGE}%,of people in {location},speak,Gujarati as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-055,{PERCENTAGE}%,of people in {location},speak,Marathi as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-056,{PERCENTAGE}%,of people in {location},speak,Telugu as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-057,{PERCENTAGE}%,of people in {location},speak,Tamil as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-058,{PERCENTAGE}%,of people in {location},speak,Malayalam as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-059,{PERCENTAGE}%,of people in {location},speak,Sinhala as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-060,{PERCENTAGE}%,of people in {location},speak,Nepalese as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-061,{PERCENTAGE}%,of people in {location},speak,any other South Asian language as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-062,{PERCENTAGE}%,of people in {location},speak,Mandarin Chinese as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-063,{PERCENTAGE}%,of people in {location},speak,Cantonese Chinese as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-064,{PERCENTAGE}%,of people in {location},speak,All other Chinese as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-065,{PERCENTAGE}%,of people in {location},speak,Japanese as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-066,{PERCENTAGE}%,of people in {location},speak,Korean as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-067,{PERCENTAGE}%,of people in {location},speak,Vietnamese as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-068,{PERCENTAGE}%,of people in {location},speak,Thai as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-069,{PERCENTAGE}%,of people in {location},speak,Malay as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-070,{PERCENTAGE}%,of people in {location},speak,Tagalog or Filipino as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-071,{PERCENTAGE}%,of people in {location},speak,any other East Asian language as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-072,{PERCENTAGE}%,of people in {location},speak,an Oceanic or Australian language as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-073,{PERCENTAGE}%,of people in {location},speak,a North or South American language as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-074,{PERCENTAGE}%,of people in {location},speak,English-based Caribbean Creole as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-075,{PERCENTAGE}%,of people in {location},speak,any other Caribbean Creole as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-076,{PERCENTAGE}%,of people in {location},speak,Amharic as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-077,{PERCENTAGE}%,of people in {location},speak,Tigrinya as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-078,{PERCENTAGE}%,of people in {location},speak,Somali as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-079,{PERCENTAGE}%,of people in {location},speak,Krio as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-080,{PERCENTAGE}%,of people in {location},speak,Akan as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-081,{PERCENTAGE}%,of people in {location},speak,Yoruba as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-082,{PERCENTAGE}%,of people in {location},speak,Igbo as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-083,{PERCENTAGE}%,of people in {location},speak,Swahili or Kiswahili as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-084,{PERCENTAGE}%,of people in {location},speak,Luganda as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-085,{PERCENTAGE}%,of people in {location},speak,Lingala as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-086,{PERCENTAGE}%,of people in {location},speak,Shona as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-087,{PERCENTAGE}%,of people in {location},speak,Afrikaans as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-088,{PERCENTAGE}%,of people in {location},speak,any other Nigerian language as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-089,{PERCENTAGE}%,of people in {location},speak,any other West African language as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-090,{PERCENTAGE}%,of people in {location},speak,any other African language as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-091,{PERCENTAGE}%,of people in {location},use,British Sign Language as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-092,{PERCENTAGE}%,of people in {location},use,any other sign language as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-093,{PERCENTAGE}%,of people in {location},use,any sign communication system as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-094,{PERCENTAGE}%,of people in {location},speak,any other language as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-001,{PERCENTAGE}%,of people in {location},speak,English (English or Welsh if in Wales) as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-002,{PERCENTAGE}%,of people in {location},speak,any other UK language as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-003,{PERCENTAGE}%,of people in {location},speak,French as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-004,{PERCENTAGE}%,of people in {location},speak,Portuguese as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-005,{PERCENTAGE}%,of people in {location},speak,Spanish as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-006,{PERCENTAGE}%,of people in {location},speak,Polish as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-007,{PERCENTAGE}%,of people in {location},speak,any other European language (EU) as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-008,{PERCENTAGE}%,of people in {location},speak,any other European language (non-EU) as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-009,{PERCENTAGE}%,of people in {location},speak,Russian as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-010,{PERCENTAGE}%,of people in {location},speak,Turkish as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-011,{PERCENTAGE}%,of people in {location},speak,Arabic as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-012,{PERCENTAGE}%,of people in {location},speak,a West or Central Asian language as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-013,{PERCENTAGE}%,of people in {location},speak,Panjabi as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-014,{PERCENTAGE}%,of people in {location},speak,Urdu as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-015,{PERCENTAGE}%,of people in {location},speak,Bengali (with Sylheti and Chatgaya) as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-016,{PERCENTAGE}%,of people in {location},speak,Gujarati as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-017,{PERCENTAGE}%,of people in {location},speak,Tamil as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-018,{PERCENTAGE}%,of people in {location},speak,any other South Asian language as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-019,{PERCENTAGE}%,of people in {location},speak,Chinese as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-020,{PERCENTAGE}%,of people in {location},speak,any other East Asian language
+Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-021,{PERCENTAGE}%,of people in {location},speak,an African language as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-022,{PERCENTAGE}%,of people in {location},speak,an other language as their main language
+Identity,2021-EILR,Multiple ethnic groups in household,hh_multi_ethnic_group,hh_multi_ethnic_group-001,{PERCENTAGE}%,of households in {location},are,one-person households
+Identity,2021-EILR,Multiple ethnic groups in household,hh_multi_ethnic_group,hh_multi_ethnic_group-002,{PERCENTAGE}%,of households in {location},have,members that are all from the same ethnic group
+Identity,2021-EILR,Multiple ethnic groups in household,hh_multi_ethnic_group,hh_multi_ethnic_group-003,{PERCENTAGE}%,of households in {location},have,members from ethnic groups that differ between generations but not within partnerships
+Identity,2021-EILR,Multiple ethnic groups in household,hh_multi_ethnic_group,hh_multi_ethnic_group-004,{PERCENTAGE}%,of households in {location},have,members from ethnic groups that differ within partnerships
+Identity,2021-EILR,Multiple ethnic groups in household,hh_multi_ethnic_group,hh_multi_ethnic_group-005,{PERCENTAGE}%,of households in {location},have,members with any other combination of ethnic identities
+Identity,2021-EILR,Multiple main languages in household,hh_multi_language,hh_multi_language-001,{PERCENTAGE}%,of households in {location},are,not applicable (one-person household)
+Identity,2021-EILR,Multiple main languages in household,hh_multi_language,hh_multi_language-002,{PERCENTAGE}%,of households in {location},have,members that all have the same main language
+Identity,2021-EILR,Multiple main languages in household,hh_multi_language,hh_multi_language-003,{PERCENTAGE}%,of households in {location},have,"members that have different main languages between generations, but not within partnerships"
+Identity,2021-EILR,Multiple main languages in household,hh_multi_language,hh_multi_language-004,{PERCENTAGE}%,of households in {location},have,members that have different main languages within partnerships
+Identity,2021-EILR,Multiple main languages in household,hh_multi_language,hh_multi_language-005,{PERCENTAGE}%,of households in {location},are,members with any other combination of multiple main languages
+Identity,2021-EILR,Multiple main languages in household,hh_multi_language_3a,hh_multi_language_3a-001,{PERCENTAGE}%,of households in {location},have,members that all have the same main language
+Identity,2021-EILR,Multiple main languages in household,hh_multi_language_3a,hh_multi_language_3a-002,{PERCENTAGE}%,of households in {location},have,members that have different main languages
+Identity,2021-EILR,Multiple religions in household,hh_multi_religion_7a,hh_multi_religion_7a-001,{PERCENTAGE}%,of households in {location},are,one-person households
+Identity,2021-EILR,Multiple religions in household,hh_multi_religion_7a,hh_multi_religion_7a-002,{PERCENTAGE}%,of households in {location},did,not state their religion
+Identity,2021-EILR,Multiple religions in household,hh_multi_religion_7a,hh_multi_religion_7a-003,{PERCENTAGE}%,of households in {location},reported,the same religion
+Identity,2021-EILR,Multiple religions in household,hh_multi_religion_7a,hh_multi_religion_7a-004,{PERCENTAGE}%,of households in {location},reported,no religion
+Identity,2021-EILR,Multiple religions in household,hh_multi_religion_7a,hh_multi_religion_7a-005,{PERCENTAGE}%,of households in {location},reported,a combination of the same religion and no religion
+Identity,2021-EILR,Multiple religions in household,hh_multi_religion_7a,hh_multi_religion_7a-006,{PERCENTAGE}%,of households in {location},reported,at least two different religions
+Identity,2021-EILR,National identity,national_identity_all,national_identity_all-001,{PERCENTAGE}%,of people in {location},identify as,British
+Identity,2021-EILR,National identity,national_identity_all,national_identity_all-002,{PERCENTAGE}%,of people in {location},identify as,English
+Identity,2021-EILR,National identity,national_identity_all,national_identity_all-003,{PERCENTAGE}%,of people in {location},identify as,English and British
+Identity,2021-EILR,National identity,national_identity_all,national_identity_all-004,{PERCENTAGE}%,of people in {location},identify as,Welsh
+Identity,2021-EILR,National identity,national_identity_all,national_identity_all-005,{PERCENTAGE}%,of people in {location},identify as,Welsh and British
+Identity,2021-EILR,National identity,national_identity_all,national_identity_all-006,{PERCENTAGE}%,of people in {location},identify as,Scottish
+Identity,2021-EILR,National identity,national_identity_all,national_identity_all-007,{PERCENTAGE}%,of people in {location},identify as,Scottish and British
+Identity,2021-EILR,National identity,national_identity_all,national_identity_all-008,{PERCENTAGE}%,of people in {location},identify as,Northern Irish
+Identity,2021-EILR,National identity,national_identity_all,national_identity_all-009,{PERCENTAGE}%,of people in {location},identify as,Northern Irish and British
+Identity,2021-EILR,National identity,national_identity_all,national_identity_all-010,{PERCENTAGE}%,of people in {location},identify as,Cornish
+Identity,2021-EILR,National identity,national_identity_all,national_identity_all-011,{PERCENTAGE}%,of people in {location},identify as,Cornish and British
+Identity,2021-EILR,National identity,national_identity_all,national_identity_all-012,{PERCENTAGE}%,of people in {location},identify as,any other combination of UK identities
+Identity,2021-EILR,National identity,national_identity_all,national_identity_all-013,{PERCENTAGE}%,of people in {location},identify as,Irish
+Identity,2021-EILR,National identity,national_identity_all,national_identity_all-014,{PERCENTAGE}%,of people in {location},identify as,Irish and at least one UK identity
+Identity,2021-EILR,National identity,national_identity_all,national_identity_all-015,{PERCENTAGE}%,of people in {location},identify as,any other national identity
+Identity,2021-EILR,National identity,national_identity_all,national_identity_all-016,{PERCENTAGE}%,of people in {location},identify as,any other national identity and at least one UK identity
+Identity,2021-EILR,National identity,national_identity_all_4a,national_identity_all_4a-001,{PERCENTAGE}%,of people in {location},have,one or more UK identity only
+Identity,2021-EILR,National identity,national_identity_all_4a,national_identity_all_4a-002,{PERCENTAGE}%,of people in {location},have,a UK identity and a non-UK identity
+Identity,2021-EILR,National identity,national_identity_all_4a,national_identity_all_4a-003,{PERCENTAGE}%,of people in {location},have,a non-UK identity only
+Identity,2021-EILR,National identity,national_identity_all_9a,national_identity_all_9a-001,{PERCENTAGE}%,of people in {location},identify as,British
+Identity,2021-EILR,National identity,national_identity_all_9a,national_identity_all_9a-002,{PERCENTAGE}%,of people in {location},identify as,Welsh
+Identity,2021-EILR,National identity,national_identity_all_9a,national_identity_all_9a-003,{PERCENTAGE}%,of people in {location},identify as,Welsh and British
+Identity,2021-EILR,National identity,national_identity_all_9a,national_identity_all_9a-004,{PERCENTAGE}%,of people in {location},identify as,English
+Identity,2021-EILR,National identity,national_identity_all_9a,national_identity_all_9a-005,{PERCENTAGE}%,of people in {location},identify as,English and British
+Identity,2021-EILR,National identity,national_identity_all_9a,national_identity_all_9a-006,{PERCENTAGE}%,of people in {location},identify as,any other combination of UK identities
+Identity,2021-EILR,National identity,national_identity_all_9a,national_identity_all_9a-007,{PERCENTAGE}%,of people in {location},identify as,Non-UK
+Identity,2021-EILR,National identity,national_identity_all_9a,national_identity_all_9a-008,{PERCENTAGE}%,of people in {location},identify as,both UK and non-UK identity
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-001,{PERCENTAGE}%,of people in {location},identify as,British
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-002,{PERCENTAGE}%,of people in {location},identify as,English
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-003,{PERCENTAGE}%,of people in {location},identify as,English and British
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-004,{PERCENTAGE}%,of people in {location},identify as,Welsh
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-005,{PERCENTAGE}%,of people in {location},identify as,Welsh and British
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-006,{PERCENTAGE}%,of people in {location},identify as,Scottish
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-007,{PERCENTAGE}%,of people in {location},identify as,Scottish and British
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-008,{PERCENTAGE}%,of people in {location},identify as,Northern Irish
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-009,{PERCENTAGE}%,of people in {location},identify as,Northern Irish and British
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-010,{PERCENTAGE}%,of people in {location},identify as,Cornish
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-011,{PERCENTAGE}%,of people in {location},identify as,Cornish and British
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-012,{PERCENTAGE}%,of people in {location},identify as,any other combination of UK identities
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-013,{PERCENTAGE}%,of people in {location},identify as,any other national identity and at least one UK identity
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-014,{PERCENTAGE}%,of people in {location},identify as,a Guernsey Islander
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-015,{PERCENTAGE}%,of people in {location},identify as,a Jersey Islander
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-016,{PERCENTAGE}%,of people in {location},identify as,Manx (Isle of Man)
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-017,{PERCENTAGE}%,of people in {location},identify as,any other Channel Island identity
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-018,{PERCENTAGE}%,of people in {location},identify as,Irish
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-019,{PERCENTAGE}%,of people in {location},identify as,Irish and at least one UK identity
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-020,{PERCENTAGE}%,of people in {location},identify as,French
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-021,{PERCENTAGE}%,of people in {location},identify as,German
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-022,{PERCENTAGE}%,of people in {location},identify as,Italian
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-023,{PERCENTAGE}%,of people in {location},identify as,Portuguese
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-024,{PERCENTAGE}%,of people in {location},identify as,Spanish (including Canary Islanders)
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-025,{PERCENTAGE}%,of people in {location},identify as,any other national identity from countries that were EU members in March 2001  
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-026,{PERCENTAGE}%,of people in {location},identify as,Lithuanian
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-027,{PERCENTAGE}%,of people in {location},identify as,Polish
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-028,{PERCENTAGE}%,of people in {location},identify as,Romanian
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-029,{PERCENTAGE}%,of people in {location},identify as,any other national identity from EU countries  
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-030,{PERCENTAGE}%,of people in {location},identify as,any other national identity from countries that were EU members in March 2001  
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-031,{PERCENTAGE}%,of people in {location},identify as,any other European identity
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-032,{PERCENTAGE}%,of people in {location},identify as,North African
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-033,{PERCENTAGE}%,of people in {location},identify as,Ghanaian
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-034,{PERCENTAGE}%,of people in {location},identify as,Nigerian
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-035,{PERCENTAGE}%,of people in {location},identify as,any other Central or West African identity
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-036,{PERCENTAGE}%,of people in {location},identify as,Kenyan
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-037,{PERCENTAGE}%,of people in {location},identify as,Somali
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-038,{PERCENTAGE}%,of people in {location},identify as,South African
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-039,{PERCENTAGE}%,of people in {location},identify as,Zimbabwean
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-040,{PERCENTAGE}%,of people in {location},identify as,any other South or East African identity
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-041,{PERCENTAGE}%,of people in {location},identify as,Kurdish
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-042,{PERCENTAGE}%,of people in {location},identify as,Iranian
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-043,{PERCENTAGE}%,of people in {location},identify as,Iraqi
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-044,{PERCENTAGE}%,of people in {location},identify as,any other Middle Eastern identity
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-045,{PERCENTAGE}%,of people in {location},identify as,Chinese
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-046,{PERCENTAGE}%,of people in {location},identify as,Hong Kong Chinese
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-047,{PERCENTAGE}%,of people in {location},identify as,Japanese
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-048,{PERCENTAGE}%,of people in {location},identify as,any other East Asian identity
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-049,{PERCENTAGE}%,of people in {location},identify as,Afghan
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-050,{PERCENTAGE}%,of people in {location},identify as,Bangladeshi
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-051,{PERCENTAGE}%,of people in {location},identify as,Indian
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-052,{PERCENTAGE}%,of people in {location},identify as,Pakistani
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-053,{PERCENTAGE}%,of people in {location},identify as,Sri Lankan
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-054,{PERCENTAGE}%,of people in {location},identify as,any other South Asian identity
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-055,{PERCENTAGE}%,of people in {location},identify as,Filipino
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-056,{PERCENTAGE}%,of people in {location},identify as,Malaysian
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-057,{PERCENTAGE}%,of people in {location},identify as,Singaporean
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-058,{PERCENTAGE}%,of people in {location},identify as,any other South-East Asian identity
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-059,{PERCENTAGE}%,of people in {location},identify as,Central Asian
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-060,{PERCENTAGE}%,of people in {location},identify as,Asian (not specified)
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-061,{PERCENTAGE}%,of people in {location},identify as,Canadian
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-062,{PERCENTAGE}%,of people in {location},identify as,a US citizen
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-063,{PERCENTAGE}%,of people in {location},identify as,any other North American identity
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-064,{PERCENTAGE}%,of people in {location},identify as,Central American
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-065,{PERCENTAGE}%,of people in {location},identify as,South American
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-066,{PERCENTAGE}%,of people in {location},identify as,Jamaican
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-067,{PERCENTAGE}%,of people in {location},identify as,any other Caribbean identity
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-068,{PERCENTAGE}%,of people in {location},identify as,Australian
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-069,{PERCENTAGE}%,of people in {location},identify as,a New Zealander
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-070,{PERCENTAGE}%,of people in {location},identify as,any other Australasian identity
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-071,{PERCENTAGE}%,of people in {location},identify as,any other Oceanian identity
+Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-072,{PERCENTAGE}%,of people in {location},identify as,any other national identity
+Identity,2021-EILR,Proficiency in English language,english_proficiency,english_proficiency-001,{PERCENTAGE}%,of people in {location},speak,English (or Welsh in Wales) as their main language
+Identity,2021-EILR,Proficiency in English language,english_proficiency,english_proficiency-002,{PERCENTAGE}%,of people in {location},speak,"a different main language, but speak English (or Welsh in Wales) very well"
+Identity,2021-EILR,Proficiency in English language,english_proficiency,english_proficiency-003,{PERCENTAGE}%,of people in {location},speak,"a different main language, but speak English (or Welsh in Wales) well"
+Identity,2021-EILR,Proficiency in English language,english_proficiency,english_proficiency-004,{PERCENTAGE}%,of people in {location},speak,"a different main language, but cannot speak English (or Welsh in Wales) well"
+Identity,2021-EILR,Proficiency in English language,english_proficiency,english_proficiency-005,{PERCENTAGE}%,of people in {location},speak,"a different main language, but cannot speak English (or Welsh in Wales) at all"
+Identity,2021-EILR,Proficiency in English language,english_proficiency_4a,english_proficiency_4a-001,{PERCENTAGE}%,of people in {location},speak,English (English or Welsh in Wales) as their main language
+Identity,2021-EILR,Proficiency in English language,english_proficiency_4a,english_proficiency_4a-002,{PERCENTAGE}%,of people in {location},do not have,"English (English or Welsh in Wales) as their main language, but can speak English very well or well"
+Identity,2021-EILR,Proficiency in English language,english_proficiency_4a,english_proficiency_4a-003,{PERCENTAGE}%,of people in {location},do not have,"English (English or Welsh in Wales) as their main language, and cannot speak English or cannot speak English well"
+Identity,2021-EILR,Religion,religion_tb,religion_tb-001,{PERCENTAGE}%,of people in {location},have,no religion
+Identity,2021-EILR,Religion,religion_tb,religion_tb-002,{PERCENTAGE}%,of people in {location},are,Christian
+Identity,2021-EILR,Religion,religion_tb,religion_tb-003,{PERCENTAGE}%,of people in {location},are,Buddhist
+Identity,2021-EILR,Religion,religion_tb,religion_tb-004,{PERCENTAGE}%,of people in {location},are,Hindu
+Identity,2021-EILR,Religion,religion_tb,religion_tb-005,{PERCENTAGE}%,of people in {location},are,Jewish
+Identity,2021-EILR,Religion,religion_tb,religion_tb-006,{PERCENTAGE}%,of people in {location},are,Muslim
+Identity,2021-EILR,Religion,religion_tb,religion_tb-007,{PERCENTAGE}%,of people in {location},are,Sikh
+Identity,2021-EILR,Religion,religion_tb,religion_tb-008,{PERCENTAGE}%,of people in {location},reported,"""Any other religion"""
+Identity,2021-EILR,Religion,religion_tb,religion_tb-009,{PERCENTAGE}%,of people in {location},did,not answer
+Identity,2021-SOGI,Gender identity,gender_identity_4a,gender_identity_4a-001,{PERCENTAGE}%,of families in {location},have,a gender identity the same as their sex registered at birth
+Identity,2021-SOGI,Gender identity,gender_identity_4a,gender_identity_4a-002,{PERCENTAGE}%,of families in {location},have,a gender identity different from their sex registered at birth
+Identity,2021-SOGI,Gender identity,gender_identity_4a,gender_identity_4a-003,{PERCENTAGE}%,of families in {location},did,not answer
+Identity,2021-SOGI,Gender identity,gender_identity_8a,gender_identity_8a-001,{PERCENTAGE}%,of families in {location},have,a gender identity the same as their sex registered at birth
+Identity,2021-SOGI,Gender identity,gender_identity_8a,gender_identity_8a-002,{PERCENTAGE}%,of families in {location},have,a gender identity different from their sex registered at birth but no specific identity given
+Identity,2021-SOGI,Gender identity,gender_identity_8a,gender_identity_8a-003,{PERCENTAGE}%,of families in {location},are,a trans woman
+Identity,2021-SOGI,Gender identity,gender_identity_8a,gender_identity_8a-004,{PERCENTAGE}%,of families in {location},are,a trans man
+Identity,2021-SOGI,Gender identity,gender_identity_8a,gender_identity_8a-005,{PERCENTAGE}%,of families in {location},are,non-binary
+Identity,2021-SOGI,Gender identity,gender_identity_8a,gender_identity_8a-006,{PERCENTAGE}%,of families in {location},have,another gender identity
+Identity,2021-SOGI,Gender identity,gender_identity_8a,gender_identity_8a-007,{PERCENTAGE}%,of families in {location},did,not answer
+Identity,2021-SOGI,Sexual orientation,sexual_orientation_4a,sexual_orientation_4a-001,{PERCENTAGE}%,of people in {location},are,straight or heterosexual
+Identity,2021-SOGI,Sexual orientation,sexual_orientation_4a,sexual_orientation_4a-002,{PERCENTAGE}%,of people in {location},are,"lesbian, gay, bisexual, or other (lgbo)"
+Identity,2021-SOGI,Sexual orientation,sexual_orientation_4a,sexual_orientation_4a-003,{PERCENTAGE}%,of people in {location},did,not answer
+Identity,2021-SOGI,Sexual orientation,sexual_orientation_6a,sexual_orientation_6a-001,{PERCENTAGE}%,of people in {location},are,straight or heterosexual
+Identity,2021-SOGI,Sexual orientation,sexual_orientation_6a,sexual_orientation_6a-002,{PERCENTAGE}%,of people in {location},are,gay or lesbian
+Identity,2021-SOGI,Sexual orientation,sexual_orientation_6a,sexual_orientation_6a-003,{PERCENTAGE}%,of people in {location},are,bisexual
+Identity,2021-SOGI,Sexual orientation,sexual_orientation_6a,sexual_orientation_6a-004,{PERCENTAGE}%,of people in {location},have,another sexual orientation
+Identity,2021-SOGI,Sexual orientation,sexual_orientation_6a,sexual_orientation_6a-005,{PERCENTAGE}%,of people in {location},did,not answer
+Identity,2021-SOGI,Sexual orientation,sexual_orientation_9a,sexual_orientation_9a-001,{PERCENTAGE}%,of people in {location},are,straight or heterosexual
+Identity,2021-SOGI,Sexual orientation,sexual_orientation_9a,sexual_orientation_9a-002,{PERCENTAGE}%,of people in {location},are,gay or lesbian
+Identity,2021-SOGI,Sexual orientation,sexual_orientation_9a,sexual_orientation_9a-003,{PERCENTAGE}%,of people in {location},are,bisexual
+Identity,2021-SOGI,Sexual orientation,sexual_orientation_9a,sexual_orientation_9a-004,{PERCENTAGE}%,of people in {location},are,pansexual
+Identity,2021-SOGI,Sexual orientation,sexual_orientation_9a,sexual_orientation_9a-005,{PERCENTAGE}%,of people in {location},are,asexual
+Identity,2021-SOGI,Sexual orientation,sexual_orientation_9a,sexual_orientation_9a-006,{PERCENTAGE}%,of people in {location},are,queer
+Identity,2021-SOGI,Sexual orientation,sexual_orientation_9a,sexual_orientation_9a-007,{PERCENTAGE}%,of people in {location},have,another sexual orientation
+Identity,2021-SOGI,Sexual orientation,sexual_orientation_9a,sexual_orientation_9a-008,{PERCENTAGE}%,of people in {location},did,not answer
+Identity,2021-WELSH-SKILLS,Welsh language skills,welsh_skills_all,welsh_skills_all-000,{PERCENTAGE}%,of people aged 3 years and over in {location},can,understand spoken Welsh only
+Identity,2021-WELSH-SKILLS,Welsh language skills,welsh_skills_all,welsh_skills_all-001,{PERCENTAGE}%,of people aged 3 years and over in {location},can,"speak, read and write Welsh"
+Identity,2021-WELSH-SKILLS,Welsh language skills,welsh_skills_all,welsh_skills_all-002,{PERCENTAGE}%,of people aged 3 years and over in {location},can,speak but cannot read or write Welsh
+Identity,2021-WELSH-SKILLS,Welsh language skills,welsh_skills_all,welsh_skills_all-003,{PERCENTAGE}%,of people aged 3 years and over in {location},can,speak and read but cannot write Welsh
+Identity,2021-WELSH-SKILLS,Welsh language skills,welsh_skills_all,welsh_skills_all-004,{PERCENTAGE}%,of people aged 3 years and over in {location},can,read but cannot speak or write Welsh
+Identity,2021-WELSH-SKILLS,Welsh language skills,welsh_skills_all,welsh_skills_all-005,{PERCENTAGE}%,of people aged 3 years and over in {location},can,write but cannot speak or read Welsh
+Identity,2021-WELSH-SKILLS,Welsh language skills,welsh_skills_all,welsh_skills_all-006,{PERCENTAGE}%,of people aged 3 years and over in {location},can,read and write but cannot speak Welsh
+Identity,2021-WELSH-SKILLS,Welsh language skills,welsh_skills_all,welsh_skills_all-007,{PERCENTAGE}%,of people aged 3 years and over in {location},can,speak and other combinations of skills in Welsh
+Identity,2021-WELSH-SKILLS,Welsh language skills,welsh_skills_all,welsh_skills_all-008,{PERCENTAGE}%,of people aged 3 years and over in {location},have,no skills in Welsh
+Identity,2021-WELSH-SKILLS,Welsh language skills,welsh_skills_all_4b,welsh_skills_all_4b-000,{PERCENTAGE}%,of people aged 3 years and over in {location},can,understand spoken Welsh only
+Identity,2021-WELSH-SKILLS,Welsh language skills,welsh_skills_all_4b,welsh_skills_all_4b-001,{PERCENTAGE}%,of people aged 3 years and over in {location},can,"speak, read or write Welsh"
+Identity,2021-WELSH-SKILLS,Welsh language skills,welsh_skills_all_4b,welsh_skills_all_4b-002,{PERCENTAGE}%,of people aged 3 years and over in {location},have,no skills in Welsh
+Identity,2021-WELSH-SKILLS,Welsh language skills,welsh_skills_all_6a,welsh_skills_all_6a-000,{PERCENTAGE}%,of people aged 3 years and over in {location},can,understand spoken Welsh only
+Identity,2021-WELSH-SKILLS,Welsh language skills,welsh_skills_all_6a,welsh_skills_all_6a-001,{PERCENTAGE}%,of people aged 3 years and over in {location},can,"speak, read and write Welsh"
+Identity,2021-WELSH-SKILLS,Welsh language skills,welsh_skills_all_6a,welsh_skills_all_6a-002,{PERCENTAGE}%,of people aged 3 years and over in {location},can,speak and other combinations of skills in Welsh
+Identity,2021-WELSH-SKILLS,Welsh language skills,welsh_skills_all_6a,welsh_skills_all_6a-003,{PERCENTAGE}%,of people aged 3 years and over in {location},have,another combination of skills in Welsh
+Identity,2021-WELSH-SKILLS,Welsh language skills,welsh_skills_all_6a,welsh_skills_all_6a-004,{PERCENTAGE}%,of people aged 3 years and over in {location},have,no skills in Welsh
+Identity,2021-WELSH-SKILLS,Welsh speaking ability,welsh_skills_speak,welsh_skills_speak-000,{PERCENTAGE}%,of people aged 3 years and over in {location},cannot,speak Welsh
+Identity,2021-WELSH-SKILLS,Welsh speaking ability,welsh_skills_speak,welsh_skills_speak-001,{PERCENTAGE}%,of people aged 3 years and over in {location},can,speak Welsh
+Population,2021-ARM,UK armed forces veteran indicator,uk_armed_forces,uk_armed_forces-001,{PERCENTAGE}%,of people in {location},have,previously served in the UK armed forces
+Population,2021-ARM,UK armed forces veteran indicator,uk_armed_forces,uk_armed_forces-002,{PERCENTAGE}%,of people in {location},have,previously served in the UK reserve armed forces
+Population,2021-ARM,UK armed forces veteran indicator,uk_armed_forces,uk_armed_forces-003,{PERCENTAGE}%,of people in {location},have,previously served in both the regular and reserve UK armed forces
+Population,2021-ARM,UK armed forces veteran indicator,uk_armed_forces,uk_armed_forces-004,{PERCENTAGE}%,of people in {location},have,not previously served in any of the UK armed forces
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-000,{PERCENTAGE}%,of people in {location},are,aged under 1 year
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-001,{PERCENTAGE}%,of people in {location},are,aged 1 year
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-002,{PERCENTAGE}%,of people in {location},are,aged 2 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-003,{PERCENTAGE}%,of people in {location},are,aged 3 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-004,{PERCENTAGE}%,of people in {location},are,aged 4 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-005,{PERCENTAGE}%,of people in {location},are,aged 5 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-006,{PERCENTAGE}%,of people in {location},are,aged 6 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-007,{PERCENTAGE}%,of people in {location},are,aged 7 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-008,{PERCENTAGE}%,of people in {location},are,aged 8 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-009,{PERCENTAGE}%,of people in {location},are,aged 9 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-010,{PERCENTAGE}%,of people in {location},are,aged 10 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-011,{PERCENTAGE}%,of people in {location},are,aged 11 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-012,{PERCENTAGE}%,of people in {location},are,aged 12 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-013,{PERCENTAGE}%,of people in {location},are,aged 13 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-014,{PERCENTAGE}%,of people in {location},are,aged 14 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-015,{PERCENTAGE}%,of people in {location},are,aged 15 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-016,{PERCENTAGE}%,of people in {location},are,aged 16 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-017,{PERCENTAGE}%,of people in {location},are,aged 17 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-018,{PERCENTAGE}%,of people in {location},are,aged 18 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-019,{PERCENTAGE}%,of people in {location},are,aged 19 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-020,{PERCENTAGE}%,of people in {location},are,aged 20 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-021,{PERCENTAGE}%,of people in {location},are,aged 21 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-022,{PERCENTAGE}%,of people in {location},are,aged 22 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-023,{PERCENTAGE}%,of people in {location},are,aged 23 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-024,{PERCENTAGE}%,of people in {location},are,aged 24 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-025,{PERCENTAGE}%,of people in {location},are,aged 25 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-026,{PERCENTAGE}%,of people in {location},are,aged 26 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-027,{PERCENTAGE}%,of people in {location},are,aged 27 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-028,{PERCENTAGE}%,of people in {location},are,aged 28 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-029,{PERCENTAGE}%,of people in {location},are,aged 29 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-030,{PERCENTAGE}%,of people in {location},are,aged 30 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-031,{PERCENTAGE}%,of people in {location},are,aged 31 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-032,{PERCENTAGE}%,of people in {location},are,aged 32 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-033,{PERCENTAGE}%,of people in {location},are,aged 33 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-034,{PERCENTAGE}%,of people in {location},are,aged 34 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-035,{PERCENTAGE}%,of people in {location},are,aged 35 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-036,{PERCENTAGE}%,of people in {location},are,aged 36 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-037,{PERCENTAGE}%,of people in {location},are,aged 37 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-038,{PERCENTAGE}%,of people in {location},are,aged 38 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-039,{PERCENTAGE}%,of people in {location},are,aged 39 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-040,{PERCENTAGE}%,of people in {location},are,aged 40 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-041,{PERCENTAGE}%,of people in {location},are,aged 41 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-042,{PERCENTAGE}%,of people in {location},are,aged 42 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-043,{PERCENTAGE}%,of people in {location},are,aged 43 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-044,{PERCENTAGE}%,of people in {location},are,aged 44 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-045,{PERCENTAGE}%,of people in {location},are,aged 45 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-046,{PERCENTAGE}%,of people in {location},are,aged 46 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-047,{PERCENTAGE}%,of people in {location},are,aged 47 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-048,{PERCENTAGE}%,of people in {location},are,aged 48 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-049,{PERCENTAGE}%,of people in {location},are,aged 49 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-050,{PERCENTAGE}%,of people in {location},are,aged 50 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-051,{PERCENTAGE}%,of people in {location},are,aged 51 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-052,{PERCENTAGE}%,of people in {location},are,aged 52 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-053,{PERCENTAGE}%,of people in {location},are,aged 53 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-054,{PERCENTAGE}%,of people in {location},are,aged 54 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-055,{PERCENTAGE}%,of people in {location},are,aged 55 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-056,{PERCENTAGE}%,of people in {location},are,aged 56 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-057,{PERCENTAGE}%,of people in {location},are,aged 57 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-058,{PERCENTAGE}%,of people in {location},are,aged 58 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-059,{PERCENTAGE}%,of people in {location},are,aged 59 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-060,{PERCENTAGE}%,of people in {location},are,aged 60 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-061,{PERCENTAGE}%,of people in {location},are,aged 61 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-062,{PERCENTAGE}%,of people in {location},are,aged 62 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-063,{PERCENTAGE}%,of people in {location},are,aged 63 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-064,{PERCENTAGE}%,of people in {location},are,aged 64 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-065,{PERCENTAGE}%,of people in {location},are,aged 65 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-066,{PERCENTAGE}%,of people in {location},are,aged 66 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-067,{PERCENTAGE}%,of people in {location},are,aged 67 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-068,{PERCENTAGE}%,of people in {location},are,aged 68 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-069,{PERCENTAGE}%,of people in {location},are,aged 69 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-070,{PERCENTAGE}%,of people in {location},are,aged 70 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-071,{PERCENTAGE}%,of people in {location},are,aged 71 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-072,{PERCENTAGE}%,of people in {location},are,aged 72 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-073,{PERCENTAGE}%,of people in {location},are,aged 73 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-074,{PERCENTAGE}%,of people in {location},are,aged 74 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-075,{PERCENTAGE}%,of people in {location},are,aged 75 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-076,{PERCENTAGE}%,of people in {location},are,aged 76 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-077,{PERCENTAGE}%,of people in {location},are,aged 77 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-078,{PERCENTAGE}%,of people in {location},are,aged 78 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-079,{PERCENTAGE}%,of people in {location},are,aged 79 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-080,{PERCENTAGE}%,of people in {location},are,aged 80 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-081,{PERCENTAGE}%,of people in {location},are,aged 81 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-082,{PERCENTAGE}%,of people in {location},are,aged 82 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-083,{PERCENTAGE}%,of people in {location},are,aged 83 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-084,{PERCENTAGE}%,of people in {location},are,aged 84 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-085,{PERCENTAGE}%,of people in {location},are,aged 85 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-086,{PERCENTAGE}%,of people in {location},are,aged 86 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-087,{PERCENTAGE}%,of people in {location},are,aged 87 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-088,{PERCENTAGE}%,of people in {location},are,aged 88 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-089,{PERCENTAGE}%,of people in {location},are,aged 89 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-090,{PERCENTAGE}%,of people in {location},are,aged 90 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-091,{PERCENTAGE}%,of people in {location},are,aged 91 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-092,{PERCENTAGE}%,of people in {location},are,aged 92 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-093,{PERCENTAGE}%,of people in {location},are,aged 93 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-094,{PERCENTAGE}%,of people in {location},are,aged 94 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-095,{PERCENTAGE}%,of people in {location},are,aged 95 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-096,{PERCENTAGE}%,of people in {location},are,aged 96 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-097,{PERCENTAGE}%,of people in {location},are,aged 97 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-098,{PERCENTAGE}%,of people in {location},are,aged 98 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-099,{PERCENTAGE}%,of people in {location},are,aged 99 years
+Population,2021-DEM,Age,resident_age_101a,resident_age_101a-100,{PERCENTAGE}%,of people in {location},are,aged 100 years and over
+Population,2021-DEM,Age,resident_age_11a,resident_age_11a-001,{PERCENTAGE}%,of people in {location},are,aged 4 years and under
+Population,2021-DEM,Age,resident_age_11a,resident_age_11a-002,{PERCENTAGE}%,of people in {location},are,aged 5 to 9 years
+Population,2021-DEM,Age,resident_age_11a,resident_age_11a-003,{PERCENTAGE}%,of people in {location},are,aged 10 to 15 years
+Population,2021-DEM,Age,resident_age_11a,resident_age_11a-004,{PERCENTAGE}%,of people in {location},are,aged 16 to 19 years
+Population,2021-DEM,Age,resident_age_11a,resident_age_11a-005,{PERCENTAGE}%,of people in {location},are,aged 20 to 24 years
+Population,2021-DEM,Age,resident_age_11a,resident_age_11a-006,{PERCENTAGE}%,of people in {location},are,aged 25 to 34 years
+Population,2021-DEM,Age,resident_age_11a,resident_age_11a-007,{PERCENTAGE}%,of people in {location},are,aged 35 to 49 years
+Population,2021-DEM,Age,resident_age_11a,resident_age_11a-008,{PERCENTAGE}%,of people in {location},are,aged 50 to 64 years
+Population,2021-DEM,Age,resident_age_11a,resident_age_11a-009,{PERCENTAGE}%,of people in {location},are,aged 65 to 74 years
+Population,2021-DEM,Age,resident_age_11a,resident_age_11a-010,{PERCENTAGE}%,of people in {location},are,aged 75 to 84 years
+Population,2021-DEM,Age,resident_age_11a,resident_age_11a-011,{PERCENTAGE}%,of people in {location},are,aged 85 years and over
+Population,2021-DEM,Age,resident_age_3a,resident_age_3a-001,{PERCENTAGE}%,of people in {location},are,aged 15 years and under
+Population,2021-DEM,Age,resident_age_3a,resident_age_3a-002,{PERCENTAGE}%,of people in {location},are,aged 16 to 64 years
+Population,2021-DEM,Age,resident_age_3a,resident_age_3a-003,{PERCENTAGE}%,of people in {location},are,aged 65 years and over
+Population,2021-DEM,Age,resident_age_8c,resident_age_8c-001,{PERCENTAGE}%,of people in {location},are,aged 14 years and under
+Population,2021-DEM,Age,resident_age_8c,resident_age_8c-002,{PERCENTAGE}%,of people in {location},are,aged 15 to 24 years
+Population,2021-DEM,Age,resident_age_8c,resident_age_8c-003,{PERCENTAGE}%,of people in {location},are,aged 25 to 34 years
+Population,2021-DEM,Age,resident_age_8c,resident_age_8c-004,{PERCENTAGE}%,of people in {location},are,aged 35 to 44 years
+Population,2021-DEM,Age,resident_age_8c,resident_age_8c-005,{PERCENTAGE}%,of people in {location},are,aged 45 to 54 years
+Population,2021-DEM,Age,resident_age_8c,resident_age_8c-006,{PERCENTAGE}%,of people in {location},are,aged 55 to 64 years
+Population,2021-DEM,Age,resident_age_8c,resident_age_8c-007,{PERCENTAGE}%,of people in {location},are,aged 65 to 74 years
+Population,2021-DEM,Age,resident_age_8c,resident_age_8c-008,{PERCENTAGE}%,of people in {location},are,aged 75 years and over
+Population,2021-DEM,Household composition,hh_family_composition_15a,hh_family_composition_15a-001,{PERCENTAGE}%,of households in {location},are,households with one person aged 66 years and over
+Population,2021-DEM,Household composition,hh_family_composition_15a,hh_family_composition_15a-002,{PERCENTAGE}%,of households in {location},are,households with one person aged less than 66 years
+Population,2021-DEM,Household composition,hh_family_composition_15a,hh_family_composition_15a-003,{PERCENTAGE}%,of households in {location},are,single-family households in which all people are aged 66 years and over
+Population,2021-DEM,Household composition,hh_family_composition_15a,hh_family_composition_15a-004,{PERCENTAGE}%,of households in {location},are,single-family households of a married or civil partnership couple with no children
+Population,2021-DEM,Household composition,hh_family_composition_15a,hh_family_composition_15a-005,{PERCENTAGE}%,of households in {location},are,single-family households of a married or civil partnership couple with dependent children
+Population,2021-DEM,Household composition,hh_family_composition_15a,hh_family_composition_15a-006,{PERCENTAGE}%,of households in {location},are,single-family households of a married or civil partnership couple with independent children
+Population,2021-DEM,Household composition,hh_family_composition_15a,hh_family_composition_15a-007,{PERCENTAGE}%,of households in {location},are,single-family households of a cohabiting couple with no children
+Population,2021-DEM,Household composition,hh_family_composition_15a,hh_family_composition_15a-008,{PERCENTAGE}%,of households in {location},are,single-family households of a cohabiting couple with dependent children
+Population,2021-DEM,Household composition,hh_family_composition_15a,hh_family_composition_15a-009,{PERCENTAGE}%,of households in {location},are,single-family households of a cohabiting couple with independent children
+Population,2021-DEM,Household composition,hh_family_composition_15a,hh_family_composition_15a-010,{PERCENTAGE}%,of households in {location},are,single-family households of a lone parent family with dependent children
+Population,2021-DEM,Household composition,hh_family_composition_15a,hh_family_composition_15a-011,{PERCENTAGE}%,of households in {location},are,single-family households of a lone parent family with independent children
+Population,2021-DEM,Household composition,hh_family_composition_15a,hh_family_composition_15a-012,{PERCENTAGE}%,of households in {location},are,single-family households with other family composition
+Population,2021-DEM,Household composition,hh_family_composition_15a,hh_family_composition_15a-013,{PERCENTAGE}%,of households in {location},are,multiple-family households with dependent children
+Population,2021-DEM,Household composition,hh_family_composition_15a,hh_family_composition_15a-014,{PERCENTAGE}%,of households in {location},are,"another type of multiple-family household, including all full-time students and all aged 66 years and over"
+Population,2021-DEM,Household composition,hh_family_composition_4a,hh_family_composition_4a-001,{PERCENTAGE}%,of households in {location},are,other household types
+Population,2021-DEM,Household composition,hh_family_composition_4a,hh_family_composition_4a-002,{PERCENTAGE}%,of households in {location},are,one-person households
+Population,2021-DEM,Household composition,hh_family_composition_4a,hh_family_composition_4a-003,{PERCENTAGE}%,of households in {location},are,single-family households
+Population,2021-DEM,Household deprivation,hh_deprivation,hh_deprivation-001,{PERCENTAGE}%,of households in {location},are,not deprived in any dimension
+Population,2021-DEM,Household deprivation,hh_deprivation,hh_deprivation-002,{PERCENTAGE}%,of households in {location},are,deprived in one dimension
+Population,2021-DEM,Household deprivation,hh_deprivation,hh_deprivation-003,{PERCENTAGE}%,of households in {location},are,deprived in two dimensions
+Population,2021-DEM,Household deprivation,hh_deprivation,hh_deprivation-004,{PERCENTAGE}%,of households in {location},are,deprived in three dimensions
+Population,2021-DEM,Household deprivation,hh_deprivation,hh_deprivation-005,{PERCENTAGE}%,of households in {location},are,deprived in four dimensions
+Population,2021-DEM,Household size,hh_size_5a,hh_size_5a-001,{PERCENTAGE}%,of households in {location},have,1 person per household
+Population,2021-DEM,Household size,hh_size_5a,hh_size_5a-002,{PERCENTAGE}%,of households in {location},have,2 people per household
+Population,2021-DEM,Household size,hh_size_5a,hh_size_5a-003,{PERCENTAGE}%,of households in {location},have,3 people per household
+Population,2021-DEM,Household size,hh_size_5a,hh_size_5a-004,{PERCENTAGE}%,of households in {location},have,4 or more people per household
+Population,2021-DEM,Household size,hh_size_9a,hh_size_9a-001,{PERCENTAGE}%,of households in {location},have,1 person per household
+Population,2021-DEM,Household size,hh_size_9a,hh_size_9a-002,{PERCENTAGE}%,of households in {location},have,2 people per household
+Population,2021-DEM,Household size,hh_size_9a,hh_size_9a-003,{PERCENTAGE}%,of households in {location},have,3 people per household
+Population,2021-DEM,Household size,hh_size_9a,hh_size_9a-004,{PERCENTAGE}%,of households in {location},have,4 people per household
+Population,2021-DEM,Household size,hh_size_9a,hh_size_9a-005,{PERCENTAGE}%,of households in {location},have,5 people per household
+Population,2021-DEM,Household size,hh_size_9a,hh_size_9a-006,{PERCENTAGE}%,of households in {location},have,6 people per household
+Population,2021-DEM,Household size,hh_size_9a,hh_size_9a-007,{PERCENTAGE}%,of households in {location},have,7 people per household
+Population,2021-DEM,Household size,hh_size_9a,hh_size_9a-008,{PERCENTAGE}%,of households in {location},have,8 or more people per household
+Population,2021-DEM,Legal partnership status,legal_partnership_status,legal_partnership_status-001,{PERCENTAGE}%,of people aged 16 years and over in {location},have,never married and never registered a civil partnership
+Population,2021-DEM,Legal partnership status,legal_partnership_status,legal_partnership_status-002,{PERCENTAGE}%,of people aged 16 years and over in {location},are,married to the opposite sex
+Population,2021-DEM,Legal partnership status,legal_partnership_status,legal_partnership_status-003,{PERCENTAGE}%,of people aged 16 years and over in {location},are,married to the same sex
+Population,2021-DEM,Legal partnership status,legal_partnership_status,legal_partnership_status-004,{PERCENTAGE}%,of people aged 16 years and over in {location},are,in a registered civil partnership with the opposite sex
+Population,2021-DEM,Legal partnership status,legal_partnership_status,legal_partnership_status-005,{PERCENTAGE}%,of people aged 16 years and over in {location},are,in a registered civil partnership with the same sex
+Population,2021-DEM,Legal partnership status,legal_partnership_status,legal_partnership_status-006,{PERCENTAGE}%,of people aged 16 years and over in {location},are,"separated, but still married"
+Population,2021-DEM,Legal partnership status,legal_partnership_status,legal_partnership_status-007,{PERCENTAGE}%,of people aged 16 years and over in {location},are,"separated, but still in a registered civil partnership"
+Population,2021-DEM,Legal partnership status,legal_partnership_status,legal_partnership_status-008,{PERCENTAGE}%,of people aged 16 years and over in {location},are,divorced
+Population,2021-DEM,Legal partnership status,legal_partnership_status,legal_partnership_status-009,{PERCENTAGE}%,of people aged 16 years and over in {location},were,formerly in a civil partnership now legally dissolved
+Population,2021-DEM,Legal partnership status,legal_partnership_status,legal_partnership_status-010,{PERCENTAGE}%,of people aged 16 years and over in {location},are,widowed
+Population,2021-DEM,Legal partnership status,legal_partnership_status,legal_partnership_status-011,{PERCENTAGE}%,of people aged 16 years and over in {location},are,the surviving partner from a civil partnership
+Population,2021-DEM,Legal partnership status,legal_partnership_status_3a,legal_partnership_status_3a-001,{PERCENTAGE}%,of people aged 16 years and over in {location},are,married or in a registered civil partnership
+Population,2021-DEM,Legal partnership status,legal_partnership_status_3a,legal_partnership_status_3a-002,{PERCENTAGE}%,of people aged 16 years and over in {location},have,other marital or civil partnership status
+Population,2021-DEM,Legal partnership status,legal_partnership_status_6a,legal_partnership_status_6a-001,{PERCENTAGE}%,of people aged 16 years and over in {location},have,never married and never registered a civil partnership
+Population,2021-DEM,Legal partnership status,legal_partnership_status_6a,legal_partnership_status_6a-002,{PERCENTAGE}%,of people aged 16 years and over in {location},are,married or in a registered civil partnership
+Population,2021-DEM,Legal partnership status,legal_partnership_status_6a,legal_partnership_status_6a-003,{PERCENTAGE}%,of people aged 16 years and over in {location},are,"separated, but still legally married or still legally in a civil partnership"
+Population,2021-DEM,Legal partnership status,legal_partnership_status_6a,legal_partnership_status_6a-004,{PERCENTAGE}%,of people aged 16 years and over in {location},are,divorced or have had their civil partnership dissolved
+Population,2021-DEM,Legal partnership status,legal_partnership_status_6a,legal_partnership_status_6a-005,{PERCENTAGE}%,of people aged 16 years and over in {location},are,widowed or the surviving partner from a civil partnership
+Population,2021-DEM,Living arrangements,living_arrangements_11a,living_arrangements_11a-001,{PERCENTAGE}%,of people aged 16 years and over in households in {location},live together,in an opposite-sex couple that is married or in a civil partnership
+Population,2021-DEM,Living arrangements,living_arrangements_11a,living_arrangements_11a-002,{PERCENTAGE}%,of people aged 16 years and over in households in {location},live together,in a same-sex couple that is married or in a civil partnership
+Population,2021-DEM,Living arrangements,living_arrangements_11a,living_arrangements_11a-003,{PERCENTAGE}%,of people aged 16 years and over in households in {location},live together,"in a couple that is separated, but still married or in a civil partnership"
+Population,2021-DEM,Living arrangements,living_arrangements_11a,living_arrangements_11a-004,{PERCENTAGE}%,of people aged 16 years and over in households in {location},live together,in an opposite-sex couple that is cohabiting
+Population,2021-DEM,Living arrangements,living_arrangements_11a,living_arrangements_11a-005,{PERCENTAGE}%,of people aged 16 years and over in households in {location},live together,in a same-sex couple that is cohabiting
+Population,2021-DEM,Living arrangements,living_arrangements_11a,living_arrangements_11a-006,{PERCENTAGE}%,of people aged 16 years and over in households in {location},are,single (never married and never registered a same-sex civil partnership)
+Population,2021-DEM,Living arrangements,living_arrangements_11a,living_arrangements_11a-007,{PERCENTAGE}%,of people aged 16 years and over in households in {location},are,"not living in a couple, but are married or in a registered civil partnership"
+Population,2021-DEM,Living arrangements,living_arrangements_11a,living_arrangements_11a-008,{PERCENTAGE}%,of people aged 16 years and over in households in {location},are,separated (including those who are married and those who are in civil partnerships)
+Population,2021-DEM,Living arrangements,living_arrangements_11a,living_arrangements_11a-009,{PERCENTAGE}%,of people aged 16 years and over in households in {location},are,divorced or formerly in a civil partnership which is now legally dissolved
+Population,2021-DEM,Living arrangements,living_arrangements_11a,living_arrangements_11a-010,{PERCENTAGE}%,of people aged 16 years and over in households in {location},are,widowed or the surviving partner from a civil partnership
+Population,2021-DEM,Sex,sex,sex-001,{PERCENTAGE}%,of people in {location},are,female
+Population,2021-DEM,Sex,sex,sex-002,{PERCENTAGE}%,of people in {location},are,male
+Population,2021-MIG,Age of arrival in the UK,age_arrival_uk_18a,age_arrival_uk_18a-001,{PERCENTAGE}%,of people in {location},were,born in the UK
+Population,2021-MIG,Age of arrival in the UK,age_arrival_uk_18a,age_arrival_uk_18a-002,{PERCENTAGE}%,of people in {location},arrived,in the UK aged 0 to 4 years
+Population,2021-MIG,Age of arrival in the UK,age_arrival_uk_18a,age_arrival_uk_18a-003,{PERCENTAGE}%,of people in {location},arrived,in the UK aged 5 to 7 years
+Population,2021-MIG,Age of arrival in the UK,age_arrival_uk_18a,age_arrival_uk_18a-004,{PERCENTAGE}%,of people in {location},arrived,in the UK aged 8 to 9 years
+Population,2021-MIG,Age of arrival in the UK,age_arrival_uk_18a,age_arrival_uk_18a-005,{PERCENTAGE}%,of people in {location},arrived,in the UK aged 10 to 14 years
+Population,2021-MIG,Age of arrival in the UK,age_arrival_uk_18a,age_arrival_uk_18a-006,{PERCENTAGE}%,of people in {location},arrived,in the UK aged 15 years
+Population,2021-MIG,Age of arrival in the UK,age_arrival_uk_18a,age_arrival_uk_18a-007,{PERCENTAGE}%,of people in {location},arrived,in the UK aged 16 to 17 years
+Population,2021-MIG,Age of arrival in the UK,age_arrival_uk_18a,age_arrival_uk_18a-008,{PERCENTAGE}%,of people in {location},arrived,in the UK aged 18 to 19 years
+Population,2021-MIG,Age of arrival in the UK,age_arrival_uk_18a,age_arrival_uk_18a-009,{PERCENTAGE}%,of people in {location},arrived,in the UK aged 20 to 24 years
+Population,2021-MIG,Age of arrival in the UK,age_arrival_uk_18a,age_arrival_uk_18a-010,{PERCENTAGE}%,of people in {location},arrived,in the UK aged 25 to 29 years
+Population,2021-MIG,Age of arrival in the UK,age_arrival_uk_18a,age_arrival_uk_18a-011,{PERCENTAGE}%,of people in {location},arrived,in the UK aged 30 to 44 years
+Population,2021-MIG,Age of arrival in the UK,age_arrival_uk_18a,age_arrival_uk_18a-012,{PERCENTAGE}%,of people in {location},arrived,in the UK aged 45 to 59 years
+Population,2021-MIG,Age of arrival in the UK,age_arrival_uk_18a,age_arrival_uk_18a-013,{PERCENTAGE}%,of people in {location},arrived,in the UK aged 60 to 64 years
+Population,2021-MIG,Age of arrival in the UK,age_arrival_uk_18a,age_arrival_uk_18a-014,{PERCENTAGE}%,of people in {location},arrived,in the UK aged 65 to 74 years
+Population,2021-MIG,Age of arrival in the UK,age_arrival_uk_18a,age_arrival_uk_18a-015,{PERCENTAGE}%,of people in {location},arrived,in the UK aged 75 to 84 years
+Population,2021-MIG,Age of arrival in the UK,age_arrival_uk_18a,age_arrival_uk_18a-016,{PERCENTAGE}%,of people in {location},arrived,in the UK aged 85 to 89 years
+Population,2021-MIG,Age of arrival in the UK,age_arrival_uk_18a,age_arrival_uk_18a-017,{PERCENTAGE}%,of people in {location},arrived,in the UK aged 90 years and over
+Population,2021-MIG,Country of birth,country_of_birth_12a,country_of_birth_12a-001,{PERCENTAGE}%,of people in {location},were,born in the UK
+Population,2021-MIG,Country of birth,country_of_birth_12a,country_of_birth_12a-002,{PERCENTAGE}%,of people in {location},were,born in the EU14 (countries that joined the EU before 2004)
+Population,2021-MIG,Country of birth,country_of_birth_12a,country_of_birth_12a-003,{PERCENTAGE}%,of people in {location},were,born in the EU8 (countries that joined the EU in 2004)
+Population,2021-MIG,Country of birth,country_of_birth_12a,country_of_birth_12a-004,{PERCENTAGE}%,of people in {location},were,born in the EU2 (countries that joined the EU in 2007)
+Population,2021-MIG,Country of birth,country_of_birth_12a,country_of_birth_12a-005,{PERCENTAGE}%,of people in {location},were,born in other EU countries
+Population,2021-MIG,Country of birth,country_of_birth_12a,country_of_birth_12a-006,{PERCENTAGE}%,of people in {location},were,born in European countries that are not part of the EU
+Population,2021-MIG,Country of birth,country_of_birth_12a,country_of_birth_12a-007,{PERCENTAGE}%,of people in {location},were,born in Africa
+Population,2021-MIG,Country of birth,country_of_birth_12a,country_of_birth_12a-008,{PERCENTAGE}%,of people in {location},were,born in the Middle East and Asia
+Population,2021-MIG,Country of birth,country_of_birth_12a,country_of_birth_12a-009,{PERCENTAGE}%,of people in {location},were,born in the Americas or the Caribbean
+Population,2021-MIG,Country of birth,country_of_birth_12a,country_of_birth_12a-010,{PERCENTAGE}%,of people in {location},were,"born in Antarctica, Oceania (including Australasia) or other"
+Population,2021-MIG,Country of birth,country_of_birth_12a,country_of_birth_12a-011,{PERCENTAGE}%,of people in {location},were,born in the British Overseas Territories
+Population,2021-MIG,Country of birth,country_of_birth_3a,country_of_birth_3a-001,{PERCENTAGE}%,of people in {location},were,born in the UK
+Population,2021-MIG,Country of birth,country_of_birth_3a,country_of_birth_3a-002,{PERCENTAGE}%,of people in {location},were,born outside the UK
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-001,{PERCENTAGE}%,of people in {location},were,born in England
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-002,{PERCENTAGE}%,of people in {location},were,born in Northern Ireland
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-003,{PERCENTAGE}%,of people in {location},were,born in Scotland
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-004,{PERCENTAGE}%,of people in {location},were,born in Wales
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-005,{PERCENTAGE}%,of people in {location},were,born in Great Britain (country not specified)
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-006,{PERCENTAGE}%,of people in {location},were,born in the UK (country not specified)
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-007,{PERCENTAGE}%,of people in {location},were,born in Ireland
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-008,{PERCENTAGE}%,of people in {location},were,born in France
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-009,{PERCENTAGE}%,of people in {location},were,born in Germany
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-010,{PERCENTAGE}%,of people in {location},were,born in Italy
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-011,{PERCENTAGE}%,of people in {location},were,born in Portugal (including Madeira and the Azores)
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-012,{PERCENTAGE}%,of people in {location},were,born in Spain (including the Canary Islands)
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-013,{PERCENTAGE}%,of people in {location},were,born in other countries that were EU members in March 2001 
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-014,{PERCENTAGE}%,of people in {location},were,born in Lithuania
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-015,{PERCENTAGE}%,of people in {location},were,born in Poland
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-016,{PERCENTAGE}%,of people in {location},were,born in Romania
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-017,{PERCENTAGE}%,of people in {location},were,born in other countries that joined the EU between April 2001 - March 2011
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-018,{PERCENTAGE}%,of people in {location},were,born in Croatia
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-019,{PERCENTAGE}%,of people in {location},were,born in Turkey
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-020,{PERCENTAGE}%,of people in {location},were,born in other European countries
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-021,{PERCENTAGE}%,of people in {location},were,born in North Africa
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-022,{PERCENTAGE}%,of people in {location},were,born in Ghana
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-023,{PERCENTAGE}%,of people in {location},were,born in Nigeria
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-024,{PERCENTAGE}%,of people in {location},were,born in other Central and Western African countries
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-025,{PERCENTAGE}%,of people in {location},were,born in Kenya
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-026,{PERCENTAGE}%,of people in {location},were,born in Somalia
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-027,{PERCENTAGE}%,of people in {location},were,born in South Africa
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-028,{PERCENTAGE}%,of people in {location},were,born in Zimbabwe
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-029,{PERCENTAGE}%,of people in {location},were,born in other South and Eastern African countries
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-030,{PERCENTAGE}%,of people in {location},were,born in Africa (country not specified)
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-031,{PERCENTAGE}%,of people in {location},were,born in Iran
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-032,{PERCENTAGE}%,of people in {location},were,born in Iraq
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-033,{PERCENTAGE}%,of people in {location},were,born in other Middle Eastern countries
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-034,{PERCENTAGE}%,of people in {location},were,born in China
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-035,{PERCENTAGE}%,of people in {location},were,born in Hong Kong
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-036,{PERCENTAGE}%,of people in {location},were,born in other East Asian countries
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-037,{PERCENTAGE}%,of people in {location},were,born in Afghanistan
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-038,{PERCENTAGE}%,of people in {location},were,born in India
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-039,{PERCENTAGE}%,of people in {location},were,born in Pakistan
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-040,{PERCENTAGE}%,of people in {location},were,born in Bangladesh
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-041,{PERCENTAGE}%,of people in {location},were,born in Sri Lanka
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-042,{PERCENTAGE}%,of people in {location},were,born in other Southern Asian countries
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-043,{PERCENTAGE}%,of people in {location},were,born in the Philippines
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-044,{PERCENTAGE}%,of people in {location},were,born in Malaysia
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-045,{PERCENTAGE}%,of people in {location},were,born in Singapore
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-046,{PERCENTAGE}%,of people in {location},were,born in other South-East Asian countries
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-047,{PERCENTAGE}%,of people in {location},were,born in Central Asia
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-048,{PERCENTAGE}%,of people in {location},were,born in the United States
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-049,{PERCENTAGE}%,of people in {location},were,born in Canada
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-050,{PERCENTAGE}%,of people in {location},were,born in other North American countries
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-051,{PERCENTAGE}%,of people in {location},were,born in Central America
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-052,{PERCENTAGE}%,of people in {location},were,born in South America
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-053,{PERCENTAGE}%,of people in {location},were,born in Jamaica
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-054,{PERCENTAGE}%,of people in {location},were,born in other Caribbean countries
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-055,{PERCENTAGE}%,of people in {location},were,born in Australia
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-056,{PERCENTAGE}%,of people in {location},were,born in New Zealand
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-057,{PERCENTAGE}%,of people in {location},were,both in other Australasian countries
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-058,{PERCENTAGE}%,of people in {location},were,born in other Oceanian countries or Antarctica 
+Population,2021-MIG,Country of birth,country_of_birth_60a,country_of_birth_60a-059,{PERCENTAGE}%,of people in {location},were,both in other countries
+Population,2021-MIG,Country of birth,country_of_birth_8a,country_of_birth_8a-001,{PERCENTAGE}%,of people in {location},were,born in the UK
+Population,2021-MIG,Country of birth,country_of_birth_8a,country_of_birth_8a-002,{PERCENTAGE}%,of people in {location},were,born in Ireland
+Population,2021-MIG,Country of birth,country_of_birth_8a,country_of_birth_8a-003,{PERCENTAGE}%,of people in {location},were,born in other European countries
+Population,2021-MIG,Country of birth,country_of_birth_8a,country_of_birth_8a-004,{PERCENTAGE}%,of people in {location},were,born in Africa
+Population,2021-MIG,Country of birth,country_of_birth_8a,country_of_birth_8a-005,{PERCENTAGE}%,of people in {location},were,born in the Middle East and Asia
+Population,2021-MIG,Country of birth,country_of_birth_8a,country_of_birth_8a-006,{PERCENTAGE}%,of people in {location},were,born in the Americas or the Caribbean
+Population,2021-MIG,Country of birth,country_of_birth_8a,country_of_birth_8a-007,{PERCENTAGE}%,of people in {location},were,"born in Antarctica, Oceania (including Australasia) or other"
+Population,2021-MIG,Length of residence in the UK,residence_length_6b,residence_length_6b-001,{PERCENTAGE}%,of people in {location},were,born in the UK
+Population,2021-MIG,Length of residence in the UK,residence_length_6b,residence_length_6b-002,{PERCENTAGE}%,of people in {location},have,lived in the UK for 10 years or more
+Population,2021-MIG,Length of residence in the UK,residence_length_6b,residence_length_6b-003,{PERCENTAGE}%,of people in {location},have,"lived in the UK for 5 years or more, but less than 10 years"
+Population,2021-MIG,Length of residence in the UK,residence_length_6b,residence_length_6b-004,{PERCENTAGE}%,of people in {location},have,"lived in the UK for 2 years or more, but less than 5 years"
+Population,2021-MIG,Length of residence in the UK,residence_length_6b,residence_length_6b-005,{PERCENTAGE}%,of people in {location},have,lived in the UK for less than 2 years
+Population,2021-MIG,Migrant indicator,migrant_ind,migrant_ind-000,{PERCENTAGE}%,of people in {location},were,living at their address of enumeration one year ago
+Population,2021-MIG,Migrant indicator,migrant_ind,migrant_ind-001,{PERCENTAGE}%,of people in {location},were,living at a student or boarding school term-time address in the UK one year ago
+Population,2021-MIG,Migrant indicator,migrant_ind,migrant_ind-002,{PERCENTAGE}%,of people in {location},were,living at a different address within the UK one year ago
+Population,2021-MIG,Migrant indicator,migrant_ind,migrant_ind-003,{PERCENTAGE}%,of people in {location},were,living at an address outside the UK one year ago
+Population,2021-MIG,Passports held,passports_all_13a,passports_all_13a-001,{PERCENTAGE}%,of people in {location},have,a UK passport
+Population,2021-MIG,Passports held,passports_all_13a,passports_all_13a-002,{PERCENTAGE}%,of people in {location},have,an Irish passport
+Population,2021-MIG,Passports held,passports_all_13a,passports_all_13a-003,{PERCENTAGE}%,of people in {location},have,a passport from another EU country
+Population,2021-MIG,Passports held,passports_all_13a,passports_all_13a-004,{PERCENTAGE}%,of people in {location},have,a passport from a non-EU European country
+Population,2021-MIG,Passports held,passports_all_13a,passports_all_13a-005,{PERCENTAGE}%,of people in {location},have,an African passport
+Population,2021-MIG,Passports held,passports_all_13a,passports_all_13a-006,{PERCENTAGE}%,of people in {location},have,a Middle Eastern or Asian passport
+Population,2021-MIG,Passports held,passports_all_13a,passports_all_13a-007,{PERCENTAGE}%,of people in {location},have,a North American or Caribbean passport
+Population,2021-MIG,Passports held,passports_all_13a,passports_all_13a-008,{PERCENTAGE}%,of people in {location},have,a Central American passport
+Population,2021-MIG,Passports held,passports_all_13a,passports_all_13a-009,{PERCENTAGE}%,of people in {location},have,a South American passport
+Population,2021-MIG,Passports held,passports_all_13a,passports_all_13a-010,{PERCENTAGE}%,of people in {location},have,a passport from Antarctica and Oceania (including Australia)
+Population,2021-MIG,Passports held,passports_all_13a,passports_all_13a-011,{PERCENTAGE}%,of people in {location},have,a passport from the British Overseas Territories
+Population,2021-MIG,Passports held,passports_all_13a,passports_all_13a-012,{PERCENTAGE}%,of people in {location},have,no passport
+Population,2021-MIG,Passports held,passports_all_18a,passports_all_18a-001,{PERCENTAGE}%,of people in {location},have,a UK passport
+Population,2021-MIG,Passports held,passports_all_18a,passports_all_18a-002,{PERCENTAGE}%,of people in {location},have,an Irish passport
+Population,2021-MIG,Passports held,passports_all_18a,passports_all_18a-003,{PERCENTAGE}%,of people in {location},have,a passport from another EU country
+Population,2021-MIG,Passports held,passports_all_18a,passports_all_18a-004,{PERCENTAGE}%,of people in {location},have,a passport from a non-EU European country
+Population,2021-MIG,Passports held,passports_all_18a,passports_all_18a-005,{PERCENTAGE}%,of people in {location},have,a North African passport
+Population,2021-MIG,Passports held,passports_all_18a,passports_all_18a-006,{PERCENTAGE}%,of people in {location},have,a Central or West African passport
+Population,2021-MIG,Passports held,passports_all_18a,passports_all_18a-007,{PERCENTAGE}%,of people in {location},have,a South or East African passport
+Population,2021-MIG,Passports held,passports_all_18a,passports_all_18a-008,{PERCENTAGE}%,of people in {location},have,a Middle Eastern passport
+Population,2021-MIG,Passports held,passports_all_18a,passports_all_18a-009,{PERCENTAGE}%,of people in {location},have,an East Asian passport
+Population,2021-MIG,Passports held,passports_all_18a,passports_all_18a-010,{PERCENTAGE}%,of people in {location},have,a South Asian passport
+Population,2021-MIG,Passports held,passports_all_18a,passports_all_18a-011,{PERCENTAGE}%,of people in {location},have,a South-East Asian passport
+Population,2021-MIG,Passports held,passports_all_18a,passports_all_18a-012,{PERCENTAGE}%,of people in {location},have,a Central Asian passport
+Population,2021-MIG,Passports held,passports_all_18a,passports_all_18a-013,{PERCENTAGE}%,of people in {location},have,a North American or Caribbean passport
+Population,2021-MIG,Passports held,passports_all_18a,passports_all_18a-014,{PERCENTAGE}%,of people in {location},have,a Central or South American passport
+Population,2021-MIG,Passports held,passports_all_18a,passports_all_18a-015,{PERCENTAGE}%,of people in {location},have,a passport from Antarctica and Oceania (including Australasia)
+Population,2021-MIG,Passports held,passports_all_18a,passports_all_18a-016,{PERCENTAGE}%,of people in {location},have,a passport from the British Overseas Territories
+Population,2021-MIG,Passports held,passports_all_18a,passports_all_18a-017,{PERCENTAGE}%,of people in {location},have,no passport
+Population,2021-MIG,Passports held,passports_all_27a,passports_all_27a-001,{PERCENTAGE}%,of people in {location},have,a UK passport
+Population,2021-MIG,Passports held,passports_all_27a,passports_all_27a-002,{PERCENTAGE}%,of people in {location},have,an Irish passport
+Population,2021-MIG,Passports held,passports_all_27a,passports_all_27a-003,{PERCENTAGE}%,of people in {location},have,a French passport
+Population,2021-MIG,Passports held,passports_all_27a,passports_all_27a-004,{PERCENTAGE}%,of people in {location},have,a German passport
+Population,2021-MIG,Passports held,passports_all_27a,passports_all_27a-005,{PERCENTAGE}%,of people in {location},have,an Italian passport
+Population,2021-MIG,Passports held,passports_all_27a,passports_all_27a-006,{PERCENTAGE}%,of people in {location},have,a Portuguese passport
+Population,2021-MIG,Passports held,passports_all_27a,passports_all_27a-007,{PERCENTAGE}%,of people in {location},have,a Spanish passport
+Population,2021-MIG,Passports held,passports_all_27a,passports_all_27a-008,{PERCENTAGE}%,of people in {location},have,a Lithuanian passport
+Population,2021-MIG,Passports held,passports_all_27a,passports_all_27a-009,{PERCENTAGE}%,of people in {location},have,a Polish passport
+Population,2021-MIG,Passports held,passports_all_27a,passports_all_27a-010,{PERCENTAGE}%,of people in {location},have,a Romanian passport
+Population,2021-MIG,Passports held,passports_all_27a,passports_all_27a-011,{PERCENTAGE}%,of people in {location},have,a passport from another EU country
+Population,2021-MIG,Passports held,passports_all_27a,passports_all_27a-012,{PERCENTAGE}%,of people in {location},have,a Turkish passport
+Population,2021-MIG,Passports held,passports_all_27a,passports_all_27a-013,{PERCENTAGE}%,of people in {location},have,a passport from another non-EU European country
+Population,2021-MIG,Passports held,passports_all_27a,passports_all_27a-014,{PERCENTAGE}%,of people in {location},have,a North African passport
+Population,2021-MIG,Passports held,passports_all_27a,passports_all_27a-015,{PERCENTAGE}%,of people in {location},have,a Central or West African passport
+Population,2021-MIG,Passports held,passports_all_27a,passports_all_27a-016,{PERCENTAGE}%,of people in {location},have,a South or East African passport
+Population,2021-MIG,Passports held,passports_all_27a,passports_all_27a-017,{PERCENTAGE}%,of people in {location},have,a Middle Eastern passport
+Population,2021-MIG,Passports held,passports_all_27a,passports_all_27a-018,{PERCENTAGE}%,of people in {location},have,an East Asian passport
+Population,2021-MIG,Passports held,passports_all_27a,passports_all_27a-019,{PERCENTAGE}%,of people in {location},have,a South Asian passport
+Population,2021-MIG,Passports held,passports_all_27a,passports_all_27a-020,{PERCENTAGE}%,of people in {location},have,a South-East Asian passport
+Population,2021-MIG,Passports held,passports_all_27a,passports_all_27a-021,{PERCENTAGE}%,of people in {location},have,a Central Asian passport
+Population,2021-MIG,Passports held,passports_all_27a,passports_all_27a-022,{PERCENTAGE}%,of people in {location},have,a North American or Caribbean passport
+Population,2021-MIG,Passports held,passports_all_27a,passports_all_27a-023,{PERCENTAGE}%,of people in {location},have,a Central or South American passport
+Population,2021-MIG,Passports held,passports_all_27a,passports_all_27a-024,{PERCENTAGE}%,of people in {location},have,a passport from Antarctica and Oceania (including Australasia)
+Population,2021-MIG,Passports held,passports_all_27a,passports_all_27a-025,{PERCENTAGE}%,of people in {location},have,a passport from the British Overseas Territories
+Population,2021-MIG,Passports held,passports_all_27a,passports_all_27a-026,{PERCENTAGE}%,of people in {location},have,no passport
+Population,2021-MIG,Passports held,passports_all_4a,passports_all_4a-001,{PERCENTAGE}%,of people in {location},have,a UK passport
+Population,2021-MIG,Passports held,passports_all_4a,passports_all_4a-002,{PERCENTAGE}%,of people in {location},have,a non-UK passport
+Population,2021-MIG,Passports held,passports_all_4a,passports_all_4a-003,{PERCENTAGE}%,of people in {location},have,no passport
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-001,{PERCENTAGE}%,of people in {location},have,a UK passport
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-002,{PERCENTAGE}%,of people in {location},have,an Irish passport
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-003,{PERCENTAGE}%,of people in {location},have,a French passport
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-004,{PERCENTAGE}%,of people in {location},have,a German passport
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-005,{PERCENTAGE}%,of people in {location},have,an Italian passport
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-006,{PERCENTAGE}%,of people in {location},have,a Portuguese passport
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-007,{PERCENTAGE}%,of people in {location},have,a Spanish passport
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-008,{PERCENTAGE}%,of people in {location},have,a Lithuanian passport
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-009,{PERCENTAGE}%,of people in {location},have,a Polish passport
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-010,{PERCENTAGE}%,of people in {location},have,a Romanian passport
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-011,{PERCENTAGE}%,of people in {location},have,a passport from another EU country
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-012,{PERCENTAGE}%,of people in {location},have,a Turkish passport
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-013,{PERCENTAGE}%,of people in {location},have,a passport from another non-EU European country
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-014,{PERCENTAGE}%,of people in {location},have,a North African passport
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-015,{PERCENTAGE}%,of people in {location},have,a Ghanaian passport
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-016,{PERCENTAGE}%,of people in {location},have,a Nigerian passport
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-017,{PERCENTAGE}%,of people in {location},have,a passport from another Central or West African country
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-018,{PERCENTAGE}%,of people in {location},have,a Kenyan passport
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-019,{PERCENTAGE}%,of people in {location},have,a Somalian passport
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-020,{PERCENTAGE}%,of people in {location},have,a South African passport
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-021,{PERCENTAGE}%,of people in {location},have,a Zimbabwean passport
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-022,{PERCENTAGE}%,of people in {location},have,a passport from another South or East African country
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-023,{PERCENTAGE}%,of people in {location},have,an Iranian passport
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-024,{PERCENTAGE}%,of people in {location},have,an Iraqi passport
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-025,{PERCENTAGE}%,of people in {location},have,a passport from another Middle Eastern country
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-026,{PERCENTAGE}%,of people in {location},have,a Chinese passport
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-027,{PERCENTAGE}%,of people in {location},have,a passport from Hong Kong
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-028,{PERCENTAGE}%,of people in {location},have,a Japanese passport
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-029,{PERCENTAGE}%,of people in {location},have,a passport from another East Asian country
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-030,{PERCENTAGE}%,of people in {location},have,an Afghan passport
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-031,{PERCENTAGE}%,of people in {location},have,a Bangladeshi passport
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-032,{PERCENTAGE}%,of people in {location},have,an Indian passport
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-033,{PERCENTAGE}%,of people in {location},have,a Pakistani passport
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-034,{PERCENTAGE}%,of people in {location},have,a Sri Lankan passport
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-035,{PERCENTAGE}%,of people in {location},have,a passport from another South Asian country
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-036,{PERCENTAGE}%,of people in {location},have,a Malaysian passport
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-037,{PERCENTAGE}%,of people in {location},have,a Filipino passport
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-038,{PERCENTAGE}%,of people in {location},have,a Singaporean passport
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-039,{PERCENTAGE}%,of people in {location},have,a passport from another South-East Asian country
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-040,{PERCENTAGE}%,of people in {location},have,a Central Asian passport
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-041,{PERCENTAGE}%,of people in {location},have,a Canadian passport
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-042,{PERCENTAGE}%,of people in {location},have,a United States passport
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-043,{PERCENTAGE}%,of people in {location},have,a Central American passport
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-044,{PERCENTAGE}%,of people in {location},have,a South American passport
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-045,{PERCENTAGE}%,of people in {location},have,a Jamaican passport
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-046,{PERCENTAGE}%,of people in {location},have,a passport from another Caribbean country
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-047,{PERCENTAGE}%,of people in {location},have,an Australian passport
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-048,{PERCENTAGE}%,of people in {location},have,a New Zealand passport
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-049,{PERCENTAGE}%,of people in {location},have,a passport from another country in Oceania and Antarctica
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-050,{PERCENTAGE}%,of people in {location},have,a passport from the British Overseas Territories
+Population,2021-MIG,Passports held,passports_all_52a,passports_all_52a-051,{PERCENTAGE}%,of people in {location},have,no passport
+Population,2021-MIG,Year of arrival in the UK,year_arrival_uk,year_arrival_uk-001,{PERCENTAGE}%,of people in {location},were,born in the UK
+Population,2021-MIG,Year of arrival in the UK,year_arrival_uk,year_arrival_uk-002,{PERCENTAGE}%,of people in {location},arrived,in the UK before 1951
+Population,2021-MIG,Year of arrival in the UK,year_arrival_uk,year_arrival_uk-003,{PERCENTAGE}%,of people in {location},arrived,in the UK between 1951 and 1960
+Population,2021-MIG,Year of arrival in the UK,year_arrival_uk,year_arrival_uk-004,{PERCENTAGE}%,of people in {location},arrived,in the UK between 1961 and 1970
+Population,2021-MIG,Year of arrival in the UK,year_arrival_uk,year_arrival_uk-005,{PERCENTAGE}%,of people in {location},arrived,in the UK between 1971 and 1980
+Population,2021-MIG,Year of arrival in the UK,year_arrival_uk,year_arrival_uk-006,{PERCENTAGE}%,of people in {location},arrived,in the UK between 1981 and 1990
+Population,2021-MIG,Year of arrival in the UK,year_arrival_uk,year_arrival_uk-007,{PERCENTAGE}%,of people in {location},arrived,in the UK between 1991 and 2000
+Population,2021-MIG,Year of arrival in the UK,year_arrival_uk,year_arrival_uk-008,{PERCENTAGE}%,of people in {location},arrived,in the UK between 2001 and 2010
+Population,2021-MIG,Year of arrival in the UK,year_arrival_uk,year_arrival_uk-009,{PERCENTAGE}%,of people in {location},arrived,in the UK between 2011 and 2013
+Population,2021-MIG,Year of arrival in the UK,year_arrival_uk,year_arrival_uk-010,{PERCENTAGE}%,of people in {location},arrived,in the UK between 2014 and 2016
+Population,2021-MIG,Year of arrival in the UK,year_arrival_uk,year_arrival_uk-011,{PERCENTAGE}%,of people in {location},arrived,in the UK between 2017 and 2019
+Population,2021-MIG,Year of arrival in the UK,year_arrival_uk,year_arrival_uk-012,{PERCENTAGE}%,of people in {location},arrived,in the UK between 2020 and 2021
+Population,2021-MIG,Year of arrival in the UK,year_arrival_uk_6a,year_arrival_uk_6a-001,{PERCENTAGE}%,of people in {location},were,born in the UK
+Population,2021-MIG,Year of arrival in the UK,year_arrival_uk_6a,year_arrival_uk_6a-002,{PERCENTAGE}%,of people in {location},arrived,in the UK before 1991
+Population,2021-MIG,Year of arrival in the UK,year_arrival_uk_6a,year_arrival_uk_6a-003,{PERCENTAGE}%,of people in {location},arrived,in the UK between 1991 and 2000
+Population,2021-MIG,Year of arrival in the UK,year_arrival_uk_6a,year_arrival_uk_6a-004,{PERCENTAGE}%,of people in {location},arrived,in the UK between 2001 and 2010
+Population,2021-MIG,Year of arrival in the UK,year_arrival_uk_6a,year_arrival_uk_6a-005,{PERCENTAGE}%,of people in {location},arrived,in the UK between 2011 and 2021
+Work,2021-LAB,Economic activity status,economic_activity_status_10a,economic_activity_status_10a-001,{PERCENTAGE}%,of people aged 16 years and over in {location},are,in employment (excluding full-time students)
+Work,2021-LAB,Economic activity status,economic_activity_status_10a,economic_activity_status_10a-002,{PERCENTAGE}%,of people aged 16 years and over in {location},are,"unemployed, but seeking work or waiting to start a job already obtained (excluding full-time students)"
+Work,2021-LAB,Economic activity status,economic_activity_status_10a,economic_activity_status_10a-003,{PERCENTAGE}%,of people aged 16 years and over in {location},are,full-time students and in employment
+Work,2021-LAB,Economic activity status,economic_activity_status_10a,economic_activity_status_10a-004,{PERCENTAGE}%,of people aged 16 years and over in {location},are,"full-time students and unemployed, but seeking work or waiting to start a job already obtained"
+Work,2021-LAB,Economic activity status,economic_activity_status_10a,economic_activity_status_10a-005,{PERCENTAGE}%,of people aged 16 years and over in {location},are,retired
+Work,2021-LAB,Economic activity status,economic_activity_status_10a,economic_activity_status_10a-006,{PERCENTAGE}%,of people aged 16 years and over in {location},are,students and economically inactive
+Work,2021-LAB,Economic activity status,economic_activity_status_10a,economic_activity_status_10a-007,{PERCENTAGE}%,of people aged 16 years and over in {location},are,economically inactive due to looking after home or family
+Work,2021-LAB,Economic activity status,economic_activity_status_10a,economic_activity_status_10a-008,{PERCENTAGE}%,of people aged 16 years and over in {location},are,economically inactive due to long-term sickness or disability
+Work,2021-LAB,Economic activity status,economic_activity_status_10a,economic_activity_status_10a-009,{PERCENTAGE}%,of people aged 16 years and over in {location},are,otherwise economically inactive
+Work,2021-LAB,Economic activity status,economic_activity_status_3a,economic_activity_status_3a-001,{PERCENTAGE}%,of people aged 16 years and over in {location},are,economically active
+Work,2021-LAB,Economic activity status,economic_activity_status_3a,economic_activity_status_3a-002,{PERCENTAGE}%,of people aged 16 years and over in {location},are,economically inactive
+Work,2021-LAB,Economic activity status,economic_activity_status_4a,economic_activity_status_4a-001,{PERCENTAGE}%,of people aged 16 years and over in {location},are,in employment (including full-time students)
+Work,2021-LAB,Economic activity status,economic_activity_status_4a,economic_activity_status_4a-002,{PERCENTAGE}%,of people aged 16 years and over in {location},are,unemployed (including full-time students)
+Work,2021-LAB,Economic activity status,economic_activity_status_4a,economic_activity_status_4a-003,{PERCENTAGE}%,of people aged 16 years and over in {location},are,economically inactive
+Work,2021-LAB,Employment history,has_ever_worked,has_ever_worked-001,{PERCENTAGE}%,of people aged 16 years and over not in employment in {location},have,worked in the last 12 months
+Work,2021-LAB,Employment history,has_ever_worked,has_ever_worked-002,{PERCENTAGE}%,of people aged 16 years and over not in employment in {location},have,not worked in the last 12 months
+Work,2021-LAB,Employment history,has_ever_worked,has_ever_worked-003,{PERCENTAGE}%,of people aged 16 years and over not in employment in {location},have,never worked
+Work,2021-LAB,Hours worked,hours_per_week_worked,hours_per_week_worked-001,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work,part-time: 15 hours or less
+Work,2021-LAB,Hours worked,hours_per_week_worked,hours_per_week_worked-002,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work,part-time: 16 to 30 hours
+Work,2021-LAB,Hours worked,hours_per_week_worked,hours_per_week_worked-003,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work,full-time: 31 to 48 hours
+Work,2021-LAB,Hours worked,hours_per_week_worked,hours_per_week_worked-004,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work,full-time: 49 or more hours
+Work,2021-LAB,Hours worked,hours_per_week_worked_3a,hours_per_week_worked_3a-001,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work,part-time: 30 hours or less
+Work,2021-LAB,Hours worked,hours_per_week_worked_3a,hours_per_week_worked_3a-002,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work,full-time: 31 or more hours
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-001,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,"crop or animal production, hunting or related service activities"
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-002,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,forestry or logging
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-003,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,fishing or aquaculture
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-004,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,mining of coal and lignite
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-005,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,extraction of crude petroleum and natural gas
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-006,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,mining of metal ores
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-007,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,other mining or quarrying
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-008,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,mining support service activities
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-009,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,manufacture of food products
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-010,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,manufacture of beverages
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-011,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,manufacture of tobacco products
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-012,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,manufacture of textiles
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-013,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,manufacture of wearing apparel
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-014,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,manufacture of leather and related products
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-015,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,manufacture of wood and of products of wood or cork (except furniture) or manufacture of articles of straw or plaiting materials
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-016,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,manufacture of paper or paper products
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-017,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,printing and reproduction of recorded media
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-018,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,manufacture of coke or refined petroleum products
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-019,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,manufacture of chemicals or chemical products
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-020,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,manufacture of basic pharmaceutical products or pharmaceutical preparations
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-021,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,manufacture of rubber or plastic products
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-022,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,manufacture of other non-metallic mineral products
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-023,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,manufacture of basic metals
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-024,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,"manufacture of fabricated metal products, except machinery and equipment"
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-025,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,"manufacture of computer, electrical or optical products"
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-026,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,manufacture of electrical equipment
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-027,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,manufacture of machinery and equipment not otherwise specified
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-028,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,"manufacture of motor vehicles, trailers and semi-trailers"
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-029,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,manufacture of other transport equipment
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-030,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,manufacture of furniture
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-031,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,other manufacturing
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-032,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,repair and installation of machinery or equipment
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-033,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,"electricity, gas, steam or air conditioning supply"
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-034,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,"water collection, treatment or supply"
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-035,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,sewerage
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-036,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,"waste collection, treatment or disposal activities, or materials recovery"
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-037,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,remediation activities or other waste management services
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-038,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,"construction of buildings, civil engineering or specialised construction activities"
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-039,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,wholesale or retail trade or repair of motor vehicles and motorcycles
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-040,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,"wholesale trade, except of motor vehicles and motorcycles"
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-041,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,"retail trade, except of motor vehicles and motorcycles"
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-042,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,wholesale or retail trade of a type not otherwise specified
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-043,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,land transport or transport via pipelines
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-044,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,water transport
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-045,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,air transport
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-046,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,warehousing or support activities for transportation
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-047,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,postal or courier activities
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-048,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,accommodation
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-049,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,food or beverage service activities
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-050,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,publishing activities
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-051,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,"motion picture, video or television production, or sound recording or music publishing activities"
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-052,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,programming and broadcasting activities
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-053,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,telecommunications
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-054,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,"computer programming, consultancy or related activities"
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-055,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,information service activities
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-056,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,"financial service activities, except insurance and pension funding"
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-057,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,"insurance, reinsurance or pension funding, except compulsory social security"
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-058,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,activities auxiliary to financial services and insurance activities
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-059,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,real estate activities
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-060,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,legal or accounting activities
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-061,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,activities of head offices or management consultancy activities
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-062,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,"architectural or engineering activities, or technical testing and analysis"
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-063,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,scientific research and development
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-064,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,advertising or market research
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-065,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,"other professional, scientific or technical activities"
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-066,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,veterinary activities
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-067,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,rental or leasing activities
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-068,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,employment activities
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-069,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,"travel agency, tour operator or other reservation service and related activities"
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-070,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,security or investigation activities
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-071,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,services to buildings or landscape activities
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-072,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,"office administrative, office support or other business support activities"
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-073,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,"public administration or defence, or compulsory social security"
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-074,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,education
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-075,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,human health activities
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-076,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,residential care activities
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-077,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,social work activities without accommodation
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-078,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,"creative, arts and entertainment activities"
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-079,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,"libraries, archives, museums and other cultural activities"
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-080,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,gambling and betting activities
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-081,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,sports activities and amusement and recreation activities
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-082,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,activities of membership organisations
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-083,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,repair of computers or personal and household goods
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-084,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,other personal service activities
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-085,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,activities of households as employers of domestic personnel
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-086,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,undifferentiated goods- and services-producing activities of private households for own use
+Work,2021-LAB,Industry (current),industry_current_88a,industry_current_88a-087,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work in,activities of extraterritorial organisations or bodies
+Work,2021-LAB,National Statistics Socio-economic Classification (NS-SEC),ns_sec_10a,ns_sec_10a-001,{PERCENTAGE}%,of people aged 16 years and over in {location},are,"L1, L2 and L3: higher managerial, administrative and professional occupations"
+Work,2021-LAB,National Statistics Socio-economic Classification (NS-SEC),ns_sec_10a,ns_sec_10a-002,{PERCENTAGE}%,of people aged 16 years and over in {location},are,"L4, L5 and L6: lower managerial, administrative and professional occupations"
+Work,2021-LAB,National Statistics Socio-economic Classification (NS-SEC),ns_sec_10a,ns_sec_10a-003,{PERCENTAGE}%,of people aged 16 years and over in {location},are,L7: intermediate occupations
+Work,2021-LAB,National Statistics Socio-economic Classification (NS-SEC),ns_sec_10a,ns_sec_10a-004,{PERCENTAGE}%,of people aged 16 years and over in {location},are,L8 and L9: small employers and own account workers
+Work,2021-LAB,National Statistics Socio-economic Classification (NS-SEC),ns_sec_10a,ns_sec_10a-005,{PERCENTAGE}%,of people aged 16 years and over in {location},are,L10 and L11: lower supervisory and technical occupations
+Work,2021-LAB,National Statistics Socio-economic Classification (NS-SEC),ns_sec_10a,ns_sec_10a-006,{PERCENTAGE}%,of people aged 16 years and over in {location},are,L12: semi-routine occupations
+Work,2021-LAB,National Statistics Socio-economic Classification (NS-SEC),ns_sec_10a,ns_sec_10a-007,{PERCENTAGE}%,of people aged 16 years and over in {location},are,L13: routine occupations
+Work,2021-LAB,National Statistics Socio-economic Classification (NS-SEC),ns_sec_10a,ns_sec_10a-008,{PERCENTAGE}%,of people aged 16 years and over in {location},are,L14.1 and L14.2: never worked and long-term unemployed
+Work,2021-LAB,National Statistics Socio-economic Classification (NS-SEC),ns_sec_10a,ns_sec_10a-009,{PERCENTAGE}%,of people aged 16 years and over in {location},are,L15: full-time students
+Work,2021-LAB,Occupation (current),occupation_current_10a,occupation_current_10a-001,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},are,"managers, directors or senior officials"
+Work,2021-LAB,Occupation (current),occupation_current_10a,occupation_current_10a-002,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},are,in professional occupations
+Work,2021-LAB,Occupation (current),occupation_current_10a,occupation_current_10a-003,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},are,in associate professional or technical occupations
+Work,2021-LAB,Occupation (current),occupation_current_10a,occupation_current_10a-004,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},are,in administrative or secretarial occupations
+Work,2021-LAB,Occupation (current),occupation_current_10a,occupation_current_10a-005,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},are,in skilled trades occupations
+Work,2021-LAB,Occupation (current),occupation_current_10a,occupation_current_10a-006,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},are,"in caring, leisure or other service occupations"
+Work,2021-LAB,Occupation (current),occupation_current_10a,occupation_current_10a-007,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},are,in sales or customer service occupations
+Work,2021-LAB,Occupation (current),occupation_current_10a,occupation_current_10a-008,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},are,"process, plant or machine operatives"
+Work,2021-LAB,Occupation (current),occupation_current_10a,occupation_current_10a-009,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},are,in elementary occupations
+Work,2021-TTW,Distance travelled to work,workplace_travel,workplace_travel-001,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},travel,less than 2km to work
+Work,2021-TTW,Distance travelled to work,workplace_travel,workplace_travel-002,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},travel,2km to less than 5km to work
+Work,2021-TTW,Distance travelled to work,workplace_travel,workplace_travel-003,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},travel,5km to less than 10km to work
+Work,2021-TTW,Distance travelled to work,workplace_travel,workplace_travel-004,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},travel,10km to less than 20km to work
+Work,2021-TTW,Distance travelled to work,workplace_travel,workplace_travel-005,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},travel,20km to less than 30km to work
+Work,2021-TTW,Distance travelled to work,workplace_travel,workplace_travel-006,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},travel,30km to less than 40km to work
+Work,2021-TTW,Distance travelled to work,workplace_travel,workplace_travel-007,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},travel,40km to less than 60km to work
+Work,2021-TTW,Distance travelled to work,workplace_travel,workplace_travel-008,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},travel,60km and over to work
+Work,2021-TTW,Distance travelled to work,workplace_travel,workplace_travel-009,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work,mainly from home
+Work,2021-TTW,Distance travelled to work,workplace_travel,workplace_travel-010,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work,"mainly at an offshore location, in no fixed place, or outside the UK"
+Work,2021-TTW,Distance travelled to work,workplace_travel_4a,workplace_travel_4a-001,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},travel,less than 10km to work
+Work,2021-TTW,Distance travelled to work,workplace_travel_4a,workplace_travel_4a-002,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},travel,10km and over to work
+Work,2021-TTW,Distance travelled to work,workplace_travel_4a,workplace_travel_4a-003,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work,mainly from home
+Work,2021-TTW,Distance travelled to work,workplace_travel_4a,workplace_travel_4a-004,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},have,other forms of travel to work
+Work,2021-TTW,Distance travelled to work,workplace_travel_5a,workplace_travel_5a-001,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},travel,less than 10km to work
+Work,2021-TTW,Distance travelled to work,workplace_travel_5a,workplace_travel_5a-002,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},travel,10km to less than 30km to work
+Work,2021-TTW,Distance travelled to work,workplace_travel_5a,workplace_travel_5a-003,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},travel,30km and over to work
+Work,2021-TTW,Distance travelled to work,workplace_travel_5a,workplace_travel_5a-004,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work,mainly from home
+Work,2021-TTW,Distance travelled to work,workplace_travel_5a,workplace_travel_5a-005,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},have,other forms of travel to work
+Work,2021-TTW,Method of travel to workplace,transport_to_workplace_12a,transport_to_workplace_12a-001,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},work,mainly at or from home
+Work,2021-TTW,Method of travel to workplace,transport_to_workplace_12a,transport_to_workplace_12a-002,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},travel to work by,"underground, metro, light rail or tram"
+Work,2021-TTW,Method of travel to workplace,transport_to_workplace_12a,transport_to_workplace_12a-003,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},travel to work by,train
+Work,2021-TTW,Method of travel to workplace,transport_to_workplace_12a,transport_to_workplace_12a-004,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},travel to work by,"bus, minibus or coach"
+Work,2021-TTW,Method of travel to workplace,transport_to_workplace_12a,transport_to_workplace_12a-005,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},travel to work by,taxi
+Work,2021-TTW,Method of travel to workplace,transport_to_workplace_12a,transport_to_workplace_12a-006,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},travel to work by,"motorcycle, scooter or moped"
+Work,2021-TTW,Method of travel to workplace,transport_to_workplace_12a,transport_to_workplace_12a-007,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},travel to work by,driving a car or van
+Work,2021-TTW,Method of travel to workplace,transport_to_workplace_12a,transport_to_workplace_12a-008,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},travel to work by,passenger in a car or van
+Work,2021-TTW,Method of travel to workplace,transport_to_workplace_12a,transport_to_workplace_12a-009,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},travel to work by,bicycle
+Work,2021-TTW,Method of travel to workplace,transport_to_workplace_12a,transport_to_workplace_12a-010,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},travel to work,on foot
+Work,2021-TTW,Method of travel to workplace,transport_to_workplace_12a,transport_to_workplace_12a-011,{PERCENTAGE}%,of people aged 16 years and over in employment in {location},travel to work,using other means

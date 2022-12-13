@@ -1,7 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-12-13-12-25-06",
-    "spec_file": "2021-content-spec.json",
+    "created_at": "2022-12-15-15-02-56",
     "release": "2021-EILR-ar2776-c21ew_metadata-v1-3_cantab_20221207-35"
   },
   "content": [
@@ -31,7 +30,6 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "dataset": "TS029",
               "data_download": "https://www.ons.gov.uk/datasets/TS029/editions/2021/versions/1",
               "categories": [
                 {
@@ -70,7 +68,6 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "dataset": "TS029",
               "data_download": "https://www.ons.gov.uk/datasets/TS029/editions/2021/versions/1",
               "categories": [
                 {
@@ -138,7 +135,6 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "dataset": "TS021",
               "data_download": "https://www.ons.gov.uk/datasets/TS021/editions/2021/versions/1",
               "categories": [
                 {
@@ -193,7 +189,6 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "dataset": "TS021",
               "data_download": "https://www.ons.gov.uk/datasets/TS021/editions/2021/versions/1",
               "categories": [
                 {
@@ -372,7 +367,6 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "dataset": "TS025",
               "data_download": "https://www.ons.gov.uk/datasets/TS025/editions/2021/versions/1",
               "categories": [
                 {
@@ -432,7 +426,6 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "dataset": "TS023",
               "data_download": "https://www.ons.gov.uk/datasets/TS023/editions/2021/versions/1",
               "categories": [
                 {
@@ -500,7 +493,6 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "dataset": "TS026",
               "data_download": "https://www.ons.gov.uk/datasets/TS026/editions/2021/versions/1",
               "categories": [
                 {
@@ -531,7 +523,6 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "dataset": "TS026",
               "data_download": "https://www.ons.gov.uk/datasets/TS026/editions/2021/versions/1",
               "categories": [
                 {
@@ -599,7 +590,6 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "dataset": "TS075",
               "data_download": "https://www.ons.gov.uk/datasets/TS075/editions/2021/versions/1",
               "categories": [
                 {
@@ -672,7 +662,6 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "dataset": "TS024",
               "data_download": "https://www.ons.gov.uk/datasets/TS024/editions/2021/versions/1",
               "categories": [
                 {
@@ -861,7 +850,6 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "dataset": "TS024",
               "data_download": "https://www.ons.gov.uk/datasets/TS024/editions/2021/versions/1",
               "categories": [
                 {
@@ -1643,7 +1631,6 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "dataset": "TS027",
               "data_download": "https://www.ons.gov.uk/datasets/TS027/editions/2021/versions/1",
               "categories": [
                 {
@@ -1682,7 +1669,6 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "dataset": "TS027",
               "data_download": "https://www.ons.gov.uk/datasets/TS027/editions/2021/versions/1",
               "categories": [
                 {
@@ -1761,7 +1747,6 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "dataset": "TS027",
               "data_download": "https://www.ons.gov.uk/datasets/TS027/editions/2021/versions/1",
               "categories": [
                 {
@@ -1917,7 +1902,6 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "dataset": "TS028",
               "data_download": "https://www.ons.gov.uk/datasets/TS028/editions/2021/versions/1",
               "categories": [
                 {
@@ -2118,7 +2102,7 @@
                   "code": "national_identity_detailed-025",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "identify as",
-                  "legend_str_3": "any other national identity from countries that were EU members in March 2001  "
+                  "legend_str_3": "any other national identity from countries that were EU members in March 2001"
                 },
                 {
                   "name": "Other identity only: European: EU countries: Lithuanian",
@@ -2150,7 +2134,7 @@
                   "code": "national_identity_detailed-029",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "identify as",
-                  "legend_str_3": "any other "
+                  "legend_str_3": "any other national identity from EU countries"
                 },
                 {
                   "name": "Other identity only: European: Non-EU countries: Turkish",
@@ -2158,7 +2142,7 @@
                   "code": "national_identity_detailed-030",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "identify as",
-                  "legend_str_3": "any other national identity from countries that were EU members in March 2001  "
+                  "legend_str_3": "any other national identity from countries that were EU members in March 2001"
                 },
                 {
                   "name": "Other identity only: European: Non-EU countries: Other European",
@@ -2522,7 +2506,6 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "dataset": "TS030",
               "data_download": "https://www.ons.gov.uk/datasets/TS030/editions/2021/versions/1",
               "categories": [
                 {

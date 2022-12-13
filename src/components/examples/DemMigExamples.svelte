@@ -1,6 +1,6 @@
 <script lang="ts">
   import { page } from "$app/stores";
-  import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
+  import { buildHyperlink } from "../../helpers/buildHyperlinkHelper";
 
   export let reverseType = false;
 </script>

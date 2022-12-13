@@ -104,6 +104,12 @@ export const sortVariableGroupVariables = (variableGroups: VariableGroup[]) => {
   Return name of latest release. Update by adding returns statements above those currently here.
 */
 export const getLatestRelease = (content: ContentTree) => {
+  if (content.releases.some((r) => r.includes("2021-SOGI"))) {
+    return "Sogi";
+  }
+  if (content.releases.some((r) => r.includes("2021-HOU"))) {
+    return "Hou";
+  }
   if (content.releases.some((r) => r.includes("2021-LAB"))) {
     return "LabTtwWelshSkills";
   }

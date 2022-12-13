@@ -40,6 +40,9 @@ type M struct {
 	// XXX cats... + totcats ... in table?
 	cats    []types.Category
 	totcats []types.Category
+
+	// remember which metrics CSV held each category
+	loadedCats map[types.Category]string
 }
 
 func New( /*geos []types.Geocode, */ cats []types.Category, withTots bool) (*M, error) {
@@ -73,13 +76,14 @@ func New( /*geos []types.Geocode, */ cats []types.Category, withTots bool) (*M, 
 	}
 
 	return &M{
-		tab:     tab,
-		geoidx:  geoidx,
-		catidx:  catidx,
-		totidx:  totidx,
-		geos:    []types.Geocode{},
-		cats:    cats,
-		totcats: totcats,
+		tab:        tab,
+		geoidx:     geoidx,
+		catidx:     catidx,
+		totidx:     totidx,
+		geos:       []types.Geocode{},
+		cats:       cats,
+		totcats:    totcats,
+		loadedCats: map[types.Category]string{},
 	}, nil
 }
 
@@ -108,10 +112,10 @@ func (m *M) Load(fname string) error {
 	if err != nil {
 		return err
 	}
-	return m.ImportCSV(records)
+	return m.ImportCSV(fname, records)
 }
 
-func (m *M) ImportCSV(records [][]string) error {
+func (m *M) ImportCSV(fname string, records [][]string) error {
 	var imported int
 
 	if len(records) < 2 {
@@ -137,6 +141,14 @@ func (m *M) ImportCSV(records [][]string) error {
 				log.Printf("ignoring CSV col %q\n", catcode)
 				continue // this category not wanted
 			}
+		}
+
+		// check if we have seen this category before
+		firstCSV, ok := m.loadedCats[types.Category(catcode)]
+		if ok {
+			return fmt.Errorf("duplicate category %s: seen in %s and %s", catcode, firstCSV, fname)
+		} else {
+			m.loadedCats[types.Category(catcode)] = fname
 		}
 
 		for csvrow, record := range records {

@@ -89,7 +89,7 @@ func Test_CalcRatios(t *testing.T) {
 				{"geoB", "16", "2", "4"},
 				{"geoC", "20", "5", "4"},
 			}
-			err := m.ImportCSV(records)
+			err := m.ImportCSV("test", records)
 			So(err, ShouldBeNil)
 
 			Convey("ratios should be calculated", func() {

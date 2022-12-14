@@ -89,13 +89,13 @@ func (a *Atlas) SetStandardProps(geotype types.Geotype) error {
 			feat.Properties[k] = v
 		}
 		feat.Properties["geotype"] = string(geotype)
-
+/*
 		if feat.BBox == nil {
 			feat.BBox = feat.Geometry.Bounds()
 		}
 
 		feat.Geometry = nil // don't need any more; free up space
-
+*/
 		geocode, ok := feat.Properties["geocode"].(string)
 		if !ok {
 			return fmt.Errorf("%s feature %d: no geocode", geotype, n)

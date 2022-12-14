@@ -98,7 +98,7 @@ func main() {
 		}
 		missingCats := m.MissingCats()
 		if len(missingCats) > 0 {
-			log.Printf("Categories in %s, but not in any metrics files:")
+			log.Printf("Categories in %s, but not in any metrics files:", *contentName)
 			for _, cat := range missingCats {
 				log.Printf("\t%s", cat)
 			}

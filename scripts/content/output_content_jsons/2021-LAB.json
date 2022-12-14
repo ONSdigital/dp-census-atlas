@@ -1,8 +1,8 @@
 {
   "meta": {
-    "created_at": "2022-12-07-14-59-36",
-    "spec_file": "2021-content-spec-v33.json",
-    "release": "2021-LAB"
+    "created_at": "2022-12-13-12-25-06",
+    "spec_file": "2021-content-spec.json",
+    "release": "2021-LAB-ar2776-c21ew_metadata-v1-3_cantab_20221207-35"
   },
   "content": [
     {
@@ -185,9 +185,9 @@
         {
           "name": "Employment history",
           "code": "has_ever_worked",
-          "slug": "unemployment-history",
+          "slug": "employment-history",
           "desc": "The employment history of people who are currently not working.",
-          "long_desc": "Classifies people currently not working into:\n\n* those who have not worked in the last 12 months (short-term unemployed)\n* those who have worked, but not in the last 12 months (long-term unemployed)\n* those who have never worked (includes those who are unemployed and economically inactive)",
+          "long_desc": "Classifies people who were not in employment on Census Day into:\n\n* Not in employment: Worked in the last 12 months\n* Not in employment: Not worked in the last 12 months\n* Not in employment: Never worked",
           "units": "Person",
           "topic_code": "LAB",
           "caveat_text": "There are pandemic-related quality considerations for this variable.",
@@ -196,7 +196,7 @@
             {
               "code": "has_ever_worked",
               "slug": "has-ever-worked",
-              "desc": "Unemployment history (4 categories)",
+              "desc": "Employment history (4 categories)",
               "available_geotypes": [
                 "oa",
                 "msoa",
@@ -1175,7 +1175,7 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "dataset": "TS064",
+              "dataset": "TS063",
               "data_download": "https://www.ons.gov.uk/datasets/TS063/editions/2021/versions/1",
               "categories": [
                 {

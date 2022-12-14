@@ -25,7 +25,7 @@ from os import makedirs
 from pathlib import Path
 import sys
 
-from slugify import slugify
+from slugify import slugify as python_slugify
 
 from scripts.census_objects import (
     CensusCategory,
@@ -42,6 +42,10 @@ from scripts.update_variable_desc_from_csv import update_variable_descs_from_fil
 from scripts.update_caveats_from_csv import update_variable_caveats_from_file
 from scripts.update_data_downloads_from_csv import update_classification_data_downloads_from_file
 from scripts.validate_content import validate_variable_groups
+
+
+def slugify(txt: str) -> str:
+    return python_slugify(txt.replace(" -", " minus ").replace(" +", " plus "))
 
 
 def category_from_cantabular_csv_row(csv_row: dict) -> CensusCategory:
@@ -318,12 +322,12 @@ def main(spec_fn: str):
     }
 
     # output
-    output_dir = Path("output_content_jsons").joinpath(spec["version"])
+    output_dir = Path("output_content_jsons")
     makedirs(output_dir, exist_ok=True)
     print(f"Writing content jsons to {output_dir}...")
     for content_iteration_name, content_iteration in content_iterations.items():
-        release_name = f"{spec['version']}-{content_iteration_name}"
-        meta["release"] = f"{spec['version']}-{content_iteration_name}"
+        release_name = f"{spec['census_year']}-{content_iteration_name}"
+        meta["release"] = f"{spec['census_year']}-{content_iteration_name}-{spec['cantabular_metadata_dir']}"
         output_filename = output_dir.joinpath(f"{release_name}.json")
         write_content({"meta": meta, "content": content_iteration}, output_filename)
     print("... done.")

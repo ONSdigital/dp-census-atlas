@@ -2,16 +2,16 @@ import { test, expect } from "@playwright/test";
 
 const latestExampleTexts = [
   {
-    defaultGeo: "Newham",
-    text: "See how ethnically diverse different neighbourhoods are in {GEO}.",
-  },
-  {
-    defaultGeo: "Caerphilly",
-    text: 'View the percentages of people who reported having "No religion" across {GEO}.',
+    defaultGeo: "Cardiff",
+    text: "View the percentages of people by sexual orientation across {GEO}.",
   },
   {
     defaultGeo: "East Lindsey",
-    text: "Find out what percentage of people were in employment in {GEO}.",
+    text: "Find out the percentage of people in employment in {GEO}.",
+  },
+  {
+    defaultGeo: "Cornwall",
+    text: "See what percentage of households use only renewable energy for their central heating in different neighbourhoods of {GEO}.",
   },
 ];
 

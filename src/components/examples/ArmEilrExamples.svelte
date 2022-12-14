@@ -1,7 +1,7 @@
 <script lang="ts">
   import { page } from "$app/stores";
-  import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
-  import { geography } from "../stores/geography";
+  import { buildHyperlink } from "../../helpers/buildHyperlinkHelper";
+  import { geography } from "../../stores/geography";
   export let reverseType = false;
 
   $: ewNotSelected = $geography.geoType !== "ew";

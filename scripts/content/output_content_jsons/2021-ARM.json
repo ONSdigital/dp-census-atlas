@@ -1,8 +1,8 @@
 {
   "meta": {
-    "created_at": "2022-12-07-14-59-36",
-    "spec_file": "2021-content-spec-v33.json",
-    "release": "2021-ARM"
+    "created_at": "2022-12-13-12-25-06",
+    "spec_file": "2021-content-spec.json",
+    "release": "2021-ARM-ar2776-c21ew_metadata-v1-3_cantab_20221207-35"
   },
   "content": [
     {
@@ -34,7 +34,7 @@
               "categories": [
                 {
                   "name": "Previously served in the UK regular armed forces",
-                  "slug": "previously-served-in-uk-armed-forces",
+                  "slug": "previously-served-in-the-uk-regular-armed-forces",
                   "code": "uk_armed_forces-001",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",

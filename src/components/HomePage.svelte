@@ -4,9 +4,11 @@
   import VariableGroupList from "./VariableGroupList.svelte";
   import AreaPanel from "./AreaPanel.svelte";
   import SearchBox from "./SearchBox.svelte";
-  import DemMigExamples from "./DemMigExamples.svelte";
-  import ArmEilrExamples from "./ArmEilrExamples.svelte";
-  import LabTtwWelshSkills from "./LabTtwWelshSkillsExamples.svelte";
+  import DemMigExamples from "./examples/DemMigExamples.svelte";
+  import ArmEilrExamples from "./examples/ArmEilrExamples.svelte";
+  import LabTtwWelshSkillsExamples from "./examples/LabTtwWelshSkillsExamples.svelte";
+  import HouExamples from "./examples/HouExamples.svelte";
+  import SogiExamples from "./examples/SogiExamples.svelte";
 </script>
 
 <div class="px-6">
@@ -35,7 +37,11 @@
         {:else if getLatestRelease($content) === "ArmEilr"}
           <ArmEilrExamples />
         {:else if getLatestRelease($content) === "LabTtwWelshSkills"}
-          <LabTtwWelshSkills />
+          <LabTtwWelshSkillsExamples />
+        {:else if getLatestRelease($content) === "Hou"}
+          <HouExamples />
+        {:else if getLatestRelease($content) === "Sogi"}
+          <SogiExamples />
         {/if}
       </ul>
     </div>

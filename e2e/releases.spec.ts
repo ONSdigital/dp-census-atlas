@@ -7,7 +7,7 @@ import { test, expect } from "@playwright/test";
 const testCases = [
   {
     name: "DEM",
-    url: "/choropleth/population/household-composition/hh-family-composition-4a/multiple-family-household?lad=E07000035",
+    url: "/choropleth/population/household-composition/hh-family-composition-4a/other-household-types?lad=E07000035",
     legendText: "3.1% of households in Derbyshire Dales LAD are other household types",
     categoryCount: 3,
     nextClassificationCategoryCount: 14,

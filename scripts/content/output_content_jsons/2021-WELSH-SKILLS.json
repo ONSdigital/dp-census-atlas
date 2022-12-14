@@ -1,8 +1,8 @@
 {
   "meta": {
-    "created_at": "2022-12-07-14-59-36",
-    "spec_file": "2021-content-spec-v33.json",
-    "release": "2021-WELSH-SKILLS"
+    "created_at": "2022-12-13-12-25-06",
+    "spec_file": "2021-content-spec.json",
+    "release": "2021-WELSH-SKILLS-ar2776-c21ew_metadata-v1-3_cantab_20221207-35"
   },
   "content": [
     {
@@ -218,6 +218,8 @@
               "slug": "welsh-skills-speak",
               "desc": "Welsh speaking ability (3 categories)",
               "available_geotypes": [
+                "oa",
+                "msoa",
                 "lad"
               ],
               "choropleth_default": true,

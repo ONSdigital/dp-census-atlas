@@ -1,7 +1,7 @@
 <script lang="ts">
   import { page } from "$app/stores";
-  import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
-  import { geography } from "../stores/geography";
+  import { buildHyperlink } from "../../helpers/buildHyperlinkHelper";
+  import { geography } from "../../stores/geography";
   export let reverseType = false;
 
   $: ewNotSelected = $geography.geoType !== "ew";
@@ -10,7 +10,7 @@
 <ul class="pl-4 list-disc list-outside">
   <!-- https://www.ons.gov.uk/census/maps/choropleth/identity/ethnic-group/ethnic-group-tb-6a/asian-asian-british-or-asian-welsh?lad=E09000025 -->
   <li class="pb-2">
-    See how ethnically diverse different neighbourhoods are in
+    See how
     <a
       href={buildHyperlink(
         $page.url,
@@ -31,12 +31,14 @@
       class:hyperlink={!reverseType}
       class:hyperlink-reverse={reverseType}
     >
-      {ewNotSelected ? $geography.displayName : "Newham"}</a
-    >.
+      ethnically diverse
+    </a>
+    different neighbourhoods are in
+    {ewNotSelected ? $geography.displayName : "Newham"}.
   </li>
   <!-- https://www.ons.gov.uk/census/maps/choropleth/identity/religion/religion-tb/no-religion?lad=W06000018 -->
   <li class="pb-2">
-    View the percentages of people who reported having "No religion" across
+    View the percentages of
     <a
       href={buildHyperlink(
         $page.url,
@@ -55,14 +57,13 @@
         },
       )}
       class:hyperlink={!reverseType}
-      class:hyperlink-reverse={reverseType}
+      class:hyperlink-reverse={reverseType}>people who report having 'No religion'</a
     >
-      {ewNotSelected ? $geography.displayName : "Caerphilly"}</a
-    >.
+    across {ewNotSelected ? $geography.displayName : "Caerphilly"}.
   </li>
   <!-- https://www.ons.gov.uk/census/maps/choropleth/work/economic-activity-status/economic-activity-status-10a/economically-active-excluding-full-time-students-in-employment?lad=E07000137 -->
   <li class="pb-2">
-    Find out what percentage of people were in employment in
+    Find out the percentage of
     <a
       href={buildHyperlink(
         $page.url,
@@ -81,9 +82,35 @@
         },
       )}
       class:hyperlink={!reverseType}
+      class:hyperlink-reverse={reverseType}>people in employment</a
+    >
+    in {ewNotSelected ? $geography.displayName : "East Lindsey"}.
+  </li>
+  <!-- https://www.ons.gov.uk/census/maps/choropleth/housing/type-of-central-heating-in-household/heating-type/renewable-energy-only?lad=E06000052 -->
+  <li class="pb-2">
+    See what percentage of households use only
+    <a
+      href={buildHyperlink(
+        $page.url,
+        {
+          variableGroup: "housing",
+          variable: "type-of-central-heating-in-household",
+          category: {
+            classification: "heating-type",
+            category: "renewable-energy-only",
+          },
+        },
+        undefined,
+        {
+          geoType: ewNotSelected ? $geography.geoType : "lad",
+          geoCode: ewNotSelected ? $geography.geoCode : "E06000052",
+        },
+      )}
+      class:hyperlink={!reverseType}
       class:hyperlink-reverse={reverseType}
     >
-      {ewNotSelected ? $geography.displayName : "East Lindsey"}</a
-    >.
+      renewable energy for their central heating
+    </a>
+    in different neighbourhoods of {ewNotSelected ? $geography.displayName : "Cornwall"}.
   </li>
 </ul>

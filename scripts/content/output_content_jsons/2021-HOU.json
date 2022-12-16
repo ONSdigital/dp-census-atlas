@@ -1,7 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-12-13-12-25-06",
-    "spec_file": "2021-content-spec.json",
+    "created_at": "2022-12-15-15-02-56",
     "release": "2021-HOU-ar2776-c21ew_metadata-v1-3_cantab_20221207-35"
   },
   "content": [
@@ -31,7 +30,6 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "dataset": "TS044",
               "categories": [
                 {
                   "name": "Whole house or bungalow",
@@ -69,7 +67,6 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "dataset": "TS044",
               "categories": [
                 {
                   "name": "Whole house or bungalow: Detached",
@@ -123,7 +120,6 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "dataset": "TS044",
               "categories": [
                 {
                   "name": "Detached",
@@ -213,7 +209,6 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "dataset": "TS056",
               "categories": [
                 {
                   "name": "No second address",
@@ -264,7 +259,6 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "dataset": "TS046",
               "categories": [
                 {
                   "name": "Does not have central heating",
@@ -279,7 +273,7 @@
                   "slug": "does-have-central-heating",
                   "code": "heating_type_3a-002",
                   "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have ",
+                  "legend_str_2": "have",
                   "legend_str_3": "central heating"
                 }
               ]
@@ -294,14 +288,13 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "dataset": "TS046",
               "categories": [
                 {
                   "name": "No central heating",
                   "slug": "no-central-heating",
                   "code": "heating_type-001",
                   "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have ",
+                  "legend_str_2": "have",
                   "legend_str_3": "no central heating"
                 },
                 {
@@ -309,7 +302,7 @@
                   "slug": "mains-gas-only",
                   "code": "heating_type-002",
                   "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have ",
+                  "legend_str_2": "have",
                   "legend_str_3": "mains gas central heating"
                 },
                 {
@@ -317,7 +310,7 @@
                   "slug": "tank-or-bottled-gas-only",
                   "code": "heating_type-003",
                   "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have ",
+                  "legend_str_2": "have",
                   "legend_str_3": "tank or bottled gas central heating"
                 },
                 {
@@ -325,7 +318,7 @@
                   "slug": "electric-only",
                   "code": "heating_type-004",
                   "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have ",
+                  "legend_str_2": "have",
                   "legend_str_3": "electric central heating"
                 },
                 {
@@ -333,7 +326,7 @@
                   "slug": "oil-only",
                   "code": "heating_type-005",
                   "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have ",
+                  "legend_str_2": "have",
                   "legend_str_3": "oil central heating"
                 },
                 {
@@ -341,7 +334,7 @@
                   "slug": "wood-only",
                   "code": "heating_type-006",
                   "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have ",
+                  "legend_str_2": "have",
                   "legend_str_3": "wood central heating"
                 },
                 {
@@ -349,7 +342,7 @@
                   "slug": "solid-fuel-only",
                   "code": "heating_type-007",
                   "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have ",
+                  "legend_str_2": "have",
                   "legend_str_3": "solid fuel central heating"
                 },
                 {
@@ -357,7 +350,7 @@
                   "slug": "renewable-energy-only",
                   "code": "heating_type-008",
                   "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have ",
+                  "legend_str_2": "have",
                   "legend_str_3": "renewables central heating"
                 },
                 {
@@ -373,7 +366,7 @@
                   "slug": "other-central-heating-only",
                   "code": "heating_type-010",
                   "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have ",
+                  "legend_str_2": "have",
                   "legend_str_3": "another type of central heating"
                 },
                 {
@@ -381,7 +374,7 @@
                   "slug": "two-or-more-types-of-central-heating-not-including-renewable-energy",
                   "code": "heating_type-011",
                   "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have ",
+                  "legend_str_2": "have",
                   "legend_str_3": "two or more types of central heating (not including renewable energy)"
                 },
                 {
@@ -389,7 +382,7 @@
                   "slug": "two-or-more-types-of-central-heating-including-renewable-energy",
                   "code": "heating_type-012",
                   "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have ",
+                  "legend_str_2": "have",
                   "legend_str_3": "two or more types of central heating (including renewable energy)"
                 }
               ]
@@ -417,7 +410,6 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "dataset": "TS054",
               "categories": [
                 {
                   "name": "Owned: Owns outright",
@@ -463,7 +455,6 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "dataset": "TS054",
               "categories": [
                 {
                   "name": "Owned: Owns outright",
@@ -554,14 +545,13 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "dataset": "TS050",
               "categories": [
                 {
                   "name": "1 bedroom",
                   "slug": "1-bedroom",
                   "code": "number_bedrooms_5a-001",
                   "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have ",
+                  "legend_str_2": "have",
                   "legend_str_3": "1 bedroom"
                 },
                 {
@@ -569,7 +559,7 @@
                   "slug": "2-bedrooms",
                   "code": "number_bedrooms_5a-002",
                   "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have ",
+                  "legend_str_2": "have",
                   "legend_str_3": "2 bedrooms"
                 },
                 {
@@ -577,7 +567,7 @@
                   "slug": "3-bedrooms",
                   "code": "number_bedrooms_5a-003",
                   "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have ",
+                  "legend_str_2": "have",
                   "legend_str_3": "3 bedrooms"
                 },
                 {
@@ -585,7 +575,7 @@
                   "slug": "4-or-more-bedrooms",
                   "code": "number_bedrooms_5a-004",
                   "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have ",
+                  "legend_str_2": "have",
                   "legend_str_3": "4 or more bedrooms"
                 }
               ]
@@ -613,7 +603,6 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "dataset": "TS045",
               "categories": [
                 {
                   "name": "No cars or vans in household",
@@ -643,7 +632,6 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "dataset": "TS045",
               "categories": [
                 {
                   "name": "No cars or vans in household",
@@ -701,7 +689,6 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "dataset": "TS052",
               "categories": [
                 {
                   "name": "Occupancy rating of bedrooms: +2 or more",
@@ -767,7 +754,6 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "dataset": "TS053",
               "categories": [
                 {
                   "name": "Occupancy rating of rooms: +2 or more",
@@ -833,7 +819,6 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "dataset": "TS055",
               "categories": [
                 {
                   "name": "Armed forces base address",

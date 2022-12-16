@@ -1,7 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-12-13-12-25-06",
-    "spec_file": "2021-content-spec.json",
+    "created_at": "2022-12-15-15-02-56",
     "release": "2021-DEM-ar2776-c21ew_metadata-v1-3_cantab_20221207-35"
   },
   "content": [
@@ -29,7 +28,6 @@
                 "lad"
               ],
               "choropleth_default": true,
-              "dataset": "TS006",
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -65,7 +63,6 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "dataset": "TS011",
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -133,7 +130,6 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "dataset": "TS003",
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -172,7 +168,6 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "dataset": "TS003",
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -312,7 +307,6 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "dataset": "TS017",
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -359,7 +353,6 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "dataset": "TS017",
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -451,7 +444,6 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "dataset": "TS002",
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -482,7 +474,6 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "dataset": "TS002",
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -537,7 +528,6 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "dataset": "TS002",
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -651,7 +641,6 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "dataset": "TS010",
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -758,7 +747,6 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "dataset": "TS076",
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -796,7 +784,6 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "dataset": "TS076",
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -874,7 +861,6 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "dataset": "TS076",
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -976,7 +962,6 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "dataset": "TS007",
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -1809,7 +1794,6 @@
                 "lad"
               ],
               "choropleth_default": true,
-              "dataset": "TS007a",
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -1845,7 +1829,6 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "dataset": "TS020",
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {

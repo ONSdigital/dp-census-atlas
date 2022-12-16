@@ -1,0 +1,2547 @@
+{
+  "meta": {
+    "created_at": "2022-12-13-13-01-53",
+    "release": "2021-EILR-ar2776-c21ew_metadata-v1-3_cantab_20221207-35"
+  },
+  "content": [
+    {
+      "name": "Identity",
+      "slug": "identity",
+      "desc": "How people identify themselves and their beliefs.",
+      "variables": [
+        {
+          "name": "Proficiency in English language",
+          "code": "english_proficiency",
+          "slug": "proficiency-in-english-language",
+          "desc": "How well people whose main language is not English (or in Wales, English or Welsh) speak English",
+          "long_desc": "How well people whose main language is not English (English or Welsh in Wales) speak English.",
+          "units": "Household",
+          "topic_code": "EILR",
+          "classifications": [
+            {
+              "code": "english_proficiency_4a",
+              "slug": "english-proficiency-4a",
+              "desc": "Proficiency in English language (4 categories)",
+              "available_geotypes": ["oa", "msoa", "lad"],
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "comparison_2011_data_available": true,
+
+              "data_download": "https://www.ons.gov.uk/datasets/TS029/editions/2021/versions/1",
+              "categories": [
+                {
+                  "name": "Main language is English (English or Welsh in Wales)",
+                  "slug": "main-language-is-english-english-or-welsh-in-wales",
+                  "code": "english_proficiency_4a-001",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "English (English or Welsh in Wales) as their main language"
+                },
+                {
+                  "name": "Main language is not English (English or Welsh in Wales): Can speak English very well or well",
+                  "slug": "main-language-is-not-english-english-or-welsh-in-wales-can-speak-english-very-well-or-well",
+                  "code": "english_proficiency_4a-002",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "do not have",
+                  "legend_str_3": "English (English or Welsh in Wales) as their main language, but can speak English very well or well"
+                },
+                {
+                  "name": "Main language is not English (English or Welsh in Wales): Cannot speak English or cannot speak English well",
+                  "slug": "main-language-is-not-english-english-or-welsh-in-wales-cannot-speak-english-or-cannot-speak-english-well",
+                  "code": "english_proficiency_4a-003",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "do not have",
+                  "legend_str_3": "English (English or Welsh in Wales) as their main language, and cannot speak English or cannot speak English well"
+                }
+              ]
+            },
+            {
+              "code": "english_proficiency",
+              "slug": "english-proficiency",
+              "desc": "Proficiency in English language (6 categories)",
+              "available_geotypes": ["oa", "msoa", "lad"],
+              "comparison_2011_data_available": true,
+
+              "data_download": "https://www.ons.gov.uk/datasets/TS029/editions/2021/versions/1",
+              "categories": [
+                {
+                  "name": "Main language is English (English or Welsh in Wales)",
+                  "slug": "main-language-is-english-english-or-welsh-in-wales",
+                  "code": "english_proficiency-001",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "English (or Welsh in Wales) as their main language"
+                },
+                {
+                  "name": "Main language is not English (English or Welsh in Wales): Can speak English very well",
+                  "slug": "main-language-is-not-english-english-or-welsh-in-wales-can-speak-english-very-well",
+                  "code": "english_proficiency-002",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "a different main language, but speak English (or Welsh in Wales) very well"
+                },
+                {
+                  "name": "Main language is not English (English or Welsh in Wales): Can speak English well",
+                  "slug": "main-language-is-not-english-english-or-welsh-in-wales-can-speak-english-well",
+                  "code": "english_proficiency-003",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "a different main language, but speak English (or Welsh in Wales) well"
+                },
+                {
+                  "name": "Main language is not English (English or Welsh in Wales): Cannot speak English well",
+                  "slug": "main-language-is-not-english-english-or-welsh-in-wales-cannot-speak-english-well",
+                  "code": "english_proficiency-004",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "a different main language, but cannot speak English (or Welsh in Wales) well"
+                },
+                {
+                  "name": "Main language is not English (English or Welsh in Wales): Cannot speak English",
+                  "slug": "main-language-is-not-english-english-or-welsh-in-wales-cannot-speak-english",
+                  "code": "english_proficiency-005",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "a different main language, but cannot speak English (or Welsh in Wales) at all"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Ethnic group",
+          "code": "ethnic_group_tb",
+          "slug": "ethnic-group",
+          "desc": "The ethnic group a person identifies with.",
+          "long_desc": "The ethnic group that the person completing the census feels they belong to. This could be based on their culture, family background, identity or physical appearance.\n\nRespondents could choose one out of 19 tick-box response categories, including write-in response options.",
+          "units": "Person",
+          "topic_code": "EILR",
+          "classifications": [
+            {
+              "code": "ethnic_group_tb_6a",
+              "slug": "ethnic-group-tb-6a",
+              "desc": "Ethnic group (6 categories)",
+              "available_geotypes": ["oa", "msoa", "lad"],
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "comparison_2011_data_available": true,
+
+              "data_download": "https://www.ons.gov.uk/datasets/TS021/editions/2021/versions/1",
+              "categories": [
+                {
+                  "name": "Asian, Asian British or Asian Welsh",
+                  "slug": "asian-asian-british-or-asian-welsh",
+                  "code": "ethnic_group_tb_6a-001",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "Asian, Asian British or Asian Welsh"
+                },
+                {
+                  "name": "Black, Black British, Black Welsh, Caribbean or African",
+                  "slug": "black-black-british-black-welsh-caribbean-or-african",
+                  "code": "ethnic_group_tb_6a-002",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "Black, Black British, Black Welsh, Caribbean or African"
+                },
+                {
+                  "name": "Mixed or Multiple ethnic groups",
+                  "slug": "mixed-or-multiple-ethnic-groups",
+                  "code": "ethnic_group_tb_6a-003",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "from mixed or multiple ethnic groups"
+                },
+                {
+                  "name": "White",
+                  "slug": "white",
+                  "code": "ethnic_group_tb_6a-004",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "White"
+                },
+                {
+                  "name": "Other ethnic group",
+                  "slug": "other-ethnic-group",
+                  "code": "ethnic_group_tb_6a-005",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "from any other ethnic group"
+                }
+              ]
+            },
+            {
+              "code": "ethnic_group_tb_20b",
+              "slug": "ethnic-group-tb-20b",
+              "desc": "Ethnic group (20 categories)",
+              "available_geotypes": ["oa", "msoa", "lad"],
+              "comparison_2011_data_available": true,
+
+              "data_download": "https://www.ons.gov.uk/datasets/TS021/editions/2021/versions/1",
+              "categories": [
+                {
+                  "name": "Asian, Asian British or Asian Welsh: Bangladeshi",
+                  "slug": "asian-asian-british-or-asian-welsh-bangladeshi",
+                  "code": "ethnic_group_tb_20b-001",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "Asian, Asian British or Asian Welsh: Bangladeshi"
+                },
+                {
+                  "name": "Asian, Asian British or Asian Welsh: Chinese",
+                  "slug": "asian-asian-british-or-asian-welsh-chinese",
+                  "code": "ethnic_group_tb_20b-002",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "Asian, Asian British or Asian Welsh: Chinese"
+                },
+                {
+                  "name": "Asian, Asian British or Asian Welsh: Indian",
+                  "slug": "asian-asian-british-or-asian-welsh-indian",
+                  "code": "ethnic_group_tb_20b-003",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "Asian, Asian British or Asian Welsh: Indian"
+                },
+                {
+                  "name": "Asian, Asian British or Asian Welsh: Pakistani",
+                  "slug": "asian-asian-british-or-asian-welsh-pakistani",
+                  "code": "ethnic_group_tb_20b-004",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "Asian, Asian British or Asian Welsh: Pakistani"
+                },
+                {
+                  "name": "Asian, Asian British or Asian Welsh: Other Asian",
+                  "slug": "asian-asian-british-or-asian-welsh-other-asian",
+                  "code": "ethnic_group_tb_20b-005",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "Asian, Asian British or Asian Welsh: Other Asian"
+                },
+                {
+                  "name": "Black, Black British, Black Welsh, Caribbean or African: African",
+                  "slug": "black-black-british-black-welsh-caribbean-or-african-african",
+                  "code": "ethnic_group_tb_20b-006",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "Black, Black British, Black Welsh, Caribbean or African: African"
+                },
+                {
+                  "name": "Black, Black British, Black Welsh, Caribbean or African: Caribbean",
+                  "slug": "black-black-british-black-welsh-caribbean-or-african-caribbean",
+                  "code": "ethnic_group_tb_20b-007",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "Black, Black British, Black Welsh, Caribbean or African: Caribbean"
+                },
+                {
+                  "name": "Black, Black British, Black Welsh, Caribbean or African: Other Black",
+                  "slug": "black-black-british-black-welsh-caribbean-or-african-other-black",
+                  "code": "ethnic_group_tb_20b-008",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "Black, Black British, Black Welsh, Caribbean or African: Other Black"
+                },
+                {
+                  "name": "Mixed or Multiple ethnic groups: White and Asian",
+                  "slug": "mixed-or-multiple-ethnic-groups-white-and-asian",
+                  "code": "ethnic_group_tb_20b-009",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "Mixed or Multiple ethnic groups: White and Asian"
+                },
+                {
+                  "name": "Mixed or Multiple ethnic groups: White and Black African",
+                  "slug": "mixed-or-multiple-ethnic-groups-white-and-black-african",
+                  "code": "ethnic_group_tb_20b-010",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "Mixed or Multiple ethnic groups: White and Black African"
+                },
+                {
+                  "name": "Mixed or Multiple ethnic groups: White and Black Caribbean",
+                  "slug": "mixed-or-multiple-ethnic-groups-white-and-black-caribbean",
+                  "code": "ethnic_group_tb_20b-011",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "Mixed or Multiple ethnic groups: White and Black Caribbean"
+                },
+                {
+                  "name": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups",
+                  "slug": "mixed-or-multiple-ethnic-groups-other-mixed-or-multiple-ethnic-groups",
+                  "code": "ethnic_group_tb_20b-012",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "Mixed or Multiple ethnic groups: Other Mixed or Multiple ethnic groups"
+                },
+                {
+                  "name": "White: English, Welsh, Scottish, Northern Irish or British",
+                  "slug": "white-english-welsh-scottish-northern-irish-or-british",
+                  "code": "ethnic_group_tb_20b-013",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "White: English, Welsh, Scottish, Northern Irish or British"
+                },
+                {
+                  "name": "White: Irish",
+                  "slug": "white-irish",
+                  "code": "ethnic_group_tb_20b-014",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "White: Irish"
+                },
+                {
+                  "name": "White: Gypsy or Irish Traveller",
+                  "slug": "white-gypsy-or-irish-traveller",
+                  "code": "ethnic_group_tb_20b-015",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "White: Gypsy or Irish Traveller"
+                },
+                {
+                  "name": "White: Roma",
+                  "slug": "white-roma",
+                  "code": "ethnic_group_tb_20b-016",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "White: Roma"
+                },
+                {
+                  "name": "White: Other White",
+                  "slug": "white-other-white",
+                  "code": "ethnic_group_tb_20b-017",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "White: Other White"
+                },
+                {
+                  "name": "Other ethnic group: Arab",
+                  "slug": "other-ethnic-group-arab",
+                  "code": "ethnic_group_tb_20b-018",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "Arab"
+                },
+                {
+                  "name": "Other ethnic group: Any other ethnic group",
+                  "slug": "other-ethnic-group-any-other-ethnic-group",
+                  "code": "ethnic_group_tb_20b-019",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "from any other ethnic group"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Household language (English and Welsh)",
+          "code": "hh_language",
+          "slug": "household-language-english-and-welsh",
+          "desc": "People who have English in England, or in Wales English or Welsh, as their main language.",
+          "long_desc": "Classifies households by the combination of adults and children (aged 3 to 15 years) within a household that have English (English or Welsh in Wales) as their main language.",
+          "units": "Household",
+          "topic_code": "EILR",
+          "classifications": [
+            {
+              "code": "hh_language",
+              "slug": "hh-language",
+              "desc": "Household language (English and Welsh) (5 categories)",
+              "available_geotypes": ["oa", "msoa", "lad"],
+              "choropleth_default": true,
+              "comparison_2011_data_available": true,
+
+              "data_download": "https://www.ons.gov.uk/datasets/TS025/editions/2021/versions/1",
+              "categories": [
+                {
+                  "name": "All adults in household have English in England, or English or Welsh in Wales as a main language",
+                  "slug": "all-adults-in-household-have-english-in-england-or-english-or-welsh-in-wales-as-a-main-language",
+                  "code": "hh_language-001",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "English in England, or English or Welsh in Wales, as the main language for all adults"
+                },
+                {
+                  "name": "At least one but not all adults in household have English in England, or English or Welsh in Wales as a main language",
+                  "slug": "at-least-one-but-not-all-adults-in-household-have-english-in-england-or-english-or-welsh-in-wales-as-a-main-language",
+                  "code": "hh_language-002",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "English in England, or English or Welsh in Wales, as the main language for some but not all adults"
+                },
+                {
+                  "name": "No adults in household, but at least one person aged 3 to 15 years, has English in England or English or Welsh in Wales as a main language",
+                  "slug": "no-adults-in-household-but-at-least-one-person-aged-3-to-15-years-has-english-in-england-or-english-or-welsh-in-wales-as-a-main-language",
+                  "code": "hh_language-003",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "English in England, or English or Welsh in Wales, as the main language for no adults but some children (aged 3-15 years)"
+                },
+                {
+                  "name": "No people in household have English in England, or English or Welsh in Wales as a main language",
+                  "slug": "no-people-in-household-have-english-in-england-or-english-or-welsh-in-wales-as-a-main-language",
+                  "code": "hh_language-004",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "no members that have English in England, or English or Welsh in Wales, as their main language."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Multiple ethnic groups in household",
+          "code": "hh_multi_ethnic_group",
+          "slug": "multiple-ethnic-groups-in-household",
+          "desc": "Ethnic groups within a household.",
+          "long_desc": "Classifies households by whether members identify as having the same or different ethnic groups. \n\nIf multiple ethnic groups are present, this identifies whether they differ between generations or partnerships within the household.",
+          "units": "Household",
+          "topic_code": "EILR",
+          "classifications": [
+            {
+              "code": "hh_multi_ethnic_group",
+              "slug": "hh-multi-ethnic-group",
+              "desc": "Multiple ethnic groups in household (6 categories)",
+              "available_geotypes": ["oa", "msoa", "lad"],
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "comparison_2011_data_available": true,
+
+              "data_download": "https://www.ons.gov.uk/datasets/TS023/editions/2021/versions/1",
+              "categories": [
+                {
+                  "name": "One-person household",
+                  "slug": "one-person-household",
+                  "code": "hh_multi_ethnic_group-001",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "one-person households"
+                },
+                {
+                  "name": "All household members have the same ethnic group",
+                  "slug": "all-household-members-have-the-same-ethnic-group",
+                  "code": "hh_multi_ethnic_group-002",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "members that are all from the same ethnic group"
+                },
+                {
+                  "name": "Ethnic groups differ between generations but not within partnerships",
+                  "slug": "ethnic-groups-differ-between-generations-but-not-within-partnerships",
+                  "code": "hh_multi_ethnic_group-003",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "members from ethnic groups that differ between generations but not within partnerships"
+                },
+                {
+                  "name": "Ethnic groups differ within partnerships",
+                  "slug": "ethnic-groups-differ-within-partnerships",
+                  "code": "hh_multi_ethnic_group-004",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "members from ethnic groups that differ within partnerships"
+                },
+                {
+                  "name": "Any other combination of multiple ethnic identities",
+                  "slug": "any-other-combination-of-multiple-ethnic-identities",
+                  "code": "hh_multi_ethnic_group-005",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "members with any other combination of ethnic identities"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Multiple main languages in household",
+          "code": "hh_multi_language",
+          "slug": "multiple-main-languages-in-household",
+          "desc": "Whether there are multiple languages in a household.",
+          "long_desc": "Classifies households by whether members speak the same or different main language. If multiple main languages are spoken, this identifies whether they differ between generations or partnerships within the household.",
+          "units": "Household",
+          "topic_code": "EILR",
+          "classifications": [
+            {
+              "code": "hh_multi_language_3a",
+              "slug": "hh-multi-language-3a",
+              "desc": "Multiple main languages in household (3 categories)",
+              "available_geotypes": ["oa", "msoa", "lad"],
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "comparison_2011_data_available": true,
+
+              "data_download": "https://www.ons.gov.uk/datasets/TS026/editions/2021/versions/1",
+              "categories": [
+                {
+                  "name": "All household members have the same main language",
+                  "slug": "all-household-members-have-the-same-main-language",
+                  "code": "hh_multi_language_3a-001",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "members that all have the same main language"
+                },
+                {
+                  "name": "Household members have different main languages",
+                  "slug": "household-members-have-different-main-languages",
+                  "code": "hh_multi_language_3a-002",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "members that have different main languages"
+                }
+              ]
+            },
+            {
+              "code": "hh_multi_language",
+              "slug": "hh-multi-language",
+              "desc": "Multiple main languages in household (6 categories)",
+              "available_geotypes": ["oa", "msoa", "lad"],
+              "comparison_2011_data_available": true,
+
+              "data_download": "https://www.ons.gov.uk/datasets/TS026/editions/2021/versions/1",
+              "categories": [
+                {
+                  "name": "One-person household",
+                  "slug": "one-person-household",
+                  "code": "hh_multi_language-001",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "not applicable (one-person household)"
+                },
+                {
+                  "name": "All household members have the same main language",
+                  "slug": "all-household-members-have-the-same-main-language",
+                  "code": "hh_multi_language-002",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "members that all have the same main language"
+                },
+                {
+                  "name": "Main language differs between generations, but not within partnerships",
+                  "slug": "main-language-differs-between-generations-but-not-within-partnerships",
+                  "code": "hh_multi_language-003",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "members that have different main languages between generations, but not within partnerships"
+                },
+                {
+                  "name": "Main language differs within partnerships",
+                  "slug": "main-language-differs-within-partnerships",
+                  "code": "hh_multi_language-004",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "members that have different main languages within partnerships"
+                },
+                {
+                  "name": "Any other combination of multiple main languages",
+                  "slug": "any-other-combination-of-multiple-main-languages",
+                  "code": "hh_multi_language-005",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "members with any other combination of multiple main languages"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Multiple religions in household",
+          "code": "hh_multi_religion",
+          "slug": "multiple-religions-in-household",
+          "desc": "Whether there are multiple religions in a household.",
+          "long_desc": "Classifies households by whether members identify with the same religion, no religion, did not answer the question, or a combination of these options.\n\nThis question was voluntary and the variable includes those who answered the question alongside those who chose not to.",
+          "units": "Household",
+          "topic_code": "EILR",
+          "classifications": [
+            {
+              "code": "hh_multi_religion_7a",
+              "slug": "hh-multi-religion-7a",
+              "desc": "Multiple religions in household (7 categories)",
+              "available_geotypes": ["oa", "msoa", "lad"],
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "comparison_2011_data_available": true,
+
+              "data_download": "https://www.ons.gov.uk/datasets/TS075/editions/2021/versions/1",
+              "categories": [
+                {
+                  "name": "One-person household",
+                  "slug": "one-person-household",
+                  "code": "hh_multi_religion_7a-001",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "one-person households"
+                },
+                {
+                  "name": "Multi-person household: No people stated their religion",
+                  "slug": "multi-person-household-no-people-stated-their-religion",
+                  "code": "hh_multi_religion_7a-002",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "did",
+                  "legend_str_3": "not state their religion"
+                },
+                {
+                  "name": "Multi-person household: Same religion (at least one person has stated a religion but the household may include people who did not state their religion)",
+                  "slug": "multi-person-household-same-religion-at-least-one-person-has-stated-a-religion-but-the-household-may-include-people-who-did-not-state-their-religion",
+                  "code": "hh_multi_religion_7a-003",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "reported",
+                  "legend_str_3": "the same religion"
+                },
+                {
+                  "name": "Multi-person household: No religion (household may include people who did not state their religion)",
+                  "slug": "multi-person-household-no-religion-household-may-include-people-who-did-not-state-their-religion",
+                  "code": "hh_multi_religion_7a-004",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "reported",
+                  "legend_str_3": "no religion"
+                },
+                {
+                  "name": "Multi-person household: Same religion and no religion (household may include people who did not state their religion)",
+                  "slug": "multi-person-household-same-religion-and-no-religion-household-may-include-people-who-did-not-state-their-religion",
+                  "code": "hh_multi_religion_7a-005",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "reported",
+                  "legend_str_3": "a combination of the same religion and no religion"
+                },
+                {
+                  "name": "Multi-person household: At least two different religions stated (household may include people with no religion and who did not state their religion)",
+                  "slug": "multi-person-household-at-least-two-different-religions-stated-household-may-include-people-with-no-religion-and-who-did-not-state-their-religion",
+                  "code": "hh_multi_religion_7a-006",
+                  "legend_str_1": "of households in {location}",
+                  "legend_str_2": "reported",
+                  "legend_str_3": "at least two different religions"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Main language (detailed)",
+          "code": "main_language_detailed",
+          "slug": "main-language-detailed",
+          "desc": "People's first or preferred language.",
+          "long_desc": "A person's first or preferred language.\n\nThis shows a detailed breakdown of the responses given in the write-in option \"Other, write in\".",
+          "units": "Person",
+          "topic_code": "EILR",
+          "classifications": [
+            {
+              "code": "main_language_detailed_23a",
+              "slug": "main-language-detailed-23a",
+              "desc": "Main language (detailed) (23 categories)",
+              "available_geotypes": ["lad"],
+              "choropleth_default": true,
+              "comparison_2011_data_available": true,
+
+              "data_download": "https://www.ons.gov.uk/datasets/TS024/editions/2021/versions/1",
+              "categories": [
+                {
+                  "name": "English (English or Welsh if in Wales)",
+                  "slug": "english-english-or-welsh-if-in-wales",
+                  "code": "main_language_detailed_23a-001",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "English (English or Welsh if in Wales) as their main language"
+                },
+                {
+                  "name": "Other UK language: Any other UK language",
+                  "slug": "other-uk-language-any-other-uk-language",
+                  "code": "main_language_detailed_23a-002",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "any other UK language as their main language"
+                },
+                {
+                  "name": "French",
+                  "slug": "french",
+                  "code": "main_language_detailed_23a-003",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "French as their main language"
+                },
+                {
+                  "name": "Portuguese",
+                  "slug": "portuguese",
+                  "code": "main_language_detailed_23a-004",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Portuguese as their main language"
+                },
+                {
+                  "name": "Spanish",
+                  "slug": "spanish",
+                  "code": "main_language_detailed_23a-005",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Spanish as their main language"
+                },
+                {
+                  "name": "Other European language (EU): Polish",
+                  "slug": "other-european-language-eu-polish",
+                  "code": "main_language_detailed_23a-006",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Polish as their main language"
+                },
+                {
+                  "name": "Other European language (EU): Any other European language",
+                  "slug": "other-european-language-eu-any-other-european-language",
+                  "code": "main_language_detailed_23a-007",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "any other European language (EU) as their main language"
+                },
+                {
+                  "name": "European language (non-EU)",
+                  "slug": "european-language-non-eu",
+                  "code": "main_language_detailed_23a-008",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "any other European language (non-EU) as their main language"
+                },
+                {
+                  "name": "Russian",
+                  "slug": "russian",
+                  "code": "main_language_detailed_23a-009",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Russian as their main language"
+                },
+                {
+                  "name": "Turkish",
+                  "slug": "turkish",
+                  "code": "main_language_detailed_23a-010",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Turkish as their main language"
+                },
+                {
+                  "name": "Arabic",
+                  "slug": "arabic",
+                  "code": "main_language_detailed_23a-011",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Arabic as their main language"
+                },
+                {
+                  "name": "West or Central Asian language",
+                  "slug": "west-or-central-asian-language",
+                  "code": "main_language_detailed_23a-012",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "a West or Central Asian language as their main language"
+                },
+                {
+                  "name": "South Asian language: Panjabi",
+                  "slug": "south-asian-language-panjabi",
+                  "code": "main_language_detailed_23a-013",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Panjabi as their main language"
+                },
+                {
+                  "name": "South Asian language: Urdu",
+                  "slug": "south-asian-language-urdu",
+                  "code": "main_language_detailed_23a-014",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Urdu as their main language"
+                },
+                {
+                  "name": "South Asian language: Bengali (with Sylheti and Chatgaya)",
+                  "slug": "south-asian-language-bengali-with-sylheti-and-chatgaya",
+                  "code": "main_language_detailed_23a-015",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Bengali (with Sylheti and Chatgaya) as their main language"
+                },
+                {
+                  "name": "South Asian language: Gujarati",
+                  "slug": "south-asian-language-gujarati",
+                  "code": "main_language_detailed_23a-016",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Gujarati as their main language"
+                },
+                {
+                  "name": "South Asian language: Tamil",
+                  "slug": "south-asian-language-tamil",
+                  "code": "main_language_detailed_23a-017",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Tamil as their main language"
+                },
+                {
+                  "name": "South Asian language: Any other South Asian language",
+                  "slug": "south-asian-language-any-other-south-asian-language",
+                  "code": "main_language_detailed_23a-018",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "any other South Asian language as their main language"
+                },
+                {
+                  "name": "East Asian language: Chinese",
+                  "slug": "east-asian-language-chinese",
+                  "code": "main_language_detailed_23a-019",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Chinese as their main language"
+                },
+                {
+                  "name": "East Asian language: Any other East Asian language",
+                  "slug": "east-asian-language-any-other-east-asian-language",
+                  "code": "main_language_detailed_23a-020",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "any other East Asian language"
+                },
+                {
+                  "name": "African language",
+                  "slug": "african-language",
+                  "code": "main_language_detailed_23a-021",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "an African language as their main language"
+                },
+                {
+                  "name": "Other language",
+                  "slug": "other-language",
+                  "code": "main_language_detailed_23a-022",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "an other language as their main language"
+                }
+              ]
+            },
+            {
+              "code": "main_language_detailed",
+              "slug": "main-language-detailed",
+              "desc": "Main language (detailed) (95 categories)",
+              "available_geotypes": ["lad"],
+              "comparison_2011_data_available": true,
+
+              "data_download": "https://www.ons.gov.uk/datasets/TS024/editions/2021/versions/1",
+              "categories": [
+                {
+                  "name": "English (English or Welsh in Wales)",
+                  "slug": "english-english-or-welsh-in-wales",
+                  "code": "main_language_detailed-001",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "English (English or Welsh in Wales) as their main language"
+                },
+                {
+                  "name": "Welsh or Cymraeg (in England only)",
+                  "slug": "welsh-or-cymraeg-in-england-only",
+                  "code": "main_language_detailed-002",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Welsh or Cymraeg (in England only) as their main language"
+                },
+                {
+                  "name": "Other UK language: Gaelic (Irish)",
+                  "slug": "other-uk-language-gaelic-irish",
+                  "code": "main_language_detailed-003",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Gaelic (Irish) as their main language"
+                },
+                {
+                  "name": "Other UK language: Gaelic (Scottish)",
+                  "slug": "other-uk-language-gaelic-scottish",
+                  "code": "main_language_detailed-004",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Gaelic (Scottish) as their main language"
+                },
+                {
+                  "name": "Other UK language: Manx Gaelic",
+                  "slug": "other-uk-language-manx-gaelic",
+                  "code": "main_language_detailed-005",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Manx Gaelic as their main language"
+                },
+                {
+                  "name": "Other UK language: Gaelic (Not otherwise specified)",
+                  "slug": "other-uk-language-gaelic-not-otherwise-specified",
+                  "code": "main_language_detailed-006",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Gaelic (Not otherwise specified) as their main language"
+                },
+                {
+                  "name": "Other UK language: Cornish",
+                  "slug": "other-uk-language-cornish",
+                  "code": "main_language_detailed-007",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Cornish as their main language"
+                },
+                {
+                  "name": "Other UK language: Scots",
+                  "slug": "other-uk-language-scots",
+                  "code": "main_language_detailed-008",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Scots as their main language"
+                },
+                {
+                  "name": "Other UK language: Ulster Scots",
+                  "slug": "other-uk-language-ulster-scots",
+                  "code": "main_language_detailed-009",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Ulster Scots as their main language"
+                },
+                {
+                  "name": "Other UK language: Romany English",
+                  "slug": "other-uk-language-romany-english",
+                  "code": "main_language_detailed-010",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Romany English as their main language"
+                },
+                {
+                  "name": "Other UK language: Irish Traveller Cant",
+                  "slug": "other-uk-language-irish-traveller-cant",
+                  "code": "main_language_detailed-011",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Irish Traveller Cant as their main language"
+                },
+                {
+                  "name": "French",
+                  "slug": "french",
+                  "code": "main_language_detailed-012",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "French as their main language"
+                },
+                {
+                  "name": "Portuguese",
+                  "slug": "portuguese",
+                  "code": "main_language_detailed-013",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Portuguese as their main language"
+                },
+                {
+                  "name": "Spanish",
+                  "slug": "spanish",
+                  "code": "main_language_detailed-014",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Spanish as their main language"
+                },
+                {
+                  "name": "Other European language (EU): Italian",
+                  "slug": "other-european-language-eu-italian",
+                  "code": "main_language_detailed-015",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Italian as their main language"
+                },
+                {
+                  "name": "Other European language (EU): German",
+                  "slug": "other-european-language-eu-german",
+                  "code": "main_language_detailed-016",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "German as their main language"
+                },
+                {
+                  "name": "Other European language (EU): Polish",
+                  "slug": "other-european-language-eu-polish",
+                  "code": "main_language_detailed-017",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Polish as their main language"
+                },
+                {
+                  "name": "Other European language (EU): Slovak",
+                  "slug": "other-european-language-eu-slovak",
+                  "code": "main_language_detailed-018",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Slovak as their main language"
+                },
+                {
+                  "name": "Other European language (EU): Czech",
+                  "slug": "other-european-language-eu-czech",
+                  "code": "main_language_detailed-019",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Czech as their main language"
+                },
+                {
+                  "name": "Other European language (EU): Romanian",
+                  "slug": "other-european-language-eu-romanian",
+                  "code": "main_language_detailed-020",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Romanian as their main language"
+                },
+                {
+                  "name": "Other European language (EU): Lithuanian",
+                  "slug": "other-european-language-eu-lithuanian",
+                  "code": "main_language_detailed-021",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Lithuanian as their main language"
+                },
+                {
+                  "name": "Other European language (EU): Latvian",
+                  "slug": "other-european-language-eu-latvian",
+                  "code": "main_language_detailed-022",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Latvian as their main language"
+                },
+                {
+                  "name": "Other European language (EU): Hungarian",
+                  "slug": "other-european-language-eu-hungarian",
+                  "code": "main_language_detailed-023",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Hungarian as their main language"
+                },
+                {
+                  "name": "Other European language (EU): Bulgarian",
+                  "slug": "other-european-language-eu-bulgarian",
+                  "code": "main_language_detailed-024",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Bulgarian as their main language"
+                },
+                {
+                  "name": "Other European language (EU): Greek",
+                  "slug": "other-european-language-eu-greek",
+                  "code": "main_language_detailed-025",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Greek as their main language"
+                },
+                {
+                  "name": "Other European language (EU): Dutch",
+                  "slug": "other-european-language-eu-dutch",
+                  "code": "main_language_detailed-026",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Dutch as their main language"
+                },
+                {
+                  "name": "Other European language (EU): Swedish",
+                  "slug": "other-european-language-eu-swedish",
+                  "code": "main_language_detailed-027",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Swedish as their main language"
+                },
+                {
+                  "name": "Other European language (EU): Danish",
+                  "slug": "other-european-language-eu-danish",
+                  "code": "main_language_detailed-028",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Danish as their main language"
+                },
+                {
+                  "name": "Other European language (EU): Finnish",
+                  "slug": "other-european-language-eu-finnish",
+                  "code": "main_language_detailed-029",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Finnish as their main language"
+                },
+                {
+                  "name": "Other European language (EU): Estonian",
+                  "slug": "other-european-language-eu-estonian",
+                  "code": "main_language_detailed-030",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Estonian as their main language"
+                },
+                {
+                  "name": "Other European language (EU): Slovenian",
+                  "slug": "other-european-language-eu-slovenian",
+                  "code": "main_language_detailed-031",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Slovenian as their main language"
+                },
+                {
+                  "name": "Other European language (EU): Maltese",
+                  "slug": "other-european-language-eu-maltese",
+                  "code": "main_language_detailed-032",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Maltese as their main language"
+                },
+                {
+                  "name": "Other European language (EU): Any other European language (EU)",
+                  "slug": "other-european-language-eu-any-other-european-language-eu",
+                  "code": "main_language_detailed-033",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "any other European language (EU) as their main language"
+                },
+                {
+                  "name": "Other European language (non EU): Albanian",
+                  "slug": "other-european-language-non-eu-albanian",
+                  "code": "main_language_detailed-034",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Albanian as their main language"
+                },
+                {
+                  "name": "Other European language (non EU): Ukrainian",
+                  "slug": "other-european-language-non-eu-ukrainian",
+                  "code": "main_language_detailed-035",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Ukrainian as their main language"
+                },
+                {
+                  "name": "Other European language (non EU): Any other Eastern European language (non EU)",
+                  "slug": "other-european-language-non-eu-any-other-eastern-european-language-non-eu",
+                  "code": "main_language_detailed-036",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "any other Eastern European language (non-EU) as their main language"
+                },
+                {
+                  "name": "Other European language (non EU): Northern European language (non EU)",
+                  "slug": "other-european-language-non-eu-northern-european-language-non-eu",
+                  "code": "main_language_detailed-037",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "any Northern European language (non-EU) as their main language"
+                },
+                {
+                  "name": "Other European language (EU and non-EU): Bosnian, Croatian, Serbian, and Montenegrin",
+                  "slug": "other-european-language-eu-and-non-eu-bosnian-croatian-serbian-and-montenegrin",
+                  "code": "main_language_detailed-038",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Bosnian, Croatian, Serbian, or Montenegrin as their main language"
+                },
+                {
+                  "name": "Other European language (non-national): Any Romani language",
+                  "slug": "other-european-language-non-national-any-romani-language",
+                  "code": "main_language_detailed-039",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "any Romani language as their main language"
+                },
+                {
+                  "name": "Other European language (non-national): Yiddish",
+                  "slug": "other-european-language-non-national-yiddish",
+                  "code": "main_language_detailed-040",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Yiddish as their main language"
+                },
+                {
+                  "name": "Russian",
+                  "slug": "russian",
+                  "code": "main_language_detailed-041",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Russian as their main language"
+                },
+                {
+                  "name": "Turkish",
+                  "slug": "turkish",
+                  "code": "main_language_detailed-042",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Turkish as their main language"
+                },
+                {
+                  "name": "Arabic",
+                  "slug": "arabic",
+                  "code": "main_language_detailed-043",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Arabic as their main language"
+                },
+                {
+                  "name": "West or Central Asian language: Hebrew",
+                  "slug": "west-or-central-asian-language-hebrew",
+                  "code": "main_language_detailed-044",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Hebrew as their main language"
+                },
+                {
+                  "name": "West or Central Asian language: Kurdish",
+                  "slug": "west-or-central-asian-language-kurdish",
+                  "code": "main_language_detailed-045",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Kurdish as their main language"
+                },
+                {
+                  "name": "West or Central Asian language: Persian or Farsi",
+                  "slug": "west-or-central-asian-language-persian-or-farsi",
+                  "code": "main_language_detailed-046",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Persian or Farsi as their main language"
+                },
+                {
+                  "name": "West or Central Asian language: Pashto",
+                  "slug": "west-or-central-asian-language-pashto",
+                  "code": "main_language_detailed-047",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Pashto as their main language"
+                },
+                {
+                  "name": "West or Central Asian language: Any other West or Central Asian language",
+                  "slug": "west-or-central-asian-language-any-other-west-or-central-asian-language",
+                  "code": "main_language_detailed-048",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "any other West or Central Asian language as their main language"
+                },
+                {
+                  "name": "South Asian language: Urdu",
+                  "slug": "south-asian-language-urdu",
+                  "code": "main_language_detailed-049",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Urdu as their main language"
+                },
+                {
+                  "name": "South Asian language: Hindi",
+                  "slug": "south-asian-language-hindi",
+                  "code": "main_language_detailed-050",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Hindi as their main language"
+                },
+                {
+                  "name": "South Asian language: Panjabi",
+                  "slug": "south-asian-language-panjabi",
+                  "code": "main_language_detailed-051",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Panjabi as their main language"
+                },
+                {
+                  "name": "South Asian language: Pakistani Pahari (with Mirpuri and Potwari)",
+                  "slug": "south-asian-language-pakistani-pahari-with-mirpuri-and-potwari",
+                  "code": "main_language_detailed-052",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Pakistani Pahari (with Mirpuri and Potwari) as their main language"
+                },
+                {
+                  "name": "South Asian language: Bengali (with Sylheti and Chatgaya)",
+                  "slug": "south-asian-language-bengali-with-sylheti-and-chatgaya",
+                  "code": "main_language_detailed-053",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Bengali (with Sylheti and Chatgaya) as their main language"
+                },
+                {
+                  "name": "South Asian language: Gujarati",
+                  "slug": "south-asian-language-gujarati",
+                  "code": "main_language_detailed-054",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Gujarati as their main language"
+                },
+                {
+                  "name": "South Asian language: Marathi",
+                  "slug": "south-asian-language-marathi",
+                  "code": "main_language_detailed-055",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Marathi as their main language"
+                },
+                {
+                  "name": "South Asian language: Telugu",
+                  "slug": "south-asian-language-telugu",
+                  "code": "main_language_detailed-056",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Telugu as their main language"
+                },
+                {
+                  "name": "South Asian language: Tamil",
+                  "slug": "south-asian-language-tamil",
+                  "code": "main_language_detailed-057",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Tamil as their main language"
+                },
+                {
+                  "name": "South Asian language: Malayalam",
+                  "slug": "south-asian-language-malayalam",
+                  "code": "main_language_detailed-058",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Malayalam as their main language"
+                },
+                {
+                  "name": "South Asian language: Sinhala",
+                  "slug": "south-asian-language-sinhala",
+                  "code": "main_language_detailed-059",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Sinhala as their main language"
+                },
+                {
+                  "name": "South Asian language: Nepalese",
+                  "slug": "south-asian-language-nepalese",
+                  "code": "main_language_detailed-060",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Nepalese as their main language"
+                },
+                {
+                  "name": "South Asian language: Any other South Asian language",
+                  "slug": "south-asian-language-any-other-south-asian-language",
+                  "code": "main_language_detailed-061",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "any other South Asian language as their main language"
+                },
+                {
+                  "name": "East Asian language: Mandarin Chinese",
+                  "slug": "east-asian-language-mandarin-chinese",
+                  "code": "main_language_detailed-062",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Mandarin Chinese as their main language"
+                },
+                {
+                  "name": "East Asian language: Cantonese Chinese",
+                  "slug": "east-asian-language-cantonese-chinese",
+                  "code": "main_language_detailed-063",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Cantonese Chinese as their main language"
+                },
+                {
+                  "name": "East Asian language: All other Chinese",
+                  "slug": "east-asian-language-all-other-chinese",
+                  "code": "main_language_detailed-064",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "All other Chinese as their main language"
+                },
+                {
+                  "name": "East Asian language: Japanese",
+                  "slug": "east-asian-language-japanese",
+                  "code": "main_language_detailed-065",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Japanese as their main language"
+                },
+                {
+                  "name": "East Asian language: Korean",
+                  "slug": "east-asian-language-korean",
+                  "code": "main_language_detailed-066",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Korean as their main language"
+                },
+                {
+                  "name": "East Asian language: Vietnamese",
+                  "slug": "east-asian-language-vietnamese",
+                  "code": "main_language_detailed-067",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Vietnamese as their main language"
+                },
+                {
+                  "name": "East Asian language: Thai",
+                  "slug": "east-asian-language-thai",
+                  "code": "main_language_detailed-068",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Thai as their main language"
+                },
+                {
+                  "name": "East Asian language: Malay",
+                  "slug": "east-asian-language-malay",
+                  "code": "main_language_detailed-069",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Malay as their main language"
+                },
+                {
+                  "name": "East Asian language: Tagalog or Filipino",
+                  "slug": "east-asian-language-tagalog-or-filipino",
+                  "code": "main_language_detailed-070",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Tagalog or Filipino as their main language"
+                },
+                {
+                  "name": "East Asian language: Any other East Asian language",
+                  "slug": "east-asian-language-any-other-east-asian-language",
+                  "code": "main_language_detailed-071",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "any other East Asian language as their main language"
+                },
+                {
+                  "name": "Oceanic or Australian language",
+                  "slug": "oceanic-or-australian-language",
+                  "code": "main_language_detailed-072",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "an Oceanic or Australian language as their main language"
+                },
+                {
+                  "name": "North or South American language",
+                  "slug": "north-or-south-american-language",
+                  "code": "main_language_detailed-073",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "a North or South American language as their main language"
+                },
+                {
+                  "name": "Caribbean Creole: English-based Caribbean Creole",
+                  "slug": "caribbean-creole-english-based-caribbean-creole",
+                  "code": "main_language_detailed-074",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "English-based Caribbean Creole as their main language"
+                },
+                {
+                  "name": "Caribbean Creole: Any other Caribbean Creole",
+                  "slug": "caribbean-creole-any-other-caribbean-creole",
+                  "code": "main_language_detailed-075",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "any other Caribbean Creole as their main language"
+                },
+                {
+                  "name": "African language: Amharic",
+                  "slug": "african-language-amharic",
+                  "code": "main_language_detailed-076",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Amharic as their main language"
+                },
+                {
+                  "name": "African language: Tigrinya",
+                  "slug": "african-language-tigrinya",
+                  "code": "main_language_detailed-077",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Tigrinya as their main language"
+                },
+                {
+                  "name": "African language: Somali",
+                  "slug": "african-language-somali",
+                  "code": "main_language_detailed-078",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Somali as their main language"
+                },
+                {
+                  "name": "African language: Krio",
+                  "slug": "african-language-krio",
+                  "code": "main_language_detailed-079",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Krio as their main language"
+                },
+                {
+                  "name": "African language: Akan",
+                  "slug": "african-language-akan",
+                  "code": "main_language_detailed-080",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Akan as their main language"
+                },
+                {
+                  "name": "African language: Yoruba",
+                  "slug": "african-language-yoruba",
+                  "code": "main_language_detailed-081",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Yoruba as their main language"
+                },
+                {
+                  "name": "African language: Igbo",
+                  "slug": "african-language-igbo",
+                  "code": "main_language_detailed-082",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Igbo as their main language"
+                },
+                {
+                  "name": "African language: Swahili or Kiswahili",
+                  "slug": "african-language-swahili-or-kiswahili",
+                  "code": "main_language_detailed-083",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Swahili or Kiswahili as their main language"
+                },
+                {
+                  "name": "African language: Luganda",
+                  "slug": "african-language-luganda",
+                  "code": "main_language_detailed-084",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Luganda as their main language"
+                },
+                {
+                  "name": "African language: Lingala",
+                  "slug": "african-language-lingala",
+                  "code": "main_language_detailed-085",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Lingala as their main language"
+                },
+                {
+                  "name": "African language: Shona",
+                  "slug": "african-language-shona",
+                  "code": "main_language_detailed-086",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Shona as their main language"
+                },
+                {
+                  "name": "African language: Afrikaans",
+                  "slug": "african-language-afrikaans",
+                  "code": "main_language_detailed-087",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "Afrikaans as their main language"
+                },
+                {
+                  "name": "African language: Any other Nigerian language",
+                  "slug": "african-language-any-other-nigerian-language",
+                  "code": "main_language_detailed-088",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "any other Nigerian language as their main language"
+                },
+                {
+                  "name": "African language: Any other West African language",
+                  "slug": "african-language-any-other-west-african-language",
+                  "code": "main_language_detailed-089",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "any other West African language as their main language"
+                },
+                {
+                  "name": "African language: Any other African language",
+                  "slug": "african-language-any-other-african-language",
+                  "code": "main_language_detailed-090",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "any other African language as their main language"
+                },
+                {
+                  "name": "Sign language: British Sign Language",
+                  "slug": "sign-language-british-sign-language",
+                  "code": "main_language_detailed-091",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "use",
+                  "legend_str_3": "British Sign Language as their main language"
+                },
+                {
+                  "name": "Sign language: Any other sign language",
+                  "slug": "sign-language-any-other-sign-language",
+                  "code": "main_language_detailed-092",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "use",
+                  "legend_str_3": "any other sign language as their main language"
+                },
+                {
+                  "name": "Sign language: Any sign communication system",
+                  "slug": "sign-language-any-sign-communication-system",
+                  "code": "main_language_detailed-093",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "use",
+                  "legend_str_3": "any sign communication system as their main language"
+                },
+                {
+                  "name": "Other language",
+                  "slug": "other-language",
+                  "code": "main_language_detailed-094",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "speak",
+                  "legend_str_3": "any other language as their main language"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "National identity",
+          "code": "national_identity_all",
+          "slug": "national-identity",
+          "desc": "People's national identity (where they feel they belong or could think of as home).",
+          "long_desc": "Someone\u2019s national identity is a self-determined assessment of their own identity, it could be the country or countries where they feel they belong or think of as home. It is not dependent on ethnic group or citizenship.\n\nRespondents could select more than one national identity.",
+          "units": "Person",
+          "topic_code": "EILR",
+          "caveat_text": "There are quality considerations for this variable.",
+          "caveat_link": "https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/ethnicity/methodologies/ethnicgroupnationalidentitylanguageandreligionqualityinformationforcensus2021",
+          "classifications": [
+            {
+              "code": "national_identity_all_4a",
+              "slug": "national-identity-all-4a",
+              "desc": "National identity (4 categories)",
+              "available_geotypes": ["oa", "msoa", "lad"],
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "comparison_2011_data_available": true,
+
+              "data_download": "https://www.ons.gov.uk/datasets/TS027/editions/2021/versions/1",
+              "categories": [
+                {
+                  "name": "One or more UK identity only",
+                  "slug": "one-or-more-uk-identity-only",
+                  "code": "national_identity_all_4a-001",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "one or more UK identity only"
+                },
+                {
+                  "name": "UK identity and non-UK identity",
+                  "slug": "uk-identity-and-non-uk-identity",
+                  "code": "national_identity_all_4a-002",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "a UK identity and a non-UK identity"
+                },
+                {
+                  "name": "Non-UK identity only",
+                  "slug": "non-uk-identity-only",
+                  "code": "national_identity_all_4a-003",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "a non-UK identity only"
+                }
+              ]
+            },
+            {
+              "code": "national_identity_all_9a",
+              "slug": "national-identity-all-9a",
+              "desc": "National identity (9 categories)",
+              "available_geotypes": ["oa", "msoa", "lad"],
+              "comparison_2011_data_available": true,
+
+              "data_download": "https://www.ons.gov.uk/datasets/TS027/editions/2021/versions/1",
+              "categories": [
+                {
+                  "name": "British only identity",
+                  "slug": "british-only-identity",
+                  "code": "national_identity_all_9a-001",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "British"
+                },
+                {
+                  "name": "Welsh only identity",
+                  "slug": "welsh-only-identity",
+                  "code": "national_identity_all_9a-002",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Welsh"
+                },
+                {
+                  "name": "Welsh and British only identity",
+                  "slug": "welsh-and-british-only-identity",
+                  "code": "national_identity_all_9a-003",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Welsh and British"
+                },
+                {
+                  "name": "English only identity",
+                  "slug": "english-only-identity",
+                  "code": "national_identity_all_9a-004",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "English"
+                },
+                {
+                  "name": "English and British only identity",
+                  "slug": "english-and-british-only-identity",
+                  "code": "national_identity_all_9a-005",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "English and British"
+                },
+                {
+                  "name": "Any other combination of only UK identities",
+                  "slug": "any-other-combination-of-only-uk-identities",
+                  "code": "national_identity_all_9a-006",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "any other combination of UK identities"
+                },
+                {
+                  "name": "Non-UK identity only",
+                  "slug": "non-uk-identity-only",
+                  "code": "national_identity_all_9a-007",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Non-UK"
+                },
+                {
+                  "name": "UK identity and non-UK identity",
+                  "slug": "uk-identity-and-non-uk-identity",
+                  "code": "national_identity_all_9a-008",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "both UK and non-UK identity"
+                }
+              ]
+            },
+            {
+              "code": "national_identity_all",
+              "slug": "national-identity-all",
+              "desc": "National identity (17 categories)",
+              "available_geotypes": ["oa", "msoa", "lad"],
+              "comparison_2011_data_available": true,
+
+              "data_download": "https://www.ons.gov.uk/datasets/TS027/editions/2021/versions/1",
+              "categories": [
+                {
+                  "name": "British only identity",
+                  "slug": "british-only-identity",
+                  "code": "national_identity_all-001",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "British"
+                },
+                {
+                  "name": "English only identity",
+                  "slug": "english-only-identity",
+                  "code": "national_identity_all-002",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "English"
+                },
+                {
+                  "name": "English and British only identity",
+                  "slug": "english-and-british-only-identity",
+                  "code": "national_identity_all-003",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "English and British"
+                },
+                {
+                  "name": "Welsh only identity",
+                  "slug": "welsh-only-identity",
+                  "code": "national_identity_all-004",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Welsh"
+                },
+                {
+                  "name": "Welsh and British only identity",
+                  "slug": "welsh-and-british-only-identity",
+                  "code": "national_identity_all-005",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Welsh and British"
+                },
+                {
+                  "name": "Scottish only identity",
+                  "slug": "scottish-only-identity",
+                  "code": "national_identity_all-006",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Scottish"
+                },
+                {
+                  "name": "Scottish and British only identity",
+                  "slug": "scottish-and-british-only-identity",
+                  "code": "national_identity_all-007",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Scottish and British"
+                },
+                {
+                  "name": "Northern Irish only identity",
+                  "slug": "northern-irish-only-identity",
+                  "code": "national_identity_all-008",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Northern Irish"
+                },
+                {
+                  "name": "Northern Irish and British only identity",
+                  "slug": "northern-irish-and-british-only-identity",
+                  "code": "national_identity_all-009",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Northern Irish and British"
+                },
+                {
+                  "name": "Cornish only identity",
+                  "slug": "cornish-only-identity",
+                  "code": "national_identity_all-010",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Cornish"
+                },
+                {
+                  "name": "Cornish and British only identity",
+                  "slug": "cornish-and-british-only-identity",
+                  "code": "national_identity_all-011",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Cornish and British"
+                },
+                {
+                  "name": "Any other combination of only UK identities",
+                  "slug": "any-other-combination-of-only-uk-identities",
+                  "code": "national_identity_all-012",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "any other combination of UK identities"
+                },
+                {
+                  "name": "Irish only identity",
+                  "slug": "irish-only-identity",
+                  "code": "national_identity_all-013",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Irish"
+                },
+                {
+                  "name": "Irish and at least one UK identity",
+                  "slug": "irish-and-at-least-one-uk-identity",
+                  "code": "national_identity_all-014",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Irish and at least one UK identity"
+                },
+                {
+                  "name": "Other identity only",
+                  "slug": "other-identity-only",
+                  "code": "national_identity_all-015",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "any other national identity"
+                },
+                {
+                  "name": "Other identity and at least one UK identity",
+                  "slug": "other-identity-and-at-least-one-uk-identity",
+                  "code": "national_identity_all-016",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "any other national identity and at least one UK identity"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "National identity (detailed)",
+          "code": "national_identity_detailed",
+          "slug": "national-identity-detailed",
+          "desc": "People's national identity (where they feel they belong or could think of as home) broken down by country.",
+          "long_desc": "Someone\u2019s national identity is a self-determined assessment of their own identity, it could be the country or countries where they feel they belong or think of as home. It is not dependent on ethnic group or citizenship.\n\nRespondents could select more than one national identity.",
+          "units": "Person",
+          "topic_code": "EILR",
+          "caveat_text": "There are quality considerations for this variable.",
+          "caveat_link": "https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/ethnicity/methodologies/ethnicgroupnationalidentitylanguageandreligionqualityinformationforcensus2021",
+          "classifications": [
+            {
+              "code": "national_identity_detailed",
+              "slug": "national-identity-detailed",
+              "desc": "National identity (detailed) (73 categories)",
+              "available_geotypes": ["msoa", "lad"],
+              "choropleth_default": true,
+              "comparison_2011_data_available": true,
+
+              "data_download": "https://www.ons.gov.uk/datasets/TS028/editions/2021/versions/1",
+              "categories": [
+                {
+                  "name": "UK identity: British only identity",
+                  "slug": "uk-identity-british-only-identity",
+                  "code": "national_identity_detailed-001",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "British"
+                },
+                {
+                  "name": "UK identity: English only identity",
+                  "slug": "uk-identity-english-only-identity",
+                  "code": "national_identity_detailed-002",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "English"
+                },
+                {
+                  "name": "UK identity: English and British only identity",
+                  "slug": "uk-identity-english-and-british-only-identity",
+                  "code": "national_identity_detailed-003",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "English and British"
+                },
+                {
+                  "name": "UK identity: Welsh only identity",
+                  "slug": "uk-identity-welsh-only-identity",
+                  "code": "national_identity_detailed-004",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Welsh"
+                },
+                {
+                  "name": "UK identity: Welsh and British only identity",
+                  "slug": "uk-identity-welsh-and-british-only-identity",
+                  "code": "national_identity_detailed-005",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Welsh and British"
+                },
+                {
+                  "name": "UK identity: Scottish only identity",
+                  "slug": "uk-identity-scottish-only-identity",
+                  "code": "national_identity_detailed-006",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Scottish"
+                },
+                {
+                  "name": "UK identity: Scottish and British only identity",
+                  "slug": "uk-identity-scottish-and-british-only-identity",
+                  "code": "national_identity_detailed-007",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Scottish and British"
+                },
+                {
+                  "name": "UK identity: Northern Irish only identity",
+                  "slug": "uk-identity-northern-irish-only-identity",
+                  "code": "national_identity_detailed-008",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Northern Irish"
+                },
+                {
+                  "name": "UK identity: Northern Irish and British only identity",
+                  "slug": "uk-identity-northern-irish-and-british-only-identity",
+                  "code": "national_identity_detailed-009",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Northern Irish and British"
+                },
+                {
+                  "name": "UK identity: Cornish only identity",
+                  "slug": "uk-identity-cornish-only-identity",
+                  "code": "national_identity_detailed-010",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Cornish"
+                },
+                {
+                  "name": "UK identity: Cornish and British only identity",
+                  "slug": "uk-identity-cornish-and-british-only-identity",
+                  "code": "national_identity_detailed-011",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Cornish and British"
+                },
+                {
+                  "name": "UK identity: Any other combination of UK identities (UK only)",
+                  "slug": "uk-identity-any-other-combination-of-uk-identities-uk-only",
+                  "code": "national_identity_detailed-012",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "any other combination of UK identities"
+                },
+                {
+                  "name": "UK identity: Other identity and at least one UK identity",
+                  "slug": "uk-identity-other-identity-and-at-least-one-uk-identity",
+                  "code": "national_identity_detailed-013",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "any other national identity and at least one UK identity"
+                },
+                {
+                  "name": "Other identity only: Guernsey Islander",
+                  "slug": "other-identity-only-guernsey-islander",
+                  "code": "national_identity_detailed-014",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "a Guernsey Islander"
+                },
+                {
+                  "name": "Other identity only: Jersey Islander",
+                  "slug": "other-identity-only-jersey-islander",
+                  "code": "national_identity_detailed-015",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "a Jersey Islander"
+                },
+                {
+                  "name": "Other identity only: Isle of Man (Manx)",
+                  "slug": "other-identity-only-isle-of-man-manx",
+                  "code": "national_identity_detailed-016",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Manx (Isle of Man)"
+                },
+                {
+                  "name": "Other identity only: Channel Islander not otherwise specified",
+                  "slug": "other-identity-only-channel-islander-not-otherwise-specified",
+                  "code": "national_identity_detailed-017",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "any other Channel Island identity"
+                },
+                {
+                  "name": "Other identity only: Irish only identity",
+                  "slug": "other-identity-only-irish-only-identity",
+                  "code": "national_identity_detailed-018",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Irish"
+                },
+                {
+                  "name": "Other identity only: Irish and at least one UK identity",
+                  "slug": "other-identity-only-irish-and-at-least-one-uk-identity",
+                  "code": "national_identity_detailed-019",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Irish and at least one UK identity"
+                },
+                {
+                  "name": "Other identity only: European: EU countries: French",
+                  "slug": "other-identity-only-european-eu-countries-french",
+                  "code": "national_identity_detailed-020",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "French"
+                },
+                {
+                  "name": "Other identity only: European: EU countries: German",
+                  "slug": "other-identity-only-european-eu-countries-german",
+                  "code": "national_identity_detailed-021",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "German"
+                },
+                {
+                  "name": "Other identity only: European: EU countries: Italian",
+                  "slug": "other-identity-only-european-eu-countries-italian",
+                  "code": "national_identity_detailed-022",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Italian"
+                },
+                {
+                  "name": "Other identity only: European: EU countries: Portuguese",
+                  "slug": "other-identity-only-european-eu-countries-portuguese",
+                  "code": "national_identity_detailed-023",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Portuguese"
+                },
+                {
+                  "name": "Other identity only: European: EU countries: Spanish (including Canary Islander)",
+                  "slug": "other-identity-only-european-eu-countries-spanish-including-canary-islander",
+                  "code": "national_identity_detailed-024",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Spanish (including Canary Islanders)"
+                },
+                {
+                  "name": "Other identity only: European: EU countries: Other member countries in March 2001",
+                  "slug": "other-identity-only-european-eu-countries-other-member-countries-in-march-2001",
+                  "code": "national_identity_detailed-025",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "any other national identity from countries that were EU members in March 2001"
+                },
+                {
+                  "name": "Other identity only: European: EU countries: Lithuanian",
+                  "slug": "other-identity-only-european-eu-countries-lithuanian",
+                  "code": "national_identity_detailed-026",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Lithuanian"
+                },
+                {
+                  "name": "Other identity only: European: EU countries: Polish",
+                  "slug": "other-identity-only-european-eu-countries-polish",
+                  "code": "national_identity_detailed-027",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Polish"
+                },
+                {
+                  "name": "Other identity only: European: EU countries: Romanian",
+                  "slug": "other-identity-only-european-eu-countries-romanian",
+                  "code": "national_identity_detailed-028",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Romanian"
+                },
+                {
+                  "name": "Other identity only: European: EU countries: Other member countries",
+                  "slug": "other-identity-only-european-eu-countries-other-member-countries",
+                  "code": "national_identity_detailed-029",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "any other national identity from EU countries"
+                },
+                {
+                  "name": "Other identity only: European: Non-EU countries: Turkish",
+                  "slug": "other-identity-only-european-non-eu-countries-turkish",
+                  "code": "national_identity_detailed-030",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "any other national identity from countries that were EU members in March 2001"
+                },
+                {
+                  "name": "Other identity only: European: Non-EU countries: Other European",
+                  "slug": "other-identity-only-european-non-eu-countries-other-european",
+                  "code": "national_identity_detailed-031",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "any other European identity"
+                },
+                {
+                  "name": "Other identity only: African: North African",
+                  "slug": "other-identity-only-african-north-african",
+                  "code": "national_identity_detailed-032",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "North African"
+                },
+                {
+                  "name": "Other identity only: African: Central and Western African: Ghanaian",
+                  "slug": "other-identity-only-african-central-and-western-african-ghanaian",
+                  "code": "national_identity_detailed-033",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Ghanaian"
+                },
+                {
+                  "name": "Other identity only: African: Central and Western African: Nigerian",
+                  "slug": "other-identity-only-african-central-and-western-african-nigerian",
+                  "code": "national_identity_detailed-034",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Nigerian"
+                },
+                {
+                  "name": "Other identity only: African: Central and Western African: Other Central and Western African",
+                  "slug": "other-identity-only-african-central-and-western-african-other-central-and-western-african",
+                  "code": "national_identity_detailed-035",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "any other Central or West African identity"
+                },
+                {
+                  "name": "Other identity only: African: South and Eastern African: Kenyan",
+                  "slug": "other-identity-only-african-south-and-eastern-african-kenyan",
+                  "code": "national_identity_detailed-036",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Kenyan"
+                },
+                {
+                  "name": "Other identity only: African: South and Eastern African: Somali",
+                  "slug": "other-identity-only-african-south-and-eastern-african-somali",
+                  "code": "national_identity_detailed-037",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Somali"
+                },
+                {
+                  "name": "Other identity only: African: South and Eastern African: South African",
+                  "slug": "other-identity-only-african-south-and-eastern-african-south-african",
+                  "code": "national_identity_detailed-038",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "South African"
+                },
+                {
+                  "name": "Other identity only: African: South and Eastern African: Zimbabwean",
+                  "slug": "other-identity-only-african-south-and-eastern-african-zimbabwean",
+                  "code": "national_identity_detailed-039",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Zimbabwean"
+                },
+                {
+                  "name": "Other identity only: African: South and Eastern African: Other South and Eastern African",
+                  "slug": "other-identity-only-african-south-and-eastern-african-other-south-and-eastern-african",
+                  "code": "national_identity_detailed-040",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "any other South or East African identity"
+                },
+                {
+                  "name": "Other identity only: Middle Eastern and Asian: Middle Eastern: Kurdish",
+                  "slug": "other-identity-only-middle-eastern-and-asian-middle-eastern-kurdish",
+                  "code": "national_identity_detailed-041",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Kurdish"
+                },
+                {
+                  "name": "Other identity only: Middle Eastern and Asian: Middle Eastern: Iranian",
+                  "slug": "other-identity-only-middle-eastern-and-asian-middle-eastern-iranian",
+                  "code": "national_identity_detailed-042",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Iranian"
+                },
+                {
+                  "name": "Other identity only: Middle Eastern and Asian: Middle Eastern: Iraqi",
+                  "slug": "other-identity-only-middle-eastern-and-asian-middle-eastern-iraqi",
+                  "code": "national_identity_detailed-043",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Iraqi"
+                },
+                {
+                  "name": "Other identity only: Middle Eastern and Asian: Middle Eastern: Other Middle Eastern",
+                  "slug": "other-identity-only-middle-eastern-and-asian-middle-eastern-other-middle-eastern",
+                  "code": "national_identity_detailed-044",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "any other Middle Eastern identity"
+                },
+                {
+                  "name": "Other identity only: Middle Eastern and Asian: Eastern Asian: Chinese",
+                  "slug": "other-identity-only-middle-eastern-and-asian-eastern-asian-chinese",
+                  "code": "national_identity_detailed-045",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Chinese"
+                },
+                {
+                  "name": "Other identity only: Middle Eastern and Asian: Eastern Asian: Hong Kong Chinese",
+                  "slug": "other-identity-only-middle-eastern-and-asian-eastern-asian-hong-kong-chinese",
+                  "code": "national_identity_detailed-046",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Hong Kong Chinese"
+                },
+                {
+                  "name": "Other identity only: Middle Eastern and Asian: Eastern Asian: Japanese",
+                  "slug": "other-identity-only-middle-eastern-and-asian-eastern-asian-japanese",
+                  "code": "national_identity_detailed-047",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Japanese"
+                },
+                {
+                  "name": "Other identity only: Middle Eastern and Asian: Eastern Asian: Other Eastern Asian",
+                  "slug": "other-identity-only-middle-eastern-and-asian-eastern-asian-other-eastern-asian",
+                  "code": "national_identity_detailed-048",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "any other East Asian identity"
+                },
+                {
+                  "name": "Other identity only: Middle Eastern and Asian: Southern Asian: Afghan",
+                  "slug": "other-identity-only-middle-eastern-and-asian-southern-asian-afghan",
+                  "code": "national_identity_detailed-049",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Afghan"
+                },
+                {
+                  "name": "Other identity only: Middle Eastern and Asian: Southern Asian: Bangladeshi",
+                  "slug": "other-identity-only-middle-eastern-and-asian-southern-asian-bangladeshi",
+                  "code": "national_identity_detailed-050",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Bangladeshi"
+                },
+                {
+                  "name": "Other identity only: Middle Eastern and Asian: Southern Asian: Indian",
+                  "slug": "other-identity-only-middle-eastern-and-asian-southern-asian-indian",
+                  "code": "national_identity_detailed-051",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Indian"
+                },
+                {
+                  "name": "Other identity only: Middle Eastern and Asian: Southern Asian: Pakistani",
+                  "slug": "other-identity-only-middle-eastern-and-asian-southern-asian-pakistani",
+                  "code": "national_identity_detailed-052",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Pakistani"
+                },
+                {
+                  "name": "Other identity only: Middle Eastern and Asian: Southern Asian: Sri Lankan",
+                  "slug": "other-identity-only-middle-eastern-and-asian-southern-asian-sri-lankan",
+                  "code": "national_identity_detailed-053",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Sri Lankan"
+                },
+                {
+                  "name": "Other identity only: Middle Eastern and Asian: Southern Asian: Other Southern Asian",
+                  "slug": "other-identity-only-middle-eastern-and-asian-southern-asian-other-southern-asian",
+                  "code": "national_identity_detailed-054",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "any other South Asian identity"
+                },
+                {
+                  "name": "Other identity only: Middle Eastern and Asian: South-East Asian: Filipino",
+                  "slug": "other-identity-only-middle-eastern-and-asian-south-east-asian-filipino",
+                  "code": "national_identity_detailed-055",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Filipino"
+                },
+                {
+                  "name": "Other identity only: Middle Eastern and Asian: South-East Asian: Malaysian",
+                  "slug": "other-identity-only-middle-eastern-and-asian-south-east-asian-malaysian",
+                  "code": "national_identity_detailed-056",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Malaysian"
+                },
+                {
+                  "name": "Other identity only: Middle Eastern and Asian: South-East Asian: Singaporean",
+                  "slug": "other-identity-only-middle-eastern-and-asian-south-east-asian-singaporean",
+                  "code": "national_identity_detailed-057",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Singaporean"
+                },
+                {
+                  "name": "Other identity only: Middle Eastern and Asian: South-East Asian: Other South-East Asian",
+                  "slug": "other-identity-only-middle-eastern-and-asian-south-east-asian-other-south-east-asian",
+                  "code": "national_identity_detailed-058",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "any other South-East Asian identity"
+                },
+                {
+                  "name": "Other identity only: Middle Eastern and Asian: Central Asian",
+                  "slug": "other-identity-only-middle-eastern-and-asian-central-asian",
+                  "code": "national_identity_detailed-059",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Central Asian"
+                },
+                {
+                  "name": "Other identity only: Middle Eastern and Asian: Asian not otherwise specified",
+                  "slug": "other-identity-only-middle-eastern-and-asian-asian-not-otherwise-specified",
+                  "code": "national_identity_detailed-060",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Asian (not specified)"
+                },
+                {
+                  "name": "Other identity only: American and Caribbean: North American: Canadian",
+                  "slug": "other-identity-only-american-and-caribbean-north-american-canadian",
+                  "code": "national_identity_detailed-061",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Canadian"
+                },
+                {
+                  "name": "Other identity only: American and Caribbean: North American: US Citizen",
+                  "slug": "other-identity-only-american-and-caribbean-north-american-us-citizen",
+                  "code": "national_identity_detailed-062",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "a US citizen"
+                },
+                {
+                  "name": "Other identity only: American and Caribbean: North American: Other North American",
+                  "slug": "other-identity-only-american-and-caribbean-north-american-other-north-american",
+                  "code": "national_identity_detailed-063",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "any other North American identity"
+                },
+                {
+                  "name": "Other identity only: American and Caribbean: Central American",
+                  "slug": "other-identity-only-american-and-caribbean-central-american",
+                  "code": "national_identity_detailed-064",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Central American"
+                },
+                {
+                  "name": "Other identity only: American and Caribbean: South American",
+                  "slug": "other-identity-only-american-and-caribbean-south-american",
+                  "code": "national_identity_detailed-065",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "South American"
+                },
+                {
+                  "name": "Other identity only: American and Caribbean: Caribbean: Jamaican",
+                  "slug": "other-identity-only-american-and-caribbean-caribbean-jamaican",
+                  "code": "national_identity_detailed-066",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Jamaican"
+                },
+                {
+                  "name": "Other identity only: American and Caribbean: Caribbean: Other Caribbean",
+                  "slug": "other-identity-only-american-and-caribbean-caribbean-other-caribbean",
+                  "code": "national_identity_detailed-067",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "any other Caribbean identity"
+                },
+                {
+                  "name": "Other identity only: Antarctican and Oceanian: Australasian: Australian",
+                  "slug": "other-identity-only-antarctican-and-oceanian-australasian-australian",
+                  "code": "national_identity_detailed-068",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "Australian"
+                },
+                {
+                  "name": "Other identity only: Antarctican and Oceanian: Australasian: New Zealander",
+                  "slug": "other-identity-only-antarctican-and-oceanian-australasian-new-zealander",
+                  "code": "national_identity_detailed-069",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "a New Zealander"
+                },
+                {
+                  "name": "Other identity only: Antarctican and Oceanian: Australasian: Other Australasian",
+                  "slug": "other-identity-only-antarctican-and-oceanian-australasian-other-australasian",
+                  "code": "national_identity_detailed-070",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "any other Australasian identity"
+                },
+                {
+                  "name": "Other identity only: Antarctican and Oceanian: Other Oceanian",
+                  "slug": "other-identity-only-antarctican-and-oceanian-other-oceanian",
+                  "code": "national_identity_detailed-071",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "any other Oceanian identity"
+                },
+                {
+                  "name": "Other identity only: Other",
+                  "slug": "other-identity-only-other",
+                  "code": "national_identity_detailed-072",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "identify as",
+                  "legend_str_3": "any other national identity"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Religion",
+          "code": "religion_tb",
+          "slug": "religion",
+          "desc": "The religion people connect or identify with.",
+          "long_desc": "The religion people connect or identify with (their religious affiliation), whether or not they practice or have belief in it.\n\nThis question was voluntary and includes people who identified with one of 8 tick-box response options, including \u2018No religion\u2019, alongside those who chose not to answer this question.",
+          "units": "Person",
+          "topic_code": "EILR",
+          "caveat_text": "There are quality considerations for the \"not answered\" category in university locations.",
+          "caveat_link": "https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/ethnicity/methodologies/ethnicgroupnationalidentitylanguageandreligionqualityinformationforcensus2021",
+          "classifications": [
+            {
+              "code": "religion_tb",
+              "slug": "religion-tb",
+              "desc": "Religion (10 categories)",
+              "available_geotypes": ["oa", "msoa", "lad"],
+              "choropleth_default": true,
+              "comparison_2011_data_available": true,
+
+              "data_download": "https://www.ons.gov.uk/datasets/TS030/editions/2021/versions/1",
+              "categories": [
+                {
+                  "name": "No religion",
+                  "slug": "no-religion",
+                  "code": "religion_tb-001",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "no religion"
+                },
+                {
+                  "name": "Christian",
+                  "slug": "christian",
+                  "code": "religion_tb-002",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "Christian"
+                },
+                {
+                  "name": "Buddhist",
+                  "slug": "buddhist",
+                  "code": "religion_tb-003",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "Buddhist"
+                },
+                {
+                  "name": "Hindu",
+                  "slug": "hindu",
+                  "code": "religion_tb-004",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "Hindu"
+                },
+                {
+                  "name": "Jewish",
+                  "slug": "jewish",
+                  "code": "religion_tb-005",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "Jewish"
+                },
+                {
+                  "name": "Muslim",
+                  "slug": "muslim",
+                  "code": "religion_tb-006",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "Muslim"
+                },
+                {
+                  "name": "Sikh",
+                  "slug": "sikh",
+                  "code": "religion_tb-007",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "Sikh"
+                },
+                {
+                  "name": "Other religion",
+                  "slug": "other-religion",
+                  "code": "religion_tb-008",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "reported",
+                  "legend_str_3": "\"Any other religion\""
+                },
+                {
+                  "name": "Not answered",
+                  "slug": "not-answered",
+                  "code": "religion_tb-009",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "did",
+                  "legend_str_3": "not answer"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

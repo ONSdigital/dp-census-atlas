@@ -1,93 +1,357 @@
 {
-  "census_year": 2021,
   "cantabular_metadata_dir": "ar2776-c21ew_metadata-v1-3_cantab_20221207-35",
-  "variable_groups_spec_file": "Atlas_variable_groups.json",
-  "content_and_releases_spec_file": "Atlas_content_and_releases.json",
-  "category_legend_strs_file": "Atlas_legend_strings.csv",
-  "variable_descriptions_file": "Atlas_variables_short_descriptions.csv",
-  "variable_caveats_file": "Atlas_variables_caveats.csv",
-  "classifications_downloads_file": "Atlas_classification_data_downloads.csv",
-  "classification_geotype_availability_file": "Available_geotypes_for_classifications.csv",
-  "variable_topic_overrides": {
-    "hh_size": "DEM",
-    "number_of_cars": "HOU",
-    "hh_multi_ethnic_group": "EILR"
-  },
-  "classification_dropped_categories": {
-    "hh_size_5a": ["hh_size_5a-000"],
-    "hh_size_9a": ["hh_size_9a-000"],
-    "transport_to_workplace_12a": ["transport_to_workplace_12a-012"]
-  },
-  "variable_renames": {},
-  "category_renames": {},
-  "category_slug_renames": {},
-  "extra_variables": {
-    "Population": [
-      {
-        "insert_before": "hh_deprivation",
-        "variable": {
-          "name": "Population density",
-          "code": "population_density",
-          "slug": "population-density",
-          "desc": "The number of people per square kilometre.",
-          "long_desc": "The number of usual residents per square kilometre, calculated based on total land area excluding inland water.",
-          "units": "Persons per square kilometre",
-          "topic_code": "DEM",
-          "classifications": [
-            {
+  "variable_groups": [
+    {
+      "name": "Population",
+      "slug": "population",
+      "desc": "People, their living arrangements and where they come from.",
+      "variables_by_content_json": {
+        "2021-ARM": [
+          {
+            "code": "uk_armed_forces",
+            "classifications": ["uk_armed_forces"]
+          }
+        ],
+        "2021-DEM": [
+          {
+            "custom_variable": {
+              "name": "Population density",
               "code": "population_density",
               "slug": "population-density",
-              "desc": "Population density",
-              "dataset": "TS006",
-              "available_geotypes": ["oa", "msoa", "lad"],
-              "choropleth_default": true,
-              "categories": [
+              "desc": "The number of people resident per square kilometre.",
+              "long_desc": "The number of usual residents per square kilometre, calculated based on total land area excluding inland water.",
+              "units": "Persons per square kilometre",
+              "topic_code": "DEM",
+              "classifications": [
                 {
-                  "name": "Persons per square kilometre",
-                  "slug": "persons-per-square-kilometre",
-                  "code": "population_density-001",
-                  "legend_str_1": "Population density of {location}",
-                  "legend_str_2": "in",
-                  "legend_str_3": "persons per square kilometre"
+                  "code": "population_density",
+                  "slug": "population-density",
+                  "desc": "Population density",
+                  "available_geotypes": ["oa", "msoa", "lad"],
+                  "choropleth_default": true,
+                  "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
+                  "categories": [
+                    {
+                      "name": "Persons per square kilometre",
+                      "slug": "persons-per-square-kilometre",
+                      "code": "population_density-001",
+                      "legend_str_1": "Population density of {location}",
+                      "legend_str_2": "in",
+                      "legend_str_3": "persons per square kilometre"
+                    }
+                  ]
                 }
               ]
             }
-          ]
-        }
-      },
-      {
-        "insert_before": "sex",
-        "variable": {
-          "name": "Median age",
-          "code": "median_age",
-          "slug": "median-age",
-          "desc": "Median age on Census Day, 21 March 2021.",
-          "long_desc": "Median age is calculated from the age of residents on Census Day, 21 March 2021 in England and Wales. The median age is the age of the person in the middle of the group, such that one half of the group is younger than that person and the other half is older.",
-          "units": "Years",
-          "topic_code": "DEM",
-          "available_geotypes": ["msoa", "lad"],
-          "classifications": [
-            {
+          },
+          {
+            "code": "hh_deprivation",
+            "classifications": ["hh_deprivation"]
+          },
+          {
+            "code": "hh_family_composition",
+            "classifications": ["hh_family_composition_4a", "hh_family_composition_15a"]
+          },
+          {
+            "code": "hh_size",
+            "classifications": ["hh_size_5a", "hh_size_9a"],
+            "classification_dropped_categories": {
+              "hh_size_5a": ["0 people in household"],
+              "hh_size_9a": ["0 people in household"]
+            }
+          },
+          {
+            "code": "legal_partnership_status",
+            "classifications": [
+              "legal_partnership_status_3a",
+              "legal_partnership_status_6a",
+              "legal_partnership_status"
+            ]
+          },
+          {
+            "code": "living_arrangements",
+            "classifications": ["living_arrangements_11a"]
+          },
+          {
+            "code": "resident_age",
+            "classifications": ["resident_age_3a", "resident_age_8c", "resident_age_11a", "resident_age_101a"]
+          },
+          {
+            "custom_variable": {
+              "name": "Median age",
               "code": "median_age",
               "slug": "median-age",
-              "desc": "Median age",
-              "available_geotypes": ["msoa", "lad"],
-              "dataset": "TS007a",
-              "choropleth_default": true,
-              "categories": [
+              "desc": "The median age of people on Census Day, 21 March 2021.",
+              "long_desc": "Median age is calculated from the age of residents on Census Day, 21 March 2021 in England and Wales. The median age is the age of the person in the middle of the group, such that one half of the group is younger than that person and the other half is older.",
+              "units": "Years",
+              "topic_code": "DEM",
+              "classifications": [
                 {
-                  "name": "Median age",
+                  "code": "median_age",
                   "slug": "median-age",
-                  "code": "median_age-001",
-                  "legend_str_1": "Median age of people in {location}",
-                  "legend_str_2": "in",
-                  "legend_str_3": "years"
+                  "desc": "Median age",
+                  "available_geotypes": ["msoa", "lad"],
+                  "choropleth_default": true,
+                  "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
+                  "categories": [
+                    {
+                      "name": "Median age",
+                      "slug": "median-age",
+                      "code": "median_age-001",
+                      "legend_str_1": "Median age of people in {location}",
+                      "legend_str_2": "in",
+                      "legend_str_3": "years"
+                    }
+                  ]
                 }
               ]
             }
-          ]
-        }
+          },
+          {
+            "code": "sex",
+            "classifications": ["sex"]
+          }
+        ],
+        "2021-MIG": [
+          {
+            "code": "age_arrival_uk",
+            "classifications": ["age_arrival_uk_18a"]
+          },
+          {
+            "code": "country_of_birth",
+            "classifications": [
+              "country_of_birth_3a",
+              "country_of_birth_8a",
+              "country_of_birth_12a",
+              "country_of_birth_60a"
+            ]
+          },
+          {
+            "code": "migrant_ind",
+            "classifications": ["migrant_ind"]
+          },
+          {
+            "code": "passports_all",
+            "classifications": [
+              "passports_all_4a",
+              "passports_all_13a",
+              "passports_all_18a",
+              "passports_all_27a",
+              "passports_all_52a"
+            ]
+          },
+          {
+            "code": "residence_length",
+            "classifications": ["residence_length_6b"]
+          },
+          {
+            "code": "year_arrival_uk",
+            "classifications": ["year_arrival_uk_6a", "year_arrival_uk"]
+          }
+        ]
       }
-    ]
-  }
+    },
+    {
+      "name": "Education",
+      "slug": "education",
+      "desc": "People in education and qualifications they hold.",
+      "variables_by_content_json": {
+        "2021-EDU": [
+          {
+            "code": "highest_qualification",
+            "classifications": ["highest_qualification_6a", "highest_qualification"]
+          }
+        ]
+      }
+    },
+    {
+      "name": "Identity",
+      "slug": "identity",
+      "desc": "How people identify themselves and their beliefs.",
+      "variables_by_content_json": {
+        "2021-EILR": [
+          {
+            "code": "english_proficiency",
+            "classifications": ["english_proficiency_4a", "english_proficiency"]
+          },
+          {
+            "code": "ethnic_group_tb",
+            "classifications": ["ethnic_group_tb_6a", "ethnic_group_tb_20b"]
+          },
+          {
+            "code": "hh_language",
+            "classifications": ["hh_language"]
+          },
+          {
+            "code": "hh_multi_ethnic_group",
+            "classifications": ["hh_multi_ethnic_group"]
+          },
+          {
+            "code": "hh_multi_language",
+            "classifications": ["hh_multi_language_3a", "hh_multi_language"]
+          },
+          {
+            "code": "hh_multi_religion",
+            "classifications": ["hh_multi_religion_7a"]
+          },
+          {
+            "code": "main_language_detailed",
+            "classifications": ["main_language_detailed_23a", "main_language_detailed"]
+          },
+          {
+            "code": "national_identity_all",
+            "classifications": ["national_identity_all_4a", "national_identity_all_9a", "national_identity_all"]
+          },
+          {
+            "code": "national_identity_detailed",
+            "classifications": ["national_identity_detailed"]
+          },
+          {
+            "code": "religion_tb",
+            "classifications": ["religion_tb"]
+          }
+        ],
+        "2021-SOGI": [
+          {
+            "code": "gender_identity",
+            "classifications": ["gender_identity_4a", "gender_identity_8a"]
+          },
+          {
+            "code": "sexual_orientation",
+            "classifications": ["sexual_orientation_4a", "sexual_orientation_6a", "sexual_orientation_9a"]
+          }
+        ],
+        "2021-WELSH-SKILLS": [
+          {
+            "code": "welsh_skills_all",
+            "classifications": ["welsh_skills_all_4b", "welsh_skills_all_6a", "welsh_skills_all"]
+          },
+          {
+            "code": "welsh_skills_speak",
+            "classifications": ["welsh_skills_speak"]
+          }
+        ]
+      }
+    },
+    {
+      "name": "Housing",
+      "slug": "housing",
+      "desc": "Types of homes and the people living in them.",
+      "variables_by_content_json": {
+        "2021-HOU": [
+          {
+            "code": "accommodation_type",
+            "classifications": ["accommodation_type_3a", "accommodation_type_5a", "accommodation_type"]
+          },
+          {
+            "code": "alternative_address_indicator",
+            "classifications": ["alternative_address_indicator"]
+          },
+          {
+            "code": "heating_type",
+            "classifications": ["heating_type_3a", "heating_type"]
+          },
+          {
+            "code": "hh_tenure",
+            "classifications": ["hh_tenure_5a", "hh_tenure_9a"]
+          },
+          {
+            "code": "number_bedrooms",
+            "classifications": ["number_bedrooms_5a"]
+          },
+          {
+            "code": "number_of_cars",
+            "classifications": ["number_of_cars_3a", "number_of_cars_5a"]
+          },
+          {
+            "code": "occupancy_rating_bedrooms",
+            "classifications": ["occupancy_rating_bedrooms_6a"]
+          },
+          {
+            "code": "occupancy_rating_rooms",
+            "classifications": ["occupancy_rating_rooms_6a"]
+          },
+          {
+            "code": "second_address_type_priority",
+            "classifications": ["second_address_type_priority"]
+          }
+        ]
+      }
+    },
+    {
+      "name": "Health",
+      "slug": "health",
+      "desc": "People's general health and caring responsibilities.",
+      "variables_by_content_json": {
+        "2021-HUC": [
+          {
+            "code": "disability",
+            "classifications": ["disability_3a", "disability"]
+          },
+          {
+            "code": "health_in_general",
+            "classifications": ["health_in_general_3a", "health_in_general_4a", "health_in_general"]
+          },
+          {
+            "code": "hh_disabled",
+            "classifications": ["hh_disabled_4a"]
+          },
+          {
+            "code": "is_carer",
+            "classifications": ["is_carer_5a", "is_carer"]
+          }
+        ]
+      }
+    },
+    {
+      "name": "Work",
+      "slug": "work",
+      "desc": "People's employment status.",
+      "variables_by_content_json": {
+        "2021-LAB": [
+          {
+            "code": "economic_activity",
+            "classifications": [
+              "economic_activity_status_3a",
+              "economic_activity_status_4a",
+              "economic_activity_status_10a"
+            ]
+          },
+          {
+            "code": "has_ever_worked",
+            "classifications": ["has_ever_worked"]
+          },
+          {
+            "code": "hours_per_week_worked",
+            "classifications": ["hours_per_week_worked_3a", "hours_per_week_worked"]
+          },
+          {
+            "code": "industry_current",
+            "classifications": ["industry_current_88a"]
+          },
+          {
+            "code": "ns_sec",
+            "classifications": ["ns_sec_10a"]
+          },
+          {
+            "code": "occupation_current",
+            "classifications": ["occupation_current_10a"]
+          }
+        ],
+        "2021-TTW": [
+          {
+            "code": "transport_to_workplace",
+            "classifications": ["transport_to_workplace_12a"],
+            "classification_dropped_categories": {
+              "transport_to_workplace_12a": ["Not in employment or aged 15 years and under"]
+            }
+          },
+          {
+            "code": "workplace_travel",
+            "classifications": ["workplace_travel_4a", "workplace_travel_5a", "workplace_travel"]
+          }
+        ]
+      }
+    }
+  ]
 }

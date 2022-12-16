@@ -1,0 +1,70 @@
+{
+  "meta": {
+    "created_at": "2022-12-13-13-01-53",
+    "release": "2021-ARM-ar2776-c21ew_metadata-v1-3_cantab_20221207-35"
+  },
+  "content": [
+    {
+      "name": "Population",
+      "slug": "population",
+      "desc": "People, their living arrangements and where they come from.",
+      "variables": [
+        {
+          "name": "UK armed forces veteran indicator",
+          "code": "uk_armed_forces",
+          "slug": "uk-armed-forces-veteran-indicator",
+          "desc": "People who have served in the UK armed forces.",
+          "long_desc": "Identifies people who have previously served in the UK armed forces. This includes those who have served for at least one day in armed forces, either regular or reserves, or Merchant Mariners who have seen duty on legally defined military operations.",
+          "units": "Person",
+          "topic_code": "ARM",
+          "classifications": [
+            {
+              "code": "uk_armed_forces",
+              "slug": "uk-armed-forces",
+              "desc": "UK armed forces veteran indicator (5 categories)",
+              "available_geotypes": ["msoa", "lad"],
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "comparison_2011_data_available": true,
+
+              "categories": [
+                {
+                  "name": "Previously served in the UK regular armed forces",
+                  "slug": "previously-served-in-the-uk-regular-armed-forces",
+                  "code": "uk_armed_forces-001",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "previously served in the UK armed forces"
+                },
+                {
+                  "name": "Previously served in UK reserve armed forces",
+                  "slug": "previously-served-in-uk-reserve-armed-forces",
+                  "code": "uk_armed_forces-002",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "previously served in the UK reserve armed forces"
+                },
+                {
+                  "name": "Previously served in both regular and reserve UK armed forces",
+                  "slug": "previously-served-in-both-regular-and-reserve-uk-armed-forces",
+                  "code": "uk_armed_forces-003",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "previously served in both the regular and reserve UK armed forces"
+                },
+                {
+                  "name": "Has not previously served in any UK armed forces",
+                  "slug": "has-not-previously-served-in-any-uk-armed-forces",
+                  "code": "uk_armed_forces-004",
+                  "legend_str_1": "of people in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "not previously served in any of the UK armed forces"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

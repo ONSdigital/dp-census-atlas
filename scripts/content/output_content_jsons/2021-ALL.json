@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-12-16-13-05-36",
-    "release": "2021-ALL-ar2776-c21ew_metadata-v1-3_cantab_20221213-36"
+    "created_at": "2022-12-16-15-13-02",
+    "release": "2021-ALL-ar2776-c21ew_metadata-v1-3_cantab_20221216-37"
   },
   "content": [
     {
@@ -4032,7 +4032,7 @@
           "code": "highest_qualification",
           "slug": "highest-level-of-qualification",
           "desc": "The highest level of qualification gained.",
-          "long_desc": "The highest level of qualification is derived from the question asking people to indicate all qualifications held, or their nearest equivalent.  \n\nThis may include foreign qualifications where they were matched to the closest UK equivalent.",
+          "long_desc": "The highest level of qualification is derived from the question asking people to indicate all qualifications held, or their nearest equivalent.\n\nThis may include foreign qualifications where they were matched to the closest UK equivalent.",
           "units": "Person",
           "topic_code": "EDU",
           "classifications": [
@@ -6750,7 +6750,7 @@
           "slug": "gender-identity",
           "desc": "The gender identity recorded by the person completing the census.",
           "long_desc": "Classifies people according to the responses to the gender identity question. This question was voluntary and was only asked of people aged 16 years and over.",
-          "units": "Family",
+          "units": "Person",
           "topic_code": "SOGI",
           "classifications": [
             {
@@ -7283,7 +7283,7 @@
           "code": "accommodation_type",
           "slug": "accommodation-type",
           "desc": "The type of buildings people live in.",
-          "long_desc": "The type of building or structure used or available by an individual or household.\n\nThis could be:\n\n* the whole house or bungalow\n* a flat, maisonette or apartment\n* a temporary or mobile structure, such as a caravan\n\nMore information about accommodation types\n\nWhole house or bungalow\nThis property type is not divided into flats or other living accommodation. There are three types of whole houses or bungalows.\n\nDetached\nNone of the living accommodation is attached to another property but can be attached to a garage.\n\nSemi-detached\nThe living accommodation is joined to another house or bungalow by a common wall that they share.\n\nTerraced\nA mid-terraced house is located between two other houses and shares two common walls. An end-of-terrace house is part of a terraced development but only shares one common wall.\n\nFlats (Apartments) and maisonettes\nAn apartment is another word for a flat. A maisonette is a 2-storey flat.",
+          "long_desc": "The type of building or structure used or available by an individual or household.\n\nThis could be:\n\n* the whole house or bungalow\n* a flat, maisonette or apartment\n* a temporary or mobile structure, such as a caravan\n\nMore information about accommodation types\n\nWhole house or bungalow:\nThis property type is not divided into flats or other living accommodation. There are three types of whole houses or bungalows.\n\nDetached:\nNone of the living accommodation is attached to another property but can be attached to a garage.\n\nSemi-detached:\nThe living accommodation is joined to another house or bungalow by a common wall that they share.\n\nTerraced:\nA mid-terraced house is located between two other houses and shares two common walls. An end-of-terrace house is part of a terraced development but only shares one common wall.\n\nFlats (Apartments) and maisonettes:\nAn apartment is another word for a flat. A maisonette is a 2-storey flat.",
           "units": "Household",
           "topic_code": "HOU",
           "classifications": [
@@ -8169,7 +8169,7 @@
           "code": "disability",
           "slug": "disability",
           "desc": "People with a long-term health problem or disability, including relating to old-age.",
-          "long_desc": "People who assessed their day-to-day activities as limited by long-term physical or mental health conditions or illnesses are considered disabled. This definition of a disabled person meets the harmonised standard for measuring disability and is in line with the Equality Act (2010). \n\nAdditional \nCensus 2021 asks the Government Statistical Service harmonised questions (used on several existing large surveys), which are two separate questions designed to capture a person's disability according to the Equality Act (2010). These replace a single question in the 2011 census that showed whether a long-term health problem or disability limited a person's day-to-day activities. \n  \nThe Census 2021 questions indicate: \n\n* whether a person has long term physical or mental health conditions or illnesses \n* the extent to which any indicated long term physical or mental health conditions or illnesses limit their day-to-day activities \n\nTo allow comparability with Census 2011, Scotland and Northern Ireland Census 2021 continue to ask the same question as the in the Census 2011. In Northern Ireland, disability status is defined according to the Disability Discrimination Act (1995). Please see the Health and Unpaid Care topic report for more details.",
+          "long_desc": "People who assessed their day-to-day activities as limited by long-term physical or mental health conditions or illnesses are considered disabled. This definition of a disabled person meets the harmonised standard for measuring disability and is in line with the Equality Act (2010).",
           "units": "Person",
           "topic_code": "HUC",
           "classifications": [
@@ -8438,7 +8438,7 @@
           "code": "is_carer",
           "slug": "provision-of-unpaid-care",
           "desc": "People who are unpaid carers.",
-          "long_desc": "An unpaid carer may look after, give help or support to anyone who has long-term physical or mental ill-health conditions, illness or problems related to old age.  \n\nThis does not include any activities as part of paid employment. \n\nThis help can be within or outside of the carer's household. \n\nAdditional  \n\nSince the Census 2011, this question has changed in England and Wales in the following ways. \n\nThe reference to disability has been removed. \n\n'Anyone' replaces specific groups, i.e. family members, friends, neighbours. \n\nThe additional option to break down the hours of unpaid hours worked.   \n\nScotland have retained the Census 2011 question for consistency. Northern Ireland have used a similar Census 2021 question as England and Wales but with the same response options as their Census 2011. Please see the Health and Unpaid Care topic report for more details.",
+          "long_desc": "An unpaid carer may look after, give help or support to anyone who has long-term physical or mental ill-health conditions, illness or problems related to old age.  \n\nThis does not include any activities as part of paid employment. \n\nThis help can be within or outside of the carer's household.",
           "units": "Person",
           "topic_code": "HUC",
           "classifications": [

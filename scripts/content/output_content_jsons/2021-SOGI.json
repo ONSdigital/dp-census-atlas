@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-12-16-13-05-36",
-    "release": "2021-SOGI-ar2776-c21ew_metadata-v1-3_cantab_20221213-36"
+    "created_at": "2022-12-16-15-13-02",
+    "release": "2021-SOGI-ar2776-c21ew_metadata-v1-3_cantab_20221216-37"
   },
   "content": [
     {
@@ -15,7 +15,7 @@
           "slug": "gender-identity",
           "desc": "The gender identity recorded by the person completing the census.",
           "long_desc": "Classifies people according to the responses to the gender identity question. This question was voluntary and was only asked of people aged 16 years and over.",
-          "units": "Family",
+          "units": "Person",
           "topic_code": "SOGI",
           "classifications": [
             {

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-12-15-15-02-56",
-    "release": "2021-ALL-ar2776-c21ew_metadata-v1-3_cantab_20221207-35"
+    "created_at": "2022-12-16-09-20-33",
+    "release": "2021-ALL-ar2776-c21ew_metadata-v1-3_cantab_20221213-36"
   },
   "content": [
     {
@@ -104,7 +104,7 @@
           "code": "hh_deprivation",
           "slug": "household-deprivation",
           "desc": "Whether a household is deprived in one or more ways.",
-          "long_desc": "The dimensions of deprivation used to classify households are indicators based on four selected household characteristics.\n\nEducation\n\nA household is classified as deprived in the education dimension if no one has at least level 2 education and no one aged 16 to 18 years is a full-time student.\n\nEmployment\n\nA household is classified as deprived in the employment dimension if any member, not a full-time student, is either unemployed or economically inactive due to long-term sickness or disability.\n\nHealth\n\nA household is classified as deprived in the health dimension if any person in the household has general health that is bad or very bad or is identified as disabled\n\nPeople who have assessed their day-to-day activities as limited by long-term physical or mental health conditions or illnesses are considered disabled.  This definition of a disabled person meets the harmonised standard for measuring disability and is in line with the Equality Act (2010).\n\nHousing\n\nA household is classified as deprived in the housing dimension if the household's accommodation is either overcrowded, in a shared dwelling, or has no central heating.",
+          "long_desc": "The dimensions of deprivation used to classify households are indicators based on four selected household characteristics.\n\nEducation\n\nA household is classified as deprived in the education dimension if no one has at least level 2 education and no one aged 16 to 18 years is a full-time student.\n\nEmployment\n\nA household is classified as deprived in the employment dimension if any member, not a full-time student, is either unemployed or economically inactive due to long-term sickness or disability.\n\nHealth\n\nA household is classified as deprived in the health dimension if any person in the household has general health that is bad or very bad or is identified as disabled.\n\nPeople who have assessed their day-to-day activities as limited by long-term physical or mental health conditions or illnesses are considered disabled.  This definition of a disabled person meets the harmonised standard for measuring disability and is in line with the Equality Act (2010).\n\nHousing\n\nA household is classified as deprived in the housing dimension if the household's accommodation is either overcrowded, in a shared dwelling, or has no central heating.",
           "units": "Household",
           "topic_code": "DEM",
           "classifications": [

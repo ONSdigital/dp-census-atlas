@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-12-16-10-15-07",
+    "created_at": "2022-12-16-10-32-26",
     "release": "2021-ALL-ar2776-c21ew_metadata-v1-3_cantab_20221213-36"
   },
   "content": [
@@ -7302,7 +7302,7 @@
                   "name": "Detached",
                   "slug": "detached",
                   "code": "accommodation_type-001",
-                  "legend_str_1": "of homes in {location}",
+                  "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "detached"
                 },
@@ -7310,7 +7310,7 @@
                   "name": "Semi-detached",
                   "slug": "semi-detached",
                   "code": "accommodation_type-002",
-                  "legend_str_1": "of homes in {location}",
+                  "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "semi-detached"
                 },
@@ -7318,7 +7318,7 @@
                   "name": "Terraced",
                   "slug": "terraced",
                   "code": "accommodation_type-003",
-                  "legend_str_1": "of homes in {location}",
+                  "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "terraced"
                 },
@@ -7326,7 +7326,7 @@
                   "name": "In a purpose-built block of flats or tenement",
                   "slug": "in-a-purpose-built-block-of-flats-or-tenement",
                   "code": "accommodation_type-004",
-                  "legend_str_1": "of homes in {location}",
+                  "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "in a purpose-built block of flats or tenement"
                 },
@@ -7334,7 +7334,7 @@
                   "name": "Part of a converted or shared house, including bedsits",
                   "slug": "part-of-a-converted-or-shared-house-including-bedsits",
                   "code": "accommodation_type-005",
-                  "legend_str_1": "of homes in {location}",
+                  "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "part of a converted or shared house, including bedsits"
                 },
@@ -7342,7 +7342,7 @@
                   "name": "Part of another converted building, for example, former school, church or warehouse",
                   "slug": "part-of-another-converted-building-for-example-former-school-church-or-warehouse",
                   "code": "accommodation_type-006",
-                  "legend_str_1": "of homes in {location}",
+                  "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "part of another converted building, for example, former school, church or warehouse"
                 },
@@ -7350,7 +7350,7 @@
                   "name": "In a commercial building, for example, in an office building, hotel or over a shop",
                   "slug": "in-a-commercial-building-for-example-in-an-office-building-hotel-or-over-a-shop",
                   "code": "accommodation_type-007",
-                  "legend_str_1": "of homes in {location}",
+                  "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "in a commercial building, for example, in an office building, hotel or over a shop"
                 },
@@ -7358,7 +7358,7 @@
                   "name": "A caravan or other mobile or temporary structure",
                   "slug": "a-caravan-or-other-mobile-or-temporary-structure",
                   "code": "accommodation_type-008",
-                  "legend_str_1": "of homes in {location}",
+                  "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "a caravan or other mobile or temporary structure"
                 }
@@ -7381,7 +7381,7 @@
                   "name": "Whole house or bungalow",
                   "slug": "whole-house-or-bungalow",
                   "code": "accommodation_type_3a-001",
-                  "legend_str_1": "of homes in {location}",
+                  "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "whole houses or bungalows"
                 },
@@ -7389,7 +7389,7 @@
                   "name": "Flat, maisonette or apartment",
                   "slug": "flat-maisonette-or-apartment",
                   "code": "accommodation_type_3a-002",
-                  "legend_str_1": "of homes in {location}",
+                  "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "flats, maisonettes or apartments"
                 },
@@ -7397,7 +7397,7 @@
                   "name": "A caravan or other mobile or temporary structure",
                   "slug": "a-caravan-or-other-mobile-or-temporary-structure",
                   "code": "accommodation_type_3a-003",
-                  "legend_str_1": "of homes in {location}",
+                  "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "a caravan or other mobile or temporary structure"
                 }
@@ -7418,7 +7418,7 @@
                   "name": "Whole house or bungalow: Detached",
                   "slug": "whole-house-or-bungalow-detached",
                   "code": "accommodation_type_5a-001",
-                  "legend_str_1": "of homes in {location}",
+                  "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "detached whole houses or bungalows"
                 },
@@ -7426,7 +7426,7 @@
                   "name": "Whole house or bungalow: Semi-detached",
                   "slug": "whole-house-or-bungalow-semi-detached",
                   "code": "accommodation_type_5a-002",
-                  "legend_str_1": "of homes in {location}",
+                  "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "semi-detached whole houses or bungalows"
                 },
@@ -7434,7 +7434,7 @@
                   "name": "Whole house or bungalow: Terraced",
                   "slug": "whole-house-or-bungalow-terraced",
                   "code": "accommodation_type_5a-003",
-                  "legend_str_1": "of homes in {location}",
+                  "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "terraced whole houses or bungalows"
                 },
@@ -7442,7 +7442,7 @@
                   "name": "Flat, maisonette or apartment",
                   "slug": "flat-maisonette-or-apartment",
                   "code": "accommodation_type_5a-004",
-                  "legend_str_1": "of homes in {location}",
+                  "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "flats, maisonettes or apartments"
                 },
@@ -7450,7 +7450,7 @@
                   "name": "A caravan or other mobile or temporary structure",
                   "slug": "a-caravan-or-other-mobile-or-temporary-structure",
                   "code": "accommodation_type_5a-005",
-                  "legend_str_1": "of homes in {location}",
+                  "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "a caravan or other mobile or temporary structure"
                 }
@@ -7511,7 +7511,7 @@
           "name": "Type of central heating in household",
           "code": "heating_type",
           "slug": "type-of-central-heating-in-household",
-          "desc": "Central heating is a heating system used to heat multiple rooms in a building.",
+          "desc": "The type of central heating in a household.",
           "long_desc": "Central heating is a heating system used to heat multiple rooms in a building by circulating air or heated water through pipes to radiators or vents. Single or multiple fuel sources can fuel these systems. \n\nCentral heating systems that are unused or not working are still considered. No information is available for household spaces with no usual residents.",
           "units": "Household",
           "topic_code": "HOU",
@@ -7589,7 +7589,7 @@
                   "code": "heating_type-008",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "renewables central heating"
+                  "legend_str_3": "renewable central heating"
                 },
                 {
                   "name": "District or communal heat networks only",
@@ -7684,7 +7684,7 @@
                   "name": "Owned: Owns outright",
                   "slug": "owned-owns-outright",
                   "code": "hh_tenure_5a-000",
-                  "legend_str_1": "of homes in {location}",
+                  "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "owned outright"
                 },
@@ -7692,7 +7692,7 @@
                   "name": "Owned: Owns with a mortgage or loan or shared ownership",
                   "slug": "owned-owns-with-a-mortgage-or-loan-or-shared-ownership",
                   "code": "hh_tenure_5a-001",
-                  "legend_str_1": "of homes in {location}",
+                  "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "owned with a mortgage, loan, or shared ownership"
                 },
@@ -7700,15 +7700,15 @@
                   "name": "Rented: Social rented",
                   "slug": "rented-social-rented",
                   "code": "hh_tenure_5a-002",
-                  "legend_str_1": "of homes in {location}",
+                  "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "social rented"
+                  "legend_str_3": "socially rented"
                 },
                 {
                   "name": "Private rented or lives rent free",
                   "slug": "private-rented-or-lives-rent-free",
                   "code": "hh_tenure_5a-003",
-                  "legend_str_1": "of homes in {location}",
+                  "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "privately rented or rent free"
                 }
@@ -7729,7 +7729,7 @@
                   "name": "Owned: Owns outright",
                   "slug": "owned-owns-outright",
                   "code": "hh_tenure_9a-000",
-                  "legend_str_1": "of homes in {location}",
+                  "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "owned outright"
                 },
@@ -7737,7 +7737,7 @@
                   "name": "Owned: Owns with a mortgage or loan",
                   "slug": "owned-owns-with-a-mortgage-or-loan",
                   "code": "hh_tenure_9a-001",
-                  "legend_str_1": "of homes in {location}",
+                  "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "owned with a mortgage or loan"
                 },
@@ -7745,7 +7745,7 @@
                   "name": "Shared ownership: Shared ownership",
                   "slug": "shared-ownership-shared-ownership",
                   "code": "hh_tenure_9a-002",
-                  "legend_str_1": "of homes in {location}",
+                  "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "under shared ownership"
                 },
@@ -7753,7 +7753,7 @@
                   "name": "Social rented: Rents from council or Local Authority",
                   "slug": "social-rented-rents-from-council-or-local-authority",
                   "code": "hh_tenure_9a-003",
-                  "legend_str_1": "of homes in {location}",
+                  "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "socially rented from a council or local authority"
                 },
@@ -7761,7 +7761,7 @@
                   "name": "Social rented: Other social rented",
                   "slug": "social-rented-other-social-rented",
                   "code": "hh_tenure_9a-004",
-                  "legend_str_1": "of homes in {location}",
+                  "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "otherwise socially rented"
                 },
@@ -7769,7 +7769,7 @@
                   "name": "Private rented: Private landlord or letting agency",
                   "slug": "private-rented-private-landlord-or-letting-agency",
                   "code": "hh_tenure_9a-005",
-                  "legend_str_1": "of homes in {location}",
+                  "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "privately rented from a landlord or letting agency"
                 },
@@ -7777,7 +7777,7 @@
                   "name": "Private rented: Other private rented",
                   "slug": "private-rented-other-private-rented",
                   "code": "hh_tenure_9a-006",
-                  "legend_str_1": "of homes in {location}",
+                  "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "otherwise privately rented"
                 },
@@ -7785,7 +7785,7 @@
                   "name": "Lives rent free",
                   "slug": "lives-rent-free",
                   "code": "hh_tenure_9a-007",
-                  "legend_str_1": "of homes in {location}",
+                  "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "rent free"
                 }
@@ -7855,7 +7855,7 @@
           "name": "Number of cars or vans",
           "code": "number_of_cars",
           "slug": "number-of-cars-or-vans",
-          "desc": "Vehicles owned or available for use by a household.",
+          "desc": "Cars or vans owned or available for use by a household.",
           "long_desc": "The number of cars or vans owned or available for use by household members.\n\nVehicles included:\n\n* pick-ups, camper vans and motor homes  \n* vehicles that are temporarily not working  \n* vehicles that have failed their MOT   \n* vehicles owned or used by a lodger  \n* company cars or vans if they're available for private use \n\nVehicles not included:\n\n* motorbikes, trikes, quad bikes or mobility scooters  \n* vehicles that have a Statutory Off Road Notification (SORN)  \n* vehicles owned or used only by a visitor  \n* vehicles that are kept at another address or not easily accessed  \n\nThe number of cars or vans in an area relates only to households. Cars or vans used by communal establishment residents are not counted.   \nHouseholds with 10 to 20 cars or vans are counted as having only 10.  \nHouseholds with more than 20 cars or vans were treated as invalid and a value imputed.",
           "units": "Household",
           "topic_code": "HOU",
@@ -7879,7 +7879,7 @@
                   "code": "number_of_cars_3a-000",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "no cars or vans in household"
+                  "legend_str_3": "no cars or vans"
                 },
                 {
                   "name": "1 or more cars or vans in household",
@@ -7887,7 +7887,7 @@
                   "code": "number_of_cars_3a-001",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "1 or more cars or vans in household"
+                  "legend_str_3": "1 or more cars or vans"
                 }
               ]
             },
@@ -7908,7 +7908,7 @@
                   "code": "number_of_cars_5a-000",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "no cars or vans in household"
+                  "legend_str_3": "no cars or vans"
                 },
                 {
                   "name": "1 car or van in household",
@@ -7916,7 +7916,7 @@
                   "code": "number_of_cars_5a-001",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "1 car or van in household"
+                  "legend_str_3": "1 car or van"
                 },
                 {
                   "name": "2 cars or vans in household",
@@ -7924,7 +7924,7 @@
                   "code": "number_of_cars_5a-002",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "2 cars or vans in household"
+                  "legend_str_3": "2 cars or vans"
                 },
                 {
                   "name": "3 or more cars or vans in household",
@@ -7932,7 +7932,7 @@
                   "code": "number_of_cars_5a-003",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "3 or more cars or vans in household"
+                  "legend_str_3": "3 or more cars or vans"
                 }
               ]
             }
@@ -8151,15 +8151,7 @@
                   "code": "second_address_type_priority-008",
                   "legend_str_1": "of people in {location}'s second address",
                   "legend_str_2": "is",
-                  "legend_str_3": "another form of second address"
-                },
-                {
-                  "name": "Second address type not specified",
-                  "slug": "second-address-type-not-specified",
-                  "code": "second_address_type_priority-009",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "a second address of a type not specified"
+                  "legend_str_3": "other"
                 }
               ]
             }

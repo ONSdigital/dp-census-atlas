@@ -273,7 +273,10 @@
           },
           {
             "code": "second_address_type_priority",
-            "classifications": ["second_address_type_priority"]
+            "classifications": ["second_address_type_priority"],
+            "classification_dropped_categories": {
+              "second_address_type_priority": ["Second address type not specified"]
+            }
           }
         ]
       }

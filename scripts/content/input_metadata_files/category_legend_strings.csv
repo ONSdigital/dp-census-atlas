@@ -40,32 +40,32 @@ Health,2021-HUC,Provision of unpaid care,is_carer_5a,is_carer_5a-001,{PERCENTAGE
 Health,2021-HUC,Provision of unpaid care,is_carer_5a,is_carer_5a-002,{PERCENTAGE}%,of people in {location},provide,19 or less hours unpaid care a week
 Health,2021-HUC,Provision of unpaid care,is_carer_5a,is_carer_5a-003,{PERCENTAGE}%,of people in {location},provide,20 to 49 hours unpaid care a week
 Health,2021-HUC,Provision of unpaid care,is_carer_5a,is_carer_5a-004,{PERCENTAGE}%,of people in {location},provide,50 or more hours unpaid care a week
-Housing,2021-HOU,Accommodation type,accommodation_type,accommodation_type-001,{PERCENTAGE}%,of homes in {location},are,detached
-Housing,2021-HOU,Accommodation type,accommodation_type,accommodation_type-002,{PERCENTAGE}%,of homes in {location},are,semi-detached
-Housing,2021-HOU,Accommodation type,accommodation_type,accommodation_type-003,{PERCENTAGE}%,of homes in {location},are,terraced
-Housing,2021-HOU,Accommodation type,accommodation_type,accommodation_type-004,{PERCENTAGE}%,of homes in {location},are,in a purpose-built block of flats or tenement
-Housing,2021-HOU,Accommodation type,accommodation_type,accommodation_type-005,{PERCENTAGE}%,of homes in {location},are,"part of a converted or shared house, including bedsits"
-Housing,2021-HOU,Accommodation type,accommodation_type,accommodation_type-006,{PERCENTAGE}%,of homes in {location},are,"part of another converted building, for example, former school, church or warehouse"
-Housing,2021-HOU,Accommodation type,accommodation_type,accommodation_type-007,{PERCENTAGE}%,of homes in {location},are,"in a commercial building, for example, in an office building, hotel or over a shop"
-Housing,2021-HOU,Accommodation type,accommodation_type,accommodation_type-008,{PERCENTAGE}%,of homes in {location},are,a caravan or other mobile or temporary structure
-Housing,2021-HOU,Accommodation type,accommodation_type_3a,accommodation_type_3a-001,{PERCENTAGE}%,of homes in {location},are,whole houses or bungalows
-Housing,2021-HOU,Accommodation type,accommodation_type_3a,accommodation_type_3a-002,{PERCENTAGE}%,of homes in {location},are,"flats, maisonettes or apartments"
-Housing,2021-HOU,Accommodation type,accommodation_type_3a,accommodation_type_3a-003,{PERCENTAGE}%,of homes in {location},are,a caravan or other mobile or temporary structure
-Housing,2021-HOU,Accommodation type,accommodation_type_5a,accommodation_type_5a-001,{PERCENTAGE}%,of homes in {location},are,detached whole houses or bungalows
-Housing,2021-HOU,Accommodation type,accommodation_type_5a,accommodation_type_5a-002,{PERCENTAGE}%,of homes in {location},are,semi-detached whole houses or bungalows
-Housing,2021-HOU,Accommodation type,accommodation_type_5a,accommodation_type_5a-003,{PERCENTAGE}%,of homes in {location},are,terraced whole houses or bungalows
-Housing,2021-HOU,Accommodation type,accommodation_type_5a,accommodation_type_5a-004,{PERCENTAGE}%,of homes in {location},are,"flats, maisonettes or apartments"
-Housing,2021-HOU,Accommodation type,accommodation_type_5a,accommodation_type_5a-005,{PERCENTAGE}%,of homes in {location},are,a caravan or other mobile or temporary structure
+Housing,2021-HOU,Accommodation type,accommodation_type,accommodation_type-001,{PERCENTAGE}%,of households in {location},are,detached
+Housing,2021-HOU,Accommodation type,accommodation_type,accommodation_type-002,{PERCENTAGE}%,of households in {location},are,semi-detached
+Housing,2021-HOU,Accommodation type,accommodation_type,accommodation_type-003,{PERCENTAGE}%,of households in {location},are,terraced
+Housing,2021-HOU,Accommodation type,accommodation_type,accommodation_type-004,{PERCENTAGE}%,of households in {location},are,in a purpose-built block of flats or tenement
+Housing,2021-HOU,Accommodation type,accommodation_type,accommodation_type-005,{PERCENTAGE}%,of households in {location},are,"part of a converted or shared house, including bedsits"
+Housing,2021-HOU,Accommodation type,accommodation_type,accommodation_type-006,{PERCENTAGE}%,of households in {location},are,"part of another converted building, for example, former school, church or warehouse"
+Housing,2021-HOU,Accommodation type,accommodation_type,accommodation_type-007,{PERCENTAGE}%,of households in {location},are,"in a commercial building, for example, in an office building, hotel or over a shop"
+Housing,2021-HOU,Accommodation type,accommodation_type,accommodation_type-008,{PERCENTAGE}%,of households in {location},are,a caravan or other mobile or temporary structure
+Housing,2021-HOU,Accommodation type,accommodation_type_3a,accommodation_type_3a-001,{PERCENTAGE}%,of households in {location},are,whole houses or bungalows
+Housing,2021-HOU,Accommodation type,accommodation_type_3a,accommodation_type_3a-002,{PERCENTAGE}%,of households in {location},are,"flats, maisonettes or apartments"
+Housing,2021-HOU,Accommodation type,accommodation_type_3a,accommodation_type_3a-003,{PERCENTAGE}%,of households in {location},are,a caravan or other mobile or temporary structure
+Housing,2021-HOU,Accommodation type,accommodation_type_5a,accommodation_type_5a-001,{PERCENTAGE}%,of households in {location},are,detached whole houses or bungalows
+Housing,2021-HOU,Accommodation type,accommodation_type_5a,accommodation_type_5a-002,{PERCENTAGE}%,of households in {location},are,semi-detached whole houses or bungalows
+Housing,2021-HOU,Accommodation type,accommodation_type_5a,accommodation_type_5a-003,{PERCENTAGE}%,of households in {location},are,terraced whole houses or bungalows
+Housing,2021-HOU,Accommodation type,accommodation_type_5a,accommodation_type_5a-004,{PERCENTAGE}%,of households in {location},are,"flats, maisonettes or apartments"
+Housing,2021-HOU,Accommodation type,accommodation_type_5a,accommodation_type_5a-005,{PERCENTAGE}%,of households in {location},are,a caravan or other mobile or temporary structure
 Housing,2021-HOU,Number of bedrooms,number_bedrooms_5a,number_bedrooms_5a-001,{PERCENTAGE}%,of households in {location},have ,1 bedroom
 Housing,2021-HOU,Number of bedrooms,number_bedrooms_5a,number_bedrooms_5a-002,{PERCENTAGE}%,of households in {location},have ,2 bedrooms
 Housing,2021-HOU,Number of bedrooms,number_bedrooms_5a,number_bedrooms_5a-003,{PERCENTAGE}%,of households in {location},have ,3 bedrooms
 Housing,2021-HOU,Number of bedrooms,number_bedrooms_5a,number_bedrooms_5a-004,{PERCENTAGE}%,of households in {location},have ,4 or more bedrooms
-Housing,2021-HOU,Number of cars or vans,number_of_cars_3a,number_of_cars_3a-000,{PERCENTAGE}%,of households in {location},have,no cars or vans in household
-Housing,2021-HOU,Number of cars or vans,number_of_cars_3a,number_of_cars_3a-001,{PERCENTAGE}%,of households in {location},have,1 or more cars or vans in household
-Housing,2021-HOU,Number of cars or vans,number_of_cars_5a,number_of_cars_5a-000,{PERCENTAGE}%,of households in {location},have,no cars or vans in household
-Housing,2021-HOU,Number of cars or vans,number_of_cars_5a,number_of_cars_5a-001,{PERCENTAGE}%,of households in {location},have,1 car or van in household
-Housing,2021-HOU,Number of cars or vans,number_of_cars_5a,number_of_cars_5a-002,{PERCENTAGE}%,of households in {location},have,2 cars or vans in household
-Housing,2021-HOU,Number of cars or vans,number_of_cars_5a,number_of_cars_5a-003,{PERCENTAGE}%,of households in {location},have,3 or more cars or vans in household
+Housing,2021-HOU,Number of cars or vans,number_of_cars_3a,number_of_cars_3a-000,{PERCENTAGE}%,of households in {location},have,no cars or vans
+Housing,2021-HOU,Number of cars or vans,number_of_cars_3a,number_of_cars_3a-001,{PERCENTAGE}%,of households in {location},have,1 or more cars or vans
+Housing,2021-HOU,Number of cars or vans,number_of_cars_5a,number_of_cars_5a-000,{PERCENTAGE}%,of households in {location},have,no cars or vans
+Housing,2021-HOU,Number of cars or vans,number_of_cars_5a,number_of_cars_5a-001,{PERCENTAGE}%,of households in {location},have,1 car or van
+Housing,2021-HOU,Number of cars or vans,number_of_cars_5a,number_of_cars_5a-002,{PERCENTAGE}%,of households in {location},have,2 cars or vans 
+Housing,2021-HOU,Number of cars or vans,number_of_cars_5a,number_of_cars_5a-003,{PERCENTAGE}%,of households in {location},have,3 or more cars or vans
 Housing,2021-HOU,Occupancy rating for bedrooms,occupancy_rating_bedrooms_6a,occupancy_rating_bedrooms_6a-001,{PERCENTAGE}%,of households in {location},have,an occupancy rating of +2 or more for bedrooms
 Housing,2021-HOU,Occupancy rating for bedrooms,occupancy_rating_bedrooms_6a,occupancy_rating_bedrooms_6a-002,{PERCENTAGE}%,of households in {location},have,an occupancy rating of +1 for bedrooms
 Housing,2021-HOU,Occupancy rating for bedrooms,occupancy_rating_bedrooms_6a,occupancy_rating_bedrooms_6a-003,{PERCENTAGE}%,of households in {location},have,an occupancy rating of 0 for bedrooms
@@ -86,20 +86,20 @@ Housing,2021-HOU,Second address type,second_address_type_priority,second_address
 Housing,2021-HOU,Second address type,second_address_type_priority,second_address_type_priority-005,{PERCENTAGE}%,of people in {location}'s second address,is,a student's home address
 Housing,2021-HOU,Second address type,second_address_type_priority,second_address_type_priority-006,{PERCENTAGE}%,of people in {location}'s second address,is,another parent or guardian's address
 Housing,2021-HOU,Second address type,second_address_type_priority,second_address_type_priority-007,{PERCENTAGE}%,of people in {location}'s second address,is,a partner's address
-Housing,2021-HOU,Second address type,second_address_type_priority,second_address_type_priority-008,{PERCENTAGE}%,of people in {location}'s second address,is,another form of second address
+Housing,2021-HOU,Second address type,second_address_type_priority,second_address_type_priority-008,{PERCENTAGE}%,of people in {location}'s second address,is,other
 Housing,2021-HOU,Second address type,second_address_type_priority,second_address_type_priority-009,{PERCENTAGE}%,of people in {location},have,a second address of a type not specified
-Housing,2021-HOU,Tenure of household,hh_tenure_5a,hh_tenure_5a-000,{PERCENTAGE}%,of homes in {location},are,owned outright
-Housing,2021-HOU,Tenure of household,hh_tenure_5a,hh_tenure_5a-001,{PERCENTAGE}%,of homes in {location},are,"owned with a mortgage, loan, or shared ownership"
-Housing,2021-HOU,Tenure of household,hh_tenure_5a,hh_tenure_5a-002,{PERCENTAGE}%,of homes in {location},are,social rented
-Housing,2021-HOU,Tenure of household,hh_tenure_5a,hh_tenure_5a-003,{PERCENTAGE}%,of homes in {location},are,privately rented or rent free
-Housing,2021-HOU,Tenure of household,hh_tenure_9a,hh_tenure_9a-000,{PERCENTAGE}%,of homes in {location},are,owned outright
-Housing,2021-HOU,Tenure of household,hh_tenure_9a,hh_tenure_9a-001,{PERCENTAGE}%,of homes in {location},are,owned with a mortgage or loan
-Housing,2021-HOU,Tenure of household,hh_tenure_9a,hh_tenure_9a-002,{PERCENTAGE}%,of homes in {location},are,under shared ownership
-Housing,2021-HOU,Tenure of household,hh_tenure_9a,hh_tenure_9a-003,{PERCENTAGE}%,of homes in {location},are,socially rented from a council or local authority
-Housing,2021-HOU,Tenure of household,hh_tenure_9a,hh_tenure_9a-004,{PERCENTAGE}%,of homes in {location},are,otherwise socially rented
-Housing,2021-HOU,Tenure of household,hh_tenure_9a,hh_tenure_9a-005,{PERCENTAGE}%,of homes in {location},are,privately rented from a landlord or letting agency
-Housing,2021-HOU,Tenure of household,hh_tenure_9a,hh_tenure_9a-006,{PERCENTAGE}%,of homes in {location},are,otherwise privately rented
-Housing,2021-HOU,Tenure of household,hh_tenure_9a,hh_tenure_9a-007,{PERCENTAGE}%,of homes in {location},are,rent free
+Housing,2021-HOU,Tenure of household,hh_tenure_5a,hh_tenure_5a-000,{PERCENTAGE}%,of households in {location},are,owned outright
+Housing,2021-HOU,Tenure of household,hh_tenure_5a,hh_tenure_5a-001,{PERCENTAGE}%,of households in {location},are,"owned with a mortgage, loan, or shared ownership"
+Housing,2021-HOU,Tenure of household,hh_tenure_5a,hh_tenure_5a-002,{PERCENTAGE}%,of households in {location},are,socially rented
+Housing,2021-HOU,Tenure of household,hh_tenure_5a,hh_tenure_5a-003,{PERCENTAGE}%,of households in {location},are,privately rented or rent free
+Housing,2021-HOU,Tenure of household,hh_tenure_9a,hh_tenure_9a-000,{PERCENTAGE}%,of households in {location},are,owned outright
+Housing,2021-HOU,Tenure of household,hh_tenure_9a,hh_tenure_9a-001,{PERCENTAGE}%,of households in {location},are,owned with a mortgage or loan
+Housing,2021-HOU,Tenure of household,hh_tenure_9a,hh_tenure_9a-002,{PERCENTAGE}%,of households in {location},are,under shared ownership
+Housing,2021-HOU,Tenure of household,hh_tenure_9a,hh_tenure_9a-003,{PERCENTAGE}%,of households in {location},are,socially rented from a council or local authority
+Housing,2021-HOU,Tenure of household,hh_tenure_9a,hh_tenure_9a-004,{PERCENTAGE}%,of households in {location},are,otherwise socially rented
+Housing,2021-HOU,Tenure of household,hh_tenure_9a,hh_tenure_9a-005,{PERCENTAGE}%,of households in {location},are,privately rented from a landlord or letting agency
+Housing,2021-HOU,Tenure of household,hh_tenure_9a,hh_tenure_9a-006,{PERCENTAGE}%,of households in {location},are,otherwise privately rented
+Housing,2021-HOU,Tenure of household,hh_tenure_9a,hh_tenure_9a-007,{PERCENTAGE}%,of households in {location},are,rent free
 Housing,2021-HOU,Type of central heating in household,heating_type,heating_type-001,{PERCENTAGE}%,of households in {location},have ,no central heating
 Housing,2021-HOU,Type of central heating in household,heating_type,heating_type-002,{PERCENTAGE}%,of households in {location},have ,mains gas central heating
 Housing,2021-HOU,Type of central heating in household,heating_type,heating_type-003,{PERCENTAGE}%,of households in {location},have ,tank or bottled gas central heating
@@ -107,7 +107,7 @@ Housing,2021-HOU,Type of central heating in household,heating_type,heating_type-
 Housing,2021-HOU,Type of central heating in household,heating_type,heating_type-005,{PERCENTAGE}%,of households in {location},have ,oil central heating
 Housing,2021-HOU,Type of central heating in household,heating_type,heating_type-006,{PERCENTAGE}%,of households in {location},have ,wood central heating
 Housing,2021-HOU,Type of central heating in household,heating_type,heating_type-007,{PERCENTAGE}%,of households in {location},have ,solid fuel central heating
-Housing,2021-HOU,Type of central heating in household,heating_type,heating_type-008,{PERCENTAGE}%,of households in {location},have ,renewables central heating
+Housing,2021-HOU,Type of central heating in household,heating_type,heating_type-008,{PERCENTAGE}%,of households in {location},have ,renewable central heating
 Housing,2021-HOU,Type of central heating in household,heating_type,heating_type-009,{PERCENTAGE}%,of households in {location},are,part of a district or communal heat network
 Housing,2021-HOU,Type of central heating in household,heating_type,heating_type-010,{PERCENTAGE}%,of households in {location},have ,another type of central heating
 Housing,2021-HOU,Type of central heating in household,heating_type,heating_type-011,{PERCENTAGE}%,of households in {location},have ,two or more types of central heating (not including renewable energy)

@@ -33,6 +33,14 @@ Utility scripts for making and editing content.json files for consumption by the
 1. Ensure requirements and dependencies are installed
 2. Invoke tests with `pipenv run tests` (or in verbose mode with `pipenv run testsv`)
 
+## Uploading new map content
+
+The content jsons need to be in three places to be loaded by various instances of census maps:
+
+1. **local/dev**: The local instance of census maps loads content json directly from the scripts `output_content_jsons` directory. so no additional action beyond checking in the new versions is needed for local.
+2. **sandbox + netlify**: Both the ONS sandbox and netlify instances of census maps load content jsons from the `ons-dp-sandbox-atlas-data` bucket (in the ONS Sandbox AWS account), in the `/content-json/2021` directory. New files can be manually uploaded to this location via the AWS GUI, or using `aws s3 sync` with the AWS CLI. For convenience, the shell script `upload-content-json-to-s3-for-sandbox-netlify.sh` will upload all content json from `output_content_jsons` to this location when executed with `./upload-content-json-to-s3-for-sandbox-netlify.sh` (assuming you are logged in to SSO as the `dp-sandbox` profile, and that you have write access to the bucket).
+3. **publishing-preview/prod**: The publishing preview and production instances of census maps load their content json from florence visualisations. There are different visualisations for different content jsons. The shell script `make-florence-zips.sh` will produce a zip file named for each florence visualisation (plus a timestamp) containing the content json for each when executed with `./make-florence-zips.sh`. See the script itself for more details.
+
 ## Changing census maps content
 
 ### Changing variable groups, variables, classifications or dropping categories from classifications

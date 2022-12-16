@@ -10,7 +10,7 @@ ethnic_group_tb,The ethnic group a person identifies with.
 gender_identity,The gender identity recorded by the person completing the census.
 has_ever_worked,The employment history of people who are currently not working.
 health_in_general,How people rate their general health.
-heating_type,Central heating is a heating system used to heat multiple rooms in a building.
+heating_type,The type of central heating in a household.
 hh_deprivation,Whether a household is deprived in one or more ways.
 hh_disabled,The number of people in a household with a disability or long-term health problem.
 hh_family_composition,Households according to the relationships between members.
@@ -32,7 +32,7 @@ national_identity_all,People's national identity (where they feel they belong or
 national_identity_detailed,People's national identity (where they feel they belong or could think of as home) broken down by country.
 ns_sec,People's socioeconomic position based on their occupation and other job characteristics.
 number_bedrooms,The number of bedrooms in a household.
-number_of_cars,Vehicles owned or available for use by a household.
+number_of_cars,Cars or vans owned or available for use by a household.
 occupancy_rating_bedrooms,"Whether homes are overcrowded, ideally occupied or under-occupied, based on bedrooms."
 occupancy_rating_rooms,"Whether homes are overcrowded, ideally occupied or under-occupied, based on rooms."
 occupation_current,People's main jobs.

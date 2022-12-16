@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-12-16-09-20-33",
+    "created_at": "2022-12-16-10-15-07",
     "release": "2021-ALL-ar2776-c21ew_metadata-v1-3_cantab_20221213-36"
   },
   "content": [
@@ -6769,7 +6769,7 @@
                   "name": "Gender identity the same as sex registered at birth",
                   "slug": "gender-identity-the-same-as-sex-registered-at-birth",
                   "code": "gender_identity_4a-001",
-                  "legend_str_1": "of families in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a gender identity the same as their sex registered at birth"
                 },
@@ -6777,7 +6777,7 @@
                   "name": "Gender identity different from sex registered at birth",
                   "slug": "gender-identity-different-from-sex-registered-at-birth",
                   "code": "gender_identity_4a-002",
-                  "legend_str_1": "of families in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a gender identity different from their sex registered at birth"
                 },
@@ -6785,7 +6785,7 @@
                   "name": "Not answered",
                   "slug": "not-answered",
                   "code": "gender_identity_4a-003",
-                  "legend_str_1": "of families in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "did",
                   "legend_str_3": "not answer"
                 }
@@ -6804,7 +6804,7 @@
                   "name": "Gender identity the same as sex registered at birth",
                   "slug": "gender-identity-the-same-as-sex-registered-at-birth",
                   "code": "gender_identity_8a-001",
-                  "legend_str_1": "of families in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a gender identity the same as their sex registered at birth"
                 },
@@ -6812,7 +6812,7 @@
                   "name": "Gender identity different from sex registered at birth but no specific identity given",
                   "slug": "gender-identity-different-from-sex-registered-at-birth-but-no-specific-identity-given",
                   "code": "gender_identity_8a-002",
-                  "legend_str_1": "of families in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "a gender identity different from their sex registered at birth but no specific identity given"
                 },
@@ -6820,7 +6820,7 @@
                   "name": "Trans woman",
                   "slug": "trans-woman",
                   "code": "gender_identity_8a-003",
-                  "legend_str_1": "of families in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "a trans woman"
                 },
@@ -6828,7 +6828,7 @@
                   "name": "Trans man",
                   "slug": "trans-man",
                   "code": "gender_identity_8a-004",
-                  "legend_str_1": "of families in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "a trans man"
                 },
@@ -6836,7 +6836,7 @@
                   "name": "Non-binary",
                   "slug": "non-binary",
                   "code": "gender_identity_8a-005",
-                  "legend_str_1": "of families in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "non-binary"
                 },
@@ -6844,7 +6844,7 @@
                   "name": "All other gender identities",
                   "slug": "all-other-gender-identities",
                   "code": "gender_identity_8a-006",
-                  "legend_str_1": "of families in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "another gender identity"
                 },
@@ -6852,7 +6852,7 @@
                   "name": "Not answered",
                   "slug": "not-answered",
                   "code": "gender_identity_8a-007",
-                  "legend_str_1": "of families in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "did",
                   "legend_str_3": "not answer"
                 }
@@ -6885,7 +6885,7 @@
                   "name": "Straight or Heterosexual",
                   "slug": "straight-or-heterosexual",
                   "code": "sexual_orientation_4a-001",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "straight or heterosexual"
                 },
@@ -6893,15 +6893,15 @@
                   "name": "Lesbian, Gay, Bisexual, or Other (LGB+)",
                   "slug": "lesbian-gay-bisexual-or-other-lgb",
                   "code": "sexual_orientation_4a-002",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "lesbian, gay, bisexual, or other (lgbo)"
+                  "legend_str_3": "lesbian, gay, bisexual, or other (LGBO)"
                 },
                 {
                   "name": "Not answered",
                   "slug": "not-answered",
                   "code": "sexual_orientation_4a-003",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "did",
                   "legend_str_3": "not answer"
                 }
@@ -6921,7 +6921,7 @@
                   "name": "Straight or Heterosexual",
                   "slug": "straight-or-heterosexual",
                   "code": "sexual_orientation_6a-001",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "straight or heterosexual"
                 },
@@ -6929,7 +6929,7 @@
                   "name": "Gay or Lesbian",
                   "slug": "gay-or-lesbian",
                   "code": "sexual_orientation_6a-002",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "gay or lesbian"
                 },
@@ -6937,7 +6937,7 @@
                   "name": "Bisexual",
                   "slug": "bisexual",
                   "code": "sexual_orientation_6a-003",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "bisexual"
                 },
@@ -6945,7 +6945,7 @@
                   "name": "All other sexual orientations",
                   "slug": "all-other-sexual-orientations",
                   "code": "sexual_orientation_6a-004",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "another sexual orientation"
                 },
@@ -6953,7 +6953,7 @@
                   "name": "Not answered",
                   "slug": "not-answered",
                   "code": "sexual_orientation_6a-005",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "did",
                   "legend_str_3": "not answer"
                 }
@@ -6973,7 +6973,7 @@
                   "name": "Straight or Heterosexual",
                   "slug": "straight-or-heterosexual",
                   "code": "sexual_orientation_9a-001",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "straight or heterosexual"
                 },
@@ -6981,7 +6981,7 @@
                   "name": "Gay or Lesbian",
                   "slug": "gay-or-lesbian",
                   "code": "sexual_orientation_9a-002",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "gay or lesbian"
                 },
@@ -6989,7 +6989,7 @@
                   "name": "Bisexual",
                   "slug": "bisexual",
                   "code": "sexual_orientation_9a-003",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "bisexual"
                 },
@@ -6997,7 +6997,7 @@
                   "name": "Pansexual",
                   "slug": "pansexual",
                   "code": "sexual_orientation_9a-004",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "pansexual"
                 },
@@ -7005,7 +7005,7 @@
                   "name": "Asexual",
                   "slug": "asexual",
                   "code": "sexual_orientation_9a-005",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "asexual"
                 },
@@ -7013,7 +7013,7 @@
                   "name": "Queer",
                   "slug": "queer",
                   "code": "sexual_orientation_9a-006",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "queer"
                 },
@@ -7021,7 +7021,7 @@
                   "name": "All other sexual orientations",
                   "slug": "all-other-sexual-orientations",
                   "code": "sexual_orientation_9a-007",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "another sexual orientation"
                 },
@@ -7029,7 +7029,7 @@
                   "name": "Not answered",
                   "slug": "not-answered",
                   "code": "sexual_orientation_9a-008",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "did",
                   "legend_str_3": "not answer"
                 }

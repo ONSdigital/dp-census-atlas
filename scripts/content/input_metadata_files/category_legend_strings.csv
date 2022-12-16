@@ -392,32 +392,32 @@ Identity,2021-EILR,Religion,religion_tb,religion_tb-006,{PERCENTAGE}%,of people 
 Identity,2021-EILR,Religion,religion_tb,religion_tb-007,{PERCENTAGE}%,of people in {location},are,Sikh
 Identity,2021-EILR,Religion,religion_tb,religion_tb-008,{PERCENTAGE}%,of people in {location},reported,"""Any other religion"""
 Identity,2021-EILR,Religion,religion_tb,religion_tb-009,{PERCENTAGE}%,of people in {location},did,not answer
-Identity,2021-SOGI,Gender identity,gender_identity_4a,gender_identity_4a-001,{PERCENTAGE}%,of families in {location},have,a gender identity the same as their sex registered at birth
-Identity,2021-SOGI,Gender identity,gender_identity_4a,gender_identity_4a-002,{PERCENTAGE}%,of families in {location},have,a gender identity different from their sex registered at birth
-Identity,2021-SOGI,Gender identity,gender_identity_4a,gender_identity_4a-003,{PERCENTAGE}%,of families in {location},did,not answer
-Identity,2021-SOGI,Gender identity,gender_identity_8a,gender_identity_8a-001,{PERCENTAGE}%,of families in {location},have,a gender identity the same as their sex registered at birth
-Identity,2021-SOGI,Gender identity,gender_identity_8a,gender_identity_8a-002,{PERCENTAGE}%,of families in {location},have,a gender identity different from their sex registered at birth but no specific identity given
-Identity,2021-SOGI,Gender identity,gender_identity_8a,gender_identity_8a-003,{PERCENTAGE}%,of families in {location},are,a trans woman
-Identity,2021-SOGI,Gender identity,gender_identity_8a,gender_identity_8a-004,{PERCENTAGE}%,of families in {location},are,a trans man
-Identity,2021-SOGI,Gender identity,gender_identity_8a,gender_identity_8a-005,{PERCENTAGE}%,of families in {location},are,non-binary
-Identity,2021-SOGI,Gender identity,gender_identity_8a,gender_identity_8a-006,{PERCENTAGE}%,of families in {location},have,another gender identity
-Identity,2021-SOGI,Gender identity,gender_identity_8a,gender_identity_8a-007,{PERCENTAGE}%,of families in {location},did,not answer
-Identity,2021-SOGI,Sexual orientation,sexual_orientation_4a,sexual_orientation_4a-001,{PERCENTAGE}%,of people in {location},are,straight or heterosexual
-Identity,2021-SOGI,Sexual orientation,sexual_orientation_4a,sexual_orientation_4a-002,{PERCENTAGE}%,of people in {location},are,"lesbian, gay, bisexual, or other (lgbo)"
-Identity,2021-SOGI,Sexual orientation,sexual_orientation_4a,sexual_orientation_4a-003,{PERCENTAGE}%,of people in {location},did,not answer
-Identity,2021-SOGI,Sexual orientation,sexual_orientation_6a,sexual_orientation_6a-001,{PERCENTAGE}%,of people in {location},are,straight or heterosexual
-Identity,2021-SOGI,Sexual orientation,sexual_orientation_6a,sexual_orientation_6a-002,{PERCENTAGE}%,of people in {location},are,gay or lesbian
-Identity,2021-SOGI,Sexual orientation,sexual_orientation_6a,sexual_orientation_6a-003,{PERCENTAGE}%,of people in {location},are,bisexual
-Identity,2021-SOGI,Sexual orientation,sexual_orientation_6a,sexual_orientation_6a-004,{PERCENTAGE}%,of people in {location},have,another sexual orientation
-Identity,2021-SOGI,Sexual orientation,sexual_orientation_6a,sexual_orientation_6a-005,{PERCENTAGE}%,of people in {location},did,not answer
-Identity,2021-SOGI,Sexual orientation,sexual_orientation_9a,sexual_orientation_9a-001,{PERCENTAGE}%,of people in {location},are,straight or heterosexual
-Identity,2021-SOGI,Sexual orientation,sexual_orientation_9a,sexual_orientation_9a-002,{PERCENTAGE}%,of people in {location},are,gay or lesbian
-Identity,2021-SOGI,Sexual orientation,sexual_orientation_9a,sexual_orientation_9a-003,{PERCENTAGE}%,of people in {location},are,bisexual
-Identity,2021-SOGI,Sexual orientation,sexual_orientation_9a,sexual_orientation_9a-004,{PERCENTAGE}%,of people in {location},are,pansexual
-Identity,2021-SOGI,Sexual orientation,sexual_orientation_9a,sexual_orientation_9a-005,{PERCENTAGE}%,of people in {location},are,asexual
-Identity,2021-SOGI,Sexual orientation,sexual_orientation_9a,sexual_orientation_9a-006,{PERCENTAGE}%,of people in {location},are,queer
-Identity,2021-SOGI,Sexual orientation,sexual_orientation_9a,sexual_orientation_9a-007,{PERCENTAGE}%,of people in {location},have,another sexual orientation
-Identity,2021-SOGI,Sexual orientation,sexual_orientation_9a,sexual_orientation_9a-008,{PERCENTAGE}%,of people in {location},did,not answer
+Identity,2021-SOGI,Gender identity,gender_identity_4a,gender_identity_4a-001,{PERCENTAGE}%,of people aged 16 years and over in {location},have,a gender identity the same as their sex registered at birth
+Identity,2021-SOGI,Gender identity,gender_identity_4a,gender_identity_4a-002,{PERCENTAGE}%,of people aged 16 years and over in {location},have,a gender identity different from their sex registered at birth
+Identity,2021-SOGI,Gender identity,gender_identity_4a,gender_identity_4a-003,{PERCENTAGE}%,of people aged 16 years and over in {location},did,not answer
+Identity,2021-SOGI,Gender identity,gender_identity_8a,gender_identity_8a-001,{PERCENTAGE}%,of people aged 16 years and over in {location},have,a gender identity the same as their sex registered at birth
+Identity,2021-SOGI,Gender identity,gender_identity_8a,gender_identity_8a-002,{PERCENTAGE}%,of people aged 16 years and over in {location},have,a gender identity different from their sex registered at birth but no specific identity given
+Identity,2021-SOGI,Gender identity,gender_identity_8a,gender_identity_8a-003,{PERCENTAGE}%,of people aged 16 years and over in {location},are,a trans woman
+Identity,2021-SOGI,Gender identity,gender_identity_8a,gender_identity_8a-004,{PERCENTAGE}%,of people aged 16 years and over in {location},are,a trans man
+Identity,2021-SOGI,Gender identity,gender_identity_8a,gender_identity_8a-005,{PERCENTAGE}%,of people aged 16 years and over in {location},are,non-binary
+Identity,2021-SOGI,Gender identity,gender_identity_8a,gender_identity_8a-006,{PERCENTAGE}%,of people aged 16 years and over in {location},have,another gender identity
+Identity,2021-SOGI,Gender identity,gender_identity_8a,gender_identity_8a-007,{PERCENTAGE}%,of people aged 16 years and over in {location},did,not answer
+Identity,2021-SOGI,Sexual orientation,sexual_orientation_4a,sexual_orientation_4a-001,{PERCENTAGE}%,of people aged 16 years and over in {location},are,straight or heterosexual
+Identity,2021-SOGI,Sexual orientation,sexual_orientation_4a,sexual_orientation_4a-002,{PERCENTAGE}%,of people aged 16 years and over in {location},are,"lesbian, gay, bisexual, or other (LGBO)"
+Identity,2021-SOGI,Sexual orientation,sexual_orientation_4a,sexual_orientation_4a-003,{PERCENTAGE}%,of people aged 16 years and over in {location},did,not answer
+Identity,2021-SOGI,Sexual orientation,sexual_orientation_6a,sexual_orientation_6a-001,{PERCENTAGE}%,of people aged 16 years and over in {location},are,straight or heterosexual
+Identity,2021-SOGI,Sexual orientation,sexual_orientation_6a,sexual_orientation_6a-002,{PERCENTAGE}%,of people aged 16 years and over in {location},are,gay or lesbian
+Identity,2021-SOGI,Sexual orientation,sexual_orientation_6a,sexual_orientation_6a-003,{PERCENTAGE}%,of people aged 16 years and over in {location},are,bisexual
+Identity,2021-SOGI,Sexual orientation,sexual_orientation_6a,sexual_orientation_6a-004,{PERCENTAGE}%,of people aged 16 years and over in {location},have,another sexual orientation
+Identity,2021-SOGI,Sexual orientation,sexual_orientation_6a,sexual_orientation_6a-005,{PERCENTAGE}%,of people aged 16 years and over in {location},did,not answer
+Identity,2021-SOGI,Sexual orientation,sexual_orientation_9a,sexual_orientation_9a-001,{PERCENTAGE}%,of people aged 16 years and over in {location},are,straight or heterosexual
+Identity,2021-SOGI,Sexual orientation,sexual_orientation_9a,sexual_orientation_9a-002,{PERCENTAGE}%,of people aged 16 years and over in {location},are,gay or lesbian
+Identity,2021-SOGI,Sexual orientation,sexual_orientation_9a,sexual_orientation_9a-003,{PERCENTAGE}%,of people aged 16 years and over in {location},are,bisexual
+Identity,2021-SOGI,Sexual orientation,sexual_orientation_9a,sexual_orientation_9a-004,{PERCENTAGE}%,of people aged 16 years and over in {location},are,pansexual
+Identity,2021-SOGI,Sexual orientation,sexual_orientation_9a,sexual_orientation_9a-005,{PERCENTAGE}%,of people aged 16 years and over in {location},are,asexual
+Identity,2021-SOGI,Sexual orientation,sexual_orientation_9a,sexual_orientation_9a-006,{PERCENTAGE}%,of people aged 16 years and over in {location},are,queer
+Identity,2021-SOGI,Sexual orientation,sexual_orientation_9a,sexual_orientation_9a-007,{PERCENTAGE}%,of people aged 16 years and over in {location},have,another sexual orientation
+Identity,2021-SOGI,Sexual orientation,sexual_orientation_9a,sexual_orientation_9a-008,{PERCENTAGE}%,of people aged 16 years and over in {location},did,not answer
 Identity,2021-WELSH-SKILLS,Welsh language skills,welsh_skills_all,welsh_skills_all-000,{PERCENTAGE}%,of people aged 3 years and over in {location},can,understand spoken Welsh only
 Identity,2021-WELSH-SKILLS,Welsh language skills,welsh_skills_all,welsh_skills_all-001,{PERCENTAGE}%,of people aged 3 years and over in {location},can,"speak, read and write Welsh"
 Identity,2021-WELSH-SKILLS,Welsh language skills,welsh_skills_all,welsh_skills_all-002,{PERCENTAGE}%,of people aged 3 years and over in {location},can,speak but cannot read or write Welsh

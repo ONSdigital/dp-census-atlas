@@ -34,8 +34,7 @@ func New() *Atlas {
 	}
 }
 
-// SetStandardProps sets geotype, geocode, ename and wname properties in each Feature,
-// and computes a bounding box for each Feature if it doesn't already have one.
+// SetStandardProps sets geotype, geocode, ename and wname properties in each Feature.
 func (a *Atlas) SetStandardProps(geotype types.Geotype) error {
 
 	// The 2011 oa.geojson confusingly has a property named LAD11CD
@@ -89,13 +88,7 @@ func (a *Atlas) SetStandardProps(geotype types.Geotype) error {
 			feat.Properties[k] = v
 		}
 		feat.Properties["geotype"] = string(geotype)
-/*
-		if feat.BBox == nil {
-			feat.BBox = feat.Geometry.Bounds()
-		}
 
-		feat.Geometry = nil // don't need any more; free up space
-*/
 		geocode, ok := feat.Properties["geocode"].(string)
 		if !ok {
 			return fmt.Errorf("%s feature %d: no geocode", geotype, n)

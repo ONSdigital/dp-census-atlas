@@ -154,7 +154,7 @@
     {
       "name": "Education",
       "slug": "education",
-      "desc": "People in education and qualifications they hold.",
+      "desc": "The qualifications people hold.",
       "variables_by_content_json": {
         "2021-EDU": [
           {
@@ -309,7 +309,7 @@
     {
       "name": "Work",
       "slug": "work",
-      "desc": "People's employment status.",
+      "desc": "All about people's jobs and employment.",
       "variables_by_content_json": {
         "2021-LAB": [
           {

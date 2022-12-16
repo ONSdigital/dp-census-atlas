@@ -66,16 +66,16 @@ Housing,2021-HOU,Number of cars or vans,number_of_cars_5a,number_of_cars_5a-000,
 Housing,2021-HOU,Number of cars or vans,number_of_cars_5a,number_of_cars_5a-001,{PERCENTAGE}%,of households in {location},have,1 car or van
 Housing,2021-HOU,Number of cars or vans,number_of_cars_5a,number_of_cars_5a-002,{PERCENTAGE}%,of households in {location},have,2 cars or vans 
 Housing,2021-HOU,Number of cars or vans,number_of_cars_5a,number_of_cars_5a-003,{PERCENTAGE}%,of households in {location},have,3 or more cars or vans
-Housing,2021-HOU,Occupancy rating for bedrooms,occupancy_rating_bedrooms_6a,occupancy_rating_bedrooms_6a-001,{PERCENTAGE}%,of households in {location},have,an occupancy rating of +2 or more for bedrooms
-Housing,2021-HOU,Occupancy rating for bedrooms,occupancy_rating_bedrooms_6a,occupancy_rating_bedrooms_6a-002,{PERCENTAGE}%,of households in {location},have,an occupancy rating of +1 for bedrooms
-Housing,2021-HOU,Occupancy rating for bedrooms,occupancy_rating_bedrooms_6a,occupancy_rating_bedrooms_6a-003,{PERCENTAGE}%,of households in {location},have,an occupancy rating of 0 for bedrooms
-Housing,2021-HOU,Occupancy rating for bedrooms,occupancy_rating_bedrooms_6a,occupancy_rating_bedrooms_6a-004,{PERCENTAGE}%,of households in {location},have,an occupancy rating of -1 for bedrooms
-Housing,2021-HOU,Occupancy rating for bedrooms,occupancy_rating_bedrooms_6a,occupancy_rating_bedrooms_6a-005,{PERCENTAGE}%,of households in {location},have,an occupancy rating of -2 for bedrooms
-Housing,2021-HOU,Occupancy rating for rooms,occupancy_rating_rooms_6a,occupancy_rating_rooms_6a-001,{PERCENTAGE}%,of households in {location},have,an occupancy rating of +2 or more for rooms
-Housing,2021-HOU,Occupancy rating for rooms,occupancy_rating_rooms_6a,occupancy_rating_rooms_6a-002,{PERCENTAGE}%,of households in {location},have,an occupancy rating of +1 for rooms
-Housing,2021-HOU,Occupancy rating for rooms,occupancy_rating_rooms_6a,occupancy_rating_rooms_6a-003,{PERCENTAGE}%,of households in {location},have,an occupancy rating of 0 for rooms
-Housing,2021-HOU,Occupancy rating for rooms,occupancy_rating_rooms_6a,occupancy_rating_rooms_6a-004,{PERCENTAGE}%,of households in {location},have,an occupancy rating of -1 for rooms
-Housing,2021-HOU,Occupancy rating for rooms,occupancy_rating_rooms_6a,occupancy_rating_rooms_6a-005,{PERCENTAGE}%,of households in {location},have,an occupancy rating of -2 for rooms
+Housing,2021-HOU,Occupancy rating for bedrooms,occupancy_rating_bedrooms_6a,occupancy_rating_bedrooms_6a-001,{PERCENTAGE}%,of households in {location},have,an occupancy rating of +2 or more of bedrooms
+Housing,2021-HOU,Occupancy rating for bedrooms,occupancy_rating_bedrooms_6a,occupancy_rating_bedrooms_6a-002,{PERCENTAGE}%,of households in {location},have,an occupancy rating of +1 of bedrooms
+Housing,2021-HOU,Occupancy rating for bedrooms,occupancy_rating_bedrooms_6a,occupancy_rating_bedrooms_6a-003,{PERCENTAGE}%,of households in {location},have,an occupancy rating of 0 of bedrooms
+Housing,2021-HOU,Occupancy rating for bedrooms,occupancy_rating_bedrooms_6a,occupancy_rating_bedrooms_6a-004,{PERCENTAGE}%,of households in {location},have,an occupancy rating of -1 of bedrooms
+Housing,2021-HOU,Occupancy rating for bedrooms,occupancy_rating_bedrooms_6a,occupancy_rating_bedrooms_6a-005,{PERCENTAGE}%,of households in {location},have,an occupancy rating of -2 of bedrooms
+Housing,2021-HOU,Occupancy rating for rooms,occupancy_rating_rooms_6a,occupancy_rating_rooms_6a-001,{PERCENTAGE}%,of households in {location},have,an occupancy rating of +2 or more of rooms
+Housing,2021-HOU,Occupancy rating for rooms,occupancy_rating_rooms_6a,occupancy_rating_rooms_6a-002,{PERCENTAGE}%,of households in {location},have,an occupancy rating of +1 of rooms
+Housing,2021-HOU,Occupancy rating for rooms,occupancy_rating_rooms_6a,occupancy_rating_rooms_6a-003,{PERCENTAGE}%,of households in {location},have,an occupancy rating of 0 of rooms
+Housing,2021-HOU,Occupancy rating for rooms,occupancy_rating_rooms_6a,occupancy_rating_rooms_6a-004,{PERCENTAGE}%,of households in {location},have,an occupancy rating of -1 of rooms
+Housing,2021-HOU,Occupancy rating for rooms,occupancy_rating_rooms_6a,occupancy_rating_rooms_6a-005,{PERCENTAGE}%,of households in {location},have,an occupancy rating of -2 of rooms
 Housing,2021-HOU,Second address indicator,alternative_address_indicator,alternative_address_indicator-001,{PERCENTAGE}%,of people in {location},have,no second address
 Housing,2021-HOU,Second address indicator,alternative_address_indicator,alternative_address_indicator-002,{PERCENTAGE}%,of people in {location},have,a second address in the UK
 Housing,2021-HOU,Second address indicator,alternative_address_indicator,alternative_address_indicator-003,{PERCENTAGE}%,of people in {location},have,a second address outside the UK

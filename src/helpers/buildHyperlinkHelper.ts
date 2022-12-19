@@ -15,6 +15,7 @@ interface CategoryPageParams {
   variableGroup: string;
   variable: string;
   category: { classification: string; category: string };
+  changeOverTime?: boolean;
 }
 
 type UrlParams = VariableGroupPageParams | VariablePageParams | CategoryPageParams;
@@ -34,7 +35,13 @@ export const buildHyperlink = (
   geography?: { geoType: GeoType; geoCode: string },
 ) => {
   // update the geography param if given (all other queryparams should pass through unscathed)
+  if (urlParams && "changeOverTime" in urlParams) {
+    url.searchParams.set("changeOverTime", urlParams.changeOverTime.toString());
+  } else {
+    url.searchParams.delete("changeOverTime");
+  }
   const searchParams = geography ? setGeographyParam(url.searchParams, geography) : url.searchParams;
+
   // get an actual querystring beginning with "?" else an empty string
   const search = Array.from(searchParams).length > 0 ? "?" + searchParams.toString() : "";
 

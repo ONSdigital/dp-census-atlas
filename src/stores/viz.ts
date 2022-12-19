@@ -17,6 +17,7 @@ export const viz = asyncDerived([params, viewport], async ([$params, $viewport])
       category: $params.category,
       geoType: $viewport.geoType,
       bbox: $viewport.bbox,
+      changeOverTime: $params.changeOverTime,
     };
 
     const [data, breaks] = await Promise.all([fetchDataForBbox(args), fetchBreaks(args)]);

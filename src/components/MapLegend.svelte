@@ -27,7 +27,7 @@
       };
 
   const legendTextClass = "text-sm sm:text-base lg:text-lg xl:text-xl";
-  $: colors = $viz ? getColoursForBreaks($viz.breaks) : colours.standard;
+  $: colors = $viz ? getColoursForBreaks($viz.breaks, $viz.params.changeOverTime) : colours.standard;
 </script>
 
 <!--                      | no geography selected  |  geography selected    -->

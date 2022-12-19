@@ -105,15 +105,6 @@ const welshSkills = {
   fakeDataBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021",
   realDataBaseUrl: "https://ons-dp-prod-census-maps-welsh-skills.s3.eu-west-2.amazonaws.com",
 };
-const comp2011Test = {
-  localContentJsonUrl: "http://localhost:8090/2011-COMP-TEST.json",
-  publicContentJsonUrl:
-    "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2011-comparison-test/2011-COMP-TEST.json",
-  prodPubContentJsonUrl: "",
-  prodWebContentJsonUrl: "",
-  fakeDataBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
-  realDataBaseUrl: "",
-};
 
 // envs / instances
 export default {
@@ -122,7 +113,11 @@ export default {
   dev: {
     publishing: [],
     web: [
+<<<<<<< HEAD
       // // zero is published
+=======
+      // zero is published
+>>>>>>> 58e275d (update 2011 comparison data availability)
       {
         contentJsonUrl: zero.localContentJsonUrl,
         contentBaseUrl: zero.realDataBaseUrl,
@@ -147,26 +142,41 @@ export default {
         contentJsonUrl: eilr.localContentJsonUrl,
         contentBaseUrl: eilr.realDataBaseUrl,
       },
+<<<<<<< HEAD
       // hou is published
       {
         contentJsonUrl: hou.localContentJsonUrl,
         contentBaseUrl: hou.realDataBaseUrl,
+=======
+      // hou is unpublished
+      {
+        contentJsonUrl: hou.localContentJsonUrl,
+        contentBaseUrl: hou.fakeDataBaseUrl,
+>>>>>>> 58e275d (update 2011 comparison data availability)
       },
       // huc is unpublished
       {
         contentJsonUrl: huc.localContentJsonUrl,
         contentBaseUrl: huc.fakeDataBaseUrl,
       },
+<<<<<<< HEAD
       // lab is published
       {
         contentJsonUrl: lab.localContentJsonUrl,
         contentBaseUrl: lab.realDataBaseUrl,
+=======
+      // lab is unpublished
+      {
+        contentJsonUrl: lab.localContentJsonUrl,
+        contentBaseUrl: lab.fakeDataBaseUrl,
+>>>>>>> 58e275d (update 2011 comparison data availability)
       },
       // mig is published
       {
         contentJsonUrl: mig.localContentJsonUrl,
         contentBaseUrl: mig.realDataBaseUrl,
       },
+<<<<<<< HEAD
       // sogi is published
       {
         contentJsonUrl: sogi.localContentJsonUrl,
@@ -181,6 +191,22 @@ export default {
       {
         contentJsonUrl: welshSkills.localContentJsonUrl,
         contentBaseUrl: welshSkills.realDataBaseUrl,
+=======
+      // sogi is unpublished
+      {
+        contentJsonUrl: sogi.localContentJsonUrl,
+        contentBaseUrl: sogi.fakeDataBaseUrl,
+      },
+      // ttw is unpublished
+      {
+        contentJsonUrl: ttw.localContentJsonUrl,
+        contentBaseUrl: ttw.fakeDataBaseUrl,
+      },
+      // welshSkills is unpublished
+      {
+        contentJsonUrl: welshSkills.localContentJsonUrl,
+        contentBaseUrl: welshSkills.fakeDataBaseUrl,
+>>>>>>> 58e275d (update 2011 comparison data availability)
       },
     ],
   },
@@ -204,36 +230,58 @@ export default {
         contentJsonUrl: dem.publicContentJsonUrl,
         contentBaseUrl: dem.realDataBaseUrl,
       },
+<<<<<<< HEAD
       // edu is published
       {
         contentJsonUrl: edu.publicContentJsonUrl,
         contentBaseUrl: edu.realDataBaseUrl,
+=======
+      // edu is unpublished
+      {
+        contentJsonUrl: edu.publicContentJsonUrl,
+        contentBaseUrl: edu.fakeDataBaseUrl,
+>>>>>>> 58e275d (update 2011 comparison data availability)
       },
       // eilr is published
       {
         contentJsonUrl: eilr.publicContentJsonUrl,
         contentBaseUrl: eilr.realDataBaseUrl,
       },
+<<<<<<< HEAD
       // hou is published
       {
         contentJsonUrl: hou.publicContentJsonUrl,
         contentBaseUrl: hou.realDataBaseUrl,
+=======
+      // hou is unpublished
+      {
+        contentJsonUrl: hou.publicContentJsonUrl,
+        contentBaseUrl: hou.fakeDataBaseUrl,
+>>>>>>> 58e275d (update 2011 comparison data availability)
       },
       // huc is unpublished
       {
         contentJsonUrl: huc.publicContentJsonUrl,
         contentBaseUrl: huc.fakeDataBaseUrl,
       },
+<<<<<<< HEAD
       // lab is published
       {
         contentJsonUrl: lab.publicContentJsonUrl,
         contentBaseUrl: lab.realDataBaseUrl,
+=======
+      // lab is unpublished
+      {
+        contentJsonUrl: lab.publicContentJsonUrl,
+        contentBaseUrl: lab.fakeDataBaseUrl,
+>>>>>>> 58e275d (update 2011 comparison data availability)
       },
       // mig is published
       {
         contentJsonUrl: mig.publicContentJsonUrl,
         contentBaseUrl: mig.realDataBaseUrl,
       },
+<<<<<<< HEAD
       // sogi is published
       {
         contentJsonUrl: sogi.publicContentJsonUrl,
@@ -248,6 +296,22 @@ export default {
       {
         contentJsonUrl: welshSkills.publicContentJsonUrl,
         contentBaseUrl: welshSkills.realDataBaseUrl,
+=======
+      // sogi is unpublished
+      {
+        contentJsonUrl: sogi.publicContentJsonUrl,
+        contentBaseUrl: sogi.fakeDataBaseUrl,
+      },
+      // ttw is unpublished
+      {
+        contentJsonUrl: ttw.publicContentJsonUrl,
+        contentBaseUrl: ttw.fakeDataBaseUrl,
+      },
+      // welshSkills is unpublished
+      {
+        contentJsonUrl: welshSkills.publicContentJsonUrl,
+        contentBaseUrl: welshSkills.fakeDataBaseUrl,
+>>>>>>> 58e275d (update 2011 comparison data availability)
       },
     ],
   },

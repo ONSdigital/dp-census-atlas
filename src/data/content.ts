@@ -3,7 +3,8 @@
 // topics
 const zero = {
   localContentJsonUrl: "http://localhost:8090/release-0.json",
-  publicContentJsonUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/release-0.json",
+  publicContentJsonUrl:
+    "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2011-comparison-test/release-0.json",
   prodPubContentJsonUrl: "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusatlasdryrun/release-0.json",
   prodWebContentJsonUrl: "https://www.ons.gov.uk/visualisations/censusatlasdryrun/release-0.json",
   fakeDataBaseUrl: "no data to load",
@@ -11,7 +12,8 @@ const zero = {
 };
 const arm = {
   localContentJsonUrl: "http://localhost:8090/2021-ARM.json",
-  publicContentJsonUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-ARM.json",
+  publicContentJsonUrl:
+    "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2011-comparison-test/2021-ARM.json",
   prodPubContentJsonUrl: "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusmapsconfig/2021-ARM.json",
   prodWebContentJsonUrl: "https://www.ons.gov.uk/visualisations/censusmapsconfig/2021-ARM.json",
   fakeDataBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021",
@@ -19,7 +21,8 @@ const arm = {
 };
 const dem = {
   localContentJsonUrl: "http://localhost:8090/2021-DEM.json",
-  publicContentJsonUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-DEM.json",
+  publicContentJsonUrl:
+    "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2011-comparison-test/2021-DEM.json",
   prodPubContentJsonUrl: "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusmapsconfig/2021-DEM.json",
   prodWebContentJsonUrl: "https://www.ons.gov.uk/visualisations/censusmapsconfig/2021-DEM.json",
   fakeDataBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021",
@@ -36,7 +39,8 @@ const edu = {
 };
 const eilr = {
   localContentJsonUrl: "http://localhost:8090/2021-EILR.json",
-  publicContentJsonUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-EILR.json",
+  publicContentJsonUrl:
+    "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2011-comparison-test/2021-EILR.json",
   prodPubContentJsonUrl: "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusmapsconfig/2021-EILR.json",
   prodWebContentJsonUrl: "https://www.ons.gov.uk/visualisations/censusmapsconfig/2021-EILR.json",
   fakeDataBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021",
@@ -44,7 +48,8 @@ const eilr = {
 };
 const hou = {
   localContentJsonUrl: "http://localhost:8090/2021-HOU.json",
-  publicContentJsonUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-HOU.json",
+  publicContentJsonUrl:
+    "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2011-comparison-test/2021-HOU.json",
   prodPubContentJsonUrl:
     "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusmapsconfighou/2021-HOU.json",
   prodWebContentJsonUrl: "https://www.ons.gov.uk/visualisations/censusmapsconfighou/2021-HOU.json",
@@ -62,7 +67,8 @@ const huc = {
 };
 const lab = {
   localContentJsonUrl: "http://localhost:8090/2021-LAB.json",
-  publicContentJsonUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-LAB.json",
+  publicContentJsonUrl:
+    "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2011-comparison-test/2021-LAB.json",
   prodPubContentJsonUrl:
     "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusmapsconfiglab/2021-LAB.json",
   prodWebContentJsonUrl: "https://www.ons.gov.uk/visualisations/censusmapsconfiglab/2021-LAB.json",
@@ -71,7 +77,8 @@ const lab = {
 };
 const mig = {
   localContentJsonUrl: "http://localhost:8090/2021-MIG.json",
-  publicContentJsonUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-MIG.json",
+  publicContentJsonUrl:
+    "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2011-comparison-test/2021-MIG.json",
   prodPubContentJsonUrl: "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusmapsconfig/2021-MIG.json",
   prodWebContentJsonUrl: "https://www.ons.gov.uk/visualisations/censusmapsconfig/2021-MIG.json",
   fakeDataBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021",
@@ -79,7 +86,8 @@ const mig = {
 };
 const sogi = {
   localContentJsonUrl: "http://localhost:8090/2021-SOGI.json",
-  publicContentJsonUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-SOGI.json",
+  publicContentJsonUrl:
+    "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2011-comparison-test/2021-SOGI.json",
   prodPubContentJsonUrl:
     "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusmapsconfigsogi/2021-SOGI.json",
   prodWebContentJsonUrl: "https://www.ons.gov.uk/visualisations/censusmapsconfigsogi/2021-SOGI.json",
@@ -88,7 +96,8 @@ const sogi = {
 };
 const ttw = {
   localContentJsonUrl: "http://localhost:8090/2021-TTW.json",
-  publicContentJsonUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-TTW.json",
+  publicContentJsonUrl:
+    "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2011-comparison-test/2021-TTW.json",
   prodPubContentJsonUrl:
     "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusmapsconfiglab/2021-TTW.json",
   prodWebContentJsonUrl: "https://www.ons.gov.uk/visualisations/censusmapsconfiglab/2021-TTW.json",
@@ -98,7 +107,7 @@ const ttw = {
 const welshSkills = {
   localContentJsonUrl: "http://localhost:8090/2021-WELSH-SKILLS.json",
   publicContentJsonUrl:
-    "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-WELSH-SKILLS.json",
+    "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2011-comparison-test/2021-WELSH-SKILLS.json",
   prodPubContentJsonUrl:
     "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusmapsconfiglab/2021-WELSH-SKILLS.json",
   prodWebContentJsonUrl: "https://www.ons.gov.uk/visualisations/censusmapsconfiglab/2021-WELSH-SKILLS.json",
@@ -113,11 +122,7 @@ export default {
   dev: {
     publishing: [],
     web: [
-<<<<<<< HEAD
       // // zero is published
-=======
-      // zero is published
->>>>>>> 58e275d (update 2011 comparison data availability)
       {
         contentJsonUrl: zero.localContentJsonUrl,
         contentBaseUrl: zero.realDataBaseUrl,
@@ -142,41 +147,26 @@ export default {
         contentJsonUrl: eilr.localContentJsonUrl,
         contentBaseUrl: eilr.realDataBaseUrl,
       },
-<<<<<<< HEAD
       // hou is published
       {
         contentJsonUrl: hou.localContentJsonUrl,
         contentBaseUrl: hou.realDataBaseUrl,
-=======
-      // hou is unpublished
-      {
-        contentJsonUrl: hou.localContentJsonUrl,
-        contentBaseUrl: hou.fakeDataBaseUrl,
->>>>>>> 58e275d (update 2011 comparison data availability)
       },
       // huc is unpublished
       {
         contentJsonUrl: huc.localContentJsonUrl,
         contentBaseUrl: huc.fakeDataBaseUrl,
       },
-<<<<<<< HEAD
       // lab is published
       {
         contentJsonUrl: lab.localContentJsonUrl,
         contentBaseUrl: lab.realDataBaseUrl,
-=======
-      // lab is unpublished
-      {
-        contentJsonUrl: lab.localContentJsonUrl,
-        contentBaseUrl: lab.fakeDataBaseUrl,
->>>>>>> 58e275d (update 2011 comparison data availability)
       },
       // mig is published
       {
         contentJsonUrl: mig.localContentJsonUrl,
         contentBaseUrl: mig.realDataBaseUrl,
       },
-<<<<<<< HEAD
       // sogi is published
       {
         contentJsonUrl: sogi.localContentJsonUrl,
@@ -191,22 +181,6 @@ export default {
       {
         contentJsonUrl: welshSkills.localContentJsonUrl,
         contentBaseUrl: welshSkills.realDataBaseUrl,
-=======
-      // sogi is unpublished
-      {
-        contentJsonUrl: sogi.localContentJsonUrl,
-        contentBaseUrl: sogi.fakeDataBaseUrl,
-      },
-      // ttw is unpublished
-      {
-        contentJsonUrl: ttw.localContentJsonUrl,
-        contentBaseUrl: ttw.fakeDataBaseUrl,
-      },
-      // welshSkills is unpublished
-      {
-        contentJsonUrl: welshSkills.localContentJsonUrl,
-        contentBaseUrl: welshSkills.fakeDataBaseUrl,
->>>>>>> 58e275d (update 2011 comparison data availability)
       },
     ],
   },
@@ -230,58 +204,36 @@ export default {
         contentJsonUrl: dem.publicContentJsonUrl,
         contentBaseUrl: dem.realDataBaseUrl,
       },
-<<<<<<< HEAD
       // edu is published
       {
         contentJsonUrl: edu.publicContentJsonUrl,
         contentBaseUrl: edu.realDataBaseUrl,
-=======
-      // edu is unpublished
-      {
-        contentJsonUrl: edu.publicContentJsonUrl,
-        contentBaseUrl: edu.fakeDataBaseUrl,
->>>>>>> 58e275d (update 2011 comparison data availability)
       },
       // eilr is published
       {
         contentJsonUrl: eilr.publicContentJsonUrl,
         contentBaseUrl: eilr.realDataBaseUrl,
       },
-<<<<<<< HEAD
       // hou is published
       {
         contentJsonUrl: hou.publicContentJsonUrl,
         contentBaseUrl: hou.realDataBaseUrl,
-=======
-      // hou is unpublished
-      {
-        contentJsonUrl: hou.publicContentJsonUrl,
-        contentBaseUrl: hou.fakeDataBaseUrl,
->>>>>>> 58e275d (update 2011 comparison data availability)
       },
       // huc is unpublished
       {
         contentJsonUrl: huc.publicContentJsonUrl,
         contentBaseUrl: huc.fakeDataBaseUrl,
       },
-<<<<<<< HEAD
       // lab is published
       {
         contentJsonUrl: lab.publicContentJsonUrl,
         contentBaseUrl: lab.realDataBaseUrl,
-=======
-      // lab is unpublished
-      {
-        contentJsonUrl: lab.publicContentJsonUrl,
-        contentBaseUrl: lab.fakeDataBaseUrl,
->>>>>>> 58e275d (update 2011 comparison data availability)
       },
       // mig is published
       {
         contentJsonUrl: mig.publicContentJsonUrl,
         contentBaseUrl: mig.realDataBaseUrl,
       },
-<<<<<<< HEAD
       // sogi is published
       {
         contentJsonUrl: sogi.publicContentJsonUrl,
@@ -296,22 +248,6 @@ export default {
       {
         contentJsonUrl: welshSkills.publicContentJsonUrl,
         contentBaseUrl: welshSkills.realDataBaseUrl,
-=======
-      // sogi is unpublished
-      {
-        contentJsonUrl: sogi.publicContentJsonUrl,
-        contentBaseUrl: sogi.fakeDataBaseUrl,
-      },
-      // ttw is unpublished
-      {
-        contentJsonUrl: ttw.publicContentJsonUrl,
-        contentBaseUrl: ttw.fakeDataBaseUrl,
-      },
-      // welshSkills is unpublished
-      {
-        contentJsonUrl: welshSkills.publicContentJsonUrl,
-        contentBaseUrl: welshSkills.fakeDataBaseUrl,
->>>>>>> 58e275d (update 2011 comparison data availability)
       },
     ],
   },

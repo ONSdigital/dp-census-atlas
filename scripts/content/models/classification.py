@@ -17,7 +17,7 @@ class CensusClassification:
     choropleth_default: bool
     dot_density_default: bool
     categories: list[CensusCategory]
-    comparison_2011_data_available: bool = False
+    comparison_2011_data_available_geotypes: list[str]
     data_download: str = ""
     _variable_code: str = ""
 
@@ -48,10 +48,12 @@ class CensusClassification:
         if available_geos_row is not None:
             self.available_geotypes = available_geos_row["available_geotypes"].strip().split(",")
 
-    def set_comparison_2011_data_available(self, available_2011_comparison_data: list[dict]) -> None:
+    def set_comparison_2011_data_available_geotypes(self, available_2011_comparison_data: list[dict]) -> None:
         available_2011_row = next((r for r in available_2011_comparison_data if r["classification"] == self.code), None)
-        if available_2011_row is not None and available_2011_row["2011_comparison_data_available"].lower() == "yes":
-            self.comparison_2011_data_available = True
+        if available_2011_row is not None and available_2011_row["2011_comparison_data_available_geotypes"] != "":
+            self.comparison_2011_data_available_geotypes = available_2011_row[
+                "2011_comparison_data_available_geotypes"
+            ].strip().split(",")
 
     def is_valid(self) -> bool:
         """
@@ -101,10 +103,10 @@ class CensusClassification:
         if self.dot_density_default:
             output_params["dot_density_default"] = self.dot_density_default
 
-        if self.comparison_2011_data_available:
+        if self.comparison_2011_data_available_geotypes:
             output_params[
-                "comparison_2011_data_available"
-            ] = self.comparison_2011_data_available
+                "comparison_2011_data_available_geotypes"
+            ] = self.comparison_2011_data_available_geotypes
 
         if self.data_download:
             output_params["data_download"] = self.data_download
@@ -124,8 +126,8 @@ def classification_from_content_json(content_json: dict) -> CensusClassification
         available_geotypes=content_json["available_geotypes"],
         choropleth_default=content_json.get("choropleth_default", False),
         dot_density_default=content_json.get("dot_density_default", False),
-        comparison_2011_data_available=content_json.get(
-            "comparison_2011_data_available", False
+        comparison_2011_data_available_geotypes=content_json.get(
+            "comparison_2011_data_available_geotypes", []
         ),
         data_download=content_json.get("data_download", ""),
         categories=[category_from_content_json(
@@ -181,6 +183,7 @@ def classifications_from_metadata(
                     dot_density_default=False,
                     data_download="",
                     categories=[],
+                    comparison_2011_data_available_geotypes=[],
                     _variable_code=csv_row["Variable_Mnemonic"],
                 )
 
@@ -188,7 +191,7 @@ def classifications_from_metadata(
                 classification.set_dot_density_default(dot_density_defaults)
                 classification.set_data_downloads(data_downloads)
                 classification.set_available_geotypes(available_geotypes)
-                classification.set_comparison_2011_data_available(available_2011_comparison_data)
+                classification.set_comparison_2011_data_available_geotypes(available_2011_comparison_data)
 
                 classifications.append(classification)
 

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-12-16-13-05-36",
-    "release": "2021-HOU-ar2776-c21ew_metadata-v1-3_cantab_20221213-36"
+    "created_at": "2022-12-19-09-32-22",
+    "release": "2021-HOU-ar2776-c21ew_metadata-v1-3_cantab_20221216-37"
   },
   "content": [
     {
@@ -14,7 +14,7 @@
           "code": "accommodation_type",
           "slug": "accommodation-type",
           "desc": "The type of buildings people live in.",
-          "long_desc": "The type of building or structure used or available by an individual or household.\n\nThis could be:\n\n* the whole house or bungalow\n* a flat, maisonette or apartment\n* a temporary or mobile structure, such as a caravan\n\nMore information about accommodation types\n\nWhole house or bungalow\nThis property type is not divided into flats or other living accommodation. There are three types of whole houses or bungalows.\n\nDetached\nNone of the living accommodation is attached to another property but can be attached to a garage.\n\nSemi-detached\nThe living accommodation is joined to another house or bungalow by a common wall that they share.\n\nTerraced\nA mid-terraced house is located between two other houses and shares two common walls. An end-of-terrace house is part of a terraced development but only shares one common wall.\n\nFlats (Apartments) and maisonettes\nAn apartment is another word for a flat. A maisonette is a 2-storey flat.",
+          "long_desc": "The type of building or structure used or available by an individual or household.\n\nThis could be:\n\n* the whole house or bungalow\n* a flat, maisonette or apartment\n* a temporary or mobile structure, such as a caravan\n\nMore information about accommodation types\n\nWhole house or bungalow:\nThis property type is not divided into flats or other living accommodation. There are three types of whole houses or bungalows.\n\nDetached:\nNone of the living accommodation is attached to another property but can be attached to a garage.\n\nSemi-detached:\nThe living accommodation is joined to another house or bungalow by a common wall that they share.\n\nTerraced:\nA mid-terraced house is located between two other houses and shares two common walls. An end-of-terrace house is part of a terraced development but only shares one common wall.\n\nFlats (Apartments) and maisonettes:\nAn apartment is another word for a flat. A maisonette is a 2-storey flat.",
           "units": "Household",
           "topic_code": "HOU",
           "classifications": [

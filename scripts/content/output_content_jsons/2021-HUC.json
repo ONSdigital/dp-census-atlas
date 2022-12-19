@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-12-16-13-05-36",
-    "release": "2021-HUC-ar2776-c21ew_metadata-v1-3_cantab_20221213-36"
+    "created_at": "2022-12-19-09-32-22",
+    "release": "2021-HUC-ar2776-c21ew_metadata-v1-3_cantab_20221216-37"
   },
   "content": [
     {
@@ -14,7 +14,7 @@
           "code": "disability",
           "slug": "disability",
           "desc": "People with a long-term health problem or disability, including relating to old-age.",
-          "long_desc": "People who assessed their day-to-day activities as limited by long-term physical or mental health conditions or illnesses are considered disabled. This definition of a disabled person meets the harmonised standard for measuring disability and is in line with the Equality Act (2010). \n\nAdditional \nCensus 2021 asks the Government Statistical Service harmonised questions (used on several existing large surveys), which are two separate questions designed to capture a person's disability according to the Equality Act (2010). These replace a single question in the 2011 census that showed whether a long-term health problem or disability limited a person's day-to-day activities. \n  \nThe Census 2021 questions indicate: \n\n* whether a person has long term physical or mental health conditions or illnesses \n* the extent to which any indicated long term physical or mental health conditions or illnesses limit their day-to-day activities \n\nTo allow comparability with Census 2011, Scotland and Northern Ireland Census 2021 continue to ask the same question as the in the Census 2011. In Northern Ireland, disability status is defined according to the Disability Discrimination Act (1995). Please see the Health and Unpaid Care topic report for more details.",
+          "long_desc": "People who assessed their day-to-day activities as limited by long-term physical or mental health conditions or illnesses are considered disabled. This definition of a disabled person meets the harmonised standard for measuring disability and is in line with the Equality Act (2010).",
           "units": "Person",
           "topic_code": "HUC",
           "classifications": [
@@ -283,7 +283,7 @@
           "code": "is_carer",
           "slug": "provision-of-unpaid-care",
           "desc": "People who are unpaid carers.",
-          "long_desc": "An unpaid carer may look after, give help or support to anyone who has long-term physical or mental ill-health conditions, illness or problems related to old age.  \n\nThis does not include any activities as part of paid employment. \n\nThis help can be within or outside of the carer's household. \n\nAdditional  \n\nSince the Census 2011, this question has changed in England and Wales in the following ways. \n\nThe reference to disability has been removed. \n\n'Anyone' replaces specific groups, i.e. family members, friends, neighbours. \n\nThe additional option to break down the hours of unpaid hours worked.   \n\nScotland have retained the Census 2011 question for consistency. Northern Ireland have used a similar Census 2021 question as England and Wales but with the same response options as their Census 2011. Please see the Health and Unpaid Care topic report for more details.",
+          "long_desc": "An unpaid carer may look after, give help or support to anyone who has long-term physical or mental ill-health conditions, illness or problems related to old age.  \n\nThis does not include any activities as part of paid employment. \n\nThis help can be within or outside of the carer's household.",
           "units": "Person",
           "topic_code": "HUC",
           "classifications": [

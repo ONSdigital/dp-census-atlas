@@ -3,7 +3,7 @@
   import { hovered } from "../stores/hovered";
   import { selected } from "../stores/selected";
   import { formatTemplateString } from "../helpers/categoryHelpers";
-  import { choroplethColours } from "../helpers/choroplethHelpers";
+  import { colours, getColoursForBreaks } from "../helpers/choroplethHelpers";
   import { getClassificationDataSuffix, roundedClassificationDataToString } from "../helpers/classificationHelpers";
   import BreaksChart from "./BreaksChart.svelte";
   import GeoTypeBadge from "./GeoTypeBadge.svelte";
@@ -27,6 +27,7 @@
       };
 
   const legendTextClass = "text-sm sm:text-base lg:text-lg xl:text-xl";
+  $: colors = $viz ? getColoursForBreaks($viz.breaks) : colours.standard;
 </script>
 
 <!--                      | no geography selected  |  geography selected    -->
@@ -125,7 +126,7 @@
           hovered={active.value}
           suffix={getClassificationDataSuffix($viz.params.classification.code)}
           breaks={$viz.breaks}
-          colors={choroplethColours}
+          {colors}
           classificationCode={$viz.params.classification.code}
         />
       {/if}

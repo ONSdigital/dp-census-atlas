@@ -127,7 +127,7 @@ def classification_from_content_json(content_json: dict) -> CensusClassification
         choropleth_default=content_json.get("choropleth_default", False),
         dot_density_default=content_json.get("dot_density_default", False),
         comparison_2011_data_available_geotypes=content_json.get(
-            "comparison_2011_data_available_geotypes", False
+            "comparison_2011_data_available_geotypes", []
         ),
         data_download=content_json.get("data_download", ""),
         categories=[category_from_content_json(
@@ -184,6 +184,7 @@ def classifications_from_metadata(
                     comparison_2011_data_available_geotypes=[],
                     data_download="",
                     categories=[],
+                    comparison_2011_data_available_geotypes=[],
                     _variable_code=csv_row["Variable_Mnemonic"],
                 )
 

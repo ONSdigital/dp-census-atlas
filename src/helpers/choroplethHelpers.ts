@@ -5,7 +5,10 @@ export const colours = {
   mid: "#DDDDDD",
 };
 
-export const getColoursForBreaks = (breaks: number[]): string[] => {
+export const getColoursForBreaks = (breaks: number[], changeOverTime: boolean): string[] => {
+  if (!changeOverTime) {
+    return colours.standard;
+  }
   if (breaks[0] > 0) {
     return colours.pos;
   }

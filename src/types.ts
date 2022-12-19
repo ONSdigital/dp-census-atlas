@@ -30,6 +30,7 @@ export type Classification = {
   available_geotypes: GeoType[];
   choropleth_default: boolean;
   dot_density_default: boolean;
+  comparison_2011_data_available: boolean;
   categories: Category[];
 };
 
@@ -54,6 +55,7 @@ export type VizData = {
     variableGroup: VariableGroup;
     variable: Variable;
     category: Category;
+    changeOverTime: boolean;
   };
 };
 

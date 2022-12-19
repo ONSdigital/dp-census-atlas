@@ -4,17 +4,28 @@ import { bboxToDataTiles } from "../helpers/spatialHelper";
 import { uniqueRoundedClassificationBreaks } from "../helpers/classificationHelpers";
 
 const geoBaseUrl = "https://cdn.ons.gov.uk/maptiles/cm-geos/v2";
+const changeOverTimeBaseUrl = "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison";
 
 /*
   Fetch place data files for all data 'tiles' (predefined coordinate grid squares) that intersect with current viewport
   bounding box.
 */
-export const fetchDataForBbox = async (args: { category: Category; geoType: GeoType; bbox: Bbox }) => {
+export const fetchDataForBbox = async (args: {
+  category: Category;
+  geoType: GeoType;
+  bbox: Bbox;
+  changeOverTime: boolean;
+}) => {
   const data = await fetchTileDataForBbox(args);
   return data.map((row) => parsePlaceData(row, args.category.code));
 };
 
-const fetchTileDataForBbox = async (args: { category: Category; geoType: GeoType; bbox: Bbox }) => {
+const fetchTileDataForBbox = async (args: {
+  category: Category;
+  geoType: GeoType;
+  bbox: Bbox;
+  changeOverTime: boolean;
+}) => {
   // get all intersecting data tiles
   const dataTiles = bboxToDataTiles(args.bbox, args.geoType);
 
@@ -25,6 +36,7 @@ const fetchTileDataForBbox = async (args: { category: Category; geoType: GeoType
         category: args.category,
         geoType: args.geoType,
         tile: dataTile,
+        changeOverTime: args.changeOverTime,
       });
     }),
   );
@@ -42,8 +54,17 @@ const parsePlaceData = (row: dsv.DSVRowString<string>, categoryCode: string) => 
   Fetch json with census data by for categories categoryCode and totalCode for all geographies of type 'geoType' that
   fall within geographic bounding box represented by 'tile'.
 */
-export const fetchTileData = async (args: { category: Category; geoType: GeoType; tile: DataTile }) => {
-  const url = `${args.category.baseUrl}/tiles/${args.geoType}/${args.tile.tilename}/${args.category.code}.csv`;
+export const fetchTileData = async (args: {
+  category: Category;
+  geoType: GeoType;
+  tile: DataTile;
+  changeOverTime: boolean;
+}) => {
+  let baseUrl = args.category.baseUrl;
+  if (args.changeOverTime) {
+    baseUrl = changeOverTimeBaseUrl;
+  }
+  const url = `${baseUrl}/tiles/${args.geoType}/${args.tile.tilename}/${args.category.code}.csv`;
   const response = await fetch(url);
   const csv = await response.text();
   return dsv.csvParse(csv);
@@ -57,8 +78,13 @@ export const fetchBreaks = async (args: {
   classification: Classification;
   category: Category;
   geoType: GeoType;
+  changeOverTime: boolean;
 }): Promise<{ breaks: number[] }> => {
-  const url = `${args.category.baseUrl}/breaks/${args.geoType}/${args.category.code}.json`;
+  let baseUrl = args.category.baseUrl;
+  if (args.changeOverTime) {
+    baseUrl = changeOverTimeBaseUrl;
+  }
+  const url = `${baseUrl}/breaks/${args.geoType}/${args.category.code}.json`;
   const response = await fetch(url);
   const breaksRaw = await response.json();
   /*

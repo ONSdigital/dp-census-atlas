@@ -12,12 +12,14 @@ export const params = derived([page, content], ([$page, $content]) => {
   const variable = variableGroup?.variables.find((v) => v.slug === $page.params.variable);
   const classification = variable?.classifications.find((c) => c.slug === $page.params.classification);
   const category = classification?.categories.find((c) => c.slug === $page.params.category);
+  const changeOverTime = !!$page.url.searchParams.get("changeOverTime");
 
   return {
     variableGroup,
     variable,
     classification,
     category,
+    changeOverTime,
     ...getSelectedGeography($page.url.searchParams),
     ...parseEmbedParams($page.url.searchParams),
   };

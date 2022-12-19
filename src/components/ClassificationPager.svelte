@@ -21,6 +21,7 @@
             classification: prev.slug,
             category: prev.categories[0].slug,
           },
+          ...($params?.changeOverTime && { changeOverTime: $params.changeOverTime }),
         })}
         >Fewer categories
       </a>
@@ -37,6 +38,7 @@
             classification: next.slug,
             category: next.categories[0].slug,
           },
+          ...($params?.changeOverTime && { changeOverTime: $params.changeOverTime }),
         })}
         >More categories
       </a>

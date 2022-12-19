@@ -1,14 +1,13 @@
 {
   "meta": {
-    "created_at": "2022-12-13-12-25-06",
-    "spec_file": "2021-content-spec.json",
-    "release": "2021-EDU-ar2776-c21ew_metadata-v1-3_cantab_20221207-35"
+    "created_at": "2022-12-16-13-05-36",
+    "release": "2021-EDU-ar2776-c21ew_metadata-v1-3_cantab_20221213-36"
   },
   "content": [
     {
       "name": "Education",
       "slug": "education",
-      "desc": "People in education and qualifications they hold.",
+      "desc": "The qualifications people hold.",
       "variables": [
         {
           "name": "Highest level of qualification",
@@ -31,7 +30,6 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "dataset": "TS067",
               "categories": [
                 {
                   "name": "No qualifications",
@@ -85,7 +83,6 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "dataset": "TS067",
               "categories": [
                 {
                   "name": "No qualifications",

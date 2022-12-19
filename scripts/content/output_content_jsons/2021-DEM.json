@@ -1,8 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-12-13-12-25-06",
-    "spec_file": "2021-content-spec.json",
-    "release": "2021-DEM-ar2776-c21ew_metadata-v1-3_cantab_20221207-35"
+    "created_at": "2022-12-16-13-05-36",
+    "release": "2021-DEM-ar2776-c21ew_metadata-v1-3_cantab_20221213-36"
   },
   "content": [
     {
@@ -29,7 +28,6 @@
                 "lad"
               ],
               "choropleth_default": true,
-              "dataset": "TS006",
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -49,7 +47,7 @@
           "code": "hh_deprivation",
           "slug": "household-deprivation",
           "desc": "Whether a household is deprived in one or more ways.",
-          "long_desc": "The dimensions of deprivation used to classify households are indicators based on four selected household characteristics.\n\nEducation\n\nA household is classified as deprived in the education dimension if no one has at least level 2 education and no one aged 16 to 18 years is a full-time student.\n\nEmployment\n\nA household is classified as deprived in the employment dimension if any member, not a full-time student, is either unemployed or economically inactive due to long-term sickness or disability.\n\nHealth\n\nA household is classified as deprived in the health dimension if any person in the household has general health that is bad or very bad or is identified as disabled\n\nPeople who have assessed their day-to-day activities as limited by long-term physical or mental health conditions or illnesses are considered disabled.  This definition of a disabled person meets the harmonised standard for measuring disability and is in line with the Equality Act (2010).\n\nHousing\n\nA household is classified as deprived in the housing dimension if the household's accommodation is either overcrowded, in a shared dwelling, or has no central heating.",
+          "long_desc": "The dimensions of deprivation used to classify households are indicators based on four selected household characteristics.\n\nEducation\n\nA household is classified as deprived in the education dimension if no one has at least level 2 education and no one aged 16 to 18 years is a full-time student.\n\nEmployment\n\nA household is classified as deprived in the employment dimension if any member, not a full-time student, is either unemployed or economically inactive due to long-term sickness or disability.\n\nHealth\n\nA household is classified as deprived in the health dimension if any person in the household has general health that is bad or very bad or is identified as disabled.\n\nPeople who have assessed their day-to-day activities as limited by long-term physical or mental health conditions or illnesses are considered disabled.  This definition of a disabled person meets the harmonised standard for measuring disability and is in line with the Equality Act (2010).\n\nHousing\n\nA household is classified as deprived in the housing dimension if the household's accommodation is either overcrowded, in a shared dwelling, or has no central heating.",
           "units": "Household",
           "topic_code": "DEM",
           "classifications": [
@@ -65,7 +63,6 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "dataset": "TS011",
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -133,7 +130,6 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "dataset": "TS003",
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -172,7 +168,6 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "dataset": "TS003",
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -312,7 +307,6 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "dataset": "TS017",
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -359,7 +353,6 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "dataset": "TS017",
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -451,7 +444,6 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "dataset": "TS002",
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -482,7 +474,6 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "dataset": "TS002",
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -537,7 +528,6 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "dataset": "TS002",
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -651,7 +641,6 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "dataset": "TS010",
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -758,7 +747,6 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "dataset": "TS076",
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -796,7 +784,6 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "dataset": "TS076",
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -874,7 +861,6 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "dataset": "TS076",
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -976,7 +962,6 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "dataset": "TS007",
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -1809,7 +1794,6 @@
                 "lad"
               ],
               "choropleth_default": true,
-              "dataset": "TS007a",
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -1845,7 +1829,6 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "dataset": "TS020",
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {

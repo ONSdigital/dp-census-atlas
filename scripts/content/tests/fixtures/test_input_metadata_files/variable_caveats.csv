@@ -1,0 +1,51 @@
+variable_group,content_json,variable,caveat_text,caveat_link
+Education,2021-EDU,highest_qualification,,
+Health,2021-HUC,disability,,
+Health,2021-HUC,health_in_general,,
+Health,2021-HUC,hh_disabled,,
+Health,2021-HUC,is_carer,,
+Housing,2021-HOU,accommodation_type,,
+Housing,2021-HOU,alternative_address_indicator,,
+Housing,2021-HOU,heating_type,,
+Housing,2021-HOU,hh_tenure,,
+Housing,2021-HOU,number_bedrooms,,
+Housing,2021-HOU,number_of_cars,,
+Housing,2021-HOU,occupancy_rating_bedrooms,,
+Housing,2021-HOU,occupancy_rating_rooms,,
+Housing,2021-HOU,second_address_type_priority,,
+Identity,2021-EILR,english_proficiency,,
+Identity,2021-EILR,ethnic_group_tb,,
+Identity,2021-EILR,hh_language,,
+Identity,2021-EILR,hh_multi_ethnic_group,,
+Identity,2021-EILR,hh_multi_language,,
+Identity,2021-EILR,hh_multi_religion,,
+Identity,2021-EILR,main_language_detailed,,
+Identity,2021-EILR,national_identity_all,There are quality considerations for this variable.,https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/ethnicity/methodologies/ethnicgroupnationalidentitylanguageandreligionqualityinformationforcensus2021
+Identity,2021-EILR,national_identity_detailed,There are quality considerations for this variable.,https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/ethnicity/methodologies/ethnicgroupnationalidentitylanguageandreligionqualityinformationforcensus2021
+Identity,2021-EILR,religion_tb,"There are quality considerations for the ""not answered"" category in university locations.",https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/ethnicity/methodologies/ethnicgroupnationalidentitylanguageandreligionqualityinformationforcensus2021
+Identity,2021-EILR,welsh_skills_all,,
+Identity,2021-EILR,welsh_skills_speak,,
+Identity,2021-SOGI,gender_identity,,
+Identity,2021-SOGI,sexual_orientation,,
+Population,2021-ARM,uk_armed_forces,,
+Population,2021-DEM,hh_deprivation,,
+Population,2021-DEM,hh_family_composition,,
+Population,2021-DEM,hh_size,,
+Population,2021-DEM,legal_partnership_status,,
+Population,2021-DEM,living_arrangements,,
+Population,2021-DEM,resident_age,,
+Population,2021-DEM,sex,,
+Population,2021-MIG,age_arrival_uk,,
+Population,2021-MIG,country_of_birth,,
+Population,2021-MIG,migrant_ind,,
+Population,2021-MIG,passports_all,,
+Population,2021-MIG,residence_length,,
+Population,2021-MIG,year_arrival_uk,,
+Work,2021-LAB,economic_activity,There are pandemic-related quality considerations for this variable.,https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/methodologies/labourmarketqualityinformationforcensus2021
+Work,2021-LAB,has_ever_worked,There are pandemic-related quality considerations for this variable.,https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/methodologies/labourmarketqualityinformationforcensus2021
+Work,2021-LAB,hours_per_week_worked,There are pandemic-related quality considerations for this variable.,https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/methodologies/labourmarketqualityinformationforcensus2021
+Work,2021-LAB,industry_current,There are pandemic-related quality considerations for this variable.,https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/methodologies/labourmarketqualityinformationforcensus2021
+Work,2021-LAB,ns_sec,There are pandemic-related quality considerations for this variable.,https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/methodologies/labourmarketqualityinformationforcensus2021
+Work,2021-LAB,occupation_current,There are pandemic-related quality considerations for this variable.,https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/methodologies/labourmarketqualityinformationforcensus2021
+Work,2021-TTW,transport_to_workplace,There are pandemic-related quality considerations for this variable.,https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/methodologies/traveltoworkqualityinformationforcensus2021
+Work,2021-TTW,workplace_travel,There are pandemic-related quality considerations for this variable.,https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/methodologies/traveltoworkqualityinformationforcensus2021

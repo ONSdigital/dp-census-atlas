@@ -1,0 +1,580 @@
+﻿Id,Classification_Mnemonic,Number_Of_Category_Items,Mnemonic_2011,Flat_Classification_Flag,Parent_Classification_Mnemonic,Security_Mnemonic,Signed_Off_Flag,Variable_Mnemonic,Default_Classification_Flag,Internal_Classification_Label_English,External_Classification_Label_English,External_Classification_Label_Welsh,Version
+1,1_year_ago_address_country,281,,Y,,PUB,N,1_year_ago_address_country,,Address one year ago (Outside UK) (281 categories),Address one year ago (Outside UK) (281 categories),Cyfeiriad flwyddyn yn ôl (Y tu allan i'r Deyrnas Unedig) (281 o gategorïau),1
+2,1_year_ago_address_indicator,9,,Y,,PUB,N,1_year_ago_address_indicator,,Address one year ago (Indicator) (9 categories),Address one year ago (Indicator) (9 categories),Cyfeiriad flwyddyn yn ôl (Dangosydd) (9 categori),1
+3,66_plus_employment,3,,Y,,PUB,Y,66_plus_employment,,Employment status of people aged 66 years and over (3 categories),Employment status of people aged 66 years and over (3 categories),Statws cyflogaeth pobl 66 oed a throsodd (3 chategori),1
+4,66_plus_hh,11,,Y,,PUB,Y,66_plus_hh,,Households with people aged 66 years and over (11 categories),Households with people aged 66 years and over (11 categories),Cartrefi â phobl 66 oed a throsodd (11 o gategorïau),1
+5,66_plus_ind,3,,Y,,PUB,Y,66_plus_ind,,People aged 66 years and over (3 categories),People aged 66 years and over (3 categories),Pobl 66 oed a throsodd (3 chategori),1
+6,accom_by_dwelling_type,9,,Y,,PUB,Y,accom_by_dwelling_type,Y,Accommodation by type of dwelling (9 categories),Accommodation by type of dwelling (9 categories),Cartref yn ôl math o annedd (9 categori),1
+7,accom_by_dwelling_type_8a,8,,N,accom_by_dwelling_type,PUB,Y,accom_by_dwelling_type,N,Accommodation by type of dwelling (8 categories),Accommodation by type of dwelling (8 categories),Cartref yn ôl math o annedd (8 categori),1
+8,accommodation_type,8,,Y,,PUB,Y,accommodation_type,N,Accommodation type (8 categories),Accommodation type (8 categories),Math o lety (8 categori),1
+9,accommodation_type_2a,2,,N,accommodation_type,PUB,Y,accommodation_type,N,Accommodation type (2 categories),Accommodation type (2 categories),Math o lety (2 categori),1
+10,accommodation_type_3a,3,,N,accommodation_type,PUB,Y,accommodation_type,N,Accommodation type (3 categories),Accommodation type (3 categories),Math o lety (3 categori),1
+11,accommodation_type_5a,5,,N,accommodation_type,PUB,Y,accommodation_type,Y,Accommodation type (5 categories),Accommodation type (5 categories),Math o lety (5 categori),1
+12,accommodation_type_7a,7,,N,accommodation_type,PUB,Y,accommodation_type,N,Accommodation type (7 categories),Accommodation type (7 categories),Math o lety (7 categori),1
+13,activity_last_week,8,,Y,,PUB,Y,activity_last_week,N,Economic activity status last week (8 categories),Economic activity status last week (8 categories),Statws gweithgarwch economaidd yr wythnos diwethaf (8 categori),1
+14,activity_last_week_3a,3,,N,activity_last_week,PUB,Y,activity_last_week,Y,Economic activity status last week (3 categories),Economic activity status last week (3 categories),Statws gweithgarwch economaidd yr wythnos diwethaf (3 categori),1
+15,adult_lifestage,22,,Y,,PUB,Y,adult_lifestage,,Adult lifestage (22 categories),Adult lifestage (22 categories),Cyfnod bywyd oedolyn (22 o gategorïau),1
+16,adult_lifestage_12a,12,,N,adult_lifestage,PUB,Y,adult_lifestage,,Adult lifestage (12 categories),Adult lifestage (12 categories),Cyfnod bywyd oedolyn (12 o gategorïau),1
+17,adult_lifestage_21a,21,,N,adult_lifestage,PUB,Y,adult_lifestage,,Adult lifestage (21 categories),Adult lifestage (21 categories),Cyfnod bywyd oedolyn (21 o gategorïau),1
+18,adult_lifestage_9a,9,,N,adult_lifestage,PUB,Y,adult_lifestage,,Adult lifestage (9 categories),Adult lifestage (9 categories),Cyfnod bywyd oedolyn (9 o gategorïau),1
+19,adult_student,2,,Y,,PUB,Y,adult_student,,Full-time students aged 18 years and over (2 categories),Full-time students aged 18 years and over (2 categories),Myfyrwyr amser llawn 18 oed a throsodd (2 gategori),1
+20,age_16over_pop_1a,0,,Y,,PUB,N,age_16over_pop,,Age 16 and over (Population),People aged 16 and over,Pobl 16 oed a throsodd ,1
+21,age_16to65_pop_1a,0,,Y,,PUB,N,age_16to65_pop,,Age 16 to 65 (Population),People aged 16 to 65 years,Pobl 16 i 65 oed,1
+22,age_16to74_pop_1a,0,,Y,,PUB,N,age_16to74_pop,,Age 16 to 74 (Population),People aged 16 to 74 years,Pobl 16 i 74 oed,1
+23,age_3over_pop_1a,0,,Y,,PUB,N,age_3over_pop,,Age 3 and over (Population),People aged 3 years and over,Pobl 3 oed a throsodd,1
+24,age_3to4_pop_1a,0,,Y,,PUB,N,age_3to4_pop,,Age 3 to 4 (Population),Children aged 3 to 4 years,Plant 3 i 4 oed,1
+25,age_arrival_uk,118,,Y,,PUB,Y,age_arrival_uk,N,Age of arrival in the UK (118 categories),Age of arrival in the UK (118 categories),Oed cyrraedd y Deyrnas Unedig (118 o gategorïau),1
+26,age_arrival_uk_18a,18,,N,age_arrival_uk,PUB,Y,age_arrival_uk,N,Age of arrival in the UK (18 categories),Age of arrival in the UK (18 categories),Oed cyrraedd y Deyrnas Unedig (18 o gategorïau),1
+27,age_arrival_uk_23a,23,,N,age_arrival_uk,PUB,Y,age_arrival_uk,N,Age of arrival in the UK (23 categories),Age of arrival in the UK (23 categories),Oed cyrraedd y Deyrnas Unedig (23 o gategorïau),1
+28,age_arrival_uk_8a,8,,N,age_arrival_uk,PUB,Y,age_arrival_uk,Y,Age of arrival in the UK (8 categories),Age of arrival in the UK (8 categories),Oed cyrraedd y Deyrnas Unedig (8 o gategorïau),1
+29,all_families_pop_1a,0,,Y,,PUB,N,all_families_pop,,All families (Population),All families,Pob teulu,1
+30,alternative_address_country,282,,Y,,PUB,N,alternative_address_country,,Second address (Outside UK) (282 categories),Second address (Outside UK) (282 categories),Ail gyfeiriad (Y tu allan i'r Deyrnas Unedig) (282 o gategorïau),1
+31,alternative_address_indicator,3,,Y,,PUB,Y,alternative_address_indicator,Y,Second address indicator (3 categories),Second address indicator (3 categories),Dangosydd ail gyfeiriad (3 chategori),1
+32,alternative_address_type,11,,Y,,PUB,N,alternative_address_type,,Second address type (11 categories),Second address type (11 categories),Math o ail gyfeiriad (11 o gategorïau),1
+33,available_for_work,6,,Y,,PUB,N,available_for_work,,Available for work (6 categories),Available for work (6 categories),Ar gael i weithio (6 chategori),1
+34,away_student_ind,3,,Y,,PUB,Y,away_student_ind,,Schoolchild or student living away from home during term-time (3 categories),Schoolchild or student living away from home during term-time (3 categories),Plentyn ysgol neu fyfyriwr yn byw i ffwrdd o’r cartref yn ystod y tymor (3 chategori),1
+35,away_student_num,31,,Y,,PUB,Y,away_student_num,,Number of students and schoolchildren living away from home during term-time (31 categories),Number of students and schoolchildren living away from home during term-time (31 categories),Nifer y myfyrwyr a phlant ysgol sy'n byw i ffwrdd o’r cartref yn ystod y tymor (31 o gategorïau),1
+36,ce_management_type,27,,Y,,PUB,Y,ce_management_type,,Communal establishment management and type (27 categories),Communal establishment management and type (27 categories),"Y math o sefydliad cymunedol, a'r gwaith o'i reoli (27 o gategorïau)",1
+37,ce_management_type_12a,12,,N,ce_management_type,PUB,Y,ce_management_type,,Communal establishment management and type (12 categories),Communal establishment management and type (12 categories),"Y math o sefydliad cymunedol, a'r gwaith o'i reoli (12 o gategorïau)",1
+38,ce_management_type_1a,1,,N,ce_management_type,PUB,Y,ce_management_type,,Communal establishment management and type (1 categories),Communal establishment management and type (1 categories),"Y math o sefydliad cymunedol, a'r gwaith o'i reoli (1 o gategorïau)",1
+39,ce_management_type_26a,26,,N,ce_management_type,PUB,Y,ce_management_type,,Communal establishment management and type (26 categories),Communal establishment management and type (26 categories),"Y math o sefydliad cymunedol, a'r gwaith o'i reoli (26 o gategorïau)",1
+40,ce_position_age,119,,Y,,PUB,Y,ce_position_age,N,Position in communal establishment and age (119 categories),Position in communal establishment and age (119 categories),Rôl mewn sefydliad cymunedol ac oedran (119 o gategorïau),1
+41,ce_position_age_11a,11,,N,ce_position_age,PUB,Y,ce_position_age,Y,Position in communal establishment and age (11 categories),Position in communal establishment and age (11 categories),Rôl mewn sefydliad cymunedol ac oedran (11 o gategorïau),1
+42,ce_position_ethnic_group,23,,Y,,PUB,Y,ce_position_ethnic_group,N,Position in communal establishment and ethnic group (23 categories),Position in communal establishment and ethnic group (23 categories),Rôl mewn sefydliad cymunedol a grŵp ethnig (23 o gategorïau),1
+43,ce_position_ethnic_group_9a,9,,N,ce_position_ethnic_group,PUB,Y,ce_position_ethnic_group,Y,Position in communal establishment and ethnic group (9 categories),Position in communal establishment and ethnic group (9 categories),Rôl mewn sefydliad cymunedol a grŵp ethnig (9 o gategorïau),1
+44,ce_position_religion,13,,Y,,PUB,Y,ce_position_religion,Y,Position in communal establishment and religion (13 categories),Position in communal establishment and religion (13 categories),Rôl mewn sefydliad cymunedol a chrefydd (13 o gategorïau),1
+45,ce_position_sex_age,53,,Y,,PUB,Y,ce_position_sex_age,,Position in communal establishment and sex and age (53 categories),Position in communal establishment and sex and age (53 categories),Rôl mewn sefydliad cymunedol a rhyw ac oedran (53 o gategorïau),1
+46,ce_position_sex_age_19a,19,,N,ce_position_sex_age,PUB,Y,ce_position_sex_age,,Position in communal establishment and sex and age (19 categories),Position in communal establishment and sex and age (19 categories),Rôl mewn sefydliad cymunedol a rhyw ac oedran (19 o gategorïau),1
+47,ce_record_key,258,,Y,,PUB,N,ce_record_key,,CE Record Key (258 categories),CE Record Key (258 categories),Allwedd Cofnod CE (258 o gategorïau),1
+48,child_family_status,7,,Y,,PUB,Y,child_family_status,,Children and family status (7 categories),Children and family status (7 categories),Statws plant a theulu (7 categori),1
+49,communal_est_pop_1a,0,,Y,,PUB,N,communal_est_pop,,Communal establishments (Population),Communal establishments,Sefydliadau cymunedol,1
+50,concealed_family_ind,3,,Y,,PUB,Y,concealed_family_ind,,Concealed family indicator (3 categories),Concealed family indicator (3 categories),Dangosydd teulu cudd (3 chategori),1
+51,concealed_family_type,13,,Y,,PUB,Y,concealed_family_type,,Concealed family type (13 categories),Concealed family type (13 categories),Math o deulu cudd (13 o gategorïau),1
+52,concealed_family_type_11a,11,,N,concealed_family_type,PUB,Y,concealed_family_type,,Concealed family type (11 categories),Concealed family type (11 categories),Math o deulu cudd (11 o gategorïau),1
+53,cornish_ind,9,,Y,,PUB,Y,cornish_ind,,Cornish identity (9 categories),Cornish identity (9 categories),Hunaniaeth Gernywaidd (9 categori),1
+54,cornish_ind_3a,3,,N,cornish_ind,PUB,Y,cornish_ind,,Cornish identity (3 categories),Cornish identity (3 categories),Hunaniaeth Gernywaidd (3 categori),1
+55,cornish_ind_4a,4,,N,cornish_ind,PUB,Y,cornish_ind,,Cornish identity (4 categories),Cornish identity (4 categories),Hunaniaeth Gernywaidd (4 categori),1
+56,country_of_birth_10a,10,,N,country_of_birth,PUB,Y,country_of_birth,,Country of birth (10 categories),Country of birth (10 categories),Gwlad enedigol (10 o gategorïau),1
+57,country_of_birth_12a,12,,N,country_of_birth,PUB,Y,country_of_birth,Y,Country of birth (12 categories),Country of birth (12 categories),Gwlad enedigol (12 o gategorïau),1
+58,country_of_birth_13a,13,,N,country_of_birth,PUB,Y,country_of_birth,N,Country of birth (13 categories),Country of birth (13 categories),Gwlad enedigol (13 o gategorïau),1
+59,country_of_birth_190a,190,,N,country_of_birth,PUB,Y,country_of_birth,,Country of birth (190 categories),Country of birth (190 categories),Gwlad enedigol (190 o gategorïau),1
+60,country_of_birth_22a,22,,N,country_of_birth,PUB,Y,country_of_birth,N,Country of birth (22 categories),Country of birth (22 categories),Gwlad enedigol (22 o gategorïau),1
+61,country_of_birth_25a,25,,N,country_of_birth,PUB,Y,country_of_birth,,Country of birth (25 categories),Country of birth (25 categories),Gwlad enedigol (25 o gategorïau),1
+62,country_of_birth,279,,Y,,PUB,Y,country_of_birth,N,Country of birth (279 categories),Country of birth (279 categories),Gwlad enedigol (279 o gategorïau),1
+63,country_of_birth_3a,3,,N,country_of_birth,PUB,Y,country_of_birth,N,Country of birth (UK) (3 categories),Country of birth (UK) (3 categories),Gwlad enedigol (y Deyrnas Unedig) (3 chategori),1
+64,country_of_birth_3b,3,,N,country_of_birth,PUB,Y,country_of_birth,,Country of birth (Wales) (3 categories),Country of birth (Wales) (3 categories),Gwlad enedigol (Cymru) (3 chategori),1
+65,country_of_birth_58a,58,,N,country_of_birth,PUB,Y,country_of_birth,N,Country of birth (58 categories),Country of birth (58 categories),Gwlad enedigol (58 o gategorïau),1
+66,country_of_birth_59a,59,,N,country_of_birth,PUB,Y,country_of_birth,,Country of birth (59 categories),Country of birth (59 categories),Gwlad enedigol (59 o gategorïau),1
+67,country_of_birth_60a,60,,N,country_of_birth,PUB,Y,country_of_birth,,Country of birth (60 categories),Country of birth (60 categories),Gwlad enedigol (60 o gategorïau),1
+68,country_of_birth_66a,66,,N,country_of_birth,PUB,Y,country_of_birth,,Country of birth (66 categories),Country of birth (66 categories),Gwlad enedigol (66 o gategorïau),1
+69,country_of_birth_8a,8,,N,country_of_birth,PUB,Y,country_of_birth,N,Country of birth (8 categories),Country of birth (8 categories),Gwlad enedigol (8 o gategorïau),1
+70,dependent_child_age,20,,Y,,PUB,Y,dependent_child_age,,Dependent child age (20 categories),Dependent child age (20 categories),Oedran plentyn dibynnol (20 o gategorïau),1
+71,dependent_child_age_11a,11,,N,dependent_child_age,PUB,Y,dependent_child_age,,Dependent child age (11 categories),Dependent child age (11 categories),Oedran plentyn dibynnol (11 o gategorïau),1
+72,dependent_child_age_3a,3,,N,dependent_child_age,PUB,Y,dependent_child_age,,Dependent child age (3 categories),Dependent child age (3 categories),Oedran plentyn dibynnol (3 o gategorïau),1
+73,dependent_child_age_4a,4,,N,dependent_child_age,PUB,Y,dependent_child_age,,Dependent child age (4 categories),Dependent child age (4 categories),Oedran plentyn dibynnol (4 o gategorïau),1
+74,dependent_child_age_6a,6,,N,dependent_child_age,PUB,Y,dependent_child_age,,Dependent child age (6 categories),Dependent child age (6 categories),Oedran plentyn dibynnol (6 o gategorïau),1
+75,dependent_child_age_9a,9,,N,dependent_child_age,PUB,Y,dependent_child_age,,Dependent child age (9 categories),Dependent child age (9 categories),Oedran plentyn dibynnol (9 o gategorïau),1
+76,dependent_child_ind,3,,Y,,PUB,Y,dependent_child_ind,,Dependent child indicator (3 categories),Dependent child indicator (3 categories),Dangosydd plentyn dibynnol (3 chategori),1
+77,dependent_child_pop_1a,0,,Y,,PUB,N,dependent_child_pop,,Dependent children (Population),Dependent children,Plant dibynnol,1
+78,disability,5,,Y,,PUB,Y,disability,N,Disability (5 categories),Disability (5 categories),Anabledd (5 categori),1
+79,disability_3a,3,,N,disability,PUB,Y,disability,Y,Disability (3 categories),Disability (3 categories),Anabledd (3 chategori),1
+80,disability_4a,4,,N,disability,PUB,Y,disability,N,Disability - Equality act disabled (4 categories),Disability - Equality act disabled (4 categories),Anabledd - Yn anabl o dan y Ddeddf Cydraddoldeb (4 categori),1
+81,disability_4b,4,,N,disability,PUB,Y,disability,,Disability - Not Equality act disabled (4 categories),Disability - Not Equality act disabled (4 categories),Anabledd - Ddim yn anabl o dan y Ddeddf Cydraddoldeb (4 categori) ,1
+82,distance_to_work,12002,,Y,,PUB,Y,distance_to_work,,Distance to work in km,Distance to work in km,Pellter i'r gwaith mewn km,1
+83,dummy_reason,14,,Y,,PUB,N,dummy_reason,,Dummy reason (14 categories),Dummy reason (14 categories),Rheswm ffug (14 o gategorïau),1
+84,dummy_source,9,,Y,,PUB,N,dummy_source,,Dummy source (9 categories),Dummy source (9 categories),Ffynhonnell ffug (9 categori),1
+85,dwelling_hmo_unrelated,3,,Y,,PUB,Y,dwelling_hmo_unrelated,,Dwellings containing households of multiple occupancy (3 categories),Dwellings containing households of multiple occupancy (3 categories),Anheddau sy'n cynnwys cartrefi amlfeddiannaeth (3 chategori),1
+86,dwelling_occupancy,7,,Y,,PUB,Y,dwelling_occupancy,,Dwelling occupancy (7 categories),Dwelling occupancy (7 categories),Deiliadaeth annedd (7 categori),1
+87,dwelling_occupancy_3a,3,,N,dwelling_occupancy,PUB,Y,dwelling_occupancy,,Dwelling occupancy (3 categories),Dwelling occupancy (3 categories),Deiliadaeth annedd (3 categori),1
+88,dwelling_record_key,257,,Y,,PUB,N,dwelling_record_key,,Dwelling Key (257 categories),Dwelling Key (257 categories),Allwedd Annedd (257 o gategorïau),1
+89,dwelling_rooms,100,,Y,,PUB,Y,dwelling_rooms,,Number of rooms in dwelling (100 categories),Number of rooms in dwelling (100 categories),Nifer yr ystafelloedd yn yr annedd (100 o gategorïau),1
+90,dwelling_tenure,11,,Y,,PUB,Y,dwelling_tenure,,Tenure of dwelling (11 categories),Tenure of dwelling (11 categories),Daliadaeth annedd (11 o gategorïau),1
+91,dwelling_tenure_4a,4,,N,dwelling_tenure,PUB,Y,dwelling_tenure,,Tenure of dwelling (4 categories),Tenure of dwelling (4 categories),Daliadaeth annedd (4 categori),1
+92,economic_activity_status_10a,10,,N,economic_activity,PUB,Y,economic_activity,N,Economic activity status (10 categories),Economic activity status (10 categories),Statws gweithgarwch economaidd (10 o gategorïau),1
+93,economic_activity_status_12a,12,,N,economic_activity,PUB,Y,economic_activity,N,Economic activity status (12 categories),Economic activity status (12 categories),Statws gweithgarwch economaidd (12 o gategorïau),1
+94,economic_activity,20,,Y,,PUB,Y,economic_activity,N,Economic activity status (20 categories),Economic activity status (20 categories),Statws gweithgarwch economaidd (20 o gategorïau),1
+95,economic_activity_status_3a,3,,N,economic_activity,PUB,Y,economic_activity,,Economic activity status (3 categories),Economic activity status (3 categories),Statws gweithgarwch economaidd (3 o gategorïau),1
+96,economic_activity_status_4a,4,,N,economic_activity,PUB,Y,economic_activity,N,Economic activity status (4 categories),Economic activity status (4 categories),Statws gweithgarwch economaidd (4 o gategorïau),1
+97,economic_activity_status_7a,7,,N,economic_activity,PUB,Y,economic_activity,Y,Economic activity status (7 categories),Economic activity status (7 categories),Statws gweithgarwch economaidd (7 o gategorïau),1
+98,economic_activity_status_hours_worked_20a,20,,Y,,PUB,Y,economic_activity_hours_worked,,Economic activity status and hours worked (20 categories),Economic activity status and hours worked (20 categories),Statws gweithgarwch economaidd ac oriau gwaith (20 o gategorïau),1
+99,economic_activity_status_hours_worked_7a,7,,N,economic_activity_status_hours_worked_20a,PUB,Y,economic_activity_hours_worked,,Economic activity status and hours worked (7 categories),Economic activity status and hours worked (7 categories),Statws gweithgarwch economaidd ac oriau gwaith (7 o gategorïau),1
+100,economic_category,9,,Y,,PUB,Y,economic_category,,Economic category (9 categories),Economic category (9 categories),Categori economaidd (9 categori),1
+101,employment_status,7,,Y,,PUB,N,employment_status,,Employment status (7 categories),Employment status (7 categories),Statws cyflogaeth (7 categori),1
+102,english_language_proficiency,8,,Y,,PUB,N,english_language_proficiency,,English language proficiency (8 categories),English language proficiency (8 categories),Hyfedredd yn yr iaith Saesneg (8 categori),1
+103,english_proficiency,6,,Y,,PUB,Y,english_proficiency,N,Proficiency in English language (6 categories),Proficiency in English language (6 categories),Hyfedredd yn yr iaith Saesneg (6 chategori),1
+104,english_proficiency_4a,4,,N,english_proficiency,PUB,Y,english_proficiency,N,Proficiency in English language (4 categories),Proficiency in English language (4 categories),Hyfedredd yn yr iaith Saesneg (4 chategori),1
+105,english_proficiency_5a,5,,N,english_proficiency,PUB,Y,english_proficiency,Y,Proficiency in English language (5 categories),Proficiency in English language (5 categories),Hyfedredd yn yr iaith Saesneg (5 chategori),1
+106,enumeration_address_oa,1,,Y,,PUB,Y,enumeration_address_oa,,Output Area of enumeration address,Output Area of enumeration address,Ardal Gynnyrch cyfeiriad cyfrifo ,1
+107,ethnic_group,1411,,Y,,PUB,Y,ethnic_group,,Ethnic Group (all) (1411 categories),Ethnic Group (all) (1411 categories),Grŵp ethnig (pob un) (1411 o gategorïau),1
+108,ethnic_group_288a,288,,N,ethnic_group,PUB,Y,ethnic_group,,Ethnic Group (detailed) (288 categories),Ethnic Group (detailed) (288 categories),Grŵp ethnig (manwl) (288 o gategorïau),1
+109,ethnic_group_51a,51,,N,ethnic_group,PUB,Y,ethnic_group,,Ethnic Group (detailed) (51 categories),Ethnic Group (detailed) (51 categories),Grŵp ethnig (manwl) (51 o gategorïau),1
+110,ethnic_group_tb,20,,Y,,PUB,Y,ethnic_group_tb,N,Ethnic group (unordered) (20 categories),Ethnic group (unordered) (20 categories),Grŵp ethnig (di-drefn) (20 o gategorïau),1
+111,ethnic_group_tb_20b,20,,N,ethnic_group_tb,PUB,Y,ethnic_group_tb,N,Ethnic group (20 categories),Ethnic group (20 categories),Grŵp ethnig (20 o gategorïau),1
+112,ethnic_group_tb_6a,6,,N,ethnic_group_tb,PUB,Y,ethnic_group_tb,N,Ethnic group (6 categories),Ethnic group (6 categories),Grŵp ethnig (6 o gategorïau),1
+113,ethnic_group_tb_8a,8,,N,ethnic_group_tb,PUB,Y,ethnic_group_tb,Y,Ethnic group (8 categories),Ethnic group (8 categories),Grŵp ethnig (8 o gategorïau),1
+114,families_and_children,12,,Y,,PUB,Y,families_and_children,,Family type (12 categories),Family type (12 categories),Math o deulu (12 o gategorïau),1
+115,families_and_children_3a,3,,N,families_and_children,PUB,Y,families_and_children,,Family type (3 categories),Family type (3 categories),Math o deulu (3 o gategorïau),1
+116,families_and_children_7a,7,,N,families_and_children,PUB,Y,families_and_children,,Family type (7 categories),Family type (7 categories),Math o deulu (7 o gategorïau),1
+117,families_and_children_9a,9,,N,families_and_children,PUB,Y,families_and_children,,Family type (9 categories),Family type (9 categories),Math o deulu (9 o gategorïau),1
+118,families_and_children_welsh_speaker_parents,17,,Y,,PUB,Y,families_and_children_welsh_speaker_parents,,Family type and Welsh-speaking adults (17 categories),Family type and Welsh-speaking adults (17 categories),Math o deulu ac oedolion sy'n siarad Cymraeg (17 o gategorïau),1
+119,families_and_children_welsh_speaker_parents_9a,9,,N,families_and_children_welsh_speaker_parents,PUB,Y,families_and_children_welsh_speaker_parents,,Family type and Welsh-speaking adults (9 categories),Family type and Welsh-speaking adults (9 categories),Math o deulu ac oedolion sy'n siarad Cymraeg (9 o gategorïau),1
+120,family_dependent_children,21,,Y,,PUB,Y,family_dependent_children,,Dependent children in family (21 categories),Dependent children in family (21 categories),Plant dibynnol yn y teulu (21 o gategorïau),1
+121,family_dependent_children_11a,11,,N,family_dependent_children,PUB,Y,family_dependent_children,,Dependent children in family (11 categories),Dependent children in family (11 categories),Plant dibynnol yn y teulu (11 o gategorïau),1
+122,family_dependent_children_14a,14,,N,family_dependent_children,PUB,Y,family_dependent_children,,Dependent children in family (14 categories),Dependent children in family (14 categories),Plant dibynnol yn y teulu (14 o gategorïau),1
+123,family_dependent_children_4a,4,,N,family_dependent_children,PUB,Y,family_dependent_children,,Dependent children in family (4 categories),Dependent children in family (4 categories),Plant dibynnol yn y teulu (4 o gategorïau),1
+124,family_dependent_children_5a,5,,N,family_dependent_children,PUB,Y,family_dependent_children,,Dependent children in family (5 categories),Dependent children in family (5 categories),Plant dibynnol yn y teulu (5 o gategorïau),1
+125,family_dependent_children_6a,6,,N,family_dependent_children,PUB,Y,family_dependent_children,,Dependent children in family (6 categories),Dependent children in family (6 categories),Plant dibynnol yn y teulu (6 o gategorïau),1
+126,family_dependent_children_pop_1a,0,,Y,,PUB,N,family_dependent_children_pop,,Families with dependent children (Population),Families with dependent children,Teuluoedd â phlant dibynnol,1
+127,family_non_dependent_children,32,,Y,,PUB,Y,family_non_dependent_children,,Number of non-dependent children in family (32 categories),Number of non-dependent children in family (32 categories),Nifer y plant nad ydynt yn ddibynnol yn y teulu (32 o gategorïau),1
+128,family_record_key,257,,Y,,PUB,N,family_record_key,,Family Key (257 categories),Family Key (257 categories),Allwedd Teulu (257 o gategorïau),1
+129,family_reference_person_ind,3,,Y,,PUB,Y,family_reference_person_ind,,Family reference person indicator (3 categories),Family reference person indicator (3 categories),Dangosydd person cyswllt y teulu (3 chategori),1
+130,family_reference_person_pop_1a,0,,Y,,PUB,N,family_reference_person_pop,,Family Reference Person (Population),Family reference person,Person cyswllt y teulu,1
+131,family_status,10,,Y,,PUB,Y,family_status,,Family status (10 categories),Family status (10 categories),Statws teulu (10 categori),1
+132,family_status_5a,5,,N,family_status,PUB,Y,family_status,,Family status (5 categories),Family status (5 categories),Statws teulu (5 categori),1
+133,family_status_by_workers_in_generation_1,16,,Y,,PUB,Y,family_status_by_workers_in_generation_1,,Family status by workers in generation 1 (16 categories),Family status by workers in generation 1 (16 categories),Statws y teulu yn ôl gweithwyr yng nghenhedlaeth 1 (16 o gategorïau),1
+134,family_status_by_workers_in_generation_1_8a,8,,N,family_status_by_workers_in_generation_1,PUB,Y,family_status_by_workers_in_generation_1,,Family status by workers in generation 1 (8 categories),Family status by workers in generation 1 (8 categories),Statws y teulu yn ôl gweithwyr yng nghenhedlaeth 1 (8 o gategorïau),1
+135,family_type_1,14,,Y,,PUB,N,family_type_1,,Family Type 1 (14 categories),Family Type 1 (14 categories),Math o Deulu 1 (14 o gategorïau),1
+136,family_type_2,12,,Y,,PUB,N,family_type_2,,Family Type 2 (12 categories),Family Type 2 (12 categories),Math o Deulu 2 (12 o gategorïau),1
+137,family_type_welsh_speaker,26,,Y,,PUB,Y,family_type_welsh_speaker,,Welsh-speaking families (26 categories),Welsh-speaking families (26 categories),Teuluoedd sy'n siarad Cymraeg (26 o gategorïau),1
+138,from_dummy,5,,Y,,PUB,N,from_dummy,,From dummy (5 categories),From dummy (5 categories),O ffurflen ffug (5 categori),1
+139,frp_age,117,,Y,,PUB,N,frp_age,,Age of the family reference person (117 categories),Age of the family reference person (117 categories),,1
+140,frp_age_8a,8,,N,,PUB,N,frp_age,,Age of the family reference person (8 categories),Age of the family reference person (8 categories),,1
+141,frp_age_6a,6,,N,,PUB,N,frp_age,,Age of the family reference person (6 categories),Age of the family reference person (6 categories),,1
+142,frp_age_5a,5,,N,,PUB,N,frp_age,,Age of the family reference person (5 categories),Age of the family reference person (5 categories),,1
+143,full_time_ed_pop_1a,0,,Y,,PUB,N,full_time_ed_pop,,Schoolchild or full-time student (Population),Schoolchildren and full-time students,Plant ysgol a myfyrwyr amser llawn,1
+144,gender_identity,14,,Y,,PUB,Y,gender_identity,,Gender identity (14 categories),Gender identity (14 categories),Hunaniaeth o ran rhywedd (14 o gategorïau),1
+145,gender_identity_4a,4,,N,gender_identity,PUB,Y,gender_identity,,Gender identity (4 categories),Gender identity (4 categories),Hunaniaeth o ran rhywedd (4 o gategorïau),1
+146,gender_identity_7a,7,,N,gender_identity,PUB,Y,gender_identity,,Gender identity (7 categories),Gender identity (7 categories),Hunaniaeth o ran rhywedd (7 o gategorïau),1
+147,gender_identity_8a,8,,N,gender_identity,PUB,Y,gender_identity,,Gender identity (8 categories),Gender identity (8 categories),Hunaniaeth o ran rhywedd (8 o gategorïau),1
+148,generation,5,,Y,,PUB,N,generation,,Generation (5 categories),Generation (5 categories),Cenhedlaeth (5 categori),1
+149,grandparent_family,4,,Y,,PUB,N,grandparent_family,,Grandparent family (4 categories),Grandparent family (4 categories),Teulu taid a nain (4 categori),1
+150,grandparent_family_ind,3,,Y,,PUB,Y,grandparent_family_ind,,Grandparent family indicator (3 categories),Grandparent family indicator (3 categories),Dangosydd teulu neiniau a theidiau  (3 chategori),1
+151,gypsy_trvlr_pop_1a,0,,Y,,PUB,N,gypsy_trvlr_pop,,Ethnic group White Gypsy or Irish Traveller (Population),"People who are members of the White Roma, Gypsy, or Irish Traveller community (using ethnic group)","Pobl sy'n aelodau o'r gymuned Roma, Sipsiwn neu Deithwyr Gwyddelig Gwyn (gan ddefnyddio grŵp ethnig)",1
+152,has_ever_worked,4,,Y,,PUB,Y,has_ever_worked,Y,Employment history (4 categories),Employment history (4 categories),Hanes cyflogaeth (4 categori),1
+153,health_in_general,6,,Y,,PUB,Y,health_in_general,N,General health (6 categories),General health (6 categories),Iechyd cyffredinol (6 chategori),1
+154,health_in_general_3a,3,,N,health_in_general,PUB,Y,health_in_general,N,General health (3 categories),General health (3 categories),Iechyd cyffredinol (3 chategori),1
+155,health_in_general_4a,4,,N,health_in_general,PUB,Y,health_in_general,Y,General health (4 categories),General health (4 categories),Iechyd cyffredinol (4 chategori),1
+156,heating_type,13,,Y,,PUB,Y,heating_type,N,Type of central heating in household (13 categories),Type of central heating in household (13 categories),Math o wres canolog yn y cartref (13 o gategorïau),1
+157,heating_type_3a,3,,N,heating_type,PUB,Y,heating_type,N,Type of central heating in household (3 categories),Type of central heating in household (3 categories),Math o wres canolog yn y cartref (3 o gategorïau),1
+158,heating_type_5a,5,,N,heating_type,PUB,Y,heating_type,,Type of central heating in household (5 categories),Type of central heating in household (5 categories),Math o wres canolog yn y cartref (5 o gategorïau),1
+159,hh_17_plus,32,,Y,,PUB,Y,hh_17_plus,,Number of people aged 17 years or over in household (32 categories),Number of people aged 17 years or over in household (32 categories),Nifer y bobl 17 oed neu drosodd yn y cartref (32 o gategorïau),1
+160,hh_17_plus_4a,4,,N,hh_17_plus,PUB,Y,hh_17_plus,,Number of people aged 17 years or over in household (4 categories),Number of people aged 17 years or over in household (4 categories),Nifer y bobl 17 oed neu drosodd yn y cartref (4 o gategorïau),1
+161,hh_adult_welsh_speakers,5,,Y,,PUB,Y,hh_adult_welsh_speakers,Y,Welsh-speaking people in household (5 categories),Welsh-speaking people in household (5 categories),Pobl sy'n siarad Cymraeg yn y cartref (5 categori),1
+162,hh_adults_and_children,13,,Y,,PUB,Y,hh_adults_and_children,N,Adults and children in household (13 categories),Adults and children in household (13 categories),Oedolion a phlant yn y cartref (13 o gategorïau),1
+163,hh_adults_and_children_11a,11,,N,hh_adults_and_children,PUB,Y,hh_adults_and_children,Y,Adults and children in household (11 categories),Adults and children in household (11 categories),Oedolion a phlant yn y cartref (11 o gategorïau),1
+164,hh_adults_disabled,32,,Y,,PUB,Y,hh_adults_disabled,N,Number of disabled adults in household (32 categories),Number of disabled adults in household (32 categories),Nifer yr oedolion anabl yn y cartref (32 o gategorïau),1
+165,hh_adults_disabled_4a,4,,N,hh_adults_disabled,PUB,Y,hh_adults_disabled,Y,Number of disabled adults in household (4 categories),Number of disabled adults in household (4 categories),Nifer yr oedolion anabl yn y cartref (4 o gategorïau),1
+166,hh_adults_employment,32,,Y,,PUB,Y,hh_adults_employment,N,Number of adults in employment in household (32 categories),Number of adults in employment in household (32 categories),Nifer yr oedolion mewn gwaith yn y cartref (32 o gategorïau),1
+167,hh_adults_employment_5a,5,,N,hh_adults_employment,PUB,Y,hh_adults_employment,Y,Number of adults in employment in household (5 categories),Number of adults in employment in household (5 categories),Nifer yr oedolion mewn gwaith yn y cartref (5 o gategorïau),1
+168,hh_adults_num,32,,Y,,PUB,Y,hh_adults_num,N,Number of adults in household (32 categories),Number of adults in household (32 categories),Nifer yr oedolion yn y cartref (32 o gategorïau),1
+169,hh_adults_num_3a,3,,N,hh_adults_num,PUB,Y,hh_adults_num,Y,Number of adults in household (3 categories),Number of adults in household (3 categories),Nifer yr oedolion yn y cartref (3 o gategorïau),1
+170,hh_away_student,9,,Y,,PUB,Y,hh_away_student,N,Households with students or schoolchildren living away during term-time (9 categories),Households with students or schoolchildren living away during term-time (9 categories),Cartrefi â myfyrwyr neu blant ysgol sy’n byw i ffwrdd o’r cartref yn ystod y tymor (9 categori),1
+171,hh_away_student_4a,4,,N,hh_away_student,PUB,Y,hh_away_student,Y,Households with students or schoolchildren living away during term-time (4 categories),Households with students or schoolchildren living away during term-time (4 categories),Cartrefi â myfyrwyr neu blant ysgol sy’n byw i ffwrdd o’r cartref yn ystod y tymor (4 categori),1
+172,hh_bedrooms_required,31,,Y,,PUB,Y,hh_bedrooms_required,Y,Number of bedrooms required by household (31 categories),Number of bedrooms required by household (31 categories),Nifer yr ystafelloedd gwely sydd eu hangen ar y cartref (31 o gategorïau),1
+173,hh_carers,32,,Y,,PUB,Y,hh_carers,N,Number of unpaid carers in household (32 categories),Number of unpaid carers in household (32 categories),Nifer y gofalwyr di-dâl yn y cartref (32 o gategorïau),1
+174,hh_carers_6a,6,,N,hh_carers,PUB,Y,hh_carers,Y,Number of unpaid carers in household (6 categories),Number of unpaid carers in household (6 categories),Nifer y gofalwyr di-dâl yn y cartref (6 o gategorïau),1
+175,hh_carers_employment,10,,Y,,PUB,Y,hh_carers_employment,,Unpaid carers in household and employment status (10 categories),Unpaid carers in household and employment status (10 categories),Gofalwyr di-dâl yn y cartref a statws cyflogaeth (10 categori),1
+176,hh_carers_health,8,,Y,,PUB,Y,hh_carers_health,,Unpaid carers in household and general health (8 categories),Unpaid carers in household and general health (8 categories),Gofalwyr di-dâl yn y cartref ac iechyd cyffredinol (8 categori),1
+177,hh_composition_welsh,16,,Y,,PUB,Y,hh_composition_welsh,N,Welsh household composition (16 categories),Welsh household composition (16 categories),Cyfansoddiad cartrefi Cymru (16 o gategorïau),1
+178,hh_composition_welsh_10a,10,,N,hh_composition_welsh,PUB,Y,hh_composition_welsh,N,Welsh household composition (10 categories),Welsh household composition (10 categories),Cyfansoddiad cartrefi Cymru (10 o gategorïau),1
+179,hh_composition_welsh_8a,8,,N,hh_composition_welsh,PUB,Y,hh_composition_welsh,Y,Welsh household composition (8 categories),Welsh household composition (8 categories),Cyfansoddiad cartrefi Cymru (8 categori),1
+180,hh_dependent_children,21,,Y,,PUB,Y,hh_dependent_children,N,Dependent children in household and their age (21 categories),Dependent children in household and their age (21 categories),Plant dibynnol yn y cartref a'u hoedran (21 o gategorïau),1
+181,hh_dependent_children_3a,3,,N,hh_dependent_children,PUB,Y,hh_dependent_children,N,Dependent children in household and their age - indicator (3 categories),Dependent children in household and their age - indicator (3 categories),Plant dibynnol yn y cartref a'u hoedran - dangosydd (3 chategori),1
+182,hh_dependent_children_3b,3,,N,hh_dependent_children,PUB,Y,hh_dependent_children,N,Dependent children in household and their age - indicator with age (3 categories),Dependent children in household and their age - indicator with age (3 categories),Plant dibynnol yn y cartref a'u hoedran - dangosydd ag oedran (3 chategori),1
+183,hh_dependent_children_6a,6,,N,hh_dependent_children,PUB,Y,hh_dependent_children,N,Dependent children in household and their age (6 categories),Dependent children in household and their age (6 categories),Plant dibynnol yn y cartref a'u hoedran (6 chategori),1
+184,hh_dependent_children_6b,6,,N,hh_dependent_children,PUB,Y,hh_dependent_children,,Dependent children in household and their age (B) (6 categories),Dependent children in household and their age (B) (6 categories),Plant dibynnol yn y cartref a'u hoedran (B) (6 chategori),1
+185,hh_deprivation,6,,Y,,PUB,Y,hh_deprivation,Y,Household deprivation (6 categories),Household deprivation (6 categories),Amddifadedd cartref (6 chategori),1
+186,hh_deprivation_education,3,,Y,,PUB,Y,hh_deprivation_education,Y,Household deprived in the education dimension (3 categories),Household deprived in the education dimension (3 categories),Cartref yn ddifreintiedig o ran addysg (3 chategori),1
+187,hh_deprivation_employment,3,,Y,,PUB,Y,hh_deprivation_employment,Y,Household deprived in the employment dimension (3 categories),Household deprived in the employment dimension (3 categories),Cartref yn ddifreintiedig o ran cyflogaeth (3 chategori),1
+188,hh_deprivation_health,3,,Y,,PUB,Y,hh_deprivation_health,Y,Household deprived in the health and disability dimension (3 categories),Household deprived in the health and disability dimension (3 categories),Cartref yn ddifreintiedig o ran iechyd ac anabledd (3 chategori),1
+189,hh_deprivation_housing,3,,Y,,PUB,Y,hh_deprivation_housing,Y,Household deprived in the housing dimension (3 categories),Household deprived in the housing dimension (3 categories),Cartref yn ddifreintiedig o ran tai (3 chategori),1
+190,hh_disabled,32,,Y,,PUB,Y,hh_disabled,N,Number of disabled people in household (32 categories),Number of disabled people in household (32 categories),Nifer y bobl anabl yn y cartref (32 o gategorïau),1
+191,hh_disabled_3a,3,,N,hh_disabled,PUB,Y,hh_disabled,N,Number of disabled people in household (3 categories),Number of disabled people in household (3 categories),Nifer y bobl anabl yn y cartref (3 o gategorïau),1
+192,hh_disabled_4a,4,,N,hh_disabled,PUB,Y,hh_disabled,Y,Number of disabled people in household (4 categories),Number of disabled people in household (4 categories),Nifer y bobl anabl yn y cartref (4 o gategorïau),1
+193,hh_families_count,7,,Y,,PUB,Y,hh_families_count,Y,Number of families in household (7 categories),Number of families in household (7 categories),Nifer y teuluoedd yn y cartref (7 categori),1
+194,hh_families_type,18,,Y,,PUB,Y,hh_families_type,N,Household type (18 categories),Household type (18 categories),Math o Aelwyd (18 o gategorïau),1
+195,hh_families_type_12a,12,,N,hh_families_type,PUB,Y,hh_families_type,N,Household type (12 categories),Household type (12 categories),Math o Aelwyd (12 o gategorïau),1
+196,hh_families_type_4a,4,,N,hh_families_type,PUB,Y,hh_families_type,N,Household type (4 categories),Household type (4 categories),Math o Aelwyd (4 o gategorïau),1
+197,hh_families_type_6a,6,,N,hh_families_type,PUB,Y,hh_families_type,Y,Household type (6 categories),Household type (6 categories),Math o Aelwyd (6 o gategorïau),1
+198,hh_family_composition,52,,Y,,PUB,Y,hh_family_composition,N,Household composition (52 categories),Household composition (52 categories),Cyfansoddiad y cartref (52 o gategorïau),1
+199,hh_family_composition_14a,14,,N,hh_family_composition,PUB,Y,hh_family_composition,,Household composition (14 categories),Household composition (14 categories),Cyfansoddiad y cartref (14 o gategorïau),1
+200,hh_family_composition_15a,15,,N,hh_family_composition,PUB,Y,hh_family_composition,N,Household composition (15 categories),Household composition (15 categories),Cyfansoddiad y cartref (15 o gategorïau),1
+201,hh_family_composition_15b,15,,N,hh_family_composition,PUB,Y,hh_family_composition,,Household composition (B) (15 categories),Household composition (B) (15 categories),Cyfansoddiad y cartref (B) (15 o gategorïau),1
+202,hh_family_composition_17a,17,,N,hh_family_composition,PUB,Y,hh_family_composition,,Household composition (17 categories),Household composition (17 categories),Cyfansoddiad y cartref (17 o gategorïau),1
+203,hh_family_composition_37a,37,,N,hh_family_composition,PUB,Y,hh_family_composition,N,Household composition (37 categories),Household composition (37 categories),Cyfansoddiad y cartref (37 o gategorïau),1
+204,hh_family_composition_4a,4,,N,hh_family_composition,PUB,Y,hh_family_composition,,Household composition (4 categories),Household composition (4 categories),Cyfansoddiad y cartref (4 o gategorïau),1
+205,hh_family_composition_6a,6,,N,hh_family_composition,PUB,Y,hh_family_composition,Y,Household composition (6 categories),Household composition (6 categories),Cyfansoddiad y cartref (6 o gategorïau),1
+206,hh_family_composition_8a,8,,N,hh_family_composition,PUB,Y,hh_family_composition,N,Household composition (8 categories),Household composition (8 categories),Cyfansoddiad y cartref (8 o gategorïau),1
+207,hh_hrp_veteran,5,,Y,,PUB,Y,hh_hrp_veteran,,Household Reference Person previously served in UK armed forces (5 categories),Household Reference Person previously served in UK armed forces (5 categories),Person Cyswllt y Cartref wedi gwasanaethu yn lluoedd arfog y Deyrnas Unedig yn y gorffennol (5 categori),1
+208,hh_language,5,,Y,,PUB,Y,hh_language,Y,Household language (English and Welsh) (5 categories),Household language (English and Welsh) (5 categories),Iaith y cartref (Cymraeg a Saesneg) (5 categori),1
+209,hh_lifestage,22,,Y,,PUB,Y,hh_lifestage,,Lifestage of Household Reference Person (22 categories),Lifestage of Household Reference Person (22 categories),Cyfnod bywyd Person Cyswllt y Cartref (22 o gategorïau),1
+210,hh_lifestage_13a,13,,N,hh_lifestage,PUB,Y,hh_lifestage,,Lifestage of Household Reference Person(13 categories),Lifestage of Household Reference Person(13 categories),Cyfnod bywyd Person Cyswllt y Cartref (13 o gategorïau),1
+211,hh_lone_dep_child_pop_1a,0,,Y,,PUB,N,hh_lone_dep_child_pop,,Single family lone parent households with dependent children (Population),"Single family, lone parent households with dependent children ","Un teulu, cartrefi un rhiant â phlant dibynnol ",1
+212,hh_multi_ethnic_combination,23,,Y,,PUB,Y,hh_multi_ethnic_combination,N,Combination of ethnic groups in household (unordered) (23 categories),Combination of ethnic groups in household (unordered) (23 categories),Cyfuniad o grwpiau ethnig yn y cartref (di-drefn) (23 o gategorïau),1
+213,hh_multi_ethnic_combination_23b,23,,N,hh_multi_ethnic_combination,PUB,Y,hh_multi_ethnic_combination,,Combination of ethnic groups in household (23 categories),Combination of ethnic groups in household (23 categories),Cyfuniad o grwpiau ethnig yn y cartref (23 o gategorïau),1
+214,hh_multi_ethnic_combination_8a,8,,N,hh_multi_ethnic_combination,PUB,Y,hh_multi_ethnic_combination,Y,Combination of ethnic groups in household (8 categories),Combination of ethnic groups in household (8 categories),Cyfuniad o grwpiau ethnig yn y cartref (8 o gategorïau),1
+215,hh_multi_ethnic_group,6,,Y,,PUB,Y,hh_multi_ethnic_group,Y,Multiple ethnic groups in household (6 categories),Multiple ethnic groups in household (6 categories),Grwpiau amlethnig yn y cartref (6 chategori),1
+216,hh_multi_generation,2,,Y,,PUB,Y,hh_multi_generation,,Multiple generations in household (2 categories),Multiple generations in household (2 categories),Sawl cenhedlaeth yn y cartref (2 gategori),1
+217,hh_multi_language,6,,Y,,PUB,Y,hh_multi_language,N,Multiple main languages in household (6 categories),Multiple main languages in household (6 categories),Sawl prif iaith yn y cartref (6 chategori),1
+218,hh_multi_language_3a,3,,N,hh_multi_language,PUB,Y,hh_multi_language,Y,Multiple main languages in household (3 categories),Multiple main languages in household (3 categories),Sawl prif iaith yn y cartref (3 chategori),1
+219,hh_multi_religion,10,,Y,,PUB,Y,hh_multi_religion,N,Multiple religions in household (10 categories),Multiple religions in household (10 categories),Sawl crefydd yn y cartref (10 categori),1
+220,hh_multi_religion_7a,7,,N,hh_multi_religion,PUB,Y,hh_multi_religion,Y,Multiple religions in household (7 categories),Multiple religions in household (7 categories),Sawl crefydd yn y cartref (7 categori),1
+221,hh_multi_religion_combination,15,,Y,,PUB,Y,hh_multi_religion_combination,N,Combination of religions in household (15 categories),Combination of religions in household (15 categories),Cyfuniad o grefyddau yn y cartref (15 o gategorïau),1
+222,hh_multi_religion_combination_6a,6,,N,hh_multi_religion_combination,PUB,Y,hh_multi_religion_combination,,Combination of religions in household (6 categories),Combination of religions in household (6 categories),Cyfuniad o grefyddau yn y cartref (6 o gategorïau),1
+223,hh_no_condition,32,,Y,,PUB,Y,hh_no_condition,N,Number of people in household with no long-term health condition (32 categories),Number of people in household with no long-term health condition (32 categories),Nifer y bobl yn y cartref heb gyflwr iechyd hirdymor (32 o gategorïau),1
+224,hh_no_condition_4a,4,,N,hh_no_condition,PUB,Y,hh_no_condition,Y,Number of people in household with no long-term health condition (4 categories),Number of people in household with no long-term health condition (4 categories),Nifer y bobl yn y cartref heb gyflwr iechyd hirdymor (4 o gategorïau),1
+225,hh_not_limited,32,,Y,,PUB,Y,hh_not_limited,N,Number of people in household with a long-term heath condition but are not disabled (32 categories),Number of people in household with a long-term heath condition but are not disabled (32 categories),Nifer y bobl yn y cartref â chyflwr iechyd hirdymor ond nad ydynt yn anabl (32 o gategorïau),1
+226,hh_not_limited_4a,4,,N,hh_not_limited,PUB,Y,hh_not_limited,Y,Number of people in household with a long-term heath condition but are not disabled (4 categories),Number of people in household with a long-term heath condition but are not disabled (4 categories),Nifer y bobl yn y cartref â chyflwr iechyd hirdymor ond nad ydynt yn anabl (4 o gategorïau),1
+227,hh_number_limited_little,32,,Y,,PUB,Y,hh_number_limited_little,N,Number of disabled people in household whose day-to-day activities are limited a little (32 categories),Number of disabled people in household whose day-to-day activities are limited a little (32 categories),Nifer y bobl anabl yn y cartref y cyfyngir ychydig ar eu gweithgareddau pob dydd (32 o gategorïau),1
+228,hh_number_limited_little_4a,4,,N,hh_number_limited_little,PUB,Y,hh_number_limited_little,Y,Number of disabled people in household whose day-to-day activities are limited a little (4 categories),Number of disabled people in household whose day-to-day activities are limited a little (4 categories),Nifer y bobl anabl yn y cartref y cyfyngir ychydig ar eu gweithgareddau pob dydd (4 o gategorïau),1
+229,hh_number_limited_lot,32,,Y,,PUB,Y,hh_number_limited_lot,N,Number of disabled people in household whose day-to-day activities are limited a lot (32 categories),Number of disabled people in household whose day-to-day activities are limited a lot (32 categories),Nifer y bobl anabl yn y cartref y cyfyngir llawer ar eu gweithgareddau pob dydd (32 o gategorïau),1
+230,hh_number_limited_lot_4a,4,,N,hh_number_limited_lot,PUB,Y,hh_number_limited_lot,Y,Number of disabled people in household whose day-to-day activities are limited a lot (4 categories),Number of disabled people in household whose day-to-day activities are limited a lot (4 categories),Nifer y bobl anabl yn y cartref y cyfyngir llawer ar eu gweithgareddau pob dydd (4 o gategorïau),1
+231,hh_number_of_visitors,100,,Y,,PUB,Y,hh_number_of_visitors,N,Number of visitors in household (100 categories),Number of visitors in household (100 categories),Nifer yr ymwelwyr yn y cartref (100 o gategorïau),1
+232,hh_number_of_visitors_2a,2,,N,hh_number_of_visitors,PUB,Y,hh_number_of_visitors,Y,Number of visitors in household (2 categories),Number of visitors in household (2 categories),Nifer yr ymwelwyr yn y cartref (2 o gategorïau),1
+233,hh_occupied_spaces_pop_1a,0,,Y,,PUB,N,hh_occupied_spaces_pop,,Occupied household spaces (Population),Occupied household spaces,Lleoedd cartref a ddefnyddir,1
+234,hh_persons_per_bedroom,5,,Y,,PUB,Y,hh_persons_per_bedroom,Y,Number of people per bedroom in household (5 categories),Number of people per bedroom in household (5 categories),Nifer y bobl fesul ystafell wely yn y cartref (5 categori),1
+235,hh_persons_per_room,5,,Y,,PUB,Y,hh_persons_per_room,Y,Number of people per room in household (5 categories),Number of people per room in household (5 categories),Nifer y bobl fesul ystafell yn y cartref (5 categori),1
+236,hh_record_key,258,,Y,,PUB,N,hh_record_key,,Household Record Key (258 categories),Household Record Key (258 categories),Allwedd Cofnod Cartref (258 o gategorïau),1
+237,hh_reference_person_ind,3,,Y,,PUB,Y,hh_reference_person_ind,,Household Reference Person indicator (3 categories),Household Reference Person indicator (3 categories),Dangosydd Person Cyswllt y Cartref (3 chategori),1
+238,hh_reference_person_pop_1a,0,,Y,,PUB,N,hh_reference_person_pop,,Occupied household spaces (Population),Household reference person,Person cyswllt y cartref,1
+239,hh_rooms_required,31,,Y,,PUB,Y,hh_rooms_required,,Rooms required by household (31 categories),Rooms required by household (31 categories),Ystafelloedd sydd eu hangen ar y cartref (31 o gategorïau),1
+240,hh_size,31,,Y,,PUB,Y,hh_size,N,Household size (31 categories),Household size (31 categories),Maint y cartref (31 o gategorïau),1
+241,hh_size_2a,2,,N,hh_size,PUB,Y,hh_size,,Household size (2 categories),Household size (2 categories),Maint y cartref (2 o gategorïau),1
+242,hh_size_5a,5,,N,hh_size,PUB,Y,hh_size,Y,Household size (5 categories),Household size (5 categories),Maint y cartref (5 o gategorïau),1
+243,hh_size_7a,7,,N,hh_size,PUB,Y,hh_size,N,Household size (7 categories),Household size (7 categories),Maint y cartref (7 o gategorïau),1
+244,hh_size_9a,9,,N,hh_size,PUB,Y,hh_size,N,Household size (9 categories),Household size (9 categories),Maint y cartref (9 o gategorïau),1
+245,hh_size_all_20,32,,Y,,PUB,N,hh_size_all_20,,Household Size (32 categories),Household Size (32 categories),Maint y Cartref (32 o gategorïau),1
+246,hh_space_occupancy,5,,Y,,PUB,Y,hh_space_occupancy,,Household space occupancy indicator (5 categories),Household space occupancy indicator (5 categories),Dangosydd defnydd o leoedd cartref (5 categori),1
+247,hh_space_occupancy_2a,2,,N,hh_space_occupancy,PUB,Y,hh_space_occupancy,,Household space occupancy indicator (2 categories),Household space occupancy indicator (2 categories),Dangosydd defnydd o leoedd cartref (2 categori),1
+248,hh_spaces_shared_dwelling,100,,Y,,PUB,Y,hh_spaces_shared_dwelling,,Number of household spaces in shared dwellings (100 categories),Number of household spaces in shared dwellings (100 categories),Nifer y lleoedd cartref mewn anheddau a gaiff eu rhannu (100 o gategorïau),1
+249,hh_spaces_shared_dwelling_2a,2,,N,hh_spaces_shared_dwelling,PUB,Y,hh_spaces_shared_dwelling,,Number of household spaces in shared dwellings (2 categories),Number of household spaces in shared dwellings (2 categories),Nifer y lleoedd cartref mewn anheddau a gaiff eu rhannu (2 o gategorïau),1
+250,hh_spaces_shared_dwelling_3a,3,,N,hh_spaces_shared_dwelling,PUB,Y,hh_spaces_shared_dwelling,,Number of household spaces in shared dwellings (3 categories),Number of household spaces in shared dwellings (3 categories),Nifer y lleoedd cartref mewn anheddau a gaiff eu rhannu (3 o gategorïau),1
+251,hh_tenure,11,,Y,,PUB,Y,hh_tenure,N,Tenure of household (11 categories),Tenure of household (11 categories),Deiliadaeth y cartref (11 o gategorïau),1
+252,hh_tenure_4a,4,,N,hh_tenure,PUB,Y,hh_tenure,,Tenure of household (4 categories),Tenure of household (4 categories),Deiliadaeth y cartref (4 chategori),1
+253,hh_tenure_5a,5,,N,hh_tenure,PUB,Y,hh_tenure,N,Tenure of household (5 categories),Tenure of household (5 categories),Deiliadaeth y cartref (5 chategori),1
+254,hh_tenure_6a,6,,N,hh_tenure,PUB,Y,hh_tenure,,Tenure of household (6 categories),Tenure of household (6 categories),Deiliadaeth y cartref (6 chategori),1
+255,hh_tenure_7a,7,,N,hh_tenure,PUB,Y,hh_tenure,Y,Tenure of household (7 categories),Tenure of household (7 categories),Deiliadaeth y cartref (7 o gategorïau),1
+256,hh_tenure_7b,7,,N,hh_tenure,PUB,Y,hh_tenure,,Tenure of household (B) (7 categories),Tenure of household (B) (7 categories),Deiliadaeth y cartref (B) (7 categori),1
+257,hh_tenure_9a,9,,N,hh_tenure,PUB,Y,hh_tenure,N,Tenure of household (9 categories),Tenure of household (9 categories),Deiliadaeth y cartref (9 o gategorïau),1
+258,hh_veterans,32,,Y,,PUB,Y,hh_veterans,N,Number of people in household who previously served in UK armed forces (32 categories),Number of people in household who previously served in UK armed forces (32 categories),Nifer y bobl yn y cartref sydd wedi gwasanaethu yn lluoedd arfog y Deyrnas Unedig yn y gorffennol (32 o gategorïau),1
+259,hh_veterans_3a,3,,N,hh_veterans,PUB,Y,hh_veterans,Y,Number of people in household who previously served in UK armed forces (3 categories),Number of people in household who previously served in UK armed forces (3 categories),Nifer y bobl yn y cartref sydd wedi gwasanaethu yn lluoedd arfog y Deyrnas Unedig yn y gorffennol (3 o gategorïau),1
+260,hh_veterans_4a,4,,N,hh_veterans,PUB,Y,hh_veterans,N,Number of people in household who previously served in UK armed forces (4 categories),Number of people in household who previously served in UK armed forces (4 categories),Nifer y bobl yn y cartref sydd wedi gwasanaethu yn lluoedd arfog y Deyrnas Unedig yn y gorffennol (4 o gategorïau),1
+261,hh_veterans_5a,5,,N,hh_veterans,PUB,Y,hh_veterans,N,Number of people in household who previously served in UK armed forces (5 categories),Number of people in household who previously served in UK armed forces (5 categories),Nifer y bobl yn y cartref sydd wedi gwasanaethu yn lluoedd arfog y Deyrnas Unedig yn y gorffennol (5 o gategorïau),1
+262,hh_welsh_speak_3_plus,32,,Y,,PUB,Y,hh_welsh_speak_3_plus,N,Welsh-speakers in household (32 categories),Welsh-speakers in household (32 categories),Siaradwyr Cymraeg yn y cartref (32 o gategorïau),1
+263,hh_welsh_speak_3_plus_8a,8,,N,hh_welsh_speak_3_plus,PUB,Y,hh_welsh_speak_3_plus,Y,Welsh-speakers in household (8 categories),Welsh-speakers in household (8 categories),Siaradwyr Cymraeg yn y cartref (8 o gategorïau),1
+264,hh_welsh_speak_3over_pop_1a,0,,Y,,PUB,N,hh_welsh_speak_3over_pop,,Households with usual residents aged 3 years and over who can speak Welsh (Population),Households in Wales that contain Welsh speakers who are aged 3 years or over,Cartrefi yng Nghymru sy'n cynnwys siaradwyr Cymraeg sy'n 3 oed neu drosodd,1
+265,hh_welsh_speaking_adults,32,,Y,,PUB,Y,hh_welsh_speaking_adults,N,Welsh-speaking adults in household (32 categories),Welsh-speaking adults in household (32 categories),Oedolion sy'n siarad Cymraeg yn y cartref (32 o gategorïau),1
+266,hh_welsh_speaking_adults_3a,3,,N,hh_welsh_speaking_adults,PUB,Y,hh_welsh_speaking_adults,Y,Welsh-speaking adults in household (3 categories),Welsh-speaking adults in household (3 categories),Oedolion sy'n siarad Cymraeg yn y cartref (3 o gategorïau),1
+267,highest_qualification,8,,Y,,PUB,Y,highest_qualification,N,Highest level of qualification (8 categories),Highest level of qualification (8 categories),Lefel uchaf o gymhwyster (8 categori),1
+268,highest_qualification_6a,6,,N,highest_qualification,PUB,Y,highest_qualification,,Highest level of qualification (6 categories),Highest level of qualification (6 categories),Lefel uchaf o gymhwyster (6 categori),1
+269,highest_qualification_7a,7,,N,highest_qualification,PUB,Y,highest_qualification,N,Highest level of qualification (7 categories),Highest level of qualification (7 categories),Lefel uchaf o gymhwyster (7 categori),1
+270,hours_per_week_worked,5,,Y,,PUB,Y,hours_per_week_worked,N,Hours worked (5 categories),Hours worked (5 categories),Oriau gwaith (5 categori),1
+271,hours_per_week_worked_3a,3,,N,hours_per_week_worked,PUB,Y,hours_per_week_worked,Y,Hours worked (3 categories),Hours worked (3 categories),Oriau gwaith (3 categori),1
+272,household_pop_1a,0,,Y,,PUB,N,household_pop,,Lives in a household (Population),People who live in a household,Pobl sy'n byw mewn cartref,1
+273,hrp_age,101,,Y,,PUB,Y,hrp_age,,Age of the Household Reference Person (101 categories),Age of the Household Reference Person (101 categories),Oedran Person Cyswllt y Cartref (101 o gategorïau),1
+274,hrp_cob,279,,Y,,PUB,Y,hrp_cob,,Country of birth of the Household Reference Person (279 categories),Country of birth of the Household Reference Person (279 categories),Gwlad enedigol Person Cyswllt y Cartref (279 o gategorïau),1
+275,hrp_economic_activity,20,,Y,,PUB,Y,hrp_economic_activity,,Economic activity status of the Household Reference Person (20 categories),Economic activity status of the Household Reference Person (20 categories),Statws gweithgarwch economaidd Person Cyswllt y Cartref (20 o gategorïau),1
+276,hrp_ethnic_group_tb,20,,Y,,PUB,Y,hrp_ethnic_group_tb,,Ethnic group of the Household Reference Person (20 categories),Ethnic group of the Household Reference Person (20 categories),Grŵp Ethnig Person Cyswllt y Cartref (20 o gategorïau),1
+277,hrp_ethnic_group_tb_8a,8,,N,hrp_ethnic_group_tb,PUB,Y,hrp_ethnic_group_tb,,Ethnic group of the Household Reference Person (8 categories),Ethnic group of the Household Reference Person (8 categories),Grŵp Ethnig Person Cyswllt y Cartref (8 o gategorïau),1
+278,hrp_ns_sec,17,,Y,,PUB,Y,hrp_ns_sec,,National Statistics Socio-economic Classification (NS-SeC) of the Household Reference Person (17 categories),National Statistics Socio-economic Classification (NS-SeC) of the Household Reference Person (17 categories),Dosbarthiad Economaidd-gymdeithasol Ystadegau Gwladol (NS-SeC) Person Cyswllt y Cartref (17 o gategorïau),1
+279,hrp_occupation,413,,Y,,PUB,Y,hrp_occupation,,Occupation of the Household Reference Person (413 categories),Occupation of the Household Reference Person (413 categories),Galwedigaeth Person Cyswllt y Cartref (413 o gategorïau),1
+280,hrp_religion_detailed,58,,Y,,PUB,Y,hrp_religion_detailed,,Detailed religion of the Household Reference Person (58 categories),Detailed religion of the Household Reference Person (58 categories),Crefydd fanwl Person Cyswllt y Cartref (58 o gategorïau),1
+281,hrp_religion_tb,10,,Y,,PUB,Y,hrp_religion_tb,,Religion of the Household Reference Person (10 categories),Religion of the Household Reference Person (10 categories),Crefydd Person Cyswllt y Cartref (10 categori),1
+282,hrp_sex,3,,Y,,PUB,Y,hrp_sex,,Sex of the Household Reference Person (3 categories),Sex of the Household Reference Person (3 categories),Rhyw Person Cyswllt y Cartref (3 chategori),1
+283,in_full_time_education,3,,Y,,PUB,N,in_full_time_education,,Schoolchild or full-time student indicator (3 categories),Schoolchild or full-time student indicator (3 categories),Dangosydd plentyn ysgol neu fyfyriwr amser llawn (3 categori),1
+284,industry_10a,10,,N,industry_198a,PUB,Y,sic,,Industry (10 categories),Industry (10 categories),Diwydiant (10 o gategorïau),1
+285,industry_16a,16,,N,industry_198a,PUB,Y,sic,,Industry (16 categories),Industry (16 categories),Diwydiant (16 o gategorïau),1
+286,industry_198a,198,,Y,,PUB,Y,sic,,Industry (198 categories),Industry (198 categories),Diwydiant (198 o gategorïau),1
+287,industry_19a,19,,N,industry_198a,PUB,Y,sic,,Industry (19 categories),Industry (19 categories),Diwydiant (19 o gategorïau),1
+288,industry_22a,22,,N,industry_198a,PUB,Y,sic,,Industry (22 categories),Industry (22 categories),Diwydiant (22 o gategorïau),1
+289,industry_88a,88,,N,industry_198a,PUB,Y,sic,,Industry (88 categories),Industry (88 categories),Diwydiant (88 o gategorïau),1
+290,industry_9a,9,,N,industry_198a,PUB,Y,sic,,Industry (9 categories),Industry (9 categories),Diwydiant (9 o gategorïau),1
+291,industry_business_extn,28,,Y,,PUB,Y,industry_business_extn,,Industry with manufacturing detail (28 categories),Industry with manufacturing detail (28 categories),Diwydiant ag elfen weithgynhyrchu (28 o gategorïau),1
+292,industry_business_extn_27a,27,,N,industry_business_extn,PUB,Y,industry_business_extn,,Industry with manufacturing detail (27 categories),Industry with manufacturing detail (27 categories),Diwydiant ag elfen weithgynhyrchu (27 o gategorïau),1
+293,industry_current_10a,10,,N,industry_current,PUB,Y,industry_current,,Industry (current) (10 categories),Industry (current) (10 categories),Diwydiant (cyfredol) (10 o gategorïau),1
+294,industry_current_16a,16,,N,industry_current,PUB,Y,industry_current,N,Industry (current) (16 categories),Industry (current) (16 categories),Diwydiant (cyfredol) (16 o gategorïau),1
+295,industry_current,198,,Y,,PUB,Y,industry_current,N,Industry (current) (198 categories),Industry (current) (198 categories),Diwydiant (cyfredol) (198 o gategorïau),1
+296,industry_current_19a,19,,N,industry_current,PUB,Y,industry_current,N,Industry (current) (19 categories),Industry (current) (19 categories),Diwydiant (cyfredol) (19 o gategorïau),1
+297,industry_current_22a,22,,N,industry_current,PUB,Y,industry_current,,Industry (current) (22 categories),Industry (current) (22 categories),Diwydiant (cyfredol) (22 o gategorïau),1
+298,industry_current_88a,88,,N,industry_current,PUB,Y,industry_current,N,Industry (current) (88 categories),Industry (current) (88 categories),Diwydiant (cyfredol) (88 o gategorïau),1
+299,industry_current_9a,9,,N,industry_current,PUB,Y,industry_current,Y,Industry (current) (9 categories),Industry (current) (9 categories),Diwydiant (cyfredol) (9 o gategorïau),1
+300,industry_former,23,,Y,,PUB,Y,industry_former,N,Industry (former) (23 categories),Industry (former) (23 categories),Diwydiant (blaenorol) (23 o gategorïau),1
+301,industry_former_10a,10,,N,industry_former,PUB,Y,industry_former,Y,Industry (former) (10 categories),Industry (former) (10 categories),Diwydiant (blaenorol) (10 o gategorïau),1
+302,industry_former_17a,17,,N,industry_former,PUB,Y,industry_former,N,Industry (former) (17 categories),Industry (former) (17 categories),Diwydiant (blaenorol) (17 o gategorïau),1
+303,intention_to_stay,3,,Y,,PUB,Y,intention_to_stay,N,Intention to stay in the UK (3 categories),Intention to stay in the UK (3 categories),Bwriad i aros yn y Deyrnas Unedig (3 chategori),1
+304,intention_to_stay_2a,2,,N,intention_to_stay,PUB,Y,intention_to_stay,Y,Intention to stay in the UK (2 categories),Intention to stay in the UK (2 categories),Bwriad i aros yn y Deyrnas Unedig (2 chategori),1
+305,is_carer,7,,Y,,PUB,Y,is_carer,N,Unpaid care (7 categories),Unpaid care (7 categories),Gofal di-dâl (7 categori),1
+306,is_carer_5a,5,,N,is_carer,PUB,Y,is_carer,Y,Unpaid care (5 categories),Unpaid care (5 categories),Gofal di-dâl (5 categori),1
+307,is_hh_term_time_address,6,,Y,,PUB,N,is_hh_term_time_address,,Term time address (Indicator) (6 categories),Term time address (Indicator) (6 categories),Cyfeiriad yn ystod y tymor (Dangosydd) (6 chategori),1
+308,jain_ind,5,,Y,,PUB,Y,jain_ind,,Jain identity (5 categories),Jain identity (5 categories),Hunaniaeth Jain (5 categori),1
+309,jain_ind_3a,3,,N,jain_ind,PUB,Y,jain_ind,,Jain identity (3 categories),Jain identity (3 categories),Hunaniaeth Jain (3 categori),1
+310,jewish_ind,5,,Y,,PUB,Y,jewish_ind,,Jewish identity (5 categories),Jewish identity (5 categories),Hunaniaeth Iddewig (5 categori),1
+311,jewish_ind_3a,3,,N,jewish_ind,PUB,Y,jewish_ind,,Jewish identity (3 categories),Jewish identity (3 categories),Hunaniaeth Iddewig (3 categori),1
+312,landlord,9,,Y,,PUB,N,landlord,,Landlord type (9 categories),Landlord type (9 categories),Math o landlord (9 categori),1
+313,launch_language,6,,Y,,PUB,N,launch_language,,Launch Language (6 categories),Launch Language (6 categories),Iaith Lansio (6 categori),1
+314,legal_partnership_status,12,,Y,,PUB,Y,legal_partnership_status,N,Marital and civil partnership status (12 categories),Marital and civil partnership status (12 categories),Statws priodasol a phartneriaeth sifil (12 o gategorïau),1
+315,legal_partnership_status_3a,3,,N,legal_partnership_status,PUB,Y,legal_partnership_status,N,Marital and civil partnership status (3 categories),Marital and civil partnership status (3 categories),Statws priodasol a phartneriaeth sifil (3 o gategorïau),1
+316,legal_partnership_status_6a,6,,N,legal_partnership_status,PUB,Y,legal_partnership_status,Y,Marital and civil partnership status (6 categories),Marital and civil partnership status (6 categories),Statws priodasol a phartneriaeth sifil (6 o gategorïau),1
+317,legal_partnership_status_7a,7,,N,legal_partnership_status,PUB,Y,legal_partnership_status,N,Marital and civil partnership status (7 categories),Marital and civil partnership status (7 categories),Statws priodasol a phartneriaeth sifil (7 o gategorïau),1
+318,lgbtq_ind,5,,Y,,PUB,Y,lgbtq_ind,,LGBTQ+ (5 categories),LGBTQ+ (5 categories),LHDTC+ (5 categori),1
+319,lgbtq_ind_3a,3,,N,lgbtq_ind,PUB,Y,lgbtq_ind,,LGBTQ+ (3 categories),LGBTQ+ (3 categories),LHDTC+ (3 categori),1
+320,lgbtq_ind_4a,4,,N,lgbtq_ind,PUB,Y,lgbtq_ind,,LGBTQ+ (4 categories),LGBTQ+ (4 categories),LHDTC+ (4 categori),1
+321,living_arrangements,17,,Y,,PUB,Y,living_arrangements,N,Living arrangements (17 categories),Living arrangements (17 categories),Trefniadau byw (17 o gategorïau),1
+322,living_arrangements_10a,10,,N,living_arrangements,PUB,Y,living_arrangements,Y,Living arrangements (10 categories),Living arrangements (10 categories),Trefniadau byw (10 o gategorïau),1
+323,living_arrangements_11a,11,,N,living_arrangements,PUB,Y,living_arrangements,N,Living arrangements (11 categories),Living arrangements (11 categories),Trefniadau byw (11 o gategorïau),1
+324,living_arrangements_5a,5,,N,living_arrangements,PUB,Y,living_arrangements,N,Living arrangements (5 categories),Living arrangements (5 categories),Trefniadau byw (5 o gategorïau),1
+325,looking_for_work,6,,Y,,PUB,N,looking_for_work,,Looking for work (6 categories),Looking for work (6 categories),Chwilio am waith (6 chategori),1
+326,main_language_11a,11,,N,main_language,PUB,Y,main_language,Y,Main language (11 categories),Main language (11 categories),Prif iaith (11 o gategorïau),1
+327,main_language_23a,23,,N,main_language,PUB,Y,main_language,N,Main language (23 categories),Main language (23 categories),Prif iaith (23 o gategorïau),1
+328,main_language,552,,Y,,PUB,Y,main_language,N,Main language (552 categories),Main language (552 categories),Prif iaith (552 o gategorïau),1
+329,main_language_5a,5,,N,main_language,PUB,Y,main_language,,Main language (5 categories),Main language (5 categories),Prif iaith (5 categori),1
+330,main_language_93a,93,,N,main_language,PUB,Y,main_language,,Main language (93 categories),Main language (93 categories),Prif iaith (93 o gategorïau),1
+331,main_language_detailed,95,,Y,,PUB,Y,main_language_detailed,N,Main language (detailed) (94 categories),Main language (detailed) (95 categories),Prif iaith (manwl) (95 o gategorïau),1
+332,main_language_detailed_23a,23,,N,main_language_detailed,PUB,Y,main_language_detailed,Y,Main language (detailed) (23 categories),Main language (detailed) (23 categories),Prif iaith (manwl) (23 o gategorïau),1
+333,main_language_detailed_26a,26,,N,main_language_detailed,PUB,Y,main_language_detailed,N,Main language (detailed) (26 categories),Main language (detailed) (26 categories),Prif iaith (manwl) (26 o gategorïau),1
+334,main_language_detailed_31a,31,,N,main_language_detailed,PUB,Y,main_language_detailed,N,Main language (detailed) (31 categories),Main language (detailed) (31 categories),Prif iaith (manwl) (31 o gategorïau),1
+335,marital_status,21,,Y,,PUB,N,marital_status,,Marriage and civil partnership status (21 categories),Marriage and civil partnership status (21 categories),Statws priodas a phartneriaeth sifil (21 o gategorïau),1
+336,method_of_return_2a,2,,N,method_of_return_3a,PUB,Y,resident_response_mode_20,,Method of census return (2 categories),Method of census return (2 categories),Dull o ddychwelyd y cyfrifiad (2 categori),1
+337,method_of_return_3a,3,,Y,,PUB,Y,resident_response_mode_20,,Method of census return (3 categories),Method of census return (3 categories),Dull o ddychwelyd y cyfrifiad (3 categori),1
+338,migrant_ind,5,,Y,,PUB,Y,migrant_ind,,Migrant indicator (5 categories),Migrant indicator (5 categories),Dangosydd mudwyr (5 categori),1
+339,migrant_origin_a,1,,Y,,PUB,Y,migrant_origin,,Migrant postcode or country code one year ago,Migrant postcode or country code one year ago,Cod post neu god gwlad mudwr flwyddyn yn ôl,1
+340,migrant_origin_country,279,,Y,,PUB,Y,migrant_origin_country,,Migrant country one year ago (279 categories),Migrant country one year ago (279 categories),Gwlad mudwr flwyddyn yn ôl (279 o gategorïau),1
+341,migrant_origin_oa_a,2,,Y,,PUB,Y,migrant_origin_oa,,Migrant Output Area one year ago,Migrant Output Area one year ago,Ardal Gynnyrch mudwr flwyddyn yn ôl,1
+342,month_of_arrival_in_country,16,,Y,,PUB,N,month_of_arrival_in_country,,Month of arrival in UK (16 categories),Month of arrival in UK (16 categories),Mis cyrraedd y Deyrnas Unedig (16 o gategorïau),1
+343,moving_group_number_10000a,10000,,Y,,PUB,Y,moving_group_number,,Moving group number,Moving group number,Nifer grŵp sy'n symud,1
+344,moving_group_reference_person,3,,Y,,PUB,Y,moving_group_reference_person,,Moving group reference person indicator (3 categories),Moving group reference person indicator (3 categories),Dangosydd person cyswllt grŵp sy'n symud (3 chategori),1
+345,moving_group_size_10000a,10000,,Y,,PUB,Y,moving_group_size,,Moving group size,Moving group size,Maint grŵp sy'n symud,1
+346,moving_hh_ind,4,,Y,,PUB,Y,moving_hh_ind,,Moving household indicator (4 categories),Moving household indicator (4 categories),Dangosydd cartref sy'n symud (4 categori),1
+347,multi_passports,24,,Y,,PUB,Y,multi_passports,N,Multiple passports held (24 categories),Multiple passports held (24 categories),Â sawl pasbort (24 o gategorïau),1
+348,multi_passports_9a,9,,N,multi_passports,PUB,Y,multi_passports,Y,Multiple passports held (9 categories),Multiple passports held (9 categories),Â sawl pasbort (9 o gategorïau),1
+349,nat_id_british,4,,Y,,PUB,Y,nat_id_british,,British national identity (4 categories),British national identity (4 categories),Hunaniaeth genedlaethol Brydeinig (4 categori),1
+350,nat_id_cornish,5,,Y,,PUB,Y,nat_id_cornish,,Cornish national identity (5 categories),Cornish national identity (5 categories),Hunaniaeth genedlaethol Gernywaidd (5 categori),1
+351,nat_id_english,5,,Y,,PUB,Y,nat_id_english,,English national Identity (5 categories),English national Identity (5 categories),Hunaniaeth genedlaethol Seisnig (5 categori),1
+352,nat_id_irish,8,,Y,,PUB,Y,nat_id_irish,,Irish national identity (8 categories),Irish national identity (8 categories),Hunaniaeth genedlaethol Wyddelig (8 categori),1
+353,nat_id_northern_irish,5,,Y,,PUB,Y,nat_id_northern_irish,,Northern Irish national identity (5 categories),Northern Irish national identity (5 categories),Hunaniaeth genedlaethol Gwyddelig Gogledd Iwerddon (5 categori),1
+354,nat_id_other,4,,Y,,PUB,Y,nat_id_other,,Other national identity (4 categories),Other national identity (4 categories),Hunaniaeth genedlaethol arall (4 categori),1
+355,nat_id_scottish,5,,Y,,PUB,Y,nat_id_scottish,,Scottish national identity (5 categories),Scottish national identity (5 categories),Hunaniaeth genedlaethol Albanaidd (5 categori),1
+356,nat_id_ulster_scots,7,,Y,,PUB,Y,nat_id_ulster_scots,,Ulster-Scots national identity (7 categories),Ulster-Scots national identity (7 categories),Hunaniaeth genedlaethol Sgotaidd-Wlster (7 categori),1
+357,nat_id_welsh,5,,Y,,PUB,Y,nat_id_welsh,,Welsh national identity (5 categories),Welsh national identity (5 categories),Hunaniaeth genedlaethol Gymreig (5 categori),1
+358,national_identity_all,17,,Y,,PUB,Y,national_identity_all,N,National identity (17 categories),National identity (17 categories),Hunaniaeth genedlaethol (17 o gategorïau),1
+359,national_identity_all_4a,4,,N,national_identity_all,PUB,Y,national_identity_all,N,National identity (4 categories),National identity (4 categories),Hunaniaeth genedlaethol (4 o gategorïau),1
+360,national_identity_all_9a,9,,N,national_identity_all,PUB,Y,national_identity_all,Y,National identity (9 categories),National identity (9 categories),Hunaniaeth genedlaethol (9 o gategorïau),1
+361,national_identity_detailed,73,,Y,,PUB,Y,national_identity_detailed,Y,National identity (detailed) (73 categories),National identity (detailed) (73 categories),Hunaniaeth genedlaethol (manwl) (73 o gategorïau),1
+362,national_identity_row,419,,Y,,PUB,N,national_identity_row,,National identity (419 categories),National identity (419 categories),Hunaniaeth genedlaethol (419 o gategorïau),1
+363,national_identity_uk,66,,Y,,PUB,N,national_identity_uk,,National identity UK (66 categories),National identity UK (66 categories),Hunaniaeth genedlaethol y Deyrnas Unedig (66 o gategorïau),1
+364,national_park_address,16,,Y,,PUB,Y,national_park_address,,National Park of address (16 categories),National Park of address (16 categories),Parc Cenedlaethol cyfeiriad (16 o gategorïau),1
+365,national_park_migrant_origin,16,,Y,,PUB,Y,national_park_migrant_origin,,National Park of migrant one year ago (16 categories),National Park of migrant one year ago (16 categories),Parc Cenedlaethol mudwr flwyddyn yn ôl (16 o gategorïau),1
+366,national_park_second_address,16,,Y,,PUB,Y,national_park_second_address,,National Park of second address (16 categories),National Park of second address (16 categories),Parc Cenedlaethol ail gyfeiriad (16 o gategorïau),1
+367,national_park_workplace,16,,Y,,PUB,Y,national_park_workplace,,National Park of workplace (16 categories),National Park of workplace (16 categories),Parc Cenedlaethol gweithle (16 o gategorïau),1
+368,nature_of_establishment,25,,Y,,PUB,N,nature_of_establishment,,Establishment nature (25 categories),Establishment nature (25 categories),Natur y sefydliad (25 o gategorïau),1
+369,non_termtime_oa_a,4,,Y,,PUB,Y,non_termtime_oa,,Output Area of non term-time address,Output Area of non term-time address,Ardal Gynnyrch cyfeiriad y tu allan i'r tymor,1
+370,ns_sec,17,,Y,,PUB,Y,ns_sec,N,National Statistics Socio-economic Classification (NS-SeC) (17 categories),National Statistics Socio-economic Classification (NS-SeC) (17 categories),Dosbarthiad Economaidd-gymdeithasol Ystadegau Gwladol (NS-SeC) (17 o gategorïau),1
+371,ns_sec_10a,10,,N,ns_sec,PUB,Y,ns_sec,Y,National Statistics Socio-economic Classification (NS-SeC) (10 categories),National Statistics Socio-economic Classification (NS-SeC) (10 categories),Dosbarthiad Economaidd-gymdeithasol Ystadegau Gwladol (NS-SeC) (10 o gategorïau),1
+372,ns_sec_12a,12,,N,ns_sec,PUB,Y,ns_sec,N,National Statistics Socio-economic Classification (NS-SeC) (12 categories),National Statistics Socio-economic Classification (NS-SeC) (12 categories),Dosbarthiad Economaidd-gymdeithasol Ystadegau Gwladol (NS-SeC) (12 o gategorïau),1
+373,number_bedrooms,100,,Y,,PUB,Y,number_bedrooms,N,Number of Bedrooms (100 categories),Number of Bedrooms (100 categories),Nifer yr ystafelloedd gwely (100 o gategorïau),1
+374,number_bedrooms_5a,5,,N,number_bedrooms,PUB,Y,number_bedrooms,Y,Number of Bedrooms (5 categories),Number of Bedrooms (5 categories),Nifer yr ystafelloedd gwely (5 o gategorïau),1
+375,number_bedrooms_6a,6,,N,number_bedrooms,PUB,Y,number_bedrooms,N,Number of Bedrooms (6 categories),Number of Bedrooms (6 categories),Nifer yr ystafelloedd gwely (6 o gategorïau),1
+376,number_of_cars,22,,Y,,PUB,Y,number_of_cars,N,Car or van availability (22 categories),Car or van availability (22 categories),Argaeledd car neu fan (22 o gategorïau),1
+377,number_of_cars_3a,3,,N,number_of_cars,PUB,Y,number_of_cars,Y,Car or van availability (3 categories),Car or van availability (3 categories),Argaeledd car neu fan (3 o gategorïau),1
+378,number_of_cars_4a,4,,N,number_of_cars,PUB,Y,number_of_cars,N,Car or van availability (4 categories),Car or van availability (4 categories),Argaeledd car neu fan (4 o gategorïau),1
+379,number_of_cars_5a,5,,N,number_of_cars,PUB,Y,number_of_cars,N,Car or van availability (5 categories),Car or van availability (5 categories),Argaeledd car neu fan (5 o gategorïau),1
+380,number_of_cars_6a,6,,N,number_of_cars,PUB,Y,number_of_cars,,Car or van availability (6 categories),Car or van availability (6 categories),Argaeledd car neu fan (6 o gategorïau),1
+381,number_of_residents,103,,Y,,PUB,N,number_of_residents,,Number of residents (103 categories),Number of residents (103 categories),Nifer y preswylwyr (103 o gategorïau),1
+382,number_of_visitors,104,,Y,,PUB,N,number_of_visitors,,Number of visitors staying overnight (104 categories),Number of visitors staying overnight (104 categories),Nifer yr ymwelwyr sy'n aros dros nos (104 o gategorïau),1
+383,occupancy_rating_bedrooms,12,,Y,,PUB,Y,occupancy_rating_bedrooms,N,Occupancy rating for bedrooms (12 categories),Occupancy rating for bedrooms (12 categories),Y defnydd o ystafelloedd gwely (12 o gategorïau),1
+384,occupancy_rating_bedrooms_3a,3,,N,occupancy_rating_bedrooms,PUB,Y,occupancy_rating_bedrooms,N,Occupancy rating for bedrooms (3 categories),Occupancy rating for bedrooms (3 categories),Y defnydd o ystafelloedd gwely (3 o gategorïau),1
+385,occupancy_rating_bedrooms_5a,5,,N,occupancy_rating_bedrooms,PUB,Y,occupancy_rating_bedrooms,Y,Occupancy rating for bedrooms (5 categories),Occupancy rating for bedrooms (5 categories),Y defnydd o ystafelloedd gwely (5 o gategorïau),1
+386,occupancy_rating_bedrooms_6a,6,,N,occupancy_rating_bedrooms,PUB,Y,occupancy_rating_bedrooms,N,Occupancy rating for bedrooms (6 categories),Occupancy rating for bedrooms (6 categories),Y defnydd o ystafelloedd gwely (6 o gategorïau),1
+387,occupancy_rating_rooms,12,,Y,,PUB,Y,occupancy_rating_rooms,N,Occupancy rating for rooms (12 categories),Occupancy rating for rooms (12 categories),Y defnydd o ystafelloedd (12 o gategorïau),1
+388,occupancy_rating_rooms_3a,3,,N,occupancy_rating_rooms,PUB,Y,occupancy_rating_rooms,N,Occupancy rating for rooms (3 categories),Occupancy rating for rooms (3 categories),Y defnydd o ystafelloedd (3 o gategorïau),1
+389,occupancy_rating_rooms_5a,5,,N,occupancy_rating_rooms,PUB,Y,occupancy_rating_rooms,Y,Occupancy rating for rooms (5 categories),Occupancy rating for rooms (5 categories),Y defnydd o ystafelloedd (5 o gategorïau),1
+390,occupancy_rating_rooms_6a,6,,N,occupancy_rating_rooms,PUB,Y,occupancy_rating_rooms,N,Occupancy rating for rooms (6 categories),Occupancy rating for rooms (6 categories),Y defnydd o ystafelloedd (6 o gategorïau),1
+391,occupation_105a,105,,N,occupation_413a,PUB,Y,occupation_flat,,Occupation (105 categories),Occupation (105 categories),Galwedigaeth (105 o gategorïau),1
+392,occupation_10a,10,,N,occupation_413a,PUB,Y,occupation_flat,,Occupation (10 categories),Occupation (10 categories),Galwedigaeth (10 o gategorïau),1
+393,occupation_27a,27,,N,occupation_413a,PUB,Y,occupation_flat,,Occupation (27 categories),Occupation (27 categories),Galwedigaeth (27 o gategorïau),1
+394,occupation_413a,413,,Y,,PUB,Y,occupation_flat,,Occupation (413 categories),Occupation (413 categories),Galwedigaeth (413 o gategorïau),1
+395,occupation_current_105a,105,,N,occupation_current,PUB,Y,occupation_current,N,Occupation (current) (105 categories),Occupation (current) (105 categories),Galwedigaeth (cyfredol) (105 o gategorïau),1
+396,occupation_current_10a,10,,N,occupation_current,PUB,Y,occupation_current,Y,Occupation (current) (10 categories),Occupation (current) (10 categories),Galwedigaeth (cyfredol) (10 o gategorïau),1
+397,occupation_current_27a,27,,N,occupation_current,PUB,Y,occupation_current,N,Occupation (current) (27 categories),Occupation (current) (27 categories),Galwedigaeth (cyfredol) (27 o gategorïau),1
+398,occupation_current,413,,Y,,PUB,Y,occupation_current,N,Occupation (current) (413 categories),Occupation (current) (413 categories),Galwedigaeth (cyfredol) (413 o gategorïau),1
+399,occupation_former,11,,Y,,PUB,Y,occupation_former,Y,Former occupation (11 categories),Former occupation (11 categories),Galwedigaeth flaenorol (11 o gategorïau),1
+400,other_passport_held,211,,Y,,PUB,N,other_passport_held,,Passports held (Text response) (211 categories),Passports held (Text response) (211 categories),Pasbortau (ymateb testun) (211 o gategorïau),1
+401,out_term_pop_1a,0,,Y,,PUB,N,out_term_pop,,"Usual residents including out of term students, excluding in term students (Population)","Usual residents including out of term students, excluding in term students","Preswylwyr arferol gan gynnwys myfyrwyr y tu allan i'r tymor, ac eithrio myfyrwyr yn ystod y tymor",1
+402,out_term_student_pop_1a,0,,Y,,PUB,N,out_term_student_pop,,Schoolchild or full-time student aged 4 and over at their non term-time address (Population),Schoolchilden or full-time students aged 4 years and over at their non term-time address ,Plant ysgol neu fyfyrwyr amser llawn 4 oed a throsodd yn eu cyfeiriad y tu allan i'r tymor ,1
+403,out_uk_1_year_ago_pop_1a,0,,Y,,PUB,N,out_uk_1_year_ago_pop,,Address one year ago outside the UK (Population),People whose address one year ago was outside the UK,Pobl roedd eu cyfeiriad flwyddyn yn ôl y tu allan i'r Deyrnas Unedig,1
+404,ownership_type,8,,Y,,PUB,N,ownership_type,,Tenure type (8 categories),Tenure type (8 categories),Math o ddeiliadaeth (8 categori),1
+405,passport,8,,Y,,PUB,N,passport,,Passports held (Tickbox response) (8 categories),Passports held (Tickbox response) (8 categories),Pasbortau a ddelir (ymateb ticio blwch) (8 categori),1
+406,passports_all,53,,Y,,PUB,Y,passports_all,N,Passports held (53 categories),Passports held (53 categories),Pasbortau a ddelir  (53 o gategorïau),1
+407,passports_all_11a,11,,N,passports_all,PUB,Y,passports_all,N,Passports held (11 categories),Passports held (11 categories),Pasbortau a ddelir  (11 o gategorïau),1
+408,passports_all_13a,13,,N,passports_all,PUB,Y,passports_all,,Passports held (13 categories),Passports held (13 categories),Pasbortau a ddelir (13 o gategorïau),1
+409,passports_all_18a,18,,N,passports_all,PUB,Y,passports_all,Y,Passports held (18 categories),Passports held (18 categories),Pasbortau a ddelir (18 o gategorïau),1
+410,passports_all_26a,26,,N,passports_all,PUB,Y,passports_all,,Passports held (26 categories),Passports held (26 categories),Pasbortau a ddelir (26 o gategorïau),1
+411,passports_all_27a,27,,N,passports_all,PUB,Y,passports_all,N,Passports held (27 categories),Passports held (27 categories),Pasbortau a ddelir (27 o gategorïau),1
+412,passports_all_4a,4,,N,passports_all,PUB,Y,passports_all,N,Passports held (4 categories),Passports held (4 categories),Pasbortau a ddelir (4 o gategorïau),1
+413,passports_all_52a,52,,N,passports_all,PUB,Y,passports_all,N,Passports held (52 categories),Passports held (52 categories),Pasbortau a ddelir (52 o gategorïau),1
+414,passports_held_irish,3,,Y,,PUB,Y,passports_held_irish,,Irish passport held (3 categories),Irish passport held (3 categories),Â phasbort Iwerddon (3 chategori),1
+415,passports_held_none,3,,Y,,PUB,Y,passports_held_none,,Passport held indicator (3 categories),Passport held indicator (3 categories),Dangosydd pasbortau (3 chategori),1
+416,passports_held_other,3,,Y,,PUB,Y,passports_held_other,,Other passport held (3 categories),Other passport held (3 categories),Â phasbort arall (3 chategori),1
+417,passports_held_uk,3,,Y,,PUB,Y,passports_held_uk,,UK passport held (3 categories),UK passport held (3 categories),Â phasbort y Deyrnas Unedig (3 chategori),1
+418,place_of_work_ind,6,,Y,,PUB,Y,place_of_work_ind,Y,Place of work indicator (6 categories),Place of work indicator (6 categories),Dangosydd gweithle (6 chategori),1
+419,position_in_ce,4,,Y,,PUB,Y,position_in_ce,Y,Position in communal establishment (4 categories),Position in communal establishment (4 categories),Rôl mewn sefydliad cymunedol (4 categori),1
+420,proxy_answer,5,,Y,,PUB,N,proxy_answer,,Answered on behalf of (5 categories),Answered on behalf of (5 categories),Ateb ar ran rhywun (5 categori),1
+421,public_transport_users,4,,Y,,PUB,Y,public_transport_users,,Public transport users in household (4 categories),Public transport users in household (4 categories),Pobl sy'n defnyddio trafnidiaeth gyhoeddus yn y cartref (4 categori),1
+422,qualifications,15,,Y,,PUB,N,qualifications,,Qualifications (15 categories),Qualifications (15 categories),Cymwysterau (15 o gategorïau),1
+423,qualifications01,3,,Y,,PUB,Y,qualifications01,,Apprenticeship (3 categories),Apprenticeship (3 categories),Prentisiaeth (3 chategori),1
+424,qualifications02,3,,Y,,PUB,Y,qualifications02,,Higher education qualifications (3 categories),Higher education qualifications (3 categories),Cymwysterau addysg uwch (3 chategori),1
+425,qualifications03,3,,Y,,PUB,Y,qualifications03,,5 or more GCSEs or equivalent (3 categories),5 or more GCSEs or equivalent,"5 neu fwy o gymwysterau TGAU, neu gymwysterau cyfatebol ",1
+426,qualifications04,3,,Y,,PUB,Y,qualifications04,,4 or less GCSEs or equivalent (3 categories),4 or less GCSEs or equivalent,"4 neu lai o gymwysterau TGAU, neu gymwysterau cyfatebol ",1
+427,qualifications05,3,,Y,,PUB,Y,qualifications05,,2 or more A levels or equivalent (3 categories),2 or more A levels or equivalent,"2 neu fwy o gymwysterau Lefel A (Safon Uwch), neu gymwysterau cyfatebol ",1
+428,qualifications06,3,,Y,,PUB,Y,qualifications06,,1 A level or equivalent (3 categories),1 A level or equivalent (3 categories),"1 cymhwyster Lefel A (Safon Uwch), neu gymhwyster cyfatebol (3 chategori)",1
+429,qualifications07,3,,Y,,PUB,Y,qualifications07,,1 AS level or equivalent (3 categories),1 AS level or equivalent (3 categories),"1 cymhwyster Lefel AS (Safon UG), neu gymhwyster cyfatebol (3 chategori)",1
+430,qualifications08,3,,Y,,PUB,Y,qualifications08,,NVQ level 3 or equivalent (3 categories),NVQ level 3 or equivalent (3 categories),NVQ lefel 3 neu gymhwyster cyfatebol (3 chategori),1
+431,qualifications09,3,,Y,,PUB,Y,qualifications09,,NVQ level 2 or equivalent (3 categories),NVQ level 2 or equivalent (3 categories),NVQ lefel 2 neu gymhwyster cyfatebol (3 chategori),1
+432,qualifications10,3,,Y,,PUB,Y,qualifications10,,NVQ level 1 or equivalent (3 categories),NVQ level 1 or equivalent (3 categories),NVQ lefel 1 neu gymhwyster cyfatebol (3 chategori),1
+433,qualifications11,3,,Y,,PUB,Y,qualifications11,,Other qualifications (3 categories),Other qualifications (3 categories),Cymwysterau eraill (3 chategori),1
+434,qualifications12,3,,Y,,PUB,Y,qualifications12,,No qualifications (3 categories),No qualifications (3 categories),Dim cymwysterau (3 chategori),1
+435,ravidassia_ind,5,,Y,,PUB,Y,ravidassia_ind,,Ravidassia identity (5 categories),Ravidassia identity (5 categories),Hunaniaeth Ravidassia (5 categori),1
+436,ravidassia_ind_3a,3,,N,ravidassia_ind,PUB,Y,ravidassia_ind,,Ravidassia identity (3 categories),Ravidassia identity (3 categories),Hunaniaeth Ravidassia (3 categori),1
+437,relationship,15,,Y,,PUB,N,relationship,,Relationship (15 categories),Relationship (15 categories),Perthynas (15 o gategorïau),1
+438,relationship_record_key,258,,Y,,PUB,N,relationship_record_key,,Resident Record Key (258 categories),Resident Record Key (258 categories),Allwedd Cofnod Preswylwyr (258 o gategorïau),1
+439,religion,191,,Y,,PUB,Y,religion,,Religion (all) ,Religion (all) ,Crefydd (pob un) ,1
+440,religion_191a,191,,N,religion,PUB,Y,religion,,Religion (all) (191 categories),Religion (all) (191 categories),Crefydd (pob un) (191 o gategorïau),1
+441,religion_58a,58,,N,religion,PUB,Y,religion,,Religion (detailed) (58 categories),Religion (detailed) (58 categories),Crefydd (manwl) (58 o gategorïau),1
+442,religion_tb,10,,Y,,PUB,Y,religion_tb,N,Religion (10 categories),Religion (10 categories),Crefydd (10 categori),1
+443,religion_tb_5a,5,,N,religion_tb,PUB,Y,religion_tb,Y,Religion (5 categories),Religion (5 categories),Crefydd (5 categori),1
+444,residence_length,6,,Y,,PUB,Y,residence_length,N,Length of residence in the UK (A) (6 categories),Length of residence in the UK (A) (6 categories),Cyfnod preswylio yn y Deyrnas Unedig (A) (6 chategori),1
+445,residence_length_6b,6,,N,residence_length,PUB,Y,residence_length,,Length of residence in the UK (6 categories),Length of residence in the UK (6 categories),Cyfnod preswylio yn y Deyrnas Unedig (6 chategori),1
+446,residence_type,2,,Y,,PUB,Y,residence_type,,Residence type (2 categories),Residence type (2 categories),Math o breswylfa (2 gategori),1
+447,residence_type_ce_pop_1a,0,,Y,,PUB,N,residence_type_ce_pop,,Lives in a communal establishment (Population),People who live in a communal establishment,Pobl sy'n byw mewn sefydliad cymunedol,1
+448,resident_age,116,,Y,,PUB,Y,resident_age,,Age (115 categories),Age (115 categories),Oedran (115 o gategorïau),1
+449,resident_age_101a,101,,N,resident_age,PUB,Y,resident_age,N,Age (101 categories),Age (101 categories),Oedran (101 o gategorïau),1
+450,resident_age_10a,10,,N,resident_age,PUB,Y,resident_age,,Age (10 categories),Age (10 categories),Oedran (10 categori),1
+451,resident_age_11a,11,,N,resident_age,PUB,Y,resident_age,N,Age (11 categories),Age (11 categories),Oedran (11 o gategorïau),1
+452,resident_age_11b,11,,N,resident_age,PUB,Y,resident_age,N,Age (B) (11 categories),Age (B) (11 categories),Oedran (B) (11 o gategorïau),1
+453,resident_age_11c,11,,N,resident_age,PUB,Y,resident_age,,Age (C) (11 categories),Age (C) (11 categories),Oedran (C) (11 o gategorïau),1
+454,resident_age_11d,11,,N,resident_age,PUB,Y,resident_age,N,Age (D) (11 categories),Age (D) (11 categories),Oedran (D) (11 o gategorïau),1
+455,resident_age_12a,12,,N,resident_age,PUB,Y,resident_age,N,Age (12 categories),Age (12 categories),Oedran (12 o gategorïau),1
+456,resident_age_12b,12,,N,resident_age,PUB,Y,resident_age,N,Age (B) (12 categories),Age (B) (12 categories),Oedran (B) (12 o gategorïau),1
+457,resident_age_12c,12,,N,resident_age,PUB,Y,resident_age,N,Age (C) (12 categories),Age (C) (12 categories),Oedran (C) (12 o gategorïau),1
+458,resident_age_13a,13,,N,resident_age,PUB,Y,resident_age,,Age (13 categories),Age (13 categories),Oedran (13 o gategorïau),1
+459,resident_age_14a,14,,N,resident_age,PUB,Y,resident_age,N,Age (14 categories),Age (14 categories),Oedran (14 o gategorïau),1
+460,resident_age_14b,14,,N,resident_age,PUB,Y,resident_age,N,Age (B) (14 categories),Age (B) (14 categories),Oedran (B) (14 o gategorïau),1
+461,resident_age_17a,17,,N,resident_age,PUB,Y,resident_age,N,Age (17 categories),Age (17 categories),Oedran (17 o gategorïau),1
+462,resident_age_18a,18,,N,resident_age,PUB,Y,resident_age,N,Age (18 categories),Age (18 categories),Oedran (18 o gategorïau),1
+463,resident_age_18b,18,,N,resident_age,PUB,Y,resident_age,N,Age (B) (18 categories),Age (B) (18 categories),Oedran (B) (18 o gategorïau),1
+464,resident_age_23a,23,,N,resident_age,PUB,Y,resident_age,N,Age (23 categories),Age (23 categories),Oedran (23 o gategorïau),1
+465,resident_age_2a,2,,N,resident_age,PUB,Y,resident_age,N,Age (2 categories),Age (2 categories),Oedran (2 gategori),1
+466,resident_age_3a,3,,N,resident_age,PUB,Y,resident_age,N,Age (3 categories),Age (3 categories),Oedran (3 chategori),1
+467,resident_age_3b,3,,N,resident_age,PUB,Y,resident_age,N,Age (B) (3 categories),Age (B) (3 categories),Oedran (B) (3 chategori),1
+468,resident_age_3c,3,,N,resident_age,PUB,Y,resident_age,N,Age (C) (3 categories),Age (C) (3 categories),Oedran (C) (3 chategori),1
+469,resident_age_3d,3,,N,resident_age,PUB,Y,resident_age,N,Age (D) (3 categories),Age (D) (3 categories),Oedran (D) (3 chategori),1
+470,resident_age_4a,4,,N,resident_age,PUB,Y,resident_age,N,Age (4 categories),Age (4 categories),Oedran (4 categori),1
+471,resident_age_4b,4,,N,resident_age,PUB,Y,resident_age,N,Age (B) (4 categories),Age (B) (4 categories),Oedran (B) (4 categori),1
+472,resident_age_4c,4,,N,resident_age,PUB,Y,resident_age,N,Age (C) (4 categories),Age (C) (4 categories),Oedran (C) (4 categori),1
+473,resident_age_4d,4,,N,resident_age,PUB,Y,resident_age,,Age (D) (4 categories),Age (D) (4 categories),Oedran (D) (4 categori),1
+474,resident_age_5a,5,,N,resident_age,PUB,Y,resident_age,,Age (5 categories),Age (5 categories),Oedran (5 categori),1
+475,resident_age_5b,5,,N,resident_age,PUB,Y,resident_age,N,Age (B) (5 categories),Age (B) (5 categories),Oedran (B) (5 categori),1
+476,resident_age_5c,5,,N,resident_age,PUB,Y,resident_age,N,Age (C) (5 categories),Age (C) (5 categories),Oedran (C) (5 categori),1
+477,resident_age_5d,5,,N,resident_age,PUB,Y,resident_age,N,Age (D) (5 categories),Age (D) (5 categories),Oedran (D) (5 categori),1
+478,resident_age_61a,61,,N,resident_age,PUB,Y,resident_age,,Age (61 categories),Age (61 categories),Oedran (61 o gategorïau),1
+479,resident_age_6a,6,,N,resident_age,PUB,Y,resident_age,Y,Age (6 categories),Age (6 categories),Oedran (6 chategori),1
+480,resident_age_6b,6,,N,resident_age,PUB,Y,resident_age,N,Age (B) (6 categories),Age (B) (6 categories),Oedran (B) (6 chategori),1
+481,resident_age_7a,7,,N,resident_age,PUB,Y,resident_age,N,Age (7 categories),Age (7 categories),Oedran (7 categori),1
+482,resident_age_7b,7,,N,resident_age,PUB,Y,resident_age,N,Age (B) (7 categories),Age (B) (7 categories),Oedran (B) (7 categori),1
+483,resident_age_7c,7,,N,resident_age,PUB,Y,resident_age,,Age (C) (7 categories),Age (C) (7 categories),Oedran (C) (7 categori),1
+484,resident_age_7d,7,,N,resident_age,PUB,Y,resident_age,N,Age (D) (7 categories),Age (D) (7 categories),Oedran (D) (7 categori),1
+485,resident_age_86a,86,,N,resident_age,PUB,Y,resident_age,N,Age (86 categories),Age (86 categories),Oedran (86 o gategorïau),1
+486,resident_age_8a,8,,N,resident_age,PUB,Y,resident_age,N,Age (8 categories),Age (8 categories),Oedran (8 categori),1
+487,resident_age_8b,8,,N,resident_age,PUB,Y,resident_age,N,Age (B) (8 categories),Age (B) (8 categories),Oedran (B) (8 categori),1
+488,resident_age_8c,8,,N,resident_age,PUB,Y,resident_age,,Age (C) (8 categories),Age (C) (8 categories),Oedran (C) (8 categori),1
+489,resident_age_8d,8,,N,resident_age,PUB,Y,resident_age,N,Age (D) (8 categories),Age (D) (8 categories),Oedran (D) (8 categori),1
+490,resident_age_91a,91,,N,resident_age,PUB,Y,resident_age,N,Age (91 categories),Age (91 categories),Oedran (91 o gategorïau),1
+491,resident_age_9a,9,,N,resident_age,PUB,Y,resident_age,N,Age (9 categories),Age (9 categories),Oedran (9 categori),1
+492,resident_day_of_birth,32,,Y,,PUB,N,resident_day_of_birth,,Date of birth day (32 categories),Date of birth day (32 categories),Diwrnod dyddiad geni (32 o gategorïau),1
+493,resident_month_of_birth,15,,Y,,PUB,N,resident_month_of_birth,,Date of birth month (15 categories),Date of birth month (15 categories),Mis dyddiad geni (15 o gategorïau),1
+494,resident_record_key,258,,Y,,PUB,N,resident_record_key,,Resident Record Key (258 categories),Resident Record Key (258 categories),Allwedd Cofnod Preswylwyr (258 o gategorïau),1
+495,resident_year_of_birth,119,,Y,,PUB,N,resident_year_of_birth,,Date of birth year (119 categories),Date of birth year (119 categories),Blwyddyn dyddiad geni (119 o gategorïau),1
+496,responsible_for_management,11,,Y,,PUB,N,responsible_for_management,,Management (indicator) (11 categories),Management (indicator) (11 categories),Rheoli (dangosydd) (11 categori),1
+497,schema_name,16,,Y,,PUB,N,schema_name,,Collection exercise schema name (16 categories),Collection exercise schema name (16 categories),Enw crynodeb ymarfer casglu (16 o gategorïau),1
+498,second_address_country,7,,Y,,PUB,Y,second_address_country,,Second address country (7 categories),Second address country (7 categories),Gwlad ail gyfeiriad (7 categori),1
+499,second_address_country_4a,4,,N,second_address_country,PUB,Y,second_address_country,,Second address country (4 categories),Second address country (4 categories),Gwlad ail gyfeiriad (4 categori),1
+500,second_address_oa_a,2,,Y,,PUB,Y,second_address_oa,,Second address Output Area,Second address Output Area,Ardal Gynnyrch ail gyfeiriad,1
+501,second_address_type_priority,10,,Y,,PUB,Y,second_address_type_priority,Y,Second address type (10 categories),Second address type (10 categories),Math o ail gyfeiriad (10 categori),1
+502,self_contained,4,,Y,,PUB,N,self_contained,,Self-contained (4 categories),Self-contained (4 categories),Hunangynhwysol (4 categori),1
+503,sex,2,,Y,,PUB,Y,sex,Y,Sex (2 categories),Sex (2 categories),Rhyw (2 gategori),1
+504,sexual_orientation,12,,Y,,PUB,Y,sexual_orientation,,Sexual orientation (12 categories),Sexual orientation (12 categories),Cyfeiriadedd rhywiol (12 o gategorïau),1
+505,sexual_orientation_4a,4,,N,sexual_orientation,PUB,Y,sexual_orientation,,Sexual orientation (4 categories),Sexual orientation (4 categories),Cyfeiriadedd rhywiol (4 o gategorïau),1
+506,sexual_orientation_6a,6,,N,sexual_orientation,PUB,Y,sexual_orientation,,Sexual orientation (6 categories),Sexual orientation (6 categories),Cyfeiriadedd rhywiol (6 o gategorïau),1
+507,sexual_orientation_9a,9,,N,sexual_orientation,PUB,Y,sexual_orientation,,Sexual orientation (9 categories),Sexual orientation (9 categories),Cyfeiriadedd rhywiol (9 o gategorïau),1
+508,shared_dwelling_indicator,2,,Y,,PUB,N,shared_dwelling_indicator,,Shared Dwelling Indicator (2 categories),Shared Dwelling Indicator (2 categories),Dangosydd Annedd sy'n cael ei Rhannu (2 gategori),1
+509,short_term_pop_1a,0,,Y,,PUB,N,short_term_pop,,Non-UK born short-term resident (Population),People born outside the UK who are short-term residents,Pobl a aned y tu allan i'r Deyrnas Unedig sy'n breswylwyr byrdymor,1
+510,sikh_ind,5,,Y,,PUB,Y,sikh_ind,,Sikh identity (5 categories),Sikh identity (5 categories),Hunaniaeth Sicaidd (5 categori),1
+511,sikh_ind_3a,3,,N,sikh_ind,PUB,Y,sikh_ind,,Sikh identity (3 categories),Sikh identity (3 categories),Hunaniaeth Sicaidd (3 categori),1
+512,size_of_family,30,,Y,,PUB,N,size_of_family,,Family size (30 categories),Family size (30 categories),Maint y teulu (30 o gategorïau),1
+513,soc,417,,Y,,PUB,N,soc,,Occupation (417 categories),Occupation (417 categories),Galwedigaeth (417 o gategorïau),1
+514,somali_ind,5,,Y,,PUB,Y,somali_ind,,Somali identity (5 categories),Somali identity (5 categories),Hunaniaeth Somalaidd (5 categori),1
+515,somali_ind_3a,3,,N,somali_ind,PUB,Y,somali_ind,,Somali identity (3 categories),Somali identity (3 categories),Hunaniaeth Somalaidd (3 categori),1
+516,student_accommodation,9,,Y,,PUB,Y,student_accommodation,,Schoolchild and student living arrangements (9 categories),Schoolchild and student living arrangements (9 categories),Trefniadau byw plant ysgol a myfyrwyr (9 categori),1
+517,student_accommodation_6a,6,,N,student_accommodation,PUB,Y,student_accommodation,,Schoolchild and student living arrangements (6 categories),Schoolchild and student living arrangements (6 categories),Trefniadau byw plant ysgol a myfyrwyr (6 categori),1
+518,student_accommodation_type,10,,Y,,PUB,Y,student_accommodation_type,,Student accommodation type (10 categories),Student accommodation type (10 categories),Math o lety myfyrwyr (10 categori),1
+519,student_accommodation_type_8a,8,,N,student_accommodation_type,PUB,Y,student_accommodation_type,,Student accommodation type (8 categories),Student accommodation type (8 categories),Math o lety myfyrwyr (8 categori),1
+520,student_accommodation_type_7a,7,,N,student_accommodation_type,PUB,Y,student_accommodation_type,,Student accommodation type (7 categories),Student accommodation type (7 categories),Math o lety myfyrwyr (7 categori),1
+521,student_age,5,,Y,,PUB,Y,student_age,,Age of schoolchild or student (5 categories),Age of schoolchild or student (5 categories),Oedran plentyn ysgol neu fyfyriwr (5 categori),1
+522,student_age_4a,4,,N,student_age,PUB,Y,student_age,,Age of schoolchild or student (4 categories),Age of schoolchild or student (4 categories),Oedran plentyn ysgol neu fyfyriwr (4 categori),1
+523,student_term_pop_1a,0,,Y,,PUB,N,student_term_pop,,Schoolchild or full-time student aged 4 and over at their term-time address (Population),Schoolchilden or full-time students aged 4 years and over at their term-time address ,Plant ysgol neu fyfyrwyr amser llawn 4 oed a throsodd yn eu cyfeiriad yn ystod y tymor ,1
+524,submission_language,6,,Y,,PUB,N,submission_language,,Submission Language (6 categories),Submission Language (6 categories),Iaith Gyflwyno (6 categori),1
+525,supervises_or_manages,5,,Y,,PUB,N,supervises_or_manages,,Supervisor of employees (5 categories),Supervisor of employees (5 categories),Goruchwylydd gweithwyr (5 categori),1
+526,transport_to_work,12,,Y,,PUB,Y,transport_to_work,,Method used to travel to work (12 categories),Method used to travel to work (12 categories),Dull o deithio i’r gwaith (12 o gategorïau),1
+527,transport_to_workplace,13,,Y,,PUB,Y,transport_to_workplace,N,Method used to travel to workplace (13 categories),Method used to travel to workplace (13 categories),Dull o deithio i’r gweithle (13 o gategorïau),1
+528,transport_to_workplace_12a,12,,N,transport_to_workplace,PUB,Y,transport_to_workplace,N,Method used to travel to workplace (12 categories),Method used to travel to workplace (12 categories),Dull o deithio i’r gweithle (12 o gategorïau),1
+529,transport_to_workplace_5a,5,,N,transport_to_workplace,PUB,Y,transport_to_workplace,Y,Method used to travel to workplace (5 categories),Method used to travel to workplace (5 categories),Dull o deithio i’r gweithle (5 o gategorïau),1
+530,travel_destination_oa_a,3,,Y,,PUB,N,travel_destination_oa,,Output Area of workday travel destination,Output Area of workday travel destination,Ardal Gynnyrch cyrchfan teithio diwrnod gwaith,1
+531,type_of_establishment,4,,Y,,PUB,N,type_of_establishment,,Type of establishment (4 categories),Type of establishment (4 categories),Math o sefydliad (4 categori),1
+532,usual_resident_ind,2,,Y,,PUB,Y,usual_resident_ind,,Usual resident indicator (2 categories),Usual resident indicator (2 categories),Dangosydd preswylydd arferol (2 gategori),1
+533,usual_resident_pop_1a,0,,Y,,PUB,N,usual_resident_pop,,Usual resident (Population),Usual residents,Preswylwyr arferol,1
+534,valmiki_ind,5,,Y,,PUB,Y,valmiki_ind,,Valmiki identity (5 categories),Valmiki identity (5 categories),Hunaniaeth Valmiki (5 categori),1
+535,uk_armed_forces,5,,Y,,PUB,Y,uk_armed_forces,,UK armed forces veteran indicator (5 categories),UK armed forces veteran indicator (5 categories),Dangosydd cyn-filwr yn lluoedd arfog y Deyrnas Unedig (5 categori),1
+536,visitor_address_country,281,,Y,,PUB,N,visitor_address_country,,Visitor address (Outside UK) (281 categories),Visitor address (Outside UK) (281 categories),Cyfeiriad ymwelwyr (Y tu allan i'r Derynas Unedig) (281 o gategorïau),1
+537,visitor_address_indicator,5,,Y,,PUB,N,visitor_address_indicator,,Visitor address (Indicator) (5 categories),Visitor address (Indicator) (5 categories),Cyfeiriad ymwelwyr (Dangosydd) (5 categori),1
+538,visitor_age,117,,Y,,PUB,N,visitor_age,,Visitor age (117 categories),Visitor age (117 categories),Oedran ymwelwyr (117 o gategorïau),1
+539,visitor_day_change_flag,2,,Y,,PUB,N,visitor_day_change_flag,,Visitor Day Change (2 categories),Visitor Day Change (2 categories),Newid Diwrnod Ymwelwyr (2 gategori),1
+540,visitor_record_key,257,,Y,,PUB,N,visitor_record_key,,Visitor Key (257 categories),Visitor Key (257 categories),Allwedd Ymwelwyr (257 o gategorïau),1
+541,voa_number_of_rooms,99,,Y,,PUB,Y,voa_number_of_rooms,N,Number of rooms (Valuation Office Agency) (99 categories),Number of rooms (Valuation Office Agency) (99 categories),Nifer yr ystafelloedd (Asiantaeth y Swyddfa Brisio) (99 o gategorïau),1
+542,voa_number_of_rooms_6a,6,,N,voa_number_of_rooms,PUB,Y,voa_number_of_rooms,Y,Number of rooms (Valuation Office Agency) (6 categories),Number of rooms (Valuation Office Agency) (6 categories),Nifer yr ystafelloedd (Asiantaeth y Swyddfa Brisio) (6 o gategorïau),1
+543,voa_number_of_rooms_8a,8,,N,voa_number_of_rooms,PUB,Y,voa_number_of_rooms,N,Number of rooms (Valuation Office Agency) (8 categories),Number of rooms (Valuation Office Agency) (8 categories),Nifer yr ystafelloedd (Asiantaeth y Swyddfa Brisio) (8 o gategorïau),1
+544,voa_number_of_rooms_9a,9,,N,voa_number_of_rooms,PUB,Y,voa_number_of_rooms,N,Number of rooms (Valuation Office Agency) (9 categories),Number of rooms (Valuation Office Agency) (9 categories),Nifer yr ystafelloedd (Asiantaeth y Swyddfa Brisio) (9 o gategorïau),1
+545,waiting_for_work,6,,Y,,PUB,N,waiting_for_work,,Waiting for work (6 categories),Waiting for work (6 categories),Aros am waith (6 chategori),1
+546,welsh_language_proficiency,9,,Y,,PUB,N,welsh_language_proficiency,,Welsh language (9 categories),Welsh language (9 categories),Y Gymraeg (9 categori),1
+547,welsh_skills_all,10,,Y,,PUB,Y,welsh_skills_all,N,Welsh language skills (10 categories),Welsh language skills (10 categories),Sgiliau Cymraeg (10 categori),1
+548,welsh_skills_all_4a,4,,N,welsh_skills_all,PUB,Y,welsh_skills_all,N,Welsh language skills (4 categories),Welsh language skills (4 categories),Sgiliau Cymraeg (4 categori),1
+549,welsh_skills_all_4b,4,,N,welsh_skills_all,PUB,Y,welsh_skills_all,,Welsh language skills (B) (4 categories),Welsh language skills (B) (4 categories),Sgiliau Cymraeg (B) (4 categori),1
+550,welsh_skills_all_6a,6,,N,welsh_skills_all,PUB,Y,welsh_skills_all,Y,Welsh language skills (6 categories),Welsh language skills (6 categories),Sgiliau Cymraeg (6 categori),1
+551,welsh_skills_all_8a,8,,N,welsh_skills_all,PUB,Y,welsh_skills_all,N,Welsh language skills (8 categories),Welsh language skills (8 categories),Sgiliau Cymraeg (8 categori),1
+552,welsh_skills_read,3,,Y,,PUB,Y,welsh_skills_read,Y,Welsh reading ability (3 categories),Welsh reading ability (3 categories),Gallu i ddarllen Cymraeg (3 chategori),1
+553,welsh_skills_speak,3,,Y,,PUB,Y,welsh_skills_speak,Y,Welsh speaking ability (3 categories),Welsh speaking ability (3 categories),Gallu i siarad Cymraeg (3 chategori),1
+554,welsh_skills_understand,3,,Y,,PUB,Y,welsh_skills_understand,Y,Welsh understanding ability (3 categories),Welsh understanding ability (3 categories),Gallu i ddeall Cymraeg (3 chategori),1
+555,welsh_skills_write,3,,Y,,PUB,Y,welsh_skills_write,Y,Welsh writing ability (3 categories),Welsh writing ability (3 categories),Gallu i ysgrifennu yn Gymraeg (3 chategori),1
+556,welsh_speaking_3_plus,3,,Y,,PUB,Y,welsh_speaking_3_plus,Y,Number of people aged 3 years and over who can speak Welsh (3 categories),Number of people aged 3 years and over who can speak Welsh (3 categories),Nifer y bobl 3 oed a throsodd sy'n gallu siarad Cymraeg (3 chategori),1
+557,welsh_speaking_dependent_child,9,,Y,,PUB,Y,welsh_speaking_dependent_child,N,Welsh speaking ability of dependent children (9 categories),Welsh speaking ability of dependent children (9 categories),Gallu plant dibynnol i siarad Cymraeg (9 categori),1
+558,welsh_speaking_dependent_child_3a,3,,N,welsh_speaking_dependent_child,PUB,Y,welsh_speaking_dependent_child,Y,Welsh speaking ability of dependent children (3 categories),Welsh speaking ability of dependent children (3 categories),Gallu plant dibynnol i siarad Cymraeg (3 categori),1
+559,who_is_staying,7,,Y,,PUB,N,who_is_staying,,Who else is staying overnight (7 categories),Who else is staying overnight (7 categories),Pwy arall sy’n aros dros nos (7 categori),1
+560,who_usually_lives_here,10,,Y,,PUB,N,who_usually_lives_here,,Who lives in the household (10 categories),Who lives in the household (10 categories),Pwy sy'n byw yn y cartref (10 categori),1
+561,work_from_home_pop_1a,0,,Y,,PUB,N,work_from_home_pop,,Works mainly at or from home (Population),People who mainly work at or from home,Pobl sy'n gweithio gartref neu o'r cartref yn bennaf,1
+562,workers_in_generation_1,4,,Y,,PUB,Y,workers_in_generation_1,,Number of people working in generation 1 of family (4 categories),Number of people working in generation 1 of family (4 categories),Nifer y bobl sy'n gweithio yng nghenhedlaeth 1 teulu (4 categori),1
+563,workers_transport,18,,Y,,PUB,Y,workers_transport,Y,Number of people who work in household and their transport to work (18 categories),Number of people who work in household and their transport to work (18 categories),Nifer y bobl yn y cartref sy'n gweithio a'u dull o deithio i'r gwaith (18 o gategorïau),1
+564,working_age_ind,3,,Y,,PUB,Y,working_age_ind,,People aged between 16 and 64 years (3 categories),People aged between 16 and 64 years (3 categories),Pobl rhwng 16 a 64 oed (3 chategori),1
+565,workday_pop_1a,0,,Y,,PUB,N,workday_pop,,Workday population,Workday population,Poblogaeth diwrnod gwaith,1
+566,working_pop_1a,0,,Y,,PUB,N,working_pop,,Activity last week: Working (Population),Working population,Y boblogaeth sy'n gweithio,1
+567,workplace_address_country,282,,Y,,PUB,N,workplace_address_country,,Workplace (Outside UK) (282 categories),Workplace (Outside UK) (282 categories),Gweithle (Y tu allan i'r Deyrnas Unedig) (282 o gategorïau),1
+568,workplace_oa_a,3,,Y,,PUB,Y,workplace_oa,,Output Area of workplace,Output Area of workplace,Ardal Gynnyrch gweithle,1
+569,workplace_pop_1a,0,,Y,,PUB,N,workplace_pop,,Workplace population,Workplace population,Poblogaeth y gweithle,1
+570,workplace_travel,11,,Y,,PUB,Y,workplace_travel,N,Distance travelled to work (11 categories),Distance travelled to work (11 categories),Pellter teithio i'r gwaith (11 o gategorïau),1
+571,workplace_travel_10a,10,,N,workplace_travel,PUB,Y,workplace_travel,N,Distance travelled to work (10 categories),Distance travelled to work (10 categories),Pellter teithio i'r gwaith (10 o gategorïau),1
+572,workplace_travel_4a,4,,N,workplace_travel,PUB,Y,workplace_travel,N,Distance travelled to work (4 categories),Distance travelled to work (4 categories),Pellter teithio i'r gwaith (4 o gategorïau),1
+573,workplace_travel_5a,5,,N,workplace_travel,PUB,Y,workplace_travel,N,Distance travelled to work (5 categories),Distance travelled to work (5 categories),Pellter teithio i'r gwaith (5 o gategorïau),1
+574,workplace_travel_8a,8,,N,workplace_travel,PUB,Y,workplace_travel,Y,Distance travelled to work (8 categories),Distance travelled to work (8 categories),Pellter teithio i'r gwaith (8 o gategorïau),1
+575,workplace_type,7,,Y,,PUB,N,workplace_type,,Workplace address (Indicator) (7 categories),Workplace address (Indicator) (7 categories),Cyfeiriad gweithle (Dangosydd) (7 categori),1
+576,year_arrival_uk,13,,Y,,PUB,Y,year_arrival_uk,N,Year of arrival in the UK (13 categories),Year of arrival in the UK (13 categories),Blwyddyn cyrraedd y Deyrnas Unedig (13 o gategorïau),1
+577,year_arrival_uk_11a,11,,N,year_arrival_uk,PUB,Y,year_arrival_uk,Y,Year of arrival in the UK (11 categories),Year of arrival in the UK (11 categories),Blwyddyn cyrraedd y Deyrnas Unedig (11 o gategorïau),1
+578,year_arrival_uk_6a,6,,N,year_arrival_uk,PUB,Y,year_arrival_uk,N,Year of arrival in the UK (6 categories),Year of arrival in the UK (6 categories),Blwyddyn cyrraedd y Deyrnas Unedig (6 o gategorïau),1
+579,year_of_arrival_in_country,120,,Y,,PUB,N,year_of_arrival_in_country,,Year of arrival in UK (120 categories),Year of arrival in UK (120 categories),Blwyddyn cyrraedd y Deyrnas Unedig (120 o gategorïau),1

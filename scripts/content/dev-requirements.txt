@@ -1,5 +1,0 @@
-# Test/Dev requirements
-pytest==7.1
-
-# Production requirements
--r requirements.txt

@@ -1,14 +1,13 @@
 {
   "meta": {
-    "created_at": "2022-12-13-12-25-06",
-    "spec_file": "2021-content-spec.json",
-    "release": "2021-TTW-ar2776-c21ew_metadata-v1-3_cantab_20221207-35"
+    "created_at": "2022-12-16-13-05-36",
+    "release": "2021-TTW-ar2776-c21ew_metadata-v1-3_cantab_20221213-36"
   },
   "content": [
     {
       "name": "Work",
       "slug": "work",
-      "desc": "People's employment status.",
+      "desc": "All about people's jobs and employment.",
       "variables": [
         {
           "name": "Method of travel to workplace",
@@ -31,7 +30,6 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "dataset": "TS061",
               "data_download": "https://www.ons.gov.uk/datasets/TS061/editions/2021/versions/1",
               "categories": [
                 {
@@ -148,7 +146,6 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "dataset": "TS058",
               "data_download": "https://www.ons.gov.uk/datasets/TS058/editions/2021/versions/1",
               "categories": [
                 {
@@ -194,7 +191,6 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "dataset": "TS058",
               "data_download": "https://www.ons.gov.uk/datasets/TS058/editions/2021/versions/1",
               "categories": [
                 {
@@ -248,7 +244,6 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "dataset": "TS058",
               "data_download": "https://www.ons.gov.uk/datasets/TS058/editions/2021/versions/1",
               "categories": [
                 {

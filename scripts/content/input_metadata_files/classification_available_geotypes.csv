@@ -45,7 +45,7 @@ Identity,2021-SOGI,gender_identity,gender_identity_4a,"msoa,lad"
 Identity,2021-SOGI,gender_identity,gender_identity_8a,lad
 Identity,2021-SOGI,sexual_orientation,sexual_orientation_4a,"msoa,lad"
 Identity,2021-SOGI,sexual_orientation,sexual_orientation_6a,"msoa,lad"
-Identity,2021-SOGI,sexual_orientation,sexual_orientation_9a,"msoa,lad"
+Identity,2021-SOGI,sexual_orientation,sexual_orientation_9a,"lad"
 Population,2021-ARM,uk_armed_forces,uk_armed_forces,"msoa,lad"
 Population,2021-DEM,hh_deprivation,hh_deprivation,"oa,msoa,lad"
 Population,2021-DEM,hh_family_composition,hh_family_composition_15a,"oa,msoa,lad"

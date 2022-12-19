@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-12-19-09-32-22",
+    "created_at": "2022-12-19-14-45-14",
     "release": "2021-ARM-ar2776-c21ew_metadata-v1-3_cantab_20221216-37"
   },
   "content": [
@@ -28,7 +28,6 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Previously served in the UK regular armed forces",

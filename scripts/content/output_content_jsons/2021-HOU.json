@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-12-19-09-32-22",
+    "created_at": "2022-12-19-14-45-14",
     "release": "2021-HOU-ar2776-c21ew_metadata-v1-3_cantab_20221216-37"
   },
   "content": [
@@ -29,7 +29,6 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Whole house or bungalow",
@@ -66,7 +65,6 @@
                 "msoa",
                 "lad"
               ],
-              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Whole house or bungalow: Detached",
@@ -119,7 +117,6 @@
                 "msoa",
                 "lad"
               ],
-              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Detached",
@@ -208,7 +205,6 @@
                 "lad"
               ],
               "choropleth_default": true,
-              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "No second address",
@@ -258,7 +254,6 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Does not have central heating",
@@ -287,7 +282,6 @@
                 "msoa",
                 "lad"
               ],
-              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "No central heating",
@@ -409,7 +403,6 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Owned: Owns outright",
@@ -454,7 +447,6 @@
                 "msoa",
                 "lad"
               ],
-              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Owned: Owns outright",
@@ -544,7 +536,6 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "1 bedroom",
@@ -602,7 +593,6 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "No cars or vans in household",
@@ -631,7 +621,6 @@
                 "msoa",
                 "lad"
               ],
-              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "No cars or vans in household",
@@ -688,7 +677,6 @@
                 "lad"
               ],
               "choropleth_default": true,
-              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Occupancy rating of bedrooms: +2 or more",
@@ -753,7 +741,6 @@
                 "lad"
               ],
               "choropleth_default": true,
-              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Occupancy rating of rooms: +2 or more",
@@ -818,7 +805,6 @@
                 "lad"
               ],
               "choropleth_default": true,
-              "comparison_2011_data_available": true,
               "categories": [
                 {
                   "name": "Armed forces base address",

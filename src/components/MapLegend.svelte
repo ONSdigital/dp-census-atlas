@@ -49,36 +49,60 @@
           <div class="hidden xs:block whitespace-nowrap">
             <span class="xs:text-4xl sm:text-5xl font-bold">
               {roundedClassificationDataToString($viz.params.classification.code, active.value)}</span
-            ><span class="xs:text-2xl sm:text-4xl font-bold"
-              >{getClassificationDataSuffix($viz.params.classification.code)}</span
             >
+            {#if $viz.params.changeOverTime}
+              <span class="xs:text-2xl sm:text-4xl font-bold">pp</span>
+            {:else}
+              <span class="xs:text-2xl sm:text-4xl font-bold"
+                >{getClassificationDataSuffix($viz.params.classification.code)}</span
+              >
+            {/if}
           </div>
           <div class="flex-grow md:leading-[0px]">
             <div class="mb-0.5 xs:mb-0 inline xs:block">
               <span class="xs:hidden font-bold text-2xl leading-6 sm:leading-normal mr-0.5">
                 <span class="">
                   {roundedClassificationDataToString($viz.params.classification.code, active.value)}</span
-                ><span class="text-base">{getClassificationDataSuffix($viz.params.classification.code)}</span>
+                >
+                {#if $viz.params.changeOverTime}
+                  <span class="text-sm">pp</span>
+                {:else}
+                  <span class="text-sm">{getClassificationDataSuffix($viz.params.classification.code)}</span>
+                {/if}
               </span>
               <span class={legendTextClass}>
-                {formatTemplateString(
-                  $viz.params.variable,
-                  $viz.params.category,
-                  active.displayName,
-                  $viz.params.category.legend_str_1,
-                )}
+                {#if $viz.params.changeOverTime}
+                  {$viz.params.variable.units} in {active.displayName}
+                {:else}
+                  {formatTemplateString(
+                    $viz.params.variable,
+                    $viz.params.category,
+                    active.displayName,
+                    $viz.params.category.legend_str_1,
+                  )}
+                {/if}
               </span>
               <GeoTypeBadge geoType={active.geoType} />
-              <span class={legendTextClass}>
-                {formatTemplateString(
-                  $viz.params.variable,
-                  $viz.params.category,
-                  active.displayName,
-                  $viz.params.category.legend_str_2,
-                )}
-              </span>
+              {#if !$viz.params.changeOverTime}
+                <span class={legendTextClass}>
+                  {formatTemplateString(
+                    $viz.params.variable,
+                    $viz.params.category,
+                    active.displayName,
+                    $viz.params.category.legend_str_2,
+                  )}
+                </span>
+              {/if}
             </div>
-            {#if $viz?.params?.embed?.categorySelection}
+            {#if $viz.params.changeOverTime}
+              {#if $viz?.params?.embed?.categorySelection}
+                <CategorySelector selected={$viz.params.category.slug} use="name" />
+              {:else}
+                <div class={`${legendTextClass} font-bold`}>
+                  {$viz.params.category.name}
+                </div>
+              {/if}
+            {:else if $viz?.params?.embed?.categorySelection}
               <CategorySelector selected={$viz.params.category.slug} use="legendString" />
             {:else}
               <div class={`${legendTextClass} font-bold inline xs:block`}>

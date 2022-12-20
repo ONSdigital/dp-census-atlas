@@ -28,10 +28,11 @@ const dem = {
 const edu = {
   localContentJsonUrl: "http://localhost:8090/2021-EDU.json",
   publicContentJsonUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-EDU.json",
-  prodPubContentJsonUrl: "",
-  prodWebContentJsonUrl: "",
+  prodPubContentJsonUrl:
+    "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusmapsconfigedu/2021-EDU.json",
+  prodWebContentJsonUrl: "https://www.ons.gov.uk/visualisations/censusmapsconfigedu/2021-EDU.json",
   fakeDataBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021",
-  realDataBaseUrl: "",
+  realDataBaseUrl: "https://ons-dp-prod-census-maps-edu.s3.eu-west-2.amazonaws.com",
 };
 const eilr = {
   localContentJsonUrl: "http://localhost:8090/2021-EILR.json",
@@ -332,6 +333,10 @@ export default {
         contentBaseUrl: dem.realDataBaseUrl,
       },
       {
+        contentJsonUrl: edu.prodPubContentJsonUrl,
+        contentBaseUrl: edu.realDataBaseUrl,
+      },
+      {
         contentJsonUrl: eilr.prodPubContentJsonUrl,
         contentBaseUrl: eilr.realDataBaseUrl,
       },
@@ -375,6 +380,10 @@ export default {
       {
         contentJsonUrl: dem.prodWebContentJsonUrl,
         contentBaseUrl: dem.realDataBaseUrl,
+      },
+      {
+        contentJsonUrl: edu.prodWebContentJsonUrl,
+        contentBaseUrl: edu.realDataBaseUrl,
       },
       {
         contentJsonUrl: eilr.prodWebContentJsonUrl,

@@ -1,6 +1,7 @@
 variable_group,content_json,variable,classification,available_geotypes
 Education,2021-EDU,highest_qualification,highest_qualification,"oa,msoa,lad"
 Education,2021-EDU,highest_qualification,highest_qualification_6a,"oa,msoa,lad"
+Education,2021-EDU,in_full_time_education,in_full_time_education,"oa,msoa,lad"
 Health,2021-HUC,disability,disability,"oa,msoa,lad"
 Health,2021-HUC,disability,disability_3a,"oa,msoa,lad"
 Health,2021-HUC,health_in_general,health_in_general,"oa,msoa,lad"
@@ -45,7 +46,7 @@ Identity,2021-SOGI,gender_identity,gender_identity_4a,"msoa,lad"
 Identity,2021-SOGI,gender_identity,gender_identity_8a,lad
 Identity,2021-SOGI,sexual_orientation,sexual_orientation_4a,"msoa,lad"
 Identity,2021-SOGI,sexual_orientation,sexual_orientation_6a,"msoa,lad"
-Identity,2021-SOGI,sexual_orientation,sexual_orientation_9a,"lad"
+Identity,2021-SOGI,sexual_orientation,sexual_orientation_9a,lad
 Population,2021-ARM,uk_armed_forces,uk_armed_forces,"msoa,lad"
 Population,2021-DEM,hh_deprivation,hh_deprivation,"oa,msoa,lad"
 Population,2021-DEM,hh_family_composition,hh_family_composition_15a,"oa,msoa,lad"

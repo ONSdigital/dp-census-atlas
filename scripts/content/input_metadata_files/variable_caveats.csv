@@ -1,5 +1,6 @@
 variable_group,content_json,variable,caveat_text,caveat_link
 Education,2021-EDU,highest_qualification,,
+Education,2021-EDU,in_full_time_education,,
 Health,2021-HUC,disability,,
 Health,2021-HUC,health_in_general,,
 Health,2021-HUC,hh_disabled,,

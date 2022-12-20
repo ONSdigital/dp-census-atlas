@@ -11,6 +11,8 @@ Education,2021-EDU,Highest level of qualification,highest_qualification_6a,highe
 Education,2021-EDU,Highest level of qualification,highest_qualification_6a,highest_qualification_6a-002,{PERCENTAGE}%,of people in {location},have,an apprenticeship
 Education,2021-EDU,Highest level of qualification,highest_qualification_6a,highest_qualification_6a-003,{PERCENTAGE}%,of people in {location},have,level 4 qualifications and above
 Education,2021-EDU,Highest level of qualification,highest_qualification_6a,highest_qualification_6a-004,{PERCENTAGE}%,of people in {location},have,other qualifications
+Education,2021-EDU,Schoolchild or full-time student indicator,in_full_time_education,in_full_time_education-001,{PERCENTAGE}%,of people aged five years and over in {location},are,a full-time student
+Education,2021-EDU,Schoolchild or full-time student indicator,in_full_time_education,in_full_time_education-002,{PERCENTAGE}%,of people aged five years and over in {location},are,not a full-time student
 Health,2021-HUC,Disability,disability,disability-001,{PERCENTAGE}%,of people in {location},are,disabled under the equality act: day-to-day activities limited a lot
 Health,2021-HUC,Disability,disability,disability-002,{PERCENTAGE}%,of people in {location},are,disabled under the equality act: day-to-day activities limited a little
 Health,2021-HUC,Disability,disability,disability-003,{PERCENTAGE}%,of people in {location},are,not disabled under the equality act: has long term physical or mental health condition but day-to-day activities are not limited

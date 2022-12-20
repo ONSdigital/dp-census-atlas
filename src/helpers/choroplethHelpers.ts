@@ -15,7 +15,8 @@ export const getColoursForBreaks = (breaks: number[], changeOverTime: boolean): 
   if (breaks[breaks.length - 1] <= 0) {
     return colours.neg;
   }
-  const nBreaksBelowZero = breaks.filter((br) => br < 0).length;
-  const nBreaksAboveZero = breaks.length - nBreaksBelowZero;
+  const breaksNotIncludingMin = breaks.slice(1, breaks.length);
+  const nBreaksBelowZero = breaksNotIncludingMin.filter((br) => br < 0).length;
+  const nBreaksAboveZero = breaksNotIncludingMin.length - nBreaksBelowZero;
   return [...colours.neg.slice(nBreaksBelowZero * -1), colours.mid, ...colours.pos.slice(0, nBreaksAboveZero)];
 };

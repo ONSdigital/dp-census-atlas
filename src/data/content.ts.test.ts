@@ -4,6 +4,7 @@ const publishedOrPrepublishedTopics = [
   "release-0",
   "arm",
   "dem",
+  "edu",
   "eilr",
   "hou",
   "lab",

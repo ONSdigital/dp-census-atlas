@@ -15,7 +15,7 @@ const testCases = [
   {
     name: "EDU",
     url: "/choropleth/education/highest-level-of-qualification/highest-qualification-6a/highest-level-of-qualification-apprenticeship?oa=E00093263",
-    legendText: "14.2% of people in E00093263 OA have an apprenticeship",
+    legendText: "23.5% of people in E00093263 OA have an apprenticeship",
     categoryCount: 5,
     nextClassificationCategoryCount: 7,
   },

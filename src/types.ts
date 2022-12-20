@@ -30,7 +30,7 @@ export type Classification = {
   available_geotypes: GeoType[];
   choropleth_default: boolean;
   dot_density_default: boolean;
-  comparison_2011_data_available: boolean;
+  comparison_2011_data_available_geotypes: GeoType[];
   categories: Category[];
 };
 

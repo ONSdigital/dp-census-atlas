@@ -154,12 +154,16 @@
     {
       "name": "Education",
       "slug": "education",
-      "desc": "The qualifications people hold.",
+      "desc": "People in education and qualifications they hold.",
       "variables_by_content_json": {
         "2021-EDU": [
           {
             "code": "highest_qualification",
             "classifications": ["highest_qualification_6a", "highest_qualification"]
+          },
+          {
+            "code": "in_full_time_education",
+            "classifications": ["in_full_time_education"]
           }
         ]
       }

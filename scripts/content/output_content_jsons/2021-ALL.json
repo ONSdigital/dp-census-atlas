@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-12-19-09-32-22",
+    "created_at": "2022-12-20-08-58-29",
     "release": "2021-ALL-ar2776-c21ew_metadata-v1-3_cantab_20221216-37"
   },
   "content": [
@@ -4025,7 +4025,7 @@
     {
       "name": "Education",
       "slug": "education",
-      "desc": "The qualifications people hold.",
+      "desc": "People in education and qualifications they hold.",
       "variables": [
         {
           "name": "Highest level of qualification",
@@ -4157,6 +4157,47 @@
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "other qualifications"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Schoolchild or full-time student indicator",
+          "code": "in_full_time_education",
+          "slug": "schoolchild-or-full-time-student-indicator",
+          "desc": "People in full-time education.",
+          "long_desc": "Indicates whether a person aged 5 years and over was in full-time education on Census Day, 21 March 2021. This includes schoolchildren and adults in full-time education.\n\nSchoolchildren and students in full-time education studying away from home are treated as usually resident at their term-time address.",
+          "units": "",
+          "topic_code": "EDU",
+          "classifications": [
+            {
+              "code": "in_full_time_education",
+              "slug": "in-full-time-education",
+              "desc": "Schoolchild or full-time student indicator (3 categories)",
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
+              "choropleth_default": true,
+              "comparison_2011_data_available": true,
+              "categories": [
+                {
+                  "name": "Student",
+                  "slug": "student",
+                  "code": "in_full_time_education-001",
+                  "legend_str_1": "of people aged five years and over in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "a full-time student"
+                },
+                {
+                  "name": "Not a student",
+                  "slug": "not-a-student",
+                  "code": "in_full_time_education-002",
+                  "legend_str_1": "of people aged five years and over in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "not a full-time student"
                 }
               ]
             }

@@ -1,6 +1,7 @@
 variable_group,content_json,variable,classification,2011_comparison_data_available
 Education,2021-EDU,highest_qualification,highest_qualification_6a,yes
 Education,2021-EDU,highest_qualification,highest_qualification,yes
+Education,2021-EDU,in_full_time_education,in_full_time_education,yes
 Health,2021-HUC,disability,disability_3a,yes
 Health,2021-HUC,disability,disability,yes
 Health,2021-HUC,health_in_general,health_in_general_3a,yes

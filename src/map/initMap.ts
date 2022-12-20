@@ -98,7 +98,12 @@ const getGeoType = (map: mapboxgl.Map, classification?: Classification): { actua
     const canvas = map.getCanvas();
     const pixelArea = canvas.clientWidth * canvas.clientHeight;
     const idealGeotype = (count * 1e6) / pixelArea > 40 ? "lad" : (count * 1e6) / pixelArea > 3 ? "msoa" : "oa";
-    const availableGeotypes = classification?.available_geotypes;
+    let availableGeotypes = classification?.available_geotypes;
+    // available geotypes should be the ones for change over time data if thats whats being show
+    if (get(viz)?.params?.changeOverTime) {
+      availableGeotypes = classification?.comparison_2011_data_available_geotypes;
+    }
+
     if (availableGeotypes) {
       // the first available_geotype is the lowest-level
       return {

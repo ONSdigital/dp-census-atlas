@@ -11,19 +11,19 @@ import (
 )
 
 func (m *M) IncludeTotalCats() error {
-        totcats := map[types.Category]bool{}
+	totcats := map[types.Category]bool{}
 
-        for _, cat := range m.cats {
-                totcat, err := GuessTotalsCat(cat)
-                if err != nil {
-                        return err
-                }
-                totcats[totcat] = true
-        }
+	for _, cat := range m.cats {
+		totcat, err := GuessTotalsCat(cat)
+		if err != nil {
+			return err
+		}
+		totcats[totcat] = true
+	}
 
-        for cat := range totcats {
-                m.totcats = append(m.totcats, cat)
-        }
+	for cat := range totcats {
+		m.totcats = append(m.totcats, cat)
+	}
 
 	// sort totcats for consistency
 	less := func(i, j int) bool {
@@ -31,7 +31,7 @@ func (m *M) IncludeTotalCats() error {
 	}
 	sort.Slice(m.totcats, less)
 
-        return nil
+	return nil
 }
 
 func guessTotalsCats(cats []types.Category) ([]types.Category, error) {
@@ -66,21 +66,40 @@ var catRegex = regexp.MustCompile(`^([A-Z]+)([0-9]+)([A-Z]+)([0-9]+)$`)
 // So far this means just changing the numeric part to 1.
 // "QS402EW0012" --> "QS402EW0001"
 func GuessTotalsCat(cat types.Category) (types.Category, error) {
-        matches := catRegex.FindStringSubmatch(string(cat))
-        if len(matches) != 5 {
-                return "", errors.New("can't parse category code")
-        }
+	matches := catRegex.FindStringSubmatch(string(cat))
+	if len(matches) != 5 {
+		return "", errors.New("can't parse category code")
+	}
 
-        n, err := strconv.Atoi(matches[4])
-        if err != nil {
-                return "", err
-        }
+	n, err := strconv.Atoi(matches[4])
+	if err != nil {
+		return "", err
+	}
 
-        if n == 1 {
-                return "", errors.New("category is already the totals category")
-        }
+	if n == 1 {
+		return "", errors.New("category is already the totals category")
+	}
 
-        digits := len(matches[4])
-        s := fmt.Sprintf("%s%s%s%0*d", matches[1], matches[2], matches[3], digits, 1)
-        return types.Category(s), nil
+	digits := len(matches[4])
+	s := fmt.Sprintf("%s%s%s%0*d", matches[1], matches[2], matches[3], digits, 1)
+	return types.Category(s), nil
+}
+
+// MissingCats returns a list of categories named in content.json, but not found
+// in any metrics CSV files.
+func (m *M) MissingCats() []types.Category {
+	missing := []types.Category{}
+	for _, cat := range m.cats {
+		_, ok := m.loadedCats[cat]
+		if !ok {
+			missing = append(missing, cat)
+		}
+	}
+	for _, cat := range m.totcats {
+		_, ok := m.loadedCats[cat]
+		if !ok {
+			missing = append(missing, cat)
+		}
+	}
+	return missing
 }

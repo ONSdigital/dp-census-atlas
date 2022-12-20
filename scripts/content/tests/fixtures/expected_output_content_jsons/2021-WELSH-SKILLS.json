@@ -1,0 +1,237 @@
+{
+  "meta": {
+    "created_at": "2022-12-13-13-01-53",
+    "release": "2021-WELSH-SKILLS-ar2776-c21ew_metadata-v1-3_cantab_20221207-35"
+  },
+  "content": [
+    {
+      "name": "Identity",
+      "slug": "identity",
+      "desc": "How people identify themselves and their beliefs.",
+      "variables": [
+        {
+          "name": "Welsh language skills",
+          "code": "welsh_skills_all",
+          "slug": "welsh-language-skills",
+          "desc": "Whether people can understand, speak, read, or write Welsh. This question was only asked in Wales.",
+          "long_desc": "Whether a person has Welsh language skills. If they do, can they do any of the following:\n\n* understand spoken Welsh\n* speak Welsh\n* read Welsh\n* write Welsh\n* no skills in Welsh\n\nThe census questionnaire only asked this question to people in Wales.\n\nIn results that classify people by Welsh language skills, a person may appear in more than one category depending on which combination of skills they have.",
+          "units": "Person",
+          "topic_code": "EILR",
+          "classifications": [
+            {
+              "code": "welsh_skills_all_4b",
+              "slug": "welsh-skills-all-4b",
+              "desc": "Welsh language skills (B) (4 categories)",
+              "available_geotypes": ["oa", "msoa", "lad"],
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "comparison_2011_data_available": true,
+
+              "data_download": "https://www.ons.gov.uk/datasets/TS032/editions/2021/versions/1",
+              "categories": [
+                {
+                  "name": "Can understand spoken Welsh only",
+                  "slug": "can-understand-spoken-welsh-only",
+                  "code": "welsh_skills_all_4b-000",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
+                  "legend_str_2": "can",
+                  "legend_str_3": "understand spoken Welsh only"
+                },
+                {
+                  "name": "Can speak, read or write Welsh",
+                  "slug": "can-speak-read-or-write-welsh",
+                  "code": "welsh_skills_all_4b-001",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
+                  "legend_str_2": "can",
+                  "legend_str_3": "speak, read or write Welsh"
+                },
+                {
+                  "name": "No skills in Welsh",
+                  "slug": "no-skills-in-welsh",
+                  "code": "welsh_skills_all_4b-002",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "no skills in Welsh"
+                }
+              ]
+            },
+            {
+              "code": "welsh_skills_all_6a",
+              "slug": "welsh-skills-all-6a",
+              "desc": "Welsh language skills (6 categories)",
+              "available_geotypes": ["oa", "msoa", "lad"],
+              "comparison_2011_data_available": true,
+
+              "data_download": "https://www.ons.gov.uk/datasets/TS032/editions/2021/versions/1",
+              "categories": [
+                {
+                  "name": "Can understand spoken Welsh only",
+                  "slug": "can-understand-spoken-welsh-only",
+                  "code": "welsh_skills_all_6a-000",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
+                  "legend_str_2": "can",
+                  "legend_str_3": "understand spoken Welsh only"
+                },
+                {
+                  "name": "Can speak, read and write Welsh",
+                  "slug": "can-speak-read-and-write-welsh",
+                  "code": "welsh_skills_all_6a-001",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
+                  "legend_str_2": "can",
+                  "legend_str_3": "speak, read and write Welsh"
+                },
+                {
+                  "name": "Can speak and other combinations of skills in Welsh",
+                  "slug": "can-speak-and-other-combinations-of-skills-in-welsh",
+                  "code": "welsh_skills_all_6a-002",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
+                  "legend_str_2": "can",
+                  "legend_str_3": "speak and other combinations of skills in Welsh"
+                },
+                {
+                  "name": "Other combination of skills in Welsh",
+                  "slug": "other-combination-of-skills-in-welsh",
+                  "code": "welsh_skills_all_6a-003",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "another combination of skills in Welsh"
+                },
+                {
+                  "name": "No skills in Welsh",
+                  "slug": "no-skills-in-welsh",
+                  "code": "welsh_skills_all_6a-004",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "no skills in Welsh"
+                }
+              ]
+            },
+            {
+              "code": "welsh_skills_all",
+              "slug": "welsh-skills-all",
+              "desc": "Welsh language skills (10 categories)",
+              "available_geotypes": ["oa", "msoa", "lad"],
+              "comparison_2011_data_available": true,
+
+              "data_download": "https://www.ons.gov.uk/datasets/TS032/editions/2021/versions/1",
+              "categories": [
+                {
+                  "name": "Can understand spoken Welsh only",
+                  "slug": "can-understand-spoken-welsh-only",
+                  "code": "welsh_skills_all-000",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
+                  "legend_str_2": "can",
+                  "legend_str_3": "understand spoken Welsh only"
+                },
+                {
+                  "name": "Can speak, read and write Welsh",
+                  "slug": "can-speak-read-and-write-welsh",
+                  "code": "welsh_skills_all-001",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
+                  "legend_str_2": "can",
+                  "legend_str_3": "speak, read and write Welsh"
+                },
+                {
+                  "name": "Can speak but cannot read or write Welsh",
+                  "slug": "can-speak-but-cannot-read-or-write-welsh",
+                  "code": "welsh_skills_all-002",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
+                  "legend_str_2": "can",
+                  "legend_str_3": "speak but cannot read or write Welsh"
+                },
+                {
+                  "name": "Can speak and read but cannot write Welsh",
+                  "slug": "can-speak-and-read-but-cannot-write-welsh",
+                  "code": "welsh_skills_all-003",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
+                  "legend_str_2": "can",
+                  "legend_str_3": "speak and read but cannot write Welsh"
+                },
+                {
+                  "name": "Can read but cannot speak or write Welsh",
+                  "slug": "can-read-but-cannot-speak-or-write-welsh",
+                  "code": "welsh_skills_all-004",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
+                  "legend_str_2": "can",
+                  "legend_str_3": "read but cannot speak or write Welsh"
+                },
+                {
+                  "name": "Can write but cannot speak or read Welsh",
+                  "slug": "can-write-but-cannot-speak-or-read-welsh",
+                  "code": "welsh_skills_all-005",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
+                  "legend_str_2": "can",
+                  "legend_str_3": "write but cannot speak or read Welsh"
+                },
+                {
+                  "name": "Can read and write but cannot speak Welsh",
+                  "slug": "can-read-and-write-but-cannot-speak-welsh",
+                  "code": "welsh_skills_all-006",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
+                  "legend_str_2": "can",
+                  "legend_str_3": "read and write but cannot speak Welsh"
+                },
+                {
+                  "name": "Can speak and other combinations of skills in Welsh",
+                  "slug": "can-speak-and-other-combinations-of-skills-in-welsh",
+                  "code": "welsh_skills_all-007",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
+                  "legend_str_2": "can",
+                  "legend_str_3": "speak and other combinations of skills in Welsh"
+                },
+                {
+                  "name": "No skills in Welsh",
+                  "slug": "no-skills-in-welsh",
+                  "code": "welsh_skills_all-008",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "no skills in Welsh"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Welsh speaking ability",
+          "code": "welsh_skills_speak",
+          "slug": "welsh-speaking-ability",
+          "desc": "People who can speak Welsh.",
+          "long_desc": "This classifies a person as being able to \"Speak Welsh\". They may have also ticked one or more of the following:\n\n* understand spoken Welsh\n* read Welsh\n* write Welsh\n\nIn results that classify people by Welsh language skills, a person may appear in more than one category depending on which combination of skills they have.",
+          "units": "Person",
+          "topic_code": "EILR",
+          "classifications": [
+            {
+              "code": "welsh_skills_speak",
+              "slug": "welsh-skills-speak",
+              "desc": "Welsh speaking ability (3 categories)",
+              "available_geotypes": ["oa", "msoa", "lad"],
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "comparison_2011_data_available": true,
+
+              "data_download": "https://www.ons.gov.uk/datasets/TS033/editions/2021/versions/1",
+              "categories": [
+                {
+                  "name": "Cannot speak Welsh",
+                  "slug": "cannot-speak-welsh",
+                  "code": "welsh_skills_speak-000",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
+                  "legend_str_2": "cannot",
+                  "legend_str_3": "speak Welsh"
+                },
+                {
+                  "name": "Can speak Welsh",
+                  "slug": "can-speak-welsh",
+                  "code": "welsh_skills_speak-001",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
+                  "legend_str_2": "can",
+                  "legend_str_3": "speak Welsh"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -37,14 +37,16 @@ type M struct {
 	geos []types.Geocode
 
 	// categories and totals categories in tab order.
-	// XXX cats... + totcats ... in table?
 	cats    []types.Category
 	totcats []types.Category
+
+	// remember which metrics CSV held each category
+	loadedCats map[types.Category]string
 }
 
-func New(geos []types.Geocode, cats []types.Category, withTots bool) (*M, error) {
+func New(cats []types.Category, withTots bool) (*M, error) {
 	var err error
-	var totcats []types.Category
+	totcats := []types.Category{}
 	if withTots {
 		totcats, err = guessTotalsCats(cats)
 		if err != nil {
@@ -52,21 +54,11 @@ func New(geos []types.Geocode, cats []types.Category, withTots bool) (*M, error)
 		}
 	}
 
-	// allocate notional spreadsheet and initialise with NaN cells
-	tab := make([][]types.Value, len(geos))
-	ncols := len(cats) + len(totcats)
-	for row := 0; row < len(geos); row++ {
-		tab[row] = make([]types.Value, ncols)
-		for col := 0; col < ncols; col++ {
-			tab[row][col] = types.Value(math.NaN())
-		}
-	}
+	// allocate empty notional spreadsheet
+	tab := [][]types.Value{}
 
-	// create mapping from geocode to row number
+	// create empty mapping from geocode to row number
 	geoidx := map[types.Geocode]int{}
-	for row, geocode := range geos {
-		geoidx[geocode] = row
-	}
 
 	// create mapping from category to column number
 	catidx := map[types.Category]int{}
@@ -83,13 +75,14 @@ func New(geos []types.Geocode, cats []types.Category, withTots bool) (*M, error)
 	}
 
 	return &M{
-		tab:     tab,
-		geoidx:  geoidx,
-		catidx:  catidx,
-		totidx:  totidx,
-		geos:    geos,
-		cats:    cats,
-		totcats: totcats,
+		tab:        tab,
+		geoidx:     geoidx,
+		catidx:     catidx,
+		totidx:     totidx,
+		geos:       []types.Geocode{},
+		cats:       cats,
+		totcats:    totcats,
+		loadedCats: map[types.Category]string{},
 	}, nil
 }
 
@@ -118,10 +111,10 @@ func (m *M) Load(fname string) error {
 	if err != nil {
 		return err
 	}
-	return m.ImportCSV(records)
+	return m.ImportCSV(fname, records)
 }
 
-func (m *M) ImportCSV(records [][]string) error {
+func (m *M) ImportCSV(fname string, records [][]string) error {
 	var imported int
 
 	if len(records) < 2 {
@@ -136,9 +129,6 @@ func (m *M) ImportCSV(records [][]string) error {
 	}
 	log.Printf("%d data rows in CSV\n", len(records)-1)
 
-	// create mapping from CSV row number to m.tab row number
-	rowmap := m.mapCSVgeos(records)
-
 	for csvcol, catcode := range records[0] {
 		if csvcol == 0 {
 			continue // skip GeographyCode column
@@ -152,6 +142,14 @@ func (m *M) ImportCSV(records [][]string) error {
 			}
 		}
 
+		// check if we have seen this category before
+		firstCSV, ok := m.loadedCats[types.Category(catcode)]
+		if ok {
+			return fmt.Errorf("duplicate category %s: seen in %s and %s", catcode, firstCSV, fname)
+		} else {
+			m.loadedCats[types.Category(catcode)] = fname
+		}
+
 		for csvrow, record := range records {
 			if csvrow == 0 {
 				continue // skip headers row
@@ -159,10 +157,7 @@ func (m *M) ImportCSV(records [][]string) error {
 			if len(record) != len(records[0]) {
 				return fmt.Errorf("row %d: should have %d cols", csvrow, len(records[0]))
 			}
-			tabrow := rowmap[csvrow]
-			if tabrow == -1 {
-				continue // not interested this geo
-			}
+			tabrow := m.getRowIdx(types.Geocode(record[0]))
 			cur := m.tab[tabrow][tabcol]
 			if !math.IsNaN(float64(cur)) {
 				return fmt.Errorf("row %d: col %d: duplicate", csvrow, csvcol)
@@ -184,24 +179,34 @@ func (m *M) ImportCSV(records [][]string) error {
 	return nil
 }
 
-// mapCSVgeos creates a mapping from CSV row number to m.tab row number
-// based on each row's geocode.
-func (m *M) mapCSVgeos(records [][]string) map[int]int {
-	var missing int
-	idx := make(map[int]int, len(records))
-	for csvrow, record := range records {
-		if csvrow == 0 {
-			continue // skip header line
-		}
-		tabrow, ok := m.geoidx[types.Geocode(record[0])]
-		if !ok {
-			tabrow = -1
-			missing++
-		}
-		idx[csvrow] = tabrow
+// getRowIdx returns the row index in m.tab for geocode.
+// If geocode isn't already in m.tab, a row is created for it and filled with NaNs.
+func (m *M) getRowIdx(geocode types.Geocode) int {
+	// check if geocode is already in table
+	rowidx, ok := m.geoidx[geocode]
+	if ok {
+		return rowidx
 	}
-	log.Printf("%d geos in CSV, but not in geojson\n", missing)
-	return idx
+
+	// create and initialise new row
+	ncols := len(m.cats) + len(m.totcats)
+	nan := types.Value(math.NaN())
+	newrow := make([]types.Value, ncols)
+	for col := 0; col < ncols; col++ {
+		newrow[col] = nan
+	}
+
+	// add new row to m.tab
+	m.tab = append(m.tab, newrow)
+
+	// add this geocode to the geos list
+	m.geos = append(m.geos, geocode)
+
+	// add this geocode to geoidx
+	rowidx = len(m.tab) - 1
+	m.geoidx[geocode] = rowidx
+
+	return rowidx
 }
 
 // MakeTiles creates data tile CSVs in dir.
@@ -217,7 +222,7 @@ func (m *M) MakeTiles(geos []types.Geocode, dir string) error {
 		for i, geocode := range geos {
 			tabrow := tabrows[i]
 			if tabrow == -1 {
-				log.Printf("%s: geocode not in table", geocode)
+				//log.Printf("MakeTiles: %s: geocode not in table", geocode)
 				continue
 			}
 			val := float64(m.tab[tabrow][tabcol])
@@ -231,7 +236,7 @@ func (m *M) MakeTiles(geos []types.Geocode, dir string) error {
 
 		fname := filepath.Join(dir, string(cat)+".csv")
 		if !found {
-			log.Printf("%s: no matching geos; not creating", fname)
+			//log.Printf("%s: no matching geos; not creating", fname)
 			continue
 		}
 
@@ -328,7 +333,7 @@ func (m *M) tabrowsByType(lookup TypeLookupFunc) map[types.Geotype][]int {
 	for tabrow, geocode := range m.geos {
 		geotype, found := lookup(geocode)
 		if !found {
-			log.Printf("tabrowsByType: geocode %s not found in table", geocode)
+			//log.Printf("tabrowsByType: geocode %s in metrics but not in geojson", geocode)
 			continue
 		}
 		res[geotype] = append(res[geotype], tabrow)

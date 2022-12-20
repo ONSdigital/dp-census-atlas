@@ -57,7 +57,7 @@ func Test_IncludeTotalCats(t *testing.T) {
 			types.Category("A1A2"),
 			types.Category("A2A2"),
 		}
-		m, err := New(geos, cats, false)
+		m, err := New(cats, false)
 		So(err, ShouldBeNil)
 
 		Convey("totals categories should be calculated", func() {
@@ -75,12 +75,11 @@ func Test_IncludeTotalCats(t *testing.T) {
 
 func Test_CalcRatios(t *testing.T) {
 	Convey("Given an initialised M", t, func() {
-		geos := []types.Geocode{geoA, geoB, geoC}
 		cats := []types.Category{
 			types.Category("CAT1A2"),
 			types.Category("CAT1A3"),
 		}
-		m, err := New(geos, cats, true)
+		m, err := New(cats, true)
 		So(err, ShouldBeNil)
 
 		Convey("when a valid CSV is imported", func() {
@@ -90,7 +89,7 @@ func Test_CalcRatios(t *testing.T) {
 				{"geoB", "16", "2", "4"},
 				{"geoC", "20", "5", "4"},
 			}
-			err := m.ImportCSV(records)
+			err := m.ImportCSV("test", records)
 			So(err, ShouldBeNil)
 
 			Convey("ratios should be calculated", func() {
@@ -117,6 +116,38 @@ func Test_CalcRatios(t *testing.T) {
 				}
 			})
 
+		})
+	})
+}
+
+func Test_MissingCats(t *testing.T) {
+	Convey("When all lists are empty", t, func() {
+		m := &M{
+			loadedCats: map[types.Category]string{},
+		}
+		Convey("there are no missing cats", func() {
+			missing := m.MissingCats()
+			So(len(missing), ShouldEqual, 0)
+		})
+	})
+	Convey("When there is a missing cat", t, func() {
+		m := &M{
+			cats:       []types.Category{cat1},
+			loadedCats: map[types.Category]string{},
+		}
+		Convey("it is found", func() {
+			missing := m.MissingCats()
+			So(missing, ShouldResemble, []types.Category{cat1})
+		})
+	})
+	Convey("When there is a missing totcat", t, func() {
+		m := &M{
+			totcats:    []types.Category{cat1},
+			loadedCats: map[types.Category]string{},
+		}
+		Convey("it is found", func() {
+			missing := m.MissingCats()
+			So(missing, ShouldResemble, []types.Category{cat1})
 		})
 	})
 }

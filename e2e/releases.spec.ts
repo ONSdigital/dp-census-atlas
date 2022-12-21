@@ -28,10 +28,9 @@ const testCases = [
   },
   {
     name: "HUC",
-    url: "/choropleth/health/general-health/health-in-general-3a/not-good-health?oa=E00134787",
-    legendText: "75.3% of households in E00134787 OA have not good health",
-    categoryCount: 2,
-    nextClassificationCategoryCount: 3,
+    url: "/choropleth/health/general-health/health-in-general/fair-health?lad=E06000062",
+    legendText: "68.2% of households in West Northamptonshire LAD have fair health",
+    categoryCount: 5,
   },
   {
     name: "HOU",
@@ -44,7 +43,7 @@ const testCases = [
     name: "LAB",
     url: "/choropleth/work/hours-worked/hours-per-week-worked-3a/part-time-30-hours-or-less-worked?lad=E07000203",
     legendText:
-      "4.4% of people aged 16 years and over in employment in Mid Suffolk LAD work part-time: 30 hours or less",
+      "31.4% of people aged 16 years and over in employment in Mid Suffolk LAD work part-time: 30 hours or less",
     categoryCount: 2,
     nextClassificationCategoryCount: 4,
   },
@@ -67,7 +66,7 @@ const testCases = [
     name: "TTW",
     url: "/choropleth/work/distance-travelled-to-work/workplace-travel-4a/10km-and-over?msoa=E02003657",
     legendText:
-      "86.5% of people aged 16 years and over in employment in Granborough, Stewkley & Great Brickhill MSOA travel 10km and over to work",
+      "23.2% of people aged 16 years and over in employment in Granborough, Stewkley & Great Brickhill MSOA travel 10km and over to work",
     categoryCount: 4,
     nextClassificationCategoryCount: 5,
   },
@@ -81,8 +80,8 @@ const testCases = [
   },
   {
     name: "WELSH-SKILLS",
-    url: "/choropleth/identity/welsh-language-skills/welsh-skills-all-4b/can-speak-read-or-write-welsh?lad=E07000244",
-    legendText: "43.2% of people aged 3 years and over in East Suffolk LAD can speak, read or write Welsh",
+    url: "/choropleth/identity/welsh-language-skills/welsh-skills-all-4b/can-speak-read-or-write-welsh?oa=W00000287",
+    legendText: "59.6% of people aged 3 years and over in W00000287 OA can speak, read or write Welsh",
     categoryCount: 3,
     nextClassificationCategoryCount: 5,
   },

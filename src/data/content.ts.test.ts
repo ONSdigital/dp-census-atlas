@@ -7,6 +7,7 @@ const publishedOrPrepublishedTopics = [
   "edu",
   "eilr",
   "hou",
+  "huc",
   "lab",
   "mig",
   "sogi",

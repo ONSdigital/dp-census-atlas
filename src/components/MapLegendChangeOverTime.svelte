@@ -2,8 +2,7 @@
   import { viz } from "../stores/viz";
   import { hovered } from "../stores/hovered";
   import { selected } from "../stores/selected";
-  import { formatTemplateString } from "../helpers/categoryHelpers";
-  import { colours } from "../helpers/choroplethHelpers";
+  import { colours, getColoursForBreaks } from "../helpers/choroplethHelpers";
   import { getClassificationDataSuffix, roundedClassificationDataToString } from "../helpers/classificationHelpers";
   import BreaksChart from "./BreaksChart.svelte";
   import GeoTypeBadge from "./GeoTypeBadge.svelte";
@@ -27,6 +26,9 @@
       };
 
   const legendTextClass = "text-sm sm:text-base lg:text-lg xl:text-xl";
+  $: colors = $viz ? getColoursForBreaks($viz.breaks, $viz.params.changeOverTime) : colours.standard;
+  $: deltaSuffix = active.value > 0 ? "+" : "";
+  $: deltaDesc = active.value == 0 ? "no change" : active.value > 0 ? "increase" : "decrease";
 </script>
 
 <!--                      | no geography selected  |  geography selected    -->
@@ -46,47 +48,30 @@
         <!-- full legend -->
         <div class="flex gap-3 items-center">
           <div class="hidden xs:block whitespace-nowrap">
-            <span class="xs:text-4xl sm:text-5xl font-bold">
-              {roundedClassificationDataToString($viz.params.classification.code, active.value)}</span
-            ><span class="xs:text-2xl sm:text-4xl font-bold"
-              >{getClassificationDataSuffix($viz.params.classification.code)}</span
-            >
+            <div>
+              <span class="xs:text-4xl sm:text-5xl font-bold">
+                {deltaSuffix}{roundedClassificationDataToString($viz.params.classification.code, active.value)}</span
+              ><span class="xs:text-2xl sm:text-4xl font-bold">pp</span>
+            </div>
+            <!-- <div class="xs:text-2xl sm:text-2xl font-bold">{deltaDesc}</div> -->
           </div>
           <div class="flex-grow leading-[0px]">
             <div class="">
               <span class="xs:hidden font-bold">
                 <span class="">
                   {roundedClassificationDataToString($viz.params.classification.code, active.value)}</span
-                ><span class="text-sm">{getClassificationDataSuffix($viz.params.classification.code)}</span>
+                ><span class="text-sm">pp</span>
               </span>
               <span class={legendTextClass}>
-                {formatTemplateString(
-                  $viz.params.variable,
-                  $viz.params.category,
-                  active.displayName,
-                  $viz.params.category.legend_str_1,
-                )}
+                {$viz.params.variable.units} in {active.displayName}
               </span>
               <GeoTypeBadge geoType={active.geoType} />
-              <span class={legendTextClass}>
-                {formatTemplateString(
-                  $viz.params.variable,
-                  $viz.params.category,
-                  active.displayName,
-                  $viz.params.category.legend_str_2,
-                )}
-              </span>
             </div>
             {#if $viz?.params?.embed?.categorySelection}
-              <CategorySelector selected={$viz.params.category.slug} use="legendString" />
+              <CategorySelector selected={$viz.params.category.slug} use="name" />
             {:else}
               <div class={`${legendTextClass} font-bold`}>
-                {formatTemplateString(
-                  $viz.params.variable,
-                  $viz.params.category,
-                  active.displayName,
-                  $viz.params.category.legend_str_3,
-                )}
+                {$viz.params.category.name}
               </div>
             {/if}
           </div>
@@ -123,11 +108,15 @@
         <BreaksChart
           selected={$selected?.value}
           hovered={active.value}
-          suffix={getClassificationDataSuffix($viz.params.classification.code)}
+          suffix="pp"
           breaks={$viz.breaks}
-          colors={colours.standard}
+          {colors}
           classificationCode={$viz.params.classification.code}
+          showPositive={true}
         />
+        <div class="xs:text-1xl sm:text-1xl font-bold text-center pt-1 pb-1">
+          10 year change from 2011 Census in percentage points (pp)
+        </div>
       {/if}
     </div>
   </div>

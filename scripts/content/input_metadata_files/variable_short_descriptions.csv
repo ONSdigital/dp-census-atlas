@@ -12,7 +12,6 @@ has_ever_worked,The employment history of people who are currently not working.
 health_in_general,How people rate their general health.
 heating_type,The type of central heating in a household.
 hh_deprivation,Whether a household is deprived in one or more ways.
-hh_disabled,The number of people in a household with a disability or long-term health problem.
 hh_family_composition,Households according to the relationships between members.
 hh_language,"People who have English in England, or in Wales English or Welsh, as their main language."
 hh_multi_ethnic_group,Ethnic groups within a household.

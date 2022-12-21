@@ -293,19 +293,15 @@
         "2021-HUC": [
           {
             "code": "disability",
-            "classifications": ["disability_3a", "disability"]
+            "classifications": ["disability_4a"]
           },
           {
             "code": "health_in_general",
-            "classifications": ["health_in_general_3a", "health_in_general_4a", "health_in_general"]
-          },
-          {
-            "code": "hh_disabled",
-            "classifications": ["hh_disabled_4a"]
+            "classifications": ["health_in_general"]
           },
           {
             "code": "is_carer",
-            "classifications": ["is_carer_5a", "is_carer"]
+            "classifications": ["is_carer_5a"]
           }
         ]
       }

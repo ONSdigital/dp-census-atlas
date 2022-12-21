@@ -36,10 +36,28 @@ pushd output_content_jsons
 popd
 
 # SOGI goes in the censusmapsconfigsogi visualisation
-echo "Zipping HOU for censusmapsconfighou visualisation"
+echo "Zipping SOGI for censusmapsconfigsogi visualisation"
 pushd output_content_jsons
     zipname="censusmapsconfigsogi-${created_at}.zip"
     zip "$zipname" \
         2021-SOGI.json \
+        && mv "$zipname" ..
+popd
+
+# EDU goes in the censusmapsconfigedu visualisation
+echo "Zipping EDU for censusmapsconfigedu visualisation"
+pushd output_content_jsons
+    zipname="censusmapsconfigedu-${created_at}.zip"
+    zip "$zipname" \
+        2021-EDU.json \
+        && mv "$zipname" ..
+popd
+
+# HUC goes in the censusmapsconfighuc visualisation
+echo "Zipping HUC for censusmapsconfigedu visualisation"
+pushd output_content_jsons
+    zipname="censusmapsconfighuc-${created_at}.zip"
+    zip "$zipname" \
+        2021-HUC.json \
         && mv "$zipname" ..
 popd

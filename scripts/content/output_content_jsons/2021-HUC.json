@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2022-12-20-08-58-29",
+    "created_at": "2022-12-21-12-15-43",
     "release": "2021-HUC-ar2776-c21ew_metadata-v1-3_cantab_20221216-37"
   },
   "content": [
@@ -19,12 +19,10 @@
           "topic_code": "HUC",
           "classifications": [
             {
-              "code": "disability_3a",
-              "slug": "disability-3a",
-              "desc": "Disability (3 categories)",
+              "code": "disability_4a",
+              "slug": "disability-4a",
+              "desc": "Disability - Equality act disabled (4 categories)",
               "available_geotypes": [
-                "oa",
-                "msoa",
                 "lad"
               ],
               "choropleth_default": true,
@@ -32,38 +30,9 @@
               "comparison_2011_data_available": true,
               "categories": [
                 {
-                  "name": "Disabled under the Equality Act",
-                  "slug": "disabled-under-the-equality-act",
-                  "code": "disability_3a-001",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "disabled under the equality act"
-                },
-                {
-                  "name": "Not disabled under the Equality Act",
-                  "slug": "not-disabled-under-the-equality-act",
-                  "code": "disability_3a-002",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "not disabled under the equality act"
-                }
-              ]
-            },
-            {
-              "code": "disability",
-              "slug": "disability",
-              "desc": "Disability (5 categories)",
-              "available_geotypes": [
-                "oa",
-                "msoa",
-                "lad"
-              ],
-              "comparison_2011_data_available": true,
-              "categories": [
-                {
                   "name": "Disabled under the Equality Act: Day-to-day activities limited a lot",
                   "slug": "disabled-under-the-equality-act-day-to-day-activities-limited-a-lot",
-                  "code": "disability-001",
+                  "code": "disability_4a-001",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "disabled under the equality act: day-to-day activities limited a lot"
@@ -71,26 +40,18 @@
                 {
                   "name": "Disabled under the Equality Act: Day-to-day activities limited a little",
                   "slug": "disabled-under-the-equality-act-day-to-day-activities-limited-a-little",
-                  "code": "disability-002",
+                  "code": "disability_4a-002",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "disabled under the equality act: day-to-day activities limited a little"
                 },
                 {
-                  "name": "Not disabled under the Equality Act: Has long term physical or mental health condition but day-to-day activities are not limited",
-                  "slug": "not-disabled-under-the-equality-act-has-long-term-physical-or-mental-health-condition-but-day-to-day-activities-are-not-limited",
-                  "code": "disability-003",
+                  "name": "Not disabled under the Equality Act",
+                  "slug": "not-disabled-under-the-equality-act",
+                  "code": "disability_4a-003",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "not disabled under the equality act: has long term physical or mental health condition but day-to-day activities are not limited"
-                },
-                {
-                  "name": "Not disabled under the Equality Act: No long term physical or mental health conditions",
-                  "slug": "not-disabled-under-the-equality-act-no-long-term-physical-or-mental-health-conditions",
-                  "code": "disability-004",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "are",
-                  "legend_str_3": "not disabled under the equality act: no long term physical or mental health conditions"
+                  "legend_str_3": "not disabled under the equality act"
                 }
               ]
             }
@@ -106,82 +67,14 @@
           "topic_code": "HUC",
           "classifications": [
             {
-              "code": "health_in_general_3a",
-              "slug": "health-in-general-3a",
-              "desc": "General health (3 categories)",
-              "available_geotypes": [
-                "oa",
-                "msoa",
-                "lad"
-              ],
-              "choropleth_default": true,
-              "dot_density_default": true,
-              "comparison_2011_data_available": true,
-              "categories": [
-                {
-                  "name": "Good health",
-                  "slug": "good-health",
-                  "code": "health_in_general_3a-001",
-                  "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "good health"
-                },
-                {
-                  "name": "Not good health",
-                  "slug": "not-good-health",
-                  "code": "health_in_general_3a-002",
-                  "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "not good health"
-                }
-              ]
-            },
-            {
-              "code": "health_in_general_4a",
-              "slug": "health-in-general-4a",
-              "desc": "General health (4 categories)",
-              "available_geotypes": [
-                "oa",
-                "msoa",
-                "lad"
-              ],
-              "comparison_2011_data_available": true,
-              "categories": [
-                {
-                  "name": "Very good or good health",
-                  "slug": "very-good-or-good-health",
-                  "code": "health_in_general_4a-001",
-                  "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "very good or good health"
-                },
-                {
-                  "name": "Fair health",
-                  "slug": "fair-health",
-                  "code": "health_in_general_4a-002",
-                  "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "fair health"
-                },
-                {
-                  "name": "Bad or very bad health",
-                  "slug": "bad-or-very-bad-health",
-                  "code": "health_in_general_4a-003",
-                  "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "bad or very bad health"
-                }
-              ]
-            },
-            {
               "code": "health_in_general",
               "slug": "health-in-general",
               "desc": "General health (6 categories)",
               "available_geotypes": [
-                "oa",
-                "msoa",
                 "lad"
               ],
+              "choropleth_default": true,
+              "dot_density_default": true,
               "comparison_2011_data_available": true,
               "categories": [
                 {
@@ -229,56 +122,6 @@
           ]
         },
         {
-          "name": "Number of disabled people in household",
-          "code": "hh_disabled",
-          "slug": "number-of-disabled-people-in-household",
-          "desc": "The number of people in a household with a disability or long-term health problem.",
-          "long_desc": "The number of people in a household who assessed their day-to-day activities as limited by long-term physical or mental health conditions or illnesses and are considered disabled.  This definition of a disabled person meets the harmonised standard for measuring disability and is in line with the Equality Act (2010).",
-          "units": "Household",
-          "topic_code": "HUC",
-          "classifications": [
-            {
-              "code": "hh_disabled_4a",
-              "slug": "hh-disabled-4a",
-              "desc": "Number of disabled people in household (4 categories)",
-              "available_geotypes": [
-                "oa",
-                "msoa",
-                "lad"
-              ],
-              "choropleth_default": true,
-              "dot_density_default": true,
-              "comparison_2011_data_available": true,
-              "categories": [
-                {
-                  "name": "No people disabled under the Equality Act in household",
-                  "slug": "no-people-disabled-under-the-equality-act-in-household",
-                  "code": "hh_disabled_4a-000",
-                  "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "no people disabled under the equality act in household"
-                },
-                {
-                  "name": "1 person disabled under the Equality Act in household",
-                  "slug": "1-person-disabled-under-the-equality-act-in-household",
-                  "code": "hh_disabled_4a-001",
-                  "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "1 person disabled under the equality act in household"
-                },
-                {
-                  "name": "2 or more people disabled under the Equality Act in household",
-                  "slug": "2-or-more-people-disabled-under-the-equality-act-in-household",
-                  "code": "hh_disabled_4a-002",
-                  "legend_str_1": "of households in {location}",
-                  "legend_str_2": "have",
-                  "legend_str_3": "2 or more people disabled under the equality act in household"
-                }
-              ]
-            }
-          ]
-        },
-        {
           "name": "Provision of unpaid care",
           "code": "is_carer",
           "slug": "provision-of-unpaid-care",
@@ -292,8 +135,6 @@
               "slug": "is-carer-5a",
               "desc": "Unpaid care (5 categories)",
               "available_geotypes": [
-                "oa",
-                "msoa",
                 "lad"
               ],
               "choropleth_default": true,
@@ -328,67 +169,6 @@
                   "name": "Provides 50 or more hours unpaid care a week",
                   "slug": "provides-50-or-more-hours-unpaid-care-a-week",
                   "code": "is_carer_5a-004",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "provide",
-                  "legend_str_3": "50 or more hours unpaid care a week"
-                }
-              ]
-            },
-            {
-              "code": "is_carer",
-              "slug": "is-carer",
-              "desc": "Unpaid care (7 categories)",
-              "available_geotypes": [
-                "oa",
-                "msoa",
-                "lad"
-              ],
-              "comparison_2011_data_available": true,
-              "categories": [
-                {
-                  "name": "Provides no unpaid care",
-                  "slug": "provides-no-unpaid-care",
-                  "code": "is_carer-001",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "provide",
-                  "legend_str_3": "no unpaid care"
-                },
-                {
-                  "name": "Provides 9 hours or less unpaid care a week",
-                  "slug": "provides-9-hours-or-less-unpaid-care-a-week",
-                  "code": "is_carer-002",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "provide",
-                  "legend_str_3": "9 hours or less unpaid care a week"
-                },
-                {
-                  "name": "Provides 10 to 19 hours unpaid care a week",
-                  "slug": "provides-10-to-19-hours-unpaid-care-a-week",
-                  "code": "is_carer-003",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "provide",
-                  "legend_str_3": "10 to 19 hours unpaid care a week"
-                },
-                {
-                  "name": "Provides 20 to 34 hours unpaid care a week",
-                  "slug": "provides-20-to-34-hours-unpaid-care-a-week",
-                  "code": "is_carer-004",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "provide",
-                  "legend_str_3": "20 to 34 hours unpaid care a week"
-                },
-                {
-                  "name": "Provides 35 to 49 hours unpaid care a week",
-                  "slug": "provides-35-to-49-hours-unpaid-care-a-week",
-                  "code": "is_carer-005",
-                  "legend_str_1": "of people in {location}",
-                  "legend_str_2": "provide",
-                  "legend_str_3": "35 to 49 hours unpaid care a week"
-                },
-                {
-                  "name": "Provides 50 or more hours unpaid care a week",
-                  "slug": "provides-50-or-more-hours-unpaid-care-a-week",
-                  "code": "is_carer-006",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "provide",
                   "legend_str_3": "50 or more hours unpaid care a week"

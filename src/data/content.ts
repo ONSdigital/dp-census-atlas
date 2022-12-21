@@ -54,10 +54,11 @@ const hou = {
 const huc = {
   localContentJsonUrl: "http://localhost:8090/2021-HUC.json",
   publicContentJsonUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-HUC.json",
-  prodPubContentJsonUrl: "",
-  prodWebContentJsonUrl: "",
+  prodPubContentJsonUrl:
+    "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusmapsconfighuc/2021-HUC.json",
+  prodWebContentJsonUrl: "https://www.ons.gov.uk/visualisations/censusmapsconfighuc/2021-HUC.json",
   fakeDataBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021",
-  realDataBaseUrl: "",
+  realDataBaseUrl: "https://ons-dp-prod-census-maps-huc.s3.eu-west-2.amazonaws.com",
 };
 const lab = {
   localContentJsonUrl: "http://localhost:8090/2021-LAB.json",
@@ -147,10 +148,10 @@ export default {
         contentJsonUrl: huc.localContentJsonUrl,
         contentBaseUrl: huc.fakeDataBaseUrl,
       },
-      // lab is unpublished
+      // lab is published
       {
         contentJsonUrl: lab.localContentJsonUrl,
-        contentBaseUrl: lab.fakeDataBaseUrl,
+        contentBaseUrl: lab.realDataBaseUrl,
       },
       // mig is published
       {
@@ -162,15 +163,15 @@ export default {
         contentJsonUrl: sogi.localContentJsonUrl,
         contentBaseUrl: sogi.fakeDataBaseUrl,
       },
-      // ttw is unpublished
+      // ttw is published
       {
         contentJsonUrl: ttw.localContentJsonUrl,
-        contentBaseUrl: ttw.fakeDataBaseUrl,
+        contentBaseUrl: ttw.realDataBaseUrl,
       },
-      // welshSkills is unpublished
+      // welshSkills is published
       {
         contentJsonUrl: welshSkills.localContentJsonUrl,
-        contentBaseUrl: welshSkills.fakeDataBaseUrl,
+        contentBaseUrl: welshSkills.realDataBaseUrl,
       },
     ],
   },
@@ -214,10 +215,10 @@ export default {
         contentJsonUrl: huc.publicContentJsonUrl,
         contentBaseUrl: huc.fakeDataBaseUrl,
       },
-      // lab is unpublished
+      // lab is published
       {
         contentJsonUrl: lab.publicContentJsonUrl,
-        contentBaseUrl: lab.fakeDataBaseUrl,
+        contentBaseUrl: lab.realDataBaseUrl,
       },
       // mig is published
       {
@@ -229,15 +230,15 @@ export default {
         contentJsonUrl: sogi.publicContentJsonUrl,
         contentBaseUrl: sogi.fakeDataBaseUrl,
       },
-      // ttw is unpublished
+      // ttw is published
       {
         contentJsonUrl: ttw.publicContentJsonUrl,
-        contentBaseUrl: ttw.fakeDataBaseUrl,
+        contentBaseUrl: ttw.realDataBaseUrl,
       },
-      // welshSkills is unpublished
+      // welshSkills is published
       {
         contentJsonUrl: welshSkills.publicContentJsonUrl,
-        contentBaseUrl: welshSkills.fakeDataBaseUrl,
+        contentBaseUrl: welshSkills.realDataBaseUrl,
       },
     ],
   },
@@ -281,10 +282,10 @@ export default {
         contentJsonUrl: huc.publicContentJsonUrl,
         contentBaseUrl: huc.fakeDataBaseUrl,
       },
-      // lab is unpublished
+      // lab is published
       {
         contentJsonUrl: lab.publicContentJsonUrl,
-        contentBaseUrl: lab.fakeDataBaseUrl,
+        contentBaseUrl: lab.realDataBaseUrl,
       },
       // mig is published
       {
@@ -296,15 +297,15 @@ export default {
         contentJsonUrl: sogi.publicContentJsonUrl,
         contentBaseUrl: sogi.fakeDataBaseUrl,
       },
-      // ttw is unpublished
+      // ttw is published
       {
         contentJsonUrl: ttw.publicContentJsonUrl,
-        contentBaseUrl: ttw.fakeDataBaseUrl,
+        contentBaseUrl: ttw.realDataBaseUrl,
       },
-      // welshSkills is unpublished
+      // welshSkills is published
       {
         contentJsonUrl: welshSkills.publicContentJsonUrl,
-        contentBaseUrl: welshSkills.fakeDataBaseUrl,
+        contentBaseUrl: welshSkills.realDataBaseUrl,
       },
     ],
   },
@@ -343,6 +344,10 @@ export default {
       {
         contentJsonUrl: hou.prodPubContentJsonUrl,
         contentBaseUrl: hou.realDataBaseUrl,
+      },
+      {
+        contentJsonUrl: huc.prodPubContentJsonUrl,
+        contentBaseUrl: huc.realDataBaseUrl,
       },
       {
         contentJsonUrl: lab.prodPubContentJsonUrl,
@@ -392,6 +397,10 @@ export default {
       {
         contentJsonUrl: hou.prodWebContentJsonUrl,
         contentBaseUrl: hou.realDataBaseUrl,
+      },
+      {
+        contentJsonUrl: huc.prodWebContentJsonUrl,
+        contentBaseUrl: huc.realDataBaseUrl,
       },
       {
         contentJsonUrl: lab.prodWebContentJsonUrl,

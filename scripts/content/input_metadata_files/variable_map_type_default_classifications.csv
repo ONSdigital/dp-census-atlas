@@ -1,9 +1,8 @@
 variable_group,content_json,variable,choropleth_default_classification,dot_density_default_classification
 Education,2021-EDU,highest_qualification,highest_qualification_6a,highest_qualification_6a
 Education,2021-EDU,in_full_time_education,in_full_time_education,
-Health,2021-HUC,disability,disability_3a,disability_3a
-Health,2021-HUC,health_in_general,health_in_general_3a,health_in_general_3a
-Health,2021-HUC,hh_disabled,hh_disabled_4a,hh_disabled_4a
+Health,2021-HUC,disability,disability_4a,disability_4a
+Health,2021-HUC,health_in_general,health_in_general,health_in_general
 Health,2021-HUC,is_carer,is_carer_5a,is_carer_5a
 Housing,2021-HOU,accommodation_type,accommodation_type_3a,accommodation_type_3a
 Housing,2021-HOU,alternative_address_indicator,alternative_address_indicator,

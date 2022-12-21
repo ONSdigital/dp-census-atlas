@@ -28,10 +28,9 @@ const testCases = [
   },
   {
     name: "HUC",
-    url: "/choropleth/health/general-health/health-in-general-3a/not-good-health?oa=E00134787",
-    legendText: "75.3% of households in E00134787 OA have not good health",
-    categoryCount: 2,
-    nextClassificationCategoryCount: 3,
+    url: "/choropleth/health/general-health/health-in-general/fair-health?lad=E06000062",
+    legendText: "68.2% of households in West Northamptonshire LAD have fair health",
+    categoryCount: 5,
   },
   {
     name: "HOU",
@@ -82,7 +81,7 @@ const testCases = [
   {
     name: "WELSH-SKILLS",
     url: "/choropleth/identity/welsh-language-skills/welsh-skills-all-4b/can-speak-read-or-write-welsh?oa=W00000287",
-    legendText: "59.6% of people aged 3 years and over in East Suffolk LAD can speak, read or write Welsh",
+    legendText: "59.6% of people aged 3 years and over in W00000287 OA can speak, read or write Welsh",
     categoryCount: 3,
     nextClassificationCategoryCount: 5,
   },

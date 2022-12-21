@@ -13,12 +13,9 @@ Education,2021-EDU,Highest level of qualification,highest_qualification_6a,highe
 Education,2021-EDU,Highest level of qualification,highest_qualification_6a,highest_qualification_6a-004,{PERCENTAGE}%,of people in {location},have,other qualifications
 Education,2021-EDU,Schoolchild or full-time student indicator,in_full_time_education,in_full_time_education-001,{PERCENTAGE}%,of people aged five years and over in {location},are,a full-time student
 Education,2021-EDU,Schoolchild or full-time student indicator,in_full_time_education,in_full_time_education-002,{PERCENTAGE}%,of people aged five years and over in {location},are,not a full-time student
-Health,2021-HUC,Disability,disability,disability-001,{PERCENTAGE}%,of people in {location},are,disabled under the equality act: day-to-day activities limited a lot
-Health,2021-HUC,Disability,disability,disability-002,{PERCENTAGE}%,of people in {location},are,disabled under the equality act: day-to-day activities limited a little
-Health,2021-HUC,Disability,disability,disability-003,{PERCENTAGE}%,of people in {location},are,not disabled under the equality act: has long term physical or mental health condition but day-to-day activities are not limited
-Health,2021-HUC,Disability,disability,disability-004,{PERCENTAGE}%,of people in {location},are,not disabled under the equality act: no long term physical or mental health conditions
-Health,2021-HUC,Disability,disability_3a,disability_3a-001,{PERCENTAGE}%,of people in {location},are,disabled under the equality act
-Health,2021-HUC,Disability,disability_3a,disability_3a-002,{PERCENTAGE}%,of people in {location},are,not disabled under the equality act
+Health,2021-HUC,Disability,disability_4a,disability_4a-001,{PERCENTAGE}%,of people in {location},are,disabled under the equality act: day-to-day activities limited a lot
+Health,2021-HUC,Disability,disability_4a,disability_4a-002,{PERCENTAGE}%,of people in {location},are,disabled under the equality act: day-to-day activities limited a little
+Health,2021-HUC,Disability,disability_4a,disability_4a-003,{PERCENTAGE}%,of people in {location},are,not disabled under the equality act
 Health,2021-HUC,General health,health_in_general,health_in_general-001,{PERCENTAGE}%,of households in {location},have,very good health
 Health,2021-HUC,General health,health_in_general,health_in_general-002,{PERCENTAGE}%,of households in {location},have,good health
 Health,2021-HUC,General health,health_in_general,health_in_general-003,{PERCENTAGE}%,of households in {location},have,fair health
@@ -29,9 +26,6 @@ Health,2021-HUC,General health,health_in_general_3a,health_in_general_3a-002,{PE
 Health,2021-HUC,General health,health_in_general_4a,health_in_general_4a-001,{PERCENTAGE}%,of households in {location},have,very good or good health
 Health,2021-HUC,General health,health_in_general_4a,health_in_general_4a-002,{PERCENTAGE}%,of households in {location},have,fair health
 Health,2021-HUC,General health,health_in_general_4a,health_in_general_4a-003,{PERCENTAGE}%,of households in {location},have,bad or very bad health
-Health,2021-HUC,Number of disabled people in household,hh_disabled_4a,hh_disabled_4a-000,{PERCENTAGE}%,of households in {location},have,no people disabled under the equality act in household
-Health,2021-HUC,Number of disabled people in household,hh_disabled_4a,hh_disabled_4a-001,{PERCENTAGE}%,of households in {location},have,1 person disabled under the equality act in household
-Health,2021-HUC,Number of disabled people in household,hh_disabled_4a,hh_disabled_4a-002,{PERCENTAGE}%,of households in {location},have,2 or more people disabled under the equality act in household
 Health,2021-HUC,Provision of unpaid care,is_carer,is_carer-001,{PERCENTAGE}%,of people in {location},provide,no unpaid care
 Health,2021-HUC,Provision of unpaid care,is_carer,is_carer-002,{PERCENTAGE}%,of people in {location},provide,9 hours or less unpaid care a week
 Health,2021-HUC,Provision of unpaid care,is_carer,is_carer-003,{PERCENTAGE}%,of people in {location},provide,10 to 19 hours unpaid care a week

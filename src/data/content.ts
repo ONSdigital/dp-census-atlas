@@ -148,10 +148,10 @@ export default {
         contentJsonUrl: huc.localContentJsonUrl,
         contentBaseUrl: huc.fakeDataBaseUrl,
       },
-      // lab is unpublished
+      // lab is published
       {
         contentJsonUrl: lab.localContentJsonUrl,
-        contentBaseUrl: lab.fakeDataBaseUrl,
+        contentBaseUrl: lab.realDataBaseUrl,
       },
       // mig is published
       {
@@ -163,15 +163,15 @@ export default {
         contentJsonUrl: sogi.localContentJsonUrl,
         contentBaseUrl: sogi.fakeDataBaseUrl,
       },
-      // ttw is unpublished
+      // ttw is published
       {
         contentJsonUrl: ttw.localContentJsonUrl,
-        contentBaseUrl: ttw.fakeDataBaseUrl,
+        contentBaseUrl: ttw.realDataBaseUrl,
       },
-      // welshSkills is unpublished
+      // welshSkills is published
       {
         contentJsonUrl: welshSkills.localContentJsonUrl,
-        contentBaseUrl: welshSkills.fakeDataBaseUrl,
+        contentBaseUrl: welshSkills.realDataBaseUrl,
       },
     ],
   },
@@ -215,10 +215,10 @@ export default {
         contentJsonUrl: huc.publicContentJsonUrl,
         contentBaseUrl: huc.fakeDataBaseUrl,
       },
-      // lab is unpublished
+      // lab is published
       {
         contentJsonUrl: lab.publicContentJsonUrl,
-        contentBaseUrl: lab.fakeDataBaseUrl,
+        contentBaseUrl: lab.realDataBaseUrl,
       },
       // mig is published
       {
@@ -230,15 +230,15 @@ export default {
         contentJsonUrl: sogi.publicContentJsonUrl,
         contentBaseUrl: sogi.fakeDataBaseUrl,
       },
-      // ttw is unpublished
+      // ttw is published
       {
         contentJsonUrl: ttw.publicContentJsonUrl,
-        contentBaseUrl: ttw.fakeDataBaseUrl,
+        contentBaseUrl: ttw.realDataBaseUrl,
       },
-      // welshSkills is unpublished
+      // welshSkills is published
       {
         contentJsonUrl: welshSkills.publicContentJsonUrl,
-        contentBaseUrl: welshSkills.fakeDataBaseUrl,
+        contentBaseUrl: welshSkills.realDataBaseUrl,
       },
     ],
   },
@@ -282,10 +282,10 @@ export default {
         contentJsonUrl: huc.publicContentJsonUrl,
         contentBaseUrl: huc.fakeDataBaseUrl,
       },
-      // lab is unpublished
+      // lab is published
       {
         contentJsonUrl: lab.publicContentJsonUrl,
-        contentBaseUrl: lab.fakeDataBaseUrl,
+        contentBaseUrl: lab.realDataBaseUrl,
       },
       // mig is published
       {
@@ -297,15 +297,15 @@ export default {
         contentJsonUrl: sogi.publicContentJsonUrl,
         contentBaseUrl: sogi.fakeDataBaseUrl,
       },
-      // ttw is unpublished
+      // ttw is published
       {
         contentJsonUrl: ttw.publicContentJsonUrl,
-        contentBaseUrl: ttw.fakeDataBaseUrl,
+        contentBaseUrl: ttw.realDataBaseUrl,
       },
-      // welshSkills is unpublished
+      // welshSkills is published
       {
         contentJsonUrl: welshSkills.publicContentJsonUrl,
-        contentBaseUrl: welshSkills.fakeDataBaseUrl,
+        contentBaseUrl: welshSkills.realDataBaseUrl,
       },
     ],
   },

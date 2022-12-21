@@ -53,25 +53,24 @@
                 {deltaSuffix}{roundedClassificationDataToString($viz.params.classification.code, active.value)}</span
               ><span class="xs:text-2xl sm:text-4xl font-bold">pp</span>
             </div>
-            <!-- <div class="xs:text-2xl sm:text-2xl font-bold">{deltaDesc}</div> -->
           </div>
           <div class="flex-grow leading-[0px]">
             <div class="">
               <span class="xs:hidden font-bold">
-                <span class="">
-                  {roundedClassificationDataToString($viz.params.classification.code, active.value)}</span
-                ><span class="text-sm">pp</span>
+                <span class="xs:text-4xl sm:text-5xl font-bold">
+                  {deltaSuffix}{roundedClassificationDataToString($viz.params.classification.code, active.value)}</span
+                ><span class="xs:text-2xl sm:text-4xl font-bold">pp</span>
               </span>
-              <span class={legendTextClass}>
-                {$viz.params.variable.units} in {active.displayName}
-              </span>
-              <GeoTypeBadge geoType={active.geoType} />
+              <span class={legendTextClass}> 10 year change from 2011 Census in percentage points </span>
             </div>
             {#if $viz?.params?.embed?.categorySelection}
               <CategorySelector selected={$viz.params.category.slug} use="name" />
             {:else}
-              <div class={`${legendTextClass} font-bold`}>
-                {$viz.params.category.name}
+              <div>
+                <span class={`${legendTextClass} font-bold`}>
+                  {$viz.params.category.name} in {active.displayName}
+                </span>
+                <GeoTypeBadge geoType={active.geoType} />
               </div>
             {/if}
           </div>
@@ -114,9 +113,6 @@
           classificationCode={$viz.params.classification.code}
           showPositive={true}
         />
-        <div class="xs:text-1xl sm:text-1xl font-bold text-center pt-1 pb-1">
-          10 year change from 2011 Census in percentage points (pp)
-        </div>
       {/if}
     </div>
   </div>

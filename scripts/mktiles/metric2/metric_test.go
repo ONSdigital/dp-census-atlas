@@ -241,7 +241,7 @@ func Test_ImportCSV(t *testing.T) {
 			records := [][]string{
 				{"GeographyCode", "cat1"},
 			}
-			err := m.ImportCSV("test", records)
+			err := m.ImportCSV("test", records, false, map[string]string{})
 			Convey("error shoud be returned", func() {
 				So(err.Error(), ShouldContainSubstring, "not enough rows")
 			})
@@ -252,7 +252,7 @@ func Test_ImportCSV(t *testing.T) {
 				{"Geography Code"}, // also tests fuzzy (0,0) comparison
 				{"geoA"},
 			}
-			err := m.ImportCSV("test", records)
+			err := m.ImportCSV("test", records, false, map[string]string{})
 			Convey("error should be returned", func() {
 				So(err.Error(), ShouldContainSubstring, "not enough columns")
 			})
@@ -263,7 +263,7 @@ func Test_ImportCSV(t *testing.T) {
 				{"header1", "header2"},
 				{"cell1", "cell2"},
 			}
-			err := m.ImportCSV("test", records)
+			err := m.ImportCSV("test", records, false, map[string]string{})
 			Convey("error should be returned", func() {
 				So(err.Error(), ShouldContainSubstring, "not a metrics file")
 			})
@@ -274,7 +274,7 @@ func Test_ImportCSV(t *testing.T) {
 				{"GeographyCode", "cat1"},
 				{"geoA"},
 			}
-			err := m.ImportCSV("test", records)
+			err := m.ImportCSV("test", records, false, map[string]string{})
 			Convey("error should be returned", func() {
 				So(err.Error(), ShouldContainSubstring, "should have")
 			})
@@ -285,7 +285,7 @@ func Test_ImportCSV(t *testing.T) {
 				{"GeographyCode", "cat1"},
 				{"geoA", "this isn't a number"},
 			}
-			err := m.ImportCSV("test", records)
+			err := m.ImportCSV("test", records, false, map[string]string{})
 			Convey("error should be returned", func() {
 				So(err.Error(), ShouldContainSubstring, "ParseFloat")
 			})
@@ -297,10 +297,10 @@ func Test_ImportCSV(t *testing.T) {
 				{"geoA", "1.2", "3.4"},
 				{"geoC", "5.6", "7.8"},
 			}
-			err := m.ImportCSV("test1", records)
+			err := m.ImportCSV("test1", records, false, map[string]string{})
 			So(err, ShouldBeNil)
 			Convey("second import should return error", func() {
-				err := m.ImportCSV("test2", records)
+				err := m.ImportCSV("test2", records, false, map[string]string{})
 				So(err.Error(), ShouldContainSubstring, "duplicate")
 			})
 		})
@@ -311,7 +311,7 @@ func Test_ImportCSV(t *testing.T) {
 				{"geoA", "1", "2"},
 				{"geoB", "3", "4"},
 			}
-			err := m.ImportCSV("test1", records)
+			err := m.ImportCSV("test1", records, false, map[string]string{})
 			So(err, ShouldBeNil)
 			Convey("CSV with duplicate should return error", func() {
 				records := [][]string{
@@ -319,7 +319,7 @@ func Test_ImportCSV(t *testing.T) {
 					{"geoA", "2", "3"},
 					{"geoB", "4", "5"},
 				}
-				err := m.ImportCSV("test2", records)
+				err := m.ImportCSV("test2", records, false, map[string]string{})
 				So(err.Error(), ShouldContainSubstring, "duplicate")
 			})
 		})
@@ -338,7 +338,7 @@ func Test_ImportCSV(t *testing.T) {
 				{"geoA", "1.2", "3.4"},
 				{"geoC", "5.6", "7.8"},
 			}
-			err := m.ImportCSV("test1", records)
+			err := m.ImportCSV("test1", records, false, map[string]string{})
 			Convey("no error should be returned", func() {
 				So(err, ShouldBeNil)
 			})
@@ -375,7 +375,7 @@ func Test_ImportCSV(t *testing.T) {
 					{"geoB", "13.14", "15.16"},
 					{"geoC", "NA", "19.2"},
 				}
-				err := m.ImportCSV("test2", records)
+				err := m.ImportCSV("test2", records, false, map[string]string{})
 				Convey("no error should be returned", func() {
 					So(err, ShouldBeNil)
 				})
@@ -409,6 +409,59 @@ func Test_ImportCSV(t *testing.T) {
 				})
 			})
 		})
+
+		Convey("When category names are used when importing a valid CSV", func() {
+			// cat names with prefixes
+			doCatNameMatching := true
+			namesToCats := map[string]string{
+				"2021 Percentage change: cat1": "cat1",
+				"2021 Percentage change: cat2": "cat2",
+			}
+
+			// these fields don't change
+			catidx := map[types.Category]int{
+				cat1: 0,
+				cat2: 1,
+			}
+			totidx := map[types.Category]int{}
+			totcats := []types.Category{}
+
+			records := [][]string{
+				{"GeographyCode", "2021 Percentage change: cat1", "2021 Percentage change: cat2", "2021 Percentage change: cat3"},
+				{"geoA", "1.2", "2.3", "3.4"},
+				{"geoC", "5.6", "6.7", "7.8"},
+			}
+			err := m.ImportCSV("test1", records, doCatNameMatching, namesToCats)
+			Convey("no error should be returned", func() {
+				So(err, ShouldBeNil)
+			})
+			Convey("correct table should be built", func() {
+
+				want := &M{
+					tab: [][]types.Value{
+						{types.Value(1.2), types.Value(2.3)},
+						{types.Value(5.6), types.Value(6.7)},
+					},
+					geoidx: map[types.Geocode]int{
+						geoA: 0,
+						geoC: 1,
+					},
+					catidx: catidx,
+					totidx: totidx,
+					geos: []types.Geocode{
+						geoA,
+						geoC,
+					},
+					cats:    cats,
+					totcats: totcats,
+					loadedCats: map[types.Category]string{
+						cat1: "test1",
+						cat2: "test1",
+					},
+				}
+				So(m, shouldBeEquivM, want)
+			})
+		})
 	})
 }
 
@@ -422,7 +475,7 @@ func Test_mapGeos(t *testing.T) {
 			{"geoA", "1", "2"},
 			{"geoB", "3", "4"},
 		}
-		err = m.ImportCSV("test", records)
+		err = m.ImportCSV("test", records, false, map[string]string{})
 		So(err, ShouldBeNil)
 
 		Convey("empty geo list returns empty index", func() {
@@ -455,7 +508,7 @@ func Test_MakeTiles(t *testing.T) {
 				{"geoN", "9.1", "NaN"},
 			}
 
-			err := m.ImportCSV("test", records)
+			err := m.ImportCSV("test", records, false, map[string]string{})
 			So(err, ShouldBeNil)
 
 			// Request tiles without any geos.
@@ -545,7 +598,7 @@ func Test_tabrowsByType(t *testing.T) {
 			{"geoC", "3"},
 			{"geoN", "4"},
 		}
-		err = m.ImportCSV("test", records)
+		err = m.ImportCSV("test", records, false, map[string]string{})
 		So(err, ShouldBeNil)
 
 		Convey("tabrowsByType categorises geos", func() {
@@ -607,7 +660,7 @@ func Test_MakeBreaks(t *testing.T) {
 				{"geoM", "13", "27"},
 				{"geoN", "14", "28"},
 			}
-			err := m.ImportCSV("test", records)
+			err := m.ImportCSV("test", records, false, map[string]string{})
 			So(err, ShouldBeNil)
 
 			Convey("correct breaks files should be produced", withTempDir(func(tmpdir string) {

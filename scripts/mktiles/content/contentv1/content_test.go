@@ -68,7 +68,7 @@ func Test_Load(t *testing.T) {
 
 		Convey("Name to Category map should be built", func() {
 			want := map[string]string{}
-			got, err := v1.NamesToCats("wrong classification code")
+			got, err := v1.NamesToCats("wrong classification code", "")
 			So(err, ShouldBeNil)
 			So(got, ShouldResemble, want)
 
@@ -79,7 +79,7 @@ func Test_Load(t *testing.T) {
 				"Highest level of qualification: Level 4 qualifications and above": "highest_qualification_6a-003",
 				"Highest level of qualification: Other qualifications":             "highest_qualification_6a-004",
 			}
-			got, err = v1.NamesToCats("highest_qualification_6a")
+			got, err = v1.NamesToCats("highest_qualification_6a", "")
 			So(err, ShouldBeNil)
 			So(got, ShouldResemble, want)
 
@@ -92,11 +92,11 @@ func Test_Load(t *testing.T) {
 				"Level 4 qualifications and above: degree (BA, BSc), higher degree (MA, PhD, PGCE), NVQ level 4 to 5, HNC, HND, RSA Higher Diploma, BTEC Higher level, professional qualifications (for example, teaching, nursing, accountancy)":                                                     "highest_qualification-005",
 				"Other: vocational or work-related qualifications, other qualifications achieved in England or Wales, qualifications achieved outside England or Wales (equivalent not stated or unknown)":                                                                                            "highest_qualification-006",
 			}
-			got, err = v1.NamesToCats("highest_qualification")
+			got, err = v1.NamesToCats("highest_qualification", "")
 			So(err, ShouldBeNil)
 			So(got, ShouldResemble, want)
 
-			got, err = v1.NamesToCats("")
+			got, err = v1.NamesToCats("", "")
 			So(err, ShouldNotBeNil)
 			So(got, ShouldBeNil)
 		})

@@ -37,6 +37,8 @@ func main() {
 	force := flag.Bool("f", false, "force using an existing out directory")
 	contentName := flag.String("c", "", "path to content.json (default content.json within input dir)")
 	classCode := flag.String("C", "", "classification code to match in content.json (blank means all)")
+	doCatNameMatching := flag.Bool("M", false, "match categories from input files based on name rather than code")
+	catNamePrefix := flag.String("N", "", "when doCatNameMatching=true, optional prefix for cat names as they are found in input files")
 	flag.Parse()
 
 	if *contentName == "" {
@@ -49,6 +51,8 @@ func main() {
 	log.Printf("          calc ratios: %t", *doRatios)
 	log.Printf("generate fake metrics: %t", *doFake)
 	log.Printf("                force: %t", *force)
+	log.Printf("matching cats by name: %t", *doCatNameMatching)
+	log.Printf("using cat name prefix: %s", *catNamePrefix)
 
 	if err := setupOutDir(*outdir, *force); err != nil {
 		log.Fatal(err)
@@ -67,6 +71,14 @@ func main() {
 		log.Fatal(err)
 	}
 	log.Printf("found %d categories", len(wantcats))
+
+	//
+	// make cat name to cat code map
+	//
+	namesToCats, err := cont.NamesToCats(*classCode, *catNamePrefix)
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	//
 	// load grid file
@@ -93,7 +105,7 @@ func main() {
 	//
 	if !*doFake {
 		log.Printf("loading metrics files")
-		if err := m.LoadAll(*indir, MSOA_NAMES_CSV); err != nil {
+		if err := m.LoadAll(*indir, MSOA_NAMES_CSV, *doCatNameMatching, namesToCats); err != nil {
 			log.Fatal(err)
 		}
 		missingCats := m.MissingCats()

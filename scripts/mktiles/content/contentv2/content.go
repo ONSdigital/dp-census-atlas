@@ -79,7 +79,7 @@ func (v2 *V2) Categories(classcode string) ([]string, error) {
 // NamesToCats creates a map to lookup a category code given a category name.
 // This is used when converting plain text headings in spreadsheets to specific
 // category codes.
-func (v2 *V2) NamesToCats(classcode string) (map[string]string, error) {
+func (v2 *V2) NamesToCats(classcode string, prefix string,) (map[string]string, error) {
 	catmap := map[string]string{}
 
 	for _, content := range v2.Content {
@@ -93,7 +93,7 @@ func (v2 *V2) NamesToCats(classcode string) (map[string]string, error) {
 					if ok {
 						return nil, fmt.Errorf("duplicate: %q", cat.Name)
 					}
-					catmap[cat.Name] = cat.Code
+					catmap[prefix+cat.Name] = cat.Code
 				}
 			}
 		}

@@ -18,5 +18,10 @@ export const getColoursForBreaks = (breaks: number[], changeOverTime: boolean): 
   const breaksNotIncludingMin = breaks.slice(1, breaks.length);
   const nBreaksBelowZero = breaksNotIncludingMin.filter((br) => br < 0).length;
   const nBreaksAboveZero = breaksNotIncludingMin.length - nBreaksBelowZero;
-  return [...colours.neg.slice(nBreaksBelowZero * -1), colours.mid, ...colours.pos.slice(0, nBreaksAboveZero)];
+
+  // NB avoid issue where slicing with zero index includes ALL neg or pos colors when there should be none
+  const negColours = nBreaksBelowZero > 0 ? colours.neg.slice(nBreaksBelowZero * -1) : [];
+  const posColours = nBreaksAboveZero > 0 ? colours.pos.slice(0, nBreaksAboveZero) : [];
+
+  return [...negColours, colours.mid, ...posColours];
 };

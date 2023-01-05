@@ -29,7 +29,7 @@
                   "desc": "Population density",
                   "available_geotypes": ["oa", "msoa", "lad"],
                   "choropleth_default": true,
-                  "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
+                  "data_download": "https://www.nomisweb.co.uk/datasets/c2021ts006",
                   "categories": [
                     {
                       "name": "Persons per square kilometre",
@@ -92,7 +92,7 @@
                   "desc": "Median age",
                   "available_geotypes": ["msoa", "lad"],
                   "choropleth_default": true,
-                  "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
+                  "data_download": "https://www.nomisweb.co.uk/sources/census_2021_ts",
                   "categories": [
                     {
                       "name": "Median age",

@@ -12,11 +12,14 @@ export const renderMapViz = (map: mapboxgl.Map, data: VizData | undefined) => {
   }
 
   const layer = layers.find((l) => l.name == data.geoType);
+  const changeOverTime = Boolean(
+    data.params.changeOverTime && data.params.classification.comparison_2011_data_available_geotypes,
+  );
 
   data.places.forEach((p) => {
     map.setFeatureState(
       { source: layer.name, sourceLayer: layer.sourceLayer, id: p.geoCode },
-      { colour: getChoroplethColour(p.categoryValue, data.breaks, data.params.changeOverTime) },
+      { colour: getChoroplethColour(p.categoryValue, data.breaks, changeOverTime) },
     );
   });
 };

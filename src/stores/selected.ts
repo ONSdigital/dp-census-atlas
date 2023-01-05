@@ -17,12 +17,13 @@ export const selected = asyncDerived([geography, viz], async ([$geography, $viz]
     };
   } else {
     const [[west, south], [east, north]] = $geography.bbox;
-
     const args = {
       category: $viz.params.category,
       geoType: $geography.geoType,
       bbox: { south, west, north, east },
-      changeOverTime: $viz.params.changeOverTime,
+      changeOverTime: Boolean(
+        $viz.params.changeOverTime && $viz.params.classification.comparison_2011_data_available_geotypes,
+      ),
     };
     const data = await fetchDataForBbox(args);
 

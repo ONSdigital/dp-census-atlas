@@ -55,8 +55,8 @@ const huc = {
   localContentJsonUrl: "http://localhost:8090/2021-HUC.json",
   publicContentJsonUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-HUC.json",
   prodPubContentJsonUrl:
-    "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusmapsconfighuc/2021-HUC.json",
-  prodWebContentJsonUrl: "https://www.ons.gov.uk/visualisations/censusmapsconfighuc/2021-HUC.json",
+    "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusmapsconfighuc2/2021-HUC.json",
+  prodWebContentJsonUrl: "https://www.ons.gov.uk/visualisations/censusmapsconfighuc2/2021-HUC.json",
   fakeDataBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021",
   realDataBaseUrl: "https://ons-dp-prod-census-maps-huc.s3.eu-west-2.amazonaws.com",
 };

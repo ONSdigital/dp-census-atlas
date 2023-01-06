@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2023-01-06-11-07-27",
+    "created_at": "2023-01-06-13-51-14",
     "release": "2021-HOU-ar2776-c21ew_metadata-v1-3_cantab_20230104-38"
   },
   "content": [
@@ -30,7 +30,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS044/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS044/editions/2021",
               "categories": [
                 {
                   "name": "Whole house or bungalow",
@@ -68,7 +68,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS044/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS044/editions/2021",
               "categories": [
                 {
                   "name": "Whole house or bungalow: Detached",
@@ -122,7 +122,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS044/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS044/editions/2021",
               "categories": [
                 {
                   "name": "Detached",
@@ -212,7 +212,7 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS056/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS056/editions/2021",
               "categories": [
                 {
                   "name": "No second address",
@@ -263,7 +263,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS046/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS046/editions/2021",
               "categories": [
                 {
                   "name": "Does not have central heating",
@@ -293,7 +293,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS046/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS046/editions/2021",
               "categories": [
                 {
                   "name": "No central heating",
@@ -416,7 +416,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS054/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS054/editions/2021",
               "categories": [
                 {
                   "name": "Owned: Owns outright",
@@ -462,7 +462,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS054/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS054/editions/2021",
               "categories": [
                 {
                   "name": "Owned: Owns outright",
@@ -553,7 +553,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS050/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS050/editions/2021",
               "categories": [
                 {
                   "name": "1 bedroom",
@@ -612,7 +612,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS045/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS045/editions/2021",
               "categories": [
                 {
                   "name": "No cars or vans in household",
@@ -642,7 +642,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS045/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS045/editions/2021",
               "categories": [
                 {
                   "name": "No cars or vans in household",
@@ -700,7 +700,7 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS052/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS052/editions/2021",
               "categories": [
                 {
                   "name": "Occupancy rating of bedrooms: +2 or more",
@@ -766,7 +766,7 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS053/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS053/editions/2021",
               "categories": [
                 {
                   "name": "Occupancy rating of rooms: +2 or more",
@@ -832,7 +832,7 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS055/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS055/editions/2021",
               "categories": [
                 {
                   "name": "Armed forces base address",

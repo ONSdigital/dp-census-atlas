@@ -1,69 +1,138 @@
 package sync
 
 import (
-	"fmt"
+	"log"
 
-	"github.com/aws/aws-sdk-go/aws/session"
-	"github.com/aws/aws-sdk-go/service/s3"
+	"github.com/ONSdigital/dp-census-atlas/scripts/s3sync/storage"
+)
+
+const (
+	stateUnknown   int = iota // state not known yet (zero value)
+	stateMissing              // src: missing from dst
+	stateDifferent            // src: exists in dst, but different
+	stateSame                 // src: exists in dst and same size and modtime
+	stateSeen                 // dst: exists in src
 )
 
 type Syncer struct {
-	src    string
-	bucket string
-	prefix string
-
-	sess	*session.Session
-	s3	*s3.S3
+	src      storage.Filer
+	dst      storage.Filer
+	srcfiles map[string]*storage.FileInfo
+	dstfiles map[string]*storage.FileInfo
+	dryrun   bool
 }
 
-func New(src, bucket, prefix string) (*Syncer, error) {
+// New returns a new Syncer which can sync from src to dst.
+func New(src, dst storage.Filer, dryrun bool) (*Syncer, error) {
 	return &Syncer{
 		src:    src,
-		bucket: bucket,
-		prefix: prefix,
+		dst:    dst,
+		dryrun: dryrun,
 	}, nil
 }
 
+// Sync runs the sync from src to dst.
 func (s *Syncer) Sync() error {
-	if err := s.Login(); err != nil {
-		return err
-	}
-	return s.List()
-}
-
-func (s *Syncer) Login() error {
-	// completely depend on environment variables
-	sess, err := session.NewSession()
+	log.Println("Scanning files in src")
+	srcfiles, err := s.src.Scan()
 	if err != nil {
 		return err
 	}
-	s.sess = sess
-	s.s3 = s3.New(sess)
-	return nil
-}
+	s.srcfiles = srcfiles
 
-func (s *Syncer) List() error {
-	in := &s3.ListBucketsInput{}
-
-	out, err := s.s3.ListBuckets(in)
+	log.Println("Scanning files in dst")
+	dstfiles, err := s.dst.Scan()
 	if err != nil {
 		return err
 	}
+	s.dstfiles = dstfiles
 
-	fmt.Println(out)
+	log.Println("Comparing checksums")
+	if err := s.diff(); err != nil {
+		return err
+	}
+
+	log.Println("Copying new files to dst")
+	if err := s.copy(stateMissing); err != nil {
+		return err
+	}
+
+	log.Printf("Copying changed files to dst")
+	if err := s.copy(stateDifferent); err != nil {
+		return err
+	}
+
+	log.Printf("Removing deleted files from dst")
+	if err := s.delete(); err != nil {
+		return err
+	}
 	return nil
-/*
-	in := &s3.ListObjectsV2Input{
-		Bucket: &s.bucket,
-	}
+}
 
-	pageNum := 0
+// diff determines which files are different or missing between src and dst.
+func (s *Syncer) diff() error {
+	for key, src := range s.srcfiles {
+		srcsum, err := s.src.Checksum(src.Name)
+		if err != nil {
+			return err
+		}
+		src.Checksum = srcsum
 
-	f := func(page *s3.ListObjectsV2Output, lastPage bool) bool {
-		pageNum++
-		fmt.Println(page)
-		return pageNum <= 3
+		dst, ok := s.dstfiles[key]
+		if !ok {
+			src.SyncState = stateMissing
+			continue
+		}
+
+		dstsum, err := s.dst.Checksum(dst.Name)
+		if err != nil {
+			return err
+		}
+		dst.Checksum = dstsum
+
+		if srcsum == dstsum {
+			src.SyncState = stateSame
+		} else {
+			src.SyncState = stateDifferent
+		}
+		dst.SyncState = stateSeen
 	}
-	return s.s3.ListObjectsV2Pages(in, f)
-*/
+	return nil
+}
+
+// copy copies all files from src to dst where source state equals state.
+func (s *Syncer) copy(state int) error {
+	for _, src := range s.srcfiles {
+		if src.SyncState != state {
+			continue
+		}
+		log.Printf("\t%s\n", src.Name)
+		if s.dryrun {
+			continue
+		}
+		r, err := s.src.Open(src.Name)
+		if err != nil {
+			return err
+		}
+		if err := s.dst.Create(src.Name, r, src.Checksum); err != nil {
+			r.Close()
+			return err
+		}
+	}
+	return nil
+}
+
+// delete removes all files from dst where dst state is not stateSeen.
+func (s *Syncer) delete() error {
+	for _, dst := range s.dstfiles {
+		if dst.SyncState == stateSeen {
+			continue
+		}
+		log.Printf("\tremove %s\n", dst.Name)
+		if s.dryrun {
+			continue
+		}
+		s.dst.Remove(dst.Name)
+	}
+	return nil
 }

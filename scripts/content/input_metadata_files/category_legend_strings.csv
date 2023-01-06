@@ -1,16 +1,16 @@
 variable_group,content_json,variable,classification,category_code,legend_start_str,legend_str_1,legend_str_2,legend_str_3
-Education,2021-EDU,Highest level of qualification,highest_qualification,highest_qualification-000,{PERCENTAGE}%,of people in {location},have,no qualifications
-Education,2021-EDU,Highest level of qualification,highest_qualification,highest_qualification-001,{PERCENTAGE}%,of people in {location},have,level 1 and entry level qualifications
-Education,2021-EDU,Highest level of qualification,highest_qualification,highest_qualification-002,{PERCENTAGE}%,of people in {location},have,level 2 qualifications
-Education,2021-EDU,Highest level of qualification,highest_qualification,highest_qualification-003,{PERCENTAGE}%,of people in {location},have,an apprenticeship
-Education,2021-EDU,Highest level of qualification,highest_qualification,highest_qualification-004,{PERCENTAGE}%,of people in {location},have,level 3 qualifications
-Education,2021-EDU,Highest level of qualification,highest_qualification,highest_qualification-005,{PERCENTAGE}%,of people in {location},have,level 4 qualifications and above
-Education,2021-EDU,Highest level of qualification,highest_qualification,highest_qualification-006,{PERCENTAGE}%,of people in {location},have,other qualifications
-Education,2021-EDU,Highest level of qualification,highest_qualification_6a,highest_qualification_6a-000,{PERCENTAGE}%,of people in {location},have,no qualifications
-Education,2021-EDU,Highest level of qualification,highest_qualification_6a,highest_qualification_6a-001,{PERCENTAGE}%,of people in {location},have,"level 1, 2 or 3 qualifications"
-Education,2021-EDU,Highest level of qualification,highest_qualification_6a,highest_qualification_6a-002,{PERCENTAGE}%,of people in {location},have,an apprenticeship
-Education,2021-EDU,Highest level of qualification,highest_qualification_6a,highest_qualification_6a-003,{PERCENTAGE}%,of people in {location},have,level 4 qualifications and above
-Education,2021-EDU,Highest level of qualification,highest_qualification_6a,highest_qualification_6a-004,{PERCENTAGE}%,of people in {location},have,other qualifications
+Education,2021-EDU,Highest level of qualification,highest_qualification,highest_qualification-000,{PERCENTAGE}%,of people aged 16 years and over in {location},have,no qualifications
+Education,2021-EDU,Highest level of qualification,highest_qualification,highest_qualification-001,{PERCENTAGE}%,of people aged 16 years and over in {location},have,level 1 and entry level qualifications as their highest level of qualification
+Education,2021-EDU,Highest level of qualification,highest_qualification,highest_qualification-002,{PERCENTAGE}%,of people aged 16 years and over in {location},have,level 2 qualifications as their highest level of qualification
+Education,2021-EDU,Highest level of qualification,highest_qualification,highest_qualification-003,{PERCENTAGE}%,of people aged 16 years and over in {location},have,an apprenticeship as their highest level of qualification
+Education,2021-EDU,Highest level of qualification,highest_qualification,highest_qualification-004,{PERCENTAGE}%,of people aged 16 years and over in {location},have,level 3 qualifications as their highest level of qualification
+Education,2021-EDU,Highest level of qualification,highest_qualification,highest_qualification-005,{PERCENTAGE}%,of people aged 16 years and over in {location},have,level 4 qualifications and above as their highest level of qualification
+Education,2021-EDU,Highest level of qualification,highest_qualification,highest_qualification-006,{PERCENTAGE}%,of people aged 16 years and over in {location},have,other qualifications as their highest level of qualification
+Education,2021-EDU,Highest level of qualification,highest_qualification_6a,highest_qualification_6a-000,{PERCENTAGE}%,of people aged 16 years and over in {location},have,no qualifications
+Education,2021-EDU,Highest level of qualification,highest_qualification_6a,highest_qualification_6a-001,{PERCENTAGE}%,of people aged 16 years and over in {location},have,"level 1, 2 or 3 qualifications as their highest level of qualification"
+Education,2021-EDU,Highest level of qualification,highest_qualification_6a,highest_qualification_6a-002,{PERCENTAGE}%,of people aged 16 years and over in {location},have,an apprenticeship as their highest level of qualification
+Education,2021-EDU,Highest level of qualification,highest_qualification_6a,highest_qualification_6a-003,{PERCENTAGE}%,of people aged 16 years and over in {location},have,level 4 qualifications and above as their highest level of qualification
+Education,2021-EDU,Highest level of qualification,highest_qualification_6a,highest_qualification_6a-004,{PERCENTAGE}%,of people aged 16 years and over in {location},have,other qualifications as their highest level of qualification
 Education,2021-EDU,Schoolchild or full-time student indicator,in_full_time_education,in_full_time_education-001,{PERCENTAGE}%,of people aged five years and over in {location},are,a full-time student
 Education,2021-EDU,Schoolchild or full-time student indicator,in_full_time_education,in_full_time_education-002,{PERCENTAGE}%,of people aged five years and over in {location},are,not a full-time student
 Health,2021-HUC,Disability,disability_4a,disability_4a-001,{PERCENTAGE}%,of people in {location},are,disabled under the equality act: day-to-day activities limited a lot

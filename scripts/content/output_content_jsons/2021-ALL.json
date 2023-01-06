@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2023-01-06-11-07-27",
+    "created_at": "2023-01-06-13-51-14",
     "release": "2021-ALL-ar2776-c21ew_metadata-v1-3_cantab_20230104-38"
   },
   "content": [
@@ -29,7 +29,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS071/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS071/editions/2021",
               "categories": [
                 {
                   "name": "Previously served in the UK regular armed forces",
@@ -121,7 +121,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS011/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS011/editions/2021",
               "categories": [
                 {
                   "name": "Household is not deprived in any dimension",
@@ -186,7 +186,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS003/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS003/editions/2021",
               "categories": [
                 {
                   "name": "One-person household: Aged 66 years and over",
@@ -314,7 +314,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS003/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS003/editions/2021",
               "categories": [
                 {
                   "name": "Other household types",
@@ -365,7 +365,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS017/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS017/editions/2021",
               "categories": [
                 {
                   "name": "1 person in household",
@@ -411,7 +411,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS017/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS017/editions/2021",
               "categories": [
                 {
                   "name": "1 person in household",
@@ -500,7 +500,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS002/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS002/editions/2021",
               "categories": [
                 {
                   "name": "Never married and never registered a civil partnership",
@@ -604,7 +604,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS002/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS002/editions/2021",
               "categories": [
                 {
                   "name": "Married or in a registered civil partnership",
@@ -634,7 +634,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS002/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS002/editions/2021",
               "categories": [
                 {
                   "name": "Never married and never registered a civil partnership",
@@ -699,7 +699,7 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS010/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS010/editions/2021",
               "categories": [
                 {
                   "name": "Living in an opposite-sex couple: Married or in a civil partnership",
@@ -803,7 +803,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS007/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS007/editions/2021",
               "categories": [
                 {
                   "name": "Aged under 1 year",
@@ -1624,7 +1624,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS007/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS007/editions/2021",
               "categories": [
                 {
                   "name": "Aged 4 years and under",
@@ -1727,7 +1727,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS007/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS007/editions/2021",
               "categories": [
                 {
                   "name": "Aged 15 years and under",
@@ -1764,7 +1764,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS007/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS007/editions/2021",
               "categories": [
                 {
                   "name": "Aged 14 years and under",
@@ -1887,7 +1887,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS008/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS008/editions/2021",
               "categories": [
                 {
                   "name": "Female",
@@ -1930,7 +1930,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS018/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS018/editions/2021",
               "categories": [
                 {
                   "name": "Born in the UK",
@@ -2091,7 +2091,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS004/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS004/editions/2021",
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
@@ -2193,7 +2193,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS004/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS004/editions/2021",
               "categories": [
                 {
                   "name": "Born in the UK",
@@ -2221,7 +2221,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS012/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS012/editions/2021",
               "categories": [
                 {
                   "name": "Europe: United Kingdom: England",
@@ -2705,7 +2705,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS004/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS004/editions/2021",
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
@@ -2787,7 +2787,7 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS019/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS019/editions/2021",
               "categories": [
                 {
                   "name": "Address one year ago is the same as the address of enumeration",
@@ -2843,7 +2843,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS005/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS005/editions/2021",
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
@@ -2952,7 +2952,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS005/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS005/editions/2021",
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
@@ -3102,7 +3102,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS005/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS005/editions/2021",
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
@@ -3326,7 +3326,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS005/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS005/editions/2021",
               "categories": [
                 {
                   "name": "UK passport",
@@ -3363,7 +3363,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS013/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS013/editions/2021",
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
@@ -3798,7 +3798,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS016/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS016/editions/2021",
               "categories": [
                 {
                   "name": "Born in the UK",
@@ -3863,7 +3863,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS015/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS015/editions/2021",
               "categories": [
                 {
                   "name": "Born in the UK",
@@ -3975,7 +3975,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS015/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS015/editions/2021",
               "categories": [
                 {
                   "name": "Born in the UK",
@@ -4047,7 +4047,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS067/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS067/editions/2021",
               "categories": [
                 {
                   "name": "No qualifications",
@@ -4119,7 +4119,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS067/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS067/editions/2021",
               "categories": [
                 {
                   "name": "No qualifications",
@@ -4185,7 +4185,7 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS068/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS068/editions/2021",
               "categories": [
                 {
                   "name": "Student",
@@ -4233,7 +4233,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS029/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS029/editions/2021",
               "categories": [
                 {
                   "name": "Main language is English (English or Welsh in Wales)",
@@ -4289,7 +4289,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS029/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS029/editions/2021",
               "categories": [
                 {
                   "name": "Main language is English (English or Welsh in Wales)",
@@ -4338,7 +4338,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS021/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS021/editions/2021",
               "categories": [
                 {
                   "name": "Asian, Asian British or Asian Welsh: Bangladeshi",
@@ -4506,7 +4506,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS021/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS021/editions/2021",
               "categories": [
                 {
                   "name": "Asian, Asian British or Asian Welsh",
@@ -4572,7 +4572,7 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS025/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS025/editions/2021",
               "categories": [
                 {
                   "name": "All adults in household have English in England, or English or Welsh in Wales as a main language",
@@ -4631,7 +4631,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS023/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS023/editions/2021",
               "categories": [
                 {
                   "name": "One-person household",
@@ -4696,7 +4696,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS026/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS026/editions/2021",
               "categories": [
                 {
                   "name": "One-person household",
@@ -4752,7 +4752,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS026/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS026/editions/2021",
               "categories": [
                 {
                   "name": "All household members have the same main language",
@@ -4795,7 +4795,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS075/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS075/editions/2021",
               "categories": [
                 {
                   "name": "One-person household",
@@ -4866,7 +4866,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS024/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS024/editions/2021",
               "categories": [
                 {
                   "name": "English (English or Welsh in Wales)",
@@ -5631,7 +5631,7 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS024/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS024/editions/2021",
               "categories": [
                 {
                   "name": "English (English or Welsh if in Wales)",
@@ -5834,7 +5834,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS027/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS027/editions/2021",
               "categories": [
                 {
                   "name": "British only identity",
@@ -5978,7 +5978,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS027/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS027/editions/2021",
               "categories": [
                 {
                   "name": "One or more UK identity only",
@@ -6016,7 +6016,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS027/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS027/editions/2021",
               "categories": [
                 {
                   "name": "British only identity",
@@ -6107,7 +6107,7 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS028/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS028/editions/2021",
               "categories": [
                 {
                   "name": "UK identity: British only identity",
@@ -6711,7 +6711,7 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS030/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS030/editions/2021",
               "categories": [
                 {
                   "name": "No religion",
@@ -6809,7 +6809,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS070/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS070/editions/2021",
               "categories": [
                 {
                   "name": "Gender identity the same as sex registered at birth",
@@ -6845,7 +6845,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS070/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS070/editions/2021",
               "categories": [
                 {
                   "name": "Gender identity the same as sex registered at birth",
@@ -6927,7 +6927,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS077/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS077/editions/2021",
               "categories": [
                 {
                   "name": "Straight or Heterosexual",
@@ -6964,7 +6964,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS077/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS077/editions/2021",
               "categories": [
                 {
                   "name": "Straight or Heterosexual",
@@ -7016,7 +7016,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS079/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS079/editions/2021",
               "categories": [
                 {
                   "name": "Straight or Heterosexual",
@@ -7105,7 +7105,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS032/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS032/editions/2021",
               "categories": [
                 {
                   "name": "Can understand spoken Welsh only",
@@ -7193,7 +7193,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS032/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS032/editions/2021",
               "categories": [
                 {
                   "name": "Can understand spoken Welsh only",
@@ -7231,7 +7231,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS032/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS032/editions/2021",
               "categories": [
                 {
                   "name": "Can understand spoken Welsh only",
@@ -7298,7 +7298,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS033/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS033/editions/2021",
               "categories": [
                 {
                   "name": "Cannot speak Welsh",
@@ -7346,7 +7346,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS044/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS044/editions/2021",
               "categories": [
                 {
                   "name": "Detached",
@@ -7426,7 +7426,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS044/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS044/editions/2021",
               "categories": [
                 {
                   "name": "Whole house or bungalow",
@@ -7464,7 +7464,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS044/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS044/editions/2021",
               "categories": [
                 {
                   "name": "Whole house or bungalow: Detached",
@@ -7530,7 +7530,7 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS056/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS056/editions/2021",
               "categories": [
                 {
                   "name": "No second address",
@@ -7579,7 +7579,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS046/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS046/editions/2021",
               "categories": [
                 {
                   "name": "No central heating",
@@ -7691,7 +7691,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS046/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS046/editions/2021",
               "categories": [
                 {
                   "name": "Does not have central heating",
@@ -7734,7 +7734,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS054/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS054/editions/2021",
               "categories": [
                 {
                   "name": "Owned: Owns outright",
@@ -7780,7 +7780,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS054/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS054/editions/2021",
               "categories": [
                 {
                   "name": "Owned: Owns outright",
@@ -7871,7 +7871,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS050/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS050/editions/2021",
               "categories": [
                 {
                   "name": "1 bedroom",
@@ -7930,7 +7930,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS045/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS045/editions/2021",
               "categories": [
                 {
                   "name": "No cars or vans in household",
@@ -7960,7 +7960,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS045/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS045/editions/2021",
               "categories": [
                 {
                   "name": "No cars or vans in household",
@@ -8018,7 +8018,7 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS052/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS052/editions/2021",
               "categories": [
                 {
                   "name": "Occupancy rating of bedrooms: +2 or more",
@@ -8084,7 +8084,7 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS053/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS053/editions/2021",
               "categories": [
                 {
                   "name": "Occupancy rating of rooms: +2 or more",
@@ -8150,7 +8150,7 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS055/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS055/editions/2021",
               "categories": [
                 {
                   "name": "Armed forces base address",
@@ -8246,7 +8246,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS038/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS038/editions/2021",
               "categories": [
                 {
                   "name": "Disabled under the Equality Act: Day-to-day activities limited a lot",
@@ -8295,7 +8295,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS037/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS037/editions/2021",
               "categories": [
                 {
                   "name": "Very good health",
@@ -8425,7 +8425,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS066/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS066/editions/2021",
               "categories": [
                 {
                   "name": "Economically active (excluding full-time students): In employment",
@@ -8512,7 +8512,7 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS066/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS066/editions/2021",
               "categories": [
                 {
                   "name": "Economically active",
@@ -8543,7 +8543,7 @@
               ],
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS066/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS066/editions/2021",
               "categories": [
                 {
                   "name": "Economically active: In employment (including full-time students)",
@@ -8596,7 +8596,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS065/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS065/editions/2021",
               "categories": [
                 {
                   "name": "Not in employment: Worked in the last 12 months",
@@ -8647,7 +8647,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS059/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS059/editions/2021",
               "categories": [
                 {
                   "name": "Part-time: 15 hours or less worked",
@@ -8695,7 +8695,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS059/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS059/editions/2021",
               "categories": [
                 {
                   "name": "Part-time: 30 hours or less worked",
@@ -8738,7 +8738,7 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS060/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS060/editions/2021",
               "categories": [
                 {
                   "name": "01 Crop and animal production, hunting and related service activities",
@@ -9462,7 +9462,7 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS062/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS062/editions/2021",
               "categories": [
                 {
                   "name": "L1, L2 and L3: Higher managerial, administrative and professional occupations",
@@ -9561,7 +9561,7 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS063/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS063/editions/2021",
               "categories": [
                 {
                   "name": "1. Managers, directors and senior officials",
@@ -9660,7 +9660,7 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS061/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS061/editions/2021",
               "categories": [
                 {
                   "name": "Work mainly at or from home",
@@ -9774,7 +9774,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS058/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS058/editions/2021",
               "categories": [
                 {
                   "name": "Less than 2km",
@@ -9869,7 +9869,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS058/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS058/editions/2021",
               "categories": [
                 {
                   "name": "Less than 10km",
@@ -9914,7 +9914,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS058/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS058/editions/2021",
               "categories": [
                 {
                   "name": "Less than 10km",

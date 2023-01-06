@@ -40,22 +40,23 @@ func Test_Load(t *testing.T) {
 
 		Convey("Name to Category map should be built", func() {
 			want := map[string]string{}
-			got, err := v3.NamesToCats("wrong classification code")
+			got, err := v3.NamesToCats("wrong classification code", "")
 			So(err, ShouldBeNil)
 			So(got, ShouldResemble, want)
 
 			want = map[string]string{
-				"Household is not deprived in any dimension": "hh_deprivation-001",
-				"Household is deprived in one dimension":     "hh_deprivation-002",
-				"Household is deprived in two dimensions":    "hh_deprivation-003",
-				"Household is deprived in three dimensions":  "hh_deprivation-004",
-				"Household is deprived in four dimensions":   "hh_deprivation-005",
+				"2021 Value change: Household is not deprived in any dimension": "hh_deprivation-001",
+				"2021 Value change: Household is deprived in one dimension":     "hh_deprivation-002",
+				"2021 Value change: Household is deprived in two dimensions":    "hh_deprivation-003",
+				"2021 Value change: Household is deprived in three dimensions":  "hh_deprivation-004",
+				"2021 Value change: Household is deprived in four dimensions":   "hh_deprivation-005",
 			}
-			got, err = v3.NamesToCats("")
+			catNamePrefix := "2021 Value change: "
+			got, err = v3.NamesToCats("", catNamePrefix)
 			So(err, ShouldBeNil)
 			So(got, ShouldResemble, want)
 
-			got, err = v3.NamesToCats("hh_deprivation")
+			got, err = v3.NamesToCats("hh_deprivation", catNamePrefix)
 			So(err, ShouldBeNil)
 			So(got, ShouldResemble, want)
 		})

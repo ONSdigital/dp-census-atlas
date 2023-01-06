@@ -38,7 +38,7 @@ func main() {
 	contentName := flag.String("c", "", "path to content.json (default content.json within input dir)")
 	classCode := flag.String("C", "", "classification code to match in content.json (blank means all)")
 	doCatNameMatching := flag.Bool("M", false, "match categories from input files based on name rather than code")
-	catNamePrefix := flag.String("N", "", "when doCatNameMatching=true, optional prefix for cat names as they are found in input files")
+	catNamePrefix := flag.String("P", "", "when doCatNameMatching=true, optional prefix for cat names as they are found in input files")
 	ignoreMissingCats := flag.Bool("i", false, "ignore missing categories (useful is processing only part of a content json)")
 	flag.Parse()
 

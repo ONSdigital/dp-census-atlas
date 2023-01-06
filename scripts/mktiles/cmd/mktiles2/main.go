@@ -39,6 +39,7 @@ func main() {
 	classCode := flag.String("C", "", "classification code to match in content.json (blank means all)")
 	doCatNameMatching := flag.Bool("M", false, "match categories from input files based on name rather than code")
 	catNamePrefix := flag.String("N", "", "when doCatNameMatching=true, optional prefix for cat names as they are found in input files")
+	ignoreMissingCats := flag.Bool("i", false, "ignore missing categories (useful is processing only part of a content json)")
 	flag.Parse()
 
 	if *contentName == "" {
@@ -114,7 +115,9 @@ func main() {
 			for _, cat := range missingCats {
 				log.Printf("\t%s", cat)
 			}
-			log.Fatal("missing categories in metrics files")
+			if !*ignoreMissingCats {
+				log.Fatal("missing categories in metrics files")
+			}
 		}
 	}
 

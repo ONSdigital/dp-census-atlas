@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2023-01-06-09-48-09",
+    "created_at": "2023-01-06-11-07-27",
     "release": "2021-HUC-ar2776-c21ew_metadata-v1-3_cantab_20230104-38"
   },
   "content": [
@@ -28,6 +28,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "data_download": "https://www.ons.gov.uk/datasets/TS038/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "Disabled under the Equality Act: Day-to-day activities limited a lot",
@@ -76,6 +77,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "data_download": "https://www.ons.gov.uk/datasets/TS037/editions/2021/versions/1",
               "categories": [
                 {
                   "name": "Very good health",

@@ -16,7 +16,7 @@ pushd output_content_jsons
 popd
 
 # LAB, TTW and WELSH-SKILLS go in the censusmapsconfiglab visualisation
-echo "Zipping HOU for censusmapsconfighou visualisation"
+echo "Zipping LAB, TTW, and WELSH-SKILLS for censusmapsconfiglab visualisation"
 pushd output_content_jsons
     zipname="censusmapsconfiglab-${created_at}.zip"
     zip "$zipname" \

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-12-21-12-15-43",
-    "release": "2021-EILR-ar2776-c21ew_metadata-v1-3_cantab_20221216-37"
+    "created_at": "2023-01-06-13-51-14",
+    "release": "2021-EILR-ar2776-c21ew_metadata-v1-3_cantab_20230104-38"
   },
   "content": [
     {
@@ -30,7 +30,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS029/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS029/editions/2021",
               "categories": [
                 {
                   "name": "Main language is English (English or Welsh in Wales)",
@@ -68,7 +68,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS029/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS029/editions/2021",
               "categories": [
                 {
                   "name": "Main language is English (English or Welsh in Wales)",
@@ -135,7 +135,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS021/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS021/editions/2021",
               "categories": [
                 {
                   "name": "Asian, Asian British or Asian Welsh",
@@ -189,7 +189,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS021/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS021/editions/2021",
               "categories": [
                 {
                   "name": "Asian, Asian British or Asian Welsh: Bangladeshi",
@@ -367,7 +367,7 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS025/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS025/editions/2021",
               "categories": [
                 {
                   "name": "All adults in household have English in England, or English or Welsh in Wales as a main language",
@@ -426,7 +426,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS023/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS023/editions/2021",
               "categories": [
                 {
                   "name": "One-person household",
@@ -493,7 +493,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS026/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS026/editions/2021",
               "categories": [
                 {
                   "name": "All household members have the same main language",
@@ -523,7 +523,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS026/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS026/editions/2021",
               "categories": [
                 {
                   "name": "One-person household",
@@ -590,7 +590,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS075/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS075/editions/2021",
               "categories": [
                 {
                   "name": "One-person household",
@@ -649,7 +649,7 @@
           "code": "main_language_detailed",
           "slug": "main-language-detailed",
           "desc": "People's first or preferred language.",
-          "long_desc": "A person's first or preferred language.\n\nThis shows a detailed breakdown of the responses given in the write-in option \"Other, write in\".",
+          "long_desc": "A person's first or preferred language. \n\nThis breaks down the responses given in the write-in option \"Other, write in (including British Sign Language)\".",
           "units": "Person",
           "topic_code": "EILR",
           "classifications": [
@@ -662,7 +662,7 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS024/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS024/editions/2021",
               "categories": [
                 {
                   "name": "English (English or Welsh if in Wales)",
@@ -850,7 +850,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS024/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS024/editions/2021",
               "categories": [
                 {
                   "name": "English (English or Welsh in Wales)",
@@ -1631,7 +1631,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS027/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS027/editions/2021",
               "categories": [
                 {
                   "name": "One or more UK identity only",
@@ -1669,7 +1669,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS027/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS027/editions/2021",
               "categories": [
                 {
                   "name": "British only identity",
@@ -1747,7 +1747,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS027/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS027/editions/2021",
               "categories": [
                 {
                   "name": "British only identity",
@@ -1902,7 +1902,7 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS028/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS028/editions/2021",
               "categories": [
                 {
                   "name": "UK identity: British only identity",
@@ -2506,7 +2506,7 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS030/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS030/editions/2021",
               "categories": [
                 {
                   "name": "No religion",

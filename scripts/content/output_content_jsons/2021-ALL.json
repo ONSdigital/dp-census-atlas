@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2022-12-21-12-15-43",
-    "release": "2021-ALL-ar2776-c21ew_metadata-v1-3_cantab_20221216-37"
+    "created_at": "2023-01-06-13-51-14",
+    "release": "2021-ALL-ar2776-c21ew_metadata-v1-3_cantab_20230104-38"
   },
   "content": [
     {
@@ -29,6 +29,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "data_download": "https://www.ons.gov.uk/datasets/TS071/editions/2021",
               "categories": [
                 {
                   "name": "Previously served in the UK regular armed forces",
@@ -85,7 +86,7 @@
                 "lad"
               ],
               "choropleth_default": true,
-              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
+              "data_download": "https://www.nomisweb.co.uk/datasets/c2021ts006",
               "categories": [
                 {
                   "name": "Persons per square kilometre",
@@ -120,7 +121,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
+              "data_download": "https://www.ons.gov.uk/datasets/TS011/editions/2021",
               "categories": [
                 {
                   "name": "Household is not deprived in any dimension",
@@ -185,7 +186,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
+              "data_download": "https://www.ons.gov.uk/datasets/TS003/editions/2021",
               "categories": [
                 {
                   "name": "One-person household: Aged 66 years and over",
@@ -313,7 +314,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
+              "data_download": "https://www.ons.gov.uk/datasets/TS003/editions/2021",
               "categories": [
                 {
                   "name": "Other household types",
@@ -364,7 +365,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
+              "data_download": "https://www.ons.gov.uk/datasets/TS017/editions/2021",
               "categories": [
                 {
                   "name": "1 person in household",
@@ -410,7 +411,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
+              "data_download": "https://www.ons.gov.uk/datasets/TS017/editions/2021",
               "categories": [
                 {
                   "name": "1 person in household",
@@ -499,7 +500,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
+              "data_download": "https://www.ons.gov.uk/datasets/TS002/editions/2021",
               "categories": [
                 {
                   "name": "Never married and never registered a civil partnership",
@@ -603,7 +604,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
+              "data_download": "https://www.ons.gov.uk/datasets/TS002/editions/2021",
               "categories": [
                 {
                   "name": "Married or in a registered civil partnership",
@@ -633,7 +634,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
+              "data_download": "https://www.ons.gov.uk/datasets/TS002/editions/2021",
               "categories": [
                 {
                   "name": "Never married and never registered a civil partnership",
@@ -698,7 +699,7 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
+              "data_download": "https://www.ons.gov.uk/datasets/TS010/editions/2021",
               "categories": [
                 {
                   "name": "Living in an opposite-sex couple: Married or in a civil partnership",
@@ -802,7 +803,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
+              "data_download": "https://www.ons.gov.uk/datasets/TS007/editions/2021",
               "categories": [
                 {
                   "name": "Aged under 1 year",
@@ -1623,7 +1624,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
+              "data_download": "https://www.ons.gov.uk/datasets/TS007/editions/2021",
               "categories": [
                 {
                   "name": "Aged 4 years and under",
@@ -1726,7 +1727,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
+              "data_download": "https://www.ons.gov.uk/datasets/TS007/editions/2021",
               "categories": [
                 {
                   "name": "Aged 15 years and under",
@@ -1763,7 +1764,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
+              "data_download": "https://www.ons.gov.uk/datasets/TS007/editions/2021",
               "categories": [
                 {
                   "name": "Aged 14 years and under",
@@ -1851,7 +1852,7 @@
                 "lad"
               ],
               "choropleth_default": true,
-              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
+              "data_download": "https://www.nomisweb.co.uk/sources/census_2021_ts",
               "categories": [
                 {
                   "name": "Median age",
@@ -1886,7 +1887,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
+              "data_download": "https://www.ons.gov.uk/datasets/TS008/editions/2021",
               "categories": [
                 {
                   "name": "Female",
@@ -1929,7 +1930,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
+              "data_download": "https://www.ons.gov.uk/datasets/TS018/editions/2021",
               "categories": [
                 {
                   "name": "Born in the UK",
@@ -2090,7 +2091,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
+              "data_download": "https://www.ons.gov.uk/datasets/TS004/editions/2021",
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
@@ -2192,7 +2193,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
+              "data_download": "https://www.ons.gov.uk/datasets/TS004/editions/2021",
               "categories": [
                 {
                   "name": "Born in the UK",
@@ -2220,7 +2221,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
+              "data_download": "https://www.ons.gov.uk/datasets/TS012/editions/2021",
               "categories": [
                 {
                   "name": "Europe: United Kingdom: England",
@@ -2704,7 +2705,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
+              "data_download": "https://www.ons.gov.uk/datasets/TS004/editions/2021",
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
@@ -2786,7 +2787,7 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
+              "data_download": "https://www.ons.gov.uk/datasets/TS019/editions/2021",
               "categories": [
                 {
                   "name": "Address one year ago is the same as the address of enumeration",
@@ -2842,7 +2843,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
+              "data_download": "https://www.ons.gov.uk/datasets/TS005/editions/2021",
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
@@ -2951,7 +2952,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
+              "data_download": "https://www.ons.gov.uk/datasets/TS005/editions/2021",
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
@@ -3101,7 +3102,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
+              "data_download": "https://www.ons.gov.uk/datasets/TS005/editions/2021",
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
@@ -3325,7 +3326,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
+              "data_download": "https://www.ons.gov.uk/datasets/TS005/editions/2021",
               "categories": [
                 {
                   "name": "UK passport",
@@ -3362,7 +3363,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
+              "data_download": "https://www.ons.gov.uk/datasets/TS013/editions/2021",
               "categories": [
                 {
                   "name": "Europe: United Kingdom",
@@ -3797,7 +3798,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
+              "data_download": "https://www.ons.gov.uk/datasets/TS016/editions/2021",
               "categories": [
                 {
                   "name": "Born in the UK",
@@ -3862,7 +3863,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
+              "data_download": "https://www.ons.gov.uk/datasets/TS015/editions/2021",
               "categories": [
                 {
                   "name": "Born in the UK",
@@ -3974,7 +3975,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
+              "data_download": "https://www.ons.gov.uk/datasets/TS015/editions/2021",
               "categories": [
                 {
                   "name": "Born in the UK",
@@ -4031,7 +4032,7 @@
           "name": "Highest level of qualification",
           "code": "highest_qualification",
           "slug": "highest-level-of-qualification",
-          "desc": "The highest level of qualification gained.",
+          "desc": "The highest level of qualification a person has reported.",
           "long_desc": "The highest level of qualification is derived from the question asking people to indicate all qualifications held, or their nearest equivalent.\n\nThis may include foreign qualifications where they were matched to the closest UK equivalent.",
           "units": "Person",
           "topic_code": "EDU",
@@ -4046,12 +4047,13 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
+              "data_download": "https://www.ons.gov.uk/datasets/TS067/editions/2021",
               "categories": [
                 {
                   "name": "No qualifications",
                   "slug": "no-qualifications",
                   "code": "highest_qualification-000",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "no qualifications"
                 },
@@ -4059,49 +4061,49 @@
                   "name": "Level 1 and entry level qualifications: 1 to 4 GCSEs grade A* to C , Any GCSEs at other grades, O levels or CSEs (any grades), 1 AS level, NVQ level 1, Foundation GNVQ, Basic or Essential Skills",
                   "slug": "level-1-and-entry-level-qualifications-1-to-4-gcses-grade-a-to-c-any-gcses-at-other-grades-o-levels-or-cses-any-grades-1-as-level-nvq-level-1-foundation-gnvq-basic-or-essential-skills",
                   "code": "highest_qualification-001",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "level 1 and entry level qualifications"
+                  "legend_str_3": "level 1 and entry level qualifications as their highest level of qualification"
                 },
                 {
                   "name": "Level 2 qualifications: 5 or more GCSEs (A* to C or 9 to 4), O levels (passes), CSEs (grade 1), School Certification, 1 A level, 2 to 3 AS levels, VCEs, Intermediate or Higher Diploma, Welsh Baccalaureate Intermediate Diploma, NVQ level 2, Intermediate GNVQ, City and Guilds Craft, BTEC First or General Diploma, RSA Diploma",
                   "slug": "level-2-qualifications-5-or-more-gcses-a-to-c-or-9-to-4-o-levels-passes-cses-grade-1-school-certification-1-a-level-2-to-3-as-levels-vces-intermediate-or-higher-diploma-welsh-baccalaureate-intermediate-diploma-nvq-level-2-intermediate-gnvq-city-and-guilds-craft-btec-first-or-general-diploma-rsa-diploma",
                   "code": "highest_qualification-002",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "level 2 qualifications"
+                  "legend_str_3": "level 2 qualifications as their highest level of qualification"
                 },
                 {
                   "name": "Apprenticeship",
                   "slug": "apprenticeship",
                   "code": "highest_qualification-003",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "an apprenticeship"
+                  "legend_str_3": "an apprenticeship as their highest level of qualification"
                 },
                 {
                   "name": "Level 3 qualifications: 2 or more A levels or VCEs, 4 or more AS levels, Higher School Certificate, Progression or Advanced Diploma, Welsh Baccalaureate Advance Diploma, NVQ level 3; Advanced GNVQ, City and Guilds Advanced Craft, ONC, OND, BTEC National, RSA Advanced Diploma",
                   "slug": "level-3-qualifications-2-or-more-a-levels-or-vces-4-or-more-as-levels-higher-school-certificate-progression-or-advanced-diploma-welsh-baccalaureate-advance-diploma-nvq-level-3-advanced-gnvq-city-and-guilds-advanced-craft-onc-ond-btec-national-rsa-advanced-diploma",
                   "code": "highest_qualification-004",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "level 3 qualifications"
+                  "legend_str_3": "level 3 qualifications as their highest level of qualification"
                 },
                 {
                   "name": "Level 4 qualifications and above: degree (BA, BSc), higher degree (MA, PhD, PGCE), NVQ level 4 to 5, HNC, HND, RSA Higher Diploma, BTEC Higher level, professional qualifications (for example, teaching, nursing, accountancy)",
                   "slug": "level-4-qualifications-and-above-degree-ba-bsc-higher-degree-ma-phd-pgce-nvq-level-4-to-5-hnc-hnd-rsa-higher-diploma-btec-higher-level-professional-qualifications-for-example-teaching-nursing-accountancy",
                   "code": "highest_qualification-005",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "level 4 qualifications and above"
+                  "legend_str_3": "level 4 qualifications and above as their highest level of qualification"
                 },
                 {
                   "name": "Other: vocational or work-related qualifications, other qualifications achieved in England or Wales, qualifications achieved outside England or Wales (equivalent not stated or unknown)",
                   "slug": "other-vocational-or-work-related-qualifications-other-qualifications-achieved-in-england-or-wales-qualifications-achieved-outside-england-or-wales-equivalent-not-stated-or-unknown",
                   "code": "highest_qualification-006",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "other qualifications"
+                  "legend_str_3": "other qualifications as their highest level of qualification"
                 }
               ]
             },
@@ -4117,12 +4119,13 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "data_download": "https://www.ons.gov.uk/datasets/TS067/editions/2021",
               "categories": [
                 {
                   "name": "No qualifications",
                   "slug": "no-qualifications",
                   "code": "highest_qualification_6a-000",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "no qualifications"
                 },
@@ -4130,33 +4133,33 @@
                   "name": "Highest level of qualification: Level 1, 2 or 3 qualifications",
                   "slug": "highest-level-of-qualification-level-1-2-or-3-qualifications",
                   "code": "highest_qualification_6a-001",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "level 1, 2 or 3 qualifications"
+                  "legend_str_3": "level 1, 2 or 3 qualifications as their highest level of qualification"
                 },
                 {
                   "name": "Highest level of qualification: Apprenticeship",
                   "slug": "highest-level-of-qualification-apprenticeship",
                   "code": "highest_qualification_6a-002",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "an apprenticeship"
+                  "legend_str_3": "an apprenticeship as their highest level of qualification"
                 },
                 {
                   "name": "Highest level of qualification: Level 4 qualifications and above",
                   "slug": "highest-level-of-qualification-level-4-qualifications-and-above",
                   "code": "highest_qualification_6a-003",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "level 4 qualifications and above"
+                  "legend_str_3": "level 4 qualifications and above as their highest level of qualification"
                 },
                 {
                   "name": "Highest level of qualification: Other qualifications",
                   "slug": "highest-level-of-qualification-other-qualifications",
                   "code": "highest_qualification_6a-004",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "other qualifications"
+                  "legend_str_3": "other qualifications as their highest level of qualification"
                 }
               ]
             }
@@ -4182,6 +4185,7 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
+              "data_download": "https://www.ons.gov.uk/datasets/TS068/editions/2021",
               "categories": [
                 {
                   "name": "Student",
@@ -4229,7 +4233,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS029/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS029/editions/2021",
               "categories": [
                 {
                   "name": "Main language is English (English or Welsh in Wales)",
@@ -4285,7 +4289,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS029/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS029/editions/2021",
               "categories": [
                 {
                   "name": "Main language is English (English or Welsh in Wales)",
@@ -4334,7 +4338,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS021/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS021/editions/2021",
               "categories": [
                 {
                   "name": "Asian, Asian British or Asian Welsh: Bangladeshi",
@@ -4502,7 +4506,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS021/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS021/editions/2021",
               "categories": [
                 {
                   "name": "Asian, Asian British or Asian Welsh",
@@ -4568,7 +4572,7 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS025/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS025/editions/2021",
               "categories": [
                 {
                   "name": "All adults in household have English in England, or English or Welsh in Wales as a main language",
@@ -4627,7 +4631,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS023/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS023/editions/2021",
               "categories": [
                 {
                   "name": "One-person household",
@@ -4692,7 +4696,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS026/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS026/editions/2021",
               "categories": [
                 {
                   "name": "One-person household",
@@ -4748,7 +4752,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS026/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS026/editions/2021",
               "categories": [
                 {
                   "name": "All household members have the same main language",
@@ -4791,7 +4795,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS075/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS075/editions/2021",
               "categories": [
                 {
                   "name": "One-person household",
@@ -4850,7 +4854,7 @@
           "code": "main_language_detailed",
           "slug": "main-language-detailed",
           "desc": "People's first or preferred language.",
-          "long_desc": "A person's first or preferred language.\n\nThis shows a detailed breakdown of the responses given in the write-in option \"Other, write in\".",
+          "long_desc": "A person's first or preferred language. \n\nThis breaks down the responses given in the write-in option \"Other, write in (including British Sign Language)\".",
           "units": "Person",
           "topic_code": "EILR",
           "classifications": [
@@ -4862,7 +4866,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS024/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS024/editions/2021",
               "categories": [
                 {
                   "name": "English (English or Welsh in Wales)",
@@ -5627,7 +5631,7 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS024/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS024/editions/2021",
               "categories": [
                 {
                   "name": "English (English or Welsh if in Wales)",
@@ -5830,7 +5834,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS027/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS027/editions/2021",
               "categories": [
                 {
                   "name": "British only identity",
@@ -5974,7 +5978,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS027/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS027/editions/2021",
               "categories": [
                 {
                   "name": "One or more UK identity only",
@@ -6012,7 +6016,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS027/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS027/editions/2021",
               "categories": [
                 {
                   "name": "British only identity",
@@ -6103,7 +6107,7 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS028/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS028/editions/2021",
               "categories": [
                 {
                   "name": "UK identity: British only identity",
@@ -6707,7 +6711,7 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS030/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS030/editions/2021",
               "categories": [
                 {
                   "name": "No religion",
@@ -6805,6 +6809,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "data_download": "https://www.ons.gov.uk/datasets/TS070/editions/2021",
               "categories": [
                 {
                   "name": "Gender identity the same as sex registered at birth",
@@ -6840,6 +6845,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
+              "data_download": "https://www.ons.gov.uk/datasets/TS070/editions/2021",
               "categories": [
                 {
                   "name": "Gender identity the same as sex registered at birth",
@@ -6921,6 +6927,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "data_download": "https://www.ons.gov.uk/datasets/TS077/editions/2021",
               "categories": [
                 {
                   "name": "Straight or Heterosexual",
@@ -6957,6 +6964,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
+              "data_download": "https://www.ons.gov.uk/datasets/TS077/editions/2021",
               "categories": [
                 {
                   "name": "Straight or Heterosexual",
@@ -7008,6 +7016,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
+              "data_download": "https://www.ons.gov.uk/datasets/TS079/editions/2021",
               "categories": [
                 {
                   "name": "Straight or Heterosexual",
@@ -7096,7 +7105,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS032/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS032/editions/2021",
               "categories": [
                 {
                   "name": "Can understand spoken Welsh only",
@@ -7184,7 +7193,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS032/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS032/editions/2021",
               "categories": [
                 {
                   "name": "Can understand spoken Welsh only",
@@ -7222,7 +7231,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS032/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS032/editions/2021",
               "categories": [
                 {
                   "name": "Can understand spoken Welsh only",
@@ -7289,7 +7298,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS033/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS033/editions/2021",
               "categories": [
                 {
                   "name": "Cannot speak Welsh",
@@ -7337,6 +7346,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
+              "data_download": "https://www.ons.gov.uk/datasets/TS044/editions/2021",
               "categories": [
                 {
                   "name": "Detached",
@@ -7416,6 +7426,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "data_download": "https://www.ons.gov.uk/datasets/TS044/editions/2021",
               "categories": [
                 {
                   "name": "Whole house or bungalow",
@@ -7453,6 +7464,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
+              "data_download": "https://www.ons.gov.uk/datasets/TS044/editions/2021",
               "categories": [
                 {
                   "name": "Whole house or bungalow: Detached",
@@ -7518,6 +7530,7 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
+              "data_download": "https://www.ons.gov.uk/datasets/TS056/editions/2021",
               "categories": [
                 {
                   "name": "No second address",
@@ -7566,6 +7579,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
+              "data_download": "https://www.ons.gov.uk/datasets/TS046/editions/2021",
               "categories": [
                 {
                   "name": "No central heating",
@@ -7677,6 +7691,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "data_download": "https://www.ons.gov.uk/datasets/TS046/editions/2021",
               "categories": [
                 {
                   "name": "Does not have central heating",
@@ -7719,6 +7734,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "data_download": "https://www.ons.gov.uk/datasets/TS054/editions/2021",
               "categories": [
                 {
                   "name": "Owned: Owns outright",
@@ -7764,6 +7780,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
+              "data_download": "https://www.ons.gov.uk/datasets/TS054/editions/2021",
               "categories": [
                 {
                   "name": "Owned: Owns outright",
@@ -7854,6 +7871,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "data_download": "https://www.ons.gov.uk/datasets/TS050/editions/2021",
               "categories": [
                 {
                   "name": "1 bedroom",
@@ -7912,6 +7930,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "data_download": "https://www.ons.gov.uk/datasets/TS045/editions/2021",
               "categories": [
                 {
                   "name": "No cars or vans in household",
@@ -7941,6 +7960,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
+              "data_download": "https://www.ons.gov.uk/datasets/TS045/editions/2021",
               "categories": [
                 {
                   "name": "No cars or vans in household",
@@ -7998,6 +8018,7 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
+              "data_download": "https://www.ons.gov.uk/datasets/TS052/editions/2021",
               "categories": [
                 {
                   "name": "Occupancy rating of bedrooms: +2 or more",
@@ -8063,6 +8084,7 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
+              "data_download": "https://www.ons.gov.uk/datasets/TS053/editions/2021",
               "categories": [
                 {
                   "name": "Occupancy rating of rooms: +2 or more",
@@ -8128,6 +8150,7 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
+              "data_download": "https://www.ons.gov.uk/datasets/TS055/editions/2021",
               "categories": [
                 {
                   "name": "Armed forces base address",
@@ -8223,6 +8246,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "data_download": "https://www.ons.gov.uk/datasets/TS038/editions/2021",
               "categories": [
                 {
                   "name": "Disabled under the Equality Act: Day-to-day activities limited a lot",
@@ -8271,6 +8295,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
+              "data_download": "https://www.ons.gov.uk/datasets/TS037/editions/2021",
               "categories": [
                 {
                   "name": "Very good health",
@@ -8400,7 +8425,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS066/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS066/editions/2021",
               "categories": [
                 {
                   "name": "Economically active (excluding full-time students): In employment",
@@ -8487,7 +8512,7 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS066/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS066/editions/2021",
               "categories": [
                 {
                   "name": "Economically active",
@@ -8518,7 +8543,7 @@
               ],
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS066/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS066/editions/2021",
               "categories": [
                 {
                   "name": "Economically active: In employment (including full-time students)",
@@ -8571,7 +8596,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.nomisweb.co.uk/datasets/c2021ts065",
+              "data_download": "https://www.ons.gov.uk/datasets/TS065/editions/2021",
               "categories": [
                 {
                   "name": "Not in employment: Worked in the last 12 months",
@@ -8622,7 +8647,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS059/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS059/editions/2021",
               "categories": [
                 {
                   "name": "Part-time: 15 hours or less worked",
@@ -8670,7 +8695,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS059/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS059/editions/2021",
               "categories": [
                 {
                   "name": "Part-time: 30 hours or less worked",
@@ -8713,7 +8738,7 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS060/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS060/editions/2021",
               "categories": [
                 {
                   "name": "01 Crop and animal production, hunting and related service activities",
@@ -9437,7 +9462,7 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS062/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS062/editions/2021",
               "categories": [
                 {
                   "name": "L1, L2 and L3: Higher managerial, administrative and professional occupations",
@@ -9536,7 +9561,7 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS063/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS063/editions/2021",
               "categories": [
                 {
                   "name": "1. Managers, directors and senior officials",
@@ -9635,7 +9660,7 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS061/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS061/editions/2021",
               "categories": [
                 {
                   "name": "Work mainly at or from home",
@@ -9749,7 +9774,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS058/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS058/editions/2021",
               "categories": [
                 {
                   "name": "Less than 2km",
@@ -9844,7 +9869,7 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS058/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS058/editions/2021",
               "categories": [
                 {
                   "name": "Less than 10km",
@@ -9889,7 +9914,7 @@
                 "lad"
               ],
               "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS058/editions/2021/versions/1",
+              "data_download": "https://www.ons.gov.uk/datasets/TS058/editions/2021",
               "categories": [
                 {
                   "name": "Less than 10km",

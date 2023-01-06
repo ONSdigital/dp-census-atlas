@@ -19,7 +19,7 @@ hh_multi_language,Whether there are multiple languages in a household.
 hh_multi_religion,Whether there are multiple religions in a household.
 hh_size,The number of people in a household.
 hh_tenure,Whether a household owns or rents.
-highest_qualification,The highest level of qualification gained.
+highest_qualification,The highest level of qualification a person has reported.
 hours_per_week_worked,The number of hours people work per week.
 industry_current,The industry people work in.
 is_carer,People who are unpaid carers.

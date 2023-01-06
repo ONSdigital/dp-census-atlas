@@ -27,6 +27,10 @@ type M struct {
 	// map geocodes to their row in tab
 	geoidx map[types.Geocode]int
 
+	// map cat names to cat codes
+	doCatNameMatching bool
+	namesToCats       map[string]string
+
 	// map categories to their col in tab
 	catidx map[types.Category]int
 
@@ -86,7 +90,7 @@ func New(cats []types.Category, withTots bool) (*M, error) {
 	}, nil
 }
 
-func (m *M) LoadAll(dir, except string) error {
+func (m *M) LoadAll(dir, except string, doCatNameMatching bool, namesToCats map[string]string) error {
 	fnames, err := filepath.Glob(filepath.Join(dir, "*.[cC][sS][vV]"))
 	if err != nil {
 		return err
@@ -99,22 +103,22 @@ func (m *M) LoadAll(dir, except string) error {
 			continue
 		}
 		log.Printf("Loading %s", fname)
-		if err := m.Load(fname); err != nil {
+		if err := m.Load(fname, doCatNameMatching, namesToCats); err != nil {
 			return err
 		}
 	}
 	return nil
 }
 
-func (m *M) Load(fname string) error {
+func (m *M) Load(fname string, doCatNameMatching bool, namesToCats map[string]string) error {
 	records, err := LoadCSV(fname)
 	if err != nil {
 		return err
 	}
-	return m.ImportCSV(fname, records)
+	return m.ImportCSV(fname, records, doCatNameMatching, namesToCats)
 }
 
-func (m *M) ImportCSV(fname string, records [][]string) error {
+func (m *M) ImportCSV(fname string, records [][]string, doCatNameMatching bool, namesToCats map[string]string) error {
 	var imported int
 
 	if len(records) < 2 {
@@ -129,10 +133,23 @@ func (m *M) ImportCSV(fname string, records [][]string) error {
 	}
 	log.Printf("%d data rows in CSV\n", len(records)-1)
 
-	for csvcol, catcode := range records[0] {
+	for csvcol, colname := range records[0] {
 		if csvcol == 0 {
 			continue // skip GeographyCode column
 		}
+
+		var catcode string
+		var ok bool
+		if doCatNameMatching {
+			catcode, ok = namesToCats[colname]
+			if !ok {
+				log.Printf("ignoring CSV col %q\n", colname)
+				continue // this category not wanted
+			}
+		} else {
+			catcode = colname
+		}
+
 		tabcol, ok := m.catidx[types.Category(catcode)]
 		if !ok {
 			tabcol, ok = m.totidx[types.Category(catcode)]

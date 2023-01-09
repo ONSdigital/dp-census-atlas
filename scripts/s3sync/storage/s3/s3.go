@@ -4,6 +4,7 @@ import (
 	"errors"
 	"io"
 	"path"
+	"strings"
 
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/session"
@@ -28,6 +29,16 @@ func New(bucket, prefix string) (*S3, error) {
 	if err != nil {
 		return nil, err
 	}
+
+	// ensure prefix is in a state where it can be path-joined to names
+	// to form object keys
+	prefix = path.Clean(prefix)
+	prefix = strings.TrimPrefix(prefix, "/")
+	if prefix == "." {
+		prefix = ""
+	}
+	prefix = storage.Normalise(prefix)
+
 	return &S3{
 		s3:         awss3.New(sess),
 		uploader:   s3manager.NewUploader(sess),
@@ -41,15 +52,27 @@ func New(bucket, prefix string) (*S3, error) {
 func (s *S3) Scan() (map[string]*storage.FileInfo, error) {
 	infos := make(map[string]*storage.FileInfo)
 
+	// When a prefix is included in an S3 list objects request, objects which do
+	// not have that prefix are not returned.
+	// But the object keys that _are_ returned include the prefix.
+	// So we need to strip the prefix when we are generating our list of objects.
+	// The prefix will be restored in any S3 API calls.
+	prefix := s.prefix
+	if prefix != "" {
+		prefix += "/"
+	}
+
 	in := &awss3.ListObjectsV2Input{
 		Bucket: &s.bucket,
-		Prefix: &s.prefix,
+		Prefix: &prefix,
 	}
+
 	fcn := func(page *awss3.ListObjectsV2Output, lastPage bool) bool {
 		for _, obj := range page.Contents {
-			path := *obj.Key
+			path := storage.Normalise(*obj.Key)
+			path = strings.TrimPrefix(path, prefix)
 			infos[storage.PathToKey(path)] = &storage.FileInfo{
-				Name: storage.Normalise(path),
+				Name: path,
 			}
 		}
 		return true

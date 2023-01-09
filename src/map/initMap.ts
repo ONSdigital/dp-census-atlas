@@ -3,7 +3,7 @@ import { page } from "$app/stores";
 import mapboxgl, { GeoJSONSource, Map } from "mapbox-gl";
 import { combineLatest, fromEvent, merge } from "rxjs";
 import { throttleTime } from "rxjs/operators";
-import { type GeoType, type GeographyInfo, type Classification, GeoTypes } from "../types";
+import type { GeoType, GeographyInfo, Classification } from "../types";
 import { params } from "../stores/params";
 import { geography } from "../stores/geography";
 import { englandAndWalesBbox } from "../helpers/geographyHelper";

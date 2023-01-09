@@ -15,7 +15,7 @@ export const layers = [
   {
     name: "msoa" as GeoType,
     urlTemplate: "https://cdn.ons.gov.uk/maptiles/administrative/2021/msoa/v2/boundaries/{z}/{x}/{y}.pbf",
-    minZoom: 6,
+    minZoom: 8,
     defaultZoom: 9.5,
     sourceMaxZoom: 12,
     geoPadFactor: 5,
@@ -26,8 +26,8 @@ export const layers = [
   {
     name: "oa" as GeoType,
     urlTemplate: "https://cdn.ons.gov.uk/maptiles/administrative/2021/oa/v2/boundaries/{z}/{x}/{y}.pbf",
-    minZoom: 8,
-    defaultZoom: 10,
+    minZoom: 10,
+    defaultZoom: 11,
     sourceMaxZoom: 12,
     geoPadFactor: 3,
     idProperty: "areacd",

@@ -1,5 +1,5 @@
 import { isNumeric } from "../util/numberUtil";
-import { GeoTypes, type NumberQuadruple } from "../types";
+import { GeoTypes, type GeoType, type NumberQuadruple } from "../types";
 
 export const getEmbedCode = (url: URL, embedParams: EmbedUrlParams) => {
   const params = new URLSearchParams({

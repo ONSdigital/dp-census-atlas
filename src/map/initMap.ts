@@ -3,7 +3,7 @@ import { page } from "$app/stores";
 import mapboxgl, { GeoJSONSource, Map } from "mapbox-gl";
 import { combineLatest, fromEvent, merge } from "rxjs";
 import { throttleTime } from "rxjs/operators";
-import type { GeoType, GeographyInfo, Classification } from "../types";
+import { type GeoType, type GeographyInfo, type Classification, GeoTypes } from "../types";
 import { params } from "../stores/params";
 import { geography } from "../stores/geography";
 import { englandAndWalesBbox } from "../helpers/geographyHelper";
@@ -60,7 +60,7 @@ export const initMap = (container: HTMLElement) => {
       throttleTime(1000, undefined, { leading: false, trailing: true }), // don't discard the final movement
     )
     .subscribe(([_, $params]) => {
-      setViewportStoreAndLayerVisibility(map, $params.classification);
+      setViewportStoreAndLayerVisibility(map, $params.classification, $params?.geoLock);
     });
 
   if (interactive) {
@@ -75,10 +75,19 @@ export const initMap = (container: HTMLElement) => {
   return map;
 };
 
-const setViewportStoreAndLayerVisibility = (map: mapboxgl.Map, classification: Classification) => {
+const setViewportStoreAndLayerVisibility = (
+  map: mapboxgl.Map,
+  classification: Classification,
+  geoLock: GeoType | undefined,
+) => {
   const b = map.getBounds();
   const bbox = { east: b.getEast(), north: b.getNorth(), west: b.getWest(), south: b.getSouth() };
-  const geoType = getGeoType(map, classification);
+  let geoType;
+  if (geoLock) {
+    geoType = { actual: geoLock, ideal: geoLock };
+  } else {
+    geoType = getGeoType(map, classification);
+  }
 
   setMapLayerVisibility(map, geoType.actual);
 

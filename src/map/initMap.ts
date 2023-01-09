@@ -64,7 +64,7 @@ export const initMap = (container: HTMLElement) => {
     commands.subscribe((command) => listenToCommandStore(map, command));
   });
 
-  // when the map loads or moves, or then when the selecion changes, emit an event at most once per second
+  // when the map loads or moves, or then when the selection changes, emit an event at most once per second
   combineLatest([merge(fromEvent(map, "load"), fromEvent(map, "move")), toObservable(params)])
     .pipe(
       throttleTime(1000, undefined, { leading: false, trailing: true }), // don't discard the final movement

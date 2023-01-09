@@ -1,6 +1,7 @@
 <script lang="ts">
   import { page } from "$app/stores";
   import { params } from "../stores/params";
+  import { nav } from "../stores/nav";
   import { gotoUrl } from "../helpers/navigationHelper";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
   import CategoryPageLinks from "./CategoryPageLinks.svelte";
@@ -11,7 +12,7 @@
   import CaveatWarning from "./CaveatWarning.svelte";
 </script>
 
-<div class="h-full flex flex-col">
+<div class="grow flex flex-col">
   <div class="px-6 border-t-[1px] border-t-ons-grey-15">
     <AreaPanel />
     <section class="mb-8">
@@ -53,6 +54,7 @@
                     category: category.slug,
                   },
                 });
+                nav.set({ open: false });
                 gotoUrl(link);
               }}
               class="flex gap-2 items-center p-2 border-t-[1px] border-t-slate-300 cursor-pointer custom-ring"

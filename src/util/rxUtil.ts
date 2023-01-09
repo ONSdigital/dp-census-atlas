@@ -17,3 +17,20 @@ export function toObservable<T>(store: Readable<T>) {
     return store.subscribe((value: T) => observer.next(value));
   });
 }
+
+/** https://github.com/olegmingaleev/rxjs-web-observers/blob/main/src/lib/from-resize.ts */
+export const fromResizeObserver = (
+  target: Element,
+  options?: ResizeObserverOptions,
+): Observable<ReadonlyArray<ResizeObserverEntry>> =>
+  new Observable((observer) => {
+    const resizeObserver = new ResizeObserver((entries) => {
+      observer.next(entries);
+    });
+
+    resizeObserver.observe(target, options);
+
+    return () => {
+      resizeObserver.disconnect();
+    };
+  });

@@ -39,6 +39,7 @@ func (s *Syncer) Sync() error {
 		return err
 	}
 	s.srcfiles = srcfiles
+	log.Printf("\tfound %d files\n", len(srcfiles))
 
 	log.Println("Scanning files in dst")
 	dstfiles, err := s.dst.Scan()
@@ -46,6 +47,7 @@ func (s *Syncer) Sync() error {
 		return err
 	}
 	s.dstfiles = dstfiles
+	log.Printf("\tfound %d files\n", len(dstfiles))
 
 	log.Println("Comparing checksums")
 	if err := s.diff(); err != nil {

@@ -43,6 +43,11 @@ export const initMap = (container: HTMLElement) => {
 
   map.touchZoomRotate.disableRotation();
 
+  if (get(params)?.geoLock) {
+    const minZoomForGeoLock = layers.find((l) => l.name === get(params).geoLock).minZoom;
+    map.setMinZoom(minZoomForGeoLock);
+  }
+
   if (interactive) {
     map.addControl(new mapboxgl.NavigationControl({ showCompass: false }));
   }

@@ -57,19 +57,28 @@ func CLI(args []string, new NewSyncer) int {
 func Run(args []string, new NewSyncer) error {
 	fs := flag.NewFlagSet("s3sync", flag.ContinueOnError)
 	dryrun := fs.Bool("n", false, "dryrun")
-	src := fs.String("i", "", "source directory or bucket:[prefix]")
-	dst := fs.String("o", "", "dest directory or bucket:[prefix]")
+	fs.Usage = func() {
+		fmt.Fprintf(fs.Output(), "Usage: %s [flags] <src> <dst>\n", os.Args[0])
+		fmt.Fprintf(fs.Output(), "where: src and dst are either local directories or <bucket>:[prefix]\n")
+		fs.PrintDefaults()
+	}
 	if err := fs.Parse(args); err != nil {
 		return err
 	}
-	if *src == "" {
+
+	src := fs.Arg(0)
+	if src == "" {
+		fs.Usage()
 		return errors.New("source required")
 	}
-	if *dst == "" {
+
+	dst := fs.Arg(1)
+	if dst == "" {
+		fs.Usage()
 		return errors.New("dest required")
 	}
 
-	syncer, err := new(*src, *dst, *dryrun)
+	syncer, err := new(src, dst, *dryrun)
 	if err != nil {
 		return err
 	}

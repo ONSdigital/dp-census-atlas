@@ -6,7 +6,6 @@
   import { params } from "../stores/params";
   import { viewport } from "../stores/viewport";
   import { commands } from "../stores/commands";
-  import { nav } from "../stores/nav";
 
   const geoTypes = GeoTypes.filter((g) => g !== "ew");
 </script>
@@ -83,11 +82,5 @@
         <AreaSearch embedded />
       </div>
     {/if}
-    <!-- <button
-      class="bg-ons-census-secondary text-white"
-      on:click={() => {
-        nav.set({ open: true, peek: false });
-      }}>burger</button
-    > -->
   </div>
 {/if}

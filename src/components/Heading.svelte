@@ -1,6 +1,4 @@
 <script lang="ts">
-  import Icon from "./MaterialIcon.svelte";
-  import { nav } from "../stores/nav";
 </script>
 
 <div class="px-6 py-5 bg-ons-ocean-blue text-ons-grey-5">
@@ -9,9 +7,6 @@
     <div class="flex-grow ">
       <span class="px-2 bg-ons-black text-ons-grey-5 font-bold">ALPHA</span>
     </div>
-    <!-- <div class="">
-      {$nav.open}
-    </div> -->
   </div>
   <div class="mt-2">Use our maps to find out what people's lives were like across England and Wales in March 2021.</div>
 </div>

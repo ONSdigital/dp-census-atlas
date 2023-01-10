@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { params } from "../stores/params";
   import EmbedThis from "./EmbedThis.svelte";
   import Icon from "./MaterialIcon.svelte";
   // ToDo revert this if / when the indiviudal datasets become available again!
@@ -21,8 +22,10 @@
         <div>Download data</div>
       </a>
     {/if}
-    <div class="">
-      <EmbedThis />
-    </div>
+    {#if !$params.embed}
+      <div class="">
+        <EmbedThis />
+      </div>
+    {/if}
   </div>
 </section>

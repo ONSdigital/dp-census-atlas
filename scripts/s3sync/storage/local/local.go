@@ -78,7 +78,8 @@ func (l *Local) Create(name string, r io.Reader, checksum string) error {
 		return err
 	}
 
-	w, err := os.Create(path)
+	tmp := path + ".sync.tmp"
+	w, err := os.Create(tmp)
 	if err != nil {
 		return err
 	}
@@ -87,7 +88,11 @@ func (l *Local) Create(name string, r io.Reader, checksum string) error {
 		w.Close()
 		return err
 	}
-	return w.Close()
+	if err := w.Close(); err != nil {
+		return err
+	}
+
+	return os.Rename(tmp, path)
 }
 
 // Open opens name and returns a ReadCloser.

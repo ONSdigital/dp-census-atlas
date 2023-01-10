@@ -8,5 +8,7 @@
       <span class="px-2 bg-ons-black text-ons-grey-5 font-bold">ALPHA</span>
     </div>
   </div>
-  <div class="mt-2">Use our maps to find out what people's lives were like across England and Wales in March 2021.</div>
+  <div class="hidden xs:block mt-2">
+    Use our maps to find out what people's lives were like across England and Wales in March 2021.
+  </div>
 </div>

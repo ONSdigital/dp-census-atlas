@@ -9,7 +9,7 @@
 
 <section class="">
   <h2 class="mb-2 text-md font-semibold md:text-lg ">Use and share</h2>
-  <div class="flex items-center gap-6">
+  <div class="flex items-center gap-x-6 gap-y-1 flex-wrap ">
     {#if dataDownloadUrl}
       <a
         href={dataDownloadUrl}

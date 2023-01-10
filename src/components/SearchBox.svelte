@@ -52,11 +52,11 @@
                 variableGroup: vg.slug,
               })}
             >
-              <div class="flex items-center gap-2">
-                <Badge className="bg-slate-500">TOPIC</Badge>
-                <div class="text-xl">{@html highlightText(vg.name, val)}</div>
-              </div>
               <div class="">
+                <Badge className="bg-slate-500 inline mr-1">TOPIC</Badge>
+                <div class="text-lg inline">{@html highlightText(vg.name, val)}</div>
+              </div>
+              <div class="mt-0.5">
                 {@html highlightText(vg.desc, val)}
               </div>
             </SearchBoxItem>
@@ -72,11 +72,11 @@
                 },
               })}
             >
-              <div class="flex items-center gap-2">
-                <Badge className="bg-slate-500">VARIABLE</Badge>
-                <div class="text-xl">{@html highlightText(v.variable.name, val)}</div>
-              </div>
               <div class="">
+                <Badge className="bg-slate-500 inline mr-1">VARIABLE</Badge>
+                <div class="text-lg inline">{@html highlightText(v.variable.name, val)}</div>
+              </div>
+              <div class="mt-0.5">
                 {@html highlightText(v.variable.desc, val)}
               </div>
             </SearchBoxItem>
@@ -92,11 +92,11 @@
                 },
               })}
             >
-              <div class="flex items-center gap-2">
-                <Badge className="bg-slate-500">CATEGORY</Badge>
-                <div class="text-xl">{@html highlightText(c.category.name, val)}</div>
-              </div>
               <div class="">
+                <Badge className="bg-slate-500 inline mr-1">CATEGORY</Badge>
+                <div class="text-lg inline">{@html highlightText(c.category.name, val)}</div>
+              </div>
+              <div class="mt-0.5">
                 in variable {c.variable.variable.name}
               </div>
             </SearchBoxItem>

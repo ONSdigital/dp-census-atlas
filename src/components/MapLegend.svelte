@@ -52,12 +52,12 @@
               >{getClassificationDataSuffix($viz.params.classification.code)}</span
             >
           </div>
-          <div class="flex-grow leading-[0px]">
-            <div class="">
-              <span class="xs:hidden font-bold">
+          <div class="flex-grow md:leading-[0px]">
+            <div class="mb-0.5 xs:mb-0 inline xs:block">
+              <span class="xs:hidden font-bold text-2xl leading-6 sm:leading-normal mr-0.5">
                 <span class="">
                   {roundedClassificationDataToString($viz.params.classification.code, active.value)}</span
-                ><span class="text-sm">{getClassificationDataSuffix($viz.params.classification.code)}</span>
+                ><span class="text-base">{getClassificationDataSuffix($viz.params.classification.code)}</span>
               </span>
               <span class={legendTextClass}>
                 {formatTemplateString(
@@ -80,7 +80,7 @@
             {#if $viz?.params?.embed?.categorySelection}
               <CategorySelector selected={$viz.params.category.slug} use="legendString" />
             {:else}
-              <div class={`${legendTextClass} font-bold`}>
+              <div class={`${legendTextClass} font-bold inline xs:block`}>
                 {formatTemplateString(
                   $viz.params.variable,
                   $viz.params.category,

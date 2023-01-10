@@ -4,7 +4,7 @@ import { bboxToDataTiles } from "../helpers/spatialHelper";
 import { uniqueRoundedClassificationBreaks } from "../helpers/classificationHelpers";
 
 const geoBaseUrl = "https://cdn.ons.gov.uk/maptiles/cm-geos/v2";
-const changeOverTimeBaseUrl = "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison";
+const changeOverTimeBaseUrl = "https://ons-dp-sandbox-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com";
 
 /*
   Fetch place data files for all data 'tiles' (predefined coordinate grid squares) that intersect with current viewport

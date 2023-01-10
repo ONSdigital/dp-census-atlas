@@ -53,10 +53,10 @@ pushd output_content_jsons
         && mv "$zipname" ..
 popd
 
-# HUC goes in the censusmapsconfighuc visualisation
-echo "Zipping HUC for censusmapsconfigedu visualisation"
+# HUC goes in the censusmapsconfighuc2 visualisation
+echo "Zipping HUC for censusmapsconfighuc2 visualisation"
 pushd output_content_jsons
-    zipname="censusmapsconfighuc-${created_at}.zip"
+    zipname="censusmapsconfighuc2-${created_at}.zip"
     zip "$zipname" \
         2021-HUC.json \
         && mv "$zipname" ..

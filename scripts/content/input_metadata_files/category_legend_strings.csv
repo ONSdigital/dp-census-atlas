@@ -399,7 +399,7 @@ Identity,2021-SOGI,Gender identity,gender_identity_8a,gender_identity_8a-005,{PE
 Identity,2021-SOGI,Gender identity,gender_identity_8a,gender_identity_8a-006,{PERCENTAGE}%,of people aged 16 years and over in {location},have,another gender identity
 Identity,2021-SOGI,Gender identity,gender_identity_8a,gender_identity_8a-007,{PERCENTAGE}%,of people aged 16 years and over in {location},did,not answer
 Identity,2021-SOGI,Sexual orientation,sexual_orientation_4a,sexual_orientation_4a-001,{PERCENTAGE}%,of people aged 16 years and over in {location},are,straight or heterosexual
-Identity,2021-SOGI,Sexual orientation,sexual_orientation_4a,sexual_orientation_4a-002,{PERCENTAGE}%,of people aged 16 years and over in {location},are,"lesbian, gay, bisexual, or other (LGBO)"
+Identity,2021-SOGI,Sexual orientation,sexual_orientation_4a,sexual_orientation_4a-002,{PERCENTAGE}%,of people aged 16 years and over in {location},are,"lesbian, gay, bisexual, or other (LGB+)"
 Identity,2021-SOGI,Sexual orientation,sexual_orientation_4a,sexual_orientation_4a-003,{PERCENTAGE}%,of people aged 16 years and over in {location},did,not answer
 Identity,2021-SOGI,Sexual orientation,sexual_orientation_6a,sexual_orientation_6a-001,{PERCENTAGE}%,of people aged 16 years and over in {location},are,straight or heterosexual
 Identity,2021-SOGI,Sexual orientation,sexual_orientation_6a,sexual_orientation_6a-002,{PERCENTAGE}%,of people aged 16 years and over in {location},are,gay or lesbian

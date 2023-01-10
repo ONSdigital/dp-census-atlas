@@ -13,11 +13,11 @@
 </script>
 
 <div class="grow flex flex-col">
-  <div class="px-6 border-t-[1px] border-t-ons-grey-15">
+  <div class="px-6">
     <AreaPanel />
     <section class="mb-8">
       <h2 class="pt-3 font-bold text-slate-500">Topic</h2>
-      <nav class="flex flex-wrap items-center gap-2 text-xl leading-6 md:leading-normal" aria-label="Breadcrumb">
+      <nav class="flex flex-wrap items-center gap-2 text-xl" aria-label="Breadcrumb">
         <a class="hyperlink" href={buildHyperlink($page.url)}>Home</a>
         <div class="text-sm font-extrabold text-ons-grey-75 select-none" aria-hidden>&gt;</div>
         <a class="hyperlink" href={buildHyperlink($page.url, { variableGroup: $params.variableGroup.slug })}

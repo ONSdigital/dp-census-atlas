@@ -44,8 +44,13 @@ export const initMap = (container: HTMLElement) => {
   map.touchZoomRotate.disableRotation();
 
   if (get(params)?.geoLock) {
-    const minZoomForGeoLock = layers.find((l) => l.name === get(params).geoLock).minZoom;
-    map.setMinZoom(minZoomForGeoLock);
+    if (get(params).geoLock === "oa") {
+      // 9 seems a sensible compromise min zoom for urban and rural areas when OA is geolocked
+      map.setMinZoom(9);
+    } else {
+      const minZoomForGeoLock = layers.find((l) => l.name === get(params).geoLock).minZoom;
+      map.setMinZoom(minZoomForGeoLock);
+    }
   }
 
   if (interactive) {

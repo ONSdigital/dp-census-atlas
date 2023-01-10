@@ -2,6 +2,7 @@
   import { params } from "../stores/params";
   import { nav } from "../stores/nav";
   import Header from "./Header.svelte";
+  import EmbeddedHeader from "./EmbeddedHeader.svelte";
   import Map from "./Map.svelte";
   import MapControls from "./MapControls.svelte";
   import MapTips from "./MapTips.svelte";
@@ -42,6 +43,7 @@
       } lg:translate-x-0 ${!$params.category ? "right-0 sm:right-0 md:right-0" : ""}`}
     >
       <div class="grow flex flex-col overflow-y-auto bg-ons-white">
+        <EmbeddedHeader />
         <Heading />
         <slot />
       </div>

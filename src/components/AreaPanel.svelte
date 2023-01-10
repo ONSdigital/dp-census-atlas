@@ -1,10 +1,9 @@
 <script lang="ts">
   import { page } from "$app/stores";
   import { geography } from "../stores/geography";
-  import GeoSearch from "./AreaSearch.svelte";
+  import AreaSearch from "./AreaSearch.svelte";
   import Icon from "./MaterialIcon.svelte";
   import { deselectGeography } from "../helpers/navigationHelper";
-  import GeoTypeBadge from "./GeoTypeBadge.svelte";
   import { geoTypeSingularDescriptions } from "../helpers/geographyHelper";
 
   $: open = false;
@@ -54,6 +53,10 @@
   </label>
 
   <div class="mt-3 mb-1" style:display={open ? "block" : "none"}>
-    <GeoSearch />
+    <AreaSearch
+      onSelected={() => {
+        open = false;
+      }}
+    />
   </div>
 </section>

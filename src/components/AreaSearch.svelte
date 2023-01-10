@@ -6,6 +6,7 @@
   import type { GeographySearchItem, PostcodeSearchItem } from "../types";
 
   export let embedded = false;
+  export let onSelected: (() => void) | undefined;
 
   async function handleSelect(event) {
     if (event?.detail?.kind === "Geography") {
@@ -14,6 +15,9 @@
     } else if (event?.detail?.kind === "Postcode") {
       const postcode = event.detail as PostcodeSearchItem;
       selectGeography($page.url.searchParams, { geoType: "oa", geoCode: postcode.oa });
+    }
+    if (onSelected) {
+      onSelected();
     }
   }
 </script>

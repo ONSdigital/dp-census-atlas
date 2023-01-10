@@ -10,10 +10,15 @@
 
 <section class="">
   <h2 class="mb-2 text-md font-semibold md:text-lg ">Use and share</h2>
-  <div class="flex items-center gap-x-6 gap-y-1 flex-wrap ">
+  <div class="flex items-center gap-x-6 gap-y-2 flex-wrap ">
     <div>
       <Share />
     </div>
+    {#if !$params.embed}
+      <div class="hidden md:block">
+        <EmbedThis />
+      </div>
+    {/if}
     {#if dataDownloadUrl}
       <a
         href={dataDownloadUrl}
@@ -25,11 +30,6 @@
         </div>
         <div>Download data</div>
       </a>
-    {/if}
-    {#if !$params.embed}
-      <div class="hidden md:block">
-        <EmbedThis />
-      </div>
     {/if}
   </div>
 </section>

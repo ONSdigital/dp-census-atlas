@@ -20,14 +20,16 @@ type Syncer struct {
 	srcfiles map[string]*storage.FileInfo
 	dstfiles map[string]*storage.FileInfo
 	dryrun   bool
+	nodelete bool
 }
 
 // New returns a new Syncer which can sync from src to dst.
-func New(src, dst storage.Filer, dryrun bool) (*Syncer, error) {
+func New(src, dst storage.Filer, dryrun, nodelete bool) (*Syncer, error) {
 	return &Syncer{
-		src:    src,
-		dst:    dst,
-		dryrun: dryrun,
+		src:      src,
+		dst:      dst,
+		dryrun:   dryrun,
+		nodelete: nodelete,
 	}, nil
 }
 
@@ -64,9 +66,11 @@ func (s *Syncer) Sync() error {
 		return err
 	}
 
-	log.Printf("Removing deleted files from dst")
-	if err := s.delete(); err != nil {
-		return err
+	if !s.nodelete {
+		log.Printf("Removing deleted files from dst")
+		if err := s.delete(); err != nil {
+			return err
+		}
 	}
 	return nil
 }

@@ -17,9 +17,9 @@ type Syncer interface {
 	Sync() error
 }
 
-type NewSyncer func(src, dst string, dryrun bool) (Syncer, error)
+type NewSyncer func(src, dst string, dryrun, nodelete bool) (Syncer, error)
 
-func New(srcdir, dstdir string, dryrun bool) (Syncer, error) {
+func New(srcdir, dstdir string, dryrun, nodelete bool) (Syncer, error) {
 	src, err := newFiler(srcdir)
 	if err != nil {
 		return nil, err
@@ -30,7 +30,7 @@ func New(srcdir, dstdir string, dryrun bool) (Syncer, error) {
 		return nil, err
 	}
 
-	return sync.New(src, dst, dryrun)
+	return sync.New(src, dst, dryrun, nodelete)
 }
 
 // newFiler returns either a local or s3 Filer depending on whether s contains a colon.
@@ -57,6 +57,7 @@ func CLI(args []string, new NewSyncer) int {
 func Run(args []string, new NewSyncer) error {
 	fs := flag.NewFlagSet("s3sync", flag.ContinueOnError)
 	dryrun := fs.Bool("n", false, "dryrun")
+	nodelete := fs.Bool("D", false, "do not delete files on destination")
 	fs.Usage = func() {
 		fmt.Fprintf(fs.Output(), "Usage: %s [flags] <src> <dst>\n", os.Args[0])
 		fmt.Fprintf(fs.Output(), "where: src and dst are either local directories or <bucket>:[prefix]\n")
@@ -78,7 +79,7 @@ func Run(args []string, new NewSyncer) error {
 		return errors.New("dest required")
 	}
 
-	syncer, err := new(src, dst, *dryrun)
+	syncer, err := new(src, dst, *dryrun, *nodelete)
 	if err != nil {
 		return err
 	}

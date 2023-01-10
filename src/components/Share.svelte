@@ -19,8 +19,8 @@
         await navigator.clipboard.writeText(url);
         complete = true;
       }
-    } catch (error) {
-      console.log(error);
+    } catch (e) {
+      console.error(e);
     }
   }
 </script>

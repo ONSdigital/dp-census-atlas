@@ -1,9 +1,9 @@
 variable_group,content_json,variable,caveat_text,caveat_link
 Education,2021-EDU,highest_qualification,,
 Education,2021-EDU,in_full_time_education,,
-Health,2021-HUC,disability,,
-Health,2021-HUC,health_in_general,,
-Health,2021-HUC,is_carer,,
+Health,2021-HUC,disability,Figures for this variable are age standardised.,
+Health,2021-HUC,health_in_general,Figures for this variable are age standardised.,
+Health,2021-HUC,is_carer,Figures for this variable are age standardised.,
 Housing,2021-HOU,accommodation_type,,
 Housing,2021-HOU,alternative_address_indicator,,
 Housing,2021-HOU,heating_type,,

@@ -1,6 +1,7 @@
 <script lang="ts">
   import { params } from "../stores/params";
   import EmbedThis from "./EmbedThis.svelte";
+  import Share from "./Share.svelte";
   import Icon from "./MaterialIcon.svelte";
   // ToDo revert this if / when the indiviudal datasets become available again!
   // href={`https://www.ons.gov.uk/datasets/${dataset}/editions/2021/versions/1`}
@@ -10,6 +11,9 @@
 <section class="">
   <h2 class="mb-2 text-md font-semibold md:text-lg ">Use and share</h2>
   <div class="flex items-center gap-x-6 gap-y-1 flex-wrap ">
+    <div>
+      <Share />
+    </div>
     {#if dataDownloadUrl}
       <a
         href={dataDownloadUrl}
@@ -23,7 +27,7 @@
       </a>
     {/if}
     {#if !$params.embed}
-      <div class="">
+      <div class="hidden md:block">
         <EmbedThis />
       </div>
     {/if}

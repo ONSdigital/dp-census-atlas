@@ -17,9 +17,9 @@
       id="{name}-input"
       {name}
       type="search"
-      placeholder="Search Census"
+      placeholder="Search Census 2021"
       autocomplete="off"
-      class="flex items-center justify-center h-12 p-2 w-full appearance-none border-l-2 border-t-2 border-b-2 border-black focus:border-4 custom-ring"
+      class="flex items-center justify-center h-12 p-2 w-full appearance-none border-l-2 border-t-2 border-b-2 border-black rounded-none bg-ons-white focus:border-4 custom-ring"
       bind:value={val}
     />
     <button tabindex="-1" type="submit" class="bg-onsblue px-3">

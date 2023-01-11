@@ -1,5 +1,6 @@
 <script lang="ts">
   import { page } from "$app/stores";
+  import { nav } from "../stores/nav";
   import { geography } from "../stores/geography";
   import AreaSearch from "./AreaSearch.svelte";
   import Icon from "./MaterialIcon.svelte";
@@ -56,6 +57,7 @@
     <AreaSearch
       onSelected={() => {
         open = false;
+        nav.set({ open: false });
       }}
     />
   </div>

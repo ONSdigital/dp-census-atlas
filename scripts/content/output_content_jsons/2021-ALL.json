@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2023-01-06-13-51-14",
+    "created_at": "2023-01-10-14-43-13",
     "release": "2021-ALL-ar2776-c21ew_metadata-v1-3_cantab_20230104-38"
   },
   "content": [
@@ -6943,7 +6943,7 @@
                   "code": "sexual_orientation_4a-002",
                   "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "lesbian, gay, bisexual, or other (LGBO)"
+                  "legend_str_3": "lesbian, gay, bisexual, or other (LGB+)"
                 },
                 {
                   "name": "Not answered",
@@ -8231,10 +8231,11 @@
           "name": "Disability",
           "code": "disability",
           "slug": "disability",
-          "desc": "People with a long-term health problem or disability, including relating to old-age.",
+          "desc": "People with a long-term health problem or disability, including conditions relating to old-age.",
           "long_desc": "People who assessed their day-to-day activities as limited by long-term physical or mental health conditions or illnesses are considered disabled. This definition of a disabled person meets the harmonised standard for measuring disability and is in line with the Equality Act (2010).",
           "units": "Person",
           "topic_code": "HUC",
+          "caveat_text": "Figures for this variable are age standardised.",
           "classifications": [
             {
               "code": "disability_4a",
@@ -8284,6 +8285,7 @@
           "long_desc": "A person's assessment of the general state of their health from very good to very bad. This assessment is not based on a person's health over any specified period of time.",
           "units": "Household",
           "topic_code": "HUC",
+          "caveat_text": "Figures for this variable are age standardised.",
           "classifications": [
             {
               "code": "health_in_general",
@@ -8301,7 +8303,7 @@
                   "name": "Very good health",
                   "slug": "very-good-health",
                   "code": "health_in_general-001",
-                  "legend_str_1": "of households in {location}",
+                  "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "very good health"
                 },
@@ -8309,7 +8311,7 @@
                   "name": "Good health",
                   "slug": "good-health",
                   "code": "health_in_general-002",
-                  "legend_str_1": "of households in {location}",
+                  "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "good health"
                 },
@@ -8317,7 +8319,7 @@
                   "name": "Fair health",
                   "slug": "fair-health",
                   "code": "health_in_general-003",
-                  "legend_str_1": "of households in {location}",
+                  "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "fair health"
                 },
@@ -8325,7 +8327,7 @@
                   "name": "Bad health",
                   "slug": "bad-health",
                   "code": "health_in_general-004",
-                  "legend_str_1": "of households in {location}",
+                  "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "bad health"
                 },
@@ -8333,7 +8335,7 @@
                   "name": "Very bad health",
                   "slug": "very-bad-health",
                   "code": "health_in_general-005",
-                  "legend_str_1": "of households in {location}",
+                  "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "very bad health"
                 }
@@ -8349,6 +8351,7 @@
           "long_desc": "An unpaid carer may look after, give help or support to anyone who has long-term physical or mental ill-health conditions, illness or problems related to old age.  \n\nThis does not include any activities as part of paid employment. \n\nThis help can be within or outside of the carer's household.",
           "units": "Person",
           "topic_code": "HUC",
+          "caveat_text": "Figures for this variable are age standardised.",
           "classifications": [
             {
               "code": "is_carer_5a",
@@ -8365,7 +8368,7 @@
                   "name": "Provides no unpaid care",
                   "slug": "provides-no-unpaid-care",
                   "code": "is_carer_5a-001",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 5 years and over in {location}",
                   "legend_str_2": "provide",
                   "legend_str_3": "no unpaid care"
                 },
@@ -8373,7 +8376,7 @@
                   "name": "Provides 19 or less hours unpaid care a week",
                   "slug": "provides-19-or-less-hours-unpaid-care-a-week",
                   "code": "is_carer_5a-002",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 5 years and over in {location}",
                   "legend_str_2": "provide",
                   "legend_str_3": "19 or less hours unpaid care a week"
                 },
@@ -8381,7 +8384,7 @@
                   "name": "Provides 20 to 49 hours unpaid care a week",
                   "slug": "provides-20-to-49-hours-unpaid-care-a-week",
                   "code": "is_carer_5a-003",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 5 years and over in {location}",
                   "legend_str_2": "provide",
                   "legend_str_3": "20 to 49 hours unpaid care a week"
                 },
@@ -8389,7 +8392,7 @@
                   "name": "Provides 50 or more hours unpaid care a week",
                   "slug": "provides-50-or-more-hours-unpaid-care-a-week",
                   "code": "is_carer_5a-004",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 5 years and over in {location}",
                   "legend_str_2": "provide",
                   "legend_str_3": "50 or more hours unpaid care a week"
                 }

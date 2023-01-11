@@ -12,3 +12,10 @@ export const getSelectedGeography = (params: URLSearchParams) => {
   }
   return { geoType: englandAndWales.meta.geotype as GeoType, geoCode: englandAndWales.meta.code };
 };
+
+export const getGeoLock = (params: URLSearchParams) => {
+  if (params.has("geoLock")) {
+    return { geoLock: params.get("geoLock") as GeoType };
+  }
+  return {};
+};

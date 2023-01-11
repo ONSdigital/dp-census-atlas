@@ -43,6 +43,16 @@ export const initMap = (container: HTMLElement) => {
 
   map.touchZoomRotate.disableRotation();
 
+  if (get(params)?.geoLock) {
+    if (get(params).geoLock === "oa") {
+      // 9 seems a sensible compromise min zoom for urban and rural areas when OA is geolocked
+      map.setMinZoom(9);
+    } else {
+      const minZoomForGeoLock = layers.find((l) => l.name === get(params).geoLock).minZoom;
+      map.setMinZoom(minZoomForGeoLock);
+    }
+  }
+
   if (interactive) {
     map.addControl(new mapboxgl.NavigationControl({ showCompass: false }));
   }
@@ -60,7 +70,7 @@ export const initMap = (container: HTMLElement) => {
       throttleTime(1000, undefined, { leading: false, trailing: true }), // don't discard the final movement
     )
     .subscribe(([_, $params]) => {
-      setViewportStoreAndLayerVisibility(map, $params.classification);
+      setViewportStoreAndLayerVisibility(map, $params.classification, $params?.geoLock);
     });
 
   if (interactive) {
@@ -75,10 +85,19 @@ export const initMap = (container: HTMLElement) => {
   return map;
 };
 
-const setViewportStoreAndLayerVisibility = (map: mapboxgl.Map, classification: Classification) => {
+const setViewportStoreAndLayerVisibility = (
+  map: mapboxgl.Map,
+  classification: Classification,
+  geoLock: GeoType | undefined,
+) => {
   const b = map.getBounds();
   const bbox = { east: b.getEast(), north: b.getNorth(), west: b.getWest(), south: b.getSouth() };
-  const geoType = getGeoType(map, classification);
+  let geoType;
+  if (geoLock) {
+    geoType = { actual: geoLock, ideal: geoLock };
+  } else {
+    geoType = getGeoType(map, classification);
+  }
 
   setMapLayerVisibility(map, geoType.actual);
 

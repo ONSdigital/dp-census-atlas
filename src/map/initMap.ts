@@ -20,6 +20,7 @@ import { isAppInteractive, type EmbedParams } from "../helpers/embedHelper";
 
 const defaultZoom = 6;
 const maxAllowedZoom = 15;
+const minZoom = 5;
 
 /** Configure the map's properties and subscribe to its events. */
 export const initMap = (container: HTMLElement) => {
@@ -30,7 +31,7 @@ export const initMap = (container: HTMLElement) => {
     container,
     style,
     zoom: defaultZoom, // inexplicably necessary to set (even though we fitBounds next)
-    minZoom: 5, // prevent accidental zoom out, especially on mobile
+    minZoom: minZoom, // prevent accidental zoom out, especially on mobile
     maxZoom: maxAllowedZoom,
     maxBounds,
     interactive,
@@ -43,15 +44,7 @@ export const initMap = (container: HTMLElement) => {
 
   map.touchZoomRotate.disableRotation();
 
-  if (get(params)?.geoLock) {
-    if (get(params).geoLock === "oa") {
-      // 9 seems a sensible compromise min zoom for urban and rural areas when OA is geolocked
-      map.setMinZoom(9);
-    } else {
-      const minZoomForGeoLock = layers.find((l) => l.name === get(params).geoLock).minZoom;
-      map.setMinZoom(minZoomForGeoLock);
-    }
-  }
+  setMinZoomIfGeoLock(map, get(params)?.geoLock);
 
   if (interactive) {
     map.addControl(new mapboxgl.NavigationControl({ showCompass: false }));
@@ -62,6 +55,7 @@ export const initMap = (container: HTMLElement) => {
     viz.subscribe((value) => renderMapViz(map, value));
     geography.subscribe((geography) => listenToGeographyStore(map, geography));
     commands.subscribe((command) => listenToCommandStore(map, command));
+    params.subscribe((params) => listenToParamStore(map, params));
   });
 
   // when the map loads or moves, or then when the selection changes, emit an event at most once per second
@@ -205,4 +199,22 @@ const listenToCommandStore = (map: mapboxgl.Map, command: Command) => {
     const zoom = getSuitableZoomForGeoType(command.geoType);
     map.zoomTo(zoom, { duration: 6000 });
   }
+};
+
+const setMinZoomIfGeoLock = (map: mapboxgl.Map, geoLock: GeoType | undefined) => {
+  if (geoLock) {
+    if (geoLock === "oa") {
+      // 9 seems a sensible compromise min zoom for urban and rural areas when OA is geolocked
+      map.setMinZoom(9);
+    } else {
+      const minZoomForGeoLock = layers.find((l) => l.name === geoLock).minZoom;
+      map.setMinZoom(minZoomForGeoLock);
+    }
+  } else {
+    map.setMinZoom(minZoom);
+  }
+};
+
+const listenToParamStore = (map: mapboxgl.Map, params) => {
+  setMinZoomIfGeoLock(map, params?.geoLock);
 };

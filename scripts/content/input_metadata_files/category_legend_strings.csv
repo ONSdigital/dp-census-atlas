@@ -16,26 +16,26 @@ Education,2021-EDU,Schoolchild or full-time student indicator,in_full_time_educa
 Health,2021-HUC,Disability,disability_4a,disability_4a-001,{PERCENTAGE}%,of people in {location},are,disabled under the equality act: day-to-day activities limited a lot
 Health,2021-HUC,Disability,disability_4a,disability_4a-002,{PERCENTAGE}%,of people in {location},are,disabled under the equality act: day-to-day activities limited a little
 Health,2021-HUC,Disability,disability_4a,disability_4a-003,{PERCENTAGE}%,of people in {location},are,not disabled under the equality act
-Health,2021-HUC,General health,health_in_general,health_in_general-001,{PERCENTAGE}%,of households in {location},have,very good health
-Health,2021-HUC,General health,health_in_general,health_in_general-002,{PERCENTAGE}%,of households in {location},have,good health
-Health,2021-HUC,General health,health_in_general,health_in_general-003,{PERCENTAGE}%,of households in {location},have,fair health
-Health,2021-HUC,General health,health_in_general,health_in_general-004,{PERCENTAGE}%,of households in {location},have,bad health
-Health,2021-HUC,General health,health_in_general,health_in_general-005,{PERCENTAGE}%,of households in {location},have,very bad health
-Health,2021-HUC,General health,health_in_general_3a,health_in_general_3a-001,{PERCENTAGE}%,of households in {location},have,good health
-Health,2021-HUC,General health,health_in_general_3a,health_in_general_3a-002,{PERCENTAGE}%,of households in {location},have,not good health
-Health,2021-HUC,General health,health_in_general_4a,health_in_general_4a-001,{PERCENTAGE}%,of households in {location},have,very good or good health
-Health,2021-HUC,General health,health_in_general_4a,health_in_general_4a-002,{PERCENTAGE}%,of households in {location},have,fair health
-Health,2021-HUC,General health,health_in_general_4a,health_in_general_4a-003,{PERCENTAGE}%,of households in {location},have,bad or very bad health
-Health,2021-HUC,Provision of unpaid care,is_carer,is_carer-001,{PERCENTAGE}%,of people in {location},provide,no unpaid care
-Health,2021-HUC,Provision of unpaid care,is_carer,is_carer-002,{PERCENTAGE}%,of people in {location},provide,9 hours or less unpaid care a week
-Health,2021-HUC,Provision of unpaid care,is_carer,is_carer-003,{PERCENTAGE}%,of people in {location},provide,10 to 19 hours unpaid care a week
-Health,2021-HUC,Provision of unpaid care,is_carer,is_carer-004,{PERCENTAGE}%,of people in {location},provide,20 to 34 hours unpaid care a week
-Health,2021-HUC,Provision of unpaid care,is_carer,is_carer-005,{PERCENTAGE}%,of people in {location},provide,35 to 49 hours unpaid care a week
-Health,2021-HUC,Provision of unpaid care,is_carer,is_carer-006,{PERCENTAGE}%,of people in {location},provide,50 or more hours unpaid care a week
-Health,2021-HUC,Provision of unpaid care,is_carer_5a,is_carer_5a-001,{PERCENTAGE}%,of people in {location},provide,no unpaid care
-Health,2021-HUC,Provision of unpaid care,is_carer_5a,is_carer_5a-002,{PERCENTAGE}%,of people in {location},provide,19 or less hours unpaid care a week
-Health,2021-HUC,Provision of unpaid care,is_carer_5a,is_carer_5a-003,{PERCENTAGE}%,of people in {location},provide,20 to 49 hours unpaid care a week
-Health,2021-HUC,Provision of unpaid care,is_carer_5a,is_carer_5a-004,{PERCENTAGE}%,of people in {location},provide,50 or more hours unpaid care a week
+Health,2021-HUC,General health,health_in_general,health_in_general-001,{PERCENTAGE}%,of people in {location},have,very good health
+Health,2021-HUC,General health,health_in_general,health_in_general-002,{PERCENTAGE}%,of people in {location},have,good health
+Health,2021-HUC,General health,health_in_general,health_in_general-003,{PERCENTAGE}%,of people in {location},have,fair health
+Health,2021-HUC,General health,health_in_general,health_in_general-004,{PERCENTAGE}%,of people in {location},have,bad health
+Health,2021-HUC,General health,health_in_general,health_in_general-005,{PERCENTAGE}%,of people in {location},have,very bad health
+Health,2021-HUC,General health,health_in_general_3a,health_in_general_3a-001,{PERCENTAGE}%,of people in {location},have,good health
+Health,2021-HUC,General health,health_in_general_3a,health_in_general_3a-002,{PERCENTAGE}%,of people in {location},have,not good health
+Health,2021-HUC,General health,health_in_general_4a,health_in_general_4a-001,{PERCENTAGE}%,of people in {location},have,very good or good health
+Health,2021-HUC,General health,health_in_general_4a,health_in_general_4a-002,{PERCENTAGE}%,of people in {location},have,fair health
+Health,2021-HUC,General health,health_in_general_4a,health_in_general_4a-003,{PERCENTAGE}%,of people in {location},have,bad or very bad health
+Health,2021-HUC,Provision of unpaid care,is_carer,is_carer-001,{PERCENTAGE}%,of people aged 5 years and over in {location},provide,no unpaid care
+Health,2021-HUC,Provision of unpaid care,is_carer,is_carer-002,{PERCENTAGE}%,of people aged 5 years and over in {location},provide,9 hours or less unpaid care a week
+Health,2021-HUC,Provision of unpaid care,is_carer,is_carer-003,{PERCENTAGE}%,of people aged 5 years and over in {location},provide,10 to 19 hours unpaid care a week
+Health,2021-HUC,Provision of unpaid care,is_carer,is_carer-004,{PERCENTAGE}%,of people aged 5 years and over in {location},provide,20 to 34 hours unpaid care a week
+Health,2021-HUC,Provision of unpaid care,is_carer,is_carer-005,{PERCENTAGE}%,of people aged 5 years and over in {location},provide,35 to 49 hours unpaid care a week
+Health,2021-HUC,Provision of unpaid care,is_carer,is_carer-006,{PERCENTAGE}%,of people aged 5 years and over in {location},provide,50 or more hours unpaid care a week
+Health,2021-HUC,Provision of unpaid care,is_carer_5a,is_carer_5a-001,{PERCENTAGE}%,of people aged 5 years and over in {location},provide,no unpaid care
+Health,2021-HUC,Provision of unpaid care,is_carer_5a,is_carer_5a-002,{PERCENTAGE}%,of people aged 5 years and over in {location},provide,19 or less hours unpaid care a week
+Health,2021-HUC,Provision of unpaid care,is_carer_5a,is_carer_5a-003,{PERCENTAGE}%,of people aged 5 years and over in {location},provide,20 to 49 hours unpaid care a week
+Health,2021-HUC,Provision of unpaid care,is_carer_5a,is_carer_5a-004,{PERCENTAGE}%,of people aged 5 years and over in {location},provide,50 or more hours unpaid care a week
 Housing,2021-HOU,Accommodation type,accommodation_type,accommodation_type-001,{PERCENTAGE}%,of households in {location},are,detached
 Housing,2021-HOU,Accommodation type,accommodation_type,accommodation_type-002,{PERCENTAGE}%,of households in {location},are,semi-detached
 Housing,2021-HOU,Accommodation type,accommodation_type,accommodation_type-003,{PERCENTAGE}%,of households in {location},are,terraced
@@ -399,7 +399,7 @@ Identity,2021-SOGI,Gender identity,gender_identity_8a,gender_identity_8a-005,{PE
 Identity,2021-SOGI,Gender identity,gender_identity_8a,gender_identity_8a-006,{PERCENTAGE}%,of people aged 16 years and over in {location},have,another gender identity
 Identity,2021-SOGI,Gender identity,gender_identity_8a,gender_identity_8a-007,{PERCENTAGE}%,of people aged 16 years and over in {location},did,not answer
 Identity,2021-SOGI,Sexual orientation,sexual_orientation_4a,sexual_orientation_4a-001,{PERCENTAGE}%,of people aged 16 years and over in {location},are,straight or heterosexual
-Identity,2021-SOGI,Sexual orientation,sexual_orientation_4a,sexual_orientation_4a-002,{PERCENTAGE}%,of people aged 16 years and over in {location},are,"lesbian, gay, bisexual, or other (LGBO)"
+Identity,2021-SOGI,Sexual orientation,sexual_orientation_4a,sexual_orientation_4a-002,{PERCENTAGE}%,of people aged 16 years and over in {location},are,"lesbian, gay, bisexual, or other (LGB+)"
 Identity,2021-SOGI,Sexual orientation,sexual_orientation_4a,sexual_orientation_4a-003,{PERCENTAGE}%,of people aged 16 years and over in {location},did,not answer
 Identity,2021-SOGI,Sexual orientation,sexual_orientation_6a,sexual_orientation_6a-001,{PERCENTAGE}%,of people aged 16 years and over in {location},are,straight or heterosexual
 Identity,2021-SOGI,Sexual orientation,sexual_orientation_6a,sexual_orientation_6a-002,{PERCENTAGE}%,of people aged 16 years and over in {location},are,gay or lesbian
@@ -565,12 +565,12 @@ Population,2021-DEM,Household composition,hh_family_composition_15a,hh_family_co
 Population,2021-DEM,Household composition,hh_family_composition_15a,hh_family_composition_15a-003,{PERCENTAGE}%,of households in {location},are,single-family households in which all people are aged 66 years and over
 Population,2021-DEM,Household composition,hh_family_composition_15a,hh_family_composition_15a-004,{PERCENTAGE}%,of households in {location},are,single-family households of a married or civil partnership couple with no children
 Population,2021-DEM,Household composition,hh_family_composition_15a,hh_family_composition_15a-005,{PERCENTAGE}%,of households in {location},are,single-family households of a married or civil partnership couple with dependent children
-Population,2021-DEM,Household composition,hh_family_composition_15a,hh_family_composition_15a-006,{PERCENTAGE}%,of households in {location},are,single-family households of a married or civil partnership couple with independent children
+Population,2021-DEM,Household composition,hh_family_composition_15a,hh_family_composition_15a-006,{PERCENTAGE}%,of households in {location},are,single-family households of a married or civil partnership couple with non-dependent children
 Population,2021-DEM,Household composition,hh_family_composition_15a,hh_family_composition_15a-007,{PERCENTAGE}%,of households in {location},are,single-family households of a cohabiting couple with no children
 Population,2021-DEM,Household composition,hh_family_composition_15a,hh_family_composition_15a-008,{PERCENTAGE}%,of households in {location},are,single-family households of a cohabiting couple with dependent children
-Population,2021-DEM,Household composition,hh_family_composition_15a,hh_family_composition_15a-009,{PERCENTAGE}%,of households in {location},are,single-family households of a cohabiting couple with independent children
+Population,2021-DEM,Household composition,hh_family_composition_15a,hh_family_composition_15a-009,{PERCENTAGE}%,of households in {location},are,single-family households of a cohabiting couple with non-dependent children
 Population,2021-DEM,Household composition,hh_family_composition_15a,hh_family_composition_15a-010,{PERCENTAGE}%,of households in {location},are,single-family households of a lone parent family with dependent children
-Population,2021-DEM,Household composition,hh_family_composition_15a,hh_family_composition_15a-011,{PERCENTAGE}%,of households in {location},are,single-family households of a lone parent family with independent children
+Population,2021-DEM,Household composition,hh_family_composition_15a,hh_family_composition_15a-011,{PERCENTAGE}%,of households in {location},are,single-family households of a lone parent family with non-dependent children
 Population,2021-DEM,Household composition,hh_family_composition_15a,hh_family_composition_15a-012,{PERCENTAGE}%,of households in {location},are,single-family households with other family composition
 Population,2021-DEM,Household composition,hh_family_composition_15a,hh_family_composition_15a-013,{PERCENTAGE}%,of households in {location},are,multiple-family households with dependent children
 Population,2021-DEM,Household composition,hh_family_composition_15a,hh_family_composition_15a-014,{PERCENTAGE}%,of households in {location},are,"another type of multiple-family household, including all full-time students and all aged 66 years and over"

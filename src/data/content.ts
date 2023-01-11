@@ -138,10 +138,10 @@ export default {
         contentJsonUrl: eilr.localContentJsonUrl,
         contentBaseUrl: eilr.realDataBaseUrl,
       },
-      // hou is unpublished
+      // hou is published
       {
         contentJsonUrl: hou.localContentJsonUrl,
-        contentBaseUrl: hou.fakeDataBaseUrl,
+        contentBaseUrl: hou.realDataBaseUrl,
       },
       // huc is unpublished
       {
@@ -158,10 +158,10 @@ export default {
         contentJsonUrl: mig.localContentJsonUrl,
         contentBaseUrl: mig.realDataBaseUrl,
       },
-      // sogi is unpublished
+      // sogi is published
       {
         contentJsonUrl: sogi.localContentJsonUrl,
-        contentBaseUrl: sogi.fakeDataBaseUrl,
+        contentBaseUrl: sogi.realDataBaseUrl,
       },
       // ttw is published
       {
@@ -195,20 +195,20 @@ export default {
         contentJsonUrl: dem.publicContentJsonUrl,
         contentBaseUrl: dem.realDataBaseUrl,
       },
-      // edu is unpublished
+      // edu is published
       {
         contentJsonUrl: edu.publicContentJsonUrl,
-        contentBaseUrl: edu.fakeDataBaseUrl,
+        contentBaseUrl: edu.realDataBaseUrl,
       },
       // eilr is published
       {
         contentJsonUrl: eilr.publicContentJsonUrl,
         contentBaseUrl: eilr.realDataBaseUrl,
       },
-      // hou is unpublished
+      // hou is published
       {
         contentJsonUrl: hou.publicContentJsonUrl,
-        contentBaseUrl: hou.fakeDataBaseUrl,
+        contentBaseUrl: hou.realDataBaseUrl,
       },
       // huc is unpublished
       {
@@ -225,10 +225,10 @@ export default {
         contentJsonUrl: mig.publicContentJsonUrl,
         contentBaseUrl: mig.realDataBaseUrl,
       },
-      // sogi is unpublished
+      // sogi is published
       {
         contentJsonUrl: sogi.publicContentJsonUrl,
-        contentBaseUrl: sogi.fakeDataBaseUrl,
+        contentBaseUrl: sogi.realDataBaseUrl,
       },
       // ttw is published
       {
@@ -262,20 +262,20 @@ export default {
         contentJsonUrl: dem.publicContentJsonUrl,
         contentBaseUrl: dem.realDataBaseUrl,
       },
-      // edu is unpublished
+      // edu is published
       {
         contentJsonUrl: edu.publicContentJsonUrl,
-        contentBaseUrl: edu.fakeDataBaseUrl,
+        contentBaseUrl: edu.realDataBaseUrl,
       },
       // eilr is published
       {
         contentJsonUrl: eilr.publicContentJsonUrl,
         contentBaseUrl: eilr.realDataBaseUrl,
       },
-      // hou is unpublished
+      // hou is published
       {
         contentJsonUrl: hou.publicContentJsonUrl,
-        contentBaseUrl: hou.fakeDataBaseUrl,
+        contentBaseUrl: hou.realDataBaseUrl,
       },
       // huc is unpublished
       {
@@ -292,10 +292,10 @@ export default {
         contentJsonUrl: mig.publicContentJsonUrl,
         contentBaseUrl: mig.realDataBaseUrl,
       },
-      // sogi is unpublished
+      // sogi is published
       {
         contentJsonUrl: sogi.publicContentJsonUrl,
-        contentBaseUrl: sogi.fakeDataBaseUrl,
+        contentBaseUrl: sogi.realDataBaseUrl,
       },
       // ttw is published
       {

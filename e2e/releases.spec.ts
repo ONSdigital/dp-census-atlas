@@ -30,13 +30,13 @@ const testCases = [
   {
     name: "HUC",
     url: "/choropleth/health/general-health/health-in-general/fair-health?lad=E06000062",
-    legendText: "68.2% of households in West Northamptonshire LAD have fair health",
+    legendText: "68.2% of people in West Northamptonshire LAD have fair health",
     categoryCount: 5,
   },
   {
     name: "HOU",
     url: "/choropleth/housing/tenure-of-household/hh-tenure-5a/private-rented-or-lives-rent-free?msoa=E02001564",
-    legendText: "14.2% of households in Old Cantley, Auckley & Finningley MSOA are privately rented or rent free",
+    legendText: "10.2% of households in Old Cantley, Auckley & Finningley MSOA are privately rented or rent free",
     categoryCount: 4,
     nextClassificationCategoryCount: 8,
   },
@@ -59,7 +59,7 @@ const testCases = [
     name: "SOGI",
     url: "/choropleth/identity/gender-identity/gender-identity-4a/gender-identity-different-from-sex-registered-at-birth?msoa=E02003604",
     legendText:
-      "22.84% of people aged 16 years and over in Biggleswade East MSOA have a gender identity different from their sex registered at birth",
+      "0.32% of people aged 16 years and over in Biggleswade East MSOA have a gender identity different from their sex registered at birth",
     categoryCount: 3,
     nextClassificationCategoryCount: 7,
   },

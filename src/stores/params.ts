@@ -1,7 +1,7 @@
 import { derived } from "svelte/store";
 import { page } from "$app/stores";
 import { content } from "./content";
-import { getSelectedGeography } from "../helpers/paramsHelper";
+import { getSelectedGeography, getGeoLock } from "../helpers/paramsHelper";
 import { parseEmbedParams } from "../helpers/embedHelper";
 
 /**
@@ -19,6 +19,7 @@ export const params = derived([page, content], ([$page, $content]) => {
     classification,
     category,
     ...getSelectedGeography($page.url.searchParams),
+    ...getGeoLock($page.url.searchParams),
     ...parseEmbedParams($page.url.searchParams),
   };
 });

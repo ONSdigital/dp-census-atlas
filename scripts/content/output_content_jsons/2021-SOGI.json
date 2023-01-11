@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2023-01-06-13-51-14",
+    "created_at": "2023-01-11-09-48-45",
     "release": "2021-SOGI-ar2776-c21ew_metadata-v1-3_cantab_20230104-38"
   },
   "content": [
@@ -163,7 +163,7 @@
                   "code": "sexual_orientation_4a-002",
                   "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "lesbian, gay, bisexual, or other (LGBO)"
+                  "legend_str_3": "lesbian, gay, bisexual, or other (LGB+)"
                 },
                 {
                   "name": "Not answered",

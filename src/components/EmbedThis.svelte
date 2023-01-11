@@ -20,6 +20,8 @@
   let embedCategorySelection = false;
   let embedView: "viewport" | "geography" = "geography";
   let embedSelectGeo = true;
+  let doGeoLock = false;
+  $: geoLock = $viewport?.geoType || "ew";
 
   $: embedBounds = [
     $viewport?.bbox.west,
@@ -37,6 +39,7 @@
     embedCategorySelection,
     embedView,
     ...(embedView === "viewport" && { embedBounds: embedBounds }), // don't include embed bounds unless we need to!
+    ...(doGeoLock && { geoLock: geoLock }), // don't include geoLock unless we need to!
   });
 
   onMount(() => {
@@ -103,6 +106,12 @@
       <label class="hoverable">
         <input type="checkbox" bind:checked={embedCategorySelection} class="custom-ring mr-1" />
         Category selection
+      </label>
+    </div>
+    <div class="">
+      <label class="hoverable">
+        <input type="checkbox" bind:checked={doGeoLock} class="custom-ring mr-1" />
+        Lock geotype to {geoLock.toUpperCase()}
       </label>
     </div>
   </section>

@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2023-01-06-13-51-14",
+    "created_at": "2023-01-11-09-48-45",
     "release": "2021-DEM-ar2776-c21ew_metadata-v1-3_cantab_20230104-38"
   },
   "content": [
@@ -216,7 +216,7 @@
                   "code": "hh_family_composition_15a-006",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "single-family households of a married or civil partnership couple with independent children"
+                  "legend_str_3": "single-family households of a married or civil partnership couple with non-dependent children"
                 },
                 {
                   "name": "Single family household: Cohabiting couple family: No children",
@@ -240,7 +240,7 @@
                   "code": "hh_family_composition_15a-009",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "single-family households of a cohabiting couple with independent children"
+                  "legend_str_3": "single-family households of a cohabiting couple with non-dependent children"
                 },
                 {
                   "name": "Single family household: Lone parent family: With dependent children",
@@ -256,7 +256,7 @@
                   "code": "hh_family_composition_15a-011",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "single-family households of a lone parent family with independent children"
+                  "legend_str_3": "single-family households of a lone parent family with non-dependent children"
                 },
                 {
                   "name": "Single family household: Other single family household: Other family composition",

@@ -1,6 +1,7 @@
 package sync
 
 import (
+	"context"
 	"log"
 
 	"github.com/ONSdigital/dp-census-atlas/scripts/s3sync/storage"
@@ -34,9 +35,9 @@ func New(src, dst storage.Filer, dryrun, nodelete bool) (*Syncer, error) {
 }
 
 // Sync runs the sync from src to dst.
-func (s *Syncer) Sync() error {
+func (s *Syncer) Sync(ctx context.Context) error {
 	log.Println("Scanning files in src")
-	srcfiles, err := s.src.Scan()
+	srcfiles, err := s.src.Scan(ctx)
 	if err != nil {
 		return err
 	}
@@ -44,7 +45,7 @@ func (s *Syncer) Sync() error {
 	log.Printf("\tfound %d files\n", len(srcfiles))
 
 	log.Println("Scanning files in dst")
-	dstfiles, err := s.dst.Scan()
+	dstfiles, err := s.dst.Scan(ctx)
 	if err != nil {
 		return err
 	}
@@ -52,23 +53,23 @@ func (s *Syncer) Sync() error {
 	log.Printf("\tfound %d files\n", len(dstfiles))
 
 	log.Println("Comparing checksums")
-	if err := s.diff(); err != nil {
+	if err := s.diff(ctx); err != nil {
 		return err
 	}
 
 	log.Println("Copying new files to dst")
-	if err := s.copy(stateMissing); err != nil {
+	if err := s.copy(ctx, stateMissing); err != nil {
 		return err
 	}
 
 	log.Printf("Copying changed files to dst")
-	if err := s.copy(stateDifferent); err != nil {
+	if err := s.copy(ctx, stateDifferent); err != nil {
 		return err
 	}
 
 	if !s.nodelete {
 		log.Printf("Removing deleted files from dst")
-		if err := s.delete(); err != nil {
+		if err := s.delete(ctx); err != nil {
 			return err
 		}
 	}
@@ -76,9 +77,9 @@ func (s *Syncer) Sync() error {
 }
 
 // diff determines which files are different or missing between src and dst.
-func (s *Syncer) diff() error {
+func (s *Syncer) diff(ctx context.Context) error {
 	for key, src := range s.srcfiles {
-		srcsum, err := s.src.Checksum(src.Name)
+		srcsum, err := s.src.Checksum(ctx, src.Name)
 		if err != nil {
 			return err
 		}
@@ -90,7 +91,7 @@ func (s *Syncer) diff() error {
 			continue
 		}
 
-		dstsum, err := s.dst.Checksum(dst.Name)
+		dstsum, err := s.dst.Checksum(ctx, dst.Name)
 		if err != nil {
 			return err
 		}
@@ -107,7 +108,7 @@ func (s *Syncer) diff() error {
 }
 
 // copy copies all files from src to dst where source state equals state.
-func (s *Syncer) copy(state int) error {
+func (s *Syncer) copy(ctx context.Context, state int) error {
 	for _, src := range s.srcfiles {
 		if src.SyncState != state {
 			continue
@@ -116,11 +117,11 @@ func (s *Syncer) copy(state int) error {
 		if s.dryrun {
 			continue
 		}
-		r, err := s.src.Open(src.Name)
+		r, err := s.src.Open(ctx, src.Name)
 		if err != nil {
 			return err
 		}
-		if err := s.dst.Create(src.Name, r, src.Checksum); err != nil {
+		if err := s.dst.Create(ctx, src.Name, r, src.Checksum); err != nil {
 			r.Close()
 			return err
 		}
@@ -129,7 +130,7 @@ func (s *Syncer) copy(state int) error {
 }
 
 // delete removes all files from dst where dst state is not stateSeen.
-func (s *Syncer) delete() error {
+func (s *Syncer) delete(ctx context.Context) error {
 	for _, dst := range s.dstfiles {
 		if dst.SyncState == stateSeen {
 			continue
@@ -138,7 +139,7 @@ func (s *Syncer) delete() error {
 		if s.dryrun {
 			continue
 		}
-		s.dst.Remove(dst.Name)
+		s.dst.Remove(ctx, dst.Name)
 	}
 	return nil
 }

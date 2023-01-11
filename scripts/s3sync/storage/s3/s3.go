@@ -1,6 +1,7 @@
 package s3
 
 import (
+	"context"
 	"errors"
 	"io"
 	"path"
@@ -16,11 +17,10 @@ import (
 
 // S3 implements storage.Filer
 type S3 struct {
-	s3         *awss3.S3
-	uploader   *s3manager.Uploader
-	downloader *s3manager.Downloader
-	bucket     string
-	prefix     string
+	s3       *awss3.S3
+	uploader *s3manager.Uploader
+	bucket   string
+	prefix   string
 }
 
 // New creates a new S3 Filer based at bucket:prefix.
@@ -40,16 +40,15 @@ func New(bucket, prefix string) (*S3, error) {
 	prefix = storage.Normalise(prefix)
 
 	return &S3{
-		s3:         awss3.New(sess),
-		uploader:   s3manager.NewUploader(sess),
-		downloader: s3manager.NewDownloader(sess),
-		bucket:     bucket,
-		prefix:     prefix,
+		s3:       awss3.New(sess),
+		uploader: s3manager.NewUploader(sess),
+		bucket:   bucket,
+		prefix:   prefix,
 	}, nil
 }
 
 // Scan is an S3 equivalent of os.ReadDir; it reads filenames from a bucket and prefix.
-func (s *S3) Scan() (map[string]*storage.FileInfo, error) {
+func (s *S3) Scan(ctx context.Context) (map[string]*storage.FileInfo, error) {
 	infos := make(map[string]*storage.FileInfo)
 
 	// When a prefix is included in an S3 list objects request, objects which do
@@ -77,14 +76,14 @@ func (s *S3) Scan() (map[string]*storage.FileInfo, error) {
 		}
 		return true
 	}
-	if err := s.s3.ListObjectsV2Pages(in, fcn); err != nil {
+	if err := s.s3.ListObjectsV2PagesWithContext(ctx, in, fcn); err != nil {
 		return nil, err
 	}
 	return infos, nil
 }
 
 // Checksum calls S3 to get the CRC32 checksum of the object named bucket:prefix+name.
-func (s *S3) Checksum(name string) (string, error) {
+func (s *S3) Checksum(ctx context.Context, name string) (string, error) {
 	key := s.fullpath(name)
 	in := &awss3.GetObjectAttributesInput{
 		Bucket: &s.bucket,
@@ -93,7 +92,7 @@ func (s *S3) Checksum(name string) (string, error) {
 			aws.String("Checksum"),
 		},
 	}
-	out, err := s.s3.GetObjectAttributes(in)
+	out, err := s.s3.GetObjectAttributesWithContext(ctx, in)
 	if err != nil {
 		return "", err
 	}
@@ -110,20 +109,20 @@ func (s *S3) Checksum(name string) (string, error) {
 }
 
 // Remove removes the S3 object bucket:prefix+name.
-func (s *S3) Remove(name string) error {
+func (s *S3) Remove(ctx context.Context, name string) error {
 	key := s.fullpath(name)
 	in := &awss3.DeleteObjectInput{
 		Bucket: &s.bucket,
 		Key:    &key,
 	}
-	_, err := s.s3.DeleteObject(in)
+	_, err := s.s3.DeleteObjectWithContext(ctx, in)
 	return err
 }
 
 // Create creates an S3 object named bucket:prefix+name.
 // The contents of the object come from r, and the CRC32 checksum is expected to
 // match checksum.
-func (s *S3) Create(name string, r io.Reader, checksum string) error {
+func (s *S3) Create(ctx context.Context, name string, r io.Reader, checksum string) error {
 	key := s.fullpath(name)
 
 	// would use PutObject, but it wants a ReadSeeker, which GetObject
@@ -136,20 +135,20 @@ func (s *S3) Create(name string, r io.Reader, checksum string) error {
 		ChecksumCRC32:     &checksum,
 		// ACL: aws.String(s3.BucketCannedACLPublicRead),
 	}
-	_, err := s.uploader.Upload(in)
+	_, err := s.uploader.UploadWithContext(ctx, in)
 	return err
 }
 
 // Open returns a ReadCloser which can be used to read an object's contents.
 // The object is named bucket:prefix+name.
 // Caller is responsible for closing the returned ReadCloser.
-func (s *S3) Open(name string) (io.ReadCloser, error) {
+func (s *S3) Open(ctx context.Context, name string) (io.ReadCloser, error) {
 	key := s.fullpath(name)
 	in := &awss3.GetObjectInput{
 		Bucket: &s.bucket,
 		Key:    &key,
 	}
-	out, err := s.s3.GetObject(in)
+	out, err := s.s3.GetObjectWithContext(ctx, in)
 	if err != nil {
 		return nil, err
 	}

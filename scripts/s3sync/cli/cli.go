@@ -1,6 +1,7 @@
 package cli
 
 import (
+	"context"
 	"errors"
 	"flag"
 	"fmt"
@@ -14,7 +15,7 @@ import (
 )
 
 type Syncer interface {
-	Sync() error
+	Sync(ctx context.Context) error
 }
 
 type NewSyncer func(src, dst string, dryrun, nodelete bool) (Syncer, error)
@@ -84,5 +85,5 @@ func Run(args []string, new NewSyncer) error {
 		return err
 	}
 
-	return syncer.Sync()
+	return syncer.Sync(context.Background())
 }

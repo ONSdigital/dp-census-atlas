@@ -1,15 +1,16 @@
 package storage
 
 import (
+	"context"
 	"io"
 )
 
 type Filer interface {
-	Scan() (files map[string]*FileInfo, err error)
-	Checksum(name string) (string, error)
-	Remove(name string) error
-	Create(name string, r io.Reader, checksum string) error
-	Open(name string) (r io.ReadCloser, err error)
+	Scan(ctx context.Context) (files map[string]*FileInfo, err error)
+	Checksum(ctx context.Context, name string) (string, error)
+	Remove(ctx context.Context, name string) error
+	Create(ctx context.Context, name string, r io.Reader, checksum string) error
+	Open(ctx context.Context, name string) (r io.ReadCloser, err error)
 }
 
 type FileInfo struct {

@@ -1,8 +1,10 @@
 package local
 
 import (
+	"context"
 	"encoding/base64"
 	"encoding/binary"
+	"errors"
 	"hash/crc32"
 	"io"
 	"io/fs"
@@ -25,7 +27,7 @@ func New(dir string) (*Local, error) {
 }
 
 // Scan recursively reads filenames from the local dir.
-func (l *Local) Scan() (map[string]*storage.FileInfo, error) {
+func (l *Local) Scan(ctx context.Context) (map[string]*storage.FileInfo, error) {
 	FS := os.DirFS(l.dir)
 
 	infos := make(map[string]*storage.FileInfo)
@@ -41,8 +43,13 @@ func (l *Local) Scan() (map[string]*storage.FileInfo, error) {
 			Name: path,
 		}
 		key := storage.PathToKey(path)
-		infos[key] = info
-		return nil
+		select {
+		case <-ctx.Done():
+			return errors.New("local walk canceled")
+		default:
+			infos[key] = info
+			return nil
+		}
 	}
 
 	if err := fs.WalkDir(FS, ".", fcn); err != nil {
@@ -52,7 +59,7 @@ func (l *Local) Scan() (map[string]*storage.FileInfo, error) {
 }
 
 // Checksum calculates the CRC32 checksum of file name.
-func (l *Local) Checksum(name string) (string, error) {
+func (l *Local) Checksum(_ context.Context, name string) (string, error) {
 	buf, err := os.ReadFile(l.fullpath(name))
 	if err != nil {
 		return "", err
@@ -64,14 +71,14 @@ func (l *Local) Checksum(name string) (string, error) {
 }
 
 // Remove deletes the file or directory name.
-func (l *Local) Remove(name string) error {
+func (l *Local) Remove(_ context.Context, name string) error {
 	return os.Remove(l.fullpath(name))
 }
 
 // Create creates a file and copies from r to the new file.
 // Checksum is not used.
 // Caller is responsible for closing r when Create returns.
-func (l *Local) Create(name string, r io.Reader, checksum string) error {
+func (l *Local) Create(_ context.Context, name string, r io.Reader, checksum string) error {
 	path := l.fullpath(name)
 	dir := filepath.Dir(path)
 	if err := os.MkdirAll(dir, 0755); err != nil {
@@ -97,7 +104,7 @@ func (l *Local) Create(name string, r io.Reader, checksum string) error {
 
 // Open opens name and returns a ReadCloser.
 // Caller is responsible for closing.
-func (l *Local) Open(name string) (io.ReadCloser, error) {
+func (l *Local) Open(_ context.Context, name string) (io.ReadCloser, error) {
 	return os.Open(l.fullpath(name))
 }
 

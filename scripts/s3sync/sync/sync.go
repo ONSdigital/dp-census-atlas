@@ -2,7 +2,12 @@ package sync
 
 import (
 	"context"
+	"errors"
 	"log"
+	"os"
+	"runtime"
+	"strconv"
+	"sync"
 
 	"github.com/ONSdigital/dp-census-atlas/scripts/s3sync/storage"
 )
@@ -78,32 +83,110 @@ func (s *Syncer) Sync(ctx context.Context) error {
 
 // diff determines which files are different or missing between src and dst.
 func (s *Syncer) diff(ctx context.Context) error {
-	for key, src := range s.srcfiles {
-		srcsum, err := s.src.Checksum(ctx, src.Name)
-		if err != nil {
-			return err
-		}
-		src.Checksum = srcsum
+	ctx, cancel := context.WithCancel(ctx)
+	defer cancel()
 
-		dst, ok := s.dstfiles[key]
-		if !ok {
-			src.SyncState = stateMissing
-			continue
-		}
-
-		dstsum, err := s.dst.Checksum(ctx, dst.Name)
-		if err != nil {
-			return err
-		}
-		dst.Checksum = dstsum
-
-		if srcsum == dstsum {
-			src.SyncState = stateSame
-		} else {
-			src.SyncState = stateDifferent
-		}
-		dst.SyncState = stateSeen
+	// this function generates a list of paths to diff
+	generate := func() <-chan string {
+		queue := make(chan string)
+		go func() {
+			defer close(queue)
+			for key := range s.srcfiles {
+				select {
+				case <-ctx.Done():
+					return
+				case queue <- key:
+				}
+			}
+		}()
+		return queue
 	}
+
+	// this function processes each path in the queue and sends results to the returned channel.
+	process := func(queue <-chan string, nworkers int) <-chan error {
+		var wg sync.WaitGroup
+		results := make(chan error)
+
+		worker := func() {
+			defer wg.Done()
+			for key := range queue {
+				err := s.diffOne(ctx, key)
+				select {
+				case results <- err:
+				case <-ctx.Done():
+					return
+				}
+			}
+		}
+
+		wg.Add(nworkers)
+		for i := 0; i < nworkers; i++ {
+			go worker()
+		}
+
+		go func() {
+			wg.Wait()
+			close(results)
+		}()
+
+		return results
+	}
+
+	results := process(generate(), envConc("S3SYNC_DIFF_CONCURRENCY", runtime.NumCPU()))
+
+	var err error
+	for result := range results {
+		if result != nil {
+			err = result
+			cancel()
+		}
+	}
+	if err != nil {
+		return err
+	}
+	return ctx.Err()
+
+	/*
+		// non concurrent version
+		for key, _ := range s.srcfiles {
+			if err := s.diffOne(ctx, key); err != nil {
+				return err
+			}
+		}
+		return nil
+	*/
+}
+
+// diffOne compares a single path in src and dst.
+func (s *Syncer) diffOne(ctx context.Context, key string) error {
+	src, ok := s.srcfiles[key]
+	if !ok {
+		return errors.New("key not in source")
+	}
+	srcsum, err := s.src.Checksum(ctx, src.Name)
+	if err != nil {
+		return err
+	}
+	src.Checksum = srcsum
+
+	dst, ok := s.dstfiles[key]
+	if !ok {
+		src.SyncState = stateMissing
+		return nil
+	}
+
+	dstsum, err := s.dst.Checksum(ctx, dst.Name)
+	if err != nil {
+		return err
+	}
+	dst.Checksum = dstsum
+
+	if srcsum == dstsum {
+		src.SyncState = stateSame
+	} else {
+		src.SyncState = stateDifferent
+	}
+	dst.SyncState = stateSeen
 	return nil
 }
 
@@ -142,4 +225,17 @@ func (s *Syncer) delete(ctx context.Context) error {
 		s.dst.Remove(ctx, dst.Name)
 	}
 	return nil
+}
+
+// envConc returns a concurrency value from an environment variable
+func envConc(name string, def int) int {
+	n, err := strconv.ParseInt(os.Getenv(name), 10, 0)
+	if err != nil {
+		return def
+	} else if n < 1 {
+		return 1
+	} else if n > 32 {
+		return 32 // arbitrary
+	}
+	return int(n)
 }

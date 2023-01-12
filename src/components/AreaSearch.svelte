@@ -6,7 +6,7 @@
   import type { GeographySearchItem, PostcodeSearchItem } from "../types";
 
   export let embedded = false;
-  export let onSelected: (() => void) | undefined;
+  export let onSelected: (() => void) | undefined = undefined;
 
   async function handleSelect(event) {
     if (event?.detail?.kind === "Geography") {

@@ -26,7 +26,7 @@
   <OnsAnalyticsBanner {analyticsId} {analyticsProps} />
   <Header />
   <!-- main -->
-  <div class={`grow flex relative overflow-y-hidden`}>
+  <div class={`grow flex relative`}>
     <!-- cloak -->
     <div
       class={`lg:hidden bg-ons-black absolute inset-0 z-20 cursor-pointer transition-opacity ${

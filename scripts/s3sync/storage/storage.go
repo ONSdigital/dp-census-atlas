@@ -20,4 +20,5 @@ type FileInfo struct {
 	SyncState int    // to be used by syncer
 }
 
+const MissingChecksum = "missing checksum" // .Checksum field may be set to this
 var ErrMissingChecksum = errors.New("missing checksum")

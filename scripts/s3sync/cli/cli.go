@@ -18,9 +18,9 @@ type Syncer interface {
 	Sync(ctx context.Context) error
 }
 
-type NewSyncer func(src, dst string, dryrun, nodelete bool) (Syncer, error)
+type NewSyncer func(src, dst string, dryrun, nodelete, nocsumok bool) (Syncer, error)
 
-func New(srcdir, dstdir string, dryrun, nodelete bool) (Syncer, error) {
+func New(srcdir, dstdir string, dryrun, nodelete, nocsumok bool) (Syncer, error) {
 	src, err := newFiler(srcdir)
 	if err != nil {
 		return nil, err
@@ -31,7 +31,7 @@ func New(srcdir, dstdir string, dryrun, nodelete bool) (Syncer, error) {
 		return nil, err
 	}
 
-	return sync.New(src, dst, dryrun, nodelete)
+	return sync.New(src, dst, dryrun, nodelete, nocsumok)
 }
 
 // newFiler returns either a local or s3 Filer depending on whether s contains a colon.
@@ -58,6 +58,7 @@ func CLI(args []string, new NewSyncer) int {
 func Run(args []string, new NewSyncer) error {
 	fs := flag.NewFlagSet("s3sync", flag.ContinueOnError)
 	dryrun := fs.Bool("n", false, "dryrun")
+	nocsumok := fs.Bool("C", false, "missing checksum on S3 objects is ok")
 	nodelete := fs.Bool("D", false, "do not delete files on destination")
 	fs.Usage = func() {
 		fmt.Fprintf(fs.Output(), "Usage: %s [flags] <src> <dst>\n", os.Args[0])
@@ -80,7 +81,7 @@ func Run(args []string, new NewSyncer) error {
 		return errors.New("dest required")
 	}
 
-	syncer, err := new(src, dst, *dryrun, *nodelete)
+	syncer, err := new(src, dst, *dryrun, *nodelete, *nocsumok)
 	if err != nil {
 		return err
 	}

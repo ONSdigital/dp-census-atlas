@@ -27,15 +27,17 @@ type Syncer struct {
 	dstfiles map[string]*storage.FileInfo
 	dryrun   bool
 	nodelete bool
+	nocsumok bool // true if missing checksum is ok
 }
 
 // New returns a new Syncer which can sync from src to dst.
-func New(src, dst storage.Filer, dryrun, nodelete bool) (*Syncer, error) {
+func New(src, dst storage.Filer, dryrun, nodelete, nocsumok bool) (*Syncer, error) {
 	return &Syncer{
 		src:      src,
 		dst:      dst,
 		dryrun:   dryrun,
 		nodelete: nodelete,
+		nocsumok: nocsumok,
 	}, nil
 }
 
@@ -138,7 +140,7 @@ func (s *Syncer) diff(ctx context.Context) error {
 	for result := range results {
 		if result != nil {
 			err = result
-			break	// keep first error
+			break // keep first error
 		}
 	}
 	if err != nil {
@@ -164,7 +166,9 @@ func (s *Syncer) diffOne(ctx context.Context, key string) error {
 		return errors.New("key not in source")
 	}
 	srcsum, err := s.src.Checksum(ctx, src.Name)
-	if err != nil {
+	if s.nocsumok && errors.Is(err, storage.ErrMissingChecksum) {
+		srcsum = storage.MissingChecksum
+	} else if err != nil {
 		return err
 	}
 	src.Checksum = srcsum
@@ -176,12 +180,16 @@ func (s *Syncer) diffOne(ctx context.Context, key string) error {
 	}
 
 	dstsum, err := s.dst.Checksum(ctx, dst.Name)
-	if err != nil {
+	if s.nocsumok && errors.Is(err, storage.ErrMissingChecksum) {
+		dstsum = storage.MissingChecksum
+	} else if err != nil {
 		return err
 	}
 	dst.Checksum = dstsum
 
-	if srcsum == dstsum {
+	if srcsum == storage.MissingChecksum || dstsum == storage.MissingChecksum {
+		src.SyncState = stateDifferent
+	} else if srcsum == dstsum {
 		src.SyncState = stateSame
 	} else {
 		src.SyncState = stateDifferent

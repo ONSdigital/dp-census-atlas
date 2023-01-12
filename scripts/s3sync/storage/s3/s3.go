@@ -83,6 +83,8 @@ func (s *S3) Scan(ctx context.Context) (map[string]*storage.FileInfo, error) {
 }
 
 // Checksum calls S3 to get the CRC32 checksum of the object named bucket:prefix+name.
+// If the object does not have an existing checksum, then
+// (storage.MissingChecksum, storage.ErrMissingChecksum) will be returned.
 func (s *S3) Checksum(ctx context.Context, name string) (string, error) {
 	key := s.fullpath(name)
 	in := &awss3.GetObjectAttributesInput{
@@ -97,15 +99,15 @@ func (s *S3) Checksum(ctx context.Context, name string) (string, error) {
 		return "", err
 	}
 
-	checksum := out.Checksum
-	if checksum == nil {
-		return "", fmt.Errorf("%s:%s: %w", s.bucket, key, storage.ErrMissingChecksum)
+	if out.Checksum == nil || out.Checksum.ChecksumCRC32 == nil {
+		return storage.MissingChecksum, fmt.Errorf(
+			"%s:%s: %w",
+			s.bucket,
+			key,
+			storage.ErrMissingChecksum,
+		)
 	}
-	crc32 := checksum.ChecksumCRC32
-	if crc32 == nil {
-		return "", fmt.Errorf("%s:%s: %w", s.bucket, key, storage.ErrMissingChecksum)
-	}
-	return *crc32, nil
+	return *out.Checksum.ChecksumCRC32, nil
 }
 
 // Remove removes the S3 object bucket:prefix+name.
@@ -123,6 +125,16 @@ func (s *S3) Remove(ctx context.Context, name string) error {
 // The contents of the object come from r, and the CRC32 checksum is expected to
 // match checksum.
 func (s *S3) Create(ctx context.Context, name string, r io.Reader, checksum string) error {
+	// if we don't have a checksum, don't set it in the new object
+	var (
+		algo  *string
+		crc32 *string
+	)
+	if checksum != storage.MissingChecksum {
+		algo = aws.String(awss3.ChecksumAlgorithmCrc32)
+		crc32 = &checksum
+	}
+
 	key := s.fullpath(name)
 
 	// would use PutObject, but it wants a ReadSeeker, which GetObject
@@ -131,8 +143,8 @@ func (s *S3) Create(ctx context.Context, name string, r io.Reader, checksum stri
 		Body:              r,
 		Bucket:            &s.bucket,
 		Key:               &key,
-		ChecksumAlgorithm: aws.String(awss3.ChecksumAlgorithmCrc32),
-		ChecksumCRC32:     &checksum,
+		ChecksumAlgorithm: algo,
+		ChecksumCRC32:     crc32,
 		// ACL: aws.String(s3.BucketCannedACLPublicRead),
 	}
 	_, err := s.uploader.UploadWithContext(ctx, in)

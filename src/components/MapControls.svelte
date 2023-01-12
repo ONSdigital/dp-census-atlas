@@ -65,10 +65,15 @@
                 class={`px-3 py-1 rounded-r bg-ons-grey-75  ${
                   i > geoTypes.indexOf($viewport.geoType) ? " text-ons-white opacity-60" : "text-ons-grey-5"
                 }`}
+                title={i > geoTypes.indexOf($viewport.geoType)
+                  ? `${g.toUpperCase()}-level data is not available for the ${
+                      $params.classification.slug
+                    } classification`
+                  : undefined}
               >
                 {geoTypePluralDescriptions[g]}
                 {#if i > geoTypes.indexOf($viewport.geoType)}
-                  <span>(unavailable)</span>
+                  <span class="text-sm"> unavailable for {$params.classification.slug}</span>
                 {/if}
               </div>
             {/if}

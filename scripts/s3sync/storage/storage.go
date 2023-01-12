@@ -2,6 +2,7 @@ package storage
 
 import (
 	"context"
+	"errors"
 	"io"
 )
 
@@ -18,3 +19,5 @@ type FileInfo struct {
 	Checksum  string // CRC32
 	SyncState int    // to be used by syncer
 }
+
+var ErrMissingChecksum = errors.New("missing checksum")

@@ -2,7 +2,7 @@ package s3
 
 import (
 	"context"
-	"errors"
+	"fmt"
 	"io"
 	"path"
 	"strings"
@@ -99,11 +99,11 @@ func (s *S3) Checksum(ctx context.Context, name string) (string, error) {
 
 	checksum := out.Checksum
 	if checksum == nil {
-		return "", errors.New("no checksum for object")
+		return "", fmt.Errorf("%s:%s: %w", s.bucket, key, storage.ErrMissingChecksum)
 	}
 	crc32 := checksum.ChecksumCRC32
 	if crc32 == nil {
-		return "", errors.New("no CRC32 checksum for object")
+		return "", fmt.Errorf("%s:%s: %w", s.bucket, key, storage.ErrMissingChecksum)
 	}
 	return *crc32, nil
 }

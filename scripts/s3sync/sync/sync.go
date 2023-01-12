@@ -138,7 +138,7 @@ func (s *Syncer) diff(ctx context.Context) error {
 	for result := range results {
 		if result != nil {
 			err = result
-			cancel()
+			break	// keep first error
 		}
 	}
 	if err != nil {

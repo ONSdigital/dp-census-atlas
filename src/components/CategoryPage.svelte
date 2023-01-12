@@ -3,7 +3,7 @@
   import type { Category } from "../types";
   import { params } from "../stores/params";
   import { nav } from "../stores/nav";
-  import { gotoUrl } from "../helpers/navigationHelper";
+  import { gotoUrl, gotoParams } from "../helpers/navigationHelper";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
   import CategoryPageLinks from "./CategoryPageLinks.svelte";
   import AreaPanel from "./AreaPanel.svelte";
@@ -68,58 +68,30 @@
         <ClassificationPager />
       {/if}
       {#if $params.classification.comparison_2011_data_available_geotypes}
-        {#if !$params.changeOverTime}
-          <a
-            class="hyperlink-without-group-hover "
-            href={buildHyperlink($page.url, {
-              variableGroup: $params.variableGroup.slug,
-              variable: $params.variable.slug,
-              category: {
-                classification: $params.classification.slug,
-                category: $params.category.slug,
-              },
-              changeOverTime: true,
-            })}
-            on:click|preventDefault={() => {
-              // use gotoUrl (with keepfocus: true) for better keyboard navigation
-              const link = buildHyperlink($page.url, {
-                variableGroup: $params.variableGroup.slug,
-                variable: $params.variable.slug,
-                category: {
-                  classification: $params.classification.slug,
-                  category: $params.category.slug,
-                },
-                changeOverTime: true,
-              });
-
-              gotoUrl(link);
-            }}>View relative change since the 2011 census</a
-          >
-        {:else}
-          <a
-            class="hyperlink-without-group-hover "
-            href={buildHyperlink($page.url, {
-              variableGroup: $params.variableGroup.slug,
-              variable: $params.variable.slug,
-              category: {
-                classification: $params.classification.slug,
-                category: $params.category.slug,
-              },
-            })}
-            on:click|preventDefault={() => {
-              // use gotoUrl (with keepfocus: true) for better keyboard navigation
-              const link = buildHyperlink($page.url, {
-                variableGroup: $params.variableGroup.slug,
-                variable: $params.variable.slug,
-                category: {
-                  classification: $params.classification.slug,
-                  category: $params.category.slug,
-                },
-              });
-              gotoUrl(link);
-            }}>View results of the 2021 census</a
-          >
-        {/if}
+        <a
+          class="hyperlink-without-group-hover "
+          href={(function () {
+            const newUrl = new URL($page.url);
+            if ($params.changeOverTime) {
+              newUrl.searchParams.delete("changeOverTime");
+            } else {
+              newUrl.searchParams.set("changeOverTime", "true");
+            }
+            return newUrl.toString();
+          })()}
+          on:click|preventDefault={() => {
+            const newParams = new URLSearchParams($page.url.searchParams);
+            if ($params.changeOverTime) {
+              newParams.delete("changeOverTime");
+            } else {
+              newParams.set("changeOverTime", "true");
+            }
+            gotoParams(newParams);
+          }}
+          >{$params.changeOverTime
+            ? "View relative change since the 2011 census"
+            : "View results of the 2021 census"}</a
+        >
       {/if}
     </section>
   </div>

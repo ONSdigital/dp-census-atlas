@@ -1,9 +1,11 @@
 <script lang="ts">
+  import { tooltip } from "../actions/tooltip";
   import Icon from "./MaterialIcon.svelte";
   import AreaSearch from "./AreaSearch.svelte";
   import { GeoTypes } from "../types";
   import { geoTypePluralDescriptions } from "../helpers/geographyHelper";
   import { selectGeoTypeLock, deselectGeoTypeLock } from "../helpers/navigationHelper";
+  import { geoTypeSingularDescriptions } from "../helpers/geographyHelper";
   import { params } from "../stores/params";
   import { viewport } from "../stores/viewport";
   import { commands } from "../stores/commands";
@@ -44,8 +46,11 @@
               <Icon kind="chevronRight" />
             </div>
           {/if}
-          <div class="flex bg-ons-grey-15 bg-opacity-70 first:rounded-l last:rounded-r">
-            <!-- initialism button (eg `LAD`) -->
+          <div
+            class="flex bg-ons-grey-15 bg-opacity-70 first:rounded-l last:rounded-r"
+            use:tooltip={{ placement: "bottom" }}
+            title={geoTypeSingularDescriptions[g]}
+          >
             <button
               class="flex custom-ring"
               on:click={() => commands.set({ kind: "zoom", geoType: g })}
@@ -53,7 +58,6 @@
               class:opacity-60={i > geoTypes.indexOf($viewport.geoType)}
             >
               <div
-                title={geoTypePluralDescriptions[g]}
                 class={`flex items-center px-3 py-1 rounded-l text-ons-grey-5 font-bold ${
                   g === $viewport.geoType || g === $viewport.idealGeoType ? "" : "last:rounded-r"
                 } ${
@@ -65,7 +69,7 @@
                 } `}
                 class:hover:bg-ons-census={i < geoTypes.indexOf($viewport.geoType)}
               >
-                <abbr title={geoTypePluralDescriptions[g]} class="no-underline">{g.toUpperCase()}</abbr>
+                <abbr class="no-underline">{g.toUpperCase()}</abbr>
               </div>
             </button>
             {#if g === $viewport.geoType || g === $viewport.idealGeoType}

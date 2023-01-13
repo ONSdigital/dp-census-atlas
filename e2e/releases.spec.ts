@@ -30,7 +30,7 @@ const testCases = [
   {
     name: "HUC",
     url: "/choropleth/health/general-health/health-in-general/fair-health?lad=E06000062",
-    legendText: "68.2% of people in West Northamptonshire LAD have fair health",
+    legendText: "19.0% of people in West Northamptonshire LAD have fair health",
     categoryCount: 5,
   },
   {

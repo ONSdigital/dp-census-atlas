@@ -27,7 +27,6 @@
   <Header />
   <!-- main -->
   <div class={`grow flex relative`}>
-    <!-- cloak -->
     <!-- svelte-ignore a11y-click-events-have-key-events (this is an *additonal* touch area to dismiss the nav) -->
     <div
       class={`lg:hidden bg-ons-black absolute inset-0 z-20 cursor-pointer transition-opacity ${
@@ -49,9 +48,11 @@
         <slot />
       </div>
       <!-- toggle -->
-      <div class="lg:hidden absolute inset-0 left-[100%] my-auto h-24" class:hidden={!$params.category}>
-        <Toggle />
-      </div>
+      {#if !$params.embed}
+        <div class="lg:hidden absolute inset-0 left-[100%] my-auto h-24" class:hidden={!$params.category}>
+          <Toggle />
+        </div>
+      {/if}
     </div>
     <!-- map -->
     <div class="grow relative">

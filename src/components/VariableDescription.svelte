@@ -9,6 +9,7 @@
   };
 </script>
 
+<!-- svelte-ignore a11y-click-events-have-key-events (this is a larger clickable area in *addition* to the button and we don't want it to be focussable) -->
 <div class="flex items-end gap-1 group hoverable" on:click={toggleOpen}>
   <div class="flex-grow">
     {shortDescription}

@@ -21,7 +21,7 @@
     <VariableGroupList />
 
     {#if isInitialReleasePeriod($content)}
-      <div class="mb-7">
+      <div>
         Further topic data will be released according to the topic summaries <a
           href="https://census.gov.uk/census-2021-results/phase-one-topic-summaries"
           class="hyperlink">release schedule</a
@@ -29,7 +29,7 @@
       </div>
     {/if}
 
-    <div class="bg-ons-grey-5 p-6 mb-6">
+    <div class="bg-ons-grey-5 p-6 mt-8 mb-6">
       <h3 class="pb-3 text-xl font-semibold ">Examples</h3>
       <ul>
         {#if getLatestRelease($content) === "DemMig"}

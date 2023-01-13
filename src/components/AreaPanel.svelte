@@ -1,10 +1,10 @@
 <script lang="ts">
   import { page } from "$app/stores";
+  import { nav } from "../stores/nav";
   import { geography } from "../stores/geography";
-  import GeoSearch from "./AreaSearch.svelte";
+  import AreaSearch from "./AreaSearch.svelte";
   import Icon from "./MaterialIcon.svelte";
   import { deselectGeography } from "../helpers/navigationHelper";
-  import GeoTypeBadge from "./GeoTypeBadge.svelte";
   import { geoTypeSingularDescriptions } from "../helpers/geographyHelper";
 
   $: open = false;
@@ -22,7 +22,7 @@
   <h2 class="font-bold text-slate-500">Area</h2>
   <!-- nested buttons are invalid html, so workaround with a clickable label -->
   <label for="area-input" on:click={toggleOpen} class="group w-full text-left hoverable custom-ring">
-    <div class="flex items-center gap-2">
+    <div class="flex items-center gap-1">
       <div class="text-xl">
         {$geography.displayName}
       </div>
@@ -36,7 +36,7 @@
           on:click={resetSelectedGeography}
           title="Clear selected area"
           aria-label="Clear selected area"
-          class="flex ml-1 text-2xl hover:scale-105 custom-ring bg-ons-grey-15 hover:bg-ons-grey-35 rounded"
+          class="flex ml-2.5 text-2xl hover:scale-105 custom-ring bg-ons-grey-15 hover:bg-ons-grey-35 rounded"
         >
           <Icon kind="close" />
         </button>
@@ -54,6 +54,11 @@
   </label>
 
   <div class="mt-3 mb-1" style:display={open ? "block" : "none"}>
-    <GeoSearch />
+    <AreaSearch
+      onSelected={() => {
+        open = false;
+        nav.set({ open: false });
+      }}
+    />
   </div>
 </section>

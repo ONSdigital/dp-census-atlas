@@ -1,6 +1,7 @@
 <script lang="ts">
   import { page } from "$app/stores";
   import { params } from "../stores/params";
+  import { nav } from "../stores/nav";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
   import { getDefaultChoroplethClassification } from "../helpers/variableHelpers";
   import AreaPanel from "./AreaPanel.svelte";
@@ -31,6 +32,7 @@
             category: getDefaultChoroplethClassification(variable).categories[0].slug,
           },
         })}
+        on:click={() => nav.set({ open: true })}
       >
         <div class="flex justify-between">
           <div class="hyperlink">{variable.name}</div>

@@ -1,6 +1,10 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
+  // use a 'future'/upcoming feature to prevent nasty hover effects on mobile
+  future: {
+    hoverOnlyWhenSupported: true,
+  },
   content: ["./src/**/*.{html,js,svelte,ts}"],
   theme: {
     screens: {

@@ -26,7 +26,7 @@
   <OnsAnalyticsBanner {analyticsId} {analyticsProps} />
   <Header />
   <!-- main -->
-  <div class={`grow flex relative`}>
+  <div class={`grow flex relative overflow-hidden`}>
     <!-- svelte-ignore a11y-click-events-have-key-events (this is an *additonal* touch area to dismiss the nav) -->
     <div
       class={`lg:hidden bg-ons-black absolute inset-0 z-20 cursor-pointer transition-opacity ${

@@ -111,7 +111,7 @@
     <div class="">
       <label class="hoverable">
         <input type="checkbox" bind:checked={doGeoLock} class="custom-ring mr-1" />
-        Lock geotype to {geoLock.toUpperCase()}
+        Lock area type to {geoLock.toUpperCase()}
       </label>
     </div>
   </section>

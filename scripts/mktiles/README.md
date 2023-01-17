@@ -202,6 +202,18 @@ This is being used for development before real-looking 2021 data is available.
 This directory must be empty or must not exist at all.
 If you stop a run midway, you will have to remove the output directory yourself before re-running the program.
 
+`-c` (optional) sets the path to the input content json, if it is not `in/content.json`
+
+`-C` (optional) sets the name of the classification code to process, if you want to do only one classification. _All_
+from the content json will be processed if this option is not used.
+
+`-M` (optional) means "match on category names" - use this option to match the wanted categories based on their names,
+rather than their codes. This is useful as often the raw metrics files only have the category names as headers.
+
+`-P` (optional) means "category name prefix". When `-M` is set, the value of this arg will be used as a prefix when
+matching category names (does nothing if `-M` is not set). This is useful as often the raw files will prefix the
+category name in the wanted columns, e.g. `Percentage point change: <name of category>`.
+
 So, assuming default input and output directories, you could do this for 2011:
 
 	./mktiles -R

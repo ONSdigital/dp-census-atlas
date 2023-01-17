@@ -37,7 +37,7 @@
 {#if $viz?.params?.category || active.geoCode}
   <div class={`absolute bottom-3 sm:bottom-5 lg:bottom-8 flex w-full justify-center`}>
     <div
-      class="z-abovemap w-full max-w-[50rem] mx-3 lg:mx-4 bg-white bg-opacity-90 px-3 lg:px-5 py-2 lg:py-3 border-[1px] lg:border-[1px] border-ons-grey-15"
+      class="w-full max-w-[50rem] mx-3 lg:mx-4 bg-white bg-opacity-90 px-3 lg:px-5 py-2 lg:py-3 border-[1px] lg:border-[1px] border-ons-grey-15"
     >
       <!-- <div class="">
         {JSON.stringify({ code: $selected?.geoCode, value: $selected?.value })}
@@ -52,12 +52,12 @@
               >{getClassificationDataSuffix($viz.params.classification.code)}</span
             >
           </div>
-          <div class="flex-grow leading-[0px]">
-            <div class="">
-              <span class="xs:hidden font-bold">
+          <div class="flex-grow md:leading-[0px]">
+            <div class="mb-0.5 xs:mb-0 inline xs:block">
+              <span class="xs:hidden font-bold text-2xl leading-6 sm:leading-normal mr-0.5">
                 <span class="">
                   {roundedClassificationDataToString($viz.params.classification.code, active.value)}</span
-                ><span class="text-sm">{getClassificationDataSuffix($viz.params.classification.code)}</span>
+                ><span class="text-base">{getClassificationDataSuffix($viz.params.classification.code)}</span>
               </span>
               <span class={legendTextClass}>
                 {formatTemplateString(
@@ -80,7 +80,7 @@
             {#if $viz?.params?.embed?.categorySelection}
               <CategorySelector selected={$viz.params.category.slug} use="legendString" />
             {:else}
-              <div class={`${legendTextClass} font-bold`}>
+              <div class={`${legendTextClass} font-bold inline xs:block`}>
                 {formatTemplateString(
                   $viz.params.variable,
                   $viz.params.category,

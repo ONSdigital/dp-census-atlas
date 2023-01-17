@@ -55,8 +55,8 @@ const huc = {
   localContentJsonUrl: "http://localhost:8090/2021-HUC.json",
   publicContentJsonUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/content-json/2021/2021-HUC.json",
   prodPubContentJsonUrl:
-    "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusmapsconfighuc/2021-HUC.json",
-  prodWebContentJsonUrl: "https://www.ons.gov.uk/visualisations/censusmapsconfighuc/2021-HUC.json",
+    "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusmapsconfighuc2/2021-HUC.json",
+  prodWebContentJsonUrl: "https://www.ons.gov.uk/visualisations/censusmapsconfighuc2/2021-HUC.json",
   fakeDataBaseUrl: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2021",
   realDataBaseUrl: "https://ons-dp-prod-census-maps-huc.s3.eu-west-2.amazonaws.com",
 };
@@ -138,10 +138,10 @@ export default {
         contentJsonUrl: eilr.localContentJsonUrl,
         contentBaseUrl: eilr.realDataBaseUrl,
       },
-      // hou is unpublished
+      // hou is published
       {
         contentJsonUrl: hou.localContentJsonUrl,
-        contentBaseUrl: hou.fakeDataBaseUrl,
+        contentBaseUrl: hou.realDataBaseUrl,
       },
       // huc is unpublished
       {
@@ -158,10 +158,10 @@ export default {
         contentJsonUrl: mig.localContentJsonUrl,
         contentBaseUrl: mig.realDataBaseUrl,
       },
-      // sogi is unpublished
+      // sogi is published
       {
         contentJsonUrl: sogi.localContentJsonUrl,
-        contentBaseUrl: sogi.fakeDataBaseUrl,
+        contentBaseUrl: sogi.realDataBaseUrl,
       },
       // ttw is published
       {
@@ -195,20 +195,20 @@ export default {
         contentJsonUrl: dem.publicContentJsonUrl,
         contentBaseUrl: dem.realDataBaseUrl,
       },
-      // edu is unpublished
+      // edu is published
       {
         contentJsonUrl: edu.publicContentJsonUrl,
-        contentBaseUrl: edu.fakeDataBaseUrl,
+        contentBaseUrl: edu.realDataBaseUrl,
       },
       // eilr is published
       {
         contentJsonUrl: eilr.publicContentJsonUrl,
         contentBaseUrl: eilr.realDataBaseUrl,
       },
-      // hou is unpublished
+      // hou is published
       {
         contentJsonUrl: hou.publicContentJsonUrl,
-        contentBaseUrl: hou.fakeDataBaseUrl,
+        contentBaseUrl: hou.realDataBaseUrl,
       },
       // huc is unpublished
       {
@@ -225,10 +225,10 @@ export default {
         contentJsonUrl: mig.publicContentJsonUrl,
         contentBaseUrl: mig.realDataBaseUrl,
       },
-      // sogi is unpublished
+      // sogi is published
       {
         contentJsonUrl: sogi.publicContentJsonUrl,
-        contentBaseUrl: sogi.fakeDataBaseUrl,
+        contentBaseUrl: sogi.realDataBaseUrl,
       },
       // ttw is published
       {
@@ -262,20 +262,20 @@ export default {
         contentJsonUrl: dem.publicContentJsonUrl,
         contentBaseUrl: dem.realDataBaseUrl,
       },
-      // edu is unpublished
+      // edu is published
       {
         contentJsonUrl: edu.publicContentJsonUrl,
-        contentBaseUrl: edu.fakeDataBaseUrl,
+        contentBaseUrl: edu.realDataBaseUrl,
       },
       // eilr is published
       {
         contentJsonUrl: eilr.publicContentJsonUrl,
         contentBaseUrl: eilr.realDataBaseUrl,
       },
-      // hou is unpublished
+      // hou is published
       {
         contentJsonUrl: hou.publicContentJsonUrl,
-        contentBaseUrl: hou.fakeDataBaseUrl,
+        contentBaseUrl: hou.realDataBaseUrl,
       },
       // huc is unpublished
       {
@@ -292,10 +292,10 @@ export default {
         contentJsonUrl: mig.publicContentJsonUrl,
         contentBaseUrl: mig.realDataBaseUrl,
       },
-      // sogi is unpublished
+      // sogi is published
       {
         contentJsonUrl: sogi.publicContentJsonUrl,
-        contentBaseUrl: sogi.fakeDataBaseUrl,
+        contentBaseUrl: sogi.realDataBaseUrl,
       },
       // ttw is published
       {
@@ -398,10 +398,10 @@ export default {
         contentJsonUrl: hou.prodWebContentJsonUrl,
         contentBaseUrl: hou.realDataBaseUrl,
       },
-      {
-        contentJsonUrl: huc.prodWebContentJsonUrl,
-        contentBaseUrl: huc.realDataBaseUrl,
-      },
+      // {
+      //   contentJsonUrl: huc.prodWebContentJsonUrl,
+      //   contentBaseUrl: huc.realDataBaseUrl,
+      // },
       {
         contentJsonUrl: lab.prodWebContentJsonUrl,
         contentBaseUrl: lab.realDataBaseUrl,

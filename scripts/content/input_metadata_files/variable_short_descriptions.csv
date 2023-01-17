@@ -3,7 +3,7 @@ accommodation_type,The type of buildings people live in.
 age_arrival_uk,The age people were when they arrived to live in the UK.
 alternative_address_indicator,An address (in or out of the UK) a person stays at for more than 30 days per year that isn't their place of usual residence.
 country_of_birth,Where people were born.
-disability,"People with a long-term health problem or disability, including relating to old-age."
+disability,"People with a long-term health problem or disability, including conditions relating to old-age."
 economic_activity,"People in employment, looking for work, waiting to start a job or economically inactive."
 english_proficiency,"How well people whose main language is not English (or in Wales, English or Welsh) speak English"
 ethnic_group_tb,The ethnic group a person identifies with.
@@ -19,7 +19,7 @@ hh_multi_language,Whether there are multiple languages in a household.
 hh_multi_religion,Whether there are multiple religions in a household.
 hh_size,The number of people in a household.
 hh_tenure,Whether a household owns or rents.
-highest_qualification,The highest level of qualification gained.
+highest_qualification,The highest level of qualification a person has reported.
 hours_per_week_worked,The number of hours people work per week.
 industry_current,The industry people work in.
 is_carer,People who are unpaid carers.

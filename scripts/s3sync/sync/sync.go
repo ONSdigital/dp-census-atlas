@@ -4,9 +4,6 @@ import (
 	"context"
 	"errors"
 	"log"
-	"os"
-	"runtime"
-	"strconv"
 	"sync"
 
 	"github.com/ONSdigital/dp-census-atlas/scripts/s3sync/storage"
@@ -28,16 +25,21 @@ type Syncer struct {
 	dryrun   bool
 	nodelete bool
 	nocsumok bool // true if missing checksum is ok
+	workers  int  // number of concurrent checksum/copy/rm workers
 }
 
 // New returns a new Syncer which can sync from src to dst.
-func New(src, dst storage.Filer, dryrun, nodelete, nocsumok bool) (*Syncer, error) {
+func New(src, dst storage.Filer, dryrun, nodelete, nocsumok bool, workers int) (*Syncer, error) {
+	if workers < 0 {
+		workers = 1
+	}
 	return &Syncer{
 		src:      src,
 		dst:      dst,
 		dryrun:   dryrun,
 		nodelete: nodelete,
 		nocsumok: nocsumok,
+		workers:  workers,
 	}, nil
 }
 
@@ -105,7 +107,7 @@ func (s *Syncer) diff(ctx context.Context) error {
 	}
 
 	// this function processes each path in the queue and sends results to the returned channel.
-	process := func(queue <-chan string, nworkers int) <-chan error {
+	process := func(queue <-chan string) <-chan error {
 		var wg sync.WaitGroup
 		results := make(chan error)
 
@@ -121,8 +123,8 @@ func (s *Syncer) diff(ctx context.Context) error {
 			}
 		}
 
-		wg.Add(nworkers)
-		for i := 0; i < nworkers; i++ {
+		wg.Add(s.workers)
+		for i := 0; i < s.workers; i++ {
 			go worker()
 		}
 
@@ -134,7 +136,7 @@ func (s *Syncer) diff(ctx context.Context) error {
 		return results
 	}
 
-	results := process(generate(), envConc("S3SYNC_DIFF_CONCURRENCY", runtime.NumCPU()))
+	results := process(generate())
 
 	var err error
 	for result := range results {
@@ -232,7 +234,7 @@ func (s *Syncer) copy(ctx context.Context, state int) error {
 	}
 
 	// this function copies each file and sends results to the returned channel.
-	process := func(queue <-chan job, nworkers int) <-chan error {
+	process := func(queue <-chan job) <-chan error {
 		var wg sync.WaitGroup
 		results := make(chan error)
 
@@ -252,8 +254,8 @@ func (s *Syncer) copy(ctx context.Context, state int) error {
 			}
 		}
 
-		wg.Add(nworkers)
-		for i := 0; i < nworkers; i++ {
+		wg.Add(s.workers)
+		for i := 0; i < s.workers; i++ {
 			go worker()
 		}
 
@@ -265,7 +267,7 @@ func (s *Syncer) copy(ctx context.Context, state int) error {
 		return results
 	}
 
-	results := process(generate(), envConc("S3SYNC_COPY_CONCURRENCY", runtime.NumCPU()))
+	results := process(generate())
 
 	var err error
 	for result := range results {
@@ -312,28 +314,90 @@ func (s *Syncer) copyOne(ctx context.Context, name, checksum string) error {
 
 // delete removes all files from dst where dst state is not stateSeen.
 func (s *Syncer) delete(ctx context.Context) error {
-	for _, dst := range s.dstfiles {
-		if dst.SyncState == stateSeen {
-			continue
-		}
-		log.Printf("\tremove %s\n", dst.Name)
-		if s.dryrun {
-			continue
-		}
-		s.dst.Remove(ctx, dst.Name)
-	}
-	return nil
-}
+	ctx, cancel := context.WithCancel(ctx)
+	defer cancel()
 
-// envConc returns a concurrency value from an environment variable
-func envConc(name string, def int) int {
-	n, err := strconv.ParseInt(os.Getenv(name), 10, 0)
-	if err != nil {
-		return def
-	} else if n < 1 {
-		return 1
-	} else if n > 32 {
-		return 32 // arbitrary
+	// this function generates a list of paths to remove
+	generate := func() <-chan string {
+		queue := make(chan string)
+		go func() {
+			defer close(queue)
+			for _, dst := range s.dstfiles {
+				if dst.SyncState == stateSeen {
+					continue
+				}
+				select {
+				case queue <- dst.Name:
+				case <-ctx.Done():
+					return
+				}
+			}
+		}()
+		return queue
 	}
-	return int(n)
+
+	// this function deletes each path in the queue and sends results on the returned channel.
+	process := func(queue <-chan string) <-chan error {
+		var wg sync.WaitGroup
+		results := make(chan error)
+
+		worker := func() {
+			defer wg.Done()
+			for key := range queue {
+				log.Printf("\t%s\n", key)
+				var err error
+				if !s.dryrun {
+					err = s.dst.Remove(ctx, key)
+				}
+				select {
+				case results <- err:
+				case <-ctx.Done():
+					return
+				}
+			}
+		}
+
+		wg.Add(s.workers)
+		for i := 0; i < s.workers; i++ {
+			go worker()
+		}
+
+		go func() {
+			wg.Wait()
+			close(results)
+		}()
+
+		return results
+	}
+
+	results := process(generate())
+
+	var err error
+	for result := range results {
+		if result != nil {
+			err = result
+			break // keep first error
+		}
+	}
+	if err != nil {
+		return err
+	}
+	return ctx.Err()
+
+	/*
+		// non concurrent version
+		for _, dst := range s.dstfiles {
+			if dst.SyncState == stateSeen {
+				continue
+			}
+			log.Printf("\tremove %s\n", dst.Name)
+			if s.dryrun {
+				continue
+			}
+			if err := s.dst.Remove(ctx, dst.Name); err != nil {
+				return err
+			}
+		}
+		return nil
+	*/
 }

@@ -6,6 +6,7 @@ import (
 	"flag"
 	"fmt"
 	"os"
+	"runtime"
 	"strings"
 
 	"github.com/ONSdigital/dp-census-atlas/scripts/s3sync/storage"
@@ -18,9 +19,9 @@ type Syncer interface {
 	Sync(ctx context.Context) error
 }
 
-type NewSyncer func(src, dst string, dryrun, nodelete, nocsumok bool) (Syncer, error)
+type NewSyncer func(src, dst string, dryrun, nodelete, nocsumok bool, workers int) (Syncer, error)
 
-func New(srcdir, dstdir string, dryrun, nodelete, nocsumok bool) (Syncer, error) {
+func New(srcdir, dstdir string, dryrun, nodelete, nocsumok bool, workers int) (Syncer, error) {
 	src, err := newFiler(srcdir)
 	if err != nil {
 		return nil, err
@@ -31,7 +32,7 @@ func New(srcdir, dstdir string, dryrun, nodelete, nocsumok bool) (Syncer, error)
 		return nil, err
 	}
 
-	return sync.New(src, dst, dryrun, nodelete, nocsumok)
+	return sync.New(src, dst, dryrun, nodelete, nocsumok, workers)
 }
 
 // newFiler returns either a local or s3 Filer depending on whether s contains a colon.
@@ -60,6 +61,7 @@ func Run(args []string, new NewSyncer) error {
 	dryrun := fs.Bool("n", false, "dryrun")
 	nocsumok := fs.Bool("C", false, "missing checksum on S3 objects is ok")
 	nodelete := fs.Bool("D", false, "do not delete files on destination")
+	workers := fs.Int("w", runtime.NumCPU(), "number of concurrent workers")
 	fs.Usage = func() {
 		fmt.Fprintf(fs.Output(), "Usage: %s [flags] <src> <dst>\n", os.Args[0])
 		fmt.Fprintf(fs.Output(), "where: src and dst are either local directories or <bucket>:[prefix]\n")
@@ -67,6 +69,9 @@ func Run(args []string, new NewSyncer) error {
 	}
 	if err := fs.Parse(args); err != nil {
 		return err
+	}
+	if *workers < 1 {
+		return errors.New("number of workers must be > 0")
 	}
 
 	src := fs.Arg(0)
@@ -81,7 +86,7 @@ func Run(args []string, new NewSyncer) error {
 		return errors.New("dest required")
 	}
 
-	syncer, err := new(src, dst, *dryrun, *nodelete, *nocsumok)
+	syncer, err := new(src, dst, *dryrun, *nodelete, *nocsumok, *workers)
 	if err != nil {
 		return err
 	}

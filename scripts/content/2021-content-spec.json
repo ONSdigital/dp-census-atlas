@@ -292,10 +292,6 @@
       "variables_by_content_json": {
         "2021-HUC": [
           {
-            "code": "disability",
-            "classifications": ["disability_4a"]
-          },
-          {
             "custom_variable": {
               "name": "Disability (age-standardised)",
               "code": "disability_age_standardised",
@@ -345,10 +341,6 @@
                 }
               ]
             }
-          },
-          {
-            "code": "health_in_general",
-            "classifications": ["health_in_general"]
           },
           {
             "custom_variable": {
@@ -416,10 +408,6 @@
                 }
               ]
             }
-          },
-          {
-            "code": "is_carer",
-            "classifications": ["is_carer_5a"]
           },
           {
             "custom_variable": {

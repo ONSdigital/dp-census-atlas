@@ -24,10 +24,11 @@
               "code": "transport_to_workplace_12a",
               "slug": "transport-to-workplace-12a",
               "desc": "Method used to travel to workplace (12 categories)",
-              "available_geotypes": ["msoa", "lad"],
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
-              "comparison_2011_data_available": true,
-
               "data_download": "https://www.ons.gov.uk/datasets/TS061/editions/2021/versions/1",
               "categories": [
                 {
@@ -137,11 +138,12 @@
               "code": "workplace_travel_4a",
               "slug": "workplace-travel-4a",
               "desc": "Distance travelled to work (4 categories)",
-              "available_geotypes": ["msoa", "lad"],
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
-
               "data_download": "https://www.ons.gov.uk/datasets/TS058/editions/2021/versions/1",
               "categories": [
                 {
@@ -182,9 +184,10 @@
               "code": "workplace_travel_5a",
               "slug": "workplace-travel-5a",
               "desc": "Distance travelled to work (5 categories)",
-              "available_geotypes": ["msoa", "lad"],
-              "comparison_2011_data_available": true,
-
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS058/editions/2021/versions/1",
               "categories": [
                 {
@@ -233,9 +236,10 @@
               "code": "workplace_travel",
               "slug": "workplace-travel",
               "desc": "Distance travelled to work (11 categories)",
-              "available_geotypes": ["msoa", "lad"],
-              "comparison_2011_data_available": true,
-
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS058/editions/2021/versions/1",
               "categories": [
                 {

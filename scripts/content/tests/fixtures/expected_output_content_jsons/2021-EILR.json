@@ -22,11 +22,13 @@
               "code": "english_proficiency_4a",
               "slug": "english-proficiency-4a",
               "desc": "Proficiency in English language (4 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
-
               "data_download": "https://www.ons.gov.uk/datasets/TS029/editions/2021/versions/1",
               "categories": [
                 {
@@ -59,9 +61,11 @@
               "code": "english_proficiency",
               "slug": "english-proficiency",
               "desc": "Proficiency in English language (6 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
-              "comparison_2011_data_available": true,
-
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS029/editions/2021/versions/1",
               "categories": [
                 {
@@ -121,11 +125,13 @@
               "code": "ethnic_group_tb_6a",
               "slug": "ethnic-group-tb-6a",
               "desc": "Ethnic group (6 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
-
               "data_download": "https://www.ons.gov.uk/datasets/TS021/editions/2021/versions/1",
               "categories": [
                 {
@@ -174,9 +180,11 @@
               "code": "ethnic_group_tb_20b",
               "slug": "ethnic-group-tb-20b",
               "desc": "Ethnic group (20 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
-              "comparison_2011_data_available": true,
-
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS021/editions/2021/versions/1",
               "categories": [
                 {
@@ -348,10 +356,12 @@
               "code": "hh_language",
               "slug": "hh-language",
               "desc": "Household language (English and Welsh) (5 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
-              "comparison_2011_data_available": true,
-
               "data_download": "https://www.ons.gov.uk/datasets/TS025/editions/2021/versions/1",
               "categories": [
                 {
@@ -403,11 +413,13 @@
               "code": "hh_multi_ethnic_group",
               "slug": "hh-multi-ethnic-group",
               "desc": "Multiple ethnic groups in household (6 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
-
               "data_download": "https://www.ons.gov.uk/datasets/TS023/editions/2021/versions/1",
               "categories": [
                 {
@@ -467,11 +479,13 @@
               "code": "hh_multi_language_3a",
               "slug": "hh-multi-language-3a",
               "desc": "Multiple main languages in household (3 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
-
               "data_download": "https://www.ons.gov.uk/datasets/TS026/editions/2021/versions/1",
               "categories": [
                 {
@@ -496,9 +510,11 @@
               "code": "hh_multi_language",
               "slug": "hh-multi-language",
               "desc": "Multiple main languages in household (6 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
-              "comparison_2011_data_available": true,
-
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS026/editions/2021/versions/1",
               "categories": [
                 {
@@ -558,11 +574,13 @@
               "code": "hh_multi_religion_7a",
               "slug": "hh-multi-religion-7a",
               "desc": "Multiple religions in household (7 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
-
               "data_download": "https://www.ons.gov.uk/datasets/TS075/editions/2021/versions/1",
               "categories": [
                 {
@@ -630,10 +648,10 @@
               "code": "main_language_detailed_23a",
               "slug": "main-language-detailed-23a",
               "desc": "Main language (detailed) (23 categories)",
-              "available_geotypes": ["lad"],
+              "available_geotypes": [
+                "lad"
+              ],
               "choropleth_default": true,
-              "comparison_2011_data_available": true,
-
               "data_download": "https://www.ons.gov.uk/datasets/TS024/editions/2021/versions/1",
               "categories": [
                 {
@@ -818,9 +836,9 @@
               "code": "main_language_detailed",
               "slug": "main-language-detailed",
               "desc": "Main language (detailed) (95 categories)",
-              "available_geotypes": ["lad"],
-              "comparison_2011_data_available": true,
-
+              "available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS024/editions/2021/versions/1",
               "categories": [
                 {
@@ -1594,11 +1612,13 @@
               "code": "national_identity_all_4a",
               "slug": "national-identity-all-4a",
               "desc": "National identity (4 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
-
               "data_download": "https://www.ons.gov.uk/datasets/TS027/editions/2021/versions/1",
               "categories": [
                 {
@@ -1631,9 +1651,11 @@
               "code": "national_identity_all_9a",
               "slug": "national-identity-all-9a",
               "desc": "National identity (9 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
-              "comparison_2011_data_available": true,
-
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS027/editions/2021/versions/1",
               "categories": [
                 {
@@ -1706,9 +1728,11 @@
               "code": "national_identity_all",
               "slug": "national-identity-all",
               "desc": "National identity (17 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
-              "comparison_2011_data_available": true,
-
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS027/editions/2021/versions/1",
               "categories": [
                 {
@@ -1858,10 +1882,11 @@
               "code": "national_identity_detailed",
               "slug": "national-identity-detailed",
               "desc": "National identity (detailed) (73 categories)",
-              "available_geotypes": ["msoa", "lad"],
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
-              "comparison_2011_data_available": true,
-
               "data_download": "https://www.ons.gov.uk/datasets/TS028/editions/2021/versions/1",
               "categories": [
                 {
@@ -2459,10 +2484,12 @@
               "code": "religion_tb",
               "slug": "religion-tb",
               "desc": "Religion (10 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
-              "comparison_2011_data_available": true,
-
               "data_download": "https://www.ons.gov.uk/datasets/TS030/editions/2021/versions/1",
               "categories": [
                 {

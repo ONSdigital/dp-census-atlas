@@ -22,11 +22,13 @@
               "code": "highest_qualification_6a",
               "slug": "highest-qualification-6a",
               "desc": "Highest level of qualification (6 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
-
               "categories": [
                 {
                   "name": "No qualifications",
@@ -74,9 +76,11 @@
               "code": "highest_qualification",
               "slug": "highest-qualification",
               "desc": "Highest level of qualification (8 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
-              "comparison_2011_data_available": true,
-
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "categories": [
                 {
                   "name": "No qualifications",

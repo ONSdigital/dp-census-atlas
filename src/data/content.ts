@@ -398,10 +398,10 @@ export default {
         contentJsonUrl: hou.prodWebContentJsonUrl,
         contentBaseUrl: hou.realDataBaseUrl,
       },
-      // {
-      //   contentJsonUrl: huc.prodWebContentJsonUrl,
-      //   contentBaseUrl: huc.realDataBaseUrl,
-      // },
+      {
+        contentJsonUrl: huc.prodWebContentJsonUrl,
+        contentBaseUrl: huc.realDataBaseUrl,
+      },
       {
         contentJsonUrl: lab.prodWebContentJsonUrl,
         contentBaseUrl: lab.realDataBaseUrl,

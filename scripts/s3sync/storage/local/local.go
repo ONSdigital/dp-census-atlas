@@ -36,8 +36,8 @@ func (l *Local) Scan(ctx context.Context) (map[string]*storage.FileInfo, error) 
 		if err != nil {
 			return err
 		}
-		if d.Type()&fs.ModeType != 0 {
-			return nil // skip non-regular files
+		if !d.Type().IsRegular() {
+			return nil
 		}
 		info := &storage.FileInfo{
 			Name: path,

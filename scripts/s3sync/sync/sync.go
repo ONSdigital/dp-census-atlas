@@ -200,24 +200,114 @@ func (s *Syncer) diffOne(ctx context.Context, key string) error {
 
 // copy copies all files from src to dst where source state equals state.
 func (s *Syncer) copy(ctx context.Context, state int) error {
-	for _, src := range s.srcfiles {
-		if src.SyncState != state {
-			continue
+	ctx, cancel := context.WithCancel(ctx)
+	defer cancel()
+
+	type job struct {
+		name     string
+		checksum string
+	}
+
+	// this function generates a list of files to copy
+	generate := func() <-chan job {
+		queue := make(chan job)
+		go func() {
+			defer close(queue)
+			for _, src := range s.srcfiles {
+				if src.SyncState != state {
+					continue
+				}
+				j := job{
+					name:     src.Name,
+					checksum: src.Checksum,
+				}
+				select {
+				case queue <- j:
+				case <-ctx.Done():
+					return
+				}
+			}
+		}()
+		return queue
+	}
+
+	// this function copies each file and sends results to the returned channel.
+	process := func(queue <-chan job, nworkers int) <-chan error {
+		var wg sync.WaitGroup
+		results := make(chan error)
+
+		worker := func() {
+			defer wg.Done()
+			for j := range queue {
+				log.Printf("\t%s\n", j.name)
+				var err error
+				if !s.dryrun {
+					err = s.copyOne(ctx, j.name, j.checksum)
+				}
+				select {
+				case results <- err:
+				case <-ctx.Done():
+					return
+				}
+			}
 		}
-		log.Printf("\t%s\n", src.Name)
-		if s.dryrun {
-			continue
+
+		wg.Add(nworkers)
+		for i := 0; i < nworkers; i++ {
+			go worker()
 		}
-		r, err := s.src.Open(ctx, src.Name)
-		if err != nil {
-			return err
-		}
-		if err := s.dst.Create(ctx, src.Name, r, src.Checksum); err != nil {
-			r.Close()
-			return err
+
+		go func() {
+			wg.Wait()
+			close(results)
+		}()
+
+		return results
+	}
+
+	results := process(generate(), envConc("S3SYNC_COPY_CONCURRENCY", runtime.NumCPU()))
+
+	var err error
+	for result := range results {
+		if result != nil {
+			err = result
+			break // keep first error
 		}
 	}
-	return nil
+	if err != nil {
+		return err
+	}
+	return ctx.Err()
+
+	/*
+		// non parallel version
+		for _, src := range s.srcfiles {
+			if src.SyncState != state {
+				continue
+			}
+			log.Printf("\t%s\n", src.Name)
+			if s.dryrun {
+				continue
+			}
+			if err := s.copyOne(ctx, src.Name, src.Checksum); err != nil {
+				return err
+			}
+		}
+		return nil
+	*/
+}
+
+// copyOne copies a single file from src to dest
+func (s *Syncer) copyOne(ctx context.Context, name, checksum string) error {
+	r, err := s.src.Open(ctx, name)
+	if err != nil {
+		return err
+	}
+	if err := s.dst.Create(ctx, name, r, checksum); err != nil {
+		r.Close()
+		return err
+	}
+	return r.Close()
 }
 
 // delete removes all files from dst where dst state is not stateSeen.

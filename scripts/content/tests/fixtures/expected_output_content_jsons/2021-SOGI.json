@@ -22,11 +22,12 @@
               "code": "gender_identity_4a",
               "slug": "gender-identity-4a",
               "desc": "Gender identity (4 categories)",
-              "available_geotypes": ["msoa", "lad"],
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
-
               "categories": [
                 {
                   "name": "Gender identity the same as sex registered at birth",
@@ -58,9 +59,9 @@
               "code": "gender_identity_8a",
               "slug": "gender-identity-8a",
               "desc": "Gender identity (8 categories)",
-              "available_geotypes": ["lad"],
-              "comparison_2011_data_available": true,
-
+              "available_geotypes": [
+                "lad"
+              ],
               "categories": [
                 {
                   "name": "Gender identity the same as sex registered at birth",
@@ -135,11 +136,12 @@
               "code": "sexual_orientation_4a",
               "slug": "sexual-orientation-4a",
               "desc": "Sexual orientation (4 categories)",
-              "available_geotypes": ["msoa", "lad"],
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
-
               "categories": [
                 {
                   "name": "Straight or Heterosexual",
@@ -171,9 +173,10 @@
               "code": "sexual_orientation_6a",
               "slug": "sexual-orientation-6a",
               "desc": "Sexual orientation (6 categories)",
-              "available_geotypes": ["msoa", "lad"],
-              "comparison_2011_data_available": true,
-
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "categories": [
                 {
                   "name": "Straight or Heterosexual",
@@ -221,9 +224,10 @@
               "code": "sexual_orientation_9a",
               "slug": "sexual-orientation-9a",
               "desc": "Sexual orientation (9 categories)",
-              "available_geotypes": ["msoa", "lad"],
-              "comparison_2011_data_available": true,
-
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "categories": [
                 {
                   "name": "Straight or Heterosexual",

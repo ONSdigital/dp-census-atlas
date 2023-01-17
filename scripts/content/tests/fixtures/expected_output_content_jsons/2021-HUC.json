@@ -22,11 +22,13 @@
               "code": "disability_3a",
               "slug": "disability-3a",
               "desc": "Disability (3 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
-
               "categories": [
                 {
                   "name": "Disabled under the Equality Act",
@@ -50,9 +52,11 @@
               "code": "disability",
               "slug": "disability",
               "desc": "Disability (5 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
-              "comparison_2011_data_available": true,
-
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "categories": [
                 {
                   "name": "Disabled under the Equality Act: Day-to-day activities limited a lot",
@@ -103,11 +107,13 @@
               "code": "health_in_general_3a",
               "slug": "health-in-general-3a",
               "desc": "General health (3 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
-
               "categories": [
                 {
                   "name": "Good health",
@@ -131,9 +137,11 @@
               "code": "health_in_general_4a",
               "slug": "health-in-general-4a",
               "desc": "General health (4 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
-              "comparison_2011_data_available": true,
-
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "categories": [
                 {
                   "name": "Very good or good health",
@@ -165,9 +173,11 @@
               "code": "health_in_general",
               "slug": "health-in-general",
               "desc": "General health (6 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
-              "comparison_2011_data_available": true,
-
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "categories": [
                 {
                   "name": "Very good health",
@@ -226,11 +236,13 @@
               "code": "hh_disabled_4a",
               "slug": "hh-disabled-4a",
               "desc": "Number of disabled people in household (4 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
-
               "categories": [
                 {
                   "name": "No people disabled under the Equality Act in household",
@@ -273,11 +285,13 @@
               "code": "is_carer_5a",
               "slug": "is-carer-5a",
               "desc": "Unpaid care (5 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
-
               "categories": [
                 {
                   "name": "Provides no unpaid care",
@@ -317,9 +331,11 @@
               "code": "is_carer",
               "slug": "is-carer",
               "desc": "Unpaid care (7 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
-              "comparison_2011_data_available": true,
-
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "categories": [
                 {
                   "name": "Provides no unpaid care",

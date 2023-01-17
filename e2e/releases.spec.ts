@@ -29,8 +29,8 @@ const testCases = [
   },
   {
     name: "HUC",
-    url: "/choropleth/health/general-health/health-in-general/fair-health?lad=E06000062",
-    legendText: "19.0% of people in West Northamptonshire LAD have fair health",
+    url: "/choropleth/health/general-health-age-standardised/health-in-general/fair-health?lad=E06000062",
+    legendText: "92.0% of people in West Northamptonshire LAD have fair health",
     categoryCount: 5,
   },
   {

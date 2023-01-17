@@ -22,9 +22,12 @@
               "code": "population_density",
               "slug": "population-density",
               "desc": "Population density",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
-
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -52,11 +55,16 @@
               "code": "hh_deprivation",
               "slug": "hh-deprivation",
               "desc": "Household deprivation (6 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
-
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -116,11 +124,16 @@
               "code": "hh_family_composition_4a",
               "slug": "hh-family-composition-4a",
               "desc": "Household composition (4 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
-
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -153,9 +166,14 @@
               "code": "hh_family_composition_15a",
               "slug": "hh-family-composition-15a",
               "desc": "Household composition (15 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
-              "comparison_2011_data_available": true,
-
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -287,11 +305,16 @@
               "code": "hh_size_5a",
               "slug": "hh-size-5a",
               "desc": "Household size (5 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
-
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -332,9 +355,14 @@
               "code": "hh_size_9a",
               "slug": "hh-size-9a",
               "desc": "Household size (9 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
-              "comparison_2011_data_available": true,
-
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -418,11 +446,18 @@
               "code": "legal_partnership_status_3a",
               "slug": "legal-partnership-status-3a",
               "desc": "Marital and civil partnership status (3 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
-
+              "comparison_2011_data_available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -447,9 +482,14 @@
               "code": "legal_partnership_status_6a",
               "slug": "legal-partnership-status-6a",
               "desc": "Marital and civil partnership status (6 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
-              "comparison_2011_data_available": true,
-
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -498,9 +538,11 @@
               "code": "legal_partnership_status",
               "slug": "legal-partnership-status",
               "desc": "Marital and civil partnership status (12 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
-              "comparison_2011_data_available": true,
-
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -608,10 +650,14 @@
               "code": "living_arrangements_11a",
               "slug": "living-arrangements-11a",
               "desc": "Living arrangements (11 categories)",
-              "available_geotypes": ["msoa", "lad"],
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
-              "comparison_2011_data_available": true,
-
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -711,11 +757,15 @@
               "code": "resident_age_3a",
               "slug": "resident-age-3a",
               "desc": "Age (3 categories)",
-              "available_geotypes": ["msoa", "lad"],
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
-
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -748,9 +798,13 @@
               "code": "resident_age_8c",
               "slug": "resident-age-8c",
               "desc": "Age (C) (8 categories)",
-              "available_geotypes": ["msoa", "lad"],
-              "comparison_2011_data_available": true,
-
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -823,9 +877,13 @@
               "code": "resident_age_11a",
               "slug": "resident-age-11a",
               "desc": "Age (11 categories)",
-              "available_geotypes": ["msoa", "lad"],
-              "comparison_2011_data_available": true,
-
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -922,9 +980,13 @@
               "code": "resident_age_101a",
               "slug": "resident-age-101a",
               "desc": "Age (101 categories)",
-              "available_geotypes": ["msoa", "lad"],
-              "comparison_2011_data_available": true,
-
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -1752,9 +1814,11 @@
               "code": "median_age",
               "slug": "median-age",
               "desc": "Median age",
-              "available_geotypes": ["msoa", "lad"],
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
-
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {
@@ -1782,11 +1846,16 @@
               "code": "sex",
               "slug": "sex",
               "desc": "Sex (2 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
-
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
               "categories": [
                 {

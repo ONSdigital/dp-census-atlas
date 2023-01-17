@@ -22,11 +22,13 @@
               "code": "welsh_skills_all_4b",
               "slug": "welsh-skills-all-4b",
               "desc": "Welsh language skills (B) (4 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
-
               "data_download": "https://www.ons.gov.uk/datasets/TS032/editions/2021/versions/1",
               "categories": [
                 {
@@ -59,9 +61,11 @@
               "code": "welsh_skills_all_6a",
               "slug": "welsh-skills-all-6a",
               "desc": "Welsh language skills (6 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
-              "comparison_2011_data_available": true,
-
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS032/editions/2021/versions/1",
               "categories": [
                 {
@@ -110,9 +114,11 @@
               "code": "welsh_skills_all",
               "slug": "welsh-skills-all",
               "desc": "Welsh language skills (10 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
-              "comparison_2011_data_available": true,
-
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS032/editions/2021/versions/1",
               "categories": [
                 {
@@ -204,11 +210,13 @@
               "code": "welsh_skills_speak",
               "slug": "welsh-skills-speak",
               "desc": "Welsh speaking ability (3 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
-
               "data_download": "https://www.ons.gov.uk/datasets/TS033/editions/2021/versions/1",
               "categories": [
                 {

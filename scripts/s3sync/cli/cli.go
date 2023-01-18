@@ -7,7 +7,6 @@ import (
 	"fmt"
 	"os"
 	"runtime"
-	"strings"
 
 	"github.com/ONSdigital/dp-census-atlas/scripts/s3sync/storage"
 	"github.com/ONSdigital/dp-census-atlas/scripts/s3sync/storage/local"
@@ -37,12 +36,18 @@ func New(srcdir, dstdir string, dryrun, nodelete, nocsumok bool, workers int) (S
 
 // newFiler returns either a local or s3 Filer depending on whether s contains a colon.
 func newFiler(s string) (storage.Filer, error) {
-	before, after, found := strings.Cut(s, ":")
-	if !found {
-		return local.New(before)
-	} else {
-		return s3.New(before, after)
+	loc, err := storage.ParseLocation(s)
+	if err != nil {
+		return nil, err
 	}
+
+	if loc.Scheme == storage.FileScheme {
+		return local.New(loc.Path)
+	} else if loc.Scheme == storage.S3Scheme {
+		return s3.New(loc.Bucket, loc.Prefix)
+	}
+
+	return nil, fmt.Errorf("unrecognized location %q", s)
 }
 
 // CLI prints any error returned from Run and converts the error into an exit value.
@@ -64,7 +69,7 @@ func Run(args []string, new NewSyncer) error {
 	workers := fs.Int("w", runtime.NumCPU(), "number of concurrent workers")
 	fs.Usage = func() {
 		fmt.Fprintf(fs.Output(), "Usage: %s [flags] <src> <dst>\n", os.Args[0])
-		fmt.Fprintf(fs.Output(), "where: src and dst are either local directories or <bucket>:[prefix]\n")
+		fmt.Fprintf(fs.Output(), "where: src and dst are either local directory paths or s3://<bucket>[/prefix]\n")
 		fs.PrintDefaults()
 	}
 	if err := fs.Parse(args); err != nil {

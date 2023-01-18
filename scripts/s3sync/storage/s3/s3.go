@@ -145,10 +145,28 @@ func (s *S3) Create(ctx context.Context, name string, r io.Reader, checksum stri
 		Key:               &key,
 		ChecksumAlgorithm: algo,
 		ChecksumCRC32:     crc32,
-		// ACL: aws.String(s3.BucketCannedACLPublicRead),
+		ContentType:       aws.String(contentType(name)),
 	}
 	_, err := s.uploader.UploadWithContext(ctx, in)
 	return err
+}
+
+// contentType returns the MIME content type based on a file extension.
+// We only use a few extensions right now, so this is ok.
+func contentType(fname string) string {
+	ext := strings.ToLower(path.Ext(fname))
+	switch ext {
+	case ".csv":
+		return "text/csv"
+	case ".geojson":
+		return "application/geo+json"
+	case ".json":
+		return "application/json"
+	case ".txt":
+		return "text/plain; charset=utf-8"
+	default:
+		return "application/octet-stream"
+	}
 }
 
 // Open returns a ReadCloser which can be used to read an object's contents.

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2023-01-18-15-10-23",
-    "release": "2021-ALL-ar2776-c21ew_metadata-v1-3_cantab_20230104-38"
+    "created_at": "2023-01-19-15-27-46",
+    "release": "2021-ALL-ar2776-c21ew_metadata-v1-3_cantab_20230119-40"
   },
   "content": [
     {
@@ -4134,8 +4134,8 @@
                   "legend_str_3": "level 3 qualifications as their highest level of qualification"
                 },
                 {
-                  "name": "Level 4 qualifications and above: degree (BA, BSc), higher degree (MA, PhD, PGCE), NVQ level 4 to 5, HNC, HND, RSA Higher Diploma, BTEC Higher level, professional qualifications (for example, teaching, nursing, accountancy)",
-                  "slug": "level-4-qualifications-and-above-degree-ba-bsc-higher-degree-ma-phd-pgce-nvq-level-4-to-5-hnc-hnd-rsa-higher-diploma-btec-higher-level-professional-qualifications-for-example-teaching-nursing-accountancy",
+                  "name": "Level 4 qualifications or above: degree (BA, BSc), higher degree (MA, PhD, PGCE), NVQ level 4 to 5, HNC, HND, RSA Higher Diploma, BTEC Higher level, professional qualifications (for example, teaching, nursing, accountancy)",
+                  "slug": "level-4-qualifications-or-above-degree-ba-bsc-higher-degree-ma-phd-pgce-nvq-level-4-to-5-hnc-hnd-rsa-higher-diploma-btec-higher-level-professional-qualifications-for-example-teaching-nursing-accountancy",
                   "code": "highest_qualification-005",
                   "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "have",
@@ -4189,8 +4189,8 @@
                   "legend_str_3": "an apprenticeship as their highest level of qualification"
                 },
                 {
-                  "name": "Highest level of qualification: Level 4 qualifications and above",
-                  "slug": "highest-level-of-qualification-level-4-qualifications-and-above",
+                  "name": "Highest level of qualification: Level 4 qualifications or above",
+                  "slug": "highest-level-of-qualification-level-4-qualifications-or-above",
                   "code": "highest_qualification_6a-003",
                   "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "have",
@@ -4214,7 +4214,7 @@
           "slug": "schoolchild-or-full-time-student-indicator",
           "desc": "People in full-time education.",
           "long_desc": "Indicates whether a person aged 5 years and over was in full-time education on Census Day, 21 March 2021. This includes schoolchildren and adults in full-time education.\n\nSchoolchildren and students in full-time education studying away from home are treated as usually resident at their term-time address.",
-          "units": "",
+          "units": "Person",
           "topic_code": "EDU",
           "classifications": [
             {
@@ -7529,7 +7529,7 @@
           "code": "alternative_address_indicator",
           "slug": "second-address-indicator",
           "desc": "An address (in or out of the UK) a person stays at for more than 30 days per year that isn't their place of usual residence.",
-          "long_desc": "An address (in or out of the UK) a person stays at for more than 30 days per year that is not their place of usual residence. \n \nSecond addresses typically include:\n\n* armed forces bases\n* addresses used by people working away from home\n* a student\u2019s home address\n* the address of another parent or guardian\n* a holiday home\n  \nIf a person with a second address was staying there on census night, they were classed as a visitor to the second address but counted as a usual resident at their home address.",
+          "long_desc": "An address (in or out of the UK) a person stays at for more than 30 days per year that is not their place of usual residence. \n \nSecond addresses typically include:\n\n* armed forces bases\n* addresses used by people working away from home\n* a student\u2019s home address\n* the address of another parent or guardian\n* a partner\u2019s address\n* a holiday home\n  \nIf a person with a second address was staying there on census night, they were classed as a visitor to the second address but counted as a usual resident at their home address.",
           "units": "Person",
           "topic_code": "HOU",
           "classifications": [

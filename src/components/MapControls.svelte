@@ -27,7 +27,7 @@
         <div class={`px-3 py-1 last:rounded-r bg-ons-grey-75 text-ons-grey-5 `}>
           {geoTypePluralDescriptions[$viewport.geoType]}
         </div>
-        {#if $params.geoLock}
+        {#if $params.geoLock && !$params.embed}
           <div class="flex items-center p-1 last:rounded-r bg-ons-grey-100 text-ons-grey-15 text-xl">
             <Icon kind="lock" />
           </div>

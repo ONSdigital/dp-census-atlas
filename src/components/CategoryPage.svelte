@@ -45,7 +45,7 @@
                 },
               })}
               on:click|preventDefault={() => {
-                // use gotoUrl (with keepfocus: true) for better keyboard navigation
+                // use gotoUrl (with keepFocus: true) for better keyboard navigation
                 const link = buildHyperlink($page.url, {
                   variableGroup: $params.variableGroup.slug,
                   variable: $params.variable.slug,

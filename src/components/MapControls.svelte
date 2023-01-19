@@ -24,17 +24,15 @@
             >{$viewport.geoType.toUpperCase()}</abbr
           >
         </div>
-        <div class={`px-3 py-1 rounded-r bg-ons-grey-75 text-ons-grey-5 `}>
+        <div class={`px-3 py-1 last:rounded-r bg-ons-grey-75 text-ons-grey-5 `}>
           {geoTypePluralDescriptions[$viewport.geoType]}
         </div>
+        {#if $params.geoLock}
+          <div class="flex items-center p-1 last:rounded-r bg-ons-grey-100 text-ons-grey-15 text-xl">
+            <Icon kind="lock" />
+          </div>
+        {/if}
       </div>
-      {#if $params.geoLock}
-        <div
-          class="flex items-center ml-1 text-2xl hover:scale-105 custom-ring bg-ons-white hover:bg-ons-grey-35 border border-gray-300 rounded"
-        >
-          <Icon kind="lock" />
-        </div>
-      {/if}
     </div>
 
     <!-- full breadcrumb (non-mobile) -->

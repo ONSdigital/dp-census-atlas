@@ -3,23 +3,13 @@
   import AreaSearch from "./AreaSearch.svelte";
   import { GeoTypes } from "../types";
   import { geoTypePluralDescriptions } from "../helpers/geographyHelper";
+  import { selectGeoTypeLock, deselectGeoTypeLock } from "../helpers/navigationHelper";
   import { params } from "../stores/params";
   import { viewport } from "../stores/viewport";
   import { commands } from "../stores/commands";
-  import { gotoParams } from "../helpers/navigationHelper";
   import { page } from "$app/stores";
 
   const geoTypes = GeoTypes.filter((g) => g !== "ew");
-
-  const lockGeo = () => {
-    const newParams = new URLSearchParams($page.url.searchParams);
-    if ($params.geoLock) {
-      newParams.delete("geoLock");
-    } else {
-      newParams.set("geoLock", $viewport?.geoType);
-    }
-    gotoParams(newParams);
-  };
 </script>
 
 {#if $viewport}
@@ -38,14 +28,13 @@
           {geoTypePluralDescriptions[$viewport.geoType]}
         </div>
       </div>
-      <button
-        on:click={lockGeo}
-        title="Lock geotype"
-        aria-label="Lock geotype"
-        class="flex items-center ml-1 text-2xl hover:scale-105 custom-ring bg-ons-white hover:bg-ons-grey-35 border border-gray-300 rounded"
-      >
-        <Icon kind={$params.geoLock ? "lock" : "lockOpen"} />
-      </button>
+      {#if $params.geoLock}
+        <div
+          class="flex items-center ml-1 text-2xl hover:scale-105 custom-ring bg-ons-white hover:bg-ons-grey-35 border border-gray-300 rounded"
+        >
+          <Icon kind="lock" />
+        </div>
+      {/if}
     </div>
 
     <!-- full breadcrumb (non-mobile) -->
@@ -101,7 +90,13 @@
         {/if}
       {/each}
       <button
-        on:click={lockGeo}
+        on:click={() => {
+          if ($params.geoLock) {
+            deselectGeoTypeLock($page.url.searchParams);
+          } else {
+            selectGeoTypeLock($page.url.searchParams, $viewport.geoType);
+          }
+        }}
         title="Lock geotype"
         aria-label="Lock geotype"
         class="flex items-center ml-1 text-2xl hover:scale-105 custom-ring bg-ons-white hover:bg-ons-grey-35 border border-gray-300 rounded"

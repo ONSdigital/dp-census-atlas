@@ -16,6 +16,18 @@ export const deselectGeography = (params: URLSearchParams) => {
   gotoParams(newer);
 };
 
+export const selectGeoTypeLock = (params: URLSearchParams, geoType: GeoType) => {
+  const newer = new URLSearchParams(params);
+  newer.set("geoLock", geoType);
+  gotoParams(newer);
+};
+
+export const deselectGeoTypeLock = (params: URLSearchParams) => {
+  const newer = new URLSearchParams(params);
+  newer.delete("geoLock");
+  gotoParams(newer);
+};
+
 const gotoParams = (newer: URLSearchParams) => {
   goto(`?${newer.toString()}`, { keepFocus: true, noScroll: true });
 };

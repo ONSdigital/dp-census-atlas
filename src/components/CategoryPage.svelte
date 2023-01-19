@@ -89,8 +89,8 @@
             gotoParams(newParams);
           }}
           >{$params.changeOverTime
-            ? "View relative change since the 2011 census"
-            : "View results of the 2021 census"}</a
+            ? "View results of the 2021 census"
+            : "View relative change since the 2011 census"}</a
         >
       {/if}
     </section>

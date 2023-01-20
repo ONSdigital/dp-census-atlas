@@ -74,7 +74,7 @@
                 disabled={g !== $viewport.geoType}
                 class={`px-3 py-0 last:rounded-r bg-ons-grey-75 custom-ring flex items-center flex-nowrap ${
                   i > geoTypes.indexOf($viewport.geoType) ? "text-ons-white opacity-60" : "text-ons-grey-5"
-                } ${g === $viewport.geoType ? "group hover:bg-ons-grey-100 focus:bg-ons-grey-100" : ""}`}
+                } ${g === $viewport.geoType ? "group hover:bg-ons-grey-100 focus-visible:bg-ons-grey-100" : ""}`}
                 on:click={() => {
                   if ($params.geoLock) {
                     deselectGeoTypeLock($page.url.searchParams);
@@ -84,10 +84,12 @@
                 }}
               >
                 <div class="relative">
-                  <div class="group-hover:invisible group-focus:invisible">
+                  <div class="group-hover:invisible group-focus-visible:invisible">
                     {geoTypePluralDescriptions[g]}
                   </div>
-                  <div class="hidden group-hover:flex group-focus:flex items-center gap-1 absolute left-0 top-0 ">
+                  <div
+                    class="hidden group-hover:flex group-focus-visible:flex items-center gap-1 absolute left-0 top-0 "
+                  >
                     {#if !$params.geoLock}
                       <div><Icon kind="lock" /></div>
                       <div>Lock</div>

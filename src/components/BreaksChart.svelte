@@ -1,18 +1,21 @@
 <script lang="ts">
   import { roundedClassificationDataToString } from "../helpers/classificationHelpers";
+  import { heatMapColours } from "../stores/heatMapColours";
+
   import BreaksMarker from "./BreaksMarker.svelte";
 
   export let hovered = undefined;
   export let selected = undefined;
-  export let breaks = [0, 20, 40, 60, 80, 100];
-  export let colors = ["rgba(234,236,177)", "rgba(169,216,145)", "rgba(0,167,186)", "rgba(0,78,166)", "rgba(0,13,84)"];
   export let suffix = "";
   export let snapTicks = true;
   export let classificationCode = "";
 
   // handle case of only one breaks value
   $: ticks = breaks.length === 1 ? [breaks[0], breaks[0]] : breaks;
-
+  $: breaks = $heatMapColours?.breaks ? $heatMapColours.breaks : [0, 20, 40, 60, 80, 100];
+  $: colors = $heatMapColours?.colours
+    ? $heatMapColours.colours
+    : ["rgba(234,236,177)", "rgba(169,216,145)", "rgba(0,167,186)", "rgba(0,78,166)", "rgba(0,13,84)"];
   const pos = (val, breaks) => {
     if (val < breaks[0]) {
       return 0;

@@ -1,7 +1,8 @@
 import type { LoadedGeographies, VizData } from "../types";
 import { layers } from "./layers";
-import { choroplethColours, getHeatMapColours } from "../helpers/choroplethHelpers";
-
+import { choroplethColours } from "../helpers/choroplethHelpers";
+import { heatMapColours } from "../stores/heatMapColours";
+import { get } from "svelte/store";
 let loadedGeographies: LoadedGeographies = undefined;
 
 export const renderMapViz = (map: mapboxgl.Map, data: VizData | undefined) => {
@@ -10,18 +11,13 @@ export const renderMapViz = (map: mapboxgl.Map, data: VizData | undefined) => {
   if (!data) {
     return;
   }
-
   const layer = layers.find((l) => l.name == data.geoType);
-
-  const allUniqueValues = [...new Set(data.places.map((p) => p.categoryValue))].sort((a, b) => {
-    return a - b;
-  });
-  const spectrum = getHeatMapColours(allUniqueValues);
-
+  const hmcolours = get(heatMapColours);
+  console.log("here", hmcolours);
   data.places.forEach((p) => {
     map.setFeatureState(
       { source: layer.name, sourceLayer: layer.sourceLayer, id: p.geoCode },
-      { colour: getChoroplethColour(p.categoryValue, allUniqueValues, spectrum) },
+      { colour: getChoroplethColour(p.categoryValue, hmcolours.breaks, hmcolours.colours) },
     );
   });
 };

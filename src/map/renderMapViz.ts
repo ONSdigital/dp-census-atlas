@@ -1,25 +1,27 @@
 import type { LoadedGeographies, VizData } from "../types";
 import { layers } from "./layers";
-import { choroplethColours } from "../helpers/choroplethHelpers";
+import { choroplethColours, getHeatMapColours } from "../helpers/choroplethHelpers";
 import { heatMapColours } from "../stores/heatMapColours";
-import { get } from "svelte/store";
 let loadedGeographies: LoadedGeographies = undefined;
 
 export const renderMapViz = (map: mapboxgl.Map, data: VizData | undefined) => {
   removeOldFeatureStates(map, data);
-
   if (!data) {
     return;
   }
+
+  const hmColours = getStuff(map, data);
+
   const layer = layers.find((l) => l.name == data.geoType);
-  const hmcolours = get(heatMapColours);
-  console.log("here", hmcolours);
+
   data.places.forEach((p) => {
     map.setFeatureState(
       { source: layer.name, sourceLayer: layer.sourceLayer, id: p.geoCode },
-      { colour: getChoroplethColour(p.categoryValue, hmcolours.breaks, hmcolours.colours) },
+      { colour: getChoroplethColour(p.categoryValue, hmColours.breaks, hmColours.colours) },
     );
   });
+
+  heatMapColours.set(hmColours);
 };
 
 const getChoroplethColour = (value: number, breaks: number[], colors: string[] = choroplethColours) => {
@@ -69,4 +71,27 @@ const rememberLoadedGeographies = (data: VizData | undefined) => {
       oa: geoType === "oa" ? new Set(geoCodes) : new Set([]),
     },
   };
+};
+
+const getStuff = (map: mapboxgl.Map, data: VizData) => {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore (queryRenderedFeatures typings appear to be wrong)
+  const renderedGeos = map.queryRenderedFeatures({ layers: [`${data.geoType}-features`] }).map((f) => f.id);
+  console.log(renderedGeos);
+  const renderedPlaces = renderedGeos.map((g) => data.places.find((p) => p.geoCode === g));
+  const breaks = [...new Set(renderedPlaces.map((p) => p.categoryValue))].sort((a, b) => a - b);
+  let legendBreaks = [];
+  if (breaks.length <= 5) {
+    legendBreaks = breaks;
+  } else {
+    legendBreaks = [
+      breaks[0],
+      breaks[Math.round(breaks.length / 4) * 1],
+      breaks[Math.round(breaks.length / 4) * 2],
+      breaks[Math.round(breaks.length / 4) * 3],
+      ...breaks.slice(-1),
+    ];
+  }
+  const colours = getHeatMapColours(breaks);
+  return { legendBreaks, breaks, colours };
 };

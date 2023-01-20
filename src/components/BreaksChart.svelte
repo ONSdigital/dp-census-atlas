@@ -12,7 +12,7 @@
 
   // handle case of only one breaks value
   $: ticks = breaks.length === 1 ? [breaks[0], breaks[0]] : breaks;
-  $: breaks = $heatMapColours?.breaks ? $heatMapColours.breaks : [0, 20, 40, 60, 80, 100];
+  $: breaks = $heatMapColours?.legendBreaks ? $heatMapColours.legendBreaks : [0, 20, 40, 60, 80, 100];
   $: colors = $heatMapColours?.colours
     ? $heatMapColours.colours
     : ["rgba(234,236,177)", "rgba(169,216,145)", "rgba(0,167,186)", "rgba(0,78,166)", "rgba(0,13,84)"];

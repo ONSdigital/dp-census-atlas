@@ -12,13 +12,11 @@ import { initMapLayers } from "./initMapLayers";
 import { renderMapViz } from "./renderMapViz";
 import { layers } from "./layers";
 import { style, maxBounds } from "./style";
-import { viewport, type Viewport } from "../stores/viewport";
+import { viewport } from "../stores/viewport";
 import { viz } from "../stores/viz";
 import { toObservable } from "../util/rxUtil";
 import { commands, type Command } from "../stores/commands";
 import { isAppInteractive, type EmbedParams } from "../helpers/embedHelper";
-import { heatMapColours } from "../stores/heatMapColours";
-import { getHeatMapColours } from "../helpers/choroplethHelpers";
 
 const defaultZoom = 6;
 const maxAllowedZoom = 15;
@@ -61,7 +59,6 @@ export const initMap = (container: HTMLElement) => {
 
   map.on("load", () => {
     initMapLayers(map, get(geography), interactive);
-    viewport.subscribe((viewport) => setHeatMapColours(map, viewport));
     viz.subscribe((value) => renderMapViz(map, value));
     geography.subscribe((geography) => listenToGeographyStore(map, geography));
     commands.subscribe((command) => listenToCommandStore(map, command));
@@ -207,30 +204,5 @@ const listenToCommandStore = (map: mapboxgl.Map, command: Command) => {
   if (command?.kind === "zoom") {
     const zoom = getSuitableZoomForGeoType(command.geoType);
     map.zoomTo(zoom, { duration: 6000 });
-  }
-};
-
-const setHeatMapColours = (map: mapboxgl.Map, viewport: Viewport) => {
-  const vizData = get(viz);
-  if (viewport?.geoType && vizData) {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore (queryRenderedFeatures typings appear to be wrong)
-    const renderedGeos = map.queryRenderedFeatures({ layers: [`${viewport.geoType}-features`] }).map((f) => f.id);
-    const renderedPlaces = renderedGeos.map((g) => vizData.places.find((p) => p.geoCode === g));
-    const breaks = [...new Set(renderedPlaces.map((p) => p.categoryValue))].sort((a, b) => a - b);
-    let legendBreaks = [];
-    if (breaks.length <= 5) {
-      legendBreaks = breaks;
-    } else {
-      legendBreaks = [
-        breaks[0],
-        breaks[Math.round(breaks.length / 4) * 1],
-        breaks[Math.round(breaks.length / 4) * 2],
-        breaks[Math.round(breaks.length / 4) * 3],
-        ...breaks.slice(-1),
-      ];
-    }
-    const colours = getHeatMapColours(breaks);
-    heatMapColours.set({ legendBreaks, breaks, colours });
   }
 };

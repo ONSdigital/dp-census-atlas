@@ -44,18 +44,21 @@ export const initMap = (container: HTMLElement) => {
 
   map.touchZoomRotate.disableRotation();
 
-  setMinZoomIfGeoLock(map, get(params)?.geoLock);
-
+  let navigation;
   if (interactive) {
-    map.addControl(new mapboxgl.NavigationControl({ showCompass: false }));
+    navigation = new mapboxgl.NavigationControl({ showCompass: false });
+    map.addControl(navigation);
+  } else {
+    navigation = false;
   }
+  setMinZoomIfGeoLock(map, get(params)?.geoLock, navigation);
 
   map.on("load", () => {
     initMapLayers(map, get(geography), interactive);
     viz.subscribe((value) => renderMapViz(map, value));
     geography.subscribe((geography) => listenToGeographyStore(map, geography));
     commands.subscribe((command) => listenToCommandStore(map, command));
-    params.subscribe((params) => listenToParamStore(map, params));
+    params.subscribe((params) => listenToParamStore(map, params, navigation));
   });
 
   // when the map loads or moves, or then when the selection changes, emit an event at most once per second
@@ -201,7 +204,11 @@ const listenToCommandStore = (map: mapboxgl.Map, command: Command) => {
   }
 };
 
-const setMinZoomIfGeoLock = (map: mapboxgl.Map, geoLock: GeoType | undefined) => {
+const setMinZoomIfGeoLock = (
+  map: mapboxgl.Map,
+  geoLock: GeoType | undefined,
+  navigation: mapboxgl.NavigationControl,
+) => {
   if (geoLock) {
     if (geoLock === "oa") {
       // 9 seems a sensible compromise min zoom for urban and rural areas when OA is geolocked
@@ -213,8 +220,12 @@ const setMinZoomIfGeoLock = (map: mapboxgl.Map, geoLock: GeoType | undefined) =>
   } else {
     map.setMinZoom(minZoom);
   }
+  if (navigation) {
+    map.removeControl(navigation);
+    map.addControl(navigation);
+  }
 };
 
-const listenToParamStore = (map: mapboxgl.Map, params) => {
-  setMinZoomIfGeoLock(map, params?.geoLock);
+const listenToParamStore = (map: mapboxgl.Map, params, navigation: mapboxgl.NavigationControl) => {
+  setMinZoomIfGeoLock(map, params?.geoLock, navigation);
 };

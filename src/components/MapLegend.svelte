@@ -3,13 +3,16 @@
   import { hovered } from "../stores/hovered";
   import { selected } from "../stores/selected";
   import { formatTemplateString } from "../helpers/categoryHelpers";
-  import { choroplethColours } from "../helpers/choroplethHelpers";
+  import { choroplethColours, getHeatMapColours } from "../helpers/choroplethHelpers";
   import { getClassificationDataSuffix, roundedClassificationDataToString } from "../helpers/classificationHelpers";
   import BreaksChart from "./BreaksChart.svelte";
   import GeoTypeBadge from "./GeoTypeBadge.svelte";
   import CategorySelector from "./CategorySelector.svelte";
 
   $: valueForHoveredGeography = $viz?.places.find((p) => p.geoCode === $hovered?.geoCode)?.categoryValue;
+  $: allUniqueValues = [...new Set($viz?.places.map((p) => p.categoryValue))].sort((a, b) => {
+    return a - b;
+  });
 
   // the hovered, otherwise the selected, geography properties
   $: active = $hovered
@@ -125,7 +128,7 @@
           hovered={active.value}
           suffix={getClassificationDataSuffix($viz.params.classification.code)}
           breaks={$viz.breaks}
-          colors={choroplethColours}
+          colors={getHeatMapColours(allUniqueValues)}
           classificationCode={$viz.params.classification.code}
         />
       {/if}

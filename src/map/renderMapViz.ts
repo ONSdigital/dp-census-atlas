@@ -1,6 +1,6 @@
 import type { LoadedGeographies, VizData } from "../types";
 import { layers } from "./layers";
-import { choroplethColours } from "../helpers/choroplethHelpers";
+import { choroplethColours, getHeatMapColours } from "../helpers/choroplethHelpers";
 
 let loadedGeographies: LoadedGeographies = undefined;
 
@@ -13,22 +13,27 @@ export const renderMapViz = (map: mapboxgl.Map, data: VizData | undefined) => {
 
   const layer = layers.find((l) => l.name == data.geoType);
 
+  const allUniqueValues = [...new Set(data.places.map((p) => p.categoryValue))].sort((a, b) => {
+    return a - b;
+  });
+  const spectrum = getHeatMapColours(allUniqueValues);
+
   data.places.forEach((p) => {
     map.setFeatureState(
       { source: layer.name, sourceLayer: layer.sourceLayer, id: p.geoCode },
-      { colour: getChoroplethColour(p.categoryValue, data.breaks) },
+      { colour: getChoroplethColour(p.categoryValue, allUniqueValues, spectrum) },
     );
   });
 };
 
-const getChoroplethColour = (value: number, breaks: number[]) => {
+const getChoroplethColour = (value: number, breaks: number[], colors: string[] = choroplethColours) => {
   let upperBreakBounds;
   if (breaks.length === 1) {
     upperBreakBounds = breaks;
   } else {
     upperBreakBounds = breaks.slice(1);
   }
-  for (const b of upperBreakBounds.map((b, i) => ({ breakpoint: b, colour: choroplethColours[i] }))) {
+  for (const b of upperBreakBounds.map((b, i) => ({ breakpoint: b, colour: colors[i] }))) {
     if (value <= b.breakpoint) return b.colour;
   }
 };

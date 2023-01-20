@@ -30,13 +30,13 @@
 </script>
 
 <div class="mt-3 box-border relative w-full h-5 mb-8 text-xs sm:text-base">
-  {#each ticks.slice(1) as brk, i}
+  {#each colors.slice() as _, i}
     <div
       class="absolute top-0 h-full"
-      style="width: {100 / (ticks.length - 1)}%; left: {i * (100 / (ticks.length - 1))}%; background-color: {colors[
-        i
-      ]};"
+      style="width: {100 / colors.length}%; left: {i * (100 / colors.length)}%; background-color: {colors[i]};"
     />
+  {/each}
+  {#each ticks.slice(1) as brk, i}
     <div class="line" style="left: {i * (100 / (ticks.length - 1))}%;" />
     <div
       class="tick"

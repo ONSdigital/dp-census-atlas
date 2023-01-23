@@ -74,11 +74,15 @@ func main() {
 	log.Printf("found %d categories", len(wantcats))
 
 	//
-	// make cat name to cat code map
+	// make cat name to cat code map (only if matching on names)
 	//
-	namesToCats, err := cont.NamesToCats(*classCode, *catNamePrefix)
-	if err != nil {
-		log.Fatal(err)
+	var namesToCats map[string]string
+	if *doCatNameMatching {
+		var err error
+		namesToCats, err = cont.NamesToCats(*classCode, *catNamePrefix)
+		if err != nil {
+			log.Fatal(err)
+		}
 	}
 
 	//

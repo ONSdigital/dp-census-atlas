@@ -184,7 +184,6 @@ def classifications_from_metadata(
                     comparison_2011_data_available_geotypes=[],
                     data_download="",
                     categories=[],
-                    comparison_2011_data_available_geotypes=[],
                     _variable_code=csv_row["Variable_Mnemonic"],
                 )
 

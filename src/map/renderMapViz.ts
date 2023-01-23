@@ -16,6 +16,12 @@ export const renderMapViz = (map: mapboxgl.Map, data: VizData | undefined) => {
     data.params.changeOverTime && data.params.classification.comparison_2011_data_available_geotypes,
   );
 
+  const renderedGeos = map.queryRenderedFeatures({ layers: [`${data.geoType}-features`] }).map((g) => g.id);
+  const geosWithData = data.places.map((p) => p.geoCode);
+  const geosWithNoData = renderedGeos.filter((g) => !geosWithData.includes(g));
+  geosWithNoData.forEach((g) => {
+    map.setFeatureState({ source: layer.name, sourceLayer: layer.sourceLayer, id: g }, { colour: "#FF00FF" });
+  });
   data.places.forEach((p) => {
     map.setFeatureState(
       { source: layer.name, sourceLayer: layer.sourceLayer, id: p.geoCode },

@@ -50,40 +50,18 @@ export const fetchTileData = async (args: { category: Category; geoType: GeoType
 };
 
 /*
-  Fetch json with estimated natural breakpoints (w. ckmeans algorithm) in data for all census category 'categoryCode'
-  divided by total for that category.
+  Fetch json with estimated natural breakpoints (w. ckmeans algorithm) in category data. Breaks include min value for
+  category as first value.
 */
 export const fetchBreaks = async (args: {
   classification: Classification;
   category: Category;
   geoType: GeoType;
 }): Promise<{ breaks: number[] }> => {
-  const url = `${args.category.baseUrl}/breaks/${args.geoType}/${args.category.code}.json`;
+  const url = `${args.category.baseUrl}/breaksCkmeans/${args.geoType}/${args.category.code}.json`;
   const response = await fetch(url);
   const breaksRaw = await response.json();
-  /*
-    breaks json files have legacy format from when it was an API response:
-    e.g.
-    {
-      "KS103EW0002": {
-        "LAD": [
-            0.283667019342937,
-            0.32603232256525966,
-            0.3817375703709814,
-            0.4696799398260561,
-            0.5993594922100404
-        ],
-        "LAD_min_max": [
-            0.21006838234294492,
-            0.5993594922100404
-        ]
-      }
-    }
-  */
-  const breaks = uniqueRoundedClassificationBreaks(args.classification.code, [
-    breaksRaw[args.category.code][`${args.geoType.toUpperCase()}_min_max`][0],
-    ...breaksRaw[args.category.code][args.geoType.toUpperCase()],
-  ]);
+  const breaks = uniqueRoundedClassificationBreaks(args.classification.code, breaksRaw);
   return { breaks };
 };
 

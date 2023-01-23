@@ -101,19 +101,18 @@ Example data:
 
 This API represents the "five colours" - otherwise known as the breaks, or "buckets", of the choropleth.
 
-Logically, this is just 6 numbers between 0 and 1. (The output is split into two for historical reasons, with the highest and lowest numbers in a separate array. The property names here can otherwise be ignored).
+This is just 6 numbers between 0 and 1. (The first one is the minimum value for each category, the next five are the upper bounds of each bucket).
 
 Now we know how to colour an area! (We know which bucket its value belongs to.)
 
-    "MSOA": [
+Example data:
+
+    [
+        0.01660255112370925,
         0.14306061085614813,
         0.2033898305084746,
         0.2640757349277529,
         0.33841721742077613,
-        0.5066721412440978
-    ],
-    "MSOA_min_max": [
-        0.01660255112370925,
         0.5066721412440978
     ]
 

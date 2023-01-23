@@ -1,5 +1,6 @@
 <script lang="ts">
   import { page } from "$app/stores";
+  import type { Category } from "../types";
   import { params } from "../stores/params";
   import { nav } from "../stores/nav";
   import { gotoUrl } from "../helpers/navigationHelper";
@@ -10,6 +11,17 @@
   import VariableDescription from "./VariableDescription.svelte";
   import ClassificationPager from "./ClassificationPager.svelte";
   import CaveatWarning from "./CaveatWarning.svelte";
+
+  const buildCategoryLink = (category: Category) => {
+    return buildHyperlink($page.url, {
+      variableGroup: $params.variableGroup.slug,
+      variable: $params.variable.slug,
+      category: {
+        classification: $params.classification.slug,
+        category: category.slug,
+      },
+    });
+  };
 </script>
 
 <div class="grow flex flex-col">
@@ -34,28 +46,13 @@
       </div>
       <ul class="flex flex-col last:border-b-[1px] mb-4">
         {#each $params.classification.categories as category}
+          {@const link = buildCategoryLink(category)}
           <li class="">
             <a
-              href={buildHyperlink($page.url, {
-                variableGroup: $params.variableGroup.slug,
-                variable: $params.variable.slug,
-                category: {
-                  classification: $params.classification.slug,
-                  category: category.slug,
-                },
-              })}
+              href={link}
               on:click|preventDefault={() => {
-                // use gotoUrl (with keepfocus: true) for better keyboard navigation
-                const link = buildHyperlink($page.url, {
-                  variableGroup: $params.variableGroup.slug,
-                  variable: $params.variable.slug,
-                  category: {
-                    classification: $params.classification.slug,
-                    category: category.slug,
-                  },
-                });
                 nav.set({ open: false });
-                gotoUrl(link);
+                gotoUrl(link); // use gotoUrl (with keepFocus: true) for better keyboard navigation
               }}
               class="flex gap-2 items-center p-2 border-t-[1px] border-t-slate-300 cursor-pointer custom-ring"
               class:bg-ons-grey-5={category === $params.category}

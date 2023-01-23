@@ -5,7 +5,7 @@
   import { fade } from "svelte/transition";
   import { fromEvent, Observable, of, concat } from "rxjs";
   import { delay, mergeMap, startWith, switchMap, tap, windowWhen } from "rxjs/operators";
-  import { getEmbedCode, getPageUrlNoGeoParam } from "../helpers/embedHelper";
+  import { getEmbedCode, cleanUnusedParams } from "../helpers/embedHelper";
   import { viewport } from "../stores/viewport";
   import Icon from "./MaterialIcon.svelte";
   import type { NumberQuadruple, GeoType } from "../types";
@@ -30,7 +30,7 @@
     $viewport?.bbox.north,
   ] as NumberQuadruple;
 
-  $: pageUrlForEmbed = embedSelectGeo ? $page.url : getPageUrlNoGeoParam($page.url);
+  $: pageUrlForEmbed = cleanUnusedParams($page.url, embedSelectGeo, doGeoLock);
 
   $: embedCode = getEmbedCode(pageUrlForEmbed, {
     embed: true,
@@ -65,6 +65,7 @@
   <button
     class="flex items-center gap-2 custom-ring hyperlink "
     on:click={() => {
+      doGeoLock = $page.url.searchParams.has("geoLock") ? true : false;
       open = true;
       dialog.showModal();
       pushAnalyticsEvent();
@@ -111,7 +112,7 @@
     <div class="">
       <label class="hoverable">
         <input type="checkbox" bind:checked={doGeoLock} class="custom-ring mr-1" />
-        Lock geotype to {geoLock.toUpperCase()}
+        Lock area type to {geoLock.toUpperCase()}
       </label>
     </div>
   </section>

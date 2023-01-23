@@ -22,11 +22,13 @@
               "code": "accommodation_type_3a",
               "slug": "accommodation-type-3a",
               "desc": "Accommodation type (3 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
-
               "categories": [
                 {
                   "name": "Whole house or bungalow",
@@ -58,9 +60,11 @@
               "code": "accommodation_type_5a",
               "slug": "accommodation-type-5a",
               "desc": "Accommodation type (5 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
-              "comparison_2011_data_available": true,
-
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "categories": [
                 {
                   "name": "Whole house or bungalow: Detached",
@@ -108,9 +112,11 @@
               "code": "accommodation_type",
               "slug": "accommodation-type",
               "desc": "Accommodation type (8 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
-              "comparison_2011_data_available": true,
-
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "categories": [
                 {
                   "name": "Detached",
@@ -193,10 +199,12 @@
               "code": "alternative_address_indicator",
               "slug": "alternative-address-indicator",
               "desc": "Second address indicator (3 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
-              "comparison_2011_data_available": true,
-
               "categories": [
                 {
                   "name": "No second address",
@@ -239,11 +247,13 @@
               "code": "heating_type_3a",
               "slug": "heating-type-3a",
               "desc": "Type of central heating in household (3 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
-
               "categories": [
                 {
                   "name": "Does not have central heating",
@@ -267,9 +277,11 @@
               "code": "heating_type",
               "slug": "heating-type",
               "desc": "Type of central heating in household (13 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
-              "comparison_2011_data_available": true,
-
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "categories": [
                 {
                   "name": "No central heating",
@@ -384,11 +396,13 @@
               "code": "hh_tenure_5a",
               "slug": "hh-tenure-5a",
               "desc": "Tenure of household (5 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
-
               "categories": [
                 {
                   "name": "Owned: Owns outright",
@@ -428,9 +442,11 @@
               "code": "hh_tenure_9a",
               "slug": "hh-tenure-9a",
               "desc": "Tenure of household (9 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
-              "comparison_2011_data_available": true,
-
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "categories": [
                 {
                   "name": "Owned: Owns outright",
@@ -513,11 +529,13 @@
               "code": "number_bedrooms_5a",
               "slug": "number-bedrooms-5a",
               "desc": "Number of Bedrooms (5 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
-
               "categories": [
                 {
                   "name": "1 bedroom",
@@ -568,11 +586,13 @@
               "code": "number_of_cars_3a",
               "slug": "number-of-cars-3a",
               "desc": "Car or van availability (3 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
-
               "categories": [
                 {
                   "name": "No cars or vans in household",
@@ -596,9 +616,11 @@
               "code": "number_of_cars_5a",
               "slug": "number-of-cars-5a",
               "desc": "Car or van availability (5 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
-              "comparison_2011_data_available": true,
-
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "categories": [
                 {
                   "name": "No cars or vans in household",
@@ -649,10 +671,12 @@
               "code": "occupancy_rating_bedrooms_6a",
               "slug": "occupancy-rating-bedrooms-6a",
               "desc": "Occupancy rating for bedrooms (6 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
-              "comparison_2011_data_available": true,
-
               "categories": [
                 {
                   "name": "Occupancy rating of bedrooms: +2 or more",
@@ -711,10 +735,12 @@
               "code": "occupancy_rating_rooms_6a",
               "slug": "occupancy-rating-rooms-6a",
               "desc": "Occupancy rating for rooms (6 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
-              "comparison_2011_data_available": true,
-
               "categories": [
                 {
                   "name": "Occupancy rating of rooms: +2 or more",
@@ -773,10 +799,12 @@
               "code": "second_address_type_priority",
               "slug": "second-address-type-priority",
               "desc": "Second address type (10 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
-              "comparison_2011_data_available": true,
-
               "categories": [
                 {
                   "name": "Armed forces base address",

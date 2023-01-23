@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2023-01-11-09-48-45",
-    "release": "2021-MIG-ar2776-c21ew_metadata-v1-3_cantab_20230104-38"
+    "created_at": "2023-01-19-15-27-46",
+    "release": "2021-MIG-ar2776-c21ew_metadata-v1-3_cantab_20230119-40"
   },
   "content": [
     {
@@ -29,7 +29,9 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS018/editions/2021",
               "categories": [
                 {
@@ -190,7 +192,9 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS004/editions/2021",
               "categories": [
                 {
@@ -218,7 +222,9 @@
               "available_geotypes": [
                 "lad"
               ],
-              "comparison_2011_data_available": true,
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS004/editions/2021",
               "categories": [
                 {
@@ -288,7 +294,6 @@
                 "msoa",
                 "lad"
               ],
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS004/editions/2021",
               "categories": [
                 {
@@ -388,7 +393,9 @@
               "available_geotypes": [
                 "lad"
               ],
-              "comparison_2011_data_available": true,
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS012/editions/2021",
               "categories": [
                 {
@@ -886,7 +893,9 @@
                 "lad"
               ],
               "choropleth_default": true,
-              "comparison_2011_data_available": true,
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS019/editions/2021",
               "categories": [
                 {
@@ -945,7 +954,6 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS005/editions/2021",
               "categories": [
                 {
@@ -982,7 +990,9 @@
                 "msoa",
                 "lad"
               ],
-              "comparison_2011_data_available": true,
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS005/editions/2021",
               "categories": [
                 {
@@ -1091,7 +1101,9 @@
                 "msoa",
                 "lad"
               ],
-              "comparison_2011_data_available": true,
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS005/editions/2021",
               "categories": [
                 {
@@ -1241,7 +1253,6 @@
                 "msoa",
                 "lad"
               ],
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS005/editions/2021",
               "categories": [
                 {
@@ -1462,7 +1473,9 @@
                 "msoa",
                 "lad"
               ],
-              "comparison_2011_data_available": true,
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS013/editions/2021",
               "categories": [
                 {
@@ -1897,7 +1910,9 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS016/editions/2021",
               "categories": [
                 {
@@ -1964,7 +1979,9 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS015/editions/2021",
               "categories": [
                 {
@@ -2018,7 +2035,9 @@
                 "msoa",
                 "lad"
               ],
-              "comparison_2011_data_available": true,
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS015/editions/2021",
               "categories": [
                 {

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2023-01-11-09-48-45",
-    "release": "2021-ALL-ar2776-c21ew_metadata-v1-3_cantab_20230104-38"
+    "created_at": "2023-01-19-15-27-46",
+    "release": "2021-ALL-ar2776-c21ew_metadata-v1-3_cantab_20230119-40"
   },
   "content": [
     {
@@ -28,7 +28,6 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS071/editions/2021",
               "categories": [
                 {
@@ -120,7 +119,9 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS011/editions/2021",
               "categories": [
                 {
@@ -185,7 +186,9 @@
                 "msoa",
                 "lad"
               ],
-              "comparison_2011_data_available": true,
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS003/editions/2021",
               "categories": [
                 {
@@ -313,7 +316,9 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS003/editions/2021",
               "categories": [
                 {
@@ -364,7 +369,9 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS017/editions/2021",
               "categories": [
                 {
@@ -410,7 +417,9 @@
                 "msoa",
                 "lad"
               ],
-              "comparison_2011_data_available": true,
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS017/editions/2021",
               "categories": [
                 {
@@ -499,7 +508,6 @@
                 "msoa",
                 "lad"
               ],
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS002/editions/2021",
               "categories": [
                 {
@@ -603,7 +611,11 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
+              "comparison_2011_data_available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS002/editions/2021",
               "categories": [
                 {
@@ -633,7 +645,9 @@
                 "msoa",
                 "lad"
               ],
-              "comparison_2011_data_available": true,
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS002/editions/2021",
               "categories": [
                 {
@@ -698,7 +712,9 @@
                 "lad"
               ],
               "choropleth_default": true,
-              "comparison_2011_data_available": true,
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS010/editions/2021",
               "categories": [
                 {
@@ -802,7 +818,9 @@
                 "msoa",
                 "lad"
               ],
-              "comparison_2011_data_available": true,
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS007/editions/2021",
               "categories": [
                 {
@@ -1623,7 +1641,9 @@
                 "msoa",
                 "lad"
               ],
-              "comparison_2011_data_available": true,
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS007/editions/2021",
               "categories": [
                 {
@@ -1726,7 +1746,9 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS007/editions/2021",
               "categories": [
                 {
@@ -1763,7 +1785,9 @@
                 "msoa",
                 "lad"
               ],
-              "comparison_2011_data_available": true,
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS007/editions/2021",
               "categories": [
                 {
@@ -1886,7 +1910,9 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS008/editions/2021",
               "categories": [
                 {
@@ -1929,7 +1955,9 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS018/editions/2021",
               "categories": [
                 {
@@ -2090,7 +2118,6 @@
                 "msoa",
                 "lad"
               ],
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS004/editions/2021",
               "categories": [
                 {
@@ -2192,7 +2219,9 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS004/editions/2021",
               "categories": [
                 {
@@ -2220,7 +2249,9 @@
               "available_geotypes": [
                 "lad"
               ],
-              "comparison_2011_data_available": true,
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS012/editions/2021",
               "categories": [
                 {
@@ -2704,7 +2735,9 @@
               "available_geotypes": [
                 "lad"
               ],
-              "comparison_2011_data_available": true,
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS004/editions/2021",
               "categories": [
                 {
@@ -2786,7 +2819,9 @@
                 "lad"
               ],
               "choropleth_default": true,
-              "comparison_2011_data_available": true,
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS019/editions/2021",
               "categories": [
                 {
@@ -2842,7 +2877,9 @@
                 "msoa",
                 "lad"
               ],
-              "comparison_2011_data_available": true,
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS005/editions/2021",
               "categories": [
                 {
@@ -2951,7 +2988,9 @@
                 "msoa",
                 "lad"
               ],
-              "comparison_2011_data_available": true,
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS005/editions/2021",
               "categories": [
                 {
@@ -3101,7 +3140,6 @@
                 "msoa",
                 "lad"
               ],
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS005/editions/2021",
               "categories": [
                 {
@@ -3325,7 +3363,6 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS005/editions/2021",
               "categories": [
                 {
@@ -3362,7 +3399,9 @@
                 "msoa",
                 "lad"
               ],
-              "comparison_2011_data_available": true,
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS013/editions/2021",
               "categories": [
                 {
@@ -3797,7 +3836,9 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS016/editions/2021",
               "categories": [
                 {
@@ -3862,7 +3903,9 @@
                 "msoa",
                 "lad"
               ],
-              "comparison_2011_data_available": true,
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS015/editions/2021",
               "categories": [
                 {
@@ -3974,7 +4017,9 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS015/editions/2021",
               "categories": [
                 {
@@ -4046,7 +4091,6 @@
                 "msoa",
                 "lad"
               ],
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS067/editions/2021",
               "categories": [
                 {
@@ -4090,8 +4134,8 @@
                   "legend_str_3": "level 3 qualifications as their highest level of qualification"
                 },
                 {
-                  "name": "Level 4 qualifications and above: degree (BA, BSc), higher degree (MA, PhD, PGCE), NVQ level 4 to 5, HNC, HND, RSA Higher Diploma, BTEC Higher level, professional qualifications (for example, teaching, nursing, accountancy)",
-                  "slug": "level-4-qualifications-and-above-degree-ba-bsc-higher-degree-ma-phd-pgce-nvq-level-4-to-5-hnc-hnd-rsa-higher-diploma-btec-higher-level-professional-qualifications-for-example-teaching-nursing-accountancy",
+                  "name": "Level 4 qualifications or above: degree (BA, BSc), higher degree (MA, PhD, PGCE), NVQ level 4 to 5, HNC, HND, RSA Higher Diploma, BTEC Higher level, professional qualifications (for example, teaching, nursing, accountancy)",
+                  "slug": "level-4-qualifications-or-above-degree-ba-bsc-higher-degree-ma-phd-pgce-nvq-level-4-to-5-hnc-hnd-rsa-higher-diploma-btec-higher-level-professional-qualifications-for-example-teaching-nursing-accountancy",
                   "code": "highest_qualification-005",
                   "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "have",
@@ -4118,7 +4162,6 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS067/editions/2021",
               "categories": [
                 {
@@ -4146,8 +4189,8 @@
                   "legend_str_3": "an apprenticeship as their highest level of qualification"
                 },
                 {
-                  "name": "Highest level of qualification: Level 4 qualifications and above",
-                  "slug": "highest-level-of-qualification-level-4-qualifications-and-above",
+                  "name": "Highest level of qualification: Level 4 qualifications or above",
+                  "slug": "highest-level-of-qualification-level-4-qualifications-or-above",
                   "code": "highest_qualification_6a-003",
                   "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "have",
@@ -4171,7 +4214,7 @@
           "slug": "schoolchild-or-full-time-student-indicator",
           "desc": "People in full-time education.",
           "long_desc": "Indicates whether a person aged 5 years and over was in full-time education on Census Day, 21 March 2021. This includes schoolchildren and adults in full-time education.\n\nSchoolchildren and students in full-time education studying away from home are treated as usually resident at their term-time address.",
-          "units": "",
+          "units": "Person",
           "topic_code": "EDU",
           "classifications": [
             {
@@ -4184,7 +4227,6 @@
                 "lad"
               ],
               "choropleth_default": true,
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS068/editions/2021",
               "categories": [
                 {
@@ -4232,7 +4274,6 @@
                 "msoa",
                 "lad"
               ],
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS029/editions/2021",
               "categories": [
                 {
@@ -4288,7 +4329,6 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS029/editions/2021",
               "categories": [
                 {
@@ -4337,7 +4377,6 @@
                 "msoa",
                 "lad"
               ],
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS021/editions/2021",
               "categories": [
                 {
@@ -4505,7 +4544,6 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS021/editions/2021",
               "categories": [
                 {
@@ -4571,7 +4609,6 @@
                 "lad"
               ],
               "choropleth_default": true,
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS025/editions/2021",
               "categories": [
                 {
@@ -4630,7 +4667,6 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS023/editions/2021",
               "categories": [
                 {
@@ -4695,7 +4731,6 @@
                 "msoa",
                 "lad"
               ],
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS026/editions/2021",
               "categories": [
                 {
@@ -4751,7 +4786,6 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS026/editions/2021",
               "categories": [
                 {
@@ -4794,7 +4828,6 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS075/editions/2021",
               "categories": [
                 {
@@ -4865,7 +4898,6 @@
               "available_geotypes": [
                 "lad"
               ],
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS024/editions/2021",
               "categories": [
                 {
@@ -5630,7 +5662,6 @@
                 "lad"
               ],
               "choropleth_default": true,
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS024/editions/2021",
               "categories": [
                 {
@@ -5833,7 +5864,6 @@
                 "msoa",
                 "lad"
               ],
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS027/editions/2021",
               "categories": [
                 {
@@ -5977,7 +6007,6 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS027/editions/2021",
               "categories": [
                 {
@@ -6015,7 +6044,6 @@
                 "msoa",
                 "lad"
               ],
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS027/editions/2021",
               "categories": [
                 {
@@ -6106,7 +6134,6 @@
                 "lad"
               ],
               "choropleth_default": true,
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS028/editions/2021",
               "categories": [
                 {
@@ -6710,7 +6737,6 @@
                 "lad"
               ],
               "choropleth_default": true,
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS030/editions/2021",
               "categories": [
                 {
@@ -6808,7 +6834,6 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS070/editions/2021",
               "categories": [
                 {
@@ -6844,7 +6869,6 @@
               "available_geotypes": [
                 "lad"
               ],
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS070/editions/2021",
               "categories": [
                 {
@@ -6926,7 +6950,6 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS077/editions/2021",
               "categories": [
                 {
@@ -6963,7 +6986,6 @@
                 "msoa",
                 "lad"
               ],
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS077/editions/2021",
               "categories": [
                 {
@@ -7015,7 +7037,6 @@
               "available_geotypes": [
                 "lad"
               ],
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS079/editions/2021",
               "categories": [
                 {
@@ -7104,7 +7125,6 @@
                 "msoa",
                 "lad"
               ],
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS032/editions/2021",
               "categories": [
                 {
@@ -7192,7 +7212,6 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS032/editions/2021",
               "categories": [
                 {
@@ -7230,7 +7249,6 @@
                 "msoa",
                 "lad"
               ],
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS032/editions/2021",
               "categories": [
                 {
@@ -7297,7 +7315,6 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS033/editions/2021",
               "categories": [
                 {
@@ -7345,7 +7362,6 @@
                 "msoa",
                 "lad"
               ],
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS044/editions/2021",
               "categories": [
                 {
@@ -7425,7 +7441,6 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS044/editions/2021",
               "categories": [
                 {
@@ -7463,7 +7478,6 @@
                 "msoa",
                 "lad"
               ],
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS044/editions/2021",
               "categories": [
                 {
@@ -7515,7 +7529,7 @@
           "code": "alternative_address_indicator",
           "slug": "second-address-indicator",
           "desc": "An address (in or out of the UK) a person stays at for more than 30 days per year that isn't their place of usual residence.",
-          "long_desc": "An address (in or out of the UK) a person stays at for more than 30 days per year that is not their place of usual residence. \n \nSecond addresses typically include:\n\n* armed forces bases\n* addresses used by people working away from home\n* a student\u2019s home address\n* the address of another parent or guardian\n* a holiday home\n  \nIf a person with a second address was staying there on census night, they were classed as a visitor to the second address but counted as a usual resident at their home address.",
+          "long_desc": "An address (in or out of the UK) a person stays at for more than 30 days per year that is not their place of usual residence. \n \nSecond addresses typically include:\n\n* armed forces bases\n* addresses used by people working away from home\n* a student\u2019s home address\n* the address of another parent or guardian\n* a partner\u2019s address\n* a holiday home\n  \nIf a person with a second address was staying there on census night, they were classed as a visitor to the second address but counted as a usual resident at their home address.",
           "units": "Person",
           "topic_code": "HOU",
           "classifications": [
@@ -7529,7 +7543,6 @@
                 "lad"
               ],
               "choropleth_default": true,
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS056/editions/2021",
               "categories": [
                 {
@@ -7578,7 +7591,6 @@
                 "msoa",
                 "lad"
               ],
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS046/editions/2021",
               "categories": [
                 {
@@ -7690,7 +7702,6 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS046/editions/2021",
               "categories": [
                 {
@@ -7733,7 +7744,6 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS054/editions/2021",
               "categories": [
                 {
@@ -7779,7 +7789,6 @@
                 "msoa",
                 "lad"
               ],
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS054/editions/2021",
               "categories": [
                 {
@@ -7870,7 +7879,6 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS050/editions/2021",
               "categories": [
                 {
@@ -7929,7 +7937,6 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS045/editions/2021",
               "categories": [
                 {
@@ -7959,7 +7966,6 @@
                 "msoa",
                 "lad"
               ],
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS045/editions/2021",
               "categories": [
                 {
@@ -8017,7 +8023,6 @@
                 "lad"
               ],
               "choropleth_default": true,
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS052/editions/2021",
               "categories": [
                 {
@@ -8083,7 +8088,6 @@
                 "lad"
               ],
               "choropleth_default": true,
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS053/editions/2021",
               "categories": [
                 {
@@ -8149,7 +8153,6 @@
                 "lad"
               ],
               "choropleth_default": true,
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS055/editions/2021",
               "categories": [
                 {
@@ -8228,17 +8231,18 @@
       "desc": "People's general health and caring responsibilities.",
       "variables": [
         {
-          "name": "Disability",
-          "code": "disability",
-          "slug": "disability",
-          "desc": "People with a long-term health problem or disability, including conditions relating to old-age.",
+          "name": "Disability (age-standardised)",
+          "code": "disability_age_standardised",
+          "slug": "disability-age-standardised",
+          "desc": "People with a long-term health problem or disability, including conditions or illnesses relating to old-age.",
           "long_desc": "People who assessed their day-to-day activities as limited by long-term physical or mental health conditions or illnesses are considered disabled. This definition of a disabled person meets the harmonised standard for measuring disability and is in line with the Equality Act (2010).",
           "units": "Person",
           "topic_code": "HUC",
-          "caveat_text": "Figures for this variable are age standardised.",
+          "caveat_text": "Values are age-standardised to account for differences in population size and age structure.",
+          "caveat_link": "http://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthandwellbeing/methodologies/healthdisabilityandunpaidcarequalityinformationforcensus2021",
           "classifications": [
             {
-              "code": "disability_4a",
+              "code": "disability_4a_age_standardised",
               "slug": "disability-4a",
               "desc": "Disability - Equality act disabled (4 categories)",
               "available_geotypes": [
@@ -8246,13 +8250,12 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS038/editions/2021",
+              "data_download": "https://www.ons.gov.uk/datasets/TS038ASP/editions/2021",
               "categories": [
                 {
                   "name": "Disabled under the Equality Act: Day-to-day activities limited a lot",
                   "slug": "disabled-under-the-equality-act-day-to-day-activities-limited-a-lot",
-                  "code": "disability_4a-001",
+                  "code": "disability_4a_age_standardised-001",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "disabled under the equality act: day-to-day activities limited a lot"
@@ -8260,7 +8263,7 @@
                 {
                   "name": "Disabled under the Equality Act: Day-to-day activities limited a little",
                   "slug": "disabled-under-the-equality-act-day-to-day-activities-limited-a-little",
-                  "code": "disability_4a-002",
+                  "code": "disability_4a_age_standardised-002",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "disabled under the equality act: day-to-day activities limited a little"
@@ -8268,7 +8271,7 @@
                 {
                   "name": "Not disabled under the Equality Act",
                   "slug": "not-disabled-under-the-equality-act",
-                  "code": "disability_4a-003",
+                  "code": "disability_4a_age_standardised-003",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "not disabled under the equality act"
@@ -8278,14 +8281,15 @@
           ]
         },
         {
-          "name": "General health",
-          "code": "health_in_general",
-          "slug": "general-health",
+          "name": "General health (age-standardised)",
+          "code": "health_in_general_age_standardised",
+          "slug": "general-health-age-standardised",
           "desc": "How people rate their general health.",
           "long_desc": "A person's assessment of the general state of their health from very good to very bad. This assessment is not based on a person's health over any specified period of time.",
           "units": "Household",
           "topic_code": "HUC",
-          "caveat_text": "Figures for this variable are age standardised.",
+          "caveat_text": "Values are age-standardised to account for differences in population size and age structure.",
+          "caveat_link": "http://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthandwellbeing/methodologies/healthdisabilityandunpaidcarequalityinformationforcensus2021",
           "classifications": [
             {
               "code": "health_in_general",
@@ -8296,13 +8300,12 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
-              "data_download": "https://www.ons.gov.uk/datasets/TS037/editions/2021",
+              "data_download": "https://www.ons.gov.uk/datasets/TS037ASP/editions/2021",
               "categories": [
                 {
                   "name": "Very good health",
                   "slug": "very-good-health",
-                  "code": "health_in_general-001",
+                  "code": "health_in_general_age_standardised-001",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "very good health"
@@ -8310,7 +8313,7 @@
                 {
                   "name": "Good health",
                   "slug": "good-health",
-                  "code": "health_in_general-002",
+                  "code": "health_in_general_age_standardised-002",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "good health"
@@ -8318,7 +8321,7 @@
                 {
                   "name": "Fair health",
                   "slug": "fair-health",
-                  "code": "health_in_general-003",
+                  "code": "health_in_general_age_standardised-003",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "fair health"
@@ -8326,7 +8329,7 @@
                 {
                   "name": "Bad health",
                   "slug": "bad-health",
-                  "code": "health_in_general-004",
+                  "code": "health_in_general_age_standardised-004",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "bad health"
@@ -8334,7 +8337,7 @@
                 {
                   "name": "Very bad health",
                   "slug": "very-bad-health",
-                  "code": "health_in_general-005",
+                  "code": "health_in_general_age_standardised-005",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
                   "legend_str_3": "very bad health"
@@ -8344,14 +8347,15 @@
           ]
         },
         {
-          "name": "Provision of unpaid care",
-          "code": "is_carer",
-          "slug": "provision-of-unpaid-care",
-          "desc": "People who are unpaid carers.",
+          "name": "Provision of unpaid care (age-standardised)",
+          "code": "is_carer_age_standardised",
+          "slug": "provision-of-unpaid-care-age-standardised",
+          "desc": "Hours of unpaid care provided per week.",
           "long_desc": "An unpaid carer may look after, give help or support to anyone who has long-term physical or mental ill-health conditions, illness or problems related to old age.  \n\nThis does not include any activities as part of paid employment. \n\nThis help can be within or outside of the carer's household.",
           "units": "Person",
           "topic_code": "HUC",
-          "caveat_text": "Figures for this variable are age standardised.",
+          "caveat_text": "Values are age-standardised to account for differences in population size and age structure.",
+          "caveat_link": "http://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthandwellbeing/methodologies/healthdisabilityandunpaidcarequalityinformationforcensus2021",
           "classifications": [
             {
               "code": "is_carer_5a",
@@ -8362,12 +8366,12 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
+              "data_download": "https://www.ons.gov.uk/datasets/TS039ASP/editions/2021",
               "categories": [
                 {
                   "name": "Provides no unpaid care",
                   "slug": "provides-no-unpaid-care",
-                  "code": "is_carer_5a-001",
+                  "code": "is_carer_5a_age_standardised-001",
                   "legend_str_1": "of people aged 5 years and over in {location}",
                   "legend_str_2": "provide",
                   "legend_str_3": "no unpaid care"
@@ -8375,7 +8379,7 @@
                 {
                   "name": "Provides 19 or less hours unpaid care a week",
                   "slug": "provides-19-or-less-hours-unpaid-care-a-week",
-                  "code": "is_carer_5a-002",
+                  "code": "is_carer_5a_age_standardised-002",
                   "legend_str_1": "of people aged 5 years and over in {location}",
                   "legend_str_2": "provide",
                   "legend_str_3": "19 or less hours unpaid care a week"
@@ -8383,7 +8387,7 @@
                 {
                   "name": "Provides 20 to 49 hours unpaid care a week",
                   "slug": "provides-20-to-49-hours-unpaid-care-a-week",
-                  "code": "is_carer_5a-003",
+                  "code": "is_carer_5a_age_standardised-003",
                   "legend_str_1": "of people aged 5 years and over in {location}",
                   "legend_str_2": "provide",
                   "legend_str_3": "20 to 49 hours unpaid care a week"
@@ -8391,7 +8395,7 @@
                 {
                   "name": "Provides 50 or more hours unpaid care a week",
                   "slug": "provides-50-or-more-hours-unpaid-care-a-week",
-                  "code": "is_carer_5a-004",
+                  "code": "is_carer_5a_age_standardised-004",
                   "legend_str_1": "of people aged 5 years and over in {location}",
                   "legend_str_2": "provide",
                   "legend_str_3": "50 or more hours unpaid care a week"
@@ -8427,7 +8431,6 @@
                 "msoa",
                 "lad"
               ],
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS066/editions/2021",
               "categories": [
                 {
@@ -8514,7 +8517,6 @@
                 "lad"
               ],
               "choropleth_default": true,
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS066/editions/2021",
               "categories": [
                 {
@@ -8545,7 +8547,6 @@
                 "lad"
               ],
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS066/editions/2021",
               "categories": [
                 {
@@ -8598,7 +8599,6 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS065/editions/2021",
               "categories": [
                 {
@@ -8649,7 +8649,6 @@
                 "msoa",
                 "lad"
               ],
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS059/editions/2021",
               "categories": [
                 {
@@ -8697,7 +8696,6 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS059/editions/2021",
               "categories": [
                 {
@@ -8740,7 +8738,6 @@
                 "lad"
               ],
               "choropleth_default": true,
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS060/editions/2021",
               "categories": [
                 {
@@ -9464,7 +9461,6 @@
                 "lad"
               ],
               "choropleth_default": true,
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS062/editions/2021",
               "categories": [
                 {
@@ -9563,7 +9559,6 @@
                 "lad"
               ],
               "choropleth_default": true,
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS063/editions/2021",
               "categories": [
                 {
@@ -9662,7 +9657,6 @@
                 "lad"
               ],
               "choropleth_default": true,
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS061/editions/2021",
               "categories": [
                 {
@@ -9776,7 +9770,6 @@
                 "msoa",
                 "lad"
               ],
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS058/editions/2021",
               "categories": [
                 {
@@ -9871,7 +9864,6 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS058/editions/2021",
               "categories": [
                 {
@@ -9916,7 +9908,6 @@
                 "msoa",
                 "lad"
               ],
-              "comparison_2011_data_available": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS058/editions/2021",
               "categories": [
                 {

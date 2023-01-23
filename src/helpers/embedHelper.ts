@@ -25,14 +25,21 @@ export type EmbedUrlParams = {
   embedBounds?: NumberQuadruple;
 };
 
-export const getPageUrlNoGeoParam = (pageUrl) => {
-  const pageUrlNoGeoParam = new URL(pageUrl);
-  GeoTypes.forEach((geoParam) => {
-    if (pageUrlNoGeoParam.searchParams.has(geoParam)) {
-      pageUrlNoGeoParam.searchParams.delete(geoParam);
+export const cleanUnusedParams = (pageUrl: URL, embedSelectGeo: boolean, doGeoLock: boolean): URL => {
+  const cleanedUrl = new URL(pageUrl);
+  if (!embedSelectGeo) {
+    GeoTypes.forEach((geoParam) => {
+      if (cleanedUrl.searchParams.has(geoParam)) {
+        cleanedUrl.searchParams.delete(geoParam);
+      }
+    });
+  }
+  if (!doGeoLock) {
+    if (cleanedUrl.searchParams.has("geoLock")) {
+      cleanedUrl.searchParams.delete("geoLock");
     }
-  });
-  return pageUrlNoGeoParam;
+  }
+  return cleanedUrl;
 };
 
 export const parseEmbedParams = (params: URLSearchParams) => {

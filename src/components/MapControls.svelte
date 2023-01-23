@@ -3,9 +3,11 @@
   import AreaSearch from "./AreaSearch.svelte";
   import { GeoTypes } from "../types";
   import { geoTypePluralDescriptions } from "../helpers/geographyHelper";
+  import { selectGeoTypeLock, deselectGeoTypeLock } from "../helpers/navigationHelper";
   import { params } from "../stores/params";
   import { viewport } from "../stores/viewport";
   import { commands } from "../stores/commands";
+  import { page } from "$app/stores";
 
   const geoTypes = GeoTypes.filter((g) => g !== "ew");
 </script>
@@ -22,9 +24,14 @@
             >{$viewport.geoType.toUpperCase()}</abbr
           >
         </div>
-        <div class={`px-3 py-1 rounded-r bg-ons-grey-75 text-ons-grey-5 `}>
+        <div class={`px-3 py-1 last:rounded-r bg-ons-grey-75 text-ons-grey-5 `}>
           {geoTypePluralDescriptions[$viewport.geoType]}
         </div>
+        {#if $params.geoLock && !$params.embed}
+          <div class="flex items-center p-1 last:rounded-r bg-ons-grey-100 text-ons-grey-15 text-xl">
+            <Icon kind="lock" />
+          </div>
+        {/if}
       </div>
     </div>
 
@@ -38,8 +45,9 @@
             </div>
           {/if}
           <div class="flex bg-ons-grey-15 bg-opacity-70 first:rounded-l last:rounded-r">
+            <!-- initialism button (eg `LAD`) -->
             <button
-              class="flex"
+              class="flex custom-ring"
               on:click={() => commands.set({ kind: "zoom", geoType: g })}
               disabled={i >= geoTypes.indexOf($viewport.geoType)}
               class:opacity-60={i > geoTypes.indexOf($viewport.geoType)}
@@ -47,7 +55,7 @@
               <div
                 title={geoTypePluralDescriptions[g]}
                 class={`flex items-center px-3 py-1 rounded-l text-ons-grey-5 font-bold ${
-                  g === $viewport.geoType || g === $viewport.idealGeoType ? "" : "rounded-r"
+                  g === $viewport.geoType || g === $viewport.idealGeoType ? "" : "last:rounded-r"
                 } ${
                   i < geoTypes.indexOf($viewport.geoType)
                     ? "bg-ons-grey-75"
@@ -61,20 +69,49 @@
               </div>
             </button>
             {#if g === $viewport.geoType || g === $viewport.idealGeoType}
-              <div
-                class={`px-3 py-1 rounded-r bg-ons-grey-75  ${
-                  i > geoTypes.indexOf($viewport.geoType) ? " text-ons-white opacity-60" : "text-ons-grey-5"
-                }`}
-                title={i > geoTypes.indexOf($viewport.geoType)
-                  ? `${g.toUpperCase()}-level data is not available for the ${
-                      $params.classification.slug
-                    } classification`
-                  : undefined}
+              <!-- geotype name button, eg `Local Authority Districts` -->
+              <button
+                disabled={g !== $viewport.geoType}
+                class={`px-3 py-0 last:rounded-r bg-ons-grey-75 custom-ring flex items-center flex-nowrap ${
+                  i > geoTypes.indexOf($viewport.geoType) ? "text-ons-white opacity-60" : "text-ons-grey-5"
+                } ${g === $viewport.geoType ? "group hover:bg-ons-grey-100 focus-visible:bg-ons-grey-100" : ""}`}
+                on:click={() => {
+                  if ($params.geoLock) {
+                    deselectGeoTypeLock($page.url.searchParams);
+                  } else {
+                    selectGeoTypeLock($page.url.searchParams, $viewport.geoType);
+                  }
+                }}
               >
-                {geoTypePluralDescriptions[g]}
-                {#if i > geoTypes.indexOf($viewport.geoType)}
-                  <span class="text-sm"> unavailable for {$params.classification.slug}</span>
-                {/if}
+                <div class="relative">
+                  <div class="group-hover:invisible group-focus-visible:invisible">
+                    {geoTypePluralDescriptions[g]}
+                  </div>
+                  <div
+                    class="hidden group-hover:flex group-focus-visible:flex items-center gap-1 absolute left-0 top-0 "
+                  >
+                    {#if !$params.geoLock}
+                      <div><Icon kind="lock" /></div>
+                      <div>Lock</div>
+                    {:else}
+                      <div><Icon kind="lockOpen" /></div>
+                      <div>Unlock</div>
+                    {/if}
+                  </div>
+                </div>
+              </button>
+            {/if}
+            {#if i > geoTypes.indexOf($viewport.geoType)}
+              <div class="flex items-center px-2 bg-ons-grey-55 text-ons-white text-sm last:rounded-r ">
+                <div class="">unavailable</div>
+              </div>
+            {/if}
+            {#if g === $viewport.geoType && $params.geoLock}
+              <div
+                class="flex items-center p-1 last:rounded-r bg-ons-grey-100 text-ons-grey-15 text-lg custom-ring "
+                title="The map is locked to the {g.toUpperCase()} geography layer. This will limit the minimum zoom."
+              >
+                <Icon kind="lock" />
               </div>
             {/if}
           </div>

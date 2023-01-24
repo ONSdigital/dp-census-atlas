@@ -1,16 +1,20 @@
+<script lang="ts">
+  export let fill: string | undefined = undefined;
+</script>
+
 <svg class="ons-svg-logo" xmlns="http://www.w3.org/2000/svg" width="197" height="19" viewBox="33 2 552 60">
   <title id="ons-logo-en-alt">Office for National Statistics logo</title>
-  <g class="ons-svg-logo__group ons-svg-logo__group--secondary" fill="#a8bd3a">
+  <g class={`${fill ?? "fill-[#a8bd3a]"}`}>
     <path
       d="M0,34.6c.8-1.69,1.39-3,2.32-4.6A38.28,38.28,0,0,1,0,23.4V34.6M5,3S0,3,0,9.25v1A62.12,62.12,0,0,0,4.2,27a43.77,43.77,0,0,1,9.42-10.79C21.69,9.21,31.16,5.13,45.9,3Z"
     />
   </g>
-  <g class="ons-svg-logo__group ons-svg-logo__group--primary" fill="#003c57">
+  <g class={`${fill ?? "fill-[#003c57]"}`}>
     <path
       d="M53.06,6.42C36.2,8,24.68,12.92,16.43,20.07A41.46,41.46,0,0,0,6.4,32.2C12.87,44.93,28.88,57,46.6,57H47s6.32.21,6.32-6.91V6.36a1.22,1.22,0,0,1-.26.06M9.72,42.67a44.25,44.25,0,0,1-5-7.42A80.59,80.59,0,0,0,0,46.38V56.91L31.06,57c-9.83-3-15.74-7.64-21.34-14.3"
     />
   </g>
-  <g class="ons-svg-logo__group ons-svg-logo__group--text" fill="#003c57">
+  <g class={`${fill ?? "fill-[#003c57]"}`}>
     <path
       d="M82,47.49c-9.07,0-13.13-7.51-13.13-16.77S72.91,14,82,14s13.1,7.61,13.1,16.77S91.1,47.54,82,47.54m0-30.91c-6.69,0-9.07,7.33-9.07,14.05s2.16,13.9,9.07,13.9,9-7.28,9-13.9-2.34-14-9-14"
     />

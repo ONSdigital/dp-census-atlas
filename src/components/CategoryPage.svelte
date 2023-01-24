@@ -25,7 +25,7 @@
   };
 </script>
 
-<div class="grow flex flex-col">
+<div class="grow flex flex-col mb-6">
   <div class="px-6">
     <AreaPanel />
     <section class="mb-8">
@@ -96,9 +96,7 @@
       {/if}
     </section>
   </div>
-
-  <div class="grow" />
-  <div class="p-6 pt-4 bg-ons-grey-5 border-t-ons-grey-15 border-t-[1px]">
-    <CategoryPageLinks dataDownloadUrl={$params.classification.data_download} />
-  </div>
 </div>
+
+<div class="grow" />
+<CategoryPageLinks dataDownloadUrl={$params.classification.data_download} />

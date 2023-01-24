@@ -10,6 +10,7 @@
   import Heading from "./Heading.svelte";
   import CookieBanner from "./CookieBanner.svelte";
   import Toggle from "./Toggle.svelte";
+  import Footer from "./Footer.svelte";
 </script>
 
 <!-- outer -->
@@ -37,6 +38,7 @@
         <EmbeddedHeader />
         <Heading />
         <slot />
+        <Footer />
       </div>
       <!-- toggle -->
       {#if !$params.embed}

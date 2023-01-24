@@ -2,7 +2,7 @@ export const colours = {
   standard: ["#CDE594", "#80C6A3", "#1F9EB7", "#186290", "#080C54"],
   neg: ["#292567", "#50488E", "#7A6CB8", "#A495DC", "#BEB7D7"],
   pos: ["#FDCC88", "#FCA540", "#EA8223", "#D46012", "#BC3B00"],
-  mid: "#DDDDDD",
+  mid: "#82E0AA",
 };
 
 export const getColoursForBreaks = (breaks: number[], changeOverTime: boolean): string[] => {

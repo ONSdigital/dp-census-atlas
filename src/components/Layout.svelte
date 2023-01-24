@@ -8,22 +8,13 @@
   import MapTips from "./MapTips.svelte";
   import MapLegend from "./MapLegend.svelte";
   import Heading from "./Heading.svelte";
-  import OnsAnalyticsBanner from "./OnsAnalyticsBanner.svelte";
+  import CookieBanner from "./CookieBanner.svelte";
   import Toggle from "./Toggle.svelte";
-
-  // Google Analytics
-  const analyticsId = "GTM-MBCBVQS";
-  const analyticsProps = {
-    contentTitle: "Census maps",
-    releaseDate: "20221102",
-    contentType: "exploratory",
-    outputSeries: "censusmaps",
-  };
 </script>
 
 <!-- outer -->
 <div class="absolute inset-0 flex flex-col min-w-[340px] text-ons-black text-sm md:text-base">
-  <OnsAnalyticsBanner {analyticsId} {analyticsProps} />
+  <CookieBanner />
   <Header />
   <!-- main -->
   <div class={`grow flex relative overflow-hidden`}>

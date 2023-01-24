@@ -5,7 +5,7 @@
 
 <footer class="px-6 pt-8 pb-10 bg-ons-grey-100 text-ons-grey-5 justify-self-end">
   <div class="mb-6">
-    <Logo fill="fill-ons-grey-5" />
+    <Logo fill="fill-ons-white" />
   </div>
 
   <div class="flex flex-wrap gap-x-6 gap-y-1 mb-8">

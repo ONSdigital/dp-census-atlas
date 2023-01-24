@@ -113,10 +113,6 @@
           classificationCode={$viz.params.classification.code}
           showPositive={true}
         />
-        <div class="w-full flex gap-1">
-          <div class="rounded-full h-5 w-5" style="background-color:{colours.noData};" />
-          <div>No Data</div>
-        </div>
       {/if}
     </div>
   </div>

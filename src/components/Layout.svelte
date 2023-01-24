@@ -60,7 +60,7 @@
       <Map />
       <MapControls />
       <MapTips />
-      {#if $params.changeOverTime && $params.classification.comparison_2011_data_available_geotypes}
+      {#if $params.changeOverTime && $params.classification?.comparison_2011_data_available_geotypes}
         <MapLegendChangeOverTime />
       {:else}
         <MapLegend />

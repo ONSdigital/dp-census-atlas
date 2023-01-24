@@ -67,7 +67,7 @@
       {#if $params.variable.classifications.length > 1}
         <ClassificationPager />
       {/if}
-      {#if $params.classification.comparison_2011_data_available_geotypes}
+      {#if $params.classification?.comparison_2011_data_available_geotypes}
         <a
           class="hyperlink-without-group-hover "
           href={(function () {

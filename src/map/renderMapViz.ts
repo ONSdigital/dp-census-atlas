@@ -1,6 +1,6 @@
 import type { LoadedGeographies, VizData } from "../types";
 import { layers } from "./layers";
-import { getColoursForBreaks } from "../helpers/choroplethHelpers";
+import { colours, getColoursForBreaks } from "../helpers/choroplethHelpers";
 
 let loadedGeographies: LoadedGeographies = undefined;
 
@@ -16,12 +16,16 @@ export const renderMapViz = (map: mapboxgl.Map, data: VizData | undefined) => {
     data.params.changeOverTime && data.params.classification.comparison_2011_data_available_geotypes,
   );
 
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore (queryRenderedFeatures typings appear to be wrong)
   const renderedGeos = map.queryRenderedFeatures({ layers: [`${data.geoType}-features`] }).map((g) => g.id);
   const geosWithData = data.places.map((p) => p.geoCode);
-  const geosWithNoData = renderedGeos.filter((g) => !geosWithData.includes(g));
-  geosWithNoData.forEach((g) => {
-    map.setFeatureState({ source: layer.name, sourceLayer: layer.sourceLayer, id: g }, { colour: "#FF00FF" });
+  renderedGeos.forEach((g) => {
+    if (!geosWithData.includes(g)) {
+      map.setFeatureState({ source: layer.name, sourceLayer: layer.sourceLayer, id: g }, { colour: colours.noData });
+    }
   });
+
   data.places.forEach((p) => {
     map.setFeatureState(
       { source: layer.name, sourceLayer: layer.sourceLayer, id: p.geoCode },

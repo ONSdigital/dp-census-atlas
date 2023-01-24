@@ -3,7 +3,7 @@
   import { hovered } from "../stores/hovered";
   import { selected } from "../stores/selected";
   import { colours, getColoursForBreaks } from "../helpers/choroplethHelpers";
-  import { getClassificationDataSuffix, roundedClassificationDataToString } from "../helpers/classificationHelpers";
+  import { roundedClassificationDataToString } from "../helpers/classificationHelpers";
   import BreaksChart from "./BreaksChart.svelte";
   import GeoTypeBadge from "./GeoTypeBadge.svelte";
   import CategorySelector from "./CategorySelector.svelte";
@@ -26,7 +26,7 @@
       };
 
   const legendTextClass = "text-sm sm:text-base lg:text-lg xl:text-xl";
-  $: colors = $viz ? getColoursForBreaks($viz.breaks, $viz.params.changeOverTime) : colours.standard;
+  $: usedColours = $viz ? getColoursForBreaks($viz.breaks, $viz.params.changeOverTime) : colours.standard;
   $: deltaSuffix = active.value > 0 ? "+" : "";
   $: deltaDesc = active.value == 0 ? "no change" : active.value > 0 ? "increase" : "decrease";
 </script>
@@ -109,10 +109,14 @@
           hovered={active.value}
           suffix="pp"
           breaks={$viz.breaks}
-          {colors}
+          colors={usedColours}
           classificationCode={$viz.params.classification.code}
           showPositive={true}
         />
+        <div class="w-full flex gap-1">
+          <div class="rounded-full h-5 w-5" style="background-color:{colours.noData};" />
+          <div>No Data</div>
+        </div>
       {/if}
     </div>
   </div>

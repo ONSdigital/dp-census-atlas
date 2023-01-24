@@ -5,6 +5,7 @@
   import { nav } from "../stores/nav";
   import { gotoUrl } from "../helpers/navigationHelper";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
+  import Icon from "./MaterialIcon.svelte";
   import CategoryPageLinks from "./CategoryPageLinks.svelte";
   import AreaPanel from "./AreaPanel.svelte";
   import RadioButton from "./RadioButton.svelte";
@@ -66,8 +67,36 @@
       {#if $params.variable.classifications.length > 1}
         <ClassificationPager />
       {/if}
+
+      <!-- work-in-progress -->
+      {#if false}
+        <div class="mb-6 mt-6 flex justify-end py-3 border-t-[1px] bg-ons-grey-5 px-3 ">
+          <div class="  ">
+            <a
+              href="https://www.ons.gov.uk/feedback"
+              class="flex items-center gap-2.5 custom-ring flex-nowrap whitespace-nowrap group"
+            >
+              <!-- <div class="fill-ons-census-supporting w-3 h-3">
+              <svg id="triangle" viewBox="0 0 100 100">
+                <polygon points="50 0, 100 100, 0 100" />
+              </svg>
+            </div> -->
+              <div class="bg-ons-census-supporting p-1">
+                <div class="text-lg text-ons-white">
+                  <Icon kind="changeHistory" />
+                </div>
+              </div>
+              <!-- <div class="text-lg ">
+              <Icon kind="changeHistory" />
+            </div> -->
+              <div class="hyperlink">Compare with 2011</div>
+            </a>
+          </div>
+        </div>
+      {/if}
     </section>
   </div>
+
   <div class="grow" />
   <div class="p-6 pt-4 bg-ons-grey-5 border-t-ons-grey-15 border-t-[1px]">
     <CategoryPageLinks dataDownloadUrl={$params.classification.data_download} />

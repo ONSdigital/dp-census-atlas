@@ -10,13 +10,16 @@
     @apply focus:outline-none focus:bg-inherit focus-visible:bg-ons-sun-yellow;
   }
   .hyperlink {
-    @apply custom-ring  text-onsblue underline underline-offset-[3px] decoration-[1px] hover:decoration-[3px] group-hover:decoration-[2px];
+    @apply custom-ring  text-onsblue underline underline-offset-[3px] decoration-[1px] hover:decoration-[3px] group-hover:decoration-[3px];
   }
   .hyperlink-without-group-hover {
     @apply custom-ring  text-onsblue underline underline-offset-[3px] decoration-[1px] hover:decoration-[3px];
   }
+  .hyperlink-subdued {
+    @apply custom-ring hover:underline group-hover:underline underline-offset-[3px] decoration-[1px] hover:decoration-[2px] group-hover:decoration-[2px];
+  }
   .hyperlink-reverse {
-    @apply custom-ring text-ons-grey-5 underline underline-offset-[3px] decoration-[1px] hover:decoration-[2px] group-hover:decoration-[2px];
+    @apply custom-ring text-ons-grey-5 underline underline-offset-[3px] decoration-[1px] hover:decoration-[2px] group-hover:decoration-[3px];
   }
   .hoverable {
     @apply cursor-pointer;

@@ -1,0 +1,168 @@
+.\"
+.\" s3sync.mandoc
+.\"
+.\" This is the authoritative man page.
+.\" Use mandoc (via "make s3sync.md") to generate s3sync.md whenever this file changes.
+.\" s3sync.md is committed to the repo so it is easier to read the man page online.
+.\"
+.Dd $Mdocdate$
+.Dt s3sync 1
+.Os
+.Sh NAME
+.Nm s3sync
+.Nd transfer files to and from S3
+.Sh SYNOPSIS
+.Nm
+.Op Fl h
+.Op Fl n
+.Op Fl C
+.Op Fl D
+.Op Fl w Ar workers
+.Ar src
+.Ar dst
+.Sh DESCRIPTION
+.Nm
+transfers files between S3 and a local directory.
+Its default mode copies missing or changed files from
+.Ar src
+to
+.Ar dst ,
+and removes files on
+.Ar dst
+which don't exist on
+.Ar src .
+.Pp
+CRC32 checksums determine if a file has changed or not.
+.Pp
+.Nm
+recognises the following flags:
+.Bl -tag -width Ds
+.It Fl n
+Dryrun.
+No changes are made, and you can see what would be done.
+This is a good way to test if your AWS authentication is working.
+.It Fl C
+Missing S3 checksums are ok.
+It is normally an error if an existing S3 object does not have a CRC32 checksum.
+When -C is used, a missing checksum will not return an error, but the object will
+always be considered changed, and will always be re-uploaded.
+But on the re-upload the checksum should be set so subsequent comparisons will have a
+valid checksum.
+.Pp
+An edge case is when syncing from S3 to S3 and the source objects do not have checksums.
+In this case there are no checksums available to post to the destination.
+But you can sync to a local temporary directory first, then sync to the destination bucket.
+This would generate checksums for the destination.
+.It Fl D
+Do not delete files on destination.
+.It Fl w Ar workers
+Use
+.Ar workers
+concurrent goroutines in the checksum, copy and remove phases.
+The default for workers is the value of Go's
+.Ql runtime.NumCPU
+function.
+You can see what this by running
+.Nm
+.Fl h .
+The default value for workers will be included in the help message.
+.El
+.Pp
+.Ar src
+and
+.Ar dst
+can be S3 locations or local directories.
+Any combination is supported.
+.Pp
+S3 locations are specified with a URI that looks like
+.Ql s3:// Ar bucket Ns Op Ar /prefix .
+.Pp
+Local directories are normal file paths.
+These can be relative, and on Windows may include a drive letter.
+.Sh IMPLEMENTATION NOTES
+S3 has two mechanisms which are almost useful for determining whether a file would need to be transfered or not.
+Objects have a LastModified timestamp and MD5 checksums.
+Unfortunately LastModified is set by the AWS machine receiving the S3 upload request and is not under the control of the caller.
+And the MD5 checksum is not necessarily a checksum over the entire object.
+In multipart uploads, a checksum is used for each part; there is no overall checksum.
+So in order to determine whether an object's content has changed or not, a separate
+checksum must be maintained and compared.
+This obviously has performance implications since checksums have to be calculated on
+local files every time.
+.Pp
+All authentication is offloaded to
+.Cm aws-sso ,
+which sets all necessary environment
+variables for
+.Nm s3sync
+to use.
+.Nm
+is intended to run as a child under
+.Cm aws-sso ,
+so there are no explicit mechanisms for setting up AWS authentication.
+If you know which environment variables to set, you can use
+.Nm
+without
+.Cm aws-sso .
+For example, in simple situations you can just set
+.Ev AWS_REGION ,
+.Ev AWS_ACCESS_KEY_ID ,
+and
+.Ev AWS_SECRET_ACCESS_KEY .
+.Sh ENVIRONMENT
+These environment variables are normallys set by
+.Cm aws-sso ,
+but you can set them yourself instead of running
+.Cm aws-sso .
+.Pp
+.Ev AWS_ACCESS_KEY_ID
+.br
+.Ev AWS_SECRET_ACCESS_KEY
+.br
+.Ev AWS_SESSION_TOKEN
+.br
+.Ev AWS_DEFAULT_REGION
+.br
+.Ev AWS_PROFILE
+.Pp
+You always have to set
+.Ev AWS_REGION .
+.Sh EXIT STATUS
+.Ex
+.Sh EXAMPLES
+For simple AWS authentication setups you could set an account's environment variables
+and run
+.Nm
+directly:
+.Bd -literal -offset indent
+export AWS_REGION=eu-west-2
+export AWS_ACCESS_KEY_ID=<id>
+export AWS_SECRET_ACCESS_KEY=<secret>
+s3sync -n ./somedir s3://mybucket
+.Ed
+.Pp
+For more complicated authentication, you can run
+.Nm
+under
+.Cm aws-sso .
+.Cm aws-sso
+will prompt for the account or role you want to use, or you can provide these on the command line.
+See the
+.Cm aws-sso
+docs for more info.
+.Bd -literal -offset indent
+export AWS_REGION=eu-west-2
+aws-sso exec -- s3sync -n ./somedir s3://mybucket
+.Ed
+.Sh SEE ALSO
+.Lk https://github.com/synfinatic/aws-sso-cli "AWS SSO CLI"
+.br
+.Lk https://docs.aws.amazon.com/cli/latest/reference/s3/index.html "AWS CLI s3 subcommand"
+.Sh BUGS
+Checksums for local files have to be calculated on every run.
+.Pp
+.Ev AWS_REGION
+has to be set explicitly.
+It doesn't seem like
+.Cm aws-sso
+sets this (or else I'm not using aws-sso right).

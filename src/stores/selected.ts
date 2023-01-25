@@ -22,6 +22,7 @@ export const selected = asyncDerived([geography, viz], async ([$geography, $viz]
       category: $viz.params.category,
       geoType: $geography.geoType,
       bbox: { south, west, north, east },
+      base_url: $viz.params.variable.base_url,
     };
 
     const data = await fetchDataForBbox(args);

@@ -19,6 +19,7 @@ export type Variable = {
   caveat_text: string;
   caveat_link: string;
   classifications: Classification[];
+  base_url: string;
 };
 
 export type Classification = {
@@ -40,7 +41,6 @@ export type Category = {
   legend_str_1: string;
   legend_str_2: string;
   legend_str_3: string;
-  baseUrl: string;
 };
 export type VariableData = { [catCode: string]: { count: number; total: number; percentage: number } };
 
@@ -145,8 +145,9 @@ export type RuntimeEnv = {
 };
 
 export type ContentConfig = {
-  contentBaseUrl: string;
-  contentJsonUrl: string;
+  localContentJsonUrl: string;
+  webContentJsonUrl: string;
+  publishingContentJsonUrl: string;
 };
 
 export type ContentTree = {

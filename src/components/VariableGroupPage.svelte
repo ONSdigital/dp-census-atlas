@@ -7,7 +7,7 @@
   import AreaPanel from "./AreaPanel.svelte";
 </script>
 
-<div class="px-6">
+<div class="px-6 mb-6">
   <AreaPanel />
   <div class="pt-3 flex">
     <div class="font-bold text-slate-500">Topic</div>
@@ -53,3 +53,5 @@
     {/each}
   </div>
 </div>
+
+<div class="grow" />

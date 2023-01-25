@@ -1,4 +1,5 @@
-<script>
+<script lang="ts">
+  import { afterNavigate } from "$app/navigation";
   import { params } from "../stores/params";
   import { nav } from "../stores/nav";
   import Header from "./Header.svelte";
@@ -11,6 +12,14 @@
   import CookieBanner from "./CookieBanner.svelte";
   import Toggle from "./Toggle.svelte";
   import Footer from "./Footer.svelte";
+
+  // workaround https://github.com/sveltejs/kit/issues/2733
+  let top: HTMLElement;
+  afterNavigate((navigation) => {
+    if (navigation.type === "link") {
+      top?.scrollIntoView();
+    }
+  });
 </script>
 
 <!-- outer -->
@@ -35,6 +44,7 @@
       } lg:translate-x-0 ${!$params.category ? "right-0 sm:right-0 md:right-0" : ""}`}
     >
       <div class="grow flex flex-col overflow-y-auto bg-ons-white">
+        <div bind:this={top} />
         <EmbeddedHeader />
         <Heading />
         <slot />

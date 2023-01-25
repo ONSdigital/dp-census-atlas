@@ -1,19 +1,4 @@
-import type { ContentConfig, Classification, Variable, VariableGroup, ContentTree } from "../types";
-
-/*
-  Iterate through variable groups and append the data baseUrl to each category of each classification of each variable.
-*/
-export const appendBaseUrlToCategories = (variableGroups: VariableGroup[], ctcfg: ContentConfig) => {
-  variableGroups.forEach((vg) => {
-    vg.variables.forEach((v) => {
-      v.classifications.forEach((c) => {
-        c.categories.forEach((ct) => {
-          ct.baseUrl = ctcfg.contentBaseUrl;
-        });
-      });
-    });
-  });
-};
+import type { Classification, Variable, VariableGroup, ContentTree } from "../types";
 
 /*
   Iterate over list of variable groups and merge variable groups with the same name.
@@ -56,6 +41,7 @@ const mergeVariables = (variables: Variable[]) => {
       caveat_text: variablesToMerge[0].caveat_text,
       caveat_link: variablesToMerge[0].caveat_link,
       classifications: dedupeClassifications(allClassifications as Classification[]),
+      base_url: variablesToMerge[0].base_url,
     });
   }
   return mergedVariables;
@@ -98,23 +84,4 @@ export const sortVariableGroupVariables = (variableGroups: VariableGroup[]) => {
   variableGroups.forEach((vg) => {
     vg.variables.sort(compareNames);
   });
-};
-
-/*
-  Return name of latest release. Update by adding returns statements above those currently here.
-*/
-export const getLatestRelease = (content: ContentTree) => {
-  if (content.releases.some((r) => r.includes("2021-SOGI"))) {
-    return "Sogi";
-  }
-  if (content.releases.some((r) => r.includes("2021-HOU"))) {
-    return "Hou";
-  }
-  if (content.releases.some((r) => r.includes("2021-LAB"))) {
-    return "LabTtwWelshSkills";
-  }
-  if (content.releases.some((r) => r.includes("2021-EILR"))) {
-    return "ArmEilr";
-  }
-  return "DemMig";
 };

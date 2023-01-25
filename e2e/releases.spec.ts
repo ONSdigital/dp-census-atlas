@@ -16,7 +16,7 @@ const testCases = [
     name: "EDU",
     url: "/choropleth/education/highest-level-of-qualification/highest-qualification-6a/highest-level-of-qualification-apprenticeship?oa=E00093263",
     legendText:
-      "23.5% of people aged 16 years and over in E00093263 OA have an apprenticeship as their highest level of qualification",
+      "8.6% of people aged 16 years and over in E00093263 OA have an apprenticeship as their highest level of qualification",
     categoryCount: 5,
     nextClassificationCategoryCount: 7,
   },

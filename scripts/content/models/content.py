@@ -13,8 +13,7 @@ from models.variable_group import CensusVariableGroup, variable_group_from_conte
 @dataclass
 class CensusContent:
     content_json: str
-    metadata_version: str
-    created_at: datetime
+    meta: dict
     content: list[CensusVariableGroup]
 
     def to_content_json_file(self, output_dir: Path) -> None:
@@ -22,10 +21,7 @@ class CensusContent:
         output_fn = output_dir.joinpath(f"{self.content_json}.json")
         with open(output_fn, "w") as f:
             json.dump({
-                "meta": {
-                    "created_at": self.created_at.strftime("%Y-%m-%d-%H-%M-%S"),
-                    "release": f"{self.content_json}-{self.metadata_version}"
-                },
+                "meta": self.meta,
                 "content": [c.to_jsonable() for c in self.content]
             }, f, indent=2)
 
@@ -59,47 +55,27 @@ def content_from_spec_and_metadata(spec: dict, input_metadata_files_dir: str) ->
     variables = variables_from_metadata(
         cantabular_metadata_full_path.joinpath("Variable.csv"),
         metadata_dir_path.joinpath("variable_short_descriptions.csv"),
-        metadata_dir_path.joinpath("variable_caveats.csv")
+        metadata_dir_path.joinpath("variable_caveats.csv"),
+        metadata_dir_path.joinpath("variable_tile_data_base_urls.csv")
     )
 
     # build content from spec
-    now = datetime.now()
+    now = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
     all_content = []
 
-    # first add content with all variable groups + variables (useful for debugging etc)
-    print("building 2021-ALL")
-    all_content.append(
-        CensusContent(
-            content_json="2021-ALL",
-            metadata_version=spec["cantabular_metadata_dir"],
-            created_at=now,
-            content=variable_groups_from_spec(spec, variables, classifications, categories)
-        )
-    )
-
-    # then cycle through and produce content for all content json referenced in spec
-    for vg_spec in spec["variable_groups"]:
-        for content_json_name, content_json_variables in vg_spec["variables_by_content_json"].items():
-            print(f"building {content_json_name}")
-            content_json_vg_spec = {
-                "variable_groups": [
-                    {
-                        "name": vg_spec["name"],
-                        "slug": vg_spec["slug"],
-                        "desc": vg_spec["desc"],
-                        "variables_by_content_json": {
-                            content_json_name: content_json_variables
-                        }
-                    }
-                ]
-            }
-            all_content.append(
-                CensusContent(
-                    content_json=content_json_name,
-                    metadata_version=spec["cantabular_metadata_dir"],
-                    created_at=now,
-                    content=variable_groups_from_spec(content_json_vg_spec, variables, classifications, categories)
-                )
+    # cycle through and produce content for all content json referenced in spec
+    for content_json_name, content_json_spec in spec["content_json"].items():
+        print(f"building {content_json_name}")
+        all_content.append(
+            CensusContent(
+                content_json=content_json_name,
+                meta={
+                    "created_at": now,
+                    "release": f"{content_json_name}-{spec['cantabular_metadata_dir']}",
+                    "additional_content_jsons": content_json_spec.get("additional_content_jsons", [])
+                },
+                content=variable_groups_from_spec(content_json_spec["content"], variables, classifications, categories)
             )
+        )
 
     return all_content

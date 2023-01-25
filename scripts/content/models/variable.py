@@ -18,6 +18,7 @@ class CensusVariable:
     long_desc: str
     units: str
     classifications: list[CensusClassification]
+    base_url: str = ""
     topic_code: str = ""
     caveat_text: str = ""
     caveat_link: str = ""
@@ -25,13 +26,13 @@ class CensusVariable:
     def gather_children(self, classification_list: list[CensusClassification], category_list: list[CensusCategory],
                         variable_spec: dict) -> None:
         """
-        Append all classifications in classification_list that are referenced in variable_spec, then tell 
+        Append all classifications in classification_list that are referenced in variable_spec, then tell
         classifications to gather_children.
         """
         unsorted_classifications = [c for c in classification_list if c.code in variable_spec["classifications"]]
-        sorted_classifications = sorted(unsorted_classifications, key=lambda c: len(c.categories))
-        for cls in sorted_classifications:
+        for cls in unsorted_classifications:
             cls.gather_children(category_list, variable_spec)
+        sorted_classifications = sorted(unsorted_classifications, key=lambda c: len(c.categories))
         self.classifications = sorted_classifications
 
     def set_short_desc(self, short_descs: list[dict]) -> None:
@@ -44,6 +45,11 @@ class CensusVariable:
         if caveat_row is not None and caveat_row["caveat_text"] != "":
             self.caveat_text = caveat_row["caveat_text"].strip()
             self.caveat_link = caveat_row["caveat_link"].strip()
+
+    def set_base_url(self, tile_data_base_urls: list[dict]) -> None:
+        base_url_row = next((r for r in tile_data_base_urls if r["variable"] == self.code), None)
+        if base_url_row is not None and base_url_row["tile_data_base_url"] != "":
+            self.base_url = base_url_row["tile_data_base_url"].strip()
 
     def is_valid(self) -> bool:
         """
@@ -92,6 +98,7 @@ class CensusVariable:
             "long_desc": self.long_desc,
             "units": self.units,
             "topic_code": self.topic_code,
+            "base_url": self.base_url
         }
 
         if self.caveat_text != "":
@@ -119,13 +126,14 @@ def variable_from_content_json(content_json: dict) -> CensusVariable:
         topic_code=content_json["topic_code"],
         caveat_text=content_json.get("caveat_text", ""),
         caveat_link=content_json.get("caveat_link", ""),
+        base_url=content_json.get("base_url", ""),
         classifications=[classification_from_content_json(
             c) for c in content_json["classifications"]],
     )
 
 
 def variables_from_metadata(variable_csv: Path or str, short_desc_csv: Path or str,
-                            caveat_csv: Path or str) -> list[CensusVariable]:
+                            caveat_csv: Path or str, tile_data_base_url_csv: Path or str) -> list[CensusVariable]:
     """
     Make CensusVariable's from rows in Variable.csv. NB filter out any blank rows in the csv. Append extra
     metadata from:
@@ -140,6 +148,9 @@ def variables_from_metadata(variable_csv: Path or str, short_desc_csv: Path or s
 
     with open(caveat_csv, "r") as f:
         caveats = list(csv.DictReader(f))
+
+    with open(tile_data_base_url_csv, "r") as f:
+        tile_data_base_urls = list(csv.DictReader(f))
 
     # load variables
     with open(variable_csv, "r", encoding="utf-8") as f:
@@ -160,6 +171,7 @@ def variables_from_metadata(variable_csv: Path or str, short_desc_csv: Path or s
 
                 variable.set_short_desc(short_descs)
                 variable.set_caveat(caveats)
+                variable.set_base_url(tile_data_base_urls)
 
                 variables.append(variable)
     return variables

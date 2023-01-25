@@ -43,7 +43,9 @@ recognises the following flags:
 
 > Missing S3 checksums are ok.
 > It is normally an error if an existing S3 object does not have a CRC32 checksum.
-> When -C is used, a missing checksum will not return an error, but the object will
+> When
+> **-C**
+> is used, a missing checksum will not return an error, but the object will
 > always be considered changed, and will always be re-uploaded.
 > But on the re-upload the checksum should be set so subsequent comparisons will have a
 > valid checksum.
@@ -77,7 +79,7 @@ can be S3 locations or local directories.
 Any combination is supported.
 
 S3 locations are specified with a URI that looks like
-'`s3:// *bucket*[*/prefix*]`'.
+'`s3://*bucket*[*/prefix*]`'.
 
 Local directories are normal file paths.
 These can be relative, and on Windows may include a drive letter.
@@ -141,10 +143,10 @@ and run
 **s3sync**
 directly:
 
-> export AWS_REGION=eu-west-2
-> export AWS_ACCESS_KEY_ID=<id>
-> export AWS_SECRET_ACCESS_KEY=<secret>
-> s3sync -n ./somedir s3://mybucket
+> export AWS_REGION=eu-west-2<br>
+> export AWS_ACCESS_KEY_ID=*id*<br>
+> export AWS_SECRET_ACCESS_KEY=*secret*<br>
+> s3sync -n ./somedir s3://mybucket<br>
 
 For more complicated authentication, you can run
 **s3sync**
@@ -156,8 +158,8 @@ See the
 **aws-sso**
 docs for more info.
 
-> export AWS_REGION=eu-west-2
-> aws-sso exec -- s3sync -n ./somedir s3://mybucket
+> export AWS_REGION=eu-west-2<br>
+> aws-sso exec -- s3sync -n ./somedir s3://mybucket<br>
 
 # SEE ALSO
 

@@ -44,7 +44,9 @@ This is a good way to test if your AWS authentication is working.
 .It Fl C
 Missing S3 checksums are ok.
 It is normally an error if an existing S3 object does not have a CRC32 checksum.
-When -C is used, a missing checksum will not return an error, but the object will
+When
+.Fl C
+is used, a missing checksum will not return an error, but the object will
 always be considered changed, and will always be re-uploaded.
 But on the re-upload the checksum should be set so subsequent comparisons will have a
 valid checksum.
@@ -75,7 +77,7 @@ can be S3 locations or local directories.
 Any combination is supported.
 .Pp
 S3 locations are specified with a URI that looks like
-.Ql s3:// Ar bucket Ns Op Ar /prefix .
+.Ql s3:// Ns Ar bucket Ns Op Ar /prefix .
 .Pp
 Local directories are normal file paths.
 These can be relative, and on Windows may include a drive letter.
@@ -134,11 +136,12 @@ For simple AWS authentication setups you could set an account's environment vari
 and run
 .Nm
 directly:
+.\" the <br> after each line is to make github markdown not fill blockquotes
 .Bd -literal -offset indent
-export AWS_REGION=eu-west-2
-export AWS_ACCESS_KEY_ID=<id>
-export AWS_SECRET_ACCESS_KEY=<secret>
-s3sync -n ./somedir s3://mybucket
+export AWS_REGION=eu-west-2<br>
+export AWS_ACCESS_KEY_ID=*id*<br>
+export AWS_SECRET_ACCESS_KEY=*secret*<br>
+s3sync -n ./somedir s3://mybucket<br>
 .Ed
 .Pp
 For more complicated authentication, you can run
@@ -151,8 +154,8 @@ See the
 .Cm aws-sso
 docs for more info.
 .Bd -literal -offset indent
-export AWS_REGION=eu-west-2
-aws-sso exec -- s3sync -n ./somedir s3://mybucket
+export AWS_REGION=eu-west-2<br>
+aws-sso exec -- s3sync -n ./somedir s3://mybucket<br>
 .Ed
 .Sh SEE ALSO
 .Lk https://github.com/synfinatic/aws-sso-cli "AWS SSO CLI"

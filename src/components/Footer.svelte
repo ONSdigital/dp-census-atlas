@@ -41,6 +41,7 @@
         class="fill-ons-grey-5"
         alt="OGL"
         width="45"
+        height="18.75"
         src="https://cdn.ons.gov.uk/assets/images/logo-ogl-footer.svg"
       />
     </div>

@@ -61,6 +61,7 @@ See the general [DP release process](https://github.com/ONSdigital/dp/blob/main/
 - go to Concourse
 - wait for release to go green
 - in 'production-ship-it', trigger a new build
+- optionally, go to `#cache` and say `clear cache for https://www.ons.gov.uk/census/maps`
 
 ## Content.json
 

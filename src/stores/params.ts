@@ -5,7 +5,7 @@ import { getSelectedGeography, getGeoLock } from "../helpers/paramsHelper";
 import { parseEmbedParams } from "../helpers/embedHelper";
 
 /**
- * A Svelte store reflecting the parsed application URL parameters.
+ * A Svelte store reflecting the *parsed* application URL parameters.
  */
 export const params = derived([page, content], ([$page, $content]) => {
   const variableGroup = $content?.variableGroups.find((vg) => vg.slug === $page.params.variableGroup);

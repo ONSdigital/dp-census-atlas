@@ -3,14 +3,13 @@
   import EmbedThis from "./EmbedThis.svelte";
   import Share from "./Share.svelte";
   import Icon from "./MaterialIcon.svelte";
-  // ToDo revert this if / when the indiviudal datasets become available again!
-  // href={`https://www.ons.gov.uk/datasets/${dataset}/editions/2021/versions/1`}
-  export let dataDownloadUrl: string | undefined;
+
+  export let dataDownloadUrl: string;
 </script>
 
-<section class="">
-  <h2 class="mb-2 text-md font-semibold md:text-lg ">Use and share</h2>
-  <div class="flex items-center gap-x-6 lg:gap-x-8 gap-y-2 flex-wrap ">
+<section class="p-6 pt-4 bg-ons-grey-5 border-t-ons-grey-15 border-t-[1px]">
+  <h2 class="mb-2 text-base font-semibold">Use and share</h2>
+  <div class="flex items-center gap-x-6 lg:gap-x-8 flex-wrap ">
     <div>
       <Share />
     </div>

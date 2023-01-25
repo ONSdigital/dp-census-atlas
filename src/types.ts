@@ -1,5 +1,5 @@
 export const GeoTypes = ["ew", "lad", "msoa", "oa"] as const;
-export type GeoType = typeof GeoTypes[number];
+export type GeoType = (typeof GeoTypes)[number];
 
 export type VariableGroup = {
   name: string;
@@ -101,7 +101,7 @@ type GeographyFeature = {
     type: string;
     coordinates: [[number, number], [number, number]];
   };
-  properties?: any;
+  properties?: unknown;
 };
 
 export type Bbox = {

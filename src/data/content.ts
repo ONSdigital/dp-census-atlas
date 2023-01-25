@@ -143,10 +143,10 @@ export default {
         contentJsonUrl: hou.localContentJsonUrl,
         contentBaseUrl: hou.realDataBaseUrl,
       },
-      // huc is unpublished
+      // huc is published
       {
         contentJsonUrl: huc.localContentJsonUrl,
-        contentBaseUrl: huc.fakeDataBaseUrl,
+        contentBaseUrl: huc.realDataBaseUrl,
       },
       // lab is published
       {
@@ -210,10 +210,10 @@ export default {
         contentJsonUrl: hou.publicContentJsonUrl,
         contentBaseUrl: hou.realDataBaseUrl,
       },
-      // huc is unpublished
+      // huc is published
       {
         contentJsonUrl: huc.publicContentJsonUrl,
-        contentBaseUrl: huc.fakeDataBaseUrl,
+        contentBaseUrl: huc.realDataBaseUrl,
       },
       // lab is published
       {
@@ -277,10 +277,10 @@ export default {
         contentJsonUrl: hou.publicContentJsonUrl,
         contentBaseUrl: hou.realDataBaseUrl,
       },
-      // huc is unpublished
+      // huc is published
       {
         contentJsonUrl: huc.publicContentJsonUrl,
-        contentBaseUrl: huc.fakeDataBaseUrl,
+        contentBaseUrl: huc.realDataBaseUrl,
       },
       // lab is published
       {

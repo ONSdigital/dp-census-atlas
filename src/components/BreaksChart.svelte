@@ -9,6 +9,7 @@
   export let suffix = "";
   export let snapTicks = true;
   export let classificationCode = "";
+  export let showPositive = false;
 
   // handle case of only one breaks value
   $: ticks = breaks.length === 1 ? [breaks[0], breaks[0]] : breaks;
@@ -27,6 +28,13 @@
       return (i + offset) * unit;
     }
   };
+
+  const getPrefix = (val) => {
+    if (showPositive && val > 0) {
+      return "+";
+    }
+    return "";
+  };
 </script>
 
 <div class="mt-3 box-border relative w-full h-5 mb-8 text-xs sm:text-base">
@@ -42,13 +50,15 @@
       class="tick"
       style="left: {i * (100 / (ticks.length - 1))}%; transform: translateX({i == 0 && snapTicks ? '-2px' : '-50%'});"
     >
-      {roundedClassificationDataToString(classificationCode, ticks[i])}<span class="tick-suffix">{suffix}</span>
+      {getPrefix(ticks[i])}{roundedClassificationDataToString(classificationCode, ticks[i])}<span class="tick-suffix"
+        >{suffix}</span
+      >
     </div>
   {/each}
   <div class="line" style="right: 0;" />
   <div class="tick" style="right: 0; transform: translateX({snapTicks ? '2px' : '50%'});">
-    {roundedClassificationDataToString(classificationCode, ticks[ticks.length - 1])}<span class="tick-suffix"
-      >{suffix}</span
+    {getPrefix(ticks.length - 1)}{roundedClassificationDataToString(classificationCode, ticks[ticks.length - 1])}<span
+      class="tick-suffix">{suffix}</span
     >
   </div>
   {#if selected !== undefined}

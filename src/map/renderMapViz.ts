@@ -1,6 +1,8 @@
 import type { LoadedGeographies, VizData } from "../types";
 import { layers } from "./layers";
-import { choroplethColours } from "../helpers/choroplethHelpers";
+import { choroplethColours, getChangeOverTimeColours } from "../helpers/choroplethHelpers";
+import { params } from "../stores/params";
+import { get } from "svelte/store";
 
 let loadedGeographies: LoadedGeographies = undefined;
 
@@ -12,23 +14,42 @@ export const renderMapViz = (map: mapboxgl.Map, data: VizData | undefined) => {
   }
 
   const layer = layers.find((l) => l.name == data.geoType);
+  let colours = choroplethColours.standard;
+
+  if (get(params)?.mapType === "change-over-time") {
+    colours = getChangeOverTimeColours(data.breaks);
+
+    // colour no-data areas to distinguish from neutral-change areas when doing change-over-time
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore (queryRenderedFeatures typings appear to be wrong)
+    const renderedGeos = map.queryRenderedFeatures({ layers: [`${data.geoType}-features`] }).map((g) => g.id);
+    const geosWithData = data.places.map((p) => p.geoCode);
+    renderedGeos.forEach((g) => {
+      if (!geosWithData.includes(g)) {
+        map.setFeatureState(
+          { source: layer.name, sourceLayer: layer.sourceLayer, id: g },
+          { colour: choroplethColours.noData },
+        );
+      }
+    });
+  }
 
   data.places.forEach((p) => {
     map.setFeatureState(
       { source: layer.name, sourceLayer: layer.sourceLayer, id: p.geoCode },
-      { colour: getChoroplethColour(p.categoryValue, data.breaks) },
+      { colour: getChoroplethColour(p.categoryValue, data.breaks, colours) },
     );
   });
 };
 
-const getChoroplethColour = (value: number, breaks: number[]) => {
+const getChoroplethColour = (value: number, breaks: number[], colours: string[]) => {
   let upperBreakBounds;
   if (breaks.length === 1) {
     upperBreakBounds = breaks;
   } else {
     upperBreakBounds = breaks.slice(1);
   }
-  for (const b of upperBreakBounds.map((b, i) => ({ breakpoint: b, colour: choroplethColours.standard[i] }))) {
+  for (const b of upperBreakBounds.map((b, i) => ({ breakpoint: b, colour: colours[i] }))) {
     if (value <= b.breakpoint) return b.colour;
   }
 };

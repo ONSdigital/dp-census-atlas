@@ -263,7 +263,30 @@ export const filterVariableGroupsForMapType = (variableGroups: VariableGroup[], 
         }
       })
       .filter((vg) => vg);
-    console.log(vgs);
+
     return vgs;
   }
+};
+
+export const contentInVariableGroups = (
+  variableGroups: VariableGroup[],
+  args: { variableGroup: VariableGroup; variable?: Variable; classification?: Classification },
+) => {
+  const matchVG = variableGroups.find((vg) => vg.name === args.variableGroup.name);
+  if (matchVG) {
+    if (!args?.variable) {
+      return true;
+    }
+    const matchV = matchVG.variables.find((v) => v.code === args.variable.code);
+    if (matchV) {
+      if (!args?.classification) {
+        return true;
+      }
+      const matchC = matchV.classifications.find((c) => c.code === args.classification.code);
+      if (matchC) {
+        return true;
+      }
+    }
+  }
+  return false;
 };

@@ -60,7 +60,7 @@
   </div>
   <div class="flex justify-end mt-1" />
 
-  <div class="text-sm mt-4 text-ons-grey-35">
+  <div class="text-sm mt-3 text-ons-grey-35">
     House of Commons Library
     <a
       class="hyperlink-reverse"

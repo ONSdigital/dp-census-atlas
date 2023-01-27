@@ -61,6 +61,7 @@ See the general [DP release process](https://github.com/ONSdigital/dp/blob/main/
 - go to Concourse
 - wait for release to go green
 - in 'production-ship-it', trigger a new build
+- optionally, go to `#cache` and say `clear cache for https://www.ons.gov.uk/census/maps`
 
 ## Content.json
 
@@ -133,55 +134,6 @@ This simple API gets basic info about an area. For example, Oxford LAD:
             ... (the bounding box)
         }
     }
-
-## Publishing
-
-TODO: update this proposal and process to reflect the built solution.
-
-Proposal: imagine we have a small list of “DP Collection ID”s committed into the front end code, like this:
-
-    let dpCollections = [
-      "0000000004",  // published
-      "0000000023",  // published
-      "0000000038",  // not published until 9.30am on 1 November
-    ];
-
-On startup, we fetch all the `content.json` files, since we can make their URLs (in parallel, with `Promise.all()`):
-
-    GET .../atlas/0000000004/content.json --> 200 (or 301 once decrypted)
-    GET .../atlas/0000000023/content.json --> 200 (or 301 once decrypted)
-    GET .../atlas/0000000038/content.json --> 404
-
-The Download Service will ensure that files in any unpublished collections will 40x, so we just _ignore_ them.
-
-We then “merge” the 200-returning `content.json` files, so they’re _additive_ — the later ones contain new classifications (and possibly corrections). The content tree is built by addition. (Even simpler would to just be to use the latest / last in the list, but addition gives us a couple of very desirable properties...)
-
-Finally (since we've made sure that the collection ID is in the URL of our files on upload) we can also build the API URLs, e.g:
-
-    GET .../atlas/0000000004/data/msoa/1-23-456/QS12345.csv
-
-- 😀 the Download Service is fully responsible for auth / publishing (places responsibility for digital publishing with... DP)
-- 😀 content will be published "at 9.30am" with no intervention needed (solves "9.30" problem)
-- 😀 collections can be previewed and signed off in pre-release (solves pre-release "sign-off" problem)
-- 😀 only authorised people can see “their” collections in pre-release (solves "auth" problem)
-- 😀 mechanism for removing / correcting published data (could simply start again with a single, replacement collection)
-
-### Publishing process
-
-1. a publishing "collection" is created manually on Zebedee (or its successor)
-2. someone runs the Script, supplying the `Collection ID` as an argument
-   - the input source (ie. which classifications) to the script could be database or Cantabula
-     - this will be a manual data-munging task
-     - or it could be built from a `content.json` file
-   - the output of the Script can be a full set of new data, or a partial addition to existing data
-   - the Script adds the output to the `Download Service` via the `Upload Client`
-3. the `Collection ID` is added to the frontend array and deployed (at least to sandbox).
-4. the `content.json` file for this collection is crafted, and tested, and uploaded
-5. the collection is signed off, being visible to appropriately auth'd personnel in publishing env
-6. the publishing date & time is configured in Zebedee
-7. the frontend code is deployed
-8. at the configured time, Zebedee sends a signal to the Download Service to publish the collection
-9. the `content.json` becomes visible to anyone who loads or refreshes the app
 
 ## Contributing
 

@@ -7,7 +7,7 @@
   export let dataDownloadUrl: string;
 </script>
 
-<section class="p-6 pt-4 bg-ons-grey-5 border-t-ons-grey-15 border-t-[1px]">
+<section class="p-6 pt-5 bg-ons-grey-5 border-t-ons-grey-15 border-t-[1px]">
   <h2 class="mb-2 text-base font-semibold">Use and share</h2>
   <div class="flex items-center gap-x-6 lg:gap-x-8 flex-wrap ">
     <div>

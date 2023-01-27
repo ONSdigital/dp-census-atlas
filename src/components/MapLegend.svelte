@@ -125,7 +125,7 @@
           hovered={active.value}
           suffix={getClassificationDataSuffix($viz.params.classification.code)}
           breaks={$viz.breaks}
-          colors={choroplethColours}
+          colors={choroplethColours.standard}
           classificationCode={$viz.params.classification.code}
         />
       {/if}

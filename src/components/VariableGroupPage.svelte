@@ -5,6 +5,7 @@
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
   import { getDefaultClassification } from "../helpers/variableHelpers";
   import AreaPanel from "./AreaPanel.svelte";
+  import ChangeOverTimeToggle from "./ChangeOverTimeToggle.svelte";
 </script>
 
 <div class="px-6 mb-6">
@@ -53,6 +54,7 @@
       </a>
     {/each}
   </div>
+  <ChangeOverTimeToggle />
 </div>
 
 <div class="grow" />

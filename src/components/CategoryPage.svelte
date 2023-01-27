@@ -12,6 +12,7 @@
   import VariableDescription from "./VariableDescription.svelte";
   import ClassificationPager from "./ClassificationPager.svelte";
   import CaveatWarning from "./CaveatWarning.svelte";
+  import ChangeOverTimeToggle from "./ChangeOverTimeToggle.svelte";
 
   const buildCategoryLink = (category: Category) => {
     return buildHyperlink($page.url, {
@@ -70,6 +71,7 @@
       {#if $params.variable.classifications.length > 1}
         <ClassificationPager />
       {/if}
+      <ChangeOverTimeToggle />
 
       <!-- work-in-progress -->
       {#if false}

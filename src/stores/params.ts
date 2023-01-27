@@ -8,12 +8,14 @@ import { parseEmbedParams } from "../helpers/embedHelper";
  * A Svelte store reflecting the *parsed* application URL parameters.
  */
 export const params = derived([page, content], ([$page, $content]) => {
+  const mapType = $page.params.mapType;
   const variableGroup = $content?.variableGroups.find((vg) => vg.slug === $page.params.variableGroup);
   const variable = variableGroup?.variables.find((v) => v.slug === $page.params.variable);
   const classification = variable?.classifications.find((c) => c.slug === $page.params.classification);
   const category = classification?.categories.find((c) => c.slug === $page.params.category);
 
   return {
+    mapType,
     variableGroup,
     variable,
     classification,

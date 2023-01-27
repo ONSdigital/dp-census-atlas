@@ -5,6 +5,7 @@
   import { highlightText, searchCensus } from "../helpers/searchCensusHelper";
   import { content } from "../stores/content";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
+  import { params } from "../stores/params";
 
   export let name: string;
   let val = "";
@@ -49,6 +50,7 @@
           {#each results.variableGroups as vg}
             <SearchBoxItem
               link={buildHyperlink($page.url, {
+                mapType: $params.mapType,
                 variableGroup: vg.slug,
               })}
             >
@@ -64,6 +66,7 @@
           {#each results.variables as v}
             <SearchBoxItem
               link={buildHyperlink($page.url, {
+                mapType: $params.mapType,
                 variableGroup: v.variableGroup.slug,
                 variable: v.variable.slug,
                 category: {
@@ -84,6 +87,7 @@
           {#each results.categories as c}
             <SearchBoxItem
               link={buildHyperlink($page.url, {
+                mapType: $params.mapType,
                 variableGroup: c.variableGroup.slug,
                 variable: c.variable.variable.slug,
                 category: {

@@ -25,6 +25,7 @@
       <a
         class="border-t-[1px] border-t-slate-300 py-2 group custom-ring"
         href={buildHyperlink($page.url, {
+          mapType: $params.mapType,
           variableGroup: $params.variableGroup.slug,
           variable: variable.slug,
           category: {

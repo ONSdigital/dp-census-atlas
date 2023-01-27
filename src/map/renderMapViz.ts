@@ -28,7 +28,7 @@ const getChoroplethColour = (value: number, breaks: number[]) => {
   } else {
     upperBreakBounds = breaks.slice(1);
   }
-  for (const b of upperBreakBounds.map((b, i) => ({ breakpoint: b, colour: choroplethColours[i] }))) {
+  for (const b of upperBreakBounds.map((b, i) => ({ breakpoint: b, colour: choroplethColours.standard[i] }))) {
     if (value <= b.breakpoint) return b.colour;
   }
 };

@@ -9,7 +9,7 @@
 
   export let name: string;
   let val = "";
-  $: results = searchCensus(val, $content.variableGroups);
+  $: results = searchCensus(val, $content[$params.mapType].variableGroups);
 </script>
 
 <div class="">

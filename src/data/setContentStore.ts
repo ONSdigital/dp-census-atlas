@@ -84,10 +84,15 @@ export const setContentStoreOnce = async () => {
   // alphabetically sort variables within their variableGroups
   sortVariableGroupVariables(mergedVariableGroups);
 
-  // write to store
-  contentStore.set({
+  // filter different content sets
+  const choroplethContent = {
     releases: releases,
     variableGroups: mergedVariableGroups as VariableGroup[],
     fakeDataLoaded: fakeDataLoaded,
+  };
+
+  // write to store
+  contentStore.set({
+    choropleth: choroplethContent,
   } as ContentTree);
 };

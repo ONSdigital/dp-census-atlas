@@ -1,9 +1,14 @@
 import { get } from "svelte/store";
 import { appBasePath } from "../buildEnv";
 import content from "./content";
-import { appendBaseUrlToCategories, mergeVariableGroups, sortVariableGroupVariables } from "../helpers/contentHelpers";
+import {
+  appendBaseUrlToCategories,
+  mergeVariableGroups,
+  sortVariableGroupVariables,
+  filterVariableGroupsForMapType,
+} from "../helpers/contentHelpers";
 import { content as contentStore } from "../stores/content";
-import type { ContentConfig, ContentTree, VariableGroup } from "../types";
+import type { ContentConfig, ContentTree, VariableGroup, MapType } from "../types";
 
 /*
   Fetch all content.json files referenced in content.ts for the current env (specified in a back-end env var, fetched
@@ -87,12 +92,21 @@ export const setContentStoreOnce = async () => {
   // filter different content sets
   const choroplethContent = {
     releases: releases,
-    variableGroups: mergedVariableGroups as VariableGroup[],
+    variableGroups: filterVariableGroupsForMapType(mergedVariableGroups, "choropleth" as MapType) as VariableGroup[],
+    fakeDataLoaded: fakeDataLoaded,
+  };
+  const changeOverTimeContent = {
+    releases: releases,
+    variableGroups: filterVariableGroupsForMapType(
+      mergedVariableGroups,
+      "change-over-time" as MapType,
+    ) as VariableGroup[],
     fakeDataLoaded: fakeDataLoaded,
   };
 
   // write to store
   contentStore.set({
     choropleth: choroplethContent,
+    "change-over-time": changeOverTimeContent,
   } as ContentTree);
 };

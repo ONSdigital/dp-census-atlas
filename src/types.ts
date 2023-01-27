@@ -153,8 +153,13 @@ export type ContentConfig = {
   publishingContentJsonUrl: string;
 };
 
+export const MapTypes = ["choropleth", "change-over-time"] as const;
+export type MapType = (typeof MapTypes)[number];
+
 export type ContentTree = {
-  releases: string[];
-  variableGroups: VariableGroup[];
-  fakeDataLoaded: boolean;
+  [K in MapType]: {
+    releases: string[];
+    variableGroups: VariableGroup[];
+    fakeDataLoaded: boolean;
+  };
 };

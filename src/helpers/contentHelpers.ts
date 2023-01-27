@@ -190,7 +190,7 @@ const dedupeClassifications = (classifications: Classification[]) => {
 };
 
 export const isInitialReleasePeriod = (content: ContentTree) => {
-  return content.variableGroups.length < 6;
+  return content.choropleth.variableGroups.length < 6;
 };
 
 /*
@@ -213,4 +213,23 @@ export const sortVariableGroupVariables = (variableGroups: VariableGroup[]) => {
   variableGroups.forEach((vg) => {
     vg.variables.sort(compareNames);
   });
+};
+
+/*
+  Return name of latest release. Update by adding returns statements above those currently here.
+*/
+export const getLatestRelease = (content: ContentTree) => {
+  if (content.choropleth.releases.some((r) => r.includes("2021-SOGI"))) {
+    return "Sogi";
+  }
+  if (content.choropleth.releases.some((r) => r.includes("2021-HOU"))) {
+    return "Hou";
+  }
+  if (content.choropleth.releases.some((r) => r.includes("2021-LAB"))) {
+    return "LabTtwWelshSkills";
+  }
+  if (content.choropleth.releases.some((r) => r.includes("2021-EILR"))) {
+    return "ArmEilr";
+  }
+  return "DemMig";
 };

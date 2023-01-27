@@ -3,7 +3,7 @@
   import { params } from "../stores/params";
   import { nav } from "../stores/nav";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
-  import { getDefaultChoroplethClassification } from "../helpers/variableHelpers";
+  import { getDefaultClassification } from "../helpers/variableHelpers";
   import AreaPanel from "./AreaPanel.svelte";
 </script>
 
@@ -29,8 +29,8 @@
           variableGroup: $params.variableGroup.slug,
           variable: variable.slug,
           category: {
-            classification: getDefaultChoroplethClassification(variable).slug,
-            category: getDefaultChoroplethClassification(variable).categories[0].slug,
+            classification: getDefaultClassification(variable, $params.mapType).slug,
+            category: getDefaultClassification(variable, $params.mapType).categories[0].slug,
           },
         })}
         on:click={() => nav.set({ open: true })}

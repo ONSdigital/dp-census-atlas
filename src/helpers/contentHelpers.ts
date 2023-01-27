@@ -233,3 +233,37 @@ export const getLatestRelease = (content: ContentTree) => {
   }
   return "DemMig";
 };
+
+export const filterVariableGroupsForMapType = (variableGroups: VariableGroup[], mapType: MapType) => {
+  // return all for choropleth
+  if (mapType === "choropleth") {
+    return variableGroups;
+  }
+  // return only those with classifications that have available change-over-time geographies for change-over-time
+  if (mapType === "change-over-time") {
+    const vgs = variableGroups
+      .map((vg) => {
+        const filtVariables = vg.variables
+          .map((v) => {
+            const filtClassifications = v.classifications.filter(
+              (c) =>
+                c.comparison_2011_data_available_geotypes && c.comparison_2011_data_available_geotypes.length !== 0,
+            );
+            if (filtClassifications.length > 0) {
+              const filtVariable = { ...v };
+              filtVariable.classifications = filtClassifications;
+              return filtVariable;
+            }
+          })
+          .filter((v) => v);
+        if (filtVariables.length > 0) {
+          const filtVariableGroup = { ...vg };
+          filtVariableGroup.variables = filtVariables;
+          return filtVariableGroup;
+        }
+      })
+      .filter((vg) => vg);
+    console.log(vgs);
+    return vgs;
+  }
+};

@@ -131,7 +131,7 @@ export default {
       // edu is unpublished
       {
         contentJsonUrl: edu.localContentJsonUrl,
-        contentBaseUrl: edu.fakeDataBaseUrl,
+        contentBaseUrl: edu.realDataBaseUrl,
       },
       // eilr is published
       {

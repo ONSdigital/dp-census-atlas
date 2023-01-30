@@ -12,13 +12,40 @@ export const renderMapViz = (map: mapboxgl.Map, data: VizData | undefined) => {
   }
 
   const layer = layers.find((l) => l.name == data.geoType);
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-ignore (queryRenderedFeatures typings appear to be wrong)
+  const renderedGeos = map.queryRenderedFeatures({ layers: [`${data.geoType}-features`] }).map((g) => g.id);
+  let max;
+  let maxGeo;
+  let min;
+  let minGeo;
 
   data.places.forEach((p) => {
+    if (renderedGeos.includes(p.geoCode)) {
+      if (max === undefined) {
+        min = p.categoryValue;
+        minGeo = p.geoCode;
+        max = p.categoryValue;
+        maxGeo = p.geoCode;
+      } else {
+        if (p.categoryValue < min) {
+          min = p.categoryValue;
+          minGeo = p.geoCode;
+        }
+        if (p.categoryValue > max) {
+          max = p.categoryValue;
+          maxGeo = p.geoCode;
+        }
+      }
+    }
     map.setFeatureState(
       { source: layer.name, sourceLayer: layer.sourceLayer, id: p.geoCode },
       { colour: getChoroplethColour(p.categoryValue, data.breaks) },
     );
   });
+
+  map.setFeatureState({ source: layer.name, sourceLayer: layer.sourceLayer, id: minGeo }, { colour: "#FF0000" });
+  map.setFeatureState({ source: layer.name, sourceLayer: layer.sourceLayer, id: maxGeo }, { colour: "#00FF00" });
 };
 
 const getChoroplethColour = (value: number, breaks: number[]) => {

@@ -2,7 +2,7 @@ import tippy, { type Props } from "tippy.js";
 
 export function tooltip(node: HTMLElement, params: Partial<Props> = {}) {
   // determine the title to show - prefer the custom content first,
-  // then the HTML title attribute then the aria-label
+  // then the HTML title attribute, then the aria-label
   const custom = params.content;
   const title = node.title;
   const label = node.getAttribute("aria-label");
@@ -21,11 +21,10 @@ export function tooltip(node: HTMLElement, params: Partial<Props> = {}) {
 
     return {
       // if the props change, update the Tippy instance
-      update: (newerParams: any) => {
+      update: (newerParams: Partial<Props>) => {
         tip.setProps({ content, ...newerParams });
       },
 
-      // clean up the Tippy instance
       destroy: () => tip.destroy(),
     };
   }

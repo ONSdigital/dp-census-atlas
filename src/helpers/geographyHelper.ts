@@ -11,7 +11,7 @@ export const geoTypePluralNames = {
 
 export const geoTypeSingularDescriptions = {
   ew: "England & Wales",
-  lad: "Local Authority Districts are large areas administered by a local government body",
+  lad: "Local Authority Districts are large, named areas of the country administered by a local government body",
   msoa: "Middle Layer Super Output Areas are medium-sized, aggregated areas of census statistics, contained within local authorities",
   oa: "Output Areas are the smallest, lowest-level areas of census statistics",
 };

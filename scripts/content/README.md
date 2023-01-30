@@ -4,6 +4,38 @@
 
 Utility scripts for making and editing content.json files for consumption by the atlas. These files hold the census metadata the atlas needs to fetch and display census data.
 
+# 1a. RUN SCRIPT USING CONDA
+
+## Requirements
+
+- Anaconda[https://www.anaconda.com/]
+
+## Getting started
+
+## How to use
+
+### installing dependencies
+
+- Start up a new anaconda shell
+- Install dependencies into new virtual env with `conda env create --file environment.yml`
+- Activate conda env with `conda activate census-maps-content-generation-env`
+
+### Make new content json
+
+1. Ensure requirements and dependencies are installed
+2. Download latest cantabular metadata archive from [https://confluence.ons.gov.uk/pages/viewpage.action?spaceKey=ODADH&title=Upload+Metadata+Files+to+support+NOMIS%2C+Testing+etc](https://confluence.ons.gov.uk/pages/viewpage.action?spaceKey=ODADH&title=Upload+Metadata+Files+to+support+NOMIS%2C+Testing+etc)
+3. Unzip cantabular metadata into a new directory within `input_metadata_files`
+4. Update the the `cantabular_metadata_dir` value in `2021-content-spec.json` to the name of the new unzipped metadata archive made in step 2 (NB just the name o the unzipped directory, not its full path - the scripts add the full path in at runtime).
+5. Run the scripts with `python make_content_jsons.py 2021-content-spec.json`
+6. New versions of the content jsons will appead in the `output_content_jsons` directory.
+
+### running unit tests
+
+1. Ensure requirements and dependencies are installed
+2. Invoke tests with `python -m pytest` (or in verbose mode with `python -m pytest -v`)
+
+# 1b. RUN SCRIPT USING PIPENV
+
 ## Requirements
 
 - Pyenv - version manager for Python ([installation instructions](https://github.com/pyenv/pyenv#installation)). This is needed to ensure the right version of python is used.
@@ -33,32 +65,33 @@ Utility scripts for making and editing content.json files for consumption by the
 1. Ensure requirements and dependencies are installed
 2. Invoke tests with `pipenv run tests` (or in verbose mode with `pipenv run testsv`)
 
+# 2. PUBLISH RESULTS
+
 ## Uploading new map content
 
-The content jsons need to be in three places to be loaded by various instances of census maps:
+The content jsons need to be in two places to be loaded by various instances of census maps:
 
 1. **local/dev**: The local instance of census maps loads content json directly from the scripts `output_content_jsons` directory. so no additional action beyond checking in the new versions is needed for local.
-2. **sandbox + netlify**: Both the ONS sandbox and netlify instances of census maps load content jsons from the `ons-dp-sandbox-atlas-data` bucket (in the ONS Sandbox AWS account), in the `/content-json/2021` directory. New files can be manually uploaded to this location via the AWS GUI, or using `aws s3 sync` with the AWS CLI. For convenience, the shell script `upload-content-json-to-s3-for-sandbox-netlify.sh` will upload all content json from `output_content_jsons` to this location when executed with `./upload-content-json-to-s3-for-sandbox-netlify.sh` (assuming you are logged in to SSO as the `dp-sandbox` profile, and that you have write access to the bucket).
-3. **publishing-preview/prod**: The publishing preview and production instances of census maps load their content json from florence visualisations. There are different visualisations for different content jsons. The shell script `make-florence-zips.sh` will produce a zip file named for each florence visualisation (plus a timestamp) containing the content json for each when executed with `./make-florence-zips.sh`. See the script itself for more details.
+2. **publishing-preview/prod**: The publishing preview and production instances of census maps load their content json from florence visualisations. There are different visualisations for different content jsons. The shell script `make-florence-zips.sh` will produce a zip file named for each florence visualisation (plus a timestamp) containing the content json for each when executed with `./make-florence-zips.sh`. See the script itself for more details.
 
 ## Changing census maps content
 
 ### Changing variable groups, variables, classifications or dropping categories from classifications
 
-The master list of census maps content is found in the `2021-content-spec.json` file, in `variable_groups`. This is a
+The master list of census maps content is found in the `2021-content-spec.json` file, in `content_json`. This is a
 heirarchy of census content:
 
 ```
-variable_groups
-    \-> content_jsons
+content_jsons
+    \-> variable_groups
         \-> variables
             \-> classifications
                 \-> categories
 ```
 
-The top level variable_groups are things made specifically for census maps - their name, slug and description is set in the `2021-content-spec.json` file. Each variable group definition contains definitions for one or more content_jsons, in `variables_by_content_json`.
+The variable_groups are things made specifically for census maps - their name, slug and description is set in the `2021-content-spec.json` file. Each variable group definition contains definitions for one or more content_jsons, in `variables`.
 
-The next level defines what variables go in each content json. For normal variables, the only config needed is an object with the variable code and an array of classifications defining which classifications to include for each variable:
+For normal variables, the only config needed is an object with the variable code and an array of classifications defining which classifications to include for each variable:
 
 ```json
 {
@@ -123,9 +156,10 @@ Census maps content uses several types of custom metadata not found in the ONS /
 defined in the `2021-content-spec.json` are assumed to be fully defined and are not referenced int he additiol a)
 
 1. `category_legend_strings.csv`: Legend strings used for each category.
-2. `classification_2011_comparison_data_availability.csv`: Whether or not 2011 comparison data is available for each classification.
+2. `classification_2011_comparison_data_availability.csv`: Whether or not 2011 comparison data is available for each classification, and for which geographies.
 3. `classification_available_geotypes.csv`: which geography types are available for each classification.
 4. `classification_data_downloads.csv`: where data for each classification can be downloaded (NB not all classifications will have data downloads and thats fine).
 5. `variable_caveats.csv`: Warnings about data quality for variables (NB not all variables will have warnings and that's fine).
 6. `variable_map_type_default_classifications.csv`: Which classifications are the default ones for different map visualisation types.
 7. `variable_short_descriptions.csv`: Short descriptions for each variable.
+8. `variable_tile_data_base_urls.csv`: S3 urls where the data for each variable can be found.

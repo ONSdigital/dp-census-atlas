@@ -4,20 +4,25 @@ import content from "./content";
 import { mergeVariableGroups, sortVariableGroupVariables } from "../helpers/contentHelpers";
 import { content as contentStore } from "../stores/content";
 import type { ContentConfig, ContentTree, VariableGroup } from "../types";
+import staticContentJsons from "./staticContentJsons/index";
 
 /*
   Fetch all content.json files referenced in content.ts for the current env (specified in a back-end env var, fetched
   via the runtime-env endpoint). Return as array of content jsons that will later be merged.
 */
-const fetchContent = async (contentConfig: ContentConfig[], isLocal: boolean, isPublishing: boolean) => {
+const fetchContent = async (contentConfig: ContentConfig[], isDev: boolean, isPublishing: boolean) => {
   const rawContent = await Promise.all(
     contentConfig.map(async (ctcfg) => {
       // set appropriate content json url
       let contentJsonUrl = ctcfg.webContentJsonUrl;
-      if (isLocal) {
-        contentJsonUrl = ctcfg.localContentJsonUrl;
+      if (isDev) {
+        contentJsonUrl = ctcfg.devContentJsonUrl;
       } else if (isPublishing) {
         contentJsonUrl = ctcfg.publishingContentJsonUrl;
+      }
+      // load from static if not url
+      if (!contentJsonUrl.startsWith("http")) {
+        return staticContentJsons[contentJsonUrl];
       }
       // fetch content
       try {
@@ -40,26 +45,21 @@ const fetchContent = async (contentConfig: ContentConfig[], isLocal: boolean, is
         console.log(`Error fetching / parsing content json file ${contentJsonUrl}: ${e}`);
       }
     }),
-  ).then((responseArry) => {
-    // filter out nulls from failed loads here
-    return responseArry.filter((tg) => tg != null).flat();
-  });
+  );
 
   // load and append any additional content jsons specced in already loaded content
   const additionalRawContent = await Promise.all(
     rawContent.map(async (contentJson) => {
       if ("additional_content_jsons" in contentJson.meta) {
-        const moreContent = await fetchContent(contentJson.meta.additional_content_jsons, isLocal, isPublishing);
+        const moreContent = await fetchContent(contentJson.meta.additional_content_jsons, isDev, isPublishing);
         return moreContent;
       }
     }),
-  ).then((responseArry) => {
-    // filter out nulls from failed loads here
-    return responseArry.filter((tg) => tg != null).flat();
-  });
+  );
   rawContent.push(...additionalRawContent);
 
-  return rawContent;
+  // filter out failed loads, flatten and return
+  return rawContent.filter((c) => c != null).flat();
 };
 
 /*
@@ -73,8 +73,11 @@ export const setContentStoreOnce = async () => {
   // get env config
   const runtimeEnv = await (await fetch(`${appBasePath}/api/runtime-env`)).json();
 
+  // use dev content if dev or netlify env
+  const isDev = ["dev", "netlify"].includes(runtimeEnv.envName);
+
   // fetch content
-  const rawContent = await fetchContent(content, runtimeEnv.envName === "dev", runtimeEnv.isPublishing);
+  const rawContent = await fetchContent(content, isDev, runtimeEnv.isPublishing);
 
   // extract all successfully loaded releases and variable groups
   const releases = rawContent.map((ct) => ct.meta.release);
@@ -86,7 +89,7 @@ export const setContentStoreOnce = async () => {
   // override data base urls with any configured fake data urls if in dev/netlify. NB remove the override after use
   // to avoid clutter
   let fakeDataLoaded = false;
-  if (["dev", "netlify"].includes(runtimeEnv.envName)) {
+  if (isDev) {
     mergedVariableGroups.forEach((vg) => {
       vg.variables.forEach((v) => {
         if (v.base_url_2021_dev_override) {

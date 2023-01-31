@@ -14,9 +14,10 @@ Content objects have these properties
 
 // envs / instances
 export default [
-  // Master
+  // Master (NB - use of STATIC-MASTER for urls will result in the master json being simply statically imported, rather
+  // than fetched)
   {
-    localContentJsonUrl: "http://localhost:8090/2021-MASTER.json",
+    devContentJsonUrl: "2021-MASTER.json",
     webContentJsonUrl: "https://www.ons.gov.uk/visualisations/censusmapsmasterconfig/2021-MASTER.json",
     publishingContentJsonUrl:
       "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusmapsmasterconfig/2021-MASTER.json",

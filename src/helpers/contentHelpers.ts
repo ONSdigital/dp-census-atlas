@@ -41,7 +41,7 @@ const mergeVariables = (variables: Variable[]) => {
       caveat_text: variablesToMerge[0].caveat_text,
       caveat_link: variablesToMerge[0].caveat_link,
       classifications: dedupeClassifications(allClassifications as Classification[]),
-      base_url: variablesToMerge[0].base_url,
+      base_url_2021: variablesToMerge[0].base_url_2021,
     });
   }
   return mergedVariables;

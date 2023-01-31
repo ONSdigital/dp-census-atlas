@@ -28,7 +28,7 @@
                 "long_desc": "The number of usual residents per square kilometre, calculated based on total land area excluding inland water.",
                 "units": "Persons per square kilometre",
                 "topic_code": "DEM",
-                "base_url": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+                "base_url_2021": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
                 "classifications": [
                   {
                     "code": "population_density",
@@ -92,7 +92,7 @@
                 "long_desc": "Median age is calculated from the age of residents on Census Day, 21 March 2021 in England and Wales. The median age is the age of the person in the middle of the group, such that one half of the group is younger than that person and the other half is older.",
                 "units": "Years",
                 "topic_code": "DEM",
-                "base_url": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+                "base_url_2021": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
                 "classifications": [
                   {
                     "code": "median_age",
@@ -294,7 +294,7 @@
                 "long_desc": "People who assessed their day-to-day activities as limited by long-term physical or mental health conditions or illnesses are considered disabled. This definition of a disabled person meets the harmonised standard for measuring disability and is in line with the Equality Act (2010).",
                 "units": "Person",
                 "topic_code": "HUC",
-                "base_url": "https://ons-dp-prod-census-maps-huc.s3.eu-west-2.amazonaws.com",
+                "base_url_2021": "https://ons-dp-prod-census-maps-huc.s3.eu-west-2.amazonaws.com",
                 "caveat_text": "Values are age-standardised to account for differences in population size and age structure.",
                 "caveat_link": "http://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthandwellbeing/methodologies/healthdisabilityandunpaidcarequalityinformationforcensus2021",
                 "classifications": [
@@ -346,7 +346,7 @@
                 "long_desc": "A person's assessment of the general state of their health from very good to very bad. This assessment is not based on a person's health over any specified period of time.",
                 "units": "Household",
                 "topic_code": "HUC",
-                "base_url": "https://ons-dp-prod-census-maps-huc.s3.eu-west-2.amazonaws.com",
+                "base_url_2021": "https://ons-dp-prod-census-maps-huc.s3.eu-west-2.amazonaws.com",
                 "caveat_text": "Values are age-standardised to account for differences in population size and age structure.",
                 "caveat_link": "http://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthandwellbeing/methodologies/healthdisabilityandunpaidcarequalityinformationforcensus2021",
                 "classifications": [
@@ -414,7 +414,7 @@
                 "long_desc": "An unpaid carer may look after, give help or support to anyone who has long-term physical or mental ill-health conditions, illness or problems related to old age.  \n\nThis does not include any activities as part of paid employment. \n\nThis help can be within or outside of the carer's household.",
                 "units": "Person",
                 "topic_code": "HUC",
-                "base_url": "https://ons-dp-prod-census-maps-huc.s3.eu-west-2.amazonaws.com",
+                "base_url_2021": "https://ons-dp-prod-census-maps-huc.s3.eu-west-2.amazonaws.com",
                 "caveat_text": "Values are age-standardised to account for differences in population size and age structure.",
                 "caveat_link": "http://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthandwellbeing/methodologies/healthdisabilityandunpaidcarequalityinformationforcensus2021",
                 "classifications": [

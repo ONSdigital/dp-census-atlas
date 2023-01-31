@@ -76,12 +76,32 @@ export const setContentStoreOnce = async () => {
   // fetch content
   const rawContent = await fetchContent(content, runtimeEnv.envName === "dev", runtimeEnv.isPublishing);
 
-  // extract all successfully loaded releases
+  // extract all successfully loaded releases and variable groups
   const releases = rawContent.map((ct) => ct.meta.release);
 
   // merge variableGroups
   const allVariableGroups = rawContent.flatMap((ct) => ct.content);
   const mergedVariableGroups = mergeVariableGroups(allVariableGroups as VariableGroup[]);
+
+  // override data base urls with any configured fake data urls if in dev/netlify. NB remove the override after use
+  // to avoid clutter
+  let fakeDataLoaded = false;
+  if (["dev", "netlify"].includes(runtimeEnv.envName)) {
+    mergedVariableGroups.forEach((vg) => {
+      vg.variables.forEach((v) => {
+        if (v.base_url_2021_dev_override) {
+          fakeDataLoaded = true;
+          v.base_url_2021 = v.base_url_2021_dev_override;
+          v.base_url_2011_2021_comparison_dev_override = undefined;
+        }
+        if (v.base_url_2011_2021_comparison_dev_override) {
+          fakeDataLoaded = true;
+          v.base_url_2011_2021_comparison = v.base_url_2011_2021_comparison_dev_override;
+          v.base_url_2011_2021_comparison_dev_override = undefined;
+        }
+      });
+    });
+  }
 
   // alphabetically sort variables within their variableGroups
   sortVariableGroupVariables(mergedVariableGroups);
@@ -90,6 +110,6 @@ export const setContentStoreOnce = async () => {
   contentStore.set({
     releases: releases,
     variableGroups: mergedVariableGroups as VariableGroup[],
-    fakeDataLoaded: false,
+    fakeDataLoaded: fakeDataLoaded,
   } as ContentTree);
 };

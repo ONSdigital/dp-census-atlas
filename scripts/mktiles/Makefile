@@ -43,5 +43,5 @@ clean::
 
 .PHONY: txt
 txt:	## generate txt man page (because html doesn't auto render on github)
-	groff -mandoc -Tascii mktiles2.mandoc > mktiles2.txt.new
+	groff -mandoc -Tascii mktiles2.mandoc | col -b > mktiles2.txt.new
 	mv mktiles2.txt.new mktiles2.txt

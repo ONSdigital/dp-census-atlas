@@ -1,469 +1,469 @@
-mktiles2(1)               BSD General Commands Manual              mktiles2(1)
+mktiles2(1)		  BSD General Commands Manual		   mktiles2(1)
 
-NNAAMMEE
-     mmkkttiilleess22 -- generate Census Atlas data files
+NAME
+     mktiles2 -- generate Census Atlas data files
 
-SSYYNNOOPPSSIISS
-     mmkkttiilleess22 [--cc _c_o_n_t_e_n_t_._j_s_o_n] [--CC _c_l_a_s_s_c_o_d_e] [--MM] [--PP _p_r_e_f_i_x] [--II _i_n_d_i_r]
-              [--FF] [--RR] [--ii] [--OO _o_u_t_d_i_r] [--ff]
+SYNOPSIS
+     mktiles2 [-c content.json] [-C classcode] [-M] [-P prefix] [-I indir]
+	      [-F] [-R] [-i] [-O outdir] [-f]
 
-DDEESSCCRRIIPPTTIIOONN
-     mmkkttiilleess22 generates data files used by the Census Atlas web application.
+DESCRIPTION
+     mktiles2 generates data files used by the Census Atlas web application.
      It loads census metrics, geographic data, and control files, then pro-
      duces a set of files containing data in a structure usable by the Census
-     Atlas.  mmkkttiilleess22 recognises the following flags:
+     Atlas.  mktiles2 recognises the following flags:
 
-     --cc _c_o_n_t_e_n_t_._j_s_o_n
-             Path to the _c_o_n_t_e_n_t_._j_s_o_n file.  This defaults to
-             _o_u_t_d_i_r/content.json.
+     -c content.json
+	     Path to the content.json file.  This defaults to
+	     outdir/content.json.
 
-     --CC _c_l_a_s_s_c_o_d_e
-             Only use categories in _c_o_n_t_e_n_t_._j_s_o_n that are under the classifi-
-             cation _c_l_a_s_s_c_o_d_e.  Normally all categories in under all classifi-
-             cations _c_o_n_t_e_n_t_._j_s_o_n will be used.
+     -C classcode
+	     Only use categories in content.json that are under the classifi-
+	     cation classcode.	Normally all categories in under all classifi-
+	     cations content.json will be used.
 
-             Use this flag when category codes are duplicated in different
-             classifications.
+	     Use this flag when category codes are duplicated in different
+	     classifications.
 
-     --MM      Match categories from input files based on name rather than code.
+     -M	     Match categories from input files based on name rather than code.
 
-             Categories are selected from metrics input files when their col-
-             umn headings string match category codes in _c_o_n_t_e_n_t_._j_s_o_n.  When
-             --MM is used, categories will be selected when their column head-
-             ings match category names instead.
+	     Categories are selected from metrics input files when their col-
+	     umn headings string match category codes in content.json.	When
+	     -M is used, categories will be selected when their column head-
+	     ings match category names instead.
 
-     --PP _p_r_e_f_i_x
-             When --MM is used, _p_r_e_f_i_x is prepended to category names found in
-             _c_o_n_t_e_n_t_._j_s_o_n and then the prefix+catcode combination is matched
-             against column headings in the metrics files.
+     -P prefix
+	     When -M is used, prefix is prepended to category names found in
+	     content.json and then the prefix+catcode combination is matched
+	     against column headings in the metrics files.
 
-             For example, the column headings in the metrics file might be
-             like this '2021 Value change: Household is not deprived in any
-             dimension', where they are prefixed with '2021 Value change: '.
-             If _c_o_n_t_e_n_t_._j_s_o_n only names 'Household is not deprived in any
-             dimension', without the prefix, you can match these categories by
-             providing a prefix to add to category names found in
-             _c_o_n_t_e_n_t_._j_s_o_n.
+	     For example, the column headings in the metrics file might be
+	     like this '2021 Value change: Household is not deprived in any
+	     dimension', where they are prefixed with '2021 Value change: '.
+	     If content.json only names 'Household is not deprived in any
+	     dimension', without the prefix, you can match these categories by
+	     providing a prefix to add to category names found in
+	     content.json.
 
-     --II _i_n_d_i_r
-             Read input files from _i_n_d_i_r.  Defaults to _._/_i_n_/.  See below for
-             the structure of the input directory.
+     -I indir
+	     Read input files from indir.  Defaults to ./in/.  See below for
+	     the structure of the input directory.
 
-     --FF      Generate fake metrics.  Instead of reading metrics files, gener-
-             ate random values.  Values will be produced for all geographies
-             in the loaded geojson files against all the categories found in
-             _c_o_n_t_e_n_t_._j_s_o_n.
+     -F	     Generate fake metrics.  Instead of reading metrics files, gener-
+	     ate random values.	 Values will be produced for all geographies
+	     in the loaded geojson files against all the categories found in
+	     content.json.
 
-     --RR      Produce ratios instead of metrics values.  See _C_a_l_c_u_l_a_t_i_n_g _R_a_t_i_o_s
-             below for how ratios are calculated.
+     -R	     Produce ratios instead of metrics values.	See Calculating Ratios
+	     below for how ratios are calculated.
 
-     --ii      Ignore missing categories in metrics files.  Normally it is an
-             error if a category is named in _c_o_n_t_e_n_t_._j_s_o_n but not found in any
-             metrics files.  With --ii missing values will just be omitted from
-             the output files.  (If there is no category data for any of the
-             geos for a tile, no data tile will be produced at all.)
+     -i	     Ignore missing categories in metrics files.  Normally it is an
+	     error if a category is named in content.json but not found in any
+	     metrics files.  With -i missing values will just be omitted from
+	     the output files.	(If there is no category data for any of the
+	     geos for a tile, no data tile will be produced at all.)
 
-     --OO _o_u_t_d_i_r
-             Output directory.  Defaults to _._/_o_u_t_/.  This directory will be
-             created if it doesn't exist.  See below for the structure of the
-             output directory.
+     -O outdir
+	     Output directory.	Defaults to ./out/.  This directory will be
+	     created if it doesn't exist.  See below for the structure of the
+	     output directory.
 
-     --ff      Force using an existing output directory even if it already has
-             content.  Normally it is an error if the output directory already
-             contains any files or directories.
+     -f	     Force using an existing output directory even if it already has
+	     content.  Normally it is an error if the output directory already
+	     contains any files or directories.
 
-   CCoonntteennttss ooff tthhee iinnppuutt ddiirreeccttoorryy
-     mmkkttiilleess22 expects the input directory _i_n_d_i_r to contain a number of files.
+   Contents of the input directory
+     mktiles2 expects the input directory indir to contain a number of files.
 
      Grid file
-             The grid file _D_a_t_a_T_i_l_e_G_r_i_d_._j_s_o_n describes output tiles covering
-             geographic areas.  Features in geojson files which overlap these
-             tiles will be included in the corresponding output data tiles.
-             Each tile has a name and a bounding box, and tiles are grouped by
-             level (LAD, LSOA, MSOA, OA).  Here is an example snippet of a
-             _D_a_t_a_T_i_l_e_G_r_i_d_._j_s_o_n file:
+	     The grid file DataTileGrid.json describes output tiles covering
+	     geographic areas.	Features in geojson files which overlap these
+	     tiles will be included in the corresponding output data tiles.
+	     Each tile has a name and a bounding box, and tiles are grouped by
+	     level (LAD, LSOA, MSOA, OA).  Here is an example snippet of a
+	     DataTileGrid.json file:
 
-                   {
-                     "lad": [
-                       {
-                         "tilename": "ew",
-                         "bbox": {
-                           "east": 1.76,
-                           "north": 58.64,
-                           "west": -7.57,
-                           "south": 49.92
-                         }
-                       }
-                     ],
-                     "msoa": [
-                       {
-                         "tilename": "61-43-7",
-                         "bbox": {
-                           "east": -5.625,
-                           "north": 50.73645513701065,
-                           "west": -8.4375,
-                           "south": 48.922499263758255
-                         }
-                       },
-                     . . .
+		   {
+		     "lad": [
+		       {
+			 "tilename": "ew",
+			 "bbox": {
+			   "east": 1.76,
+			   "north": 58.64,
+			   "west": -7.57,
+			   "south": 49.92
+			 }
+		       }
+		     ],
+		     "msoa": [
+		       {
+			 "tilename": "61-43-7",
+			 "bbox": {
+			   "east": -5.625,
+			   "north": 50.73645513701065,
+			   "west": -8.4375,
+			   "south": 48.922499263758255
+			 }
+		       },
+		     . . .
 
-             Recognised geography levels are 'lad', 'lsoa', 'msoa', and 'oa'.
-             The _b_b_o_x values are latitude and longitude.
+	     Recognised geography levels are 'lad', 'lsoa', 'msoa', and 'oa'.
+	     The bbox values are latitude and longitude.
 
-             In the example above, features within _m_s_o_a_._g_e_o_j_s_o_n which overlap
-             the bounding box of MSOA tile '61-43-7' will be included in
-             _t_i_l_e_s_/_m_s_o_a_/_6_1_-_4_3_-_7_/_c_a_t_e_g_o_r_y.csv.  (See a full description of the
-             output directory structure below.)
+	     In the example above, features within msoa.geojson which overlap
+	     the bounding box of MSOA tile '61-43-7' will be included in
+	     tiles/msoa/61-43-7/category.csv.  (See a full description of the
+	     output directory structure below.)
 
      geojson files
-             mmkkttiilleess22 expects at least one of the following geojson files to
-             exist in _i_n_d_i_r:
+	     mktiles2 expects at least one of the following geojson files to
+	     exist in indir:
 
-                   lad.geojson
-                   lsoa.geojson
-                   msoa.geojson
-                   oa.geojson
+		   lad.geojson
+		   lsoa.geojson
+		   msoa.geojson
+		   oa.geojson
 
-             These are standard geojson files.  The name of the geojson files
-             indicates the geographic level of features within the file.  All
-             features in _o_a_._g_e_o_j_s_o_n will be considered OAs, for example.
+	     These are standard geojson files.	The name of the geojson files
+	     indicates the geographic level of features within the file.  All
+	     features in oa.geojson will be considered OAs, for example.
 
-             Each feature is expected to have certain standard properties in-
-             dicating its geography code and place name.  The expected proper-
-             ties vary by geographic level.
+	     Each feature is expected to have certain standard properties in-
+	     dicating its geography code and place name.  The expected proper-
+	     ties vary by geographic level.
 
-             The table below show which properties are required.  Where multi-
-             ple property names are shown, only one is needed.  For example,
-             only one of 'lad11nm', 'lad17nm', or 'lad21nm' is needed to con-
-             vey the English place name for features in _l_a_d_._g_e_o_j_s_o_n.  Property
-             names are case-insensitive.
+	     The table below show which properties are required.  Where multi-
+	     ple property names are shown, only one is needed.	For example,
+	     only one of 'lad11nm', 'lad17nm', or 'lad21nm' is needed to con-
+	     vey the English place name for features in lad.geojson.  Property
+	     names are case-insensitive.
 
-                   Geographic                English     Welsh
-                   level         geocode     name        name
-                   ----------    -------     --------    ---------
-                   LAD           lad11cd     lad11nm     lad11nmw
-                                 lad17cd     lad17nm     lad17nmw
-                                 lad21cd     lad21nm     lad21nmw
+		   Geographic		     English	 Welsh
+		   level	 geocode     name	 name
+		   ----------	 -------     --------	 ---------
+		   LAD		 lad11cd     lad11nm	 lad11nmw
+				 lad17cd     lad17nm	 lad17nmw
+				 lad21cd     lad21nm	 lad21nmw
 
-                   LSOA          lsoa11cd    lsoa11nm    lsoa11nmw
-                                 lsoa21cd    lsoa21nm    lsoa21nmw
+		   LSOA		 lsoa11cd    lsoa11nm	 lsoa11nmw
+				 lsoa21cd    lsoa21nm	 lsoa21nmw
 
-                   MSOA          msoa11cd    msoa11nm    msoa11nmw
-                                 msoa21cd    msoa21nm    msoa21nmw
+		   MSOA		 msoa11cd    msoa11nm	 msoa11nmw
+				 msoa21cd    msoa21nm	 msoa21nmw
 
-                   OA            oa11cd      oa11nm      oa11nmw
-                                 oa21cd      oa21nm      oa21nmw
+		   OA		 oa11cd	     oa11nm	 oa11nmw
+				 oa21cd	     oa21nm	 oa21nmw
 
-             Here is an example snippet showing a feature's properties.  This
-             is part of a _l_a_d_._g_e_o_j_s_o_n file.  The geographic code is
-             'E06000001', and the English place name is 'Hartlepool'.  There
-             isn't a Welsh place name, but there is a blank property.
+	     Here is an example snippet showing a feature's properties.	 This
+	     is part of a lad.geojson file.  The geographic code is
+	     'E06000001', and the English place name is 'Hartlepool'.  There
+	     isn't a Welsh place name, but there is a blank property.
 
-                   {
-                     "type": "Feature",
-                     "properties": {
-                       "OBJECTID": 1,
-                       "LAD21CD": "E06000001",
-                       "LAD21NM": "Hartlepool",
-                       "LAD21NMW": " ",
-                       "BNG_E": 447160,
-                       "BNG_N": 531474,
-                       "LONG": -1.27018,
-                       "LAT": 54.67614,
-                       "GlobalID": "{A0067727-6C25-4D75-BBE3-839CF676A069}",
-                       "SHAPE_Length": 0.8685706369282687,
-                       "SHAPE_Area": 0.013064964649121342
-                     },
-                     "geometry": {
-                       "type": "MultiPolygon",
-                     . . .
+		   {
+		     "type": "Feature",
+		     "properties": {
+		       "OBJECTID": 1,
+		       "LAD21CD": "E06000001",
+		       "LAD21NM": "Hartlepool",
+		       "LAD21NMW": " ",
+		       "BNG_E": 447160,
+		       "BNG_N": 531474,
+		       "LONG": -1.27018,
+		       "LAT": 54.67614,
+		       "GlobalID": "{A0067727-6C25-4D75-BBE3-839CF676A069}",
+		       "SHAPE_Length": 0.8685706369282687,
+		       "SHAPE_Area": 0.013064964649121342
+		     },
+		     "geometry": {
+		       "type": "MultiPolygon",
+		     . . .
 
-             See _S_E_E _A_L_S_O below for how to download geojson files from the
-             Open Geography Portal.
+	     See SEE ALSO below for how to download geojson files from the
+	     Open Geography Portal.
 
      MSOA names (optional)
-             The place names in _m_s_o_a_._g_e_o_j_s_o_n as downloaded from the Open Geog-
-             raphy Portal (see _S_E_E _A_L_S_O below) are technical names and not
-             necessarily common names.  You can supply a mapping file to
-             change the names to more common ones.
+	     The place names in msoa.geojson as downloaded from the Open Geog-
+	     raphy Portal (see SEE ALSO below) are technical names and not
+	     necessarily common names.	You can supply a mapping file to
+	     change the names to more common ones.
 
-             The mapping file is a CSV with headers indicating the MSOA geog-
-             raphy code and common names.  In this mapping file, the columns
-             may be in any order, and there may be extra columns which will be
-             ignored.
+	     The mapping file is a CSV with headers indicating the MSOA geog-
+	     raphy code and common names.  In this mapping file, the columns
+	     may be in any order, and there may be extra columns which will be
+	     ignored.
 
-             This table shows which columns convey which information:
+	     This table shows which columns convey which information:
 
-                   Data                   CSV header
-                   -------------------    ----------------------------
-                   Geography code         msoa11cd or msoa21cd
-                   English common name    msoa11hclnm or msoa21hclnm
-                   Welsh common name      msoa11hclnmw or msoa21hclnmw
+		   Data			  CSV header
+		   -------------------	  ----------------------------
+		   Geography code	  msoa11cd or msoa21cd
+		   English common name	  msoa11hclnm or msoa21hclnm
+		   Welsh common name	  msoa11hclnmw or msoa21hclnmw
 
-             For example, below are the first two lines of an MSOA names file.
-             The first, fourth and fifth columns will be used to match common
-             names to geography codes, and the rest of the columns will be ig-
-             nored.
+	     For example, below are the first two lines of an MSOA names file.
+	     The first, fourth and fifth columns will be used to match common
+	     names to geography codes, and the rest of the columns will be ig-
+	     nored.
 
-             msoa21cd,msoa21nm,msoa21nmw,msoa21hclnm,msoa21hclnmw,localauthorityname,type
-             E02006534,Adur 001,Adur 001,Hillside,,Adur,Present in 2011
+	     msoa21cd,msoa21nm,msoa21nmw,msoa21hclnm,msoa21hclnmw,localauthorityname,type
+	     E02006534,Adur 001,Adur 001,Hillside,,Adur,Present in 2011
 
-             See _S_E_E _A_L_S_O below for a link to the House of Commons Library
-             MSOA Names page where you can download _m_s_o_a_-_n_a_m_e_s_._c_s_v.
+	     See SEE ALSO below for a link to the House of Commons Library
+	     MSOA Names page where you can download msoa-names.csv.
 
      LAD recodes (optional)
-             Sometimes the geography codes in _l_a_d_._g_e_o_j_s_o_n need to be mapped to
-             different codes.  In these cases, create _r_e_c_o_d_e_-_l_a_d_s_._c_s_v to map
-             old codes to new ones.  This file should have a header line, and
-             then a line for each recode, like this:
+	     Sometimes the geography codes in lad.geojson need to be mapped to
+	     different codes.  In these cases, create recode-lads.csv to map
+	     old codes to new ones.  This file should have a header line, and
+	     then a line for each recode, like this:
 
-                   FromCode,ToCode
-                   E06000057,E06000048
+		   FromCode,ToCode
+		   E06000057,E06000048
 
-             In that example, when a feature with the geography code
-             'E06000057' is loaded, its geography code will be changed to
-             'E06000048', and metrics will match against 'E06000048'.
+	     In that example, when a feature with the geography code
+	     'E06000057' is loaded, its geography code will be changed to
+	     'E06000048', and metrics will match against 'E06000048'.
 
      content.json (may be elsewhere)
-             The _c_o_n_t_e_n_t_._j_s_o_n file contains the categories that will be in-
-             cluded in the output files.  This file is used by the Census Maps
-             application, so it has a lot more information than just cate-
-             gories.  Categories (or category names) in this file are matched
-             against category headings in metrics CSV files.
+	     The content.json file contains the categories that will be in-
+	     cluded in the output files.  This file is used by the Census Maps
+	     application, so it has a lot more information than just cate-
+	     gories.  Categories (or category names) in this file are matched
+	     against category headings in metrics CSV files.
 
-             There have been three versions of this file as Census Maps has
-             developed.  They differ in how deep the classification/category
-             objects are nested.  The main thing to know is that the classifi-
-             cation/category relationship looks like this:
+	     There have been three versions of this file as Census Maps has
+	     developed.	 They differ in how deep the classification/category
+	     objects are nested.  The main thing to know is that the classifi-
+	     cation/category relationship looks like this:
 
-                   "classifications": [
-                     "code": "classification code",
-                     "categories": [
-                       {
-                         "name": "category name",
-                         "code": "category code",
-                       }
-                     ]
-                   ]
+		   "classifications": [
+		     "code": "classification code",
+		     "categories": [
+		       {
+			 "name": "category name",
+			 "code": "category code",
+		       }
+		     ]
+		   ]
 
-             Depending on --MM, either the category code or category name is
-             matched against headings in metrics files.  And when --CC _c_l_a_s_s_c_o_d_e
-             is used, only categories within the classification code matching
-             _c_l_a_s_s_c_o_d_e will be used.
+	     Depending on -M, either the category code or category name is
+	     matched against headings in metrics files.	 And when -C classcode
+	     is used, only categories within the classification code matching
+	     classcode will be used.
 
      Metrics files
-             All _._c_s_v files in _i_n_d_i_r, except for _m_s_o_a_-_n_a_m_e_s_._c_s_v are loaded as
-             metrics files.  These are CSV files with headers, the first of
-             which must be 'GeographyCode'.  All other columns may be matched
-             to category codes or names from _c_o_n_t_e_n_t_._j_s_o_n, although any unref-
-             erenced columns are ignored.
+	     All .csv files in indir, except for msoa-names.csv are loaded as
+	     metrics files.  These are CSV files with headers, the first of
+	     which must be 'GeographyCode'.  All other columns may be matched
+	     to category codes or names from content.json, although any unref-
+	     erenced columns are ignored.
 
-             The 'GeographyCode' column name is case-insensitive, and may in-
-             clude spaces, as in 'geography code', and so on.
+	     The 'GeographyCode' column name is case-insensitive, and may in-
+	     clude spaces, as in 'geography code', and so on.
 
-             Each line contains metrics for a single geography, whose code is
-             in the first column.  Here is an example:
+	     Each line contains metrics for a single geography, whose code is
+	     in the first column.  Here is an example:
 
-                   GeographyCode,category1,category2
-                   E06000057,0.5,0.75
+		   GeographyCode,category1,category2
+		   E06000057,0.5,0.75
 
-   SSttrruuccttuurree ooff tthhee oouuttppuutt ddiirreeccttoorryy
-     mmkkttiilleess22 produces a directory structure under _o_u_t_d_i_r like this:
+   Structure of the output directory
+     mktiles2 produces a directory structure under outdir like this:
 
      tiles (directory)
-             The _t_i_l_e_s directory holds "data tiles".  These are small subsets
-             of census data in a directory structure that matches the geo-
-             graphic level and tile name in _D_a_t_a_T_i_l_e_G_r_i_d_._j_s_o_n.  The structure
-             is
+	     The tiles directory holds "data tiles".  These are small subsets
+	     of census data in a directory structure that matches the geo-
+	     graphic level and tile name in DataTileGrid.json.	The structure
+	     is
 
-                   tiles/_l_e_v_e_l/_t_i_l_e_n_a_m_e/_c_a_t_e_g_o_r_y.csv
+		   tiles/level/tilename/category.csv
 
-             _c_a_t_e_g_o_r_y comes from _c_o_n_t_e_n_t_._j_s_o_n.  Every tile in
-             _D_a_t_a_T_i_l_e_G_r_i_d_._j_s_o_n gets its own complete set of category files.
+	     category comes from content.json.	Every tile in
+	     DataTileGrid.json gets its own complete set of category files.
 
-             These data tiles contain census data for a single category, and
-             only include geographies from geojson that overlap the tile's
-             bounding box.
+	     These data tiles contain census data for a single category, and
+	     only include geographies from geojson that overlap the tile's
+	     bounding box.
 
-             Here is an example file named
-             _t_i_l_e_s_/_l_a_d_/_e_w_/_u_k___a_r_m_e_d___f_o_r_c_e_s_-_0_0_1_._c_s_v:
+	     Here is an example file named
+	     tiles/lad/ew/uk_armed_forces-001.csv:
 
-                   geography_code,uk_armed_forces-001
-                   E06000001,4.1
-                   E06000002,3
-                   E06000003,4.9
-                   E06000004,4
-                   E06000005,4.9
-                   E06000006,3.5
-                   E06000007,3
-                   E06000008,2.3
-                   E06000009,4.2
+		   geography_code,uk_armed_forces-001
+		   E06000001,4.1
+		   E06000002,3
+		   E06000003,4.9
+		   E06000004,4
+		   E06000005,4.9
+		   E06000006,3.5
+		   E06000007,3
+		   E06000008,2.3
+		   E06000009,4.2
 
-             In the heading row, the first heading is always 'geography_code',
-             and the second heading is the category code.
+	     In the heading row, the first heading is always 'geography_code',
+	     and the second heading is the category code.
 
-             See _S_E_E _A_L_S_O below for the location of downloadable metrics
-             files.
+	     See SEE ALSO below for the location of downloadable metrics
+	     files.
 
      breaks (directory)
-             The _b_r_e_a_k_s directory holds ckmeans breakpoints and min/max val-
-             ues.  The structure is
+	     The breaks directory holds ckmeans breakpoints and min/max val-
+	     ues.  The structure is
 
-                   breaks/_l_e_v_e_l/_c_a_t_e_g_o_r_y.json.
+		   breaks/level/category.json.
 
-             _l_e_v_e_l is the geographic level 'lad', 'lsoa', 'msoa', or 'oa'.
-             _c_a_t_e_g_o_r_y is the category code from _c_o_n_t_e_n_t_._j_s_o_n.  Each geographic
-             level directory will have a file for each category in
-             _c_o_n_t_e_n_t_._j_s_o_n.  Level directories will only be created when the
-             corresponding geojson file is in _i_n_d_i_r.
+	     level is the geographic level 'lad', 'lsoa', 'msoa', or 'oa'.
+	     category is the category code from content.json.  Each geographic
+	     level directory will have a file for each category in
+	     content.json.  Level directories will only be created when the
+	     corresponding geojson file is in indir.
 
-             As an example, if _i_n_d_i_r contains _l_a_d_._g_e_o_j_s_o_n and _m_s_o_a_._g_e_o_j_s_o_n,
-             and _c_o_n_t_e_n_t_._j_s_o_n lists the 'uk_armed_forces-001' and
-             'uk_armed_forces-002' categories , then the following four files
-             will be produced:
+	     As an example, if indir contains lad.geojson and msoa.geojson,
+	     and content.json lists the 'uk_armed_forces-001' and
+	     'uk_armed_forces-002' categories , then the following four files
+	     will be produced:
 
-                   lad/uk_armed_forces-001.json
-                   lad/uk_armed_forces-002.json
-                   msoa/uk_armed_forces-001.json
-                   msoa/uk_armed_forces-002.json
+		   lad/uk_armed_forces-001.json
+		   lad/uk_armed_forces-002.json
+		   msoa/uk_armed_forces-001.json
+		   msoa/uk_armed_forces-002.json
 
-             The metrics values for all geographies in each geographic level
-             are included in the computations.
+	     The metrics values for all geographies in each geographic level
+	     are included in the computations.
 
-             Here is an example output file
-             _b_r_e_a_k_s_/_l_a_d_/_u_k___a_r_m_e_d___f_o_r_c_e_s_-_0_0_1_._j_s_o_n:
+	     Here is an example output file
+	     breaks/lad/uk_armed_forces-001.json:
 
-                   {
-                       "uk_armed_forces-001": {
-                           "LAD": [
-                               1.5,
-                               2.7,
-                               3.9,
-                               6.2,
-                               11.1
-                           ],
-                           "LAD_min_max": [
-                               0.4,
-                               11.1
-                           ]
-                       }
-                   }
+		   {
+		       "uk_armed_forces-001": {
+			   "LAD": [
+			       1.5,
+			       2.7,
+			       3.9,
+			       6.2,
+			       11.1
+			   ],
+			   "LAD_min_max": [
+			       0.4,
+			       11.1
+			   ]
+		       }
+		   }
 
      breaksCkmeans (directory)
-             The _b_r_e_a_k_s_C_k_m_e_a_n_s directory holds ckmeans breakpoints in a
-             slightly different format than the ones in the _b_r_e_a_k_s directory.
-             _b_r_e_a_k_s_C_k_m_e_a_n_s files only hold the minimum value and the five
-             breaks.  This is how the same file used in the breaks example
-             above looks in _b_r_e_a_k_s_C_k_m_e_a_n_s:
+	     The breaksCkmeans directory holds ckmeans breakpoints in a
+	     slightly different format than the ones in the breaks directory.
+	     breaksCkmeans files only hold the minimum value and the five
+	     breaks.  This is how the same file used in the breaks example
+	     above looks in breaksCkmeans:
 
-                   [
-                       0.4,
-                       1.5,
-                       2.7,
-                       3.9,
-                       6.2,
-                       11.1
-                   ]
+		   [
+		       0.4,
+		       1.5,
+		       2.7,
+		       3.9,
+		       6.2,
+		       11.1
+		   ]
 
-             The _b_r_e_a_k_s_C_k_m_e_a_n_s directory structure is the same as _b_r_e_a_k_s.
+	     The breaksCkmeans directory structure is the same as breaks.
 
      geoLookup.json
-             The _g_e_o_L_o_o_k_u_p_._j_s_o_n file is a listing of all geographies found in
-             the geojson files.  It is a json array of geographies that look
-             like this:
+	     The geoLookup.json file is a listing of all geographies found in
+	     the geojson files.	 It is a json array of geographies that look
+	     like this:
 
-                   {
-                       "en": "Hartlepool",
-                       "geoType": "LAD",
-                       "geoCode": "E06000001"
-                   }
+		   {
+		       "en": "Hartlepool",
+		       "geoType": "LAD",
+		       "geoCode": "E06000001"
+		   }
 
-   CCaallccuullaattiinngg RRaattiiooss
-     When --RR is given on the command line, the output data tiles will contain
+   Calculating Ratios
+     When -R is given on the command line, the output data tiles will contain
      ratios instead of values taken directly from the metrics files.  The ra-
      tio is the metric value divided by the total for that geography.
 
      For example, if a line in the metrics file looks like this:
 
-           GeographyCode,QS402EW0001,QS402EW0012,QS402EW0013,QS402EW0014
-           E06000001,12,3,6,3
+	   GeographyCode,QS402EW0001,QS402EW0012,QS402EW0013,QS402EW0014
+	   E06000001,12,3,6,3
 
      the ratio for 'QS402EW0012' will be 3/12 (0.25).  Data tiles for the ge-
      ography code 'E06000001' and category 'QS402EW0012' will have the value
      0.25 (its ratio), not 3 (its value).
 
      In order for this to work, category codes must fit a certain convention
-     so mmkkttiilleess22 knows which column is the totals column.  Because the --RR
+     so mktiles2 knows which column is the totals column.  Because the -R
      functionality was used during development with 2011 data, the convention
      follows 2011 category codes.  The convention for category codes is:
 
-           _u_p_p_e_r_-_c_a_s_e+_d_i_g_i_t_s+_u_p_p_e_r_-_c_a_s_e+_f_i_n_a_l_-_d_i_g_i_t_s
+	   upper-case+digits+upper-case+final-digits
 
-     Totals columns are those where _f_i_n_a_l_-_d_i_g_i_t_s has a value of 1, with any
+     Totals columns are those where final-digits has a value of 1, with any
      number of leading zeros.  For example, 'QS402EW0001' is a totals category
      because the last numeric part has a value of 1.
 
-   OOppeerraattiioonn
-     These are the processing steps mmkkttiilleess22 takes when producing output
+   Operation
+     These are the processing steps mktiles2 takes when producing output
      files.
 
-     1.   Load _c_o_n_t_e_n_t_._j_s_o_n
+     1.	  Load content.json
 
-          Category codes and names are extracted from _c_o_n_t_e_n_t_._j_s_o_n.  If --CC is
-          used, then only the categories in the given classification will be
-          extracted.
+	  Category codes and names are extracted from content.json.  If -C is
+	  used, then only the categories in the given classification will be
+	  extracted.
 
-          If --MM is used, then an internal table is set up to map category
-          names to codes.
+	  If -M is used, then an internal table is set up to map category
+	  names to codes.
 
-     2.   Load the grid file
+     2.	  Load the grid file
 
-          Tiles from _D_a_t_a_T_i_l_e_G_r_i_d_._j_s_o_n are loaded.
+	  Tiles from DataTileGrid.json are loaded.
 
-     3.   Set up notional spreadsheet
+     3.	  Set up notional spreadsheet
 
-          An internal table is set up with rows for geographies and columns
-          for each category from _c_o_n_t_e_n_t_._j_s_o_n.  This table will hold fake
-          data, values loaded from metrics files, or ratios calculated from
-          metrics files.
+	  An internal table is set up with rows for geographies and columns
+	  for each category from content.json.	This table will hold fake
+	  data, values loaded from metrics files, or ratios calculated from
+	  metrics files.
 
-     4.   Load metrics files
+     4.	  Load metrics files
 
-          If we are not generating fake data, then metrics files are loaded.
-          As each file is loaded, cells in the notional spreadsheet are popu-
-          lated with values from the file.  Only cells from categories that
-          have been extracted from _c_o_n_t_e_n_t_._j_s_o_n are loaded.  Extra columns are
-          ignored.
+	  If we are not generating fake data, then metrics files are loaded.
+	  As each file is loaded, cells in the notional spreadsheet are popu-
+	  lated with values from the file.  Only cells from categories that
+	  have been extracted from content.json are loaded.  Extra columns are
+	  ignored.
 
-     5.   Load geojson files
+     5.	  Load geojson files
 
-          Optional MSOA renames and LAD recodes are applied while the geojson
-          is loaded.
+	  Optional MSOA renames and LAD recodes are applied while the geojson
+	  is loaded.
 
-          A bounding box is calculated for each feature that doesn't already
-          have one.
+	  A bounding box is calculated for each feature that doesn't already
+	  have one.
 
-     6.   Generate geoLookup.json
+     6.	  Generate geoLookup.json
 
-     7.   Generate fake data
+     7.	  Generate fake data
 
-          If --FF was given, fake data is generated for every cell in the no-
-          tional spreadsheet.  Each cell gets a random floating point value
-          between 0 and 1.
+	  If -F was given, fake data is generated for every cell in the no-
+	  tional spreadsheet.  Each cell gets a random floating point value
+	  between 0 and 1.
 
-     8.   Calculate ratios If --RR was given, then the cell contents of non-to-
-          tals cells are recalculated as the ratio of their original value and
-          the total value.  See _C_a_l_c_u_l_a_t_i_n_g _R_a_t_i_o_s above.
+     8.	  Calculate ratios If -R was given, then the cell contents of non-to-
+	  tals cells are recalculated as the ratio of their original value and
+	  the total value.  See Calculating Ratios above.
 
-     9.   Generate data tiles
+     9.	  Generate data tiles
 
-          Data tiles are generated based on the bounding boxes from the Grid
-          file and the bounding boxes of features in the geojson files.
+	  Data tiles are generated based on the bounding boxes from the Grid
+	  file and the bounding boxes of features in the geojson files.
 
      10.  Generate breaks files
 
-FFIILLEESS
-   IInnppuutt ffiilleess
+FILES
+   Input files
      DataTileGrid.json
      lad.geojson
      lsoa.geojson
@@ -474,36 +474,36 @@ FFIILLEESS
      content.json
      *.csv
 
-   OOuuttppuutt ffiilleess
+   Output files
      tiles/level/tilename/category.csv
      breaks/level/category.json
      breaksCkmeans/level/category.json
      geoLookup.json
 
-EEXXIITT SSTTAATTUUSS
-     The mmkkttiilleess22 utility exits 0 on success, and >0 if an error occurs.
+EXIT STATUS
+     The mktiles2 utility exits 0 on success, and >0 if an error occurs.
 
-SSEEEE AALLSSOO
-     _H_o_u_s_e _o_f _C_o_m_m_o_n_s _L_i_b_r_a_r_y _M_S_O_A _N_a_m_e_s:
-     hhttttppss::////hhoouusseeooffccoommmmoonnsslliibbrraarryy..ggiitthhuubb..iioo//mmssooaannaammeess//
+SEE ALSO
+     House of Commons Library MSOA Names:
+     https://houseofcommonslibrary.github.io/msoanames/
 
-     geojson files may be downloaded from the _O_N_S _O_p_e_n _G_e_o_g_r_a_p_h_y _P_o_r_t_a_l:
-     hhttttppss::////ggeeooppoorrttaall..ssttaattiissttiiccss..ggoovv..uukk. For LSOA, MSOA and OA files, go to
+     geojson files may be downloaded from the ONS Open Geography Portal:
+     https://geoportal.statistics.gov.uk. For LSOA, MSOA and OA files, go to
      "Boundaries" -> "Census Boundaries" and then select one of:
 
-           LSOA    Lower Layer Super Output Areas
-           MSOA    Middle Layer Super Output Areas
-           OA      Output Areas
+	   LSOA	   Lower Layer Super Output Areas
+	   MSOA	   Middle Layer Super Output Areas
+	   OA	   Output Areas
 
      For LAD files, go to Boundaries -> Administrative Boundaries -> Local Au-
      thority Districts.
 
-     2011 metrics files may be downloaded from _n_o_m_i_s:
-     hhttttppss::////wwwwww..nnoommiisswweebb..ccoo..uukk. Follow "2011 Data Catalogue" -> "Bulk Down-
+     2011 metrics files may be downloaded from nomis:
+     https://www.nomisweb.co.uk. Follow "2011 Data Catalogue" -> "Bulk Down-
      load Products" and then either "Quick Statistics Bulk" or "Key Statistics
      Bulk".  You can then download a zip file which contains several CSV
      files.
 
      2021 metrics files are not directly downloadable as yet.
 
-BSD                            January 31, 2023                            BSD
+BSD			       January 31, 2023				   BSD

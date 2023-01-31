@@ -148,7 +148,7 @@ export type RuntimeEnv = {
 };
 
 export type ContentConfig = {
-  localContentJsonUrl: string;
+  devContentJsonUrl: string;
   webContentJsonUrl: string;
   publishingContentJsonUrl: string;
 };

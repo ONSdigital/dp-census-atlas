@@ -4,7 +4,7 @@
     "release": "2021-ALL-ar2776-c21ew_metadata-v1-3_cantab_20230202-43",
     "additional_content_jsons": [
       {
-        "localContentJsonUrl": "http://localhost:8090/release-0.json",
+        "devContentJsonUrl": "release-0.json",
         "webContentJsonUrl": "https://www.ons.gov.uk/visualisations/censusatlasdryrun/release-0.json",
         "publishingContentJsonUrl": "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusatlasdryrun/release-0.json"
       }

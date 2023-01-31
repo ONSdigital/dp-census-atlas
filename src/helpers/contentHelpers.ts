@@ -40,8 +40,11 @@ const mergeVariables = (variables: Variable[]) => {
       topic_code: variablesToMerge[0].topic_code,
       caveat_text: variablesToMerge[0].caveat_text,
       caveat_link: variablesToMerge[0].caveat_link,
-      classifications: dedupeClassifications(allClassifications as Classification[]),
       base_url_2021: variablesToMerge[0].base_url_2021,
+      base_url_2021_dev_override: variablesToMerge[0].base_url_2021_dev_override,
+      base_url_2011_2021_comparison: variablesToMerge[0].base_url_2011_2021_comparison,
+      base_url_2011_2021_comparison_dev_override: variablesToMerge[0].base_url_2011_2021_comparison_dev_override,
+      classifications: dedupeClassifications(allClassifications as Classification[]),
     });
   }
   return mergedVariables;

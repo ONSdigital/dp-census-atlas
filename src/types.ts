@@ -18,8 +18,11 @@ export type Variable = {
   topic_code: string;
   caveat_text: string;
   caveat_link: string;
-  classifications: Classification[];
   base_url_2021: string;
+  base_url_2021_dev_override: string;
+  base_url_2011_2021_comparison: string;
+  base_url_2011_2021_comparison_dev_override: string;
+  classifications: Classification[];
 };
 
 export type Classification = {

@@ -24,7 +24,7 @@
           "long_desc": "Identifies people who have previously served in the UK armed forces. This includes those who have served for at least one day in armed forces, either regular or reserves, or Merchant Mariners who have seen duty on legally defined military operations.",
           "units": "Person",
           "topic_code": "ARM",
-          "base_url": "https://ons-dp-prod-census-maps-arm.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-arm.s3.eu-west-2.amazonaws.com",
           "classifications": [
             {
               "code": "uk_armed_forces",
@@ -79,7 +79,7 @@
           "long_desc": "The number of usual residents per square kilometre, calculated based on total land area excluding inland water.",
           "units": "Persons per square kilometre",
           "topic_code": "DEM",
-          "base_url": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
           "classifications": [
             {
               "code": "population_density",
@@ -109,7 +109,9 @@
           "long_desc": "The dimensions of deprivation used to classify households are indicators based on four selected household characteristics.\n\nEducation\n\nA household is classified as deprived in the education dimension if no one has at least level 2 education and no one aged 16 to 18 years is a full-time student.\n\nEmployment\n\nA household is classified as deprived in the employment dimension if any member, not a full-time student, is either unemployed or economically inactive due to long-term sickness or disability.\n\nHealth\n\nA household is classified as deprived in the health dimension if any person in the household has general health that is bad or very bad or is identified as disabled.\n\nPeople who have assessed their day-to-day activities as limited by long-term physical or mental health conditions or illnesses are considered disabled.  This definition of a disabled person meets the harmonised standard for measuring disability and is in line with the Equality Act (2010).\n\nHousing\n\nA household is classified as deprived in the housing dimension if the household's accommodation is either overcrowded, in a shared dwelling, or has no central heating.",
           "units": "Household",
           "topic_code": "DEM",
-          "base_url": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
               "code": "hh_deprivation",
@@ -173,7 +175,9 @@
           "long_desc": "Households according to the relationships between members. \n\nOne-family households are classified by:\n\n* the number of dependent children \n* family type (married, civil partnership or cohabiting couple family, or lone parent family) \n\nOther households are classified by:\n\n* the number of people \n* the number of dependent children \n* whether the household consists only of students or only of people aged 66 and over",
           "units": "Household",
           "topic_code": "DEM",
-          "base_url": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
               "code": "hh_family_composition_4a",
@@ -343,7 +347,9 @@
           "long_desc": "The number of people in the household.\n\nVisitors staying at an address do not count to that household\u2019s size.",
           "units": "Household",
           "topic_code": "DEM",
-          "base_url": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
               "code": "hh_size_5a",
@@ -473,7 +479,9 @@
           "long_desc": "Classifies a person according to their legal marital or registered civil partnership status on Census Day 21 March 2021.\n\nIt is the same as the 2011 census variable \"Marital status\" but has been updated for Census 2021 to reflect the revised Civil Partnership Act that came into force in 2019.\n\nIn Census 2021 results, \"single\" refers only to someone who has never been married or in a registered civil partnership.",
           "units": "Person",
           "topic_code": "DEM",
-          "base_url": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
               "code": "legal_partnership_status_3a",
@@ -661,7 +669,9 @@
           "long_desc": "The \u201cliving arrangements\u201d classification combines responses to the question on marital and civil partnership status with information about whether or not a person is living in a couple. This topic is only applicable to people in households. Living arrangements differs from marital and civil partnership status because cohabiting takes priority over other categories. For example, if a person is divorced and cohabiting, then in results for living arrangements they are classified as cohabiting.",
           "units": "Person",
           "topic_code": "DEM",
-          "base_url": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
               "code": "living_arrangements_11a",
@@ -764,7 +774,9 @@
           "long_desc": "A person\u2019s age on Census Day, 21 March 2021 in England and Wales. Infants aged under 1 year are classified as 0 years of age.",
           "units": "Person",
           "topic_code": "DEM",
-          "base_url": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
               "code": "resident_age_3a",
@@ -1802,7 +1814,7 @@
           "long_desc": "Median age is calculated from the age of residents on Census Day, 21 March 2021 in England and Wales. The median age is the age of the person in the middle of the group, such that one half of the group is younger than that person and the other half is older.",
           "units": "Years",
           "topic_code": "DEM",
-          "base_url": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
           "classifications": [
             {
               "code": "median_age",
@@ -1832,7 +1844,9 @@
           "long_desc": "This is the sex recorded by the person completing the census. The options were \u201cFemale\u201d and \u201cMale\u201d.",
           "units": "Person",
           "topic_code": "DEM",
-          "base_url": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
               "code": "sex",
@@ -1872,7 +1886,9 @@
           "long_desc": "The date a person last arrived to live in the UK and their age. Arrival dates do not include returning from short trips away from the UK.\n\nAge of arrival only applies to usual residents not born in the UK. It does not include usual residents born in the UK who have emigrated and since returned. These are recorded in the category \u201cborn in the UK\u201d.",
           "units": "Person",
           "topic_code": "MIG",
-          "base_url": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
               "code": "age_arrival_uk_18a",
@@ -2032,7 +2048,9 @@
           "long_desc": "The country in which a person was born.\n\nFor people not born in one of in the four parts of the UK, there was an option to select \"elsewhere\".\n\nPeople who selected \"elsewhere\" were asked to write in the current name for their country of birth.",
           "units": "Person",
           "topic_code": "MIG",
-          "base_url": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
               "code": "country_of_birth_3a",
@@ -2718,7 +2736,9 @@
           "long_desc": "The migration indicator classifies people based on the difference between their current address and their address one year ago. It provides an indicator of the movement of people within the UK and from outside the UK, in the one-year period before the census.",
           "units": "Person",
           "topic_code": "MIG",
-          "base_url": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
               "code": "migrant_ind",
@@ -2773,7 +2793,9 @@
           "long_desc": "All passports classifies a person according to the passport or passports they held at the time of the census. This included expired passports or travel documents people were entitled to renew. Where a person recorded having more than one passport, they were counted only once, categorised in the following priority order: 1. UK passport, 2. Irish passport, 3. Other passport.",
           "units": "Person",
           "topic_code": "MIG",
-          "base_url": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
               "code": "passports_all_4a",
@@ -3709,7 +3731,9 @@
           "long_desc": "The length of residence in the UK is derived from the date that a person most recently arrived to live in the UK. It does not include returning from a holiday or short stay outside the UK.\n\nLength of residence is only applicable to usual residents who were not born in the UK. It does not include usual residents born in the UK who have emigrated and since returned - \nthese are recorded in the category \u201cborn in the UK\u201d.",
           "units": "Person",
           "topic_code": "MIG",
-          "base_url": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
               "code": "residence_length_6b",
@@ -3773,7 +3797,9 @@
           "long_desc": "The year someone not born in the UK last arrived in the UK. This does not include returning from short visits away from the UK.",
           "units": "Person",
           "topic_code": "MIG",
-          "base_url": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
               "code": "year_arrival_uk_6a",
@@ -3950,7 +3976,9 @@
           "long_desc": "The highest level of qualification is derived from the question asking people to indicate all qualifications held, or their nearest equivalent.\n\nThis may include foreign qualifications where they were matched to the closest UK equivalent.",
           "units": "Person",
           "topic_code": "EDU",
-          "base_url": "https://ons-dp-prod-census-maps-edu.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-edu.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
               "code": "highest_qualification_6a",
@@ -4080,7 +4108,9 @@
           "long_desc": "Indicates whether a person aged 5 years and over was in full-time education on Census Day, 21 March 2021. This includes schoolchildren and adults in full-time education.\n\nSchoolchildren and students in full-time education studying away from home are treated as usually resident at their term-time address.",
           "units": "Person",
           "topic_code": "EDU",
-          "base_url": "https://ons-dp-prod-census-maps-edu.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-edu.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
               "code": "in_full_time_education",
@@ -4126,7 +4156,9 @@
           "long_desc": "How well people whose main language is not English (English or Welsh in Wales) speak English.",
           "units": "Household",
           "topic_code": "EILR",
-          "base_url": "https://ons-dp-prod-census-maps-eilr.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-eilr.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
               "code": "english_proficiency_4a",
@@ -4224,7 +4256,9 @@
           "long_desc": "The ethnic group that the person completing the census feels they belong to. This could be based on their culture, family background, identity or physical appearance.\n\nRespondents could choose one out of 19 tick-box response categories, including write-in response options.",
           "units": "Person",
           "topic_code": "EILR",
-          "base_url": "https://ons-dp-prod-census-maps-eilr.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-eilr.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
               "code": "ethnic_group_tb_6a",
@@ -4450,7 +4484,9 @@
           "long_desc": "Classifies households by the combination of adults and children (aged 3 to 15 years) within a household that have English (English or Welsh in Wales) as their main language.",
           "units": "Household",
           "topic_code": "EILR",
-          "base_url": "https://ons-dp-prod-census-maps-eilr.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-eilr.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
               "code": "hh_language",
@@ -4505,7 +4541,9 @@
           "long_desc": "Classifies households by whether members identify as having the same or different ethnic groups.\n\nIf multiple ethnic groups are present, this identifies whether they differ between generations or partnerships within the household.",
           "units": "Household",
           "topic_code": "EILR",
-          "base_url": "https://ons-dp-prod-census-maps-eilr.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-eilr.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
               "code": "hh_multi_ethnic_group",
@@ -4569,7 +4607,7 @@
           "long_desc": "Classifies households by whether members speak the same or different main language. If multiple main languages are spoken, this identifies whether they differ between generations or partnerships within the household.",
           "units": "Household",
           "topic_code": "EILR",
-          "base_url": "https://ons-dp-prod-census-maps-eilr.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-eilr.s3.eu-west-2.amazonaws.com",
           "classifications": [
             {
               "code": "hh_multi_language_3a",
@@ -4657,7 +4695,7 @@
           "long_desc": "Classifies households by whether members identify with the same religion, no religion, did not answer the question, or a combination of these options.\n\nThis question was voluntary and the variable includes those who answered the question alongside those who chose not to.",
           "units": "Household",
           "topic_code": "EILR",
-          "base_url": "https://ons-dp-prod-census-maps-eilr.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-eilr.s3.eu-west-2.amazonaws.com",
           "classifications": [
             {
               "code": "hh_multi_religion_7a",
@@ -4728,7 +4766,9 @@
           "long_desc": "A person's first or preferred language. \n\nThis breaks down the responses given in the write-in option \"Other, write in (including British Sign Language)\".",
           "units": "Person",
           "topic_code": "EILR",
-          "base_url": "https://ons-dp-prod-census-maps-eilr.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-eilr.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
               "code": "main_language_detailed_23a",
@@ -5689,9 +5729,11 @@
           "long_desc": "Someone\u2019s national identity is a self-determined assessment of their own identity, it could be the country or countries where they feel they belong or think of as home. It is not dependent on ethnic group or citizenship.\n\nRespondents could select more than one national identity.",
           "units": "Person",
           "topic_code": "EILR",
-          "base_url": "https://ons-dp-prod-census-maps-eilr.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-eilr.s3.eu-west-2.amazonaws.com",
           "caveat_text": "There are quality considerations for this variable.",
           "caveat_link": "https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/ethnicity/methodologies/ethnicgroupnationalidentitylanguageandreligionqualityinformationforcensus2021",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
               "code": "national_identity_all_4a",
@@ -5951,9 +5993,11 @@
           "long_desc": "Someone\u2019s national identity is a self-determined assessment of their own identity, it could be the country or countries where they feel they belong or think of as home. It is not dependent on ethnic group or citizenship.\n\nRespondents could select more than one national identity.",
           "units": "Person",
           "topic_code": "EILR",
-          "base_url": "https://ons-dp-prod-census-maps-eilr.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-eilr.s3.eu-west-2.amazonaws.com",
           "caveat_text": "There are quality considerations for this variable.",
           "caveat_link": "https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/ethnicity/methodologies/ethnicgroupnationalidentitylanguageandreligionqualityinformationforcensus2021",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
               "code": "national_identity_detailed",
@@ -6552,9 +6596,11 @@
           "long_desc": "The religion people connect or identify with (their religious affiliation), whether or not they practise or have belief in it.\n\nThis question was voluntary and includes people who identified with one of 8 tick-box response options, including \"No religion\", alongside those who chose not to answer this question.",
           "units": "Person",
           "topic_code": "EILR",
-          "base_url": "https://ons-dp-prod-census-maps-eilr.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-eilr.s3.eu-west-2.amazonaws.com",
           "caveat_text": "There are quality considerations for the \"not answered\" category in university locations.",
           "caveat_link": "https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/ethnicity/methodologies/ethnicgroupnationalidentitylanguageandreligionqualityinformationforcensus2021",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
               "code": "religion_tb",
@@ -6649,7 +6695,7 @@
           "long_desc": "Classifies people according to the responses to the gender identity question. This question was voluntary and was only asked of people aged 16 years and over.",
           "units": "Person",
           "topic_code": "SOGI",
-          "base_url": "https://ons-dp-prod-census-maps-sogi.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-sogi.s3.eu-west-2.amazonaws.com",
           "classifications": [
             {
               "code": "gender_identity_4a",
@@ -6761,7 +6807,7 @@
           "long_desc": "Classifies people according to the responses to the sexual orientation question. This question was voluntary and was only asked of people aged 16 years and over.",
           "units": "Person",
           "topic_code": "SOGI",
-          "base_url": "https://ons-dp-prod-census-maps-sogi.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-sogi.s3.eu-west-2.amazonaws.com",
           "classifications": [
             {
               "code": "sexual_orientation_4a",
@@ -6930,7 +6976,9 @@
           "long_desc": "Whether a person has Welsh language skills. If they do, can they do any of the following:\n\n* understand spoken Welsh\n* speak Welsh\n* read Welsh\n* write Welsh\n* no skills in Welsh\n\nThe census questionnaire only asked this question to people in Wales.\n\nIn results that classify people by Welsh language skills, a person may appear in more than one category depending on which combination of skills they have.",
           "units": "Person",
           "topic_code": "EILR",
-          "base_url": "https://ons-dp-prod-census-maps-welsh-skills.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-welsh-skills.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
               "code": "welsh_skills_all_4b",
@@ -7110,7 +7158,9 @@
           "long_desc": "This classifies a person as being able to \"Speak Welsh\". They may have also ticked one or more of the following:\n\n* understand spoken Welsh\n* read Welsh\n* write Welsh\n\nIn results that classify people by Welsh language skills, a person may appear in more than one category depending on which combination of skills they have.",
           "units": "Person",
           "topic_code": "EILR",
-          "base_url": "https://ons-dp-prod-census-maps-welsh-skills.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-welsh-skills.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
               "code": "welsh_skills_speak",
@@ -7157,7 +7207,9 @@
           "long_desc": "The type of building or structure used or available by an individual or household.\n\nThis could be:\n\n* the whole house or bungalow\n* a flat, maisonette or apartment\n* a temporary or mobile structure, such as a caravan\n\nMore information about accommodation types\n\nWhole house or bungalow:\nThis property type is not divided into flats or other living accommodation. There are three types of whole houses or bungalows.\n\nDetached:\nNone of the living accommodation is attached to another property but can be attached to a garage.\n\nSemi-detached:\nThe living accommodation is joined to another house or bungalow by a common wall that they share.\n\nTerraced:\nA mid-terraced house is located between two other houses and shares two common walls. An end-of-terrace house is part of a terraced development but only shares one common wall.\n\nFlats (Apartments) and maisonettes:\nAn apartment is another word for a flat. A maisonette is a 2-storey flat.",
           "units": "Household",
           "topic_code": "HOU",
-          "base_url": "https://ons-dp-prod-census-maps-hou.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-hou.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
               "code": "accommodation_type_3a",
@@ -7329,7 +7381,9 @@
           "long_desc": "An address (in or out of the UK) a person stays at for more than 30 days per year that is not their place of usual residence. \n \nSecond addresses typically include:\n\n* armed forces bases\n* addresses used by people working away from home\n* a student\u2019s home address\n* the address of another parent or guardian\n* a partner\u2019s address\n* a holiday home\n  \nIf a person with a second address was staying there on census night, they were classed as a visitor to the second address but counted as a usual resident at their home address.",
           "units": "Person",
           "topic_code": "HOU",
-          "base_url": "https://ons-dp-prod-census-maps-hou.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-hou.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
               "code": "alternative_address_indicator",
@@ -7376,7 +7430,9 @@
           "long_desc": "Central heating is a heating system used to heat multiple rooms in a building by circulating air or heated water through pipes to radiators or vents. Single or multiple fuel sources can fuel these systems.\n\nCentral heating systems that are unused or not working are still considered. No information is available for household spaces with no usual residents.",
           "units": "Household",
           "topic_code": "HOU",
-          "base_url": "https://ons-dp-prod-census-maps-hou.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-hou.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
               "code": "heating_type_3a",
@@ -7521,7 +7577,9 @@
           "long_desc": "Whether a household owns or rents the accommodation that it occupies.\n\nOwner-occupied accommodation can be:\n\n* owned outright, which is where the household owns all of the accommodation\n* with a mortgage or loan\n* part-owned on a shared ownership scheme\n\n Rented accommodation can be:\n\n* private rented, for example, rented through a private landlord or letting agent\n* social rented through a local council or housing association\n\nThis information is not available for household spaces with no usual residents.",
           "units": "Household",
           "topic_code": "HOU",
-          "base_url": "https://ons-dp-prod-census-maps-hou.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-hou.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
               "code": "hh_tenure_5a",
@@ -7651,7 +7709,9 @@
           "long_desc": "The number of bedrooms in a household\u2019s accommodation.\n\nThis number is not available for household spaces with no usual residents.",
           "units": "Household",
           "topic_code": "HOU",
-          "base_url": "https://ons-dp-prod-census-maps-hou.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-hou.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
               "code": "number_bedrooms_5a",
@@ -7707,7 +7767,9 @@
           "long_desc": "The number of cars or vans owned or available for use by household members.\n\nVehicles included:\n\n* pick-ups, camper vans and motor homes\n* vehicles that are temporarily not working\n* vehicles that have failed their MOT\n* vehicles owned or used by a lodger\n* company cars or vans if they're available for private use\n\nVehicles not included:\n\n* motorbikes, trikes, quad bikes or mobility scooters\n* vehicles that have a Statutory Off Road Notification (SORN)\n* vehicles owned or used only by a visitor\n* vehicles that are kept at another address or not easily accessed\n\nThe number of cars or vans in an area relates only to households. Cars or vans used by communal establishment residents are not counted.\nHouseholds with 10 to 20 cars or vans are counted as having only 10.\nHouseholds with more than 20 cars or vans were treated as invalid and a value imputed.",
           "units": "Household",
           "topic_code": "HOU",
-          "base_url": "https://ons-dp-prod-census-maps-hou.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-hou.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
               "code": "number_of_cars_3a",
@@ -7789,7 +7851,9 @@
           "long_desc": "Whether a household's accommodation is overcrowded, ideally occupied or under-occupied. This is calculated by comparing the number of bedrooms the household requires to the number of available bedrooms.\n\nThe number of bedrooms the household requires is calculated according to the Bedroom Standard, where the following should have their own bedroom:\n\n1. married or cohabiting couple\n2. single parent\n3. person aged 16 years and over\n4. pair of same-sex persons aged 10 to 15 years\n5. person aged 10 to 15 years paired with a person under 10 years of the same sex\n6. pair of children aged under 10 years, regardless of their sex\n7. person aged under 16 years who cannot share a bedroom with someone in 4, 5 or 6 above\n\nAn occupancy rating of:\n\n* -1 or less implies that a household\u2019s accommodation has fewer bedrooms than required (overcrowded)\n* +1 or more implies that a household\u2019s accommodation has more bedrooms than required (under-occupied)\n* 0 suggests that a household\u2019s accommodation has an ideal number of bedrooms",
           "units": "Household",
           "topic_code": "HOU",
-          "base_url": "https://ons-dp-prod-census-maps-hou.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-hou.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
               "code": "occupancy_rating_bedrooms_6a",
@@ -7852,7 +7916,7 @@
           "long_desc": "Whether a household's accommodation is overcrowded, ideally occupied or under-occupied. This is calculated by comparing the number of rooms the household requires to the number of available rooms.\n\nThe number of rooms the household requires uses a formula which states that:\n\n* one-person households require three rooms comprised of two common rooms and one bedroom\n* two-or-more person households require a minimum of two common rooms and a bedroom for each person inline with the Bedroom Standard\n\nPeople who should have their own room according to the Bedroom Standard are:\n\n1. married or cohabiting couple\n2. single parent\n3. person aged 16 years and over\n4. pair of same-sex persons aged 10 to 15 years\n5. person aged 10 to 15 years paired with a person under 10 years of the same sex\n6. pair of children aged under 10 years, regardless of their sex\n7. person aged under 16 years who cannot share a bedroom with someone in 4, 5 or 6 above\n\nAn occupancy rating of:\n\n* -1 or less implies that a household\u2019s accommodation has fewer rooms than required (overcrowded)\n* +1 or more implies that a household\u2019s accommodation has more rooms than required (under-occupied)\n* 0 suggests that a household\u2019s accommodation has an ideal number of rooms\n\nThe number of rooms is taken from Valuation Office Agency (VOA) administrative data for the first time in 2021. The number of rooms is recorded at the address level, whilst the 2011 Census recorded the number of rooms at the household level.  This means that for households that live in a shared dwelling, the available number of rooms are counted for the whole dwelling in VOA, and not each individual household. \n\nVOA\u2019s definition of a room does not include bathrooms, toilets, halls or landings, kitchens, conservatories or utility rooms. All other rooms, for example, living rooms, studies, bedrooms, separate dining rooms and rooms that can only be used for storage are included. Please note that the 2011 Census question included kitchens, conservatories and utility rooms while excluding rooms that can only be used for storage. To adjust for the definitional difference, the number of rooms required is deducted from the actual number of rooms it has available, and then 1 is added.",
           "units": "Household",
           "topic_code": "HOU",
-          "base_url": "https://ons-dp-prod-census-maps-hou.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-hou.s3.eu-west-2.amazonaws.com",
           "classifications": [
             {
               "code": "occupancy_rating_rooms_6a",
@@ -7914,7 +7978,9 @@
           "long_desc": "Indicates whether a person has an alternative address (somewhere they stay for more than 30 days per year) and the type of second address this is. \n\nThe 'Not applicable' classification applies to people without an alternative address.",
           "units": "Person",
           "topic_code": "HOU",
-          "base_url": "https://ons-dp-prod-census-maps-hou.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-hou.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
               "code": "second_address_type_priority",
@@ -8008,7 +8074,7 @@
           "long_desc": "People who assessed their day-to-day activities as limited by long-term physical or mental health conditions or illnesses are considered disabled. This definition of a disabled person meets the harmonised standard for measuring disability and is in line with the Equality Act (2010).",
           "units": "Person",
           "topic_code": "HUC",
-          "base_url": "https://ons-dp-prod-census-maps-huc.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-huc.s3.eu-west-2.amazonaws.com",
           "caveat_text": "Values are age-standardised to account for differences in population size and age structure.",
           "caveat_link": "http://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthandwellbeing/methodologies/healthdisabilityandunpaidcarequalityinformationforcensus2021",
           "classifications": [
@@ -8057,7 +8123,7 @@
           "long_desc": "A person's assessment of the general state of their health from very good to very bad. This assessment is not based on a person's health over any specified period of time.",
           "units": "Household",
           "topic_code": "HUC",
-          "base_url": "https://ons-dp-prod-census-maps-huc.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-huc.s3.eu-west-2.amazonaws.com",
           "caveat_text": "Values are age-standardised to account for differences in population size and age structure.",
           "caveat_link": "http://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthandwellbeing/methodologies/healthdisabilityandunpaidcarequalityinformationforcensus2021",
           "classifications": [
@@ -8122,7 +8188,7 @@
           "long_desc": "An unpaid carer may look after, give help or support to anyone who has long-term physical or mental ill-health conditions, illness or problems related to old age.  \n\nThis does not include any activities as part of paid employment. \n\nThis help can be within or outside of the carer's household.",
           "units": "Person",
           "topic_code": "HUC",
-          "base_url": "https://ons-dp-prod-census-maps-huc.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-huc.s3.eu-west-2.amazonaws.com",
           "caveat_text": "Values are age-standardised to account for differences in population size and age structure.",
           "caveat_link": "http://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthandwellbeing/methodologies/healthdisabilityandunpaidcarequalityinformationforcensus2021",
           "classifications": [
@@ -8186,9 +8252,11 @@
           "long_desc": "People aged 16 years and over are economically active if, between 15 March and 21 March 2021, they were:\n\n* in employment (an employee or self-employed)\n* unemployed, but looking for work and could start within two weeks\n* unemployed, but waiting to start a job that had been offered and accepted\n\nIt is a measure of whether or not a person was an active participant in the labour market during this period. Economically inactive are those aged 16 years and over who did not have a job between 15 March to 21 March 2021 and had not looked for work between 22 February to 21 March 2021 or could not start work within two weeks.\n\nThe census definition differs from International Labour Organization definition used on the Labour Force Survey, so estimates are not directly comparable.",
           "units": "Person",
           "topic_code": "LAB",
-          "base_url": "https://ons-dp-prod-census-maps-lab.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-lab.s3.eu-west-2.amazonaws.com",
           "caveat_text": "There are pandemic-related quality considerations for this variable.",
           "caveat_link": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/methodologies/labourmarketqualityinformationforcensus2021",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
               "code": "economic_activity_status_3a",
@@ -8343,9 +8411,11 @@
           "long_desc": "Classifies people who were not in employment on Census Day into:\n\n* Not in employment: Worked in the last 12 months\n* Not in employment: Not worked in the last 12 months\n* Not in employment: Never worked",
           "units": "Person",
           "topic_code": "LAB",
-          "base_url": "https://ons-dp-prod-census-maps-lab.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-lab.s3.eu-west-2.amazonaws.com",
           "caveat_text": "There are pandemic-related quality considerations for this variable.",
           "caveat_link": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/methodologies/labourmarketqualityinformationforcensus2021",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
               "code": "has_ever_worked",
@@ -8392,9 +8462,11 @@
           "long_desc": "The number of hours worked per week before the census includes paid and unpaid overtime. This covers the main job of anyone aged 16 years and over.",
           "units": "Person",
           "topic_code": "LAB",
-          "base_url": "https://ons-dp-prod-census-maps-lab.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-lab.s3.eu-west-2.amazonaws.com",
           "caveat_text": "There are pandemic-related quality considerations for this variable.",
           "caveat_link": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/methodologies/labourmarketqualityinformationforcensus2021",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
               "code": "hours_per_week_worked_3a",
@@ -8476,9 +8548,11 @@
           "long_desc": "Classifies people aged 16 years and over who were in employment between 15 March and 21 March 2021 by the Standard Industrial Classification (SIC) code that represents their current industry or business.\n\nThe SIC code is assigned based on the information provided about a firm or organisation\u2019s main activity.",
           "units": "Person",
           "topic_code": "LAB",
-          "base_url": "https://ons-dp-prod-census-maps-lab.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-lab.s3.eu-west-2.amazonaws.com",
           "caveat_text": "There are pandemic-related quality considerations for this variable.",
           "caveat_link": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/methodologies/labourmarketqualityinformationforcensus2021",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
               "code": "industry_current_88a",
@@ -9197,7 +9271,7 @@
           "long_desc": "The National Statistics Socio-economic Classification (NS-SEC) indicates a person's socio-economic position based on their occupation and other job characteristics.\n\nIt is an Office for National Statistics standard classification. NS-SEC categories are assigned based on a person's occupation, whether employed, self-employed, or supervising other employees.\n\nFull-time students are recorded in the \"full-time students\" category regardless of whether they are economically active.",
           "units": "Person",
           "topic_code": "LAB",
-          "base_url": "https://ons-dp-prod-census-maps-lab.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-lab.s3.eu-west-2.amazonaws.com",
           "caveat_text": "There are pandemic-related quality considerations for this variable.",
           "caveat_link": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/methodologies/labourmarketqualityinformationforcensus2021",
           "classifications": [
@@ -9293,7 +9367,7 @@
           "long_desc": "Classifies what people aged 16 years and over do as their main job. Their job title or details of activities they do in their job and any supervisory or management responsibilities form this classification. This information is used to code responses to an occupation using the Standard Occupational Classification (SOC) 2020.\n\nIt classifies people who were in employment between 15 March and 21 March 2021, by the SOC code that represents their current occupation.\nThe lowest level of detail available is the four-digit SOC code which includes all codes in three, two and one digit SOC code levels.",
           "units": "Person",
           "topic_code": "LAB",
-          "base_url": "https://ons-dp-prod-census-maps-lab.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-lab.s3.eu-west-2.amazonaws.com",
           "caveat_text": "There are pandemic-related quality considerations for this variable.",
           "caveat_link": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/methodologies/labourmarketqualityinformationforcensus2021",
           "classifications": [
@@ -9389,7 +9463,7 @@
           "long_desc": "A person's place of work and their method of travel to work. This is the 2001 method of producing travel to work variables.\n \n\"Work mainly from home\" applies to someone who indicated their place of work as their home address and travelled to work by driving a car or van, for example visiting clients.",
           "units": "Person",
           "topic_code": "TTW",
-          "base_url": "https://ons-dp-prod-census-maps-ttw.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-ttw.s3.eu-west-2.amazonaws.com",
           "caveat_text": "There are pandemic-related quality considerations for this variable.",
           "caveat_link": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/methodologies/traveltoworkqualityinformationforcensus2021",
           "classifications": [
@@ -9501,7 +9575,7 @@
           "long_desc": "The distance, in kilometres, between a person's residential postcode and their workplace postcode measured in a straight line. A distance travelled of 0.1km indicates that the workplace postcode is the same as the residential postcode. Distances over 1200km are treated as invalid, and an imputed or estimated value is added.\n\n\u201cWork mainly at or from home\u201d is made up of those that ticked either the \"Mainly work at or from home\" box for the address of workplace question, or the \u201cWork mainly at or from home\u201d box for the method of travel to work question.\n\n\u201cOther\u201d includes no fixed place of work, working on an offshore installation and working outside of the UK.\n\nDistance is calculated as the straight line distance between the enumeration postcode and the workplace postcode.",
           "units": "Person",
           "topic_code": "TTW",
-          "base_url": "https://ons-dp-prod-census-maps-ttw.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-ttw.s3.eu-west-2.amazonaws.com",
           "caveat_text": "There are pandemic-related quality considerations for this variable.",
           "caveat_link": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/methodologies/traveltoworkqualityinformationforcensus2021",
           "classifications": [

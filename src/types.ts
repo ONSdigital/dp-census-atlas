@@ -19,7 +19,7 @@ export type Variable = {
   caveat_text: string;
   caveat_link: string;
   classifications: Classification[];
-  base_url: string;
+  base_url_2021: string;
 };
 
 export type Classification = {

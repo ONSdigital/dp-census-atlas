@@ -49,7 +49,7 @@ const fetchContent = async (contentConfig: ContentConfig[], isLocal: boolean, is
   const additionalRawContent = await Promise.all(
     rawContent.map(async (contentJson) => {
       if ("additional_content_jsons" in contentJson.meta) {
-        const moreContent = await fetchContent(contentJson.meta.additionalContentJsons, isLocal, isPublishing);
+        const moreContent = await fetchContent(contentJson.meta.additional_content_jsons, isLocal, isPublishing);
         return moreContent;
       }
     }),

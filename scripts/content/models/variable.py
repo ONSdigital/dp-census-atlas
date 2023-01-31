@@ -18,7 +18,10 @@ class CensusVariable:
     long_desc: str
     units: str
     classifications: list[CensusClassification]
-    base_url: str = ""
+    base_url_2021: str = ""
+    base_url_2021_dev_override: str = ""
+    base_url_2011_2021_comparison: str = ""
+    base_url_2011_2021_comparison_dev_override: str = ""
     topic_code: str = ""
     caveat_text: str = ""
     caveat_link: str = ""
@@ -48,8 +51,16 @@ class CensusVariable:
 
     def set_base_url(self, tile_data_base_urls: list[dict]) -> None:
         base_url_row = next((r for r in tile_data_base_urls if r["variable"] == self.code), None)
-        if base_url_row is not None and base_url_row["tile_data_base_url"] != "":
-            self.base_url = base_url_row["tile_data_base_url"].strip()
+        if base_url_row is not None:
+            if base_url_row["2021_data_base_url"] != "":
+                self.base_url_2021 = base_url_row["2021_data_base_url"].strip()
+            if base_url_row["2021_data_fake_dev_override"] != "":
+                self.base_url_2021_dev_override = base_url_row["2021_data_fake_dev_override"].strip()
+            if base_url_row["2011_2021_comparison_data_base_url"] != "":
+                self.base_url_2011_2021_comparison = base_url_row["2011_2021_comparison_data_base_url"].strip()
+            if base_url_row["2011_2021_comparison_fake_dev_override"] != "":
+                self.base_url_2011_2021_comparison_dev_override = base_url_row["2011_2021_comparison_fake_dev_override"].strip(
+                )
 
     def is_valid(self) -> bool:
         """
@@ -57,7 +68,13 @@ class CensusVariable:
         empty list, there is no choropleth default classification set, or any classifications are not valid.
         """
         is_valid = True
-        blankable_props = ["caveat_text", "caveat_link"]
+        blankable_props = [
+            "caveat_text",
+            "caveat_link",
+            "base_url_2021_dev_override",
+            "base_url_2011_2021_comparison",
+            "base_url_2011_2021_comparison_dev_override"
+        ]
         for prop, value in vars(self).items():
             if (
                 isinstance(value, str)
@@ -98,7 +115,7 @@ class CensusVariable:
             "long_desc": self.long_desc,
             "units": self.units,
             "topic_code": self.topic_code,
-            "base_url": self.base_url
+            "base_url_2021": self.base_url_2021
         }
 
         if self.caveat_text != "":
@@ -106,6 +123,15 @@ class CensusVariable:
 
         if self.caveat_link != "":
             output_params["caveat_link"] = self.caveat_link
+
+        if self.base_url_2021_dev_override != "":
+            output_params["base_url_2021_dev_override"] = self.base_url_2021_dev_override
+
+        if self.base_url_2011_2021_comparison != "":
+            output_params["base_url_2011_2021_comparison"] = self.base_url_2011_2021_comparison
+
+        if self.base_url_2011_2021_comparison_dev_override != "":
+            output_params["base_url_2011_2021_comparison_dev_override"] = self.base_url_2011_2021_comparison_dev_override
 
         output_params["classifications"] = [
             c.to_jsonable() for c in self.classifications
@@ -126,7 +152,10 @@ def variable_from_content_json(content_json: dict) -> CensusVariable:
         topic_code=content_json["topic_code"],
         caveat_text=content_json.get("caveat_text", ""),
         caveat_link=content_json.get("caveat_link", ""),
-        base_url=content_json.get("base_url", ""),
+        base_url_2021=content_json.get("base_url_2021", ""),
+        base_url_2021_dev_override=content_json.get("base_url_2021_dev_override", ""),
+        base_url_2011_2021_comparison=content_json.get("base_url_2011_2021_comparison", ""),
+        base_url_2011_2021_comparison_dev_override=content_json.get("base_url_2011_2021_comparison_dev_override", ""),
         classifications=[classification_from_content_json(
             c) for c in content_json["classifications"]],
     )

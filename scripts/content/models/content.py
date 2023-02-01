@@ -66,14 +66,17 @@ def content_from_spec_and_metadata(spec: dict, input_metadata_files_dir: str) ->
     # cycle through and produce content for all content json referenced in spec
     for content_json_name, content_json_spec in spec["content_json"].items():
         print(f"building {content_json_name}")
+        meta = {
+            "created_at": now,
+            "release": f"{content_json_name}-{spec['cantabular_metadata_dir']}",
+        }
+        additional_content_jsons = content_json_spec.get("additional_content_jsons", [])
+        if additional_content_jsons:
+            meta["additional_content_jsons"] = additional_content_jsons
         all_content.append(
             CensusContent(
                 content_json=content_json_name,
-                meta={
-                    "created_at": now,
-                    "release": f"{content_json_name}-{spec['cantabular_metadata_dir']}",
-                    "additional_content_jsons": content_json_spec.get("additional_content_jsons", [])
-                },
+                meta=meta,
                 content=variable_groups_from_spec(content_json_spec["content"], variables, classifications, categories)
             )
         )

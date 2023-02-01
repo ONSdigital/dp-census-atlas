@@ -2,81 +2,72 @@
 
 ## Overview
 
-Utility scripts for making and editing content.json files for consumption by the atlas. These files hold the census metadata the atlas needs to fetch and display census data.
-
-# 1a. RUN SCRIPT USING CONDA
+Utility scripts for making and editing content.json files for consumption by the census maps. These files hold the census metadata the atlas needs to fetch and display census data.
 
 ## Requirements
 
-- Anaconda[https://www.anaconda.com/]
+This script can be run using either [Anaconda](https://www.anaconda.com/) or [pipenv](https://pipenv.pypa.io/en/latest/) for dependency management.
 
-## Getting started
+### Conda
 
-## How to use
+- [Anaconda](https://www.anaconda.com/)
 
-### installing dependencies
-
-- Start up a new anaconda shell
-- Install dependencies into new virtual env with `conda env create --file environment.yml`
-- Activate conda env with `conda activate census-maps-content-generation-env`
-
-### Make new content json
-
-1. Ensure requirements and dependencies are installed
-2. Download latest cantabular metadata archive from [https://confluence.ons.gov.uk/pages/viewpage.action?spaceKey=ODADH&title=Upload+Metadata+Files+to+support+NOMIS%2C+Testing+etc](https://confluence.ons.gov.uk/pages/viewpage.action?spaceKey=ODADH&title=Upload+Metadata+Files+to+support+NOMIS%2C+Testing+etc)
-3. Unzip cantabular metadata into a new directory within `input_metadata_files`
-4. Update the the `cantabular_metadata_dir` value in `2021-content-spec.json` to the name of the new unzipped metadata archive made in step 2 (NB just the name o the unzipped directory, not its full path - the scripts add the full path in at runtime).
-5. Run the scripts with `python make_content_jsons.py 2021-content-spec.json`
-6. New versions of the content jsons will appead in the `output_content_jsons` directory.
-
-### running unit tests
-
-1. Ensure requirements and dependencies are installed
-2. Invoke tests with `python -m pytest` (or in verbose mode with `python -m pytest -v`)
-
-# 1b. RUN SCRIPT USING PIPENV
-
-## Requirements
+### Pipenv
 
 - Pyenv - version manager for Python ([installation instructions](https://github.com/pyenv/pyenv#installation)). This is needed to ensure the right version of python is used.
 - Pipenv - npm-like Python dependencies-manager / script runner ([installation instructions](https://pipenv.pypa.io/en/latest/#install-pipenv-today) - NB recomend global `pip install pipenv` over the user-specific install in the instructions).
 - Python 3.11.0 (although Pyenv + Pipenv should ensure this version is installed).
 
-## Getting started
-
 ## How to use
 
-### installing dependencies
+### Installing dependencies
 
-- Ensure requirements are installed
-- Install dependencies into new virtual env with `pipenv install`
+#### Conda
 
-### Make new content json
+- Ensure requirements are installed.
+- Start up a new anaconda shell.
+- Install dependencies into new virtual env defined by the checked-in `environment.yml` file with `conda env create --file environment.yml`.
+- Activate conda env with `conda activate census-maps-content-generation-env`.
+
+#### Pipenv
+
+- Ensure requirements are installed.
+- Install dependencies into new virtual env defined by the checked-in `Pipfile` with `pipenv install`.
+
+### Make or update content json
 
 1. Ensure requirements and dependencies are installed
 2. Download latest cantabular metadata archive from [https://confluence.ons.gov.uk/pages/viewpage.action?spaceKey=ODADH&title=Upload+Metadata+Files+to+support+NOMIS%2C+Testing+etc](https://confluence.ons.gov.uk/pages/viewpage.action?spaceKey=ODADH&title=Upload+Metadata+Files+to+support+NOMIS%2C+Testing+etc)
 3. Unzip cantabular metadata into a new directory within `input_metadata_files`
 4. Update the the `cantabular_metadata_dir` value in `2021-content-spec.json` to the name of the new unzipped metadata archive made in step 2 (NB just the name o the unzipped directory, not its full path - the scripts add the full path in at runtime).
-5. Run the scripts with `pipenv run make-content-jsons`
-6. New versions of the content jsons will appead in the `output_content_jsons` directory.
+5. Run the scripts:
+   - **Conda**: `python make_content_jsons.py 2021-content-spec.json`
+   - **Pipenv**: `pipenv run make-content-jsons`
+6. New versions of the content jsons will appear in the `src/data/staticContentJsons` directory (relative to project root).
 
 ### running unit tests
 
 1. Ensure requirements and dependencies are installed
-2. Invoke tests with `pipenv run tests` (or in verbose mode with `pipenv run testsv`)
+2. Invoke tests:
+   - **Conda**: `python -m pytest` (or in verbose mode with `python -m pytest -v`)
+   - **Pipenv**: `pipenv run tests` (or in verbose mode with `pipenv run testsv`)
 
-# 2. PUBLISH RESULTS
-
-## Uploading new map content
+### Publishing content json
 
 The content jsons need to be in two places to be loaded by various instances of census maps:
 
-1. **local/dev**: The local instance of census maps loads content json directly from the scripts `output_content_jsons` directory. so no additional action beyond checking in the new versions is needed for local.
-2. **publishing-preview/prod**: The publishing preview and production instances of census maps load their content json from florence visualisations. There are different visualisations for different content jsons. The shell script `make-florence-zips.sh` will produce a zip file named for each florence visualisation (plus a timestamp) containing the content json for each when executed with `./make-florence-zips.sh`. See the script itself for more details.
+1. **local/dev**: The local instance of census maps loads content json directly from the `src/data/staticContentJsons` directory that the script outputs. When updating an existing content json, no additional action beyond checking in the new versions is needed for local. If you have added a new content json, see [Adding new content json](#adding-new-content-json), below.
+2. **publishing-preview/prod**: The publishing preview and production instances of census maps load their content json from florence visualisations. There are different visualisations for different content jsons. The shell script `make-florence-zips.sh` will produce a zip file named for each florence visualisation (plus a timestamp) containing the content json for each when executed with `./make-florence-zips.sh`. See the script itself for more details. If the zip script cannot be run (if on a windows machine, for example), the content json must be manually added to the root level of a zip file. The zipfile must then be uploaded to florence as either a new visualisation or an update to an existing one.
 
-## Changing census maps content
+## Updating census maps content
 
-### Changing variable groups, variables, classifications or dropping categories from classifications
+### Adding fake data for local dev or netlify
+
+The file `input_metadata_files/variable_tile_data_base_urls.csv` (see [Changing custom census maps metadata](#changing-custom-census-maps-metadata-legend-strings-short-variable-descriptions-etc), below) holds the urls from which census data will be fetched. There are two url types for each variable, `2021_data_base_url`, which is for standard census 2021 data and should _always_ have a value, and `2011_2021_comparison_data_base_url`, which is for the 2011-2021 comparison, and will only have a value if that data is avaialble for that variable.
+
+In addition, there area two more columns, `2021_data_fake_dev_override` and `2011_2021_comparison_data_base_url` - these urls, if values are supplied, will overwrite the normal urls when running census maps either locally (with `npm run dev`) or on Netlify. Adding values for these urls allows you to load fake (i.e. unsensitive) data for development work and public feature demos.
+
+### Updating variable groups, variables, classifications or dropping categories from classifications
 
 The master list of census maps content is found in the `2021-content-spec.json` file, in `content_json`. This is a
 heirarchy of census content:
@@ -156,10 +147,55 @@ Census maps content uses several types of custom metadata not found in the ONS /
 defined in the `2021-content-spec.json` are assumed to be fully defined and are not referenced int he additiol a)
 
 1. `category_legend_strings.csv`: Legend strings used for each category.
-2. `classification_2011_comparison_data_availability.csv`: Whether or not 2011 comparison data is available for each classification, and for which geographies.
-3. `classification_available_geotypes.csv`: which geography types are available for each classification.
+2. `classification_2011_2021_comparison_data_available_geotypes.csv`: Whether or not census 2011 comparison data is available for each classification, and for which geographies.
+3. `classification_2021_data_available_geotypes.csv`: which geography types are available for each census 2021 data classification.
 4. `classification_data_downloads.csv`: where data for each classification can be downloaded (NB not all classifications will have data downloads and thats fine).
 5. `variable_caveats.csv`: Warnings about data quality for variables (NB not all variables will have warnings and that's fine).
 6. `variable_map_type_default_classifications.csv`: Which classifications are the default ones for different map visualisation types.
 7. `variable_short_descriptions.csv`: Short descriptions for each variable.
-8. `variable_tile_data_base_urls.csv`: S3 urls where the data for each variable can be found.
+8. `variable_tile_data_base_urls.csv`: S3 urls where the data for each variable can be found (both 2021 data and 2011 comparison data, when available), including any fake data overrides used in local dev or netlify. (see [Adding fake data](#adding-fake-data-for-local-dev-or-netlify), above)
+
+## Adding new content json
+
+To add an entirely new content json file, add a new object to the `content_json` array in the `2021-content-spec.json` file. This new object should have (minimally) a `content` array containing variable group definitions, as explained in the [Updating variable groups](#updating-variable-groups-variables-classifications-or-dropping-categories-from-classifications) section, above.
+
+The new content json will be written to `src/data/staticContentJsons` along with the standard `2021-MASTER.json`. This will need to be published
+To have this content json read by the census maps, there are two options, one which requires a change to the census maps code, and one which does not.
+
+### Code change: Loading new content json by hardcoding a reference into src/data/content.ts
+
+To add a hardcoded reference to the new content json:
+
+1. Update `src/data/staticContentJsons/index.ts` with an additional import statement for the new json, and an additional value in the exported index object.
+2. Update the exported array in `content.ts` with a new object detailing your new content json. It must have these properties (see [Publishing content json](#publishing-content-json), above, for more details):
+
+   ```js
+   {
+     devContentJsonUrl: "the name of the content json file goes here",
+     webContentJsonUrl: "the published url of the florence visulisation goes here",
+     publishingContentJsonUrl: "the preview url of the florence visulisation goes here",
+   }
+   ```
+
+   e.g.
+
+   ```js
+   {
+     devContentJsonUrl: "2021-MASTER.json",
+     webContentJsonUrl: "https://www.ons.gov.uk/visualisations/censusmapsmasterconfig/2021-MASTER.json",
+     publishingContentJsonUrl:
+       "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusmapsmasterconfig/2021-MASTER.json",
+   }
+   ```
+
+   NB - as the name suggests, the value for `devContenJsonUrl` can also be a full url (e.g. an s3 url) if you want local dev or netlify to fetch your new content json from a remote source. The content-loading routine will assume anything that doesn't start with `http` means that the content json is to be loaded from the `src/data/staticContentJsons` folder.
+
+   _NB: You must make these harcoded changes if you want your new content json to be available locally or on Netlify as a static import!!_
+
+### No code change: Loading new content json as parasitic load defined in 2021-MASTER.json
+
+If you want to have your new content json loaded without making any code changes, you can add an object to the `additional_content_jsons` array found in the definition for the `2021-MASTER` content json in `2021-content-spec.json`. This object must have the same properties as if [hardcoded into src/data/content.ts](#code-change-loading-new-content-json-by-hardcoding-a-reference-into-srcdatacontentts) (see above).
+
+When `2021-MASTER.json` is loaded, any additional content json referened in its `additional_content_jsons` array will be loaded as a side-effect.
+
+_NB: Without making code changes, you cannot use static loading for your new content json for local dev / netlify (as this requires both updates to content.ts etc, AND that the new content json itself is checked-in). You must therefore place your new content json somewhere publically available (e.g. s3) and add the full URL as `devContentJsonUrl` in order to load it locally or in Netlify._

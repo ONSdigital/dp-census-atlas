@@ -67,7 +67,7 @@ See the general [DP release process](https://github.com/ONSdigital/dp/blob/main/
 
 The `content.json` files list the census data that the app will show, and contain metadata (labels etc) for that content.
 
-These are generated from ONS metadata files by python scripts in the `content` directory found in the project root. See `content/README.md` for more details.
+These are generated from ONS metadata files by python scripts in the `content` directory found in the project root. See [content/README.md](https://github.com/ONSdigital/dp-census-atlas/blob/develop/scripts/content/README.md) for more details.
 
 ## Data
 

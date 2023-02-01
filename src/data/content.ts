@@ -12,10 +12,10 @@ Content objects have these properties
 };
 */
 
-// envs / instances
+// envs / instances NB - use of a simple filename for urls will result in the json being simply statically imported from
+// ./staticContentJsons/index.ts rather than fetched (as long as index.ts knows about it!)
 export default [
-  // Master (NB - use of STATIC-MASTER for urls will result in the master json being simply statically imported, rather
-  // than fetched)
+  // Master
   {
     devContentJsonUrl: "2021-MASTER.json",
     webContentJsonUrl: "https://www.ons.gov.uk/visualisations/censusmapsmasterconfig/2021-MASTER.json",

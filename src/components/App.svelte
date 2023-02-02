@@ -1,5 +1,6 @@
 <script lang="ts">
   import "mapbox-gl/dist/mapbox-gl.css";
+  import "tippy.js/dist/tippy.css";
   import "../app.css";
   import pym from "pym.js";
   import { onMount } from "svelte";

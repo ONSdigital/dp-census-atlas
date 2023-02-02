@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { tooltip } from "../actions/tooltip";
   import Icon from "./MaterialIcon.svelte";
 
   export let shortDescription: string;
@@ -17,8 +18,9 @@
 
   <button
     class="flex-none text-xl mb-0.5 group-hover:scale-125 duration-75 transition-all custom-ring"
-    title="Show full description"
-    aria-label="Show full description"
+    use:tooltip
+    title="More information"
+    aria-label="More information"
   >
     <Icon kind="info" />
   </button>

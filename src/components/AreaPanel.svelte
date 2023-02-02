@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { tooltip } from "../actions/tooltip";
   import { page } from "$app/stores";
   import { nav } from "../stores/nav";
   import { geography } from "../stores/geography";
@@ -11,7 +12,7 @@
   const toggleOpen = () => {
     open = !open;
   };
-  $: openOrCloseAreaSearchPanelText = open ? "Close area search panel" : "Open area search panel";
+  $: openOrCloseAreaSearchPanelText = open ? "Close area search" : "Open area search";
 
   const resetSelectedGeography = () => {
     deselectGeography($page.url.searchParams);
@@ -28,12 +29,15 @@
         {$geography.displayName}
       </div>
       {#if $geography?.geoType.toUpperCase() !== "EW"}
-        <div class="ml-1 text-sm bg-ons-census text-white font-bold px-1 rounded-sm">
-          <abbr title={geoTypeSingularDescriptions[$geography.geoType]} class="no-underline"
-            >{$geography.geoType.toUpperCase()}</abbr
-          >
+        <div
+          class="ml-1 text-sm bg-ons-census text-white font-bold px-1 rounded-sm"
+          use:tooltip={{ content: geoTypeSingularDescriptions[$geography.geoType], placement: "bottom" }}
+          title={geoTypeSingularDescriptions[$geography.geoType]}
+        >
+          {$geography.geoType.toUpperCase()}
         </div>
         <button
+          use:tooltip
           on:click={resetSelectedGeography}
           title="Clear selected area"
           aria-label="Clear selected area"
@@ -43,6 +47,7 @@
         </button>
       {/if}
       <button
+        use:tooltip={{ content: openOrCloseAreaSearchPanelText }}
         class="ml-auto custom-ring"
         title={openOrCloseAreaSearchPanelText}
         aria-label={openOrCloseAreaSearchPanelText}

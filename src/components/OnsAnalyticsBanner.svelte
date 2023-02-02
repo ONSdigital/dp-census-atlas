@@ -312,6 +312,7 @@
     border: 0;
     text-align: center;
     -webkit-appearance: none;
+    appearance: none;
     transition: background-color 0.25s ease-out;
     text-decoration: none;
     line-height: 24px;

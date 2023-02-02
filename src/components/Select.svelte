@@ -24,7 +24,7 @@
   export let fontSize = "1.1em";
   export let fontSizeInput = ".91em";
   export let height = 48;
-  export let maxSelected = 4;
+  export const maxSelected = 4;
 
   const getOptionLabel =
     groupKey && !groupItems

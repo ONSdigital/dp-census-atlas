@@ -1,9 +1,11 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import { setContentStoreOnce } from "../../data/setContentStore";
+  import { content } from "../../stores/content";
+
+  export let data;
 
   onMount(async () => {
-    setContentStoreOnce();
+    content.set(data.contentForStore);
   });
 </script>
 

@@ -1,0 +1,655 @@
+.Dd $Mdocdate$
+.Dt mktiles2 1
+.Os
+.Sh NAME
+.Nm mktiles2
+.Nd generate Census Atlas data files
+.Sh SYNOPSIS
+.Nm
+.Op Fl c Ar content.json
+.Op Fl C Ar classcode
+.Op Fl M
+.Op Fl P Ar prefix
+.Op Fl I Ar indir
+.Op Fl F
+.Op Fl R
+.Op Fl i
+.Op Fl O Ar outdir
+.Op Fl f
+.Sh DESCRIPTION
+.Nm
+generates data files used by the Census Atlas web application.
+It loads census metrics, geographic data, and control files, then produces a set of files containing data in a structure usable by the Census Atlas.
+.Nm
+recognises the following flags:
+.Bl -tag -width Ds
+.It Fl c Ar content.json
+Path to the
+.Pa content.json
+file.
+This defaults to
+.Ar outdir Ns / Ns Li content.json .
+.It Fl C Ar classcode
+Only use categories in
+.Pa content.json
+that are under the classification
+.Ar classcode .
+Normally all categories in under all classifications
+.Pa content.json
+will be used.
+.Pp
+Use this flag when category codes are duplicated in different classifications.
+.It Fl M
+Match categories from input files based on name rather than code.
+.Pp
+Categories are selected from metrics input files when their column headings string match category codes in
+.Pa content.json .
+When
+.Fl M
+is used, categories will be selected when their column headings match category names instead.
+.It Fl P Ar prefix
+When
+.Fl M
+is used,
+.Ar prefix
+is prepended to category names found in
+.Pa content.json
+and then the prefix+catcode combination is matched against column headings in the metrics files.
+.Pp
+For example, the column headings in the metrics file might be like this
+.Ql "2021 Value change: Household is not deprived in any dimension" ,
+where they are prefixed with
+.Ql "2021 Value change: " .
+If
+.Pa content.json
+only names
+.Ql "Household is not deprived in any dimension" ,
+without the prefix, you can match these categories by providing a prefix to add to
+category names found in
+.Pa content.json .
+.It Fl I Ar indir
+Read input files from
+.Ar indir .
+Defaults to
+.Pa ./in/ .
+See below for the structure of the input directory.
+.It Fl F
+Generate fake metrics.
+Instead of reading metrics files, generate random values.
+Values will be produced for all geographies in the loaded geojson files against all
+the categories found in
+.Pa content.json .
+.It Fl R
+Produce ratios instead of metrics values.
+See
+.Sx Calculating Ratios
+below for how ratios are calculated.
+.It Fl i
+Ignore missing categories in metrics files.
+Normally it is an error if a category is named in
+.Pa content.json
+but not found in any metrics files.
+With
+.Fl i
+missing values will just be omitted from the output files.
+(If there is no category data for any of the geos for a tile, no data tile will be produced at all.)
+.It Fl O Ar outdir
+Output directory.
+Defaults to
+.Pa ./out/ .
+This directory will be created if it doesn't exist.
+See below for the structure of the output directory.
+.It Fl f
+Force using an existing output directory even if it already has content.
+Normally it is an error if the output directory already contains any files or directories.
+.El
+.Ss Contents of the input directory
+.Nm
+expects the input directory
+.Ar indir
+to contain a number of files.
+.Bl -tag -width Ds
+.It Grid file
+The grid file
+.Pa DataTileGrid.json
+describes output tiles covering geographic areas.
+Features in geojson files which overlap these tiles will be included in the corresponding output data tiles.
+Each tile has a name and a bounding box, and tiles are grouped by level (LAD, LSOA, MSOA, OA).
+Here is an example snippet of a
+.Pa DataTileGrid.json
+file:
+.Bd -literal -offset indent
+{
+  "lad": [
+    {
+      "tilename": "ew",
+      "bbox": {
+        "east": 1.76,
+        "north": 58.64,
+        "west": -7.57,
+        "south": 49.92
+      }
+    }
+  ],
+  "msoa": [
+    {
+      "tilename": "61-43-7",
+      "bbox": {
+        "east": -5.625,
+        "north": 50.73645513701065,
+        "west": -8.4375,
+        "south": 48.922499263758255
+      }
+    },
+  . . .
+.Ed
+.Pp
+Recognised geography levels are
+.Ql lad ,
+.Ql lsoa ,
+.Ql msoa ,
+and
+.Ql oa .
+The
+.Va bbox
+values are latitude and longitude.
+.Pp
+In the example above, features within
+.Pa msoa.geojson
+which overlap the bounding box of MSOA tile
+.Ql 61-43-7
+will be included in
+.Pa tiles/msoa/61-43-7/ Ns Va category Ns .csv .
+(See a full description of the output directory structure below.)
+.It geojson files
+.Nm
+expects at least one of the following geojson files to exist in
+.Ar indir :
+.Pp
+.Bl -tag -width lsoa.geojson -offset indent -compact
+.It lad.geojson
+.It lsoa.geojson
+.It msoa.geojson
+.It oa.geojson
+.El
+.Pp
+These are standard geojson files.
+The name of the geojson files indicates the geographic level of features within the file.
+All features in
+.Pa oa.geojson
+will be considered OAs, for example.
+.Pp
+Each feature is expected to have certain standard properties indicating its geography code and place name.
+The expected properties vary by geographic level.
+.Pp
+The table below show which properties are required.
+Where multiple property names are shown, only one is needed.
+For example, only one of
+.Ql lad11nm ,
+.Ql lad17nm ,
+or
+.Ql lad21nm
+is needed to convey the English place name for features in
+.Pa lad.geojson .
+Property names are case-insensitive.
+.Bl -column -offset indent "Geographic" "msoa21cd" "msoa21nm" "msoa21nmw"
+.It Geographic Ta          Ta English  Ta Welsh
+.It level      Ta geocode  Ta name     Ta name
+.It ---------- Ta -------  Ta -------- Ta ---------
+.It LAD        Ta lad11cd  Ta lad11nm  Ta lad11nmw
+.It            Ta lad17cd  Ta lad17nm  Ta lad17nmw
+.It            Ta lad21cd  Ta lad21nm  Ta lad21nmw
+.It            Ta          Ta          Ta
+.It LSOA       Ta lsoa11cd Ta lsoa11nm Ta lsoa11nmw
+.It            Ta lsoa21cd Ta lsoa21nm Ta lsoa21nmw
+.It            Ta          Ta          Ta
+.It MSOA       Ta msoa11cd Ta msoa11nm Ta msoa11nmw
+.It            Ta msoa21cd Ta msoa21nm Ta msoa21nmw
+.It            Ta          Ta          Ta
+.It OA         Ta oa11cd   Ta oa11nm   Ta oa11nmw
+.It            Ta oa21cd   Ta oa21nm   Ta oa21nmw
+.El
+.Pp
+Here is an example snippet showing a feature's properties.
+This is part of a
+.Pa lad.geojson
+file.
+The geographic code is
+.Ql E06000001 ,
+and the English place name is
+.Ql Hartlepool .
+There isn't a Welsh place name, but there is a blank property.
+.Bd -literal -offset indent
+{
+  "type": "Feature",
+  "properties": {
+    "OBJECTID": 1,
+    "LAD21CD": "E06000001",
+    "LAD21NM": "Hartlepool",
+    "LAD21NMW": " ",
+    "BNG_E": 447160,
+    "BNG_N": 531474,
+    "LONG": -1.27018,
+    "LAT": 54.67614,
+    "GlobalID": "{A0067727-6C25-4D75-BBE3-839CF676A069}",
+    "SHAPE_Length": 0.8685706369282687,
+    "SHAPE_Area": 0.013064964649121342
+  },
+  "geometry": {
+    "type": "MultiPolygon",
+  . . .
+.Ed
+.Pp
+See
+.Sx SEE ALSO
+below for how to download geojson files from the Open Geography Portal.
+.It MSOA names (optional)
+The place names in
+.Pa msoa.geojson
+as downloaded from the Open Geography Portal (see
+.Sx SEE ALSO
+below) are technical names and not necessarily common names.
+You can supply a mapping file to change the names to more common ones.
+.Pp
+The mapping file is a CSV with headers indicating the MSOA geography code and common names.
+In this mapping file, the columns may be in any order, and there may be extra columns which will be ignored.
+.Pp
+This table shows which columns convey which information:
+.Bl -column -offset indent "English common name" "msoa11hclnmw or msoa21hclnmw"
+.It Data                Ta CSV header
+.It ------------------- Ta ----------------------------
+.It Geography code      Ta msoa11cd or msoa21cd
+.It English common name Ta msoa11hclnm or msoa21hclnm
+.It Welsh common name   Ta msoa11hclnmw or msoa21hclnmw
+.El
+.Pp
+For example, below are the first two lines of an MSOA names file.
+The first, fourth and fifth columns will be used to match common names to geography codes, and the rest of the columns will be ignored.
+.Bd -literal
+msoa21cd,msoa21nm,msoa21nmw,msoa21hclnm,msoa21hclnmw,localauthorityname,type
+E02006534,Adur 001,Adur 001,Hillside,,Adur,Present in 2011
+.Ed
+.Pp
+See
+.Sx SEE ALSO
+below for a link to the House of Commons Library MSOA Names page where you can download
+.Pa msoa-names.csv .
+.It LAD recodes (optional)
+Sometimes the geography codes in
+.Pa lad.geojson
+need to be mapped to different codes.
+In these cases, create
+.Pa recode-lads.csv
+to map old codes to new ones.
+This file should have a header line, and then a line for each recode, like this:
+.Bd -literal -offset indent
+FromCode,ToCode
+E06000057,E06000048
+.Ed
+.Pp
+In that example, when a feature with the geography code
+.Ql E06000057
+is loaded, its geography code will be changed to
+.Ql E06000048 ,
+and metrics will match against
+.Ql E06000048 .
+.It content.json (may be elsewhere)
+The
+.Pa content.json
+file contains the categories that will be included in the output files.
+This file is used by the Census Maps application, so it has a lot more information than just categories.
+Categories (or category names) in this file are matched against category headings in metrics CSV files.
+.Pp
+There have been three versions of this file as Census Maps has developed.
+They differ in how deep the classification/category objects are nested.
+The main thing to know is that the classification/category relationship looks like this:
+.Bd -literal -offset indent
+"classifications": [
+  "code": "classification code",
+  "categories": [
+    {
+      "name": "category name",
+      "code": "category code",
+    }
+  ]
+]
+.Ed
+.Pp
+Depending on
+.Fl M ,
+either the category code or category name is matched against headings in metrics files.
+And when
+.Fl C Ar classcode
+is used, only categories within the classification code matching
+.Ar classcode
+will be used.
+.It Metrics files
+All
+.Pa .csv
+files in
+.Ar indir ,
+except for
+.Pa msoa-names.csv
+are loaded as metrics files.
+These are CSV files with headers, the first of which must be
+.Ql GeographyCode .
+All other columns may be matched to category codes or names from
+.Pa content.json ,
+although any unreferenced columns are ignored.
+.Pp
+The
+.Ql GeographyCode
+column name is case-insensitive, and may include spaces, as in
+.Ql "geography code" ,
+and so on.
+.Pp
+Each line contains metrics for a single geography, whose code is in the first column.
+Here is an example:
+.Bd -literal -offset indent
+GeographyCode,category1,category2
+E06000057,0.5,0.75
+.Ed
+.El
+.Ss Structure of the output directory
+.Nm
+produces a directory structure under
+.Ar outdir
+like this:
+.Bl -tag -width Ds
+.It tiles (directory)
+The
+.Pa tiles
+directory holds "data tiles".
+These are small subsets of census data in a directory structure that matches the geographic level and tile name in
+.Pa DataTileGrid.json .
+The structure is
+.Pp
+.Dl tiles Ns / Ns Va level Ns / Ns Va tilename Ns / Ns Va category Ns .csv
+.Pp
+.Va category
+comes from
+.Pa content.json .
+Every tile in
+.Pa DataTileGrid.json
+gets its own complete set of
+category files.
+.Pp
+These data tiles contain census data for a single category, and only include geographies from geojson that overlap the tile's bounding box.
+.Pp
+Here is an example file named
+.Pa tiles/lad/ew/uk_armed_forces-001.csv :
+.Bd -literal -offset indent
+geography_code,uk_armed_forces-001
+E06000001,4.1
+E06000002,3
+E06000003,4.9
+E06000004,4
+E06000005,4.9
+E06000006,3.5
+E06000007,3
+E06000008,2.3
+E06000009,4.2
+.Ed
+.Pp
+In the heading row, the first heading is always
+.Ql geography_code ,
+and the second heading is the category code.
+.Pp
+See
+.Sx SEE ALSO
+below for the location of downloadable metrics files.
+.It breaks (directory)
+The
+.Pa breaks
+directory holds ckmeans breakpoints and min/max values.
+The structure is
+.Pp
+.Dl breaks Ns / Ns Va level Ns / Ns Va category Ns .json .
+.Pp
+.Va level
+is the geographic level
+.Ql lad ,
+.Ql lsoa ,
+.Ql msoa ,
+or
+.Ql oa .
+.Va category
+is the category code from
+.Pa content.json .
+Each geographic level directory will have a file for each category in
+.Pa content.json .
+Level directories will only be created when the corresponding geojson file is in
+.Ar indir .
+.Pp
+As an example, if
+.Ar indir
+contains
+.Pa lad.geojson
+and
+.Pa msoa.geojson ,
+and
+.Pa content.json
+lists the
+.Ql uk_armed_forces-001
+and
+.Ql uk_armed_forces-002
+categories ,
+then the following four files will be produced:
+.Pp
+.Bl -tag -width msoa/uk_armed_forces-001.json -offset indent -compact
+.It lad/uk_armed_forces-001.json
+.It lad/uk_armed_forces-002.json
+.It msoa/uk_armed_forces-001.json
+.It msoa/uk_armed_forces-002.json
+.El
+.Pp
+The metrics values for all geographies in each geographic level are included in the computations.
+.Pp
+Here is an example output file
+.Pa breaks/lad/uk_armed_forces-001.json :
+.Bd -literal -offset indent
+{
+    "uk_armed_forces-001": {
+        "LAD": [
+            1.5,
+            2.7,
+            3.9,
+            6.2,
+            11.1
+        ],
+        "LAD_min_max": [
+            0.4,
+            11.1
+        ]
+    }
+}
+.Ed
+.It breaksCkmeans (directory)
+The
+.Pa breaksCkmeans
+directory holds ckmeans breakpoints in a slightly different format than the ones in the
+.Pa breaks
+directory.
+.Pa breaksCkmeans
+files only hold the minimum value and the five breaks.
+This is how the same file used in the breaks example above looks in
+.Pa breaksCkmeans :
+.Bd -literal -offset indent
+[
+    0.4,
+    1.5,
+    2.7,
+    3.9,
+    6.2,
+    11.1
+]
+.Ed
+.Pp
+The
+.Pa breaksCkmeans
+directory structure is the same as
+.Pa breaks .
+.It geoLookup.json
+The
+.Pa geoLookup.json
+file is a listing of all geographies found in the geojson files.
+It is a json array of geographies that look like this:
+.Bd -literal -offset indent
+{
+    "en": "Hartlepool",
+    "geoType": "LAD",
+    "geoCode": "E06000001"
+}
+.Ed
+.El
+.Ss Calculating Ratios
+When
+.Fl R
+is given on the command line, the output data tiles will contain ratios instead of values taken directly from the metrics files.
+The ratio is the metric value divided by the total for that geography.
+.Pp
+For example, if a line in the metrics file looks like this:
+.Bd -literal -offset indent
+GeographyCode,QS402EW0001,QS402EW0012,QS402EW0013,QS402EW0014
+E06000001,12,3,6,3
+.Ed
+.Pp
+the ratio for
+.Ql QS402EW0012
+will be 3/12 (0.25).
+Data tiles for the geography code
+.Ql E06000001
+and category
+.Ql QS402EW0012
+will have the value 0.25 (its ratio), not 3 (its value).
+.Pp
+In order for this to work, category codes must fit a certain convention so
+.Nm
+knows which column is the totals column.
+Because the
+.Fl R
+functionality was used during development with 2011 data, the convention follows 2011 category codes.
+The convention for category codes is:
+.Bd -literal -offset indent
+.Va upper-case Ns + Ns Va digits Ns + Ns Va upper-case  Ns + Ns Va final-digits
+.Ed
+.Pp
+Totals columns are those where
+.Va final-digits
+has a value of 1, with any number of leading zeros.
+For example,
+.Ql QS402EW0001
+is a totals category because the last numeric part has a value of 1.
+.Ss Operation
+These are the processing steps
+.Nm
+takes when producing output files.
+.Bl -enum
+.It
+Load
+.Pa content.json
+.Pp
+Category codes and names are extracted from
+.Pa content.json .
+If
+.Fl C
+is used, then only the categories in the given classification will be extracted.
+.Pp
+If
+.Fl M
+is used, then an internal table is set up to map category names to codes.
+.It
+Load the grid file
+.Pp
+Tiles from
+.Pa DataTileGrid.json
+are loaded.
+.It
+Set up notional spreadsheet
+.Pp
+An internal table is set up with rows for geographies and columns for each category from
+.Pa content.json .
+This table will hold fake data, values loaded from metrics files, or ratios calculated from metrics files.
+.It
+Load metrics files
+.Pp
+If we are not generating fake data, then metrics files are loaded.
+As each file is loaded, cells in the notional spreadsheet are populated with values from the file.
+Only cells from categories that have been extracted from
+.Pa content.json
+are loaded.
+Extra columns are ignored.
+.It
+Load geojson files
+.Pp
+Optional MSOA renames and LAD recodes are applied while the geojson is loaded.
+.Pp
+A bounding box is calculated for each feature that doesn't already have one.
+.It
+Generate geoLookup.json
+.It
+Generate fake data
+.Pp
+If
+.Fl F
+was given, fake data is generated for every cell in the notional spreadsheet.
+Each cell gets a random floating point value between 0 and 1.
+.It
+Calculate ratios
+If
+.Fl R
+was given, then the cell contents of non-totals cells are recalculated as the ratio
+of their original value and the total value.
+See
+.Sx Calculating Ratios
+above.
+.It
+Generate data tiles
+.Pp
+Data tiles are generated based on the bounding boxes from the Grid file and the
+bounding boxes of features in the geojson files.
+.It
+Generate breaks files
+.El
+.Sh FILES
+.Ss Input files
+.Bl -tag -width DataTileGrid.json -compact
+.It DataTileGrid.json
+.It lad.geojson
+.It lsoa.geojson
+.It msoa.geojson
+.It oa.geojson
+.It msoa-names.csv
+.It recode-lads.csv
+.It content.json
+.It *.csv
+.El
+.Ss Output files
+.Bl -tag -width tiles/level/tilename/category.csv -compact
+.It tiles/level/tilename/category.csv
+.It breaks/level/category.json
+.It breaksCkmeans/level/category.json
+.It geoLookup.json
+.El
+.Sh EXIT STATUS
+.Ex -std
+.Sh SEE ALSO
+.Lk https://houseofcommonslibrary.github.io/msoanames/ "House of Commons Library MSOA Names"
+.Pp
+geojson files may be downloaded from the
+.Lk https://geoportal.statistics.gov.uk "ONS Open Geography Portal" .
+For LSOA, MSOA and OA files, go to "Boundaries" -> "Census Boundaries" and then select one of:
+.Bl -column -offset indent "MSOA" "Middle Layer Super Output Areas"
+.It LSOA Ta "Lower Layer Super Output Areas"
+.It MSOA Ta "Middle Layer Super Output Areas"
+.It OA   Ta "Output Areas"
+.El
+.Pp
+For LAD files, go to Boundaries -> Administrative Boundaries -> Local Authority Districts.
+.Pp
+2011 metrics files may be downloaded from
+.Lk https://www.nomisweb.co.uk "nomis" .
+Follow "2011 Data Catalogue" -> "Bulk Download Products" and then either "Quick Statistics Bulk" or "Key Statistics Bulk".
+You can then download a zip file which contains several CSV files.
+.Pp
+2021 metrics files are not directly downloadable as yet.

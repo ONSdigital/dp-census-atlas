@@ -24,8 +24,8 @@ export const getContentForStore = async (
       if (contentJson?.meta?.additional_content_jsons) {
         const additional_content_for_content_json = await Promise.all(
           contentJson.meta.additional_content_jsons.map(async (ctcfg) => {
-            const x = await fetchContentForEnv(ctcfg, isDev, isPublishing);
-            return x;
+            const contentJson = await fetchContentForEnv(ctcfg, isDev, isPublishing);
+            return contentJson;
           }),
         );
         return additional_content_for_content_json;

@@ -1,5 +1,5 @@
 import * as dsv from "d3-dsv"; // https://github.com/d3/d3/issues/3469
-import type { Bbox, Category, Classification, DataTile, GeographyData, GeoType } from "src/types";
+import type { Bbox, Category, Classification, DataTile, GeographyData, GeoType } from "../types";
 import { bboxToDataTiles } from "../helpers/spatialHelper";
 import { uniqueRoundedClassificationBreaks } from "../helpers/classificationHelpers";
 

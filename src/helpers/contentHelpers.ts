@@ -1,4 +1,125 @@
-import type { Classification, Variable, VariableGroup, ContentTree } from "../types";
+import type { Classification, Variable, VariableGroup, ContentTree, ContentConfig } from "../types";
+import staticContentJsons from "../data/staticContentJsons/index";
+
+type ContentJson = (typeof staticContentJsons)["2021-MASTER.json"];
+
+/*
+  Fetch all content.json files referenced in content.ts for the current env, return as ContentTree
+*/
+export const getContentForStore = async (
+  contentConfigs: ContentConfig[],
+  isDev: boolean,
+  isPublishing: boolean,
+): Promise<ContentTree> => {
+  // load content as specced in content configs
+  let rawContent = await Promise.all(
+    contentConfigs.map(async (ctcfg) => {
+      return fetchContentForEnv(ctcfg, isDev, isPublishing);
+    }),
+  );
+
+  // load and append any additional content jsons specced in meta.additional_content_jsons sections of the loaded content
+  const additionalRawContent = await Promise.all(
+    rawContent.map(async (contentJson) => {
+      if (contentJson?.meta?.additional_content_jsons) {
+        const additional_content_for_content_json = await Promise.all(
+          contentJson.meta.additional_content_jsons.map(async (ctcfg) => {
+            const x = await fetchContentForEnv(ctcfg, isDev, isPublishing);
+            return x;
+          }),
+        );
+        return additional_content_for_content_json;
+      }
+    }),
+  );
+
+  // combine, filter out failed loads, flatten
+  rawContent.push(...additionalRawContent.flat());
+  rawContent = rawContent.filter((c) => c != null).flat();
+
+  // extract releases and variable groups
+  const releases = rawContent.map((ct) => ct.meta.release);
+  const allVariableGroups = rawContent.flatMap((ct) => ct.content);
+
+  // merge and sort variableGroups
+  const mergedVariableGroups = mergeVariableGroups(allVariableGroups as VariableGroup[]);
+  sortVariableGroupVariables(mergedVariableGroups);
+
+  // override data base urls with any configured fake data urls if in dev/netlify. NB remove the override after use
+  // to avoid clutter
+  let fakeDataLoaded = false;
+  if (isDev) {
+    mergedVariableGroups.forEach((vg) => {
+      vg.variables.forEach((v) => {
+        if (v.base_url_2021_dev_override) {
+          fakeDataLoaded = true;
+          v.base_url_2021 = v.base_url_2021_dev_override;
+          v.base_url_2011_2021_comparison_dev_override = undefined;
+        }
+        if (v.base_url_2011_2021_comparison_dev_override) {
+          fakeDataLoaded = true;
+          v.base_url_2011_2021_comparison = v.base_url_2011_2021_comparison_dev_override;
+          v.base_url_2011_2021_comparison_dev_override = undefined;
+        }
+      });
+    });
+  }
+
+  return {
+    releases: releases,
+    variableGroups: mergedVariableGroups as VariableGroup[],
+    fakeDataLoaded: fakeDataLoaded,
+  } as ContentTree;
+};
+
+/*
+  Fetch content.json file from appropriate url for current env.
+*/
+const fetchContentForEnv = async (
+  contentConfig: ContentConfig,
+  isDev: boolean,
+  isPublishing: boolean,
+): Promise<ContentJson> => {
+  // set appropriate content json url
+  let contentJsonUrl = contentConfig.webContentJsonUrl;
+  if (isDev) {
+    contentJsonUrl = contentConfig.devContentJsonUrl;
+  } else if (isPublishing) {
+    contentJsonUrl = contentConfig.publishingContentJsonUrl;
+  }
+
+  // if content json url is blank, skip this (means that the current content is not configured for this env)
+  if (contentJsonUrl === "") {
+    return null;
+  }
+
+  // load from static if not url
+  if (!contentJsonUrl.startsWith("http")) {
+    return staticContentJsons[contentJsonUrl];
+  }
+
+  // otherwise fetch content (NB try-catch as responses _can_ be 200-status, but really failed and not JSON...)
+  try {
+    const resp = await fetch(contentJsonUrl, {
+      cache: "no-cache", // always ask for latest content files
+    });
+    if (resp.status != 200) {
+      console.log(`Content json file ${contentJsonUrl} could not be fetched.`);
+      return null;
+    } else {
+      const contentJson = await resp.json();
+      if (typeof contentJson === "string") {
+        console.log(`Content json file ${contentJsonUrl} could not be fetched: ${contentJson}.`);
+        return null;
+      } else {
+        return contentJson;
+      }
+    }
+  } catch (e) {
+    console.log(`Error fetching / parsing content json file ${contentJsonUrl}: ${e}`);
+    return null;
+  }
+};
 
 /*
   Iterate over list of variable groups and merge variable groups with the same name.

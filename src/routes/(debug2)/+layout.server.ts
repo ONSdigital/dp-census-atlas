@@ -19,7 +19,7 @@ export async function load({ fetch, request }) {
         const resp = await fetch(ctcfg.contentJsonUrl, {
           cache: "no-cache", // always ask for latest content files
           headers: {
-            cookie: request.headers.get("cookie") || "",
+            cookie: request.headers.get("cookie") || undefined,
           },
         });
         if (resp.status != 200) {

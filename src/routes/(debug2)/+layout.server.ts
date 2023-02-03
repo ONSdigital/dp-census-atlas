@@ -7,7 +7,7 @@ import {
 import type { ContentConfig, ContentTree, VariableGroup } from "../../types";
 
 /** @type {import('./$types').LayoutServerLoad} */
-export async function load({ fetch }) {
+export async function load({ fetch, request }) {
   const envName = process.env["ENV_NAME"] || import.meta.env.VITE_ENV_NAME;
   const isPublishing = (process.env["IS_PUBLISHING"] || "false").toLowerCase() === "true";
   const envMode = isPublishing ? "publishing" : "web";
@@ -18,6 +18,7 @@ export async function load({ fetch }) {
       try {
         const resp = await fetch(ctcfg.contentJsonUrl, {
           cache: "no-cache", // always ask for latest content files
+          headers: request.headers,
         });
         if (resp.status != 200) {
           console.log(`Content json file ${ctcfg.contentJsonUrl} could not be fetched.`);

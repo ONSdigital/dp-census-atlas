@@ -10,11 +10,15 @@ export const getContentForStore = async (
   contentConfigs: ContentConfig[],
   isDev: boolean,
   isPublishing: boolean,
+  useFetch: CallableFunction = fetch,
+  fetchOpts = {
+    cache: "no-cache", // always ask for latest content files
+  },
 ): Promise<ContentTree> => {
   // load content as specced in content configs
   let rawContent = await Promise.all(
     contentConfigs.map(async (ctcfg) => {
-      return fetchContentForEnv(ctcfg, isDev, isPublishing);
+      return fetchContentForEnv(ctcfg, isDev, isPublishing, useFetch, fetchOpts);
     }),
   );
 
@@ -24,7 +28,7 @@ export const getContentForStore = async (
       if (contentJson?.meta?.additional_content_jsons) {
         const additional_content_for_content_json = await Promise.all(
           contentJson.meta.additional_content_jsons.map(async (ctcfg) => {
-            const contentJson = await fetchContentForEnv(ctcfg, isDev, isPublishing);
+            const contentJson = await fetchContentForEnv(ctcfg, isDev, isPublishing, useFetch, fetchOpts);
             return contentJson;
           }),
         );
@@ -79,6 +83,10 @@ const fetchContentForEnv = async (
   contentConfig: ContentConfig,
   isDev: boolean,
   isPublishing: boolean,
+  useFetch: CallableFunction = fetch,
+  fetchOpts = {
+    cache: "no-cache", // always ask for latest content files
+  },
 ): Promise<ContentJson> => {
   // set appropriate content json url
   let contentJsonUrl = contentConfig.webContentJsonUrl;
@@ -105,9 +113,7 @@ const fetchContentForEnv = async (
 
   // otherwise fetch content (NB try-catch as responses _can_ be 200-status, but really failed and not JSON...)
   try {
-    const resp = await fetch(contentJsonUrl, {
-      cache: "no-cache", // always ask for latest content files
-    });
+    const resp = await useFetch(contentJsonUrl, fetchOpts);
     if (resp.status != 200) {
       console.log(`Content json file ${contentJsonUrl} could not be fetched.`);
       return null;

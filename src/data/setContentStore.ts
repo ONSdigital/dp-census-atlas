@@ -1,79 +1,15 @@
 import { get } from "svelte/store";
 import { appBasePath } from "../buildEnv";
 import content from "./content";
-import { mergeVariableGroups, sortVariableGroupVariables } from "../helpers/contentHelpers";
+import { getContentForStore } from "../helpers/contentHelpers";
 import { content as contentStore } from "../stores/content";
-import type { ContentConfig, ContentTree, VariableGroup } from "../types";
-import staticContentJsons from "./staticContentJsons/index";
-
-/*
-  Fetch all content.json files referenced in content.ts for the current env (specified in a back-end env var, fetched
-  via the runtime-env endpoint). Return as array of content jsons that will later be merged.
-*/
-const fetchContent = async (contentConfig: ContentConfig[], isDev: boolean, isPublishing: boolean) => {
-  const rawContent = await Promise.all(
-    contentConfig.map(async (ctcfg) => {
-      // set appropriate content json url
-      let contentJsonUrl = ctcfg.webContentJsonUrl;
-      if (isDev) {
-        contentJsonUrl = ctcfg.devContentJsonUrl;
-      } else if (isPublishing) {
-        contentJsonUrl = ctcfg.publishingContentJsonUrl;
-      }
-
-      // if content json url is blank, skip this (means that the current content is not configured for this env)
-      if (contentJsonUrl === "") {
-        return null;
-      }
-
-      // load from static if not url
-      if (!contentJsonUrl.startsWith("http")) {
-        return staticContentJsons[contentJsonUrl];
-      }
-
-      // otherwise fetch content (NB try-catch as responses _can_ be 200-status, but really failed and not JSON...)
-      try {
-        const resp = await fetch(contentJsonUrl, {
-          cache: "no-cache", // always ask for latest content files
-        });
-        if (resp.status != 200) {
-          console.log(`Content json file ${contentJsonUrl} could not be fetched.`);
-          return null;
-        } else {
-          const contentJson = await resp.json();
-          if (typeof contentJson === "string") {
-            console.log(`Content json file ${contentJsonUrl} could not be fetched: ${contentJson}.`);
-            return null;
-          } else {
-            return contentJson;
-          }
-        }
-      } catch (e) {
-        console.log(`Error fetching / parsing content json file ${contentJsonUrl}: ${e}`);
-      }
-    }),
-  );
-
-  // load and append any additional content jsons specced in already loaded content
-  const additionalRawContent = await Promise.all(
-    rawContent.map(async (contentJson) => {
-      if (contentJson && "additional_content_jsons" in contentJson.meta) {
-        const moreContent = await fetchContent(contentJson.meta.additional_content_jsons, isDev, isPublishing);
-        return moreContent;
-      }
-    }),
-  );
-  rawContent.push(...additionalRawContent);
-
-  // filter out failed loads, flatten and return
-  return rawContent.filter((c) => c != null).flat();
-};
 
 /*
   Fetch and collate all content.json files for current env, then set them in the contentStore. NB - variableGroups are
   not expected to change during the apps runtime and so this will only set the contentStore if it is not already set!
 */
 export const setContentStoreOnce = async () => {
+  // do nothing if store already set
   if (get(contentStore)) {
     return;
   }
@@ -83,43 +19,7 @@ export const setContentStoreOnce = async () => {
   // use dev content if dev or netlify env
   const isDev = ["dev", "netlify"].includes(runtimeEnv.envName);
 
-  // fetch content
-  const rawContent = await fetchContent(content, isDev, runtimeEnv.isPublishing);
-
-  // extract all successfully loaded releases and variable groups
-  const releases = rawContent.map((ct) => ct.meta.release);
-
-  // merge variableGroups
-  const allVariableGroups = rawContent.flatMap((ct) => ct.content);
-  const mergedVariableGroups = mergeVariableGroups(allVariableGroups as VariableGroup[]);
-
-  // override data base urls with any configured fake data urls if in dev/netlify. NB remove the override after use
-  // to avoid clutter
-  let fakeDataLoaded = false;
-  if (isDev) {
-    mergedVariableGroups.forEach((vg) => {
-      vg.variables.forEach((v) => {
-        if (v.base_url_2021_dev_override) {
-          fakeDataLoaded = true;
-          v.base_url_2021 = v.base_url_2021_dev_override;
-          v.base_url_2011_2021_comparison_dev_override = undefined;
-        }
-        if (v.base_url_2011_2021_comparison_dev_override) {
-          fakeDataLoaded = true;
-          v.base_url_2011_2021_comparison = v.base_url_2011_2021_comparison_dev_override;
-          v.base_url_2011_2021_comparison_dev_override = undefined;
-        }
-      });
-    });
-  }
-
-  // alphabetically sort variables within their variableGroups
-  sortVariableGroupVariables(mergedVariableGroups);
-
-  // write to store
-  contentStore.set({
-    releases: releases,
-    variableGroups: mergedVariableGroups as VariableGroup[],
-    fakeDataLoaded: fakeDataLoaded,
-  } as ContentTree);
+  // fetch content for store and set
+  const contentForStore = await getContentForStore(content, isDev, runtimeEnv.isPublishing);
+  contentStore.set(contentForStore);
 };

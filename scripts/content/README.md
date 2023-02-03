@@ -167,15 +167,11 @@ To have this content json read by the census maps, there are two options, one wh
 To add a hardcoded reference to the new content json:
 
 1. Update `src/data/staticContentJsons/index.ts` with an additional import statement for the new json, and an additional value in the exported index object.
-2. Update the exported array in `content.ts` with a new object detailing your new content json. It must have these properties (see [Publishing content json](#publishing-content-json), above, for more details):
+2. Update the exported array in `content.ts` with a new object detailing your new content json. It must have these properties:
 
-   ```js
-   {
-     devContentJsonUrl: "the name of the content json file goes here",
-     webContentJsonUrl: "the published url of the florence visulisation goes here",
-     publishingContentJsonUrl: "the preview url of the florence visulisation goes here",
-   }
-   ```
+   - `devContentJsonUrl`: Where the content json can be loaded from for local dev or netlify.
+   - `webContentJsonUrl`: Where the content json can be loaded from for prod (this will generally be a florence url).
+   - `publishingContentJsonUrl`: Where the content json can be loaded from for publishing preview (this will always be a florence url).
 
    e.g.
 
@@ -188,9 +184,15 @@ To add a hardcoded reference to the new content json:
    }
    ```
 
-   NB - as the name suggests, the value for `devContenJsonUrl` can also be a full url (e.g. an s3 url) if you want local dev or netlify to fetch your new content json from a remote source. The content-loading routine will assume anything that doesn't start with `http` means that the content json is to be loaded from the `src/data/staticContentJsons` folder.
+The value for any of the urls _can_ be simply the name of the file (e.g. `2021-MASTER.json` in the example above). This will result in the content json being loaded from directly from `src/data/staticContentJsons` rather than being fetched remotely (NB step 1 above _must_ be done for this to work).
 
-   _NB: You must make these harcoded changes if you want your new content json to be available locally or on Netlify as a static import!!_
+The value for any of the urls _can_ also be blank (`""`). This will result in the content json being ignored in the relevant env:
+
+- `devContentJsonUrl`=`""` (Content json will not be loaded in local dev / netlify).
+- `webContentJsonUrl`=`""` (Content json will not be loaded in prod).
+- `publishingContentJsonUrl`=`""` (Content json will not be loaded in publishing preview).
+
+NB - as the name suggests, the value for `devContenJsonUrl` can also be a full url (e.g. an s3 url) if you want local dev or netlify to fetch your new content json from a remote source. The content-loading routine will assume anything that doesn't start with `http` means that the content json is to be loaded from the `src/data/staticContentJsons` folder.
 
 ### No code change: Loading new content json as parasitic load defined in 2021-MASTER.json
 
@@ -198,4 +200,4 @@ If you want to have your new content json loaded without making any code changes
 
 When `2021-MASTER.json` is loaded, any additional content json referened in its `additional_content_jsons` array will be loaded as a side-effect.
 
-_NB: Without making code changes, you cannot use static loading for your new content json for local dev / netlify (as this requires both updates to content.ts etc, AND that the new content json itself is checked-in). You must therefore place your new content json somewhere publically available (e.g. s3) and add the full URL as `devContentJsonUrl` in order to load it locally or in Netlify._
+_NB: Without making code changes, you cannot use static loading for your new content json (as this requires both updates to content.ts etc, AND that the new content json itself is checked-in). You must therefore use full URLs for all values._

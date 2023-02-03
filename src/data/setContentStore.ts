@@ -20,11 +20,18 @@ const fetchContent = async (contentConfig: ContentConfig[], isDev: boolean, isPu
       } else if (isPublishing) {
         contentJsonUrl = ctcfg.publishingContentJsonUrl;
       }
+
+      // if content json url is blank, skip this (means that the current content is not configured for this env)
+      if (contentJsonUrl === "") {
+        return null;
+      }
+
       // load from static if not url
       if (!contentJsonUrl.startsWith("http")) {
         return staticContentJsons[contentJsonUrl];
       }
-      // fetch content
+
+      // otherwise fetch content (NB try-catch as responses _can_ be 200-status, but really failed and not JSON...)
       try {
         const resp = await fetch(contentJsonUrl, {
           cache: "no-cache", // always ask for latest content files
@@ -50,7 +57,7 @@ const fetchContent = async (contentConfig: ContentConfig[], isDev: boolean, isPu
   // load and append any additional content jsons specced in already loaded content
   const additionalRawContent = await Promise.all(
     rawContent.map(async (contentJson) => {
-      if ("additional_content_jsons" in contentJson.meta) {
+      if (contentJson && "additional_content_jsons" in contentJson.meta) {
         const moreContent = await fetchContent(contentJson.meta.additional_content_jsons, isDev, isPublishing);
         return moreContent;
       }

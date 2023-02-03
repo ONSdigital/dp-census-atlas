@@ -18,7 +18,9 @@ export async function load({ fetch, request }) {
       try {
         const resp = await fetch(ctcfg.contentJsonUrl, {
           cache: "no-cache", // always ask for latest content files
-          headers: request.headers,
+          headers: {
+            cookie: request.headers.get("cookie") || "",
+          },
         });
         if (resp.status != 200) {
           console.log(`Content json file ${ctcfg.contentJsonUrl} could not be fetched.`);

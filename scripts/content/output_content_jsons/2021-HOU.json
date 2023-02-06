@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2023-01-23-16-01-56",
-    "release": "2021-HOU-ar2776-c21ew_metadata-v1-3_cantab_20230119-40"
+    "created_at": "2023-02-06-15-16-09",
+    "release": "2021-HOU-ar2776-c21ew_metadata-v1-3_cantab_20230202-43"
   },
   "content": [
     {
@@ -259,7 +259,7 @@
           "code": "heating_type",
           "slug": "type-of-central-heating-in-household",
           "desc": "The type of central heating in a household.",
-          "long_desc": "Central heating is a heating system used to heat multiple rooms in a building by circulating air or heated water through pipes to radiators or vents. Single or multiple fuel sources can fuel these systems. \n\nCentral heating systems that are unused or not working are still considered. No information is available for household spaces with no usual residents.",
+          "long_desc": "Central heating is a heating system used to heat multiple rooms in a building by circulating air or heated water through pipes to radiators or vents. Single or multiple fuel sources can fuel these systems.\n\nCentral heating systems that are unused or not working are still considered. No information is available for household spaces with no usual residents.",
           "units": "Household",
           "topic_code": "HOU",
           "classifications": [
@@ -415,7 +415,7 @@
           "code": "hh_tenure",
           "slug": "tenure-of-household",
           "desc": "Whether a household owns or rents.",
-          "long_desc": "Whether a household owns or rents the accommodation that it occupies. \n\nOwner-occupied accommodation can be:\n\n* owned outright, which is where the household owns all of the accommodation \n* with a mortgage or loan \n* part-owned on a shared ownership scheme \n\n Rented accommodation can be:\n\n* private rented (for example, rented through a private landlord or letting agent \n* social rented through a local council or housing association\n\nThis information is not available for household spaces with no usual residents.",
+          "long_desc": "Whether a household owns or rents the accommodation that it occupies.\n\nOwner-occupied accommodation can be:\n\n* owned outright, which is where the household owns all of the accommodation\n* with a mortgage or loan\n* part-owned on a shared ownership scheme\n\n Rented accommodation can be:\n\n* private rented, for example, rented through a private landlord or letting agent\n* social rented through a local council or housing association\n\nThis information is not available for household spaces with no usual residents.",
           "units": "Household",
           "topic_code": "HOU",
           "classifications": [
@@ -558,7 +558,7 @@
           "code": "number_bedrooms",
           "slug": "number-of-bedrooms",
           "desc": "The number of bedrooms in a household.",
-          "long_desc": "The number of bedrooms in a household\u2019s accommodation. \n\nThis number is not available for household spaces with no usual residents.",
+          "long_desc": "The number of bedrooms in a household\u2019s accommodation.\n\nThis number is not available for household spaces with no usual residents.",
           "units": "Household",
           "topic_code": "HOU",
           "classifications": [
@@ -621,7 +621,7 @@
           "code": "number_of_cars",
           "slug": "number-of-cars-or-vans",
           "desc": "Cars or vans owned or available for use by a household.",
-          "long_desc": "The number of cars or vans owned or available for use by household members.\n\nVehicles included:\n\n* pick-ups, camper vans and motor homes  \n* vehicles that are temporarily not working  \n* vehicles that have failed their MOT   \n* vehicles owned or used by a lodger  \n* company cars or vans if they're available for private use \n\nVehicles not included:\n\n* motorbikes, trikes, quad bikes or mobility scooters  \n* vehicles that have a Statutory Off Road Notification (SORN)  \n* vehicles owned or used only by a visitor  \n* vehicles that are kept at another address or not easily accessed  \n\nThe number of cars or vans in an area relates only to households. Cars or vans used by communal establishment residents are not counted.   \nHouseholds with 10 to 20 cars or vans are counted as having only 10.  \nHouseholds with more than 20 cars or vans were treated as invalid and a value imputed.",
+          "long_desc": "The number of cars or vans owned or available for use by household members.\n\nVehicles included:\n\n* pick-ups, camper vans and motor homes\n* vehicles that are temporarily not working\n* vehicles that have failed their MOT\n* vehicles owned or used by a lodger\n* company cars or vans if they're available for private use\n\nVehicles not included:\n\n* motorbikes, trikes, quad bikes or mobility scooters\n* vehicles that have a Statutory Off Road Notification (SORN)\n* vehicles owned or used only by a visitor\n* vehicles that are kept at another address or not easily accessed\n\nThe number of cars or vans in an area relates only to households. Cars or vans used by communal establishment residents are not counted.\nHouseholds with 10 to 20 cars or vans are counted as having only 10.\nHouseholds with more than 20 cars or vans were treated as invalid and a value imputed.",
           "units": "Household",
           "topic_code": "HOU",
           "classifications": [

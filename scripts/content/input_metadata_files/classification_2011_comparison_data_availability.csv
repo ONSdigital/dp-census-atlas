@@ -61,11 +61,11 @@ Population,2021-DEM,resident_age,resident_age_11a,"msoa,lad"
 Population,2021-DEM,resident_age,resident_age_101a,lad
 Population,2021-DEM,sex,sex,"oa,msoa,lad"
 Population,2021-MIG,age_arrival_uk,age_arrival_uk_18a,lad
-Population,2021-MIG,country_of_birth,country_of_birth_3a,"oa,msoa,lad"
+Population,2021-MIG,country_of_birth,country_of_birth_3a,lad
 Population,2021-MIG,country_of_birth,country_of_birth_8a,lad
 Population,2021-MIG,country_of_birth,country_of_birth_12a,lad
 Population,2021-MIG,country_of_birth,country_of_birth_60a,lad
-Population,2021-MIG,migrant_ind,migrant_ind,"oa,msoa,lad"
+Population,2021-MIG,migrant_ind,migrant_ind,"msoa,lad"
 Population,2021-MIG,passports_all,passports_all_4a,"msoa,lad"
 Population,2021-MIG,passports_all,passports_all_13a,"msoa,lad"
 Population,2021-MIG,passports_all,passports_all_18a,"msoa,lad"

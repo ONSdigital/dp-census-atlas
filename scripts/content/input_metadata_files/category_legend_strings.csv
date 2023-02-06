@@ -138,122 +138,122 @@ Identity,2021-EILR,Household language (English and Welsh),hh_language,hh_languag
 Identity,2021-EILR,Household language (English and Welsh),hh_language,hh_language-002,{PERCENTAGE}%,of households in {location},have,"English in England, or English or Welsh in Wales, as the main language for some but not all adults"
 Identity,2021-EILR,Household language (English and Welsh),hh_language,hh_language-003,{PERCENTAGE}%,of households in {location},have,"English in England, or English or Welsh in Wales, as the main language for no adults but some children (aged 3-15 years)"
 Identity,2021-EILR,Household language (English and Welsh),hh_language,hh_language-004,{PERCENTAGE}%,of households in {location},have,"no members that have English in England, or English or Welsh in Wales, as their main language."
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-001,{PERCENTAGE}%,of people in {location},speak,English (English or Welsh in Wales) as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-002,{PERCENTAGE}%,of people in {location},speak,Welsh or Cymraeg (in England only) as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-003,{PERCENTAGE}%,of people in {location},speak,Gaelic (Irish) as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-004,{PERCENTAGE}%,of people in {location},speak,Gaelic (Scottish) as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-005,{PERCENTAGE}%,of people in {location},speak,Manx Gaelic as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-006,{PERCENTAGE}%,of people in {location},speak,Gaelic (Not otherwise specified) as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-007,{PERCENTAGE}%,of people in {location},speak,Cornish as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-008,{PERCENTAGE}%,of people in {location},speak,Scots as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-009,{PERCENTAGE}%,of people in {location},speak,Ulster Scots as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-010,{PERCENTAGE}%,of people in {location},speak,Romany English as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-011,{PERCENTAGE}%,of people in {location},speak,Irish Traveller Cant as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-012,{PERCENTAGE}%,of people in {location},speak,French as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-013,{PERCENTAGE}%,of people in {location},speak,Portuguese as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-014,{PERCENTAGE}%,of people in {location},speak,Spanish as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-015,{PERCENTAGE}%,of people in {location},speak,Italian as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-016,{PERCENTAGE}%,of people in {location},speak,German as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-017,{PERCENTAGE}%,of people in {location},speak,Polish as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-018,{PERCENTAGE}%,of people in {location},speak,Slovak as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-019,{PERCENTAGE}%,of people in {location},speak,Czech as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-020,{PERCENTAGE}%,of people in {location},speak,Romanian as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-021,{PERCENTAGE}%,of people in {location},speak,Lithuanian as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-022,{PERCENTAGE}%,of people in {location},speak,Latvian as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-023,{PERCENTAGE}%,of people in {location},speak,Hungarian as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-024,{PERCENTAGE}%,of people in {location},speak,Bulgarian as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-025,{PERCENTAGE}%,of people in {location},speak,Greek as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-026,{PERCENTAGE}%,of people in {location},speak,Dutch as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-027,{PERCENTAGE}%,of people in {location},speak,Swedish as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-028,{PERCENTAGE}%,of people in {location},speak,Danish as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-029,{PERCENTAGE}%,of people in {location},speak,Finnish as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-030,{PERCENTAGE}%,of people in {location},speak,Estonian as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-031,{PERCENTAGE}%,of people in {location},speak,Slovenian as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-032,{PERCENTAGE}%,of people in {location},speak,Maltese as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-033,{PERCENTAGE}%,of people in {location},speak,any other European language (EU) as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-034,{PERCENTAGE}%,of people in {location},speak,Albanian as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-035,{PERCENTAGE}%,of people in {location},speak,Ukrainian as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-036,{PERCENTAGE}%,of people in {location},speak,any other Eastern European language (non-EU) as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-037,{PERCENTAGE}%,of people in {location},speak,any Northern European language (non-EU) as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-038,{PERCENTAGE}%,of people in {location},speak,"Bosnian, Croatian, Serbian, or Montenegrin as their main language"
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-039,{PERCENTAGE}%,of people in {location},speak,any Romani language as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-040,{PERCENTAGE}%,of people in {location},speak,Yiddish as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-041,{PERCENTAGE}%,of people in {location},speak,Russian as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-042,{PERCENTAGE}%,of people in {location},speak,Turkish as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-043,{PERCENTAGE}%,of people in {location},speak,Arabic as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-044,{PERCENTAGE}%,of people in {location},speak,Hebrew as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-045,{PERCENTAGE}%,of people in {location},speak,Kurdish as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-046,{PERCENTAGE}%,of people in {location},speak,Persian or Farsi as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-047,{PERCENTAGE}%,of people in {location},speak,Pashto as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-048,{PERCENTAGE}%,of people in {location},speak,any other West or Central Asian language as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-049,{PERCENTAGE}%,of people in {location},speak,Urdu as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-050,{PERCENTAGE}%,of people in {location},speak,Hindi as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-051,{PERCENTAGE}%,of people in {location},speak,Panjabi as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-052,{PERCENTAGE}%,of people in {location},speak,Pakistani Pahari (with Mirpuri and Potwari) as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-053,{PERCENTAGE}%,of people in {location},speak,Bengali (with Sylheti and Chatgaya) as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-054,{PERCENTAGE}%,of people in {location},speak,Gujarati as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-055,{PERCENTAGE}%,of people in {location},speak,Marathi as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-056,{PERCENTAGE}%,of people in {location},speak,Telugu as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-057,{PERCENTAGE}%,of people in {location},speak,Tamil as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-058,{PERCENTAGE}%,of people in {location},speak,Malayalam as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-059,{PERCENTAGE}%,of people in {location},speak,Sinhala as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-060,{PERCENTAGE}%,of people in {location},speak,Nepalese as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-061,{PERCENTAGE}%,of people in {location},speak,any other South Asian language as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-062,{PERCENTAGE}%,of people in {location},speak,Mandarin Chinese as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-063,{PERCENTAGE}%,of people in {location},speak,Cantonese Chinese as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-064,{PERCENTAGE}%,of people in {location},speak,All other Chinese as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-065,{PERCENTAGE}%,of people in {location},speak,Japanese as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-066,{PERCENTAGE}%,of people in {location},speak,Korean as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-067,{PERCENTAGE}%,of people in {location},speak,Vietnamese as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-068,{PERCENTAGE}%,of people in {location},speak,Thai as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-069,{PERCENTAGE}%,of people in {location},speak,Malay as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-070,{PERCENTAGE}%,of people in {location},speak,Tagalog or Filipino as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-071,{PERCENTAGE}%,of people in {location},speak,any other East Asian language as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-072,{PERCENTAGE}%,of people in {location},speak,an Oceanic or Australian language as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-073,{PERCENTAGE}%,of people in {location},speak,a North or South American language as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-074,{PERCENTAGE}%,of people in {location},speak,English-based Caribbean Creole as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-075,{PERCENTAGE}%,of people in {location},speak,any other Caribbean Creole as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-076,{PERCENTAGE}%,of people in {location},speak,Amharic as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-077,{PERCENTAGE}%,of people in {location},speak,Tigrinya as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-078,{PERCENTAGE}%,of people in {location},speak,Somali as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-079,{PERCENTAGE}%,of people in {location},speak,Krio as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-080,{PERCENTAGE}%,of people in {location},speak,Akan as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-081,{PERCENTAGE}%,of people in {location},speak,Yoruba as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-082,{PERCENTAGE}%,of people in {location},speak,Igbo as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-083,{PERCENTAGE}%,of people in {location},speak,Swahili or Kiswahili as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-084,{PERCENTAGE}%,of people in {location},speak,Luganda as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-085,{PERCENTAGE}%,of people in {location},speak,Lingala as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-086,{PERCENTAGE}%,of people in {location},speak,Shona as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-087,{PERCENTAGE}%,of people in {location},speak,Afrikaans as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-088,{PERCENTAGE}%,of people in {location},speak,any other Nigerian language as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-089,{PERCENTAGE}%,of people in {location},speak,any other West African language as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-090,{PERCENTAGE}%,of people in {location},speak,any other African language as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-091,{PERCENTAGE}%,of people in {location},use,British Sign Language as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-092,{PERCENTAGE}%,of people in {location},use,any other sign language as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-093,{PERCENTAGE}%,of people in {location},use,any sign communication system as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-094,{PERCENTAGE}%,of people in {location},speak,any other language as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-001,{PERCENTAGE}%,of people in {location},speak,English (English or Welsh if in Wales) as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-002,{PERCENTAGE}%,of people in {location},speak,any other UK language as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-003,{PERCENTAGE}%,of people in {location},speak,French as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-004,{PERCENTAGE}%,of people in {location},speak,Portuguese as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-005,{PERCENTAGE}%,of people in {location},speak,Spanish as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-006,{PERCENTAGE}%,of people in {location},speak,Polish as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-007,{PERCENTAGE}%,of people in {location},speak,any other European language (EU) as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-008,{PERCENTAGE}%,of people in {location},speak,any other European language (non-EU) as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-009,{PERCENTAGE}%,of people in {location},speak,Russian as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-010,{PERCENTAGE}%,of people in {location},speak,Turkish as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-011,{PERCENTAGE}%,of people in {location},speak,Arabic as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-012,{PERCENTAGE}%,of people in {location},speak,a West or Central Asian language as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-013,{PERCENTAGE}%,of people in {location},speak,Panjabi as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-014,{PERCENTAGE}%,of people in {location},speak,Urdu as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-015,{PERCENTAGE}%,of people in {location},speak,Bengali (with Sylheti and Chatgaya) as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-016,{PERCENTAGE}%,of people in {location},speak,Gujarati as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-017,{PERCENTAGE}%,of people in {location},speak,Tamil as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-018,{PERCENTAGE}%,of people in {location},speak,any other South Asian language as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-019,{PERCENTAGE}%,of people in {location},speak,Chinese as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-020,{PERCENTAGE}%,of people in {location},speak,any other East Asian language
-Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-021,{PERCENTAGE}%,of people in {location},speak,an African language as their main language
-Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-022,{PERCENTAGE}%,of people in {location},speak,an other language as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-001,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,English (English or Welsh in Wales) as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-002,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Welsh or Cymraeg (in England only) as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-003,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Gaelic (Irish) as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-004,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Gaelic (Scottish) as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-005,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Manx Gaelic as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-006,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Gaelic (Not otherwise specified) as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-007,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Cornish as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-008,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Scots as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-009,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Ulster Scots as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-010,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Romany English as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-011,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Irish Traveller Cant as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-012,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,French as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-013,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Portuguese as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-014,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Spanish as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-015,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Italian as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-016,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,German as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-017,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Polish as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-018,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Slovak as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-019,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Czech as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-020,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Romanian as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-021,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Lithuanian as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-022,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Latvian as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-023,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Hungarian as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-024,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Bulgarian as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-025,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Greek as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-026,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Dutch as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-027,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Swedish as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-028,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Danish as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-029,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Finnish as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-030,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Estonian as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-031,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Slovenian as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-032,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Maltese as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-033,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,any other European language (EU) as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-034,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Albanian as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-035,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Ukrainian as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-036,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,any other Eastern European language (non-EU) as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-037,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,any Northern European language (non-EU) as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-038,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,"Bosnian, Croatian, Serbian, or Montenegrin as their main language"
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-039,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,any Romani language as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-040,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Yiddish as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-041,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Russian as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-042,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Turkish as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-043,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Arabic as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-044,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Hebrew as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-045,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Kurdish as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-046,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Persian or Farsi as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-047,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Pashto as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-048,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,any other West or Central Asian language as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-049,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Urdu as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-050,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Hindi as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-051,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Panjabi as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-052,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Pakistani Pahari (with Mirpuri and Potwari) as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-053,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Bengali (with Sylheti and Chatgaya) as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-054,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Gujarati as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-055,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Marathi as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-056,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Telugu as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-057,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Tamil as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-058,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Malayalam as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-059,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Sinhala as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-060,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Nepalese as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-061,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,any other South Asian language as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-062,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Mandarin Chinese as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-063,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Cantonese Chinese as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-064,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,All other Chinese as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-065,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Japanese as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-066,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Korean as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-067,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Vietnamese as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-068,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Thai as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-069,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Malay as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-070,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Tagalog or Filipino as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-071,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,any other East Asian language as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-072,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,an Oceanic or Australian language as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-073,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,a North or South American language as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-074,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,English-based Caribbean Creole as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-075,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,any other Caribbean Creole as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-076,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Amharic as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-077,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Tigrinya as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-078,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Somali as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-079,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Krio as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-080,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Akan as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-081,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Yoruba as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-082,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Igbo as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-083,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Swahili or Kiswahili as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-084,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Luganda as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-085,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Lingala as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-086,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Shona as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-087,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Afrikaans as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-088,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,any other Nigerian language as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-089,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,any other West African language as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-090,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,any other African language as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-091,{PERCENTAGE}%,of people aged 3 years and over in {location},use,British Sign Language as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-092,{PERCENTAGE}%,of people aged 3 years and over in {location},use,any other sign language as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-093,{PERCENTAGE}%,of people aged 3 years and over in {location},use,any sign communication system as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed,main_language_detailed-094,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,any other language as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-001,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,English (English or Welsh if in Wales) as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-002,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,any other UK language as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-003,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,French as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-004,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Portuguese as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-005,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Spanish as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-006,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Polish as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-007,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,any other European language (EU) as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-008,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,any other European language (non-EU) as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-009,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Russian as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-010,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Turkish as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-011,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Arabic as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-012,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,a West or Central Asian language as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-013,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Panjabi as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-014,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Urdu as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-015,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Bengali (with Sylheti and Chatgaya) as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-016,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Gujarati as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-017,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Tamil as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-018,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,any other South Asian language as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-019,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,Chinese as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-020,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,any other East Asian language
+Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-021,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,an African language as their main language
+Identity,2021-EILR,Main language (detailed),main_language_detailed_23a,main_language_detailed_23a-022,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,an other language as their main language
 Identity,2021-EILR,Multiple ethnic groups in household,hh_multi_ethnic_group,hh_multi_ethnic_group-001,{PERCENTAGE}%,of households in {location},are,one-person households
 Identity,2021-EILR,Multiple ethnic groups in household,hh_multi_ethnic_group,hh_multi_ethnic_group-002,{PERCENTAGE}%,of households in {location},have,members that are all from the same ethnic group
 Identity,2021-EILR,Multiple ethnic groups in household,hh_multi_ethnic_group,hh_multi_ethnic_group-003,{PERCENTAGE}%,of households in {location},have,members from ethnic groups that differ between generations but not within partnerships
@@ -371,14 +371,14 @@ Identity,2021-EILR,National identity (detailed),national_identity_detailed,natio
 Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-070,{PERCENTAGE}%,of people in {location},identify as,any other Australasian identity
 Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-071,{PERCENTAGE}%,of people in {location},identify as,any other Oceanian identity
 Identity,2021-EILR,National identity (detailed),national_identity_detailed,national_identity_detailed-072,{PERCENTAGE}%,of people in {location},identify as,any other national identity
-Identity,2021-EILR,Proficiency in English language,english_proficiency,english_proficiency-001,{PERCENTAGE}%,of people in {location},speak,English (or Welsh in Wales) as their main language
-Identity,2021-EILR,Proficiency in English language,english_proficiency,english_proficiency-002,{PERCENTAGE}%,of people in {location},speak,"a different main language, but speak English (or Welsh in Wales) very well"
-Identity,2021-EILR,Proficiency in English language,english_proficiency,english_proficiency-003,{PERCENTAGE}%,of people in {location},speak,"a different main language, but speak English (or Welsh in Wales) well"
-Identity,2021-EILR,Proficiency in English language,english_proficiency,english_proficiency-004,{PERCENTAGE}%,of people in {location},speak,"a different main language, but cannot speak English (or Welsh in Wales) well"
-Identity,2021-EILR,Proficiency in English language,english_proficiency,english_proficiency-005,{PERCENTAGE}%,of people in {location},speak,"a different main language, but cannot speak English (or Welsh in Wales) at all"
-Identity,2021-EILR,Proficiency in English language,english_proficiency_4a,english_proficiency_4a-001,{PERCENTAGE}%,of people in {location},speak,English (English or Welsh in Wales) as their main language
-Identity,2021-EILR,Proficiency in English language,english_proficiency_4a,english_proficiency_4a-002,{PERCENTAGE}%,of people in {location},do not have,"English (English or Welsh in Wales) as their main language, but can speak English very well or well"
-Identity,2021-EILR,Proficiency in English language,english_proficiency_4a,english_proficiency_4a-003,{PERCENTAGE}%,of people in {location},do not have,"English (English or Welsh in Wales) as their main language, and cannot speak English or cannot speak English well"
+Identity,2021-EILR,Proficiency in English language,english_proficiency,english_proficiency-001,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,English (or Welsh in Wales) as their main language
+Identity,2021-EILR,Proficiency in English language,english_proficiency,english_proficiency-002,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,"a different main language, but speak English (or Welsh in Wales) very well"
+Identity,2021-EILR,Proficiency in English language,english_proficiency,english_proficiency-003,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,"a different main language, but speak English (or Welsh in Wales) well"
+Identity,2021-EILR,Proficiency in English language,english_proficiency,english_proficiency-004,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,"a different main language, but cannot speak English (or Welsh in Wales) well"
+Identity,2021-EILR,Proficiency in English language,english_proficiency,english_proficiency-005,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,"a different main language, but cannot speak English (or Welsh in Wales) at all"
+Identity,2021-EILR,Proficiency in English language,english_proficiency_4a,english_proficiency_4a-001,{PERCENTAGE}%,of people aged 3 years and over in {location},speak,English (English or Welsh in Wales) as their main language
+Identity,2021-EILR,Proficiency in English language,english_proficiency_4a,english_proficiency_4a-002,{PERCENTAGE}%,of people aged 3 years and over in {location},do not have,"English (English or Welsh in Wales) as their main language, but can speak English very well or well"
+Identity,2021-EILR,Proficiency in English language,english_proficiency_4a,english_proficiency_4a-003,{PERCENTAGE}%,of people aged 3 years and over in {location},do not have,"English (English or Welsh in Wales) as their main language, and cannot speak English or cannot speak English well"
 Identity,2021-EILR,Religion,religion_tb,religion_tb-001,{PERCENTAGE}%,of people in {location},have,no religion
 Identity,2021-EILR,Religion,religion_tb,religion_tb-002,{PERCENTAGE}%,of people in {location},are,Christian
 Identity,2021-EILR,Religion,religion_tb,religion_tb-003,{PERCENTAGE}%,of people in {location},are,Buddhist
@@ -433,7 +433,7 @@ Identity,2021-WELSH-SKILLS,Welsh language skills,welsh_skills_all_6a,welsh_skill
 Identity,2021-WELSH-SKILLS,Welsh language skills,welsh_skills_all_6a,welsh_skills_all_6a-004,{PERCENTAGE}%,of people aged 3 years and over in {location},have,no skills in Welsh
 Identity,2021-WELSH-SKILLS,Welsh speaking ability,welsh_skills_speak,welsh_skills_speak-000,{PERCENTAGE}%,of people aged 3 years and over in {location},cannot,speak Welsh
 Identity,2021-WELSH-SKILLS,Welsh speaking ability,welsh_skills_speak,welsh_skills_speak-001,{PERCENTAGE}%,of people aged 3 years and over in {location},can,speak Welsh
-Population,2021-ARM,UK armed forces veteran indicator,uk_armed_forces,uk_armed_forces-001,{PERCENTAGE}%,of people in {location},have,previously served in the UK armed forces
+Population,2021-ARM,UK armed forces veteran indicator,uk_armed_forces,uk_armed_forces-001,{PERCENTAGE}%,of people in {location},have,previously served in the UK regular armed forces
 Population,2021-ARM,UK armed forces veteran indicator,uk_armed_forces,uk_armed_forces-002,{PERCENTAGE}%,of people in {location},have,previously served in the UK reserve armed forces
 Population,2021-ARM,UK armed forces veteran indicator,uk_armed_forces,uk_armed_forces-003,{PERCENTAGE}%,of people in {location},have,previously served in both the regular and reserve UK armed forces
 Population,2021-ARM,UK armed forces veteran indicator,uk_armed_forces,uk_armed_forces-004,{PERCENTAGE}%,of people in {location},have,not previously served in any of the UK armed forces

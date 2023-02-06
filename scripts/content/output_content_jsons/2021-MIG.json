@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2023-01-23-16-01-56",
-    "release": "2021-MIG-ar2776-c21ew_metadata-v1-3_cantab_20230119-40"
+    "created_at": "2023-02-06-15-16-09",
+    "release": "2021-MIG-ar2776-c21ew_metadata-v1-3_cantab_20230202-43"
   },
   "content": [
     {
@@ -179,7 +179,7 @@
           "code": "country_of_birth",
           "slug": "country-of-birth",
           "desc": "Where people were born.",
-          "long_desc": "The country in which a person was born. \n\nFor people not born in one of in the four parts of the UK, there was an option to select \"elsewhere\".\n\nPeople who selected \"elsewhere\" were asked to write in the current name for their country of birth.",
+          "long_desc": "The country in which a person was born.\n\nFor people not born in one of in the four parts of the UK, there was an option to select \"elsewhere\".\n\nPeople who selected \"elsewhere\" were asked to write in the current name for their country of birth.",
           "units": "Person",
           "topic_code": "MIG",
           "classifications": [
@@ -193,8 +193,6 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available_geotypes": [
-                "oa",
-                "msoa",
                 "lad"
               ],
               "data_download": "https://www.ons.gov.uk/datasets/TS004/editions/2021",
@@ -899,7 +897,6 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available_geotypes": [
-                "oa",
                 "msoa",
                 "lad"
               ],

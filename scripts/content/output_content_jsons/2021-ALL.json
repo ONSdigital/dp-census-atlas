@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2023-01-23-16-01-56",
-    "release": "2021-ALL-ar2776-c21ew_metadata-v1-3_cantab_20230119-40"
+    "created_at": "2023-02-06-15-16-09",
+    "release": "2021-ALL-ar2776-c21ew_metadata-v1-3_cantab_20230202-43"
   },
   "content": [
     {
@@ -36,7 +36,7 @@
                   "code": "uk_armed_forces-001",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "have",
-                  "legend_str_3": "previously served in the UK armed forces"
+                  "legend_str_3": "previously served in the UK regular armed forces"
                 },
                 {
                   "name": "Previously served in UK reserve armed forces",
@@ -358,7 +358,7 @@
           "code": "hh_size",
           "slug": "household-size",
           "desc": "The number of people in a household.",
-          "long_desc": "The number of people in the household. \n\nVisitors staying at an address do not count to that household\u2019s size.",
+          "long_desc": "The number of people in the household.\n\nVisitors staying at an address do not count to that household\u2019s size.",
           "units": "Household",
           "topic_code": "DEM",
           "classifications": [
@@ -2120,7 +2120,7 @@
           "code": "country_of_birth",
           "slug": "country-of-birth",
           "desc": "Where people were born.",
-          "long_desc": "The country in which a person was born. \n\nFor people not born in one of in the four parts of the UK, there was an option to select \"elsewhere\".\n\nPeople who selected \"elsewhere\" were asked to write in the current name for their country of birth.",
+          "long_desc": "The country in which a person was born.\n\nFor people not born in one of in the four parts of the UK, there was an option to select \"elsewhere\".\n\nPeople who selected \"elsewhere\" were asked to write in the current name for their country of birth.",
           "units": "Person",
           "topic_code": "MIG",
           "classifications": [
@@ -2238,8 +2238,6 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available_geotypes": [
-                "oa",
-                "msoa",
                 "lad"
               ],
               "data_download": "https://www.ons.gov.uk/datasets/TS004/editions/2021",
@@ -2840,7 +2838,6 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available_geotypes": [
-                "oa",
                 "msoa",
                 "lad"
               ],
@@ -4329,7 +4326,7 @@
                   "name": "Main language is English (English or Welsh in Wales)",
                   "slug": "main-language-is-english-english-or-welsh-in-wales",
                   "code": "english_proficiency-001",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "English (or Welsh in Wales) as their main language"
                 },
@@ -4337,7 +4334,7 @@
                   "name": "Main language is not English (English or Welsh in Wales): Can speak English very well",
                   "slug": "main-language-is-not-english-english-or-welsh-in-wales-can-speak-english-very-well",
                   "code": "english_proficiency-002",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "a different main language, but speak English (or Welsh in Wales) very well"
                 },
@@ -4345,7 +4342,7 @@
                   "name": "Main language is not English (English or Welsh in Wales): Can speak English well",
                   "slug": "main-language-is-not-english-english-or-welsh-in-wales-can-speak-english-well",
                   "code": "english_proficiency-003",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "a different main language, but speak English (or Welsh in Wales) well"
                 },
@@ -4353,7 +4350,7 @@
                   "name": "Main language is not English (English or Welsh in Wales): Cannot speak English well",
                   "slug": "main-language-is-not-english-english-or-welsh-in-wales-cannot-speak-english-well",
                   "code": "english_proficiency-004",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "a different main language, but cannot speak English (or Welsh in Wales) well"
                 },
@@ -4361,7 +4358,7 @@
                   "name": "Main language is not English (English or Welsh in Wales): Cannot speak English",
                   "slug": "main-language-is-not-english-english-or-welsh-in-wales-cannot-speak-english",
                   "code": "english_proficiency-005",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "a different main language, but cannot speak English (or Welsh in Wales) at all"
                 }
@@ -4389,7 +4386,7 @@
                   "name": "Main language is English (English or Welsh in Wales)",
                   "slug": "main-language-is-english-english-or-welsh-in-wales",
                   "code": "english_proficiency_4a-001",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "English (English or Welsh in Wales) as their main language"
                 },
@@ -4397,7 +4394,7 @@
                   "name": "Main language is not English (English or Welsh in Wales): Can speak English very well or well",
                   "slug": "main-language-is-not-english-english-or-welsh-in-wales-can-speak-english-very-well-or-well",
                   "code": "english_proficiency_4a-002",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "do not have",
                   "legend_str_3": "English (English or Welsh in Wales) as their main language, but can speak English very well or well"
                 },
@@ -4405,7 +4402,7 @@
                   "name": "Main language is not English (English or Welsh in Wales): Cannot speak English or cannot speak English well",
                   "slug": "main-language-is-not-english-english-or-welsh-in-wales-cannot-speak-english-or-cannot-speak-english-well",
                   "code": "english_proficiency_4a-003",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "do not have",
                   "legend_str_3": "English (English or Welsh in Wales) as their main language, and cannot speak English or cannot speak English well"
                 }
@@ -4719,7 +4716,7 @@
           "code": "hh_multi_ethnic_group",
           "slug": "multiple-ethnic-groups-in-household",
           "desc": "Ethnic groups within a household.",
-          "long_desc": "Classifies households by whether members identify as having the same or different ethnic groups. \n\nIf multiple ethnic groups are present, this identifies whether they differ between generations or partnerships within the household.",
+          "long_desc": "Classifies households by whether members identify as having the same or different ethnic groups.\n\nIf multiple ethnic groups are present, this identifies whether they differ between generations or partnerships within the household.",
           "units": "Household",
           "topic_code": "EILR",
           "classifications": [
@@ -4977,7 +4974,7 @@
                   "name": "English (English or Welsh in Wales)",
                   "slug": "english-english-or-welsh-in-wales",
                   "code": "main_language_detailed-001",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "English (English or Welsh in Wales) as their main language"
                 },
@@ -4985,7 +4982,7 @@
                   "name": "Welsh or Cymraeg (in England only)",
                   "slug": "welsh-or-cymraeg-in-england-only",
                   "code": "main_language_detailed-002",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Welsh or Cymraeg (in England only) as their main language"
                 },
@@ -4993,7 +4990,7 @@
                   "name": "Other UK language: Gaelic (Irish)",
                   "slug": "other-uk-language-gaelic-irish",
                   "code": "main_language_detailed-003",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Gaelic (Irish) as their main language"
                 },
@@ -5001,7 +4998,7 @@
                   "name": "Other UK language: Gaelic (Scottish)",
                   "slug": "other-uk-language-gaelic-scottish",
                   "code": "main_language_detailed-004",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Gaelic (Scottish) as their main language"
                 },
@@ -5009,7 +5006,7 @@
                   "name": "Other UK language: Manx Gaelic",
                   "slug": "other-uk-language-manx-gaelic",
                   "code": "main_language_detailed-005",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Manx Gaelic as their main language"
                 },
@@ -5017,7 +5014,7 @@
                   "name": "Other UK language: Gaelic (Not otherwise specified)",
                   "slug": "other-uk-language-gaelic-not-otherwise-specified",
                   "code": "main_language_detailed-006",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Gaelic (Not otherwise specified) as their main language"
                 },
@@ -5025,7 +5022,7 @@
                   "name": "Other UK language: Cornish",
                   "slug": "other-uk-language-cornish",
                   "code": "main_language_detailed-007",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Cornish as their main language"
                 },
@@ -5033,7 +5030,7 @@
                   "name": "Other UK language: Scots",
                   "slug": "other-uk-language-scots",
                   "code": "main_language_detailed-008",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Scots as their main language"
                 },
@@ -5041,7 +5038,7 @@
                   "name": "Other UK language: Ulster Scots",
                   "slug": "other-uk-language-ulster-scots",
                   "code": "main_language_detailed-009",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Ulster Scots as their main language"
                 },
@@ -5049,7 +5046,7 @@
                   "name": "Other UK language: Romany English",
                   "slug": "other-uk-language-romany-english",
                   "code": "main_language_detailed-010",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Romany English as their main language"
                 },
@@ -5057,7 +5054,7 @@
                   "name": "Other UK language: Irish Traveller Cant",
                   "slug": "other-uk-language-irish-traveller-cant",
                   "code": "main_language_detailed-011",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Irish Traveller Cant as their main language"
                 },
@@ -5065,7 +5062,7 @@
                   "name": "French",
                   "slug": "french",
                   "code": "main_language_detailed-012",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "French as their main language"
                 },
@@ -5073,7 +5070,7 @@
                   "name": "Portuguese",
                   "slug": "portuguese",
                   "code": "main_language_detailed-013",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Portuguese as their main language"
                 },
@@ -5081,7 +5078,7 @@
                   "name": "Spanish",
                   "slug": "spanish",
                   "code": "main_language_detailed-014",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Spanish as their main language"
                 },
@@ -5089,7 +5086,7 @@
                   "name": "Other European language (EU): Italian",
                   "slug": "other-european-language-eu-italian",
                   "code": "main_language_detailed-015",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Italian as their main language"
                 },
@@ -5097,7 +5094,7 @@
                   "name": "Other European language (EU): German",
                   "slug": "other-european-language-eu-german",
                   "code": "main_language_detailed-016",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "German as their main language"
                 },
@@ -5105,7 +5102,7 @@
                   "name": "Other European language (EU): Polish",
                   "slug": "other-european-language-eu-polish",
                   "code": "main_language_detailed-017",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Polish as their main language"
                 },
@@ -5113,7 +5110,7 @@
                   "name": "Other European language (EU): Slovak",
                   "slug": "other-european-language-eu-slovak",
                   "code": "main_language_detailed-018",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Slovak as their main language"
                 },
@@ -5121,7 +5118,7 @@
                   "name": "Other European language (EU): Czech",
                   "slug": "other-european-language-eu-czech",
                   "code": "main_language_detailed-019",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Czech as their main language"
                 },
@@ -5129,7 +5126,7 @@
                   "name": "Other European language (EU): Romanian",
                   "slug": "other-european-language-eu-romanian",
                   "code": "main_language_detailed-020",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Romanian as their main language"
                 },
@@ -5137,7 +5134,7 @@
                   "name": "Other European language (EU): Lithuanian",
                   "slug": "other-european-language-eu-lithuanian",
                   "code": "main_language_detailed-021",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Lithuanian as their main language"
                 },
@@ -5145,7 +5142,7 @@
                   "name": "Other European language (EU): Latvian",
                   "slug": "other-european-language-eu-latvian",
                   "code": "main_language_detailed-022",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Latvian as their main language"
                 },
@@ -5153,7 +5150,7 @@
                   "name": "Other European language (EU): Hungarian",
                   "slug": "other-european-language-eu-hungarian",
                   "code": "main_language_detailed-023",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Hungarian as their main language"
                 },
@@ -5161,7 +5158,7 @@
                   "name": "Other European language (EU): Bulgarian",
                   "slug": "other-european-language-eu-bulgarian",
                   "code": "main_language_detailed-024",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Bulgarian as their main language"
                 },
@@ -5169,7 +5166,7 @@
                   "name": "Other European language (EU): Greek",
                   "slug": "other-european-language-eu-greek",
                   "code": "main_language_detailed-025",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Greek as their main language"
                 },
@@ -5177,7 +5174,7 @@
                   "name": "Other European language (EU): Dutch",
                   "slug": "other-european-language-eu-dutch",
                   "code": "main_language_detailed-026",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Dutch as their main language"
                 },
@@ -5185,7 +5182,7 @@
                   "name": "Other European language (EU): Swedish",
                   "slug": "other-european-language-eu-swedish",
                   "code": "main_language_detailed-027",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Swedish as their main language"
                 },
@@ -5193,7 +5190,7 @@
                   "name": "Other European language (EU): Danish",
                   "slug": "other-european-language-eu-danish",
                   "code": "main_language_detailed-028",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Danish as their main language"
                 },
@@ -5201,7 +5198,7 @@
                   "name": "Other European language (EU): Finnish",
                   "slug": "other-european-language-eu-finnish",
                   "code": "main_language_detailed-029",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Finnish as their main language"
                 },
@@ -5209,7 +5206,7 @@
                   "name": "Other European language (EU): Estonian",
                   "slug": "other-european-language-eu-estonian",
                   "code": "main_language_detailed-030",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Estonian as their main language"
                 },
@@ -5217,7 +5214,7 @@
                   "name": "Other European language (EU): Slovenian",
                   "slug": "other-european-language-eu-slovenian",
                   "code": "main_language_detailed-031",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Slovenian as their main language"
                 },
@@ -5225,7 +5222,7 @@
                   "name": "Other European language (EU): Maltese",
                   "slug": "other-european-language-eu-maltese",
                   "code": "main_language_detailed-032",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Maltese as their main language"
                 },
@@ -5233,7 +5230,7 @@
                   "name": "Other European language (EU): Any other European language (EU)",
                   "slug": "other-european-language-eu-any-other-european-language-eu",
                   "code": "main_language_detailed-033",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "any other European language (EU) as their main language"
                 },
@@ -5241,7 +5238,7 @@
                   "name": "Other European language (non EU): Albanian",
                   "slug": "other-european-language-non-eu-albanian",
                   "code": "main_language_detailed-034",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Albanian as their main language"
                 },
@@ -5249,7 +5246,7 @@
                   "name": "Other European language (non EU): Ukrainian",
                   "slug": "other-european-language-non-eu-ukrainian",
                   "code": "main_language_detailed-035",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Ukrainian as their main language"
                 },
@@ -5257,7 +5254,7 @@
                   "name": "Other European language (non EU): Any other Eastern European language (non EU)",
                   "slug": "other-european-language-non-eu-any-other-eastern-european-language-non-eu",
                   "code": "main_language_detailed-036",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "any other Eastern European language (non-EU) as their main language"
                 },
@@ -5265,7 +5262,7 @@
                   "name": "Other European language (non EU): Northern European language (non EU)",
                   "slug": "other-european-language-non-eu-northern-european-language-non-eu",
                   "code": "main_language_detailed-037",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "any Northern European language (non-EU) as their main language"
                 },
@@ -5273,7 +5270,7 @@
                   "name": "Other European language (EU and non-EU): Bosnian, Croatian, Serbian, and Montenegrin",
                   "slug": "other-european-language-eu-and-non-eu-bosnian-croatian-serbian-and-montenegrin",
                   "code": "main_language_detailed-038",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Bosnian, Croatian, Serbian, or Montenegrin as their main language"
                 },
@@ -5281,7 +5278,7 @@
                   "name": "Other European language (non-national): Any Romani language",
                   "slug": "other-european-language-non-national-any-romani-language",
                   "code": "main_language_detailed-039",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "any Romani language as their main language"
                 },
@@ -5289,7 +5286,7 @@
                   "name": "Other European language (non-national): Yiddish",
                   "slug": "other-european-language-non-national-yiddish",
                   "code": "main_language_detailed-040",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Yiddish as their main language"
                 },
@@ -5297,7 +5294,7 @@
                   "name": "Russian",
                   "slug": "russian",
                   "code": "main_language_detailed-041",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Russian as their main language"
                 },
@@ -5305,7 +5302,7 @@
                   "name": "Turkish",
                   "slug": "turkish",
                   "code": "main_language_detailed-042",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Turkish as their main language"
                 },
@@ -5313,7 +5310,7 @@
                   "name": "Arabic",
                   "slug": "arabic",
                   "code": "main_language_detailed-043",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Arabic as their main language"
                 },
@@ -5321,7 +5318,7 @@
                   "name": "West or Central Asian language: Hebrew",
                   "slug": "west-or-central-asian-language-hebrew",
                   "code": "main_language_detailed-044",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Hebrew as their main language"
                 },
@@ -5329,7 +5326,7 @@
                   "name": "West or Central Asian language: Kurdish",
                   "slug": "west-or-central-asian-language-kurdish",
                   "code": "main_language_detailed-045",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Kurdish as their main language"
                 },
@@ -5337,7 +5334,7 @@
                   "name": "West or Central Asian language: Persian or Farsi",
                   "slug": "west-or-central-asian-language-persian-or-farsi",
                   "code": "main_language_detailed-046",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Persian or Farsi as their main language"
                 },
@@ -5345,7 +5342,7 @@
                   "name": "West or Central Asian language: Pashto",
                   "slug": "west-or-central-asian-language-pashto",
                   "code": "main_language_detailed-047",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Pashto as their main language"
                 },
@@ -5353,7 +5350,7 @@
                   "name": "West or Central Asian language: Any other West or Central Asian language",
                   "slug": "west-or-central-asian-language-any-other-west-or-central-asian-language",
                   "code": "main_language_detailed-048",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "any other West or Central Asian language as their main language"
                 },
@@ -5361,7 +5358,7 @@
                   "name": "South Asian language: Urdu",
                   "slug": "south-asian-language-urdu",
                   "code": "main_language_detailed-049",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Urdu as their main language"
                 },
@@ -5369,7 +5366,7 @@
                   "name": "South Asian language: Hindi",
                   "slug": "south-asian-language-hindi",
                   "code": "main_language_detailed-050",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Hindi as their main language"
                 },
@@ -5377,7 +5374,7 @@
                   "name": "South Asian language: Panjabi",
                   "slug": "south-asian-language-panjabi",
                   "code": "main_language_detailed-051",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Panjabi as their main language"
                 },
@@ -5385,7 +5382,7 @@
                   "name": "South Asian language: Pakistani Pahari (with Mirpuri and Potwari)",
                   "slug": "south-asian-language-pakistani-pahari-with-mirpuri-and-potwari",
                   "code": "main_language_detailed-052",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Pakistani Pahari (with Mirpuri and Potwari) as their main language"
                 },
@@ -5393,7 +5390,7 @@
                   "name": "South Asian language: Bengali (with Sylheti and Chatgaya)",
                   "slug": "south-asian-language-bengali-with-sylheti-and-chatgaya",
                   "code": "main_language_detailed-053",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Bengali (with Sylheti and Chatgaya) as their main language"
                 },
@@ -5401,7 +5398,7 @@
                   "name": "South Asian language: Gujarati",
                   "slug": "south-asian-language-gujarati",
                   "code": "main_language_detailed-054",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Gujarati as their main language"
                 },
@@ -5409,7 +5406,7 @@
                   "name": "South Asian language: Marathi",
                   "slug": "south-asian-language-marathi",
                   "code": "main_language_detailed-055",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Marathi as their main language"
                 },
@@ -5417,7 +5414,7 @@
                   "name": "South Asian language: Telugu",
                   "slug": "south-asian-language-telugu",
                   "code": "main_language_detailed-056",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Telugu as their main language"
                 },
@@ -5425,7 +5422,7 @@
                   "name": "South Asian language: Tamil",
                   "slug": "south-asian-language-tamil",
                   "code": "main_language_detailed-057",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Tamil as their main language"
                 },
@@ -5433,7 +5430,7 @@
                   "name": "South Asian language: Malayalam",
                   "slug": "south-asian-language-malayalam",
                   "code": "main_language_detailed-058",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Malayalam as their main language"
                 },
@@ -5441,7 +5438,7 @@
                   "name": "South Asian language: Sinhala",
                   "slug": "south-asian-language-sinhala",
                   "code": "main_language_detailed-059",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Sinhala as their main language"
                 },
@@ -5449,7 +5446,7 @@
                   "name": "South Asian language: Nepalese",
                   "slug": "south-asian-language-nepalese",
                   "code": "main_language_detailed-060",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Nepalese as their main language"
                 },
@@ -5457,7 +5454,7 @@
                   "name": "South Asian language: Any other South Asian language",
                   "slug": "south-asian-language-any-other-south-asian-language",
                   "code": "main_language_detailed-061",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "any other South Asian language as their main language"
                 },
@@ -5465,7 +5462,7 @@
                   "name": "East Asian language: Mandarin Chinese",
                   "slug": "east-asian-language-mandarin-chinese",
                   "code": "main_language_detailed-062",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Mandarin Chinese as their main language"
                 },
@@ -5473,7 +5470,7 @@
                   "name": "East Asian language: Cantonese Chinese",
                   "slug": "east-asian-language-cantonese-chinese",
                   "code": "main_language_detailed-063",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Cantonese Chinese as their main language"
                 },
@@ -5481,7 +5478,7 @@
                   "name": "East Asian language: All other Chinese",
                   "slug": "east-asian-language-all-other-chinese",
                   "code": "main_language_detailed-064",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "All other Chinese as their main language"
                 },
@@ -5489,7 +5486,7 @@
                   "name": "East Asian language: Japanese",
                   "slug": "east-asian-language-japanese",
                   "code": "main_language_detailed-065",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Japanese as their main language"
                 },
@@ -5497,7 +5494,7 @@
                   "name": "East Asian language: Korean",
                   "slug": "east-asian-language-korean",
                   "code": "main_language_detailed-066",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Korean as their main language"
                 },
@@ -5505,7 +5502,7 @@
                   "name": "East Asian language: Vietnamese",
                   "slug": "east-asian-language-vietnamese",
                   "code": "main_language_detailed-067",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Vietnamese as their main language"
                 },
@@ -5513,7 +5510,7 @@
                   "name": "East Asian language: Thai",
                   "slug": "east-asian-language-thai",
                   "code": "main_language_detailed-068",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Thai as their main language"
                 },
@@ -5521,7 +5518,7 @@
                   "name": "East Asian language: Malay",
                   "slug": "east-asian-language-malay",
                   "code": "main_language_detailed-069",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Malay as their main language"
                 },
@@ -5529,7 +5526,7 @@
                   "name": "East Asian language: Tagalog or Filipino",
                   "slug": "east-asian-language-tagalog-or-filipino",
                   "code": "main_language_detailed-070",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Tagalog or Filipino as their main language"
                 },
@@ -5537,7 +5534,7 @@
                   "name": "East Asian language: Any other East Asian language",
                   "slug": "east-asian-language-any-other-east-asian-language",
                   "code": "main_language_detailed-071",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "any other East Asian language as their main language"
                 },
@@ -5545,7 +5542,7 @@
                   "name": "Oceanic or Australian language",
                   "slug": "oceanic-or-australian-language",
                   "code": "main_language_detailed-072",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "an Oceanic or Australian language as their main language"
                 },
@@ -5553,7 +5550,7 @@
                   "name": "North or South American language",
                   "slug": "north-or-south-american-language",
                   "code": "main_language_detailed-073",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "a North or South American language as their main language"
                 },
@@ -5561,7 +5558,7 @@
                   "name": "Caribbean Creole: English-based Caribbean Creole",
                   "slug": "caribbean-creole-english-based-caribbean-creole",
                   "code": "main_language_detailed-074",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "English-based Caribbean Creole as their main language"
                 },
@@ -5569,7 +5566,7 @@
                   "name": "Caribbean Creole: Any other Caribbean Creole",
                   "slug": "caribbean-creole-any-other-caribbean-creole",
                   "code": "main_language_detailed-075",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "any other Caribbean Creole as their main language"
                 },
@@ -5577,7 +5574,7 @@
                   "name": "African language: Amharic",
                   "slug": "african-language-amharic",
                   "code": "main_language_detailed-076",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Amharic as their main language"
                 },
@@ -5585,7 +5582,7 @@
                   "name": "African language: Tigrinya",
                   "slug": "african-language-tigrinya",
                   "code": "main_language_detailed-077",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Tigrinya as their main language"
                 },
@@ -5593,7 +5590,7 @@
                   "name": "African language: Somali",
                   "slug": "african-language-somali",
                   "code": "main_language_detailed-078",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Somali as their main language"
                 },
@@ -5601,7 +5598,7 @@
                   "name": "African language: Krio",
                   "slug": "african-language-krio",
                   "code": "main_language_detailed-079",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Krio as their main language"
                 },
@@ -5609,7 +5606,7 @@
                   "name": "African language: Akan",
                   "slug": "african-language-akan",
                   "code": "main_language_detailed-080",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Akan as their main language"
                 },
@@ -5617,7 +5614,7 @@
                   "name": "African language: Yoruba",
                   "slug": "african-language-yoruba",
                   "code": "main_language_detailed-081",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Yoruba as their main language"
                 },
@@ -5625,7 +5622,7 @@
                   "name": "African language: Igbo",
                   "slug": "african-language-igbo",
                   "code": "main_language_detailed-082",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Igbo as their main language"
                 },
@@ -5633,7 +5630,7 @@
                   "name": "African language: Swahili or Kiswahili",
                   "slug": "african-language-swahili-or-kiswahili",
                   "code": "main_language_detailed-083",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Swahili or Kiswahili as their main language"
                 },
@@ -5641,7 +5638,7 @@
                   "name": "African language: Luganda",
                   "slug": "african-language-luganda",
                   "code": "main_language_detailed-084",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Luganda as their main language"
                 },
@@ -5649,7 +5646,7 @@
                   "name": "African language: Lingala",
                   "slug": "african-language-lingala",
                   "code": "main_language_detailed-085",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Lingala as their main language"
                 },
@@ -5657,7 +5654,7 @@
                   "name": "African language: Shona",
                   "slug": "african-language-shona",
                   "code": "main_language_detailed-086",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Shona as their main language"
                 },
@@ -5665,7 +5662,7 @@
                   "name": "African language: Afrikaans",
                   "slug": "african-language-afrikaans",
                   "code": "main_language_detailed-087",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Afrikaans as their main language"
                 },
@@ -5673,7 +5670,7 @@
                   "name": "African language: Any other Nigerian language",
                   "slug": "african-language-any-other-nigerian-language",
                   "code": "main_language_detailed-088",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "any other Nigerian language as their main language"
                 },
@@ -5681,7 +5678,7 @@
                   "name": "African language: Any other West African language",
                   "slug": "african-language-any-other-west-african-language",
                   "code": "main_language_detailed-089",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "any other West African language as their main language"
                 },
@@ -5689,7 +5686,7 @@
                   "name": "African language: Any other African language",
                   "slug": "african-language-any-other-african-language",
                   "code": "main_language_detailed-090",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "any other African language as their main language"
                 },
@@ -5697,7 +5694,7 @@
                   "name": "Sign language: British Sign Language",
                   "slug": "sign-language-british-sign-language",
                   "code": "main_language_detailed-091",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "use",
                   "legend_str_3": "British Sign Language as their main language"
                 },
@@ -5705,7 +5702,7 @@
                   "name": "Sign language: Any other sign language",
                   "slug": "sign-language-any-other-sign-language",
                   "code": "main_language_detailed-092",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "use",
                   "legend_str_3": "any other sign language as their main language"
                 },
@@ -5713,7 +5710,7 @@
                   "name": "Sign language: Any sign communication system",
                   "slug": "sign-language-any-sign-communication-system",
                   "code": "main_language_detailed-093",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "use",
                   "legend_str_3": "any sign communication system as their main language"
                 },
@@ -5721,7 +5718,7 @@
                   "name": "Other language",
                   "slug": "other-language",
                   "code": "main_language_detailed-094",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "any other language as their main language"
                 }
@@ -5744,7 +5741,7 @@
                   "name": "English (English or Welsh if in Wales)",
                   "slug": "english-english-or-welsh-if-in-wales",
                   "code": "main_language_detailed_23a-001",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "English (English or Welsh if in Wales) as their main language"
                 },
@@ -5752,7 +5749,7 @@
                   "name": "Other UK language: Any other UK language",
                   "slug": "other-uk-language-any-other-uk-language",
                   "code": "main_language_detailed_23a-002",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "any other UK language as their main language"
                 },
@@ -5760,7 +5757,7 @@
                   "name": "French",
                   "slug": "french",
                   "code": "main_language_detailed_23a-003",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "French as their main language"
                 },
@@ -5768,7 +5765,7 @@
                   "name": "Portuguese",
                   "slug": "portuguese",
                   "code": "main_language_detailed_23a-004",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Portuguese as their main language"
                 },
@@ -5776,7 +5773,7 @@
                   "name": "Spanish",
                   "slug": "spanish",
                   "code": "main_language_detailed_23a-005",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Spanish as their main language"
                 },
@@ -5784,7 +5781,7 @@
                   "name": "Other European language (EU): Polish",
                   "slug": "other-european-language-eu-polish",
                   "code": "main_language_detailed_23a-006",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Polish as their main language"
                 },
@@ -5792,7 +5789,7 @@
                   "name": "Other European language (EU): Any other European language",
                   "slug": "other-european-language-eu-any-other-european-language",
                   "code": "main_language_detailed_23a-007",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "any other European language (EU) as their main language"
                 },
@@ -5800,7 +5797,7 @@
                   "name": "European language (non-EU)",
                   "slug": "european-language-non-eu",
                   "code": "main_language_detailed_23a-008",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "any other European language (non-EU) as their main language"
                 },
@@ -5808,7 +5805,7 @@
                   "name": "Russian",
                   "slug": "russian",
                   "code": "main_language_detailed_23a-009",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Russian as their main language"
                 },
@@ -5816,7 +5813,7 @@
                   "name": "Turkish",
                   "slug": "turkish",
                   "code": "main_language_detailed_23a-010",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Turkish as their main language"
                 },
@@ -5824,7 +5821,7 @@
                   "name": "Arabic",
                   "slug": "arabic",
                   "code": "main_language_detailed_23a-011",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Arabic as their main language"
                 },
@@ -5832,7 +5829,7 @@
                   "name": "West or Central Asian language",
                   "slug": "west-or-central-asian-language",
                   "code": "main_language_detailed_23a-012",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "a West or Central Asian language as their main language"
                 },
@@ -5840,7 +5837,7 @@
                   "name": "South Asian language: Panjabi",
                   "slug": "south-asian-language-panjabi",
                   "code": "main_language_detailed_23a-013",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Panjabi as their main language"
                 },
@@ -5848,7 +5845,7 @@
                   "name": "South Asian language: Urdu",
                   "slug": "south-asian-language-urdu",
                   "code": "main_language_detailed_23a-014",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Urdu as their main language"
                 },
@@ -5856,7 +5853,7 @@
                   "name": "South Asian language: Bengali (with Sylheti and Chatgaya)",
                   "slug": "south-asian-language-bengali-with-sylheti-and-chatgaya",
                   "code": "main_language_detailed_23a-015",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Bengali (with Sylheti and Chatgaya) as their main language"
                 },
@@ -5864,7 +5861,7 @@
                   "name": "South Asian language: Gujarati",
                   "slug": "south-asian-language-gujarati",
                   "code": "main_language_detailed_23a-016",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Gujarati as their main language"
                 },
@@ -5872,7 +5869,7 @@
                   "name": "South Asian language: Tamil",
                   "slug": "south-asian-language-tamil",
                   "code": "main_language_detailed_23a-017",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Tamil as their main language"
                 },
@@ -5880,7 +5877,7 @@
                   "name": "South Asian language: Any other South Asian language",
                   "slug": "south-asian-language-any-other-south-asian-language",
                   "code": "main_language_detailed_23a-018",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "any other South Asian language as their main language"
                 },
@@ -5888,7 +5885,7 @@
                   "name": "East Asian language: Chinese",
                   "slug": "east-asian-language-chinese",
                   "code": "main_language_detailed_23a-019",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Chinese as their main language"
                 },
@@ -5896,7 +5893,7 @@
                   "name": "East Asian language: Any other East Asian language",
                   "slug": "east-asian-language-any-other-east-asian-language",
                   "code": "main_language_detailed_23a-020",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "any other East Asian language"
                 },
@@ -5904,7 +5901,7 @@
                   "name": "African language",
                   "slug": "african-language",
                   "code": "main_language_detailed_23a-021",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "an African language as their main language"
                 },
@@ -5912,7 +5909,7 @@
                   "name": "Other language",
                   "slug": "other-language",
                   "code": "main_language_detailed_23a-022",
-                  "legend_str_1": "of people in {location}",
+                  "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "an other language as their main language"
                 }
@@ -6814,7 +6811,7 @@
           "code": "religion_tb",
           "slug": "religion",
           "desc": "The religion people connect or identify with.",
-          "long_desc": "The religion people connect or identify with (their religious affiliation), whether or not they practice or have belief in it.\n\nThis question was voluntary and includes people who identified with one of 8 tick-box response options, including \u2018No religion\u2019, alongside those who chose not to answer this question.",
+          "long_desc": "The religion people connect or identify with (their religious affiliation), whether or not they practise or have belief in it.\n\nThis question was voluntary and includes people who identified with one of 8 tick-box response options, including \"No religion\", alongside those who chose not to answer this question.",
           "units": "Person",
           "topic_code": "EILR",
           "caveat_text": "There are quality considerations for the \"not answered\" category in university locations.",
@@ -7707,7 +7704,7 @@
           "code": "heating_type",
           "slug": "type-of-central-heating-in-household",
           "desc": "The type of central heating in a household.",
-          "long_desc": "Central heating is a heating system used to heat multiple rooms in a building by circulating air or heated water through pipes to radiators or vents. Single or multiple fuel sources can fuel these systems. \n\nCentral heating systems that are unused or not working are still considered. No information is available for household spaces with no usual residents.",
+          "long_desc": "Central heating is a heating system used to heat multiple rooms in a building by circulating air or heated water through pipes to radiators or vents. Single or multiple fuel sources can fuel these systems.\n\nCentral heating systems that are unused or not working are still considered. No information is available for household spaces with no usual residents.",
           "units": "Household",
           "topic_code": "HOU",
           "classifications": [
@@ -7863,7 +7860,7 @@
           "code": "hh_tenure",
           "slug": "tenure-of-household",
           "desc": "Whether a household owns or rents.",
-          "long_desc": "Whether a household owns or rents the accommodation that it occupies. \n\nOwner-occupied accommodation can be:\n\n* owned outright, which is where the household owns all of the accommodation \n* with a mortgage or loan \n* part-owned on a shared ownership scheme \n\n Rented accommodation can be:\n\n* private rented (for example, rented through a private landlord or letting agent \n* social rented through a local council or housing association\n\nThis information is not available for household spaces with no usual residents.",
+          "long_desc": "Whether a household owns or rents the accommodation that it occupies.\n\nOwner-occupied accommodation can be:\n\n* owned outright, which is where the household owns all of the accommodation\n* with a mortgage or loan\n* part-owned on a shared ownership scheme\n\n Rented accommodation can be:\n\n* private rented, for example, rented through a private landlord or letting agent\n* social rented through a local council or housing association\n\nThis information is not available for household spaces with no usual residents.",
           "units": "Household",
           "topic_code": "HOU",
           "classifications": [
@@ -8006,7 +8003,7 @@
           "code": "number_bedrooms",
           "slug": "number-of-bedrooms",
           "desc": "The number of bedrooms in a household.",
-          "long_desc": "The number of bedrooms in a household\u2019s accommodation. \n\nThis number is not available for household spaces with no usual residents.",
+          "long_desc": "The number of bedrooms in a household\u2019s accommodation.\n\nThis number is not available for household spaces with no usual residents.",
           "units": "Household",
           "topic_code": "HOU",
           "classifications": [
@@ -8069,7 +8066,7 @@
           "code": "number_of_cars",
           "slug": "number-of-cars-or-vans",
           "desc": "Cars or vans owned or available for use by a household.",
-          "long_desc": "The number of cars or vans owned or available for use by household members.\n\nVehicles included:\n\n* pick-ups, camper vans and motor homes  \n* vehicles that are temporarily not working  \n* vehicles that have failed their MOT   \n* vehicles owned or used by a lodger  \n* company cars or vans if they're available for private use \n\nVehicles not included:\n\n* motorbikes, trikes, quad bikes or mobility scooters  \n* vehicles that have a Statutory Off Road Notification (SORN)  \n* vehicles owned or used only by a visitor  \n* vehicles that are kept at another address or not easily accessed  \n\nThe number of cars or vans in an area relates only to households. Cars or vans used by communal establishment residents are not counted.   \nHouseholds with 10 to 20 cars or vans are counted as having only 10.  \nHouseholds with more than 20 cars or vans were treated as invalid and a value imputed.",
+          "long_desc": "The number of cars or vans owned or available for use by household members.\n\nVehicles included:\n\n* pick-ups, camper vans and motor homes\n* vehicles that are temporarily not working\n* vehicles that have failed their MOT\n* vehicles owned or used by a lodger\n* company cars or vans if they're available for private use\n\nVehicles not included:\n\n* motorbikes, trikes, quad bikes or mobility scooters\n* vehicles that have a Statutory Off Road Notification (SORN)\n* vehicles owned or used only by a visitor\n* vehicles that are kept at another address or not easily accessed\n\nThe number of cars or vans in an area relates only to households. Cars or vans used by communal establishment residents are not counted.\nHouseholds with 10 to 20 cars or vans are counted as having only 10.\nHouseholds with more than 20 cars or vans were treated as invalid and a value imputed.",
           "units": "Household",
           "topic_code": "HOU",
           "classifications": [
@@ -9940,7 +9937,7 @@
           "code": "workplace_travel",
           "slug": "distance-travelled-to-work",
           "desc": "The distance between home and work, in kilometres.",
-          "long_desc": "The distance, in kilometres, between a person's residential postcode and their workplace postcode measured in a straight line. A distance travelled of 0.1km indicates that the workplace postcode is the same as the residential postcode. Distances over 1200km are treated as invalid, and an imputed or estimated value is added.\n\n\u201cWork mainly at or from home\u201d is made up of those that ticked either the 'Mainly work at or from home' box for the address of workplace question, or the \u201cWork mainly at or from home\u201d box for the method of travel to work question.\n\n\u201cOther\u201d includes no fixed place of work, working on an offshore installation and working outside of the UK.\n\nDistance is calculated as the straight line distance between the enumeration postcode and the workplace postcode.",
+          "long_desc": "The distance, in kilometres, between a person's residential postcode and their workplace postcode measured in a straight line. A distance travelled of 0.1km indicates that the workplace postcode is the same as the residential postcode. Distances over 1200km are treated as invalid, and an imputed or estimated value is added.\n\n\u201cWork mainly at or from home\u201d is made up of those that ticked either the \"Mainly work at or from home\" box for the address of workplace question, or the \u201cWork mainly at or from home\u201d box for the method of travel to work question.\n\n\u201cOther\u201d includes no fixed place of work, working on an offshore installation and working outside of the UK.\n\nDistance is calculated as the straight line distance between the enumeration postcode and the workplace postcode.",
           "units": "Person",
           "topic_code": "TTW",
           "caveat_text": "There are pandemic-related quality considerations for this variable.",

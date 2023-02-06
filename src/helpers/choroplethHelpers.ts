@@ -1,8 +1,8 @@
 export const choroplethColours = {
   standard: ["#CDE594", "#80C6A3", "#1F9EB7", "#186290", "#080C54"],
-  neg: ["#007590", "#538d9e", "#81a6ac", "#abbfbb", "#d5d9c9"],
-  pos: ["#fbd0af", "#f5ab89", "#eb8665", "#de6041", "#ce321f"],
-  neutral: "#fef4d7",
+  neg: ["#5e4fa2", "#3288bd", "#66c2a5", "#abdda4", "#e6f598"],
+  pos: ["#fee08b", "#fdae61", "#f46d43", "#d53e4f", "#9e0142"],
+  neutral: "#ffffbf",
   noData: "#808B96",
 };
 

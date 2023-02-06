@@ -95,7 +95,12 @@ const fetchContentForEnv = async (
 
   // load from static if not url
   if (!contentJsonUrl.startsWith("http")) {
-    return staticContentJsons[contentJsonUrl];
+    if (contentJsonUrl in staticContentJsons) {
+      return staticContentJsons[contentJsonUrl];
+    } else {
+      console.log(`${contentJsonUrl} not found in static content jsons.`);
+      return null;
+    }
   }
 
   // otherwise fetch content (NB try-catch as responses _can_ be 200-status, but really failed and not JSON...)

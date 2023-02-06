@@ -10,7 +10,7 @@ export const getContentForStore = async (
   contentConfigs: ContentConfig[],
   isDev: boolean,
   isPublishing: boolean,
-  useFetch: CallableFunction = fetch,
+  useFetch: typeof fetch = fetch,
   fetchOpts = {
     cache: "no-cache", // always ask for latest content files
   },
@@ -83,7 +83,7 @@ const fetchContentForEnv = async (
   contentConfig: ContentConfig,
   isDev: boolean,
   isPublishing: boolean,
-  useFetch: CallableFunction = fetch,
+  useFetch: typeof fetch = fetch,
   fetchOpts = {
     cache: "no-cache", // always ask for latest content files
   },

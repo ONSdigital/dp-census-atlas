@@ -1,5 +1,5 @@
 import * as dsv from "d3-dsv"; // https://github.com/d3/d3/issues/3469
-import type { Bbox, Category, Classification, DataTile, GeographyData, GeoType } from "src/types";
+import type { Bbox, Category, Classification, DataTile, GeographyData, GeoType } from "../types";
 import { bboxToDataTiles } from "../helpers/spatialHelper";
 import { uniqueRoundedClassificationBreaks } from "../helpers/classificationHelpers";
 
@@ -9,12 +9,17 @@ const geoBaseUrl = "https://cdn.ons.gov.uk/maptiles/cm-geos/v2";
   Fetch place data files for all data 'tiles' (predefined coordinate grid squares) that intersect with current viewport
   bounding box.
 */
-export const fetchDataForBbox = async (args: { category: Category; geoType: GeoType; bbox: Bbox }) => {
+export const fetchDataForBbox = async (args: {
+  category: Category;
+  geoType: GeoType;
+  bbox: Bbox;
+  base_url: string;
+}) => {
   const data = await fetchTileDataForBbox(args);
   return data.map((row) => parsePlaceData(row, args.category.code));
 };
 
-const fetchTileDataForBbox = async (args: { category: Category; geoType: GeoType; bbox: Bbox }) => {
+const fetchTileDataForBbox = async (args: { category: Category; geoType: GeoType; bbox: Bbox; base_url: string }) => {
   // get all intersecting data tiles
   const dataTiles = bboxToDataTiles(args.bbox, args.geoType);
 
@@ -25,6 +30,7 @@ const fetchTileDataForBbox = async (args: { category: Category; geoType: GeoType
         category: args.category,
         geoType: args.geoType,
         tile: dataTile,
+        base_url: args.base_url,
       });
     }),
   );
@@ -42,8 +48,13 @@ const parsePlaceData = (row: dsv.DSVRowString<string>, categoryCode: string) => 
   Fetch json with census data by for categories categoryCode and totalCode for all geographies of type 'geoType' that
   fall within geographic bounding box represented by 'tile'.
 */
-export const fetchTileData = async (args: { category: Category; geoType: GeoType; tile: DataTile }) => {
-  const url = `${args.category.baseUrl}/tiles/${args.geoType}/${args.tile.tilename}/${args.category.code}.csv`;
+export const fetchTileData = async (args: {
+  category: Category;
+  geoType: GeoType;
+  tile: DataTile;
+  base_url: string;
+}) => {
+  const url = `${args.base_url}/tiles/${args.geoType}/${args.tile.tilename}/${args.category.code}.csv`;
   const response = await fetch(url);
   const csv = await response.text();
   return dsv.csvParse(csv);
@@ -57,8 +68,9 @@ export const fetchBreaks = async (args: {
   classification: Classification;
   category: Category;
   geoType: GeoType;
+  base_url: string;
 }): Promise<{ breaks: number[] }> => {
-  const url = `${args.category.baseUrl}/breaksCkmeans/${args.geoType}/${args.category.code}.json`;
+  const url = `${args.base_url}/breaksCkmeans/${args.geoType}/${args.category.code}.json`;
   const response = await fetch(url);
   const breaksRaw = await response.json();
   const breaks = uniqueRoundedClassificationBreaks(args.classification.code, breaksRaw);

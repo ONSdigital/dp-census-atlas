@@ -2,10 +2,11 @@
 /**/*.pyc
 /input_metadata_files/*
 !/input_metadata_files/category_legend_strings.csv
-!/input_metadata_files/classification_2011_comparison_data_availability.csv
-!/input_metadata_files/classification_available_geotypes.csv
+!/input_metadata_files/classification_2011_2021_comparison_data_available_geotypes.csv
+!/input_metadata_files/classification_2021_data_available_geotypes.csv
 !/input_metadata_files/classification_data_downloads.csv
 !/input_metadata_files/variable_caveats.csv
 !/input_metadata_files/variable_map_type_default_classifications.csv
 !/input_metadata_files/variable_short_descriptions.csv
+!/input_metadata_files/variable_tile_data_base_urls.csv
 /**/*.zip

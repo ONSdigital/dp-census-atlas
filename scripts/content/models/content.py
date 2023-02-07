@@ -49,8 +49,7 @@ def content_from_spec_and_metadata(spec: dict, input_metadata_files_dir: str) ->
         cantabular_metadata_full_path.joinpath("Classification.csv"),
         metadata_dir_path.joinpath("variable_map_type_default_classifications.csv"),
         metadata_dir_path.joinpath("classification_data_downloads.csv"),
-        metadata_dir_path.joinpath("classification_2021_data_available_geotypes.csv"),
-        metadata_dir_path.joinpath("classification_2011_2021_comparison_data_available_geotypes.csv")
+        metadata_dir_path.joinpath("classification_data_available_geotypes.csv"),
     )
     variables = variables_from_metadata(
         cantabular_metadata_full_path.joinpath("Variable.csv"),

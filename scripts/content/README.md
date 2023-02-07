@@ -147,13 +147,12 @@ Census maps content uses several types of custom metadata not found in the ONS /
 defined in the `2021-content-spec.json` are assumed to be fully defined and are not referenced int he additiol a)
 
 1. `category_legend_strings.csv`: Legend strings used for each category.
-2. `classification_2011_2021_comparison_data_available_geotypes.csv`: Whether or not census 2011 comparison data is available for each classification, and for which geographies.
-3. `classification_2021_data_available_geotypes.csv`: which geography types are available for each census 2021 data classification.
-4. `classification_data_downloads.csv`: where data for each classification can be downloaded (NB not all classifications will have data downloads and thats fine).
-5. `variable_caveats.csv`: Warnings about data quality for variables (NB not all variables will have warnings and that's fine).
-6. `variable_map_type_default_classifications.csv`: Which classifications are the default ones for different map visualisation types.
-7. `variable_short_descriptions.csv`: Short descriptions for each variable.
-8. `variable_tile_data_base_urls.csv`: S3 urls where the data for each variable can be found (both 2021 data and 2011 comparison data, when available), including any fake data overrides used in local dev or netlify. (see [Adding fake data](#adding-fake-data-for-local-dev-or-netlify), above)
+2. `classification_data_available_geotypes.csv`: which geography types are available for each census 2021 data classification, and (if available), which geography types are available for census 2011 vs 2021 comparison data.
+3. `classification_data_downloads.csv`: where data for each classification can be downloaded (NB not all classifications will have data downloads and thats fine).
+4. `variable_caveats.csv`: Warnings about data quality for variables (NB not all variables will have warnings and that's fine).
+5. `variable_map_type_default_classifications.csv`: Which classifications are the default ones for different map visualisation types.
+6. `variable_short_descriptions.csv`: Short descriptions for each variable.
+7. `variable_tile_data_base_urls.csv`: S3 urls where the data for each variable can be found (both 2021 data and 2011 comparison data, when available), including any fake data overrides used in local dev or netlify. (see [Adding fake data](#adding-fake-data-for-local-dev-or-netlify), above)
 
 ## Adding new content json
 

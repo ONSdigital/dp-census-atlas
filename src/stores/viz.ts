@@ -2,6 +2,7 @@ import { asyncDerived } from "@square/svelte-store";
 import { fetchBreaks, fetchDataForBbox } from "../data/api";
 import { params } from "./params";
 import { viewport } from "./viewport";
+import { getBaseUrlForCurrentMapType } from "../helpers/contentHelpers";
 
 /**
  * A Svelte store containing all the data we need in order to show a vizualisation.
@@ -17,7 +18,7 @@ export const viz = asyncDerived([params, viewport], async ([$params, $viewport])
       category: $params.category,
       geoType: $viewport.geoType,
       bbox: $viewport.bbox,
-      base_url: $params.variable.base_url_2021,
+      baseUrl: getBaseUrlForCurrentMapType($params.mapType, $params.variable),
     };
 
     const [data, breaks] = await Promise.all([fetchDataForBbox(args), fetchBreaks(args)]);

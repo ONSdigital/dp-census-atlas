@@ -1,4 +1,4 @@
-import type { Classification, Variable, VariableGroup, ContentTree, ContentConfig } from "../types";
+import type { Classification, Variable, VariableGroup, ContentTree, ContentConfig, MapType } from "../types";
 import staticContentJsons from "../data/staticContentJsons/index";
 
 type ContentJson = (typeof staticContentJsons)["2021-MASTER.json"];
@@ -65,10 +65,24 @@ export const getContentForStore = async (
     });
   }
 
-  return {
+  // filter different content sets
+  const choroplethContent = {
     releases: releases,
-    variableGroups: mergedVariableGroups as VariableGroup[],
+    variableGroups: filterVariableGroupsForMapType(mergedVariableGroups, "choropleth" as MapType) as VariableGroup[],
     fakeDataLoaded: fakeDataLoaded,
+  };
+  const changeOverTimeContent = {
+    releases: releases,
+    variableGroups: filterVariableGroupsForMapType(
+      mergedVariableGroups,
+      "change-over-time" as MapType,
+    ) as VariableGroup[],
+    fakeDataLoaded: fakeDataLoaded,
+  };
+
+  return {
+    choropleth: choroplethContent,
+    "change-over-time": changeOverTimeContent,
   } as ContentTree;
 };
 
@@ -215,25 +229,6 @@ export const sortVariableGroupVariables = (variableGroups: VariableGroup[]) => {
   });
 };
 
-/*
-  Return name of latest release. Update by adding returns statements above those currently here.
-*/
-export const getLatestRelease = (content: ContentTree) => {
-  if (content.choropleth.releases.some((r) => r.includes("2021-SOGI"))) {
-    return "Sogi";
-  }
-  if (content.choropleth.releases.some((r) => r.includes("2021-HOU"))) {
-    return "Hou";
-  }
-  if (content.choropleth.releases.some((r) => r.includes("2021-LAB"))) {
-    return "LabTtwWelshSkills";
-  }
-  if (content.choropleth.releases.some((r) => r.includes("2021-EILR"))) {
-    return "ArmEilr";
-  }
-  return "DemMig";
-};
-
 export const filterVariableGroupsForMapType = (variableGroups: VariableGroup[], mapType: MapType) => {
   // return all for choropleth
   if (mapType === "choropleth") {
@@ -289,4 +284,13 @@ export const contentInVariableGroups = (
     }
   }
   return false;
+};
+
+export const getBaseUrlForCurrentMapType = (mapType: MapType, variable: Variable): string => {
+  if (mapType === "choropleth") {
+    return variable.base_url_2021;
+  }
+  if (mapType === "change-over-time") {
+    return variable.base_url_2011_2021_comparison;
+  }
 };

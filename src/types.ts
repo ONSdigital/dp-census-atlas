@@ -18,10 +18,6 @@ export type Variable = {
   topic_code: string;
   caveat_text: string;
   caveat_link: string;
-  base_url_2021: string;
-  base_url_2021_dev_override: string;
-  base_url_2011_2021_comparison: string;
-  base_url_2011_2021_comparison_dev_override: string;
   classifications: Classification[];
 };
 
@@ -44,6 +40,7 @@ export type Category = {
   legend_str_1: string;
   legend_str_2: string;
   legend_str_3: string;
+  baseUrl: string;
 };
 export type VariableData = { [catCode: string]: { count: number; total: number; percentage: number } };
 
@@ -148,9 +145,8 @@ export type RuntimeEnv = {
 };
 
 export type ContentConfig = {
-  devContentJsonUrl: string;
-  webContentJsonUrl: string;
-  publishingContentJsonUrl: string;
+  contentBaseUrl: string;
+  contentJsonUrl: string;
 };
 
 export type ContentTree = {

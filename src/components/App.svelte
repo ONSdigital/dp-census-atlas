@@ -5,15 +5,14 @@
   import pym from "pym.js";
   import { onMount } from "svelte";
   import { page } from "$app/stores";
+  import { setContentStoreOnce } from "../data/setContentStore";
   import { content } from "../stores/content";
   import { geography } from "../stores/geography";
   import Loading from "./Loading.svelte";
   import ServiceUnavailablePage from "./ServiceUnavailablePage.svelte";
 
-  export let contentForStore;
-
   onMount(async () => {
-    content.set(contentForStore);
+    setContentStoreOnce();
 
     // tell iframe host using pym.js to set iframe height to 570px
     new pym.Child().sendMessage("height", "570");

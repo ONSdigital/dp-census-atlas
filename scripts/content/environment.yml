@@ -1,7 +1,0 @@
-name: census-maps-content-generation-env
-
-dependencies:
-  - python=3.11
-  - python-slugify=6.1
-  - pytest=7.2
-  - freezegun=1.2

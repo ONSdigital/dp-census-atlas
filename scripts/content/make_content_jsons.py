@@ -11,7 +11,7 @@ def validate_variable_groups(variable_groups: list[CensusVariableGroup]) -> bool
     return all([vg.is_valid() for vg in variable_groups])
 
 
-def main(spec_fn: Path, input_metadata_files_dir: Path, output_dir: Path):
+def main(spec_fn: str, input_metadata_files_dir: str, output_dir: str):
     with open(spec_fn, "r") as f:
         spec = json.load(f)
 
@@ -30,7 +30,7 @@ def main(spec_fn: Path, input_metadata_files_dir: Path, output_dir: Path):
     # output
     output_dir_path = Path(output_dir)
     makedirs(output_dir_path, exist_ok=True)
-    print(f"Writing content jsons to {output_dir_path.resolve()}...")
+    print(f"Writing content jsons to {output_dir_path}...")
     for content in content_iterations:
         print(f"Writing {content.content_json}...")
         content.to_content_json_file(output_dir_path)
@@ -46,5 +46,5 @@ if __name__ == "__main__":
     if len(sys.argv) > 3:
         output_dir = sys.argv[3]
     else:
-        output_dir = "../../src/data/staticContentJsons"
-    main(Path(spec_fn), Path(input_metadata_file_dir), Path(output_dir))
+        output_dir = "output_content_jsons"
+    main(spec_fn, input_metadata_file_dir, output_dir)

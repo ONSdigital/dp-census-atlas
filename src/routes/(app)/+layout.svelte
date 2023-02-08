@@ -1,10 +1,8 @@
 <script>
   import App from "../../components/App.svelte";
   import Layout from "../../components/Layout.svelte";
-
-  export let data;
 </script>
 
-<App contentForStore={data.contentForStore}>
+<App>
   <Layout><slot /></Layout>
 </App>

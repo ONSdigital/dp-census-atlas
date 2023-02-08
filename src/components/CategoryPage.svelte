@@ -67,32 +67,36 @@
       {#if $params.variable.classifications.length > 1}
         <ClassificationPager />
       {/if}
+
+      <!-- work-in-progress -->
+      {#if false}
+        <div class="mb-6 mt-6 flex justify-end py-3 border-t-[1px] bg-ons-grey-5 px-3 ">
+          <div class="  ">
+            <a
+              href="https://www.ons.gov.uk/feedback"
+              class="flex items-center gap-2.5 custom-ring flex-nowrap whitespace-nowrap group"
+            >
+              <!-- <div class="fill-ons-census-supporting w-3 h-3">
+              <svg id="triangle" viewBox="0 0 100 100">
+                <polygon points="50 0, 100 100, 0 100" />
+              </svg>
+            </div> -->
+              <div class="bg-ons-census-supporting p-1">
+                <div class="text-lg text-ons-white">
+                  <Icon kind="changeHistory" />
+                </div>
+              </div>
+              <!-- <div class="text-lg ">
+              <Icon kind="changeHistory" />
+            </div> -->
+              <div class="hyperlink">Compare with 2011</div>
+            </a>
+          </div>
+        </div>
+      {/if}
     </section>
   </div>
 </div>
 
 <div class="grow" />
-
-<!-- work-in-progress -->
-{#if false}
-  <div class="mb-6 mx-6 flex justify-end">
-    <div class="p-3 bg-ons-grey-5 ">
-      <a
-        href="https://www.ons.gov.uk/feedback"
-        class="flex items-center gap-2.5 custom-ring flex-nowrap whitespace-nowrap group"
-      >
-        <div class="fill-ons-census-supporting w-3 h-3">
-          <svg id="triangle" viewBox="0 0 100 100">
-            <polygon points="50 0, 100 100, 0 100" />
-          </svg>
-        </div>
-        <!-- <div class="bg-ons-census-supporting p-0.5 text-lg text-ons-white flex items-center">
-        <Icon kind="changeHistory" />
-      </div> -->
-        <div class="hyperlink">Compare with 2011</div>
-      </a>
-    </div>
-  </div>
-{/if}
-
 <CategoryPageLinks dataDownloadUrl={$params.classification.data_download} />

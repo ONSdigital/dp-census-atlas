@@ -14,8 +14,6 @@ test("expect two decimal places, with % for main_language_detailed_23a", async (
     "/choropleth/identity/main-language-detailed/main-language-detailed-23a/english-english-or-welsh-if-in-wales?lad=E09000012",
   );
   await expect(
-    page.getByText(
-      "80.13% of people aged 3 years and over in Hackney LAD speak English (English or Welsh if in Wales) as their main language",
-    ),
+    page.getByText("80.13% of people in Hackney LAD speak English (English or Welsh if in Wales)"),
   ).toBeVisible();
 });

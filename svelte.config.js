@@ -13,9 +13,9 @@ const getAdapter = () => {
     return nodeAdapter();
   } else if (skAdapter === "netlify") {
     /* use netlify adapter pinned to v1.x here, as adapter-auto selects a netlify adapter that is incompatible with
-    sveltekit <1.5 (and at time of writing sveltekit 1.5 did not work with our node adatper + /census/maps basepath
+    sveltekit <1.5 (and at time of writing sveltekit 1.5 did not work with our node adapter + /census/maps basepath
     setup). This should be removed when the compatibility issue is solved, as netlify recommends you just use
-    adapter-auto to build svetelkit */
+    adapter-auto to build sveltekit */
     console.log("Building with netlify adapter.");
     return netlifyAdapter();
   } else {

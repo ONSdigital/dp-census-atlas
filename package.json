@@ -8,7 +8,7 @@
     "build": "vite build",
     "build:dev": ". env/dev.sh && npm run build",
     "build:netlify": ". env/netlify.sh && npm run build",
-    "build:ons": ". env/ons.sh && npm run build && ./workaround-sveltekit-3726.sh",
+    "build:ons": ". env/ons.sh && npm run build",
     "preview": "vite preview",
     "test": ". env/test.sh && vitest run src/",
     "e2e": "playwright test e2e/",

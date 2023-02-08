@@ -16,8 +16,8 @@ export const setContentStoreOnce = async () => {
   // get env config
   const runtimeEnv = await (await fetch(`${appBasePath}/api/runtime-env`)).json();
 
-  // use dev content if dev or netlify env
-  const isDev = ["dev", "netlify"].includes(runtimeEnv.envName);
+  // use dev content if dev, netlify or sandbox env
+  const isDev = ["dev", "netlify", "sandbox"].includes(runtimeEnv.envName);
 
   // fetch content for store and set
   const contentForStore = await getContentForStore(content, isDev, runtimeEnv.isPublishing);

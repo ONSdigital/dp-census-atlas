@@ -46,13 +46,13 @@ class CensusClassification:
     def set_available_geotypes(self, available_geos: list[dict]) -> None:
         available_geos_row = next((r for r in available_geos if r["classification"] == self.code), None)
         if available_geos_row is not None:
-            self.available_geotypes = available_geos_row["2021_data_available_geotypes"].strip().split(",")
+            self.available_geotypes = available_geos_row["available_geotypes"].strip().split(",")
 
     def set_comparison_2011_data_available_geotypes(self, available_2011_comparison_data: list[dict]) -> None:
         available_2011_row = next((r for r in available_2011_comparison_data if r["classification"] == self.code), None)
-        if available_2011_row is not None and available_2011_row["2011_2021_comparison_data_available_geotypes"] != "":
+        if available_2011_row is not None and available_2011_row["2011_comparison_data_available_geotypes"] != "":
             self.comparison_2011_data_available_geotypes = available_2011_row[
-                "2011_2021_comparison_data_available_geotypes"
+                "2011_comparison_data_available_geotypes"
             ].strip().split(",")
 
     def is_valid(self) -> bool:
@@ -140,6 +140,7 @@ def classifications_from_metadata(
     map_vis_defaults_csv: Path or str,
     downloads_csv: Path or str,
     available_geotypes_csv: Path or str,
+    comparison_2011_csv: Path or str
 ) -> list[CensusClassification]:
     """
     Make CensusClassification's from rows in Classification.csv. NB filter out any blank rows in the csv. Append extra
@@ -162,6 +163,9 @@ def classifications_from_metadata(
 
     with open(available_geotypes_csv, "r") as f:
         available_geotypes = list(csv.DictReader(f))
+
+    with open(comparison_2011_csv, "r") as f:
+        available_2011_comparison_data_geotypes = list(csv.DictReader(f))
 
     # load classifications
     with open(classification_csv, "r", encoding="utf-8") as f:
@@ -187,7 +191,7 @@ def classifications_from_metadata(
                 classification.set_dot_density_default(dot_density_defaults)
                 classification.set_data_downloads(data_downloads)
                 classification.set_available_geotypes(available_geotypes)
-                classification.set_comparison_2011_data_available_geotypes(available_geotypes)
+                classification.set_comparison_2011_data_available_geotypes(available_2011_comparison_data_geotypes)
 
                 classifications.append(classification)
 

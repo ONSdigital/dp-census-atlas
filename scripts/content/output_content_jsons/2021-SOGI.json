@@ -1,0 +1,307 @@
+{
+  "meta": {
+    "created_at": "2023-01-23-16-01-56",
+    "release": "2021-SOGI-ar2776-c21ew_metadata-v1-3_cantab_20230119-40"
+  },
+  "content": [
+    {
+      "name": "Identity",
+      "slug": "identity",
+      "desc": "How people identify themselves and their beliefs.",
+      "variables": [
+        {
+          "name": "Gender identity",
+          "code": "gender_identity",
+          "slug": "gender-identity",
+          "desc": "The gender identity recorded by the person completing the census.",
+          "long_desc": "Classifies people according to the responses to the gender identity question. This question was voluntary and was only asked of people aged 16 years and over.",
+          "units": "Person",
+          "topic_code": "SOGI",
+          "classifications": [
+            {
+              "code": "gender_identity_4a",
+              "slug": "gender-identity-4a",
+              "desc": "Gender identity (4 categories)",
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "data_download": "https://www.ons.gov.uk/datasets/TS070/editions/2021",
+              "categories": [
+                {
+                  "name": "Gender identity the same as sex registered at birth",
+                  "slug": "gender-identity-the-same-as-sex-registered-at-birth",
+                  "code": "gender_identity_4a-001",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "a gender identity the same as their sex registered at birth"
+                },
+                {
+                  "name": "Gender identity different from sex registered at birth",
+                  "slug": "gender-identity-different-from-sex-registered-at-birth",
+                  "code": "gender_identity_4a-002",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "a gender identity different from their sex registered at birth"
+                },
+                {
+                  "name": "Not answered",
+                  "slug": "not-answered",
+                  "code": "gender_identity_4a-003",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
+                  "legend_str_2": "did",
+                  "legend_str_3": "not answer"
+                }
+              ]
+            },
+            {
+              "code": "gender_identity_8a",
+              "slug": "gender-identity-8a",
+              "desc": "Gender identity (8 categories)",
+              "available_geotypes": [
+                "lad"
+              ],
+              "data_download": "https://www.ons.gov.uk/datasets/TS070/editions/2021",
+              "categories": [
+                {
+                  "name": "Gender identity the same as sex registered at birth",
+                  "slug": "gender-identity-the-same-as-sex-registered-at-birth",
+                  "code": "gender_identity_8a-001",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "a gender identity the same as their sex registered at birth"
+                },
+                {
+                  "name": "Gender identity different from sex registered at birth but no specific identity given",
+                  "slug": "gender-identity-different-from-sex-registered-at-birth-but-no-specific-identity-given",
+                  "code": "gender_identity_8a-002",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "a gender identity different from their sex registered at birth but no specific identity given"
+                },
+                {
+                  "name": "Trans woman",
+                  "slug": "trans-woman",
+                  "code": "gender_identity_8a-003",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "a trans woman"
+                },
+                {
+                  "name": "Trans man",
+                  "slug": "trans-man",
+                  "code": "gender_identity_8a-004",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "a trans man"
+                },
+                {
+                  "name": "Non-binary",
+                  "slug": "non-binary",
+                  "code": "gender_identity_8a-005",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "non-binary"
+                },
+                {
+                  "name": "All other gender identities",
+                  "slug": "all-other-gender-identities",
+                  "code": "gender_identity_8a-006",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "another gender identity"
+                },
+                {
+                  "name": "Not answered",
+                  "slug": "not-answered",
+                  "code": "gender_identity_8a-007",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
+                  "legend_str_2": "did",
+                  "legend_str_3": "not answer"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Sexual orientation",
+          "code": "sexual_orientation",
+          "slug": "sexual-orientation",
+          "desc": "The sexual orientation recorded by the person completing the census.",
+          "long_desc": "Classifies people according to the responses to the sexual orientation question. This question was voluntary and was only asked of people aged 16 years and over.",
+          "units": "Person",
+          "topic_code": "SOGI",
+          "classifications": [
+            {
+              "code": "sexual_orientation_4a",
+              "slug": "sexual-orientation-4a",
+              "desc": "Sexual orientation (4 categories)",
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "data_download": "https://www.ons.gov.uk/datasets/TS077/editions/2021",
+              "categories": [
+                {
+                  "name": "Straight or Heterosexual",
+                  "slug": "straight-or-heterosexual",
+                  "code": "sexual_orientation_4a-001",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "straight or heterosexual"
+                },
+                {
+                  "name": "Lesbian, Gay, Bisexual, or Other (LGB+)",
+                  "slug": "lesbian-gay-bisexual-or-other-lgb",
+                  "code": "sexual_orientation_4a-002",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "lesbian, gay, bisexual, or other (LGB+)"
+                },
+                {
+                  "name": "Not answered",
+                  "slug": "not-answered",
+                  "code": "sexual_orientation_4a-003",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
+                  "legend_str_2": "did",
+                  "legend_str_3": "not answer"
+                }
+              ]
+            },
+            {
+              "code": "sexual_orientation_6a",
+              "slug": "sexual-orientation-6a",
+              "desc": "Sexual orientation (6 categories)",
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
+              "data_download": "https://www.ons.gov.uk/datasets/TS077/editions/2021",
+              "categories": [
+                {
+                  "name": "Straight or Heterosexual",
+                  "slug": "straight-or-heterosexual",
+                  "code": "sexual_orientation_6a-001",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "straight or heterosexual"
+                },
+                {
+                  "name": "Gay or Lesbian",
+                  "slug": "gay-or-lesbian",
+                  "code": "sexual_orientation_6a-002",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "gay or lesbian"
+                },
+                {
+                  "name": "Bisexual",
+                  "slug": "bisexual",
+                  "code": "sexual_orientation_6a-003",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "bisexual"
+                },
+                {
+                  "name": "All other sexual orientations",
+                  "slug": "all-other-sexual-orientations",
+                  "code": "sexual_orientation_6a-004",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "another sexual orientation"
+                },
+                {
+                  "name": "Not answered",
+                  "slug": "not-answered",
+                  "code": "sexual_orientation_6a-005",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
+                  "legend_str_2": "did",
+                  "legend_str_3": "not answer"
+                }
+              ]
+            },
+            {
+              "code": "sexual_orientation_9a",
+              "slug": "sexual-orientation-9a",
+              "desc": "Sexual orientation (9 categories)",
+              "available_geotypes": [
+                "lad"
+              ],
+              "data_download": "https://www.ons.gov.uk/datasets/TS079/editions/2021",
+              "categories": [
+                {
+                  "name": "Straight or Heterosexual",
+                  "slug": "straight-or-heterosexual",
+                  "code": "sexual_orientation_9a-001",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "straight or heterosexual"
+                },
+                {
+                  "name": "Gay or Lesbian",
+                  "slug": "gay-or-lesbian",
+                  "code": "sexual_orientation_9a-002",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "gay or lesbian"
+                },
+                {
+                  "name": "Bisexual",
+                  "slug": "bisexual",
+                  "code": "sexual_orientation_9a-003",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "bisexual"
+                },
+                {
+                  "name": "Pansexual",
+                  "slug": "pansexual",
+                  "code": "sexual_orientation_9a-004",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "pansexual"
+                },
+                {
+                  "name": "Asexual",
+                  "slug": "asexual",
+                  "code": "sexual_orientation_9a-005",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "asexual"
+                },
+                {
+                  "name": "Queer",
+                  "slug": "queer",
+                  "code": "sexual_orientation_9a-006",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "queer"
+                },
+                {
+                  "name": "All other sexual orientations",
+                  "slug": "all-other-sexual-orientations",
+                  "code": "sexual_orientation_9a-007",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
+                  "legend_str_2": "have",
+                  "legend_str_3": "another sexual orientation"
+                },
+                {
+                  "name": "Not answered",
+                  "slug": "not-answered",
+                  "code": "sexual_orientation_9a-008",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
+                  "legend_str_2": "did",
+                  "legend_str_3": "not answer"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

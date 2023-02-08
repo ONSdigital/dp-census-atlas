@@ -1,9 +1,13 @@
 <script>
   import { content } from "../stores/content";
-  import { isInitialReleasePeriod } from "../helpers/contentHelpers";
+  import { isInitialReleasePeriod, getLatestRelease } from "../helpers/contentHelpers";
   import VariableGroupList from "./VariableGroupList.svelte";
   import AreaPanel from "./AreaPanel.svelte";
   import SearchBox from "./SearchBox.svelte";
+  import DemMigExamples from "./examples/DemMigExamples.svelte";
+  import ArmEilrExamples from "./examples/ArmEilrExamples.svelte";
+  import LabTtwWelshSkillsExamples from "./examples/LabTtwWelshSkillsExamples.svelte";
+  import HouExamples from "./examples/HouExamples.svelte";
   import SogiExamples from "./examples/SogiExamples.svelte";
 </script>
 
@@ -28,7 +32,17 @@
     <div class="bg-ons-grey-5 p-6 mt-8 mb-9">
       <h3 class="pb-3 text-xl font-semibold ">Examples</h3>
       <ul>
-        <SogiExamples />
+        {#if getLatestRelease($content) === "DemMig"}
+          <DemMigExamples />
+        {:else if getLatestRelease($content) === "ArmEilr"}
+          <ArmEilrExamples />
+        {:else if getLatestRelease($content) === "LabTtwWelshSkills"}
+          <LabTtwWelshSkillsExamples />
+        {:else if getLatestRelease($content) === "Hou"}
+          <HouExamples />
+        {:else if getLatestRelease($content) === "Sogi"}
+          <SogiExamples />
+        {/if}
       </ul>
     </div>
   </section>

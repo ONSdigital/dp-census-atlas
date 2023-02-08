@@ -16,12 +16,22 @@ export async function load({ fetch, request }) {
   const rawContent = await Promise.all(
     contentForEnvAndMode.map(async (ctcfg) => {
       try {
-        const resp = await fetch(ctcfg.contentJsonUrl, {
-          cache: "no-cache", // always ask for latest content files
-          headers: {
-            cookie: request.headers.get("cookie") || undefined,
-          },
-        });
+        let fetchOpts;
+        if (request.url.includes("publishing")) {
+          console.log("doing cookie passthrough for publishing");
+          fetchOpts = {
+            cache: "no-cache", // always ask for latest content files
+            headers: {
+              cookie: request.headers.get("cookie") || undefined,
+            },
+          };
+        } else {
+          console.log("not doing cookie passthrough");
+          fetchOpts = {
+            cache: "no-cache", // always ask for latest content files
+          };
+        }
+        const resp = await fetch(ctcfg.contentJsonUrl, fetchOpts);
         if (resp.status != 200) {
           console.log(`Content json file ${ctcfg.contentJsonUrl} could not be fetched.`);
           console.log(resp);

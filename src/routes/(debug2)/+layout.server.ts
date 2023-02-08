@@ -24,11 +24,13 @@ export async function load({ fetch, request }) {
         });
         if (resp.status != 200) {
           console.log(`Content json file ${ctcfg.contentJsonUrl} could not be fetched.`);
+          console.log(resp);
           return null;
         } else {
           const contentJson = await resp.json();
           if (typeof contentJson === "string") {
             console.log(`Content json file ${ctcfg.contentJsonUrl} could not be fetched: ${contentJson}.`);
+            console.log(resp);
             return null;
           } else {
             return {

@@ -17,7 +17,8 @@ export async function load({ fetch, request }) {
     contentForEnvAndMode.map(async (ctcfg) => {
       try {
         let fetchOpts;
-        if (request.url.includes("publishing")) {
+        const requestUrl = new URL(request.url);
+        if (requestUrl.hostname.includes("publishing")) {
           console.log("doing cookie passthrough for publishing");
           fetchOpts = {
             cache: "no-cache", // always ask for latest content files

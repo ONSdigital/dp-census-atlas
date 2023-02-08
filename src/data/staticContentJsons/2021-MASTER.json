@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2023-02-07-09-37-32",
+    "created_at": "2023-02-08-12-08-25",
     "release": "2021-MASTER-ar2776-c21ew_metadata-v1-3_cantab_20230202-43",
     "additional_content_jsons": [
       {
@@ -117,6 +117,7 @@
           "units": "Household",
           "topic_code": "DEM",
           "base_url_2021": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
           "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
@@ -190,6 +191,7 @@
           "units": "Household",
           "topic_code": "DEM",
           "base_url_2021": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
           "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
@@ -375,6 +377,7 @@
           "units": "Household",
           "topic_code": "DEM",
           "base_url_2021": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
           "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
@@ -520,6 +523,7 @@
           "units": "Person",
           "topic_code": "DEM",
           "base_url_2021": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
           "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
@@ -729,6 +733,7 @@
           "units": "Person",
           "topic_code": "DEM",
           "base_url_2021": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
           "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
@@ -839,6 +844,7 @@
           "units": "Person",
           "topic_code": "DEM",
           "base_url_2021": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
           "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
@@ -1934,6 +1940,7 @@
           "units": "Person",
           "topic_code": "DEM",
           "base_url_2021": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
           "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
@@ -1983,6 +1990,7 @@
           "units": "Person",
           "topic_code": "MIG",
           "base_url_2021": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
           "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
@@ -2150,6 +2158,7 @@
           "units": "Person",
           "topic_code": "MIG",
           "base_url_2021": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
           "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
@@ -2855,6 +2864,7 @@
           "units": "Person",
           "topic_code": "MIG",
           "base_url_2021": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
           "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
@@ -2919,6 +2929,7 @@
           "units": "Person",
           "topic_code": "MIG",
           "base_url_2021": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
           "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
@@ -3886,6 +3897,7 @@
           "units": "Person",
           "topic_code": "MIG",
           "base_url_2021": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
           "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
@@ -3959,6 +3971,7 @@
           "units": "Person",
           "topic_code": "MIG",
           "base_url_2021": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
           "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
@@ -4151,6 +4164,7 @@
           "units": "Person",
           "topic_code": "EDU",
           "base_url_2021": "https://ons-dp-prod-census-maps-edu.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
           "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
@@ -4296,6 +4310,7 @@
           "units": "Person",
           "topic_code": "EDU",
           "base_url_2021": "https://ons-dp-prod-census-maps-edu.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
           "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
@@ -4349,6 +4364,7 @@
           "units": "Household",
           "topic_code": "EILR",
           "base_url_2021": "https://ons-dp-prod-census-maps-eilr.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
           "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
@@ -4462,6 +4478,7 @@
           "units": "Person",
           "topic_code": "EILR",
           "base_url_2021": "https://ons-dp-prod-census-maps-eilr.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
           "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
@@ -4703,6 +4720,7 @@
           "units": "Household",
           "topic_code": "EILR",
           "base_url_2021": "https://ons-dp-prod-census-maps-eilr.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
           "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
@@ -4767,6 +4785,7 @@
           "units": "Household",
           "topic_code": "EILR",
           "base_url_2021": "https://ons-dp-prod-census-maps-eilr.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
           "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
@@ -5009,6 +5028,7 @@
           "units": "Person",
           "topic_code": "EILR",
           "base_url_2021": "https://ons-dp-prod-census-maps-eilr.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
           "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
@@ -5981,6 +6001,7 @@
           "base_url_2021": "https://ons-dp-prod-census-maps-eilr.s3.eu-west-2.amazonaws.com",
           "caveat_text": "There are quality considerations for this variable.",
           "caveat_link": "https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/ethnicity/methodologies/ethnicgroupnationalidentitylanguageandreligionqualityinformationforcensus2021",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
           "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
@@ -6266,6 +6287,7 @@
           "base_url_2021": "https://ons-dp-prod-census-maps-eilr.s3.eu-west-2.amazonaws.com",
           "caveat_text": "There are quality considerations for this variable.",
           "caveat_link": "https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/ethnicity/methodologies/ethnicgroupnationalidentitylanguageandreligionqualityinformationforcensus2021",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
           "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
@@ -6874,6 +6896,7 @@
           "base_url_2021": "https://ons-dp-prod-census-maps-eilr.s3.eu-west-2.amazonaws.com",
           "caveat_text": "There are quality considerations for the \"not answered\" category in university locations.",
           "caveat_link": "https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/ethnicity/methodologies/ethnicgroupnationalidentitylanguageandreligionqualityinformationforcensus2021",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
           "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
@@ -7272,6 +7295,7 @@
           "units": "Person",
           "topic_code": "EILR",
           "base_url_2021": "https://ons-dp-prod-census-maps-welsh-skills.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
           "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
@@ -7473,6 +7497,7 @@
           "units": "Person",
           "topic_code": "EILR",
           "base_url_2021": "https://ons-dp-prod-census-maps-welsh-skills.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
           "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
@@ -7528,6 +7553,7 @@
           "units": "Household",
           "topic_code": "HOU",
           "base_url_2021": "https://ons-dp-prod-census-maps-hou.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
           "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
@@ -7723,6 +7749,7 @@
           "units": "Person",
           "topic_code": "HOU",
           "base_url_2021": "https://ons-dp-prod-census-maps-hou.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
           "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
@@ -7777,6 +7804,7 @@
           "units": "Household",
           "topic_code": "HOU",
           "base_url_2021": "https://ons-dp-prod-census-maps-hou.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
           "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
@@ -7935,6 +7963,7 @@
           "units": "Household",
           "topic_code": "HOU",
           "base_url_2021": "https://ons-dp-prod-census-maps-hou.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
           "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
@@ -8080,6 +8109,7 @@
           "units": "Household",
           "topic_code": "HOU",
           "base_url_2021": "https://ons-dp-prod-census-maps-hou.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
           "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
@@ -8145,6 +8175,7 @@
           "units": "Household",
           "topic_code": "HOU",
           "base_url_2021": "https://ons-dp-prod-census-maps-hou.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
           "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
@@ -8242,6 +8273,7 @@
           "units": "Household",
           "topic_code": "HOU",
           "base_url_2021": "https://ons-dp-prod-census-maps-hou.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
           "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
@@ -8380,6 +8412,7 @@
           "units": "Person",
           "topic_code": "HOU",
           "base_url_2021": "https://ons-dp-prod-census-maps-hou.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
           "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
@@ -8669,6 +8702,7 @@
           "base_url_2021": "https://ons-dp-prod-census-maps-lab.s3.eu-west-2.amazonaws.com",
           "caveat_text": "There are pandemic-related quality considerations for this variable.",
           "caveat_link": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/methodologies/labourmarketqualityinformationforcensus2021",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
           "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
@@ -8845,6 +8879,7 @@
           "base_url_2021": "https://ons-dp-prod-census-maps-lab.s3.eu-west-2.amazonaws.com",
           "caveat_text": "There are pandemic-related quality considerations for this variable.",
           "caveat_link": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/methodologies/labourmarketqualityinformationforcensus2021",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
           "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
@@ -8899,6 +8934,7 @@
           "base_url_2021": "https://ons-dp-prod-census-maps-lab.s3.eu-west-2.amazonaws.com",
           "caveat_text": "There are pandemic-related quality considerations for this variable.",
           "caveat_link": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/methodologies/labourmarketqualityinformationforcensus2021",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
           "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
@@ -8998,6 +9034,7 @@
           "base_url_2021": "https://ons-dp-prod-census-maps-lab.s3.eu-west-2.amazonaws.com",
           "caveat_text": "There are pandemic-related quality considerations for this variable.",
           "caveat_link": "https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/earningsandworkinghours/methodologies/labourmarketqualityinformationforcensus2021",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
           "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {

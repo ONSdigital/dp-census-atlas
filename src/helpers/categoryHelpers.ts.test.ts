@@ -9,7 +9,6 @@ describe("formatTemplateString", () => {
     legend_str_1: "",
     legend_str_2: "",
     legend_str_3: "",
-    baseUrl: "",
   };
   const testVariable: Variable = {
     name: "testVar",
@@ -21,6 +20,10 @@ describe("formatTemplateString", () => {
     topic_code: "testTopicCode",
     caveat_text: "testCaveatText",
     caveat_link: "testCaveatLink",
+    base_url_2021: "testBaseUrl2021",
+    base_url_2021_dev_override: "testBaseUrl2021DevOverride",
+    base_url_2011_2021_comparison: "testBaseUrl20112021Comparison",
+    base_url_2011_2021_comparison_dev_override: "testBaseUrl20112021ComparisonDevOverride",
     classifications: [] as Classification[],
   };
   const testLocation = "testLocation";

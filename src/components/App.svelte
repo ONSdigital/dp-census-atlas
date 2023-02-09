@@ -5,8 +5,8 @@
   import pym from "pym.js";
   import { onMount } from "svelte";
   import { page } from "$app/stores";
-  import { setContentStoreOnce } from "../data/setContentStore";
   import { content } from "../stores/content";
+  import { setContentStoreOnce } from "../data/setContentStore";
   import { geography } from "../stores/geography";
   import Loading from "./Loading.svelte";
   import ServiceUnavailablePage from "./ServiceUnavailablePage.svelte";

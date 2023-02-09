@@ -1,4 +1,4 @@
-import type { VariableGroup } from "src/types";
+import type { VariableGroup } from "../types";
 
 export const searchCensus = (q: string, variableGroups: VariableGroup[]) => {
   if (!variableGroups) {

@@ -31,9 +31,13 @@ const getGeoType = (geoCode: string): string => {
 const filterResults = (results) => {
   // aim here is to evenly populate a ten-long array of results...
   const output = [];
-  const nFromEach = Math.round(10 / Object.keys(results).length);
-  for (const rType in results) {
-    output.push(...results[rType].slice(0, nFromEach));
+  const maxResults = 10;
+  for (let i = 0; i < maxResults; i++) {
+    for (const rType in results) {
+      if (results[rType].length > i) {
+        output.push(results[rType][i]);
+      }
+    }
   }
   return output;
 };
@@ -57,17 +61,37 @@ export const GET: RequestHandler = async ({ url }) => {
           BIND (?geoCode as ?en)
           FILTER(STRSTARTS(LCASE(?en), LCASE("${q}")))
         }
-        LIMIT 10
-        `;
+        LIMIT 10`;
         const res = await fetch(`${onsLinkedDataAPI}${encodeURIComponent(sparQLprefix + query)}`);
         const rawResJson = await res.json();
-        console.log(rawResJson);
-        console.log(query);
         const resJson = rawResJson.results.bindings.map((r) => {
           return { en: r.en.value, geoType: getGeoType(r.geoCode.value), geoCode: r.geoCode.value };
         });
         results["GSS"] = resJson;
       }
+      // always do postcode search
+      const spacesInQ = /\s+/g.test(q);
+      const postcodeNoSpacesStatement = spacesInQ ? "." : "foi:code ?postcodeNoSpaces .";
+      const filterTargetStatement = spacesInQ ? "?en" : "?postcodeNoSpaces";
+      const query = `
+        SELECT DISTINCT ?en ?geoCode
+        WHERE {
+          ?pcode foi:memberOf collection:postcodes ;
+                within:outputarea ?oaRaw ;
+                postcodeAlt:postcode1space ?en ;
+              ${postcodeNoSpacesStatement}
+          ?oaRaw rdfs:label ?geoCode .
+          FILTER(STRSTARTS(LCASE(${filterTargetStatement}), LCASE("${q}")))
+        }
+        LIMIT 10`;
+      const res = await fetch(`${onsLinkedDataAPI}${encodeURIComponent(sparQLprefix + query)}`);
+      const rawResJson = await res.json();
+      console.log(query);
+      console.log(rawResJson);
+      const resJson = rawResJson.results.bindings.map((r) => {
+        return { en: r.en.value, geoType: getGeoType(r.geoCode.value), geoCode: r.geoCode.value };
+      });
+      results["PCD"] = resJson;
     }
 
     return json(filterResults(results));

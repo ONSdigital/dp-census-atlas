@@ -28,8 +28,19 @@ const getGeoType = (geoCode: string): string => {
   return "NotRecognised";
 };
 
+const filterResults = (results) => {
+  // aim here is to evenly populate a ten-long array of results...
+  const output = [];
+  const nFromEach = Math.round(10 / Object.keys(results).length);
+  for (const rType in results) {
+    output.push(...results[rType].slice(0, nFromEach));
+  }
+  return output;
+};
+
 export const GET: RequestHandler = async ({ url }) => {
   const q = url.searchParams.get("q").toLowerCase();
+  const results = {};
   if (q) {
     // digits in string means either gss code or postcode search
     if (/\d/.test(q)) {
@@ -55,10 +66,11 @@ export const GET: RequestHandler = async ({ url }) => {
         const resJson = rawResJson.results.bindings.map((r) => {
           return { en: r.en.value, geoType: getGeoType(r.geoCode.value), geoCode: r.geoCode.value };
         });
-        return json(resJson);
+        results["GSS"] = resJson;
       }
     }
 
+    return json(filterResults(results));
     // const msoaHCLresults = data.filter(
     //   (geo) => geo.geoType === "MSOA" && (geo.en.toLowerCase().includes(q) || geo.geoCode.toLowerCase() === q),
     // );

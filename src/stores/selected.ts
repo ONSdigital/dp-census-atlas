@@ -2,7 +2,7 @@ import { asyncDerived } from "@square/svelte-store";
 import { geography } from "./geography";
 import { viz } from "./viz";
 import { fetchDataForBbox } from "../data/api";
-import { getBaseUrlForCurrentMapType } from "../helpers/contentHelpers";
+import { getDataBaseUrlForVariable } from "../helpers/contentHelpers";
 
 export const selected = asyncDerived([geography, viz], async ([$geography, $viz]) => {
   if (!$geography) {
@@ -23,7 +23,7 @@ export const selected = asyncDerived([geography, viz], async ([$geography, $viz]
       category: $viz.params.category,
       geoType: $geography.geoType,
       bbox: { south, west, north, east },
-      baseUrl: getBaseUrlForCurrentMapType($viz.params.mapType, $viz.params.variable),
+      baseUrl: getDataBaseUrlForVariable($viz.params.mode, $viz.params.variable),
     };
 
     const data = await fetchDataForBbox(args);

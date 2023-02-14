@@ -49,12 +49,14 @@ export type Category = {
 export type VariableData = { [catCode: string]: { count: number; total: number; percentage: number } };
 
 export type NumberQuadruple = [number, number, number, number];
+export type StringQuintuple = [string, string, string, string, string];
 
 export type VizData = {
   geoType: GeoType;
   breaks: number[];
   places: { geoCode: string; categoryValue: number }[];
   params: {
+    mode: Mode;
     variableGroup: VariableGroup;
     variable: Variable;
     category: Category;
@@ -154,11 +156,11 @@ export type ContentConfig = {
   publishingContentJsonUrl: string;
 };
 
-export const MapTypes = ["choropleth", "change-over-time"] as const;
-export type MapType = (typeof MapTypes)[number];
+export const modes = ["choropleth", "change"] as const;
+export type Mode = (typeof modes)[number];
 
 export type ContentTree = {
-  [K in MapType]: {
+  [Key in Mode]: {
     releases: string[];
     variableGroups: VariableGroup[];
     fakeDataLoaded: boolean;

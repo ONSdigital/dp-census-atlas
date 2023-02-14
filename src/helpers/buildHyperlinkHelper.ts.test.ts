@@ -6,7 +6,7 @@ const ewSelectedUrl = new URL("/test", "https://test.com");
 
 test("returns correct url given all inputs", () => {
   const urlParams = {
-    mapType: "mapType",
+    mode: "mode",
     variableGroup: "variableGroup",
     variable: "variable",
     category: {
@@ -15,7 +15,7 @@ test("returns correct url given all inputs", () => {
     },
   };
   expect(buildHyperlink(ladSelectedUrl, urlParams)).toEqual(
-    `${appBasePath}/mapType/variableGroup/variable/classification/category?lad=ladCode`,
+    `${appBasePath}/mode/variableGroup/variable/classification/category?lad=ladCode`,
   );
 });
 
@@ -27,36 +27,34 @@ describe("index page url", () => {
 
 describe("variableGroup url", () => {
   const urlParams = {
-    mapType: "mapType",
+    mode: "mode",
     variableGroup: "variableGroup",
   };
   test("returns variableGroup url with geography query param given an LAD in input url", () => {
-    expect(buildHyperlink(ladSelectedUrl, urlParams)).toEqual(`${appBasePath}/mapType/variableGroup?lad=ladCode`);
+    expect(buildHyperlink(ladSelectedUrl, urlParams)).toEqual(`${appBasePath}/mode/variableGroup?lad=ladCode`);
   });
   test("returns variableGroup url without geography query param given no geography in input url", () => {
-    expect(buildHyperlink(ewSelectedUrl, urlParams)).toEqual(`${appBasePath}/mapType/variableGroup`);
+    expect(buildHyperlink(ewSelectedUrl, urlParams)).toEqual(`${appBasePath}/mode/variableGroup`);
   });
 });
 
 describe("variable url", () => {
   const urlParams = {
-    mapType: "mapType",
+    mode: "mode",
     variableGroup: "variableGroup",
     variable: "variable",
   };
   test("returns variable url with geography query param given an LAD in input url", () => {
-    expect(buildHyperlink(ladSelectedUrl, urlParams)).toEqual(
-      `${appBasePath}/mapType/variableGroup/variable?lad=ladCode`,
-    );
+    expect(buildHyperlink(ladSelectedUrl, urlParams)).toEqual(`${appBasePath}/mode/variableGroup/variable?lad=ladCode`);
   });
   test("returns variable url without geography query param given no geography in input url", () => {
-    expect(buildHyperlink(ewSelectedUrl, urlParams)).toEqual(`${appBasePath}/mapType/variableGroup/variable`);
+    expect(buildHyperlink(ewSelectedUrl, urlParams)).toEqual(`${appBasePath}/mode/variableGroup/variable`);
   });
 });
 
 describe("category url", () => {
   const urlParams = {
-    mapType: "mapType",
+    mode: "mode",
     variableGroup: "variableGroup",
     variable: "variable",
     category: {
@@ -66,13 +64,13 @@ describe("category url", () => {
   };
   test("returns category url with specified classification and geography query param given an LAD in input url", () => {
     expect(buildHyperlink(ladSelectedUrl, urlParams)).toEqual(
-      `${appBasePath}/mapType/variableGroup/variable/classification/category?lad=ladCode`,
+      `${appBasePath}/mode/variableGroup/variable/classification/category?lad=ladCode`,
     );
   });
 
   test("returns category url with specified classification value but without geography query param given no geography in input url", () => {
     expect(buildHyperlink(ewSelectedUrl, urlParams)).toEqual(
-      `${appBasePath}/mapType/variableGroup/variable/classification/category`,
+      `${appBasePath}/mode/variableGroup/variable/classification/category`,
     );
   });
 });

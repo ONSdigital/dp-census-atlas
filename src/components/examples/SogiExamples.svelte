@@ -15,7 +15,7 @@
       href={buildHyperlink(
         $page.url,
         {
-          mapType: "choropleth",
+          mode: "choropleth",
           variableGroup: "identity",
           variable: "sexual-orientation",
           category: {
@@ -43,7 +43,7 @@
       href={buildHyperlink(
         $page.url,
         {
-          mapType: "choropleth",
+          mode: "choropleth",
           variableGroup: "work",
           variable: "economic-activity-status",
           category: {
@@ -68,7 +68,7 @@
       href={buildHyperlink(
         $page.url,
         {
-          mapType: "choropleth",
+          mode: "choropleth",
           variableGroup: "housing",
           variable: "type-of-central-heating-in-household",
           category: {

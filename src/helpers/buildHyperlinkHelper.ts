@@ -3,18 +3,18 @@ import { appBasePath } from "../buildEnv";
 import { setGeographyParam } from "./urlHelper";
 
 interface VariableGroupPageParams {
-  mapType: string;
+  mode: string;
   variableGroup: string;
 }
 
 interface VariablePageParams {
-  mapType: string;
+  mode: string;
   variableGroup: string;
   variable: string;
 }
 
 interface CategoryPageParams {
-  mapType: string;
+  mode: string;
   variableGroup: string;
   variable: string;
   category: { classification: string; category: string };
@@ -39,7 +39,7 @@ export const buildHyperlink = (url: URL, urlParams?: UrlParams, geography?: { ge
   if (!urlParams) {
     return `${appBasePath}/${search}`;
   }
-  let link = `${appBasePath}/${urlParams.mapType}`;
+  let link = `${appBasePath}/${urlParams.mode}`;
   if ("variableGroup" in urlParams) {
     link = `${link}/${urlParams.variableGroup}`;
   }

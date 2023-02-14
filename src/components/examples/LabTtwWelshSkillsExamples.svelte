@@ -15,7 +15,7 @@
       href={buildHyperlink(
         $page.url,
         {
-          mapType: "choropleth",
+          mode: "choropleth",
           variableGroup: "identity",
           variable: "ethnic-group",
           category: {
@@ -41,7 +41,7 @@
       href={buildHyperlink(
         $page.url,
         {
-          mapType: "choropleth",
+          mode: "choropleth",
           variableGroup: "identity",
           variable: "religion",
           category: {
@@ -67,7 +67,7 @@
       href={buildHyperlink(
         $page.url,
         {
-          mapType: "choropleth",
+          mode: "choropleth",
           variableGroup: "work",
           variable: "economic-activity-status",
           category: {

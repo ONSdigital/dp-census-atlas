@@ -2,7 +2,6 @@
   import { params } from "../stores/params";
   import { page } from "$app/stores";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
-  import { mapTo } from "rxjs";
   $: classifications = $params.variable.classifications;
   $: indexOfCurrent = classifications.indexOf($params.classification);
   $: next = classifications.length > indexOfCurrent + 1 ? classifications[indexOfCurrent + 1] : undefined;
@@ -16,7 +15,7 @@
       <a
         class="hyperlink-without-group-hover "
         href={buildHyperlink($page.url, {
-          mapType: $params.mapType,
+          mode: $params.mode,
           variableGroup: $params.variableGroup.slug,
           variable: $params.variable.slug,
           category: {
@@ -33,7 +32,7 @@
       <a
         class="hyperlink-without-group-hover group-hover:decoration-[3px]"
         href={buildHyperlink($page.url, {
-          mapType: $params.mapType,
+          mode: $params.mode,
           variableGroup: $params.variableGroup.slug,
           variable: $params.variable.slug,
           category: {

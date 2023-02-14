@@ -113,7 +113,7 @@ const getGeoType = (map: mapboxgl.Map, classification?: Classification): { actua
     const idealGeotype = (count * 1e6) / pixelArea > 40 ? "lad" : (count * 1e6) / pixelArea > 3 ? "msoa" : "oa";
     let availableGeotypes = classification?.available_geotypes;
     // available geotypes should be the ones for change over time data if thats whats being shown
-    if (get(params)?.mapType === "change-over-time") {
+    if (get(params).mode === "change") {
       availableGeotypes = classification?.comparison_2011_data_available_geotypes;
     }
     if (availableGeotypes) {

@@ -5,7 +5,6 @@
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
   import { getDefaultClassification } from "../helpers/variableHelpers";
   import AreaPanel from "./AreaPanel.svelte";
-  import ChangeOverTimeToggle from "./ChangeOverTimeToggle.svelte";
 </script>
 
 <div class="px-6 mb-6">
@@ -26,12 +25,12 @@
       <a
         class="border-t-[1px] border-t-slate-300 py-2 group custom-ring"
         href={buildHyperlink($page.url, {
-          mapType: $params.mapType,
+          mode: $params.mode,
           variableGroup: $params.variableGroup.slug,
           variable: variable.slug,
           category: {
-            classification: getDefaultClassification(variable, $params.mapType).slug,
-            category: getDefaultClassification(variable, $params.mapType).categories[0].slug,
+            classification: getDefaultClassification(variable, $params.mode).slug,
+            category: getDefaultClassification(variable, $params.mode).categories[0].slug,
           },
         })}
         on:click={() => nav.set({ open: true })}
@@ -54,7 +53,6 @@
       </a>
     {/each}
   </div>
-  <ChangeOverTimeToggle />
 </div>
 
 <div class="grow" />

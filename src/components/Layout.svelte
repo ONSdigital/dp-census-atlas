@@ -8,7 +8,6 @@
   import MapControls from "./MapControls.svelte";
   import MapTips from "./MapTips.svelte";
   import MapLegend from "./MapLegend.svelte";
-  import MapLegendChangeOverTime from "./MapLegendChangeOverTime.svelte";
   import Heading from "./Heading.svelte";
   import CookieBanner from "./CookieBanner.svelte";
   import Toggle from "./Toggle.svelte";
@@ -63,11 +62,7 @@
       <Map />
       <MapControls />
       <MapTips />
-      {#if $params.mapType === "change-over-time"}
-        <MapLegendChangeOverTime />
-      {:else}
-        <MapLegend />
-      {/if}
+      <MapLegend />
     </div>
   </div>
 </div>

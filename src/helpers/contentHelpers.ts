@@ -1,5 +1,6 @@
-import type { Classification, Variable, VariableGroup, ContentTree, ContentConfig, MapType } from "../types";
+import type { Classification, Variable, VariableGroup, ContentTree, ContentConfig, Mode } from "../types";
 import staticContentJsons from "../data/staticContentJsons/index";
+import { never } from "../util/typeUtil";
 
 type ContentJson = (typeof staticContentJsons)["2021-MASTER.json"];
 
@@ -13,7 +14,7 @@ export const getContentForStore = async (
 ): Promise<ContentTree> => {
   // load content as specced in content configs
   let rawContent = await Promise.all(
-    contentConfigs.map(async (ctcfg) => {
+    contentConfigs.map((ctcfg) => {
       return fetchContentForEnv(ctcfg, isDev, isPublishing);
     }),
   );
@@ -68,21 +69,18 @@ export const getContentForStore = async (
   // filter different content sets
   const choroplethContent = {
     releases: releases,
-    variableGroups: filterVariableGroupsForMapType(mergedVariableGroups, "choropleth" as MapType) as VariableGroup[],
+    variableGroups: filterVariableGroupsForMode(mergedVariableGroups, "choropleth") as VariableGroup[],
     fakeDataLoaded: fakeDataLoaded,
   };
   const changeOverTimeContent = {
     releases: releases,
-    variableGroups: filterVariableGroupsForMapType(
-      mergedVariableGroups,
-      "change-over-time" as MapType,
-    ) as VariableGroup[],
+    variableGroups: filterVariableGroupsForMode(mergedVariableGroups, "change") as VariableGroup[],
     fakeDataLoaded: fakeDataLoaded,
   };
 
   return {
     choropleth: choroplethContent,
-    "change-over-time": changeOverTimeContent,
+    change: changeOverTimeContent,
   } as ContentTree;
 };
 
@@ -229,13 +227,13 @@ export const sortVariableGroupVariables = (variableGroups: VariableGroup[]) => {
   });
 };
 
-export const filterVariableGroupsForMapType = (variableGroups: VariableGroup[], mapType: MapType) => {
+export const filterVariableGroupsForMode = (variableGroups: VariableGroup[], mode: Mode) => {
   // return all for choropleth
-  if (mapType === "choropleth") {
+  if (mode === "choropleth") {
     return variableGroups;
   }
   // return only those with classifications that have available change-over-time geographies for change-over-time
-  if (mapType === "change-over-time") {
+  if (mode === "change") {
     const vgs = variableGroups
       .map((vg) => {
         const filtVariables = vg.variables
@@ -244,7 +242,7 @@ export const filterVariableGroupsForMapType = (variableGroups: VariableGroup[], 
               (c) =>
                 c.comparison_2011_data_available_geotypes && c.comparison_2011_data_available_geotypes.length !== 0,
             );
-            if (filtClassifications.length > 0) {
+            if (v.base_url_2011_2021_comparison && filtClassifications.length > 0) {
               const filtVariable = { ...v };
               filtVariable.classifications = filtClassifications;
               return filtVariable;
@@ -263,34 +261,50 @@ export const filterVariableGroupsForMapType = (variableGroups: VariableGroup[], 
   }
 };
 
-export const contentInVariableGroups = (
-  variableGroups: VariableGroup[],
-  args: { variableGroup: VariableGroup; variable?: Variable; classification?: Classification },
-) => {
-  const matchVG = variableGroups.find((vg) => vg.name === args.variableGroup.name);
-  if (matchVG) {
-    if (!args?.variable) {
-      return true;
-    }
-    const matchV = matchVG.variables.find((v) => v.code === args.variable.code);
-    if (matchV) {
-      if (!args?.classification) {
-        return true;
-      }
-      const matchC = matchV.classifications.find((c) => c.code === args.classification.code);
-      if (matchC) {
-        return true;
-      }
-    }
-  }
-  return false;
+// export const contentInVariableGroups = (
+//   variableGroups: VariableGroup[],
+//   args: { variableGroup: VariableGroup; variable?: Variable; classification?: Classification },
+// ) => {
+//   const matchVG = variableGroups.find((vg) => vg.name === args.variableGroup.name);
+//   if (matchVG) {
+//     if (!args?.variable) {
+//       return true;
+//     }
+//     const matchV = matchVG.variables.find((v) => v.code === args.variable.code);
+//     if (matchV) {
+//       if (!args?.classification) {
+//         return true;
+//       }
+//       const matchC = matchV.classifications.find((c) => c.code === args.classification.code);
+//       if (matchC) {
+//         return true;
+//       }
+//     }
+//   }
+//   return false;
+// };
+
+// export const getAvailableModesForVariable = (variable: Variable): Record<Mode, boolean> => {
+//   return {
+//     choropleth: variable.base_url_2021 !== undefined,
+//     change: variable.base_url_2011_2021_comparison !== undefined,
+//   };
+// };
+
+export const getDataBaseUrlsForVariable = (variable: Variable): Record<Mode, string> => {
+  return {
+    choropleth: variable.base_url_2021,
+    change: variable.base_url_2011_2021_comparison,
+  };
 };
 
-export const getBaseUrlForCurrentMapType = (mapType: MapType, variable: Variable): string => {
-  if (mapType === "choropleth") {
-    return variable.base_url_2021;
-  }
-  if (mapType === "change-over-time") {
-    return variable.base_url_2011_2021_comparison;
-  }
+export const getDataBaseUrlForVariable = (mode: Mode, variable: Variable) => {
+  return getDataBaseUrlsForVariable(variable)[mode];
+};
+
+export const getAvailableModesForClassification = (classification: Classification): Record<Mode, boolean> => {
+  return {
+    choropleth: classification.available_geotypes.length > 0,
+    change: classification.comparison_2011_data_available_geotypes?.length > 0 ?? false,
+  };
 };

@@ -9,7 +9,7 @@
 
   export let name: string;
   let val = "";
-  $: results = searchCensus(val, $content[$params.mapType].variableGroups);
+  $: results = searchCensus(val, $content[$params.mode].variableGroups);
 </script>
 
 <div class="">
@@ -50,7 +50,7 @@
           {#each results.variableGroups as vg}
             <SearchBoxItem
               link={buildHyperlink($page.url, {
-                mapType: $params.mapType,
+                mode: $params.mode,
                 variableGroup: vg.slug,
               })}
             >
@@ -66,7 +66,7 @@
           {#each results.variables as v}
             <SearchBoxItem
               link={buildHyperlink($page.url, {
-                mapType: $params.mapType,
+                mode: $params.mode,
                 variableGroup: v.variableGroup.slug,
                 variable: v.variable.slug,
                 category: {
@@ -87,7 +87,7 @@
           {#each results.categories as c}
             <SearchBoxItem
               link={buildHyperlink($page.url, {
-                mapType: $params.mapType,
+                mode: $params.mode,
                 variableGroup: c.variableGroup.slug,
                 variable: c.variable.variable.slug,
                 category: {

@@ -10,7 +10,7 @@
     Which areas have larger populations of
     <a
       href={buildHyperlink($page.url, {
-        mapType: "choropleth",
+        mode: "choropleth",
         variableGroup: "population",
         variable: "age",
         category: { classification: "resident-age-3a", category: "aged-15-years-and-under" },
@@ -23,7 +23,7 @@
     or
     <a
       href={buildHyperlink($page.url, {
-        mapType: "choropleth",
+        mode: "choropleth",
         variableGroup: "population",
         variable: "age",
         category: { classification: "resident-age-3a", category: "aged-65-years-and-over" },
@@ -40,7 +40,7 @@
       href={buildHyperlink(
         $page.url,
         {
-          mapType: "choropleth",
+          mode: "choropleth",
           variableGroup: "population",
           variable: "household-size",
           category: {
@@ -62,7 +62,7 @@
       href={buildHyperlink(
         $page.url,
         {
-          mapType: "choropleth",
+          mode: "choropleth",
           variableGroup: "population",
           variable: "legal-partnership-status",
           category: {

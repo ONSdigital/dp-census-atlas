@@ -19,7 +19,7 @@
         <div class="text-sm font-extrabold text-slate-500" aria-hidden>&gt;</div>
         <a
           class="hyperlink"
-          href={buildHyperlink($page.url, { mapType: $params.mapType, variableGroup: $params.variableGroup.slug })}
+          href={buildHyperlink($page.url, { mode: $params.mode, variableGroup: $params.variableGroup.slug })}
           >{$params.variableGroup.name}</a
         >
         <div class="text-sm font-extrabold text-slate-500" aria-hidden>&gt;</div>
@@ -34,7 +34,7 @@
           <a
             class="border-t-[1px] border-t-slate-300 py-2 group"
             href={buildHyperlink($page.url, {
-              mapType: $params.mapType,
+              mode: $params.mode,
               variableGroup: $params.variableGroup.slug,
               variable: $params.variable.slug,
               category: {

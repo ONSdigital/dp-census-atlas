@@ -234,7 +234,10 @@ export const filterVariableGroupsForMapType = (variableGroups: VariableGroup[], 
   if (mapType === "choropleth") {
     return variableGroups;
   }
-  // return only those with classifications that have available change-over-time geographies for change-over-time
+  /* for change-over-time return only those variables with:
+      - a defined base_url_2011_2021_comparison
+      - at least one classification that has a populated comparison_2011_data_available_geotypes
+  */
   if (mapType === "change-over-time") {
     const vgs = variableGroups
       .map((vg) => {
@@ -244,7 +247,7 @@ export const filterVariableGroupsForMapType = (variableGroups: VariableGroup[], 
               (c) =>
                 c.comparison_2011_data_available_geotypes && c.comparison_2011_data_available_geotypes.length !== 0,
             );
-            if (filtClassifications.length > 0) {
+            if (v.base_url_2011_2021_comparison && filtClassifications.length > 0) {
               const filtVariable = { ...v };
               filtVariable.classifications = filtClassifications;
               return filtVariable;

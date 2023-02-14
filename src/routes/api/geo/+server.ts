@@ -81,9 +81,6 @@ export const GET: RequestHandler = async ({ url }) => {
         }
       }
       // always do postcode search
-      const spacesInQ = /\s+/g.test(q);
-      const postcodeNoSpacesStatement = spacesInQ ? "." : "foi:code ?postcodeNoSpaces .";
-      const filterTargetStatement = spacesInQ ? "?en" : "?postcodeNoSpaces";
       const query = `
       SELECT DISTINCT ?en ?geoCode ?queryFlavour
       WHERE {

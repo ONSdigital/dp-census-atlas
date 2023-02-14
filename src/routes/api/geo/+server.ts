@@ -5,6 +5,7 @@ const onsLinkedDataAPI = "http://statistics.data.gov.uk/sparql.json?query=";
 
 const sparQLprefix = `
 PREFIX statent: <http://statistics.data.gov.uk/def/statistical-entity#>
+PREFIX statdef: <http://statistics.data.gov.uk/def/statistical-geography#>
 PREFIX foi: <http://publishmydata.com/def/ontology/foi/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX collection: <http://statistics.data.gov.uk/def/geography/collection/>
@@ -66,6 +67,7 @@ export const GET: RequestHandler = async ({ url }) => {
         WHERE {
           VALUES ?typecd {${allGSSPrefixes.map((c) => `"${c}"`).join(" ")}}
           ?x rdfs:label ?geoCode ;
+              statdef:status "live" ;
               statent:code ?type .
           ?type rdfs:label ?typecd .
           BIND (?geoCode as ?en)
@@ -89,9 +91,10 @@ export const GET: RequestHandler = async ({ url }) => {
           SELECT DISTINCT ?en ?geoCode ?queryFlavour
           WHERE {
             ?pcode foi:memberOf collection:postcodes ;
-                  within:outputarea ?oaRaw ;
-                  postcodeAlt:postcode1space ?en .
-            ?oaRaw rdfs:label ?geoCode .
+              within:outputarea ?oaRaw ;
+              postcodeAlt:postcode1space ?en .
+            ?oaRaw rdfs:label ?geoCode ;
+              statdef:status "live" .
             BIND ("raw" AS ?queryFlavour)
             FILTER(STRSTARTS(LCASE(?en), "${q}"))
           }
@@ -101,10 +104,11 @@ export const GET: RequestHandler = async ({ url }) => {
           SELECT DISTINCT ?en ?geoCode ?queryFlavour
           WHERE {
             ?pcode foi:memberOf collection:postcodes ;
-                  within:outputarea ?oaRaw ;
-                  postcodeAlt:postcode1space ?en ;
-                  foi:code ?postcodeNoSpaces .
-            ?oaRaw rdfs:label ?geoCode .
+                within:outputarea ?oaRaw ;
+                postcodeAlt:postcode1space ?en ;
+                foi:code ?postcodeNoSpaces .
+            ?oaRaw rdfs:label ?geoCode ;
+              statdef:status "live" .
             BIND ("noSpaces" AS ?queryFlavour)
             FILTER(STRSTARTS(LCASE(?postcodeNoSpaces), "${q.replace(/\s/g, "")}"))
           }

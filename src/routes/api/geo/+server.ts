@@ -28,6 +28,12 @@ const getGeoType = (geoCode: string): string => {
   return "NotRecognised";
 };
 
+const reformatAPIResults = (resultsJson) => {
+  return resultsJson.results.bindings.map((r) => {
+    return { en: r.en.value, geoType: getGeoType(r.geoCode.value), geoCode: r.geoCode.value };
+  });
+};
+
 const filterResults = (results) => {
   // aim here is to evenly populate a ten-long array of results...
   const output = [];
@@ -46,6 +52,10 @@ export const GET: RequestHandler = async ({ url }) => {
   const q = url.searchParams.get("q").toLowerCase();
   const results = {};
   if (q) {
+    // min q length is three
+    if (q.length < 3) {
+      return new Response("q must be three characters or more!", { status: 400 });
+    }
     // digits in string means either gss code or postcode search
     if (/\d/.test(q)) {
       // do GSS code search if q characters 1:3 match the searchedForgGeoTypes...
@@ -64,41 +74,57 @@ export const GET: RequestHandler = async ({ url }) => {
         LIMIT 10`;
         const res = await fetch(`${onsLinkedDataAPI}${encodeURIComponent(sparQLprefix + query)}`);
         const rawResJson = await res.json();
-        const resJson = rawResJson.results.bindings.map((r) => {
-          return { en: r.en.value, geoType: getGeoType(r.geoCode.value), geoCode: r.geoCode.value };
-        });
-        results["GSS"] = resJson;
+        if (res.status !== 200) {
+          return new Response(rawResJson.errors, { status: res.status });
+        } else {
+          results["gss"] = reformatAPIResults(rawResJson);
+        }
       }
       // always do postcode search
       const spacesInQ = /\s+/g.test(q);
       const postcodeNoSpacesStatement = spacesInQ ? "." : "foi:code ?postcodeNoSpaces .";
       const filterTargetStatement = spacesInQ ? "?en" : "?postcodeNoSpaces";
       const query = `
-        SELECT DISTINCT ?en ?geoCode
-        WHERE {
-          ?pcode foi:memberOf collection:postcodes ;
-                within:outputarea ?oaRaw ;
-                postcodeAlt:postcode1space ?en ;
-              ${postcodeNoSpacesStatement}
-          ?oaRaw rdfs:label ?geoCode .
-          FILTER(STRSTARTS(LCASE(${filterTargetStatement}), LCASE("${q}")))
-        }
-        LIMIT 10`;
+      SELECT DISTINCT ?en ?geoCode
+      WHERE {
+        ?pcode foi:memberOf collection:postcodes ;
+              within:outputarea ?oaRaw ;
+              postcodeAlt:postcode1space ?en ;
+            ${postcodeNoSpacesStatement}
+        ?oaRaw rdfs:label ?geoCode .
+        FILTER(STRSTARTS(LCASE(${filterTargetStatement}), LCASE("${q}")))
+      }
+      LIMIT 10`;
       const res = await fetch(`${onsLinkedDataAPI}${encodeURIComponent(sparQLprefix + query)}`);
       const rawResJson = await res.json();
-      console.log(query);
-      console.log(rawResJson);
-      const resJson = rawResJson.results.bindings.map((r) => {
-        return { en: r.en.value, geoType: getGeoType(r.geoCode.value), geoCode: r.geoCode.value };
-      });
-      results["PCD"] = resJson;
+      if (res.status !== 200) {
+        return new Response(rawResJson.errors, { status: res.status });
+      } else {
+        results["pcd"] = reformatAPIResults(rawResJson);
+      }
+      return json(filterResults(results));
     }
-
+    // search combination of known LAD / MSOA + Non-HCL MSOA
+    results["msoaHCL"] = data.filter((geo) => geo.en.toLowerCase().includes(q) || geo.geoCode.toLowerCase() === q);
+    const query = `
+    SELECT ?en ?geoCode
+    WHERE {
+      VALUES ?typecd {${searchedForGeoTypes.MSOA.map((c) => `"${c}"`).join(" ")}}
+      ?x foi:displayName ?en ;
+          rdfs:label ?geoCode ;
+          statent:code ?type .
+      ?type rdfs:label ?typecd .
+      FILTER(CONTAINS(LCASE(?en),  LCASE("${q}")))
+    }
+    LIMIT 10`;
+    const res = await fetch(`${onsLinkedDataAPI}${encodeURIComponent(sparQLprefix + query)}`);
+    const rawResJson = await res.json();
+    if (res.status !== 200) {
+      return new Response(rawResJson.errors, { status: res.status });
+    } else {
+      results["msoaNonHCL"] = reformatAPIResults(rawResJson);
+    }
     return json(filterResults(results));
-    // const msoaHCLresults = data.filter(
-    //   (geo) => geo.geoType === "MSOA" && (geo.en.toLowerCase().includes(q) || geo.geoCode.toLowerCase() === q),
-    // );
-    //return json(msoaHCLresults);
   } else {
     return json([]);
   }

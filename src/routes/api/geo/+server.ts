@@ -49,7 +49,7 @@ const filterResults = (results) => {
 };
 
 export const GET: RequestHandler = async ({ url }) => {
-  const q = url.searchParams.get("q").toLowerCase();
+  const q = url.searchParams.get("q").toLowerCase().trim();
   const results = {};
   if (q) {
     // min q length is three
@@ -69,7 +69,7 @@ export const GET: RequestHandler = async ({ url }) => {
               statent:code ?type .
           ?type rdfs:label ?typecd .
           BIND (?geoCode as ?en)
-          FILTER(STRSTARTS(LCASE(?en), LCASE("${q}")))
+          FILTER(STRSTARTS(LCASE(?en), "${q}"))
         }
         LIMIT 10`;
         const res = await fetch(`${onsLinkedDataAPI}${encodeURIComponent(sparQLprefix + query)}`);
@@ -85,22 +85,57 @@ export const GET: RequestHandler = async ({ url }) => {
       const postcodeNoSpacesStatement = spacesInQ ? "." : "foi:code ?postcodeNoSpaces .";
       const filterTargetStatement = spacesInQ ? "?en" : "?postcodeNoSpaces";
       const query = `
-      SELECT DISTINCT ?en ?geoCode
+      SELECT DISTINCT ?en ?geoCode ?queryFlavour
       WHERE {
-        ?pcode foi:memberOf collection:postcodes ;
-              within:outputarea ?oaRaw ;
-              postcodeAlt:postcode1space ?en ;
-            ${postcodeNoSpacesStatement}
-        ?oaRaw rdfs:label ?geoCode .
-        FILTER(STRSTARTS(LCASE(${filterTargetStatement}), LCASE("${q}")))
-      }
-      LIMIT 10`;
+        {
+          # Select ten postcodes filtered to match the query as typed
+          SELECT DISTINCT ?en ?geoCode ?queryFlavour
+          WHERE {
+            ?pcode foi:memberOf collection:postcodes ;
+                  within:outputarea ?oaRaw ;
+                  postcodeAlt:postcode1space ?en .
+            ?oaRaw rdfs:label ?geoCode .
+            BIND ("raw" AS ?queryFlavour)
+            FILTER(STRSTARTS(LCASE(?en), "${q}"))
+          }
+          LIMIT 10
+        } UNION {
+          # Select ten postcodes filtered to match the query with spaces removed
+          SELECT DISTINCT ?en ?geoCode ?queryFlavour
+          WHERE {
+            ?pcode foi:memberOf collection:postcodes ;
+                  within:outputarea ?oaRaw ;
+                  postcodeAlt:postcode1space ?en ;
+                  foi:code ?postcodeNoSpaces .
+            ?oaRaw rdfs:label ?geoCode .
+            BIND ("noSpaces" AS ?queryFlavour)
+            FILTER(STRSTARTS(LCASE(?postcodeNoSpaces), "${q.replace(/\s/g, "")}"))
+          }
+          LIMIT 10
+        }
+      }`;
       const res = await fetch(`${onsLinkedDataAPI}${encodeURIComponent(sparQLprefix + query)}`);
       const rawResJson = await res.json();
       if (res.status !== 200) {
         return new Response(rawResJson.errors, { status: res.status });
       } else {
-        results["pcd"] = reformatAPIResults(rawResJson);
+        // Prioritise matches with the query string as the user typed it (after enforcing case) but if no matches found
+        // use results filtered for the user query with spaces removed.
+        const rawRes = rawResJson.results.bindings
+          .filter((r) => r.queryFlavour.value === "raw")
+          .map((r) => {
+            return { en: r.en.value, geoType: getGeoType(r.geoCode.value), geoCode: r.geoCode.value };
+          });
+        if (rawRes.length > 0) {
+          results["pcd"] = rawRes;
+        } else {
+          const noSpacesRes = rawResJson.results.bindings
+            .filter((r) => r.queryFlavour.value === "noSpaces")
+            .map((r) => {
+              return { en: r.en.value, geoType: getGeoType(r.geoCode.value), geoCode: r.geoCode.value };
+            });
+          results["pcd"] = noSpacesRes;
+        }
       }
       return json(filterResults(results));
     }

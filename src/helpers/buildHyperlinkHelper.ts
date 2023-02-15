@@ -2,6 +2,10 @@ import type { GeoType } from "../types";
 import { appBasePath } from "../buildEnv";
 import { setGeographyParam } from "./urlHelper";
 
+interface HomePageParams {
+  mode: string;
+}
+
 interface VariableGroupPageParams {
   mode: string;
   variableGroup: string;
@@ -20,7 +24,7 @@ interface CategoryPageParams {
   category: { classification: string; category: string };
 }
 
-type UrlParams = VariableGroupPageParams | VariablePageParams | CategoryPageParams;
+type UrlParams = HomePageParams | VariableGroupPageParams | VariablePageParams | CategoryPageParams;
 
 /**
  * Function takes in current url and (optionally)

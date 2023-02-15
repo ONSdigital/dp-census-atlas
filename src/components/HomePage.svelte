@@ -3,12 +3,14 @@
   import { isInitialReleasePeriod } from "../helpers/contentHelpers";
   import VariableGroupList from "./VariableGroupList.svelte";
   import AreaPanel from "./AreaPanel.svelte";
+  import ModePanel from "./ModePanel.svelte";
   import SearchBox from "./SearchBox.svelte";
   import SogiExamples from "./examples/SogiExamples.svelte";
 </script>
 
 <div class="px-6">
   <AreaPanel />
+  <ModePanel />
   <section>
     <h2 class="pt-3 pb-2 font-bold text-slate-500">Topic</h2>
     <div class="mb-6">

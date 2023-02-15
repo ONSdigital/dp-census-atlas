@@ -156,7 +156,7 @@
         />
       {/if}
       {#if $viz?.params?.mode === "change"}
-        <div class="text-xs xs:text-sm pt-1 xs:pt-2.5">
+        <div class="text-xs xs:text-sm pt-0.5 xs:pt-2.5">
           Change in percentage points (pp) between March 2011 and March 2021 census.
         </div>
       {/if}

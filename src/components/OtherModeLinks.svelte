@@ -43,7 +43,7 @@
         variableGroup: $params.variableGroup.slug,
         variable: $params.variable.slug,
         category: { classification: $params.classification.slug, category: $params.category.slug },
-      })}>See Census 2021 results</a
+      })}>See March 2021 results</a
     >
   </div>
 {/if}

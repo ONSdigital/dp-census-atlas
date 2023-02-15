@@ -5,15 +5,17 @@
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
   import { getDefaultClassification } from "../helpers/variableHelpers";
   import AreaPanel from "./AreaPanel.svelte";
+  import ModePanel from "./ModePanel.svelte";
 </script>
 
 <div class="px-6 mb-6">
   <AreaPanel />
+  <ModePanel />
   <div class="pt-3 flex">
     <div class="font-bold text-slate-500">Topic</div>
   </div>
   <div class="flex items-center gap-2 text-xl">
-    <a class="hyperlink" href={buildHyperlink($page.url)}>Home</a>
+    <a class="hyperlink" href={buildHyperlink($page.url, { mode: $params.mode })}>Home</a>
     <div class="text-sm font-extrabold text-slate-500 select-none">&gt;</div>
     <div class=" ">{$params.variableGroup.name}</div>
   </div>

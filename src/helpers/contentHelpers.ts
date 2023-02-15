@@ -84,6 +84,9 @@ export const getContentForStore = async (
   } as ContentTree;
 };
 
+// todo: ensure we're not shipping the statically-loaded content to prod
+// todo: don't use a large try-catch statement
+// todo: don't return null
 /*
   Fetch content.json file from appropriate url for current env.
 */
@@ -110,7 +113,7 @@ const fetchContentForEnv = async (
     if (contentJsonUrl in staticContentJsons) {
       return staticContentJsons[contentJsonUrl];
     } else {
-      console.log(`${contentJsonUrl} not found in static content jsons.`);
+      console.error(`${contentJsonUrl} not found in static content jsons.`);
       return null;
     }
   }
@@ -120,20 +123,20 @@ const fetchContentForEnv = async (
     const resp = await fetch(contentJsonUrl, {
       cache: "no-cache", // always ask for latest content files
     });
-    if (resp.status != 200) {
-      console.log(`Content json file ${contentJsonUrl} could not be fetched.`);
+    if (resp.status !== 200) {
+      console.error(`Content json file ${contentJsonUrl} could not be fetched.`);
       return null;
     } else {
       const contentJson = await resp.json();
       if (typeof contentJson === "string") {
-        console.log(`Content json file ${contentJsonUrl} could not be fetched: ${contentJson}.`);
+        console.error(`Content json file ${contentJsonUrl} could not be fetched: ${contentJson}.`);
         return null;
       } else {
         return contentJson;
       }
     }
   } catch (e) {
-    console.log(`Error fetching / parsing content json file ${contentJsonUrl}: ${e}`);
+    console.error(`Error fetching / parsing content json file ${contentJsonUrl}: ${e}`);
     return null;
   }
 };
@@ -141,7 +144,7 @@ const fetchContentForEnv = async (
 /*
   Iterate over list of variable groups and merge variable groups with the same name.
 */
-export const mergeVariableGroups = (variableGroups: VariableGroup[]): VariableGroup[] => {
+const mergeVariableGroups = (variableGroups: VariableGroup[]): VariableGroup[] => {
   const variableGroupNames = new Set(variableGroups.map((t) => t.name));
   const mergedVariableGroups = [];
   for (const variableGroupName of variableGroupNames) {
@@ -227,37 +230,41 @@ export const sortVariableGroupVariables = (variableGroups: VariableGroup[]) => {
   });
 };
 
-export const filterVariableGroupsForMode = (variableGroups: VariableGroup[], mode: Mode) => {
-  // return all for choropleth
-  if (mode === "choropleth") {
-    return variableGroups;
-  }
-  // return only those with classifications that have available change-over-time geographies for change-over-time
-  if (mode === "change") {
-    const vgs = variableGroups
-      .map((vg) => {
-        const filtVariables = vg.variables
-          .map((v) => {
-            const filtClassifications = v.classifications.filter(
-              (c) =>
-                c.comparison_2011_data_available_geotypes && c.comparison_2011_data_available_geotypes.length !== 0,
-            );
-            if (v.base_url_2011_2021_comparison && filtClassifications.length > 0) {
-              const filtVariable = { ...v };
-              filtVariable.classifications = filtClassifications;
-              return filtVariable;
-            }
-          })
-          .filter((v) => v);
-        if (filtVariables.length > 0) {
-          const filtVariableGroup = { ...vg };
-          filtVariableGroup.variables = filtVariables;
-          return filtVariableGroup;
-        }
-      })
-      .filter((vg) => vg);
-
-    return vgs;
+const filterVariableGroupsForMode = (variableGroups: VariableGroup[], mode: Mode) => {
+  switch (mode) {
+    case "choropleth": {
+      // return everything for choropleth
+      return variableGroups;
+    }
+    case "change": {
+      // return only those with classifications that have available change-over-time geographies
+      const vgs = variableGroups
+        .map((vg) => {
+          const filtVariables = vg.variables
+            .map((v) => {
+              const filtClassifications = v.classifications.filter(
+                (c) =>
+                  c.comparison_2011_data_available_geotypes && c.comparison_2011_data_available_geotypes.length > 0,
+              );
+              if (v.base_url_2011_2021_comparison && filtClassifications.length > 0) {
+                const filtVariable = { ...v };
+                filtVariable.classifications = filtClassifications;
+                return filtVariable;
+              }
+            })
+            .filter((v) => v);
+          if (filtVariables.length > 0) {
+            const filtVariableGroup = { ...vg };
+            filtVariableGroup.variables = filtVariables;
+            return filtVariableGroup;
+          }
+        })
+        .filter((vg) => vg);
+      return vgs;
+    }
+    default: {
+      return never(mode);
+    }
   }
 };
 
@@ -307,4 +314,8 @@ export const getAvailableModesForClassification = (classification: Classificatio
     choropleth: classification.available_geotypes.length > 0,
     change: classification.comparison_2011_data_available_geotypes?.length > 0 ?? false,
   };
+};
+
+export const internal = {
+  mergeVariableGroups,
 };

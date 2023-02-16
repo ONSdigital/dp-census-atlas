@@ -8,22 +8,16 @@
   const toggleOpen = () => {
     open = !open;
   };
-  $: openOrCloseAreaSearchPanelText = open ? "Close area search" : "Open area search";
 </script>
 
 <section class="py-2.5 border-b-2">
   <h2 class="font-bold text-slate-500">Mode</h2>
   <!-- nested buttons are invalid html, so workaround with a clickable label -->
-  <!-- svelte-ignore a11y-click-events-have-key-events (this is an *additonal* touch area to the interative button) -->
+  <!-- svelte-ignore a11y-click-events-have-key-events (this is an *additonal* touch area to the interactive button) -->
   <label for="area-input" on:click={toggleOpen} class="group w-full text-left hoverable custom-ring">
     <div class="flex items-center gap-1">
       <div class="text-xl">{modeDisplayNames[$params.mode]}</div>
-      <button
-        use:tooltip={{ content: openOrCloseAreaSearchPanelText }}
-        class="ml-auto custom-ring"
-        title={openOrCloseAreaSearchPanelText}
-        aria-label={openOrCloseAreaSearchPanelText}
-      >
+      <button use:tooltip class="ml-auto custom-ring" title={"Toggle mode panel"} aria-label={"Toggle mode panel"}>
         <div class="text-2xl group-hover:scale-125 transition-all ml-2">
           <Icon kind="arrowForwardIos" orientation={open ? "w" : "e"} />
         </div>

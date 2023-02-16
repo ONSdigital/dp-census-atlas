@@ -15,6 +15,7 @@
       <a
         class="hyperlink-without-group-hover "
         href={buildHyperlink($page.url, {
+          mode: $params.mode,
           variableGroup: $params.variableGroup.slug,
           variable: $params.variable.slug,
           category: {
@@ -31,6 +32,7 @@
       <a
         class="hyperlink-without-group-hover group-hover:decoration-[3px]"
         href={buildHyperlink($page.url, {
+          mode: $params.mode,
           variableGroup: $params.variableGroup.slug,
           variable: $params.variable.slug,
           category: {

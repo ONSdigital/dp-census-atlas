@@ -22,7 +22,7 @@
 <section class="py-3 border-b-2">
   <h2 class="font-bold text-slate-500">Area</h2>
   <!-- nested buttons are invalid html, so workaround with a clickable label -->
-  <!-- svelte-ignore a11y-click-events-have-key-events (this is an *additonal* touch area to the interative button) -->
+  <!-- svelte-ignore a11y-click-events-have-key-events (this is an *additonal* touch area to the interactive button) -->
   <label for="area-input" on:click={toggleOpen} class="group w-full text-left hoverable custom-ring">
     <div class="flex items-center gap-1">
       <div class="text-xl">
@@ -47,7 +47,7 @@
         </button>
       {/if}
       <button
-        use:tooltip={{ content: openOrCloseAreaSearchPanelText }}
+        use:tooltip={{ content: "Toggle area seach" }}
         class="ml-auto custom-ring"
         title={openOrCloseAreaSearchPanelText}
         aria-label={openOrCloseAreaSearchPanelText}

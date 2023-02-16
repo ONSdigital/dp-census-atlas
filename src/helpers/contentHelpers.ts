@@ -1,20 +1,17 @@
-import type { Classification, Variable, VariableGroup, ContentTree, ContentConfig } from "../types";
+import type { Classification, Variable, VariableGroup, ContentTree, ContentConfig, Mode, DataEnv } from "../types";
 import staticContentJsons from "../data/staticContentJsons/index";
+import { never } from "../util/typeUtil";
 
 type ContentJson = (typeof staticContentJsons)["2021-MASTER.json"];
 
 /*
   Fetch all content.json files referenced in content.ts for the current env, return as ContentTree
 */
-export const getContentForStore = async (
-  contentConfigs: ContentConfig[],
-  isDev: boolean,
-  isPublishing: boolean,
-): Promise<ContentTree> => {
+export const getContentForStore = async (contentConfigs: ContentConfig[], dataEnv: DataEnv): Promise<ContentTree> => {
   // load content as specced in content configs
   let rawContent = await Promise.all(
-    contentConfigs.map(async (ctcfg) => {
-      return fetchContentForEnv(ctcfg, isDev, isPublishing);
+    contentConfigs.map((ctcfg) => {
+      return fetchContentForEnv(ctcfg, dataEnv);
     }),
   );
 
@@ -24,7 +21,7 @@ export const getContentForStore = async (
       if (contentJson?.meta?.additional_content_jsons) {
         const additional_content_for_content_json = await Promise.all(
           contentJson.meta.additional_content_jsons.map(async (ctcfg) => {
-            const contentJson = await fetchContentForEnv(ctcfg, isDev, isPublishing);
+            const contentJson = await fetchContentForEnv(ctcfg, dataEnv);
             return contentJson;
           }),
         );
@@ -45,10 +42,10 @@ export const getContentForStore = async (
   const mergedVariableGroups = mergeVariableGroups(allVariableGroups as VariableGroup[]);
   sortVariableGroupVariables(mergedVariableGroups);
 
-  // override data base urls with any configured fake data urls if in dev/netlify. NB remove the override after use
-  // to avoid clutter
+  // override data base urls with any configured fake data urls if in dev
+  // removes the override property after use to avoid clutter
   let fakeDataLoaded = false;
-  if (isDev) {
+  if (dataEnv === "dev") {
     mergedVariableGroups.forEach((vg) => {
       vg.variables.forEach((v) => {
         if (v.base_url_2021_dev_override) {
@@ -65,28 +62,32 @@ export const getContentForStore = async (
     });
   }
 
-  return {
+  // filter different content sets
+  const choroplethContent = {
     releases: releases,
-    variableGroups: mergedVariableGroups as VariableGroup[],
+    variableGroups: filterVariableGroupsForMode(mergedVariableGroups, "choropleth") as VariableGroup[],
     fakeDataLoaded: fakeDataLoaded,
+  };
+  const changeOverTimeContent = {
+    releases: releases,
+    variableGroups: filterVariableGroupsForMode(mergedVariableGroups, "change") as VariableGroup[],
+    fakeDataLoaded: fakeDataLoaded,
+  };
+
+  return {
+    choropleth: choroplethContent,
+    change: changeOverTimeContent,
   } as ContentTree;
 };
 
+// todo: ensure we're not shipping the statically-loaded content to prod
+// todo: don't use a large try-catch statement
+// todo: don't return null
 /*
   Fetch content.json file from appropriate url for current env.
 */
-const fetchContentForEnv = async (
-  contentConfig: ContentConfig,
-  isDev: boolean,
-  isPublishing: boolean,
-): Promise<ContentJson> => {
-  // set appropriate content json url
-  let contentJsonUrl = contentConfig.webContentJsonUrl;
-  if (isDev) {
-    contentJsonUrl = contentConfig.devContentJsonUrl;
-  } else if (isPublishing) {
-    contentJsonUrl = contentConfig.publishingContentJsonUrl;
-  }
+const fetchContentForEnv = async (contentConfig: ContentConfig, dataEnv: DataEnv): Promise<ContentJson> => {
+  const contentJsonUrl = getContentJsonUrl(dataEnv, contentConfig);
 
   // if content json url is blank, skip this (means that the current content is not configured for this env)
   if (contentJsonUrl === "") {
@@ -98,7 +99,7 @@ const fetchContentForEnv = async (
     if (contentJsonUrl in staticContentJsons) {
       return staticContentJsons[contentJsonUrl];
     } else {
-      console.log(`${contentJsonUrl} not found in static content jsons.`);
+      console.error(`${contentJsonUrl} not found in static content jsons.`);
       return null;
     }
   }
@@ -108,28 +109,41 @@ const fetchContentForEnv = async (
     const resp = await fetch(contentJsonUrl, {
       cache: "no-cache", // always ask for latest content files
     });
-    if (resp.status != 200) {
-      console.log(`Content json file ${contentJsonUrl} could not be fetched.`);
+    if (resp.status !== 200) {
+      console.error(`Content json file ${contentJsonUrl} could not be fetched.`);
       return null;
     } else {
       const contentJson = await resp.json();
       if (typeof contentJson === "string") {
-        console.log(`Content json file ${contentJsonUrl} could not be fetched: ${contentJson}.`);
+        console.error(`Content json file ${contentJsonUrl} could not be fetched: ${contentJson}.`);
         return null;
       } else {
         return contentJson;
       }
     }
   } catch (e) {
-    console.log(`Error fetching / parsing content json file ${contentJsonUrl}: ${e}`);
+    console.error(`Error fetching / parsing content json file ${contentJsonUrl}: ${e}`);
     return null;
+  }
+};
+
+const getContentJsonUrl = (dataEnv: DataEnv, contentConfig: ContentConfig) => {
+  switch (dataEnv) {
+    case "dev":
+      return contentConfig.devContentJsonUrl;
+    case "publishing":
+      return contentConfig.publishingContentJsonUrl;
+    case "web":
+      return contentConfig.webContentJsonUrl;
+    default:
+      never(dataEnv);
   }
 };
 
 /*
   Iterate over list of variable groups and merge variable groups with the same name.
 */
-export const mergeVariableGroups = (variableGroups: VariableGroup[]): VariableGroup[] => {
+const mergeVariableGroups = (variableGroups: VariableGroup[]): VariableGroup[] => {
   const variableGroupNames = new Set(variableGroups.map((t) => t.name));
   const mergedVariableGroups = [];
   for (const variableGroupName of variableGroupNames) {
@@ -190,7 +204,7 @@ const dedupeClassifications = (classifications: Classification[]) => {
 };
 
 export const isInitialReleasePeriod = (content: ContentTree) => {
-  return content.variableGroups.length < 6;
+  return content.choropleth.variableGroups.length < 6;
 };
 
 /*
@@ -213,4 +227,68 @@ export const sortVariableGroupVariables = (variableGroups: VariableGroup[]) => {
   variableGroups.forEach((vg) => {
     vg.variables.sort(compareNames);
   });
+};
+
+const filterVariableGroupsForMode = (variableGroups: VariableGroup[], mode: Mode) => {
+  switch (mode) {
+    case "choropleth": {
+      // return everything for choropleth
+      return variableGroups;
+    }
+    case "change": {
+      // return only those with classifications that have available change-over-time geographies
+      const vgs = variableGroups
+        .map((vg) => {
+          const filtVariables = vg.variables
+            .map((v) => {
+              const filtClassifications = v.classifications.filter(
+                (c) =>
+                  c.comparison_2011_data_available_geotypes && c.comparison_2011_data_available_geotypes.length > 0,
+              );
+              if (v.base_url_2011_2021_comparison && filtClassifications.length > 0) {
+                const filtVariable = { ...v };
+                filtVariable.classifications = filtClassifications;
+                return filtVariable;
+              }
+            })
+            .filter((v) => v);
+          if (filtVariables.length > 0) {
+            const filtVariableGroup = { ...vg };
+            filtVariableGroup.variables = filtVariables;
+            return filtVariableGroup;
+          }
+        })
+        .filter((vg) => vg);
+      return vgs;
+    }
+    default: {
+      return never(mode);
+    }
+  }
+};
+
+export const getDataBaseUrlsForVariable = (variable: Variable): Record<Mode, string> => {
+  return {
+    choropleth: variable.base_url_2021,
+    change: variable.base_url_2011_2021_comparison,
+  };
+};
+
+export const getDataBaseUrlForVariable = (mode: Mode, variable: Variable) => {
+  return getDataBaseUrlsForVariable(variable)[mode];
+};
+
+export const getAvailableModesForClassification = (
+  variable: Variable,
+  classification: Classification,
+): Record<Mode, boolean> => {
+  return {
+    choropleth: classification.available_geotypes.length > 0,
+    change:
+      variable.base_url_2011_2021_comparison && classification.comparison_2011_data_available_geotypes?.length > 0,
+  };
+};
+
+export const internal = {
+  mergeVariableGroups,
 };

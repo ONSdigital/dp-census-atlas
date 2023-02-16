@@ -9,17 +9,12 @@ const geoBaseUrl = "https://cdn.ons.gov.uk/maptiles/cm-geos/v2";
   Fetch place data files for all data 'tiles' (predefined coordinate grid squares) that intersect with current viewport
   bounding box.
 */
-export const fetchDataForBbox = async (args: {
-  category: Category;
-  geoType: GeoType;
-  bbox: Bbox;
-  base_url: string;
-}) => {
+export const fetchDataForBbox = async (args: { category: Category; geoType: GeoType; bbox: Bbox; baseUrl: string }) => {
   const data = await fetchTileDataForBbox(args);
   return data.map((row) => parsePlaceData(row, args.category.code));
 };
 
-const fetchTileDataForBbox = async (args: { category: Category; geoType: GeoType; bbox: Bbox; base_url: string }) => {
+const fetchTileDataForBbox = async (args: { category: Category; geoType: GeoType; bbox: Bbox; baseUrl: string }) => {
   // get all intersecting data tiles
   const dataTiles = bboxToDataTiles(args.bbox, args.geoType);
 
@@ -30,7 +25,7 @@ const fetchTileDataForBbox = async (args: { category: Category; geoType: GeoType
         category: args.category,
         geoType: args.geoType,
         tile: dataTile,
-        base_url: args.base_url,
+        baseUrl: args.baseUrl,
       });
     }),
   );
@@ -52,9 +47,9 @@ export const fetchTileData = async (args: {
   category: Category;
   geoType: GeoType;
   tile: DataTile;
-  base_url: string;
+  baseUrl: string;
 }) => {
-  const url = `${args.base_url}/tiles/${args.geoType}/${args.tile.tilename}/${args.category.code}.csv`;
+  const url = `${args.baseUrl}/tiles/${args.geoType}/${args.tile.tilename}/${args.category.code}.csv`;
   const response = await fetch(url);
   const csv = await response.text();
   return dsv.csvParse(csv);
@@ -68,9 +63,9 @@ export const fetchBreaks = async (args: {
   classification: Classification;
   category: Category;
   geoType: GeoType;
-  base_url: string;
+  baseUrl: string;
 }): Promise<{ breaks: number[] }> => {
-  const url = `${args.base_url}/breaksCkmeans/${args.geoType}/${args.category.code}.json`;
+  const url = `${args.baseUrl}/breaksCkmeans/${args.geoType}/${args.category.code}.json`;
   const response = await fetch(url);
   const breaksRaw = await response.json();
   const breaks = uniqueRoundedClassificationBreaks(args.classification.code, breaksRaw);

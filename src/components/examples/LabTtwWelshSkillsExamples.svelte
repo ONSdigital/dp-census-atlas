@@ -15,6 +15,7 @@
       href={buildHyperlink(
         $page.url,
         {
+          mode: "choropleth",
           variableGroup: "identity",
           variable: "ethnic-group",
           category: {
@@ -22,7 +23,6 @@
             category: "asian-asian-british-or-asian-welsh",
           },
         },
-        undefined,
         {
           geoType: ewNotSelected ? $geography.geoType : "lad",
           geoCode: ewNotSelected ? $geography.geoCode : "E09000025",
@@ -41,6 +41,7 @@
       href={buildHyperlink(
         $page.url,
         {
+          mode: "choropleth",
           variableGroup: "identity",
           variable: "religion",
           category: {
@@ -48,7 +49,6 @@
             category: "no-religion",
           },
         },
-        undefined,
         {
           geoType: ewNotSelected ? $geography.geoType : "lad",
           geoCode: ewNotSelected ? $geography.geoCode : "W06000018",
@@ -67,6 +67,7 @@
       href={buildHyperlink(
         $page.url,
         {
+          mode: "choropleth",
           variableGroup: "work",
           variable: "economic-activity-status",
           category: {
@@ -74,7 +75,6 @@
             category: "economically-active-excluding-full-time-students-in-employment",
           },
         },
-        undefined,
         {
           geoType: ewNotSelected ? $geography.geoType : "lad",
           geoCode: ewNotSelected ? $geography.geoCode : "E07000137",

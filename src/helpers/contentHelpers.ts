@@ -292,3 +292,14 @@ export const getAvailableModesForClassification = (
 export const internal = {
   mergeVariableGroups,
 };
+
+export const getAvailableModes = (content: ContentJson) => {
+  return content.content.flatMap((g) =>
+    g.variables.flatMap((v) =>
+      v.classifications.flatMap((c) => ({
+        classification: c,
+        modes: getAvailableModesForClassification(v, c),
+      })),
+    ),
+  );
+};

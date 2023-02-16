@@ -9,6 +9,7 @@
 
   const handleChange = () => {
     const link = buildHyperlink($page.url, {
+      mode: $viz.params.mode,
       variableGroup: $viz.params.variableGroup.slug,
       variable: $viz.params.variable.slug,
       category: {

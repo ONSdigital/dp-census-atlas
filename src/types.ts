@@ -1,3 +1,5 @@
+export type DataEnv = "dev" | "web" | "publishing";
+
 export const GeoTypes = ["ew", "lad", "msoa", "oa"] as const;
 export type GeoType = (typeof GeoTypes)[number];
 
@@ -34,6 +36,7 @@ export type Classification = {
   available_geotypes: GeoType[];
   choropleth_default: boolean;
   dot_density_default: boolean;
+  comparison_2011_data_available_geotypes: GeoType[];
   categories: Category[];
 };
 
@@ -48,12 +51,14 @@ export type Category = {
 export type VariableData = { [catCode: string]: { count: number; total: number; percentage: number } };
 
 export type NumberQuadruple = [number, number, number, number];
+export type StringQuintuple = [string, string, string, string, string];
 
 export type VizData = {
   geoType: GeoType;
   breaks: number[];
   places: { geoCode: string; categoryValue: number }[];
   params: {
+    mode: Mode;
     variableGroup: VariableGroup;
     variable: Variable;
     category: Category;
@@ -143,18 +148,19 @@ export type DataTileGrid = {
   oa: DataTile[];
 };
 
-export type RuntimeEnv = {
-  envName: string;
-};
-
 export type ContentConfig = {
   devContentJsonUrl: string;
   webContentJsonUrl: string;
   publishingContentJsonUrl: string;
 };
 
+export const modes = ["choropleth", "change"] as const;
+export type Mode = (typeof modes)[number];
+
 export type ContentTree = {
-  releases: string[];
-  variableGroups: VariableGroup[];
-  fakeDataLoaded: boolean;
+  [Key in Mode]: {
+    releases: string[];
+    variableGroups: VariableGroup[];
+    fakeDataLoaded: boolean;
+  };
 };

@@ -15,9 +15,11 @@
     <section class="mb-8">
       <h2 class="pt-3 font-bold text-slate-500">Topic</h2>
       <nav class="flex flex-wrap items-center gap-2 text-xl" aria-label="Breadcrumb">
-        <a class="hyperlink" href={buildHyperlink($page.url)}>Home</a>
+        <a class="hyperlink" href={buildHyperlink($page.url, { mode: $params.mode })}>Home</a>
         <div class="text-sm font-extrabold text-slate-500" aria-hidden>&gt;</div>
-        <a class="hyperlink" href={buildHyperlink($page.url, { variableGroup: $params.variableGroup.slug })}
+        <a
+          class="hyperlink"
+          href={buildHyperlink($page.url, { mode: $params.mode, variableGroup: $params.variableGroup.slug })}
           >{$params.variableGroup.name}</a
         >
         <div class="text-sm font-extrabold text-slate-500" aria-hidden>&gt;</div>
@@ -32,6 +34,7 @@
           <a
             class="border-t-[1px] border-t-slate-300 py-2 group"
             href={buildHyperlink($page.url, {
+              mode: $params.mode,
               variableGroup: $params.variableGroup.slug,
               variable: $params.variable.slug,
               category: {

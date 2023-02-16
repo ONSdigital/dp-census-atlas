@@ -15,6 +15,7 @@
       href={buildHyperlink(
         $page.url,
         {
+          mode: "choropleth",
           variableGroup: "identity",
           variable: "sexual-orientation",
           category: {
@@ -22,7 +23,6 @@
             category: "straight-or-heterosexual",
           },
         },
-        undefined,
         {
           geoType: ewNotSelected ? $geography.geoType : "lad",
           geoCode: ewNotSelected ? $geography.geoCode : "W06000015",
@@ -43,6 +43,7 @@
       href={buildHyperlink(
         $page.url,
         {
+          mode: "choropleth",
           variableGroup: "work",
           variable: "economic-activity-status",
           category: {
@@ -50,7 +51,6 @@
             category: "economically-active-excluding-full-time-students-in-employment",
           },
         },
-        undefined,
         {
           geoType: ewNotSelected ? $geography.geoType : "lad",
           geoCode: ewNotSelected ? $geography.geoCode : "E07000137",
@@ -68,6 +68,7 @@
       href={buildHyperlink(
         $page.url,
         {
+          mode: "choropleth",
           variableGroup: "housing",
           variable: "type-of-central-heating-in-household",
           category: {
@@ -75,7 +76,6 @@
             category: "renewable-energy-only",
           },
         },
-        undefined,
         {
           geoType: ewNotSelected ? $geography.geoType : "lad",
           geoCode: ewNotSelected ? $geography.geoCode : "E06000052",

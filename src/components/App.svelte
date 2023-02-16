@@ -55,7 +55,7 @@
 </svelte:head>
 
 {#if $content && $geography}
-  {#if $content.variableGroups.length > 0}
+  {#if $content.choropleth.variableGroups.length > 0}
     <slot />
   {:else}
     <ServiceUnavailablePage />

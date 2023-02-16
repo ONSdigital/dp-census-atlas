@@ -1,6 +1,5 @@
 import type { Category, Classification, Variable, VariableGroup } from "../types";
-import { mergeVariableGroups } from "./contentHelpers";
-
+import { internal } from "./contentHelpers";
 
 const makeTestVariableGroups = (n: number, parentName = ""): VariableGroup[] => {
   const variableGroups = [];
@@ -65,7 +64,7 @@ describe("mergeVariableGroups", () => {
     const variableGroupsToMerge = makeTestVariableGroups(5);
     const expectedVariableGroups = variableGroupsToMerge;
     // WHEN we call mergeVariableGroups on them, we expect them NOT to change
-    expect(mergeVariableGroups(variableGroupsToMerge)).toEqual(expectedVariableGroups);
+    expect(internal.mergeVariableGroups(variableGroupsToMerge)).toEqual(expectedVariableGroups);
   });
   test("does dedupe variable groups with the same names and content", () => {
     // GIVEN two sets of identical variable groups combined into a single array
@@ -74,7 +73,7 @@ describe("mergeVariableGroups", () => {
     const variableGroupsToMerge = [...variableGroupsToMerge1, ...variableGroupsToMerge2];
     const expectedVariableGroups = variableGroupsToMerge1;
     // WHEN we call mergeVariableGroups on them, we expect them to be de-duplicated
-    expect(mergeVariableGroups(variableGroupsToMerge)).toEqual(expectedVariableGroups);
+    expect(internal.mergeVariableGroups(variableGroupsToMerge)).toEqual(expectedVariableGroups);
   });
   test("does merge variable groups with the same names and different variables", () => {
     // GIVEN two sets of variable groups with the same names but different variables
@@ -95,6 +94,6 @@ describe("mergeVariableGroups", () => {
     const variableGroupsToMerge = [...variableGroupsToMerge1, ...variableGroupsToMerge2];
     const expectedVariableGroups = makeTestVariableGroups(6);
     // WHEN we call mergeVariableGroups on them, we expect them to have merged back into complete topics
-    expect(mergeVariableGroups(variableGroupsToMerge)).toEqual(expectedVariableGroups);
+    expect(internal.mergeVariableGroups(variableGroupsToMerge)).toEqual(expectedVariableGroups);
   });
 });

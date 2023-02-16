@@ -3,6 +3,7 @@ import { appBasePath } from "../buildEnv";
 import content from "./content";
 import { getContentForStore } from "../helpers/contentHelpers";
 import { content as contentStore } from "../stores/content";
+import type { DataEnv } from "../types";
 
 /*
   Fetch and collate all content.json files for current env, then set them in the contentStore. NB - variableGroups are
@@ -14,12 +15,9 @@ export const setContentStoreOnce = async () => {
     return;
   }
   // get env config
-  const runtimeEnv = await (await fetch(`${appBasePath}/api/runtime-env`)).json();
-
-  // use dev content if dev, netlify or sandbox env
-  const isDev = ["dev", "netlify", "sandbox"].includes(runtimeEnv.envName);
+  const dataEnv = (await (await fetch(`${appBasePath}/api/data-env`)).text()) as DataEnv;
 
   // fetch content for store and set
-  const contentForStore = await getContentForStore(content, isDev, runtimeEnv.isPublishing);
+  const contentForStore = await getContentForStore(content, dataEnv);
   contentStore.set(contentForStore);
 };

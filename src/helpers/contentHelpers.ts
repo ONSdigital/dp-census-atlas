@@ -267,36 +267,6 @@ const filterVariableGroupsForMode = (variableGroups: VariableGroup[], mode: Mode
   }
 };
 
-// export const contentInVariableGroups = (
-//   variableGroups: VariableGroup[],
-//   args: { variableGroup: VariableGroup; variable?: Variable; classification?: Classification },
-// ) => {
-//   const matchVG = variableGroups.find((vg) => vg.name === args.variableGroup.name);
-//   if (matchVG) {
-//     if (!args?.variable) {
-//       return true;
-//     }
-//     const matchV = matchVG.variables.find((v) => v.code === args.variable.code);
-//     if (matchV) {
-//       if (!args?.classification) {
-//         return true;
-//       }
-//       const matchC = matchV.classifications.find((c) => c.code === args.classification.code);
-//       if (matchC) {
-//         return true;
-//       }
-//     }
-//   }
-//   return false;
-// };
-
-// export const getAvailableModesForVariable = (variable: Variable): Record<Mode, boolean> => {
-//   return {
-//     choropleth: variable.base_url_2021 !== undefined,
-//     change: variable.base_url_2011_2021_comparison !== undefined,
-//   };
-// };
-
 export const getDataBaseUrlsForVariable = (variable: Variable): Record<Mode, string> => {
   return {
     choropleth: variable.base_url_2021,
@@ -308,10 +278,14 @@ export const getDataBaseUrlForVariable = (mode: Mode, variable: Variable) => {
   return getDataBaseUrlsForVariable(variable)[mode];
 };
 
-export const getAvailableModesForClassification = (classification: Classification): Record<Mode, boolean> => {
+export const getAvailableModesForClassification = (
+  variable: Variable,
+  classification: Classification,
+): Record<Mode, boolean> => {
   return {
     choropleth: classification.available_geotypes.length > 0,
-    change: classification.comparison_2011_data_available_geotypes?.length > 0 ?? false,
+    change:
+      variable.base_url_2011_2021_comparison && classification.comparison_2011_data_available_geotypes?.length > 0,
   };
 };
 

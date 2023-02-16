@@ -1,13 +1,14 @@
 <script lang="ts">
   import { page } from "$app/stores";
   import { params } from "../stores/params";
-  import type { Classification } from "../types";
+  import type { Classification, Variable } from "../types";
   import { getAvailableModesForClassification } from "../helpers/contentHelpers";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
   import Icon from "./MaterialIcon.svelte";
 
+  export let variable: Variable;
   export let classification: Classification;
-  $: availableModes = getAvailableModesForClassification(classification);
+  $: availableModes = getAvailableModesForClassification(variable, classification);
 </script>
 
 {#if $params.mode === "choropleth" && availableModes.change}

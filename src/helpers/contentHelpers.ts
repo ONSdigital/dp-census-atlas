@@ -1,4 +1,4 @@
-import type { Classification, Variable, VariableGroup, ContentTree, ContentConfig, Mode } from "../types";
+import type { Classification, Variable, VariableGroup, ContentTree, ContentConfig, Mode, DataEnv } from "../types";
 import staticContentJsons from "../data/staticContentJsons/index";
 import { never } from "../util/typeUtil";
 
@@ -7,15 +7,11 @@ type ContentJson = (typeof staticContentJsons)["2021-MASTER.json"];
 /*
   Fetch all content.json files referenced in content.ts for the current env, return as ContentTree
 */
-export const getContentForStore = async (
-  contentConfigs: ContentConfig[],
-  isDev: boolean,
-  isPublishing: boolean,
-): Promise<ContentTree> => {
+export const getContentForStore = async (contentConfigs: ContentConfig[], dataEnv: DataEnv): Promise<ContentTree> => {
   // load content as specced in content configs
   let rawContent = await Promise.all(
     contentConfigs.map((ctcfg) => {
-      return fetchContentForEnv(ctcfg, isDev, isPublishing);
+      return fetchContentForEnv(ctcfg, dataEnv);
     }),
   );
 
@@ -25,7 +21,7 @@ export const getContentForStore = async (
       if (contentJson?.meta?.additional_content_jsons) {
         const additional_content_for_content_json = await Promise.all(
           contentJson.meta.additional_content_jsons.map(async (ctcfg) => {
-            const contentJson = await fetchContentForEnv(ctcfg, isDev, isPublishing);
+            const contentJson = await fetchContentForEnv(ctcfg, dataEnv);
             return contentJson;
           }),
         );
@@ -46,10 +42,10 @@ export const getContentForStore = async (
   const mergedVariableGroups = mergeVariableGroups(allVariableGroups as VariableGroup[]);
   sortVariableGroupVariables(mergedVariableGroups);
 
-  // override data base urls with any configured fake data urls if in dev/netlify. NB remove the override after use
-  // to avoid clutter
+  // override data base urls with any configured fake data urls if in dev
+  // removes the override property after use to avoid clutter
   let fakeDataLoaded = false;
-  if (isDev) {
+  if (dataEnv === "dev") {
     mergedVariableGroups.forEach((vg) => {
       vg.variables.forEach((v) => {
         if (v.base_url_2021_dev_override) {
@@ -90,18 +86,8 @@ export const getContentForStore = async (
 /*
   Fetch content.json file from appropriate url for current env.
 */
-const fetchContentForEnv = async (
-  contentConfig: ContentConfig,
-  isDev: boolean,
-  isPublishing: boolean,
-): Promise<ContentJson> => {
-  // set appropriate content json url
-  let contentJsonUrl = contentConfig.webContentJsonUrl;
-  if (isDev) {
-    contentJsonUrl = contentConfig.devContentJsonUrl;
-  } else if (isPublishing) {
-    contentJsonUrl = contentConfig.publishingContentJsonUrl;
-  }
+const fetchContentForEnv = async (contentConfig: ContentConfig, dataEnv: DataEnv): Promise<ContentJson> => {
+  const contentJsonUrl = getContentJsonUrl(dataEnv, contentConfig);
 
   // if content json url is blank, skip this (means that the current content is not configured for this env)
   if (contentJsonUrl === "") {
@@ -138,6 +124,19 @@ const fetchContentForEnv = async (
   } catch (e) {
     console.error(`Error fetching / parsing content json file ${contentJsonUrl}: ${e}`);
     return null;
+  }
+};
+
+const getContentJsonUrl = (dataEnv: DataEnv, contentConfig: ContentConfig) => {
+  switch (dataEnv) {
+    case "dev":
+      return contentConfig.devContentJsonUrl;
+    case "publishing":
+      return contentConfig.publishingContentJsonUrl;
+    case "web":
+      return contentConfig.webContentJsonUrl;
+    default:
+      never(dataEnv);
   }
 };
 

@@ -1,3 +1,5 @@
+export type DataEnv = "dev" | "web" | "publishing";
+
 export const GeoTypes = ["ew", "lad", "msoa", "oa"] as const;
 export type GeoType = (typeof GeoTypes)[number];
 
@@ -144,10 +146,6 @@ export type DataTileGrid = {
   lad: DataTile[];
   msoa: DataTile[];
   oa: DataTile[];
-};
-
-export type RuntimeEnv = {
-  envName: string;
 };
 
 export type ContentConfig = {

@@ -29,6 +29,8 @@
                 "units": "Persons per square kilometre",
                 "topic_code": "DEM",
                 "base_url_2021": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+                "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
+                "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
                 "classifications": [
                   {
                     "code": "population_density",
@@ -36,6 +38,7 @@
                     "desc": "Population density",
                     "available_geotypes": ["oa", "msoa", "lad"],
                     "choropleth_default": true,
+                    "comparison_2011_data_available_geotypes": ["lad"],
                     "data_download": "https://www.nomisweb.co.uk/datasets/c2021ts006",
                     "categories": [
                       {
@@ -93,6 +96,8 @@
                 "units": "Years",
                 "topic_code": "DEM",
                 "base_url_2021": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+                "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
+                "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
                 "classifications": [
                   {
                     "code": "median_age",
@@ -100,6 +105,7 @@
                     "desc": "Median age",
                     "available_geotypes": ["msoa", "lad"],
                     "choropleth_default": true,
+                    "comparison_2011_data_available_geotypes": ["lad"],
                     "data_download": "https://www.nomisweb.co.uk/sources/census_2021_ts",
                     "categories": [
                       {
@@ -295,6 +301,8 @@
                 "units": "Person",
                 "topic_code": "HUC",
                 "base_url_2021": "https://ons-dp-prod-census-maps-huc.s3.eu-west-2.amazonaws.com",
+                "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
+                "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
                 "caveat_text": "Values are age-standardised to account for differences in population size and age structure.",
                 "caveat_link": "http://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthandwellbeing/methodologies/healthdisabilityandunpaidcarequalityinformationforcensus2021",
                 "classifications": [
@@ -305,7 +313,7 @@
                     "available_geotypes": ["lad"],
                     "choropleth_default": true,
                     "dot_density_default": true,
-                    "comparison_2011_data_available": true,
+                    "comparison_2011_data_available_geotypes": ["lad"],
                     "data_download": "https://www.ons.gov.uk/datasets/TS038ASP/editions/2021",
                     "categories": [
                       {
@@ -347,17 +355,19 @@
                 "units": "Household",
                 "topic_code": "HUC",
                 "base_url_2021": "https://ons-dp-prod-census-maps-huc.s3.eu-west-2.amazonaws.com",
+                "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
+                "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
                 "caveat_text": "Values are age-standardised to account for differences in population size and age structure.",
                 "caveat_link": "http://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthandwellbeing/methodologies/healthdisabilityandunpaidcarequalityinformationforcensus2021",
                 "classifications": [
                   {
-                    "code": "health_in_general",
+                    "code": "health_in_general_age_standardised",
                     "slug": "health-in-general",
                     "desc": "General health (6 categories)",
                     "available_geotypes": ["lad"],
                     "choropleth_default": true,
                     "dot_density_default": true,
-                    "comparison_2011_data_available": true,
+                    "comparison_2011_data_available_geotypes": ["lad"],
                     "data_download": "https://www.ons.gov.uk/datasets/TS037ASP/editions/2021",
                     "categories": [
                       {
@@ -409,23 +419,25 @@
               "custom_variable": {
                 "name": "Provision of unpaid care (age-standardised)",
                 "code": "is_carer_age_standardised",
-                "slug": "provision-of-unpaid-care-age-standardised",
+                "slug": "provision-of-unpaid-cared",
                 "desc": "Hours of unpaid care provided per week.",
                 "long_desc": "An unpaid carer may look after, give help or support to anyone who has long-term physical or mental ill-health conditions, illness or problems related to old age.  \n\nThis does not include any activities as part of paid employment. \n\nThis help can be within or outside of the carer's household.",
                 "units": "Person",
                 "topic_code": "HUC",
                 "base_url_2021": "https://ons-dp-prod-census-maps-huc.s3.eu-west-2.amazonaws.com",
+                "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
+                "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
                 "caveat_text": "Values are age-standardised to account for differences in population size and age structure.",
                 "caveat_link": "http://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthandwellbeing/methodologies/healthdisabilityandunpaidcarequalityinformationforcensus2021",
                 "classifications": [
                   {
-                    "code": "is_carer_5a",
+                    "code": "is_carer_5a_age_standardised",
                     "slug": "is-carer-5a",
                     "desc": "Unpaid care (5 categories)",
                     "available_geotypes": ["lad"],
                     "choropleth_default": true,
                     "dot_density_default": true,
-                    "comparison_2011_data_available": true,
+                    "comparison_2011_data_available_geotypes": ["lad"],
                     "data_download": "https://www.ons.gov.uk/datasets/TS039ASP/editions/2021",
                     "categories": [
                       {

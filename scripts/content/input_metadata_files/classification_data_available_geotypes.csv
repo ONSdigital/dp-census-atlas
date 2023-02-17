@@ -2,9 +2,6 @@ variable_group,content_json,variable,classification,2021_data_available_geotypes
 Education,2021-EDU,highest_qualification,highest_qualification,"oa,msoa,lad",lad
 Education,2021-EDU,highest_qualification,highest_qualification_6a,"oa,msoa,lad","oa,msoa,lad"
 Education,2021-EDU,in_full_time_education,in_full_time_education,"oa,msoa,lad",lad
-Health,2021-HUC,disability_age_standardised,disability_4a,"oa,msoa,lad",lad
-Health,2021-HUC,health_in_general_age_standardised,health_in_general,"oa,msoa,lad",lad
-Health,2021-HUC,is_carer_age_standardised,is_carer_5a,"oa,msoa,lad",lad
 Housing,2021-HOU,accommodation_type,accommodation_type,"oa,msoa,lad",lad
 Housing,2021-HOU,accommodation_type,accommodation_type_3a,"oa,msoa,lad","oa,msoa,lad"
 Housing,2021-HOU,accommodation_type,accommodation_type_5a,"oa,msoa,lad","oa,msoa,lad"

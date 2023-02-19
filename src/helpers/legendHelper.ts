@@ -1,6 +1,6 @@
 import type { Mode } from "../types";
-import { getClassificationDataSuffix } from "../helpers/classificationHelpers";
 import { never } from "../util/typeUtil";
+import { getClassificationDataSuffix } from "./classificationHelpers";
 
 export const getSuffix = (mode: Mode, classificationCode: string) => {
   switch (mode) {

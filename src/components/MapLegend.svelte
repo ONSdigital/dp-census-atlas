@@ -13,6 +13,7 @@
   import BreaksChart from "./BreaksChart.svelte";
   import GeoTypeBadge from "./GeoTypeBadge.svelte";
   import CategorySelector from "./CategorySelector.svelte";
+  import Icon from "./MaterialIcon.svelte";
 
   $: valueForHoveredGeography = $viz?.places.find((p) => p.geoCode === $hovered?.geoCode)?.categoryValue;
 
@@ -157,7 +158,12 @@
       {/if}
       {#if $viz?.params?.mode === "change"}
         <div class="text-xs xs:text-sm pt-0.5 xs:pt-2.5">
-          Change in percentage points (pp) between March 2011 and March 2021 census.
+          Change in <a href="https://en.wikipedia.org/wiki/Percentage_point" class="hyperlink-subdued"
+            >percentage points</a
+          >
+          <span class="inline">
+            <Icon kind="openInNew" />
+          </span> (pp) between March 2011 and March 2021 census.
         </div>
       {/if}
     </div>

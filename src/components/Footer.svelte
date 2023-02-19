@@ -54,7 +54,7 @@
       target="_blank"
       rel="noreferrer">Open Government Licence v3.0</a
     >
-    <span class="inline">
+    <span class="inline" aria-hidden="true">
       <Icon kind="openInNew" />
     </span>, except where otherwise stated
   </div>
@@ -68,7 +68,7 @@
       target="_blank"
       rel="noreferrer">MSOA names</a
     >
-    <span class="inline">
+    <span class="inline" aria-hidden="true">
       <Icon kind="openInNew" />
     </span>
     used under the
@@ -78,7 +78,7 @@
       target="_blank"
       rel="noreferrer">Open Parliament Licence v3.0</a
     >
-    <span class="inline">
+    <span class="inline" aria-hidden="true">
       <Icon kind="openInNew" />
     </span>
   </div>

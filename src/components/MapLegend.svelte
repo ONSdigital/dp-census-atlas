@@ -159,11 +159,11 @@
       {#if $viz?.params?.mode === "change"}
         <div class="text-xs xs:text-sm pt-0.5 xs:pt-2.5">
           Change in <a href="https://en.wikipedia.org/wiki/Percentage_point" class="hyperlink-subdued"
-            >percentage points</a
+            >percentage points (pp)</a
           >
-          <span class="inline">
+          <span class="inline" aria-hidden="true">
             <Icon kind="openInNew" />
-          </span> (pp) between March 2011 and March 2021 census.
+          </span> between March 2011 and March 2021 census.
         </div>
       {/if}
     </div>

@@ -1,9 +1,6 @@
 variable_group,content_json,variable,2021_data_base_url,2021_data_fake_dev_override,2011_2021_comparison_data_base_url,2011_2021_comparison_fake_dev_override
 Education,2021-EDU,highest_qualification,https://ons-dp-prod-census-maps-edu.s3.eu-west-2.amazonaws.com,,,https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison
 Education,2021-EDU,in_full_time_education,https://ons-dp-prod-census-maps-edu.s3.eu-west-2.amazonaws.com,,,https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison
-Health,2021-HUC,disability,https://ons-dp-prod-census-maps-huc.s3.eu-west-2.amazonaws.com,,,https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison
-Health,2021-HUC,health_in_general,https://ons-dp-prod-census-maps-huc.s3.eu-west-2.amazonaws.com,,,https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison
-Health,2021-HUC,is_carer,https://ons-dp-prod-census-maps-huc.s3.eu-west-2.amazonaws.com,,,https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison
 Housing,2021-HOU,accommodation_type,https://ons-dp-prod-census-maps-hou.s3.eu-west-2.amazonaws.com,,,https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison
 Housing,2021-HOU,alternative_address_indicator,https://ons-dp-prod-census-maps-hou.s3.eu-west-2.amazonaws.com,,,https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison
 Housing,2021-HOU,heating_type,https://ons-dp-prod-census-maps-hou.s3.eu-west-2.amazonaws.com,,,https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison

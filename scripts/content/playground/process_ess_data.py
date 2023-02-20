@@ -8,6 +8,8 @@ from slugify import slugify
 
 BASE_URL = "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS"
 
+GEOTYPES_FOR_CONTENT_JSON = ["LTLA", "RGN", "UTLA"]
+
 
 def mkfilename(str) -> str:
     return str.lower().replace(" ", "_")
@@ -65,6 +67,8 @@ if __name__ == "__main__":
                 output[id][row_geotype] = [output_row]
 
             # append to content json rough draft
+            if row_geotype not in GEOTYPES_FOR_CONTENT_JSON:
+                continue
 
             vg_name = row["Category"]
             vg_output_name = get_output_name(vg_name)

@@ -9,3 +9,4 @@
 !/input_metadata_files/variable_short_descriptions.csv
 !/input_metadata_files/variable_tile_data_base_urls.csv
 /**/*.zip
+!/playground/process_ess_data.py

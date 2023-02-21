@@ -1,7 +1,7 @@
 import { asyncDerived } from "@square/svelte-store";
 import { geography } from "./geography";
 import { viz } from "./viz";
-import { fetchDataForBbox } from "../data/api";
+import { fetchTileData } from "../data/api";
 
 export const selected = asyncDerived([geography, viz], async ([$geography, $viz]) => {
   if (!$geography) {
@@ -16,16 +16,13 @@ export const selected = asyncDerived([geography, viz], async ([$geography, $viz]
       value: undefined as number,
     };
   } else {
-    const [[west, south], [east, north]] = $geography.bbox;
-
     const args = {
       category: $viz.params.category,
       geoType: $geography.geoType,
-      bbox: { south, west, north, east },
       base_url: $viz.params.variable.base_url_2021,
     };
 
-    const data = await fetchDataForBbox(args);
+    const data = await fetchTileData(args);
 
     return {
       ...$geography,

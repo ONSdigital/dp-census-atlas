@@ -1,5 +1,5 @@
 import { asyncDerived } from "@square/svelte-store";
-import { fetchBreaks, fetchDataForBbox } from "../data/api";
+import { fetchBreaks, fetchTileData } from "../data/api";
 import { params } from "./params";
 import { viewport } from "./viewport";
 
@@ -16,11 +16,10 @@ export const viz = asyncDerived([params, viewport], async ([$params, $viewport])
       classification: $params.classification,
       category: $params.category,
       geoType: $viewport.geoType,
-      bbox: $viewport.bbox,
       base_url: $params.variable.base_url_2021,
     };
 
-    const [data, breaks] = await Promise.all([fetchDataForBbox(args), fetchBreaks(args)]);
+    const [data, breaks] = await Promise.all([fetchTileData(args), fetchBreaks(args)]);
 
     return {
       geoType: args.geoType,

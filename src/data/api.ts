@@ -29,7 +29,6 @@ const fetchTileDataForBbox = async (args: { category: Category; geoType: GeoType
       return fetchTileData({
         category: args.category,
         geoType: args.geoType,
-        tile: dataTile,
         base_url: args.base_url,
       });
     }),
@@ -48,13 +47,8 @@ const parsePlaceData = (row: dsv.DSVRowString<string>, categoryCode: string) => 
   Fetch json with census data by for categories categoryCode and totalCode for all geographies of type 'geoType' that
   fall within geographic bounding box represented by 'tile'.
 */
-export const fetchTileData = async (args: {
-  category: Category;
-  geoType: GeoType;
-  tile: DataTile;
-  base_url: string;
-}) => {
-  const url = `${args.base_url}/tiles/${args.geoType}/${args.tile.tilename}/${args.category.code}.csv`;
+export const fetchTileData = async (args: { category: Category; geoType: GeoType; base_url: string }) => {
+  const url = `${args.base_url}/tiles/${args.geoType}/${args.category.code}.csv`;
   const response = await fetch(url);
   const csv = await response.text();
   return dsv.csvParse(csv);

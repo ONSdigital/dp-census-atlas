@@ -4,15 +4,19 @@ import { centroidsGeojson } from "../helpers/quadsHelper";
 import { distinctUntilChanged, fromEventPattern } from "rxjs";
 import { map as project } from "rxjs/operators";
 import type { NumberQuadruple } from "../types";
+import topojson from "./topojson.json";
+import { feature } from "topojson-client";
 
 const layerBounds: NumberQuadruple = [-6.418, 49.864, 1.764, 55.812];
 
+const topoJsonLayersToAdd = ["LTLA", "RGN", "UTLA"];
+
 export const initMapLayers = (map, geo, interactive: boolean) => {
-  layersWithSiblings().forEach((l) => {
-    map.addSource(l.layer.name, {
-      type: "vector",
-      tiles: [l.layer.urlTemplate],
-      promoteId: l.layer.idProperty, // tells mapbox which property to use as the feature id
+  topoJsonLayersToAdd.forEach((lGeo) => {
+    map.addSource(lGeo, {
+      type: "geojson",
+      data: topojson[geoType.key],
+      promoteId: "AREACD", // tells mapbox which property to use as the feature id
       maxzoom: l.layer.sourceMaxZoom, // This is the maximum zoom level that the map tiles are available for (tiles can be over-zoomed)
       layerBounds,
     });

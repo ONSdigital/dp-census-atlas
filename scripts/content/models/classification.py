@@ -30,6 +30,32 @@ class CensusClassification:
             c for c in category_list if c._classification_code == self.code and c.name not in dropped_cats
         ]
 
+        # set mode restrictions
+        for cat_code, mode_restrictions in variable_spec.get("classification_category_mode_restrictions", {}).get(self.code, {}).items():
+            cat = next((c for c in self.categories if c.code == cat_code), False)
+            if not cat:
+                print(
+                    f"** Mode restriction for category {cat_code} in classification {self.code} could not be set - no matching category found! **")
+            else:
+                cat.restrict_to_modes = mode_restrictions
+
+        # add custom categories
+        for custom_cat_set in variable_spec.get("classification_custom_categories", {}).get(self.code, {}):
+            insert_after_cat_code = custom_cat_set["insert_after"]
+            insert_index = next((i + 1 for i, c in enumerate(self.categories)
+                                if c.code == insert_after_cat_code), False)
+            if not insert_index:
+                print(
+                    f"** Custom categories for classification {self.code} could not be set - no category matched 'insert after'! **")
+            else:
+                self.categories[insert_index:insert_index] = [
+                    category_from_content_json(cat) for cat in custom_cat_set["categories"]]
+
+    def set_mode_restrictions(self, variable_spec: dict) -> None:
+        """
+        Append all categories with matching classification code to self, except those the variable_spec says to drop.
+        """
+
     def set_choropleth_default(self, choropleth_default_classifications: list[str]) -> None:
         if self.code in choropleth_default_classifications:
             self.choropleth_default = True

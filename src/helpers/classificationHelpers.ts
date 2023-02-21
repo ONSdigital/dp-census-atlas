@@ -2,7 +2,6 @@ import type { Mode } from "../types";
 import { roundNumber, uniqueRoundedNumbers } from "../util/numberUtil";
 import { never } from "../util/typeUtil";
 
-const nonPercentageClassifications = ["population_density", "median_age"];
 const twoDecimalPlaceClassifications = [
   "main_language_detailed",
   "main_language_detailed_23a",
@@ -18,31 +17,36 @@ const twoDecimalPlaceClassifications = [
   classifications in the UI
 */
 const classificationDataDisplayConfig = (classificationCode: string, mode: Mode) => {
-  if (nonPercentageClassifications.includes(classificationCode)) {
+  if (classificationCode === "population_density") {
     return {
-      suffix: "",
+      suffix: mode === "change" ? " %" : "", // special-case for change-over-time
       round: (r: number) => roundNumber({ number: r, decimalPlaces: 0 }),
       roundToString: (r: number) => parseInt(r.toFixed(0)).toLocaleString(),
       roundBreaks: (breaks: number[]) => uniqueRoundedNumbers({ numbers: breaks, decimalPlaces: 0 }),
     };
-  }
-
-  if (twoDecimalPlaceClassifications.includes(classificationCode)) {
+  } else if (classificationCode === "median_age") {
+    return {
+      suffix: mode === "change" ? " years" : "", // special-case for change-over-time
+      round: (r: number) => roundNumber({ number: r, decimalPlaces: 0 }),
+      roundToString: (r: number) => parseInt(r.toFixed(0)).toLocaleString(),
+      roundBreaks: (breaks: number[]) => uniqueRoundedNumbers({ numbers: breaks, decimalPlaces: 0 }),
+    };
+  } else if (twoDecimalPlaceClassifications.includes(classificationCode)) {
     return {
       suffix: getStandardSuffixForMode(mode),
       round: (r: number) => roundNumber({ number: r, decimalPlaces: 2 }),
       roundToString: (r: number) => r.toFixed(2),
       roundBreaks: (breaks: number[]) => uniqueRoundedNumbers({ numbers: breaks, decimalPlaces: 2 }),
     };
+  } else {
+    // all other classifications
+    return {
+      suffix: getStandardSuffixForMode(mode),
+      round: (r: number) => roundNumber({ number: r, decimalPlaces: 1 }),
+      roundToString: (r: number) => r.toFixed(1),
+      roundBreaks: (breaks: number[]) => uniqueRoundedNumbers({ numbers: breaks, decimalPlaces: 1 }),
+    };
   }
-
-  // all other classifications
-  return {
-    suffix: getStandardSuffixForMode(mode),
-    round: (r: number) => roundNumber({ number: r, decimalPlaces: 1 }),
-    roundToString: (r: number) => r.toFixed(1),
-    roundBreaks: (breaks: number[]) => uniqueRoundedNumbers({ numbers: breaks, decimalPlaces: 1 }),
-  };
 };
 
 const getStandardSuffixForMode = (mode: Mode) => {

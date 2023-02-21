@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   // tempted to import stores/params here?
   // don't use the current params (input) to show the current results (output)
   // as that will make race conditions and incorrect vizualisations...
@@ -13,7 +13,7 @@
   import BreaksChart from "./BreaksChart.svelte";
   import GeoTypeBadge from "./GeoTypeBadge.svelte";
   import CategorySelector from "./CategorySelector.svelte";
-  import Icon from "./MaterialIcon.svelte";
+  import MapLegendExplanation from "./MapLegendExplanation.svelte";
 
   $: valueForHoveredGeography = $viz?.places.find((p) => p.geoCode === $hovered?.geoCode)?.categoryValue;
   $: suffix = $viz && getClassificationDataSuffix($viz.params.classification.code, $viz.params.mode);
@@ -145,7 +145,6 @@
           {/if}
         </div>
       {/if}
-
       {#if $viz}
         <BreaksChart
           selected={$selected?.value}
@@ -157,26 +156,7 @@
           classificationCode={$viz.params.classification.code}
           showPositive={shouldShowPositiveSign($viz.params.mode)}
         />
-      {/if}
-      {#if $viz?.params?.mode === "change"}
-        <div class="text-xs xs:text-sm pt-0.5 xs:pt-2.5">
-          Change in
-          {#if suffix === "pp"}
-            <a href="https://en.wikipedia.org/wiki/Percentage_point" class="hyperlink-subdued">percentage points (pp)</a
-            ><span class="inline" aria-hidden="true">
-              <Icon kind="openInNew" />
-            </span>
-          {:else}
-            {formatTemplateString(
-              $viz.params.variable,
-              $viz.params.category,
-              active.displayName,
-              $viz.params.category.legend_str_3,
-            )}
-            <!-- {$viz.params.category.name} -->
-          {/if}
-          between March 2011 and March 2021 census.
-        </div>
+        <MapLegendExplanation mode={$viz.params.mode} classificationCode={$viz.params.classification.code} />
       {/if}
     </div>
   </div>

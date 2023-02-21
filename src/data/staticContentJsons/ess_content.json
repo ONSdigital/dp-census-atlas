@@ -1,0 +1,773 @@
+{
+  "meta": {
+    "release": "ESS data test"
+  },
+  "content": [
+    {
+      "name": "Productivity, pay, jobs and living standards",
+      "code": "productivity,_pay,_jobs_and_living_standards",
+      "slug": "productivity-pay-jobs-and-living-standards",
+      "desc": "",
+      "variables": [
+        {
+          "name": "Gross Value Added (GVA) per hour worked",
+          "slug": "gross-value-added-per-hour-worked",
+          "code": "gross_value_added_per_hour_worked",
+          "desc": "Gross Value Added (GVA) per hour worked",
+          "long_desc": "Gross Value Added (GVA) per hour worked",
+          "units": "\u00a3",
+          "topic_code": "",
+          "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS",
+          "classifications": [
+            {
+              "code": "gross_value_added_per_hour_worked",
+              "slug": "gross-value-added-per-hour-worked",
+              "desc": "Gross Value Added (GVA) per hour worked",
+              "available_geotypes": ["LTLA"],
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "categories": [
+                {
+                  "name": "Gross Value Added (GVA) per hour worked",
+                  "slug": "gross-value-added-per-hour-worked",
+                  "code": "gross_value_added_per_hour_worked",
+                  "legend_str_1": "of Pounds in {location}",
+                  "legend_str_2": "",
+                  "legend_str_3": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Median Weekly Pay",
+          "slug": "gross-median-weekly-pay",
+          "code": "gross_median_weekly_pay",
+          "desc": "Median Weekly Pay",
+          "long_desc": "Median Weekly Pay",
+          "units": "\u00a3",
+          "topic_code": "",
+          "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS",
+          "classifications": [
+            {
+              "code": "gross_median_weekly_pay",
+              "slug": "gross-median-weekly-pay",
+              "desc": "Median Weekly Pay",
+              "available_geotypes": ["LTLA", "RGN"],
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "categories": [
+                {
+                  "name": "Median Weekly Pay",
+                  "slug": "gross-median-weekly-pay",
+                  "code": "gross_median_weekly_pay",
+                  "legend_str_1": "of Pounds in {location}",
+                  "legend_str_2": "",
+                  "legend_str_3": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Employment rate (16-64-year olds)",
+          "slug": "employment-rate-for-16-to-64-year-olds",
+          "code": "employment_rate_for_16_to_64_year_olds",
+          "desc": "Employment rate (16-64-year olds)",
+          "long_desc": "Employment rate (16-64-year olds)",
+          "units": "%",
+          "topic_code": "",
+          "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS",
+          "classifications": [
+            {
+              "code": "employment_rate_for_16_to_64_year_olds",
+              "slug": "employment-rate-for-16-to-64-year-olds",
+              "desc": "Employment rate (16-64-year olds)",
+              "available_geotypes": ["LTLA"],
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "categories": [
+                {
+                  "name": "Employment rate (16-64-year olds)",
+                  "slug": "employment-rate-for-16-to-64-year-olds",
+                  "code": "employment_rate_for_16_to_64_year_olds",
+                  "legend_str_1": "of Percentage in {location}",
+                  "legend_str_2": "",
+                  "legend_str_3": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Gross Disposable Household Income (GDHI), per head",
+          "slug": "gross-disposable-household-income-per-head",
+          "code": "gross_disposable_household_income_per_head",
+          "desc": "Gross Disposable Household Income (GDHI), per head",
+          "long_desc": "Gross Disposable Household Income (GDHI), per head",
+          "units": "\u00a3",
+          "topic_code": "",
+          "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS",
+          "classifications": [
+            {
+              "code": "gross_disposable_household_income_per_head",
+              "slug": "gross-disposable-household-income-per-head",
+              "desc": "Gross Disposable Household Income (GDHI), per head",
+              "available_geotypes": ["LTLA", "RGN"],
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "categories": [
+                {
+                  "name": "Gross Disposable Household Income (GDHI), per head",
+                  "slug": "gross-disposable-household-income-per-head",
+                  "code": "gross_disposable_household_income_per_head",
+                  "legend_str_1": "of Pounds in {location}",
+                  "legend_str_2": "",
+                  "legend_str_3": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Percentage of premises with gigabit-capable broadband",
+          "slug": "gigabit-capable-broadband",
+          "code": "gigabit_capable_broadband",
+          "desc": "Percentage of premises with gigabit-capable broadband",
+          "long_desc": "Percentage of premises with gigabit-capable broadband",
+          "units": "%",
+          "topic_code": "",
+          "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS",
+          "classifications": [
+            {
+              "code": "gigabit_capable_broadband",
+              "slug": "gigabit-capable-broadband",
+              "desc": "Percentage of premises with gigabit-capable broadband",
+              "available_geotypes": ["LTLA"],
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "categories": [
+                {
+                  "name": "Percentage of premises with gigabit-capable broadband",
+                  "slug": "gigabit-capable-broadband",
+                  "code": "gigabit_capable_broadband",
+                  "legend_str_1": "of Percentage in {location}",
+                  "legend_str_2": "",
+                  "legend_str_3": ""
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Opportunities and public services",
+      "code": "opportunities_and_public_services",
+      "slug": "opportunities-and-public-services",
+      "desc": "",
+      "variables": [
+        {
+          "name": "Percentage of pupils meeting the expected standard in reading, writing and maths by end of primary school",
+          "slug": "pupils-at-expected-standards-by-end-of-primary-school",
+          "code": "pupils_at_expected_standards_by_end_of_primary_school",
+          "desc": "Percentage of pupils meeting the expected standard in reading, writing and maths by end of primary school",
+          "long_desc": "Percentage of pupils meeting the expected standard in reading, writing and maths by end of primary school",
+          "units": "%",
+          "topic_code": "",
+          "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS",
+          "classifications": [
+            {
+              "code": "pupils_at_expected_standards_by_end_of_primary_school",
+              "slug": "pupils-at-expected-standards-by-end-of-primary-school",
+              "desc": "Percentage of pupils meeting the expected standard in reading, writing and maths by end of primary school",
+              "available_geotypes": ["LTLA", "UTLA", "RGN"],
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "categories": [
+                {
+                  "name": "Percentage of pupils meeting the expected standard in reading, writing and maths by end of primary school",
+                  "slug": "pupils-at-expected-standards-by-end-of-primary-school",
+                  "code": "pupils_at_expected_standards_by_end_of_primary_school",
+                  "legend_str_1": "of Percentage in {location}",
+                  "legend_str_2": "",
+                  "legend_str_3": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Percentage of young people achieving GCSEs (and equivalent qualifications) in English and maths by age 19",
+          "slug": "gcses-and-equivalent-in-english-and-maths-by-age-19",
+          "code": "gcses_(and_equivalent)_in_english_and_maths_by_age_19",
+          "desc": "Percentage of young people achieving GCSEs (and equivalent qualifications) in English and maths by age 19",
+          "long_desc": "Percentage of young people achieving GCSEs (and equivalent qualifications) in English and maths by age 19",
+          "units": "%",
+          "topic_code": "",
+          "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS",
+          "classifications": [
+            {
+              "code": "gcses_(and_equivalent)_in_english_and_maths_by_age_19",
+              "slug": "gcses-and-equivalent-in-english-and-maths-by-age-19",
+              "desc": "Percentage of young people achieving GCSEs (and equivalent qualifications) in English and maths by age 19",
+              "available_geotypes": ["LTLA"],
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "categories": [
+                {
+                  "name": "Percentage of young people achieving GCSEs (and equivalent qualifications) in English and maths by age 19",
+                  "slug": "gcses-and-equivalent-in-english-and-maths-by-age-19",
+                  "code": "gcses_(and_equivalent)_in_english_and_maths_by_age_19",
+                  "legend_str_1": "of Percentage in {location}",
+                  "legend_str_2": "",
+                  "legend_str_3": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Percentage of schools rated good or outstanding by Ofsted",
+          "slug": "schools-and-nursery-schools-rated-good-or-outstanding",
+          "code": "schools_and_nursery_schools_rated_good_or_outstanding",
+          "desc": "Percentage of schools rated good or outstanding by Ofsted",
+          "long_desc": "Percentage of schools rated good or outstanding by Ofsted",
+          "units": "%",
+          "topic_code": "",
+          "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS",
+          "classifications": [
+            {
+              "code": "schools_and_nursery_schools_rated_good_or_outstanding",
+              "slug": "schools-and-nursery-schools-rated-good-or-outstanding",
+              "desc": "Percentage of schools rated good or outstanding by Ofsted",
+              "available_geotypes": ["LTLA"],
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "categories": [
+                {
+                  "name": "Percentage of schools rated good or outstanding by Ofsted",
+                  "slug": "schools-and-nursery-schools-rated-good-or-outstanding",
+                  "code": "schools_and_nursery_schools_rated_good_or_outstanding",
+                  "legend_str_1": "of Percentage in {location}",
+                  "legend_str_2": "",
+                  "legend_str_3": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Persistent absences for pupils who are looked after",
+          "slug": "persistent-absences-for-pupils-looked-after-by-local-authorities",
+          "code": "persistent_absences_for_pupils_looked_after_by_local_authorities",
+          "desc": "Persistent absences for pupils who are looked after",
+          "long_desc": "Persistent absences for pupils who are looked after",
+          "units": "%",
+          "topic_code": "",
+          "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS",
+          "classifications": [
+            {
+              "code": "persistent_absences_for_pupils_looked_after_by_local_authorities",
+              "slug": "persistent-absences-for-pupils-looked-after-by-local-authorities",
+              "desc": "Persistent absences for pupils who are looked after",
+              "available_geotypes": ["LTLA", "UTLA", "RGN"],
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "categories": [
+                {
+                  "name": "Persistent absences for pupils who are looked after",
+                  "slug": "persistent-absences-for-pupils-looked-after-by-local-authorities",
+                  "code": "persistent_absences_for_pupils_looked_after_by_local_authorities",
+                  "legend_str_1": "of Percentage in {location}",
+                  "legend_str_2": "",
+                  "legend_str_3": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Percentage of 5-year olds achieving 'expected level' in communication early learning goals",
+          "slug": "children-at-expected-standard-for-communication-and-language-by-end-of-early-years-foundation-stage",
+          "code": "children_at_expected_standard_for_communication_and_language_by_end_of_early_years_foundation_stage",
+          "desc": "Percentage of 5-year olds achieving 'expected level' in communication early learning goals",
+          "long_desc": "Percentage of 5-year olds achieving 'expected level' in communication early learning goals",
+          "units": "%",
+          "topic_code": "",
+          "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS",
+          "classifications": [
+            {
+              "code": "children_at_expected_standard_for_communication_and_language_by_end_of_early_years_foundation_stage",
+              "slug": "children-at-expected-standard-for-communication-and-language-by-end-of-early-years-foundation-stage",
+              "desc": "Percentage of 5-year olds achieving 'expected level' in communication early learning goals",
+              "available_geotypes": ["LTLA", "UTLA"],
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "categories": [
+                {
+                  "name": "Percentage of 5-year olds achieving 'expected level' in communication early learning goals",
+                  "slug": "children-at-expected-standard-for-communication-and-language-by-end-of-early-years-foundation-stage",
+                  "code": "children_at_expected_standard_for_communication_and_language_by_end_of_early_years_foundation_stage",
+                  "legend_str_1": "of Percentage in {location}",
+                  "legend_str_2": "",
+                  "legend_str_3": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Percentage of 5-year olds achieving 'expected level' in literacy early learning goals",
+          "slug": "children-at-expected-standard-for-literacy-by-end-of-early-years-foundation-stage",
+          "code": "children_at_expected_standard_for_literacy_by_end_of_early_years_foundation_stage",
+          "desc": "Percentage of 5-year olds achieving 'expected level' in literacy early learning goals",
+          "long_desc": "Percentage of 5-year olds achieving 'expected level' in literacy early learning goals",
+          "units": "%",
+          "topic_code": "",
+          "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS",
+          "classifications": [
+            {
+              "code": "children_at_expected_standard_for_literacy_by_end_of_early_years_foundation_stage",
+              "slug": "children-at-expected-standard-for-literacy-by-end-of-early-years-foundation-stage",
+              "desc": "Percentage of 5-year olds achieving 'expected level' in literacy early learning goals",
+              "available_geotypes": ["LTLA", "UTLA", "RGN"],
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "categories": [
+                {
+                  "name": "Percentage of 5-year olds achieving 'expected level' in literacy early learning goals",
+                  "slug": "children-at-expected-standard-for-literacy-by-end-of-early-years-foundation-stage",
+                  "code": "children_at_expected_standard_for_literacy_by_end_of_early_years_foundation_stage",
+                  "legend_str_1": "of Percetage in {location}",
+                  "legend_str_2": "",
+                  "legend_str_3": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Percentage of 5-year olds achieving 'expected level' in maths early learning goals",
+          "slug": "children-at-expected-standard-for-maths-by-end-of-early-years-foundation-stage",
+          "code": "children_at_expected_standard_for_maths_by_end_of_early_years_foundation_stage",
+          "desc": "Percentage of 5-year olds achieving 'expected level' in maths early learning goals",
+          "long_desc": "Percentage of 5-year olds achieving 'expected level' in maths early learning goals",
+          "units": "%",
+          "topic_code": "",
+          "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS",
+          "classifications": [
+            {
+              "code": "children_at_expected_standard_for_maths_by_end_of_early_years_foundation_stage",
+              "slug": "children-at-expected-standard-for-maths-by-end-of-early-years-foundation-stage",
+              "desc": "Percentage of 5-year olds achieving 'expected level' in maths early learning goals",
+              "available_geotypes": ["LTLA", "UTLA", "RGN"],
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "categories": [
+                {
+                  "name": "Percentage of 5-year olds achieving 'expected level' in maths early learning goals",
+                  "slug": "children-at-expected-standard-for-maths-by-end-of-early-years-foundation-stage",
+                  "code": "children_at_expected_standard_for_maths_by_end_of_early_years_foundation_stage",
+                  "legend_str_1": "of Percetage in {location}",
+                  "legend_str_2": "",
+                  "legend_str_3": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Number of starts on apprenticeships",
+          "slug": "apprenticeships-starts",
+          "code": "apprenticeships_starts",
+          "desc": "Number of starts on apprenticeships",
+          "long_desc": "Number of starts on apprenticeships",
+          "units": "per 100, 000 population",
+          "topic_code": "",
+          "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS",
+          "classifications": [
+            {
+              "code": "apprenticeships_starts",
+              "slug": "apprenticeships-starts",
+              "desc": "Number of starts on apprenticeships",
+              "available_geotypes": ["LTLA", "UTLA", "RGN"],
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "categories": [
+                {
+                  "name": "Number of starts on apprenticeships",
+                  "slug": "apprenticeships-starts",
+                  "code": "apprenticeships_starts",
+                  "legend_str_1": "of Rate per 100, 000 population in {location}",
+                  "legend_str_2": "",
+                  "legend_str_3": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Number of achievements on apprenticeships",
+          "slug": "apprenticeships-achievements",
+          "code": "apprenticeships_achievements",
+          "desc": "Number of achievements on apprenticeships",
+          "long_desc": "Number of achievements on apprenticeships",
+          "units": "per 100, 000 population",
+          "topic_code": "",
+          "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS",
+          "classifications": [
+            {
+              "code": "apprenticeships_achievements",
+              "slug": "apprenticeships-achievements",
+              "desc": "Number of achievements on apprenticeships",
+              "available_geotypes": ["LTLA", "UTLA", "RGN"],
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "categories": [
+                {
+                  "name": "Number of achievements on apprenticeships",
+                  "slug": "apprenticeships-achievements",
+                  "code": "apprenticeships_achievements",
+                  "legend_str_1": "of Rate per 100, 000 population in {location}",
+                  "legend_str_2": "",
+                  "legend_str_3": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Proportion of the population aged 16 - 64 with level 3+ qualifications",
+          "slug": "aged-16-to-64-years-level-3-or-above-qualifications",
+          "code": "aged_16_to_64_years_level_3_or_above_qualifications",
+          "desc": "Proportion of the population aged 16 - 64 with level 3+ qualifications",
+          "long_desc": "Proportion of the population aged 16 - 64 with level 3+ qualifications",
+          "units": "%",
+          "topic_code": "",
+          "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS",
+          "classifications": [
+            {
+              "code": "aged_16_to_64_years_level_3_or_above_qualifications",
+              "slug": "aged-16-to-64-years-level-3-or-above-qualifications",
+              "desc": "Proportion of the population aged 16 - 64 with level 3+ qualifications",
+              "available_geotypes": ["LTLA", "RGN"],
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "categories": [
+                {
+                  "name": "Proportion of the population aged 16 - 64 with level 3+ qualifications",
+                  "slug": "aged-16-to-64-years-level-3-or-above-qualifications",
+                  "code": "aged_16_to_64_years_level_3_or_above_qualifications",
+                  "legend_str_1": "of Percentage in {location}",
+                  "legend_str_2": "",
+                  "legend_str_3": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "19+ further education and skills participation",
+          "slug": "aged-19-years-and-over-further-education-and-skills-participation",
+          "code": "aged_19_years_and_over_further_education_and_skills_participation",
+          "desc": "19+ further education and skills participation",
+          "long_desc": "19+ further education and skills participation",
+          "units": "per 100, 000 population",
+          "topic_code": "",
+          "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS",
+          "classifications": [
+            {
+              "code": "aged_19_years_and_over_further_education_and_skills_participation",
+              "slug": "aged-19-years-and-over-further-education-and-skills-participation",
+              "desc": "19+ further education and skills participation",
+              "available_geotypes": ["LTLA", "UTLA", "RGN"],
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "categories": [
+                {
+                  "name": "19+ further education and skills participation",
+                  "slug": "aged-19-years-and-over-further-education-and-skills-participation",
+                  "code": "aged_19_years_and_over_further_education_and_skills_participation",
+                  "legend_str_1": "of Rate per 100, 000 population in {location}",
+                  "legend_str_2": "",
+                  "legend_str_3": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Female Healthy Life Expectancy (HLE)",
+          "slug": "female-healthy-life-expectancy",
+          "code": "female_healthy_life_expectancy",
+          "desc": "Female Healthy Life Expectancy (HLE)",
+          "long_desc": "Female Healthy Life Expectancy (HLE)",
+          "units": "yrs",
+          "topic_code": "",
+          "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS",
+          "classifications": [
+            {
+              "code": "female_healthy_life_expectancy",
+              "slug": "female-healthy-life-expectancy",
+              "desc": "Female Healthy Life Expectancy (HLE)",
+              "available_geotypes": ["LTLA"],
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "categories": [
+                {
+                  "name": "Female Healthy Life Expectancy (HLE)",
+                  "slug": "female-healthy-life-expectancy",
+                  "code": "female_healthy_life_expectancy",
+                  "legend_str_1": "of Years in {location}",
+                  "legend_str_2": "",
+                  "legend_str_3": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Smoking prevalence of adults",
+          "slug": "cigarette-smokers",
+          "code": "cigarette_smokers",
+          "desc": "Smoking prevalence of adults",
+          "long_desc": "Smoking prevalence of adults",
+          "units": "%",
+          "topic_code": "",
+          "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS",
+          "classifications": [
+            {
+              "code": "cigarette_smokers",
+              "slug": "cigarette-smokers",
+              "desc": "Smoking prevalence of adults",
+              "available_geotypes": ["LTLA", "RGN"],
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "categories": [
+                {
+                  "name": "Smoking prevalence of adults",
+                  "slug": "cigarette-smokers",
+                  "code": "cigarette_smokers",
+                  "legend_str_1": "of Percentage in {location}",
+                  "legend_str_2": "",
+                  "legend_str_3": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Obesity prevalence - children",
+          "slug": "overweight-children-at-reception-age-aged-four-to-five-years",
+          "code": "overweight_children_at_reception_age_(aged_four_to_five_years)",
+          "desc": "Obesity prevalence - children",
+          "long_desc": "Obesity prevalence - children",
+          "units": "%",
+          "topic_code": "",
+          "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS",
+          "classifications": [
+            {
+              "code": "overweight_children_at_reception_age_(aged_four_to_five_years)",
+              "slug": "overweight-children-at-reception-age-aged-four-to-five-years",
+              "desc": "Obesity prevalence - children",
+              "available_geotypes": ["LTLA", "UTLA", "RGN"],
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "categories": [
+                {
+                  "name": "Obesity prevalence - children",
+                  "slug": "overweight-children-at-reception-age-aged-four-to-five-years",
+                  "code": "overweight_children_at_reception_age_(aged_four_to_five_years)",
+                  "legend_str_1": "of Percentage in {location}",
+                  "legend_str_2": "",
+                  "legend_str_3": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Obesity prevalence - Year 6 children",
+          "slug": "overweight-children-at-year-6-age-aged-10-to-11-years",
+          "code": "overweight_children_at_year_6_age_(aged_10_to_11_years)",
+          "desc": "Obesity prevalence - Year 6 children",
+          "long_desc": "Obesity prevalence - Year 6 children",
+          "units": "%",
+          "topic_code": "",
+          "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS",
+          "classifications": [
+            {
+              "code": "overweight_children_at_year_6_age_(aged_10_to_11_years)",
+              "slug": "overweight-children-at-year-6-age-aged-10-to-11-years",
+              "desc": "Obesity prevalence - Year 6 children",
+              "available_geotypes": ["LTLA", "UTLA"],
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "categories": [
+                {
+                  "name": "Obesity prevalence - Year 6 children",
+                  "slug": "overweight-children-at-year-6-age-aged-10-to-11-years",
+                  "code": "overweight_children_at_year_6_age_(aged_10_to_11_years)",
+                  "legend_str_1": "of Percentage in {location}",
+                  "legend_str_2": "",
+                  "legend_str_3": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Cancer diagnosis at stage 1 & 2",
+          "slug": "cancer-diagnosis-at-stage-1-and-2",
+          "code": "cancer_diagnosis_at_stage_1_and_2",
+          "desc": "Cancer diagnosis at stage 1 & 2",
+          "long_desc": "Cancer diagnosis at stage 1 & 2",
+          "units": "%",
+          "topic_code": "",
+          "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS",
+          "classifications": [
+            {
+              "code": "cancer_diagnosis_at_stage_1_and_2",
+              "slug": "cancer-diagnosis-at-stage-1-and-2",
+              "desc": "Cancer diagnosis at stage 1 & 2",
+              "available_geotypes": ["LTLA"],
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "categories": [
+                {
+                  "name": "Cancer diagnosis at stage 1 & 2",
+                  "slug": "cancer-diagnosis-at-stage-1-and-2",
+                  "code": "cancer_diagnosis_at_stage_1_and_2",
+                  "legend_str_1": "of Percentage in {location}",
+                  "legend_str_2": "",
+                  "legend_str_3": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Average life satisfaction ratings",
+          "slug": "life-satisfaction",
+          "code": "life_satisfaction",
+          "desc": "Average life satisfaction ratings",
+          "long_desc": "Average life satisfaction ratings",
+          "units": "Score out of 10",
+          "topic_code": "",
+          "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS",
+          "classifications": [
+            {
+              "code": "life_satisfaction",
+              "slug": "life-satisfaction",
+              "desc": "Average life satisfaction ratings",
+              "available_geotypes": ["LTLA"],
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "categories": [
+                {
+                  "name": "Average life satisfaction ratings",
+                  "slug": "life-satisfaction",
+                  "code": "life_satisfaction",
+                  "legend_str_1": "of Rating in {location}",
+                  "legend_str_2": "",
+                  "legend_str_3": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Average worthwhile ratings",
+          "slug": "feeling-life-is-worthwhile",
+          "code": "feeling_life_is_worthwhile",
+          "desc": "Average worthwhile ratings",
+          "long_desc": "Average worthwhile ratings",
+          "units": "Score out of 10",
+          "topic_code": "",
+          "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS",
+          "classifications": [
+            {
+              "code": "feeling_life_is_worthwhile",
+              "slug": "feeling-life-is-worthwhile",
+              "desc": "Average worthwhile ratings",
+              "available_geotypes": ["LTLA"],
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "categories": [
+                {
+                  "name": "Average worthwhile ratings",
+                  "slug": "feeling-life-is-worthwhile",
+                  "code": "feeling_life_is_worthwhile",
+                  "legend_str_1": "of Rating in {location}",
+                  "legend_str_2": "",
+                  "legend_str_3": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Average happiness ratings",
+          "slug": "happiness",
+          "code": "happiness",
+          "desc": "Average happiness ratings",
+          "long_desc": "Average happiness ratings",
+          "units": "Score out of 10",
+          "topic_code": "",
+          "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS",
+          "classifications": [
+            {
+              "code": "happiness",
+              "slug": "happiness",
+              "desc": "Average happiness ratings",
+              "available_geotypes": ["LTLA"],
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "categories": [
+                {
+                  "name": "Average happiness ratings",
+                  "slug": "happiness",
+                  "code": "happiness",
+                  "legend_str_1": "of Rating in {location}",
+                  "legend_str_2": "",
+                  "legend_str_3": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Average anxiety ratings",
+          "slug": "anxiety",
+          "code": "anxiety",
+          "desc": "Average anxiety ratings",
+          "long_desc": "Average anxiety ratings",
+          "units": "Score out of 10",
+          "topic_code": "",
+          "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS",
+          "classifications": [
+            {
+              "code": "anxiety",
+              "slug": "anxiety",
+              "desc": "Average anxiety ratings",
+              "available_geotypes": ["LTLA", "UTLA"],
+              "choropleth_default": true,
+              "dot_density_default": true,
+              "categories": [
+                {
+                  "name": "Average anxiety ratings",
+                  "slug": "anxiety",
+                  "code": "anxiety",
+                  "legend_str_1": "of Rating in {location}",
+                  "legend_str_2": "",
+                  "legend_str_3": ""
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

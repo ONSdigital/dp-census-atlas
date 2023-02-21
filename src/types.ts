@@ -47,6 +47,7 @@ export type Category = {
   legend_str_1: string;
   legend_str_2: string;
   legend_str_3: string;
+  restrict_to_modes: Mode[];
 };
 export type VariableData = { [catCode: string]: { count: number; total: number; percentage: number } };
 

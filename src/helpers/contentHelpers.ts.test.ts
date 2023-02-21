@@ -1,3 +1,4 @@
+import type { Mode } from "../types";
 import type { Category, Classification, Variable, VariableGroup } from "../types";
 import { internal } from "./contentHelpers";
 
@@ -95,5 +96,501 @@ describe("mergeVariableGroups", () => {
     const expectedVariableGroups = makeTestVariableGroups(6);
     // WHEN we call mergeVariableGroups on them, we expect them to have merged back into complete topics
     expect(internal.mergeVariableGroups(variableGroupsToMerge)).toEqual(expectedVariableGroups);
+  });
+});
+
+describe("filterVariableGroupsForMode", () => {
+  const testContent = [
+    {
+      name: "Test VG",
+      slug: "testvg",
+      desc: "Test variable group",
+      variables: [
+        {
+          name: "Test Var1",
+          code: "test_var_1",
+          slug: "test-var-1",
+          desc: "Test Var1 for both choropleth and change modes.",
+          long_desc: "",
+          base_url_2021: "https://test_base_url_2021",
+          base_url_2011_2021_comparison: "https://test_base_url_2011_2021",
+          classifications: [
+            {
+              code: "Test Var1 Cls1",
+              slug: "test-var1-cls1",
+              desc: "Test Cls1 with all categories for both choropleth and change",
+              available_geotypes: ["msoa", "lad"],
+              comparison_2011_data_available_geotypes: ["lad"],
+              categories: [
+                {
+                  name: "Common to choropleth and change 1",
+                  slug: "common-to-choropleth-and-change 1",
+                  code: "v1cls1-001",
+                  legend_str_1: "",
+                  legend_str_2: "",
+                  legend_str_3: "",
+                },
+                {
+                  name: "Common to choropleth and change 2",
+                  slug: "common-to-choropleth-and-change 2",
+                  code: "v1cls1-002",
+                  legend_str_1: "",
+                  legend_str_2: "",
+                  legend_str_3: "",
+                },
+              ],
+            },
+          ],
+        },
+        {
+          name: "Test Var2",
+          code: "test_var_2",
+          slug: "test-var-2",
+          desc: "Test Var2 with mix of choropleth-specific and change-specific categories.",
+          long_desc: "",
+          base_url_2021: "https://test_base_url_2021",
+          base_url_2011_2021_comparison: "https://test_base_url_2011_2021",
+          classifications: [
+            {
+              code: "Test Var2 Cls1",
+              slug: "test-var2-cls1",
+              desc: "Test Cls1 with mix of choropleth-specific and change-specific categories.",
+              available_geotypes: ["msoa", "lad"],
+              comparison_2011_data_available_geotypes: ["lad"],
+              categories: [
+                {
+                  name: "Choropleth specific category",
+                  slug: "choropleth-specific-category",
+                  code: "v2cls1-001",
+                  legend_str_1: "",
+                  legend_str_2: "",
+                  legend_str_3: "",
+                  restrict_to_modes: ["choropleth"],
+                },
+                {
+                  name: "Change specific category",
+                  slug: "change-specific-category",
+                  code: "v2cls1-002",
+                  legend_str_1: "",
+                  legend_str_2: "",
+                  legend_str_3: "",
+                  restrict_to_modes: ["change"],
+                },
+                {
+                  name: "Common to choropleth and change",
+                  slug: "common-to-choropleth-and-change",
+                  code: "v2cls1-003",
+                  legend_str_1: "",
+                  legend_str_2: "",
+                  legend_str_3: "",
+                },
+              ],
+            },
+          ],
+        },
+        {
+          name: "Test Var3",
+          code: "test_var_3",
+          slug: "test-var-3",
+          desc: "Test Var3 for choropleth only (no classification with comparison_2011_data_available_geotypes).",
+          long_desc: "",
+          base_url_2021: "https://test_base_url_2021",
+          base_url_2011_2021_comparison: "https://test_base_url_2011_2021",
+          classifications: [
+            {
+              code: "Test Var3 Cls1",
+              slug: "test-var3-cls1",
+              desc: "Test Cls1 with all categories for choropleth only",
+              available_geotypes: ["msoa", "lad"],
+              categories: [
+                {
+                  name: "Choropleth only 1",
+                  slug: "choropleth-only-1",
+                  code: "v3cls1-001",
+                  legend_str_1: "",
+                  legend_str_2: "",
+                  legend_str_3: "",
+                },
+                {
+                  name: "Choropleth only 1",
+                  slug: "choropleth-only-2",
+                  code: "v3cls1-002",
+                  legend_str_1: "",
+                  legend_str_2: "",
+                  legend_str_3: "",
+                },
+              ],
+            },
+          ],
+        },
+        {
+          name: "Test Var4",
+          code: "test_var_4",
+          slug: "test-var-4",
+          desc: "Test Var4 for choropleth only (no variable with base_url_2011_2021_comparison).",
+          long_desc: "",
+          base_url_2021: "https://test_base_url_2021",
+          classifications: [
+            {
+              code: "Test Var3 Cls1",
+              slug: "test-var3-cls1",
+              desc: "Test Cls1 with all categories for choropleth only",
+              available_geotypes: ["msoa", "lad"],
+              comparison_2011_data_available_geotypes: ["lad"],
+              categories: [
+                {
+                  name: "Choropleth only 1",
+                  slug: "choropleth-only-1",
+                  code: "v4cls1-001",
+                  legend_str_1: "",
+                  legend_str_2: "",
+                  legend_str_3: "",
+                },
+                {
+                  name: "Choropleth only 1",
+                  slug: "choropleth-only-2",
+                  code: "v4cls1-002",
+                  legend_str_1: "",
+                  legend_str_2: "",
+                  legend_str_3: "",
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+  ] as VariableGroup[];
+  const expectedChoroplethContent = [
+    {
+      name: "Test VG",
+      slug: "testvg",
+      desc: "Test variable group",
+      variables: [
+        {
+          name: "Test Var1",
+          code: "test_var_1",
+          slug: "test-var-1",
+          desc: "Test Var1 for both choropleth and change modes.",
+          long_desc: "",
+          base_url_2021: "https://test_base_url_2021",
+          base_url_2011_2021_comparison: "https://test_base_url_2011_2021",
+          classifications: [
+            {
+              code: "Test Var1 Cls1",
+              slug: "test-var1-cls1",
+              desc: "Test Cls1 with all categories for both choropleth and change",
+              available_geotypes: ["msoa", "lad"],
+              comparison_2011_data_available_geotypes: ["lad"],
+              categories: [
+                {
+                  name: "Common to choropleth and change 1",
+                  slug: "common-to-choropleth-and-change 1",
+                  code: "v1cls1-001",
+                  legend_str_1: "",
+                  legend_str_2: "",
+                  legend_str_3: "",
+                },
+                {
+                  name: "Common to choropleth and change 2",
+                  slug: "common-to-choropleth-and-change 2",
+                  code: "v1cls1-002",
+                  legend_str_1: "",
+                  legend_str_2: "",
+                  legend_str_3: "",
+                },
+              ],
+            },
+          ],
+        },
+        {
+          name: "Test Var2",
+          code: "test_var_2",
+          slug: "test-var-2",
+          desc: "Test Var2 with mix of choropleth-specific and change-specific categories.",
+          long_desc: "",
+          base_url_2021: "https://test_base_url_2021",
+          base_url_2011_2021_comparison: "https://test_base_url_2011_2021",
+          classifications: [
+            {
+              code: "Test Var2 Cls1",
+              slug: "test-var2-cls1",
+              desc: "Test Cls1 with mix of choropleth-specific and change-specific categories.",
+              available_geotypes: ["msoa", "lad"],
+              comparison_2011_data_available_geotypes: ["lad"],
+              categories: [
+                {
+                  name: "Choropleth specific category",
+                  slug: "choropleth-specific-category",
+                  code: "v2cls1-001",
+                  legend_str_1: "",
+                  legend_str_2: "",
+                  legend_str_3: "",
+                  restrict_to_modes: ["choropleth"],
+                },
+                // CHANGE-SPECIFIC CONTENT SHOULD BE REMOVED
+                // {
+                //   name: "Change specific category",
+                //   slug: "change-specific-category",
+                //   code: "v2cls1-002",
+                //   legend_str_1: "",
+                //   legend_str_2: "",
+                //   legend_str_3: "",
+                //   restrict_to_modes: ["change"],
+                // },
+                {
+                  name: "Common to choropleth and change",
+                  slug: "common-to-choropleth-and-change",
+                  code: "v2cls1-003",
+                  legend_str_1: "",
+                  legend_str_2: "",
+                  legend_str_3: "",
+                },
+              ],
+            },
+          ],
+        },
+        {
+          name: "Test Var3",
+          code: "test_var_3",
+          slug: "test-var-3",
+          desc: "Test Var3 for choropleth only (no classification with comparison_2011_data_available_geotypes).",
+          long_desc: "",
+          base_url_2021: "https://test_base_url_2021",
+          base_url_2011_2021_comparison: "https://test_base_url_2011_2021",
+          classifications: [
+            {
+              code: "Test Var3 Cls1",
+              slug: "test-var3-cls1",
+              desc: "Test Cls1 with all categories for choropleth only",
+              available_geotypes: ["msoa", "lad"],
+              categories: [
+                {
+                  name: "Choropleth only 1",
+                  slug: "choropleth-only-1",
+                  code: "v3cls1-001",
+                  legend_str_1: "",
+                  legend_str_2: "",
+                  legend_str_3: "",
+                },
+                {
+                  name: "Choropleth only 1",
+                  slug: "choropleth-only-2",
+                  code: "v3cls1-002",
+                  legend_str_1: "",
+                  legend_str_2: "",
+                  legend_str_3: "",
+                },
+              ],
+            },
+          ],
+        },
+        {
+          name: "Test Var4",
+          code: "test_var_4",
+          slug: "test-var-4",
+          desc: "Test Var4 for choropleth only (no variable with base_url_2011_2021_comparison).",
+          long_desc: "",
+          base_url_2021: "https://test_base_url_2021",
+          classifications: [
+            {
+              code: "Test Var3 Cls1",
+              slug: "test-var3-cls1",
+              desc: "Test Cls1 with all categories for choropleth only",
+              available_geotypes: ["msoa", "lad"],
+              comparison_2011_data_available_geotypes: ["lad"],
+              categories: [
+                {
+                  name: "Choropleth only 1",
+                  slug: "choropleth-only-1",
+                  code: "v4cls1-001",
+                  legend_str_1: "",
+                  legend_str_2: "",
+                  legend_str_3: "",
+                },
+                {
+                  name: "Choropleth only 1",
+                  slug: "choropleth-only-2",
+                  code: "v4cls1-002",
+                  legend_str_1: "",
+                  legend_str_2: "",
+                  legend_str_3: "",
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+  ] as VariableGroup[];
+  const expectedChangeContent = [
+    {
+      name: "Test VG",
+      slug: "testvg",
+      desc: "Test variable group",
+      variables: [
+        {
+          name: "Test Var1",
+          code: "test_var_1",
+          slug: "test-var-1",
+          desc: "Test Var1 for both choropleth and change modes.",
+          long_desc: "",
+          base_url_2021: "https://test_base_url_2021",
+          base_url_2011_2021_comparison: "https://test_base_url_2011_2021",
+          classifications: [
+            {
+              code: "Test Var1 Cls1",
+              slug: "test-var1-cls1",
+              desc: "Test Cls1 with all categories for both choropleth and change",
+              available_geotypes: ["msoa", "lad"],
+              comparison_2011_data_available_geotypes: ["lad"],
+              categories: [
+                {
+                  name: "Common to choropleth and change 1",
+                  slug: "common-to-choropleth-and-change 1",
+                  code: "v1cls1-001",
+                  legend_str_1: "",
+                  legend_str_2: "",
+                  legend_str_3: "",
+                },
+                {
+                  name: "Common to choropleth and change 2",
+                  slug: "common-to-choropleth-and-change 2",
+                  code: "v1cls1-002",
+                  legend_str_1: "",
+                  legend_str_2: "",
+                  legend_str_3: "",
+                },
+              ],
+            },
+          ],
+        },
+        {
+          name: "Test Var2",
+          code: "test_var_2",
+          slug: "test-var-2",
+          desc: "Test Var2 with mix of choropleth-specific and change-specific categories.",
+          long_desc: "",
+          base_url_2021: "https://test_base_url_2021",
+          base_url_2011_2021_comparison: "https://test_base_url_2011_2021",
+          classifications: [
+            {
+              code: "Test Var2 Cls1",
+              slug: "test-var2-cls1",
+              desc: "Test Cls1 with mix of choropleth-specific and change-specific categories.",
+              available_geotypes: ["msoa", "lad"],
+              comparison_2011_data_available_geotypes: ["lad"],
+              categories: [
+                // CHOROPLETH-SPECIFIC CONTENT SHOULD BE REMOVED
+                // {
+                //   name: "Choropleth specific category",
+                //   slug: "choropleth-specific-category",
+                //   code: "v2cls1-001",
+                //   legend_str_1: "",
+                //   legend_str_2: "",
+                //   legend_str_3: "",
+                //   restrict_to_modes: ["choropleth"],
+                // },
+                {
+                  name: "Change specific category",
+                  slug: "change-specific-category",
+                  code: "v2cls1-002",
+                  legend_str_1: "",
+                  legend_str_2: "",
+                  legend_str_3: "",
+                  restrict_to_modes: ["change"],
+                },
+                {
+                  name: "Common to choropleth and change",
+                  slug: "common-to-choropleth-and-change",
+                  code: "v2cls1-003",
+                  legend_str_1: "",
+                  legend_str_2: "",
+                  legend_str_3: "",
+                },
+              ],
+            },
+          ],
+        },
+        // CHOROPLETH-SPECIFIC CONTENT SHOULD BE REMOVED
+        // {
+        //   name: "Test Var3",
+        //   code: "test_var_3",
+        //   slug: "test-var-3",
+        //   desc: "Test Var3 for choropleth only (no classification with comparison_2011_data_available_geotypes).",
+        //   long_desc: "",
+        //   base_url_2021: "https://test_base_url_2021",
+        //   base_url_2011_2021_comparison: "https://test_base_url_2011_2021",
+        //   classifications: [
+        //     {
+        //       code: "Test Var3 Cls1",
+        //       slug: "test-var3-cls1",
+        //       desc: "Test Cls1 with all categories for choropleth only",
+        //       available_geotypes: ["msoa", "lad"],
+        //       categories: [
+        //         {
+        //           name: "Choropleth only 1",
+        //           slug: "choropleth-only-1",
+        //           code: "v3cls1-001",
+        //           legend_str_1: "",
+        //           legend_str_2: "",
+        //           legend_str_3: "",
+        //         },
+        //         {
+        //           name: "Choropleth only 1",
+        //           slug: "choropleth-only-2",
+        //           code: "v3cls1-002",
+        //           legend_str_1: "",
+        //           legend_str_2: "",
+        //           legend_str_3: "",
+        //         },
+        //       ],
+        //     },
+        //   ],
+        // },
+        // {
+        //   name: "Test Var4",
+        //   code: "test_var_4",
+        //   slug: "test-var-4",
+        //   desc: "Test Var4 for choropleth only (no variable with base_url_2011_2021_comparison).",
+        //   long_desc: "",
+        //   base_url_2021: "https://test_base_url_2021",
+        //   classifications: [
+        //     {
+        //       code: "Test Var3 Cls1",
+        //       slug: "test-var3-cls1",
+        //       desc: "Test Cls1 with all categories for choropleth only",
+        //       available_geotypes: ["msoa", "lad"],
+        //       comparison_2011_data_available_geotypes: ["lad"],
+        //       categories: [
+        //         {
+        //           name: "Choropleth only 1",
+        //           slug: "choropleth-only-1",
+        //           code: "v4cls1-001",
+        //           legend_str_1: "",
+        //           legend_str_2: "",
+        //           legend_str_3: "",
+        //         },
+        //         {
+        //           name: "Choropleth only 1",
+        //           slug: "choropleth-only-2",
+        //           code: "v4cls1-002",
+        //           legend_str_1: "",
+        //           legend_str_2: "",
+        //           legend_str_3: "",
+        //         },
+        //       ],
+        //     },
+        //   ],
+        // },
+      ],
+    },
+  ] as VariableGroup[];
+  test("filters for change and choropleth content", () => {
+    // GIVEN test content with parts specific to either choropleth or change modes
+    // WHEN we call filterVariableGroupsForMode for choropleth on it, we expect to get the choropleth-specific content
+    expect(internal.filterVariableGroupsForMode(testContent, "choropleth" as Mode)).toEqual(expectedChoroplethContent);
+    // WHEN we call filterVariableGroupsForMode for change on it, we expect to get the change-specific content
+    expect(internal.filterVariableGroupsForMode(testContent, "change" as Mode)).toEqual(expectedChangeContent);
   });
 });

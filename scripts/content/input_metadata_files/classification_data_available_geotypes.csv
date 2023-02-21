@@ -40,7 +40,7 @@ Identity,2021-SOGI,sexual_orientation,sexual_orientation_4a,"msoa,lad",
 Identity,2021-SOGI,sexual_orientation,sexual_orientation_6a,"msoa,lad",
 Identity,2021-SOGI,sexual_orientation,sexual_orientation_9a,lad,
 Population,2021-ARM,uk_armed_forces,uk_armed_forces,"msoa,lad",
-Population,2021-DEM,hh_deprivation,hh_deprivation,"oa,msoa,lad","oa,msoa,lad"
+Population,2021-DEM,hh_deprivation,hh_deprivation,"oa,msoa,lad",
 Population,2021-DEM,hh_family_composition,hh_family_composition_15a,"oa,msoa,lad",lad
 Population,2021-DEM,hh_family_composition,hh_family_composition_4a,"oa,msoa,lad","oa,msoa,lad"
 Population,2021-DEM,hh_size,hh_size_5a,"oa,msoa,lad","oa,msoa,lad"
@@ -58,7 +58,7 @@ Population,2021-DEM,resident_age,resident_age_8c,"msoa,lad","msoa,lad"
 Population,2021-DEM,sex,sex,"oa,msoa,lad","oa,msoa,lad"
 Population,2021-MIG,age_arrival_uk,age_arrival_uk_18a,"oa,msoa,lad",lad
 Population,2021-MIG,country_of_birth,country_of_birth_12a,"oa,msoa,lad",lad
-Population,2021-MIG,country_of_birth,country_of_birth_3a,lad,lad
+Population,2021-MIG,country_of_birth,country_of_birth_3a,lad,"oa,msoa,lad"
 Population,2021-MIG,country_of_birth,country_of_birth_60a,lad,lad
 Population,2021-MIG,country_of_birth,country_of_birth_8a,lad,lad
 Population,2021-MIG,migrant_ind,migrant_ind,"oa,msoa,lad","oa,msoa,lad"
@@ -68,8 +68,8 @@ Population,2021-MIG,passports_all,passports_all_27a,"oa,msoa,lad",lad
 Population,2021-MIG,passports_all,passports_all_4a,"oa,msoa,lad","msoa,lad"
 Population,2021-MIG,passports_all,passports_all_52a,"msoa,lad",lad
 Population,2021-MIG,residence_length,residence_length_6b,"oa,msoa,lad","oa,msoa,lad"
-Population,2021-MIG,year_arrival_uk,year_arrival_uk,"oa,msoa,lad",lad
-Population,2021-MIG,year_arrival_uk,year_arrival_uk_6a,"oa,msoa,lad","oa,msoa,lad"
+Population,2021-MIG,year_arrival_uk,year_arrival_uk,"oa,msoa,lad",
+Population,2021-MIG,year_arrival_uk,year_arrival_uk_6a,"oa,msoa,lad",
 Work,2021-LAB,economic_activity,economic_activity_status_10a,"oa,msoa,lad",lad
 Work,2021-LAB,economic_activity,economic_activity_status_3a,"oa,msoa,lad",
 Work,2021-LAB,economic_activity,economic_activity_status_4a,"oa,msoa,lad","oa,msoa,lad"

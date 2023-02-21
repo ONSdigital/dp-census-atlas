@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2023-02-21-15-04-49",
+    "created_at": "2023-02-22-14-57-36",
     "release": "2021-MASTER-ar2776-c21ew_metadata-v1-3_cantab_20230209-44",
     "additional_content_jsons": [
       {
@@ -96,7 +96,9 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available_geotypes": [
-                "lad"
+                "lad",
+                "msoa",
+                "oa"
               ],
               "data_download": "https://www.nomisweb.co.uk/datasets/c2021ts006",
               "categories": [
@@ -121,7 +123,6 @@
           "units": "Household",
           "topic_code": "DEM",
           "base_url_2021": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
-          "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
               "code": "hh_deprivation",
@@ -134,11 +135,6 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available_geotypes": [
-                "oa",
-                "msoa",
-                "lad"
-              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS011/editions/2021",
               "categories": [
                 {
@@ -2201,6 +2197,8 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available_geotypes": [
+                "oa",
+                "msoa",
                 "lad"
               ],
               "data_download": "https://www.ons.gov.uk/datasets/TS004/editions/2021",
@@ -3998,7 +3996,6 @@
           "units": "Person",
           "topic_code": "MIG",
           "base_url_2021": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
-          "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
               "code": "year_arrival_uk_6a",
@@ -4011,11 +4008,6 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available_geotypes": [
-                "oa",
-                "msoa",
-                "lad"
-              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS015/editions/2021",
               "categories": [
                 {
@@ -4067,9 +4059,6 @@
               "available_geotypes": [
                 "oa",
                 "msoa",
-                "lad"
-              ],
-              "comparison_2011_data_available_geotypes": [
                 "lad"
               ],
               "data_download": "https://www.ons.gov.uk/datasets/TS015/editions/2021",

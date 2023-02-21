@@ -37,7 +37,7 @@
                     "desc": "Population density",
                     "available_geotypes": ["oa", "msoa", "lad"],
                     "choropleth_default": true,
-                    "comparison_2011_data_available_geotypes": ["lad"],
+                    "comparison_2011_data_available_geotypes": ["lad", "msoa", "oa"],
                     "data_download": "https://www.nomisweb.co.uk/datasets/c2021ts006",
                     "categories": [
                       {

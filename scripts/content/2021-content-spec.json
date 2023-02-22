@@ -37,7 +37,7 @@
                     "desc": "Population density",
                     "available_geotypes": ["oa", "msoa", "lad"],
                     "choropleth_default": true,
-                    "comparison_2011_data_available_geotypes": ["lad"],
+                    "comparison_2011_data_available_geotypes": ["lad", "msoa", "oa"],
                     "data_download": "https://www.nomisweb.co.uk/datasets/c2021ts006",
                     "categories": [
                       {
@@ -75,7 +75,41 @@
                 "legal_partnership_status_3a",
                 "legal_partnership_status_6a",
                 "legal_partnership_status"
-              ]
+              ],
+              "classification_category_mode_restrictions": {
+                "legal_partnership_status": {
+                  "legal_partnership_status-002": ["choropleth"],
+                  "legal_partnership_status-003": ["choropleth"],
+                  "legal_partnership_status-004": ["choropleth"]
+                }
+              },
+              "classification_custom_categories": {
+                "legal_partnership_status": [
+                  {
+                    "insert_after": "legal_partnership_status-001",
+                    "categories": [
+                      {
+                        "name": "Married",
+                        "slug": "married",
+                        "code": "legal_partnership_status-002.003",
+                        "legend_str_1": "of people aged 16 years and over in {location}",
+                        "legend_str_2": "are",
+                        "legend_str_3": "married",
+                        "restrict_to_modes": ["change"]
+                      },
+                      {
+                        "name": "In a registered civil partnership",
+                        "slug": "in-a-registered-civil-partnership",
+                        "code": "legal_partnership_status-004.005",
+                        "legend_str_1": "of people aged 16 years and over in {location}",
+                        "legend_str_2": "are",
+                        "legend_str_3": "in a registered civil partnership",
+                        "restrict_to_modes": ["change"]
+                      }
+                    ]
+                  }
+                ]
+              }
             },
             {
               "code": "living_arrangements",
@@ -214,7 +248,12 @@
             },
             {
               "code": "national_identity_detailed",
-              "classifications": ["national_identity_detailed"]
+              "classifications": ["national_identity_detailed"],
+              "classification_category_mode_restrictions": {
+                "national_identity_detailed": {
+                  "national_identity_detailed-041": ["choropleth"]
+                }
+              }
             },
             {
               "code": "religion_tb",
@@ -245,7 +284,12 @@
           "variables": [
             {
               "code": "accommodation_type",
-              "classifications": ["accommodation_type_3a", "accommodation_type_5a", "accommodation_type"]
+              "classifications": ["accommodation_type_3a", "accommodation_type_5a", "accommodation_type"],
+              "classification_category_mode_restrictions": {
+                "accommodation_type": {
+                  "accommodation_type-006": ["choropleth"]
+                }
+              }
             },
             {
               "code": "alternative_address_indicator",
@@ -280,6 +324,11 @@
               "classifications": ["second_address_type_priority"],
               "classification_dropped_categories": {
                 "second_address_type_priority": ["Second address type not specified"]
+              },
+              "classification_category_mode_restrictions": {
+                "second_address_type_priority": {
+                  "second_address_type_priority-007": ["choropleth"]
+                }
               }
             }
           ]

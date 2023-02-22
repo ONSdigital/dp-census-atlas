@@ -25,7 +25,7 @@ Identity,2021-WELSH-SKILLS,welsh_skills_speak,https://ons-dp-prod-census-maps-we
 Identity,2021-SOGI,gender_identity,https://ons-dp-prod-census-maps-sogi.s3.eu-west-2.amazonaws.com,,,
 Identity,2021-SOGI,sexual_orientation,https://ons-dp-prod-census-maps-sogi.s3.eu-west-2.amazonaws.com,,,
 Population,2021-ARM,uk_armed_forces,https://ons-dp-prod-census-maps-arm.s3.eu-west-2.amazonaws.com,,,
-Population,2021-DEM,hh_deprivation,https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com,,,https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison
+Population,2021-DEM,hh_deprivation,https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com,,,
 Population,2021-DEM,hh_family_composition,https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com,,,https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison
 Population,2021-DEM,hh_size,https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com,,,https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison
 Population,2021-DEM,legal_partnership_status,https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com,,,https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison
@@ -37,7 +37,7 @@ Population,2021-MIG,country_of_birth,https://ons-dp-prod-census-maps-dem-mig.s3.
 Population,2021-MIG,migrant_ind,https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com,,,https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison
 Population,2021-MIG,passports_all,https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com,,,https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison
 Population,2021-MIG,residence_length,https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com,,,https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison
-Population,2021-MIG,year_arrival_uk,https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com,,,https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison
+Population,2021-MIG,year_arrival_uk,https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com,,,
 Work,2021-LAB,economic_activity,https://ons-dp-prod-census-maps-lab.s3.eu-west-2.amazonaws.com,,,https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison
 Work,2021-LAB,has_ever_worked,https://ons-dp-prod-census-maps-lab.s3.eu-west-2.amazonaws.com,,,https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison
 Work,2021-LAB,hours_per_week_worked,https://ons-dp-prod-census-maps-lab.s3.eu-west-2.amazonaws.com,,,https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison

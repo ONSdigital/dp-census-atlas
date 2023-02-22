@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2023-02-20-08-40-46",
+    "created_at": "2023-02-22-14-57-36",
     "release": "2021-MASTER-ar2776-c21ew_metadata-v1-3_cantab_20230209-44",
     "additional_content_jsons": [
       {
@@ -96,7 +96,9 @@
               ],
               "choropleth_default": true,
               "comparison_2011_data_available_geotypes": [
-                "lad"
+                "lad",
+                "msoa",
+                "oa"
               ],
               "data_download": "https://www.nomisweb.co.uk/datasets/c2021ts006",
               "categories": [
@@ -121,7 +123,6 @@
           "units": "Household",
           "topic_code": "DEM",
           "base_url_2021": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
-          "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
               "code": "hh_deprivation",
@@ -134,11 +135,6 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available_geotypes": [
-                "oa",
-                "msoa",
-                "lad"
-              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS011/editions/2021",
               "categories": [
                 {
@@ -641,12 +637,37 @@
                   "legend_str_3": "never married and never registered a civil partnership"
                 },
                 {
+                  "name": "Married",
+                  "slug": "married",
+                  "code": "legal_partnership_status-002.003",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "married",
+                  "restrict_to_modes": [
+                    "change"
+                  ]
+                },
+                {
+                  "name": "In a registered civil partnership",
+                  "slug": "in-a-registered-civil-partnership",
+                  "code": "legal_partnership_status-004.005",
+                  "legend_str_1": "of people aged 16 years and over in {location}",
+                  "legend_str_2": "are",
+                  "legend_str_3": "in a registered civil partnership",
+                  "restrict_to_modes": [
+                    "change"
+                  ]
+                },
+                {
                   "name": "Married: Opposite sex",
                   "slug": "married-opposite-sex",
                   "code": "legal_partnership_status-002",
                   "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "married to the opposite sex"
+                  "legend_str_3": "married to the opposite sex",
+                  "restrict_to_modes": [
+                    "choropleth"
+                  ]
                 },
                 {
                   "name": "Married: Same sex",
@@ -654,7 +675,10 @@
                   "code": "legal_partnership_status-003",
                   "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "married to the same sex"
+                  "legend_str_3": "married to the same sex",
+                  "restrict_to_modes": [
+                    "choropleth"
+                  ]
                 },
                 {
                   "name": "In a registered civil partnership: Opposite sex",
@@ -662,7 +686,10 @@
                   "code": "legal_partnership_status-004",
                   "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "in a registered civil partnership with the opposite sex"
+                  "legend_str_3": "in a registered civil partnership with the opposite sex",
+                  "restrict_to_modes": [
+                    "choropleth"
+                  ]
                 },
                 {
                   "name": "In a registered civil partnership: Same sex",
@@ -2170,6 +2197,8 @@
               "choropleth_default": true,
               "dot_density_default": true,
               "comparison_2011_data_available_geotypes": [
+                "oa",
+                "msoa",
                 "lad"
               ],
               "data_download": "https://www.ons.gov.uk/datasets/TS004/editions/2021",
@@ -3967,7 +3996,6 @@
           "units": "Person",
           "topic_code": "MIG",
           "base_url_2021": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
-          "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
               "code": "year_arrival_uk_6a",
@@ -3980,11 +4008,6 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available_geotypes": [
-                "oa",
-                "msoa",
-                "lad"
-              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS015/editions/2021",
               "categories": [
                 {
@@ -4036,9 +4059,6 @@
               "available_geotypes": [
                 "oa",
                 "msoa",
-                "lad"
-              ],
-              "comparison_2011_data_available_geotypes": [
                 "lad"
               ],
               "data_download": "https://www.ons.gov.uk/datasets/TS015/editions/2021",
@@ -6617,7 +6637,10 @@
                   "code": "national_identity_detailed-041",
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "identify as",
-                  "legend_str_3": "Kurdish"
+                  "legend_str_3": "Kurdish",
+                  "restrict_to_modes": [
+                    "choropleth"
+                  ]
                 },
                 {
                   "name": "Other identity only: Middle Eastern and Asian: Middle Eastern: Iranian",
@@ -7700,7 +7723,10 @@
                   "code": "accommodation_type-006",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "part of another converted building, for example, former school, church or warehouse"
+                  "legend_str_3": "part of another converted building, for example, former school, church or warehouse",
+                  "restrict_to_modes": [
+                    "choropleth"
+                  ]
                 },
                 {
                   "name": "In a commercial building, for example, in an office building, hotel or over a shop",
@@ -8461,7 +8487,10 @@
                   "code": "second_address_type_priority-007",
                   "legend_str_1": "of people in {location}'s second address",
                   "legend_str_2": "is",
-                  "legend_str_3": "a partner's address"
+                  "legend_str_3": "a partner's address",
+                  "restrict_to_modes": [
+                    "choropleth"
+                  ]
                 },
                 {
                   "name": "Other",

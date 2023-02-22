@@ -230,41 +230,73 @@ export const sortVariableGroupVariables = (variableGroups: VariableGroup[]) => {
 };
 
 const filterVariableGroupsForMode = (variableGroups: VariableGroup[], mode: Mode) => {
-  switch (mode) {
-    case "choropleth": {
-      // return everything for choropleth
-      return variableGroups;
-    }
-    case "change": {
-      // return only those with classifications that have available change-over-time geographies
-      const vgs = variableGroups
-        .map((vg) => {
-          const filtVariables = vg.variables
-            .map((v) => {
-              const filtClassifications = v.classifications.filter(
-                (c) =>
-                  c.comparison_2011_data_available_geotypes && c.comparison_2011_data_available_geotypes.length > 0,
-              );
-              if (v.base_url_2011_2021_comparison && filtClassifications.length > 0) {
-                const filtVariable = { ...v };
-                filtVariable.classifications = filtClassifications;
-                return filtVariable;
+  return variableGroups
+    .map((vg) => {
+      const filtVariables = vg.variables
+        .map((v) => {
+          const filtClassifications = v.classifications
+            .map((cl) => {
+              // filter categories to those that either DO NOT have a defined 'restrict_to_modes' array, OR have one
+              // that includes the current mode
+              const filtCategories = cl.categories.filter((cat) => {
+                return !cat.restrict_to_modes || cat.restrict_to_modes.includes(mode);
+              });
+              if (filtCategories.length > 0) {
+                // additional mode-dependent filtering goes here
+                const filtClassification = { ...cl };
+                filtClassification.categories = filtCategories;
+                switch (mode) {
+                  // no constraints on choropleth classifications
+                  case "choropleth": {
+                    return filtClassification;
+                  }
+                  // change classifications must have comparison_2011_data_available_geotypes defined
+                  case "change": {
+                    if (
+                      cl.comparison_2011_data_available_geotypes &&
+                      cl.comparison_2011_data_available_geotypes.length > 0
+                    ) {
+                      return filtClassification;
+                    }
+                    break;
+                  }
+                  default: {
+                    return never(mode);
+                  }
+                }
               }
             })
-            .filter((v) => v);
-          if (filtVariables.length > 0) {
-            const filtVariableGroup = { ...vg };
-            filtVariableGroup.variables = filtVariables;
-            return filtVariableGroup;
+            .filter((c) => c);
+          if (filtClassifications.length > 0) {
+            const filtVariable = { ...v };
+            filtVariable.classifications = filtClassifications;
+            // additional mode-dependent filtering goes here
+            switch (mode) {
+              // no constraints on choropleth variables
+              case "choropleth": {
+                return filtVariable;
+              }
+              // change variables must have base_url_2011_2021_comparison defined
+              case "change": {
+                if (v.base_url_2011_2021_comparison) {
+                  return filtVariable;
+                }
+                break;
+              }
+              default: {
+                return never(mode);
+              }
+            }
           }
         })
-        .filter((vg) => vg);
-      return vgs;
-    }
-    default: {
-      return never(mode);
-    }
-  }
+        .filter((v) => v);
+      if (filtVariables.length > 0) {
+        const filtVariableGroup = { ...vg };
+        filtVariableGroup.variables = filtVariables;
+        return filtVariableGroup;
+      }
+    })
+    .filter((vg) => vg);
 };
 
 export const getDataBaseUrlsForVariable = (variable: Variable): Record<Mode, string> => {
@@ -291,6 +323,7 @@ export const getAvailableModesForClassification = (
 
 export const internal = {
   mergeVariableGroups,
+  filterVariableGroupsForMode,
 };
 
 export const getAvailableModes = (content: ContentJson) => {

@@ -27,6 +27,14 @@ All _important_ state flows in one direction from the URL to the UI. This enable
           in the content tree                 the geography
                                             (and embed parameters, not shown)
 
+## Git
+
+- `develop` is the mainline development branch - anything here should be "good to go".
+- `master` is the "live" branch - anything here can get deployed by Concourse into the production `publishing` and `web` environments.
+- make branches named like `feature/my-feature`. Push to Github, make a PR and get it approved by someone else, merge to into `develop` (with `--no-ff`).
+
+      git merge --no-ff feature/my-feature
+
 ## Develop
 
     npm install

@@ -1,5 +1,6 @@
 <script lang="ts">
   import { roundedClassificationDataToString } from "../helpers/classificationHelpers";
+  import type { Mode } from "../types";
   import BreaksMarker from "./BreaksMarker.svelte";
 
   export let hovered = undefined;
@@ -8,6 +9,7 @@
   export let colors = ["rgba(234,236,177)", "rgba(169,216,145)", "rgba(0,167,186)", "rgba(0,78,166)", "rgba(0,13,84)"];
   export let suffix = "";
   export let snapTicks = true;
+  export let mode: Mode = "choropleth";
   export let classificationCode = "";
   export let showPositive = false;
 
@@ -50,16 +52,18 @@
       class="tick"
       style="left: {i * (100 / (ticks.length - 1))}%; transform: translateX({i == 0 && snapTicks ? '-2px' : '-50%'});"
     >
-      {getPrefix(ticks[i])}{roundedClassificationDataToString(classificationCode, ticks[i])}<span class="tick-suffix"
-        >{suffix}</span
+      {getPrefix(ticks[i])}{roundedClassificationDataToString(classificationCode, mode, ticks[i])}<span
+        class="tick-suffix">{suffix}</span
       >
     </div>
   {/each}
   <div class="line" style="right: 0;" />
   <div class="tick" style="right: 0; transform: translateX({snapTicks ? '2px' : '50%'});">
-    {getPrefix(ticks.length - 1)}{roundedClassificationDataToString(classificationCode, ticks[ticks.length - 1])}<span
-      class="tick-suffix">{suffix}</span
-    >
+    {getPrefix(ticks.length - 1)}{roundedClassificationDataToString(
+      classificationCode,
+      mode,
+      ticks[ticks.length - 1],
+    )}<span class="tick-suffix">{suffix}</span>
   </div>
   {#if selected !== undefined}
     <div class="absolute z-10 -top-2.5" style="left: calc({pos(selected, ticks)}% - {28 / 2}px);">

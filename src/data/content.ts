@@ -21,7 +21,6 @@ details.
 
 // envs / instances
 export default [
-  // Master
   {
     devContentJsonUrl: "2021-MASTER.json",
     webContentJsonUrl: "https://www.ons.gov.uk/visualisations/censusmapsmasterconfig/2021-MASTER.json",

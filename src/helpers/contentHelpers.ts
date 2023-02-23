@@ -1,4 +1,13 @@
-import type { Classification, Variable, VariableGroup, ContentTree, ContentConfig, Mode, DataEnv } from "../types";
+import type {
+  Classification,
+  Variable,
+  VariableGroup,
+  ContentTree,
+  ContentConfig,
+  Mode,
+  DataEnv,
+  Category,
+} from "../types";
 import staticContentJsons from "../data/staticContentJsons/index";
 import { never } from "../util/typeUtil";
 
@@ -337,10 +346,25 @@ export const getAvailableModes = (content: ContentJson) => {
   );
 };
 
-export const getFirstCategoryInClassificationForMode = (classification: Classification, mode: Mode) => {
+const getCategoriesInClassificationForMode = (classification: Classification, mode: Mode) => {
   // if restrict_to_modes is present, then it’s available for just those modes
   // but if it’s absent, it’s available for all modes
   return classification.categories.filter(
     (c) => c.restrict_to_modes === undefined || c.restrict_to_modes.includes(mode),
-  )[0];
+  );
+};
+
+export const getFirstCategoryInClassificationForMode = (classification: Classification, mode: Mode) => {
+  return getCategoriesInClassificationForMode(classification, mode)[0];
+};
+
+export const getBestMatchingCategoryInClassificationForMode = (
+  category: Category,
+  classification: Classification,
+  mode: Mode,
+) => {
+  const categories = getCategoriesInClassificationForMode(classification, mode);
+
+  // if a category has the same code, use it; otherwise just use the first
+  return categories.find((c) => c.code === category.code) ?? categories[0];
 };

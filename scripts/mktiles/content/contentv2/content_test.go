@@ -39,7 +39,7 @@ func Test_Load(t *testing.T) {
 
 		Convey("Name to Category map should be built", func() {
 			want := map[string]string{}
-			got, err := v2.NamesToCats("wrong classification code")
+			got, err := v2.NamesToCats("wrong classification code", "")
 			So(err, ShouldBeNil)
 			So(got, ShouldResemble, want)
 
@@ -49,11 +49,11 @@ func Test_Load(t *testing.T) {
 				"Previously served in both regular and reserve UK armed forces": "uk_armed_forces-003",
 				"Has not previously served in any UK armed forces":              "uk_armed_forces-004",
 			}
-			got, err = v2.NamesToCats("")
+			got, err = v2.NamesToCats("", "")
 			So(err, ShouldBeNil)
 			So(got, ShouldResemble, want)
 
-			got, err = v2.NamesToCats("uk_armed_forces")
+			got, err = v2.NamesToCats("uk_armed_forces", "")
 			So(err, ShouldBeNil)
 			So(got, ShouldResemble, want)
 		})

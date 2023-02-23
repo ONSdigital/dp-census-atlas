@@ -8,7 +8,13 @@ import { getDataBaseUrlForVariable } from "../helpers/contentHelpers";
  * A Svelte store containing all the data we need in order to show a vizualisation.
  * */
 export const viz = asyncDerived([params, viewport], async ([$params, $viewport]) => {
-  const dataAvailableForClassification = () => $params?.classification?.available_geotypes.includes($viewport.geoType);
+  let dataAvailableForClassification;
+  if ($params?.mode === "change") {
+    dataAvailableForClassification = () =>
+      $params?.classification?.comparison_2011_data_available_geotypes.includes($viewport.geoType);
+  } else {
+    dataAvailableForClassification = () => $params?.classification?.available_geotypes.includes($viewport.geoType);
+  }
 
   if (!$params?.category || !viewport || !dataAvailableForClassification()) {
     return undefined;

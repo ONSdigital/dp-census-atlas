@@ -8,8 +8,14 @@ export const selected = asyncDerived([geography, viz], async ([$geography, $viz]
   if (!$geography) {
     return undefined;
   }
-
-  const dataAvailableForClassification = $viz?.params?.classification?.available_geotypes?.includes($geography.geoType);
+  let dataAvailableForClassification;
+  if ($viz?.params?.mode === "change") {
+    dataAvailableForClassification = () =>
+      $viz?.params?.classification?.comparison_2011_data_available_geotypes?.includes($geography.geoType);
+  } else {
+    dataAvailableForClassification = () =>
+      $viz?.params?.classification?.available_geotypes?.includes($geography.geoType);
+  }
 
   if (!$viz || $geography.geoType === "ew" || !dataAvailableForClassification) {
     return {

@@ -80,7 +80,8 @@
                 "legal_partnership_status": {
                   "legal_partnership_status-002": ["choropleth"],
                   "legal_partnership_status-003": ["choropleth"],
-                  "legal_partnership_status-004": ["choropleth"]
+                  "legal_partnership_status-004": ["choropleth"],
+                  "legal_partnership_status-005": ["choropleth"]
                 }
               },
               "classification_custom_categories": {

@@ -15,6 +15,7 @@ class CensusCategory:
     legend_str_1: str
     legend_str_2: str
     legend_str_3: str
+    restrict_to_modes: list[str]
     _classification_code: str = ""
     _category_code: str = ""
 
@@ -39,7 +40,7 @@ class CensusCategory:
 
     def to_jsonable(self) -> dict:
         """Category in json-friendly form."""
-        return {
+        output_params = {
             "name": self.name,
             "slug": self.slug,
             "code": self.code,
@@ -47,6 +48,11 @@ class CensusCategory:
             "legend_str_2": self.legend_str_2,
             "legend_str_3": self.legend_str_3,
         }
+
+        if self.restrict_to_modes:
+            output_params["restrict_to_modes"] = self.restrict_to_modes
+
+        return output_params
 
 
 def category_from_content_json(content_json: dict) -> CensusCategory:
@@ -58,6 +64,7 @@ def category_from_content_json(content_json: dict) -> CensusCategory:
         legend_str_1=content_json["legend_str_1"],
         legend_str_2=content_json["legend_str_2"],
         legend_str_3=content_json["legend_str_3"],
+        restrict_to_modes=content_json.get("restrict_to_modes", []),
     )
 
 
@@ -95,6 +102,7 @@ def categories_from_metadata(category_csv: Path or str, legend_strs_csv: Path or
                     legend_str_1="",
                     legend_str_2="",
                     legend_str_3="",
+                    restrict_to_modes=[],
                     _classification_code=csv_row["Classification_Mnemonic"],
                     _category_code=csv_row["Category_Code"],
                 )

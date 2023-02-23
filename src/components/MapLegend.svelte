@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   // tempted to import stores/params here?
   // don't use the current params (input) to show the current results (output)
   // as that will make race conditions and incorrect vizualisations...
@@ -7,14 +7,16 @@
   import { hovered } from "../stores/hovered";
   import { selected } from "../stores/selected";
   import { formatTemplateString } from "../helpers/categoryHelpers";
-  import { roundedClassificationDataToString } from "../helpers/classificationHelpers";
-  import { getDropdownDisplayType, getSign, getSuffix, shouldShowPositiveSign } from "../helpers/legendHelper";
+  import { roundedClassificationDataToString, getClassificationDataSuffix } from "../helpers/classificationHelpers";
+  import { getDropdownDisplayType, getSign, shouldShowPositiveSign } from "../helpers/legendHelper";
   import { getColours } from "../helpers/choroplethHelpers";
   import BreaksChart from "./BreaksChart.svelte";
   import GeoTypeBadge from "./GeoTypeBadge.svelte";
   import CategorySelector from "./CategorySelector.svelte";
+  import MapLegendExplanation from "./MapLegendExplanation.svelte";
 
   $: valueForHoveredGeography = $viz?.places.find((p) => p.geoCode === $hovered?.geoCode)?.categoryValue;
+  $: suffix = $viz && getClassificationDataSuffix($viz.params.classification.code, $viz.params.mode);
 
   // the hovered, otherwise the selected, geography properties
   $: active = $hovered
@@ -54,11 +56,10 @@
             <span class="xs:text-4xl sm:text-5xl font-bold">
               {getSign($viz.params.mode, active.value)}{roundedClassificationDataToString(
                 $viz.params.classification.code,
+                $viz.params.mode,
                 active.value,
               )}</span
-            ><span class="xs:text-2xl sm:text-4xl font-bold"
-              >{getSuffix($viz.params.mode, $viz.params.classification.code)}</span
-            >
+            ><span class="xs:text-2xl sm:text-4xl font-bold" class:pr-2={!suffix}>{suffix}</span>
           </div>
           <div class="flex-grow md:leading-[0px]">
             <div class="mb-0.5 xs:mb-0 inline xs:block">
@@ -67,9 +68,10 @@
                 <span class="">
                   {getSign($viz.params.mode, active.value)}{roundedClassificationDataToString(
                     $viz.params.classification.code,
+                    $viz.params.mode,
                     active.value,
                   )}</span
-                ><span class="text-base">{getSuffix($viz.params.mode, $viz.params.classification.code)}</span>
+                ><span class="text-base">{suffix}</span>
               </span>
               {#if $viz.params.mode === "choropleth"}
                 <span class={legendTextClass}>
@@ -143,22 +145,18 @@
           {/if}
         </div>
       {/if}
-
       {#if $viz}
         <BreaksChart
           selected={$selected?.value}
           hovered={active.value}
-          suffix={getSuffix($viz.params.mode, $viz.params.classification.code)}
+          {suffix}
           breaks={$viz.breaks}
           colors={getColours($viz.params.mode, $viz.breaks)}
+          mode={$viz.params.mode}
           classificationCode={$viz.params.classification.code}
           showPositive={shouldShowPositiveSign($viz.params.mode)}
         />
-      {/if}
-      {#if $viz?.params?.mode === "change"}
-        <div class="text-xs xs:text-sm pt-0.5 xs:pt-2.5">
-          Change in percentage points (pp) between March 2011 and March 2021 census.
-        </div>
+        <MapLegendExplanation mode={$viz.params.mode} classificationCode={$viz.params.classification.code} />
       {/if}
     </div>
   </div>

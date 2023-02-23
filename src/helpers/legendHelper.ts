@@ -1,17 +1,5 @@
 import type { Mode } from "../types";
-import { getClassificationDataSuffix } from "../helpers/classificationHelpers";
 import { never } from "../util/typeUtil";
-
-export const getSuffix = (mode: Mode, classificationCode: string) => {
-  switch (mode) {
-    case "choropleth":
-      return getClassificationDataSuffix(classificationCode);
-    case "change":
-      return "pp";
-    default:
-      never(mode);
-  }
-};
 
 export const getSign = (mode: Mode, value: number) => {
   switch (mode) {

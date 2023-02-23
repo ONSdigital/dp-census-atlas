@@ -1,5 +1,5 @@
 import * as dsv from "d3-dsv"; // https://github.com/d3/d3/issues/3469
-import type { Bbox, Category, Classification, DataTile, GeographyData, GeoType } from "../types";
+import type { Bbox, Category, Classification, DataTile, GeographyData, GeoType, Mode } from "../types";
 import { bboxToDataTiles } from "../helpers/spatialHelper";
 import { uniqueRoundedClassificationBreaks } from "../helpers/classificationHelpers";
 
@@ -60,6 +60,7 @@ export const fetchTileData = async (args: {
   category as first value.
 */
 export const fetchBreaks = async (args: {
+  mode: Mode;
   classification: Classification;
   category: Category;
   geoType: GeoType;
@@ -68,7 +69,7 @@ export const fetchBreaks = async (args: {
   const url = `${args.baseUrl}/breaksCkmeans/${args.geoType}/${args.category.code}.json`;
   const response = await fetch(url);
   const breaksRaw = await response.json();
-  const breaks = uniqueRoundedClassificationBreaks(args.classification.code, breaksRaw);
+  const breaks = uniqueRoundedClassificationBreaks(args.classification.code, args.mode, breaksRaw);
   return { breaks };
 };
 

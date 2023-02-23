@@ -336,3 +336,11 @@ export const getAvailableModes = (content: ContentJson) => {
     ),
   );
 };
+
+export const getFirstCategoryInClassificationForMode = (classification: Classification, mode: Mode) => {
+  // if restrict_to_modes is present, then it’s available for just those modes
+  // but if it’s absent, it’s available for all modes
+  return classification.categories.filter(
+    (c) => c.restrict_to_modes === undefined || c.restrict_to_modes.includes(mode),
+  )[0];
+};

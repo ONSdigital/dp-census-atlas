@@ -30,5 +30,9 @@ audit: ## nothing yet,  but could probably use npm audit?
 	exit
 
 .PHONY: component
+component:
+	npm run e2e
+
+.PHONY: component-ci
 component: ## NB - assumed this will only be used by the CI
 	npm run e2e:ci

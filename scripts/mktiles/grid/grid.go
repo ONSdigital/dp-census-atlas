@@ -9,6 +9,7 @@ import (
 
 	"github.com/ONSdigital/dp-census-atlas/scripts/mktiles/types"
 
+	"github.com/spkg/bom"
 	"github.com/twpayne/go-geom"
 )
 
@@ -42,7 +43,7 @@ func Load(fname string) (map[types.Geotype][]Quad, error) {
 	}
 	defer f.Close()
 
-	dec := json.NewDecoder(f)
+	dec := json.NewDecoder(bom.NewReader(f))
 	var grid grid
 	if err := dec.Decode(&grid); err != nil {
 		return nil, err
@@ -51,6 +52,9 @@ func Load(fname string) (map[types.Geotype][]Quad, error) {
 	quads := make(map[types.Geotype][]Quad)
 	for geotype, cquads := range grid {
 		for _, cq := range cquads {
+			// Note: I think this awful printf/scanf stuff must have been
+			// an experiment to round coordinates to 6 decimal places.
+			// And then I forgot to make it better. Drat.
 			var west, south, east, north float64
 			s := fmt.Sprintf(
 				"%f %f %f %f",
@@ -61,7 +65,7 @@ func Load(fname string) (map[types.Geotype][]Quad, error) {
 			)
 			_, err := fmt.Sscanf(
 				s,
-				"%f%f %f %f",
+				"%f %f %f %f",
 				&west,
 				&south,
 				&east,

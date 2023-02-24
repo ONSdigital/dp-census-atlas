@@ -19,6 +19,7 @@ const searchedForGeoTypes = {
   MSOA: ["E02", "W02"],
   LAD: ["E06", "E07", "E08", "E09", "W06"],
 };
+const allSearchedForGSSPrefixes = [...searchedForGeoTypes.OA, ...searchedForGeoTypes.MSOA, ...searchedForGeoTypes.LAD];
 
 const getGeoType = (geoCode: string): string => {
   for (const geoType in searchedForGeoTypes) {
@@ -44,7 +45,7 @@ const formatPcd = (pcd: string): string => {
   return pcd.slice(0, -3) + " " + pcd.slice(-3);
 };
 
-const filterResults = (results) => {
+const evenlySampleResults = (results) => {
   // aim here is to populate a ten-long array of results with ~equal samples from each subset of results...
   const output = [];
   const maxResults = 10;
@@ -58,73 +59,19 @@ const filterResults = (results) => {
   return output;
 };
 
-export const GET: RequestHandler = async ({ url }) => {
-  const q = url.searchParams.get("q").toLowerCase().trim();
+const gssCodeOrPostcodeQuery = async (q: string): Promise<Response> => {
   const results = {};
-  if (q) {
-    // min q length is three
-    if (q.length < 3) {
-      return new Response("q must be three characters or more!", { status: 400 });
-    }
-    // digits in string means either gss code or postcode search
-    if (/\d/.test(q)) {
-      // do GSS code search if q characters 1:3 match the searchedForgGeoTypes...
-      const allGSSPrefixes = [...searchedForGeoTypes.OA, ...searchedForGeoTypes.MSOA, ...searchedForGeoTypes.LAD];
-      if (allGSSPrefixes.includes(q.slice(0, 3).toUpperCase())) {
-        const query = `
-        SELECT DISTINCT ?en ?geoCode
-        WHERE {
-          VALUES ?typecd {${allGSSPrefixes.map((c) => `"${c}"`).join(" ")}}
-          ?x rdfs:label ?geoCode ;
-              statdef:status "live" ;
-              statent:code ?type .
-          ?type rdfs:label ?typecd .
-          BIND (?geoCode as ?en)
-          (?en ?score) <tag:stardog:api:property:textMatch> "${q}*"  .
-        }
-        LIMIT 10`;
-        const res = await fetch(`${onsLinkedDataAPI}${encodeURIComponent(sparQLprefix + query)}`);
-        const rawResJson = await res.json();
-        if (res.status !== 200) {
-          return new Response(rawResJson.errors, { status: res.status });
-        } else {
-          results["gss"] = reformatAPIResults(rawResJson);
-        }
-      }
-      // always do postcode search. Remove internal spaces
-      const pcdQ = q.replace(/\s/g, "");
-      const query = `
-      SELECT DISTINCT ?en ?geoCode
-        WHERE {
-          ?pcde foi:memberOf collection:postcodes ;
-            within:outputarea ?oaRaw ;
-            foi:code ?en .
-          ?oaRaw rdfs:label ?geoCode ;
-            statdef:status "live" .
-          (?en ?score) <tag:stardog:api:property:textMatch> "${pcdQ}*"  .
-      } ORDER BY ASC(?en) LIMIT 10`;
-      const res = await fetch(`${onsLinkedDataAPI}${encodeURIComponent(sparQLprefix + query)}`);
-      const rawResJson = await res.json();
-      if (res.status !== 200) {
-        return new Response(rawResJson.errors, { status: res.status });
-      } else {
-        // get results and re-insert space for display
-        results["pcd"] = reformatAPIResults(rawResJson).map((r) => {
-          return { en: formatPcd(r.en), geoType: r.geoType, geoCode: r.geoCode };
-        });
-      }
-      return json(filterResults(results));
-    }
-    // search combination of known LAD / MSOA + Non-HCL MSOA
-    results["msoaHCL"] = data.filter((geo) => geo.en.toLowerCase().includes(q) || geo.geoCode.toLowerCase() === q);
+  // do GSS code search if q characters 1:3 match the searchedForgGeoTypes...
+  if (allSearchedForGSSPrefixes.includes(q.slice(0, 3).toUpperCase())) {
     const query = `
-    SELECT ?en ?geoCode
+    SELECT DISTINCT ?en ?geoCode
     WHERE {
-      VALUES ?typecd {${searchedForGeoTypes.MSOA.map((c) => `"${c}"`).join(" ")}}
-      ?x foi:displayName ?en ;
-          rdfs:label ?geoCode ;
+      VALUES ?typecd {${allSearchedForGSSPrefixes.map((c) => `"${c}"`).join(" ")}}
+      ?x rdfs:label ?geoCode ;
+          statdef:status "live" ;
           statent:code ?type .
       ?type rdfs:label ?typecd .
+      BIND (?geoCode as ?en)
       (?en ?score) <tag:stardog:api:property:textMatch> "${q}*"  .
     }
     LIMIT 10`;
@@ -133,9 +80,108 @@ export const GET: RequestHandler = async ({ url }) => {
     if (res.status !== 200) {
       return new Response(rawResJson.errors, { status: res.status });
     } else {
-      results["msoaNonHCL"] = reformatAPIResults(rawResJson);
+      results["gss"] = reformatAPIResults(rawResJson);
     }
-    return json(filterResults(results));
+  }
+  // always do postcode search. Remove internal spaces from query first
+  const pcdQ = q.replace(/\s/g, "");
+  const query = `
+  SELECT DISTINCT ?en ?geoCode
+    WHERE {
+      ?pcde foi:memberOf collection:postcodes ;
+        within:outputarea ?oaRaw ;
+        foi:code ?en .
+      ?oaRaw rdfs:label ?geoCode ;
+        statdef:status "live" .
+      (?en ?score) <tag:stardog:api:property:textMatch> "${pcdQ}*"  .
+  } ORDER BY ASC(?en) LIMIT 10`;
+  const res = await fetch(`${onsLinkedDataAPI}${encodeURIComponent(sparQLprefix + query)}`);
+  const rawResJson = await res.json();
+  if (res.status !== 200) {
+    return new Response(rawResJson.errors, { status: res.status });
+  } else {
+    // get results and re-insert space for display
+    results["pcd"] = reformatAPIResults(rawResJson).map((r) => {
+      return { en: formatPcd(r.en), geoType: r.geoType, geoCode: r.geoCode };
+    });
+  }
+  return json(evenlySampleResults(results));
+};
+
+const namedGeoSearch = async (q: string): Promise<Response> => {
+  const results = {};
+  // search combination of LAD,MSOA,OA + HCL MSOA from json
+  results["msoaHCL"] = data.filter(
+    (geo) => geo.geoType === "MSOA" && (geo.en.toLowerCase().includes(q) || geo.geoCode.toLowerCase() === q),
+  );
+  const query = `
+  SELECT ?en ?geoCode
+  WHERE {
+    {
+      # Select max 10 matching LADs
+      SELECT ?en ?geoCode
+      WHERE {
+        VALUES ?typecd {${searchedForGeoTypes.LAD.map((c) => `"${c}"`).join(" ")}}
+        ?x foi:displayName ?en ;
+            rdfs:label ?geoCode ;
+            statent:code ?type .
+        ?type rdfs:label ?typecd .
+        (?en ?score) <tag:stardog:api:property:textMatch> "/.*${q}.*/" 
+      }
+      LIMIT 10
+    } UNION {
+      # Select max 10 matching MSOAs
+      SELECT ?en ?geoCode
+      WHERE {
+        VALUES ?typecd {${searchedForGeoTypes.MSOA.map((c) => `"${c}"`).join(" ")}}
+        ?x foi:displayName ?en ;
+            rdfs:label ?geoCode ;
+            statent:code ?type .
+        ?type rdfs:label ?typecd .
+        (?en ?score) <tag:stardog:api:property:textMatch> "/.*${q}.*/" .
+      }
+      LIMIT 10
+    } UNION {
+      # Select max 10 matching OAs
+      SELECT ?en ?geoCode
+      WHERE {
+        VALUES ?typecd {${searchedForGeoTypes.OA.map((c) => `"${c}"`).join(" ")}}
+        ?x foi:displayName ?en ;
+            rdfs:label ?geoCode ;
+            statent:code ?type .
+        ?type rdfs:label ?typecd .
+        (?en ?score) <tag:stardog:api:property:textMatch> "/.*${q}.*/" .
+      }
+      LIMIT 10
+    }
+  }`;
+  const res = await fetch(`${onsLinkedDataAPI}${encodeURIComponent(sparQLprefix + query)}`);
+  const rawResJson = await res.json();
+  if (res.status !== 200) {
+    return new Response(rawResJson.errors, { status: res.status });
+  } else {
+    const allSparQLRes = reformatAPIResults(rawResJson);
+    results["namedLAD"] = allSparQLRes.filter((r) => r.geoType === "LAD");
+    results["namedMSOA"] = allSparQLRes.filter((r) => r.geoType === "MSOA");
+    results["namedOA"] = allSparQLRes.filter((r) => r.geoType === "OA");
+  }
+  return json(evenlySampleResults(results));
+};
+
+export const GET: RequestHandler = async ({ url }) => {
+  const q = url.searchParams.get("q").toLowerCase().trim();
+  if (q) {
+    // min q length is three
+    if (q.length < 3) {
+      return new Response("q must be three characters or more!", { status: 400 });
+    }
+    if (/\d/.test(q)) {
+      // digits in string means either gss code or postcode search
+      return await gssCodeOrPostcodeQuery(q);
+    } else {
+      // no digits in string means named geography search
+      return await namedGeoSearch(q);
+    }
   } else {
     return json([]);
   }

@@ -35,6 +35,15 @@ const reformatAPIResults = (resultsJson) => {
   });
 };
 
+const formatPcd = (pcd: string): string => {
+  // return as is if already has spaces
+  if (/\s/g.test(pcd)) {
+    return pcd;
+  }
+  // otherwise return with space inserted before inward code (final triplet)
+  return pcd.slice(0, -3) + " " + pcd.slice(-3);
+};
+
 const filterResults = (results) => {
   // aim here is to evenly populate a ten-long array of results...
   const output = [];
@@ -82,61 +91,27 @@ export const GET: RequestHandler = async ({ url }) => {
           results["gss"] = reformatAPIResults(rawResJson);
         }
       }
-      // always do postcode search
+      // always do postcode search. Remove internal spaces
+      const pcdQ = q.replace(/\s/g, "");
       const query = `
-      SELECT DISTINCT ?en ?geoCode ?queryFlavour
-      WHERE {
-        {
-          # Select ten postcodes filtered to match the query as typed
-          SELECT DISTINCT ?en ?geoCode ?queryFlavour
-          WHERE {
-            ?pcode foi:memberOf collection:postcodes ;
-              within:outputarea ?oaRaw ;
-              postcodeAlt:postcode1space ?en .
-            ?oaRaw rdfs:label ?geoCode ;
-              statdef:status "live" .
-            BIND ("raw" AS ?queryFlavour)
-            FILTER(STRSTARTS(LCASE(?en), "${q}"))
-          }
-          LIMIT 10
-        } UNION {
-          # Select ten postcodes filtered to match the query with spaces removed
-          SELECT DISTINCT ?en ?geoCode ?queryFlavour
-          WHERE {
-            ?pcode foi:memberOf collection:postcodes ;
-                within:outputarea ?oaRaw ;
-                postcodeAlt:postcode1space ?en ;
-                foi:code ?postcodeNoSpaces .
-            ?oaRaw rdfs:label ?geoCode ;
-              statdef:status "live" .
-            BIND ("noSpaces" AS ?queryFlavour)
-            FILTER(STRSTARTS(LCASE(?postcodeNoSpaces), "${q.replace(/\s/g, "")}"))
-          }
-          LIMIT 10
-        }
-      }`;
+      SELECT DISTINCT ?en ?geoCode
+        WHERE {
+          ?pcde foi:memberOf collection:postcodes ;
+            within:outputarea ?oaRaw ;
+            foi:code ?en .
+          ?oaRaw rdfs:label ?geoCode ;
+            statdef:status "live" .
+          (?en ?score) <tag:stardog:api:property:textMatch> "${pcdQ}*"  .
+      } ORDER BY ASC(?en) LIMIT 10`;
       const res = await fetch(`${onsLinkedDataAPI}${encodeURIComponent(sparQLprefix + query)}`);
       const rawResJson = await res.json();
       if (res.status !== 200) {
         return new Response(rawResJson.errors, { status: res.status });
       } else {
-        // Prioritise matches with the query string as the user typed it (after enforcing case) but if no matches found
-        // use results filtered for the user query with spaces removed.
-        const rawRes = rawResJson.results.bindings
-          .filter((r) => r.queryFlavour.value === "raw")
-          .map((r) => {
-            return { en: r.en.value, geoType: getGeoType(r.geoCode.value), geoCode: r.geoCode.value };
-          });
-        if (rawRes.length > 0) {
-          results["pcd"] = rawRes;
-        } else {
-          const noSpacesRes = rawResJson.results.bindings
-            .filter((r) => r.queryFlavour.value === "noSpaces")
-            .map((r) => {
-              return { en: r.en.value, geoType: getGeoType(r.geoCode.value), geoCode: r.geoCode.value };
-            });
-          results["pcd"] = noSpacesRes;
-        }
+        // get results and re-insert space for display
+        results["pcd"] = reformatAPIResults(rawResJson).map((r) => {
+          return { en: formatPcd(r.en), geoType: r.geoType, geoCode: r.geoCode };
+        });
       }
       return json(filterResults(results));
     }

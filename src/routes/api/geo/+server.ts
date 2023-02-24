@@ -80,7 +80,7 @@ export const GET: RequestHandler = async ({ url }) => {
               statent:code ?type .
           ?type rdfs:label ?typecd .
           BIND (?geoCode as ?en)
-          FILTER(STRSTARTS(LCASE(?en), "${q}"))
+          (?en ?score) <tag:stardog:api:property:textMatch> "${q}*"  .
         }
         LIMIT 10`;
         const res = await fetch(`${onsLinkedDataAPI}${encodeURIComponent(sparQLprefix + query)}`);
@@ -125,7 +125,7 @@ export const GET: RequestHandler = async ({ url }) => {
           rdfs:label ?geoCode ;
           statent:code ?type .
       ?type rdfs:label ?typecd .
-      FILTER(CONTAINS(LCASE(?en),  LCASE("${q}")))
+      (?en ?score) <tag:stardog:api:property:textMatch> "${q}*"  .
     }
     LIMIT 10`;
     const res = await fetch(`${onsLinkedDataAPI}${encodeURIComponent(sparQLprefix + query)}`);

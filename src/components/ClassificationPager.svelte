@@ -2,6 +2,7 @@
   import { params } from "../stores/params";
   import { page } from "$app/stores";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
+  import { getFirstCategoryInClassificationForMode } from "../helpers/contentHelpers";
   $: classifications = $params.variable.classifications;
   $: indexOfCurrent = classifications.indexOf($params.classification);
   $: next = classifications.length > indexOfCurrent + 1 ? classifications[indexOfCurrent + 1] : undefined;
@@ -20,7 +21,7 @@
           variable: $params.variable.slug,
           category: {
             classification: prev.slug,
-            category: prev.categories[0].slug,
+            category: getFirstCategoryInClassificationForMode(prev, $params.mode).slug,
           },
         })}
         >Fewer categories
@@ -37,7 +38,7 @@
           variable: $params.variable.slug,
           category: {
             classification: next.slug,
-            category: next.categories[0].slug,
+            category: getFirstCategoryInClassificationForMode(next, $params.mode).slug,
           },
         })}
         >More categories

@@ -6,6 +6,8 @@ import (
 	"fmt"
 	"io"
 	"sort"
+
+	"github.com/spkg/bom"
 )
 
 type V1 struct {
@@ -41,7 +43,7 @@ type Category struct {
 
 // Load content.json file from an io.Reader.
 func Load(r io.Reader) (*V1, error) {
-	buf, err := io.ReadAll(r)
+	buf, err := io.ReadAll(bom.NewReader(r))
 	if err != nil {
 		return nil, err
 	}

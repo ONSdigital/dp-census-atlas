@@ -10,8 +10,7 @@ PREFIX foi: <http://publishmydata.com/def/ontology/foi/>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX collection: <http://statistics.data.gov.uk/def/geography/collection/>
 PREFIX postcode: <http://statistics.data.gov.uk/id/postcode/unit/>
-PREFIX within: <http://statistics.data.gov.uk/def/spatialrelations/within#>
-PREFIX bestFit: <http://statistics.data.gov.uk/def/hierarchy/best-fit#>
+PREFIX within: <http://publishmydata.com/def/ontology/foi/within>
 `;
 
 const searchedForGeoTypes = {
@@ -60,7 +59,6 @@ const isPostcodeQ = (q: string) => {
   } else {
     return nDigits > 0 && nLetters > 2;
   }
-  return false;
 };
 
 const getGeoType = (geoCode: string): string => {
@@ -127,23 +125,20 @@ const gssCodeOrPostcodeQuery = async (q: string): Promise<Response> => {
   }
   // and/or do postcode search if q could be a partial or complete postcode
   if (isPostcodeQ(q)) {
-    //Remove internal spaces from query first
+    // Remove internal spaces from query first
     const pcdQ = q.replace(/\s/g, "");
+    // search for geos with allSearchedForGSSPrefixes in postcodes that match q
     const query = `
-    SELECT DISTINCT ?en ?geoCodeOA ?geoCodeMSOA ?geoCodeLAD
+    SELECT DISTINCT ?en ?geoCode
       WHERE {
+        VALUES ?typecd { ${allSearchedForGSSPrefixes.map((c) => `"${c}"`).join(" ")} }
         ?pcode foi:memberOf collection:postcodes ;
-          within:outputarea ?oaRaw ;
-          within:superoutputareamiddlelayer ?msoaRaw ;
-          bestFit:localauthoritydistrict ?ladRaw ;
+          within: ?allGeos ;
           foi:code ?en .
-        ?oaRaw rdfs:label ?geoCodeOA ;
+        ?allGeos rdfs:label ?geoCode ;
           statdef:status "live" .
-        ?msoaRaw rdfs:label ?geoCodeMSOA ;
-          statdef:status "live" .
-        ?ladRaw rdfs:label ?geoCodeLAD ;
-          statdef:status "live" .
-        (?en ?score) <tag:stardog:api:property:textMatch> "${pcdQ}*"  .
+        (?en ?score) <tag:stardog:api:property:textMatch> "${pcdQ}*" .
+        FILTER(STRSTARTS(?geoCode, ?typecd))
     } ORDER BY ASC(?en) LIMIT 10`;
     const res = await fetch(`${onsLinkedDataAPI}${encodeURIComponent(sparQLprefix + query)}`);
     const rawResJson = await res.json();
@@ -151,15 +146,12 @@ const gssCodeOrPostcodeQuery = async (q: string): Promise<Response> => {
       return new Response(rawResJson.errors, { status: res.status });
     } else {
       // get results and re-insert space for display
-      results["pcdOA"] = rawResJson.results.bindings.map((r) => {
-        return { en: formatPcd(r.en.value), geoType: "OA", geoCode: r.geoCodeOA.value };
+      const allSparQLRes = reformatAPIResults(rawResJson).map((r) => {
+        return { en: formatPcd(r.en), geoType: r.geoType, geoCode: r.geoCode };
       });
-      results["pcdMSOA"] = rawResJson.results.bindings.map((r) => {
-        return { en: formatPcd(r.en.value), geoType: "MSOA", geoCode: r.geoCodeMSOA.value };
-      });
-      results["pcdLAD"] = rawResJson.results.bindings.map((r) => {
-        return { en: formatPcd(r.en.value), geoType: "LAD", geoCode: r.geoCodeLAD.value };
-      });
+      results["pcdOA"] = allSparQLRes.filter((r) => r.geoType === "LAD");
+      results["pcdMSOA"] = allSparQLRes.filter((r) => r.geoType === "MSOA");
+      results["pcdLAD"] = allSparQLRes.filter((r) => r.geoType === "OA");
     }
   }
   return json(evenlySampleResults(results));

@@ -164,7 +164,7 @@ const namedGeoSearch = async (q: string): Promise<Response> => {
     (geo) => geo.geoType === "MSOA" && (geo.en.toLowerCase().includes(q) || geo.geoCode.toLowerCase() === q),
   );
   const query = `
-  SELECT ?en ?geoCode
+  SELECT DISTINCT ?en ?geoCode
   WHERE {
     {
       # Select max 10 matching LADs

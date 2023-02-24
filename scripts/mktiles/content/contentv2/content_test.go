@@ -2,14 +2,20 @@ package contentv2
 
 import (
 	"os"
+	"path/filepath"
 	"testing"
 
 	. "github.com/smartystreets/goconvey/convey"
 )
 
 func Test_Load(t *testing.T) {
+	test_Load_one("content.json", t)
+	test_Load_one("content-with-bom.json", t)
+}
+
+func test_Load_one(fname string, t *testing.T) {
 	Convey("With a loaded version 2 content.json", t, func() {
-		f, err := os.Open("testdata/content.json")
+		f, err := os.Open(filepath.Join("testdata", fname))
 		So(err, ShouldBeNil)
 		defer f.Close()
 

@@ -2,7 +2,7 @@ import { appBasePath } from "../buildEnv";
 import type { GeographySearchItem, PostcodeSearchItem } from "../types";
 
 export const isSearchableQuery = (query: string): boolean => {
-  return query.length >= 3;
+  return query.length >= 4;
 };
 
 export const fetchGeoPostcodeSearchItems = async (q: string): Promise<(GeographySearchItem | PostcodeSearchItem)[]> => {

@@ -221,8 +221,8 @@ export const GET: RequestHandler = async ({ url }) => {
   const q = url.searchParams.get("q").toLowerCase().trim();
   if (q) {
     // min q length is three
-    if (q.length < 3) {
-      return new Response("q must be three characters or more!", { status: 400 });
+    if (q.length < 4) {
+      return new Response("q must be four characters or more!", { status: 400 });
     }
     if (/\d/.test(q)) {
       // digits in string means either gss code or postcode search

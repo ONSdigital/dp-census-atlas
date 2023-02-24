@@ -45,7 +45,7 @@ const formatPcd = (pcd: string): string => {
 };
 
 const filterResults = (results) => {
-  // aim here is to evenly populate a ten-long array of results...
+  // aim here is to populate a ten-long array of results with ~equal samples from each subset of results...
   const output = [];
   const maxResults = 10;
   for (let i = 0; i < maxResults; i++) {

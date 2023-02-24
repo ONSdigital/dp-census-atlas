@@ -11,7 +11,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 PREFIX collection: <http://statistics.data.gov.uk/def/geography/collection/>
 PREFIX postcode: <http://statistics.data.gov.uk/id/postcode/unit/>
 PREFIX within: <http://statistics.data.gov.uk/def/spatialrelations/within#>
-PREFIX postcodeAlt: <http://statistics.data.gov.uk/def/postcode/unit#>
+PREFIX bestFit: <http://statistics.data.gov.uk/def/hierarchy/best-fit#>
 `;
 
 const searchedForGeoTypes = {
@@ -51,7 +51,7 @@ const evenlySampleResults = (results) => {
   const maxResults = 10;
   for (let i = 0; i < maxResults; i++) {
     for (const rType in results) {
-      if (results[rType].length > i) {
+      if (results[rType].length > i && output.length < maxResults) {
         output.push(results[rType][i]);
       }
     }
@@ -86,12 +86,18 @@ const gssCodeOrPostcodeQuery = async (q: string): Promise<Response> => {
   // always do postcode search. Remove internal spaces from query first
   const pcdQ = q.replace(/\s/g, "");
   const query = `
-  SELECT DISTINCT ?en ?geoCode
+  SELECT DISTINCT ?en ?geoCodeOA ?geoCodeMSOA ?geoCodeLAD
     WHERE {
-      ?pcde foi:memberOf collection:postcodes ;
+      ?pcode foi:memberOf collection:postcodes ;
         within:outputarea ?oaRaw ;
+        within:superoutputareamiddlelayer ?msoaRaw ;
+        bestFit:localauthoritydistrict ?ladRaw ;
         foi:code ?en .
-      ?oaRaw rdfs:label ?geoCode ;
+      ?oaRaw rdfs:label ?geoCodeOA ;
+        statdef:status "live" .
+      ?msoaRaw rdfs:label ?geoCodeMSOA ;
+        statdef:status "live" .
+      ?ladRaw rdfs:label ?geoCodeLAD ;
         statdef:status "live" .
       (?en ?score) <tag:stardog:api:property:textMatch> "${pcdQ}*"  .
   } ORDER BY ASC(?en) LIMIT 10`;
@@ -101,8 +107,14 @@ const gssCodeOrPostcodeQuery = async (q: string): Promise<Response> => {
     return new Response(rawResJson.errors, { status: res.status });
   } else {
     // get results and re-insert space for display
-    results["pcd"] = reformatAPIResults(rawResJson).map((r) => {
-      return { en: formatPcd(r.en), geoType: r.geoType, geoCode: r.geoCode };
+    results["pcdOA"] = rawResJson.results.bindings.map((r) => {
+      return { en: formatPcd(r.en.value), geoType: "OA", geoCode: r.geoCodeOA.value };
+    });
+    results["pcdMSOA"] = rawResJson.results.bindings.map((r) => {
+      return { en: formatPcd(r.en.value), geoType: "MSOA", geoCode: r.geoCodeMSOA.value };
+    });
+    results["pcdLAD"] = rawResJson.results.bindings.map((r) => {
+      return { en: formatPcd(r.en.value), geoType: "LAD", geoCode: r.geoCodeLAD.value };
     });
   }
   return json(evenlySampleResults(results));

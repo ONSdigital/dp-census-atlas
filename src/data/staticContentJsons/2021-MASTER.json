@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2023-02-27-11-25-52",
+    "created_at": "2023-02-27-12-09-16",
     "release": "2021-MASTER-ar2776-c21ew_metadata-v1-3_cantab_20230224-45",
     "additional_content_jsons": [
       {
@@ -823,7 +823,7 @@
                   "code": "living_arrangements_11a-006",
                   "legend_str_1": "of people aged 16 years and over in households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "single (never married and never registered a same-sex civil partnership)"
+                  "legend_str_3": "single (never married and never registered a civil partnership)"
                 },
                 {
                   "name": "Not living in a couple: Married or in a registered civil partnership",
@@ -4990,7 +4990,7 @@
                   "code": "hh_multi_religion_7a-002",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "did",
-                  "legend_str_3": "not state their religion"
+                  "legend_str_3": "not answer the religion question"
                 },
                 {
                   "name": "Multi-person household: Same religion (at least one person has stated a religion but the household may include people who did not answer the religion question)",

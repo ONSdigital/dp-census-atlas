@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2023-02-22-14-57-36",
-    "release": "2021-MASTER-ar2776-c21ew_metadata-v1-3_cantab_20230209-44",
+    "created_at": "2023-02-27-12-09-16",
+    "release": "2021-MASTER-ar2776-c21ew_metadata-v1-3_cantab_20230224-45",
     "additional_content_jsons": [
       {
         "devContentJsonUrl": "release-0.json",
@@ -818,12 +818,12 @@
                   "legend_str_3": "in a same-sex couple that is cohabiting"
                 },
                 {
-                  "name": "Not living in a couple: Single (never married and never registered a same-sex civil partnership)",
-                  "slug": "not-living-in-a-couple-single-never-married-and-never-registered-a-same-sex-civil-partnership",
+                  "name": "Not living in a couple: Single (never married and never registered a civil partnership)",
+                  "slug": "not-living-in-a-couple-single-never-married-and-never-registered-a-civil-partnership",
                   "code": "living_arrangements_11a-006",
                   "legend_str_1": "of people aged 16 years and over in households in {location}",
                   "legend_str_2": "are",
-                  "legend_str_3": "single (never married and never registered a same-sex civil partnership)"
+                  "legend_str_3": "single (never married and never registered a civil partnership)"
                 },
                 {
                   "name": "Not living in a couple: Married or in a registered civil partnership",
@@ -4985,40 +4985,40 @@
                   "legend_str_3": "one-person households"
                 },
                 {
-                  "name": "Multi-person household: No people stated their religion",
-                  "slug": "multi-person-household-no-people-stated-their-religion",
+                  "name": "Multi-person household: No people answered the religion question",
+                  "slug": "multi-person-household-no-people-answered-the-religion-question",
                   "code": "hh_multi_religion_7a-002",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "did",
-                  "legend_str_3": "not state their religion"
+                  "legend_str_3": "not answer the religion question"
                 },
                 {
-                  "name": "Multi-person household: Same religion (at least one person has stated a religion but the household may include people who did not state their religion)",
-                  "slug": "multi-person-household-same-religion-at-least-one-person-has-stated-a-religion-but-the-household-may-include-people-who-did-not-state-their-religion",
+                  "name": "Multi-person household: Same religion (at least one person has stated a religion but the household may include people who did not answer the religion question)",
+                  "slug": "multi-person-household-same-religion-at-least-one-person-has-stated-a-religion-but-the-household-may-include-people-who-did-not-answer-the-religion-question",
                   "code": "hh_multi_religion_7a-003",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "reported",
                   "legend_str_3": "the same religion"
                 },
                 {
-                  "name": "Multi-person household: No religion (household may include people who did not state their religion)",
-                  "slug": "multi-person-household-no-religion-household-may-include-people-who-did-not-state-their-religion",
+                  "name": "Multi-person household: No religion (household may include people who did not answer the religion question)",
+                  "slug": "multi-person-household-no-religion-household-may-include-people-who-did-not-answer-the-religion-question",
                   "code": "hh_multi_religion_7a-004",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "reported",
                   "legend_str_3": "no religion"
                 },
                 {
-                  "name": "Multi-person household: Same religion and no religion (household may include people who did not state their religion)",
-                  "slug": "multi-person-household-same-religion-and-no-religion-household-may-include-people-who-did-not-state-their-religion",
+                  "name": "Multi-person household: Same religion and no religion (household may include people who did not answer the religion question)",
+                  "slug": "multi-person-household-same-religion-and-no-religion-household-may-include-people-who-did-not-answer-the-religion-question",
                   "code": "hh_multi_religion_7a-005",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "reported",
                   "legend_str_3": "a combination of the same religion and no religion"
                 },
                 {
-                  "name": "Multi-person household: At least two different religions stated (household may include people with no religion and who did not state their religion)",
-                  "slug": "multi-person-household-at-least-two-different-religions-stated-household-may-include-people-with-no-religion-and-who-did-not-state-their-religion",
+                  "name": "Multi-person household: At least two different religions stated (household may include people with no religion and who did not answer the religion question)",
+                  "slug": "multi-person-household-at-least-two-different-religions-stated-household-may-include-people-with-no-religion-and-who-did-not-answer-the-religion-question",
                   "code": "hh_multi_religion_7a-006",
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "reported",

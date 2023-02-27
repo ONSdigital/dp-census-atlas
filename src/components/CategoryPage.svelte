@@ -73,7 +73,7 @@
         <ClassificationPager />
       {/if}
 
-      <OtherModeLinks variable={$params.variable} classification={$params.classification} />
+      <OtherModeLinks />
     </section>
   </div>
 </div>

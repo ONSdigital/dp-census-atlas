@@ -1,0 +1,73 @@
+﻿{
+  "meta": {
+    "created_at": "2022-12-05-11-33-12",
+    "spec_file": "2021-content-spec-v8.json",
+    "release": "2021-DEM"
+  },
+  "content": [
+    {
+      "name": "Household deprivation",
+      "code": "hh_deprivation",
+      "slug": "household-deprivation",
+      "desc": "Whether a household is deprived in one or more ways.",
+      "long_desc": "The dimensions of deprivation used to classify households are indicators based on four selected household characteristics.\n\nEducation\n\nA household is classified as deprived in the education dimension if no one has at least level 2 education and no one aged 16 to 18 years is a full-time student.\n\nEmployment\n\nA household is classified as deprived in the employment dimension if any member, not a full-time student, is either unemployed or economically inactive due to long-term sickness or disability.\n\nHealth\n\nA household is classified as deprived in the health dimension if any person in the household has general health that is bad or very bad or is identified as disabled\n\nHousing\n\nA household is classified as deprived in the housing dimension if the household's accommodation is either overcrowded, in a shared dwelling, or has no central heating.",
+      "units": "Household",
+      "topic_code": "DEM",
+      "classifications": [
+        {
+          "code": "hh_deprivation",
+          "slug": "hh-deprivation",
+          "desc": "Household deprivation (6 categories)",
+          "available_geotypes": ["oa", "msoa", "lad"],
+          "choropleth_default": true,
+          "dot_density_default": true,
+          "comparison_2011_data_available": true,
+          "dataset": "TS011",
+          "data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/demographyandmigrationdatacontent/2022-11-02",
+          "categories": [
+            {
+              "name": "Household is not deprived in any dimension",
+              "slug": "household-is-not-deprived-in-any-dimension",
+              "code": "hh_deprivation-001",
+              "legend_str_1": "of households in {location}",
+              "legend_str_2": "are",
+              "legend_str_3": "not deprived in any dimension"
+            },
+            {
+              "name": "Household is deprived in one dimension",
+              "slug": "household-is-deprived-in-one-dimension",
+              "code": "hh_deprivation-002",
+              "legend_str_1": "of households in {location}",
+              "legend_str_2": "are",
+              "legend_str_3": "deprived in one dimension"
+            },
+            {
+              "name": "Household is deprived in two dimensions",
+              "slug": "household-is-deprived-in-two-dimensions",
+              "code": "hh_deprivation-003",
+              "legend_str_1": "of households in {location}",
+              "legend_str_2": "are",
+              "legend_str_3": "deprived in two dimensions"
+            },
+            {
+              "name": "Household is deprived in three dimensions",
+              "slug": "household-is-deprived-in-three-dimensions",
+              "code": "hh_deprivation-004",
+              "legend_str_1": "of households in {location}",
+              "legend_str_2": "are",
+              "legend_str_3": "deprived in three dimensions"
+            },
+            {
+              "name": "Household is deprived in four dimensions",
+              "slug": "household-is-deprived-in-four-dimensions",
+              "code": "hh_deprivation-005",
+              "legend_str_1": "of households in {location}",
+              "legend_str_2": "are",
+              "legend_str_3": "deprived in four dimensions"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

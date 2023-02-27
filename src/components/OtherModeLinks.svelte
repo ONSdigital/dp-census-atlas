@@ -1,14 +1,14 @@
 <script lang="ts">
   import { page } from "$app/stores";
   import { params } from "../stores/params";
-  import type { Classification, Variable } from "../types";
-  import { getAvailableModesForClassification } from "../helpers/contentHelpers";
+  import {
+    getAvailableModesForClassification,
+    getBestMatchingCategoryInClassificationForMode,
+  } from "../helpers/contentHelpers";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
   import Icon from "./MaterialIcon.svelte";
 
-  export let variable: Variable;
-  export let classification: Classification;
-  $: availableModes = getAvailableModesForClassification(variable, classification);
+  $: availableModes = getAvailableModesForClassification($params.variable, $params.classification);
 </script>
 
 {#if $params.mode === "choropleth" && availableModes.change}
@@ -19,7 +19,11 @@
           mode: "change",
           variableGroup: $params.variableGroup.slug,
           variable: $params.variable.slug,
-          category: { classification: $params.classification.slug, category: $params.category.slug },
+          category: {
+            classification: $params.classification.slug,
+            category: getBestMatchingCategoryInClassificationForMode($params.category, $params.classification, "change")
+              .slug,
+          },
         })}
         class="flex items-center gap-2.5 custom-ring flex-nowrap whitespace-nowrap group"
       >
@@ -43,7 +47,14 @@
         mode: "choropleth",
         variableGroup: $params.variableGroup.slug,
         variable: $params.variable.slug,
-        category: { classification: $params.classification.slug, category: $params.category.slug },
+        category: {
+          classification: $params.classification.slug,
+          category: getBestMatchingCategoryInClassificationForMode(
+            $params.category,
+            $params.classification,
+            "choropleth",
+          ).slug,
+        },
       })}>See March 2021 results</a
     >
   </div>

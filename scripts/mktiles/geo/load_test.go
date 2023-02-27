@@ -4,10 +4,12 @@ import (
 	"bytes"
 	"encoding/json"
 	"os"
+	"path/filepath"
 	"reflect"
 	"strings"
 	"testing"
 
+	"github.com/spkg/bom"
 	"github.com/twpayne/go-geom/encoding/geojson"
 )
 
@@ -65,37 +67,44 @@ func Test_parseGeojson_Fails(t *testing.T) {
 // as the standard json decoder.
 // The input geojson has features for every combination of bbox and geometry.
 func Test_parseGeojson(t *testing.T) {
-	buf, err := os.ReadFile("testdata/parse-test.geojson")
-	if err != nil {
-		t.Fatal(err)
-	}
-
-	// use standard decoder to decode the entire geojson file at once
-	dec := json.NewDecoder(bytes.NewReader(buf))
-	var want geojson.FeatureCollection
-	if err = dec.Decode(&want); err != nil {
-		t.Fatal(err)
-	}
-
-	// now calculate bboxes and dump geometries like the original SetStandardProps did
-	for _, feat := range want.Features {
-		if feat.BBox == nil {
-			if feat.Geometry != nil {
-				feat.BBox = feat.Geometry.Bounds()
+	for _, fname := range []string{"no-bom-parse-test.geojson", "with-bom-parse-test.geojson"} {
+		t.Run(fname, func(t *testing.T) {
+			buf, err := os.ReadFile(filepath.Join("testdata", fname))
+			if err != nil {
+				t.Error(err)
+				return
 			}
-		}
-		feat.Geometry = nil
-	}
 
-	// parse the same geojson with parse
-	got, err := parseGeojson(bytes.NewReader(buf))
-	if err != nil {
-		t.Fatal(err)
-	}
+			// use standard decoder to decode the entire geojson file at once
+			dec := json.NewDecoder(bom.NewReader(bytes.NewReader(buf)))
+			var want geojson.FeatureCollection
+			if err = dec.Decode(&want); err != nil {
+				t.Error(err)
+				return
+			}
 
-	// make sure parseGeojson returns the same as standard unmarshal
-	if !reflect.DeepEqual(got, &want) {
-		t.Errorf("parse results don't equal standard unmarshal")
+			// now calculate bboxes and dump geometries like the original SetStandardProps did
+			for _, feat := range want.Features {
+				if feat.BBox == nil {
+					if feat.Geometry != nil {
+						feat.BBox = feat.Geometry.Bounds()
+					}
+				}
+				feat.Geometry = nil
+			}
+
+			// parse the same geojson with parse
+			got, err := parseGeojson(bytes.NewReader(buf))
+			if err != nil {
+				t.Error(err)
+				return
+			}
+
+			// make sure parseGeojson returns the same as standard unmarshal
+			if !reflect.DeepEqual(got, &want) {
+				t.Error("parse results don't equal standard unmarshal")
+			}
+		})
 	}
 }
 

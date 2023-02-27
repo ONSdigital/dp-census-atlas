@@ -1,0 +1,106 @@
+﻿{
+  "type": "FeatureCollection",
+  "name": "Test geojson parser",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "test": "no bbox, no geometry",
+        "desc": "tests that empty feature doesn't break anything"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "test": "no bbox, geometry",
+        "desc": "tests that a bbox is calculated when missing"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -1.224718106999944,
+              54.62608936300006
+            ],
+            [
+              -1.224940754999977,
+              54.62591878200004
+            ],
+            [
+              -1.224931347999927,
+              54.62596455400006
+            ],
+            [
+              -1.224925781999957,
+              54.62599163900006
+            ],
+            [
+              -1.224718106999944,
+              54.62608936300006
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "bbox": [
+        -1.383763952999971,
+        54.621901035000064,
+        -1.157637137999927,
+        54.72716868800006
+      ],
+      "properties": {
+        "test": "bbox, no geometry",
+        "desc": "tests that a bbox is retained when there is no geometry"
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "test": "bbox, geometry",
+        "desc": "tests that an existing bbox is kept in preference to geometry"
+      },
+      "bbox": [
+        -1.383763952999971,
+        54.621901035000064,
+        -1.157637137999927,
+        54.72716868800006
+      ],
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -1.224718106999944,
+              54.62608936300006
+            ],
+            [
+              -1.224940754999977,
+              54.62591878200004
+            ],
+            [
+              -1.224931347999927,
+              54.62596455400006
+            ],
+            [
+              -1.224925781999957,
+              54.62599163900006
+            ],
+            [
+              -1.224718106999944,
+              54.62608936300006
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

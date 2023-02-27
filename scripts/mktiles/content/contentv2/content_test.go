@@ -2,14 +2,20 @@ package contentv2
 
 import (
 	"os"
+	"path/filepath"
 	"testing"
 
 	. "github.com/smartystreets/goconvey/convey"
 )
 
 func Test_Load(t *testing.T) {
+	test_Load_one("content.json", t)
+	test_Load_one("content-with-bom.json", t)
+}
+
+func test_Load_one(fname string, t *testing.T) {
 	Convey("With a loaded version 2 content.json", t, func() {
-		f, err := os.Open("testdata/content.json")
+		f, err := os.Open(filepath.Join("testdata", fname))
 		So(err, ShouldBeNil)
 		defer f.Close()
 
@@ -39,7 +45,7 @@ func Test_Load(t *testing.T) {
 
 		Convey("Name to Category map should be built", func() {
 			want := map[string]string{}
-			got, err := v2.NamesToCats("wrong classification code")
+			got, err := v2.NamesToCats("wrong classification code", "")
 			So(err, ShouldBeNil)
 			So(got, ShouldResemble, want)
 
@@ -49,11 +55,11 @@ func Test_Load(t *testing.T) {
 				"Previously served in both regular and reserve UK armed forces": "uk_armed_forces-003",
 				"Has not previously served in any UK armed forces":              "uk_armed_forces-004",
 			}
-			got, err = v2.NamesToCats("")
+			got, err = v2.NamesToCats("", "")
 			So(err, ShouldBeNil)
 			So(got, ShouldResemble, want)
 
-			got, err = v2.NamesToCats("uk_armed_forces")
+			got, err = v2.NamesToCats("uk_armed_forces", "")
 			So(err, ShouldBeNil)
 			So(got, ShouldResemble, want)
 		})

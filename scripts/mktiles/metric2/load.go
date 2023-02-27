@@ -3,6 +3,8 @@ package metric2
 import (
 	"encoding/csv"
 	"os"
+
+	"github.com/spkg/bom"
 )
 
 // loadCSV XXX move this to files pkg
@@ -13,5 +15,5 @@ func LoadCSV(fname string) ([][]string, error) {
 	}
 	defer f.Close()
 
-	return csv.NewReader(f).ReadAll()
+	return csv.NewReader(bom.NewReader(f)).ReadAll()
 }

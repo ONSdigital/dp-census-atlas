@@ -9,6 +9,7 @@ import (
 
 	"github.com/ONSdigital/dp-census-atlas/scripts/mktiles/types"
 
+	"github.com/spkg/bom"
 	"github.com/twpayne/go-geom/encoding/geojson"
 )
 
@@ -43,7 +44,7 @@ func LoadGeojson(name string) (*geojson.FeatureCollection, error) {
 // geometry fields are kept until the next stage.
 func parseGeojson(r io.Reader) (*geojson.FeatureCollection, error) {
 	col := geojson.FeatureCollection{}
-	dec := json.NewDecoder(r)
+	dec := json.NewDecoder(bom.NewReader(r))
 
 	// expect initial '{'
 	if err := expectDelim(dec, '{'); err != nil {

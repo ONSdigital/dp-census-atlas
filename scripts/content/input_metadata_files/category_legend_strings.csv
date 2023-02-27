@@ -267,7 +267,7 @@ Identity,2021-EILR,Multiple main languages in household,hh_multi_language,hh_mul
 Identity,2021-EILR,Multiple main languages in household,hh_multi_language_3a,hh_multi_language_3a-001,{PERCENTAGE}%,of households in {location},have,members that all have the same main language
 Identity,2021-EILR,Multiple main languages in household,hh_multi_language_3a,hh_multi_language_3a-002,{PERCENTAGE}%,of households in {location},have,members that have different main languages
 Identity,2021-EILR,Multiple religions in household,hh_multi_religion_7a,hh_multi_religion_7a-001,{PERCENTAGE}%,of households in {location},are,one-person households
-Identity,2021-EILR,Multiple religions in household,hh_multi_religion_7a,hh_multi_religion_7a-002,{PERCENTAGE}%,of households in {location},did,not state their religion
+Identity,2021-EILR,Multiple religions in household,hh_multi_religion_7a,hh_multi_religion_7a-002,{PERCENTAGE}%,of households in {location},did,not answer the religion question
 Identity,2021-EILR,Multiple religions in household,hh_multi_religion_7a,hh_multi_religion_7a-003,{PERCENTAGE}%,of households in {location},reported,the same religion
 Identity,2021-EILR,Multiple religions in household,hh_multi_religion_7a,hh_multi_religion_7a-004,{PERCENTAGE}%,of households in {location},reported,no religion
 Identity,2021-EILR,Multiple religions in household,hh_multi_religion_7a,hh_multi_religion_7a-005,{PERCENTAGE}%,of households in {location},reported,a combination of the same religion and no religion
@@ -617,7 +617,7 @@ Population,2021-DEM,Living arrangements,living_arrangements_11a,living_arrangeme
 Population,2021-DEM,Living arrangements,living_arrangements_11a,living_arrangements_11a-003,{PERCENTAGE}%,of people aged 16 years and over in households in {location},live together,"in a couple that is separated, but still married or in a civil partnership"
 Population,2021-DEM,Living arrangements,living_arrangements_11a,living_arrangements_11a-004,{PERCENTAGE}%,of people aged 16 years and over in households in {location},live together,in an opposite-sex couple that is cohabiting
 Population,2021-DEM,Living arrangements,living_arrangements_11a,living_arrangements_11a-005,{PERCENTAGE}%,of people aged 16 years and over in households in {location},live together,in a same-sex couple that is cohabiting
-Population,2021-DEM,Living arrangements,living_arrangements_11a,living_arrangements_11a-006,{PERCENTAGE}%,of people aged 16 years and over in households in {location},are,single (never married and never registered a same-sex civil partnership)
+Population,2021-DEM,Living arrangements,living_arrangements_11a,living_arrangements_11a-006,{PERCENTAGE}%,of people aged 16 years and over in households in {location},are,single (never married and never registered a civil partnership)
 Population,2021-DEM,Living arrangements,living_arrangements_11a,living_arrangements_11a-007,{PERCENTAGE}%,of people aged 16 years and over in households in {location},are,"not living in a couple, but are married or in a registered civil partnership"
 Population,2021-DEM,Living arrangements,living_arrangements_11a,living_arrangements_11a-008,{PERCENTAGE}%,of people aged 16 years and over in households in {location},are,separated (including those who are married and those who are in civil partnerships)
 Population,2021-DEM,Living arrangements,living_arrangements_11a,living_arrangements_11a-009,{PERCENTAGE}%,of people aged 16 years and over in households in {location},are,divorced or formerly in a civil partnership which is now legally dissolved

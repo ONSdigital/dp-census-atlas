@@ -178,8 +178,6 @@
           "units": "households",
           "topic_code": "DEM",
           "base_url_2021": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
-          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
-          "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
               "code": "hh_family_composition_4a",
@@ -188,7 +186,10 @@
               "available_geotypes": ["oa", "msoa", "lad"],
               "choropleth_default": true,
               "dot_density_default": true,
+<<<<<<< HEAD
               "comparison_2011_data_available_geotypes": ["oa", "msoa", "lad"],
+=======
+>>>>>>> bb8ad57 (remove family_composition from change dataset)
               "data_download": "https://www.ons.gov.uk/datasets/TS003/editions/2021",
               "change_data_download": "https://www.google.com/",
               "categories": [
@@ -222,8 +223,16 @@
               "code": "hh_family_composition_15a",
               "slug": "hh-family-composition-15a",
               "desc": "Household composition (15 categories)",
+<<<<<<< HEAD
               "available_geotypes": ["oa", "msoa", "lad"],
               "comparison_2011_data_available_geotypes": ["lad"],
+=======
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
+>>>>>>> bb8ad57 (remove family_composition from change dataset)
               "data_download": "https://www.ons.gov.uk/datasets/TS003/editions/2021",
               "change_data_download": "https://www.google.com/",
               "categories": [

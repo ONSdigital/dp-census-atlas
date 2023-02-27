@@ -26,7 +26,7 @@ Identity,2021-SOGI,gender_identity,https://ons-dp-prod-census-maps-sogi.s3.eu-we
 Identity,2021-SOGI,sexual_orientation,https://ons-dp-prod-census-maps-sogi.s3.eu-west-2.amazonaws.com,,,
 Population,2021-ARM,uk_armed_forces,https://ons-dp-prod-census-maps-arm.s3.eu-west-2.amazonaws.com,,,
 Population,2021-DEM,hh_deprivation,https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com,,,
-Population,2021-DEM,hh_family_composition,https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com,,https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com,https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison
+Population,2021-DEM,hh_family_composition,https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com,,,
 Population,2021-DEM,hh_size,https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com,,https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com,https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison
 Population,2021-DEM,legal_partnership_status,https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com,,https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com,https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison
 Population,2021-DEM,living_arrangements,https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com,,https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com,https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison

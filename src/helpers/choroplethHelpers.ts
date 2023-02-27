@@ -3,10 +3,8 @@ import { never } from "../util/typeUtil";
 
 export const colours = {
   standard: ["#CDE594", "#80C6A3", "#1F9EB7", "#186290", "#080C54"] as StringQuintuple,
-  neg: ["#007590", "#538d9e", "#81a6ac", "#abbfbb", "#d5d9c9"] as StringQuintuple,
-  pos: ["#fbd0af", "#f5ab89", "#eb8665", "#de6041", "#ce321f"] as StringQuintuple,
-  neutral: "#fef4d7",
-  noData: "#808B96",
+  neg: ["#ce321f", "#e16a4a", "#f09977", "#fac6a6", "#fef4d7"] as StringQuintuple,
+  pos: ["#fef4d7", "#cad3c5", "#96b3b3", "#5f93a2", "#007590"] as StringQuintuple,
 };
 
 export const getColours = (mode: Mode, breaks: number[]): StringQuintuple => {
@@ -20,7 +18,7 @@ export const getColours = (mode: Mode, breaks: number[]): StringQuintuple => {
   }
 };
 
-export const getChangeColours = (breaks: number[]): [string, string, string, string, string] => {
+export const getChangeColours = (breaks: number[]): StringQuintuple => {
   let result: string[];
 
   // simple cases, all positive or all negative
@@ -40,10 +38,15 @@ export const getChangeColours = (breaks: number[]): [string, string, string, str
     const nBreaksResidual = nBreaksWant - nBreaksGot;
     nBreaksAboveZero += nBreaksResidual;
 
-    // NB avoid issue where slicing with zero index includes ALL neg or pos colors when there should be none
-    const negColours = nBreaksBelowZero > 0 ? colours.neg.slice(nBreaksBelowZero * -1) : [];
-    const posColours = nBreaksAboveZero > 0 ? colours.pos.slice(0, nBreaksAboveZero) : [];
-    result = [...negColours, colours.neutral, ...posColours];
+    // remove the first and last color from neg and pos to make the neutral color
+    const mixedNeutral = colours.pos[0];
+    const mixedNeg = colours.neg.slice(0, -1);
+    const mixedPos = colours.pos.slice(1);
+
+    // NB avoid issue where slicing with zero index includes ALL neg or pos colors when there should be none.
+    const negColours = nBreaksBelowZero > 0 ? mixedNeg.slice(nBreaksBelowZero * -1) : [];
+    const posColours = nBreaksAboveZero > 0 ? mixedPos.slice(0, nBreaksAboveZero) : [];
+    result = [...negColours, mixedNeutral, ...posColours];
   }
 
   return [result[0], result[1], result[2], result[3], result[4]];

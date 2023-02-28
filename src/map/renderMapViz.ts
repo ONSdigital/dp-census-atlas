@@ -1,7 +1,6 @@
 import { getColours } from "../helpers/choroplethHelpers";
 import type { LoadedGeographies, VizData } from "../types";
 import { layers } from "./layers";
-import { colours as allColours } from "../helpers/choroplethHelpers";
 
 // TODO: this file has become very confusing and needs refactoring
 
@@ -16,24 +15,6 @@ export const renderMapViz = (map: mapboxgl.Map, data: VizData | undefined) => {
 
   const layer = layers.find((l) => l.name == data.geoType);
   const colours = getColours(data.params.mode, data.breaks);
-
-  // todo: understand this - should this be here?
-  //
-  if (data.params.mode === "change") {
-    // colour no-data areas to distinguish from neutral-change areas when doing change-over-time
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore (queryRenderedFeatures typings appear to be wrong)
-    const renderedGeos = map.queryRenderedFeatures({ layers: [`${data.geoType}-features`] }).map((g) => g.id);
-    const geosWithData = data.places.map((p) => p.geoCode);
-    renderedGeos.forEach((g) => {
-      if (!geosWithData.includes(g)) {
-        map.setFeatureState(
-          { source: layer.name, sourceLayer: layer.sourceLayer, id: g },
-          { colour: allColours.noData },
-        );
-      }
-    });
-  }
 
   data.places.forEach((p) => {
     map.setFeatureState(

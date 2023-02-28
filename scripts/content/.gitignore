@@ -8,4 +8,5 @@
 !/input_metadata_files/variable_map_type_default_classifications.csv
 !/input_metadata_files/variable_short_descriptions.csv
 !/input_metadata_files/variable_tile_data_base_urls.csv
+!/input_metadata_files/classification_mode_specific_notes.csv
 /**/*.zip

@@ -37,6 +37,8 @@ export type Classification = {
   choropleth_default: boolean;
   dot_density_default: boolean;
   comparison_2011_data_available_geotypes: GeoType[];
+  change_notes: string;
+  change_notes_link: string;
   categories: Category[];
 };
 

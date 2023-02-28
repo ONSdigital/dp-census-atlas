@@ -28,7 +28,7 @@ Path to the
 .Pa content.json
 file.
 This defaults to
-.Ar outdir Ns / Ns Li content.json .
+.Ar indir Ns / Ns Li content.json .
 .It Fl C Ar classcode
 Only use categories in
 .Pa content.json
@@ -596,6 +596,7 @@ was given, fake data is generated for every cell in the notional spreadsheet.
 Each cell gets a random floating point value between 0 and 1.
 .It
 Calculate ratios
+.Pp
 If
 .Fl R
 was given, then the cell contents of non-totals cells are recalculated as the ratio

@@ -33,6 +33,7 @@ export type Classification = {
   desc: string;
   dataset: string;
   data_download: string;
+  change_data_download: string;
   available_geotypes: GeoType[];
   choropleth_default: boolean;
   dot_density_default: boolean;

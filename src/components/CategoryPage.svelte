@@ -13,6 +13,7 @@
   import ClassificationPager from "./ClassificationPager.svelte";
   import CaveatWarning from "./CaveatWarning.svelte";
   import OtherModeLinks from "./OtherModeLinks.svelte";
+  import { never } from "../util/typeUtil";
 
   const buildCategoryLink = (category: Category) => {
     return buildHyperlink($page.url, {
@@ -24,6 +25,17 @@
         category: category.slug,
       },
     });
+  };
+
+  const getDownloadUrl = () => {
+    switch ($params.mode) {
+      case "choropleth":
+        return $params.classification.data_download;
+      case "change":
+        return $params.classification.change_data_download;
+      default:
+        never($params.mode);
+    }
   };
 </script>
 
@@ -83,4 +95,4 @@
 
 <div class="grow" />
 
-<CategoryPageLinks dataDownloadUrl={$params.classification.data_download} />
+<CategoryPageLinks dataDownloadUrl={getDownloadUrl()} />

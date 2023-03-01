@@ -2,16 +2,18 @@ import { asyncDerived } from "@square/svelte-store";
 import { geography } from "./geography";
 import { viz } from "./viz";
 import { fetchDataForBbox } from "../data/api";
-import { getDataBaseUrlForVariable } from "../helpers/contentHelpers";
+import { getDataBaseUrlForVariable, isDataAvailable } from "../helpers/contentHelpers";
 
 export const selected = asyncDerived([geography, viz], async ([$geography, $viz]) => {
   if (!$geography) {
     return undefined;
   }
 
-  const dataAvailableForClassification = $viz?.params?.classification?.available_geotypes?.includes($geography.geoType);
-
-  if (!$viz || $geography.geoType === "ew" || !dataAvailableForClassification) {
+  if (
+    !$viz ||
+    $geography.geoType === "ew" ||
+    !isDataAvailable($viz.params.classification, $viz.params.mode, $geography.geoType)
+  ) {
     return {
       ...$geography,
       value: undefined as number,

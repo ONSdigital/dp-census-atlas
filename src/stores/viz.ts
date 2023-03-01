@@ -2,15 +2,13 @@ import { asyncDerived } from "@square/svelte-store";
 import { fetchBreaks, fetchDataForBbox } from "../data/api";
 import { params } from "./params";
 import { viewport } from "./viewport";
-import { getDataBaseUrlForVariable } from "../helpers/contentHelpers";
+import { getDataBaseUrlForVariable, isDataAvailable } from "../helpers/contentHelpers";
 
 /**
  * A Svelte store containing all the data we need in order to show a vizualisation.
  * */
 export const viz = asyncDerived([params, viewport], async ([$params, $viewport]) => {
-  const dataAvailableForClassification = () => $params?.classification?.available_geotypes.includes($viewport.geoType);
-
-  if (!$params?.category || !viewport || !dataAvailableForClassification()) {
+  if (!$params?.category || !viewport || !isDataAvailable($params.classification, $params.mode, $viewport.geoType)) {
     return undefined;
   } else {
     const args = {

@@ -3,7 +3,7 @@ import { page } from "$app/stores";
 import mapboxgl, { GeoJSONSource, Map } from "mapbox-gl";
 import { combineLatest, fromEvent, merge } from "rxjs";
 import { throttleTime } from "rxjs/operators";
-import type { GeoType, GeographyInfo, Classification } from "../types";
+import { type GeoType, type GeographyInfo, type Classification, GeoTypes } from "../types";
 import { params } from "../stores/params";
 import { geography } from "../stores/geography";
 import { englandAndWalesBbox } from "../helpers/geographyHelper";
@@ -103,26 +103,15 @@ const setViewportStoreAndLayerVisibility = (
 };
 
 const getGeoType = (map: mapboxgl.Map, classification?: Classification): { actual: GeoType; ideal: GeoType } => {
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-ignore (queryRenderedFeatures typings appear to be wrong)
-  const features = map.queryRenderedFeatures({ layers: ["centroids"] });
-  if (Array.isArray(features)) {
-    const count = features.length;
-    const canvas = map.getCanvas();
-    const pixelArea = canvas.clientWidth * canvas.clientHeight;
-    const idealGeotype = (count * 1e6) / pixelArea > 40 ? "lad" : (count * 1e6) / pixelArea > 3 ? "msoa" : "oa";
-    const availableGeotypes = classification?.available_geotypes;
-    if (availableGeotypes) {
-      // the first available_geotype is the lowest-level
-      return {
-        actual: availableGeotypes.includes(idealGeotype) ? idealGeotype : availableGeotypes[0],
-        ideal: idealGeotype,
-      };
-    } else {
-      return { actual: idealGeotype, ideal: idealGeotype };
-    }
+  const availableGeotypes = classification?.available_geotypes;
+  const idealGeotype = get(viewport)?.geoType || GeoTypes[0];
+  if (availableGeotypes) {
+    return {
+      actual: availableGeotypes.includes(idealGeotype) ? idealGeotype : availableGeotypes[0],
+      ideal: idealGeotype,
+    };
   } else {
-    return { actual: "lad", ideal: "lad" };
+    return { actual: idealGeotype, ideal: idealGeotype };
   }
 };
 

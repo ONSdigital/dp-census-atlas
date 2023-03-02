@@ -11,11 +11,9 @@ export const renderMapViz = (map: mapboxgl.Map, data: VizData | undefined) => {
     return;
   }
 
-  const layer = layers.find((l) => l.name == data.geoType);
-
   data.places.forEach((p) => {
     map.setFeatureState(
-      { source: layer.name, sourceLayer: layer.sourceLayer, id: p.geoCode },
+      { source: data.geoType, id: p.geoCode },
       { colour: getChoroplethColour(p.categoryValue, data.breaks) },
     );
   });
@@ -63,9 +61,9 @@ const rememberLoadedGeographies = (data: VizData | undefined) => {
   loadedGeographies = {
     categoryCode: catCode,
     geoCodes: {
-      lad: geoType === "lad" ? new Set(geoCodes) : new Set([]),
-      msoa: geoType === "msoa" ? new Set(geoCodes) : new Set([]),
-      oa: geoType === "oa" ? new Set(geoCodes) : new Set([]),
+      LTLA: geoType === "LTLA" ? new Set(geoCodes) : new Set([]),
+      RGN: geoType === "RGN" ? new Set(geoCodes) : new Set([]),
+      UTLA: geoType === "UTLA" ? new Set(geoCodes) : new Set([]),
     },
   };
 };

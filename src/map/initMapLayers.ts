@@ -1,5 +1,4 @@
 import { hovered } from "../stores/hovered";
-import { layersWithSiblings } from "./layers";
 import { centroidsGeojson } from "../helpers/quadsHelper";
 import { distinctUntilChanged, fromEventPattern } from "rxjs";
 import { map as project } from "rxjs/operators";
@@ -9,27 +8,27 @@ import { feature } from "topojson-client";
 
 const layerBounds: NumberQuadruple = [-6.418, 49.864, 1.764, 55.812];
 
-const topoJsonLayersToAdd = ["LTLA", "RGN", "UTLA"];
+//const topoJsonLayersToAdd = ["LTLA", "RGN", "UTLA"];
+const topoJsonLayersToAdd = ["LTLA"];
+
+const geojson = {};
+topoJsonLayersToAdd.forEach((type) => {
+  geojson[type] = feature(topojson, type);
+});
 
 export const initMapLayers = (map, geo, interactive: boolean) => {
   topoJsonLayersToAdd.forEach((lGeo) => {
     map.addSource(lGeo, {
       type: "geojson",
-      data: topojson[geoType.key],
+      data: geojson[lGeo],
       promoteId: "AREACD", // tells mapbox which property to use as the feature id
-      maxzoom: l.layer.sourceMaxZoom, // This is the maximum zoom level that the map tiles are available for (tiles can be over-zoomed)
-      layerBounds,
     });
 
     map.addLayer(
       {
-        id: `${l.layer.name}-features`,
-        minzoom: l.layer.minZoom,
-        source: l.layer.name,
-        "source-layer": l.layer.sourceLayer,
+        id: `${lGeo}-features`,
+        source: lGeo,
         type: "fill",
-        // maxzoom: l.next ? l.next.minZoom : maxAllowedZoom,
-        layout: { visibility: l.layer.name == "lad" ? "visible" : "none" }, // could just be "none"
         paint: {
           "fill-color": [
             "case",
@@ -44,15 +43,11 @@ export const initMapLayers = (map, geo, interactive: boolean) => {
 
     map.addLayer(
       {
-        id: `${l.layer.name}-outlines`,
+        id: `${lGeo}-outlines`,
         type: "line",
-        source: l.layer.name,
-        "source-layer": l.layer.sourceLayer,
-        minzoom: l.layer.minZoom,
-        // maxzoom: l.next ? l.next.minZoom : maxAllowedZoom,
+        source: lGeo,
         layout: {
           "line-join": "round",
-          visibility: l.layer.name == "lad" ? "visible" : "none",
         },
         paint: {
           "line-color": [
@@ -77,13 +72,13 @@ export const initMapLayers = (map, geo, interactive: boolean) => {
     );
 
     fromEventPattern((handler) => {
-      map.on("mousemove", `${l.layer.name}-features`, handler);
+      map.on("mousemove", `${lGeo}-features`, handler);
     })
       .pipe(
         project((e: any) => ({
-          geoType: l.layer.name,
+          geoType: lGeo,
           geoCode: e?.features?.[0].id,
-          displayName: e?.features?.[0].properties?.[l.layer.displayNameProperty],
+          displayName: e?.features?.[0].properties?.["AREANM"],
         })),
         distinctUntilChanged((prev, curr) => prev.geoCode === curr.geoCode),
       )
@@ -92,17 +87,17 @@ export const initMapLayers = (map, geo, interactive: boolean) => {
       });
 
     fromEventPattern((handler) => {
-      map.on("mouseleave", `${l.layer.name}-features`, handler);
+      map.on("mouseleave", `${lGeo}-features`, handler);
     }).subscribe(() => {
       hovered.set(undefined);
     });
 
     if (interactive) {
       // cursor to pointer when hovered
-      map.on("mouseenter", `${l.layer.name}-features`, () => {
+      map.on("mouseenter", `${lGeo}-features`, () => {
         map.getCanvas().style.cursor = "pointer";
       });
-      map.on("mouseleave", `${l.layer.name}-features`, () => {
+      map.on("mouseleave", `${lGeo}-features`, () => {
         map.getCanvas().style.cursor = "";
       });
     }
@@ -110,30 +105,21 @@ export const initMapLayers = (map, geo, interactive: boolean) => {
     // when the user moves their mouse over the state-fill layer, we'll update the
     // feature state for the feature under the mouse.
     let hoveredStateId = null; // todo: RxJS!
-    map.on("mousemove", `${l.layer.name}-features`, (e) => {
+    map.on("mousemove", `${lGeo}-features`, (e) => {
       if (e.features.length > 0) {
         if (hoveredStateId !== null) {
-          map.setFeatureState(
-            { source: l.layer.name, sourceLayer: l.layer.sourceLayer, id: hoveredStateId },
-            { hovered: false },
-          );
+          map.setFeatureState({ source: lGeo, id: hoveredStateId }, { hovered: false });
         }
         hoveredStateId = e.features[0].id;
-        map.setFeatureState(
-          { source: l.layer.name, sourceLayer: l.layer.sourceLayer, id: hoveredStateId },
-          { hovered: true },
-        );
+        map.setFeatureState({ source: lGeo, id: hoveredStateId }, { hovered: true });
       }
     });
 
     // when the mouse leaves the fill layer, update the feature state of the
     // previously hovered feature.
-    map.on("mouseleave", `${l.layer.name}-features`, () => {
+    map.on("mouseleave", `${lGeo}-features`, () => {
       if (hoveredStateId !== null) {
-        map.setFeatureState(
-          { source: l.layer.name, sourceLayer: l.layer.sourceLayer, id: hoveredStateId },
-          { hovered: false },
-        );
+        map.setFeatureState({ source: lGeo, id: hoveredStateId }, { hovered: false });
       }
       hoveredStateId = null;
     });

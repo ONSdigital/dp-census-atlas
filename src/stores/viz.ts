@@ -7,9 +7,7 @@ import { viewport } from "./viewport";
  * A Svelte store containing all the data we need in order to show a vizualisation.
  * */
 export const viz = asyncDerived([params, viewport], async ([$params, $viewport]) => {
-  const dataAvailableForClassification = () => $params?.classification?.available_geotypes.includes($viewport.geoType);
-
-  if (!$params?.category || !viewport || !dataAvailableForClassification()) {
+  if (!$params?.category || !viewport) {
     return undefined;
   } else {
     const args = {

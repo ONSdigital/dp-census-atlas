@@ -51,7 +51,8 @@ export const fetchTileData = async (args: { category: Category; geoType: GeoType
   const url = `${args.base_url}/tiles/${args.geoType}/${args.category.code}.csv`;
   const response = await fetch(url);
   const csv = await response.text();
-  return dsv.csvParse(csv);
+  const data = dsv.csvParse(csv);
+  return data.map((row) => parsePlaceData(row, args.category.code));
 };
 
 /*

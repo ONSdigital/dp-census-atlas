@@ -1,4 +1,4 @@
-export const GeoTypes = ["ew", "lad", "msoa", "oa"] as const;
+export const GeoTypes = ["LTLA", "RGN", "UTLA"] as const;
 export type GeoType = (typeof GeoTypes)[number];
 
 export type VariableGroup = {
@@ -117,9 +117,9 @@ export type Bbox = {
 export type LoadedGeographies = {
   categoryCode: string;
   geoCodes: {
-    lad: Set<string>;
-    msoa: Set<string>;
-    oa: Set<string>;
+    LTLA: Set<string>;
+    RGN: Set<string>;
+    UTLA: Set<string>;
   };
 };
 

@@ -93,7 +93,7 @@ const setViewportStoreAndLayerVisibility = (
     geoType = getGeoType(map, classification);
   }
 
-  setMapLayerVisibility(map, geoType.actual);
+  //setMapLayerVisibility(map, geoType.actual);
 
   viewport.set({
     bbox,

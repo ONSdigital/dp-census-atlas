@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2023-03-02-13-10-30",
+    "created_at": "2023-03-03-09-20-45",
     "release": "2021-MASTER-ar2776-c21ew_metadata-v1-3_cantab_20230224-45",
     "additional_content_jsons": [
       {
@@ -30,7 +30,10 @@
               "code": "uk_armed_forces",
               "slug": "uk-armed-forces",
               "desc": "UK armed forces veteran indicator (5 categories)",
-              "available_geotypes": ["msoa", "lad"],
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS071/editions/2021",
@@ -88,9 +91,17 @@
               "code": "population_density",
               "slug": "population-density",
               "desc": "Population density",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
-              "comparison_2011_data_available_geotypes": ["lad", "msoa", "oa"],
+              "comparison_2011_data_available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.nomisweb.co.uk/datasets/c2021ts006",
               "categories": [
                 {
@@ -119,7 +130,11 @@
               "code": "hh_deprivation",
               "slug": "hh-deprivation",
               "desc": "Household deprivation (6 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS011/editions/2021",
@@ -185,21 +200,18 @@
               "code": "hh_family_composition_4a",
               "slug": "hh-family-composition-4a",
               "desc": "Household composition (4 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-<<<<<<< HEAD
-<<<<<<< HEAD
-              "comparison_2011_data_available_geotypes": ["oa", "msoa", "lad"],
-=======
->>>>>>> bb8ad57 (remove family_composition from change dataset)
-=======
               "comparison_2011_data_available_geotypes": [
                 "oa",
                 "msoa",
                 "lad"
               ],
->>>>>>> fc58496 (re-add hh_family_composition_4a to change dataset)
               "data_download": "https://www.ons.gov.uk/datasets/TS003/editions/2021",
               "change_data_download": "https://www.google.com/",
               "categories": [
@@ -233,16 +245,11 @@
               "code": "hh_family_composition_15a",
               "slug": "hh-family-composition-15a",
               "desc": "Household composition (15 categories)",
-<<<<<<< HEAD
-              "available_geotypes": ["oa", "msoa", "lad"],
-              "comparison_2011_data_available_geotypes": ["lad"],
-=======
               "available_geotypes": [
                 "oa",
                 "msoa",
                 "lad"
               ],
->>>>>>> bb8ad57 (remove family_composition from change dataset)
               "data_download": "https://www.ons.gov.uk/datasets/TS003/editions/2021",
               "change_data_download": "https://www.google.com/",
               "categories": [
@@ -378,10 +385,18 @@
               "code": "hh_size_5a",
               "slug": "hh-size-5a",
               "desc": "Household size (5 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available_geotypes": ["oa", "msoa", "lad"],
+              "comparison_2011_data_available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS017/editions/2021",
               "change_data_download": "https://www.google.com/",
               "categories": [
@@ -423,8 +438,14 @@
               "code": "hh_size_9a",
               "slug": "hh-size-9a",
               "desc": "Household size (9 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
-              "comparison_2011_data_available_geotypes": ["lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS017/editions/2021",
               "change_data_download": "https://www.google.com/",
               "categories": [
@@ -512,10 +533,18 @@
               "code": "legal_partnership_status_3a",
               "slug": "legal-partnership-status-3a",
               "desc": "Marital and civil partnership status (3 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available_geotypes": ["oa", "msoa", "lad"],
+              "comparison_2011_data_available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS002/editions/2021",
               "change_data_download": "https://www.google.com/",
               "categories": [
@@ -541,8 +570,14 @@
               "code": "legal_partnership_status_6a",
               "slug": "legal-partnership-status-6a",
               "desc": "Marital and civil partnership status (6 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
-              "comparison_2011_data_available_geotypes": ["lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS002/editions/2021",
               "change_data_download": "https://www.google.com/",
               "categories": [
@@ -592,8 +627,14 @@
               "code": "legal_partnership_status",
               "slug": "legal-partnership-status",
               "desc": "Marital and civil partnership status (12 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
-              "comparison_2011_data_available_geotypes": ["lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS002/editions/2021",
               "change_data_download": "https://www.google.com/",
               "change_notes": "The category labels used in the Census Maps product when viewing in the \"Change since 2011\" mode are the Census 2021 labels. The labels for the 2011 Census data presented in this file are those used in 2011. This affects the labels only and change over time comparisons have only been computed for appropriate matching categories.",
@@ -613,7 +654,9 @@
                   "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "married",
-                  "restrict_to_modes": ["change"]
+                  "restrict_to_modes": [
+                    "change"
+                  ]
                 },
                 {
                   "name": "In a registered civil partnership",
@@ -622,7 +665,9 @@
                   "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "in a registered civil partnership",
-                  "restrict_to_modes": ["change"]
+                  "restrict_to_modes": [
+                    "change"
+                  ]
                 },
                 {
                   "name": "Married: Opposite sex",
@@ -631,7 +676,9 @@
                   "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "married to the opposite sex",
-                  "restrict_to_modes": ["choropleth"]
+                  "restrict_to_modes": [
+                    "choropleth"
+                  ]
                 },
                 {
                   "name": "Married: Same sex",
@@ -640,7 +687,9 @@
                   "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "married to the same sex",
-                  "restrict_to_modes": ["choropleth"]
+                  "restrict_to_modes": [
+                    "choropleth"
+                  ]
                 },
                 {
                   "name": "In a registered civil partnership: Opposite sex",
@@ -649,7 +698,9 @@
                   "legend_str_1": "of people aged 16 years and over in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "in a registered civil partnership with the opposite sex",
-                  "restrict_to_modes": ["choropleth"]
+                  "restrict_to_modes": [
+                    "choropleth"
+                  ]
                 },
                 {
                   "name": "In a registered civil partnership: Same sex",
@@ -727,9 +778,15 @@
               "code": "living_arrangements_11a",
               "slug": "living-arrangements-11a",
               "desc": "Living arrangements (11 categories)",
-              "available_geotypes": ["msoa", "lad"],
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
-              "comparison_2011_data_available_geotypes": ["msoa", "lad"],
+              "comparison_2011_data_available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS010/editions/2021",
               "change_data_download": "https://www.google.com/",
               "categories": [
@@ -833,10 +890,16 @@
               "code": "resident_age_3a",
               "slug": "resident-age-3a",
               "desc": "Age (3 categories)",
-              "available_geotypes": ["msoa", "lad"],
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available_geotypes": ["msoa", "lad"],
+              "comparison_2011_data_available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS007/editions/2021",
               "change_data_download": "https://www.google.com/",
               "categories": [
@@ -870,8 +933,14 @@
               "code": "resident_age_8c",
               "slug": "resident-age-8c",
               "desc": "Age (C) (8 categories)",
-              "available_geotypes": ["msoa", "lad"],
-              "comparison_2011_data_available_geotypes": ["msoa", "lad"],
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
+              "comparison_2011_data_available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS007/editions/2021",
               "change_data_download": "https://www.google.com/",
               "categories": [
@@ -945,8 +1014,14 @@
               "code": "resident_age_11a",
               "slug": "resident-age-11a",
               "desc": "Age (11 categories)",
-              "available_geotypes": ["msoa", "lad"],
-              "comparison_2011_data_available_geotypes": ["msoa", "lad"],
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
+              "comparison_2011_data_available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS007/editions/2021",
               "change_data_download": "https://www.google.com/",
               "categories": [
@@ -1044,8 +1119,13 @@
               "code": "resident_age_101a",
               "slug": "resident-age-101a",
               "desc": "Age (101 categories)",
-              "available_geotypes": ["msoa", "lad"],
-              "comparison_2011_data_available_geotypes": ["lad"],
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS007/editions/2021",
               "change_data_download": "https://www.google.com/",
               "categories": [
@@ -1877,9 +1957,14 @@
               "code": "median_age",
               "slug": "median-age",
               "desc": "Median age",
-              "available_geotypes": ["msoa", "lad"],
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
-              "comparison_2011_data_available_geotypes": ["lad"],
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.nomisweb.co.uk/sources/census_2021_ts",
               "categories": [
                 {
@@ -1910,10 +1995,18 @@
               "code": "sex",
               "slug": "sex",
               "desc": "Sex (2 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available_geotypes": ["oa", "msoa", "lad"],
+              "comparison_2011_data_available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS008/editions/2021",
               "change_data_download": "https://www.google.com/",
               "categories": [
@@ -1953,10 +2046,16 @@
               "code": "age_arrival_uk_18a",
               "slug": "age-arrival-uk-18a",
               "desc": "Age of arrival in the UK (18 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available_geotypes": ["lad"],
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS018/editions/2021",
               "change_data_download": "https://www.google.com/",
               "categories": [
@@ -2116,10 +2215,16 @@
               "code": "country_of_birth_3a",
               "slug": "country-of-birth-3a",
               "desc": "Country of birth (UK) (3 categories)",
-              "available_geotypes": ["lad"],
+              "available_geotypes": [
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available_geotypes": ["oa", "msoa", "lad"],
+              "comparison_2011_data_available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS004/editions/2021",
               "change_data_download": "https://www.google.com/",
               "categories": [
@@ -2145,8 +2250,12 @@
               "code": "country_of_birth_8a",
               "slug": "country-of-birth-8a",
               "desc": "Country of birth (8 categories)",
-              "available_geotypes": ["lad"],
-              "comparison_2011_data_available_geotypes": ["lad"],
+              "available_geotypes": [
+                "lad"
+              ],
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS004/editions/2021",
               "change_data_download": "https://www.google.com/",
               "categories": [
@@ -2212,8 +2321,14 @@
               "code": "country_of_birth_12a",
               "slug": "country-of-birth-12a",
               "desc": "Country of birth (12 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
-              "comparison_2011_data_available_geotypes": ["lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS004/editions/2021",
               "change_data_download": "https://www.google.com/",
               "categories": [
@@ -2311,8 +2426,12 @@
               "code": "country_of_birth_60a",
               "slug": "country-of-birth-60a",
               "desc": "Country of birth (60 categories)",
-              "available_geotypes": ["lad"],
-              "comparison_2011_data_available_geotypes": ["lad"],
+              "available_geotypes": [
+                "lad"
+              ],
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS012/editions/2021",
               "change_data_download": "https://www.google.com/",
               "categories": [
@@ -2808,9 +2927,17 @@
               "code": "migrant_ind",
               "slug": "migrant-ind",
               "desc": "Migrant indicator (5 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
-              "comparison_2011_data_available_geotypes": ["oa", "msoa", "lad"],
+              "comparison_2011_data_available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS019/editions/2021",
               "change_data_download": "https://www.google.com/",
               "categories": [
@@ -2866,10 +2993,17 @@
               "code": "passports_all_4a",
               "slug": "passports-all-4a",
               "desc": "Passports held (4 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available_geotypes": ["msoa", "lad"],
+              "comparison_2011_data_available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS005/editions/2021",
               "categories": [
                 {
@@ -2902,8 +3036,14 @@
               "code": "passports_all_13a",
               "slug": "passports-all-13a",
               "desc": "Passports held (13 categories)",
-              "available_geotypes": ["msoa", "lad"],
-              "comparison_2011_data_available_geotypes": ["msoa", "lad"],
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
+              "comparison_2011_data_available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS005/editions/2021",
               "change_data_download": "https://www.google.com/",
               "categories": [
@@ -3009,8 +3149,14 @@
               "code": "passports_all_18a",
               "slug": "passports-all-18a",
               "desc": "Passports held (18 categories)",
-              "available_geotypes": ["msoa", "lad"],
-              "comparison_2011_data_available_geotypes": ["msoa", "lad"],
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
+              "comparison_2011_data_available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS005/editions/2021",
               "change_data_download": "https://www.google.com/",
               "categories": [
@@ -3156,8 +3302,14 @@
               "code": "passports_all_27a",
               "slug": "passports-all-27a",
               "desc": "Passports held (27 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
-              "comparison_2011_data_available_geotypes": ["lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS005/editions/2021",
               "change_data_download": "https://www.google.com/",
               "categories": [
@@ -3375,8 +3527,13 @@
               "code": "passports_all_52a",
               "slug": "passports-all-52a",
               "desc": "Passports held (52 categories)",
-              "available_geotypes": ["msoa", "lad"],
-              "comparison_2011_data_available_geotypes": ["lad"],
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS013/editions/2021",
               "categories": [
                 {
@@ -3807,10 +3964,18 @@
               "code": "residence_length_6b",
               "slug": "residence-length-6b",
               "desc": "Length of residence in the UK (6 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available_geotypes": ["oa", "msoa", "lad"],
+              "comparison_2011_data_available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS016/editions/2021",
               "change_data_download": "https://www.google.com/",
               "categories": [
@@ -3872,7 +4037,11 @@
               "code": "year_arrival_uk_6a",
               "slug": "year-arrival-uk-6a",
               "desc": "Year of arrival in the UK (6 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS015/editions/2021",
@@ -3924,7 +4093,11 @@
               "code": "year_arrival_uk",
               "slug": "year-arrival-uk",
               "desc": "Year of arrival in the UK (13 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS015/editions/2021",
               "categories": [
                 {
@@ -4050,10 +4223,18 @@
               "code": "highest_qualification_6a",
               "slug": "highest-qualification-6a",
               "desc": "Highest level of qualification (6 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available_geotypes": ["oa", "msoa", "lad"],
+              "comparison_2011_data_available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS067/editions/2021",
               "change_data_download": "https://www.google.com/",
               "change_notes": "There are quality considerations for this variable when comparing between 2011 and 2021.",
@@ -4105,8 +4286,14 @@
               "code": "highest_qualification",
               "slug": "highest-qualification",
               "desc": "Highest level of qualification (8 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
-              "comparison_2011_data_available_geotypes": ["lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS067/editions/2021",
               "change_data_download": "https://www.google.com/",
               "change_notes": "There are quality considerations for this variable when comparing between 2011 and 2021.",
@@ -4188,9 +4375,15 @@
               "code": "in_full_time_education",
               "slug": "in-full-time-education",
               "desc": "Schoolchild or full-time student indicator (3 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
-              "comparison_2011_data_available_geotypes": ["lad"],
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS068/editions/2021",
               "change_data_download": "https://www.google.com/",
               "categories": [
@@ -4237,10 +4430,18 @@
               "code": "english_proficiency_4a",
               "slug": "english-proficiency-4a",
               "desc": "Proficiency in English language (4 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available_geotypes": ["oa", "msoa", "lad"],
+              "comparison_2011_data_available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS029/editions/2021",
               "change_data_download": "https://www.google.com/",
               "categories": [
@@ -4274,8 +4475,14 @@
               "code": "english_proficiency",
               "slug": "english-proficiency",
               "desc": "Proficiency in English language (6 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
-              "comparison_2011_data_available_geotypes": ["lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS029/editions/2021",
               "change_data_download": "https://www.google.com/",
               "categories": [
@@ -4339,10 +4546,18 @@
               "code": "ethnic_group_tb_6a",
               "slug": "ethnic-group-tb-6a",
               "desc": "Ethnic group (6 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available_geotypes": ["oa", "msoa", "lad"],
+              "comparison_2011_data_available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS021/editions/2021",
               "categories": [
                 {
@@ -4391,8 +4606,14 @@
               "code": "ethnic_group_tb_20b",
               "slug": "ethnic-group-tb-20b",
               "desc": "Ethnic group (20 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
-              "comparison_2011_data_available_geotypes": ["lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS021/editions/2021",
               "categories": [
                 {
@@ -4570,9 +4791,17 @@
               "code": "hh_language",
               "slug": "hh-language",
               "desc": "Household language (English and Welsh) (5 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
-              "comparison_2011_data_available_geotypes": ["oa", "msoa", "lad"],
+              "comparison_2011_data_available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS025/editions/2021",
               "categories": [
                 {
@@ -4627,10 +4856,16 @@
               "code": "hh_multi_ethnic_group",
               "slug": "hh-multi-ethnic-group",
               "desc": "Multiple ethnic groups in household (6 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available_geotypes": ["lad"],
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS023/editions/2021",
               "change_data_download": "https://www.google.com/",
               "categories": [
@@ -4692,7 +4927,11 @@
               "code": "hh_multi_language_3a",
               "slug": "hh-multi-language-3a",
               "desc": "Multiple main languages in household (3 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS026/editions/2021",
@@ -4720,7 +4959,11 @@
               "code": "hh_multi_language",
               "slug": "hh-multi-language",
               "desc": "Multiple main languages in household (6 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS026/editions/2021",
               "change_data_download": "https://www.google.com/",
               "categories": [
@@ -4782,7 +5025,11 @@
               "code": "hh_multi_religion_7a",
               "slug": "hh-multi-religion-7a",
               "desc": "Multiple religions in household (7 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS075/editions/2021",
@@ -4856,9 +5103,13 @@
               "code": "main_language_detailed_23a",
               "slug": "main-language-detailed-23a",
               "desc": "Main language (detailed) (23 categories)",
-              "available_geotypes": ["lad"],
+              "available_geotypes": [
+                "lad"
+              ],
               "choropleth_default": true,
-              "comparison_2011_data_available_geotypes": ["lad"],
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS024/editions/2021",
               "change_data_download": "https://www.google.com/",
               "categories": [
@@ -5044,8 +5295,12 @@
               "code": "main_language_detailed",
               "slug": "main-language-detailed",
               "desc": "Main language (detailed) (95 categories)",
-              "available_geotypes": ["lad"],
-              "comparison_2011_data_available_geotypes": ["lad"],
+              "available_geotypes": [
+                "lad"
+              ],
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS024/editions/2021",
               "change_data_download": "https://www.google.com/",
               "categories": [
@@ -5823,10 +6078,18 @@
               "code": "national_identity_all_4a",
               "slug": "national-identity-all-4a",
               "desc": "National identity (4 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available_geotypes": ["oa", "msoa", "lad"],
+              "comparison_2011_data_available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS027/editions/2021",
               "change_data_download": "https://www.google.com/",
               "categories": [
@@ -5860,8 +6123,16 @@
               "code": "national_identity_all_9a",
               "slug": "national-identity-all-9a",
               "desc": "National identity (9 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
-              "comparison_2011_data_available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
+              "comparison_2011_data_available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS027/editions/2021",
               "change_data_download": "https://www.google.com/",
               "categories": [
@@ -5935,8 +6206,14 @@
               "code": "national_identity_all",
               "slug": "national-identity-all",
               "desc": "National identity (17 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
-              "comparison_2011_data_available_geotypes": ["lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS027/editions/2021",
               "change_data_download": "https://www.google.com/",
               "categories": [
@@ -6090,9 +6367,15 @@
               "code": "national_identity_detailed",
               "slug": "national-identity-detailed",
               "desc": "National identity (detailed) (73 categories)",
-              "available_geotypes": ["msoa", "lad"],
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
-              "comparison_2011_data_available_geotypes": ["msoa", "lad"],
+              "comparison_2011_data_available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS028/editions/2021",
               "change_data_download": "https://www.google.com/",
               "change_notes": "The category labels used in the Census Maps product when viewing in the \"Change since 2011\" mode are the Census 2021 labels. The labels for the 2011 Census data presented in this file are those used in 2011. This affects the labels only and change over time comparisons have only been computed for appropriate matching categories.",
@@ -6424,7 +6707,9 @@
                   "legend_str_1": "of people in {location}",
                   "legend_str_2": "identify as",
                   "legend_str_3": "Kurdish",
-                  "restrict_to_modes": ["choropleth"]
+                  "restrict_to_modes": [
+                    "choropleth"
+                  ]
                 },
                 {
                   "name": "Other identity only: Middle Eastern and Asian: Middle Eastern: Iranian",
@@ -6696,9 +6981,17 @@
               "code": "religion_tb",
               "slug": "religion-tb",
               "desc": "Religion (10 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
-              "comparison_2011_data_available_geotypes": ["oa", "msoa", "lad"],
+              "comparison_2011_data_available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS030/editions/2021",
               "change_data_download": "https://www.google.com/",
               "change_notes": "Due to an error in the processing of the 2011 Census data, the number of usual residents in the 'Religion not stated' category was overestimated by a total of 62,000 for three local authorities: Camden, Islington, and Tower Hamlets.\n\nThe 2011 data provided here has been corrected using published correction factors available on the 2011 Census issues and corrections webpage.",
@@ -6794,7 +7087,10 @@
               "code": "gender_identity_4a",
               "slug": "gender-identity-4a",
               "desc": "Gender identity (4 categories)",
-              "available_geotypes": ["msoa", "lad"],
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS070/editions/2021",
@@ -6829,7 +7125,9 @@
               "code": "gender_identity_8a",
               "slug": "gender-identity-8a",
               "desc": "Gender identity (8 categories)",
-              "available_geotypes": ["lad"],
+              "available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS070/editions/2021",
               "categories": [
                 {
@@ -6906,7 +7204,10 @@
               "code": "sexual_orientation_4a",
               "slug": "sexual-orientation-4a",
               "desc": "Sexual orientation (4 categories)",
-              "available_geotypes": ["msoa", "lad"],
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS077/editions/2021",
@@ -6941,7 +7242,10 @@
               "code": "sexual_orientation_6a",
               "slug": "sexual-orientation-6a",
               "desc": "Sexual orientation (6 categories)",
-              "available_geotypes": ["msoa", "lad"],
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS077/editions/2021",
               "categories": [
                 {
@@ -6990,7 +7294,9 @@
               "code": "sexual_orientation_9a",
               "slug": "sexual-orientation-9a",
               "desc": "Sexual orientation (9 categories)",
-              "available_geotypes": ["lad"],
+              "available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS079/editions/2021",
               "change_data_download": "https://www.google.com/",
               "categories": [
@@ -7078,10 +7384,17 @@
               "code": "welsh_skills_all_4b",
               "slug": "welsh-skills-all-4b",
               "desc": "Welsh language skills (B) (4 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available_geotypes": ["msoa", "lad"],
+              "comparison_2011_data_available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS032/editions/2021",
               "categories": [
                 {
@@ -7114,8 +7427,15 @@
               "code": "welsh_skills_all_6a",
               "slug": "welsh-skills-all-6a",
               "desc": "Welsh language skills (6 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
-              "comparison_2011_data_available_geotypes": ["msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
+              "comparison_2011_data_available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS032/editions/2021",
               "categories": [
                 {
@@ -7164,8 +7484,14 @@
               "code": "welsh_skills_all",
               "slug": "welsh-skills-all",
               "desc": "Welsh language skills (10 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
-              "comparison_2011_data_available_geotypes": ["lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS032/editions/2021",
               "change_data_download": "https://www.google.com/",
               "categories": [
@@ -7261,10 +7587,17 @@
               "code": "welsh_skills_speak",
               "slug": "welsh-skills-speak",
               "desc": "Welsh speaking ability (3 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available_geotypes": ["msoa", "lad"],
+              "comparison_2011_data_available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS033/editions/2021",
               "categories": [
                 {
@@ -7310,10 +7643,18 @@
               "code": "accommodation_type_3a",
               "slug": "accommodation-type-3a",
               "desc": "Accommodation type (3 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available_geotypes": ["oa", "msoa", "lad"],
+              "comparison_2011_data_available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS044/editions/2021",
               "categories": [
                 {
@@ -7346,8 +7687,16 @@
               "code": "accommodation_type_5a",
               "slug": "accommodation-type-5a",
               "desc": "Accommodation type (5 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
-              "comparison_2011_data_available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
+              "comparison_2011_data_available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS044/editions/2021",
               "change_data_download": "https://www.google.com/",
               "categories": [
@@ -7397,8 +7746,14 @@
               "code": "accommodation_type",
               "slug": "accommodation-type",
               "desc": "Accommodation type (8 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
-              "comparison_2011_data_available_geotypes": ["lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS044/editions/2021",
               "change_data_download": "https://www.google.com/",
               "change_notes": "The category labels used in the Census Maps product when viewing in the \"Change since 2011\" mode are the Census 2021 labels. The labels for the 2011 Census data presented in this file are those used in 2011. This affects the labels only and change over time comparisons have only been computed for appropriate matching categories.",
@@ -7450,7 +7805,9 @@
                   "legend_str_1": "of households in {location}",
                   "legend_str_2": "are",
                   "legend_str_3": "part of another converted building, for example, former school, church or warehouse",
-                  "restrict_to_modes": ["choropleth"]
+                  "restrict_to_modes": [
+                    "choropleth"
+                  ]
                 },
                 {
                   "name": "In a commercial building, for example, in an office building, hotel or over a shop",
@@ -7488,9 +7845,15 @@
               "code": "alternative_address_indicator",
               "slug": "alternative-address-indicator",
               "desc": "Second address indicator (3 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
-              "comparison_2011_data_available_geotypes": ["lad"],
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS056/editions/2021",
               "change_data_download": "https://www.google.com/",
               "categories": [
@@ -7538,10 +7901,18 @@
               "code": "heating_type_3a",
               "slug": "heating-type-3a",
               "desc": "Type of central heating in household (3 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available_geotypes": ["oa", "msoa", "lad"],
+              "comparison_2011_data_available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS046/editions/2021",
               "change_data_download": "https://www.google.com/",
               "categories": [
@@ -7567,7 +7938,11 @@
               "code": "heating_type",
               "slug": "heating-type",
               "desc": "Type of central heating in household (13 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS046/editions/2021",
               "change_data_download": "https://www.google.com/",
               "categories": [
@@ -7687,10 +8062,18 @@
               "code": "hh_tenure_5a",
               "slug": "hh-tenure-5a",
               "desc": "Tenure of household (5 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available_geotypes": ["oa", "msoa", "lad"],
+              "comparison_2011_data_available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS054/editions/2021",
               "change_data_download": "https://www.google.com/",
               "categories": [
@@ -7732,8 +8115,14 @@
               "code": "hh_tenure_9a",
               "slug": "hh-tenure-9a",
               "desc": "Tenure of household (9 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
-              "comparison_2011_data_available_geotypes": ["lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS054/editions/2021",
               "categories": [
                 {
@@ -7820,10 +8209,18 @@
               "code": "number_bedrooms_5a",
               "slug": "number-bedrooms-5a",
               "desc": "Number of Bedrooms (5 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available_geotypes": ["oa", "msoa", "lad"],
+              "comparison_2011_data_available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS050/editions/2021",
               "change_data_download": "https://www.google.com/",
               "categories": [
@@ -7879,10 +8276,18 @@
               "code": "number_of_cars_3a",
               "slug": "number-of-cars-3a",
               "desc": "Car or van availability (3 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available_geotypes": ["oa", "msoa", "lad"],
+              "comparison_2011_data_available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS045/editions/2021",
               "change_data_download": "https://www.google.com/",
               "categories": [
@@ -7908,8 +8313,14 @@
               "code": "number_of_cars_5a",
               "slug": "number-of-cars-5a",
               "desc": "Car or van availability (5 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
-              "comparison_2011_data_available_geotypes": ["lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS045/editions/2021",
               "change_data_download": "https://www.google.com/",
               "categories": [
@@ -7965,9 +8376,17 @@
               "code": "occupancy_rating_bedrooms_6a",
               "slug": "occupancy-rating-bedrooms-6a",
               "desc": "Occupancy rating for bedrooms (6 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
-              "comparison_2011_data_available_geotypes": ["oa", "msoa", "lad"],
+              "comparison_2011_data_available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS052/editions/2021",
               "change_data_download": "https://www.google.com/",
               "categories": [
@@ -8029,7 +8448,11 @@
               "code": "occupancy_rating_rooms_6a",
               "slug": "occupancy-rating-rooms-6a",
               "desc": "Occupancy rating for rooms (6 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS053/editions/2021",
               "change_data_download": "https://www.google.com/",
@@ -8094,9 +8517,17 @@
               "code": "second_address_type_priority",
               "slug": "second-address-type-priority",
               "desc": "Second address type (10 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
-              "comparison_2011_data_available_geotypes": ["oa", "msoa", "lad"],
+              "comparison_2011_data_available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS055/editions/2021",
               "change_data_download": "https://www.google.com/",
               "change_notes": "The category labels used in the Census Maps product when viewing in the \"Change since 2011\" mode are the Census 2021 labels. The labels for the 2011 Census data presented in this file are those used in 2011. This affects the labels only and change over time comparisons have only been computed for appropriate matching categories.",
@@ -8156,7 +8587,9 @@
                   "legend_str_1": "of people in {location}'s second address",
                   "legend_str_2": "is",
                   "legend_str_3": "a partner's address",
-                  "restrict_to_modes": ["choropleth"]
+                  "restrict_to_modes": [
+                    "choropleth"
+                  ]
                 },
                 {
                   "name": "Other",
@@ -8195,10 +8628,14 @@
               "code": "disability_4a_age_standardised",
               "slug": "disability-4a",
               "desc": "Disability - Equality act disabled (4 categories)",
-              "available_geotypes": ["lad"],
+              "available_geotypes": [
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available_geotypes": ["lad"],
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS038ASP/editions/2021",
               "categories": [
                 {
@@ -8247,10 +8684,14 @@
               "code": "health_in_general_age_standardised",
               "slug": "health-in-general",
               "desc": "General health (6 categories)",
-              "available_geotypes": ["lad"],
+              "available_geotypes": [
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available_geotypes": ["lad"],
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS037ASP/editions/2021",
               "categories": [
                 {
@@ -8315,10 +8756,14 @@
               "code": "is_carer_5a_age_standardised",
               "slug": "is-carer-5a",
               "desc": "Unpaid care (5 categories)",
-              "available_geotypes": ["lad"],
+              "available_geotypes": [
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available_geotypes": ["lad"],
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS039ASP/editions/2021",
               "categories": [
                 {
@@ -8382,7 +8827,11 @@
               "code": "economic_activity_status_3a",
               "slug": "economic-activity-status-3a",
               "desc": "Economic activity status (3 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS066/editions/2021",
               "change_data_download": "https://www.google.com/",
@@ -8409,9 +8858,17 @@
               "code": "economic_activity_status_4a",
               "slug": "economic-activity-status-4a",
               "desc": "Economic activity status (4 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "dot_density_default": true,
-              "comparison_2011_data_available_geotypes": ["oa", "msoa", "lad"],
+              "comparison_2011_data_available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS066/editions/2021",
               "change_data_download": "https://www.google.com/",
               "categories": [
@@ -8445,8 +8902,14 @@
               "code": "economic_activity_status_10a",
               "slug": "economic-activity-status-10a",
               "desc": "Economic activity status (10 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
-              "comparison_2011_data_available_geotypes": ["lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS066/editions/2021",
               "categories": [
                 {
@@ -8543,7 +9006,11 @@
               "code": "has_ever_worked",
               "slug": "has-ever-worked",
               "desc": "Employment history (4 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS065/editions/2021",
@@ -8595,10 +9062,18 @@
               "code": "hours_per_week_worked_3a",
               "slug": "hours-per-week-worked-3a",
               "desc": "Hours worked (3 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available_geotypes": ["oa", "msoa", "lad"],
+              "comparison_2011_data_available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS059/editions/2021",
               "categories": [
                 {
@@ -8623,8 +9098,14 @@
               "code": "hours_per_week_worked",
               "slug": "hours-per-week-worked",
               "desc": "Hours worked (5 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
-              "comparison_2011_data_available_geotypes": ["lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS059/editions/2021",
               "categories": [
                 {
@@ -8681,9 +9162,14 @@
               "code": "industry_current_88a",
               "slug": "industry-current-88a",
               "desc": "Industry (current) (88 categories)",
-              "available_geotypes": ["msoa", "lad"],
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
-              "comparison_2011_data_available_geotypes": ["lad"],
+              "comparison_2011_data_available_geotypes": [
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS060/editions/2021",
               "categories": [
                 {
@@ -9402,7 +9888,11 @@
               "code": "ns_sec_10a",
               "slug": "ns-sec-10a",
               "desc": "National Statistics Socio-economic Classification (NS-SeC) (10 categories)",
-              "available_geotypes": ["oa", "msoa", "lad"],
+              "available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS062/editions/2021",
               "categories": [
@@ -9498,7 +9988,10 @@
               "code": "occupation_current_10a",
               "slug": "occupation-current-10a",
               "desc": "Occupation (current) (10 categories)",
-              "available_geotypes": ["msoa", "lad"],
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS063/editions/2021",
               "categories": [
@@ -9594,7 +10087,10 @@
               "code": "transport_to_workplace_12a",
               "slug": "transport-to-workplace-12a",
               "desc": "Method used to travel to workplace (12 categories)",
-              "available_geotypes": ["msoa", "lad"],
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS061/editions/2021",
               "categories": [
@@ -9706,7 +10202,10 @@
               "code": "workplace_travel_4a",
               "slug": "workplace-travel-4a",
               "desc": "Distance travelled to work (4 categories)",
-              "available_geotypes": ["msoa", "lad"],
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "choropleth_default": true,
               "dot_density_default": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS058/editions/2021",
@@ -9749,7 +10248,10 @@
               "code": "workplace_travel_5a",
               "slug": "workplace-travel-5a",
               "desc": "Distance travelled to work (5 categories)",
-              "available_geotypes": ["msoa", "lad"],
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS058/editions/2021",
               "categories": [
                 {
@@ -9798,7 +10300,10 @@
               "code": "workplace_travel",
               "slug": "workplace-travel",
               "desc": "Distance travelled to work (11 categories)",
-              "available_geotypes": ["msoa", "lad"],
+              "available_geotypes": [
+                "msoa",
+                "lad"
+              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS058/editions/2021",
               "categories": [
                 {

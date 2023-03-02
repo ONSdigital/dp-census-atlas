@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2023-03-02-12-22-14",
+    "created_at": "2023-03-02-13-10-30",
     "release": "2021-MASTER-ar2776-c21ew_metadata-v1-3_cantab_20230224-45",
     "additional_content_jsons": [
       {
@@ -178,6 +178,8 @@
           "units": "households",
           "topic_code": "DEM",
           "base_url_2021": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
+          "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
           "classifications": [
             {
               "code": "hh_family_composition_4a",
@@ -187,9 +189,17 @@
               "choropleth_default": true,
               "dot_density_default": true,
 <<<<<<< HEAD
+<<<<<<< HEAD
               "comparison_2011_data_available_geotypes": ["oa", "msoa", "lad"],
 =======
 >>>>>>> bb8ad57 (remove family_composition from change dataset)
+=======
+              "comparison_2011_data_available_geotypes": [
+                "oa",
+                "msoa",
+                "lad"
+              ],
+>>>>>>> fc58496 (re-add hh_family_composition_4a to change dataset)
               "data_download": "https://www.ons.gov.uk/datasets/TS003/editions/2021",
               "change_data_download": "https://www.google.com/",
               "categories": [

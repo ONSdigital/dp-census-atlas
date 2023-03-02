@@ -1,0 +1,51 @@
+variable,units
+accommodation_type,households
+age_arrival_uk,people
+alternative_address_indicator,households
+country_of_birth,people
+disability,people
+economic_activity,people aged 16 years and over
+english_proficiency,people aged three years and over
+ethnic_group_tb,people
+gender_identity,people
+has_ever_worked,people aged 16 years and over not in employment
+health_in_general,people
+heating_type,households
+hh_deprivation,households
+hh_family_composition,households
+hh_language,households
+hh_multi_ethnic_group,households
+hh_multi_language,households
+hh_multi_religion,households
+hh_size,households
+hh_tenure,households
+highest_qualification,people aged 16 years and over
+hours_per_week_worked,people aged 16 years and over in employment
+industry_current,people
+is_carer,people aged five years and over
+legal_partnership_status,people aged 16 years and over
+living_arrangements,people
+main_language_detailed,people
+migrant_ind,people
+national_identity_all,people
+national_identity_detailed,people
+ns_sec,people aged 16 years and over
+number_bedrooms,households
+number_of_cars,households
+occupancy_rating_bedrooms,households
+occupancy_rating_rooms,households
+occupation_current,people aged 16 years and over in employment
+passports_all,people
+religion_tb,people
+residence_length,people
+resident_age,people
+second_address_type_priority,people
+sex,people
+sexual_orientation,people
+transport_to_workplace,people aged 16 years and over in employment
+welsh_skills_all,people aged three years and over
+welsh_skills_speak,people aged three years and over
+workplace_travel,people aged 16 years and over in employment
+year_arrival_uk,people
+uk_armed_forces,people
+in_full_time_education,people aged five years and over

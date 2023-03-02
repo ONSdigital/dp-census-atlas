@@ -62,6 +62,12 @@ class CensusVariable:
                 self.base_url_2011_2021_comparison_dev_override = base_url_row["2011_2021_comparison_fake_dev_override"].strip(
                 )
 
+    def set_units(self, units: list[dict]) -> None:
+        unit_row = next((r for r in units if r["variable"] == self.code), None)
+        if unit_row is not None and unit_row["units"] != "":
+            self.units = unit_row["units"].strip()
+
+
     def is_valid(self) -> bool:
         """
         Return False if public properties are blank strings, classifications is empty list, available_geotypes is an
@@ -162,7 +168,7 @@ def variable_from_content_json(content_json: dict) -> CensusVariable:
 
 
 def variables_from_metadata(variable_csv: Path or str, short_desc_csv: Path or str,
-                            caveat_csv: Path or str, tile_data_base_url_csv: Path or str) -> list[CensusVariable]:
+                            caveat_csv: Path or str, tile_data_base_url_csv: Path or str, units_csv: Path or str) -> list[CensusVariable]:
     """
     Make CensusVariable's from rows in Variable.csv. NB filter out any blank rows in the csv. Append extra
     metadata from:
@@ -180,6 +186,9 @@ def variables_from_metadata(variable_csv: Path or str, short_desc_csv: Path or s
 
     with open(tile_data_base_url_csv, "r") as f:
         tile_data_base_urls = list(csv.DictReader(f))
+
+    with open(units_csv, "r") as f:
+        units = list(csv.DictReader(f))
 
     # load variables
     with open(variable_csv, "r", encoding="utf-8") as f:
@@ -201,6 +210,7 @@ def variables_from_metadata(variable_csv: Path or str, short_desc_csv: Path or s
                 variable.set_short_desc(short_descs)
                 variable.set_caveat(caveats)
                 variable.set_base_url(tile_data_base_urls)
+                variable.set_units(units)
 
                 variables.append(variable)
     return variables

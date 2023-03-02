@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2023-03-01-14-58-26",
+    "created_at": "2023-03-02-14-28-57",
     "release": "2021-MASTER-ar2776-c21ew_metadata-v1-3_cantab_20230224-45",
     "additional_content_jsons": [
       {
@@ -4225,6 +4225,8 @@
               ],
               "data_download": "https://www.ons.gov.uk/datasets/TS067/editions/2021",
               "change_data_download": "https://www.google.com/",
+              "change_notes": "There are quality considerations for this variable when comparing between 2011 and 2021.",
+              "change_notes_link": "https://www.ons.gov.uk/peoplepopulationandcommunity/educationandchildcare/methodologies/educationqualityinformationforcensus2021",
               "categories": [
                 {
                   "name": "No qualifications",
@@ -4282,6 +4284,8 @@
               ],
               "data_download": "https://www.ons.gov.uk/datasets/TS067/editions/2021",
               "change_data_download": "https://www.google.com/",
+              "change_notes": "There are quality considerations for this variable when comparing between 2011 and 2021.",
+              "change_notes_link": "https://www.ons.gov.uk/peoplepopulationandcommunity/educationandchildcare/methodologies/educationqualityinformationforcensus2021",
               "categories": [
                 {
                   "name": "No qualifications",

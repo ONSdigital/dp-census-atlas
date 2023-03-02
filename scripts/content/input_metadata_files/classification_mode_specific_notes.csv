@@ -1,6 +1,6 @@
 variable_group,content_json,variable,classification,change_notes,change_notes_link
-Education,2021-EDU,highest_qualification,highest_qualification,,
-Education,2021-EDU,highest_qualification,highest_qualification_6a,,
+Education,2021-EDU,highest_qualification,highest_qualification,There are quality considerations for this variable when comparing between 2011 and 2021.,https://www.ons.gov.uk/peoplepopulationandcommunity/educationandchildcare/methodologies/educationqualityinformationforcensus2021
+Education,2021-EDU,highest_qualification,highest_qualification_6a,There are quality considerations for this variable when comparing between 2011 and 2021.,https://www.ons.gov.uk/peoplepopulationandcommunity/educationandchildcare/methodologies/educationqualityinformationforcensus2021
 Education,2021-EDU,in_full_time_education,in_full_time_education,,
 Health,2021-HUC,disability,disability_4a,,
 Health,2021-HUC,health_in_general,health_in_general,,

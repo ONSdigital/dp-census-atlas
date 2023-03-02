@@ -222,7 +222,12 @@
             },
             {
               "code": "ethnic_group_tb",
-              "classifications": ["ethnic_group_tb_6a", "ethnic_group_tb_20b"]
+              "classifications": ["ethnic_group_tb_6a", "ethnic_group_tb_20b"],
+              "classification_category_mode_restrictions": {
+                "ethnic_group_tb_20b": {
+                  "ethnic_group_tb_20b-016": ["choropleth"]
+                }
+              }
             },
             {
               "code": "hh_language",

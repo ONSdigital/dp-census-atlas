@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { viz } from "../stores/viz";
   import type { Mode } from "../types";
   import Icon from "./MaterialIcon.svelte";
 
@@ -21,6 +22,7 @@
         <Icon kind="openInNew" />
       </span>
     {/if}
-    between March 2011 and March 2021 census.
+    for {$viz.params.variable.units}
+    between 2011 and 2021 census.
   </div>
 {/if}

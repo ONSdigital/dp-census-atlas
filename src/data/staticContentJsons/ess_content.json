@@ -23,7 +23,7 @@
               "code": "gross_median_weekly_pay",
               "slug": "gross-median-weekly-pay",
               "desc": "Median Weekly Pay",
-              "available_geotypes": ["LTLA", "RGN"],
+              "available_geotypes": ["LTLA"],
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -168,36 +168,6 @@
           ]
         },
         {
-          "name": "Percentage of young people achieving GCSEs (and equivalent qualifications) in English and maths by age 19",
-          "slug": "gcses-and-equivalent-in-english-and-maths-by-age-19",
-          "code": "gcses_(and_equivalent)_in_english_and_maths_by_age_19",
-          "desc": "Percentage of young people achieving GCSEs (and equivalent qualifications) in English and maths by age 19",
-          "long_desc": "Percentage of young people achieving GCSEs (and equivalent qualifications) in English and maths by age 19",
-          "units": "%",
-          "topic_code": "",
-          "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS",
-          "classifications": [
-            {
-              "code": "gcses_(and_equivalent)_in_english_and_maths_by_age_19",
-              "slug": "gcses-and-equivalent-in-english-and-maths-by-age-19",
-              "desc": "Percentage of young people achieving GCSEs (and equivalent qualifications) in English and maths by age 19",
-              "available_geotypes": ["LTLA"],
-              "choropleth_default": true,
-              "dot_density_default": true,
-              "categories": [
-                {
-                  "name": "Percentage of young people achieving GCSEs (and equivalent qualifications) in English and maths by age 19",
-                  "slug": "gcses-and-equivalent-in-english-and-maths-by-age-19",
-                  "code": "gcses_(and_equivalent)_in_english_and_maths_by_age_19",
-                  "legend_str_1": "of Percentage in {location}",
-                  "legend_str_2": "",
-                  "legend_str_3": ""
-                }
-              ]
-            }
-          ]
-        },
-        {
           "name": "Percentage of schools rated good or outstanding by Ofsted",
           "slug": "schools-and-nursery-schools-rated-good-or-outstanding",
           "code": "schools_and_nursery_schools_rated_good_or_outstanding",
@@ -241,7 +211,7 @@
               "code": "persistent_absences_for_pupils_looked_after_by_local_authorities",
               "slug": "persistent-absences-for-pupils-looked-after-by-local-authorities",
               "desc": "Persistent absences for pupils who are looked after",
-              "available_geotypes": ["LTLA", "UTLA", "RGN"],
+              "available_geotypes": ["LTLA"],
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -271,7 +241,7 @@
               "code": "children_at_expected_standard_for_communication_and_language_by_end_of_early_years_foundation_stage",
               "slug": "children-at-expected-standard-for-communication-and-language-by-end-of-early-years-foundation-stage",
               "desc": "Percentage of 5-year olds achieving 'expected level' in communication early learning goals",
-              "available_geotypes": ["LTLA", "UTLA"],
+              "available_geotypes": ["LTLA"],
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -301,7 +271,7 @@
               "code": "children_at_expected_standard_for_literacy_by_end_of_early_years_foundation_stage",
               "slug": "children-at-expected-standard-for-literacy-by-end-of-early-years-foundation-stage",
               "desc": "Percentage of 5-year olds achieving 'expected level' in literacy early learning goals",
-              "available_geotypes": ["LTLA", "UTLA", "RGN"],
+              "available_geotypes": ["LTLA"],
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -331,7 +301,7 @@
               "code": "children_at_expected_standard_for_maths_by_end_of_early_years_foundation_stage",
               "slug": "children-at-expected-standard-for-maths-by-end-of-early-years-foundation-stage",
               "desc": "Percentage of 5-year olds achieving 'expected level' in maths early learning goals",
-              "available_geotypes": ["LTLA", "UTLA", "RGN"],
+              "available_geotypes": ["LTLA"],
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -421,7 +391,7 @@
               "code": "aged_16_to_64_years_level_3_or_above_qualifications",
               "slug": "aged-16-to-64-years-level-3-or-above-qualifications",
               "desc": "Proportion of the population aged 16 - 64 with level 3+ qualifications",
-              "available_geotypes": ["LTLA", "RGN"],
+              "available_geotypes": ["LTLA"],
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -468,36 +438,6 @@
           ]
         },
         {
-          "name": "Female Healthy Life Expectancy (HLE)",
-          "slug": "female-healthy-life-expectancy",
-          "code": "female_healthy_life_expectancy",
-          "desc": "Female Healthy Life Expectancy (HLE)",
-          "long_desc": "Female Healthy Life Expectancy (HLE)",
-          "units": "yrs",
-          "topic_code": "",
-          "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS",
-          "classifications": [
-            {
-              "code": "female_healthy_life_expectancy",
-              "slug": "female-healthy-life-expectancy",
-              "desc": "Female Healthy Life Expectancy (HLE)",
-              "available_geotypes": ["LTLA"],
-              "choropleth_default": true,
-              "dot_density_default": true,
-              "categories": [
-                {
-                  "name": "Female Healthy Life Expectancy (HLE)",
-                  "slug": "female-healthy-life-expectancy",
-                  "code": "female_healthy_life_expectancy",
-                  "legend_str_1": "of Years in {location}",
-                  "legend_str_2": "",
-                  "legend_str_3": ""
-                }
-              ]
-            }
-          ]
-        },
-        {
           "name": "Smoking prevalence of adults",
           "slug": "cigarette-smokers",
           "code": "cigarette_smokers",
@@ -511,7 +451,7 @@
               "code": "cigarette_smokers",
               "slug": "cigarette-smokers",
               "desc": "Smoking prevalence of adults",
-              "available_geotypes": ["LTLA", "RGN"],
+              "available_geotypes": ["LTLA"],
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -541,7 +481,7 @@
               "code": "overweight_children_at_reception_age_(aged_four_to_five_years)",
               "slug": "overweight-children-at-reception-age-aged-four-to-five-years",
               "desc": "Obesity prevalence - children",
-              "available_geotypes": ["LTLA", "UTLA", "RGN"],
+              "available_geotypes": ["LTLA"],
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -571,7 +511,7 @@
               "code": "overweight_children_at_year_6_age_(aged_10_to_11_years)",
               "slug": "overweight-children-at-year-6-age-aged-10-to-11-years",
               "desc": "Obesity prevalence - Year 6 children",
-              "available_geotypes": ["LTLA", "UTLA"],
+              "available_geotypes": ["LTLA"],
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [
@@ -580,66 +520,6 @@
                   "slug": "overweight-children-at-year-6-age-aged-10-to-11-years",
                   "code": "overweight_children_at_year_6_age_(aged_10_to_11_years)",
                   "legend_str_1": "of Percentage in {location}",
-                  "legend_str_2": "",
-                  "legend_str_3": ""
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Average life satisfaction ratings",
-          "slug": "life-satisfaction",
-          "code": "life_satisfaction",
-          "desc": "Average life satisfaction ratings",
-          "long_desc": "Average life satisfaction ratings",
-          "units": "Score out of 10",
-          "topic_code": "",
-          "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS",
-          "classifications": [
-            {
-              "code": "life_satisfaction",
-              "slug": "life-satisfaction",
-              "desc": "Average life satisfaction ratings",
-              "available_geotypes": ["LTLA"],
-              "choropleth_default": true,
-              "dot_density_default": true,
-              "categories": [
-                {
-                  "name": "Average life satisfaction ratings",
-                  "slug": "life-satisfaction",
-                  "code": "life_satisfaction",
-                  "legend_str_1": "of Rating in {location}",
-                  "legend_str_2": "",
-                  "legend_str_3": ""
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Average worthwhile ratings",
-          "slug": "feeling-life-is-worthwhile",
-          "code": "feeling_life_is_worthwhile",
-          "desc": "Average worthwhile ratings",
-          "long_desc": "Average worthwhile ratings",
-          "units": "Score out of 10",
-          "topic_code": "",
-          "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS",
-          "classifications": [
-            {
-              "code": "feeling_life_is_worthwhile",
-              "slug": "feeling-life-is-worthwhile",
-              "desc": "Average worthwhile ratings",
-              "available_geotypes": ["LTLA"],
-              "choropleth_default": true,
-              "dot_density_default": true,
-              "categories": [
-                {
-                  "name": "Average worthwhile ratings",
-                  "slug": "feeling-life-is-worthwhile",
-                  "code": "feeling_life_is_worthwhile",
-                  "legend_str_1": "of Rating in {location}",
                   "legend_str_2": "",
                   "legend_str_3": ""
                 }
@@ -661,7 +541,7 @@
               "code": "anxiety",
               "slug": "anxiety",
               "desc": "Average anxiety ratings",
-              "available_geotypes": ["LTLA", "UTLA"],
+              "available_geotypes": ["LTLA"],
               "choropleth_default": true,
               "dot_density_default": true,
               "categories": [

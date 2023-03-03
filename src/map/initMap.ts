@@ -3,7 +3,7 @@ import { page } from "$app/stores";
 import mapboxgl, { GeoJSONSource, Map } from "mapbox-gl";
 import { combineLatest, fromEvent, merge } from "rxjs";
 import { throttleTime } from "rxjs/operators";
-import { type GeoType, type GeographyInfo, type Classification, GeoTypes } from "../types";
+import type { GeoType, GeographyInfo, Classification } from "../types";
 import { params } from "../stores/params";
 import { geography } from "../stores/geography";
 import { englandAndWalesBbox } from "../helpers/geographyHelper";
@@ -17,6 +17,7 @@ import { viz } from "../stores/viz";
 import { toObservable } from "../util/rxUtil";
 import { commands, type Command } from "../stores/commands";
 import { isAppInteractive, type EmbedParams } from "../helpers/embedHelper";
+import { topoJsonLayersToAdd } from "./initMapLayers";
 
 const defaultZoom = 6;
 const maxAllowedZoom = 15;
@@ -44,8 +45,6 @@ export const initMap = (container: HTMLElement) => {
 
   map.touchZoomRotate.disableRotation();
 
-  setMinZoomIfGeoLock(map, get(params)?.geoLock);
-
   if (interactive) {
     map.addControl(new mapboxgl.NavigationControl({ showCompass: false }));
   }
@@ -55,7 +54,6 @@ export const initMap = (container: HTMLElement) => {
     viz.subscribe((value) => renderMapViz(map, value));
     geography.subscribe((geography) => listenToGeographyStore(map, geography));
     commands.subscribe((command) => listenToCommandStore(map, command));
-    params.subscribe((params) => listenToParamStore(map, params));
   });
 
   // when the map loads or moves, or then when the selection changes, emit an event at most once per second
@@ -68,10 +66,10 @@ export const initMap = (container: HTMLElement) => {
     });
 
   if (interactive) {
-    layers.forEach((l) => {
-      map.on("click", `${l.name}-features`, (e) => {
-        const geoCode = e.features[0].properties[l.idProperty];
-        selectGeography(get(page).url.searchParams, { geoType: l.name, geoCode });
+    topoJsonLayersToAdd.forEach((lGeo) => {
+      map.on("click", `${lGeo}-features`, (e) => {
+        const geoCode = e.features[0].properties["AREACD"];
+        selectGeography(get(page).url.searchParams, { geoType: lGeo as GeoType, geoCode });
       });
     });
   }
@@ -93,8 +91,7 @@ const setViewportStoreAndLayerVisibility = (
     geoType = getGeoType(map, classification);
   }
 
-  //setMapLayerVisibility(map, geoType.actual);
-
+  setMapLayerVisibility(map, geoType.actual);
   viewport.set({
     bbox,
     geoType: geoType.actual,
@@ -104,7 +101,7 @@ const setViewportStoreAndLayerVisibility = (
 
 const getGeoType = (map: mapboxgl.Map, classification?: Classification): { actual: GeoType; ideal: GeoType } => {
   const availableGeotypes = classification?.available_geotypes;
-  const idealGeotype = get(viewport)?.geoType || GeoTypes[0];
+  const idealGeotype = get(viewport)?.geoType || (topoJsonLayersToAdd[0] as GeoType);
   if (availableGeotypes) {
     return {
       actual: availableGeotypes.includes(idealGeotype) ? idealGeotype : availableGeotypes[0],
@@ -116,20 +113,10 @@ const getGeoType = (map: mapboxgl.Map, classification?: Classification): { actua
 };
 
 const setMapLayerVisibility = (map: mapboxgl.Map, geoType: string) => {
-  layers.forEach((l) => {
-    // set layer visibility based on geoType (always keep lad-outlines visible)
-    map.setLayoutProperty(`${l.name}-features`, "visibility", l.name == geoType ? "visible" : "none");
-    map.setLayoutProperty(
-      `${l.name}-outlines`,
-      "visibility",
-      l.name === geoType || l.name === "lad" ? "visible" : "none",
-    );
-    // make lines thicker for lad-outlines when OAs or MSOAs visible
-    const lineWidthStyle =
-      geoType === "lad"
-        ? ["case", ["==", ["feature-state", "selected"], true], 3, ["==", ["feature-state", "hovered"], true], 2, 0.5]
-        : 1.5;
-    map.setPaintProperty("lad-outlines", "line-width", lineWidthStyle);
+  topoJsonLayersToAdd.forEach((lGeo) => {
+    // set layer visibility based on geoType
+    map.setLayoutProperty(`${lGeo}-features`, "visibility", lGeo == geoType ? "visible" : "none");
+    map.setLayoutProperty(`${lGeo}-outlines`, "visibility", lGeo === geoType ? "visible" : "none");
   });
 };
 
@@ -178,32 +165,15 @@ const emptyFeatureCollection = {
   features: [],
 };
 
-const getSuitableZoomForGeoType = (g: GeoType) => {
+const getSuitableZoomForGeoType = (map: mapboxgl.Map) => {
   // todo: improve this to use density centroids?
-  return layers.find((l) => l.name === g).defaultZoom;
+  // HACK just set to current zoom of map to trigger data refresh!
+  return map.getZoom();
 };
 
 const listenToCommandStore = (map: mapboxgl.Map, command: Command) => {
   if (command?.kind === "zoom") {
-    const zoom = getSuitableZoomForGeoType(command.geoType);
+    const zoom = getSuitableZoomForGeoType(map);
     map.zoomTo(zoom, { duration: 6000 });
   }
-};
-
-const setMinZoomIfGeoLock = (map: mapboxgl.Map, geoLock: GeoType | undefined) => {
-  if (geoLock) {
-    if (geoLock === "oa") {
-      // 9 seems a sensible compromise min zoom for urban and rural areas when OA is geolocked
-      map.setMinZoom(9);
-    } else {
-      const minZoomForGeoLock = layers.find((l) => l.name === geoLock).minZoom;
-      map.setMinZoom(minZoomForGeoLock);
-    }
-  } else {
-    map.setMinZoom(minZoom);
-  }
-};
-
-const listenToParamStore = (map: mapboxgl.Map, params) => {
-  setMinZoomIfGeoLock(map, params?.geoLock);
 };

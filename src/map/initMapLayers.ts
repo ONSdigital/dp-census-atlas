@@ -8,8 +8,7 @@ import { feature } from "topojson-client";
 
 const layerBounds: NumberQuadruple = [-6.418, 49.864, 1.764, 55.812];
 
-//const topoJsonLayersToAdd = ["LTLA", "RGN", "UTLA"];
-const topoJsonLayersToAdd = ["LTLA"];
+export const topoJsonLayersToAdd = ["LTLA", "UTLA", "RGN"];
 
 const geojson = {};
 topoJsonLayersToAdd.forEach((type) => {
@@ -29,6 +28,7 @@ export const initMapLayers = (map, geo, interactive: boolean) => {
         id: `${lGeo}-features`,
         source: lGeo,
         type: "fill",
+        layout: { visibility: "none" },
         paint: {
           "fill-color": [
             "case",

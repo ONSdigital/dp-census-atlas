@@ -10,36 +10,6 @@
       "desc": "",
       "variables": [
         {
-          "name": "Gross Value Added (GVA) per hour worked",
-          "slug": "gross-value-added-per-hour-worked",
-          "code": "gross_value_added_per_hour_worked",
-          "desc": "Gross Value Added (GVA) per hour worked",
-          "long_desc": "Gross Value Added (GVA) per hour worked",
-          "units": "\u00a3",
-          "topic_code": "",
-          "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS",
-          "classifications": [
-            {
-              "code": "gross_value_added_per_hour_worked",
-              "slug": "gross-value-added-per-hour-worked",
-              "desc": "Gross Value Added (GVA) per hour worked",
-              "available_geotypes": ["LTLA"],
-              "choropleth_default": true,
-              "dot_density_default": true,
-              "categories": [
-                {
-                  "name": "Gross Value Added (GVA) per hour worked",
-                  "slug": "gross-value-added-per-hour-worked",
-                  "code": "gross_value_added_per_hour_worked",
-                  "legend_str_1": "of Pounds in {location}",
-                  "legend_str_2": "",
-                  "legend_str_3": ""
-                }
-              ]
-            }
-          ]
-        },
-        {
           "name": "Median Weekly Pay",
           "slug": "gross-median-weekly-pay",
           "code": "gross_median_weekly_pay",
@@ -618,36 +588,6 @@
           ]
         },
         {
-          "name": "Cancer diagnosis at stage 1 & 2",
-          "slug": "cancer-diagnosis-at-stage-1-and-2",
-          "code": "cancer_diagnosis_at_stage_1_and_2",
-          "desc": "Cancer diagnosis at stage 1 & 2",
-          "long_desc": "Cancer diagnosis at stage 1 & 2",
-          "units": "%",
-          "topic_code": "",
-          "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS",
-          "classifications": [
-            {
-              "code": "cancer_diagnosis_at_stage_1_and_2",
-              "slug": "cancer-diagnosis-at-stage-1-and-2",
-              "desc": "Cancer diagnosis at stage 1 & 2",
-              "available_geotypes": ["LTLA"],
-              "choropleth_default": true,
-              "dot_density_default": true,
-              "categories": [
-                {
-                  "name": "Cancer diagnosis at stage 1 & 2",
-                  "slug": "cancer-diagnosis-at-stage-1-and-2",
-                  "code": "cancer_diagnosis_at_stage_1_and_2",
-                  "legend_str_1": "of Percentage in {location}",
-                  "legend_str_2": "",
-                  "legend_str_3": ""
-                }
-              ]
-            }
-          ]
-        },
-        {
           "name": "Average life satisfaction ratings",
           "slug": "life-satisfaction",
           "code": "life_satisfaction",
@@ -699,36 +639,6 @@
                   "name": "Average worthwhile ratings",
                   "slug": "feeling-life-is-worthwhile",
                   "code": "feeling_life_is_worthwhile",
-                  "legend_str_1": "of Rating in {location}",
-                  "legend_str_2": "",
-                  "legend_str_3": ""
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "Average happiness ratings",
-          "slug": "happiness",
-          "code": "happiness",
-          "desc": "Average happiness ratings",
-          "long_desc": "Average happiness ratings",
-          "units": "Score out of 10",
-          "topic_code": "",
-          "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS",
-          "classifications": [
-            {
-              "code": "happiness",
-              "slug": "happiness",
-              "desc": "Average happiness ratings",
-              "available_geotypes": ["LTLA"],
-              "choropleth_default": true,
-              "dot_density_default": true,
-              "categories": [
-                {
-                  "name": "Average happiness ratings",
-                  "slug": "happiness",
-                  "code": "happiness",
                   "legend_str_1": "of Rating in {location}",
                   "legend_str_2": "",
                   "legend_str_3": ""

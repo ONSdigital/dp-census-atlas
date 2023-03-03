@@ -20,6 +20,9 @@
       <Census2021 />
     </a>
   </div>
+  <div class="truncate">
+    <strong class="text-black">ESS DEMO!</strong>
+  </div>
   {#if $content.fakeDataLoaded}
     <div class="truncate">
       <strong class="text-white"

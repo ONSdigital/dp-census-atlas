@@ -25,37 +25,35 @@ describe("getChangeOverTimeColours", () => {
     expect(returned).toEqual(colours.neg);
     expect(returned.length).toEqual(5);
   });
-  test("returns neutral + positive colours when first break crosses zero", () => {
+  test("returns positive colours when first break crosses zero", () => {
     const breaksPlusMin = [-1, 2, 3, 4, 5, 6];
-    const expectedColours = [colours.neutral, ...colours.pos.slice(0, 4)];
     const returned = getChangeColours(breaksPlusMin);
-    expect(returned).toEqual(expectedColours);
+    expect(returned).toEqual(colours.pos);
     expect(returned.length).toEqual(5);
   });
-  test("returns negative colours + neutral when last break crosses zero", () => {
+  test("returns negative colours when last break crosses zero", () => {
     const breaksPlusMin = [-6, -5, -4, -3, -2, 1];
-    const expectedColours = [...colours.neg.slice(-4), colours.neutral];
     const returned = getChangeColours(breaksPlusMin);
-    expect(returned).toEqual(expectedColours);
+    expect(returned).toEqual(colours.neg);
     expect(returned.length).toEqual(5);
   });
   test("returns mixed colors when breaksPlusMin cross zero, positive-weighted", () => {
     const breaksPlusMin = [-2, -1, 1, 2, 3, 4];
-    const expectedColours = [...colours.neg.slice(-1), colours.neutral, ...colours.pos.slice(0, 3)];
+    const expectedColours = [...colours.neg.slice(-2, -1), ...colours.pos.slice(0, 4)];
     const returned = getChangeColours(breaksPlusMin);
     expect(returned).toEqual(expectedColours);
     expect(returned.length).toEqual(5);
   });
   test("returns mixed colors when breaksPlusMin cross zero, negative-weighted", () => {
     const breaksPlusMin = [-4, -3, -2, -1, 1, 2];
-    const expectedColours = [...colours.neg.slice(-3), colours.neutral, ...colours.pos.slice(0, 1)];
+    const expectedColours = [...colours.neg.slice(-4), ...colours.pos.slice(1, 2)];
     const returned = getChangeColours(breaksPlusMin);
     expect(returned).toEqual(expectedColours);
     expect(returned.length).toEqual(5);
   });
   test("returns positive-padded mixed colors when breaksPlusMin cross zero and n breaks < 5", () => {
     const breaksPlusMin = [-2, -1, 1, 2];
-    const expectedColours = [...colours.neg.slice(-1), colours.neutral, ...colours.pos.slice(0, 3)];
+    const expectedColours = [...colours.neg.slice(-2, -1), ...colours.pos.slice(0, 4)];
     const returned = getChangeColours(breaksPlusMin);
     expect(returned).toEqual(expectedColours);
     expect(returned.length).toEqual(5);

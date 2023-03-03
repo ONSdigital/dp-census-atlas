@@ -9,7 +9,7 @@
 
 <section class="p-6 pt-5 bg-ons-grey-5 border-t-ons-grey-15 border-t-[1px]">
   <h2 class="mb-2 text-base font-semibold">Use and share</h2>
-  <div class="flex items-center gap-x-6 lg:gap-x-8 flex-wrap ">
+  <div class="flex items-center gap-x-6 gap-y-0.5 lg:gap-x-8 flex-wrap ">
     <div>
       <Share />
     </div>

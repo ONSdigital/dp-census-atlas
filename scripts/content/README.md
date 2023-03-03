@@ -200,3 +200,28 @@ If you want to have your new content json loaded without making any code changes
 When `2021-MASTER.json` is loaded, any additional content json referened in its `additional_content_jsons` array will be loaded as a side-effect.
 
 _NB: Without making code changes, you cannot use static loading for your new content json (as this requires both updates to content.ts etc, AND that the new content json itself is checked-in). You must therefore use full URLs for all values._
+
+## Other scripts
+
+### relabel_input_categories.py
+
+`relabel_input_categories.py` will attempt to relabel the headers for a directory full of input csv files so that they reference the correct category codes found in an input content json file. The script works by reading a list of category names (the long descriptive string that is displayed for a category) and codes (the unique ID code used to label the associated category data) from and input content json file, and then attempting to match each category name with a value from the header row of each csv file in the input directory. As the values in the header rows often contain some descriptive prefix before the name of the category, a `header_prefix` arg is supplied that will be used to help match category names to headers (see [args](#args), below).
+
+The script has verbose stdout, including any files that could not be matched to classifications and any categories that could not be matched to file header values.
+
+#### args
+
+The script is invoked with three args:
+
+- **Conda**: `python relabel_input_categories.py <path to folder of input csv files> <header prefix> <path to input content jsons>`
+- **Pipenv**: `pipenv run python relabel_input_categories.py <path to folder of input csv files> <header prefix> <path to input content jsons>`
+
+e.g. (pipenv example):
+
+```shell
+pipenv run python relabel_input_categories.py change-data-2011-2021 "2021 Percentage point change: " ../../src/data/staticContentJsons/2021-MASTER.json
+```
+
+1. `<path to folder of input csv files>`: The path to a directory full of raw csv files that need labelling with category codes. It is assumed that these csv files have a header row with at least some values of the form `{<header prefix>}{category name}`, e.g. `2021 Percentage point change: Divorced or civil partnership dissolved` or `2021 Percentage point change: Widowed or surviving civil partnership partner`.
+2. `<header prefix>`: The string that prefixes category names in the header, e.g. for `2021 Percentage point change: Widowed or surviving civil partnership partner` the prefix would be ``2021 Percentage point change: ` (note inclusion of trailing whitespace). This can be blank ("") if there is no prefix required.
+3. `<path to input content jsons>`: The path to a content json file that includes all required categories, e.g. `../../src/data/staticContentJsons/2021-MASTER.json`.

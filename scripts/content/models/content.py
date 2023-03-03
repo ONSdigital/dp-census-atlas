@@ -50,12 +50,14 @@ def content_from_spec_and_metadata(spec: dict, input_metadata_files_dir: str) ->
         metadata_dir_path.joinpath("variable_map_type_default_classifications.csv"),
         metadata_dir_path.joinpath("classification_data_downloads.csv"),
         metadata_dir_path.joinpath("classification_data_available_geotypes.csv"),
+        metadata_dir_path.joinpath("classification_mode_specific_notes.csv"),
     )
     variables = variables_from_metadata(
         cantabular_metadata_full_path.joinpath("Variable.csv"),
         metadata_dir_path.joinpath("variable_short_descriptions.csv"),
         metadata_dir_path.joinpath("variable_caveats.csv"),
-        metadata_dir_path.joinpath("variable_tile_data_base_urls.csv")
+        metadata_dir_path.joinpath("variable_tile_data_base_urls.csv"),
+         metadata_dir_path.joinpath("variable_units.csv")
     )
 
     # build content from spec

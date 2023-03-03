@@ -18,7 +18,10 @@ class CensusClassification:
     dot_density_default: bool
     categories: list[CensusCategory]
     comparison_2011_data_available_geotypes: list[str]
+    change_notes: str = ""
+    change_notes_link: str = ""
     data_download: str = ""
+    change_data_download: str = ""
     _variable_code: str = ""
 
     def gather_children(self, category_list: list[CensusCategory], variable_spec: dict) -> None:
@@ -65,28 +68,37 @@ class CensusClassification:
             self.dot_density_default = True
 
     def set_data_downloads(self, data_downloads: list[dict]) -> None:
-        data_downloads_row = next((r for r in data_downloads if r["classification"] == self.code), None)
-        if data_downloads_row is not None and data_downloads_row["data_download"] != "":
-            self.data_download = data_downloads_row["data_download"].strip()
+        relevant_row = next((r for r in data_downloads if r["classification"] == self.code), None)
+        if relevant_row is not None:
+            if relevant_row["data_download"] != "":
+                self.data_download = relevant_row["data_download"].strip()
+            # set change data download if defined
+            if relevant_row["change_data_download"] != "":
+                self.change_data_download = relevant_row["change_data_download"].strip()
 
     def set_available_geotypes(self, available_geos: list[dict]) -> None:
-        available_geos_row = next((r for r in available_geos if r["classification"] == self.code), None)
-        if available_geos_row is not None:
-            self.available_geotypes = available_geos_row["2021_data_available_geotypes"].strip().split(",")
+        relevant_row = next((r for r in available_geos if r["classification"] == self.code), None)
+        if relevant_row is not None:
+            self.available_geotypes = relevant_row["2021_data_available_geotypes"].strip().split(",")
+            # set comparison 2011 geotypes if defined
+            if relevant_row["2011_2021_comparison_data_available_geotypes"] != "":
+                self.comparison_2011_data_available_geotypes = relevant_row[
+                    "2011_2021_comparison_data_available_geotypes"
+                ].strip().split(",")
 
-    def set_comparison_2011_data_available_geotypes(self, available_2011_comparison_data: list[dict]) -> None:
-        available_2011_row = next((r for r in available_2011_comparison_data if r["classification"] == self.code), None)
-        if available_2011_row is not None and available_2011_row["2011_2021_comparison_data_available_geotypes"] != "":
-            self.comparison_2011_data_available_geotypes = available_2011_row[
-                "2011_2021_comparison_data_available_geotypes"
-            ].strip().split(",")
+    def set_mode_specific_notes(self, mode_specific_notes: list[dict]) -> None:
+        relevant_row = next((r for r in mode_specific_notes if r["classification"] == self.code), None)
+        if relevant_row is not None and relevant_row["change_notes"] != "":
+            self.change_notes = relevant_row["change_notes"].strip()
+            if relevant_row["change_notes_link"] != "":
+                self.change_notes_link = relevant_row["change_notes_link"]
 
     def is_valid(self) -> bool:
         """
         Return False if public properties are blank strings, categories is empty list, or any categories are not valid
         """
         is_valid = True
-        blankable_props = ["dataset", "data_download"]
+        blankable_props = ["dataset", "data_download", "change_notes", "change_notes_link", "change_data_download"]
         for prop, value in vars(self).items():
             if (
                 isinstance(value, str)
@@ -122,20 +134,19 @@ class CensusClassification:
             "desc": self.desc,
             "available_geotypes": self.available_geotypes,
         }
-
-        if self.choropleth_default:
-            output_params["choropleth_default"] = self.choropleth_default
-
-        if self.dot_density_default:
-            output_params["dot_density_default"] = self.dot_density_default
-
-        if self.comparison_2011_data_available_geotypes:
-            output_params[
-                "comparison_2011_data_available_geotypes"
-            ] = self.comparison_2011_data_available_geotypes
-
-        if self.data_download:
-            output_params["data_download"] = self.data_download
+        optional_params = [
+            "choropleth_default",
+            "dot_density_default",
+            "comparison_2011_data_available_geotypes",
+            "data_download",
+            "change_data_download",
+            "change_notes",
+            "change_notes_link"
+        ]
+        for op in optional_params:
+            op_value = getattr(self, op)
+            if op_value:
+                output_params[op] = op_value
 
         output_params["categories"] = [c.to_jsonable()
                                        for c in self.categories]
@@ -156,6 +167,9 @@ def classification_from_content_json(content_json: dict) -> CensusClassification
             "comparison_2011_data_available_geotypes", False
         ),
         data_download=content_json.get("data_download", ""),
+        change_data_download=content_json.get("change_data_download", ""),
+        change_notes=content_json.get("change_notes", ""),
+        change_notes_link=content_json.get("change_notes_link", ""),
         categories=[category_from_content_json(
             c) for c in content_json["categories"]],
     )
@@ -166,6 +180,7 @@ def classifications_from_metadata(
     map_vis_defaults_csv: Path or str,
     downloads_csv: Path or str,
     available_geotypes_csv: Path or str,
+    mode_specific_notes_csv: Path or str,
 ) -> list[CensusClassification]:
     """
     Make CensusClassification's from rows in Classification.csv. NB filter out any blank rows in the csv. Append extra
@@ -188,6 +203,9 @@ def classifications_from_metadata(
 
     with open(available_geotypes_csv, "r") as f:
         available_geotypes = list(csv.DictReader(f))
+
+    with open(mode_specific_notes_csv, "r") as f:
+        mode_specific_notes = list(csv.DictReader(f))
 
     # load classifications
     with open(classification_csv, "r", encoding="utf-8") as f:
@@ -213,7 +231,7 @@ def classifications_from_metadata(
                 classification.set_dot_density_default(dot_density_defaults)
                 classification.set_data_downloads(data_downloads)
                 classification.set_available_geotypes(available_geotypes)
-                classification.set_comparison_2011_data_available_geotypes(available_geotypes)
+                classification.set_mode_specific_notes(mode_specific_notes)
 
                 classifications.append(classification)
 

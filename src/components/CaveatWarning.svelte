@@ -13,7 +13,7 @@
       </div>
     </div>
   </div>
-  <div class="py-3 ">
+  <div class="py-3 " style="white-space:pre-wrap">
     <span class="sr-only">Warning</span>
     {text}
     {#if link}

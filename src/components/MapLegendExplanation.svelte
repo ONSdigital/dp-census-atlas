@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { viz } from "../stores/viz";
   import type { Mode } from "../types";
   import Icon from "./MaterialIcon.svelte";
 
@@ -14,11 +15,14 @@
       Change in median age
     {:else}
       Change in
-      <a href="https://en.wikipedia.org/wiki/Percentage_point" class="hyperlink-subdued mr-1">percentage points (pp)</a
+      <a
+        href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/censusmaps/2022-11-02#:~:text=Changes%20over%20time"
+        class="hyperlink-subdued mr-1">percentage points (pp)</a
       ><span class="inline" aria-hidden="true">
         <Icon kind="openInNew" />
       </span>
     {/if}
-    between March 2011 and March 2021 census.
+    for {$viz.params.variable.units}
+    between 2011 and 2021 census.
   </div>
 {/if}

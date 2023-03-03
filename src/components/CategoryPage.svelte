@@ -87,8 +87,6 @@
       {#if $params.variable.classifications.length > 1}
         <ClassificationPager />
       {/if}
-
-      <OtherModeLinks />
     </section>
   </div>
 </div>

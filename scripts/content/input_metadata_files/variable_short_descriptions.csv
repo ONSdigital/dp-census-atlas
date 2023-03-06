@@ -13,7 +13,7 @@ health_in_general,How people rate their general health.
 heating_type,The type of central heating in a household.
 hh_deprivation,Whether a household is deprived in one or more ways.
 hh_family_composition,Households according to the relationships between members.
-hh_language,"People who have English in England, or in Wales English or Welsh, as their main language."
+hh_language,"Households who have English in England, or in Wales English or Welsh, as their main language."
 hh_multi_ethnic_group,Ethnic groups within a household.
 hh_multi_language,Whether there are multiple languages in a household.
 hh_multi_religion,Whether there are multiple religions in a household.

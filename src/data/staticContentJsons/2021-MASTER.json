@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2023-03-02-16-03-21",
-    "release": "2021-MASTER-ar2776-c21ew_metadata-v1-3_cantab_20230224-45",
+    "created_at": "2023-03-06-16-32-01",
+    "release": "2021-MASTER-ar2776-c21ew_metadata-v1-3_cantab_20230303-46",
     "additional_content_jsons": [
       {
         "devContentJsonUrl": "release-0.json",
@@ -631,12 +631,9 @@
                 "msoa",
                 "lad"
               ],
-              "comparison_2011_data_available_geotypes": [
-                "lad"
-              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS002/editions/2021",
               "change_data_download": "https://www.google.com/",
-              "change_notes": "The category labels used in the Census Maps product when viewing in the \"Change since 2011\" mode are the Census 2021 labels. The labels for the 2011 Census data presented in this file are those used in 2011. This affects the labels only and change over time comparisons have only been computed for appropriate matching categories.",
+              "change_notes": "Change over time comparisons are only available for comparable categories. The category labels used here are the Census 2021 labels. Labels for the 2011 Census data are presented in the data downloads.",
               "categories": [
                 {
                   "name": "Never married and never registered a civil partnership",
@@ -767,7 +764,7 @@
           "slug": "living-arrangements",
           "desc": "People's living arrangements, by their legal partnership status.",
           "long_desc": "The \u201cliving arrangements\u201d classification combines responses to the question on marital and civil partnership status with information about whether or not a person is living in a couple. This topic is only applicable to people in households. Living arrangements differs from marital and civil partnership status because cohabiting takes priority over other categories. For example, if a person is divorced and cohabiting, then in results for living arrangements they are classified as cohabiting.",
-          "units": "people",
+          "units": "people aged 16 years and over",
           "topic_code": "DEM",
           "base_url_2021": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
           "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
@@ -4219,11 +4216,6 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available_geotypes": [
-                "oa",
-                "msoa",
-                "lad"
-              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS067/editions/2021",
               "change_data_download": "https://www.google.com/",
               "change_notes": "There are quality considerations for this variable when comparing between 2011 and 2021.",
@@ -4278,9 +4270,6 @@
               "available_geotypes": [
                 "oa",
                 "msoa",
-                "lad"
-              ],
-              "comparison_2011_data_available_geotypes": [
                 "lad"
               ],
               "data_download": "https://www.ons.gov.uk/datasets/TS067/editions/2021",
@@ -4601,6 +4590,7 @@
                 "lad"
               ],
               "data_download": "https://www.ons.gov.uk/datasets/TS021/editions/2021",
+              "change_notes": "Change over time comparisons are only available for comparable categories. The category labels used here are the Census 2021 labels. Labels for the 2011 Census data are presented in the data downloads.",
               "categories": [
                 {
                   "name": "Asian, Asian British or Asian Welsh: Bangladeshi",
@@ -4762,7 +4752,7 @@
           "name": "Household language (English and Welsh)",
           "code": "hh_language",
           "slug": "household-language-english-and-welsh",
-          "desc": "People who have English in England, or in Wales English or Welsh, as their main language.",
+          "desc": "Households who have English in England, or in Wales English or Welsh, as their main language.",
           "long_desc": "Classifies households by the combination of adults and children (aged 3 to 15 years) within a household that have English (English or Welsh in Wales) as their main language.",
           "units": "households",
           "topic_code": "EILR",
@@ -5074,7 +5064,7 @@
           "slug": "main-language-detailed",
           "desc": "People's first or preferred language.",
           "long_desc": "A person's first or preferred language. \n\nThis breaks down the responses given in the write-in option \"Other, write in (including British Sign Language)\".",
-          "units": "people",
+          "units": "people aged three years and over",
           "topic_code": "EILR",
           "base_url_2021": "https://ons-dp-prod-census-maps-eilr.s3.eu-west-2.amazonaws.com",
           "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
@@ -5283,6 +5273,7 @@
               ],
               "data_download": "https://www.ons.gov.uk/datasets/TS024/editions/2021",
               "change_data_download": "https://www.google.com/",
+              "change_notes": "Change over time comparisons are only available for comparable categories. The category labels used here are the Census 2021 labels. Labels for the 2011 Census data are presented in the data downloads.",
               "categories": [
                 {
                   "name": "English (English or Welsh in Wales)",
@@ -6356,7 +6347,7 @@
               ],
               "data_download": "https://www.ons.gov.uk/datasets/TS028/editions/2021",
               "change_data_download": "https://www.google.com/",
-              "change_notes": "The category labels used in the Census Maps product when viewing in the \"Change since 2011\" mode are the Census 2021 labels. The labels for the 2011 Census data presented in this file are those used in 2011. This affects the labels only and change over time comparisons have only been computed for appropriate matching categories.",
+              "change_notes": "Change over time comparisons are only available for comparable categories. The category labels used here are the Census 2021 labels. Labels for the 2011 Census data are presented in the data downloads.",
               "categories": [
                 {
                   "name": "UK identity: British only identity",
@@ -6971,7 +6962,7 @@
               ],
               "data_download": "https://www.ons.gov.uk/datasets/TS030/editions/2021",
               "change_data_download": "https://www.google.com/",
-              "change_notes": "Due to an error in the processing of the 2011 Census data, the number of usual residents in the 'Religion not stated' category was overestimated by a total of 62,000 for three local authorities: Camden, Islington, and Tower Hamlets.\n\nThe 2011 data provided here has been corrected using published correction factors available on the 2011 Census issues and corrections webpage.",
+              "change_notes": "Due to an error in the processing of the 2011 Census data, the number of usual residents in the 'Religion not stated' category was overestimated by a total of 62,000 for three local authorities: Camden, Islington, and Tower Hamlets.\n\nThe 2011 data provided here has been corrected using published correction factors available on the 2011 Census issues and corrections webpage.\n\nThe 2011 data for MSOAs and output areas within the three affected local authorities is not provided, as no correction is available for these geographies.",
               "change_notes_link": "https://www.ons.gov.uk/census/2011census/2011censusdata/censusproductsissuesandcorrections",
               "categories": [
                 {
@@ -7730,7 +7721,7 @@
               ],
               "data_download": "https://www.ons.gov.uk/datasets/TS044/editions/2021",
               "change_data_download": "https://www.google.com/",
-              "change_notes": "The category labels used in the Census Maps product when viewing in the \"Change since 2011\" mode are the Census 2021 labels. The labels for the 2011 Census data presented in this file are those used in 2011. This affects the labels only and change over time comparisons have only been computed for appropriate matching categories.",
+              "change_notes": "Change over time comparisons are only available for comparable categories. The category labels used here are the Census 2021 labels. Labels for the 2011 Census data are presented in the data downloads.",
               "categories": [
                 {
                   "name": "Detached",
@@ -7809,7 +7800,7 @@
           "slug": "second-address-indicator",
           "desc": "An address (in or out of the UK) a person stays at for more than 30 days per year that isn't their place of usual residence.",
           "long_desc": "An address (in or out of the UK) a person stays at for more than 30 days per year that is not their place of usual residence. \n \nSecond addresses typically include:\n\n* armed forces bases\n* addresses used by people working away from home\n* a student\u2019s home address\n* the address of another parent or guardian\n* a partner\u2019s address\n* a holiday home\n  \nIf a person with a second address was staying there on census night, they were classed as a visitor to the second address but counted as a usual resident at their home address.",
-          "units": "households",
+          "units": "people",
           "topic_code": "HOU",
           "base_url_2021": "https://ons-dp-prod-census-maps-hou.s3.eu-west-2.amazonaws.com",
           "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
@@ -8497,7 +8488,7 @@
               ],
               "data_download": "https://www.ons.gov.uk/datasets/TS055/editions/2021",
               "change_data_download": "https://www.google.com/",
-              "change_notes": "The category labels used in the Census Maps product when viewing in the \"Change since 2011\" mode are the Census 2021 labels. The labels for the 2011 Census data presented in this file are those used in 2011. This affects the labels only and change over time comparisons have only been computed for appropriate matching categories.",
+              "change_notes": "Change over time comparisons are only available for comparable categories. The category labels used here are the Census 2021 labels. Labels for the 2011 Census data are presented in the data downloads.",
               "categories": [
                 {
                   "name": "Armed forces base address",
@@ -9111,7 +9102,7 @@
           "slug": "industry-current",
           "desc": "The industry people work in.",
           "long_desc": "Classifies people aged 16 years and over who were in employment between 15 March and 21 March 2021 by the Standard Industrial Classification (SIC) code that represents their current industry or business.\n\nThe SIC code is assigned based on the information provided about a firm or organisation\u2019s main activity.",
-          "units": "people",
+          "units": "people aged 16 years and over in employment",
           "topic_code": "LAB",
           "base_url_2021": "https://ons-dp-prod-census-maps-lab.s3.eu-west-2.amazonaws.com",
           "caveat_text": "There are pandemic-related quality considerations for this variable.",

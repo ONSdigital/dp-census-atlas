@@ -20,9 +20,10 @@ const classificationDataDisplayConfig = (classificationCode: string, mode: Mode)
   if (classificationCode === "population_density") {
     return {
       suffix: mode === "change" ? " %" : "", // special-case for change-over-time
-      round: (r: number) => roundNumber({ number: r, decimalPlaces: 0 }),
-      roundToString: (r: number) => parseInt(r.toFixed(0)).toLocaleString(),
-      roundBreaks: (breaks: number[]) => uniqueRoundedNumbers({ numbers: breaks, decimalPlaces: 0 }),
+      round: (r: number) => roundNumber({ number: r, decimalPlaces: mode === "change" ? 1 : 0 }),
+      roundToString: (r: number) => (mode === "change" ? r.toFixed(1) : Math.round(r).toLocaleString()),
+      roundBreaks: (breaks: number[]) =>
+        uniqueRoundedNumbers({ numbers: breaks, decimalPlaces: mode === "change" ? 1 : 0 }),
     };
   } else if (classificationCode === "median_age") {
     return {

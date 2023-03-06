@@ -1,6 +1,6 @@
 variable_group,content_json,variable,classification,2021_data_available_geotypes,2011_2021_comparison_data_available_geotypes
-Education,2021-EDU,highest_qualification,highest_qualification,"oa,msoa,lad",lad
-Education,2021-EDU,highest_qualification,highest_qualification_6a,"oa,msoa,lad","oa,msoa,lad"
+Education,2021-EDU,highest_qualification,highest_qualification,"oa,msoa,lad",
+Education,2021-EDU,highest_qualification,highest_qualification_6a,"oa,msoa,lad",
 Education,2021-EDU,in_full_time_education,in_full_time_education,"oa,msoa,lad",lad
 Housing,2021-HOU,accommodation_type,accommodation_type,"oa,msoa,lad",lad
 Housing,2021-HOU,accommodation_type,accommodation_type_3a,"oa,msoa,lad","oa,msoa,lad"
@@ -45,7 +45,7 @@ Population,2021-DEM,hh_family_composition,hh_family_composition_15a,"oa,msoa,lad
 Population,2021-DEM,hh_family_composition,hh_family_composition_4a,"oa,msoa,lad","oa,msoa,lad"
 Population,2021-DEM,hh_size,hh_size_5a,"oa,msoa,lad","oa,msoa,lad"
 Population,2021-DEM,hh_size,hh_size_9a,"oa,msoa,lad",lad
-Population,2021-DEM,legal_partnership_status,legal_partnership_status,"oa,msoa,lad",lad
+Population,2021-DEM,legal_partnership_status,legal_partnership_status,"oa,msoa,lad",
 Population,2021-DEM,legal_partnership_status,legal_partnership_status_3a,"oa,msoa,lad","oa,msoa,lad"
 Population,2021-DEM,legal_partnership_status,legal_partnership_status_6a,"oa,msoa,lad",lad
 Population,2021-DEM,living_arrangements,living_arrangements_11a,"msoa,lad","msoa,lad"

@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2023-03-06-13-27-03",
-    "release": "2021-MASTER-ar2776-c21ew_metadata-v1-3_cantab_20230224-45",
+    "created_at": "2023-03-06-16-32-01",
+    "release": "2021-MASTER-ar2776-c21ew_metadata-v1-3_cantab_20230303-46",
     "additional_content_jsons": [
       {
         "devContentJsonUrl": "release-0.json",
@@ -629,9 +629,6 @@
               "available_geotypes": [
                 "oa",
                 "msoa",
-                "lad"
-              ],
-              "comparison_2011_data_available_geotypes": [
                 "lad"
               ],
               "data_download": "https://www.ons.gov.uk/datasets/TS002/editions/2021",
@@ -5276,6 +5273,7 @@
               ],
               "data_download": "https://www.ons.gov.uk/datasets/TS024/editions/2021",
               "change_data_download": "https://www.google.com/",
+              "change_notes": "Change over time comparisons are only available for comparable categories. The category labels used here are the Census 2021 labels. Labels for the 2011 Census data are presented in the data downloads.",
               "categories": [
                 {
                   "name": "English (English or Welsh in Wales)",
@@ -6964,7 +6962,7 @@
               ],
               "data_download": "https://www.ons.gov.uk/datasets/TS030/editions/2021",
               "change_data_download": "https://www.google.com/",
-              "change_notes": "Due to an error in the processing of the 2011 Census data, the number of usual residents in the 'Religion not stated' category was overestimated by a total of 62,000 for three local authorities: Camden, Islington, and Tower Hamlets.\n\nThe 2011 data provided here has been corrected using published correction factors available on the 2011 Census issues and corrections webpage.",
+              "change_notes": "Due to an error in the processing of the 2011 Census data, the number of usual residents in the 'Religion not stated' category was overestimated by a total of 62,000 for three local authorities: Camden, Islington, and Tower Hamlets.\n\nThe 2011 data provided here has been corrected using published correction factors available on the 2011 Census issues and corrections webpage.\n\nThe 2011 data for MSOAs and output areas within the three affected local authorities is not provided, as no correction is available for these geographies.",
               "change_notes_link": "https://www.ons.gov.uk/census/2011census/2011censusdata/censusproductsissuesandcorrections",
               "categories": [
                 {

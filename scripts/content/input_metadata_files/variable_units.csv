@@ -1,7 +1,7 @@
 variable,units
 accommodation_type,households
 age_arrival_uk,people
-alternative_address_indicator,households
+alternative_address_indicator,people
 country_of_birth,people
 disability,people
 economic_activity,people aged 16 years and over
@@ -21,11 +21,12 @@ hh_size,households
 hh_tenure,households
 highest_qualification,people aged 16 years and over
 hours_per_week_worked,people aged 16 years and over in employment
-industry_current,people
+industry_current,people aged 16 years and over in employment
 is_carer,people aged five years and over
+is_carer_age_standardised,people aged five years and over
 legal_partnership_status,people aged 16 years and over
 living_arrangements,people
-main_language_detailed,people
+main_language_detailed,people aged three years and over
 migrant_ind,people
 national_identity_all,people
 national_identity_detailed,people

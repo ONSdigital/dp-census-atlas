@@ -1,6 +1,6 @@
 {
   "meta": {
-    "created_at": "2023-03-02-16-03-21",
+    "created_at": "2023-03-06-12-15-38",
     "release": "2021-MASTER-ar2776-c21ew_metadata-v1-3_cantab_20230224-45",
     "additional_content_jsons": [
       {
@@ -636,7 +636,7 @@
               ],
               "data_download": "https://www.ons.gov.uk/datasets/TS002/editions/2021",
               "change_data_download": "https://www.google.com/",
-              "change_notes": "The category labels used in the Census Maps product when viewing in the \"Change since 2011\" mode are the Census 2021 labels. The labels for the 2011 Census data presented in this file are those used in 2011. This affects the labels only and change over time comparisons have only been computed for appropriate matching categories.",
+              "change_notes": "Change over time comparisons are only available for comparable categories. The category labels used here are the Census 2021 labels. Labels for the 2011 Census data are presented in the data downloads.",
               "categories": [
                 {
                   "name": "Never married and never registered a civil partnership",
@@ -4219,11 +4219,6 @@
               ],
               "choropleth_default": true,
               "dot_density_default": true,
-              "comparison_2011_data_available_geotypes": [
-                "oa",
-                "msoa",
-                "lad"
-              ],
               "data_download": "https://www.ons.gov.uk/datasets/TS067/editions/2021",
               "change_data_download": "https://www.google.com/",
               "change_notes": "There are quality considerations for this variable when comparing between 2011 and 2021.",
@@ -4278,9 +4273,6 @@
               "available_geotypes": [
                 "oa",
                 "msoa",
-                "lad"
-              ],
-              "comparison_2011_data_available_geotypes": [
                 "lad"
               ],
               "data_download": "https://www.ons.gov.uk/datasets/TS067/editions/2021",
@@ -6356,7 +6348,7 @@
               ],
               "data_download": "https://www.ons.gov.uk/datasets/TS028/editions/2021",
               "change_data_download": "https://www.google.com/",
-              "change_notes": "The category labels used in the Census Maps product when viewing in the \"Change since 2011\" mode are the Census 2021 labels. The labels for the 2011 Census data presented in this file are those used in 2011. This affects the labels only and change over time comparisons have only been computed for appropriate matching categories.",
+              "change_notes": "Change over time comparisons are only available for comparable categories. The category labels used here are the Census 2021 labels. Labels for the 2011 Census data are presented in the data downloads.",
               "categories": [
                 {
                   "name": "UK identity: British only identity",
@@ -7730,7 +7722,7 @@
               ],
               "data_download": "https://www.ons.gov.uk/datasets/TS044/editions/2021",
               "change_data_download": "https://www.google.com/",
-              "change_notes": "The category labels used in the Census Maps product when viewing in the \"Change since 2011\" mode are the Census 2021 labels. The labels for the 2011 Census data presented in this file are those used in 2011. This affects the labels only and change over time comparisons have only been computed for appropriate matching categories.",
+              "change_notes": "Change over time comparisons are only available for comparable categories. The category labels used here are the Census 2021 labels. Labels for the 2011 Census data are presented in the data downloads.",
               "categories": [
                 {
                   "name": "Detached",
@@ -8497,7 +8489,7 @@
               ],
               "data_download": "https://www.ons.gov.uk/datasets/TS055/editions/2021",
               "change_data_download": "https://www.google.com/",
-              "change_notes": "The category labels used in the Census Maps product when viewing in the \"Change since 2011\" mode are the Census 2021 labels. The labels for the 2011 Census data presented in this file are those used in 2011. This affects the labels only and change over time comparisons have only been computed for appropriate matching categories.",
+              "change_notes": "Change over time comparisons are only available for comparable categories. The category labels used here are the Census 2021 labels. Labels for the 2011 Census data are presented in the data downloads.",
               "categories": [
                 {
                   "name": "Armed forces base address",

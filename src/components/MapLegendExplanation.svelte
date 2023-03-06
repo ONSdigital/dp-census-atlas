@@ -10,9 +10,9 @@
 {#if mode === "change"}
   <div class="text-xs xs:text-sm pt-0.5 xs:pt-2.5">
     {#if classificationCode === "population_density"}
-      Percentage change in people per square kilometres
+      Percentage change in people per square kilometres between 2011 and 2021 census.
     {:else if classificationCode === "median_age"}
-      Change in median age
+      Change in median age between 2011 and 2021 census.
     {:else}
       Change in
       <a
@@ -21,8 +21,8 @@
       ><span class="inline" aria-hidden="true">
         <Icon kind="openInNew" />
       </span>
+      for {$viz.params.variable.units}
+      between 2011 and 2021 census.
     {/if}
-    for {$viz.params.variable.units}
-    between 2011 and 2021 census.
   </div>
 {/if}

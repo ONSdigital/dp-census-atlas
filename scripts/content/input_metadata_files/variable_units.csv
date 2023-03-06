@@ -4,12 +4,14 @@ age_arrival_uk,people
 alternative_address_indicator,people
 country_of_birth,people
 disability,people
+disability_age_standardised,people
 economic_activity,people aged 16 years and over
 english_proficiency,people aged three years and over
 ethnic_group_tb,people
 gender_identity,people
 has_ever_worked,people aged 16 years and over not in employment
 health_in_general,people
+health_in_general_age_standardised,people
 heating_type,households
 hh_deprivation,households
 hh_family_composition,households
@@ -25,7 +27,7 @@ industry_current,people aged 16 years and over in employment
 is_carer,people aged five years and over
 is_carer_age_standardised,people aged five years and over
 legal_partnership_status,people aged 16 years and over
-living_arrangements,people
+living_arrangements,people aged 16 years and over
 main_language_detailed,people aged three years and over
 migrant_ind,people
 national_identity_all,people

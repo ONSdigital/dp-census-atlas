@@ -12,7 +12,7 @@
   import VariableDescription from "./VariableDescription.svelte";
   import ClassificationPager from "./ClassificationPager.svelte";
   import CaveatWarning from "./CaveatWarning.svelte";
-  import OtherModeLinks from "./OtherModeLinks.svelte";
+  import CaveatInfo from "./CaveatInfo.svelte";
   import { never } from "../util/typeUtil";
 
   const buildCategoryLink = (category: Category) => {
@@ -59,9 +59,6 @@
       {#if $params.variable.caveat_text}
         <CaveatWarning text={$params.variable.caveat_text} link={$params.variable.caveat_link} />
       {/if}
-      {#if $params.classification.change_notes && $params.mode === "change"}
-        <CaveatWarning text={$params.classification.change_notes} link={$params.classification.change_notes_link} />
-      {/if}
       <div class="mt-4 mb-2">
         <VariableDescription shortDescription={$params.variable.desc} longDescription={$params.variable.long_desc} />
       </div>
@@ -86,6 +83,9 @@
       </ul>
       {#if $params.variable.classifications.length > 1}
         <ClassificationPager />
+      {/if}
+      {#if $params.classification.change_notes && $params.mode === "change"}
+        <CaveatInfo text={$params.classification.change_notes} link={$params.classification.change_notes_link} />
       {/if}
     </section>
   </div>

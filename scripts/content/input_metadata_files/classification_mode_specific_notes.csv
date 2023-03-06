@@ -20,7 +20,7 @@ Housing,2021-HOU,second_address_type_priority,second_address_type_priority,"Chan
 Identity,2021-DEM,hh_multi_ethnic_group,hh_multi_ethnic_group,,
 Identity,2021-EILR,english_proficiency,english_proficiency,,
 Identity,2021-EILR,english_proficiency,english_proficiency_4a,,
-Identity,2021-EILR,ethnic_group_tb,ethnic_group_tb_20b,,
+Identity,2021-EILR,ethnic_group_tb,ethnic_group_tb_20b,"Change over time comparisons are only available for comparable categories. The category labels used here are the Census 2021 labels. Labels for the 2011 Census data are presented in the data downloads.",
 Identity,2021-EILR,ethnic_group_tb,ethnic_group_tb_6a,,
 Identity,2021-EILR,hh_language,hh_language,,
 Identity,2021-EILR,hh_multi_language,hh_multi_language,,

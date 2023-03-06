@@ -1,15 +1,9 @@
 variable_group,content_json,variable,caveat_text,caveat_link
 Education,2021-EDU,highest_qualification,,
 Education,2021-EDU,in_full_time_education,,
-Health,2021-HUC,disability,"Values are not age-standardised, so do not account for differences in population size and age structure.
-
-Census 2021 was undertaken during the coronavirus (COVID-19) pandemic, which may have influenced how people responded.","http://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthandwellbeing/methodologies/healthdisabilityandunpaidcarequalityinformationforcensus2021"
-Health,2021-HUC,health_in_general,"Values are not age-standardised, so do not account for differences in population size and age structure.
-
-Census 2021 was undertaken during the coronavirus (COVID-19) pandemic, which may have influenced how people responded.","http://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthandwellbeing/methodologies/healthdisabilityandunpaidcarequalityinformationforcensus2021",
-Health,2021-HUC,is_carer,"Values are not age-standardised, so do not account for differences in population size and age structure.
-
-Census 2021 was undertaken during the coronavirus (COVID-19) pandemic, which may have influenced how people responded.","http://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthandwellbeing/methodologies/healthdisabilityandunpaidcarequalityinformationforcensus2021",
+Health,2021-HUC,disability,"Values are not age-standardised, so do not account for differences in population size and age structure.","http://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthandwellbeing/methodologies/healthdisabilityandunpaidcarequalityinformationforcensus2021"
+Health,2021-HUC,health_in_general,"Values are not age-standardised, so do not account for differences in population size and age structure.","http://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthandwellbeing/methodologies/healthdisabilityandunpaidcarequalityinformationforcensus2021",
+Health,2021-HUC,is_carer,"Values are not age-standardised, so do not account for differences in population size and age structure.","http://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthandwellbeing/methodologies/healthdisabilityandunpaidcarequalityinformationforcensus2021",
 Housing,2021-HOU,accommodation_type,,
 Housing,2021-HOU,alternative_address_indicator,,
 Housing,2021-HOU,heating_type,,

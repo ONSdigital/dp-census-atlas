@@ -45,7 +45,7 @@ Population,2021-DEM,hh_family_composition,hh_family_composition_15a,"oa,msoa,lad
 Population,2021-DEM,hh_family_composition,hh_family_composition_4a,"oa,msoa,lad","oa,msoa,lad"
 Population,2021-DEM,hh_size,hh_size_5a,"oa,msoa,lad","oa,msoa,lad"
 Population,2021-DEM,hh_size,hh_size_9a,"oa,msoa,lad",lad
-Population,2021-DEM,legal_partnership_status,legal_partnership_status,"oa,msoa,lad",lad
+Population,2021-DEM,legal_partnership_status,legal_partnership_status,"oa,msoa,lad",
 Population,2021-DEM,legal_partnership_status,legal_partnership_status_3a,"oa,msoa,lad","oa,msoa,lad"
 Population,2021-DEM,legal_partnership_status,legal_partnership_status_6a,"oa,msoa,lad",lad
 Population,2021-DEM,living_arrangements,living_arrangements_11a,"msoa,lad","msoa,lad"

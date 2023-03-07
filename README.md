@@ -51,6 +51,7 @@ All _important_ state flows in one direction from the URL to the UI. This enable
 
 See the general [DP release process](https://github.com/ONSdigital/dp/blob/main/guides/RELEASES.md), but here are the specific steps for this app:
 
+- the work you want to release needs to be approved and merged to `develop` in the normal way
 - see existing releases <https://github.com/ONSdigital/dp-census-atlas/releases> and choose the next release name (if the latest `1.14.0`, the next will be `1.15.0`)
 - ensure your `develop` is up-to-date `git checkout develop`, `git pull`
 - create a 'release branch' from `develop` with an incremented release number `git checkout -b release/0.0.0` and push to Github

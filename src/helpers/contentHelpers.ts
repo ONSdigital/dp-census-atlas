@@ -7,6 +7,7 @@ import type {
   Mode,
   DataEnv,
   Category,
+  GeoType,
 } from "../types";
 import staticContentJsons from "../data/staticContentJsons/index";
 import { never } from "../util/typeUtil";
@@ -74,12 +75,12 @@ export const getContentForStore = async (contentConfigs: ContentConfig[], dataEn
   // filter different content sets
   const choroplethContent = {
     releases: releases,
-    variableGroups: filterVariableGroupsForMode(mergedVariableGroups, "choropleth") as VariableGroup[],
+    variableGroups: getContentForMode(mergedVariableGroups, "choropleth"),
     fakeDataLoaded: fakeDataLoaded,
   };
   const changeOverTimeContent = {
     releases: releases,
-    variableGroups: filterVariableGroupsForMode(mergedVariableGroups, "change") as VariableGroup[],
+    variableGroups: getContentForMode(mergedVariableGroups, "change"),
     fakeDataLoaded: fakeDataLoaded,
   };
 
@@ -238,74 +239,24 @@ export const sortVariableGroupVariables = (variableGroups: VariableGroup[]) => {
   });
 };
 
-const filterVariableGroupsForMode = (variableGroups: VariableGroup[], mode: Mode) => {
-  return variableGroups
-    .map((vg) => {
-      const filtVariables = vg.variables
-        .map((v) => {
-          const filtClassifications = v.classifications
-            .map((cl) => {
-              // filter categories to those that either DO NOT have a defined 'restrict_to_modes' array, OR have one
-              // that includes the current mode
-              const filtCategories = cl.categories.filter((cat) => {
-                return !cat.restrict_to_modes || cat.restrict_to_modes.includes(mode);
-              });
-              if (filtCategories.length > 0) {
-                // additional mode-dependent filtering goes here
-                const filtClassification = { ...cl };
-                filtClassification.categories = filtCategories;
-                switch (mode) {
-                  // no constraints on choropleth classifications
-                  case "choropleth": {
-                    return filtClassification;
-                  }
-                  // change classifications must have comparison_2011_data_available_geotypes defined
-                  case "change": {
-                    if (
-                      cl.comparison_2011_data_available_geotypes &&
-                      cl.comparison_2011_data_available_geotypes.length > 0
-                    ) {
-                      return filtClassification;
-                    }
-                    break;
-                  }
-                  default: {
-                    return never(mode);
-                  }
-                }
-              }
-            })
-            .filter((c) => c);
-          if (filtClassifications.length > 0) {
-            const filtVariable = { ...v };
-            filtVariable.classifications = filtClassifications;
-            // additional mode-dependent filtering goes here
-            switch (mode) {
-              // no constraints on choropleth variables
-              case "choropleth": {
-                return filtVariable;
-              }
-              // change variables must have base_url_2011_2021_comparison defined
-              case "change": {
-                if (v.base_url_2011_2021_comparison) {
-                  return filtVariable;
-                }
-                break;
-              }
-              default: {
-                return never(mode);
-              }
-            }
-          }
+const getContentForMode = (variableGroups: VariableGroup[], mode: Mode): VariableGroup[] => {
+  return variableGroups.map((vg) => {
+    return {
+      ...vg,
+      variables: vg.variables
+        .filter((v) => {
+          return getDataBaseUrlsForVariable(v)[mode] && getClassificationsInVariable(v, mode).length > 0;
         })
-        .filter((v) => v);
-      if (filtVariables.length > 0) {
-        const filtVariableGroup = { ...vg };
-        filtVariableGroup.variables = filtVariables;
-        return filtVariableGroup;
-      }
-    })
-    .filter((vg) => vg);
+        .map((v) => {
+          return {
+            ...v,
+            classifications: getClassificationsInVariable(v, mode).map((c) => {
+              return { ...c, categories: getCategoriesInClassification(c, mode) };
+            }),
+          };
+        }),
+    };
+  });
 };
 
 export const getDataBaseUrlsForVariable = (variable: Variable): Record<Mode, string> => {
@@ -319,6 +270,10 @@ export const getDataBaseUrlForVariable = (mode: Mode, variable: Variable) => {
   return getDataBaseUrlsForVariable(variable)[mode];
 };
 
+export const getClassificationsInVariable = (variable: Variable, mode: Mode) => {
+  return variable.classifications.filter((c) => getGeoTypeDataAvailable(c, mode).length > 0);
+};
+
 export const getAvailableModesForClassification = (
   variable: Variable,
   classification: Classification,
@@ -328,11 +283,6 @@ export const getAvailableModesForClassification = (
     change:
       variable.base_url_2011_2021_comparison && classification.comparison_2011_data_available_geotypes?.length > 0,
   };
-};
-
-export const internal = {
-  mergeVariableGroups,
-  filterVariableGroupsForMode,
 };
 
 export const getAvailableModes = (content: ContentJson) => {
@@ -346,7 +296,7 @@ export const getAvailableModes = (content: ContentJson) => {
   );
 };
 
-const getCategoriesInClassificationForMode = (classification: Classification, mode: Mode) => {
+const getCategoriesInClassification = (classification: Classification, mode: Mode) => {
   // if restrict_to_modes is present, then it’s available for just those modes
   // but if it’s absent, it’s available for all modes
   return classification.categories.filter(
@@ -355,7 +305,7 @@ const getCategoriesInClassificationForMode = (classification: Classification, mo
 };
 
 export const getFirstCategoryInClassificationForMode = (classification: Classification, mode: Mode) => {
-  return getCategoriesInClassificationForMode(classification, mode)[0];
+  return getCategoriesInClassification(classification, mode)[0];
 };
 
 export const getBestMatchingCategoryInClassificationForMode = (
@@ -363,8 +313,32 @@ export const getBestMatchingCategoryInClassificationForMode = (
   classification: Classification,
   mode: Mode,
 ) => {
-  const categories = getCategoriesInClassificationForMode(classification, mode);
+  const categories = getCategoriesInClassification(classification, mode);
 
   // if a category has the same code, use it; otherwise just use the first
   return categories.find((c) => c.code === category.code) ?? categories[0];
+};
+
+export const getGeoTypeDataAvailable = (classification: Classification, mode: Mode) => {
+  switch (mode) {
+    case "choropleth": {
+      return classification?.available_geotypes ?? [];
+    }
+    case "change": {
+      return classification?.comparison_2011_data_available_geotypes ?? [];
+    }
+    default: {
+      return never(mode);
+    }
+  }
+};
+
+export const isDataAvailable = (classification: Classification, mode: Mode, geoType: GeoType) => {
+  return getGeoTypeDataAvailable(classification, mode).includes(geoType);
+};
+
+// export functions for testing
+export const internal = {
+  mergeVariableGroups,
+  getContentForMode,
 };

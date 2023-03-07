@@ -16,7 +16,7 @@
     {:else}
       Change in
       <a
-        href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/censusmaps/2022-11-02#:~:text=Changes%20over%20time"
+        href="https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/censusmaps/2022-11-02#:~:text=A%20percentage%20point%20change%20is%20the%20difference%20between%20percentages"
         class="hyperlink-subdued mr-1">percentage points (pp)</a
       ><span class="inline" aria-hidden="true">
         <Icon kind="openInNew" />

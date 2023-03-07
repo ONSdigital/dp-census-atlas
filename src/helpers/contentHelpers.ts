@@ -245,7 +245,7 @@ const getContentForMode = (variableGroups: VariableGroup[], mode: Mode): Variabl
       ...vg,
       variables: vg.variables
         .filter((v) => {
-          return getDataBaseUrlsForVariable(v)[mode];
+          return getDataBaseUrlsForVariable(v)[mode] && getClassificationsInVariable(v, mode).length > 0;
         })
         .map((v) => {
           return {

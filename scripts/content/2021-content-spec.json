@@ -30,7 +30,6 @@
                 "topic_code": "DEM",
                 "base_url_2021": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
                 "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
-                "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
                 "classifications": [
                   {
                     "code": "population_density",
@@ -40,6 +39,7 @@
                     "choropleth_default": true,
                     "comparison_2011_data_available_geotypes": ["oa", "msoa", "lad"],
                     "data_download": "https://www.nomisweb.co.uk/datasets/c2021ts006",
+                    "change_data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/censuschangeovertimedataenglandandwales/2011to2021",
                     "categories": [
                       {
                         "name": "Persons per square kilometre",
@@ -131,7 +131,6 @@
                 "topic_code": "DEM",
                 "base_url_2021": "https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com",
                 "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
-                "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
                 "classifications": [
                   {
                     "code": "median_age",
@@ -141,6 +140,7 @@
                     "choropleth_default": true,
                     "comparison_2011_data_available_geotypes": ["lad"],
                     "data_download": "https://www.nomisweb.co.uk/sources/census_2021_ts",
+                    "change_data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/censuschangeovertimedataenglandandwales/2011to2021",
                     "categories": [
                       {
                         "name": "Median age",
@@ -356,7 +356,6 @@
                 "topic_code": "HUC",
                 "base_url_2021": "https://ons-dp-prod-census-maps-huc.s3.eu-west-2.amazonaws.com",
                 "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
-                "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
                 "caveat_text": "Values are age-standardised to account for differences in population size and age structure.\n\nCensus 2021 was undertaken during the coronavirus (COVID-19) pandemic, which may have influenced how people responded.",
                 "caveat_link": "http://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthandwellbeing/methodologies/healthdisabilityandunpaidcarequalityinformationforcensus2021",
                 "classifications": [
@@ -369,6 +368,7 @@
                     "dot_density_default": true,
                     "comparison_2011_data_available_geotypes": ["lad"],
                     "data_download": "https://www.ons.gov.uk/datasets/TS038ASP/editions/2021",
+                    "change_data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/censuschangeovertimedataenglandandwales/2011to2021",
                     "categories": [
                       {
                         "name": "Disabled under the Equality Act: Day-to-day activities limited a lot",
@@ -410,7 +410,6 @@
                 "topic_code": "HUC",
                 "base_url_2021": "https://ons-dp-prod-census-maps-huc.s3.eu-west-2.amazonaws.com",
                 "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
-                "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
                 "caveat_text": "Values are age-standardised to account for differences in population size and age structure.\n\nCensus 2021 was undertaken during the coronavirus (COVID-19) pandemic, which may have influenced how people responded.",
                 "caveat_link": "http://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthandwellbeing/methodologies/healthdisabilityandunpaidcarequalityinformationforcensus2021",
                 "classifications": [
@@ -423,6 +422,7 @@
                     "dot_density_default": true,
                     "comparison_2011_data_available_geotypes": ["lad"],
                     "data_download": "https://www.ons.gov.uk/datasets/TS037ASP/editions/2021",
+                    "change_data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/censuschangeovertimedataenglandandwales/2011to2021",
                     "categories": [
                       {
                         "name": "Very good health",
@@ -480,7 +480,6 @@
                 "topic_code": "HUC",
                 "base_url_2021": "https://ons-dp-prod-census-maps-huc.s3.eu-west-2.amazonaws.com",
                 "base_url_2011_2021_comparison": "https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com",
-                "base_url_2011_2021_comparison_dev_override": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/FAKE/2011-2021-comparison",
                 "caveat_text": "Values are age-standardised to account for differences in population size and age structure.\n\nCensus 2021 was undertaken during the coronavirus (COVID-19) pandemic, which may have influenced how people responded.",
                 "caveat_link": "http://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/healthandwellbeing/methodologies/healthdisabilityandunpaidcarequalityinformationforcensus2021",
                 "classifications": [
@@ -493,6 +492,7 @@
                     "dot_density_default": true,
                     "comparison_2011_data_available_geotypes": ["lad"],
                     "data_download": "https://www.ons.gov.uk/datasets/TS039ASP/editions/2021",
+                    "change_data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/censuschangeovertimedataenglandandwales/2011to2021",
                     "categories": [
                       {
                         "name": "Provides no unpaid care",

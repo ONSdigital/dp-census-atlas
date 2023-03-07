@@ -589,8 +589,8 @@ describe("filterVariableGroupsForMode", () => {
   test("filters for change and choropleth content", () => {
     // GIVEN test content with parts specific to either choropleth or change modes
     // WHEN we call filterVariableGroupsForMode for choropleth on it, we expect to get the choropleth-specific content
-    expect(internal.filterVariableGroupsForMode(testContent, "choropleth" as Mode)).toEqual(expectedChoroplethContent);
+    expect(internal.getContentForMode(testContent, "choropleth")).toEqual(expectedChoroplethContent);
     // WHEN we call filterVariableGroupsForMode for change on it, we expect to get the change-specific content
-    expect(internal.filterVariableGroupsForMode(testContent, "change" as Mode)).toEqual(expectedChangeContent);
+    expect(internal.getContentForMode(testContent, "change")).toEqual(expectedChangeContent);
   });
 });

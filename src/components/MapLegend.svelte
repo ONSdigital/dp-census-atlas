@@ -156,7 +156,11 @@
           classificationCode={$viz.params.classification.code}
           showPositive={shouldShowPositiveSign($viz.params.mode)}
         />
-        <MapLegendExplanation mode={$viz.params.mode} classificationCode={$viz.params.classification.code} />
+        <MapLegendExplanation
+          mode={$viz.params.mode}
+          classificationCode={$viz.params.classification.code}
+          variableName={$viz.params.variable.name}
+        />
       {/if}
     </div>
   </div>

@@ -259,6 +259,17 @@ const getContentForMode = (variableGroups: VariableGroup[], mode: Mode): Variabl
   });
 };
 
+export const getDownloadUrl = (mode: Mode, classification: Classification) => {
+  switch (mode) {
+    case "choropleth":
+      return classification.data_download;
+    case "change":
+      return classification.change_data_download;
+    default:
+      never(mode);
+  }
+};
+
 export const getDataBaseUrlsForVariable = (variable: Variable): Record<Mode, string> => {
   return {
     choropleth: variable.base_url_2021,

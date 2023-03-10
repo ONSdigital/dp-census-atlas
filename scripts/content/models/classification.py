@@ -18,6 +18,7 @@ class CensusClassification:
     dot_density_default: bool
     categories: list[CensusCategory]
     comparison_2011_data_available_geotypes: list[str]
+    dot_density_data_available_geotypes: list[str]
     change_notes: str = ""
     change_notes_link: str = ""
     data_download: str = ""
@@ -85,6 +86,12 @@ class CensusClassification:
                 self.comparison_2011_data_available_geotypes = relevant_row[
                     "2011_2021_comparison_data_available_geotypes"
                 ].strip().split(",")
+            # set dot density geotypes if defined
+            if relevant_row["dot_density_data_available_geotypes"] != "":
+                self.dot_density_data_available_geotypes = relevant_row[
+                    "dot_density_data_available_geotypes"
+                ].strip().split(",")
+            
 
     def set_mode_specific_notes(self, mode_specific_notes: list[dict]) -> None:
         relevant_row = next((r for r in mode_specific_notes if r["classification"] == self.code), None)
@@ -138,6 +145,7 @@ class CensusClassification:
             "choropleth_default",
             "dot_density_default",
             "comparison_2011_data_available_geotypes",
+            "dot_density_data_available_geotypes",
             "data_download",
             "change_data_download",
             "change_notes",
@@ -165,6 +173,9 @@ def classification_from_content_json(content_json: dict) -> CensusClassification
         dot_density_default=content_json.get("dot_density_default", False),
         comparison_2011_data_available_geotypes=content_json.get(
             "comparison_2011_data_available_geotypes", False
+        ),
+        dot_density_data_available_geotypes=content_json.get(
+            "dot_density_data_available_geotypes", False
         ),
         data_download=content_json.get("data_download", ""),
         change_data_download=content_json.get("change_data_download", ""),
@@ -222,6 +233,7 @@ def classifications_from_metadata(
                     choropleth_default=False,
                     dot_density_default=False,
                     comparison_2011_data_available_geotypes=[],
+                    dot_density_data_available_geotypes=[],
                     data_download="",
                     categories=[],
                     _variable_code=csv_row["Variable_Mnemonic"],

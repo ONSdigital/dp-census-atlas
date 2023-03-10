@@ -78,6 +78,11 @@ export const getContentForStore = async (contentConfigs: ContentConfig[], dataEn
     variableGroups: getContentForMode(mergedVariableGroups, "choropleth"),
     fakeDataLoaded: fakeDataLoaded,
   };
+  const dotdensityContent = {
+    releases: releases,
+    variableGroups: getContentForMode(mergedVariableGroups, "dotdensity"),
+    fakeDataLoaded: fakeDataLoaded,
+  };
   const changeOverTimeContent = {
     releases: releases,
     variableGroups: getContentForMode(mergedVariableGroups, "change"),
@@ -86,8 +91,9 @@ export const getContentForStore = async (contentConfigs: ContentConfig[], dataEn
 
   return {
     choropleth: choroplethContent,
+    dotdensity: dotdensityContent,
     change: changeOverTimeContent,
-  } as ContentTree;
+  };
 };
 
 // todo: ensure we're not shipping the statically-loaded content to prod
@@ -262,6 +268,7 @@ const getContentForMode = (variableGroups: VariableGroup[], mode: Mode): Variabl
 export const getDownloadUrl = (mode: Mode, classification: Classification) => {
   switch (mode) {
     case "choropleth":
+    case "dotdensity":
       return classification.data_download;
     case "change":
       return classification.change_data_download;
@@ -273,6 +280,7 @@ export const getDownloadUrl = (mode: Mode, classification: Classification) => {
 export const getDataBaseUrlsForVariable = (variable: Variable): Record<Mode, string> => {
   return {
     choropleth: variable.base_url_2021,
+    dotdensity: variable.base_url_2021, // TODO
     change: variable.base_url_2011_2021_comparison,
   };
 };
@@ -282,7 +290,23 @@ export const getDataBaseUrlForVariable = (mode: Mode, variable: Variable) => {
 };
 
 export const getClassificationsInVariable = (variable: Variable, mode: Mode) => {
-  return variable.classifications.filter((c) => getGeoTypeDataAvailable(c, mode).length > 0);
+  const classificationsWithDataAvailable = variable.classifications.filter(
+    (c) => getGeoTypeDataAvailable(c, mode).length > 0,
+  );
+
+  switch (mode) {
+    case "choropleth":
+    case "change": {
+      return classificationsWithDataAvailable;
+    }
+    case "dotdensity": {
+      // we're using dot_density_default to mean that the classification is included for dotdensity
+      return classificationsWithDataAvailable.filter((c) => c.dot_density_default);
+    }
+    default: {
+      return never(mode);
+    }
+  }
 };
 
 export const getAvailableModesForClassification = (
@@ -291,6 +315,7 @@ export const getAvailableModesForClassification = (
 ): Record<Mode, boolean> => {
   return {
     choropleth: classification.available_geotypes.length > 0,
+    dotdensity: classification.dot_density_default,
     change:
       variable.base_url_2011_2021_comparison && classification.comparison_2011_data_available_geotypes?.length > 0,
   };
@@ -332,7 +357,8 @@ export const getBestMatchingCategoryInClassificationForMode = (
 
 export const getGeoTypeDataAvailable = (classification: Classification, mode: Mode) => {
   switch (mode) {
-    case "choropleth": {
+    case "choropleth":
+    case "dotdensity": {
       return classification?.available_geotypes ?? [];
     }
     case "change": {
@@ -346,6 +372,28 @@ export const getGeoTypeDataAvailable = (classification: Classification, mode: Mo
 
 export const isDataAvailable = (classification: Classification, mode: Mode, geoType: GeoType) => {
   return getGeoTypeDataAvailable(classification, mode).includes(geoType);
+};
+
+export const getDefaultClassification = (variable: Variable, mode: Mode) => {
+  if (!variable) {
+    throw "No variable argument provided.";
+  }
+
+  const choroplethDefault = variable.classifications.find((c) => c.choropleth_default);
+
+  switch (mode) {
+    case "choropleth":
+      return choroplethDefault;
+    case "dotdensity":
+      return variable.classifications.find((c) => c.dot_density_default);
+    case "change": {
+      // try to return choropleth default, just return first classification if none
+      // TODO: check if this is correct - how is using the choropleth default classification OK? what if it doesn't exist for change?
+      return choroplethDefault ?? variable?.classifications[0];
+    }
+    default:
+      never(mode);
+  }
 };
 
 // export functions for testing

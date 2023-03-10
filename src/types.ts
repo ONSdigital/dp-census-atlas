@@ -158,13 +158,14 @@ export type ContentConfig = {
   publishingContentJsonUrl: string;
 };
 
-export const modes = ["choropleth", "change"] as const;
+export const modes = ["choropleth", "dotdensity", "change"] as const;
 export type Mode = (typeof modes)[number];
 
-export type ContentTree = {
-  [Key in Mode]: {
+export type ContentTree = Record<
+  Mode,
+  {
     releases: string[];
     variableGroups: VariableGroup[];
     fakeDataLoaded: boolean;
-  };
-};
+  }
+>;

@@ -21,7 +21,7 @@ interface CategoryPageParams {
   mode: string;
   variableGroup: string;
   variable: string;
-  category: { classification: string; category: string };
+  category: { classification: string; category: string } | { classification: string; categories: string[] };
 }
 
 type UrlParams = HomePageParams | VariableGroupPageParams | VariablePageParams | CategoryPageParams;
@@ -48,10 +48,20 @@ export const buildHyperlink = (url: URL, urlParams?: UrlParams, geography?: { ge
     link = `${link}/${urlParams.variableGroup}`;
   }
   if ("variable" in urlParams) {
-    link = `${link}/${urlParams.variable}`;
+    if (urlParams.mode === "dotdensity") {
+      link = `${link}/${urlParams.variable}`;
+    } else {
+      link = `${link}/${urlParams.variable}`;
+    }
   }
   if ("category" in urlParams) {
-    link = `${link}/${urlParams.category.classification}/${urlParams.category.category}`;
+    if ("category" in urlParams.category) {
+      link = `${link}/${urlParams.category.classification}/${urlParams.category.category}`;
+    } else {
+      // multiple categories (for the dotdensity mode)
+      const categories = [...urlParams.category.categories].sort().join("~");
+      link = `${link}/${urlParams.category.classification}/${categories === "" ? "none" : categories}`;
+    }
   }
   return `${link}${search}`;
 };

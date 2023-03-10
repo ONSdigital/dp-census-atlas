@@ -9,6 +9,7 @@ describe("formatTemplateString", () => {
     legend_str_1: "",
     legend_str_2: "",
     legend_str_3: "",
+    restrict_to_modes: [],
   };
   const testVariable: Variable = {
     name: "testVar",

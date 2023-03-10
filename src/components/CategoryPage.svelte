@@ -1,6 +1,6 @@
 <script lang="ts">
   import { page } from "$app/stores";
-  import type { Category } from "../types";
+  import type { Category, Classification } from "../types";
   import { params } from "../stores/params";
   import { nav } from "../stores/nav";
   import { gotoUrl } from "../helpers/navigationHelper";
@@ -10,6 +10,7 @@
   import AreaPanel from "./AreaPanel.svelte";
   import ModePanel from "./ModePanel.svelte";
   import RadioButton from "./RadioButton.svelte";
+  import CheckBox from "./CheckBox.svelte";
   import VariableDescription from "./VariableDescription.svelte";
   import ClassificationPager from "./ClassificationPager.svelte";
   import CaveatWarning from "./CaveatWarning.svelte";
@@ -23,6 +24,21 @@
       category: {
         classification: $params.classification.slug,
         category: category.slug,
+      },
+    });
+  };
+  const buildCategoriesLink = (category: Category, selected: boolean) => {
+    // flip the currently selected category
+    const categories = [...new Set($params.categories.map((c) => c.code).concat(category.code))].filter(
+      (c) => !(c === category.code && selected),
+    );
+    return buildHyperlink($page.url, {
+      mode: $params.mode,
+      variableGroup: $params.variableGroup.slug,
+      variable: $params.variable.slug,
+      category: {
+        classification: $params.classification.slug,
+        categories,
       },
     });
   };
@@ -51,25 +67,48 @@
       <div class="mt-4 mb-2">
         <VariableDescription shortDescription={$params.variable.desc} longDescription={$params.variable.long_desc} />
       </div>
-      <ul class="flex flex-col last:border-b-[1px] mb-4">
-        {#each $params.classification.categories as category}
-          {@const link = buildCategoryLink(category)}
-          <li class="">
-            <a
-              href={link}
-              on:click|preventDefault={() => {
-                nav.set({ open: false });
-                gotoUrl(link); // use gotoUrl (with keepFocus: true) for better keyboard navigation
-              }}
-              class="flex gap-2 items-center p-2 border-t-[1px] border-t-slate-300 cursor-pointer custom-ring"
-              class:bg-ons-grey-5={category === $params.category}
-            >
-              <RadioButton selected={category === $params.category} />
-              <div>{category.name}</div>
-            </a>
-          </li>
-        {/each}
-      </ul>
+      {#if $params.mode === "dotdensity"}
+        <ul class="flex flex-col last:border-b-[1px] mb-4">
+          {#each $params.classification.categories as category}
+            {@const selected = $params.categories.includes(category)}
+            {@const link = buildCategoriesLink(category, selected)}
+            <li>
+              <a
+                href={link}
+                on:click|preventDefault={() => {
+                  nav.set({ open: false });
+                  gotoUrl(link); // use gotoUrl (with keepFocus: true) for better keyboard navigation
+                }}
+                class="flex gap-2 items-center p-2 border-t-[1px] border-t-slate-300 cursor-pointer custom-ring"
+                class:bg-ons-grey-5={!selected}
+              >
+                <CheckBox {selected} />
+                <div>{category.name}</div>
+              </a>
+            </li>
+          {/each}
+        </ul>
+      {:else}
+        <ul class="flex flex-col last:border-b-[1px] mb-4">
+          {#each $params.classification.categories as category}
+            {@const link = buildCategoryLink(category)}
+            <li>
+              <a
+                href={link}
+                on:click|preventDefault={() => {
+                  nav.set({ open: false });
+                  gotoUrl(link); // use gotoUrl (with keepFocus: true) for better keyboard navigation
+                }}
+                class="flex gap-2 items-center p-2 border-t-[1px] border-t-slate-300 cursor-pointer custom-ring"
+                class:bg-ons-grey-5={category === $params.category}
+              >
+                <RadioButton selected={category === $params.category} />
+                <div>{category.name}</div>
+              </a>
+            </li>
+          {/each}
+        </ul>
+      {/if}
       {#if $params.variable.classifications.length > 1}
         <ClassificationPager />
       {/if}

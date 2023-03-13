@@ -64,29 +64,32 @@ func NewContent(release string) *Content {
 }
 
 // NewVariableGroup sets up a new top level variable group (Topic).
-func (cont *Content) NewVariableGroup(name, code, slug string) *VariableGroup {
-	vg := &VariableGroup{
+func NewVariableGroup(name, code, slug string) *VariableGroup {
+	return &VariableGroup{
 		Name: name,
 		Code: code,
 		Slug: slug,
 	}
+}
+
+// AppendVariableGroup adds a VariableGroup to a Content struct.
+func (cont *Content) AppendVariableGroup(vg *VariableGroup) {
 	cont.Content = append(cont.Content, vg)
-	return vg
 }
 
 // NewCategory creates the Variable/Classification/Category structure in ess_content.json
 // for a single Indicator.
 // The structure of content.json has more hierarchical levels than we need for ESS.
 // So we fill each level with the same Indicator fields.
-func (vg *VariableGroup) NewCategory(name, code, slug, units, legend string, geotypes []string) {
+func (vg *VariableGroup) NewCategory(name, code, slug, units, legend, baseurl string, geotypes []string) {
 	v := &Variable{
 		Name:        name,
 		Code:        code,
 		Slug:        slug,
-		Desc:        name,
+		Desc:        "",
 		LongDesc:    name,
 		Units:       units,
-		BaseURL2021: "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+		BaseURL2021: baseurl,
 		Classifications: []*Classification{
 			{
 				Code:              code,

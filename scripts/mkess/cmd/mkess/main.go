@@ -8,6 +8,7 @@ import (
 	"log"
 	"os"
 	"path/filepath"
+	"sort"
 	"strconv"
 
 	"github.com/gosimple/slug"
@@ -139,12 +140,13 @@ var topics = []Topic{
 
 func main() {
 	outdir := flag.String("O", "", "output directory")
+	baseurl := flag.String("u", "", "base URL for data tiles and ckmeans files")
 	flag.Usage = func() {
-		fmt.Fprintf(flag.CommandLine.Output(), "Usage: %s -O <outdir> < input.csv\n", os.Args[0])
+		fmt.Fprintf(flag.CommandLine.Output(), "Usage: %s -O <outdir> -u <baseurl> < input.csv\n", os.Args[0])
 		flag.PrintDefaults()
 	}
 	flag.Parse()
-	if *outdir == "" {
+	if *outdir == "" || *baseurl == "" {
 		flag.Usage()
 		os.Exit(2)
 	}
@@ -223,17 +225,17 @@ func main() {
 		log.Fatal(err)
 	}
 
-	if err := genContent(filepath.Join(*outdir, "ess_content.json"), ds); err != nil {
+	if err := genContent(filepath.Join(*outdir, "ess_content.json"), ds, *baseurl); err != nil {
 		log.Fatal(err)
 	}
 }
 
 // genContent generates the ess_content.json file.
 // The structure comes from topics, and the data comes from ds.
-func genContent(fname string, ds *DataSet) error {
+func genContent(fname string, ds *DataSet, baseurl string) error {
 	cont := NewContent("ESS data test")
 	for _, topic := range topics {
-		vg := cont.NewVariableGroup(
+		vg := NewVariableGroup(
 			topic.Name,
 			ZapSpecial(topic.Name),
 			slug.Make(topic.Name),
@@ -257,12 +259,16 @@ func genContent(fname string, ds *DataSet) error {
 				slug.Make(iname),
 				ind.Unit,
 				ind.Measure,
+				baseurl,
 				geotypes,
 			)
 			nind++
 		}
+		// The Census Maps app doesn't like empty variable groups in content.json files.
 		if nind == 0 {
 			log.Printf("Topic %q has no qualifying indicators", topic.Name)
+		} else {
+			cont.AppendVariableGroup(vg)
 		}
 
 	}
@@ -281,5 +287,6 @@ func availableGeotypes(ind *Indicator) []string {
 			}
 		}
 	}
+	sort.Strings(result) // sort for output consistency
 	return result
 }

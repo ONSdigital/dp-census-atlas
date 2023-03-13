@@ -86,7 +86,7 @@ func (ds *DataSet) WriteTiles(base string) error {
 			// generate directory and filenames
 			dir := filepath.Join(base, "tiles", geotype)
 			indname := ZapSpecial(desc)
-			outname := filepath.Join(dir, desc) + ".csv"
+			outname := filepath.Join(dir, indname) + ".csv"
 			tmpname := outname + ".tmp"
 
 			// create directory and temporary output file

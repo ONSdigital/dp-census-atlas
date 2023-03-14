@@ -58,7 +58,7 @@ Population,2021-DEM,resident_age,resident_age_8c,"msoa,lad","msoa,lad"
 Population,2021-DEM,sex,sex,"oa,msoa,lad","oa,msoa,lad"
 Population,2021-MIG,age_arrival_uk,age_arrival_uk_18a,"oa,msoa,lad",lad
 Population,2021-MIG,country_of_birth,country_of_birth_12a,"oa,msoa,lad",lad
-Population,2021-MIG,country_of_birth,country_of_birth_3a,lad,"oa,msoa,lad"
+Population,2021-MIG,country_of_birth,country_of_birth_3a,"oa,msoa,lad","oa,msoa,lad"
 Population,2021-MIG,country_of_birth,country_of_birth_60a,lad,lad
 Population,2021-MIG,country_of_birth,country_of_birth_8a,lad,lad
 Population,2021-MIG,migrant_ind,migrant_ind,"oa,msoa,lad","oa,msoa,lad"

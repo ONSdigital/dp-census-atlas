@@ -24,6 +24,7 @@ export type Variable = {
   base_url_2021_dev_override: string;
   base_url_2011_2021_comparison: string;
   base_url_2011_2021_comparison_dev_override: string;
+  base_url_dot_density: string;
   classifications: Classification[];
 };
 

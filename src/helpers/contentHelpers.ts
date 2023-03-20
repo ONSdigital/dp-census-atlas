@@ -200,6 +200,7 @@ const mergeVariables = (variables: Variable[]) => {
       base_url_2021_dev_override: variablesToMerge[0].base_url_2021_dev_override,
       base_url_2011_2021_comparison: variablesToMerge[0].base_url_2011_2021_comparison,
       base_url_2011_2021_comparison_dev_override: variablesToMerge[0].base_url_2011_2021_comparison_dev_override,
+      base_url_dot_density: variablesToMerge[0].base_url_dot_density,
       classifications: dedupeClassifications(allClassifications as Classification[]),
     });
   }
@@ -246,23 +247,20 @@ export const sortVariableGroupVariables = (variableGroups: VariableGroup[]) => {
 };
 
 const getContentForMode = (variableGroups: VariableGroup[], mode: Mode): VariableGroup[] => {
-  return variableGroups.map((vg) => {
-    return {
+  return variableGroups
+    .map((vg) => ({
       ...vg,
       variables: vg.variables
-        .filter((v) => {
-          return getDataBaseUrlsForVariable(v)[mode] && getClassificationsInVariable(v, mode).length > 0;
-        })
-        .map((v) => {
-          return {
-            ...v,
-            classifications: getClassificationsInVariable(v, mode).map((c) => {
-              return { ...c, categories: getCategoriesInClassification(c, mode) };
-            }),
-          };
-        }),
-    };
-  });
+        .filter((v) => getDataBaseUrlsForVariable(v)[mode] && getClassificationsInVariable(v, mode).length > 0)
+        .map((v) => ({
+          ...v,
+          classifications: getClassificationsInVariable(v, mode).map((c) => ({
+            ...c,
+            categories: getCategoriesInClassification(c, mode),
+          })),
+        })),
+    }))
+    .filter((vg) => vg.variables.length > 0);
 };
 
 export const getDownloadUrl = (mode: Mode, classification: Classification) => {
@@ -280,7 +278,7 @@ export const getDownloadUrl = (mode: Mode, classification: Classification) => {
 export const getDataBaseUrlsForVariable = (variable: Variable): Record<Mode, string> => {
   return {
     choropleth: variable.base_url_2021,
-    dotdensity: variable.base_url_2021, // TODO
+    dotdensity: variable.base_url_dot_density,
     change: variable.base_url_2011_2021_comparison,
   };
 };

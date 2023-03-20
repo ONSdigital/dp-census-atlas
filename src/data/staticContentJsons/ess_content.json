@@ -24,8 +24,8 @@
                             "slug": "gigabit-capable-broadband",
                             "desc": "Gigabit capable broadband",
                             "available_geotypes": [
-                                "LTLA",
-                                "UTLA"
+                                "UTLA",
+                                "LTLA"
                             ],
                             "choropleth_default": true,
                             "dot_density_default": true,
@@ -57,8 +57,8 @@
                             "slug": "4g-coverage",
                             "desc": "4G coverage",
                             "available_geotypes": [
-                                "LTLA",
-                                "UTLA"
+                                "UTLA",
+                                "LTLA"
                             ],
                             "choropleth_default": true,
                             "dot_density_default": true,
@@ -98,9 +98,9 @@
                             "slug": "pupils-at-expected-standards-by-end-of-primary-school",
                             "desc": "Pupils at expected standards by end of primary school",
                             "available_geotypes": [
-                                "LTLA",
                                 "RGN",
-                                "UTLA"
+                                "UTLA",
+                                "LTLA"
                             ],
                             "choropleth_default": true,
                             "dot_density_default": true,
@@ -132,9 +132,9 @@
                             "slug": "gcses-and-equivalent-in-english-and-maths-by-age-19",
                             "desc": "GCSEs (and equivalent) in English and maths by age 19",
                             "available_geotypes": [
-                                "LTLA",
                                 "RGN",
-                                "UTLA"
+                                "UTLA",
+                                "LTLA"
                             ],
                             "choropleth_default": true,
                             "dot_density_default": true,
@@ -166,9 +166,9 @@
                             "slug": "schools-and-nursery-schools-rated-good-or-outstanding",
                             "desc": "Schools and nursery schools rated good or outstanding",
                             "available_geotypes": [
-                                "LTLA",
                                 "RGN",
-                                "UTLA"
+                                "UTLA",
+                                "LTLA"
                             ],
                             "choropleth_default": true,
                             "dot_density_default": true,
@@ -200,9 +200,9 @@
                             "slug": "persistent-absences-for-all-pupils",
                             "desc": "Persistent absences for all pupils",
                             "available_geotypes": [
-                                "LTLA",
                                 "RGN",
-                                "UTLA"
+                                "UTLA",
+                                "LTLA"
                             ],
                             "choropleth_default": true,
                             "dot_density_default": true,
@@ -234,9 +234,9 @@
                             "slug": "persistent-absences-for-pupils-eligible-for-free-school-meals",
                             "desc": "Persistent absences for pupils eligible for free school meals",
                             "available_geotypes": [
-                                "LTLA",
                                 "RGN",
-                                "UTLA"
+                                "UTLA",
+                                "LTLA"
                             ],
                             "choropleth_default": true,
                             "dot_density_default": true,
@@ -268,9 +268,9 @@
                             "slug": "persistent-absences-for-pupils-looked-after-by-local-authorities",
                             "desc": "Persistent absences for pupils looked after by local authorities",
                             "available_geotypes": [
-                                "LTLA",
                                 "RGN",
-                                "UTLA"
+                                "UTLA",
+                                "LTLA"
                             ],
                             "choropleth_default": true,
                             "dot_density_default": true,
@@ -302,9 +302,9 @@
                             "slug": "children-at-expected-standard-for-communication-and-language-by-end-of-early-years-foundation-stage",
                             "desc": "Children at expected standard for communication and language by end of early years foundation stage",
                             "available_geotypes": [
-                                "LTLA",
                                 "RGN",
-                                "UTLA"
+                                "UTLA",
+                                "LTLA"
                             ],
                             "choropleth_default": true,
                             "dot_density_default": true,
@@ -336,9 +336,9 @@
                             "slug": "children-at-expected-standard-for-literacy-by-end-of-early-years-foundation-stage",
                             "desc": "Children at expected standard for literacy by end of early years foundation stage",
                             "available_geotypes": [
-                                "LTLA",
                                 "RGN",
-                                "UTLA"
+                                "UTLA",
+                                "LTLA"
                             ],
                             "choropleth_default": true,
                             "dot_density_default": true,
@@ -370,9 +370,9 @@
                             "slug": "children-at-expected-standard-for-maths-by-end-of-early-years-foundation-stage",
                             "desc": "Children at expected standard for maths by end of early years foundation stage",
                             "available_geotypes": [
-                                "LTLA",
                                 "RGN",
-                                "UTLA"
+                                "UTLA",
+                                "LTLA"
                             ],
                             "choropleth_default": true,
                             "dot_density_default": true,
@@ -404,9 +404,9 @@
                             "slug": "apprenticeships-starts",
                             "desc": "Apprenticeships starts",
                             "available_geotypes": [
-                                "LTLA",
                                 "RGN",
-                                "UTLA"
+                                "UTLA",
+                                "LTLA"
                             ],
                             "choropleth_default": true,
                             "dot_density_default": true,
@@ -438,9 +438,9 @@
                             "slug": "apprenticeships-achievements",
                             "desc": "Apprenticeships achievements",
                             "available_geotypes": [
-                                "LTLA",
                                 "RGN",
-                                "UTLA"
+                                "UTLA",
+                                "LTLA"
                             ],
                             "choropleth_default": true,
                             "dot_density_default": true,
@@ -472,9 +472,9 @@
                             "slug": "aged-19-years-and-over-further-education-and-skills-participation",
                             "desc": "Aged 19 years and over further education and skills participation",
                             "available_geotypes": [
-                                "LTLA",
                                 "RGN",
-                                "UTLA"
+                                "UTLA",
+                                "LTLA"
                             ],
                             "choropleth_default": true,
                             "dot_density_default": true,
@@ -514,9 +514,9 @@
                             "slug": "female-healthy-life-expectancy",
                             "desc": "Female healthy life expectancy",
                             "available_geotypes": [
-                                "LTLA",
                                 "RGN",
-                                "UTLA"
+                                "UTLA",
+                                "LTLA"
                             ],
                             "choropleth_default": true,
                             "dot_density_default": true,
@@ -548,9 +548,9 @@
                             "slug": "male-healthy-life-expectancy",
                             "desc": "Male healthy life expectancy",
                             "available_geotypes": [
-                                "LTLA",
                                 "RGN",
-                                "UTLA"
+                                "UTLA",
+                                "LTLA"
                             ],
                             "choropleth_default": true,
                             "dot_density_default": true,
@@ -582,9 +582,9 @@
                             "slug": "cigarette-smokers",
                             "desc": "Cigarette smokers",
                             "available_geotypes": [
-                                "LTLA",
                                 "RGN",
-                                "UTLA"
+                                "UTLA",
+                                "LTLA"
                             ],
                             "choropleth_default": true,
                             "dot_density_default": true,
@@ -616,9 +616,9 @@
                             "slug": "overweight-children-at-reception-age-aged-four-to-five-years",
                             "desc": "Overweight children at reception age (aged four to five years)",
                             "available_geotypes": [
-                                "LTLA",
                                 "RGN",
-                                "UTLA"
+                                "UTLA",
+                                "LTLA"
                             ],
                             "choropleth_default": true,
                             "dot_density_default": true,
@@ -650,9 +650,9 @@
                             "slug": "overweight-children-at-year-6-age-aged-10-to-11-years",
                             "desc": "Overweight children at Year 6 age (aged 10 to 11 years)",
                             "available_geotypes": [
-                                "LTLA",
                                 "RGN",
-                                "UTLA"
+                                "UTLA",
+                                "LTLA"
                             ],
                             "choropleth_default": true,
                             "dot_density_default": true,
@@ -684,9 +684,9 @@
                             "slug": "overweight-adults-aged-18-years-and-over",
                             "desc": "Overweight adults (aged 18 years and over)",
                             "available_geotypes": [
-                                "LTLA",
                                 "RGN",
-                                "UTLA"
+                                "UTLA",
+                                "LTLA"
                             ],
                             "choropleth_default": true,
                             "dot_density_default": true,
@@ -718,9 +718,9 @@
                             "slug": "cancer-diagnosis-at-stage-1-and-2",
                             "desc": "Cancer diagnosis at stage 1 and 2",
                             "available_geotypes": [
-                                "LTLA",
                                 "RGN",
-                                "UTLA"
+                                "UTLA",
+                                "LTLA"
                             ],
                             "choropleth_default": true,
                             "dot_density_default": true,
@@ -752,9 +752,9 @@
                             "slug": "cardiovascular-mortality-considered-preventable-in-persons-aged-under-75",
                             "desc": "Cardiovascular mortality considered preventable in persons aged under 75",
                             "available_geotypes": [
-                                "LTLA",
                                 "RGN",
-                                "UTLA"
+                                "UTLA",
+                                "LTLA"
                             ],
                             "choropleth_default": true,
                             "dot_density_default": true,
@@ -786,9 +786,9 @@
                             "slug": "life-satisfaction",
                             "desc": "Life satisfaction",
                             "available_geotypes": [
-                                "LTLA",
                                 "RGN",
-                                "UTLA"
+                                "UTLA",
+                                "LTLA"
                             ],
                             "choropleth_default": true,
                             "dot_density_default": true,
@@ -820,9 +820,9 @@
                             "slug": "feeling-life-is-worthwhile",
                             "desc": "Feeling life is worthwhile",
                             "available_geotypes": [
-                                "LTLA",
                                 "RGN",
-                                "UTLA"
+                                "UTLA",
+                                "LTLA"
                             ],
                             "choropleth_default": true,
                             "dot_density_default": true,
@@ -854,9 +854,9 @@
                             "slug": "happiness",
                             "desc": "Happiness",
                             "available_geotypes": [
-                                "LTLA",
                                 "RGN",
-                                "UTLA"
+                                "UTLA",
+                                "LTLA"
                             ],
                             "choropleth_default": true,
                             "dot_density_default": true,
@@ -888,9 +888,9 @@
                             "slug": "anxiety",
                             "desc": "Anxiety",
                             "available_geotypes": [
-                                "LTLA",
                                 "RGN",
-                                "UTLA"
+                                "UTLA",
+                                "LTLA"
                             ],
                             "choropleth_default": true,
                             "dot_density_default": true,
@@ -930,9 +930,9 @@
                             "slug": "additions-to-the-housing-stock",
                             "desc": "Additions to the housing stock",
                             "available_geotypes": [
-                                "LTLA",
                                 "RGN",
-                                "UTLA"
+                                "UTLA",
+                                "LTLA"
                             ],
                             "choropleth_default": true,
                             "dot_density_default": true,
@@ -972,8 +972,8 @@
                             "slug": "gross-value-added-per-hour-worked",
                             "desc": "Gross value added per hour worked",
                             "available_geotypes": [
-                                "LTLA",
-                                "UTLA"
+                                "UTLA",
+                                "LTLA"
                             ],
                             "choropleth_default": true,
                             "dot_density_default": true,
@@ -1005,9 +1005,9 @@
                             "slug": "gross-median-weekly-pay",
                             "desc": "Gross median weekly pay",
                             "available_geotypes": [
-                                "LTLA",
                                 "RGN",
-                                "UTLA"
+                                "UTLA",
+                                "LTLA"
                             ],
                             "choropleth_default": true,
                             "dot_density_default": true,
@@ -1047,9 +1047,9 @@
                             "slug": "public-transport-or-walk-to-employment-centre-with-500-to-4999-jobs",
                             "desc": "Public transport or walk to employment centre with 500 to 4999 jobs",
                             "available_geotypes": [
-                                "LTLA",
                                 "RGN",
-                                "UTLA"
+                                "UTLA",
+                                "LTLA"
                             ],
                             "choropleth_default": true,
                             "dot_density_default": true,
@@ -1081,9 +1081,9 @@
                             "slug": "drive-to-employment-centre-with-500-to-4999-jobs",
                             "desc": "Drive to employment centre with 500 to 4999 jobs",
                             "available_geotypes": [
-                                "LTLA",
                                 "RGN",
-                                "UTLA"
+                                "UTLA",
+                                "LTLA"
                             ],
                             "choropleth_default": true,
                             "dot_density_default": true,
@@ -1115,9 +1115,9 @@
                             "slug": "cycle-to-employment-centre-with-500-to-4999-jobs",
                             "desc": "Cycle to employment centre with 500 to 4999 jobs",
                             "available_geotypes": [
-                                "LTLA",
                                 "RGN",
-                                "UTLA"
+                                "UTLA",
+                                "LTLA"
                             ],
                             "choropleth_default": true,
                             "dot_density_default": true,

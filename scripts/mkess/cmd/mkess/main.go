@@ -8,32 +8,34 @@ import (
 	"log"
 	"os"
 	"path/filepath"
-	"sort"
 	"strconv"
 
 	"github.com/gosimple/slug"
 	"github.com/jszwec/csvutil"
 )
 
-// Map Geography fields in the spreadsheet to geography codes in the topo file.
-// An empty code here will cause the corresponding spreadsheet rows to be skipped.
-// Geography strings must exactly match the strings found in the spreadsheet.
-var geotypes = map[string]string{
-	"Combined Authority or City Region": "CAUTH",
-	"Country":                           "CTRY",
-	"County or Unitary Authority":       "UTLA",
-	"ITL Level 1":                       "ITL1",
-	"ITL Level 2":                       "ITL2",
-	"ITL Level 3":                       "ITL3",
-	"Local Authority District":          "LTLA",
-	"Nation":                            "",
-	"Police Force Area":                 "",
-	"Region":                            "RGN",
-	"Welsh Health Board":                "",
+// Map geocode prefixes to geotypes.
+var geotypes = map[string][]string{
+	"E12": []string{"RGN"},
+	"N92": []string{"RGN"},
+	"S92": []string{"RGN"},
+	"W92": []string{"RGN"},
+	"E06": []string{"LTLA", "UTLA"},
+	"E07": []string{"LTLA"},
+	"E08": []string{"LTLA", "UTLA"},
+	"E09": []string{"LTLA", "UTLA"},
+	"E10": []string{"UTLA"},
+	"N09": []string{"LTLA", "UTLA"},
+	"S12": []string{"LTLA", "UTLA"},
+	"W06": []string{"LTLA", "UTLA"},
 }
 
 // These are the only geotypes we want in ess_content.json.
-var contentGeotypes = []string{"RGN", "LTLA", "UTLA"}
+// Order here counts.
+// This order will be seen in the Map.
+// The available_geographies key in ess_content.json will have
+// matching members in this order.
+var contentGeotypes = []string{"RGN", "UTLA", "LTLA"}
 
 // The Topic->Indicators hierarchy defines the structure of ess_content.json.
 // Topics become the top level VariableGroups and Indicators become
@@ -200,11 +202,8 @@ func main() {
 		}
 
 		// map Geography to geocode
-		geotype, ok := geotypes[row.Geography]
-		if !ok {
-			log.Fatalf("line %d: %q: unrecognised geography", line, row.Geography)
-		}
-		if geotype == "" {
+		geotypes := geocode2geotypes(row.AreaCode)
+		if len(geotypes) == 0 {
 			continue
 		}
 
@@ -218,7 +217,9 @@ func main() {
 		if err != nil {
 			log.Fatalf("line %d: %s", line, err)
 		}
-		ind.AppendMetric(geotype, row.AreaCode, val)
+		for _, geotype := range geotypes {
+			ind.AppendMetric(geotype, row.AreaCode, val)
+		}
 	}
 
 	if err := ds.WriteTiles(*outdir); err != nil {
@@ -279,14 +280,22 @@ func genContent(fname string, ds *DataSet, baseurl string) error {
 // also in contentGeotypes.
 func availableGeotypes(ind *Indicator) []string {
 	var result []string
-	for geotype := range ind.Metrics {
-		for _, wanttype := range contentGeotypes {
+	for _, wanttype := range contentGeotypes {
+		for geotype := range ind.Metrics {
 			if geotype == wanttype {
 				result = append(result, geotype)
 				break
 			}
 		}
 	}
-	sort.Strings(result) // sort for output consistency
 	return result
+}
+
+// geocode2geotypes returns the set of geotypes we want geocode to fall into.
+// An empty set means we are not interested in this geocode.
+func geocode2geotypes(geocode string) []string {
+	if len(geocode) != 9 {
+		return nil
+	}
+	return geotypes[geocode[0:3]]
 }

@@ -65,6 +65,7 @@ type Topic struct {
 //
 // The other Indicators in the spreadsheet are placed within Topics.
 // The Indicator strings must exactly match the strings found in the spreadsheet.
+/*
 var topics = []Topic{
 	{
 		Name: "Business",
@@ -144,6 +145,105 @@ var topics = []Topic{
 	},
 	{
 		Name: "Devolution",
+		Indicators: []string{
+			"Population under devolution deal in England",
+		},
+	},
+}
+*/
+var topics = []Topic{
+	{
+		Name: "Economic output and productivity",
+		Indicators: []string{
+			"Gross value added per hour worked",
+		},
+	},
+	{
+		Name: "People in work",
+		Indicators: []string{
+			"Gross median weekly pay",
+			"Employment rate for 16 to 64 year olds",
+			"Public transport or walk to employment centre with 500 to 4999 jobs",
+			"Drive to employment centre with 500 to 4999 jobs",
+			"Cycle to employment centre with 500 to 4999 jobs",
+			"Apprenticeships starts",
+			"Apprenticeships achievements",
+		},
+	},
+	{
+		Name: "Regional accounts",
+		Indicators: []string{
+			"Gross disposable household income per head",
+		},
+	},
+	{
+		Name: "International trade",
+		Indicators: []string{
+			"Total value of UK exports",
+			"Inward foreign direct investment (FDI)",
+			"Outward foreign direct investment (FDI)",
+		},
+	},
+	{
+		Name: "IT and internet industry",
+		Indicators: []string{
+			"Gigabit capable broadband",
+			"4G coverage",
+		},
+	},
+	{
+		Name: "Education and childcare",
+		Indicators: []string{
+			"Pupils at expected standards by end of primary school",
+			"GCSEs (and equivalent) in English and maths by age 19",
+			"Schools and nursery schools rated good or outstanding",
+			"Persistent absences for all pupils",
+			"Persistent absences for pupils eligible for free school meals",
+			"Persistent absences for pupils looked after by local authorities",
+			"Children at expected standard for communication and language by end of early years foundation stage",
+			"Children at expected standard for literacy by end of early years foundation stage",
+			"Children at expected standard for maths by end of early years foundation stage",
+			"Aged 19 years and over further education and skills learner achievements",
+			"Aged 16 to 64 years level 3 or above qualifications",
+			"Aged 19 years and over further education and skills participation",
+		},
+	},
+	{
+		Name: "Health and social care",
+		Indicators: []string{
+			"Female healthy life expectancy",
+			"Male healthy life expectancy",
+			"Cigarette smokers",
+			"Overweight children at reception age (aged four to five years)",
+			"Overweight children at Year 6 age (aged 10 to 11 years)",
+			"Overweight adults (aged 18 years and over)",
+			"Cancers diagnosed at stage 1 and 2",
+			"Cardiovascular mortality considered preventable in persons aged under 75",
+		},
+	},
+	{
+		Name: "Well-being",
+		Indicators: []string{
+			"Life satisfaction",
+			"Feeling life is worthwhile",
+			"Happiness",
+			"Anxiety",
+		},
+	},
+	{
+		Name: "Housing",
+		Indicators: []string{
+			"Additions to the housing stock",
+		},
+	},
+	{
+		Name: "Crime and justice",
+		Indicators: []string{
+			"Homicide Offences",
+		},
+	},
+	{
+		Name: "Government, public sector and taxes",
 		Indicators: []string{
 			"Population under devolution deal in England",
 		},

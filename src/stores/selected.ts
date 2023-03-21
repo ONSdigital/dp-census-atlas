@@ -1,7 +1,7 @@
 import { asyncDerived } from "@square/svelte-store";
 import { geography } from "./geography";
 import { viz } from "./viz";
-import { fetchDataForBbox } from "../data/api";
+import { fetchSingleCategoryDataForBbox } from "../data/api";
 import { getDataBaseUrlForVariable, isDataAvailable } from "../helpers/contentHelpers";
 
 export const selected = asyncDerived([geography, viz], async ([$geography, $viz]) => {
@@ -28,7 +28,7 @@ export const selected = asyncDerived([geography, viz], async ([$geography, $viz]
       baseUrl: getDataBaseUrlForVariable($viz.params.mode, $viz.params.variable),
     };
 
-    const data = await fetchDataForBbox(args);
+    const data = await fetchSingleCategoryDataForBbox(args);
 
     return {
       ...$geography,

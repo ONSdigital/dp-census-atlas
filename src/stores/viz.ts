@@ -1,5 +1,5 @@
 import { asyncDerived } from "@square/svelte-store";
-import { fetchBreaks, fetchDataForBbox } from "../data/api";
+import { fetchBreaks, fetchSingleCategoryDataForBbox, fetchMultiCategoryDataForBbox } from "../data/api";
 import { params } from "./params";
 import { viewport } from "./viewport";
 import { getDataBaseUrlForVariable, isDataAvailable } from "../helpers/contentHelpers";
@@ -15,20 +15,34 @@ export const viz = asyncDerived([params, viewport], async ([$params, $viewport])
       mode: $params.mode,
       classification: $params.classification,
       category: $params.category,
+      categories: $params.categories,
       geoType: $viewport.geoType,
       bbox: $viewport.bbox,
       baseUrl: getDataBaseUrlForVariable($params.mode, $params.variable),
     };
 
-    const [data, breaks] = await Promise.all([fetchDataForBbox(args), fetchBreaks(args)]);
-
-    return {
-      geoType: args.geoType,
-      breaks: breaks.breaks,
-      places: data,
-      params: {
-        ...$params,
-      },
-    };
+    if ($params.mode === "dotdensity") {
+      const [data, englandAndWales] = await Promise.all([fetchMultiCategoryDataForBbox(args), new Promise(() => true)]);
+      return {
+        kind: "dotdensity",
+        geoType: args.geoType,
+        englandAndWales,
+        places: data,
+        params: {
+          ...$params,
+        },
+      };
+    } else {
+      const [data, breaks] = await Promise.all([fetchSingleCategoryDataForBbox(args), fetchBreaks(args)]);
+      return {
+        kind: "choropleth", // `change` is the same choropleth in terms of the viz data
+        geoType: args.geoType,
+        breaks: breaks.breaks,
+        places: data,
+        params: {
+          ...$params,
+        },
+      };
+    }
   }
 });

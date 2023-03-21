@@ -5,35 +5,56 @@ import { uniqueRoundedClassificationBreaks } from "../helpers/classificationHelp
 
 const geoBaseUrl = "https://cdn.ons.gov.uk/maptiles/cm-geos/v2";
 
+// eg https://onsvisual.github.io/dot-density-data/output/data/oa/2046-1358-12/workplace_travel_4a.csv
+const getSingleCategoryUrl = (args: any) =>
+  `${args.baseUrl}/tiles/${args.geoType}/${args.tile.tilename}/${args.category.code}.csv`;
+
+const getMultiCategoryUrl = (args: any) =>
+  `${args.baseUrl}/tiles/${args.geoType}/${args.tile.tilename}/${args.classificaton.code}.csv`;
+
 /*
   Fetch place data files for all data 'tiles' (predefined coordinate grid squares) that intersect with current viewport
   bounding box.
 */
-export const fetchDataForBbox = async (args: { category: Category; geoType: GeoType; bbox: Bbox; baseUrl: string }) => {
-  const data = await fetchTileDataForBbox(args);
-  return data.map((row) => parsePlaceData(row, args.category.code));
+export const fetchSingleCategoryDataForBbox = async (args: {
+  category: Category;
+  geoType: GeoType;
+  bbox: Bbox;
+  baseUrl: string;
+}) => {
+  const data = await fetchTileDataForBbox(args, getSingleCategoryUrl);
+  return data.map((row) => parseSingleCategoryData(row, args.category.code));
 };
 
-const fetchTileDataForBbox = async (args: { category: Category; geoType: GeoType; bbox: Bbox; baseUrl: string }) => {
+export const fetchMultiCategoryDataForBbox = async (args: {
+  category: Category;
+  geoType: GeoType;
+  bbox: Bbox;
+  baseUrl: string;
+}) => {
+  const data = await fetchTileDataForBbox(args, getMultiCategoryUrl);
+  return data.map((row) => parseSingleCategoryData(row, args.category.code));
+};
+
+const fetchTileDataForBbox = async (
+  args: { geoType: GeoType; bbox: Bbox; baseUrl: string },
+  getUrl: (args: any) => string,
+) => {
   // get all intersecting data tiles
   const dataTiles = bboxToDataTiles(args.bbox, args.geoType);
 
   // fetch data from data tile files
   const fetched = await Promise.all(
-    dataTiles.map((dataTile) => {
-      return fetchTileData({
-        category: args.category,
-        geoType: args.geoType,
-        tile: dataTile,
-        baseUrl: args.baseUrl,
-      });
+    dataTiles.map((tile) => {
+      const url = getUrl({ ...args, tile });
+      return fetchTileData(url);
     }),
   );
 
   return fetched.flat();
 };
 
-const parsePlaceData = (row: dsv.DSVRowString<string>, categoryCode: string) => {
+const parseSingleCategoryData = (row: dsv.DSVRowString<string>, categoryCode: string) => {
   const geoCode = row.geography_code;
   const categoryValue = parseFloat(row[categoryCode]);
   return { geoCode, categoryValue };
@@ -43,13 +64,7 @@ const parsePlaceData = (row: dsv.DSVRowString<string>, categoryCode: string) => 
   Fetch json with census data by for categories categoryCode and totalCode for all geographies of type 'geoType' that
   fall within geographic bounding box represented by 'tile'.
 */
-export const fetchTileData = async (args: {
-  category: Category;
-  geoType: GeoType;
-  tile: DataTile;
-  baseUrl: string;
-}) => {
-  const url = `${args.baseUrl}/tiles/${args.geoType}/${args.tile.tilename}/${args.category.code}.csv`;
+const fetchTileData = async (url: string) => {
   const response = await fetch(url);
   const csv = await response.text();
   return dsv.csvParse(csv);

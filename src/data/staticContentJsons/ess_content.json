@@ -24,7 +24,6 @@
                             "slug": "gigabit-capable-broadband",
                             "desc": "Gigabit capable broadband",
                             "available_geotypes": [
-                                "UTLA",
                                 "LTLA"
                             ],
                             "choropleth_default": true,
@@ -57,7 +56,6 @@
                             "slug": "4g-coverage",
                             "desc": "4G coverage",
                             "available_geotypes": [
-                                "UTLA",
                                 "LTLA"
                             ],
                             "choropleth_default": true,
@@ -99,8 +97,7 @@
                             "desc": "Pupils at expected standards by end of primary school",
                             "available_geotypes": [
                                 "RGN",
-                                "UTLA",
-                                "LTLA"
+                                "UTLA"
                             ],
                             "choropleth_default": true,
                             "dot_density_default": true,
@@ -167,8 +164,7 @@
                             "desc": "Schools and nursery schools rated good or outstanding",
                             "available_geotypes": [
                                 "RGN",
-                                "UTLA",
-                                "LTLA"
+                                "UTLA"
                             ],
                             "choropleth_default": true,
                             "dot_density_default": true,
@@ -201,8 +197,7 @@
                             "desc": "Persistent absences for all pupils",
                             "available_geotypes": [
                                 "RGN",
-                                "UTLA",
-                                "LTLA"
+                                "UTLA"
                             ],
                             "choropleth_default": true,
                             "dot_density_default": true,
@@ -235,7 +230,6 @@
                             "desc": "Persistent absences for pupils eligible for free school meals",
                             "available_geotypes": [
                                 "RGN",
-                                "UTLA",
                                 "LTLA"
                             ],
                             "choropleth_default": true,
@@ -269,8 +263,7 @@
                             "desc": "Persistent absences for pupils looked after by local authorities",
                             "available_geotypes": [
                                 "RGN",
-                                "UTLA",
-                                "LTLA"
+                                "UTLA"
                             ],
                             "choropleth_default": true,
                             "dot_density_default": true,
@@ -515,8 +508,7 @@
                             "desc": "Female healthy life expectancy",
                             "available_geotypes": [
                                 "RGN",
-                                "UTLA",
-                                "LTLA"
+                                "UTLA"
                             ],
                             "choropleth_default": true,
                             "dot_density_default": true,
@@ -549,8 +541,7 @@
                             "desc": "Male healthy life expectancy",
                             "available_geotypes": [
                                 "RGN",
-                                "UTLA",
-                                "LTLA"
+                                "UTLA"
                             ],
                             "choropleth_default": true,
                             "dot_density_default": true,
@@ -583,7 +574,6 @@
                             "desc": "Cigarette smokers",
                             "available_geotypes": [
                                 "RGN",
-                                "UTLA",
                                 "LTLA"
                             ],
                             "choropleth_default": true,
@@ -972,7 +962,6 @@
                             "slug": "gross-value-added-per-hour-worked",
                             "desc": "Gross value added per hour worked",
                             "available_geotypes": [
-                                "UTLA",
                                 "LTLA"
                             ],
                             "choropleth_default": true,
@@ -1006,7 +995,6 @@
                             "desc": "Gross median weekly pay",
                             "available_geotypes": [
                                 "RGN",
-                                "UTLA",
                                 "LTLA"
                             ],
                             "choropleth_default": true,

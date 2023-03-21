@@ -30,6 +30,16 @@ var geotypes = map[string][]string{
 	"W06": []string{"LTLA", "UTLA"},
 }
 
+// requiredPrefixes lists geocode prefixes that are required to be within
+// a geotype.
+// ds.TrimGeotypes removes geotypes that do not have the required prefixes.
+// The key in the requiredPrefixes map is a geotype, and the value is a
+// slice of required prefixes.
+var requiredPrefixes = map[string][]string{
+	"LTLA": {"E07"},
+	"UTLA": {"E10"},
+}
+
 // These are the only geotypes we want in ess_content.json.
 // Order here counts.
 // This order will be seen in the Map.
@@ -219,6 +229,13 @@ func main() {
 		}
 		for _, geotype := range geotypes {
 			ind.AppendMetric(geotype, row.AreaCode, val)
+		}
+	}
+
+	// remove geotypes that do not have any geocodes with the required prefixes
+	for geotype, prefixes := range requiredPrefixes {
+		for _, prefix := range prefixes {
+			ds.TrimGeotypes(geotype, prefix)
 		}
 	}
 

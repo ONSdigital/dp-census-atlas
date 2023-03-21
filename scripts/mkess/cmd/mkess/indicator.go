@@ -3,6 +3,7 @@ package main
 import (
 	"encoding/csv"
 	"fmt"
+	"log"
 	"os"
 	"path/filepath"
 	"strconv"
@@ -67,6 +68,35 @@ func (ds *DataSet) FindIndicator(desc, period, measure, unit string) (*Indicator
 	}
 
 	return ind, nil
+}
+
+// TrimGeotypes removes geotypes from Indicators where there are no metrics with the given prefix.
+//
+// For example, if geotype is "LTLA" and prefix is "E07", LTLA geotypes without geocodes
+// that start with E07 will be removed.
+func (ds *DataSet) TrimGeotypes(geotype, prefix string) {
+	for desc, ind := range ds.Indicators {
+		for thisgeotype, metrics := range ind.Metrics {
+			if thisgeotype != geotype {
+				continue
+			}
+			hasprefix := false
+			for _, metric := range metrics {
+				geocode := metric.Geocode
+				if len(geocode) != 9 {
+					continue
+				}
+				if geocode[0:3] == prefix {
+					hasprefix = true
+					break
+				}
+			}
+			if !hasprefix {
+				delete(ind.Metrics, geotype)
+				log.Printf("trimmed geotype %s (missing %s) from %s", geotype, prefix, desc)
+			}
+		}
+	}
 }
 
 // AppendMetric appends a new geocode,value to an Indicator

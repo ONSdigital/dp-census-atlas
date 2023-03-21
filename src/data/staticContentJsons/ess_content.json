@@ -4,9 +4,334 @@
     },
     "content": [
         {
-            "name": "Digital",
-            "code": "digital",
-            "slug": "digital",
+            "name": "Economic output and productivity",
+            "code": "economic_output_and_productivity",
+            "slug": "economic-output-and-productivity",
+            "desc": "",
+            "variables": [
+                {
+                    "name": "Gross value added per hour worked",
+                    "code": "gross_value_added_per_hour_worked",
+                    "slug": "gross-value-added-per-hour-worked",
+                    "desc": "",
+                    "long_desc": "Gross value added per hour worked",
+                    "units": "£",
+                    "topic_code": "",
+                    "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+                    "classifications": [
+                        {
+                            "code": "gross_value_added_per_hour_worked",
+                            "slug": "gross-value-added-per-hour-worked",
+                            "desc": "Gross value added per hour worked",
+                            "available_geotypes": [
+                                "LTLA"
+                            ],
+                            "choropleth_default": true,
+                            "dot_density_default": true,
+                            "categories": [
+                                {
+                                    "code": "gross_value_added_per_hour_worked",
+                                    "slug": "gross-value-added-per-hour-worked",
+                                    "name": "Gross value added per hour worked",
+                                    "legend_str_1": "Pounds",
+                                    "legend_str_2": "",
+                                    "legend_str_3": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "People in work",
+            "code": "people_in_work",
+            "slug": "people-in-work",
+            "desc": "",
+            "variables": [
+                {
+                    "name": "Gross median weekly pay",
+                    "code": "gross_median_weekly_pay",
+                    "slug": "gross-median-weekly-pay",
+                    "desc": "",
+                    "long_desc": "Gross median weekly pay",
+                    "units": "£",
+                    "topic_code": "",
+                    "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+                    "classifications": [
+                        {
+                            "code": "gross_median_weekly_pay",
+                            "slug": "gross-median-weekly-pay",
+                            "desc": "Gross median weekly pay",
+                            "available_geotypes": [
+                                "RGN",
+                                "LTLA"
+                            ],
+                            "choropleth_default": true,
+                            "dot_density_default": true,
+                            "categories": [
+                                {
+                                    "code": "gross_median_weekly_pay",
+                                    "slug": "gross-median-weekly-pay",
+                                    "name": "Gross median weekly pay",
+                                    "legend_str_1": "Pounds",
+                                    "legend_str_2": "",
+                                    "legend_str_3": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Employment rate for 16 to 64 year olds",
+                    "code": "employment_rate_for_16_to_64_year_olds",
+                    "slug": "employment-rate-for-16-to-64-year-olds",
+                    "desc": "",
+                    "long_desc": "Employment rate for 16 to 64 year olds",
+                    "units": "%",
+                    "topic_code": "",
+                    "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+                    "classifications": [
+                        {
+                            "code": "employment_rate_for_16_to_64_year_olds",
+                            "slug": "employment-rate-for-16-to-64-year-olds",
+                            "desc": "Employment rate for 16 to 64 year olds",
+                            "available_geotypes": [
+                                "RGN",
+                                "LTLA"
+                            ],
+                            "choropleth_default": true,
+                            "dot_density_default": true,
+                            "categories": [
+                                {
+                                    "code": "employment_rate_for_16_to_64_year_olds",
+                                    "slug": "employment-rate-for-16-to-64-year-olds",
+                                    "name": "Employment rate for 16 to 64 year olds",
+                                    "legend_str_1": "Percentage",
+                                    "legend_str_2": "",
+                                    "legend_str_3": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Public transport or walk to employment centre with 500 to 4999 jobs",
+                    "code": "public_transport_or_walk_to_employment_centre_with_500_to_4999_jobs",
+                    "slug": "public-transport-or-walk-to-employment-centre-with-500-to-4999-jobs",
+                    "desc": "",
+                    "long_desc": "Public transport or walk to employment centre with 500 to 4999 jobs",
+                    "units": "mins",
+                    "topic_code": "",
+                    "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+                    "classifications": [
+                        {
+                            "code": "public_transport_or_walk_to_employment_centre_with_500_to_4999_jobs",
+                            "slug": "public-transport-or-walk-to-employment-centre-with-500-to-4999-jobs",
+                            "desc": "Public transport or walk to employment centre with 500 to 4999 jobs",
+                            "available_geotypes": [
+                                "RGN",
+                                "UTLA",
+                                "LTLA"
+                            ],
+                            "choropleth_default": true,
+                            "dot_density_default": true,
+                            "categories": [
+                                {
+                                    "code": "public_transport_or_walk_to_employment_centre_with_500_to_4999_jobs",
+                                    "slug": "public-transport-or-walk-to-employment-centre-with-500-to-4999-jobs",
+                                    "name": "Public transport or walk to employment centre with 500 to 4999 jobs",
+                                    "legend_str_1": "Minutes",
+                                    "legend_str_2": "",
+                                    "legend_str_3": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Drive to employment centre with 500 to 4999 jobs",
+                    "code": "drive_to_employment_centre_with_500_to_4999_jobs",
+                    "slug": "drive-to-employment-centre-with-500-to-4999-jobs",
+                    "desc": "",
+                    "long_desc": "Drive to employment centre with 500 to 4999 jobs",
+                    "units": "mins",
+                    "topic_code": "",
+                    "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+                    "classifications": [
+                        {
+                            "code": "drive_to_employment_centre_with_500_to_4999_jobs",
+                            "slug": "drive-to-employment-centre-with-500-to-4999-jobs",
+                            "desc": "Drive to employment centre with 500 to 4999 jobs",
+                            "available_geotypes": [
+                                "RGN",
+                                "UTLA",
+                                "LTLA"
+                            ],
+                            "choropleth_default": true,
+                            "dot_density_default": true,
+                            "categories": [
+                                {
+                                    "code": "drive_to_employment_centre_with_500_to_4999_jobs",
+                                    "slug": "drive-to-employment-centre-with-500-to-4999-jobs",
+                                    "name": "Drive to employment centre with 500 to 4999 jobs",
+                                    "legend_str_1": "Minutes",
+                                    "legend_str_2": "",
+                                    "legend_str_3": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Cycle to employment centre with 500 to 4999 jobs",
+                    "code": "cycle_to_employment_centre_with_500_to_4999_jobs",
+                    "slug": "cycle-to-employment-centre-with-500-to-4999-jobs",
+                    "desc": "",
+                    "long_desc": "Cycle to employment centre with 500 to 4999 jobs",
+                    "units": "mins",
+                    "topic_code": "",
+                    "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+                    "classifications": [
+                        {
+                            "code": "cycle_to_employment_centre_with_500_to_4999_jobs",
+                            "slug": "cycle-to-employment-centre-with-500-to-4999-jobs",
+                            "desc": "Cycle to employment centre with 500 to 4999 jobs",
+                            "available_geotypes": [
+                                "RGN",
+                                "UTLA",
+                                "LTLA"
+                            ],
+                            "choropleth_default": true,
+                            "dot_density_default": true,
+                            "categories": [
+                                {
+                                    "code": "cycle_to_employment_centre_with_500_to_4999_jobs",
+                                    "slug": "cycle-to-employment-centre-with-500-to-4999-jobs",
+                                    "name": "Cycle to employment centre with 500 to 4999 jobs",
+                                    "legend_str_1": "Minutes",
+                                    "legend_str_2": "",
+                                    "legend_str_3": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Apprenticeships starts",
+                    "code": "apprenticeships_starts",
+                    "slug": "apprenticeships-starts",
+                    "desc": "",
+                    "long_desc": "Apprenticeships starts",
+                    "units": "per 100,000 population",
+                    "topic_code": "",
+                    "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+                    "classifications": [
+                        {
+                            "code": "apprenticeships_starts",
+                            "slug": "apprenticeships-starts",
+                            "desc": "Apprenticeships starts",
+                            "available_geotypes": [
+                                "RGN",
+                                "UTLA",
+                                "LTLA"
+                            ],
+                            "choropleth_default": true,
+                            "dot_density_default": true,
+                            "categories": [
+                                {
+                                    "code": "apprenticeships_starts",
+                                    "slug": "apprenticeships-starts",
+                                    "name": "Apprenticeships starts",
+                                    "legend_str_1": "Rate per 100,000 population",
+                                    "legend_str_2": "",
+                                    "legend_str_3": ""
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "Apprenticeships achievements",
+                    "code": "apprenticeships_achievements",
+                    "slug": "apprenticeships-achievements",
+                    "desc": "",
+                    "long_desc": "Apprenticeships achievements",
+                    "units": "per 100,000 population",
+                    "topic_code": "",
+                    "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+                    "classifications": [
+                        {
+                            "code": "apprenticeships_achievements",
+                            "slug": "apprenticeships-achievements",
+                            "desc": "Apprenticeships achievements",
+                            "available_geotypes": [
+                                "RGN",
+                                "UTLA",
+                                "LTLA"
+                            ],
+                            "choropleth_default": true,
+                            "dot_density_default": true,
+                            "categories": [
+                                {
+                                    "code": "apprenticeships_achievements",
+                                    "slug": "apprenticeships-achievements",
+                                    "name": "Apprenticeships achievements",
+                                    "legend_str_1": "Rate per 100,000 population",
+                                    "legend_str_2": "",
+                                    "legend_str_3": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Regional accounts",
+            "code": "regional_accounts",
+            "slug": "regional-accounts",
+            "desc": "",
+            "variables": [
+                {
+                    "name": "Gross disposable household income per head",
+                    "code": "gross_disposable_household_income_per_head",
+                    "slug": "gross-disposable-household-income-per-head",
+                    "desc": "",
+                    "long_desc": "Gross disposable household income per head",
+                    "units": "£",
+                    "topic_code": "",
+                    "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+                    "classifications": [
+                        {
+                            "code": "gross_disposable_household_income_per_head",
+                            "slug": "gross-disposable-household-income-per-head",
+                            "desc": "Gross disposable household income per head",
+                            "available_geotypes": [
+                                "RGN",
+                                "LTLA"
+                            ],
+                            "choropleth_default": true,
+                            "dot_density_default": true,
+                            "categories": [
+                                {
+                                    "code": "gross_disposable_household_income_per_head",
+                                    "slug": "gross-disposable-household-income-per-head",
+                                    "name": "Gross disposable household income per head",
+                                    "legend_str_1": "Pounds",
+                                    "legend_str_2": "",
+                                    "legend_str_3": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "IT and internet industry",
+            "code": "it_and_internet_industry",
+            "slug": "it-and-internet-industry",
             "desc": "",
             "variables": [
                 {
@@ -76,9 +401,9 @@
             ]
         },
         {
-            "name": "Education and skills",
-            "code": "education_and_skills",
-            "slug": "education-and-skills",
+            "name": "Education and childcare",
+            "code": "education_and_childcare",
+            "slug": "education-and-childcare",
             "desc": "",
             "variables": [
                 {
@@ -383,32 +708,30 @@
                     ]
                 },
                 {
-                    "name": "Apprenticeships starts",
-                    "code": "apprenticeships_starts",
-                    "slug": "apprenticeships-starts",
+                    "name": "Aged 19 years and over further education and skills learner achievements",
+                    "code": "aged_19_years_and_over_further_education_and_skills_learner_achievements",
+                    "slug": "aged-19-years-and-over-further-education-and-skills-learner-achievements",
                     "desc": "",
-                    "long_desc": "Apprenticeships starts",
-                    "units": "per 100,000 population",
+                    "long_desc": "Aged 19 years and over further education and skills learner achievements",
+                    "units": "Number",
                     "topic_code": "",
                     "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
                     "classifications": [
                         {
-                            "code": "apprenticeships_starts",
-                            "slug": "apprenticeships-starts",
-                            "desc": "Apprenticeships starts",
+                            "code": "aged_19_years_and_over_further_education_and_skills_learner_achievements",
+                            "slug": "aged-19-years-and-over-further-education-and-skills-learner-achievements",
+                            "desc": "Aged 19 years and over further education and skills learner achievements",
                             "available_geotypes": [
-                                "RGN",
-                                "UTLA",
-                                "LTLA"
+                                "UTLA"
                             ],
                             "choropleth_default": true,
                             "dot_density_default": true,
                             "categories": [
                                 {
-                                    "code": "apprenticeships_starts",
-                                    "slug": "apprenticeships-starts",
-                                    "name": "Apprenticeships starts",
-                                    "legend_str_1": "Rate per 100,000 population",
+                                    "code": "aged_19_years_and_over_further_education_and_skills_learner_achievements",
+                                    "slug": "aged-19-years-and-over-further-education-and-skills-learner-achievements",
+                                    "name": "Aged 19 years and over further education and skills learner achievements",
+                                    "legend_str_1": "Achievements gained",
                                     "legend_str_2": "",
                                     "legend_str_3": ""
                                 }
@@ -417,32 +740,31 @@
                     ]
                 },
                 {
-                    "name": "Apprenticeships achievements",
-                    "code": "apprenticeships_achievements",
-                    "slug": "apprenticeships-achievements",
+                    "name": "Aged 16 to 64 years level 3 or above qualifications",
+                    "code": "aged_16_to_64_years_level_3_or_above_qualifications",
+                    "slug": "aged-16-to-64-years-level-3-or-above-qualifications",
                     "desc": "",
-                    "long_desc": "Apprenticeships achievements",
-                    "units": "per 100,000 population",
+                    "long_desc": "Aged 16 to 64 years level 3 or above qualifications",
+                    "units": "%",
                     "topic_code": "",
                     "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
                     "classifications": [
                         {
-                            "code": "apprenticeships_achievements",
-                            "slug": "apprenticeships-achievements",
-                            "desc": "Apprenticeships achievements",
+                            "code": "aged_16_to_64_years_level_3_or_above_qualifications",
+                            "slug": "aged-16-to-64-years-level-3-or-above-qualifications",
+                            "desc": "Aged 16 to 64 years level 3 or above qualifications",
                             "available_geotypes": [
                                 "RGN",
-                                "UTLA",
                                 "LTLA"
                             ],
                             "choropleth_default": true,
                             "dot_density_default": true,
                             "categories": [
                                 {
-                                    "code": "apprenticeships_achievements",
-                                    "slug": "apprenticeships-achievements",
-                                    "name": "Apprenticeships achievements",
-                                    "legend_str_1": "Rate per 100,000 population",
+                                    "code": "aged_16_to_64_years_level_3_or_above_qualifications",
+                                    "slug": "aged-16-to-64-years-level-3-or-above-qualifications",
+                                    "name": "Aged 16 to 64 years level 3 or above qualifications",
+                                    "legend_str_1": "Percentage",
                                     "legend_str_2": "",
                                     "legend_str_3": ""
                                 }
@@ -487,9 +809,9 @@
             ]
         },
         {
-            "name": "Health and wellbeing",
-            "code": "health_and_wellbeing",
-            "slug": "health-and-wellbeing",
+            "name": "Health and social care",
+            "code": "health_and_social_care",
+            "slug": "health-and-social-care",
             "desc": "",
             "variables": [
                 {
@@ -694,19 +1016,19 @@
                     ]
                 },
                 {
-                    "name": "Cancer diagnosis at stage 1 and 2",
-                    "code": "cancer_diagnosis_at_stage_1_and_2",
-                    "slug": "cancer-diagnosis-at-stage-1-and-2",
+                    "name": "Cancers diagnosed at stage 1 and 2",
+                    "code": "cancers_diagnosed_at_stage_1_and_2",
+                    "slug": "cancers-diagnosed-at-stage-1-and-2",
                     "desc": "",
-                    "long_desc": "Cancer diagnosis at stage 1 and 2",
+                    "long_desc": "Cancers diagnosed at stage 1 and 2",
                     "units": "%",
                     "topic_code": "",
                     "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
                     "classifications": [
                         {
-                            "code": "cancer_diagnosis_at_stage_1_and_2",
-                            "slug": "cancer-diagnosis-at-stage-1-and-2",
-                            "desc": "Cancer diagnosis at stage 1 and 2",
+                            "code": "cancers_diagnosed_at_stage_1_and_2",
+                            "slug": "cancers-diagnosed-at-stage-1-and-2",
+                            "desc": "Cancers diagnosed at stage 1 and 2",
                             "available_geotypes": [
                                 "RGN",
                                 "UTLA",
@@ -716,9 +1038,9 @@
                             "dot_density_default": true,
                             "categories": [
                                 {
-                                    "code": "cancer_diagnosis_at_stage_1_and_2",
-                                    "slug": "cancer-diagnosis-at-stage-1-and-2",
-                                    "name": "Cancer diagnosis at stage 1 and 2",
+                                    "code": "cancers_diagnosed_at_stage_1_and_2",
+                                    "slug": "cancers-diagnosed-at-stage-1-and-2",
+                                    "name": "Cancers diagnosed at stage 1 and 2",
                                     "legend_str_1": "Percentage",
                                     "legend_str_2": "",
                                     "legend_str_3": ""
@@ -760,7 +1082,15 @@
                             ]
                         }
                     ]
-                },
+                }
+            ]
+        },
+        {
+            "name": "Well-being",
+            "code": "well-being",
+            "slug": "well-being",
+            "desc": "",
+            "variables": [
                 {
                     "name": "Life satisfaction",
                     "code": "life_satisfaction",
@@ -942,189 +1272,6 @@
             ]
         },
         {
-            "name": "Income and pay",
-            "code": "income_and_pay",
-            "slug": "income-and-pay",
-            "desc": "",
-            "variables": [
-                {
-                    "name": "Gross value added per hour worked",
-                    "code": "gross_value_added_per_hour_worked",
-                    "slug": "gross-value-added-per-hour-worked",
-                    "desc": "",
-                    "long_desc": "Gross value added per hour worked",
-                    "units": "£",
-                    "topic_code": "",
-                    "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
-                    "classifications": [
-                        {
-                            "code": "gross_value_added_per_hour_worked",
-                            "slug": "gross-value-added-per-hour-worked",
-                            "desc": "Gross value added per hour worked",
-                            "available_geotypes": [
-                                "LTLA"
-                            ],
-                            "choropleth_default": true,
-                            "dot_density_default": true,
-                            "categories": [
-                                {
-                                    "code": "gross_value_added_per_hour_worked",
-                                    "slug": "gross-value-added-per-hour-worked",
-                                    "name": "Gross value added per hour worked",
-                                    "legend_str_1": "Pounds",
-                                    "legend_str_2": "",
-                                    "legend_str_3": ""
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "name": "Gross median weekly pay",
-                    "code": "gross_median_weekly_pay",
-                    "slug": "gross-median-weekly-pay",
-                    "desc": "",
-                    "long_desc": "Gross median weekly pay",
-                    "units": "£",
-                    "topic_code": "",
-                    "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
-                    "classifications": [
-                        {
-                            "code": "gross_median_weekly_pay",
-                            "slug": "gross-median-weekly-pay",
-                            "desc": "Gross median weekly pay",
-                            "available_geotypes": [
-                                "RGN",
-                                "LTLA"
-                            ],
-                            "choropleth_default": true,
-                            "dot_density_default": true,
-                            "categories": [
-                                {
-                                    "code": "gross_median_weekly_pay",
-                                    "slug": "gross-median-weekly-pay",
-                                    "name": "Gross median weekly pay",
-                                    "legend_str_1": "Pounds",
-                                    "legend_str_2": "",
-                                    "legend_str_3": ""
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            "name": "Transport",
-            "code": "transport",
-            "slug": "transport",
-            "desc": "",
-            "variables": [
-                {
-                    "name": "Public transport or walk to employment centre with 500 to 4999 jobs",
-                    "code": "public_transport_or_walk_to_employment_centre_with_500_to_4999_jobs",
-                    "slug": "public-transport-or-walk-to-employment-centre-with-500-to-4999-jobs",
-                    "desc": "",
-                    "long_desc": "Public transport or walk to employment centre with 500 to 4999 jobs",
-                    "units": "mins",
-                    "topic_code": "",
-                    "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
-                    "classifications": [
-                        {
-                            "code": "public_transport_or_walk_to_employment_centre_with_500_to_4999_jobs",
-                            "slug": "public-transport-or-walk-to-employment-centre-with-500-to-4999-jobs",
-                            "desc": "Public transport or walk to employment centre with 500 to 4999 jobs",
-                            "available_geotypes": [
-                                "RGN",
-                                "UTLA",
-                                "LTLA"
-                            ],
-                            "choropleth_default": true,
-                            "dot_density_default": true,
-                            "categories": [
-                                {
-                                    "code": "public_transport_or_walk_to_employment_centre_with_500_to_4999_jobs",
-                                    "slug": "public-transport-or-walk-to-employment-centre-with-500-to-4999-jobs",
-                                    "name": "Public transport or walk to employment centre with 500 to 4999 jobs",
-                                    "legend_str_1": "Minutes",
-                                    "legend_str_2": "",
-                                    "legend_str_3": ""
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "name": "Drive to employment centre with 500 to 4999 jobs",
-                    "code": "drive_to_employment_centre_with_500_to_4999_jobs",
-                    "slug": "drive-to-employment-centre-with-500-to-4999-jobs",
-                    "desc": "",
-                    "long_desc": "Drive to employment centre with 500 to 4999 jobs",
-                    "units": "mins",
-                    "topic_code": "",
-                    "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
-                    "classifications": [
-                        {
-                            "code": "drive_to_employment_centre_with_500_to_4999_jobs",
-                            "slug": "drive-to-employment-centre-with-500-to-4999-jobs",
-                            "desc": "Drive to employment centre with 500 to 4999 jobs",
-                            "available_geotypes": [
-                                "RGN",
-                                "UTLA",
-                                "LTLA"
-                            ],
-                            "choropleth_default": true,
-                            "dot_density_default": true,
-                            "categories": [
-                                {
-                                    "code": "drive_to_employment_centre_with_500_to_4999_jobs",
-                                    "slug": "drive-to-employment-centre-with-500-to-4999-jobs",
-                                    "name": "Drive to employment centre with 500 to 4999 jobs",
-                                    "legend_str_1": "Minutes",
-                                    "legend_str_2": "",
-                                    "legend_str_3": ""
-                                }
-                            ]
-                        }
-                    ]
-                },
-                {
-                    "name": "Cycle to employment centre with 500 to 4999 jobs",
-                    "code": "cycle_to_employment_centre_with_500_to_4999_jobs",
-                    "slug": "cycle-to-employment-centre-with-500-to-4999-jobs",
-                    "desc": "",
-                    "long_desc": "Cycle to employment centre with 500 to 4999 jobs",
-                    "units": "mins",
-                    "topic_code": "",
-                    "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
-                    "classifications": [
-                        {
-                            "code": "cycle_to_employment_centre_with_500_to_4999_jobs",
-                            "slug": "cycle-to-employment-centre-with-500-to-4999-jobs",
-                            "desc": "Cycle to employment centre with 500 to 4999 jobs",
-                            "available_geotypes": [
-                                "RGN",
-                                "UTLA",
-                                "LTLA"
-                            ],
-                            "choropleth_default": true,
-                            "dot_density_default": true,
-                            "categories": [
-                                {
-                                    "code": "cycle_to_employment_centre_with_500_to_4999_jobs",
-                                    "slug": "cycle-to-employment-centre-with-500-to-4999-jobs",
-                                    "name": "Cycle to employment centre with 500 to 4999 jobs",
-                                    "legend_str_1": "Minutes",
-                                    "legend_str_2": "",
-                                    "legend_str_3": ""
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
-        {
             "name": "Crime and justice",
             "code": "crime_and_justice",
             "slug": "crime-and-justice",
@@ -1165,9 +1312,9 @@
             ]
         },
         {
-            "name": "Devolution",
-            "code": "devolution",
-            "slug": "devolution",
+            "name": "Government, public sector and taxes",
+            "code": "government,_public_sector_and_taxes",
+            "slug": "government-public-sector-and-taxes",
             "desc": "",
             "variables": [
                 {

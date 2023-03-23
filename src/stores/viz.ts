@@ -8,7 +8,7 @@ import {
 import { params } from "./params";
 import { viewport } from "./viewport";
 import { getDataBaseUrlForVariable, isDataAvailable } from "../helpers/contentHelpers";
-import type { Mode, SingleCategoryVizData } from "../types";
+import type { Mode } from "../types";
 import { never } from "../util/typeUtil";
 
 /**

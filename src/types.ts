@@ -58,16 +58,27 @@ export type VariableData = { [catCode: string]: { count: number; total: number; 
 export type NumberQuadruple = [number, number, number, number];
 export type StringQuintuple = [string, string, string, string, string];
 
-export type VizData = {
+type VizData = {
   geoType: GeoType;
-  breaks: number[];
-  places: { geoCode: string; categoryValue: number }[];
   params: {
     mode: Mode;
     variableGroup: VariableGroup;
     variable: Variable;
+    classification: Classification;
     category: Category;
   };
+};
+
+export type SingleCategoryVizData = VizData & {
+  kind: "single-category";
+  breaks: number[];
+  places: { geoCode: string; categoryValue: number }[];
+};
+
+export type MultiCategoryVizData = VizData & {
+  kind: "multi-category";
+  englandAndWales: Record<string, number>;
+  places: { geoCode: string; categoryValue: number }[];
 };
 
 export type GeographyInfo = {

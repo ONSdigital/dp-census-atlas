@@ -5,12 +5,13 @@ import { uniqueRoundedClassificationBreaks } from "../helpers/classificationHelp
 
 const geoBaseUrl = "https://cdn.ons.gov.uk/maptiles/cm-geos/v2";
 
-// eg https://onsvisual.github.io/dot-density-data/output/data/oa/2046-1358-12/workplace_travel_4a.csv
 const getSingleCategoryUrl = (args: any) =>
   `${args.baseUrl}/tiles/${args.geoType}/${args.tile.tilename}/${args.category.code}.csv`;
 
-const getMultiCategoryUrl = (args: any) =>
-  `${args.baseUrl}/tiles/${args.geoType}/${args.tile.tilename}/${args.classificaton.code}.csv`;
+const getMultiCategoryUrl = (args: any) => {
+  // https://onsvisual.github.io/dot-density-data/output/data/tiles/msoa/126-83-8/country_of_birth_3a.csv
+  return `${args.baseUrl}/tiles/${args.geoType}/${args.tile.tilename}/${args.classification.code}.csv`;
+};
 
 /*
   Fetch place data files for all data 'tiles' (predefined coordinate grid squares) that intersect with current viewport
@@ -27,13 +28,18 @@ export const fetchSingleCategoryDataForBbox = async (args: {
 };
 
 export const fetchMultiCategoryDataForBbox = async (args: {
-  category: Category;
+  classification: Classification;
   geoType: GeoType;
   bbox: Bbox;
   baseUrl: string;
 }) => {
   const data = await fetchTileDataForBbox(args, getMultiCategoryUrl);
-  return data.map((row) => parseSingleCategoryData(row, args.category.code));
+  return data.map((row) =>
+    parseMultiCategoryData(
+      row,
+      args.classification.categories.map((c) => c.code),
+    ),
+  );
 };
 
 const fetchTileDataForBbox = async (
@@ -54,12 +60,6 @@ const fetchTileDataForBbox = async (
   return fetched.flat();
 };
 
-const parseSingleCategoryData = (row: dsv.DSVRowString<string>, categoryCode: string) => {
-  const geoCode = row.geography_code;
-  const categoryValue = parseFloat(row[categoryCode]);
-  return { geoCode, categoryValue };
-};
-
 /*
   Fetch json with census data by for categories categoryCode and totalCode for all geographies of type 'geoType' that
   fall within geographic bounding box represented by 'tile'.
@@ -68,6 +68,18 @@ const fetchTileData = async (url: string) => {
   const response = await fetch(url);
   const csv = await response.text();
   return dsv.csvParse(csv);
+};
+
+const parseSingleCategoryData = (row: dsv.DSVRowString<string>, categoryCode: string) => {
+  const geoCode = row.geography_code;
+  const categoryValue = parseFloat(row[categoryCode]);
+  return { geoCode, categoryValue };
+};
+
+const parseMultiCategoryData = (row: dsv.DSVRowString<string>, categoryCodes: string[]) => {
+  const geoCode = row.geography_code;
+  const categoryValues = categoryCodes.map((c) => ({ code: c, value: parseFloat(row[c]) }));
+  return { geoCode, categoryValues };
 };
 
 /*
@@ -86,6 +98,19 @@ export const fetchBreaks = async (args: {
   const breaksRaw = await response.json();
   const breaks = uniqueRoundedClassificationBreaks(args.classification.code, args.mode, breaksRaw);
   return { breaks };
+};
+
+export const fetchMultiCategoryDataForEnglandAndWales = async (args: {
+  mode: Mode;
+  classification: Classification;
+  category: Category;
+  geoType: GeoType;
+  baseUrl: string;
+}) => {
+  const url = `${args.baseUrl}/ew/${args.classification.code}.json`;
+  const response = await fetch(url);
+  const data = (await response.json()) as Record<string, number>;
+  return { data };
 };
 
 /*

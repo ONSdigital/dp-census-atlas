@@ -37,7 +37,9 @@ export const selected = asyncDerived([geography, viz], async ([$geography, $viz]
       const data = await fetchMultiCategoryDataForBbox({ ...args, classification: $viz.params.classification });
       return {
         ...$geography,
-        value: data.find((p) => p.geoCode === $geography.geoCode)?.categoryValues as Record<string, number> | undefined,
+        values: data.find((p) => p.geoCode === $geography.geoCode)?.categoryValues as
+          | Record<string, number>
+          | undefined,
       };
     }
   }

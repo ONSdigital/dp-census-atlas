@@ -3,7 +3,7 @@
 </script>
 
 <div
-  class="bg-white border-[3px] border-ons-ocean-blue w-[22px] h-[22px] rounded-sm flex flex-shrink-0 justify-center items-center focus-within:border-blue-500"
+  class="bg-white border-[3px] border-ons-ocean-blue w-[22px] h-[22px] mr-[1px] rounded-sm flex flex-shrink-0 justify-center items-center focus-within:border-blue-500"
 >
   {#if selected}
     <!-- #206095 -->

@@ -30,7 +30,7 @@
         geoType: $selected?.geoType,
         geoCode: $selected?.geoCode,
         displayName: $selected?.displayName,
-        value: $selected?.value,
+        value: $selected && "value" in $selected ? $selected?.value : undefined,
       };
 
   const legendTextClass = "text-sm sm:text-base lg:text-lg xl:text-xl";
@@ -147,7 +147,7 @@
       {/if}
       {#if $viz}
         <BreaksChart
-          selected={$selected?.value}
+          selected={$selected && "value" in $selected ? $selected?.value : undefined}
           hovered={active.value}
           {suffix}
           breaks={$viz.breaks}

@@ -15,11 +15,13 @@
       <Logo />
     </a>
   </div>
+  <!--
   <div class="p-3">
     <a href="https://www.ons.gov.uk/census" class="fill-ons-census custom-ring">
       <Census2021 />
     </a>
   </div>
+  -->
   <div class="truncate">
     <strong class="text-black">ESS DEMO!</strong>
   </div>

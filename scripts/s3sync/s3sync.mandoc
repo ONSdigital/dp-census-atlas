@@ -130,7 +130,7 @@ but you can set them yourself instead of running
 You always have to set
 .Ev AWS_REGION .
 .Sh EXIT STATUS
-.Ex
+.Ex -std
 .Sh EXAMPLES
 For simple AWS authentication setups you could set an account's environment variables
 and run

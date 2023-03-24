@@ -63,13 +63,14 @@ In this example, I am using the `ESS2` prefix in that same bucket.
 
 `mkess` usage is like this:
 
-	mkess -O <dir> -u <bucket-url> < spreadsheet.csv
+	mkess -O <dir> -u <bucket-url> -t <taxonomy.json> < spreadsheet.csv
 
 For example:
 
 	mkess \
 		-O ESS2 \
 		-u https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2 \
+		-t taxonomy.json \
 		< in.csv
 
 `mkess` creates the output files under the directory named in its `-O` argument.

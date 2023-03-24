@@ -1,4 +1,4 @@
-package main
+package content
 
 import (
 	"encoding/json"
@@ -55,7 +55,7 @@ type Category struct {
 	Legend3 string `json:"legend_str_3"`
 }
 
-func NewContent(release string) *Content {
+func New(release string) *Content {
 	return &Content{
 		Meta: Meta{
 			Release: release,

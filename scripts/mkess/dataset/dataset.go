@@ -1,4 +1,4 @@
-package main
+package dataset
 
 import (
 	"encoding/csv"
@@ -26,7 +26,7 @@ type Metric struct {
 	Value   float64
 }
 
-func NewDataSet() *DataSet {
+func New() *DataSet {
 	return &DataSet{
 		Indicators: make(map[string]*Indicator),
 	}

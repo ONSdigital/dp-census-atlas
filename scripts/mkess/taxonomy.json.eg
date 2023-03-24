@@ -6,97 +6,220 @@
     {
       "name": "Economic output and productivity",
       "indicators": [
-        "Gross value added per hour worked"
+        {
+          "name": "Gross value added per hour worked",
+          "longdesc": "Long description for gross value added per hour worked"
+        }
       ]
     },
     {
       "name": "People in work",
       "indicators": [
-        "Gross median weekly pay",
-        "Employment rate for 16 to 64 year olds",
-        "Public transport or walk to employment centre with 500 to 4999 jobs",
-        "Drive to employment centre with 500 to 4999 jobs",
-        "Cycle to employment centre with 500 to 4999 jobs",
-        "Apprenticeships starts",
-        "Apprenticeships achievements"
+        {
+          "name": "Gross median weekly pay",
+          "longdesc": "Long description for gross median weekly pay"
+        },
+        {
+          "name": "Employment rate for 16 to 64 year olds",
+          "longdesc": "Long description for employment rate for 16 to 64 year olds"
+        },
+        {
+          "name": "Public transport or walk to employment centre with 500 to 4999 jobs",
+          "longdesc": "Long description for public transport or walk to employment centre with 500 to 4999 jobs"
+        },
+        {
+          "name": "Drive to employment centre with 500 to 4999 jobs",
+          "longdesc": "Long description for drive to employment centre with 500 to 4999 jobs"
+        },
+        {
+          "name": "Cycle to employment centre with 500 to 4999 jobs",
+          "longdesc": "Long description for cycle to employment centre with 500 to 4999 jobs"
+        },
+        {
+          "name": "Apprenticeships starts",
+          "longdesc": "Long description for apprenticeships starts"
+        },
+        {
+          "name": "Apprenticeships achievements",
+          "longdesc": "Long description for apprenticeships achievements"
+        }
       ]
     },
     {
       "name": "Regional accounts",
       "indicators": [
-        "Gross disposable household income per head"
+        {
+          "name": "Gross disposable household income per head",
+          "longdesc": "Long description for gross disposable household income per head"
+        }
       ]
     },
     {
       "name": "International trade",
       "indicators": [
-        "Total value of UK exports",
-        "Inward foreign direct investment (FDI)",
-        "Outward foreign direct investment (FDI)"
+        {
+          "name": "Total value of UK exports",
+          "longdesc": "Long description for total value of UK exports"
+        },
+        {
+          "name": "Inward foreign direct investment (FDI)",
+          "longdesc": "Long description for inward foreign direct investment (FDI)"
+        },
+        {
+          "name": "Outward foreign direct investment (FDI)",
+          "longdesc": "Long description for outward foreign direct investment (FDI)"
+        }
       ]
     },
     {
       "name": "IT and internet industry",
       "indicators": [
-        "Gigabit capable broadband",
-        "4G coverage"
+        {
+          "name": "Gigabit capable broadband",
+          "longdesc": "Long description for gigabit capable broadband"
+        },
+        {
+          "name": "4G coverage",
+          "longdesc": "Long description for 4G coverage"
+        }
       ]
     },
     {
       "name": "Education and childcare",
       "indicators": [
-        "Pupils at expected standards by end of primary school",
-        "GCSEs (and equivalent) in English and maths by age 19",
-        "Schools and nursery schools rated good or outstanding",
-        "Persistent absences for all pupils",
-        "Persistent absences for pupils eligible for free school meals",
-        "Persistent absences for pupils looked after by local authorities",
-        "Children at expected standard for communication and language by end of early years foundation stage",
-        "Children at expected standard for literacy by end of early years foundation stage",
-        "Children at expected standard for maths by end of early years foundation stage",
-        "Aged 19 years and over further education and skills learner achievements",
-        "Aged 16 to 64 years level 3 or above qualifications",
-        "Aged 19 years and over further education and skills participation"
+        {
+          "name": "Pupils at expected standards by end of primary school",
+          "longdesc": "Long description for pupils at expected standards by end of primary school"
+        },
+        {
+          "name": "GCSEs (and equivalent) in English and maths by age 19",
+          "longdesc": "Long description for GCSEs (and equivalent) in English and maths by age 19"
+        },
+        {
+          "name": "Schools and nursery schools rated good or outstanding",
+          "longdesc": "Long description for schools and nursery schools rated good or outstanding"
+        },
+        {
+          "name": "Persistent absences for all pupils",
+          "longdesc": "Long description for persistent absences for all pupils"
+        },
+        {
+          "name": "Persistent absences for pupils eligible for free school meals",
+          "longdesc": "Long description for persistent absences for pupils eligible for free school meals"
+        },
+        {
+          "name": "Persistent absences for pupils looked after by local authorities",
+          "longdesc": "Long description for persistent absences for pupils looked after by local authorities"
+        },
+        {
+          "name": "Children at expected standard for communication and language by end of early years foundation stage",
+          "longdesc": "Long description for children at expected standard for communication and language by end of early years foundation stage"
+        },
+        {
+          "name": "Children at expected standard for literacy by end of early years foundation stage",
+          "longdesc": "Long description for children at expected standard for literacy by end of early years foundation stage"
+        },
+        {
+          "name": "Children at expected standard for maths by end of early years foundation stage",
+          "longdesc": "Long description for children at expected standard for maths by end of early years foundation stage"
+        },
+        {
+          "name": "Aged 19 years and over further education and skills learner achievements",
+          "longdesc": "Long description for aged 19 years and over further education and skills learner achievements"
+        },
+        {
+          "name": "Aged 16 to 64 years level 3 or above qualifications",
+          "longdesc": "Long description for aged 16 to 64 years level 3 or above qualifications"
+        },
+        {
+          "name": "Aged 19 years and over further education and skills participation",
+          "longdesc": "Long description for aged 19 years and over further education and skills participation"
+        }
       ]
     },
     {
       "name": "Health and social care",
       "indicators": [
-        "Female healthy life expectancy",
-        "Male healthy life expectancy",
-        "Cigarette smokers",
-        "Overweight children at reception age (aged four to five years)",
-        "Overweight children at Year 6 age (aged 10 to 11 years)",
-        "Overweight adults (aged 18 years and over)",
-        "Cancers diagnosed at stage 1 and 2",
-        "Cardiovascular mortality considered preventable in persons aged under 75"
+        {
+          "name": "Female healthy life expectancy",
+          "longdesc": "Long description for female healthy life expectancy"
+        },
+        {
+          "name": "Male healthy life expectancy",
+          "longdesc": "Long description for male healthy life expectancy"
+        },
+        {
+          "name": "Cigarette smokers",
+          "longdesc": "Long description for cigarette smokers"
+        },
+        {
+          "name": "Overweight children at reception age (aged four to five years)",
+          "longdesc": "Long description for oveerweight children at reception age (age four to five years)"
+        },
+        {
+          "name": "Overweight children at Year 6 age (aged 10 to 11 years)",
+          "longdesc": "Long description for overweight children at Year 6 age (aged 10 to 11 years)"
+        },
+        {
+          "name": "Overweight adults (aged 18 years and over)",
+          "longdesc": "Long description for overweight adults (aged 18 years and over)"
+        },
+        {
+          "name": "Cancers diagnosed at stage 1 and 2",
+          "longdesc": "Long description for cancers diagnosed at stage 1 and 2"
+        },
+        {
+          "name": "Cardiovascular mortality considered preventable in persons aged under 75",
+          "longdesc": "Long description for cardiovascular mortality considered preventable in persons aged under 75"
+        }
       ]
     },
     {
       "name": "Well-being",
       "indicators": [
-        "Life satisfaction",
-        "Feeling life is worthwhile",
-        "Happiness",
-        "Anxiety"
+        {
+          "name": "Life satisfaction",
+          "longdesc": "Long description for life satisfaction"
+        },
+        {
+          "name": "Feeling life is worthwhile",
+          "longdesc": "Long description for feeling life is worthwhile"
+        },
+        {
+          "name": "Happiness",
+          "longdesc": "Long description for happiness"
+        },
+        {
+          "name": "Anxiety",
+          "longdesc": "Long description for anxiety"
+        }
       ]
     },
     {
       "name": "Housing",
       "indicators": [
-        "Additions to the housing stock"
+        {
+          "name": "Additions to the housing stock",
+          "longdesc": "Long description for additions to the housing stock"
+        }
       ]
     },
     {
       "name": "Crime and justice",
       "indicators": [
-        "Homicide Offences"
+        {
+          "name": "Homicide Offences",
+          "longdesc": "Long description for homicide offences"
+        }
       ]
     },
     {
       "name": "Government, public sector and taxes",
       "indicators": [
-        "Population under devolution deal in England"
+        {
+          "name": "Population under devolution deal in England",
+          "longdesc": "Long description for population under devolution deal in Englans"
+        }
       ]
     }
   ]

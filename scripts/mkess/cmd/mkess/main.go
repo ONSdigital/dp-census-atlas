@@ -2,7 +2,6 @@ package main
 
 import (
 	"encoding/csv"
-	"encoding/json"
 	"flag"
 	"fmt"
 	"io"
@@ -13,6 +12,10 @@ import (
 
 	"github.com/gosimple/slug"
 	"github.com/jszwec/csvutil"
+
+	"github.com/ONSdigital/dp-census-atlas/scripts/mkess/content"
+	"github.com/ONSdigital/dp-census-atlas/scripts/mkess/dataset"
+	"github.com/ONSdigital/dp-census-atlas/scripts/mkess/taxonomy"
 )
 
 // Map geocode prefixes to geotypes.
@@ -48,19 +51,6 @@ var requiredPrefixes = map[string][]string{
 // matching members in this order.
 var contentGeotypes = []string{"RGN", "UTLA", "LTLA"}
 
-type Taxonomy struct {
-	Topics []Topic `json:"topics"`
-}
-
-// The Topic->Indicators hierarchy defines the structure of ess_content.json.
-// Topics become the top level VariableGroups and Indicators become
-// Variables/Classifications/Categories.
-// See NewCategory() for how Indicators are set up within content.json Variables.
-type Topic struct {
-	Name       string   `json:"name"`
-	Indicators []string `json:"indicators"`
-}
-
 func main() {
 	outdir := flag.String("O", "", "output directory")
 	baseurl := flag.String("u", "", "base URL for data tiles and ckmeans files")
@@ -75,7 +65,7 @@ func main() {
 		os.Exit(2)
 	}
 
-	taxonomy, err := loadTaxonomy(*taxpath)
+	taxonomy, err := taxonomy.Load(*taxpath)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -103,7 +93,7 @@ func main() {
 	}
 
 	// Set up DataSet to accumulate Indicators and Values
-	ds := NewDataSet()
+	ds := dataset.New()
 
 	line := 1 // accounts for header line
 	for {
@@ -165,34 +155,20 @@ func main() {
 	}
 }
 
-func loadTaxonomy(fname string) (*Taxonomy, error) {
-	var tax Taxonomy
-
-	buf, err := os.ReadFile(fname)
-	if err != nil {
-		return nil, err
-	}
-
-	if err := json.Unmarshal(buf, &tax); err != nil {
-		return nil, err
-	}
-
-	return &tax, nil
-}
-
 // genContent generates the ess_content.json file.
 // The structure comes from topics, and the data comes from ds.
-func genContent(fname string, topics []Topic, ds *DataSet, baseurl string) error {
-	cont := NewContent("ESS data test")
+func genContent(fname string, topics []taxonomy.Topic, ds *dataset.DataSet, baseurl string) error {
+	cont := content.New("ESS data test")
 	for _, topic := range topics {
-		vg := NewVariableGroup(
+		vg := content.NewVariableGroup(
 			topic.Name,
-			ZapSpecial(topic.Name),
+			dataset.ZapSpecial(topic.Name),
 			slug.Make(topic.Name),
 		)
 
 		nind := 0
-		for _, iname := range topic.Indicators {
+		for _, taxind := range topic.Indicators {
+			iname := taxind.Name
 			ind, ok := ds.Indicators[iname]
 			if !ok {
 				log.Printf("Indicator %q not found in spreadsheet", iname)
@@ -205,7 +181,7 @@ func genContent(fname string, topics []Topic, ds *DataSet, baseurl string) error
 			}
 			vg.NewCategory(
 				iname,
-				ZapSpecial(iname),
+				dataset.ZapSpecial(iname),
 				slug.Make(iname),
 				ind.Unit,
 				ind.Measure,
@@ -227,7 +203,7 @@ func genContent(fname string, topics []Topic, ds *DataSet, baseurl string) error
 
 // availableGeotypes returns the list of geotypes in an Indicator which are
 // also in contentGeotypes.
-func availableGeotypes(ind *Indicator) []string {
+func availableGeotypes(ind *dataset.Indicator) []string {
 	var result []string
 	for _, wanttype := range contentGeotypes {
 		for geotype := range ind.Metrics {

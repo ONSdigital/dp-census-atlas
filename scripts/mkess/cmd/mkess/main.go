@@ -181,6 +181,7 @@ func genContent(fname string, topics []taxonomy.Topic, ds *dataset.DataSet, base
 			}
 			vg.NewCategory(
 				iname,
+				taxind.LongDesc,
 				dataset.ZapSpecial(iname),
 				slug.Make(iname),
 				ind.Unit,

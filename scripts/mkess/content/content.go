@@ -81,13 +81,13 @@ func (cont *Content) AppendVariableGroup(vg *VariableGroup) {
 // for a single Indicator.
 // The structure of content.json has more hierarchical levels than we need for ESS.
 // So we fill each level with the same Indicator fields.
-func (vg *VariableGroup) NewCategory(name, code, slug, units, legend, baseurl string, geotypes []string) {
+func (vg *VariableGroup) NewCategory(name, longdesc, code, slug, units, legend, baseurl string, geotypes []string) {
 	v := &Variable{
 		Name:        name,
 		Code:        code,
 		Slug:        slug,
 		Desc:        "",
-		LongDesc:    name,
+		LongDesc:    longdesc,
 		Units:       units,
 		BaseURL2021: baseurl,
 		Classifications: []*Classification{

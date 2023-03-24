@@ -1,0 +1,103 @@
+{
+  "meta": {
+    "comment": "Rob's taxonomy"
+  },
+  "topics": [
+    {
+      "name": "Economic output and productivity",
+      "indicators": [
+        "Gross value added per hour worked"
+      ]
+    },
+    {
+      "name": "People in work",
+      "indicators": [
+        "Gross median weekly pay",
+        "Employment rate for 16 to 64 year olds",
+        "Public transport or walk to employment centre with 500 to 4999 jobs",
+        "Drive to employment centre with 500 to 4999 jobs",
+        "Cycle to employment centre with 500 to 4999 jobs",
+        "Apprenticeships starts",
+        "Apprenticeships achievements"
+      ]
+    },
+    {
+      "name": "Regional accounts",
+      "indicators": [
+        "Gross disposable household income per head"
+      ]
+    },
+    {
+      "name": "International trade",
+      "indicators": [
+        "Total value of UK exports",
+        "Inward foreign direct investment (FDI)",
+        "Outward foreign direct investment (FDI)"
+      ]
+    },
+    {
+      "name": "IT and internet industry",
+      "indicators": [
+        "Gigabit capable broadband",
+        "4G coverage"
+      ]
+    },
+    {
+      "name": "Education and childcare",
+      "indicators": [
+        "Pupils at expected standards by end of primary school",
+        "GCSEs (and equivalent) in English and maths by age 19",
+        "Schools and nursery schools rated good or outstanding",
+        "Persistent absences for all pupils",
+        "Persistent absences for pupils eligible for free school meals",
+        "Persistent absences for pupils looked after by local authorities",
+        "Children at expected standard for communication and language by end of early years foundation stage",
+        "Children at expected standard for literacy by end of early years foundation stage",
+        "Children at expected standard for maths by end of early years foundation stage",
+        "Aged 19 years and over further education and skills learner achievements",
+        "Aged 16 to 64 years level 3 or above qualifications",
+        "Aged 19 years and over further education and skills participation"
+      ]
+    },
+    {
+      "name": "Health and social care",
+      "indicators": [
+        "Female healthy life expectancy",
+        "Male healthy life expectancy",
+        "Cigarette smokers",
+        "Overweight children at reception age (aged four to five years)",
+        "Overweight children at Year 6 age (aged 10 to 11 years)",
+        "Overweight adults (aged 18 years and over)",
+        "Cancers diagnosed at stage 1 and 2",
+        "Cardiovascular mortality considered preventable in persons aged under 75"
+      ]
+    },
+    {
+      "name": "Well-being",
+      "indicators": [
+        "Life satisfaction",
+        "Feeling life is worthwhile",
+        "Happiness",
+        "Anxiety"
+      ]
+    },
+    {
+      "name": "Housing",
+      "indicators": [
+        "Additions to the housing stock"
+      ]
+    },
+    {
+      "name": "Crime and justice",
+      "indicators": [
+        "Homicide Offences"
+      ]
+    },
+    {
+      "name": "Government, public sector and taxes",
+      "indicators": [
+        "Population under devolution deal in England"
+      ]
+    }
+  ]
+}

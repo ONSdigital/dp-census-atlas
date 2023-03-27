@@ -42,3 +42,5 @@ export const layersWithSiblings = () => {
     .map((l, i) => ({ layer: layers[i], next: l }))
     .concat({ layer: layers[layers.length - 1], next: undefined });
 };
+
+export const dotDensityPath = "https://cdn.ons.gov.uk/maptiles/census-dots/v1";

@@ -8,10 +8,10 @@ import { params } from "../stores/params";
 import { geography } from "../stores/geography";
 import { englandAndWalesBbox } from "../helpers/geographyHelper";
 import { selectGeography } from "../helpers/navigationHelper";
-import { initMapLayers } from "./initMapLayers";
+import { initMapLayers, initDotDensityLayers } from "./initMapLayers";
 import { renderMapViz } from "./renderMapViz";
 import { layers } from "./layers";
-import { style, maxBounds } from "./style";
+import { style, styleDotDensity, maxBounds } from "./style";
 import { viewport } from "../stores/viewport";
 import { viz } from "../stores/viz";
 import { toObservable } from "../util/rxUtil";
@@ -22,14 +22,17 @@ const defaultZoom = 6;
 const maxAllowedZoom = 15;
 const minZoom = 5;
 
+let mode, classification, categories;
+
 /** Configure the map's properties and subscribe to its events. */
 export const initMap = (container: HTMLElement) => {
-  const embed = get(params).embed;
+  const paramsData = get(params);
+  const embed = paramsData.embed;
   const interactive = isAppInteractive(embed);
 
   const map = new Map({
     container,
-    style,
+    style: paramsData.mode === "dotdensity" ? styleDotDensity : style,
     zoom: defaultZoom, // inexplicably necessary to set (even though we fitBounds next)
     minZoom: minZoom, // prevent accidental zoom out, especially on mobile
     maxZoom: maxAllowedZoom,
@@ -44,13 +47,17 @@ export const initMap = (container: HTMLElement) => {
 
   map.touchZoomRotate.disableRotation();
 
-  setMinZoomIfGeoLock(map, get(params)?.geoLock);
+  setMinZoomIfGeoLock(map, paramsData?.geoLock);
 
   if (interactive) {
     map.addControl(new mapboxgl.NavigationControl({ showCompass: false }));
   }
 
   map.on("load", () => {
+    mode = paramsData.mode;
+    classification = paramsData.classification;
+    categories = paramsData.categories;
+
     initMapLayers(map, get(geography), interactive);
     viz.subscribe((value) => renderMapViz(map, value));
     geography.subscribe((geography) => listenToGeographyStore(map, geography));
@@ -221,4 +228,36 @@ const setMinZoomIfGeoLock = (map: mapboxgl.Map, geoLock: GeoType | undefined) =>
 
 const listenToParamStore = (map: mapboxgl.Map, params) => {
   setMinZoomIfGeoLock(map, params?.geoLock);
+  if (params.mode !== mode) {
+    // Change maps layers for new mode
+    updateMapLayers(map, params);
+  } else if (params.mode === "dotdensity" && map.getLayer("dots")) {
+    if (!params.classification) {
+      // Hide/remove dots from map
+      map.setFilter("dots", ["in", "cat", "none"]);
+    } else if (params.classification !== classification) {
+      // Change dots source + layer for new classification
+      initDotDensityLayers(map, params);
+    } else if (params.categories !== categories) {
+      // Filter dots when category selection changed
+      updateDotLayerFilter(map, params);
+    }
+  }
+  mode = params.mode;
+  classification = params.classification;
+  categories = params.categories;
+};
+
+const updateMapLayers = (map: mapboxgl.Map, params) => {
+  const embed = params.embed;
+  const interactive = isAppInteractive(embed);
+
+  map.setStyle(params.mode === "dotdensity" ? styleDotDensity : style);
+  map.once("styledata", () => {
+    initMapLayers(map, get(geography), interactive);
+  });
+};
+
+const updateDotLayerFilter = (map: mapboxgl.Map, params) => {
+  map.setFilter("dots", ["in", "cat", ...params.categories.map((c) => c?.code)]);
 };

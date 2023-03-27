@@ -1,13 +1,62 @@
 import { hovered } from "../stores/hovered";
-import { layersWithSiblings } from "./layers";
+import { layersWithSiblings, dotDensityPath } from "./layers";
 import { centroidsGeojson } from "../helpers/quadsHelper";
 import { distinctUntilChanged, fromEventPattern } from "rxjs";
 import { map as project } from "rxjs/operators";
 import type { NumberQuadruple } from "../types";
+import { get } from "svelte/store";
+import { params } from "../stores/params";
+import type mapboxgl from "mapbox-gl";
 
 const layerBounds: NumberQuadruple = [-6.418, 49.864, 1.764, 55.812];
+const dotDensityColors = ["#3bb2d0", "#e55e5e", "#223b53", "#fbb03b", "#ccc"];
+
+export const makeColors = (categories) => {
+  const cols = ["match", ["get", "cat"]];
+  categories.forEach((cat, i) => {
+    cols.push(cat);
+    cols.push(dotDensityColors[i]);
+  });
+  cols.push("rgba(0,0,0,0)");
+  return cols;
+};
+
+export const initDotDensityLayers = (map: mapboxgl.Map, params) => {
+  if (map.getLayer("dots")) map.removeLayer("dots");
+  if (map.getSource("dots")) map.removeSource("dots");
+
+  if (params.classification) {
+    map.addSource("dots", {
+      type: "vector",
+      tiles: [`${dotDensityPath}/${params.classification.code}/{z}/{x}/{y}.pbf`],
+      maxzoom: 11,
+    });
+    map.addLayer(
+      {
+        id: "dots",
+        type: "circle",
+        source: "dots",
+        "source-layer": params.classification.code,
+        filter: ["in", "cat", ...params.categories.map((c) => c?.code)],
+        paint: {
+          "circle-color": makeColors(params.classification.categories.map((c) => c.code)),
+          "circle-radius": {
+            stops: [
+              [8, 0.7],
+              [12, 1.2],
+              [15, 3],
+            ],
+          },
+        },
+      },
+      "place_other",
+    );
+  }
+};
 
 export const initMapLayers = (map, geo, interactive: boolean) => {
+  const paramsData = get(params);
+
   layersWithSiblings().forEach((l) => {
     map.addSource(l.layer.name, {
       type: "vector",
@@ -26,16 +75,19 @@ export const initMapLayers = (map, geo, interactive: boolean) => {
         type: "fill",
         // maxzoom: l.next ? l.next.minZoom : maxAllowedZoom,
         layout: { visibility: l.layer.name == "lad" ? "visible" : "none" }, // could just be "none"
-        paint: {
-          "fill-color": [
-            "case",
-            ["!=", ["feature-state", "colour"], null],
-            ["feature-state", "colour"],
-            "lightgrey", // Set to grey to confirm layer exists when data not loaded. Should be set to rgba(255,255,255,0)
-          ],
-        },
+        paint:
+          paramsData.mode === "dotdensity"
+            ? { "fill-color": "rgba(0,0,0,0)" }
+            : {
+                "fill-color": [
+                  "case",
+                  ["!=", ["feature-state", "colour"], null],
+                  ["feature-state", "colour"],
+                  "lightgrey", // Set to grey to confirm layer exists when data not loaded. Should be set to rgba(255,255,255,0)
+                ],
+              },
       },
-      "mask-raster",
+      paramsData.mode === "dotdensity" ? null : "mask-raster",
     );
 
     map.addLayer(
@@ -69,7 +121,7 @@ export const initMapLayers = (map, geo, interactive: boolean) => {
           ],
         },
       },
-      "place_other",
+      "place_suburb",
     );
 
     fromEventPattern((handler) => {
@@ -134,6 +186,10 @@ export const initMapLayers = (map, geo, interactive: boolean) => {
       hoveredStateId = null;
     });
   });
+
+  if (paramsData.mode === "dotdensity") {
+    initDotDensityLayers(map, paramsData);
+  }
 
   // selected geography layer
   map.addSource("selected-geography", {

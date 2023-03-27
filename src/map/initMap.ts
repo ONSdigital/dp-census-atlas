@@ -231,11 +231,8 @@ const listenToParamStore = (map: mapboxgl.Map, params) => {
   if (params.mode !== mode) {
     // Change maps layers for new mode
     updateMapLayers(map, params);
-  } else if (params.mode === "dotdensity" && map.getLayer("dots")) {
-    if (!params.classification) {
-      // Hide/remove dots from map
-      map.setFilter("dots", ["in", "cat", "none"]);
-    } else if (params.classification !== classification) {
+  } else if (params.mode === "dotdensity") {
+    if (params.classification !== classification) {
       // Change dots source + layer for new classification
       initDotDensityLayers(map, params);
     } else if (params.categories !== categories) {
@@ -259,5 +256,5 @@ const updateMapLayers = (map: mapboxgl.Map, params) => {
 };
 
 const updateDotLayerFilter = (map: mapboxgl.Map, params) => {
-  map.setFilter("dots", ["in", "cat", ...params.categories.map((c) => c?.code)]);
+  if (map.getLayer("dots")) map.setFilter("dots", ["in", "cat", ...params.categories.map((c) => c?.code)]);
 };

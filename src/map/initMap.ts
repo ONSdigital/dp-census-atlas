@@ -6,7 +6,7 @@ import { throttleTime } from "rxjs/operators";
 import type { GeoType, GeographyInfo, Classification } from "../types";
 import { params } from "../stores/params";
 import { geography } from "../stores/geography";
-import { englandAndWalesBbox } from "../helpers/geographyHelper";
+import { ukBbox } from "../helpers/geographyHelper";
 import { selectGeography } from "../helpers/navigationHelper";
 import { initMapLayers } from "./initMapLayers";
 import { renderMapViz } from "./renderMapViz";
@@ -146,7 +146,7 @@ const setInitialPosition = (map: mapboxgl.Map, embed: EmbedParams) => {
 
 const setPosition = (map: mapboxgl.Map, g: GeographyInfo, options: { animate: boolean } = { animate: false }) => {
   if (g.geoType === "ew") {
-    const bounds = new mapboxgl.LngLatBounds(englandAndWalesBbox);
+    const bounds = new mapboxgl.LngLatBounds(ukBbox);
     map.fitBounds(bounds, { padding: 0, animate: false });
   } else {
     const bounds = new mapboxgl.LngLatBounds(g.bbox);

@@ -1,6 +1,7 @@
 import type { NumberQuadruple } from "../types";
 
-export const englandAndWalesBbox: NumberQuadruple = [1, 55.8, -5, 49.7];
+export const ukBbox: NumberQuadruple = [1.98, 58.93, -7.87, 50.26];
+
 
 export const geoTypePluralNames = {
   ew: "England & Wales",

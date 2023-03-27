@@ -19,7 +19,7 @@
   let colours = ["#3bb2d0", "#e55e5e", "#223b53", "#fbb03b", "#ccc"];
 
   const getColourForCategory = (categoryCode: string) => {
-    return $viz.params.categories
+    return $viz.params.classification.categories
       .map((c, i) => ({ code: c.code, colour: colours[i] }))
       .find((c) => c.code === categoryCode).colour;
   };

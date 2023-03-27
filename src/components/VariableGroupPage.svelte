@@ -9,8 +9,8 @@
 </script>
 
 <div class="px-6 mb-6">
-  <AreaPanel />
   <ModePanel />
+  <AreaPanel />
   <div class="pt-3 flex">
     <div class="font-bold text-slate-500">Topic</div>
   </div>

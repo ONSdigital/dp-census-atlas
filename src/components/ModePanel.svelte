@@ -13,8 +13,8 @@
   };
 </script>
 
-<section class="py-2.5 border-b-2">
-  <h2 class="font-bold text-slate-500">Mode</h2>
+<section class="pt-3 pb-2.5 border-b-2">
+  <h2 class="font-bold text-slate-500">Map</h2>
   <!-- nested buttons are invalid html, so workaround with a clickable label -->
   <!-- svelte-ignore a11y-click-events-have-key-events (this is an *additonal* touch area to the interactive button) -->
   <label for="area-input" on:click={toggleOpen} class="group w-full text-left hoverable custom-ring">

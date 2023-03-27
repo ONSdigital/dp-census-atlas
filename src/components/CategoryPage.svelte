@@ -46,8 +46,8 @@
 
 <div class="grow flex flex-col mb-6">
   <div class="px-6">
-    <AreaPanel />
     <ModePanel />
+    <AreaPanel />
     <section class="mb-8">
       <h2 class="pt-3 font-bold text-slate-500">Topic</h2>
       <nav class="flex flex-wrap items-center gap-2 text-xl" aria-label="Breadcrumb">

@@ -24,22 +24,20 @@ This script can be run using either [Anaconda](https://www.anaconda.com/) or [pi
 
 #### Conda
 
-- Ensure requirements are installed.
 - Start up a new anaconda shell.
 - Install dependencies into new virtual env defined by the checked-in `environment.yml` file with `conda env create --file environment.yml`.
 - Activate conda env with `conda activate census-maps-content-generation-env`.
 
 #### Pipenv
 
-- Ensure requirements are installed.
 - Install dependencies into new virtual env defined by the checked-in `Pipfile` with `pipenv install`.
 
 ### Make or update content json
 
 1. Ensure requirements and dependencies are installed
 2. Download latest cantabular metadata archive from [https://confluence.ons.gov.uk/pages/viewpage.action?spaceKey=ODADH&title=Upload+Metadata+Files+to+support+NOMIS%2C+Testing+etc](https://confluence.ons.gov.uk/pages/viewpage.action?spaceKey=ODADH&title=Upload+Metadata+Files+to+support+NOMIS%2C+Testing+etc)
-3. Unzip cantabular metadata into a new directory within `input_metadata_files`, named after the zip file (without the .zip extension), e.g. `ar2776-c21ew_metadata-v1-3_cantab_20230224-45.zip` should be unzipped to `input_metadata_files/ar2776-c21ew_metadata-v1-3_cantab_20230224-45`.
-4. Update the the `cantabular_metadata_dir` value in `2021-content-spec.json` to the name of the new directory made in step 2 (NB just the name of the unzipped directory, not its full path - the scripts add the full path in at runtime).
+3. Unzip cantabular metadata into a new directory within `input_metadata_files`. A Mac will do it automatically; otherwise make it named after the zip file (without the .zip extension), e.g. `ar2776-c21ew_metadata-v1-3_cantab_20230224-45.zip` should be unzipped to `input_metadata_files/ar2776-c21ew_metadata-v1-3_cantab_20230224-45`.
+4. Update the the `cantabular_metadata_dir` value in `2021-content-spec.json` to the name of the new directory made in step 2.
 5. Run the scripts:
    - **Conda**: `python make_content_jsons.py 2021-content-spec.json` (NB if using conda, open an anaconda shell and activate the conda environment - see [Conda](#conda), above.)
    - **Pipenv**: `pipenv run make-content-jsons`

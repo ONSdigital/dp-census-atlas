@@ -3,14 +3,14 @@
   import { params } from "../stores/params";
   import { nav } from "../stores/nav";
   import { buildHyperlink } from "../helpers/buildHyperlinkHelper";
-  import { getDefaultClassification } from "../helpers/variableHelpers";
+  import { getDefaultClassification } from "../helpers/contentHelpers";
   import AreaPanel from "./AreaPanel.svelte";
   import ModePanel from "./ModePanel.svelte";
 </script>
 
 <div class="px-6 mb-6">
-  <AreaPanel />
   <ModePanel />
+  <AreaPanel />
   <div class="pt-3 flex">
     <div class="font-bold text-slate-500">Topic</div>
   </div>
@@ -24,16 +24,23 @@
   </div>
   <div class="flex flex-col mb-6 last:border-b-[1px] border-b-slate-300">
     {#each $params.variableGroup.variables as variable}
+      {@const defaultClassification = getDefaultClassification(variable, $params.mode)}
       <a
         class="border-t-[1px] border-t-slate-300 py-2 group custom-ring"
         href={buildHyperlink($page.url, {
           mode: $params.mode,
           variableGroup: $params.variableGroup.slug,
           variable: variable.slug,
-          category: {
-            classification: getDefaultClassification(variable, $params.mode).slug,
-            category: getDefaultClassification(variable, $params.mode).categories[0].slug,
-          },
+          category:
+            $params.mode === "dotdensity"
+              ? {
+                  classification: defaultClassification.slug,
+                  categories: defaultClassification.categories.map((c) => c.code),
+                }
+              : {
+                  classification: defaultClassification.slug,
+                  category: defaultClassification.categories[0].slug,
+                },
         })}
         on:click={() => nav.set({ open: true })}
       >

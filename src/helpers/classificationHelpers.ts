@@ -53,6 +53,7 @@ const classificationDataDisplayConfig = (classificationCode: string, mode: Mode)
 const getStandardSuffixForMode = (mode: Mode) => {
   switch (mode) {
     case "choropleth":
+    case "dotdensity":
       return "%";
     case "change":
       return "pp";

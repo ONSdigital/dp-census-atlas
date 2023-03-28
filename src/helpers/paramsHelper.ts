@@ -1,4 +1,4 @@
-import { GeoTypes, type GeoType, modes, type Mode } from "../types";
+import { GeoTypes, type GeoType, modes, type Mode, type Classification } from "../types";
 import { englandAndWales } from "./spatialHelper";
 
 export const getMode = (params: Record<string, string>): Mode => {

@@ -15,7 +15,11 @@ import { never } from "../util/typeUtil";
  * A Svelte store containing all the data we need in order to show a vizualisation.
  * */
 export const viz = asyncDerived([params, viewport], async ([$params, $viewport]) => {
-  if (!$params?.category || !viewport || !isDataAvailable($params.classification, $params.mode, $viewport.geoType)) {
+  if (
+    (!$params?.category && !$params?.categories) ||
+    !viewport ||
+    !isDataAvailable($params.classification, $params.mode, $viewport.geoType)
+  ) {
     return undefined;
   } else {
     const args = {

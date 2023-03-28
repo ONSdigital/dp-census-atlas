@@ -8,7 +8,7 @@
   import { hovered } from "../stores/hovered";
   import { selected } from "../stores/selected";
   import { tooltip } from "../actions/tooltip";
-  import { roundedClassificationDataToString, getClassificationDataSuffix } from "../helpers/classificationHelpers";
+  import { getClassificationDataSuffix } from "../helpers/classificationHelpers";
   import GeoTypeBadge from "./GeoTypeBadge.svelte";
   import MultiCategoryMapLegendToggle from "./MultiCategoryMapLegendToggle.svelte";
   import { getDensityForZoomLevel } from "../helpers/dotdensityHelpers";
@@ -44,14 +44,19 @@
         geoType: $selected?.geoType,
         geoCode: $selected?.geoCode,
         displayName: $selected?.displayName,
-        value: $selected && "values" in $selected ? $selected?.values : undefined,
+        value:
+          $selected && "values" in $selected
+            ? $selected?.values
+            : $viz && "englandAndWales" in $viz
+            ? Object.entries($viz.englandAndWales).map(([code, value]) => ({ code, value }))
+            : undefined,
       };
 
   const legendTextClass = "text-sm sm:text-base lg:text-lg xl:text-xl";
 </script>
 
 {#if $viz?.params?.categories || active.geoCode}
-  <div class={`absolute bottom-3 sm:bottom-5 lg:bottom-8 flex w-full justify-center`}>
+  <div class={`absolute bottom-3 sm:bottom-5 lg:bottom-6 flex w-full justify-center`}>
     <div
       class="w-full max-w-[50rem] mx-3 lg:mx-4 bg-white bg-opacity-90 px-3 lg:px-5 py-2 lg:py-3 border-[1px] lg:border-[1px] border-ons-grey-15"
     >
@@ -90,7 +95,7 @@
                 {@const ewValue = $viz.englandAndWales[category.code]}
                 <div class="">
                   <div class="flex gap-2 items-start sm:items-end justify-between">
-                    <div class="leading-[1.35rem] md:mb-0.5" class:widows={"3"}>
+                    <div class="leading-[1.35rem] md:mb-[1px]" class:widows={"3"}>
                       {category.name}&nbsp;<span class="ml-0.5 font-bold">
                         {value}%
                       </span>

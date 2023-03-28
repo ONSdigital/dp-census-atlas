@@ -4,12 +4,14 @@
   // as that will make race conditions and incorrect vizualisations...
   // instead, use the params that were used to *request* the viz, i.e. `$viz.params`
   import { viz } from "../stores/viz";
+  import { viewport } from "../stores/viewport";
   import { hovered } from "../stores/hovered";
   import { selected } from "../stores/selected";
   import { tooltip } from "../actions/tooltip";
   import { roundedClassificationDataToString, getClassificationDataSuffix } from "../helpers/classificationHelpers";
   import GeoTypeBadge from "./GeoTypeBadge.svelte";
   import MultiCategoryMapLegendToggle from "./MultiCategoryMapLegendToggle.svelte";
+  import { getDensityForZoomLevel } from "../helpers/dotdensityHelpers";
 
   $: open = true;
   const toggleOpen = () => {
@@ -76,7 +78,9 @@
             </div>
             <div class="grow" />
             {#if shouldBeHorizontal()}
-              <div class="text-sm mt-3">One dot represents 500 households</div>
+              <div class="text-sm mt-3">
+                One dot represents {getDensityForZoomLevel($viewport.zoom).toLocaleString()} households
+              </div>
             {/if}
           </div>
           {#if open && $viz.params.categories.length > 0}
@@ -120,7 +124,9 @@
                   <!-- <button class="hyperlink-subdued text-sm">Show values</button> -->
                 </div>
                 {#if !shouldBeHorizontal()}
-                  <div class="text-sm">One dot represents 500 households</div>
+                  <div class="text-sm">
+                    One dot represents {getDensityForZoomLevel($viewport.zoom).toLocaleString()} households
+                  </div>
                 {/if}
               </div>
             </div>

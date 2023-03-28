@@ -5,6 +5,6 @@
 <div class="px-6 py-4 sm:py-6 bg-ons-ocean-blue text-ons-grey-5">
   <h1 class="text-2xl sm:text-3xl font-semibold break-words">Subnational indicator maps</h1>
   <div class={`mt-2 ${!$params.variableGroup && !$params.category ? "" : "hidden xs:block"}`}>
-    Description of subnational indicators here.
+    Use our maps to find out about your local authority.
   </div>
 </div>

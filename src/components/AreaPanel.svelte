@@ -19,7 +19,7 @@
   };
 </script>
 
-<section class="py-3 border-b-2">
+<section class="py-2.5 border-b-2">
   <h2 class="font-bold text-slate-500">Area</h2>
   <!-- nested buttons are invalid html, so workaround with a clickable label -->
   <!-- svelte-ignore a11y-click-events-have-key-events (this is an *additonal* touch area to the interactive button) -->

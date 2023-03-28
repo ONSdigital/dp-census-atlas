@@ -4,6 +4,7 @@ import { never } from "../util/typeUtil";
 export const getSign = (mode: Mode, value: number) => {
   switch (mode) {
     case "choropleth":
+    case "dotdensity":
       return "";
     case "change":
       return value > 0 ? "+" : "";
@@ -15,6 +16,7 @@ export const getSign = (mode: Mode, value: number) => {
 export const shouldShowPositiveSign = (mode: Mode) => {
   switch (mode) {
     case "choropleth":
+    case "dotdensity":
       return false;
     case "change":
       return true;
@@ -26,6 +28,7 @@ export const shouldShowPositiveSign = (mode: Mode) => {
 export const getDropdownDisplayType = (mode: Mode) => {
   switch (mode) {
     case "choropleth":
+    case "dotdensity":
       return "legendString";
     case "change":
       return "name";

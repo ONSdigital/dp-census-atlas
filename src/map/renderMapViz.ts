@@ -1,27 +1,29 @@
 import { getColours } from "../helpers/choroplethHelpers";
-import type { LoadedGeographies, VizData } from "../types";
+import type { LoadedGeographies, MultiCategoryVizData, SingleCategoryVizData } from "../types";
 import { layers } from "./layers";
 
 // TODO: this file has become very confusing and needs refactoring
 
 let loadedGeographies: LoadedGeographies = undefined;
 
-export const renderMapViz = (map: mapboxgl.Map, data: VizData | undefined) => {
+export const renderMapViz = (map: mapboxgl.Map, data: SingleCategoryVizData | MultiCategoryVizData | undefined) => {
   removeOldFeatureStates(map, data);
 
   if (!data) {
     return;
   }
 
-  const layer = layers.find((l) => l.name == data.geoType);
-  const colours = getColours(data.params.mode, data.breaks);
+  if (data.kind === "single-category") {
+    const layer = layers.find((l) => l.name == data.geoType);
+    const colours = getColours(data.params.mode, data.breaks);
 
-  data.places.forEach((p) => {
-    map.setFeatureState(
-      { source: layer.name, sourceLayer: layer.sourceLayer, id: p.geoCode },
-      { colour: getChoroplethColour(p.categoryValue, data.breaks, colours) },
-    );
-  });
+    data.places.forEach((p) => {
+      map.setFeatureState(
+        { source: layer.name, sourceLayer: layer.sourceLayer, id: p.geoCode },
+        { colour: getChoroplethColour(p.categoryValue, data.breaks, colours) },
+      );
+    });
+  }
 };
 
 const getChoroplethColour = (value: number, breaks: number[], colours: string[]) => {
@@ -36,7 +38,7 @@ const getChoroplethColour = (value: number, breaks: number[], colours: string[])
   }
 };
 
-const removeOldFeatureStates = (map: mapboxgl.Map, data: VizData | undefined) => {
+const removeOldFeatureStates = (map: mapboxgl.Map, data: SingleCategoryVizData | MultiCategoryVizData | undefined) => {
   const categoryCode = data?.params?.category?.code;
   const geoCodes = data ? new Set(data.places.map((d) => d.geoCode)) : new Set([]);
 
@@ -58,7 +60,7 @@ const removeOldFeatureStates = (map: mapboxgl.Map, data: VizData | undefined) =>
   }
 };
 
-const rememberLoadedGeographies = (data: VizData | undefined) => {
+const rememberLoadedGeographies = (data: SingleCategoryVizData | MultiCategoryVizData | undefined) => {
   const catCode = data?.params?.category?.code;
   const geoType = data?.geoType;
   const geoCodes = data ? data.places.map((d) => d.geoCode) : [];

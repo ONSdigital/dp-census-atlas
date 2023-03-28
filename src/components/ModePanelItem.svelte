@@ -25,7 +25,6 @@
   {:else}
     <a
       class="group custom-ring block"
-      class:bg-red-500={disabled}
       on:click={() => {
         toggleOpen();
         nav.set({ open: false });
@@ -35,11 +34,20 @@
         ...($params.variableGroup && { variableGroup: $params.variableGroup.slug }),
         ...($params.variable && { variable: $params.variable.slug }),
         ...($params.category && {
-          category: {
-            classification: $params.classification.slug,
-            category: getBestMatchingCategoryInClassificationForMode($params.category, $params.classification, "change")
-              .slug,
-          },
+          category:
+            mode === "dotdensity"
+              ? {
+                  classification: $params.classification.slug,
+                  categories: $params.classification.categories.map((c) => c.code),
+                }
+              : {
+                  classification: $params.classification.slug,
+                  category: getBestMatchingCategoryInClassificationForMode(
+                    $params.category,
+                    $params.classification,
+                    mode,
+                  ).slug,
+                },
         }),
       })}
     >

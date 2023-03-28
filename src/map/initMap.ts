@@ -96,6 +96,7 @@ const setViewportStoreAndLayerVisibility = (
   setMapLayerVisibility(map, geoType.actual);
 
   viewport.set({
+    zoom: map.getZoom(),
     bbox,
     geoType: geoType.actual,
     idealGeoType: geoType.ideal,

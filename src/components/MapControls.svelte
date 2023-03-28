@@ -116,7 +116,7 @@
               </button>
             {/if}
             {#if i > geoTypes.indexOf($viewport.geoType)}
-              <div class="flex items-center px-2 bg-ons-grey-55 text-ons-white text-sm last:rounded-r ">
+              <div class="flex items-center px-2 bg-ons-grey-100 text-ons-white text-sm last:rounded-r ">
                 <div class="">Unavailable</div>
               </div>
             {/if}

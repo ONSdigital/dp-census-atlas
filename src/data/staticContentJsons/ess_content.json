@@ -18,6 +18,9 @@
                     "units": "£",
                     "topic_code": "",
                     "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+                    "source": "Office for National Statistics",
+                    "higher_value_polarity": "Better",
+                    "period": "2020",
                     "classifications": [
                         {
                             "code": "gross_value_added_per_hour_worked",
@@ -58,6 +61,9 @@
                     "units": "£",
                     "topic_code": "",
                     "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+                    "source": "Office for National Statistics / NISRA",
+                    "higher_value_polarity": "Better",
+                    "period": "2022",
                     "classifications": [
                         {
                             "code": "gross_median_weekly_pay",
@@ -91,6 +97,9 @@
                     "units": "%",
                     "topic_code": "",
                     "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+                    "source": "Office for National Statistics",
+                    "higher_value_polarity": "Better",
+                    "period": "10/2021 - 09/2022",
                     "classifications": [
                         {
                             "code": "employment_rate_for_16_to_64_year_olds",
@@ -124,6 +133,9 @@
                     "units": "mins",
                     "topic_code": "",
                     "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+                    "source": "Department for Transport",
+                    "higher_value_polarity": "Worse",
+                    "period": "2019 revised",
                     "classifications": [
                         {
                             "code": "public_transport_or_walk_to_employment_centre_with_500_to_4999_jobs",
@@ -158,6 +170,9 @@
                     "units": "mins",
                     "topic_code": "",
                     "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+                    "source": "Department for Transport",
+                    "higher_value_polarity": "Worse",
+                    "period": "2019 revised",
                     "classifications": [
                         {
                             "code": "drive_to_employment_centre_with_500_to_4999_jobs",
@@ -192,6 +207,9 @@
                     "units": "mins",
                     "topic_code": "",
                     "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+                    "source": "Department for Transport",
+                    "higher_value_polarity": "Worse",
+                    "period": "2019 revised",
                     "classifications": [
                         {
                             "code": "cycle_to_employment_centre_with_500_to_4999_jobs",
@@ -226,6 +244,9 @@
                     "units": "per 100,000 population",
                     "topic_code": "",
                     "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+                    "source": "Department for Education",
+                    "higher_value_polarity": "Better",
+                    "period": "2021/22",
                     "classifications": [
                         {
                             "code": "apprenticeships_starts",
@@ -260,6 +281,9 @@
                     "units": "per 100,000 population",
                     "topic_code": "",
                     "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+                    "source": "Department for Education",
+                    "higher_value_polarity": "Better",
+                    "period": "2021/22",
                     "classifications": [
                         {
                             "code": "apprenticeships_achievements",
@@ -302,6 +326,9 @@
                     "units": "£",
                     "topic_code": "",
                     "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+                    "source": "Office for National Statistics",
+                    "higher_value_polarity": "Better",
+                    "period": "2020",
                     "classifications": [
                         {
                             "code": "gross_disposable_household_income_per_head",
@@ -343,6 +370,9 @@
                     "units": "%",
                     "topic_code": "",
                     "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+                    "source": "OFCOM",
+                    "higher_value_polarity": "Better",
+                    "period": "Sep-22",
                     "classifications": [
                         {
                             "code": "gigabit_capable_broadband",
@@ -375,6 +405,9 @@
                     "units": "%",
                     "topic_code": "",
                     "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+                    "source": "OFCOM",
+                    "higher_value_polarity": "Better",
+                    "period": "Sep-22",
                     "classifications": [
                         {
                             "code": "4g_coverage",
@@ -415,6 +448,9 @@
                     "units": "%",
                     "topic_code": "",
                     "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+                    "source": "Department for Education",
+                    "higher_value_polarity": "Better",
+                    "period": "2021/22",
                     "classifications": [
                         {
                             "code": "pupils_at_expected_standards_by_end_of_primary_school",
@@ -448,6 +484,9 @@
                     "units": "%",
                     "topic_code": "",
                     "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+                    "source": "Department for Education",
+                    "higher_value_polarity": "Better",
+                    "period": "2020/21",
                     "classifications": [
                         {
                             "code": "gcses__and_equivalent__in_english_and_maths_by_age_19",
@@ -482,6 +521,9 @@
                     "units": "%",
                     "topic_code": "",
                     "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+                    "source": "OFSTED",
+                    "higher_value_polarity": "Better",
+                    "period": "As at 31 December 2022",
                     "classifications": [
                         {
                             "code": "schools_and_nursery_schools_rated_good_or_outstanding",
@@ -515,6 +557,9 @@
                     "units": "%",
                     "topic_code": "",
                     "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+                    "source": "Department for Education",
+                    "higher_value_polarity": "Worse",
+                    "period": "2020/21",
                     "classifications": [
                         {
                             "code": "persistent_absences_for_all_pupils",
@@ -548,6 +593,9 @@
                     "units": "%",
                     "topic_code": "",
                     "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+                    "source": "Department for Education",
+                    "higher_value_polarity": "Worse",
+                    "period": "2020/21",
                     "classifications": [
                         {
                             "code": "persistent_absences_for_pupils_eligible_for_free_school_meals",
@@ -581,6 +629,9 @@
                     "units": "%",
                     "topic_code": "",
                     "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+                    "source": "Department for Education",
+                    "higher_value_polarity": "Worse",
+                    "period": "2020/21",
                     "classifications": [
                         {
                             "code": "persistent_absences_for_pupils_looked_after_by_local_authorities",
@@ -614,6 +665,9 @@
                     "units": "%",
                     "topic_code": "",
                     "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+                    "source": "Department for Education",
+                    "higher_value_polarity": "Better",
+                    "period": "2021/22",
                     "classifications": [
                         {
                             "code": "children_at_expected_standard_for_communication_and_language_by_end_of_early_years_foundation_stage",
@@ -648,6 +702,9 @@
                     "units": "%",
                     "topic_code": "",
                     "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+                    "source": "Department for Education",
+                    "higher_value_polarity": "Better",
+                    "period": "2021/22",
                     "classifications": [
                         {
                             "code": "children_at_expected_standard_for_literacy_by_end_of_early_years_foundation_stage",
@@ -682,6 +739,9 @@
                     "units": "%",
                     "topic_code": "",
                     "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+                    "source": "Department for Education",
+                    "higher_value_polarity": "Better",
+                    "period": "2021/22",
                     "classifications": [
                         {
                             "code": "children_at_expected_standard_for_maths_by_end_of_early_years_foundation_stage",
@@ -716,6 +776,9 @@
                     "units": "Number",
                     "topic_code": "",
                     "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+                    "source": "Department for Education",
+                    "higher_value_polarity": "Better",
+                    "period": "2020/21",
                     "classifications": [
                         {
                             "code": "aged_19_years_and_over_further_education_and_skills_learner_achievements",
@@ -748,6 +811,9 @@
                     "units": "%",
                     "topic_code": "",
                     "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+                    "source": "NOMIS",
+                    "higher_value_polarity": "Better",
+                    "period": "2021",
                     "classifications": [
                         {
                             "code": "aged_16_to_64_years_level_3_or_above_qualifications",
@@ -781,6 +847,9 @@
                     "units": "per 100,000 population",
                     "topic_code": "",
                     "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+                    "source": "Department for Education",
+                    "higher_value_polarity": "Better",
+                    "period": "2021/22",
                     "classifications": [
                         {
                             "code": "aged_19_years_and_over_further_education_and_skills_participation",
@@ -823,6 +892,9 @@
                     "units": "yrs",
                     "topic_code": "",
                     "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+                    "source": "Office for National Statistics",
+                    "higher_value_polarity": "Better",
+                    "period": "2018 - 2020",
                     "classifications": [
                         {
                             "code": "female_healthy_life_expectancy",
@@ -856,6 +928,9 @@
                     "units": "yrs",
                     "topic_code": "",
                     "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+                    "source": "Office for National Statistics",
+                    "higher_value_polarity": "Better",
+                    "period": "2018 - 2020",
                     "classifications": [
                         {
                             "code": "male_healthy_life_expectancy",
@@ -889,6 +964,9 @@
                     "units": "%",
                     "topic_code": "",
                     "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+                    "source": "Office for National Statistics",
+                    "higher_value_polarity": "Worse",
+                    "period": "2021",
                     "classifications": [
                         {
                             "code": "cigarette_smokers",
@@ -922,6 +1000,9 @@
                     "units": "%",
                     "topic_code": "",
                     "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+                    "source": "Office for Health Improvement and Disparities",
+                    "higher_value_polarity": "Worse",
+                    "period": "2021/22",
                     "classifications": [
                         {
                             "code": "overweight_children_at_reception_age__aged_four_to_five_years_",
@@ -956,6 +1037,9 @@
                     "units": "%",
                     "topic_code": "",
                     "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+                    "source": "Office for Health Improvement and Disparities",
+                    "higher_value_polarity": "Worse",
+                    "period": "2021/22",
                     "classifications": [
                         {
                             "code": "overweight_children_at_year_6_age__aged_10_to_11_years_",
@@ -990,6 +1074,9 @@
                     "units": "%",
                     "topic_code": "",
                     "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+                    "source": "Office for Health Improvement and Disparities",
+                    "higher_value_polarity": "Worse",
+                    "period": "2020 - 2021",
                     "classifications": [
                         {
                             "code": "overweight_adults__aged_18_years_and_over_",
@@ -1024,6 +1111,9 @@
                     "units": "%",
                     "topic_code": "",
                     "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+                    "source": "Office for Health Improvement and Disparities",
+                    "higher_value_polarity": "Better",
+                    "period": "2020",
                     "classifications": [
                         {
                             "code": "cancers_diagnosed_at_stage_1_and_2",
@@ -1058,6 +1148,9 @@
                     "units": "per 100,000 population",
                     "topic_code": "",
                     "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+                    "source": "Office for Health Improvement and Disparities",
+                    "higher_value_polarity": "Worse",
+                    "period": "2017 - 2019",
                     "classifications": [
                         {
                             "code": "cardiovascular_mortality_considered_preventable_in_persons_aged_under_75",
@@ -1100,6 +1193,9 @@
                     "units": "Score out of 10",
                     "topic_code": "",
                     "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+                    "source": "Office for National Statistics",
+                    "higher_value_polarity": "Better",
+                    "period": "04/2021 - 03/2022",
                     "classifications": [
                         {
                             "code": "life_satisfaction",
@@ -1134,6 +1230,9 @@
                     "units": "Score out of 10",
                     "topic_code": "",
                     "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+                    "source": "Office for National Statistics",
+                    "higher_value_polarity": "Better",
+                    "period": "04/2021 - 03/2022",
                     "classifications": [
                         {
                             "code": "feeling_life_is_worthwhile",
@@ -1168,6 +1267,9 @@
                     "units": "Score out of 10",
                     "topic_code": "",
                     "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+                    "source": "Office for National Statistics",
+                    "higher_value_polarity": "Better",
+                    "period": "04/2021 - 03/2022",
                     "classifications": [
                         {
                             "code": "happiness",
@@ -1202,6 +1304,9 @@
                     "units": "Score out of 10",
                     "topic_code": "",
                     "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+                    "source": "Office for National Statistics",
+                    "higher_value_polarity": "Worse",
+                    "period": "04/2021 - 03/2022",
                     "classifications": [
                         {
                             "code": "anxiety",
@@ -1244,6 +1349,9 @@
                     "units": "Rate per 1,000 stock",
                     "topic_code": "",
                     "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+                    "source": "Department for Levelling Up, Housing and Communities",
+                    "higher_value_polarity": "Better",
+                    "period": "2021 - 2022",
                     "classifications": [
                         {
                             "code": "additions_to_the_housing_stock",
@@ -1286,6 +1394,9 @@
                     "units": "Rate per million population",
                     "topic_code": "",
                     "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+                    "source": "Office for National Statistics",
+                    "higher_value_polarity": "Worse",
+                    "period": "04/2019 - 03/2022",
                     "classifications": [
                         {
                             "code": "homicide_offences",
@@ -1326,6 +1437,9 @@
                     "units": "%",
                     "topic_code": "",
                     "base_url_2021": "https://ons-dp-sandbox-atlas-data.s3.eu-west-2.amazonaws.com/ESS2",
+                    "source": "Office for National Statistics",
+                    "higher_value_polarity": "Better",
+                    "period": "As of 13 January 2023",
                     "classifications": [
                         {
                             "code": "population_under_devolution_deal_in_england",

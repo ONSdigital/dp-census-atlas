@@ -25,15 +25,18 @@ type VariableGroup struct {
 }
 
 type Variable struct {
-	Name            string            `json:"name"`
-	Code            string            `json:"code"`
-	Slug            string            `json:"slug"`
-	Desc            string            `json:"desc"`
-	LongDesc        string            `json:"long_desc"`
-	Units           string            `json:"units"`
-	TopicCode       string            `json:"topic_code"`
-	BaseURL2021     string            `json:"base_url_2021"`
-	Classifications []*Classification `json:"classifications"`
+	Name                string            `json:"name"`
+	Code                string            `json:"code"`
+	Slug                string            `json:"slug"`
+	Desc                string            `json:"desc"`
+	LongDesc            string            `json:"long_desc"`
+	Units               string            `json:"units"`
+	TopicCode           string            `json:"topic_code"`
+	BaseURL2021         string            `json:"base_url_2021"`
+	Source              string            `json:"source"`
+	HigherValuePolarity string            `json:"higher_value_polarity"`
+	Period              string            `json:"period"`
+	Classifications     []*Classification `json:"classifications"`
 }
 
 type Classification struct {
@@ -81,15 +84,18 @@ func (cont *Content) AppendVariableGroup(vg *VariableGroup) {
 // for a single Indicator.
 // The structure of content.json has more hierarchical levels than we need for ESS.
 // So we fill each level with the same Indicator fields.
-func (vg *VariableGroup) NewCategory(name, longdesc, code, slug, units, legend, baseurl string, geotypes []string) {
+func (vg *VariableGroup) NewCategory(name, longdesc, code, slug, units, legend, baseurl, source, higherValuePolarity, period string, geotypes []string) {
 	v := &Variable{
-		Name:        name,
-		Code:        code,
-		Slug:        slug,
-		Desc:        "",
-		LongDesc:    longdesc,
-		Units:       units,
-		BaseURL2021: baseurl,
+		Name:                name,
+		Code:                code,
+		Slug:                slug,
+		Desc:                "",
+		LongDesc:            longdesc,
+		Source:              source,
+		HigherValuePolarity: higherValuePolarity,
+		Period:              period,
+		Units:               units,
+		BaseURL2021:         baseurl,
 		Classifications: []*Classification{
 			{
 				Code:              code,

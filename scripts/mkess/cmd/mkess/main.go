@@ -187,6 +187,9 @@ func genContent(fname string, topics []taxonomy.Topic, ds *dataset.DataSet, base
 				ind.Unit,
 				ind.Measure,
 				baseurl,
+				taxind.Source,
+				taxind.HigherValuePolarity,
+				ind.Period,
 				geotypes,
 			)
 			nind++

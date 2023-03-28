@@ -19,8 +19,10 @@ type Topic struct {
 }
 
 type Indicator struct {
-	Name     string `json:"name"`
-	LongDesc string `json:"longdesc"`
+	Name                string `json:"name"`
+	LongDesc            string `json:"longdesc"`
+	Source              string `json:"source"`
+	HigherValuePolarity string `json:"higher_value_polarity"`
 }
 
 func Load(fname string) (*Taxonomy, error) {

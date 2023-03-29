@@ -7,15 +7,15 @@ import type { NumberQuadruple } from "../types";
 import { get } from "svelte/store";
 import { params } from "../stores/params";
 import type mapboxgl from "mapbox-gl";
+import { dotdensityColours } from "../helpers/dotdensityHelpers";
 
 const layerBounds: NumberQuadruple = [-6.418, 49.864, 1.764, 55.812];
-const dotDensityColors = ["#3bb2d0", "#e55e5e", "#223b53", "#fbb03b", "#ccc"];
 
 export const makeColors = (categories) => {
   const cols = ["match", ["get", "cat"]];
   categories.forEach((cat, i) => {
     cols.push(cat);
-    cols.push(dotDensityColors[i]);
+    cols.push(dotdensityColours[i]);
   });
   cols.push("rgba(0,0,0,0)");
   return cols;

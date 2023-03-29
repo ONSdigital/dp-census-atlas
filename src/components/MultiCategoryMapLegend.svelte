@@ -8,21 +8,18 @@
   import { hovered } from "../stores/hovered";
   import { selected } from "../stores/selected";
   import { tooltip } from "../actions/tooltip";
-  import { getClassificationDataSuffix } from "../helpers/classificationHelpers";
   import GeoTypeBadge from "./GeoTypeBadge.svelte";
   import MultiCategoryMapLegendToggle from "./MultiCategoryMapLegendToggle.svelte";
-  import { getDensityForZoomLevel } from "../helpers/dotdensityHelpers";
+  import { dotdensityColours, getDensityForZoomLevel } from "../helpers/dotdensityHelpers";
 
   $: open = true;
   const toggleOpen = () => {
     open = !open;
   };
 
-  let colours = ["#3bb2d0", "#e55e5e", "#223b53", "#fbb03b", "#ccc"];
-
   const getColourForCategory = (categoryCode: string) => {
     return $viz.params.classification.categories
-      .map((c, i) => ({ code: c.code, colour: colours[i] }))
+      .map((c, i) => ({ code: c.code, colour: dotdensityColours[i] }))
       .find((c) => c.code === categoryCode).colour;
   };
 
@@ -30,7 +27,6 @@
   const shouldBeCollapsable = () => $viz.params.categories.length > 2;
 
   $: valueForHoveredGeography = $viz?.places.find((p) => p.geoCode === $hovered?.geoCode)?.categoryValues;
-  $: suffix = $viz && getClassificationDataSuffix($viz.params.classification.code, $viz.params.mode);
 
   // the hovered, otherwise the selected, geography properties
   $: active = $hovered
@@ -74,9 +70,6 @@
                 </span>
                 <GeoTypeBadge geoType={active.geoType} />
               </div>
-              <!-- {#if !shouldBeHorizontal() || !open}
-                  <MultiCategoryMapLegendToggle {open} {toggleOpen} />
-              {/if} -->
               <div class="block" class:sm:hidden={shouldBeHorizontal() && open}>
                 <MultiCategoryMapLegendToggle {open} {toggleOpen} />
               </div>

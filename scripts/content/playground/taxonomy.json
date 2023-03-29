@@ -1,0 +1,308 @@
+{
+  "meta": {
+    "comment": "Rob's taxonomy"
+  },
+  "topics": [
+    {
+      "name": "Economic output and productivity",
+      "indicators": [
+        {
+          "name": "Gross value added per hour worked",
+          "longdesc": "Measure of business productivity (estimate of the volume of goods and services produced) in £ per hour worked",
+          "source": "Office for National Statistics",
+          "higher_value_polarity": "Better"
+        }
+      ]
+    },
+    {
+      "name": "People in work",
+      "indicators": [
+        {
+          "name": "Gross median weekly pay",
+          "longdesc": "Average (median) weekly pay, based on where people live",
+          "source": "Office for National Statistics / NISRA",
+          "higher_value_polarity": "Better"
+        },
+        {
+          "name": "Employment rate for 16 to 64 year olds",
+          "longdesc": "Proportion of people aged between 16 and 64 years in paid work or who had a job that they were temporarily away from",
+          "source": "Office for National Statistics",
+          "higher_value_polarity": "Better"
+        },
+        {
+          "name": "Public transport or walk to employment centre with 500 to 4999 jobs",
+          "longdesc": "Average travel time in minutes to nearest employment centre with 500 to 4999 jobs available by public transport or walking",
+          "source": "Department for Transport",
+          "higher_value_polarity": "Worse"
+        },
+        {
+          "name": "Drive to employment centre with 500 to 4999 jobs",
+          "longdesc": "Average travel time in minutes to nearest employment centre with 500 to 4999 jobs available by car",
+          "source": "Department for Transport",
+          "higher_value_polarity": "Worse"
+        },
+        {
+          "name": "Cycle to employment centre with 500 to 4999 jobs",
+          "longdesc": "Average travel time in minutes to nearest employment centre with 500 to 49099 jobs available by cycle",
+          "source": "Department for Transport",
+          "higher_value_polarity": "Worse"
+        },
+        {
+          "name": "Apprenticeships starts",
+          "longdesc": "Apprenticeships started by adults aged 16+ based on home address, rate per 100,000",
+          "source": "Department for Education",
+          "higher_value_polarity": "Better"
+        },
+        {
+          "name": "Apprenticeships achievements",
+          "longdesc": "Apprenticeships achieved by adults aged 16+ based on home address, rate per 100,000",
+          "source": "Department for Education",
+          "higher_value_polarity": "Better"
+        }
+      ]
+    },
+    {
+      "name": "Regional accounts",
+      "indicators": [
+        {
+          "name": "Gross disposable household income per head",
+          "longdesc": "Estimate of the amount of money each individual within a household has available for spending or saving after they have paid taxes and received any direct benefits",
+          "source": "Office for National Statistics",
+          "higher_value_polarity": "Better"
+        }
+      ]
+    },
+    {
+      "name": "International trade",
+      "indicators": [
+        {
+          "name": "Total value of UK exports",
+          "longdesc": "Estimated total value of UK exports including trade in both goods and services",
+          "source": "Office for National Statistics",
+          "higher_value_polarity": "Better"
+        },
+        {
+          "name": "Inward foreign direct investment (FDI)",
+          "longdesc": "Total foreign FDI international investment position in the UK at end period",
+          "source": "Office for National Statistics",
+          "higher_value_polarity": "Better"
+        },
+        {
+          "name": "Outward foreign direct investment (FDI)",
+          "longdesc": "Total FDI international investment position abroad at end period",
+          "source": "Office for National Statistics",
+          "higher_value_polarity": "Better"
+        }
+      ]
+    },
+    {
+      "name": "IT and internet industry",
+      "indicators": [
+        {
+          "name": "Gigabit capable broadband",
+          "longdesc": "Percentage of premises with 125 megabytes (MB) or greater",
+          "source": "OFCOM",
+          "higher_value_polarity": "Better"
+        },
+        {
+          "name": "4G coverage",
+          "longdesc": "Percentage of geographic areas with 4G signal outdoors from at least 1 operator (signal threshold: 105dBm)",
+          "source": "OFCOM",
+          "higher_value_polarity": "Better"
+        }
+      ]
+    },
+    {
+      "name": "Education and childcare",
+      "indicators": [
+        {
+          "name": "Pupils at expected standards by end of primary school",
+          "longdesc": "Percentage of pupils in state-funded schools meeting the expected standard in reading, writing and maths by end of primary school (KS2)",
+          "source": "Department for Education",
+          "higher_value_polarity": "Better"
+        },
+        {
+          "name": "GCSEs (and equivalent) in English and maths by age 19",
+          "longdesc": "GCSEs (and equivalent) in English and maths by age 19",
+          "source": "Department for Education",
+          "higher_value_polarity": "Better"
+        },
+        {
+          "name": "Schools and nursery schools rated good or outstanding",
+          "longdesc": "Percentage of state-funded Nursery schools, Primary schools, Secondary schools, Alternative Provision (AP) schools and Special schools that are rated 'Good' or 'Outstanding' by OFSTED",
+          "source": "OFSTED",
+          "higher_value_polarity": "Better"
+        },
+        {
+          "name": "Persistent absences for all pupils",
+          "longdesc": "Percentage of pupils in state-funded schools that were persistently absent (those absent for 10% of schooling sessions) during the academic year",
+          "source": "Department for Education",
+          "higher_value_polarity": "Worse"
+        },
+        {
+          "name": "Persistent absences for pupils eligible for free school meals",
+          "longdesc": "Percentage of pupils in state-funded schools who have been eligible for free school meals in the past 6 years that were persistently absent (those absent for 10% of schooling sessions) during the academic year",
+          "source": "Department for Education",
+          "higher_value_polarity": "Worse"
+        },
+        {
+          "name": "Persistent absences for pupils looked after by local authorities",
+          "longdesc": "Percentage of pupils in state-funded schools who are looked after continuously by local authorities that were persistnetly absent (those absent for 10% of schooling sessions) during the academic year. These pupils have been looked after for at least 12 months as of 31 March 2022",
+          "source": "Department for Education",
+          "higher_value_polarity": "Worse"
+        },
+        {
+          "name": "Children at expected standard for communication and language by end of early years foundation stage",
+          "longdesc": "Early years foundation stage profile outcomes of 5 year olds. Percentage at 'expected level' across all communication and language learning goals",
+          "source": "Department for Education",
+          "higher_value_polarity": "Better"
+        },
+        {
+          "name": "Children at expected standard for literacy by end of early years foundation stage",
+          "longdesc": "Early years foundation stage profile outcomes of 5 year olds. Percentage at 'expected level' across all literacy learning goals",
+          "source": "Department for Education",
+          "higher_value_polarity": "Better"
+        },
+        {
+          "name": "Children at expected standard for maths by end of early years foundation stage",
+          "longdesc": "Early years foundation stage profile outcomes of 5 year olds. Percentage at 'expected level' across all mathematics learning goals",
+          "source": "Department for Education",
+          "higher_value_polarity": "Better"
+        },
+        {
+          "name": "Aged 19 years and over further education and skills learner achievements",
+          "longdesc": "Count of learners achieving a funded further education and skills learning aim, with the exception of community learning",
+          "source": "Department for Education",
+          "higher_value_polarity": "Better"
+        },
+        {
+          "name": "Aged 16 to 64 years level 3 or above qualifications",
+          "longdesc": "Percentage of the population aged 16-64 with National Vocational Qualification (NVQ) level 3+ qualifications",
+          "source": "NOMIS",
+          "higher_value_polarity": "Better"
+        },
+        {
+          "name": "Aged 19 years and over further education and skills participation",
+          "longdesc": "19+ further education and skills participation rate per 100,000 people",
+          "source": "Department for Education",
+          "higher_value_polarity": "Better"
+        }
+      ]
+    },
+    {
+      "name": "Health and social care",
+      "indicators": [
+        {
+          "name": "Female healthy life expectancy",
+          "longdesc": "Average years expected to be lived in good health for females born during the reference period",
+          "source": "Office for National Statistics",
+          "higher_value_polarity": "Better"
+        },
+        {
+          "name": "Male healthy life expectancy",
+          "longdesc": "Average years expected to be lived in good health for males born during the reference period",
+          "source": "Office for National Statistics",
+          "higher_value_polarity": "Better"
+        },
+        {
+          "name": "Cigarette smokers",
+          "longdesc": "Percentage of adults (18+) people who state they currently smoke cigarettes (excluding e-cigarettes)",
+          "source": "Office for National Statistics",
+          "higher_value_polarity": "Worse"
+        },
+        {
+          "name": "Overweight children at reception age (aged four to five years)",
+          "longdesc": "Proportion of children aged 4-5 years classified as overweight or obese. Children are classified as overweight (including obese) if their BMI is on or above the 85th centile of the British 1990 growth reference (UK90) according to age and sex.",
+          "source": "Office for Health Improvement and Disparities",
+          "higher_value_polarity": "Worse"
+        },
+        {
+          "name": "Overweight children at Year 6 age (aged 10 to 11 years)",
+          "longdesc": "Proportion of children aged 10-11 classified as overweight or obese. Children are classified as overweight (including obese) if their BMI is on or above the 85th centile of the British 1990 growth reference (UK90) according to age and sex.",
+          "source": "Office for Health Improvement and Disparities",
+          "higher_value_polarity": "Worse"
+        },
+        {
+          "name": "Overweight adults (aged 18 years and over)",
+          "longdesc": "Percentage of adults aged 18 and over classified as overweight or obese",
+          "source": "Office for Health Improvement and Disparities",
+          "higher_value_polarity": "Worse"
+        },
+        {
+          "name": "Cancers diagnosed at stage 1 and 2",
+          "longdesc": "New cases of cancer diagnosed at stages 1 and 2 as a percentage of all new cases of cancer diagnosed at any known stage",
+          "source": "Office for Health Improvement and Disparities",
+          "higher_value_polarity": "Better"
+        },
+        {
+          "name": "Cardiovascular mortality considered preventable in persons aged under 75",
+          "longdesc": "Age-standardised mortality rate from cardiovascular diseases considered preventble for those aged under 75 per 100,000 people (2019 definition)",
+          "source": "Office for Health Improvement and Disparities",
+          "higher_value_polarity": "Worse"
+        }
+      ]
+    },
+    {
+      "name": "Well-being",
+      "indicators": [
+        {
+          "name": "Life satisfaction",
+          "longdesc": "The average rating of those that feel satisfied about their lives for adults aged 16 years and over",
+          "source": "Office for National Statistics",
+          "higher_value_polarity": "Better"
+        },
+        {
+          "name": "Feeling life is worthwhile",
+          "longdesc": "The average rating of those that feel the thiings they do in life are worthwhile for adults aged 16 years and over",
+          "source": "Office for National Statistics",
+          "higher_value_polarity": "Better"
+        },
+        {
+          "name": "Happiness",
+          "longdesc": "The average rating of those that felt happy yesterday for adults aged 16 years and over",
+          "source": "Office for National Statistics",
+          "higher_value_polarity": "Better"
+        },
+        {
+          "name": "Anxiety",
+          "longdesc": "The average rating of those that felt anxious yesterday for adults aged 16 years and over",
+          "source": "Office for National Statistics",
+          "higher_value_polarity": "Worse"
+        }
+      ]
+    },
+    {
+      "name": "Housing",
+      "indicators": [
+        {
+          "name": "Additions to the housing stock",
+          "longdesc": "Net additions to the dweling stock (including new builds, conversions, changes of use, other gains/losses and offset by demolitions) per 1,000 stock",
+          "source": "Department for Levelling Up, Housing and Communities",
+          "higher_value_polarity": "Better"
+        }
+      ]
+    },
+    {
+      "name": "Crime and justice",
+      "indicators": [
+        {
+          "name": "Homicide Offences",
+          "longdesc": "Rate of Homicide offences per million population",
+          "source": "Office for National Statistics",
+          "higher_value_polarity": "Worse"
+        }
+      ]
+    },
+    {
+      "name": "Government, public sector and taxes",
+      "indicators": [
+        {
+          "name": "Population under devolution deal in England",
+          "longdesc": "Percentage of the population living in an area covered by the highest level of devolution in England",
+          "source": "Office for National Statistics",
+          "higher_value_polarity": "Better"
+        }
+      ]
+    }
+  ]
+}

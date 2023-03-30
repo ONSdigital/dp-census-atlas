@@ -11,6 +11,7 @@
   async function handleSelect(event) {
     if (event?.detail?.kind === "Geography") {
       const geo = event.detail as GeographySearchItem;
+      console.log(geo);
       selectGeography($page.url.searchParams, geo);
     } else if (event?.detail?.kind === "Postcode") {
       const postcode = event.detail as PostcodeSearchItem;

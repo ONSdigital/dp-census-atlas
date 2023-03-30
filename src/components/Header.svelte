@@ -22,8 +22,8 @@
     </a>
   </div>
   -->
-  <div class="truncate">
-    <strong class="text-black">ESS DEMO!</strong>
+  <div class="truncate bg-black py-1 px-2">
+    <strong class="text-white">PROTOTYPE</strong>
   </div>
   {#if $content.fakeDataLoaded}
     <div class="truncate">
@@ -33,3 +33,5 @@
     </div>
   {/if}
 </header>
+
+<style></style>

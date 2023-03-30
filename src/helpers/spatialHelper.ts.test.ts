@@ -112,6 +112,6 @@ describe("bboxToDataTiles", () => {
         bbox: { east: 15, north: 15, west: 5, south: 5 },
       },
     ];
-    expect(bboxToDataTiles(viewportBbox, "lad", dataTiles)).toEqual(expectedDataTiles);
+    expect(bboxToDataTiles(viewportBbox, "ltla", dataTiles)).toEqual(expectedDataTiles);
   });
 });

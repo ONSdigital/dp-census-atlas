@@ -5,14 +5,20 @@ import { map as project } from "rxjs/operators";
 import type { NumberQuadruple } from "../types";
 import topojson from "./topojson.json";
 import { feature } from "topojson-client";
+// import { layers } from "./layers";
 
 const layerBounds: NumberQuadruple = [-6.418, 49.864, 1.764, 55.812];
 
 export const topoJsonLayersToAdd = ["LTLA", "UTLA", "RGN"];
 
-const geojson = {};
+export const geojson = {};
 topoJsonLayersToAdd.forEach((type) => {
-  geojson[type] = feature(topojson, type);
+  const layer = feature(topojson, type);
+  layer.features = layer.features.map((f) => {
+    f.properties.type = type;
+    return f;
+  });
+  geojson[type] = layer;
 });
 
 export const initMapLayers = (map, geo, interactive: boolean) => {

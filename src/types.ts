@@ -1,4 +1,4 @@
-export const GeoTypes = ["ew", "LTLA", "RGN", "UTLA"] as const;
+export const GeoTypes = ["ew", "rgn", "utla", "ltla"] as const;
 export type GeoType = (typeof GeoTypes)[number];
 
 export type VariableGroup = {

@@ -19,12 +19,12 @@ const classificationDataDisplayConfig = (classificationCode: string) => {
     "gross_value_added_per_hour_worked",
     "gross_median_weekly_pay",
     "gross_disposable_household_income_per_head",
-  ]
+  ];
   if (poundsClassifications.includes(classificationCode)) {
     return {
       suffix: "",
       round: (r: number) => roundNumber({ number: r, decimalPlaces: 0 }),
-      roundToString: (r: number) => r.toFixed(0),
+      roundToString: (r: number) => "£" + parseInt(r.toFixed(0)).toLocaleString(),
       roundBreaks: (breaks: number[]) => uniqueRoundedNumbers({ numbers: breaks, decimalPlaces: 0 }),
     };
   }
@@ -33,24 +33,22 @@ const classificationDataDisplayConfig = (classificationCode: string) => {
     "public_transport_or_walk_to_employment_centre_with_500_to_4999_jobs",
     "drive_to_employment_centre_with_500_to_4999_jobs",
     "cycle_to_employment_centre_with_500_to_4999_jobs",
-  ]
+  ];
   if (minutesClassifications.includes(classificationCode)) {
     return {
       suffix: "",
       round: (r: number) => roundNumber({ number: r, decimalPlaces: 0 }),
-      roundToString: (r: number) => r.toFixed(0),
+      roundToString: (r: number) => parseInt(r.toFixed(0)).toLocaleString(),
       roundBreaks: (breaks: number[]) => uniqueRoundedNumbers({ numbers: breaks, decimalPlaces: 0 }),
     };
   }
 
-  const per1kClassifications = [
-    "additions_to_the_housing_stock",
-  ]
+  const per1kClassifications = ["additions_to_the_housing_stock"];
   if (per1kClassifications.includes(classificationCode)) {
     return {
       suffix: "",
       round: (r: number) => roundNumber({ number: r, decimalPlaces: 0 }),
-      roundToString: (r: number) => r.toFixed(0),
+      roundToString: (r: number) => parseInt(r.toFixed(0)).toLocaleString(),
       roundBreaks: (breaks: number[]) => uniqueRoundedNumbers({ numbers: breaks, decimalPlaces: 0 }),
     };
   }
@@ -60,64 +58,52 @@ const classificationDataDisplayConfig = (classificationCode: string) => {
     "apprenticeships_achievements",
     "aged_19_years_and_over_further_education_and_skills_participation",
     "cardiovascular_mortality_considered_preventable_in_persons_aged_under_75",
-  ]
+  ];
   if (per100kClassifications.includes(classificationCode)) {
     return {
       suffix: "",
       round: (r: number) => roundNumber({ number: r, decimalPlaces: 0 }),
-      roundToString: (r: number) => r.toFixed(0),
+      roundToString: (r: number) => parseInt(r.toFixed(0)).toLocaleString(),
       roundBreaks: (breaks: number[]) => uniqueRoundedNumbers({ numbers: breaks, decimalPlaces: 0 }),
     };
   }
 
-  const perMillionClassifications = [
-    "homicide_offences",
-  ]
+  const perMillionClassifications = ["homicide_offences"];
   if (perMillionClassifications.includes(classificationCode)) {
     return {
       suffix: "",
       round: (r: number) => roundNumber({ number: r, decimalPlaces: 0 }),
-      roundToString: (r: number) => r.toFixed(0),
+      roundToString: (r: number) => parseInt(r.toFixed(0)).toLocaleString(),
       roundBreaks: (breaks: number[]) => uniqueRoundedNumbers({ numbers: breaks, decimalPlaces: 0 }),
     };
   }
 
-  const numberClassifications = [
-    "aged_19_years_and_over_further_education_and_skills_learner_achievements",
-  ]
+  const numberClassifications = ["aged_19_years_and_over_further_education_and_skills_learner_achievements"];
   if (numberClassifications.includes(classificationCode)) {
     return {
       suffix: "",
       round: (r: number) => roundNumber({ number: r, decimalPlaces: 0 }),
-      roundToString: (r: number) => r.toFixed(0),
+      roundToString: (r: number) => parseInt(r.toFixed(0)).toLocaleString(),
       roundBreaks: (breaks: number[]) => uniqueRoundedNumbers({ numbers: breaks, decimalPlaces: 0 }),
     };
   }
 
-  const yearsClassifications = [
-    "female_healthy_life_expectancy",
-    "male_healthy_life_expectancy",
-  ]
+  const yearsClassifications = ["female_healthy_life_expectancy", "male_healthy_life_expectancy"];
   if (yearsClassifications.includes(classificationCode)) {
     return {
       suffix: "",
       round: (r: number) => roundNumber({ number: r, decimalPlaces: 0 }),
-      roundToString: (r: number) => r.toFixed(0),
+      roundToString: (r: number) => parseInt(r.toFixed(0)).toLocaleString(),
       roundBreaks: (breaks: number[]) => uniqueRoundedNumbers({ numbers: breaks, decimalPlaces: 0 }),
     };
   }
 
-  const outOf10Classifications = [
-    "life_satisfaction",
-    "feeling_life_is_worthwhile",
-    "happiness",
-    "anxiety",
-  ]
+  const outOf10Classifications = ["life_satisfaction", "feeling_life_is_worthwhile", "happiness", "anxiety"];
   if (outOf10Classifications.includes(classificationCode)) {
     return {
       suffix: "",
       round: (r: number) => roundNumber({ number: r, decimalPlaces: 0 }),
-      roundToString: (r: number) => r.toFixed(0),
+      roundToString: (r: number) => parseInt(r.toFixed(0)).toLocaleString(),
       roundBreaks: (breaks: number[]) => uniqueRoundedNumbers({ numbers: breaks, decimalPlaces: 0 }),
     };
   }

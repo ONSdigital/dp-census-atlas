@@ -86,7 +86,7 @@
       // console.log("new page view " + location);
 
       let areaData = {};
-      ["oa", "msoa", "lad"].forEach((key) => {
+      ["rgn", "utla", "ltla"].forEach((key) => {
         let code = page.url.searchParams.get(key);
         if (code) areaData = { areaCode: code, areaType: key };
       });

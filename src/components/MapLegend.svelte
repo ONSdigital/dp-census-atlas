@@ -64,7 +64,7 @@
                   $viz.params.variable,
                   $viz.params.category,
                   active.displayName,
-                  $viz.params.category.legend_str_1,
+                  ["%", "£"].includes($viz.params.variable.units) ? "in {location}" : "{category_unit} in {location}",
                 )}
               </span>
               <GeoTypeBadge geoType={active.geoType} />
@@ -85,7 +85,7 @@
                   $viz.params.variable,
                   $viz.params.category,
                   active.displayName,
-                  $viz.params.category.legend_str_3,
+                  "{variable_name}",
                 )}
               </div>
             {/if}

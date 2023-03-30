@@ -19,9 +19,9 @@ import { commands, type Command } from "../stores/commands";
 import { isAppInteractive, type EmbedParams } from "../helpers/embedHelper";
 import { topoJsonLayersToAdd } from "./initMapLayers";
 
-const defaultZoom = 6;
+const defaultZoom = 5;
 const maxAllowedZoom = 15;
-const minZoom = 5;
+const minZoom = 4;
 
 /** Configure the map's properties and subscribe to its events. */
 export const initMap = (container: HTMLElement) => {
@@ -127,6 +127,7 @@ const listenToGeographyStore = (map: mapboxgl.Map, geography: GeographyInfo) => 
     const boundary = geography.geoType === "ew" ? emptyFeatureCollection : geography.boundary;
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore types here are no good
+
     source.setData(boundary);
 
     // don't change position for EW
@@ -145,12 +146,12 @@ const setInitialPosition = (map: mapboxgl.Map, embed: EmbedParams) => {
 };
 
 const setPosition = (map: mapboxgl.Map, g: GeographyInfo, options: { animate: boolean } = { animate: false }) => {
-  if (g.geoType === "ew") {
+  if (!g.geoType || g.geoType === "ew") {
     const bounds = new mapboxgl.LngLatBounds(ukBbox);
     map.fitBounds(bounds, { padding: 0, animate: false });
   } else {
     const bounds = new mapboxgl.LngLatBounds(g.bbox);
-    const layer = layers.find((l) => l.name === g.geoType);
+    const layer = layers.find((l) => l.name === g.geoType.toLowerCase());
     // ensure that we don't pad more than the viewport
     const padding = Math.min(
       map.getContainer().offsetWidth / layer.geoPadFactor,

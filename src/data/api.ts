@@ -1,7 +1,9 @@
 import * as dsv from "d3-dsv"; // https://github.com/d3/d3/issues/3469
 import type { Bbox, Category, Classification, DataTile, GeographyData, GeoType } from "../types";
+import bbox from "@turf/bbox";
 import { bboxToDataTiles } from "../helpers/spatialHelper";
 import { uniqueRoundedClassificationBreaks } from "../helpers/classificationHelpers";
+import { geojson } from "../map/initMapLayers";
 
 const geoBaseUrl = "https://cdn.ons.gov.uk/maptiles/cm-geos/v2";
 
@@ -75,8 +77,37 @@ export const fetchBreaks = async (args: {
 /*
   Fetch json with bounding box for geography.
 */
-export const fetchGeography = async (geoCode: string): Promise<GeographyData> => {
-  const url = `${geoBaseUrl}/${geoCode}.geojson`;
-  const response = await fetch(url);
-  return await response.json();
+export const fetchGeography = async (geoType: string, geoCode: string): Promise<GeographyData> => {
+  if (geojson && geojson[geoType.toLocaleUpperCase()]) {
+    const feature = geojson[geoType.toLocaleUpperCase()].features.find((f) => f.properties.AREACD === geoCode);
+    feature.id = "boundary";
+    const bounds = bbox(feature);
+    const centroid = [(bounds[0] + bounds[2]) / 2, (bounds[1] + bounds[3]) / 2];
+    const geo = {
+      meta: { code: geoCode, name: feature.properties.AREANM, geotype: geoType },
+      geo_json: {
+        type: "FeatureCollection",
+        features: [
+          {
+            type: "Feature",
+            id: "centroid",
+            geometry: { type: "Point", coordinates: centroid },
+          },
+          {
+            type: "Feature",
+            id: "bbox",
+            geometry: {
+              type: "LineString",
+              coordinates: [
+                [bounds[0], bounds[1]],
+                [bounds[2], bounds[3]],
+              ],
+            },
+          },
+          feature,
+        ],
+      },
+    };
+    return geo;
+  }
 };

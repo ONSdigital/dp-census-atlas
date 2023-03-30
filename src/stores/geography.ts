@@ -14,7 +14,7 @@ const geoType = derived(params, ($params) => $params.geoType);
  * A Svelte store containing all the data we need to show the selected geography.
  */
 export const geography = asyncDerived([geoCode, geoType], async ([$geoCode, $geoType]) => {
-  const data = $geoType === "ew" ? englandAndWales : await fetchGeography($geoCode);
+  const data = $geoType === "ew" ? englandAndWales : await fetchGeography($geoType, $geoCode);
   return getGeographyInfo(data);
 });
 

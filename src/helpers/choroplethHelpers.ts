@@ -10,6 +10,7 @@ export const colours = {
 export const getColours = (mode: Mode, breaks: number[]): StringQuintuple => {
   switch (mode) {
     case "choropleth":
+    case "dotdensity":
       return colours.standard;
     case "change":
       return getChangeColours(breaks);

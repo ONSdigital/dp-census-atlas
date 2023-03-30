@@ -14,7 +14,10 @@ export const params = derived([page, content], ([$page, $content]) => {
   const variableGroup = $content?.[mode]?.variableGroups.find((vg) => vg.slug === $page.params.variableGroup);
   const variable = variableGroup?.variables.find((v) => v.slug === $page.params.variable);
   const classification = variable?.classifications.find((c) => c.slug === $page.params.classification);
-  const category = classification?.categories.find((c) => c.slug === $page.params.category);
+
+  const category =
+    classification?.categories.find((c) => c.slug === $page.params.category) ?? classification?.categories[0];
+  const categories = classification?.categories.filter((c) => $page.params.category.split("~").includes(c.code));
 
   return {
     mode,
@@ -22,6 +25,7 @@ export const params = derived([page, content], ([$page, $content]) => {
     variable,
     classification,
     category,
+    categories,
     ...getSelectedGeography($page.url.searchParams),
     ...getGeoLock($page.url.searchParams),
     ...parseEmbedParams($page.url.searchParams),

@@ -22,6 +22,7 @@ class CensusVariable:
     base_url_2021_dev_override: str = ""
     base_url_2011_2021_comparison: str = ""
     base_url_2011_2021_comparison_dev_override: str = ""
+    base_url_dot_density: str = ""
     topic_code: str = ""
     caveat_text: str = ""
     caveat_link: str = ""
@@ -59,8 +60,9 @@ class CensusVariable:
             if base_url_row["2011_2021_comparison_data_base_url"] != "":
                 self.base_url_2011_2021_comparison = base_url_row["2011_2021_comparison_data_base_url"].strip()
             if base_url_row["2011_2021_comparison_fake_dev_override"] != "":
-                self.base_url_2011_2021_comparison_dev_override = base_url_row["2011_2021_comparison_fake_dev_override"].strip(
-                )
+                self.base_url_2011_2021_comparison_dev_override = base_url_row["2011_2021_comparison_fake_dev_override"].strip()
+            if base_url_row["dot_density_data_base_url"] != "":
+                self.base_url_dot_density = base_url_row["dot_density_data_base_url"].strip()
 
     def set_units(self, units: list[dict]) -> None:
         unit_row = next((r for r in units if r["variable"] == self.code), None)
@@ -80,6 +82,7 @@ class CensusVariable:
             "base_url_2021_dev_override",
             "base_url_2011_2021_comparison",
             "base_url_2011_2021_comparison_dev_override"
+            "base_url_dot_density",
         ]
         for prop, value in vars(self).items():
             if (
@@ -139,6 +142,9 @@ class CensusVariable:
         if self.base_url_2011_2021_comparison_dev_override != "":
             output_params["base_url_2011_2021_comparison_dev_override"] = self.base_url_2011_2021_comparison_dev_override
 
+        if self.base_url_dot_density != "":
+            output_params["base_url_dot_density"] = self.base_url_dot_density
+
         output_params["classifications"] = [
             c.to_jsonable() for c in self.classifications
         ]
@@ -162,6 +168,7 @@ def variable_from_content_json(content_json: dict) -> CensusVariable:
         base_url_2021_dev_override=content_json.get("base_url_2021_dev_override", ""),
         base_url_2011_2021_comparison=content_json.get("base_url_2011_2021_comparison", ""),
         base_url_2011_2021_comparison_dev_override=content_json.get("base_url_2011_2021_comparison_dev_override", ""),
+        base_url_dot_density=content_json.get("base_url_dot_density", ""),
         classifications=[classification_from_content_json(
             c) for c in content_json["classifications"]],
     )

@@ -77,7 +77,8 @@
             <div class="grow" />
             {#if shouldBeHorizontal()}
               <div class="text-sm mt-3">
-                One dot represents {getDensityForZoomLevel($viewport.zoom).toLocaleString()} households
+                One dot represents {getDensityForZoomLevel($viewport.zoom).toLocaleString()}
+                {$viz.params.variable.units}
               </div>
             {/if}
           </div>
@@ -123,7 +124,8 @@
                 </div>
                 {#if !shouldBeHorizontal()}
                   <div class="text-sm">
-                    One dot represents {getDensityForZoomLevel($viewport.zoom).toLocaleString()} households
+                    One dot represents {getDensityForZoomLevel($viewport.zoom).toLocaleString()}
+                    {$viz.params.variable.units}
                   </div>
                 {/if}
               </div>

@@ -17,6 +17,7 @@ export const getContentForStore = async (
       return fetchContentForEnv(ctcfg, isDev, isPublishing);
     }),
   );
+  console.log(rawContent);
 
   // load and append any additional content jsons specced in meta.additional_content_jsons sections of the loaded content
   const additionalRawContent = await Promise.all(
@@ -164,6 +165,9 @@ const mergeVariables = (variables: Variable[]) => {
       long_desc: variablesToMerge[0].long_desc,
       units: variablesToMerge[0].units,
       topic_code: variablesToMerge[0].topic_code,
+      source: variablesToMerge[0].source,
+      higher_value_polarity: variablesToMerge[0].higher_value_polarity,
+      period: variablesToMerge[0].period,
       caveat_text: variablesToMerge[0].caveat_text,
       caveat_link: variablesToMerge[0].caveat_link,
       base_url_2021: variablesToMerge[0].base_url_2021,

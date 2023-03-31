@@ -128,6 +128,9 @@
           colors={choroplethColours}
           classificationCode={$viz.params.classification.code}
         />
+        <div class="text-xs xs:text-sm pt-0.5 xs:pt-2.5">
+          Source: {$viz?.params?.variable?.source}, {$viz?.params?.variable?.period}
+        </div>
       {/if}
     </div>
   </div>

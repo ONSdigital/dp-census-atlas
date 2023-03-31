@@ -16,6 +16,9 @@ export type Variable = {
   long_desc: string;
   units: string;
   topic_code: string;
+  source: string;
+  higher_value_polarity: string;
+  period: string;
   caveat_text: string;
   caveat_link: string;
   base_url_2021: string;

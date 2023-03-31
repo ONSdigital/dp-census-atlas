@@ -10,10 +10,13 @@ const layerBounds: NumberQuadruple = [-6.418, 49.864, 1.764, 55.812];
 
 export const topoJsonLayersToAdd = ["LTLA", "UTLA", "RGN"];
 
-const geojson = {};
-topoJsonLayersToAdd.forEach((type) => {
-  geojson[type] = feature(topojson, type);
-});
+export const geojson = (() => {
+  const geojson = {};
+  topoJsonLayersToAdd.forEach((type) => {
+    geojson[type] = feature(topojson, type);
+  });
+  return geojson;
+})();
 
 export const initMapLayers = (map, geo, interactive: boolean) => {
   topoJsonLayersToAdd.forEach((lGeo) => {

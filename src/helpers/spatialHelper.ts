@@ -31,10 +31,10 @@ export const bboxToDataTiles = (bbox: Bbox, geoType: GeoType, dataTileGrid: Data
   });
 };
 
-export const englandAndWales: GeographyData = {
+export const unitedKingdom: GeographyData = {
   meta: {
-    name: "England and Wales",
-    code: "K04000001",
+    name: "United Kingdom",
+    code: "K02000001",
     geotype: "ew",
   },
   geo_json: {

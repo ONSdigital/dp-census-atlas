@@ -10,6 +10,7 @@ export const isSearchableQuery = (query: string): boolean => {
 export const fetchGeoPostcodeSearchItems = async (q: string): Promise<(GeographySearchItem | PostcodeSearchItem)[]> => {
   if (isSearchableQuery(q)) {
     const fetched = await Promise.all([fetchGeographySearchItems(q), fetchPostcodeSearchItems(q)]);
+    console.log(fetched);
     return fetched.flat();
   }
   return [] as GeographySearchItem[];
@@ -28,14 +29,33 @@ const fetchGeographySearchItems = async (q: string): Promise<GeographySearchItem
 
 const fetchPostcodeSearchItems = async (q: string): Promise<PostcodeSearchItem[]> => {
   try {
-    const pcdPrefix = q.toUpperCase().replace(/\s/g, "").slice(0, 4);
-    const response = await fetch(`https://cdn.ons.gov.uk/maptiles/postcode-oa-lookup/2022-08/${pcdPrefix}.json`);
+    const pcdPrefix = q.toLowerCase();
+    const response = await fetch(`https://api.postcodes.io/postcodes/${pcdPrefix}/autocomplete`);
     const json = await response.json();
-    const postcodeResults = json.map((postcode) => ({ kind: "Postcode", value: postcode.pcd, oa: postcode.oa }));
+    const postcodeResults = json.result.map((postcode) => ({ kind: "Postcode", value: postcode }));
     return filterPostcodeResults(q, postcodeResults);
   } catch (err) {
     console.error(err);
     return [] as PostcodeSearchItem[];
+  }
+};
+
+export const fetchGeographyForPostcode = async (pcd: PostcodeSearchItem): Promise<GeographySearchItem> => {
+  try {
+    const response = await fetch(`https://api.postcodes.io/postcodes/${pcd.value}`);
+    const json = await response.json();
+    const code = json.result.codes.admin_district;
+    const name = json.result.admin_district;
+    const geo = {
+      kind: "Geography",
+      value: name,
+      geoType: "LTLA",
+      geoCode: code,
+      en: name,
+    };
+    return geo as GeographySearchItem;
+  } catch (err) {
+    console.error(err);
   }
 };
 

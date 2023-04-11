@@ -1,22 +1,21 @@
 <script lang="ts">
   import { page } from "$app/stores";
   import Select from "./Select.svelte";
-  import { fetchGeoPostcodeSearchItems } from "../helpers/areaSearchHelper";
+  import { fetchGeoPostcodeSearchItems, fetchGeographyForPostcode } from "../helpers/areaSearchHelper";
   import { selectGeography } from "../helpers/navigationHelper";
-  import type { GeographySearchItem, PostcodeSearchItem } from "../types";
+  import type { GeographySearchItem } from "../types";
 
   export let embedded = false;
   export let onSelected: (() => void) | undefined = undefined;
 
   async function handleSelect(event) {
-    if (event?.detail?.kind === "Geography") {
-      const geo = event.detail as GeographySearchItem;
-      console.log(geo);
-      selectGeography($page.url.searchParams, geo);
-    } else if (event?.detail?.kind === "Postcode") {
-      const postcode = event.detail as PostcodeSearchItem;
-      selectGeography($page.url.searchParams, { geoType: "oa", geoCode: postcode.oa });
+    let geo;
+    if (event?.detail?.kind === "Postcode") {
+      geo = await fetchGeographyForPostcode(event.detail);
+    } else {
+      geo = event.detail as GeographySearchItem;
     }
+    selectGeography($page.url.searchParams, geo);
     if (onSelected) {
       onSelected();
     }
@@ -27,7 +26,7 @@
   <Select
     id="area-input"
     mode="search"
-    placeholder="Search England and Wales"
+    placeholder="Search United Kingdom"
     items={[]}
     loadOptions={fetchGeoPostcodeSearchItems}
     idKey="value"

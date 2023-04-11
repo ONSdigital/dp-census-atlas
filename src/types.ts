@@ -73,16 +73,14 @@ export type GeographyInfo = {
 
 export type GeographySearchItem = {
   kind: "Geography";
+  value: string;
   geoType: GeoType;
   geoCode: string;
   en: string;
-  cy: string;
-  bbox: number[];
 };
 export type PostcodeSearchItem = {
   kind: "Postcode";
   value: string;
-  oa: string;
 };
 export type AreaSearchItem = GeographySearchItem | PostcodeSearchItem;
 

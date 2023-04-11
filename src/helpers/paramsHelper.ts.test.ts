@@ -1,13 +1,13 @@
 import { GeoTypes } from "../types";
-import { englandAndWales } from "./spatialHelper";
+import { unitedKingdom } from "./spatialHelper";
 import { getSelectedGeography } from "./paramsHelper";
 
 describe("getSelectedGeography", () => {
   test("returns ew when no geography in url", () => {
     const testURL = new URL("https://dp.aws.onsdigital.uk/census-atlas");
     expect(getSelectedGeography(testURL.searchParams)).toEqual({
-      geoType: englandAndWales.meta.geotype,
-      geoCode: englandAndWales.meta.code,
+      geoType: unitedKingdom.meta.geotype,
+      geoCode: unitedKingdom.meta.code,
     });
   });
   // test all known geotypes are found

@@ -1,5 +1,5 @@
 import { GeoTypes, type GeoType } from "../types";
-import { englandAndWales } from "./spatialHelper";
+import { unitedKingdom } from "./spatialHelper";
 
 export const getSelectedGeography = (params: URLSearchParams) => {
   for (const param of GeoTypes) {
@@ -10,7 +10,7 @@ export const getSelectedGeography = (params: URLSearchParams) => {
       };
     }
   }
-  return { geoType: englandAndWales.meta.geotype as GeoType, geoCode: englandAndWales.meta.code };
+  return { geoType: unitedKingdom.meta.geotype as GeoType, geoCode: unitedKingdom.meta.code };
 };
 
 export const getGeoLock = (params: URLSearchParams) => {

@@ -27,8 +27,8 @@
     return slug ? parseSlug(slug) : undefined;
   }
   $: title = $page.params.variable
-    ? `${parseParam("variable")} - Census Maps, ONS`
-    : "Census Maps - Census 2021 data interactive, ONS";
+    ? `${parseParam("variable")} - Subnational indicator maps, ONS`
+    : "Subnational indicator maps, ONS";
   $: url = "https://www.ons.gov.uk" + $page.url.pathname;
 </script>
 
@@ -44,14 +44,8 @@
   <meta property="og:image:height" content="492" />
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:image" content="https://www.ons.gov.uk/census/maps/img/og-image.png" />
-  <meta
-    property="og:description"
-    content="Census maps is an interactive tool to explore Census 2021 data across England and Wales for different topics down to a neighbourhood level."
-  />
-  <meta
-    name="description"
-    content="Census maps is an interactive tool to explore Census 2021 data across England and Wales for different topics down to a neighbourhood level."
-  />
+  <meta property="og:description" content="Use our maps to find out about your local authority." />
+  <meta name="description" content="Use our maps to find out about your local authority." />
 </svelte:head>
 
 {#if $content && $geography}

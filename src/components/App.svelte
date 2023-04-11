@@ -44,8 +44,8 @@
   <meta property="og:image:height" content="492" />
   <meta property="twitter:card" content="summary_large_image" />
   <meta property="twitter:image" content="https://www.ons.gov.uk/census/maps/img/og-image.png" />
-  <meta property="og:description" content="Use our maps to find out about your local authority." />
-  <meta name="description" content="Use our maps to find out about your local authority." />
+  <meta property="og:description" content="Use our maps to find out about your local area." />
+  <meta name="description" content="Use our maps to find out about your local area." />
 </svelte:head>
 
 {#if $content && $geography}

@@ -25,12 +25,12 @@
       </div>
     {/if}
 
-    <div class="bg-ons-grey-5 p-6 mt-8 mb-9">
+    <!-- <div class="bg-ons-grey-5 p-6 mt-8 mb-9">
       <h3 class="pb-3 text-xl font-semibold ">Examples</h3>
       <ul>
         <SogiExamples />
       </ul>
-    </div>
+    </div> -->
   </section>
 </div>
 

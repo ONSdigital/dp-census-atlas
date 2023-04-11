@@ -102,9 +102,9 @@ const classificationDataDisplayConfig = (classificationCode: string) => {
   if (outOf10Classifications.includes(classificationCode)) {
     return {
       suffix: "",
-      round: (r: number) => roundNumber({ number: r, decimalPlaces: 0 }),
-      roundToString: (r: number) => parseInt(r.toFixed(0)).toLocaleString(),
-      roundBreaks: (breaks: number[]) => uniqueRoundedNumbers({ numbers: breaks, decimalPlaces: 0 }),
+      round: (r: number) => roundNumber({ number: r, decimalPlaces: 2 }),
+      roundToString: (r: number) => r.toFixed(2),
+      roundBreaks: (breaks: number[]) => uniqueRoundedNumbers({ numbers: breaks, decimalPlaces: 2 }),
     };
   }
 

@@ -12,7 +12,7 @@
   title={""}
   aria-label={""}
 >
-  <div class="text-2xl group-hover:scale-125 transition-all">
+  <div class="text-2xl group-hover:scale-125 transition-all" style="line-height: 1">
     <Icon kind="arrowForwardIos" orientation={open ? "e" : "w"} />
   </div>
 </button>

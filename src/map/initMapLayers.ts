@@ -29,8 +29,12 @@ export const initDotDensityLayers = (map: mapboxgl.Map, params) => {
     map.addSource("dots", {
       type: "vector",
       tiles: [`${dotDensityPath}/${params.classification.code}/{z}/{x}/{y}.pbf`],
-      maxzoom: 11,
+      maxzoom: 14,
     });
+    layersWithSiblings().forEach((l) => {
+      map.setPaintProperty(`${l.layer.name}-features`, "fill-color", "rgba(0,0,0,0)");
+    });
+
     map.addLayer(
       {
         id: "dots",
@@ -43,14 +47,18 @@ export const initDotDensityLayers = (map: mapboxgl.Map, params) => {
           "circle-radius": {
             stops: [
               [8, 0.7],
-              [12, 1.2],
-              [15, 3],
+              [12, 1],
+              [16, 2],
             ],
           },
         },
       },
       "place_other",
     );
+  } else {
+    layersWithSiblings().forEach((l) => {
+      map.setPaintProperty(`${l.layer.name}-features`, "fill-color", "lightgrey");
+    });
   }
 };
 
@@ -77,7 +85,10 @@ export const initMapLayers = (map, geo, interactive: boolean) => {
         layout: { visibility: l.layer.name == "lad" ? "visible" : "none" }, // could just be "none"
         paint:
           paramsData.mode === "dotdensity"
-            ? { "fill-color": "rgba(0,0,0,0)" }
+            ? {
+                "fill-color": paramsData.classification ? "rgba(0,0,0,0)" : "lightgrey",
+                "fill-opacity": ["interpolate", ["linear"], ["zoom"], 9, 0.9, 10, 0.1],
+              }
             : {
                 "fill-color": [
                   "case",
@@ -87,7 +98,7 @@ export const initMapLayers = (map, geo, interactive: boolean) => {
                 ],
               },
       },
-      paramsData.mode === "dotdensity" ? null : "mask-raster",
+      paramsData.mode === "dotdensity" ? "place_other" : "mask-raster",
     );
 
     map.addLayer(

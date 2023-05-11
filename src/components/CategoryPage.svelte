@@ -115,6 +115,12 @@
       {#if $params.classification.change_notes && $params.mode === "change"}
         <CaveatInfo text={$params.classification.change_notes} link={$params.classification.change_notes_link} />
       {/if}
+      {#if $params.mode === "dotdensity"}
+        <CaveatInfo
+          text="The dots on this map are placed randomly within each area. They do not represent specific people or addresses."
+          link=""
+        />
+      {/if}
     </section>
   </div>
 </div>

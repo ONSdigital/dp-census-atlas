@@ -5,4 +5,5 @@ export function getDensityForZoomLevel(zoom: number) {
   return zoom < 12 ? densities[Math.floor(zoom)] : 10;
 }
 
-export const dotdensityColours = ["#3bb2d0", "#e55e5e", "#223b53", "#fbb03b", "#ccc"];
+// export const dotdensityColours = ["#3bb2d0", "#e55e5e", "#223b53", "#fbb03b", "#ccc"];
+export const dotdensityColours = ["#27A0CC", "#F66068", "#003C57", "#FBB03B", "#ccc"];

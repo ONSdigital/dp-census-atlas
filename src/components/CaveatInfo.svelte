@@ -11,8 +11,8 @@
       <div class="text-base text-ons-white flex items-center justify-center font-extrabold ">i</div>
     </div>
   </div>
+  <div class="sr-only">Info</div>
   <div class="py-3 " style="white-space:pre-wrap">
-    <span class="sr-only">Info</span>
     {text}
     {#if link}
       <a href={link} class="hyperlink custom-ring whitespace-nowrap">Read more</a>

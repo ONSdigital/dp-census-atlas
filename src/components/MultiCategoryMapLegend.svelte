@@ -83,13 +83,13 @@
             {/if}
           </div>
           {#if open && $viz.params.categories.length > 0}
-            <div class="flex flex-1 flex-col gap-1 sm:gap-2">
+            <div class="flex flex-1 flex-col gap-1">
               {#each $viz.params.categories as category, i}
                 {@const value = active.value.find((v) => v.code === category.code).value}
                 {@const ewValue = $viz.englandAndWales[category.code]}
                 <div class="">
                   <div class="flex gap-2 items-start sm:items-end justify-between">
-                    <div class="leading-[1.35rem] md:mb-[1px]" class:widows={"3"}>
+                    <div class="leading-[1.35rem]" class:widows={"3"}>
                       {category.name}&nbsp;<span class="ml-0.5 font-bold">
                         {value}%
                       </span>

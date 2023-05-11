@@ -10,7 +10,7 @@
   import { tooltip } from "../actions/tooltip";
   import GeoTypeBadge from "./GeoTypeBadge.svelte";
   import MultiCategoryMapLegendToggle from "./MultiCategoryMapLegendToggle.svelte";
-  import { dotdensityColours, getDensityForZoomLevel } from "../helpers/dotdensityHelpers";
+  import { dotdensityColours, getDensityForZoomLevel, makeUnitSingular } from "../helpers/dotdensityHelpers";
 
   $: open = true;
   const toggleOpen = () => {
@@ -78,7 +78,7 @@
             {#if shouldBeHorizontal()}
               <div class="text-sm mt-3">
                 One dot represents {getDensityForZoomLevel($viewport.zoom).toLocaleString()}
-                {$viz.params.variable.units}
+                {makeUnitSingular($viz.params.variable.units, $viewport.zoom)}
               </div>
             {/if}
           </div>
@@ -124,8 +124,8 @@
                 </div>
                 {#if !shouldBeHorizontal()}
                   <div class="text-sm">
-                    One dot represents {getDensityForZoomLevel($viewport.zoom).toLocaleString()}
-                    {$viz.params.variable.units}
+                    One dot represents {getDensityForZoomLevel($viewport.zoom).toLocaleString("en")}
+                    {makeUnitSingular($viz.params.variable.units, $viewport.zoom)}
                   </div>
                 {/if}
               </div>

@@ -117,7 +117,7 @@
       {/if}
       {#if $params.mode === "dotdensity"}
         <CaveatInfo
-          text="The dots on this map are placed randomly within each area. They do not represent specific people or addresses."
+          text="The dots on this map broadly represent the data in each area, but they are distributed randomly, so do not identify people or relate to the buildings where they appear."
           link=""
         />
       {/if}

@@ -8,21 +8,18 @@
   import { hovered } from "../stores/hovered";
   import { selected } from "../stores/selected";
   import { tooltip } from "../actions/tooltip";
-  import { roundedClassificationDataToString, getClassificationDataSuffix } from "../helpers/classificationHelpers";
   import GeoTypeBadge from "./GeoTypeBadge.svelte";
   import MultiCategoryMapLegendToggle from "./MultiCategoryMapLegendToggle.svelte";
-  import { getDensityForZoomLevel } from "../helpers/dotdensityHelpers";
+  import { dotdensityColours, getDensityForZoomLevel, makeUnitSingular } from "../helpers/dotdensityHelpers";
 
   $: open = true;
   const toggleOpen = () => {
     open = !open;
   };
 
-  let colours = ["#3bb2d0", "#e55e5e", "#223b53", "#fbb03b", "#ccc"];
-
   const getColourForCategory = (categoryCode: string) => {
     return $viz.params.classification.categories
-      .map((c, i) => ({ code: c.code, colour: colours[i] }))
+      .map((c, i) => ({ code: c.code, colour: dotdensityColours[i] }))
       .find((c) => c.code === categoryCode).colour;
   };
 
@@ -30,7 +27,6 @@
   const shouldBeCollapsable = () => $viz.params.categories.length > 2;
 
   $: valueForHoveredGeography = $viz?.places.find((p) => p.geoCode === $hovered?.geoCode)?.categoryValues;
-  $: suffix = $viz && getClassificationDataSuffix($viz.params.classification.code, $viz.params.mode);
 
   // the hovered, otherwise the selected, geography properties
   $: active = $hovered
@@ -44,14 +40,19 @@
         geoType: $selected?.geoType,
         geoCode: $selected?.geoCode,
         displayName: $selected?.displayName,
-        value: $selected && "values" in $selected ? $selected?.values : undefined,
+        value:
+          $selected && "values" in $selected
+            ? $selected?.values
+            : $viz && "englandAndWales" in $viz
+            ? Object.entries($viz.englandAndWales).map(([code, value]) => ({ code, value }))
+            : undefined,
       };
 
   const legendTextClass = "text-sm sm:text-base lg:text-lg xl:text-xl";
 </script>
 
 {#if $viz?.params?.categories || active.geoCode}
-  <div class={`absolute bottom-3 sm:bottom-5 lg:bottom-8 flex w-full justify-center`}>
+  <div class={`absolute bottom-3 sm:bottom-5 lg:bottom-6 flex w-full justify-center`}>
     <div
       class="w-full max-w-[50rem] mx-3 lg:mx-4 bg-white bg-opacity-90 px-3 lg:px-5 py-2 lg:py-3 border-[1px] lg:border-[1px] border-ons-grey-15"
     >
@@ -69,9 +70,6 @@
                 </span>
                 <GeoTypeBadge geoType={active.geoType} />
               </div>
-              <!-- {#if !shouldBeHorizontal() || !open}
-                  <MultiCategoryMapLegendToggle {open} {toggleOpen} />
-              {/if} -->
               <div class="block" class:sm:hidden={shouldBeHorizontal() && open}>
                 <MultiCategoryMapLegendToggle {open} {toggleOpen} />
               </div>
@@ -79,18 +77,19 @@
             <div class="grow" />
             {#if shouldBeHorizontal()}
               <div class="text-sm mt-3">
-                One dot represents {getDensityForZoomLevel($viewport.zoom).toLocaleString()} households
+                One dot represents {getDensityForZoomLevel($viewport.zoom).toLocaleString()}
+                {makeUnitSingular($viz.params.variable.units, $viewport.zoom)}
               </div>
             {/if}
           </div>
           {#if open && $viz.params.categories.length > 0}
-            <div class="flex flex-1 flex-col gap-1 sm:gap-2">
+            <div class="flex flex-1 flex-col gap-1">
               {#each $viz.params.categories as category, i}
                 {@const value = active.value.find((v) => v.code === category.code).value}
                 {@const ewValue = $viz.englandAndWales[category.code]}
                 <div class="">
                   <div class="flex gap-2 items-start sm:items-end justify-between">
-                    <div class="leading-[1.35rem] md:mb-0.5" class:widows={"3"}>
+                    <div class="leading-[1.35rem]" class:widows={"3"}>
                       {category.name}&nbsp;<span class="ml-0.5 font-bold">
                         {value}%
                       </span>
@@ -125,7 +124,8 @@
                 </div>
                 {#if !shouldBeHorizontal()}
                   <div class="text-sm">
-                    One dot represents {getDensityForZoomLevel($viewport.zoom).toLocaleString()} households
+                    One dot represents {getDensityForZoomLevel($viewport.zoom).toLocaleString("en")}
+                    {makeUnitSingular($viz.params.variable.units, $viewport.zoom)}
                   </div>
                 {/if}
               </div>

@@ -26,3 +26,17 @@ clean::
 .PHONY: man
 man:	## display s3sync man page on terminal
 	$(MANDOC) < s3sync.mandoc | less
+
+.PHONY: pdf
+pdf:    ## generate pdf man page
+	groff -mandoc -Tps -P-pa4 -pdfmark s3sync.mandoc | ps2pdf - - > s3sync.pdf.new
+	mv s3sync.pdf.new s3sync.pdf
+clean::
+	rm -f s3sync.pdf.new s3sync.pdf
+
+.PHONY: html
+html:	## generate html man page
+	$(MANDOC) -W warning -T html < s3sync.mandoc > s3sync.html.new
+	mv s3sync.html.new s3sync.html
+clean::
+	rm -f s3sync.html.new s3sync.html

@@ -8,147 +8,66 @@ import (
 	"log"
 	"os"
 	"path/filepath"
-	"sort"
 	"strconv"
 
 	"github.com/gosimple/slug"
 	"github.com/jszwec/csvutil"
+
+	"github.com/ONSdigital/dp-census-atlas/scripts/mkess/content"
+	"github.com/ONSdigital/dp-census-atlas/scripts/mkess/dataset"
+	"github.com/ONSdigital/dp-census-atlas/scripts/mkess/taxonomy"
 )
 
-// Map Geography fields in the spreadsheet to geography codes in the topo file.
-// An empty code here will cause the corresponding spreadsheet rows to be skipped.
-// Geography strings must exactly match the strings found in the spreadsheet.
-var geotypes = map[string]string{
-	"Combined Authority or City Region": "CAUTH",
-	"Country":                           "CTRY",
-	"County or Unitary Authority":       "UTLA",
-	"ITL Level 1":                       "ITL1",
-	"ITL Level 2":                       "ITL2",
-	"ITL Level 3":                       "ITL3",
-	"Local Authority District":          "LTLA",
-	"Nation":                            "",
-	"Police Force Area":                 "",
-	"Region":                            "RGN",
-	"Welsh Health Board":                "",
+// Map geocode prefixes to geotypes.
+var geotypes = map[string][]string{
+	"E12": []string{"RGN"},
+	"N92": []string{"RGN"},
+	"S92": []string{"RGN"},
+	"W92": []string{"RGN"},
+	"E06": []string{"LTLA", "UTLA"},
+	"E07": []string{"LTLA"},
+	"E08": []string{"LTLA", "UTLA"},
+	"E09": []string{"LTLA", "UTLA"},
+	"E10": []string{"UTLA"},
+	"N09": []string{"LTLA", "UTLA"},
+	"S12": []string{"LTLA", "UTLA"},
+	"W06": []string{"LTLA", "UTLA"},
+}
+
+// requiredPrefixes lists geocode prefixes that are required to be within
+// a geotype.
+// ds.TrimGeotypes removes geotypes that do not have the required prefixes.
+// The key in the requiredPrefixes map is a geotype, and the value is a
+// slice of required prefixes.
+var requiredPrefixes = map[string][]string{
+	"LTLA": {"E07"},
+	"UTLA": {"E10"},
 }
 
 // These are the only geotypes we want in ess_content.json.
-var contentGeotypes = []string{"RGN", "LTLA", "UTLA"}
-
-// The Topic->Indicators hierarchy defines the structure of ess_content.json.
-// Topics become the top level VariableGroups and Indicators become
-// Variables/Classifications/Categories.
-// See NewCategory() for how Indicators are set up within content.json Variables.
-type Topic struct {
-	Name       string
-	Indicators []string
-}
-
-// These Indicators in the spreadsheet are not used in currently selected Topics:
-//
-//	Aged 16 to 64 years level 3 or above qualifications
-//	Aged 19 years and over further education and skills learner achievements
-//	Employment rate for 16 to 64 year olds
-//	Gross disposable household income per head
-//
-// The other Indicators in the spreadsheet are placed within Topics.
-// The Indicator strings must exactly match the strings found in the spreadsheet.
-var topics = []Topic{
-	{
-		Name: "Business",
-		Indicators: []string{
-			"Total value of UK exports",
-			"Inward foreign direct investment (FDI)",
-			"Outward foreign direct investment (FDI)",
-		},
-	},
-	{
-		Name: "Digital",
-		Indicators: []string{
-			"Gigabit capable broadband",
-			"4G coverage",
-		},
-	},
-	{
-		Name: "Education and skills",
-		Indicators: []string{
-			"Pupils at expected standards by end of primary school",
-			"GCSEs (and equivalent) in English and maths by age 19",
-			"Schools and nursery schools rated good or outstanding",
-			"Persistent absences for all pupils",
-			"Persistent absences for pupils eligible for free school meals",
-			"Persistent absences for pupils looked after by local authorities",
-			"Children at expected standard for communication and language by end of early years foundation stage",
-			"Children at expected standard for literacy by end of early years foundation stage",
-			"Children at expected standard for maths by end of early years foundation stage",
-			"Apprenticeships starts",
-			"Apprenticeships achievements",
-			"Aged 19 years and over further education and skills participation",
-		},
-	},
-	{
-		Name: "Health and wellbeing",
-		Indicators: []string{
-			"Female healthy life expectancy",
-			"Male healthy life expectancy",
-			"Cigarette smokers",
-			"Overweight children at reception age (aged four to five years)",
-			"Overweight children at Year 6 age (aged 10 to 11 years)",
-			"Overweight adults (aged 18 years and over)",
-			"Cancer diagnosis at stage 1 and 2",
-			"Cardiovascular mortality considered preventable in persons aged under 75",
-			"Life satisfaction",
-			"Feeling life is worthwhile",
-			"Happiness",
-			"Anxiety",
-		},
-	},
-	{
-		Name: "Housing",
-		Indicators: []string{
-			"Additions to the housing stock",
-		},
-	},
-	{
-		Name: "Income and pay",
-		Indicators: []string{
-			"Gross value added per hour worked",
-			"Gross median weekly pay",
-		},
-	},
-	{
-		Name: "Transport",
-		Indicators: []string{
-			"Public transport or walk to employment centre with 500 to 4999 jobs",
-			"Drive to employment centre with 500 to 4999 jobs",
-			"Cycle to employment centre with 500 to 4999 jobs",
-		},
-	},
-	{
-		Name: "Crime and justice",
-		Indicators: []string{
-			"Homicide Offences",
-		},
-	},
-	{
-		Name: "Devolution",
-		Indicators: []string{
-			"Population under devolution deal in England",
-		},
-	},
-}
+// Order here counts.
+// This order will be seen in the Map.
+// The available_geographies key in ess_content.json will have
+// matching members in this order.
+var contentGeotypes = []string{"RGN", "UTLA", "LTLA"}
 
 func main() {
 	outdir := flag.String("O", "", "output directory")
 	baseurl := flag.String("u", "", "base URL for data tiles and ckmeans files")
+	taxpath := flag.String("t", "", "path to taxonomy.json")
 	flag.Usage = func() {
 		fmt.Fprintf(flag.CommandLine.Output(), "Usage: %s -O <outdir> -u <baseurl> < input.csv\n", os.Args[0])
 		flag.PrintDefaults()
 	}
 	flag.Parse()
-	if *outdir == "" || *baseurl == "" {
+	if *outdir == "" || *baseurl == "" || *taxpath == "" {
 		flag.Usage()
 		os.Exit(2)
+	}
+
+	taxonomy, err := taxonomy.Load(*taxpath)
+	if err != nil {
+		log.Fatal(err)
 	}
 
 	// Row describes the rows of the spreadsheet.
@@ -174,7 +93,7 @@ func main() {
 	}
 
 	// Set up DataSet to accumulate Indicators and Values
-	ds := NewDataSet()
+	ds := dataset.New()
 
 	line := 1 // accounts for header line
 	for {
@@ -200,11 +119,8 @@ func main() {
 		}
 
 		// map Geography to geocode
-		geotype, ok := geotypes[row.Geography]
-		if !ok {
-			log.Fatalf("line %d: %q: unrecognised geography", line, row.Geography)
-		}
-		if geotype == "" {
+		geotypes := geocode2geotypes(row.AreaCode)
+		if len(geotypes) == 0 {
 			continue
 		}
 
@@ -218,31 +134,41 @@ func main() {
 		if err != nil {
 			log.Fatalf("line %d: %s", line, err)
 		}
-		ind.AppendMetric(geotype, row.AreaCode, val)
+		for _, geotype := range geotypes {
+			ind.AppendMetric(geotype, row.AreaCode, val)
+		}
+	}
+
+	// remove geotypes that do not have any geocodes with the required prefixes
+	for geotype, prefixes := range requiredPrefixes {
+		for _, prefix := range prefixes {
+			ds.TrimGeotypes(geotype, prefix)
+		}
 	}
 
 	if err := ds.WriteTiles(*outdir); err != nil {
 		log.Fatal(err)
 	}
 
-	if err := genContent(filepath.Join(*outdir, "ess_content.json"), ds, *baseurl); err != nil {
+	if err := genContent(filepath.Join(*outdir, "ess_content.json"), taxonomy.Topics, ds, *baseurl); err != nil {
 		log.Fatal(err)
 	}
 }
 
 // genContent generates the ess_content.json file.
 // The structure comes from topics, and the data comes from ds.
-func genContent(fname string, ds *DataSet, baseurl string) error {
-	cont := NewContent("ESS data test")
+func genContent(fname string, topics []taxonomy.Topic, ds *dataset.DataSet, baseurl string) error {
+	cont := content.New("ESS data test")
 	for _, topic := range topics {
-		vg := NewVariableGroup(
+		vg := content.NewVariableGroup(
 			topic.Name,
-			ZapSpecial(topic.Name),
+			dataset.ZapSpecial(topic.Name),
 			slug.Make(topic.Name),
 		)
 
 		nind := 0
-		for _, iname := range topic.Indicators {
+		for _, taxind := range topic.Indicators {
+			iname := taxind.Name
 			ind, ok := ds.Indicators[iname]
 			if !ok {
 				log.Printf("Indicator %q not found in spreadsheet", iname)
@@ -255,11 +181,15 @@ func genContent(fname string, ds *DataSet, baseurl string) error {
 			}
 			vg.NewCategory(
 				iname,
-				ZapSpecial(iname),
+				taxind.LongDesc,
+				dataset.ZapSpecial(iname),
 				slug.Make(iname),
 				ind.Unit,
 				ind.Measure,
 				baseurl,
+				taxind.Source,
+				taxind.HigherValuePolarity,
+				ind.Period,
 				geotypes,
 			)
 			nind++
@@ -277,16 +207,24 @@ func genContent(fname string, ds *DataSet, baseurl string) error {
 
 // availableGeotypes returns the list of geotypes in an Indicator which are
 // also in contentGeotypes.
-func availableGeotypes(ind *Indicator) []string {
+func availableGeotypes(ind *dataset.Indicator) []string {
 	var result []string
-	for geotype := range ind.Metrics {
-		for _, wanttype := range contentGeotypes {
+	for _, wanttype := range contentGeotypes {
+		for geotype := range ind.Metrics {
 			if geotype == wanttype {
 				result = append(result, geotype)
 				break
 			}
 		}
 	}
-	sort.Strings(result) // sort for output consistency
 	return result
+}
+
+// geocode2geotypes returns the set of geotypes we want geocode to fall into.
+// An empty set means we are not interested in this geocode.
+func geocode2geotypes(geocode string) []string {
+	if len(geocode) != 9 {
+		return nil
+	}
+	return geotypes[geocode[0:3]]
 }

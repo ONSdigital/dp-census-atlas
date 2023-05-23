@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2023-03-22-13-23-26",
-    "release": "2021-MASTER-ar2776-c21ew_metadata-v1-3_cantab_20230303-46",
+    "created_at": "2023-05-23-09-14-05",
+    "release": "2021-MASTER-ar2776-c21ew_metadata-v1-4_cantab_20230512-53",
     "additional_content_jsons": [
       {
         "devContentJsonUrl": "release-0.json",
@@ -5115,8 +5115,8 @@
                   "legend_str_3": "English (English or Welsh if in Wales) as their main language"
                 },
                 {
-                  "name": "Other UK language: Any other UK language",
-                  "slug": "other-uk-language-any-other-uk-language",
+                  "name": "Any other UK languages",
+                  "slug": "any-other-uk-languages",
                   "code": "main_language_detailed_23a-002",
                   "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
@@ -5155,16 +5155,16 @@
                   "legend_str_3": "Polish as their main language"
                 },
                 {
-                  "name": "Other European language (EU): Any other European language",
-                  "slug": "other-european-language-eu-any-other-european-language",
+                  "name": "Other European language (EU): Any other European languages",
+                  "slug": "other-european-language-eu-any-other-european-languages",
                   "code": "main_language_detailed_23a-007",
                   "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "any other European language (EU) as their main language"
                 },
                 {
-                  "name": "European language (non-EU)",
-                  "slug": "european-language-non-eu",
+                  "name": "Other European languages (non-EU)",
+                  "slug": "other-european-languages-non-eu",
                   "code": "main_language_detailed_23a-008",
                   "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
@@ -5195,8 +5195,8 @@
                   "legend_str_3": "Arabic as their main language"
                 },
                 {
-                  "name": "West or Central Asian language",
-                  "slug": "west-or-central-asian-language",
+                  "name": "West or Central Asian languages",
+                  "slug": "west-or-central-asian-languages",
                   "code": "main_language_detailed_23a-012",
                   "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
@@ -5243,40 +5243,40 @@
                   "legend_str_3": "Tamil as their main language"
                 },
                 {
-                  "name": "South Asian language: Any other South Asian language",
-                  "slug": "south-asian-language-any-other-south-asian-language",
+                  "name": "South Asian language: Any other South Asian languages",
+                  "slug": "south-asian-language-any-other-south-asian-languages",
                   "code": "main_language_detailed_23a-018",
                   "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "any other South Asian language as their main language"
                 },
                 {
-                  "name": "East Asian language: Chinese",
-                  "slug": "east-asian-language-chinese",
+                  "name": "East Asian language: Mandarin, Cantonese and other Chinese languages",
+                  "slug": "east-asian-language-mandarin-cantonese-and-other-chinese-languages",
                   "code": "main_language_detailed_23a-019",
                   "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "Chinese as their main language"
                 },
                 {
-                  "name": "East Asian language: Any other East Asian language",
-                  "slug": "east-asian-language-any-other-east-asian-language",
+                  "name": "East Asian language: Any other East Asian languages",
+                  "slug": "east-asian-language-any-other-east-asian-languages",
                   "code": "main_language_detailed_23a-020",
                   "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "any other East Asian language"
                 },
                 {
-                  "name": "African language",
-                  "slug": "african-language",
+                  "name": "African languages",
+                  "slug": "african-languages",
                   "code": "main_language_detailed_23a-021",
                   "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
                   "legend_str_3": "an African language as their main language"
                 },
                 {
-                  "name": "Other language",
-                  "slug": "other-language",
+                  "name": "Any other languages (including sign and supported languages)",
+                  "slug": "any-other-languages-including-sign-and-supported-languages",
                   "code": "main_language_detailed_23a-022",
                   "legend_str_1": "of people aged 3 years and over in {location}",
                   "legend_str_2": "speak",
@@ -8357,7 +8357,7 @@
           "code": "occupancy_rating_bedrooms",
           "slug": "occupancy-rating-for-bedrooms",
           "desc": "Whether homes are overcrowded, ideally occupied or under-occupied, based on bedrooms.",
-          "long_desc": "Whether a household's accommodation is overcrowded, ideally occupied or under-occupied. This is calculated by comparing the number of bedrooms the household requires to the number of available bedrooms.\n\nThe number of bedrooms the household requires is calculated according to the Bedroom Standard, where the following should have their own bedroom:\n\n1. married or cohabiting couple\n2. single parent\n3. person aged 16 years and over\n4. pair of same-sex persons aged 10 to 15 years\n5. person aged 10 to 15 years paired with a person under 10 years of the same sex\n6. pair of children aged under 10 years, regardless of their sex\n7. person aged under 16 years who cannot share a bedroom with someone in 4, 5 or 6 above\n\nAn occupancy rating of:\n\n* -1 or less implies that a household\u2019s accommodation has fewer bedrooms than required (overcrowded)\n* +1 or more implies that a household\u2019s accommodation has more bedrooms than required (under-occupied)\n* 0 suggests that a household\u2019s accommodation has an ideal number of bedrooms",
+          "long_desc": "Whether a household's accommodation is overcrowded, ideally occupied or under-occupied. This is calculated by comparing the number of bedrooms the household requires to the number of available bedrooms.\n\nThe number of bedrooms the household requires is calculated according to the Bedroom Standard, where the following should have their own bedroom:\n\n1. adult couple\n2. any remaining adult (aged 21 years or over)\n3. two males (aged 10 to 20 years)\n4. one male (aged 10 to 20 years) and one male (aged 9 years or under), if there are an odd number of males aged 10-20\n5. one male aged 10-20 if there are no males aged 0-9 to pair with him.\n6. repeat steps 3-5 for females\n7. two children (aged 9 years or under) regardless of sex\n8. any remaining child (aged 9 years or under)\n\nAn occupancy rating of:\n\n* -1 or less implies that a household\u2019s accommodation has fewer bedrooms than required (overcrowded)\n* +1 or more implies that a household\u2019s accommodation has more bedrooms than required (under-occupied)\n* 0 suggests that a household\u2019s accommodation has an ideal number of bedrooms",
           "units": "households",
           "topic_code": "HOU",
           "base_url_2021": "https://ons-dp-prod-census-maps-hou.s3.eu-west-2.amazonaws.com",
@@ -8432,7 +8432,7 @@
           "code": "occupancy_rating_rooms",
           "slug": "occupancy-rating-for-rooms",
           "desc": "Whether homes are overcrowded, ideally occupied or under-occupied, based on rooms.",
-          "long_desc": "Whether a household's accommodation is overcrowded, ideally occupied or under-occupied. This is calculated by comparing the number of rooms the household requires to the number of available rooms.\n\nThe number of rooms the household requires uses a formula which states that:\n\n* one-person households require three rooms comprised of two common rooms and one bedroom\n* two-or-more person households require a minimum of two common rooms and a bedroom for each person inline with the Bedroom Standard\n\nPeople who should have their own room according to the Bedroom Standard are:\n\n1. married or cohabiting couple\n2. single parent\n3. person aged 16 years and over\n4. pair of same-sex persons aged 10 to 15 years\n5. person aged 10 to 15 years paired with a person under 10 years of the same sex\n6. pair of children aged under 10 years, regardless of their sex\n7. person aged under 16 years who cannot share a bedroom with someone in 4, 5 or 6 above\n\nAn occupancy rating of:\n\n* -1 or less implies that a household\u2019s accommodation has fewer rooms than required (overcrowded)\n* +1 or more implies that a household\u2019s accommodation has more rooms than required (under-occupied)\n* 0 suggests that a household\u2019s accommodation has an ideal number of rooms\n\nThe number of rooms is taken from Valuation Office Agency (VOA) administrative data for the first time in 2021. The number of rooms is recorded at the address level, whilst the 2011 Census recorded the number of rooms at the household level.  This means that for households that live in a shared dwelling, the available number of rooms are counted for the whole dwelling in VOA, and not each individual household. \n\nVOA\u2019s definition of a room does not include bathrooms, toilets, halls or landings, kitchens, conservatories or utility rooms. All other rooms, for example, living rooms, studies, bedrooms, separate dining rooms and rooms that can only be used for storage are included. Please note that the 2011 Census question included kitchens, conservatories and utility rooms while excluding rooms that can only be used for storage. To adjust for the definitional difference, the number of rooms required is deducted from the actual number of rooms it has available, and then 1 is added.",
+          "long_desc": "Whether a household's accommodation is overcrowded, ideally occupied or under-occupied. This is calculated by comparing the number of rooms the household requires to the number of available rooms.\n\nThe number of rooms the household requires uses a formula which states that:\n\n* one-person households require three rooms comprised of two common rooms and one bedroom\n* two-or-more person households require a minimum of two common rooms and a bedroom for each of the following:\n\n1. married or cohabiting couple\n2. single parent\n3. person aged 16 years and over\n4. pair of same-sex persons aged 10 to 15 years\n5. person aged 10 to 15 years paired with a person under 10 years of the same sex\n6. pair of children aged 10 years, regardless of their sex\n7. person aged under 16 years who cannot share a bedroom with someone in 4, 5 or 6 above\n\nAn occupancy rating of:\n\n* -1 or less implies that a household\u2019s accommodation has fewer rooms than required (overcrowded)\n* +1 or more implies that a household\u2019s accommodation has more rooms than required (under-occupied)\n* 0 suggests that a household\u2019s accommodation has an ideal number of rooms\n\nThe number of rooms is taken from Valuation Office Agency (VOA) administrative data for the first time in 2021. The number of rooms is recorded at the address level, whilst the 2011 Census recorded the number of rooms at the household level. This means that for households that live in a shared dwelling, the available number of rooms are counted for the whole dwelling in VOA, and not each individual household. \n\nVOA\u2019s definition of a room does not include bathrooms, toilets, halls or landings, kitchens, conservatories or utility rooms. All other rooms, for example, living rooms, studies, bedrooms, separate dining rooms and rooms that can only be used for storage are included. Please note that the 2011 Census question included kitchens, conservatories and utility rooms while excluding rooms that can only be used for storage. To adjust for the definitional difference, the number of rooms required is deducted from the actual number of rooms it has available, and then 1 is added.",
           "units": "households",
           "topic_code": "HOU",
           "base_url_2021": "https://ons-dp-prod-census-maps-hou.s3.eu-west-2.amazonaws.com",
@@ -8625,7 +8625,6 @@
                 "lad"
               ],
               "choropleth_default": true,
-              "dot_density_default": true,
               "comparison_2011_data_available_geotypes": [
                 "lad"
               ],
@@ -8681,7 +8680,6 @@
                 "lad"
               ],
               "choropleth_default": true,
-              "dot_density_default": true,
               "comparison_2011_data_available_geotypes": [
                 "lad"
               ],
@@ -8753,7 +8751,6 @@
                 "lad"
               ],
               "choropleth_default": true,
-              "dot_density_default": true,
               "comparison_2011_data_available_geotypes": [
                 "lad"
               ],
@@ -8808,7 +8805,7 @@
           "code": "economic_activity",
           "slug": "economic-activity-status",
           "desc": "People in employment, looking for work, waiting to start a job or economically inactive.",
-          "long_desc": "People aged 16 years and over are economically active if, between 15 March and 21 March 2021, they were:\n\n* in employment (an employee or self-employed)\n* unemployed, but looking for work and could start within two weeks\n* unemployed, but waiting to start a job that had been offered and accepted\n\nIt is a measure of whether or not a person was an active participant in the labour market during this period. Economically inactive are those aged 16 years and over who did not have a job between 15 March to 21 March 2021 and had not looked for work between 22 February to 21 March 2021 or could not start work within two weeks.\n\nThe census definition differs from International Labour Organization definition used on the Labour Force Survey, so estimates are not directly comparable.",
+          "long_desc": "People aged 16 years and over are economically active if, between 15 March and 21 March 2021, they were:\n\n* in employment (an employee or self-employed)\n* unemployed, but looking for work and could start within two weeks\n* unemployed, but waiting to start a job that had been offered and accepted\n\nIt is a measure of whether or not a person was an active participant in the labour market during this period. Economically inactive are those aged 16 years and over who did not have a job between 15 March to 21 March 2021 and had not looked for work between 22 February to 21 March 2021 or could not start work within two weeks.\n\nThe census definition differs from International Labour Organization definition used on the Labour Force Survey, so estimates are not directly comparable.\n\nThis classification splits out full-time students from those who are not full-time students when they are employed or unemployed. It is recommended to sum these together to look at all of those in employment or unemployed, or to use the four category labour market classification, if you want to look at all those with a particular labour market status.",
           "units": "people aged 16 years and over",
           "topic_code": "LAB",
           "base_url_2021": "https://ons-dp-prod-census-maps-lab.s3.eu-west-2.amazonaws.com",
@@ -8955,7 +8952,7 @@
                   "legend_str_3": "students and economically inactive"
                 },
                 {
-                  "name": "Economically Inactive: Looking after home or family",
+                  "name": "Economically inactive: Looking after home or family",
                   "slug": "economically-inactive-looking-after-home-or-family",
                   "code": "economic_activity_status_10a-007",
                   "legend_str_1": "of people aged 16 years and over in {location}",
@@ -10188,7 +10185,7 @@
           "code": "workplace_travel",
           "slug": "distance-travelled-to-work",
           "desc": "The distance between home and work, in kilometres.",
-          "long_desc": "The distance, in kilometres, between a person's residential postcode and their workplace postcode measured in a straight line. A distance travelled of 0.1km indicates that the workplace postcode is the same as the residential postcode. Distances over 1200km are treated as invalid, and an imputed or estimated value is added.\n\n\u201cWork mainly at or from home\u201d is made up of those that ticked either the \"Mainly work at or from home\" box for the address of workplace question, or the \u201cWork mainly at or from home\u201d box for the method of travel to work question.\n\n\u201cOther\u201d includes no fixed place of work, working on an offshore installation and working outside of the UK.\n\nDistance is calculated as the straight line distance between the enumeration postcode and the workplace postcode.",
+          "long_desc": "The distance, in kilometres, between a person's residential postcode and their workplace postcode measured in a straight line. A distance travelled of 0.1km indicates that the workplace postcode is the same as the residential postcode. Distances over 1200km are treated as invalid, and an imputed or estimated value is added.\n\n\u201cWork mainly at or from home\u201d is made up of those that ticked either the \"Mainly work at or from home\" box for the address of workplace question, or the \u201cWork mainly at or from home\u201d box for the method of travel to work question.\n\nDistance is calculated as the straight line distance between the enumeration postcode and the workplace postcode.\n\nCombine this variable with \u201cEconomic activity status\u201d to identify those in employment at the time of the census.",
           "units": "people aged 16 years and over in employment",
           "topic_code": "TTW",
           "base_url_2021": "https://ons-dp-prod-census-maps-ttw.s3.eu-west-2.amazonaws.com",
@@ -10205,7 +10202,6 @@
                 "lad"
               ],
               "choropleth_default": true,
-              "dot_density_default": true,
               "data_download": "https://www.ons.gov.uk/datasets/TS058/editions/2021",
               "categories": [
                 {
@@ -10233,8 +10229,8 @@
                   "legend_str_3": "mainly from home"
                 },
                 {
-                  "name": "Other",
-                  "slug": "other",
+                  "name": "Not in employment or works mainly offshore, in no fixed place or outside the UK",
+                  "slug": "not-in-employment-or-works-mainly-offshore-in-no-fixed-place-or-outside-the-uk",
                   "code": "workplace_travel_4a-004",
                   "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "have",
@@ -10285,8 +10281,8 @@
                   "legend_str_3": "mainly from home"
                 },
                 {
-                  "name": "Other",
-                  "slug": "other",
+                  "name": "Not in employment or works mainly offshore, in no fixed place or outside the UK",
+                  "slug": "not-in-employment-or-works-mainly-offshore-in-no-fixed-place-or-outside-the-uk",
                   "code": "workplace_travel_5a-005",
                   "legend_str_1": "of people aged 16 years and over in employment in {location}",
                   "legend_str_2": "have",

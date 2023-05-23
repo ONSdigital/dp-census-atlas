@@ -1,5 +1,5 @@
 {
-  "cantabular_metadata_dir": "ar2776-c21ew_metadata-v1-3_cantab_20230303-46",
+  "cantabular_metadata_dir": "ar2776-c21ew_metadata-v1-4_cantab_20230512-53",
   "content_json": {
     "2021-MASTER": {
       "additional_content_jsons": [
@@ -365,7 +365,6 @@
                     "desc": "Disability - Equality act disabled (4 categories)",
                     "available_geotypes": ["lad"],
                     "choropleth_default": true,
-                    "dot_density_default": true,
                     "comparison_2011_data_available_geotypes": ["lad"],
                     "data_download": "https://www.ons.gov.uk/datasets/TS038ASP/editions/2021",
                     "change_data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/censuschangeovertimedataenglandandwales/2011to2021",
@@ -419,7 +418,6 @@
                     "desc": "General health (6 categories)",
                     "available_geotypes": ["lad"],
                     "choropleth_default": true,
-                    "dot_density_default": true,
                     "comparison_2011_data_available_geotypes": ["lad"],
                     "data_download": "https://www.ons.gov.uk/datasets/TS037ASP/editions/2021",
                     "change_data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/censuschangeovertimedataenglandandwales/2011to2021",
@@ -489,7 +487,6 @@
                     "desc": "Unpaid care (5 categories)",
                     "available_geotypes": ["lad"],
                     "choropleth_default": true,
-                    "dot_density_default": true,
                     "comparison_2011_data_available_geotypes": ["lad"],
                     "data_download": "https://www.ons.gov.uk/datasets/TS039ASP/editions/2021",
                     "change_data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/censuschangeovertimedataenglandandwales/2011to2021",

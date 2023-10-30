@@ -1,7 +1,7 @@
 {
   "meta": {
-    "created_at": "2023-09-14-13-46-36",
-    "release": "2021-MASTER-ar2776-c21ew_metadata-v1-5_cantab_20230913-67",
+    "created_at": "2023-10-30-17-33-22",
+    "release": "2021-MASTER-ar2776-c21ew_metadata-v1-5_cantab_20231017-69",
     "additional_content_jsons": [
       {
         "devContentJsonUrl": "release-0.json",
@@ -7192,7 +7192,9 @@
           "long_desc": "Classifies people according to the responses to the sexual orientation question. This question was voluntary and was only asked of people aged 16 years and over.",
           "units": "people",
           "topic_code": "SOGI",
-          "base_url_2021": "https://ons-dp-prod-census-maps-sogi.s3.eu-west-2.amazonaws.com",
+          "base_url_2021": "https://ons-dp-prod-census-maps-sogi.s3.eu-west-2.amazonaws.com/v2",
+          "caveat_text": "We have corrected an error affecting the \"Pansexual\" and \"All other sexual orientations categories\"",
+          "caveat_link": "https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/sexuality/methodologies/sexualorientationandgenderidentityqualityinformationforcensus2021",
           "base_url_dot_density": "https://onsvisual.github.io/dot-density-data/output/data",
           "classifications": [
             {
@@ -8500,7 +8502,7 @@
           "code": "second_address_type_priority",
           "slug": "second-address-type",
           "desc": "Whether people have an alternative address (somewhere they stay for more than 30 days per year) and the type of address this is.",
-          "long_desc": "Indicates whether a person has an alternative address (somewhere they stay for more than 30 days per year) and the type of second address this is. \n\nThe 'Not applicable' classification applies to people without an alternative address.",
+          "long_desc": "Indicates whether a person has an alternative address (somewhere they stay for more than 30 days per year) and the type of second address this is.",
           "units": "people",
           "topic_code": "HOU",
           "base_url_2021": "https://ons-dp-prod-census-maps-hou.s3.eu-west-2.amazonaws.com",

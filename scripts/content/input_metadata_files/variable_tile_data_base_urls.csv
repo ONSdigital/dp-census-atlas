@@ -23,7 +23,7 @@ Identity,2021-EILR,religion_tb,https://ons-dp-prod-census-maps-eilr.s3.eu-west-2
 Identity,2021-WELSH-SKILLS,welsh_skills_all,https://ons-dp-prod-census-maps-welsh-skills.s3.eu-west-2.amazonaws.com,,https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com,,https://onsvisual.github.io/dot-density-data/output/data
 Identity,2021-WELSH-SKILLS,welsh_skills_speak,https://ons-dp-prod-census-maps-welsh-skills.s3.eu-west-2.amazonaws.com,,https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com,,https://onsvisual.github.io/dot-density-data/output/data
 Identity,2021-SOGI,gender_identity,https://ons-dp-prod-census-maps-sogi.s3.eu-west-2.amazonaws.com,,,,https://onsvisual.github.io/dot-density-data/output/data
-Identity,2021-SOGI,sexual_orientation,https://ons-dp-prod-census-maps-sogi.s3.eu-west-2.amazonaws.com,,,,https://onsvisual.github.io/dot-density-data/output/data
+Identity,2021-SOGI,sexual_orientation,https://ons-dp-prod-census-maps-sogi.s3.eu-west-2.amazonaws.com/v2,,,,https://onsvisual.github.io/dot-density-data/output/data
 Population,2021-ARM,uk_armed_forces,https://ons-dp-prod-census-maps-arm.s3.eu-west-2.amazonaws.com,,,,https://onsvisual.github.io/dot-density-data/output/data
 Population,2021-DEM,hh_deprivation,https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com,,,,https://onsvisual.github.io/dot-density-data/output/data
 Population,2021-DEM,hh_family_composition,https://ons-dp-prod-census-maps-dem-mig.s3.eu-west-2.amazonaws.com,,https://ons-dp-prod-census-maps-comparison-2011.s3.eu-west-2.amazonaws.com,,https://onsvisual.github.io/dot-density-data/output/data

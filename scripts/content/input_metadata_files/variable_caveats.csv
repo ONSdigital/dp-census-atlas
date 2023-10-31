@@ -32,7 +32,7 @@ Identity,2021-EILR,religion_tb,"There are quality considerations for the ""not a
 Identity,2021-EILR,welsh_skills_all,,
 Identity,2021-EILR,welsh_skills_speak,,
 Identity,2021-SOGI,gender_identity,,
-Identity,2021-SOGI,sexual_orientation,"We have corrected an error affecting the ""Pansexual"" and ""All other sexual orientations categories""",https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/sexuality/methodologies/sexualorientationandgenderidentityqualityinformationforcensus2021
+Identity,2021-SOGI,sexual_orientation,"We have corrected an error affecting the ""Pansexual"" and ""All other sexual orientations"" categories.",https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/sexuality/methodologies/sexualorientationandgenderidentityqualityinformationforcensus2021
 Population,2021-ARM,uk_armed_forces,,
 Population,2021-DEM,hh_deprivation,,
 Population,2021-DEM,hh_family_composition,,

@@ -1,5 +1,5 @@
 {
-  "cantabular_metadata_dir": "ar2776-c21ew_metadata-v1-3_cantab_20230303-46",
+  "cantabular_metadata_dir": "ar2776-c21ew_metadata-v1-5_cantab_20231017-69",
   "content_json": {
     "2021-MASTER": {
       "additional_content_jsons": [
@@ -365,7 +365,6 @@
                     "desc": "Disability - Equality act disabled (4 categories)",
                     "available_geotypes": ["lad"],
                     "choropleth_default": true,
-                    "dot_density_default": true,
                     "comparison_2011_data_available_geotypes": ["lad"],
                     "data_download": "https://www.ons.gov.uk/datasets/TS038ASP/editions/2021",
                     "change_data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/censuschangeovertimedataenglandandwales/2011to2021",
@@ -419,7 +418,6 @@
                     "desc": "General health (6 categories)",
                     "available_geotypes": ["lad"],
                     "choropleth_default": true,
-                    "dot_density_default": true,
                     "comparison_2011_data_available_geotypes": ["lad"],
                     "data_download": "https://www.ons.gov.uk/datasets/TS037ASP/editions/2021",
                     "change_data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/censuschangeovertimedataenglandandwales/2011to2021",
@@ -489,7 +487,6 @@
                     "desc": "Unpaid care (5 categories)",
                     "available_geotypes": ["lad"],
                     "choropleth_default": true,
-                    "dot_density_default": true,
                     "comparison_2011_data_available_geotypes": ["lad"],
                     "data_download": "https://www.ons.gov.uk/datasets/TS039ASP/editions/2021",
                     "change_data_download": "https://www.ons.gov.uk/peoplepopulationandcommunity/populationandmigration/populationestimates/articles/censuschangeovertimedataenglandandwales/2011to2021",
@@ -575,7 +572,47 @@
             },
             {
               "code": "workplace_travel",
-              "classifications": ["workplace_travel_4a", "workplace_travel_5a", "workplace_travel"]
+              "classifications": ["workplace_travel_4a", "workplace_travel_5a", "workplace_travel"],
+              "classification_dropped_categories": {
+                "workplace_travel_4a": [
+                  "Not in employment or works mainly offshore, in no fixed place or outside the UK"
+                ],
+                "workplace_travel_5a": [
+                  "Not in employment or works mainly offshore, in no fixed place or outside the UK"
+                ]
+              },
+              "classification_custom_categories": {
+                "workplace_travel_4a": [
+                  {
+                    "insert_after": "workplace_travel_4a-003",
+                    "categories": [
+                      {
+                        "name": "Works mainly at an offshore installation, in no fixed place, or outside the UK",
+                        "slug": "works-mainly-at-an-offshore-installation-in-no-fixed-place-or-outside-the-uk",
+                        "code": "workplace_travel_4a-004",
+                        "legend_str_1": "of people aged 16 years and over in employment in {location}",
+                        "legend_str_2": "have",
+                        "legend_str_3": "other forms of travel to work"
+                      }
+                    ]
+                  }
+                ],
+                "workplace_travel_5a": [
+                  {
+                    "insert_after": "workplace_travel_5a-004",
+                    "categories": [
+                      {
+                        "name": "Works mainly at an offshore installation, in no fixed place, or outside the UK",
+                        "slug": "works-mainly-at-an-offshore-installation-in-no-fixed-place-or-outside-the-uk",
+                        "code": "workplace_travel_5a-005",
+                        "legend_str_1": "of people aged 16 years and over in employment in {location}",
+                        "legend_str_2": "have",
+                        "legend_str_3": "other forms of travel to work"
+                      }
+                    ]
+                  }
+                ]
+              }
             }
           ]
         }

@@ -1,8 +1,6 @@
 {
   "recommendations": [
     "ardenivanov.svelte-intellisense",
-    "christian-kohler.npm-intellisense",
-    "christian-kohler.path-intellisense",
     "davidanson.vscode-markdownlint",
     "dbaeumer.vscode-eslint",
     "editorconfig.editorconfig",

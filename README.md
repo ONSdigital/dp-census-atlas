@@ -2,39 +2,6 @@
 
 Explore neighbourhood-level Census data on a map.
 
-## State ownership
-
-In this app, there are three possible 'owners' of state:
-
-- The URL (app state)
-- Map instance (transitory map state, eg the exact zoom and position)
-- Svelte components (transistory, local UI state, eg whether a modal is open)
-
-All _important_ state flows in one direction from the URL to the UI. This enables link sharing and makes apps work properly on the web.
-
-- When a URL is shared, the app opens in the same state as when it was shared _in every important way_
-- The Back (and Forward) buttons work correctly
-- Embedding is a special case of sharing - the URL needs to contain all the relevant parameters to show the embeddable content
-
-## URL structure
-
-    /population/sex/sex/female              ? msoa=E02006827
-                  |                                |
-                  |                                |
-    /topic/variable/classification/category ? geotype=geocode
-                  |                                |
-          `path` picks a node                `query` selects
-          in the content tree                 the geography
-                                            (and embed parameters, not shown)
-
-## Git
-
-- `develop` is the mainline development branch - anything here should be "good to go".
-- `master` is the "live" branch - anything here can get deployed by Concourse into the production `publishing` and `web` environments.
-- make branches named like `feature/my-feature`. Push to Github, make a PR and get it approved by someone else, merge to into `develop` (with `--no-ff`).
-
-      git merge --no-ff feature/my-feature
-
 ## Develop
 
     npm install
@@ -46,6 +13,14 @@ All _important_ state flows in one direction from the URL to the UI. This enable
 
     npm run test   # run unit tests
     npm run e2e    # run UI tests (needs npm run dev first)
+
+## Git
+
+- `develop` is the mainline development branch - anything here should be "good to go".
+- `master` is the "live" branch - anything here can get deployed by Concourse into the production `publishing` and `web` environments.
+- make branches named like `feature/my-feature`. Push to Github, make a PR and get it approved by someone else, merge to into `develop` (with `--no-ff`).
+
+      git merge --no-ff feature/my-feature
 
 ## Releases
 
@@ -72,17 +47,79 @@ See the general [DP release process](https://github.com/ONSdigital/dp/blob/main/
 - in 'production-ship-it', trigger a new build
 - optionally, go to `#cache` and say `clear cache for https://www.ons.gov.uk/census/maps`
 
+## State ownership
+
+In this app, there are three possible 'owners' of state:
+
+- The URL (app state)
+- Map instance (transitory map state, eg the exact zoom and position)
+- Svelte components (transistory, local UI state, eg whether a modal is open)
+
+All _important_ state flows in one direction from the URL to the UI. This enables link sharing and makes apps work properly on the web.
+
+- When a URL is shared, the app opens in the same state as when it was shared _in every important way_
+- The Back (and Forward) buttons work correctly
+- Embedding is a special case of sharing - the URL needs to contain all the relevant parameters to show the embeddable content
+
+## URL structure
+
+    /population/sex/sex/female              ? msoa=E02006827
+                  |                                |
+                  |                                |
+    /topic/variable/classification/category ? geotype=geocode
+                  |                                |
+          `path` picks a node                `query` selects
+          in the content tree                 the geography
+                                            (and embed parameters, not shown)
+
+## Important concepts
+
+- Census concepts.
+
+  - topics (now called VariableGroups - the top level grouping of variables)
+  - variables (essentially, Census questions)
+  - classifications (essentially, Census results tables)
+  - categories (essentially, Census answers)
+
+- Geography types. We chose three simple, hierarchical geography types.
+
+  - LAD (large)
+  - MSAO (medium)
+  - OA (small)
+
+- Modes (a.k.a. map types). This concept was added post-launch, to allow additional map types.
+
+  - choropleth (the original, default map type)
+  - dotdensity (a novel, dotted map)
+  - change (change over time, between 2011 and 2021 census)
+
+- Svelte stores. We used `asyncDerived` from Square to everything to flow from the URL to the vizualisation.
+
+  - $params - the _parsed_ application URL parameters. This store does a lot of useful work. It depends on the built-in page store, which provides the URL, and makes available the current variableGroup, variable, classification and category in the content tree.
+  - $viewport - the current map viewport.
+  - $viz - all the data we need in order to show a vizualisation.
+
+There are other stores, but these are the key ones to understand.
+
 ## Content.json
 
-The `content.json` files list the census data that the app will show, and contain metadata (labels etc) for that content.
+The `content.json` file(s) list the census content that the app will show, and contain metadata (labels etc) for that content. This essentially defines what is in the navigation panel on the left of the map.
 
 These are generated from ONS metadata files by python scripts in the `content` directory found in the project root. See [content/README.md](https://github.com/ONSdigital/dp-census-atlas/blob/develop/scripts/content/README.md) for more details.
 
+> We built a client-side (browser-based) mechanism of loading multiple content.json files and merging them all together, which was a practical solution to previewing and then publishing the data at the time of data release, given the publishing contraints the dev team faced at the time. It would be better if the content was built on the server, because it would enable server-side rendering of the app's pages.
+
+Logically, there is one `content` object tree, made available throughout the app via the Svelte `$content` store.
+
+## quadsDataTileGrid.json
+
+This contains the 'tiles' we decided to break up the country into, at each of the geography types.
+
 ## Data
 
-Data is hosted in three 'flat file APIs' - that is, sets of files hosted on S3.
+Data (ie, what is shown on the map) is hosted in three 'flat file APIs' - that is, sets of files hosted on S3.
 
-> Note: the data structures returned by the APIs could be simplified slightly - the output has been kept compatible with the earlier dynamic Go API.
+> The data structures returned by the APIs could have been simplified slightly - the output was kept compatible with the earlier dynamic Go API.
 
 ### 'Data' API
 

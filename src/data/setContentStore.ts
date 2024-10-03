@@ -3,7 +3,7 @@ import { appBasePath } from "../buildEnv";
 import content from "./content";
 import { getContentForStore } from "../helpers/contentHelpers";
 import { content as contentStore } from "../stores/content";
-import type { DataEnv } from "../types";
+import type { DataEnv, ContentTree } from "../types";
 
 /*
   Fetch and collate all content.json files for current env, then set them in the contentStore. NB - variableGroups are
@@ -19,5 +19,14 @@ export const setContentStoreOnce = async () => {
 
   // fetch content for store and set
   const contentForStore = await getContentForStore(content, dataEnv);
+  removeGenderIdentity(contentForStore);
+
   contentStore.set(contentForStore);
+};
+
+const removeGenderIdentity = (content: ContentTree) => {
+  const identity = content.choropleth.variableGroups.find((vg) => vg.slug === "identity");
+  if (identity) {
+    identity.variables = identity.variables.filter((v) => v.code !== "gender_identity");
+  }
 };

@@ -1,4 +1,4 @@
-import { redirect } from "@sveltejs/kit";
+import { error, redirect } from "@sveltejs/kit";
 
 export const redirectIfNecessary = (url: URL) => {
   const match = redirects.find((r) => url.pathname.includes(r.old));
@@ -6,6 +6,15 @@ export const redirectIfNecessary = (url: URL) => {
     const location = new URL(url);
     location.pathname = url.pathname.replace(match.old, match.new);
     throw redirect(301, location.toString());
+  }
+
+  // handle removal of gender identity with explanatory message
+  if (url.pathname.includes("/identity/gender-identity")) {
+    throw error(404, {
+      message: "Gender identity estimates from Census 2021 are no longer accredited official statistics.",
+      readMoreLink:
+        "https://www.ons.gov.uk/peoplepopulationandcommunity/culturalidentity/sexuality/methodologies/sexualorientationandgenderidentityqualityinformationforcensus2021",
+    });
   }
 };
 

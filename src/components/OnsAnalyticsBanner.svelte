@@ -19,14 +19,36 @@
     return -1 < document.cookie.indexOf("cookies_preferences_set=true");
   }
 
+  // extractValue extracts the value from an undecodeable JSON cookie string
+  function extractValue(key: string, extractionString: string): string | null {
+    const extractionRegex = new RegExp(`'${key}':(.*?)[,}]`);
+    const match = extractionString.match(extractionRegex);
+    if (match) {
+      return match[1];
+    }
+    return null;
+  }
+
   // Check if usage cookies are allowed (for Google Analytics + Hotjar)
   function getUsageCookieValue() {
-    var cookiesPolicyCookie = document.cookie.match(new RegExp("(^|;) ?cookies_policy=([^;]*)(;|$)"));
-    if (cookiesPolicyCookie) {
-      var decodedCookie = decodeURIComponent(cookiesPolicyCookie[2]);
-      var cookieValue = JSON.parse(decodedCookie);
+    const legacyPolicyCookie = document.cookie.match(/(^|;) ?cookies_policy=([^;]*)(;|$)/);
+    if (legacyPolicyCookie) {
+      console.debug("legacy cookies_policy found");
+      const decodedCookie = decodeURIComponent(legacyPolicyCookie[2]);
+      const cookieValue = JSON.parse(decodedCookie);
+      console.debug("usage is", cookieValue.usage);
       return cookieValue.usage;
     }
+
+    const policyCookie = document.cookie.match(/(?:^|; )ons_cookie_policy=({.*?})/);
+    if (policyCookie) {
+      console.debug("ons_cookie_policy found");
+      const usageValue = extractValue("usage", policyCookie[1]);
+      console.debug("usage is", usageValue);
+      return usageValue === "true";
+    }
+
+    console.debug("no cookie found - opting out");
     return false;
   }
 
@@ -302,7 +324,11 @@
     cursor: pointer;
   }
   .btn {
-    font-family: open sans, Helvetica, Arial, sans-serif;
+    font-family:
+      open sans,
+      Helvetica,
+      Arial,
+      sans-serif;
     font-weight: 400;
     font-size: 14px;
     display: inline-block;

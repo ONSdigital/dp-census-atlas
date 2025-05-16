@@ -28,6 +28,7 @@ See the general [DP release process](https://github.com/ONSdigital/dp/blob/main/
 
 - the work you want to release needs to be approved and merged to `develop` in the normal way
 - see existing releases <https://github.com/ONSdigital/dp-census-atlas/releases> and choose the next release name (if the latest `1.14.0`, the next will be `1.15.0`)
+- update the `src/routes/version/+server.ts` file with this version
 - ensure your `develop` is up-to-date `git checkout develop`, `git pull`
 - create a 'release branch' from `develop` with an incremented release number `git checkout -b release/0.0.0` and push to Github
 - go to <https://github.com/ONSdigital/dp-census-atlas/branches> and make a PR with a base of `master`
@@ -46,6 +47,7 @@ See the general [DP release process](https://github.com/ONSdigital/dp/blob/main/
 - wait for release to go green
 - in 'production-ship-it', trigger a new build
 - optionally, go to `#cache` and say `clear cache for https://www.ons.gov.uk/census/maps`
+- check the new version is available at `https://www.ons.gov.uk/census/maps/version`
 
 ## State ownership
 

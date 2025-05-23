@@ -16,7 +16,7 @@
   let location = null; // For keeping track of navigation multi-page apps
 
   function hasCookiesPreferencesSet() {
-    return -1 < document.cookie.indexOf("cookies_preferences_set=true");
+    return -1 < document.cookie.indexOf("ons_cookie_message_displayed=true");
   }
 
   // extractValue extracts the value from an undecodeable JSON cookie string
@@ -57,11 +57,13 @@
     let oneYearInSeconds = 60 * 60 * 24 * 365;
     let cookiesDomain = window.location.hostname;
     let cookiesPreference = !0;
-    let encodedCookiesPolicy = `%7B%22essential%22%3Atrue%2C%22usage%22%3A${option == "all" ? "true" : "false"}%7D`;
+    let acceptAllCookiesPolicy = `{'essential':true,'settings':true,'usage':true,'campaigns':true}`;
+    let rejectAllCookiesPolicy = `{'essential':true,'settings':false,'usage':false,'campaigns':false}`;
+    let cookiesPolicy = option == "all" ? acceptAllCookiesPolicy : rejectAllCookiesPolicy;
     let cookiesPath = "/";
 
-    document.cookie = `cookies_preferences_set=${cookiesPreference};max-age=${oneYearInSeconds};domain=${cookiesDomain};path=${cookiesPath};`;
-    document.cookie = `cookies_policy=${encodedCookiesPolicy};max-age=${oneYearInSeconds};domain=${cookiesDomain};path=${cookiesPath};`;
+    document.cookie = `ons_cookie_message_displayed=${cookiesPreference};max-age=${oneYearInSeconds};domain=${cookiesDomain};path=${cookiesPath};`;
+    document.cookie = `ons_cookies_policy=${cookiesPolicy};max-age=${oneYearInSeconds};domain=${cookiesDomain};path=${cookiesPath};`;
 
     message = option == "all" ? "all" : "only essential";
     if (option == "all") usageCookies = true;
@@ -138,11 +140,15 @@
         <div class="cookies-banner__wrapper wrapper">
           <div>
             <div class="cookies-banner__message font-size--18">
-              <h1 class="cookies-banner__heading font-size--h3">Tell us whether you accept cookies</h1>
+              <h1 class="cookies-banner__heading font-size--h3">Cookies on ons.gov.uk</h1>
               <p class="cookies-banner__body">
-                We would like to use cookies to collect anonymous information about how you use this prototype.
+                Cookies are small files stored on your device when you visit a website. We use some essential cookies to
+                make this website work.
               </p>
-              <p class="cookies-banner__body">We use this information to improve our services.</p>
+              <p class="cookies-banner__body">
+                We would like to set <a href="https://www.ons.gov.uk/cookies">additional cookies</a> to remember your settings
+                and understand how you use the site. This helps us to improve our services.
+              </p>
             </div>
             <div class="cookies-banner__buttons">
               <div class="cookies-banner__button cookies-banner__button--accept">
@@ -157,12 +163,15 @@
               </div>
               <div class="cookies-banner__button">
                 <button
-                  class="btn btn--full-width btn--secondary btn--focus font-weight-700 font-size--17 text-wrap"
+                  class="btn btn--full-width btn--primary btn--focus font-weight-700 font-size--17 text-wrap"
                   data-gtm-accept-cookies="true"
                   on:click|preventDefault={() => setCookie("reject")}
                 >
                   Reject cookies
                 </button>
+              </div>
+              <div class="cookies-banner__button">
+                <a href="https://www.ons.gov.uk/cookies">Manage settings</a>
               </div>
             </div>
           </div>
@@ -275,7 +284,8 @@
     }
   }
   .cookies-banner a {
-    text-decoration: none;
+    text-decoration: underline;
+    color: #206095;
   }
   .cookies-banner p,
   .cookies-banner .markdown li p:nth-of-type(2),
@@ -324,11 +334,7 @@
     cursor: pointer;
   }
   .btn {
-    font-family:
-      open sans,
-      Helvetica,
-      Arial,
-      sans-serif;
+    font-family: open sans, Helvetica, Arial, sans-serif;
     font-weight: 400;
     font-size: 14px;
     display: inline-block;

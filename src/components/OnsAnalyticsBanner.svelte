@@ -63,7 +63,7 @@
     let cookiesPath = "/";
 
     document.cookie = `ons_cookie_message_displayed=${cookiesPreference};max-age=${oneYearInSeconds};domain=${cookiesDomain};path=${cookiesPath};`;
-    document.cookie = `ons_cookies_policy=${cookiesPolicy};max-age=${oneYearInSeconds};domain=${cookiesDomain};path=${cookiesPath};`;
+    document.cookie = `ons_cookie_policy=${cookiesPolicy};max-age=${oneYearInSeconds};domain=${cookiesDomain};path=${cookiesPath};`;
 
     message = option == "all" ? "all" : "only essential";
     if (option == "all") usageCookies = true;

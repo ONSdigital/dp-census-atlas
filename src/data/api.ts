@@ -77,7 +77,7 @@ const parseSingleCategoryData = (row: dsv.DSVRowString<string>, categoryCode: st
 };
 
 const parseMultiCategoryData = (row: dsv.DSVRowString<string>, categoryCodes: string[]) => {
-  const geoCode = row.geography_code;
+  const geoCode = row.geography_code || row.areacd;
   const categoryValues = categoryCodes.map((c) => ({ code: c, value: parseFloat(row[c]) }));
   return { geoCode, categoryValues };
 };

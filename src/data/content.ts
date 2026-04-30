@@ -23,8 +23,10 @@ details.
 export default [
   {
     devContentJsonUrl: "2021-MASTER.json",
-    webContentJsonUrl: "https://www.ons.gov.uk/visualisations/censusmapsmasterconfig/2021-MASTER.json",
-    publishingContentJsonUrl:
-      "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusmapsmasterconfig/2021-MASTER.json",
+    webContentJsonUrl: "2021-MASTER.json",
+    publishingContentJsonUrl: "2021-MASTER.json",
+    // webContentJsonUrl: "https://www.ons.gov.uk/visualisations/censusmapsmasterconfig/2021-MASTER.json",
+    // publishingContentJsonUrl:
+    //   "https://publishing.dp-prod.aws.onsdigital.uk/visualisations/censusmapsmasterconfig/2021-MASTER.json",
   },
 ];

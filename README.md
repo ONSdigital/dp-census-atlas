@@ -4,6 +4,7 @@ Explore neighbourhood-level Census data on a map.
 
 ## Develop
 
+    nvm use       # use the correct Node version
     npm install
     npm run dev
 

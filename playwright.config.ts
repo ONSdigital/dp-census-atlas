@@ -6,7 +6,7 @@ const config: PlaywrightTestConfig = {
     port: 4173,
   },
   use: {
-    baseURL: "http://localhost:28100",
+    baseURL: "http://localhost:4173",
   },
   fullyParallel: true,
   timeout: 80000,

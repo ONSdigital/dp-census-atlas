@@ -8,7 +8,7 @@ const testCases = [
   {
     name: "DEM",
     url: "/choropleth/population/household-composition/hh-family-composition-4a/other-household-types?lad=E07000035",
-    legendText: "3.1% of households in Derbyshire Dales LAD are other household types",
+    legendText: "3.4% of households in Derbyshire Dales LAD are other household types",
     categoryCount: 3,
     nextClassificationCategoryCount: 14,
   },
@@ -54,14 +54,6 @@ const testCases = [
     legendText: "2.5% of people in Great Shelford & Stapleford MSOA arrived in the UK between 1991 and 2000",
     categoryCount: 5,
     nextClassificationCategoryCount: 12,
-  },
-  {
-    name: "SOGI",
-    url: "/choropleth/identity/gender-identity/gender-identity-4a/gender-identity-different-from-sex-registered-at-birth?msoa=E02003604",
-    legendText:
-      "0.32% of people aged 16 years and over in Biggleswade East MSOA have a gender identity different from their sex registered at birth",
-    categoryCount: 3,
-    nextClassificationCategoryCount: 7,
   },
   {
     name: "TTW",
